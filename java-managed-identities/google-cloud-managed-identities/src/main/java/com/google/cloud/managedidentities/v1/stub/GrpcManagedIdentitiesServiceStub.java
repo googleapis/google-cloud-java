@@ -66,6 +66,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMicrosoftAdDomainRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResetAdminPasswordRequest, ResetAdminPasswordResponse>
@@ -78,6 +79,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
                   ProtoUtils.marshaller(ResetAdminPasswordRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ResetAdminPasswordResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDomainsRequest, ListDomainsResponse>
@@ -89,6 +91,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
               .setRequestMarshaller(ProtoUtils.marshaller(ListDomainsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDomainsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDomainRequest, Domain> getDomainMethodDescriptor =
@@ -97,6 +100,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
           .setFullMethodName("google.cloud.managedidentities.v1.ManagedIdentitiesService/GetDomain")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDomainRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Domain.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateDomainRequest, Operation>
@@ -107,6 +111,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
                   "google.cloud.managedidentities.v1.ManagedIdentitiesService/UpdateDomain")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateDomainRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDomainRequest, Operation>
@@ -117,6 +122,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
                   "google.cloud.managedidentities.v1.ManagedIdentitiesService/DeleteDomain")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteDomainRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AttachTrustRequest, Operation> attachTrustMethodDescriptor =
@@ -126,6 +132,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
               "google.cloud.managedidentities.v1.ManagedIdentitiesService/AttachTrust")
           .setRequestMarshaller(ProtoUtils.marshaller(AttachTrustRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ReconfigureTrustRequest, Operation>
@@ -137,6 +144,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReconfigureTrustRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DetachTrustRequest, Operation> detachTrustMethodDescriptor =
@@ -146,6 +154,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
               "google.cloud.managedidentities.v1.ManagedIdentitiesService/DetachTrust")
           .setRequestMarshaller(ProtoUtils.marshaller(DetachTrustRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ValidateTrustRequest, Operation>
@@ -157,6 +166,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ValidateTrustRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateMicrosoftAdDomainRequest, Operation>

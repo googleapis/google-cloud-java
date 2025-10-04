@@ -75,7 +75,7 @@ public final class DeleteRepositoryRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. Name of the repository to delete.
    * The format is
-   * projects/{project_number}/locations/{location_id}/repositories/{repository_id}.
+   * `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`.
    * </pre>
    *
    * <code>
@@ -103,7 +103,7 @@ public final class DeleteRepositoryRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. Name of the repository to delete.
    * The format is
-   * projects/{project_number}/locations/{location_id}/repositories/{repository_id}.
+   * `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`.
    * </pre>
    *
    * <code>
@@ -523,7 +523,7 @@ public final class DeleteRepositoryRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. Name of the repository to delete.
      * The format is
-     * projects/{project_number}/locations/{location_id}/repositories/{repository_id}.
+     * `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`.
      * </pre>
      *
      * <code>
@@ -550,7 +550,7 @@ public final class DeleteRepositoryRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. Name of the repository to delete.
      * The format is
-     * projects/{project_number}/locations/{location_id}/repositories/{repository_id}.
+     * `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`.
      * </pre>
      *
      * <code>
@@ -577,7 +577,7 @@ public final class DeleteRepositoryRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. Name of the repository to delete.
      * The format is
-     * projects/{project_number}/locations/{location_id}/repositories/{repository_id}.
+     * `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`.
      * </pre>
      *
      * <code>
@@ -603,7 +603,7 @@ public final class DeleteRepositoryRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. Name of the repository to delete.
      * The format is
-     * projects/{project_number}/locations/{location_id}/repositories/{repository_id}.
+     * `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`.
      * </pre>
      *
      * <code>
@@ -625,7 +625,7 @@ public final class DeleteRepositoryRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. Name of the repository to delete.
      * The format is
-     * projects/{project_number}/locations/{location_id}/repositories/{repository_id}.
+     * `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`.
      * </pre>
      *
      * <code>

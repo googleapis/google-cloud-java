@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -337,6 +337,19 @@ public final class NotificationsApiServiceGrpc {
     return NotificationsApiServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static NotificationsApiServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<NotificationsApiServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<NotificationsApiServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public NotificationsApiServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new NotificationsApiServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return NotificationsApiServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -611,6 +624,111 @@ public final class NotificationsApiServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service NotificationsApiService.
+   *
+   * <pre>
+   * Service to manage notification subscriptions for merchants
+   * </pre>
+   */
+  public static final class NotificationsApiServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<NotificationsApiServiceBlockingV2Stub> {
+    private NotificationsApiServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected NotificationsApiServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new NotificationsApiServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets notification subscriptions for an account.
+     * </pre>
+     */
+    public com.google.shopping.merchant.notifications.v1beta.NotificationSubscription
+        getNotificationSubscription(
+            com.google.shopping.merchant.notifications.v1beta.GetNotificationSubscriptionRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNotificationSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a notification subscription for a merchant. We will allow the
+     * following types of notification subscriptions to exist together (per
+     * merchant as a subscriber per event type):
+     * 1. Subscription for all managed accounts + subscription for self
+     * 2. Multiple "partial" subscriptions for managed accounts + subscription
+     * for self
+     * we will not allow (per merchant as a subscriber per event type):
+     * 1. multiple self subscriptions.
+     * 2. multiple "all managed accounts" subscriptions.
+     * 3. all and partial subscriptions at the same time.
+     * 4. multiple partial subscriptions for the same target account
+     * </pre>
+     */
+    public com.google.shopping.merchant.notifications.v1beta.NotificationSubscription
+        createNotificationSubscription(
+            com.google.shopping.merchant.notifications.v1beta.CreateNotificationSubscriptionRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNotificationSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing notification subscription for a merchant.
+     * </pre>
+     */
+    public com.google.shopping.merchant.notifications.v1beta.NotificationSubscription
+        updateNotificationSubscription(
+            com.google.shopping.merchant.notifications.v1beta.UpdateNotificationSubscriptionRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateNotificationSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a notification subscription for a merchant.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteNotificationSubscription(
+        com.google.shopping.merchant.notifications.v1beta.DeleteNotificationSubscriptionRequest
+            request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNotificationSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets all the notification subscriptions for a merchant.
+     * </pre>
+     */
+    public com.google.shopping.merchant.notifications.v1beta.ListNotificationSubscriptionsResponse
+        listNotificationSubscriptions(
+            com.google.shopping.merchant.notifications.v1beta.ListNotificationSubscriptionsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNotificationSubscriptionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service NotificationsApiService.
    *
    * <pre>
    * Service to manage notification subscriptions for merchants

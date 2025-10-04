@@ -80,6 +80,176 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  private int expirationCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object expiration_;
+
+  public enum ExpirationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    EXPIRE_TIME(13),
+    TTL(14),
+    EXPIRATION_NOT_SET(0);
+    private final int value;
+
+    private ExpirationCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ExpirationCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ExpirationCase forNumber(int value) {
+      switch (value) {
+        case 13:
+          return EXPIRE_TIME;
+        case 14:
+          return TTL;
+        case 0:
+          return EXPIRATION_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ExpirationCase getExpirationCase() {
+    return ExpirationCase.forNumber(expirationCase_);
+  }
+
+  public static final int EXPIRE_TIME_FIELD_NUMBER = 13;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Timestamp of when this resource is considered expired.
+   * This is *always* provided on output, regardless of what `expiration` was
+   * sent on input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the expireTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpireTime() {
+    return expirationCase_ == 13;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Timestamp of when this resource is considered expired.
+   * This is *always* provided on output, regardless of what `expiration` was
+   * sent on input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The expireTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getExpireTime() {
+    if (expirationCase_ == 13) {
+      return (com.google.protobuf.Timestamp) expiration_;
+    }
+    return com.google.protobuf.Timestamp.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Timestamp of when this resource is considered expired.
+   * This is *always* provided on output, regardless of what `expiration` was
+   * sent on input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+    if (expirationCase_ == 13) {
+      return (com.google.protobuf.Timestamp) expiration_;
+    }
+    return com.google.protobuf.Timestamp.getDefaultInstance();
+  }
+
+  public static final int TTL_FIELD_NUMBER = 14;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. The TTL for this resource. The expiration time is
+   * computed: now + TTL.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the ttl field is set.
+   */
+  @java.lang.Override
+  public boolean hasTtl() {
+    return expirationCase_ == 14;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. The TTL for this resource. The expiration time is
+   * computed: now + TTL.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ttl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getTtl() {
+    if (expirationCase_ == 14) {
+      return (com.google.protobuf.Duration) expiration_;
+    }
+    return com.google.protobuf.Duration.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. The TTL for this resource. The expiration time is
+   * computed: now + TTL.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getTtlOrBuilder() {
+    if (expirationCase_ == 14) {
+      return (com.google.protobuf.Duration) expiration_;
+    }
+    return com.google.protobuf.Duration.getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -549,6 +719,12 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetScope(), ScopeDefaultEntryHolder.defaultEntry, 11);
+    if (expirationCase_ == 13) {
+      output.writeMessage(13, (com.google.protobuf.Timestamp) expiration_);
+    }
+    if (expirationCase_ == 14) {
+      output.writeMessage(14, (com.google.protobuf.Duration) expiration_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -586,6 +762,16 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, scope__);
     }
+    if (expirationCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.protobuf.Timestamp) expiration_);
+    }
+    if (expirationCase_ == 14) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, (com.google.protobuf.Duration) expiration_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -615,6 +801,17 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getFact().equals(other.getFact())) return false;
     if (!internalGetScope().equals(other.internalGetScope())) return false;
+    if (!getExpirationCase().equals(other.getExpirationCase())) return false;
+    switch (expirationCase_) {
+      case 13:
+        if (!getExpireTime().equals(other.getExpireTime())) return false;
+        break;
+      case 14:
+        if (!getTtl().equals(other.getTtl())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -645,6 +842,18 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetScope().getMap().isEmpty()) {
       hash = (37 * hash) + SCOPE_FIELD_NUMBER;
       hash = (53 * hash) + internalGetScope().hashCode();
+    }
+    switch (expirationCase_) {
+      case 13:
+        hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getExpireTime().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + TTL_FIELD_NUMBER;
+        hash = (53 * hash) + getTtl().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -818,6 +1027,12 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.clear();
+      }
+      if (ttlBuilder_ != null) {
+        ttlBuilder_.clear();
+      }
       name_ = "";
       displayName_ = "";
       description_ = "";
@@ -833,6 +1048,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
       }
       fact_ = "";
       internalGetMutableScope().clear();
+      expirationCase_ = 0;
+      expiration_ = null;
       return this;
     }
 
@@ -863,38 +1080,50 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Memory result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.description_ = description_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.fact_ = fact_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.scope_ = internalGetScope();
         result.scope_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.Memory result) {
+      result.expirationCase_ = expirationCase_;
+      result.expiration_ = this.expiration_;
+      if (expirationCase_ == 13 && expireTimeBuilder_ != null) {
+        result.expiration_ = expireTimeBuilder_.build();
+      }
+      if (expirationCase_ == 14 && ttlBuilder_ != null) {
+        result.expiration_ = ttlBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -944,17 +1173,17 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.aiplatform.v1beta1.Memory.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -965,11 +1194,27 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFact().isEmpty()) {
         fact_ = other.fact_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       internalGetMutableScope().mergeFrom(other.internalGetScope());
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
+      switch (other.getExpirationCase()) {
+        case EXPIRE_TIME:
+          {
+            mergeExpireTime(other.getExpireTime());
+            break;
+          }
+        case TTL:
+          {
+            mergeTtl(other.getTtl());
+            break;
+          }
+        case EXPIRATION_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -999,37 +1244,37 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 82:
               {
                 fact_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 82
             case 90:
@@ -1038,9 +1283,21 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
                     input.readMessage(
                         ScopeDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableScope().getMutableMap().put(scope__.getKey(), scope__.getValue());
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 90
+            case 106:
+              {
+                input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
+                expirationCase_ = 13;
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(getTtlFieldBuilder().getBuilder(), extensionRegistry);
+                expirationCase_ = 14;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1058,7 +1315,485 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int expirationCase_ = 0;
+    private java.lang.Object expiration_;
+
+    public ExpirationCase getExpirationCase() {
+      return ExpirationCase.forNumber(expirationCase_);
+    }
+
+    public Builder clearExpiration() {
+      expirationCase_ = 0;
+      expiration_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        expireTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp of when this resource is considered expired.
+     * This is *always* provided on output, regardless of what `expiration` was
+     * sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the expireTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasExpireTime() {
+      return expirationCase_ == 13;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp of when this resource is considered expired.
+     * This is *always* provided on output, regardless of what `expiration` was
+     * sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The expireTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getExpireTime() {
+      if (expireTimeBuilder_ == null) {
+        if (expirationCase_ == 13) {
+          return (com.google.protobuf.Timestamp) expiration_;
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      } else {
+        if (expirationCase_ == 13) {
+          return expireTimeBuilder_.getMessage();
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp of when this resource is considered expired.
+     * This is *always* provided on output, regardless of what `expiration` was
+     * sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExpireTime(com.google.protobuf.Timestamp value) {
+      if (expireTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expiration_ = value;
+        onChanged();
+      } else {
+        expireTimeBuilder_.setMessage(value);
+      }
+      expirationCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp of when this resource is considered expired.
+     * This is *always* provided on output, regardless of what `expiration` was
+     * sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (expireTimeBuilder_ == null) {
+        expiration_ = builderForValue.build();
+        onChanged();
+      } else {
+        expireTimeBuilder_.setMessage(builderForValue.build());
+      }
+      expirationCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp of when this resource is considered expired.
+     * This is *always* provided on output, regardless of what `expiration` was
+     * sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
+      if (expireTimeBuilder_ == null) {
+        if (expirationCase_ == 13
+            && expiration_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          expiration_ =
+              com.google.protobuf.Timestamp.newBuilder((com.google.protobuf.Timestamp) expiration_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          expiration_ = value;
+        }
+        onChanged();
+      } else {
+        if (expirationCase_ == 13) {
+          expireTimeBuilder_.mergeFrom(value);
+        } else {
+          expireTimeBuilder_.setMessage(value);
+        }
+      }
+      expirationCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp of when this resource is considered expired.
+     * This is *always* provided on output, regardless of what `expiration` was
+     * sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearExpireTime() {
+      if (expireTimeBuilder_ == null) {
+        if (expirationCase_ == 13) {
+          expirationCase_ = 0;
+          expiration_ = null;
+          onChanged();
+        }
+      } else {
+        if (expirationCase_ == 13) {
+          expirationCase_ = 0;
+          expiration_ = null;
+        }
+        expireTimeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp of when this resource is considered expired.
+     * This is *always* provided on output, regardless of what `expiration` was
+     * sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
+      return getExpireTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp of when this resource is considered expired.
+     * This is *always* provided on output, regardless of what `expiration` was
+     * sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+      if ((expirationCase_ == 13) && (expireTimeBuilder_ != null)) {
+        return expireTimeBuilder_.getMessageOrBuilder();
+      } else {
+        if (expirationCase_ == 13) {
+          return (com.google.protobuf.Timestamp) expiration_;
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp of when this resource is considered expired.
+     * This is *always* provided on output, regardless of what `expiration` was
+     * sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getExpireTimeFieldBuilder() {
+      if (expireTimeBuilder_ == null) {
+        if (!(expirationCase_ == 13)) {
+          expiration_ = com.google.protobuf.Timestamp.getDefaultInstance();
+        }
+        expireTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                (com.google.protobuf.Timestamp) expiration_, getParentForChildren(), isClean());
+        expiration_ = null;
+      }
+      expirationCase_ = 13;
+      onChanged();
+      return expireTimeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        ttlBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. The TTL for this resource. The expiration time is
+     * computed: now + TTL.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the ttl field is set.
+     */
+    @java.lang.Override
+    public boolean hasTtl() {
+      return expirationCase_ == 14;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. The TTL for this resource. The expiration time is
+     * computed: now + TTL.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The ttl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getTtl() {
+      if (ttlBuilder_ == null) {
+        if (expirationCase_ == 14) {
+          return (com.google.protobuf.Duration) expiration_;
+        }
+        return com.google.protobuf.Duration.getDefaultInstance();
+      } else {
+        if (expirationCase_ == 14) {
+          return ttlBuilder_.getMessage();
+        }
+        return com.google.protobuf.Duration.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. The TTL for this resource. The expiration time is
+     * computed: now + TTL.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setTtl(com.google.protobuf.Duration value) {
+      if (ttlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expiration_ = value;
+        onChanged();
+      } else {
+        ttlBuilder_.setMessage(value);
+      }
+      expirationCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. The TTL for this resource. The expiration time is
+     * computed: now + TTL.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setTtl(com.google.protobuf.Duration.Builder builderForValue) {
+      if (ttlBuilder_ == null) {
+        expiration_ = builderForValue.build();
+        onChanged();
+      } else {
+        ttlBuilder_.setMessage(builderForValue.build());
+      }
+      expirationCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. The TTL for this resource. The expiration time is
+     * computed: now + TTL.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeTtl(com.google.protobuf.Duration value) {
+      if (ttlBuilder_ == null) {
+        if (expirationCase_ == 14
+            && expiration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          expiration_ =
+              com.google.protobuf.Duration.newBuilder((com.google.protobuf.Duration) expiration_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          expiration_ = value;
+        }
+        onChanged();
+      } else {
+        if (expirationCase_ == 14) {
+          ttlBuilder_.mergeFrom(value);
+        } else {
+          ttlBuilder_.setMessage(value);
+        }
+      }
+      expirationCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. The TTL for this resource. The expiration time is
+     * computed: now + TTL.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearTtl() {
+      if (ttlBuilder_ == null) {
+        if (expirationCase_ == 14) {
+          expirationCase_ = 0;
+          expiration_ = null;
+          onChanged();
+        }
+      } else {
+        if (expirationCase_ == 14) {
+          expirationCase_ = 0;
+          expiration_ = null;
+        }
+        ttlBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. The TTL for this resource. The expiration time is
+     * computed: now + TTL.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.Duration.Builder getTtlBuilder() {
+      return getTtlFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. The TTL for this resource. The expiration time is
+     * computed: now + TTL.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getTtlOrBuilder() {
+      if ((expirationCase_ == 14) && (ttlBuilder_ != null)) {
+        return ttlBuilder_.getMessageOrBuilder();
+      } else {
+        if (expirationCase_ == 14) {
+          return (com.google.protobuf.Duration) expiration_;
+        }
+        return com.google.protobuf.Duration.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. The TTL for this resource. The expiration time is
+     * computed: now + TTL.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getTtlFieldBuilder() {
+      if (ttlBuilder_ == null) {
+        if (!(expirationCase_ == 14)) {
+          expiration_ = com.google.protobuf.Duration.getDefaultInstance();
+        }
+        ttlBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                (com.google.protobuf.Duration) expiration_, getParentForChildren(), isClean());
+        expiration_ = null;
+      }
+      expirationCase_ = 14;
+      onChanged();
+      return ttlBuilder_;
+    }
 
     private java.lang.Object name_ = "";
 
@@ -1131,7 +1866,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1151,7 +1886,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1176,7 +1911,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1246,7 +1981,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1264,7 +1999,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1287,7 +2022,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1357,7 +2092,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1375,7 +2110,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1398,7 +2133,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1424,7 +2159,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1470,7 +2205,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1492,7 +2227,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1510,7 +2245,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -1521,7 +2256,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1539,7 +2274,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1561,7 +2296,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1636,7 +2371,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1682,7 +2417,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1704,7 +2439,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1722,7 +2457,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -1733,7 +2468,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -1751,7 +2486,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -1773,7 +2508,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1892,7 +2627,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       fact_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1910,7 +2645,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFact() {
       fact_ = getDefaultInstance().getFact();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -1933,7 +2668,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       fact_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1955,7 +2690,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
       if (!scope_.isMutable()) {
         scope_ = scope_.copy();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return scope_;
     }
@@ -2053,7 +2788,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearScope() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableScope().getMutableMap().clear();
       return this;
     }
@@ -2080,7 +2815,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableScope() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       return internalGetMutableScope().getMutableMap();
     }
 
@@ -2103,7 +2838,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableScope().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -2120,7 +2855,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllScope(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableScope().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       return this;
     }
 

@@ -155,4 +155,58 @@ public interface GcpBackupConfigOrBuilder
    * @return The bytes of the backupPlanRules at the given index.
    */
   com.google.protobuf.ByteString getBackupPlanRulesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The name of the backup plan revision.
+   * </pre>
+   *
+   * <code>string backup_plan_revision_name = 5;</code>
+   *
+   * @return The backupPlanRevisionName.
+   */
+  java.lang.String getBackupPlanRevisionName();
+
+  /**
+   *
+   *
+   * <pre>
+   * The name of the backup plan revision.
+   * </pre>
+   *
+   * <code>string backup_plan_revision_name = 5;</code>
+   *
+   * @return The bytes for backupPlanRevisionName.
+   */
+  com.google.protobuf.ByteString getBackupPlanRevisionNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The user friendly id of the backup plan revision.
+   * E.g. v0, v1 etc.
+   * </pre>
+   *
+   * <code>string backup_plan_revision_id = 6;</code>
+   *
+   * @return The backupPlanRevisionId.
+   */
+  java.lang.String getBackupPlanRevisionId();
+
+  /**
+   *
+   *
+   * <pre>
+   * The user friendly id of the backup plan revision.
+   * E.g. v0, v1 etc.
+   * </pre>
+   *
+   * <code>string backup_plan_revision_id = 6;</code>
+   *
+   * @return The bytes for backupPlanRevisionId.
+   */
+  com.google.protobuf.ByteString getBackupPlanRevisionIdBytes();
 }

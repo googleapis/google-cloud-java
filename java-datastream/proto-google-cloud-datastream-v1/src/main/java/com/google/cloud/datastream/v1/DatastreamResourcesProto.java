@@ -69,6 +69,22 @@ public final class DatastreamResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datastream_v1_SalesforceProfile_Oauth2ClientCredentials_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datastream_v1_MongodbProfile_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datastream_v1_MongodbProfile_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datastream_v1_HostAddress_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datastream_v1_HostAddress_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datastream_v1_SrvConnectionFormat_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datastream_v1_SrvConnectionFormat_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datastream_v1_StandardConnectionFormat_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datastream_v1_StandardConnectionFormat_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datastream_v1_GcsProfile_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datastream_v1_GcsProfile_fieldAccessorTable;
@@ -89,6 +105,10 @@ public final class DatastreamResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datastream_v1_VpcPeeringConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datastream_v1_PscInterfaceConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datastream_v1_PscInterfaceConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datastream_v1_PrivateConnection_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datastream_v1_PrivateConnection_fieldAccessorTable;
@@ -108,6 +128,10 @@ public final class DatastreamResourcesProto {
       internal_static_google_cloud_datastream_v1_Route_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datastream_v1_Route_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datastream_v1_MongodbSslConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datastream_v1_MongodbSslConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datastream_v1_MysqlSslConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -273,6 +297,26 @@ public final class DatastreamResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datastream_v1_SalesforceField_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datastream_v1_MongodbSourceConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datastream_v1_MongodbSourceConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datastream_v1_MongodbCluster_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datastream_v1_MongodbCluster_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datastream_v1_MongodbDatabase_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datastream_v1_MongodbDatabase_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datastream_v1_MongodbCollection_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datastream_v1_MongodbCollection_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datastream_v1_MongodbField_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datastream_v1_MongodbField_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datastream_v1_SourceConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datastream_v1_SourceConfig_fieldAccessorTable;
@@ -364,6 +408,10 @@ public final class DatastreamResourcesProto {
       internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_SalesforceObjectIdentifier_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_SalesforceObjectIdentifier_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_MongodbObjectIdentifier_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_MongodbObjectIdentifier_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datastream_v1_BackfillJob_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -507,7 +555,27 @@ public final class DatastreamResourcesProto {
           + "\tclient_id\030\001 \001(\tB\003\340A\002\022\032\n\r"
           + "client_secret\030\002 \001(\tB\003\340A\001\0220\n"
           + "#secret_manager_stored_client_secret\030\003 \001(\tB\003\340A\001B\r\n"
-          + "\013credentials\"4\n\n"
+          + "\013credentials\"\335\003\n"
+          + "\016MongodbProfile\022D\n"
+          + "\016host_addresses\030\001"
+          + " \003(\0132\'.google.cloud.datastream.v1.HostAddressB\003\340A\002\022\030\n"
+          + "\013replica_set\030\002 \001(\tB\003\340A\001\022\025\n"
+          + "\010username\030\003 \001(\tB\003\340A\002\022\025\n"
+          + "\010password\030\004 \001(\tB\003\340A\001\022+\n"
+          + "\036secret_manager_stored_password\030\005 \001(\tB\003\340A\001\022E\n\n"
+          + "ssl_config\030\006 \001(\0132,"
+          + ".google.cloud.datastream.v1.MongodbSslConfigB\003\340A\001\022P\n"
+          + "\025srv_connection_format\030e \001(\013"
+          + "2/.google.cloud.datastream.v1.SrvConnectionFormatH\000\022Z\n"
+          + "\032standard_connection_format\030f"
+          + " \001(\01324.google.cloud.datastream.v1.StandardConnectionFormatH\000B\033\n"
+          + "\031mongodb_connection_format\"7\n"
+          + "\013HostAddress\022\025\n"
+          + "\010hostname\030\001 \001(\tB\003\340A\002\022\021\n"
+          + "\004port\030\002 \001(\005B\003\340A\001\"\025\n"
+          + "\023SrvConnectionFormat\":\n"
+          + "\030StandardConnectionFormat\022\036\n"
+          + "\021direct_connection\030\001 \001(\010B\003\340A\001\"4\n\n"
           + "GcsProfile\022\023\n"
           + "\006bucket\030\001 \001(\tB\003\340A\002\022\021\n"
           + "\troot_path\030\002 \001(\t\"\021\n"
@@ -523,7 +591,10 @@ public final class DatastreamResourcesProto {
           + "\020VpcPeeringConfig\0224\n"
           + "\003vpc\030\001 \001(\tB\'\340A\002\372A!\n"
           + "\037compute.googleapis.com/Networks\022\023\n"
-          + "\006subnet\030\002 \001(\tB\003\340A\002\"\311\006\n"
+          + "\006subnet\030\002 \001(\tB\003\340A\002\"b\n"
+          + "\022PscInterfaceConfig\022L\n"
+          + "\022network_attachment\030\001 \001(\tB0\340A\002\372A*\n"
+          + "(compute.googleapis.com/NetworkAttachment\"\227\007\n"
           + "\021PrivateConnection\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\010\340A\003\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
@@ -539,7 +610,9 @@ public final class DatastreamResourcesProto {
           + "\r"
           + "satisfies_pzi\030\t \001(\010B\003\340A\003H\001\210\001\001\022H\n"
           + "\022vpc_peering_config\030d"
-          + " \001(\0132,.google.cloud.datastream.v1.VpcPeeringConfig\032-\n"
+          + " \001(\0132,.google.cloud.datastream.v1.VpcPeeringConfig\022L\n"
+          + "\024psc_interface_config\030e"
+          + " \001(\0132..google.cloud.datastream.v1.PscInterfaceConfig\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"i\n"
@@ -550,8 +623,8 @@ public final class DatastreamResourcesProto {
           + "\006FAILED\020\003\022\014\n"
           + "\010DELETING\020\004\022\024\n"
           + "\020FAILED_TO_DELETE\020\005:\201\001\352A~\n"
-          + "+datastream.googleapis.com/PrivateConnection\022Oprojects/"
-          + "{project}/locations/{location}/privateConnections/{private_connection}B\020\n"
+          + "+datastream.googleapis.com/PrivateConnection\022Oprojects/{p"
+          + "roject}/locations/{location}/privateConnections/{private_connection}B\020\n"
           + "\016_satisfies_pzsB\020\n"
           + "\016_satisfies_pzi\"f\n"
           + "\023PrivateConnectivity\022O\n"
@@ -568,37 +641,48 @@ public final class DatastreamResourcesProto {
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\205\001\352A\201\001\n"
-          + "\037datastream.googleapis.com/Route\022^projects/{p"
-          + "roject}/locations/{location}/privateConn"
-          + "ections/{private_connection}/routes/{route}\"\320\001\n"
+          + "\037datastream.googleapis.com/Route\022^projects/{pro"
+          + "ject}/locations/{location}/privateConnec"
+          + "tions/{private_connection}/routes/{route}\"\207\002\n"
+          + "\020MongodbSslConfig\022\032\n\n"
+          + "client_key\030\001 \001(\tB\006\340A\004\340A\001\022\033\n"
+          + "\016client_key_set\030\002 \001(\010B\003\340A\003\022\"\n"
+          + "\022client_certificate\030\003 \001(\tB\006\340A\004\340A\001\022#\n"
+          + "\026client_certificate_set\030\004 \001(\010B\003\340A\003\022\036\n"
+          + "\016ca_certificate\030\005 \001(\tB\006\340A\004\340A\001\022\037\n"
+          + "\022ca_certificate_set\030\006 \001(\010B\003\340A\003\0220\n"
+          + " secret_manager_stored_client_key\030\007 \001(\tB\006\340A\004\340A\001\"\320\001\n"
           + "\016MysqlSslConfig\022\032\n\n"
           + "client_key\030\001 \001(\tB\006\340A\004\340A\001\022\033\n"
           + "\016client_key_set\030\002 \001(\010B\003\340A\003\022\"\n"
           + "\022client_certificate\030\003 \001(\tB\006\340A\004\340A\001\022#\n"
           + "\026client_certificate_set\030\004 \001(\010B\003\340A\003\022\033\n"
           + "\016ca_certificate\030\005 \001(\tB\003\340A\004\022\037\n"
-          + "\022ca_certificate_set\030\006 \001(\010B\003\340A\003\"O\n"
+          + "\022ca_certificate_set\030\006 \001(\010B\003\340A\003\"\203\001\n"
           + "\017OracleSslConfig\022\033\n"
           + "\016ca_certificate\030\001 \001(\tB\003\340A\004\022\037\n"
-          + "\022ca_certificate_set\030\002 \001(\010B\003\340A\003\"\272\003\n"
+          + "\022ca_certificate_set\030\002 \001(\010B\003\340A\003\0222\n"
+          + "%server_certificate_distinguished_name\030\003 \001(\tB\003\340A\001\"\217\004\n"
           + "\023PostgresqlSslConfig\022a\n"
-          + "\023server_verification\030\001 \001(\0132B.google.cl"
-          + "oud.datastream.v1.PostgresqlSslConfig.ServerVerificationH\000\022u\n"
-          + "\036server_and_client_verification\030\002 \001(\0132K.google.cloud.datast"
-          + "ream.v1.PostgresqlSslConfig.ServerAndClientVerificationH\000\0324\n"
+          + "\023server_verification\030\001 \001(\0132B.google.cloud"
+          + ".datastream.v1.PostgresqlSslConfig.ServerVerificationH\000\022u\n"
+          + "\036server_and_client_verification\030\002 \001(\0132K.google.cloud.datastrea"
+          + "m.v1.PostgresqlSslConfig.ServerAndClientVerificationH\000\032^\n"
           + "\022ServerVerification\022\036\n"
-          + "\016ca_certificate\030\001 \001(\tB\006\340A\004\340A\002\032}\n"
+          + "\016ca_certificate\030\001 \001(\tB\006\340A\004\340A\002\022(\n"
+          + "\033server_certificate_hostname\030\002 \001(\tB\003\340A\001\032\247\001\n"
           + "\033ServerAndClientVerification\022\"\n"
           + "\022client_certificate\030\001 \001(\tB\006\340A\004\340A\002\022\032\n\n"
           + "client_key\030\002 \001(\tB\006\340A\004\340A\001\022\036\n"
-          + "\016ca_certificate\030\003 \001(\tB\006\340A\004\340A\002B\024\n"
-          + "\022encryption_setting\"\272\n\n"
+          + "\016ca_certificate\030\003 \001(\tB\006\340A\004\340A\002\022(\n"
+          + "\033server_certificate_hostname\030\005 \001(\tB\003\340A\001B\024\n"
+          + "\022encryption_setting\"\201\013\n"
           + "\021ConnectionProfile\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\010\340A\003\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022I\n"
-          + "\006labels\030\004 \003(\01329.google.cl"
-          + "oud.datastream.v1.ConnectionProfile.LabelsEntry\022\031\n"
+          + "\006labels\030\004 \003(\01329.google."
+          + "cloud.datastream.v1.ConnectionProfile.LabelsEntry\022\031\n"
           + "\014display_name\030\005 \001(\tB\003\340A\002\022\037\n\r"
           + "satisfies_pzs\030\006 \001(\010B\003\340A\003H\002\210\001\001\022\037\n\r"
           + "satisfies_pzi\030\007 \001(\010B\003\340A\003H\003\210\001\001\022C\n"
@@ -608,23 +692,25 @@ public final class DatastreamResourcesProto {
           + "mysql_profile\030f \001(\0132(.google.cloud.datastream.v1.MysqlProfileH\000\022G\n"
           + "\020bigquery_profile\030g"
           + " \001(\0132+.google.cloud.datastream.v1.BigQueryProfileH\000\022K\n"
-          + "\022postgresql_profile\030h \001(\013"
-          + "2-.google.cloud.datastream.v1.PostgresqlProfileH\000\022J\n"
-          + "\022sql_server_profile\030i \001(\0132,."
-          + "google.cloud.datastream.v1.SqlServerProfileH\000\022K\n"
-          + "\022salesforce_profile\030k \001(\0132-.goog"
-          + "le.cloud.datastream.v1.SalesforceProfileH\000\022b\n"
-          + "\036static_service_ip_connectivity\030\310\001 "
-          + "\001(\01327.google.cloud.datastream.v1.StaticServiceIpConnectivityH\001\022]\n"
+          + "\022postgresql_profile\030h \001"
+          + "(\0132-.google.cloud.datastream.v1.PostgresqlProfileH\000\022J\n"
+          + "\022sql_server_profile\030i \001(\0132"
+          + ",.google.cloud.datastream.v1.SqlServerProfileH\000\022K\n"
+          + "\022salesforce_profile\030k \001(\0132-.go"
+          + "ogle.cloud.datastream.v1.SalesforceProfileH\000\022E\n"
+          + "\017mongodb_profile\030l"
+          + " \001(\0132*.google.cloud.datastream.v1.MongodbProfileH\000\022b\n"
+          + "\036static_service_ip_connectivity\030\310\001 \001(\01327.g"
+          + "oogle.cloud.datastream.v1.StaticServiceIpConnectivityH\001\022]\n"
           + "\030forward_ssh_connectivity\030\311\001"
           + " \001(\01328.google.cloud.datastream.v1.ForwardSshTunnelConnectivityH\001\022P\n"
-          + "\024private_connectivity\030\312\001 \001(\0132/.google.cl"
-          + "oud.datastream.v1.PrivateConnectivityH\001\032-\n"
+          + "\024private_connectivity\030\312\001"
+          + " \001(\0132/.google.cloud.datastream.v1.PrivateConnectivityH\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\201\001\352A~\n"
-          + "+datastream.googleapis.com/ConnectionProfile\022Oprojects/{project}/lo"
-          + "cations/{location}/connectionProfiles/{connection_profile}B\t\n"
+          + "+datastream.googleapis.com/ConnectionProfile\022Oprojects/{project}/locations"
+          + "/{location}/connectionProfiles/{connection_profile}B\t\n"
           + "\007profileB\016\n"
           + "\014connectivityB\020\n"
           + "\016_satisfies_pzsB\020\n"
@@ -653,22 +739,24 @@ public final class DatastreamResourcesProto {
           + "\017exclude_objects\030\002 \001(\0132\'.google.cloud.datastream.v1.OracleRdbms\022 \n"
           + "\030max_concurrent_cdc_tasks\030\003 \001(\005\022%\n"
           + "\035max_concurrent_backfill_tasks\030\004 \001(\005\022]\n"
-          + "\022drop_large_objects\030d \001(\0132?.go"
-          + "ogle.cloud.datastream.v1.OracleSourceConfig.DropLargeObjectsH\000\022a\n"
-          + "\024stream_large_objects\030f \001(\0132A.google.cloud.datastream.v"
-          + "1.OracleSourceConfig.StreamLargeObjectsH\000\022L\n"
-          + "\tlog_miner\030g \001(\01327.google.cloud.data"
-          + "stream.v1.OracleSourceConfig.LogMinerH\001\022[\n"
-          + "\021binary_log_parser\030h \001(\0132>.google.clou"
-          + "d.datastream.v1.OracleSourceConfig.BinaryLogParserH\001\032\022\n"
+          + "\022drop_large_objects\030d \001(\0132?.google.cl"
+          + "oud.datastream.v1.OracleSourceConfig.DropLargeObjectsH\000\022a\n"
+          + "\024stream_large_objects\030f"
+          + " \001(\0132A.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjectsH\000\022L\n"
+          + "\tlog_miner\030g"
+          + " \001(\01327.google.cloud.datastream.v1.OracleSourceConfig.LogMinerH\001\022[\n"
+          + "\021binary_log_parser\030h \001(\0132>.google.cloud.datas"
+          + "tream.v1.OracleSourceConfig.BinaryLogParserH\001\032\022\n"
           + "\020DropLargeObjects\032\024\n"
           + "\022StreamLargeObjects\032\n\n"
           + "\010LogMiner\032\214\003\n"
           + "\017BinaryLogParser\022{\n"
-          + "\032oracle_asm_log_file_access\030\001 \001(\0132U.google.cloud.datastream.v1.OracleSo"
-          + "urceConfig.BinaryLogParser.OracleAsmLogFileAccessH\000\022q\n"
-          + "\024log_file_directories\030\002 \001(\0132Q.google.cloud.datastream.v1.OracleSou"
-          + "rceConfig.BinaryLogParser.LogFileDirectoriesH\000\032\030\n"
+          + "\032oracle_asm_log_file_access\030\001 \001(\0132U.go"
+          + "ogle.cloud.datastream.v1.OracleSourceCon"
+          + "fig.BinaryLogParser.OracleAsmLogFileAccessH\000\022q\n"
+          + "\024log_file_directories\030\002 \001(\0132Q.goo"
+          + "gle.cloud.datastream.v1.OracleSourceConf"
+          + "ig.BinaryLogParser.LogFileDirectoriesH\000\032\030\n"
           + "\026OracleAsmLogFileAccess\032\\\n"
           + "\022LogFileDirectories\022!\n"
           + "\024online_log_directory\030\001 \001(\tB\003\340A\002\022#\n"
@@ -691,14 +779,14 @@ public final class DatastreamResourcesProto {
           + " \003(\0132,.google.cloud.datastream.v1.PostgresqlColumn\"j\n"
           + "\020PostgresqlSchema\022\016\n"
           + "\006schema\030\001 \001(\t\022F\n"
-          + "\021postgresql_tables\030\002"
-          + " \003(\0132+.google.cloud.datastream.v1.PostgresqlTable\"[\n"
+          + "\021postgresql_tables\030\002 \003(\013"
+          + "2+.google.cloud.datastream.v1.PostgresqlTable\"[\n"
           + "\017PostgresqlRdbms\022H\n"
           + "\022postgresql_schemas\030\001"
           + " \003(\0132,.google.cloud.datastream.v1.PostgresqlSchema\"\207\002\n"
           + "\026PostgresqlSourceConfig\022D\n"
-          + "\017include_objects\030\001 \001(\0132+."
-          + "google.cloud.datastream.v1.PostgresqlRdbms\022D\n"
+          + "\017include_objects\030\001"
+          + " \001(\0132+.google.cloud.datastream.v1.PostgresqlRdbms\022D\n"
           + "\017exclude_objects\030\002 \001(\0132+.google.cloud.datastream.v1.PostgresqlRdbms\022"
           + " \n"
           + "\020replication_slot\030\003 \001(\tB\006\340A\002\340A\005\022\030\n"
@@ -728,10 +816,10 @@ public final class DatastreamResourcesProto {
           + " \n"
           + "\030max_concurrent_cdc_tasks\030\003 \001(\005\022%\n"
           + "\035max_concurrent_backfill_tasks\030\004 \001(\005\022P\n"
-          + "\020transaction_logs\030e \001(\01324.goo"
-          + "gle.cloud.datastream.v1.SqlServerTransactionLogsH\000\022J\n\r"
-          + "change_tables\030f \001(\01321.goog"
-          + "le.cloud.datastream.v1.SqlServerChangeTablesH\000B\014\n\n"
+          + "\020transaction_logs\030e \001(\01324.google.clo"
+          + "ud.datastream.v1.SqlServerTransactionLogsH\000\022J\n\r"
+          + "change_tables\030f \001(\01321.google.clou"
+          + "d.datastream.v1.SqlServerChangeTablesH\000B\014\n\n"
           + "cdc_method\"\032\n"
           + "\030SqlServerTransactionLogs\"\027\n"
           + "\025SqlServerChangeTables\"\266\001\n"
@@ -752,25 +840,25 @@ public final class DatastreamResourcesProto {
           + "\010database\030\001 \001(\t\022<\n"
           + "\014mysql_tables\030\002 \003(\0132&.google.cloud.datastream.v1.MysqlTable\"P\n\n"
           + "MysqlRdbms\022B\n"
-          + "\017mysql_databases\030\001"
-          + " \003(\0132).google.cloud.datastream.v1.MysqlDatabase\"\255\003\n"
+          + "\017mysql_databases\030\001 \003(\013"
+          + "2).google.cloud.datastream.v1.MysqlDatabase\"\255\003\n"
           + "\021MysqlSourceConfig\022?\n"
           + "\017include_objects\030\001 \001(\0132&.google.cloud.datastream.v1.MysqlRdbms\022?\n"
           + "\017exclude_objects\030\002 \001(\0132&.google.cloud.datastream.v1.MysqlRdbms\022 \n"
           + "\030max_concurrent_cdc_tasks\030\003 \001(\005\022%\n"
           + "\035max_concurrent_backfill_tasks\030\004 \001(\005\022^\n"
-          + "\023binary_log_position\030e \001(\0132?.google.cloud."
-          + "datastream.v1.MysqlSourceConfig.BinaryLogPositionH\000\022B\n"
-          + "\004gtid\030f \001(\01322.google.cloud"
-          + ".datastream.v1.MysqlSourceConfig.GtidH\000\032\023\n"
+          + "\023binary_log_position\030e \001(\0132?.google.cloud.datastr"
+          + "eam.v1.MysqlSourceConfig.BinaryLogPositionH\000\022B\n"
+          + "\004gtid\030f"
+          + " \001(\01322.google.cloud.datastream.v1.MysqlSourceConfig.GtidH\000\032\023\n"
           + "\021BinaryLogPosition\032\006\n"
           + "\004GtidB\014\n\n"
           + "cdc_method\"\332\001\n"
           + "\026SalesforceSourceConfig\022B\n"
           + "\017include_objects\030\001"
           + " \001(\0132).google.cloud.datastream.v1.SalesforceOrg\022B\n"
-          + "\017exclude_objects\030\002 \001"
-          + "(\0132).google.cloud.datastream.v1.SalesforceOrg\0228\n"
+          + "\017exclude_objects\030\002 \001(\0132).go"
+          + "ogle.cloud.datastream.v1.SalesforceOrg\0228\n"
           + "\020polling_interval\030\003"
           + " \001(\0132\031.google.protobuf.DurationB\003\340A\002\"N\n\r"
           + "SalesforceOrg\022=\n"
@@ -781,7 +869,23 @@ public final class DatastreamResourcesProto {
           + "\017SalesforceField\022\014\n"
           + "\004name\030\001 \001(\t\022\021\n"
           + "\tdata_type\030\002 \001(\t\022\020\n"
-          + "\010nillable\030\003 \001(\010\"\243\004\n"
+          + "\010nillable\030\003 \001(\010\"\313\001\n"
+          + "\023MongodbSourceConfig\022C\n"
+          + "\017include_objects\030\001 \001(\0132*."
+          + "google.cloud.datastream.v1.MongodbCluster\022C\n"
+          + "\017exclude_objects\030\002"
+          + " \001(\0132*.google.cloud.datastream.v1.MongodbCluster\022*\n"
+          + "\035max_concurrent_backfill_tasks\030\003 \001(\005B\003\340A\001\"P\n"
+          + "\016MongodbCluster\022>\n"
+          + "\tdatabases\030\001 \003(\0132+.google.cloud.datastream.v1.MongodbDatabase\"g\n"
+          + "\017MongodbDatabase\022\020\n"
+          + "\010database\030\001 \001(\t\022B\n"
+          + "\013collections\030\002 \003(\0132-.google.cloud.datastream.v1.MongodbCollection\"a\n"
+          + "\021MongodbCollection\022\022\n\n"
+          + "collection\030\001 \001(\t\0228\n"
+          + "\006fields\030\002 \003(\0132(.google.cloud.datastream.v1.MongodbField\"\035\n"
+          + "\014MongodbField\022\r\n"
+          + "\005field\030\001 \001(\t\"\365\004\n"
           + "\014SourceConfig\022V\n"
           + "\031source_connection_profile\030\001 \001(\tB3\340A\002\372A-\n"
           + "+datastream.googleapis.com/ConnectionProfile\022N\n"
@@ -793,8 +897,10 @@ public final class DatastreamResourcesProto {
           + " \001(\01322.google.cloud.datastream.v1.PostgresqlSourceConfigH\000\022U\n"
           + "\030sql_server_source_config\030g"
           + " \001(\01321.google.cloud.datastream.v1.SqlServerSourceConfigH\000\022V\n"
-          + "\030salesforce_source_config\030h \001(\01322.google.clo"
-          + "ud.datastream.v1.SalesforceSourceConfigH\000B\026\n"
+          + "\030salesforce_source_config\030h"
+          + " \001(\01322.google.cloud.datastream.v1.SalesforceSourceConfigH\000\022P\n"
+          + "\025mongodb_source_config\030i \001(\0132/.google.cl"
+          + "oud.datastream.v1.MongodbSourceConfigH\000B\026\n"
           + "\024source_stream_config\"\020\n"
           + "\016AvroFileFormat\"\357\002\n"
           + "\016JsonFileFormat\022W\n"
@@ -814,40 +920,42 @@ public final class DatastreamResourcesProto {
           + "\004path\030\001 \001(\t\022\030\n"
           + "\020file_rotation_mb\030\002 \001(\005\0229\n"
           + "\026file_rotation_interval\030\003 \001(\0132\031.google.protobuf.Duration\022F\n"
-          + "\020avro_file_format\030d "
-          + "\001(\0132*.google.cloud.datastream.v1.AvroFileFormatH\000\022F\n"
-          + "\020json_file_format\030e \001(\0132*.go"
-          + "ogle.cloud.datastream.v1.JsonFileFormatH\000B\r\n"
-          + "\013file_format\"\237\n\n"
+          + "\020avro_file_format\030d \001("
+          + "\0132*.google.cloud.datastream.v1.AvroFileFormatH\000\022F\n"
+          + "\020json_file_format\030e \001(\0132*.goog"
+          + "le.cloud.datastream.v1.JsonFileFormatH\000B\r\n"
+          + "\013file_format\"\314\n\n"
           + "\031BigQueryDestinationConfig\022k\n"
-          + "\025single_target_dataset\030\311\001 \001(\0132I"
-          + ".google.cloud.datastream.v1.BigQueryDestinationConfig.SingleTargetDatasetH\000\022s\n"
-          + "\031source_hierarchy_datasets\030\312\001 \001(\0132M.google"
-          + ".cloud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasetsH\000\0222\n"
+          + "\025single_target_dataset\030\311\001 \001(\0132I.g"
+          + "oogle.cloud.datastream.v1.BigQueryDestinationConfig.SingleTargetDatasetH\000\022s\n"
+          + "\031source_hierarchy_datasets\030\312\001 \001(\0132M.google.c"
+          + "loud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasetsH\000\0222\n"
           + "\016data_freshness\030\254\002 \001(\0132\031.google.protobuf.Duration\022Z\n"
-          + "\013blmt_config\030\001 \001(\0132@.google.cloud"
-          + ".datastream.v1.BigQueryDestinationConfig.BlmtConfigB\003\340A\001\022M\n"
-          + "\005merge\030\255\002 \001(\0132;.googl"
-          + "e.cloud.datastream.v1.BigQueryDestinationConfig.MergeH\001\022X\n"
-          + "\013append_only\030\256\002 \001(\0132@."
-          + "google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnlyH\001\032)\n"
+          + "\013blmt_config\030\001 \001(\0132@.google.cloud.d"
+          + "atastream.v1.BigQueryDestinationConfig.BlmtConfigB\003\340A\001\022M\n"
+          + "\005merge\030\255\002 \001(\0132;.google."
+          + "cloud.datastream.v1.BigQueryDestinationConfig.MergeH\001\022X\n"
+          + "\013append_only\030\256\002 \001(\0132@.go"
+          + "ogle.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnlyH\001\032)\n"
           + "\023SingleTargetDataset\022\022\n\n"
-          + "dataset_id\030\001 \001(\t\032\355\001\n"
+          + "dataset_id\030\001 \001(\t\032\232\002\n"
           + "\027SourceHierarchyDatasets\022w\n"
-          + "\020dataset_template\030\002 \001(\0132].google.cloud.datastream.v1.BigQuery"
-          + "DestinationConfig.SourceHierarchyDatasets.DatasetTemplate\032Y\n"
+          + "\020dataset_template\030\002 \001(\0132].google.cloud.datastream.v1.BigQueryDe"
+          + "stinationConfig.SourceHierarchyDatasets.DatasetTemplate\022\034\n\n"
+          + "project_id\030\003 \001(\tB\003\340A\001H\000\210\001\001\032Y\n"
           + "\017DatasetTemplate\022\025\n"
           + "\010location\030\001 \001(\tB\003\340A\002\022\031\n"
           + "\021dataset_id_prefix\030\002 \001(\t\022\024\n"
-          + "\014kms_key_name\030\003 \001(\t\032\224\003\n\n"
+          + "\014kms_key_name\030\003 \001(\tB\r\n"
+          + "\013_project_id\032\224\003\n\n"
           + "BlmtConfig\022\023\n"
           + "\006bucket\030\001 \001(\tB\003\340A\002\022\021\n"
           + "\troot_path\030\002 \001(\t\022\034\n"
           + "\017connection_name\030\003 \001(\tB\003\340A\002\022e\n"
-          + "\013file_format\030\004 \001(\0162K.google.cloud.datastream"
-          + ".v1.BigQueryDestinationConfig.BlmtConfig.FileFormatB\003\340A\002\022g\n"
-          + "\014table_format\030\005 \001(\0162L.google.cloud.datastream.v1.BigQueryDest"
-          + "inationConfig.BlmtConfig.TableFormatB\003\340A\002\"6\n\n"
+          + "\013file_format\030\004 \001(\0162K.google.cloud.datastr"
+          + "eam.v1.BigQueryDestinationConfig.BlmtConfig.FileFormatB\003\340A\002\022g\n"
+          + "\014table_format\030\005 \001(\0162L.google.cloud.datastream.v1.BigQueryD"
+          + "estinationConfig.BlmtConfig.TableFormatB\003\340A\002\"6\n\n"
           + "FileFormat\022\033\n"
           + "\027FILE_FORMAT_UNSPECIFIED\020\000\022\013\n"
           + "\007PARQUET\020\001\"8\n"
@@ -861,11 +969,11 @@ public final class DatastreamResourcesProto {
           + "\021DestinationConfig\022[\n"
           + "\036destination_connection_profile\030\001 \001(\tB3\340A\002\372A-\n"
           + "+datastream.googleapis.com/ConnectionProfile\022R\n"
-          + "\026gcs_destination_config\030d \001(\01320."
-          + "google.cloud.datastream.v1.GcsDestinationConfigH\000\022\\\n"
+          + "\026gcs_destination_config\030d \001(\013"
+          + "20.google.cloud.datastream.v1.GcsDestinationConfigH\000\022\\\n"
           + "\033bigquery_destination_config\030e"
           + " \001(\01325.google.cloud.datastream.v1.BigQueryDestinationConfigH\000B\033\n"
-          + "\031destination_stream_config\"\234\r\n"
+          + "\031destination_stream_config\"\354\r\n"
           + "\006Stream\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\010\340A\003\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
@@ -877,17 +985,17 @@ public final class DatastreamResourcesProto {
           + "\022destination_config\030\007"
           + " \001(\0132-.google.cloud.datastream.v1.DestinationConfigB\003\340A\002\0227\n"
           + "\005state\030\010 \001(\0162(.google.cloud.datastream.v1.Stream.State\022N\n"
-          + "\014backfill_all\030e \001(\01326.goog"
-          + "le.cloud.datastream.v1.Stream.BackfillAllStrategyH\000\022P\n\r"
-          + "backfill_none\030f \001(\01327.goo"
-          + "gle.cloud.datastream.v1.Stream.BackfillNoneStrategyH\000\0226\n"
+          + "\014backfill_all\030e \001(\01326.g",
+      "oogle.cloud.datastream.v1.Stream.BackfillAllStrategyH\000\022P\n\r"
+          + "backfill_none\030f \001(\01327."
+          + "google.cloud.datastream.v1.Stream.BackfillNoneStrategyH\000\0226\n"
           + "\006errors\030\t \003(\0132!.google.cloud.datastream.v1.ErrorB\003\340A\003\0221\n"
           + "\037customer_managed_encryption_key\030\n"
           + " \001(\tB\003\340A\005H\001\210\001\001\022;\n"
           + "\022last_recovery_time\030\r"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\037\n\r"
           + "satisfies_pzs\030\017 \001(\010B\003\340A\003H\002\210\001\001\022\037\n\r"
-          + "satisfies_pzi\030\020 \001(\010B\003\340A\003H\003\210\001\001\032\270\003\n"
+          + "satisfies_pzi\030\020 \001(\010B\003\340A\003H\003\210\001\001\032\210\004\n"
           + "\023BackfillAllStrategy\022J\n"
           + "\027oracle_excluded_objects\030\001"
           + " \001(\0132\'.google.cloud.datastream.v1.OracleRdbmsH\000\022H\n"
@@ -898,7 +1006,9 @@ public final class DatastreamResourcesProto {
           + "\033sql_server_excluded_objects\030\004"
           + " \001(\0132*.google.cloud.datastream.v1.SqlServerRdbmsH\000\022P\n"
           + "\033salesforce_excluded_objects\030\005"
-          + " \001(\0132).google.cloud.datastream.v1.SalesforceOrgH\000B\022\n"
+          + " \001(\0132).google.cloud.datastream.v1.SalesforceOrgH\000\022N\n"
+          + "\030mongodb_excluded_objects\030\006"
+          + " \001(\0132*.google.cloud.datastream.v1.MongodbClusterH\000B\022\n"
           + "\020excluded_objects\032\026\n"
           + "\024BackfillNoneStrategy\032-\n"
           + "\013LabelsEntry\022\013\n"
@@ -914,8 +1024,8 @@ public final class DatastreamResourcesProto {
           + "\022FAILED_PERMANENTLY\020\006\022\014\n"
           + "\010STARTING\020\007\022\014\n"
           + "\010DRAINING\020\010:_\352A\\\n"
-          + " datastream.googleapis.com/Stream\0228pr"
-          + "ojects/{project}/locations/{location}/streams/{stream}B\023\n"
+          + " datastream.googleapis.com/Stream\022"
+          + "8projects/{project}/locations/{location}/streams/{stream}B\023\n"
           + "\021backfill_strategyB\"\n"
           + " _customer_managed_encryption_keyB\020\n"
           + "\016_satisfies_pzsB\020\n"
@@ -928,22 +1038,23 @@ public final class DatastreamResourcesProto {
           + "\014display_name\030\005 \001(\tB\003\340A\002\0226\n"
           + "\006errors\030\006 \003(\0132!.google.cloud.datastream.v1.ErrorB\003\340A\003\022=\n"
           + "\014backfill_job\030\007 \001(\0132\'.google.cloud.datastream.v1.BackfillJob\022I\n\r"
-          + "source_object\030\010 \001(\01322.google.cloud.d"
-          + "atastream.v1.SourceObjectIdentifier:v\352As\n"
-          + "&datastream.googleapis.com/StreamObject"
-          + "\022Iprojects/{project}/locations/{location}/streams/{stream}/objects/{object}\"\226\007\n"
+          + "source_object\030\010 \001(\01322.google.clou"
+          + "d.datastream.v1.SourceObjectIdentifier:v\352As\n"
+          + "&datastream.googleapis.com/StreamObject\022Iprojects/{project}/locations/{locat"
+          + "ion}/streams/{stream}/objects/{object}\"\313\010\n"
           + "\026SourceObjectIdentifier\022f\n"
-          + "\021oracle_identifier\030\001 \001(\0132I.google.cloud.datastream.v1.S"
-          + "ourceObjectIdentifier.OracleObjectIdentifierH\000\022d\n"
-          + "\020mysql_identifier\030\002 \001(\0132H.googl"
-          + "e.cloud.datastream.v1.SourceObjectIdenti",
-      "fier.MysqlObjectIdentifierH\000\022n\n"
-          + "\025postgresql_identifier\030\003 \001(\0132M.google.cloud.datas"
-          + "tream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifierH\000\022m\n"
-          + "\025sql_server_identifier\030\004 \001(\0132L.google.cloud.datastream.v1"
-          + ".SourceObjectIdentifier.SqlServerObjectIdentifierH\000\022n\n"
-          + "\025salesforce_identifier\030\005 \001(\0132M.google.cloud.datastream.v1.SourceOb"
-          + "jectIdentifier.SalesforceObjectIdentifierH\000\032A\n"
+          + "\021oracle_identifier\030\001 \001(\0132I.google.cloud.datastream.v"
+          + "1.SourceObjectIdentifier.OracleObjectIdentifierH\000\022d\n"
+          + "\020mysql_identifier\030\002 \001(\0132H.go"
+          + "ogle.cloud.datastream.v1.SourceObjectIdentifier.MysqlObjectIdentifierH\000\022n\n"
+          + "\025postgresql_identifier\030\003 \001(\0132M.google.cloud.da"
+          + "tastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifierH\000\022m\n"
+          + "\025sql_server_identifier\030\004 \001(\0132L.google.cloud.datastream"
+          + ".v1.SourceObjectIdentifier.SqlServerObjectIdentifierH\000\022n\n"
+          + "\025salesforce_identifier\030\005 \001(\0132M.google.cloud.datastream.v1.Sourc"
+          + "eObjectIdentifier.SalesforceObjectIdentifierH\000\022h\n"
+          + "\022mongodb_identifier\030\006 \001(\0132J.goo"
+          + "gle.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifierH\000\032A\n"
           + "\026OracleObjectIdentifier\022\023\n"
           + "\006schema\030\001 \001(\tB\003\340A\002\022\022\n"
           + "\005table\030\002 \001(\tB\003\340A\002\032E\n"
@@ -957,11 +1068,14 @@ public final class DatastreamResourcesProto {
           + "\006schema\030\001 \001(\tB\003\340A\002\022\022\n"
           + "\005table\030\002 \001(\tB\003\340A\002\0326\n"
           + "\032SalesforceObjectIdentifier\022\030\n"
-          + "\013object_name\030\001 \001(\tB\003\340A\002B\023\n"
+          + "\013object_name\030\001 \001(\tB\003\340A\002\032I\n"
+          + "\027MongodbObjectIdentifier\022\025\n"
+          + "\010database\030\001 \001(\tB\003\340A\002\022\027\n\n"
+          + "collection\030\002 \001(\tB\003\340A\002B\023\n"
           + "\021source_identifier\"\377\003\n"
           + "\013BackfillJob\022A\n"
-          + "\005state\030\001 \001(\0162-.google.clo"
-          + "ud.datastream.v1.BackfillJob.StateB\003\340A\003\022@\n"
+          + "\005state\030\001"
+          + " \001(\0162-.google.cloud.datastream.v1.BackfillJob.StateB\003\340A\003\022@\n"
           + "\007trigger\030\002 \001(\0162/.google.cloud.datastream.v1.BackfillJob.Trigger\0228\n"
           + "\017last_start_time\030\003"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0226\n\r"
@@ -984,15 +1098,16 @@ public final class DatastreamResourcesProto {
           + "\005Error\022\016\n"
           + "\006reason\030\001 \001(\t\022\022\n\n"
           + "error_uuid\030\002 \001(\t\022\017\n"
-          + "\007message\030\003 \001(\t\022.\n\n"
+          + "\007message\030\003 \001(\t\022.\n"
+          + "\n"
           + "error_time\030\004 \001(\0132\032.google.protobuf.Timestamp\022?\n"
           + "\007details\030\005 \003(\0132..google.cloud.datastream.v1.Error.DetailsEntry\032.\n"
           + "\014DetailsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"O\n"
           + "\020ValidationResult\022;\n"
-          + "\013validations\030\001"
-          + " \003(\0132&.google.cloud.datastream.v1.Validation\"\210\002\n\n"
+          + "\013validations\030\001 \003(\0132"
+          + "&.google.cloud.datastream.v1.Validation\"\210\002\n\n"
           + "Validation\022\023\n"
           + "\013description\030\001 \001(\t\022@\n"
           + "\005state\030\002"
@@ -1007,10 +1122,10 @@ public final class DatastreamResourcesProto {
           + "\007WARNING\020\004\"\256\002\n"
           + "\021ValidationMessage\022\017\n"
           + "\007message\030\001 \001(\t\022B\n"
-          + "\005level\030\002"
-          + " \001(\01623.google.cloud.datastream.v1.ValidationMessage.Level\022M\n"
-          + "\010metadata\030\003"
-          + " \003(\0132;.google.cloud.datastream.v1.ValidationMessage.MetadataEntry\022\014\n"
+          + "\005level\030\002 \001(\016"
+          + "23.google.cloud.datastream.v1.ValidationMessage.Level\022M\n"
+          + "\010metadata\030\003 \003(\0132;.google"
+          + ".cloud.datastream.v1.ValidationMessage.MetadataEntry\022\014\n"
           + "\004code\030\004 \001(\t\032/\n\r"
           + "MetadataEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
@@ -1020,23 +1135,23 @@ public final class DatastreamResourcesProto {
           + "\007WARNING\020\001\022\t\n"
           + "\005ERROR\020\002\"\200\006\n"
           + "\013CdcStrategy\022j\n"
-          + "\032most_recent_start_position\030e \001(\0132"
-          + "?.google.cloud.datastream.v1.CdcStrategy.MostRecentStartPositionB\003\340A\001H\000\022p\n"
-          + "\035next_available_start_position\030f \001(\0132B.google."
-          + "cloud.datastream.v1.CdcStrategy.NextAvailableStartPositionB\003\340A\001H\000\022e\n"
-          + "\027specific_start_position\030g \001(\0132=.google.cloud.datast"
-          + "ream.v1.CdcStrategy.SpecificStartPositionB\003\340A\001H\000\032\031\n"
+          + "\032most_recent_start_position\030e \001(\0132?.google.cloud.d"
+          + "atastream.v1.CdcStrategy.MostRecentStartPositionB\003\340A\001H\000\022p\n"
+          + "\035next_available_start_position\030f \001(\0132B.google.cloud.datastream"
+          + ".v1.CdcStrategy.NextAvailableStartPositionB\003\340A\001H\000\022e\n"
+          + "\027specific_start_position\030g \001"
+          + "(\0132=.google.cloud.datastream.v1.CdcStrategy.SpecificStartPositionB\003\340A\001H\000\032\031\n"
           + "\027MostRecentStartPosition\032\034\n"
           + "\032NextAvailableStartPosition\032\340\002\n"
           + "\025SpecificStartPosition\022J\n"
-          + "\022mysql_log_position\030e \001(\0132"
-          + ",.google.cloud.datastream.v1.MysqlLogPositionH\000\022L\n"
-          + "\023oracle_scn_position\030f \001(\0132-.g"
-          + "oogle.cloud.datastream.v1.OracleScnPositionH\000\022S\n"
-          + "\027sql_server_lsn_position\030g \001(\01320"
-          + ".google.cloud.datastream.v1.SqlServerLsnPositionH\000\022L\n"
-          + "\023mysql_gtid_position\030h \001(\0132"
-          + "-.google.cloud.datastream.v1.MysqlGtidPositionH\000B\n\n"
+          + "\022mysql_log_position\030e"
+          + " \001(\0132,.google.cloud.datastream.v1.MysqlLogPositionH\000\022L\n"
+          + "\023oracle_scn_position\030f"
+          + " \001(\0132-.google.cloud.datastream.v1.OracleScnPositionH\000\022S\n"
+          + "\027sql_server_lsn_position\030g"
+          + " \001(\01320.google.cloud.datastream.v1.SqlServerLsnPositionH\000\022L\n"
+          + "\023mysql_gtid_position\030h"
+          + " \001(\0132-.google.cloud.datastream.v1.MysqlGtidPositionH\000B\n\n"
           + "\010positionB\020\n"
           + "\016start_position\"(\n"
           + "\024SqlServerLsnPosition\022\020\n"
@@ -1048,13 +1163,15 @@ public final class DatastreamResourcesProto {
           + "\014log_position\030\002 \001(\005B\003\340A\001H\000\210\001\001B\017\n\r"
           + "_log_position\"*\n"
           + "\021MysqlGtidPosition\022\025\n"
-          + "\010gtid_set\030\001 \001(\tB\003\340A\002B\250\002\n"
-          + "\036com.google.cloud.datastream.v1B\030DatastreamResourcesProtoP\001Z>"
-          + "cloud.google.com/go/datastream/apiv1/dat"
-          + "astreampb;datastreampb\252\002\032Google.Cloud.Da"
-          + "tastream.V1\312\002\032Google\\Cloud\\Datastream\\V1\352\002\035Google::Cloud::Datastream::V1\352AO\n"
-          + "\037compute.googleapis.com/Networks\022,projects/{"
-          + "project}/global/networks/{network}b\006proto3"
+          + "\010gtid_set\030\001 \001(\tB\003\340A\002B\242\003\n"
+          + "\036com.google.cloud.datastream.v1B\030DatastreamResourcesProtoP\001Z>cloud.google.com"
+          + "/go/datastream/apiv1/datastreampb;datast"
+          + "reampb\252\002\032Google.Cloud.Datastream.V1\312\002\032Go"
+          + "ogle\\Cloud\\Datastream\\V1\352\002\035Google::Cloud::Datastream::V1\352AO\n"
+          + "\037compute.googleapis."
+          + "com/Networks\022,projects/{project}/global/networks/{network}\352Aw\n"
+          + "(compute.googleapis.com/NetworkAttachment\022Kprojects/{proje"
+          + "ct}/regions/{region}/networkAttachments/{network_attachment}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1181,8 +1298,46 @@ public final class DatastreamResourcesProto {
             new java.lang.String[] {
               "ClientId", "ClientSecret", "SecretManagerStoredClientSecret",
             });
-    internal_static_google_cloud_datastream_v1_GcsProfile_descriptor =
+    internal_static_google_cloud_datastream_v1_MongodbProfile_descriptor =
         getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_datastream_v1_MongodbProfile_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datastream_v1_MongodbProfile_descriptor,
+            new java.lang.String[] {
+              "HostAddresses",
+              "ReplicaSet",
+              "Username",
+              "Password",
+              "SecretManagerStoredPassword",
+              "SslConfig",
+              "SrvConnectionFormat",
+              "StandardConnectionFormat",
+              "MongodbConnectionFormat",
+            });
+    internal_static_google_cloud_datastream_v1_HostAddress_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_datastream_v1_HostAddress_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datastream_v1_HostAddress_descriptor,
+            new java.lang.String[] {
+              "Hostname", "Port",
+            });
+    internal_static_google_cloud_datastream_v1_SrvConnectionFormat_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_datastream_v1_SrvConnectionFormat_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datastream_v1_SrvConnectionFormat_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_datastream_v1_StandardConnectionFormat_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_datastream_v1_StandardConnectionFormat_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datastream_v1_StandardConnectionFormat_descriptor,
+            new java.lang.String[] {
+              "DirectConnection",
+            });
+    internal_static_google_cloud_datastream_v1_GcsProfile_descriptor =
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_datastream_v1_GcsProfile_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_GcsProfile_descriptor,
@@ -1190,19 +1345,19 @@ public final class DatastreamResourcesProto {
               "Bucket", "RootPath",
             });
     internal_static_google_cloud_datastream_v1_BigQueryProfile_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_datastream_v1_BigQueryProfile_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_BigQueryProfile_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_datastream_v1_StaticServiceIpConnectivity_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_datastream_v1_StaticServiceIpConnectivity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_StaticServiceIpConnectivity_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_datastream_v1_ForwardSshTunnelConnectivity_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_datastream_v1_ForwardSshTunnelConnectivity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_ForwardSshTunnelConnectivity_descriptor,
@@ -1210,15 +1365,23 @@ public final class DatastreamResourcesProto {
               "Hostname", "Username", "Port", "Password", "PrivateKey", "AuthenticationMethod",
             });
     internal_static_google_cloud_datastream_v1_VpcPeeringConfig_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_datastream_v1_VpcPeeringConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_VpcPeeringConfig_descriptor,
             new java.lang.String[] {
               "Vpc", "Subnet",
             });
+    internal_static_google_cloud_datastream_v1_PscInterfaceConfig_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_datastream_v1_PscInterfaceConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datastream_v1_PscInterfaceConfig_descriptor,
+            new java.lang.String[] {
+              "NetworkAttachment",
+            });
     internal_static_google_cloud_datastream_v1_PrivateConnection_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_datastream_v1_PrivateConnection_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_PrivateConnection_descriptor,
@@ -1233,6 +1396,7 @@ public final class DatastreamResourcesProto {
               "SatisfiesPzs",
               "SatisfiesPzi",
               "VpcPeeringConfig",
+              "PscInterfaceConfig",
             });
     internal_static_google_cloud_datastream_v1_PrivateConnection_LabelsEntry_descriptor =
         internal_static_google_cloud_datastream_v1_PrivateConnection_descriptor
@@ -1245,7 +1409,7 @@ public final class DatastreamResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_datastream_v1_PrivateConnectivity_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_datastream_v1_PrivateConnectivity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_PrivateConnectivity_descriptor,
@@ -1253,7 +1417,7 @@ public final class DatastreamResourcesProto {
               "PrivateConnection",
             });
     internal_static_google_cloud_datastream_v1_Route_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_datastream_v1_Route_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_Route_descriptor,
@@ -1274,8 +1438,22 @@ public final class DatastreamResourcesProto {
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_datastream_v1_MongodbSslConfig_descriptor =
+        getDescriptor().getMessageTypes().get(19);
+    internal_static_google_cloud_datastream_v1_MongodbSslConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datastream_v1_MongodbSslConfig_descriptor,
+            new java.lang.String[] {
+              "ClientKey",
+              "ClientKeySet",
+              "ClientCertificate",
+              "ClientCertificateSet",
+              "CaCertificate",
+              "CaCertificateSet",
+              "SecretManagerStoredClientKey",
+            });
     internal_static_google_cloud_datastream_v1_MysqlSslConfig_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_datastream_v1_MysqlSslConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_MysqlSslConfig_descriptor,
@@ -1288,15 +1466,15 @@ public final class DatastreamResourcesProto {
               "CaCertificateSet",
             });
     internal_static_google_cloud_datastream_v1_OracleSslConfig_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_datastream_v1_OracleSslConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_OracleSslConfig_descriptor,
             new java.lang.String[] {
-              "CaCertificate", "CaCertificateSet",
+              "CaCertificate", "CaCertificateSet", "ServerCertificateDistinguishedName",
             });
     internal_static_google_cloud_datastream_v1_PostgresqlSslConfig_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_datastream_v1_PostgresqlSslConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_PostgresqlSslConfig_descriptor,
@@ -1311,7 +1489,7 @@ public final class DatastreamResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_PostgresqlSslConfig_ServerVerification_descriptor,
             new java.lang.String[] {
-              "CaCertificate",
+              "CaCertificate", "ServerCertificateHostname",
             });
     internal_static_google_cloud_datastream_v1_PostgresqlSslConfig_ServerAndClientVerification_descriptor =
         internal_static_google_cloud_datastream_v1_PostgresqlSslConfig_descriptor
@@ -1321,10 +1499,10 @@ public final class DatastreamResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_PostgresqlSslConfig_ServerAndClientVerification_descriptor,
             new java.lang.String[] {
-              "ClientCertificate", "ClientKey", "CaCertificate",
+              "ClientCertificate", "ClientKey", "CaCertificate", "ServerCertificateHostname",
             });
     internal_static_google_cloud_datastream_v1_ConnectionProfile_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_datastream_v1_ConnectionProfile_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_ConnectionProfile_descriptor,
@@ -1343,6 +1521,7 @@ public final class DatastreamResourcesProto {
               "PostgresqlProfile",
               "SqlServerProfile",
               "SalesforceProfile",
+              "MongodbProfile",
               "StaticServiceIpConnectivity",
               "ForwardSshConnectivity",
               "PrivateConnectivity",
@@ -1360,7 +1539,7 @@ public final class DatastreamResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_datastream_v1_OracleColumn_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_datastream_v1_OracleColumn_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_OracleColumn_descriptor,
@@ -1376,7 +1555,7 @@ public final class DatastreamResourcesProto {
               "OrdinalPosition",
             });
     internal_static_google_cloud_datastream_v1_OracleTable_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_datastream_v1_OracleTable_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_OracleTable_descriptor,
@@ -1384,7 +1563,7 @@ public final class DatastreamResourcesProto {
               "Table", "OracleColumns",
             });
     internal_static_google_cloud_datastream_v1_OracleSchema_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_datastream_v1_OracleSchema_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_OracleSchema_descriptor,
@@ -1392,7 +1571,7 @@ public final class DatastreamResourcesProto {
               "Schema", "OracleTables",
             });
     internal_static_google_cloud_datastream_v1_OracleRdbms_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_datastream_v1_OracleRdbms_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_OracleRdbms_descriptor,
@@ -1400,7 +1579,7 @@ public final class DatastreamResourcesProto {
               "OracleSchemas",
             });
     internal_static_google_cloud_datastream_v1_OracleSourceConfig_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_datastream_v1_OracleSourceConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_OracleSourceConfig_descriptor,
@@ -1469,7 +1648,7 @@ public final class DatastreamResourcesProto {
               "OnlineLogDirectory", "ArchivedLogDirectory",
             });
     internal_static_google_cloud_datastream_v1_PostgresqlColumn_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_datastream_v1_PostgresqlColumn_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_PostgresqlColumn_descriptor,
@@ -1484,7 +1663,7 @@ public final class DatastreamResourcesProto {
               "OrdinalPosition",
             });
     internal_static_google_cloud_datastream_v1_PostgresqlTable_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_datastream_v1_PostgresqlTable_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_PostgresqlTable_descriptor,
@@ -1492,7 +1671,7 @@ public final class DatastreamResourcesProto {
               "Table", "PostgresqlColumns",
             });
     internal_static_google_cloud_datastream_v1_PostgresqlSchema_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_datastream_v1_PostgresqlSchema_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_PostgresqlSchema_descriptor,
@@ -1500,7 +1679,7 @@ public final class DatastreamResourcesProto {
               "Schema", "PostgresqlTables",
             });
     internal_static_google_cloud_datastream_v1_PostgresqlRdbms_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_datastream_v1_PostgresqlRdbms_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_PostgresqlRdbms_descriptor,
@@ -1508,7 +1687,7 @@ public final class DatastreamResourcesProto {
               "PostgresqlSchemas",
             });
     internal_static_google_cloud_datastream_v1_PostgresqlSourceConfig_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_datastream_v1_PostgresqlSourceConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_PostgresqlSourceConfig_descriptor,
@@ -1520,7 +1699,7 @@ public final class DatastreamResourcesProto {
               "MaxConcurrentBackfillTasks",
             });
     internal_static_google_cloud_datastream_v1_SqlServerColumn_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_datastream_v1_SqlServerColumn_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_SqlServerColumn_descriptor,
@@ -1535,7 +1714,7 @@ public final class DatastreamResourcesProto {
               "OrdinalPosition",
             });
     internal_static_google_cloud_datastream_v1_SqlServerTable_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_datastream_v1_SqlServerTable_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_SqlServerTable_descriptor,
@@ -1543,7 +1722,7 @@ public final class DatastreamResourcesProto {
               "Table", "Columns",
             });
     internal_static_google_cloud_datastream_v1_SqlServerSchema_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_datastream_v1_SqlServerSchema_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_SqlServerSchema_descriptor,
@@ -1551,7 +1730,7 @@ public final class DatastreamResourcesProto {
               "Schema", "Tables",
             });
     internal_static_google_cloud_datastream_v1_SqlServerRdbms_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_datastream_v1_SqlServerRdbms_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_SqlServerRdbms_descriptor,
@@ -1559,7 +1738,7 @@ public final class DatastreamResourcesProto {
               "Schemas",
             });
     internal_static_google_cloud_datastream_v1_SqlServerSourceConfig_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_datastream_v1_SqlServerSourceConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_SqlServerSourceConfig_descriptor,
@@ -1573,19 +1752,19 @@ public final class DatastreamResourcesProto {
               "CdcMethod",
             });
     internal_static_google_cloud_datastream_v1_SqlServerTransactionLogs_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_datastream_v1_SqlServerTransactionLogs_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_SqlServerTransactionLogs_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_datastream_v1_SqlServerChangeTables_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_datastream_v1_SqlServerChangeTables_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_SqlServerChangeTables_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_datastream_v1_MysqlColumn_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_datastream_v1_MysqlColumn_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_MysqlColumn_descriptor,
@@ -1601,7 +1780,7 @@ public final class DatastreamResourcesProto {
               "Scale",
             });
     internal_static_google_cloud_datastream_v1_MysqlTable_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_datastream_v1_MysqlTable_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_MysqlTable_descriptor,
@@ -1609,7 +1788,7 @@ public final class DatastreamResourcesProto {
               "Table", "MysqlColumns",
             });
     internal_static_google_cloud_datastream_v1_MysqlDatabase_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_cloud_datastream_v1_MysqlDatabase_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_MysqlDatabase_descriptor,
@@ -1617,7 +1796,7 @@ public final class DatastreamResourcesProto {
               "Database", "MysqlTables",
             });
     internal_static_google_cloud_datastream_v1_MysqlRdbms_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_cloud_datastream_v1_MysqlRdbms_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_MysqlRdbms_descriptor,
@@ -1625,7 +1804,7 @@ public final class DatastreamResourcesProto {
               "MysqlDatabases",
             });
     internal_static_google_cloud_datastream_v1_MysqlSourceConfig_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_cloud_datastream_v1_MysqlSourceConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_MysqlSourceConfig_descriptor,
@@ -1655,7 +1834,7 @@ public final class DatastreamResourcesProto {
             internal_static_google_cloud_datastream_v1_MysqlSourceConfig_Gtid_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_datastream_v1_SalesforceSourceConfig_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_cloud_datastream_v1_SalesforceSourceConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_SalesforceSourceConfig_descriptor,
@@ -1663,7 +1842,7 @@ public final class DatastreamResourcesProto {
               "IncludeObjects", "ExcludeObjects", "PollingInterval",
             });
     internal_static_google_cloud_datastream_v1_SalesforceOrg_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_cloud_datastream_v1_SalesforceOrg_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_SalesforceOrg_descriptor,
@@ -1671,7 +1850,7 @@ public final class DatastreamResourcesProto {
               "Objects",
             });
     internal_static_google_cloud_datastream_v1_SalesforceObject_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_cloud_datastream_v1_SalesforceObject_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_SalesforceObject_descriptor,
@@ -1679,15 +1858,55 @@ public final class DatastreamResourcesProto {
               "ObjectName", "Fields",
             });
     internal_static_google_cloud_datastream_v1_SalesforceField_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(49);
     internal_static_google_cloud_datastream_v1_SalesforceField_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_SalesforceField_descriptor,
             new java.lang.String[] {
               "Name", "DataType", "Nillable",
             });
+    internal_static_google_cloud_datastream_v1_MongodbSourceConfig_descriptor =
+        getDescriptor().getMessageTypes().get(50);
+    internal_static_google_cloud_datastream_v1_MongodbSourceConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datastream_v1_MongodbSourceConfig_descriptor,
+            new java.lang.String[] {
+              "IncludeObjects", "ExcludeObjects", "MaxConcurrentBackfillTasks",
+            });
+    internal_static_google_cloud_datastream_v1_MongodbCluster_descriptor =
+        getDescriptor().getMessageTypes().get(51);
+    internal_static_google_cloud_datastream_v1_MongodbCluster_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datastream_v1_MongodbCluster_descriptor,
+            new java.lang.String[] {
+              "Databases",
+            });
+    internal_static_google_cloud_datastream_v1_MongodbDatabase_descriptor =
+        getDescriptor().getMessageTypes().get(52);
+    internal_static_google_cloud_datastream_v1_MongodbDatabase_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datastream_v1_MongodbDatabase_descriptor,
+            new java.lang.String[] {
+              "Database", "Collections",
+            });
+    internal_static_google_cloud_datastream_v1_MongodbCollection_descriptor =
+        getDescriptor().getMessageTypes().get(53);
+    internal_static_google_cloud_datastream_v1_MongodbCollection_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datastream_v1_MongodbCollection_descriptor,
+            new java.lang.String[] {
+              "Collection", "Fields",
+            });
+    internal_static_google_cloud_datastream_v1_MongodbField_descriptor =
+        getDescriptor().getMessageTypes().get(54);
+    internal_static_google_cloud_datastream_v1_MongodbField_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datastream_v1_MongodbField_descriptor,
+            new java.lang.String[] {
+              "Field",
+            });
     internal_static_google_cloud_datastream_v1_SourceConfig_descriptor =
-        getDescriptor().getMessageTypes().get(44);
+        getDescriptor().getMessageTypes().get(55);
     internal_static_google_cloud_datastream_v1_SourceConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_SourceConfig_descriptor,
@@ -1698,16 +1917,17 @@ public final class DatastreamResourcesProto {
               "PostgresqlSourceConfig",
               "SqlServerSourceConfig",
               "SalesforceSourceConfig",
+              "MongodbSourceConfig",
               "SourceStreamConfig",
             });
     internal_static_google_cloud_datastream_v1_AvroFileFormat_descriptor =
-        getDescriptor().getMessageTypes().get(45);
+        getDescriptor().getMessageTypes().get(56);
     internal_static_google_cloud_datastream_v1_AvroFileFormat_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_AvroFileFormat_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_datastream_v1_JsonFileFormat_descriptor =
-        getDescriptor().getMessageTypes().get(46);
+        getDescriptor().getMessageTypes().get(57);
     internal_static_google_cloud_datastream_v1_JsonFileFormat_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_JsonFileFormat_descriptor,
@@ -1715,7 +1935,7 @@ public final class DatastreamResourcesProto {
               "SchemaFileFormat", "Compression",
             });
     internal_static_google_cloud_datastream_v1_GcsDestinationConfig_descriptor =
-        getDescriptor().getMessageTypes().get(47);
+        getDescriptor().getMessageTypes().get(58);
     internal_static_google_cloud_datastream_v1_GcsDestinationConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_GcsDestinationConfig_descriptor,
@@ -1728,7 +1948,7 @@ public final class DatastreamResourcesProto {
               "FileFormat",
             });
     internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_descriptor =
-        getDescriptor().getMessageTypes().get(48);
+        getDescriptor().getMessageTypes().get(59);
     internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_descriptor,
@@ -1760,7 +1980,7 @@ public final class DatastreamResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_SourceHierarchyDatasets_descriptor,
             new java.lang.String[] {
-              "DatasetTemplate",
+              "DatasetTemplate", "ProjectId",
             });
     internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_SourceHierarchyDatasets_DatasetTemplate_descriptor =
         internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_SourceHierarchyDatasets_descriptor
@@ -1799,7 +2019,7 @@ public final class DatastreamResourcesProto {
             internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_Merge_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_datastream_v1_DestinationConfig_descriptor =
-        getDescriptor().getMessageTypes().get(49);
+        getDescriptor().getMessageTypes().get(60);
     internal_static_google_cloud_datastream_v1_DestinationConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_DestinationConfig_descriptor,
@@ -1810,7 +2030,7 @@ public final class DatastreamResourcesProto {
               "DestinationStreamConfig",
             });
     internal_static_google_cloud_datastream_v1_Stream_descriptor =
-        getDescriptor().getMessageTypes().get(50);
+        getDescriptor().getMessageTypes().get(61);
     internal_static_google_cloud_datastream_v1_Stream_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_Stream_descriptor,
@@ -1843,6 +2063,7 @@ public final class DatastreamResourcesProto {
               "PostgresqlExcludedObjects",
               "SqlServerExcludedObjects",
               "SalesforceExcludedObjects",
+              "MongodbExcludedObjects",
               "ExcludedObjects",
             });
     internal_static_google_cloud_datastream_v1_Stream_BackfillNoneStrategy_descriptor =
@@ -1860,7 +2081,7 @@ public final class DatastreamResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_datastream_v1_StreamObject_descriptor =
-        getDescriptor().getMessageTypes().get(51);
+        getDescriptor().getMessageTypes().get(62);
     internal_static_google_cloud_datastream_v1_StreamObject_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_StreamObject_descriptor,
@@ -1874,7 +2095,7 @@ public final class DatastreamResourcesProto {
               "SourceObject",
             });
     internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_descriptor =
-        getDescriptor().getMessageTypes().get(52);
+        getDescriptor().getMessageTypes().get(63);
     internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_descriptor,
@@ -1884,6 +2105,7 @@ public final class DatastreamResourcesProto {
               "PostgresqlIdentifier",
               "SqlServerIdentifier",
               "SalesforceIdentifier",
+              "MongodbIdentifier",
               "SourceIdentifier",
             });
     internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_OracleObjectIdentifier_descriptor =
@@ -1936,8 +2158,18 @@ public final class DatastreamResourcesProto {
             new java.lang.String[] {
               "ObjectName",
             });
+    internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_MongodbObjectIdentifier_descriptor =
+        internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_descriptor
+            .getNestedTypes()
+            .get(5);
+    internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_MongodbObjectIdentifier_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_MongodbObjectIdentifier_descriptor,
+            new java.lang.String[] {
+              "Database", "Collection",
+            });
     internal_static_google_cloud_datastream_v1_BackfillJob_descriptor =
-        getDescriptor().getMessageTypes().get(53);
+        getDescriptor().getMessageTypes().get(64);
     internal_static_google_cloud_datastream_v1_BackfillJob_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_BackfillJob_descriptor,
@@ -1945,7 +2177,7 @@ public final class DatastreamResourcesProto {
               "State", "Trigger", "LastStartTime", "LastEndTime", "Errors",
             });
     internal_static_google_cloud_datastream_v1_Error_descriptor =
-        getDescriptor().getMessageTypes().get(54);
+        getDescriptor().getMessageTypes().get(65);
     internal_static_google_cloud_datastream_v1_Error_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_Error_descriptor,
@@ -1961,7 +2193,7 @@ public final class DatastreamResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_datastream_v1_ValidationResult_descriptor =
-        getDescriptor().getMessageTypes().get(55);
+        getDescriptor().getMessageTypes().get(66);
     internal_static_google_cloud_datastream_v1_ValidationResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_ValidationResult_descriptor,
@@ -1969,7 +2201,7 @@ public final class DatastreamResourcesProto {
               "Validations",
             });
     internal_static_google_cloud_datastream_v1_Validation_descriptor =
-        getDescriptor().getMessageTypes().get(56);
+        getDescriptor().getMessageTypes().get(67);
     internal_static_google_cloud_datastream_v1_Validation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_Validation_descriptor,
@@ -1977,7 +2209,7 @@ public final class DatastreamResourcesProto {
               "Description", "State", "Message", "Code",
             });
     internal_static_google_cloud_datastream_v1_ValidationMessage_descriptor =
-        getDescriptor().getMessageTypes().get(57);
+        getDescriptor().getMessageTypes().get(68);
     internal_static_google_cloud_datastream_v1_ValidationMessage_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_ValidationMessage_descriptor,
@@ -1995,7 +2227,7 @@ public final class DatastreamResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_datastream_v1_CdcStrategy_descriptor =
-        getDescriptor().getMessageTypes().get(58);
+        getDescriptor().getMessageTypes().get(69);
     internal_static_google_cloud_datastream_v1_CdcStrategy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_CdcStrategy_descriptor,
@@ -2030,7 +2262,7 @@ public final class DatastreamResourcesProto {
               "Position",
             });
     internal_static_google_cloud_datastream_v1_SqlServerLsnPosition_descriptor =
-        getDescriptor().getMessageTypes().get(59);
+        getDescriptor().getMessageTypes().get(70);
     internal_static_google_cloud_datastream_v1_SqlServerLsnPosition_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_SqlServerLsnPosition_descriptor,
@@ -2038,7 +2270,7 @@ public final class DatastreamResourcesProto {
               "Lsn",
             });
     internal_static_google_cloud_datastream_v1_OracleScnPosition_descriptor =
-        getDescriptor().getMessageTypes().get(60);
+        getDescriptor().getMessageTypes().get(71);
     internal_static_google_cloud_datastream_v1_OracleScnPosition_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_OracleScnPosition_descriptor,
@@ -2046,7 +2278,7 @@ public final class DatastreamResourcesProto {
               "Scn",
             });
     internal_static_google_cloud_datastream_v1_MysqlLogPosition_descriptor =
-        getDescriptor().getMessageTypes().get(61);
+        getDescriptor().getMessageTypes().get(72);
     internal_static_google_cloud_datastream_v1_MysqlLogPosition_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_MysqlLogPosition_descriptor,
@@ -2054,7 +2286,7 @@ public final class DatastreamResourcesProto {
               "LogFile", "LogPosition",
             });
     internal_static_google_cloud_datastream_v1_MysqlGtidPosition_descriptor =
-        getDescriptor().getMessageTypes().get(62);
+        getDescriptor().getMessageTypes().get(73);
     internal_static_google_cloud_datastream_v1_MysqlGtidPosition_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_MysqlGtidPosition_descriptor,

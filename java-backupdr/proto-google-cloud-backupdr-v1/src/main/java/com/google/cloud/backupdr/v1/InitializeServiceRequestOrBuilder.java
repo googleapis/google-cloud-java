@@ -137,4 +137,52 @@ public interface InitializeServiceRequestOrBuilder
    * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for initializing a Cloud SQL instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig cloud_sql_instance_initialization_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the cloudSqlInstanceInitializationConfig field is set.
+   */
+  boolean hasCloudSqlInstanceInitializationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for initializing a Cloud SQL instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig cloud_sql_instance_initialization_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The cloudSqlInstanceInitializationConfig.
+   */
+  com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig
+      getCloudSqlInstanceInitializationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for initializing a Cloud SQL instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfig cloud_sql_instance_initialization_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.backupdr.v1.CloudSqlInstanceInitializationConfigOrBuilder
+      getCloudSqlInstanceInitializationConfigOrBuilder();
+
+  com.google.cloud.backupdr.v1.InitializeServiceRequest.InitializationConfigCase
+      getInitializationConfigCase();
 }

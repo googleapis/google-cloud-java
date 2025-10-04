@@ -171,7 +171,27 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * optional string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the parentAdUnit field is set.
+   */
+  @java.lang.Override
+  public boolean hasParentAdUnit() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The AdUnit's parent. Every ad unit has a parent except
+   * for the root ad unit, which is created by Google. Format:
+   * "networks/{network_code}/adUnits/{ad_unit_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The parentAdUnit.
@@ -199,7 +219,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * optional string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for parentAdUnit.
@@ -326,7 +346,24 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * characters.
    * </pre>
    *
-   * <code>string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisplayName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The display name of the ad unit. Its maximum length is 255
+   * characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -351,7 +388,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * characters.
    * </pre>
    *
-   * <code>string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -377,13 +414,36 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. A string used to uniquely identify the ad unit for the purposes
-   * of serving the ad. This attribute is optional and can be set during ad unit
+   * Optional. Immutable. A string used to uniquely identify the ad unit for the
+   * purposes of serving the ad. This attribute can be set during ad unit
    * creation. If it is not provided, it will be assigned by Google based on the
    * ad unit ID.
    * </pre>
    *
-   * <code>string ad_unit_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * optional string ad_unit_code = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the adUnitCode field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdUnitCode() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A string used to uniquely identify the ad unit for the
+   * purposes of serving the ad. This attribute can be set during ad unit
+   * creation. If it is not provided, it will be assigned by Google based on the
+   * ad unit ID.
+   * </pre>
+   *
+   * <code>
+   * optional string ad_unit_code = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The adUnitCode.
    */
@@ -404,13 +464,15 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. A string used to uniquely identify the ad unit for the purposes
-   * of serving the ad. This attribute is optional and can be set during ad unit
+   * Optional. Immutable. A string used to uniquely identify the ad unit for the
+   * purposes of serving the ad. This attribute can be set during ad unit
    * creation. If it is not provided, it will be assigned by Google based on the
    * ad unit ID.
    * </pre>
    *
-   * <code>string ad_unit_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * optional string ad_unit_code = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for adUnitCode.
    */
@@ -438,7 +500,25 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of this ad unit.  It defaults to ACTIVE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The enum numeric value on the wire for status.
@@ -456,7 +536,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The status.
@@ -483,7 +563,27 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the appliedTargetWindow field is set.
+   */
+  @java.lang.Override
+  public boolean hasAppliedTargetWindow() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The target window directly applied to this AdUnit.
+   * If this field is not set, this AdUnit uses the target window specified in
+   * effectiveTargetWindow.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for appliedTargetWindow.
@@ -503,7 +603,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The appliedTargetWindow.
@@ -530,7 +630,27 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the effectiveTargetWindow field is set.
+   */
+  @java.lang.Override
+  public boolean hasEffectiveTargetWindow() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-empty default. The target window of this AdUnit. This
+   * value is inherited from ancestor AdUnits and defaults to TOP if no AdUnit
+   * in the hierarchy specifies it.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The enum numeric value on the wire for effectiveTargetWindow.
@@ -550,7 +670,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The effectiveTargetWindow.
@@ -741,7 +861,24 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * characters.
    * </pre>
    *
-   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of the ad unit. The maximum length is 65,535
+   * characters.
+   * </pre>
+   *
+   * <code>optional string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -766,7 +903,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * characters.
    * </pre>
    *
-   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -796,7 +933,26 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * feature is only available for Ad Manager 360 accounts.
    * </pre>
    *
-   * <code>bool explicitly_targeted = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional bool explicitly_targeted = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the explicitlyTargeted field is set.
+   */
+  @java.lang.Override
+  public boolean hasExplicitlyTargeted() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If this field is set to true, then the AdUnit will not be
+   * implicitly targeted when its parent is. Traffickers must explicitly
+   * target such an AdUnit or else no line items will serve to it. This
+   * feature is only available for Ad Manager 360 accounts.
+   * </pre>
+   *
+   * <code>optional bool explicitly_targeted = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The explicitlyTargeted.
    */
@@ -815,7 +971,23 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * Output only. This field is set to true if the ad unit has any children.
    * </pre>
    *
-   * <code>bool has_children = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool has_children = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the hasChildren field is set.
+   */
+  @java.lang.Override
+  public boolean hasHasChildren() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is set to true if the ad unit has any children.
+   * </pre>
+   *
+   * <code>optional bool has_children = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The hasChildren.
    */
@@ -834,14 +1006,15 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time this AdUnit was last modified.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the updateTime field is set.
    */
   @java.lang.Override
   public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -851,7 +1024,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time this AdUnit was last modified.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The updateTime.
@@ -868,7 +1042,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time this AdUnit was last modified.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -975,12 +1150,38 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * corresponds to in an external set top box ad campaign system.
    * </pre>
    *
-   * <code>string external_set_top_box_channel_id = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional string external_set_top_box_channel_id = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
+   *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
+   * @return Whether the externalSetTopBoxChannelId field is set.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public boolean hasExternalSetTopBoxChannelId() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines what set top box video on demand channel this ad unit
+   * corresponds to in an external set top box ad campaign system.
+   * </pre>
+   *
+   * <code>
+   * optional string external_set_top_box_channel_id = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
+   *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
    * @return The externalSetTopBoxChannelId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getExternalSetTopBoxChannelId() {
     java.lang.Object ref = externalSetTopBoxChannelId_;
     if (ref instanceof java.lang.String) {
@@ -1001,12 +1202,16 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * corresponds to in an external set top box ad campaign system.
    * </pre>
    *
-   * <code>string external_set_top_box_channel_id = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional string external_set_top_box_channel_id = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
+   *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
    * @return The bytes for externalSetTopBoxChannelId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getExternalSetTopBoxChannelIdBytes() {
     java.lang.Object ref = externalSetTopBoxChannelId_;
     if (ref instanceof java.lang.String) {
@@ -1031,14 +1236,15 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * will not refresh.
    * </pre>
    *
-   * <code>.google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional .google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the refreshDelay field is set.
    */
   @java.lang.Override
   public boolean hasRefreshDelay() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1050,7 +1256,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * will not refresh.
    * </pre>
    *
-   * <code>.google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional .google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The refreshDelay.
@@ -1071,7 +1278,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * will not refresh.
    * </pre>
    *
-   * <code>.google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional .google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -1178,8 +1386,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Contains the set of labels applied directly to the ad unit as
    * well as those inherited from the parent ad units. If a label has been
-   * negated, only the negated label is returned. This field is readonly and is
-   * assigned by Google.
+   * negated, only the negated label is returned. This attribute is assigned by
+   * Google.
    * </pre>
    *
    * <code>
@@ -1197,8 +1405,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Contains the set of labels applied directly to the ad unit as
    * well as those inherited from the parent ad units. If a label has been
-   * negated, only the negated label is returned. This field is readonly and is
-   * assigned by Google.
+   * negated, only the negated label is returned. This attribute is assigned by
+   * Google.
    * </pre>
    *
    * <code>
@@ -1217,8 +1425,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Contains the set of labels applied directly to the ad unit as
    * well as those inherited from the parent ad units. If a label has been
-   * negated, only the negated label is returned. This field is readonly and is
-   * assigned by Google.
+   * negated, only the negated label is returned. This attribute is assigned by
+   * Google.
    * </pre>
    *
    * <code>
@@ -1236,8 +1444,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Contains the set of labels applied directly to the ad unit as
    * well as those inherited from the parent ad units. If a label has been
-   * negated, only the negated label is returned. This field is readonly and is
-   * assigned by Google.
+   * negated, only the negated label is returned. This attribute is assigned by
+   * Google.
    * </pre>
    *
    * <code>
@@ -1255,8 +1463,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Contains the set of labels applied directly to the ad unit as
    * well as those inherited from the parent ad units. If a label has been
-   * negated, only the negated label is returned. This field is readonly and is
-   * assigned by Google.
+   * negated, only the negated label is returned. This attribute is assigned by
+   * Google.
    * </pre>
    *
    * <code>
@@ -1463,12 +1671,31 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The smart size mode for this ad unit. This attribute is optional
-   * and defaults to SmartSizeMode.NONE for fixed sizes.
+   * Optional. Non-empty default. The smart size mode for this ad unit. This
+   * attribute defaults to SmartSizeMode.NONE for fixed sizes.
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the smartSizeMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasSmartSizeMode() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The smart size mode for this ad unit. This
+   * attribute defaults to SmartSizeMode.NONE for fixed sizes.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
    * </code>
    *
    * @return The enum numeric value on the wire for smartSizeMode.
@@ -1482,12 +1709,12 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The smart size mode for this ad unit. This attribute is optional
-   * and defaults to SmartSizeMode.NONE for fixed sizes.
+   * Optional. Non-empty default. The smart size mode for this ad unit. This
+   * attribute defaults to SmartSizeMode.NONE for fixed sizes.
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
    * </code>
    *
    * @return The smartSizeMode.
@@ -1508,9 +1735,9 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The value of AdSense enabled directly applied to this ad unit.
-   * This attribute is optional and if not specified this ad unit will inherit
-   * the value of effectiveAdsenseEnabled from its ancestors.
+   * Optional. The value of AdSense enabled directly applied to this ad unit. If
+   * not specified this ad unit will inherit the value of
+   * effectiveAdsenseEnabled from its ancestors.
    * </pre>
    *
    * <code>optional bool applied_adsense_enabled = 26 [(.google.api.field_behavior) = OPTIONAL];
@@ -1520,16 +1747,16 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasAppliedAdsenseEnabled() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Optional. The value of AdSense enabled directly applied to this ad unit.
-   * This attribute is optional and if not specified this ad unit will inherit
-   * the value of effectiveAdsenseEnabled from its ancestors.
+   * Optional. The value of AdSense enabled directly applied to this ad unit. If
+   * not specified this ad unit will inherit the value of
+   * effectiveAdsenseEnabled from its ancestors.
    * </pre>
    *
    * <code>optional bool applied_adsense_enabled = 26 [(.google.api.field_behavior) = OPTIONAL];
@@ -1555,7 +1782,30 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
    * unit has set appliedAdsenseEnabled, the attribute is defaulted to true.
    * </pre>
    *
-   * <code>bool effective_adsense_enabled = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional bool effective_adsense_enabled = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the effectiveAdsenseEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasEffectiveAdsenseEnabled() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies whether or not the AdUnit is enabled for serving ads
+   * from the AdSense content network. This attribute defaults to the ad unit's
+   * parent or ancestor's setting if one has been set. If no ancestor of the ad
+   * unit has set appliedAdsenseEnabled, the attribute is defaulted to true.
+   * </pre>
+   *
+   * <code>
+   * optional bool effective_adsense_enabled = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The effectiveAdsenseEnabled.
    */
@@ -1581,7 +1831,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(adUnitCode_)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, adUnitCode_);
     }
     for (int i = 0; i < appliedTeams_.size(); i++) {
@@ -1590,30 +1840,28 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < teams_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, teams_.getRaw(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
     }
-    if (explicitlyTargeted_ != false) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeBool(6, explicitlyTargeted_);
     }
-    if (hasChildren_ != false) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeBool(7, hasChildren_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(8, getUpdateTime());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, displayName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentAdUnit_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, parentAdUnit_);
     }
     for (int i = 0; i < parentPath_.size(); i++) {
       output.writeMessage(11, parentPath_.get(i));
     }
-    if (status_
-        != com.google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus.AD_UNIT_STATUS_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeEnum(13, status_);
     }
     for (int i = 0; i < adUnitSizes_.size(); i++) {
@@ -1622,10 +1870,10 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
     if (adUnitId_ != 0L) {
       output.writeInt64(15, adUnitId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalSetTopBoxChannelId_)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, externalSetTopBoxChannelId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(19, getRefreshDelay());
     }
     for (int i = 0; i < appliedLabels_.size(); i++) {
@@ -1640,25 +1888,19 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < effectiveLabelFrequencyCaps_.size(); i++) {
       output.writeMessage(24, effectiveLabelFrequencyCaps_.get(i));
     }
-    if (smartSizeMode_
-        != com.google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode.SMART_SIZE_MODE_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeEnum(25, smartSizeMode_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeBool(26, appliedAdsenseEnabled_);
     }
-    if (effectiveAdsenseEnabled_ != false) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeBool(27, effectiveAdsenseEnabled_);
     }
-    if (appliedTargetWindow_
-        != com.google.ads.admanager.v1.TargetWindowEnum.TargetWindow.TARGET_WINDOW_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeEnum(44, appliedTargetWindow_);
     }
-    if (effectiveTargetWindow_
-        != com.google.ads.admanager.v1.TargetWindowEnum.TargetWindow.TARGET_WINDOW_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeEnum(45, effectiveTargetWindow_);
     }
     getUnknownFields().writeTo(output);
@@ -1673,7 +1915,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(adUnitCode_)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, adUnitCode_);
     }
     {
@@ -1692,30 +1934,28 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getTeamsList().size();
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
     }
-    if (explicitlyTargeted_ != false) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, explicitlyTargeted_);
     }
-    if (hasChildren_ != false) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, hasChildren_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getUpdateTime());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, displayName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentAdUnit_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, parentAdUnit_);
     }
     for (int i = 0; i < parentPath_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, parentPath_.get(i));
     }
-    if (status_
-        != com.google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus.AD_UNIT_STATUS_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, status_);
     }
     for (int i = 0; i < adUnitSizes_.size(); i++) {
@@ -1724,11 +1964,11 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
     if (adUnitId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(15, adUnitId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalSetTopBoxChannelId_)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(17, externalSetTopBoxChannelId_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getRefreshDelay());
     }
     for (int i = 0; i < appliedLabels_.size(); i++) {
@@ -1749,25 +1989,19 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               24, effectiveLabelFrequencyCaps_.get(i));
     }
-    if (smartSizeMode_
-        != com.google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode.SMART_SIZE_MODE_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(25, smartSizeMode_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(26, appliedAdsenseEnabled_);
     }
-    if (effectiveAdsenseEnabled_ != false) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(27, effectiveAdsenseEnabled_);
     }
-    if (appliedTargetWindow_
-        != com.google.ads.admanager.v1.TargetWindowEnum.TargetWindow.TARGET_WINDOW_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(44, appliedTargetWindow_);
     }
-    if (effectiveTargetWindow_
-        != com.google.ads.admanager.v1.TargetWindowEnum.TargetWindow.TARGET_WINDOW_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(45, effectiveTargetWindow_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -1787,25 +2021,55 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
 
     if (!getName().equals(other.getName())) return false;
     if (getAdUnitId() != other.getAdUnitId()) return false;
-    if (!getParentAdUnit().equals(other.getParentAdUnit())) return false;
+    if (hasParentAdUnit() != other.hasParentAdUnit()) return false;
+    if (hasParentAdUnit()) {
+      if (!getParentAdUnit().equals(other.getParentAdUnit())) return false;
+    }
     if (!getParentPathList().equals(other.getParentPathList())) return false;
-    if (!getDisplayName().equals(other.getDisplayName())) return false;
-    if (!getAdUnitCode().equals(other.getAdUnitCode())) return false;
-    if (status_ != other.status_) return false;
-    if (appliedTargetWindow_ != other.appliedTargetWindow_) return false;
-    if (effectiveTargetWindow_ != other.effectiveTargetWindow_) return false;
+    if (hasDisplayName() != other.hasDisplayName()) return false;
+    if (hasDisplayName()) {
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+    }
+    if (hasAdUnitCode() != other.hasAdUnitCode()) return false;
+    if (hasAdUnitCode()) {
+      if (!getAdUnitCode().equals(other.getAdUnitCode())) return false;
+    }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (status_ != other.status_) return false;
+    }
+    if (hasAppliedTargetWindow() != other.hasAppliedTargetWindow()) return false;
+    if (hasAppliedTargetWindow()) {
+      if (appliedTargetWindow_ != other.appliedTargetWindow_) return false;
+    }
+    if (hasEffectiveTargetWindow() != other.hasEffectiveTargetWindow()) return false;
+    if (hasEffectiveTargetWindow()) {
+      if (effectiveTargetWindow_ != other.effectiveTargetWindow_) return false;
+    }
     if (!getAppliedTeamsList().equals(other.getAppliedTeamsList())) return false;
     if (!getTeamsList().equals(other.getTeamsList())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (getExplicitlyTargeted() != other.getExplicitlyTargeted()) return false;
-    if (getHasChildren() != other.getHasChildren()) return false;
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasExplicitlyTargeted() != other.hasExplicitlyTargeted()) return false;
+    if (hasExplicitlyTargeted()) {
+      if (getExplicitlyTargeted() != other.getExplicitlyTargeted()) return false;
+    }
+    if (hasHasChildren() != other.hasHasChildren()) return false;
+    if (hasHasChildren()) {
+      if (getHasChildren() != other.getHasChildren()) return false;
+    }
     if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getAdUnitSizesList().equals(other.getAdUnitSizesList())) return false;
-    if (!getExternalSetTopBoxChannelId().equals(other.getExternalSetTopBoxChannelId()))
-      return false;
+    if (hasExternalSetTopBoxChannelId() != other.hasExternalSetTopBoxChannelId()) return false;
+    if (hasExternalSetTopBoxChannelId()) {
+      if (!getExternalSetTopBoxChannelId().equals(other.getExternalSetTopBoxChannelId()))
+        return false;
+    }
     if (hasRefreshDelay() != other.hasRefreshDelay()) return false;
     if (hasRefreshDelay()) {
       if (!getRefreshDelay().equals(other.getRefreshDelay())) return false;
@@ -1817,12 +2081,18 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
       return false;
     if (!getEffectiveLabelFrequencyCapsList().equals(other.getEffectiveLabelFrequencyCapsList()))
       return false;
-    if (smartSizeMode_ != other.smartSizeMode_) return false;
+    if (hasSmartSizeMode() != other.hasSmartSizeMode()) return false;
+    if (hasSmartSizeMode()) {
+      if (smartSizeMode_ != other.smartSizeMode_) return false;
+    }
     if (hasAppliedAdsenseEnabled() != other.hasAppliedAdsenseEnabled()) return false;
     if (hasAppliedAdsenseEnabled()) {
       if (getAppliedAdsenseEnabled() != other.getAppliedAdsenseEnabled()) return false;
     }
-    if (getEffectiveAdsenseEnabled() != other.getEffectiveAdsenseEnabled()) return false;
+    if (hasEffectiveAdsenseEnabled() != other.hasEffectiveAdsenseEnabled()) return false;
+    if (hasEffectiveAdsenseEnabled()) {
+      if (getEffectiveAdsenseEnabled() != other.getEffectiveAdsenseEnabled()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1838,22 +2108,34 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + AD_UNIT_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAdUnitId());
-    hash = (37 * hash) + PARENT_AD_UNIT_FIELD_NUMBER;
-    hash = (53 * hash) + getParentAdUnit().hashCode();
+    if (hasParentAdUnit()) {
+      hash = (37 * hash) + PARENT_AD_UNIT_FIELD_NUMBER;
+      hash = (53 * hash) + getParentAdUnit().hashCode();
+    }
     if (getParentPathCount() > 0) {
       hash = (37 * hash) + PARENT_PATH_FIELD_NUMBER;
       hash = (53 * hash) + getParentPathList().hashCode();
     }
-    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDisplayName().hashCode();
-    hash = (37 * hash) + AD_UNIT_CODE_FIELD_NUMBER;
-    hash = (53 * hash) + getAdUnitCode().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + status_;
-    hash = (37 * hash) + APPLIED_TARGET_WINDOW_FIELD_NUMBER;
-    hash = (53 * hash) + appliedTargetWindow_;
-    hash = (37 * hash) + EFFECTIVE_TARGET_WINDOW_FIELD_NUMBER;
-    hash = (53 * hash) + effectiveTargetWindow_;
+    if (hasDisplayName()) {
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+    }
+    if (hasAdUnitCode()) {
+      hash = (37 * hash) + AD_UNIT_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getAdUnitCode().hashCode();
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+    }
+    if (hasAppliedTargetWindow()) {
+      hash = (37 * hash) + APPLIED_TARGET_WINDOW_FIELD_NUMBER;
+      hash = (53 * hash) + appliedTargetWindow_;
+    }
+    if (hasEffectiveTargetWindow()) {
+      hash = (37 * hash) + EFFECTIVE_TARGET_WINDOW_FIELD_NUMBER;
+      hash = (53 * hash) + effectiveTargetWindow_;
+    }
     if (getAppliedTeamsCount() > 0) {
       hash = (37 * hash) + APPLIED_TEAMS_FIELD_NUMBER;
       hash = (53 * hash) + getAppliedTeamsList().hashCode();
@@ -1862,12 +2144,18 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TEAMS_FIELD_NUMBER;
       hash = (53 * hash) + getTeamsList().hashCode();
     }
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + EXPLICITLY_TARGETED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExplicitlyTargeted());
-    hash = (37 * hash) + HAS_CHILDREN_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHasChildren());
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasExplicitlyTargeted()) {
+      hash = (37 * hash) + EXPLICITLY_TARGETED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExplicitlyTargeted());
+    }
+    if (hasHasChildren()) {
+      hash = (37 * hash) + HAS_CHILDREN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHasChildren());
+    }
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
@@ -1876,8 +2164,10 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + AD_UNIT_SIZES_FIELD_NUMBER;
       hash = (53 * hash) + getAdUnitSizesList().hashCode();
     }
-    hash = (37 * hash) + EXTERNAL_SET_TOP_BOX_CHANNEL_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getExternalSetTopBoxChannelId().hashCode();
+    if (hasExternalSetTopBoxChannelId()) {
+      hash = (37 * hash) + EXTERNAL_SET_TOP_BOX_CHANNEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getExternalSetTopBoxChannelId().hashCode();
+    }
     if (hasRefreshDelay()) {
       hash = (37 * hash) + REFRESH_DELAY_FIELD_NUMBER;
       hash = (53 * hash) + getRefreshDelay().hashCode();
@@ -1898,14 +2188,18 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + EFFECTIVE_LABEL_FREQUENCY_CAPS_FIELD_NUMBER;
       hash = (53 * hash) + getEffectiveLabelFrequencyCapsList().hashCode();
     }
-    hash = (37 * hash) + SMART_SIZE_MODE_FIELD_NUMBER;
-    hash = (53 * hash) + smartSizeMode_;
+    if (hasSmartSizeMode()) {
+      hash = (37 * hash) + SMART_SIZE_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + smartSizeMode_;
+    }
     if (hasAppliedAdsenseEnabled()) {
       hash = (37 * hash) + APPLIED_ADSENSE_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAppliedAdsenseEnabled());
     }
-    hash = (37 * hash) + EFFECTIVE_ADSENSE_ENABLED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEffectiveAdsenseEnabled());
+    if (hasEffectiveAdsenseEnabled()) {
+      hash = (37 * hash) + EFFECTIVE_ADSENSE_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEffectiveAdsenseEnabled());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2231,23 +2525,30 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.adUnitId_ = adUnitId_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.parentAdUnit_ = parentAdUnit_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.displayName_ = displayName_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.adUnitCode_ = adUnitCode_;
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.status_ = status_;
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.appliedTargetWindow_ = appliedTargetWindow_;
+        to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.effectiveTargetWindow_ = effectiveTargetWindow_;
+        to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         appliedTeams_.makeImmutable();
@@ -2259,35 +2560,40 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.description_ = description_;
+        to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.explicitlyTargeted_ = explicitlyTargeted_;
+        to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.hasChildren_ = hasChildren_;
+        to_bitField0_ |= 0x00000100;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.externalSetTopBoxChannelId_ = externalSetTopBoxChannelId_;
+        to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.refreshDelay_ =
             refreshDelayBuilder_ == null ? refreshDelay_ : refreshDelayBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
         result.smartSizeMode_ = smartSizeMode_;
+        to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
         result.appliedAdsenseEnabled_ = appliedAdsenseEnabled_;
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x01000000) != 0)) {
         result.effectiveAdsenseEnabled_ = effectiveAdsenseEnabled_;
+        to_bitField0_ |= 0x00004000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2345,7 +2651,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
       if (other.getAdUnitId() != 0L) {
         setAdUnitId(other.getAdUnitId());
       }
-      if (!other.getParentAdUnit().isEmpty()) {
+      if (other.hasParentAdUnit()) {
         parentAdUnit_ = other.parentAdUnit_;
         bitField0_ |= 0x00000004;
         onChanged();
@@ -2377,24 +2683,24 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (!other.getDisplayName().isEmpty()) {
+      if (other.hasDisplayName()) {
         displayName_ = other.displayName_;
         bitField0_ |= 0x00000010;
         onChanged();
       }
-      if (!other.getAdUnitCode().isEmpty()) {
+      if (other.hasAdUnitCode()) {
         adUnitCode_ = other.adUnitCode_;
         bitField0_ |= 0x00000020;
         onChanged();
       }
-      if (other.status_ != 0) {
-        setStatusValue(other.getStatusValue());
+      if (other.hasStatus()) {
+        setStatus(other.getStatus());
       }
-      if (other.appliedTargetWindow_ != 0) {
-        setAppliedTargetWindowValue(other.getAppliedTargetWindowValue());
+      if (other.hasAppliedTargetWindow()) {
+        setAppliedTargetWindow(other.getAppliedTargetWindow());
       }
-      if (other.effectiveTargetWindow_ != 0) {
-        setEffectiveTargetWindowValue(other.getEffectiveTargetWindowValue());
+      if (other.hasEffectiveTargetWindow()) {
+        setEffectiveTargetWindow(other.getEffectiveTargetWindow());
       }
       if (!other.appliedTeams_.isEmpty()) {
         if (appliedTeams_.isEmpty()) {
@@ -2416,15 +2722,15 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
         description_ = other.description_;
         bitField0_ |= 0x00000800;
         onChanged();
       }
-      if (other.getExplicitlyTargeted() != false) {
+      if (other.hasExplicitlyTargeted()) {
         setExplicitlyTargeted(other.getExplicitlyTargeted());
       }
-      if (other.getHasChildren() != false) {
+      if (other.hasHasChildren()) {
         setHasChildren(other.getHasChildren());
       }
       if (other.hasUpdateTime()) {
@@ -2457,7 +2763,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (!other.getExternalSetTopBoxChannelId().isEmpty()) {
+      if (other.hasExternalSetTopBoxChannelId()) {
         externalSetTopBoxChannelId_ = other.externalSetTopBoxChannelId_;
         bitField0_ |= 0x00010000;
         onChanged();
@@ -2573,13 +2879,13 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (other.smartSizeMode_ != 0) {
-        setSmartSizeModeValue(other.getSmartSizeModeValue());
+      if (other.hasSmartSizeMode()) {
+        setSmartSizeMode(other.getSmartSizeMode());
       }
       if (other.hasAppliedAdsenseEnabled()) {
         setAppliedAdsenseEnabled(other.getAppliedAdsenseEnabled());
       }
-      if (other.getEffectiveAdsenseEnabled() != false) {
+      if (other.hasEffectiveAdsenseEnabled()) {
         setEffectiveAdsenseEnabled(other.getEffectiveAdsenseEnabled());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3005,7 +3311,26 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * optional string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the parentAdUnit field is set.
+     */
+    public boolean hasParentAdUnit() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. The AdUnit's parent. Every ad unit has a parent except
+     * for the root ad unit, which is created by Google. Format:
+     * "networks/{network_code}/adUnits/{ad_unit_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The parentAdUnit.
@@ -3032,7 +3357,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * optional string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for parentAdUnit.
@@ -3059,7 +3384,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * optional string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The parentAdUnit to set.
@@ -3085,7 +3410,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * optional string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -3107,7 +3432,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * optional string parent_ad_unit = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for parentAdUnit to set.
@@ -3573,7 +3898,23 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the displayName field is set.
+     */
+    public boolean hasDisplayName() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The display name of the ad unit. Its maximum length is 255
+     * characters.
+     * </pre>
+     *
+     * <code>optional string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The displayName.
      */
@@ -3597,7 +3938,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for displayName.
      */
@@ -3621,7 +3962,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -3644,7 +3985,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -3663,7 +4004,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 9 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -3685,13 +4026,35 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. A string used to uniquely identify the ad unit for the purposes
-     * of serving the ad. This attribute is optional and can be set during ad unit
+     * Optional. Immutable. A string used to uniquely identify the ad unit for the
+     * purposes of serving the ad. This attribute can be set during ad unit
      * creation. If it is not provided, it will be assigned by Google based on the
      * ad unit ID.
      * </pre>
      *
-     * <code>string ad_unit_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * optional string ad_unit_code = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the adUnitCode field is set.
+     */
+    public boolean hasAdUnitCode() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A string used to uniquely identify the ad unit for the
+     * purposes of serving the ad. This attribute can be set during ad unit
+     * creation. If it is not provided, it will be assigned by Google based on the
+     * ad unit ID.
+     * </pre>
+     *
+     * <code>
+     * optional string ad_unit_code = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The adUnitCode.
      */
@@ -3711,13 +4074,15 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. A string used to uniquely identify the ad unit for the purposes
-     * of serving the ad. This attribute is optional and can be set during ad unit
+     * Optional. Immutable. A string used to uniquely identify the ad unit for the
+     * purposes of serving the ad. This attribute can be set during ad unit
      * creation. If it is not provided, it will be assigned by Google based on the
      * ad unit ID.
      * </pre>
      *
-     * <code>string ad_unit_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * optional string ad_unit_code = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for adUnitCode.
      */
@@ -3737,13 +4102,15 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. A string used to uniquely identify the ad unit for the purposes
-     * of serving the ad. This attribute is optional and can be set during ad unit
+     * Optional. Immutable. A string used to uniquely identify the ad unit for the
+     * purposes of serving the ad. This attribute can be set during ad unit
      * creation. If it is not provided, it will be assigned by Google based on the
      * ad unit ID.
      * </pre>
      *
-     * <code>string ad_unit_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * optional string ad_unit_code = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The adUnitCode to set.
      * @return This builder for chaining.
@@ -3762,13 +4129,15 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. A string used to uniquely identify the ad unit for the purposes
-     * of serving the ad. This attribute is optional and can be set during ad unit
+     * Optional. Immutable. A string used to uniquely identify the ad unit for the
+     * purposes of serving the ad. This attribute can be set during ad unit
      * creation. If it is not provided, it will be assigned by Google based on the
      * ad unit ID.
      * </pre>
      *
-     * <code>string ad_unit_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * optional string ad_unit_code = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -3783,13 +4152,15 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. A string used to uniquely identify the ad unit for the purposes
-     * of serving the ad. This attribute is optional and can be set during ad unit
+     * Optional. Immutable. A string used to uniquely identify the ad unit for the
+     * purposes of serving the ad. This attribute can be set during ad unit
      * creation. If it is not provided, it will be assigned by Google based on the
      * ad unit ID.
      * </pre>
      *
-     * <code>string ad_unit_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * optional string ad_unit_code = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for adUnitCode to set.
      * @return This builder for chaining.
@@ -3815,7 +4186,25 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of this ad unit.  It defaults to ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The enum numeric value on the wire for status.
@@ -3833,7 +4222,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The enum numeric value on the wire for status to set.
@@ -3854,7 +4243,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The status.
@@ -3876,7 +4265,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The status to set.
@@ -3900,7 +4289,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.AdUnitStatusEnum.AdUnitStatus status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.
@@ -3924,7 +4313,27 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the appliedTargetWindow field is set.
+     */
+    @java.lang.Override
+    public boolean hasAppliedTargetWindow() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target window directly applied to this AdUnit.
+     * If this field is not set, this AdUnit uses the target window specified in
+     * effectiveTargetWindow.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for appliedTargetWindow.
@@ -3944,7 +4353,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for appliedTargetWindow to set.
@@ -3967,7 +4376,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The appliedTargetWindow.
@@ -3991,7 +4400,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The appliedTargetWindow to set.
@@ -4018,7 +4427,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow applied_target_window = 44 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -4042,7 +4451,27 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the effectiveTargetWindow field is set.
+     */
+    @java.lang.Override
+    public boolean hasEffectiveTargetWindow() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Non-empty default. The target window of this AdUnit. This
+     * value is inherited from ancestor AdUnits and defaults to TOP if no AdUnit
+     * in the hierarchy specifies it.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The enum numeric value on the wire for effectiveTargetWindow.
@@ -4062,7 +4491,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The enum numeric value on the wire for effectiveTargetWindow to set.
@@ -4085,7 +4514,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The effectiveTargetWindow.
@@ -4110,7 +4539,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The effectiveTargetWindow to set.
@@ -4137,7 +4566,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.TargetWindowEnum.TargetWindow effective_target_window = 45 [(.google.api.field_behavior) = NON_EMPTY_DEFAULT, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.
@@ -4588,7 +5017,23 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of the ad unit. The maximum length is 65,535
+     * characters.
+     * </pre>
+     *
+     * <code>optional string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -4612,7 +5057,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -4636,7 +5081,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -4659,7 +5104,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -4678,7 +5123,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * characters.
      * </pre>
      *
-     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -4706,7 +5151,26 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * feature is only available for Ad Manager 360 accounts.
      * </pre>
      *
-     * <code>bool explicitly_targeted = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional bool explicitly_targeted = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the explicitlyTargeted field is set.
+     */
+    @java.lang.Override
+    public boolean hasExplicitlyTargeted() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If this field is set to true, then the AdUnit will not be
+     * implicitly targeted when its parent is. Traffickers must explicitly
+     * target such an AdUnit or else no line items will serve to it. This
+     * feature is only available for Ad Manager 360 accounts.
+     * </pre>
+     *
+     * <code>optional bool explicitly_targeted = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The explicitlyTargeted.
      */
@@ -4725,7 +5189,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * feature is only available for Ad Manager 360 accounts.
      * </pre>
      *
-     * <code>bool explicitly_targeted = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional bool explicitly_targeted = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The explicitlyTargeted to set.
      * @return This builder for chaining.
@@ -4748,7 +5212,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * feature is only available for Ad Manager 360 accounts.
      * </pre>
      *
-     * <code>bool explicitly_targeted = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional bool explicitly_targeted = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -4768,7 +5232,23 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * Output only. This field is set to true if the ad unit has any children.
      * </pre>
      *
-     * <code>bool has_children = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool has_children = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the hasChildren field is set.
+     */
+    @java.lang.Override
+    public boolean hasHasChildren() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is set to true if the ad unit has any children.
+     * </pre>
+     *
+     * <code>optional bool has_children = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The hasChildren.
      */
@@ -4784,7 +5264,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * Output only. This field is set to true if the ad unit has any children.
      * </pre>
      *
-     * <code>bool has_children = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool has_children = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The hasChildren to set.
      * @return This builder for chaining.
@@ -4804,7 +5284,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * Output only. This field is set to true if the ad unit has any children.
      * </pre>
      *
-     * <code>bool has_children = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool has_children = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -4830,7 +5310,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the updateTime field is set.
@@ -4847,7 +5327,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The updateTime.
@@ -4870,7 +5350,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
@@ -4895,7 +5375,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -4917,7 +5397,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
@@ -4947,7 +5427,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearUpdateTime() {
@@ -4969,7 +5449,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
@@ -4986,7 +5466,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
@@ -5007,7 +5487,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -5440,11 +5920,36 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * corresponds to in an external set top box ad campaign system.
      * </pre>
      *
-     * <code>string external_set_top_box_channel_id = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional string external_set_top_box_channel_id = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
+     *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
+     * @return Whether the externalSetTopBoxChannelId field is set.
+     */
+    @java.lang.Deprecated
+    public boolean hasExternalSetTopBoxChannelId() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines what set top box video on demand channel this ad unit
+     * corresponds to in an external set top box ad campaign system.
+     * </pre>
+     *
+     * <code>
+     * optional string external_set_top_box_channel_id = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
+     *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
      * @return The externalSetTopBoxChannelId.
      */
+    @java.lang.Deprecated
     public java.lang.String getExternalSetTopBoxChannelId() {
       java.lang.Object ref = externalSetTopBoxChannelId_;
       if (!(ref instanceof java.lang.String)) {
@@ -5465,11 +5970,15 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * corresponds to in an external set top box ad campaign system.
      * </pre>
      *
-     * <code>string external_set_top_box_channel_id = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional string external_set_top_box_channel_id = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
+     *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
      * @return The bytes for externalSetTopBoxChannelId.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getExternalSetTopBoxChannelIdBytes() {
       java.lang.Object ref = externalSetTopBoxChannelId_;
       if (ref instanceof String) {
@@ -5490,12 +5999,16 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * corresponds to in an external set top box ad campaign system.
      * </pre>
      *
-     * <code>string external_set_top_box_channel_id = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional string external_set_top_box_channel_id = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
+     *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
      * @param value The externalSetTopBoxChannelId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setExternalSetTopBoxChannelId(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -5514,11 +6027,15 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * corresponds to in an external set top box ad campaign system.
      * </pre>
      *
-     * <code>string external_set_top_box_channel_id = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional string external_set_top_box_channel_id = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
+     *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearExternalSetTopBoxChannelId() {
       externalSetTopBoxChannelId_ = getDefaultInstance().getExternalSetTopBoxChannelId();
       bitField0_ = (bitField0_ & ~0x00010000);
@@ -5534,12 +6051,16 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * corresponds to in an external set top box ad campaign system.
      * </pre>
      *
-     * <code>string external_set_top_box_channel_id = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional string external_set_top_box_channel_id = 17 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
+     *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
      * @param value The bytes for externalSetTopBoxChannelId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setExternalSetTopBoxChannelIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -5567,7 +6088,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * will not refresh.
      * </pre>
      *
-     * <code>.google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the refreshDelay field is set.
@@ -5585,7 +6107,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * will not refresh.
      * </pre>
      *
-     * <code>.google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The refreshDelay.
@@ -5609,7 +6132,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * will not refresh.
      * </pre>
      *
-     * <code>.google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setRefreshDelay(com.google.protobuf.Duration value) {
@@ -5635,7 +6159,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * will not refresh.
      * </pre>
      *
-     * <code>.google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setRefreshDelay(com.google.protobuf.Duration.Builder builderForValue) {
@@ -5658,7 +6183,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * will not refresh.
      * </pre>
      *
-     * <code>.google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeRefreshDelay(com.google.protobuf.Duration value) {
@@ -5689,7 +6215,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * will not refresh.
      * </pre>
      *
-     * <code>.google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearRefreshDelay() {
@@ -5712,7 +6239,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * will not refresh.
      * </pre>
      *
-     * <code>.google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.Duration.Builder getRefreshDelayBuilder() {
@@ -5730,7 +6258,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * will not refresh.
      * </pre>
      *
-     * <code>.google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.DurationOrBuilder getRefreshDelayOrBuilder() {
@@ -5752,7 +6281,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * will not refresh.
      * </pre>
      *
-     * <code>.google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional .google.protobuf.Duration refresh_delay = 19 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -6203,8 +6733,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -6226,8 +6756,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -6248,8 +6778,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -6270,8 +6800,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -6299,8 +6829,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -6325,8 +6855,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -6353,8 +6883,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -6382,8 +6912,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -6408,8 +6938,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -6434,8 +6964,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -6460,8 +6990,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -6485,8 +7015,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -6510,8 +7040,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -6529,8 +7059,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -6552,8 +7082,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -6575,8 +7105,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -6594,8 +7124,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -6614,8 +7144,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Contains the set of labels applied directly to the ad unit as
      * well as those inherited from the parent ad units. If a label has been
-     * negated, only the negated label is returned. This field is readonly and is
-     * assigned by Google.
+     * negated, only the negated label is returned. This attribute is assigned by
+     * Google.
      * </pre>
      *
      * <code>
@@ -7522,12 +8052,31 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The smart size mode for this ad unit. This attribute is optional
-     * and defaults to SmartSizeMode.NONE for fixed sizes.
+     * Optional. Non-empty default. The smart size mode for this ad unit. This
+     * attribute defaults to SmartSizeMode.NONE for fixed sizes.
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return Whether the smartSizeMode field is set.
+     */
+    @java.lang.Override
+    public boolean hasSmartSizeMode() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The smart size mode for this ad unit. This
+     * attribute defaults to SmartSizeMode.NONE for fixed sizes.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
      * </code>
      *
      * @return The enum numeric value on the wire for smartSizeMode.
@@ -7541,12 +8090,12 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The smart size mode for this ad unit. This attribute is optional
-     * and defaults to SmartSizeMode.NONE for fixed sizes.
+     * Optional. Non-empty default. The smart size mode for this ad unit. This
+     * attribute defaults to SmartSizeMode.NONE for fixed sizes.
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
      * </code>
      *
      * @param value The enum numeric value on the wire for smartSizeMode to set.
@@ -7563,12 +8112,12 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The smart size mode for this ad unit. This attribute is optional
-     * and defaults to SmartSizeMode.NONE for fixed sizes.
+     * Optional. Non-empty default. The smart size mode for this ad unit. This
+     * attribute defaults to SmartSizeMode.NONE for fixed sizes.
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
      * </code>
      *
      * @return The smartSizeMode.
@@ -7586,12 +8135,12 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The smart size mode for this ad unit. This attribute is optional
-     * and defaults to SmartSizeMode.NONE for fixed sizes.
+     * Optional. Non-empty default. The smart size mode for this ad unit. This
+     * attribute defaults to SmartSizeMode.NONE for fixed sizes.
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
      * </code>
      *
      * @param value The smartSizeMode to set.
@@ -7612,12 +8161,12 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The smart size mode for this ad unit. This attribute is optional
-     * and defaults to SmartSizeMode.NONE for fixed sizes.
+     * Optional. Non-empty default. The smart size mode for this ad unit. This
+     * attribute defaults to SmartSizeMode.NONE for fixed sizes.
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.ads.admanager.v1.SmartSizeModeEnum.SmartSizeMode smart_size_mode = 25 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
      * </code>
      *
      * @return This builder for chaining.
@@ -7635,9 +8184,9 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The value of AdSense enabled directly applied to this ad unit.
-     * This attribute is optional and if not specified this ad unit will inherit
-     * the value of effectiveAdsenseEnabled from its ancestors.
+     * Optional. The value of AdSense enabled directly applied to this ad unit. If
+     * not specified this ad unit will inherit the value of
+     * effectiveAdsenseEnabled from its ancestors.
      * </pre>
      *
      * <code>optional bool applied_adsense_enabled = 26 [(.google.api.field_behavior) = OPTIONAL];
@@ -7654,9 +8203,9 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The value of AdSense enabled directly applied to this ad unit.
-     * This attribute is optional and if not specified this ad unit will inherit
-     * the value of effectiveAdsenseEnabled from its ancestors.
+     * Optional. The value of AdSense enabled directly applied to this ad unit. If
+     * not specified this ad unit will inherit the value of
+     * effectiveAdsenseEnabled from its ancestors.
      * </pre>
      *
      * <code>optional bool applied_adsense_enabled = 26 [(.google.api.field_behavior) = OPTIONAL];
@@ -7673,9 +8222,9 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The value of AdSense enabled directly applied to this ad unit.
-     * This attribute is optional and if not specified this ad unit will inherit
-     * the value of effectiveAdsenseEnabled from its ancestors.
+     * Optional. The value of AdSense enabled directly applied to this ad unit. If
+     * not specified this ad unit will inherit the value of
+     * effectiveAdsenseEnabled from its ancestors.
      * </pre>
      *
      * <code>optional bool applied_adsense_enabled = 26 [(.google.api.field_behavior) = OPTIONAL];
@@ -7696,9 +8245,9 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The value of AdSense enabled directly applied to this ad unit.
-     * This attribute is optional and if not specified this ad unit will inherit
-     * the value of effectiveAdsenseEnabled from its ancestors.
+     * Optional. The value of AdSense enabled directly applied to this ad unit. If
+     * not specified this ad unit will inherit the value of
+     * effectiveAdsenseEnabled from its ancestors.
      * </pre>
      *
      * <code>optional bool applied_adsense_enabled = 26 [(.google.api.field_behavior) = OPTIONAL];
@@ -7725,7 +8274,29 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * unit has set appliedAdsenseEnabled, the attribute is defaulted to true.
      * </pre>
      *
-     * <code>bool effective_adsense_enabled = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional bool effective_adsense_enabled = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the effectiveAdsenseEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasEffectiveAdsenseEnabled() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies whether or not the AdUnit is enabled for serving ads
+     * from the AdSense content network. This attribute defaults to the ad unit's
+     * parent or ancestor's setting if one has been set. If no ancestor of the ad
+     * unit has set appliedAdsenseEnabled, the attribute is defaulted to true.
+     * </pre>
+     *
+     * <code>
+     * optional bool effective_adsense_enabled = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The effectiveAdsenseEnabled.
@@ -7745,7 +8316,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * unit has set appliedAdsenseEnabled, the attribute is defaulted to true.
      * </pre>
      *
-     * <code>bool effective_adsense_enabled = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional bool effective_adsense_enabled = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The effectiveAdsenseEnabled to set.
@@ -7769,7 +8341,8 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessageV3
      * unit has set appliedAdsenseEnabled, the attribute is defaulted to true.
      * </pre>
      *
-     * <code>bool effective_adsense_enabled = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional bool effective_adsense_enabled = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.

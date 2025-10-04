@@ -64,6 +64,7 @@ public class GrpcSessionsStub extends SessionsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(DetectIntentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DetectIntentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DetectIntentRequest, DetectIntentResponse>
@@ -75,6 +76,7 @@ public class GrpcSessionsStub extends SessionsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(DetectIntentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DetectIntentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
@@ -86,6 +88,7 @@ public class GrpcSessionsStub extends SessionsStub {
                   ProtoUtils.marshaller(StreamingDetectIntentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamingDetectIntentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MatchIntentRequest, MatchIntentResponse>
@@ -96,6 +99,7 @@ public class GrpcSessionsStub extends SessionsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(MatchIntentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(MatchIntentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FulfillIntentRequest, FulfillIntentResponse>
@@ -107,6 +111,7 @@ public class GrpcSessionsStub extends SessionsStub {
                   ProtoUtils.marshaller(FulfillIntentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FulfillIntentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SubmitAnswerFeedbackRequest, AnswerFeedback>
@@ -117,6 +122,7 @@ public class GrpcSessionsStub extends SessionsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SubmitAnswerFeedbackRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AnswerFeedback.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -128,6 +134,7 @@ public class GrpcSessionsStub extends SessionsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -136,6 +143,7 @@ public class GrpcSessionsStub extends SessionsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<DetectIntentRequest, DetectIntentResponse> detectIntentCallable;

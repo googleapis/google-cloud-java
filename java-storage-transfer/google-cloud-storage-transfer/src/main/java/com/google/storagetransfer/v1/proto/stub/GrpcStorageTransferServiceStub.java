@@ -60,6 +60,7 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                       TransferProto.GetGoogleServiceAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TransferTypes.GoogleServiceAccount.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -75,6 +76,7 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                       TransferProto.CreateTransferJobRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TransferTypes.TransferJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -90,6 +92,7 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                       TransferProto.UpdateTransferJobRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TransferTypes.TransferJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -103,6 +106,7 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                   ProtoUtils.marshaller(TransferProto.GetTransferJobRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TransferTypes.TransferJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -119,6 +123,7 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       TransferProto.ListTransferJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TransferProto.PauseTransferOperationRequest, Empty>
@@ -131,6 +136,7 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                   ProtoUtils.marshaller(
                       TransferProto.PauseTransferOperationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TransferProto.ResumeTransferOperationRequest, Empty>
@@ -143,6 +149,7 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                   ProtoUtils.marshaller(
                       TransferProto.ResumeTransferOperationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TransferProto.RunTransferJobRequest, Operation>
@@ -153,6 +160,7 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(TransferProto.RunTransferJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TransferProto.DeleteTransferJobRequest, Empty>
@@ -165,6 +173,7 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                   ProtoUtils.marshaller(
                       TransferProto.DeleteTransferJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -178,6 +187,7 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                   ProtoUtils.marshaller(TransferProto.CreateAgentPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TransferTypes.AgentPool.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -191,6 +201,7 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                   ProtoUtils.marshaller(TransferProto.UpdateAgentPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TransferTypes.AgentPool.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>
@@ -202,6 +213,7 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                   ProtoUtils.marshaller(TransferProto.GetAgentPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TransferTypes.AgentPool.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -216,6 +228,7 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                   ProtoUtils.marshaller(TransferProto.ListAgentPoolsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TransferProto.ListAgentPoolsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TransferProto.DeleteAgentPoolRequest, Empty>
@@ -226,6 +239,7 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(TransferProto.DeleteAgentPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<

@@ -62,6 +62,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAuthorizationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Authorization.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDeploymentRequest, Deployment>
@@ -72,6 +73,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReplaceDeploymentRequest, Deployment>
@@ -82,6 +84,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReplaceDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDeploymentRequest, Deployment>
@@ -92,6 +95,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDeploymentsRequest, ListDeploymentsResponse>
@@ -103,6 +107,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                   ProtoUtils.marshaller(ListDeploymentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeploymentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDeploymentRequest, Empty>
@@ -113,6 +118,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InstallDeploymentRequest, Empty>
@@ -123,6 +129,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InstallDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UninstallDeploymentRequest, Empty>
@@ -133,6 +140,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UninstallDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInstallStatusRequest, InstallStatus>
@@ -143,6 +151,7 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetInstallStatusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InstallStatus.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetAuthorizationRequest, Authorization> getAuthorizationCallable;

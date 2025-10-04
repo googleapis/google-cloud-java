@@ -79,6 +79,8 @@ public class HttpJsonRevisionsStub extends RevisionsStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{name=projects/*/locations/*/workerPools/*/revisions/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -113,6 +115,8 @@ public class HttpJsonRevisionsStub extends RevisionsStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{parent=projects/*/locations/*/workerPools/*}/revisions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -151,6 +155,8 @@ public class HttpJsonRevisionsStub extends RevisionsStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v2/{name=projects/*/locations/*/workerPools/*/revisions/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

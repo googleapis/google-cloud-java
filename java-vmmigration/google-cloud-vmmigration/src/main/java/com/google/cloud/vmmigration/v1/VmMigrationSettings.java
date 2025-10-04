@@ -16,10 +16,14 @@
 
 package com.google.cloud.vmmigration.v1;
 
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.FetchStorageInventoryPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCloneJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCutoverJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDatacenterConnectorsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDiskMigrationJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListGroupsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListImageImportJobsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListImageImportsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListLocationsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListMigratingVmsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListReplicationCyclesPagedResponse;
@@ -175,6 +179,15 @@ public class VmMigrationSettings extends ClientSettings<VmMigrationSettings> {
   /** Returns the object with the settings used for calls to fetchInventory. */
   public UnaryCallSettings<FetchInventoryRequest, FetchInventoryResponse> fetchInventorySettings() {
     return ((VmMigrationStubSettings) getStubSettings()).fetchInventorySettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchStorageInventory. */
+  public PagedCallSettings<
+          FetchStorageInventoryRequest,
+          FetchStorageInventoryResponse,
+          FetchStorageInventoryPagedResponse>
+      fetchStorageInventorySettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).fetchStorageInventorySettings();
   }
 
   /** Returns the object with the settings used for calls to listUtilizationReports. */
@@ -357,6 +370,17 @@ public class VmMigrationSettings extends ClientSettings<VmMigrationSettings> {
           FinalizeMigrationRequest, FinalizeMigrationResponse, OperationMetadata>
       finalizeMigrationOperationSettings() {
     return ((VmMigrationStubSettings) getStubSettings()).finalizeMigrationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to extendMigration. */
+  public UnaryCallSettings<ExtendMigrationRequest, Operation> extendMigrationSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).extendMigrationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to extendMigration. */
+  public OperationCallSettings<ExtendMigrationRequest, ExtendMigrationResponse, OperationMetadata>
+      extendMigrationOperationSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).extendMigrationOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createCloneJob. */
@@ -554,6 +578,140 @@ public class VmMigrationSettings extends ClientSettings<VmMigrationSettings> {
     return ((VmMigrationStubSettings) getStubSettings()).getReplicationCycleSettings();
   }
 
+  /** Returns the object with the settings used for calls to listImageImports. */
+  public PagedCallSettings<
+          ListImageImportsRequest, ListImageImportsResponse, ListImageImportsPagedResponse>
+      listImageImportsSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).listImageImportsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getImageImport. */
+  public UnaryCallSettings<GetImageImportRequest, ImageImport> getImageImportSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).getImageImportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createImageImport. */
+  public UnaryCallSettings<CreateImageImportRequest, Operation> createImageImportSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).createImageImportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createImageImport. */
+  public OperationCallSettings<CreateImageImportRequest, ImageImport, OperationMetadata>
+      createImageImportOperationSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).createImageImportOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteImageImport. */
+  public UnaryCallSettings<DeleteImageImportRequest, Operation> deleteImageImportSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).deleteImageImportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteImageImport. */
+  public OperationCallSettings<DeleteImageImportRequest, Empty, OperationMetadata>
+      deleteImageImportOperationSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).deleteImageImportOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listImageImportJobs. */
+  public PagedCallSettings<
+          ListImageImportJobsRequest, ListImageImportJobsResponse, ListImageImportJobsPagedResponse>
+      listImageImportJobsSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).listImageImportJobsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getImageImportJob. */
+  public UnaryCallSettings<GetImageImportJobRequest, ImageImportJob> getImageImportJobSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).getImageImportJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelImageImportJob. */
+  public UnaryCallSettings<CancelImageImportJobRequest, Operation> cancelImageImportJobSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).cancelImageImportJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelImageImportJob. */
+  public OperationCallSettings<
+          CancelImageImportJobRequest, CancelImageImportJobResponse, OperationMetadata>
+      cancelImageImportJobOperationSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).cancelImageImportJobOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDiskMigrationJob. */
+  public UnaryCallSettings<CreateDiskMigrationJobRequest, Operation>
+      createDiskMigrationJobSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).createDiskMigrationJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDiskMigrationJob. */
+  public OperationCallSettings<CreateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      createDiskMigrationJobOperationSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).createDiskMigrationJobOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDiskMigrationJobs. */
+  public PagedCallSettings<
+          ListDiskMigrationJobsRequest,
+          ListDiskMigrationJobsResponse,
+          ListDiskMigrationJobsPagedResponse>
+      listDiskMigrationJobsSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).listDiskMigrationJobsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDiskMigrationJob. */
+  public UnaryCallSettings<GetDiskMigrationJobRequest, DiskMigrationJob>
+      getDiskMigrationJobSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).getDiskMigrationJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDiskMigrationJob. */
+  public UnaryCallSettings<UpdateDiskMigrationJobRequest, Operation>
+      updateDiskMigrationJobSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).updateDiskMigrationJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDiskMigrationJob. */
+  public OperationCallSettings<UpdateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      updateDiskMigrationJobOperationSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).updateDiskMigrationJobOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDiskMigrationJob. */
+  public UnaryCallSettings<DeleteDiskMigrationJobRequest, Operation>
+      deleteDiskMigrationJobSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).deleteDiskMigrationJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDiskMigrationJob. */
+  public OperationCallSettings<DeleteDiskMigrationJobRequest, Empty, OperationMetadata>
+      deleteDiskMigrationJobOperationSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).deleteDiskMigrationJobOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to runDiskMigrationJob. */
+  public UnaryCallSettings<RunDiskMigrationJobRequest, Operation> runDiskMigrationJobSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).runDiskMigrationJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to runDiskMigrationJob. */
+  public OperationCallSettings<
+          RunDiskMigrationJobRequest, RunDiskMigrationJobResponse, OperationMetadata>
+      runDiskMigrationJobOperationSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).runDiskMigrationJobOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelDiskMigrationJob. */
+  public UnaryCallSettings<CancelDiskMigrationJobRequest, Operation>
+      cancelDiskMigrationJobSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).cancelDiskMigrationJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelDiskMigrationJob. */
+  public OperationCallSettings<
+          CancelDiskMigrationJobRequest, CancelDiskMigrationJobResponse, OperationMetadata>
+      cancelDiskMigrationJobOperationSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).cancelDiskMigrationJobOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -725,6 +883,15 @@ public class VmMigrationSettings extends ClientSettings<VmMigrationSettings> {
     public UnaryCallSettings.Builder<FetchInventoryRequest, FetchInventoryResponse>
         fetchInventorySettings() {
       return getStubSettingsBuilder().fetchInventorySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchStorageInventory. */
+    public PagedCallSettings.Builder<
+            FetchStorageInventoryRequest,
+            FetchStorageInventoryResponse,
+            FetchStorageInventoryPagedResponse>
+        fetchStorageInventorySettings() {
+      return getStubSettingsBuilder().fetchStorageInventorySettings();
     }
 
     /** Returns the builder for the settings used for calls to listUtilizationReports. */
@@ -915,6 +1082,18 @@ public class VmMigrationSettings extends ClientSettings<VmMigrationSettings> {
             FinalizeMigrationRequest, FinalizeMigrationResponse, OperationMetadata>
         finalizeMigrationOperationSettings() {
       return getStubSettingsBuilder().finalizeMigrationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to extendMigration. */
+    public UnaryCallSettings.Builder<ExtendMigrationRequest, Operation> extendMigrationSettings() {
+      return getStubSettingsBuilder().extendMigrationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to extendMigration. */
+    public OperationCallSettings.Builder<
+            ExtendMigrationRequest, ExtendMigrationResponse, OperationMetadata>
+        extendMigrationOperationSettings() {
+      return getStubSettingsBuilder().extendMigrationOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createCloneJob. */
@@ -1123,6 +1302,149 @@ public class VmMigrationSettings extends ClientSettings<VmMigrationSettings> {
     public UnaryCallSettings.Builder<GetReplicationCycleRequest, ReplicationCycle>
         getReplicationCycleSettings() {
       return getStubSettingsBuilder().getReplicationCycleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listImageImports. */
+    public PagedCallSettings.Builder<
+            ListImageImportsRequest, ListImageImportsResponse, ListImageImportsPagedResponse>
+        listImageImportsSettings() {
+      return getStubSettingsBuilder().listImageImportsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getImageImport. */
+    public UnaryCallSettings.Builder<GetImageImportRequest, ImageImport> getImageImportSettings() {
+      return getStubSettingsBuilder().getImageImportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createImageImport. */
+    public UnaryCallSettings.Builder<CreateImageImportRequest, Operation>
+        createImageImportSettings() {
+      return getStubSettingsBuilder().createImageImportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createImageImport. */
+    public OperationCallSettings.Builder<CreateImageImportRequest, ImageImport, OperationMetadata>
+        createImageImportOperationSettings() {
+      return getStubSettingsBuilder().createImageImportOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteImageImport. */
+    public UnaryCallSettings.Builder<DeleteImageImportRequest, Operation>
+        deleteImageImportSettings() {
+      return getStubSettingsBuilder().deleteImageImportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteImageImport. */
+    public OperationCallSettings.Builder<DeleteImageImportRequest, Empty, OperationMetadata>
+        deleteImageImportOperationSettings() {
+      return getStubSettingsBuilder().deleteImageImportOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listImageImportJobs. */
+    public PagedCallSettings.Builder<
+            ListImageImportJobsRequest,
+            ListImageImportJobsResponse,
+            ListImageImportJobsPagedResponse>
+        listImageImportJobsSettings() {
+      return getStubSettingsBuilder().listImageImportJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getImageImportJob. */
+    public UnaryCallSettings.Builder<GetImageImportJobRequest, ImageImportJob>
+        getImageImportJobSettings() {
+      return getStubSettingsBuilder().getImageImportJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelImageImportJob. */
+    public UnaryCallSettings.Builder<CancelImageImportJobRequest, Operation>
+        cancelImageImportJobSettings() {
+      return getStubSettingsBuilder().cancelImageImportJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelImageImportJob. */
+    public OperationCallSettings.Builder<
+            CancelImageImportJobRequest, CancelImageImportJobResponse, OperationMetadata>
+        cancelImageImportJobOperationSettings() {
+      return getStubSettingsBuilder().cancelImageImportJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDiskMigrationJob. */
+    public UnaryCallSettings.Builder<CreateDiskMigrationJobRequest, Operation>
+        createDiskMigrationJobSettings() {
+      return getStubSettingsBuilder().createDiskMigrationJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDiskMigrationJob. */
+    public OperationCallSettings.Builder<
+            CreateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+        createDiskMigrationJobOperationSettings() {
+      return getStubSettingsBuilder().createDiskMigrationJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDiskMigrationJobs. */
+    public PagedCallSettings.Builder<
+            ListDiskMigrationJobsRequest,
+            ListDiskMigrationJobsResponse,
+            ListDiskMigrationJobsPagedResponse>
+        listDiskMigrationJobsSettings() {
+      return getStubSettingsBuilder().listDiskMigrationJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDiskMigrationJob. */
+    public UnaryCallSettings.Builder<GetDiskMigrationJobRequest, DiskMigrationJob>
+        getDiskMigrationJobSettings() {
+      return getStubSettingsBuilder().getDiskMigrationJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDiskMigrationJob. */
+    public UnaryCallSettings.Builder<UpdateDiskMigrationJobRequest, Operation>
+        updateDiskMigrationJobSettings() {
+      return getStubSettingsBuilder().updateDiskMigrationJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDiskMigrationJob. */
+    public OperationCallSettings.Builder<
+            UpdateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+        updateDiskMigrationJobOperationSettings() {
+      return getStubSettingsBuilder().updateDiskMigrationJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDiskMigrationJob. */
+    public UnaryCallSettings.Builder<DeleteDiskMigrationJobRequest, Operation>
+        deleteDiskMigrationJobSettings() {
+      return getStubSettingsBuilder().deleteDiskMigrationJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDiskMigrationJob. */
+    public OperationCallSettings.Builder<DeleteDiskMigrationJobRequest, Empty, OperationMetadata>
+        deleteDiskMigrationJobOperationSettings() {
+      return getStubSettingsBuilder().deleteDiskMigrationJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runDiskMigrationJob. */
+    public UnaryCallSettings.Builder<RunDiskMigrationJobRequest, Operation>
+        runDiskMigrationJobSettings() {
+      return getStubSettingsBuilder().runDiskMigrationJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runDiskMigrationJob. */
+    public OperationCallSettings.Builder<
+            RunDiskMigrationJobRequest, RunDiskMigrationJobResponse, OperationMetadata>
+        runDiskMigrationJobOperationSettings() {
+      return getStubSettingsBuilder().runDiskMigrationJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelDiskMigrationJob. */
+    public UnaryCallSettings.Builder<CancelDiskMigrationJobRequest, Operation>
+        cancelDiskMigrationJobSettings() {
+      return getStubSettingsBuilder().cancelDiskMigrationJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelDiskMigrationJob. */
+    public OperationCallSettings.Builder<
+            CancelDiskMigrationJobRequest, CancelDiskMigrationJobResponse, OperationMetadata>
+        cancelDiskMigrationJobOperationSettings() {
+      return getStubSettingsBuilder().cancelDiskMigrationJobOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

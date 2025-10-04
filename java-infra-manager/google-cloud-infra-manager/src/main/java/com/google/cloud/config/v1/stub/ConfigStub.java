@@ -19,6 +19,8 @@ package com.google.cloud.config.v1.stub;
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceChangesPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceDriftsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
@@ -39,6 +41,8 @@ import com.google.cloud.config.v1.ExportPreviewResultResponse;
 import com.google.cloud.config.v1.ExportRevisionStatefileRequest;
 import com.google.cloud.config.v1.GetDeploymentRequest;
 import com.google.cloud.config.v1.GetPreviewRequest;
+import com.google.cloud.config.v1.GetResourceChangeRequest;
+import com.google.cloud.config.v1.GetResourceDriftRequest;
 import com.google.cloud.config.v1.GetResourceRequest;
 import com.google.cloud.config.v1.GetRevisionRequest;
 import com.google.cloud.config.v1.GetTerraformVersionRequest;
@@ -47,6 +51,10 @@ import com.google.cloud.config.v1.ListDeploymentsRequest;
 import com.google.cloud.config.v1.ListDeploymentsResponse;
 import com.google.cloud.config.v1.ListPreviewsRequest;
 import com.google.cloud.config.v1.ListPreviewsResponse;
+import com.google.cloud.config.v1.ListResourceChangesRequest;
+import com.google.cloud.config.v1.ListResourceChangesResponse;
+import com.google.cloud.config.v1.ListResourceDriftsRequest;
+import com.google.cloud.config.v1.ListResourceDriftsResponse;
 import com.google.cloud.config.v1.ListResourcesRequest;
 import com.google.cloud.config.v1.ListResourcesResponse;
 import com.google.cloud.config.v1.ListRevisionsRequest;
@@ -58,6 +66,8 @@ import com.google.cloud.config.v1.LockInfo;
 import com.google.cloud.config.v1.OperationMetadata;
 import com.google.cloud.config.v1.Preview;
 import com.google.cloud.config.v1.Resource;
+import com.google.cloud.config.v1.ResourceChange;
+import com.google.cloud.config.v1.ResourceDrift;
 import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
 import com.google.cloud.config.v1.TerraformVersion;
@@ -248,6 +258,34 @@ public abstract class ConfigStub implements BackgroundResource {
 
   public UnaryCallable<GetTerraformVersionRequest, TerraformVersion> getTerraformVersionCallable() {
     throw new UnsupportedOperationException("Not implemented: getTerraformVersionCallable()");
+  }
+
+  public UnaryCallable<ListResourceChangesRequest, ListResourceChangesPagedResponse>
+      listResourceChangesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listResourceChangesPagedCallable()");
+  }
+
+  public UnaryCallable<ListResourceChangesRequest, ListResourceChangesResponse>
+      listResourceChangesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listResourceChangesCallable()");
+  }
+
+  public UnaryCallable<GetResourceChangeRequest, ResourceChange> getResourceChangeCallable() {
+    throw new UnsupportedOperationException("Not implemented: getResourceChangeCallable()");
+  }
+
+  public UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsPagedResponse>
+      listResourceDriftsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listResourceDriftsPagedCallable()");
+  }
+
+  public UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsResponse>
+      listResourceDriftsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listResourceDriftsCallable()");
+  }
+
+  public UnaryCallable<GetResourceDriftRequest, ResourceDrift> getResourceDriftCallable() {
+    throw new UnsupportedOperationException("Not implemented: getResourceDriftCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

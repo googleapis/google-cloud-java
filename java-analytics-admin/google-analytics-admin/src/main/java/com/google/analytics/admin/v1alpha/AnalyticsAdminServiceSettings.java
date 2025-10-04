@@ -837,24 +837,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteChannelGroupSettings();
   }
 
-  /** Returns the object with the settings used for calls to setAutomatedGa4ConfigurationOptOut. */
-  public UnaryCallSettings<
-          SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
-      setAutomatedGa4ConfigurationOptOutSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .setAutomatedGa4ConfigurationOptOutSettings();
-  }
-
-  /**
-   * Returns the object with the settings used for calls to fetchAutomatedGa4ConfigurationOptOut.
-   */
-  public UnaryCallSettings<
-          FetchAutomatedGa4ConfigurationOptOutRequest, FetchAutomatedGa4ConfigurationOptOutResponse>
-      fetchAutomatedGa4ConfigurationOptOutSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .fetchAutomatedGa4ConfigurationOptOutSettings();
-  }
-
   /** Returns the object with the settings used for calls to createBigQueryLink. */
   public UnaryCallSettings<CreateBigQueryLinkRequest, BigQueryLink> createBigQueryLinkSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createBigQueryLinkSettings();
@@ -894,30 +876,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       updateEnhancedMeasurementSettingsSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings())
         .updateEnhancedMeasurementSettingsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createConnectedSiteTag. */
-  public UnaryCallSettings<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
-      createConnectedSiteTagSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createConnectedSiteTagSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteConnectedSiteTag. */
-  public UnaryCallSettings<DeleteConnectedSiteTagRequest, Empty> deleteConnectedSiteTagSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteConnectedSiteTagSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listConnectedSiteTags. */
-  public UnaryCallSettings<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
-      listConnectedSiteTagsSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listConnectedSiteTagsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to fetchConnectedGa4Property. */
-  public UnaryCallSettings<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
-      fetchConnectedGa4PropertySettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .fetchConnectedGa4PropertySettings();
   }
 
   /** Returns the object with the settings used for calls to getAdSenseLink. */
@@ -1201,6 +1159,13 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       getSubpropertySyncConfigSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings())
         .getSubpropertySyncConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getReportingIdentitySettings. */
+  public UnaryCallSettings<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
+      getReportingIdentitySettingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .getReportingIdentitySettingsSettings();
   }
 
   public static final AnalyticsAdminServiceSettings create(AnalyticsAdminServiceStubSettings stub)
@@ -2045,25 +2010,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       return getStubSettingsBuilder().deleteChannelGroupSettings();
     }
 
-    /**
-     * Returns the builder for the settings used for calls to setAutomatedGa4ConfigurationOptOut.
-     */
-    public UnaryCallSettings.Builder<
-            SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
-        setAutomatedGa4ConfigurationOptOutSettings() {
-      return getStubSettingsBuilder().setAutomatedGa4ConfigurationOptOutSettings();
-    }
-
-    /**
-     * Returns the builder for the settings used for calls to fetchAutomatedGa4ConfigurationOptOut.
-     */
-    public UnaryCallSettings.Builder<
-            FetchAutomatedGa4ConfigurationOptOutRequest,
-            FetchAutomatedGa4ConfigurationOptOutResponse>
-        fetchAutomatedGa4ConfigurationOptOutSettings() {
-      return getStubSettingsBuilder().fetchAutomatedGa4ConfigurationOptOutSettings();
-    }
-
     /** Returns the builder for the settings used for calls to createBigQueryLink. */
     public UnaryCallSettings.Builder<CreateBigQueryLinkRequest, BigQueryLink>
         createBigQueryLinkSettings() {
@@ -2107,31 +2053,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
             UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
         updateEnhancedMeasurementSettingsSettings() {
       return getStubSettingsBuilder().updateEnhancedMeasurementSettingsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createConnectedSiteTag. */
-    public UnaryCallSettings.Builder<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
-        createConnectedSiteTagSettings() {
-      return getStubSettingsBuilder().createConnectedSiteTagSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteConnectedSiteTag. */
-    public UnaryCallSettings.Builder<DeleteConnectedSiteTagRequest, Empty>
-        deleteConnectedSiteTagSettings() {
-      return getStubSettingsBuilder().deleteConnectedSiteTagSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listConnectedSiteTags. */
-    public UnaryCallSettings.Builder<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
-        listConnectedSiteTagsSettings() {
-      return getStubSettingsBuilder().listConnectedSiteTagsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to fetchConnectedGa4Property. */
-    public UnaryCallSettings.Builder<
-            FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
-        fetchConnectedGa4PropertySettings() {
-      return getStubSettingsBuilder().fetchConnectedGa4PropertySettings();
     }
 
     /** Returns the builder for the settings used for calls to getAdSenseLink. */
@@ -2403,6 +2324,12 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
         getSubpropertySyncConfigSettings() {
       return getStubSettingsBuilder().getSubpropertySyncConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getReportingIdentitySettings. */
+    public UnaryCallSettings.Builder<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
+        getReportingIdentitySettingsSettings() {
+      return getStubSettingsBuilder().getReportingIdentitySettingsSettings();
     }
 
     @Override

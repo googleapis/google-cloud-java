@@ -104,8 +104,8 @@ public interface ListCertificateRevocationListsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
-   * [ListCertificateRevocationListsRequest.next_page_token][] to retrieve the
-   * next page of results.
+   * [ListCertificateRevocationListsRequest.page_token][google.cloud.security.privateca.v1.ListCertificateRevocationListsRequest.page_token]
+   * to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -119,8 +119,8 @@ public interface ListCertificateRevocationListsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
-   * [ListCertificateRevocationListsRequest.next_page_token][] to retrieve the
-   * next page of results.
+   * [ListCertificateRevocationListsRequest.page_token][google.cloud.security.privateca.v1.ListCertificateRevocationListsRequest.page_token]
+   * to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

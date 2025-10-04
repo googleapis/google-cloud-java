@@ -34,6 +34,10 @@ import com.google.cloud.confidentialcomputing.v1.Challenge;
 import com.google.cloud.confidentialcomputing.v1.CreateChallengeRequest;
 import com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest;
 import com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse;
+import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest;
+import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeResponse;
+import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest;
+import com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -133,6 +137,86 @@ public class HttpJsonConfidentialComputingStub extends ConfidentialComputingStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
+      verifyConfidentialSpaceMethodDescriptor =
+          ApiMethodDescriptor
+              .<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.confidentialcomputing.v1.ConfidentialComputing/VerifyConfidentialSpace")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<VerifyConfidentialSpaceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{challenge=projects/*/locations/*/challenges/*}:verifyConfidentialSpace",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<VerifyConfidentialSpaceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "challenge", request.getChallenge());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<VerifyConfidentialSpaceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearChallenge().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<VerifyConfidentialSpaceResponse>newBuilder()
+                      .setDefaultInstance(VerifyConfidentialSpaceResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
+      verifyConfidentialGkeMethodDescriptor =
+          ApiMethodDescriptor
+              .<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.confidentialcomputing.v1.ConfidentialComputing/VerifyConfidentialGke")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<VerifyConfidentialGkeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{challenge=projects/*/locations/*/challenges/*}:verifyConfidentialGke",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<VerifyConfidentialGkeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "challenge", request.getChallenge());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<VerifyConfidentialGkeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearChallenge().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<VerifyConfidentialGkeResponse>newBuilder()
+                      .setDefaultInstance(VerifyConfidentialGkeResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -204,6 +288,10 @@ public class HttpJsonConfidentialComputingStub extends ConfidentialComputingStub
   private final UnaryCallable<CreateChallengeRequest, Challenge> createChallengeCallable;
   private final UnaryCallable<VerifyAttestationRequest, VerifyAttestationResponse>
       verifyAttestationCallable;
+  private final UnaryCallable<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
+      verifyConfidentialSpaceCallable;
+  private final UnaryCallable<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
+      verifyConfidentialGkeCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -276,6 +364,32 @@ public class HttpJsonConfidentialComputingStub extends ConfidentialComputingStub
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
+        verifyConfidentialSpaceTransportSettings =
+            HttpJsonCallSettings
+                .<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>newBuilder()
+                .setMethodDescriptor(verifyConfidentialSpaceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("challenge", String.valueOf(request.getChallenge()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
+        verifyConfidentialGkeTransportSettings =
+            HttpJsonCallSettings
+                .<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>newBuilder()
+                .setMethodDescriptor(verifyConfidentialGkeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("challenge", String.valueOf(request.getChallenge()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -308,6 +422,16 @@ public class HttpJsonConfidentialComputingStub extends ConfidentialComputingStub
             verifyAttestationTransportSettings,
             settings.verifyAttestationSettings(),
             clientContext);
+    this.verifyConfidentialSpaceCallable =
+        callableFactory.createUnaryCallable(
+            verifyConfidentialSpaceTransportSettings,
+            settings.verifyConfidentialSpaceSettings(),
+            clientContext);
+    this.verifyConfidentialGkeCallable =
+        callableFactory.createUnaryCallable(
+            verifyConfidentialGkeTransportSettings,
+            settings.verifyConfidentialGkeSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -327,6 +451,8 @@ public class HttpJsonConfidentialComputingStub extends ConfidentialComputingStub
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(createChallengeMethodDescriptor);
     methodDescriptors.add(verifyAttestationMethodDescriptor);
+    methodDescriptors.add(verifyConfidentialSpaceMethodDescriptor);
+    methodDescriptors.add(verifyConfidentialGkeMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -341,6 +467,18 @@ public class HttpJsonConfidentialComputingStub extends ConfidentialComputingStub
   public UnaryCallable<VerifyAttestationRequest, VerifyAttestationResponse>
       verifyAttestationCallable() {
     return verifyAttestationCallable;
+  }
+
+  @Override
+  public UnaryCallable<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
+      verifyConfidentialSpaceCallable() {
+    return verifyConfidentialSpaceCallable;
+  }
+
+  @Override
+  public UnaryCallable<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
+      verifyConfidentialGkeCallable() {
+    return verifyConfidentialGkeCallable;
   }
 
   @Override

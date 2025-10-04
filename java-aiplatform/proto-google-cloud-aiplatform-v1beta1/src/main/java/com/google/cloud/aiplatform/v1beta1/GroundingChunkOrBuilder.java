@@ -102,5 +102,42 @@ public interface GroundingChunkOrBuilder
   com.google.cloud.aiplatform.v1beta1.GroundingChunk.RetrievedContextOrBuilder
       getRetrievedContextOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Grounding chunk from Google Maps.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps maps = 3;</code>
+   *
+   * @return Whether the maps field is set.
+   */
+  boolean hasMaps();
+
+  /**
+   *
+   *
+   * <pre>
+   * Grounding chunk from Google Maps.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps maps = 3;</code>
+   *
+   * @return The maps.
+   */
+  com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps getMaps();
+
+  /**
+   *
+   *
+   * <pre>
+   * Grounding chunk from Google Maps.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps maps = 3;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.GroundingChunk.MapsOrBuilder getMapsOrBuilder();
+
   com.google.cloud.aiplatform.v1beta1.GroundingChunk.ChunkTypeCase getChunkTypeCase();
 }

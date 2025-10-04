@@ -18,9 +18,11 @@ package com.google.cloud.developerconnect.v1;
 
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRefsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchLinkableGitRepositoriesPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListAccountConnectorsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListConnectionsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListGitRepositoryLinksPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListLocationsPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListUsersPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -207,6 +209,7 @@ public class DeveloperConnectClientHttpJsonTest {
             .setEtag("etag3123477")
             .setUid("uid115792")
             .setCryptoKeyConfig(CryptoKeyConfig.newBuilder().build())
+            .setGitProxyConfig(GitProxyConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -262,6 +265,7 @@ public class DeveloperConnectClientHttpJsonTest {
             .setEtag("etag3123477")
             .setUid("uid115792")
             .setCryptoKeyConfig(CryptoKeyConfig.newBuilder().build())
+            .setGitProxyConfig(GitProxyConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -317,6 +321,7 @@ public class DeveloperConnectClientHttpJsonTest {
             .setEtag("etag3123477")
             .setUid("uid115792")
             .setCryptoKeyConfig(CryptoKeyConfig.newBuilder().build())
+            .setGitProxyConfig(GitProxyConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -382,6 +387,7 @@ public class DeveloperConnectClientHttpJsonTest {
             .setEtag("etag3123477")
             .setUid("uid115792")
             .setCryptoKeyConfig(CryptoKeyConfig.newBuilder().build())
+            .setGitProxyConfig(GitProxyConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -447,6 +453,7 @@ public class DeveloperConnectClientHttpJsonTest {
             .setEtag("etag3123477")
             .setUid("uid115792")
             .setCryptoKeyConfig(CryptoKeyConfig.newBuilder().build())
+            .setGitProxyConfig(GitProxyConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -470,6 +477,7 @@ public class DeveloperConnectClientHttpJsonTest {
             .setEtag("etag3123477")
             .setUid("uid115792")
             .setCryptoKeyConfig(CryptoKeyConfig.newBuilder().build())
+            .setGitProxyConfig(GitProxyConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -513,6 +521,7 @@ public class DeveloperConnectClientHttpJsonTest {
               .setEtag("etag3123477")
               .setUid("uid115792")
               .setCryptoKeyConfig(CryptoKeyConfig.newBuilder().build())
+              .setGitProxyConfig(GitProxyConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateConnectionAsync(connection, updateMask).get();
@@ -629,6 +638,7 @@ public class DeveloperConnectClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
             .setWebhookId("webhookId-544129550")
+            .setGitProxyUri("gitProxyUri306660880")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -696,6 +706,7 @@ public class DeveloperConnectClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
             .setWebhookId("webhookId-544129550")
+            .setGitProxyUri("gitProxyUri306660880")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -959,6 +970,7 @@ public class DeveloperConnectClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
             .setWebhookId("webhookId-544129550")
+            .setGitProxyUri("gitProxyUri306660880")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1020,6 +1032,7 @@ public class DeveloperConnectClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
             .setWebhookId("webhookId-544129550")
+            .setGitProxyUri("gitProxyUri306660880")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1556,6 +1569,1002 @@ public class DeveloperConnectClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAccountConnectorsTest() throws Exception {
+    AccountConnector responsesElement = AccountConnector.newBuilder().build();
+    ListAccountConnectorsResponse expectedResponse =
+        ListAccountConnectorsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAccountConnectors(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAccountConnectorsPagedResponse pagedListResponse = client.listAccountConnectors(parent);
+
+    List<AccountConnector> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAccountConnectorsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAccountConnectorsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAccountConnectors(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAccountConnectorsTest2() throws Exception {
+    AccountConnector responsesElement = AccountConnector.newBuilder().build();
+    ListAccountConnectorsResponse expectedResponse =
+        ListAccountConnectorsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAccountConnectors(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListAccountConnectorsPagedResponse pagedListResponse = client.listAccountConnectors(parent);
+
+    List<AccountConnector> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAccountConnectorsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAccountConnectorsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listAccountConnectors(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAccountConnectorTest() throws Exception {
+    AccountConnector expectedResponse =
+        AccountConnector.newBuilder()
+            .setName(
+                AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setOauthStartUri("oauthStartUri-1592753823")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AccountConnectorName name =
+        AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+
+    AccountConnector actualResponse = client.getAccountConnector(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAccountConnectorExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AccountConnectorName name =
+          AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+      client.getAccountConnector(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAccountConnectorTest2() throws Exception {
+    AccountConnector expectedResponse =
+        AccountConnector.newBuilder()
+            .setName(
+                AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setOauthStartUri("oauthStartUri-1592753823")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-1769/locations/location-1769/accountConnectors/accountConnector-1769";
+
+    AccountConnector actualResponse = client.getAccountConnector(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAccountConnectorExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1769/locations/location-1769/accountConnectors/accountConnector-1769";
+      client.getAccountConnector(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAccountConnectorTest() throws Exception {
+    AccountConnector expectedResponse =
+        AccountConnector.newBuilder()
+            .setName(
+                AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setOauthStartUri("oauthStartUri-1592753823")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAccountConnectorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    AccountConnector accountConnector = AccountConnector.newBuilder().build();
+    String accountConnectorId = "accountConnectorId-605811237";
+
+    AccountConnector actualResponse =
+        client.createAccountConnectorAsync(parent, accountConnector, accountConnectorId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAccountConnectorExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      AccountConnector accountConnector = AccountConnector.newBuilder().build();
+      String accountConnectorId = "accountConnectorId-605811237";
+      client.createAccountConnectorAsync(parent, accountConnector, accountConnectorId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createAccountConnectorTest2() throws Exception {
+    AccountConnector expectedResponse =
+        AccountConnector.newBuilder()
+            .setName(
+                AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setOauthStartUri("oauthStartUri-1592753823")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAccountConnectorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    AccountConnector accountConnector = AccountConnector.newBuilder().build();
+    String accountConnectorId = "accountConnectorId-605811237";
+
+    AccountConnector actualResponse =
+        client.createAccountConnectorAsync(parent, accountConnector, accountConnectorId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAccountConnectorExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      AccountConnector accountConnector = AccountConnector.newBuilder().build();
+      String accountConnectorId = "accountConnectorId-605811237";
+      client.createAccountConnectorAsync(parent, accountConnector, accountConnectorId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateAccountConnectorTest() throws Exception {
+    AccountConnector expectedResponse =
+        AccountConnector.newBuilder()
+            .setName(
+                AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setOauthStartUri("oauthStartUri-1592753823")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateAccountConnectorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AccountConnector accountConnector =
+        AccountConnector.newBuilder()
+            .setName(
+                AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setOauthStartUri("oauthStartUri-1592753823")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AccountConnector actualResponse =
+        client.updateAccountConnectorAsync(accountConnector, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateAccountConnectorExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AccountConnector accountConnector =
+          AccountConnector.newBuilder()
+              .setName(
+                  AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+                      .toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllAnnotations(new HashMap<String, String>())
+              .setEtag("etag3123477")
+              .putAllLabels(new HashMap<String, String>())
+              .setOauthStartUri("oauthStartUri-1592753823")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAccountConnectorAsync(accountConnector, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteAccountConnectorTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAccountConnectorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AccountConnectorName name =
+        AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+
+    client.deleteAccountConnectorAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAccountConnectorExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AccountConnectorName name =
+          AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+      client.deleteAccountConnectorAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteAccountConnectorTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAccountConnectorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-1769/locations/location-1769/accountConnectors/accountConnector-1769";
+
+    client.deleteAccountConnectorAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAccountConnectorExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1769/locations/location-1769/accountConnectors/accountConnector-1769";
+      client.deleteAccountConnectorAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void fetchAccessTokenTest() throws Exception {
+    FetchAccessTokenResponse expectedResponse =
+        FetchAccessTokenResponse.newBuilder()
+            .setToken("token110541305")
+            .setExpirationTime(Timestamp.newBuilder().build())
+            .addAllScopes(new ArrayList<String>())
+            .setExchangeError(ExchangeError.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AccountConnectorName accountConnector =
+        AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+
+    FetchAccessTokenResponse actualResponse = client.fetchAccessToken(accountConnector);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchAccessTokenExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AccountConnectorName accountConnector =
+          AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+      client.fetchAccessToken(accountConnector);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchAccessTokenTest2() throws Exception {
+    FetchAccessTokenResponse expectedResponse =
+        FetchAccessTokenResponse.newBuilder()
+            .setToken("token110541305")
+            .setExpirationTime(Timestamp.newBuilder().build())
+            .addAllScopes(new ArrayList<String>())
+            .setExchangeError(ExchangeError.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String accountConnector =
+        "projects/project-5342/locations/location-5342/accountConnectors/accountConnector-5342";
+
+    FetchAccessTokenResponse actualResponse = client.fetchAccessToken(accountConnector);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchAccessTokenExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String accountConnector =
+          "projects/project-5342/locations/location-5342/accountConnectors/accountConnector-5342";
+      client.fetchAccessToken(accountConnector);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listUsersTest() throws Exception {
+    User responsesElement = User.newBuilder().build();
+    ListUsersResponse expectedResponse =
+        ListUsersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllUsers(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AccountConnectorName parent =
+        AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+
+    ListUsersPagedResponse pagedListResponse = client.listUsers(parent);
+
+    List<User> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getUsersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listUsersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AccountConnectorName parent =
+          AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+      client.listUsers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listUsersTest2() throws Exception {
+    User responsesElement = User.newBuilder().build();
+    ListUsersResponse expectedResponse =
+        ListUsersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllUsers(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-2472/locations/location-2472/accountConnectors/accountConnector-2472";
+
+    ListUsersPagedResponse pagedListResponse = client.listUsers(parent);
+
+    List<User> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getUsersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listUsersExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-2472/locations/location-2472/accountConnectors/accountConnector-2472";
+      client.listUsers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteUserTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteUserTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    UserName name = UserName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]", "[USER]");
+
+    client.deleteUserAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteUserExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      UserName name = UserName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]", "[USER]");
+      client.deleteUserAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteUserTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteUserTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-8611/locations/location-8611/accountConnectors/accountConnector-8611/users/user-8611";
+
+    client.deleteUserAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteUserExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8611/locations/location-8611/accountConnectors/accountConnector-8611/users/user-8611";
+      client.deleteUserAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void fetchSelfTest() throws Exception {
+    User expectedResponse =
+        User.newBuilder()
+            .setName(
+                UserName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]", "[USER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setLastTokenRequestTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AccountConnectorName name =
+        AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+
+    User actualResponse = client.fetchSelf(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchSelfExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AccountConnectorName name =
+          AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+      client.fetchSelf(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchSelfTest2() throws Exception {
+    User expectedResponse =
+        User.newBuilder()
+            .setName(
+                UserName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]", "[USER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setLastTokenRequestTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-1769/locations/location-1769/accountConnectors/accountConnector-1769";
+
+    User actualResponse = client.fetchSelf(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchSelfExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1769/locations/location-1769/accountConnectors/accountConnector-1769";
+      client.fetchSelf(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSelfTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSelfTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AccountConnectorName name =
+        AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+
+    client.deleteSelfAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSelfExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AccountConnectorName name =
+          AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+      client.deleteSelfAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteSelfTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSelfTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-1769/locations/location-1769/accountConnectors/accountConnector-1769";
+
+    client.deleteSelfAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSelfExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1769/locations/location-1769/accountConnectors/accountConnector-1769";
+      client.deleteSelfAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

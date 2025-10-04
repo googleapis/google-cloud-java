@@ -42,8 +42,7 @@ public final class UserProto {
   static {
     java.lang.String[] descriptorData = {
       "\n"
-          + "\031google/chat/v1/user.proto\022\016google.chat"
-          + ".v1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\270\001\n"
+          + "\031google/chat/v1/user.proto\022\016google.chat.v1\032\037google/api/field_behavior.proto\"\270\001\n"
           + "\004User\022\014\n"
           + "\004name\030\001 \001(\t\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\003\022\021\n"
@@ -54,17 +53,16 @@ public final class UserProto {
           + "\020TYPE_UNSPECIFIED\020\000\022\t\n"
           + "\005HUMAN\020\001\022\007\n"
           + "\003BOT\020\002B\242\001\n"
-          + "\022com.google.chat.v1B\tUserProtoP\001Z,cloud.google.com/go/chat/apiv1/c"
-          + "hatpb;chatpb\242\002\013DYNAPIProto\252\002\023Google.Apps"
-          + ".Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google:"
-          + ":Apps::Chat::V1b\006proto3"
+          + "\022com.google.chat.v1B\tUserProtoP\001Z,cloud.google.com/go"
+          + "/chat/apiv1/chatpb;chatpb\242\002\013DYNAPIProto\252"
+          + "\002\023Google.Apps.Chat.V1\312\002\023Google\\Apps\\Chat"
+          + "\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
-              com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_chat_v1_User_descriptor = getDescriptor().getMessageTypes().get(0);
     internal_static_google_chat_v1_User_fieldAccessorTable =
@@ -79,7 +77,6 @@ public final class UserProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
-    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -271,6 +271,7 @@ public class ModelGardenServiceClientTest {
 
     Assert.assertEquals(request.getPublisherModelName(), actualRequest.getPublisherModelName());
     Assert.assertEquals(request.getHuggingFaceModelId(), actualRequest.getHuggingFaceModelId());
+    Assert.assertEquals(request.getCustomModel(), actualRequest.getCustomModel());
     Assert.assertEquals(request.getDestination(), actualRequest.getDestination());
     Assert.assertEquals(request.getModelConfig(), actualRequest.getModelConfig());
     Assert.assertEquals(request.getEndpointConfig(), actualRequest.getEndpointConfig());

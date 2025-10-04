@@ -93,6 +93,90 @@ public interface UpcomingMaintenanceOrBuilder
    *
    *
    * <pre>
+   * Indicates whether the UpcomingMaintenance will be triggered on VM shutdown.
+   * </pre>
+   *
+   * <code>optional bool maintenance_on_shutdown = 231055754;</code>
+   *
+   * @return Whether the maintenanceOnShutdown field is set.
+   */
+  boolean hasMaintenanceOnShutdown();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the UpcomingMaintenance will be triggered on VM shutdown.
+   * </pre>
+   *
+   * <code>optional bool maintenance_on_shutdown = 231055754;</code>
+   *
+   * @return The maintenanceOnShutdown.
+   */
+  boolean getMaintenanceOnShutdown();
+
+  /**
+   *
+   *
+   * <pre>
+   * The reasons for the maintenance. Only valid for vms.
+   * Check the MaintenanceReasons enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string maintenance_reasons = 140283267;</code>
+   *
+   * @return A list containing the maintenanceReasons.
+   */
+  java.util.List<java.lang.String> getMaintenanceReasonsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The reasons for the maintenance. Only valid for vms.
+   * Check the MaintenanceReasons enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string maintenance_reasons = 140283267;</code>
+   *
+   * @return The count of maintenanceReasons.
+   */
+  int getMaintenanceReasonsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The reasons for the maintenance. Only valid for vms.
+   * Check the MaintenanceReasons enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string maintenance_reasons = 140283267;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The maintenanceReasons at the given index.
+   */
+  java.lang.String getMaintenanceReasons(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The reasons for the maintenance. Only valid for vms.
+   * Check the MaintenanceReasons enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string maintenance_reasons = 140283267;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the maintenanceReasons at the given index.
+   */
+  com.google.protobuf.ByteString getMaintenanceReasonsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    *
    * Check the MaintenanceStatus enum for the list of possible values.
    * </pre>

@@ -80,4 +80,34 @@ public interface SoleTenantConfigOrBuilder
    */
   com.google.container.v1.SoleTenantConfig.NodeAffinityOrBuilder getNodeAffinitiesOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The minimum number of virtual CPUs this instance will consume
+   * when running on a sole-tenant node. This field can only be set if the node
+   * pool is created in a shared sole-tenant node group.
+   * </pre>
+   *
+   * <code>optional int32 min_node_cpus = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the minNodeCpus field is set.
+   */
+  boolean hasMinNodeCpus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The minimum number of virtual CPUs this instance will consume
+   * when running on a sole-tenant node. This field can only be set if the node
+   * pool is created in a shared sole-tenant node group.
+   * </pre>
+   *
+   * <code>optional int32 min_node_cpus = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The minNodeCpus.
+   */
+  int getMinNodeCpus();
 }

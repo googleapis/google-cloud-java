@@ -69,6 +69,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   ProtoUtils.marshaller(ListInstancesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstancesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInstanceRequest, Instance> getInstanceMethodDescriptor =
@@ -77,6 +78,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
           .setFullMethodName("google.cloud.redis.v1beta1.CloudRedis/GetInstance")
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetInstanceAuthStringRequest, InstanceAuthString>
@@ -87,6 +89,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetInstanceAuthStringRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InstanceAuthString.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateInstanceRequest, Operation>
@@ -97,6 +100,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateInstanceRequest, Operation>
@@ -107,6 +111,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpgradeInstanceRequest, Operation>
@@ -117,6 +122,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpgradeInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportInstanceRequest, Operation>
@@ -127,6 +133,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportInstanceRequest, Operation>
@@ -137,6 +144,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FailoverInstanceRequest, Operation>
@@ -147,6 +155,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(FailoverInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteInstanceRequest, Operation>
@@ -157,6 +166,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RescheduleMaintenanceRequest, Operation>
@@ -167,6 +177,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RescheduleMaintenanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;

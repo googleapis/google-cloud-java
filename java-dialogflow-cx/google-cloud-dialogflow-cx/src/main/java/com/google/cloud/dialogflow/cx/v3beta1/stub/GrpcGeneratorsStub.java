@@ -64,6 +64,7 @@ public class GrpcGeneratorsStub extends GeneratorsStub {
                   ProtoUtils.marshaller(ListGeneratorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGeneratorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGeneratorRequest, Generator>
@@ -73,6 +74,7 @@ public class GrpcGeneratorsStub extends GeneratorsStub {
               .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Generators/GetGenerator")
               .setRequestMarshaller(ProtoUtils.marshaller(GetGeneratorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Generator.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateGeneratorRequest, Generator>
@@ -83,6 +85,7 @@ public class GrpcGeneratorsStub extends GeneratorsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateGeneratorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Generator.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateGeneratorRequest, Generator>
@@ -93,6 +96,7 @@ public class GrpcGeneratorsStub extends GeneratorsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateGeneratorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Generator.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteGeneratorRequest, Empty>
@@ -103,6 +107,7 @@ public class GrpcGeneratorsStub extends GeneratorsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteGeneratorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -114,6 +119,7 @@ public class GrpcGeneratorsStub extends GeneratorsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -122,6 +128,7 @@ public class GrpcGeneratorsStub extends GeneratorsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListGeneratorsRequest, ListGeneratorsResponse> listGeneratorsCallable;

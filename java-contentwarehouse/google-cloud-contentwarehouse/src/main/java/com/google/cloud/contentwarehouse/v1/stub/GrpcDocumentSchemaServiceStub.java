@@ -57,6 +57,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDocumentSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DocumentSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDocumentSchemaRequest, DocumentSchema>
@@ -68,6 +69,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDocumentSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DocumentSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDocumentSchemaRequest, DocumentSchema>
@@ -79,6 +81,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDocumentSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DocumentSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDocumentSchemaRequest, Empty>
@@ -90,6 +93,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDocumentSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDocumentSchemasRequest, ListDocumentSchemasResponse>
@@ -102,6 +106,7 @@ public class GrpcDocumentSchemaServiceStub extends DocumentSchemaServiceStub {
                   ProtoUtils.marshaller(ListDocumentSchemasRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDocumentSchemasResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateDocumentSchemaRequest, DocumentSchema>

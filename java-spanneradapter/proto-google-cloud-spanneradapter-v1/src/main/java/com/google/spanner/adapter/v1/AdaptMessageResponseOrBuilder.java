@@ -104,4 +104,20 @@ public interface AdaptMessageResponseOrBuilder
    * </code>
    */
   java.lang.String getStateUpdatesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether this is the last
+   * [AdaptMessageResponse][google.spanner.adapter.v1.AdaptMessageResponse] in
+   * the stream. This field may be optionally set by the server. Clients should
+   * not rely on this field being set in all cases.
+   * </pre>
+   *
+   * <code>bool last = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The last.
+   */
+  boolean getLast();
 }

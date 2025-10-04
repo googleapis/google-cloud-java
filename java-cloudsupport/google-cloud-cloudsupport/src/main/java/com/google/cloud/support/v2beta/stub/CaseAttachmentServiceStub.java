@@ -21,6 +21,8 @@ import static com.google.cloud.support.v2beta.CaseAttachmentServiceClient.ListAt
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.support.v2beta.Attachment;
+import com.google.cloud.support.v2beta.GetAttachmentRequest;
 import com.google.cloud.support.v2beta.ListAttachmentsRequest;
 import com.google.cloud.support.v2beta.ListAttachmentsResponse;
 import javax.annotation.Generated;
@@ -42,6 +44,10 @@ public abstract class CaseAttachmentServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListAttachmentsRequest, ListAttachmentsResponse> listAttachmentsCallable() {
     throw new UnsupportedOperationException("Not implemented: listAttachmentsCallable()");
+  }
+
+  public UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAttachmentCallable()");
   }
 
   @Override

@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.aiplatform.v1.stub.FeatureOnlineStoreServiceStubSettings;
@@ -108,6 +109,13 @@ public class FeatureOnlineStoreServiceSettings
       searchNearestEntitiesSettings() {
     return ((FeatureOnlineStoreServiceStubSettings) getStubSettings())
         .searchNearestEntitiesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to featureViewDirectWrite. */
+  public StreamingCallSettings<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteSettings() {
+    return ((FeatureOnlineStoreServiceStubSettings) getStubSettings())
+        .featureViewDirectWriteSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -244,6 +252,13 @@ public class FeatureOnlineStoreServiceSettings
     public UnaryCallSettings.Builder<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
         searchNearestEntitiesSettings() {
       return getStubSettingsBuilder().searchNearestEntitiesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to featureViewDirectWrite. */
+    public StreamingCallSettings.Builder<
+            FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+        featureViewDirectWriteSettings() {
+      return getStubSettingsBuilder().featureViewDirectWriteSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

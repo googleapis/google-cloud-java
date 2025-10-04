@@ -35,7 +35,7 @@ public interface SdpAdvancedConfigOrBuilder
    * Sanitization. All Sensitive Data Protection findings identified during
    * inspection will be returned as SdpFinding in SdpInsepctionResult.
    *
-   *  e.g.
+   * e.g.
    * `projects/{project}/locations/{location}/inspectTemplates/{inspect_template}`
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface SdpAdvancedConfigOrBuilder
    * Sanitization. All Sensitive Data Protection findings identified during
    * inspection will be returned as SdpFinding in SdpInsepctionResult.
    *
-   *  e.g.
+   * e.g.
    * `projects/{project}/locations/{location}/inspectTemplates/{inspect_template}`
    * </pre>
    *

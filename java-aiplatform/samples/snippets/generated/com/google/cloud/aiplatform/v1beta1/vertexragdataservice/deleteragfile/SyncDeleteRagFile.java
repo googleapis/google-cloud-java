@@ -41,6 +41,7 @@ public class SyncDeleteRagFile {
               .setName(
                   RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]")
                       .toString())
+              .setForceDelete(true)
               .build();
       vertexRagDataServiceClient.deleteRagFileAsync(request).get();
     }

@@ -183,6 +183,16 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * <code>MALFORMED_FUNCTION_CALL = 9;</code>
      */
     MALFORMED_FUNCTION_CALL(9),
+    /**
+     *
+     *
+     * <pre>
+     * The model response was blocked by Model Armor.
+     * </pre>
+     *
+     * <code>MODEL_ARMOR = 10;</code>
+     */
+    MODEL_ARMOR(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -302,6 +312,17 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int MALFORMED_FUNCTION_CALL_VALUE = 9;
 
+    /**
+     *
+     *
+     * <pre>
+     * The model response was blocked by Model Armor.
+     * </pre>
+     *
+     * <code>MODEL_ARMOR = 10;</code>
+     */
+    public static final int MODEL_ARMOR_VALUE = 10;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -346,6 +367,8 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
           return SPII;
         case 9:
           return MALFORMED_FUNCTION_CALL;
+        case 10:
+          return MODEL_ARMOR;
         default:
           return null;
       }

@@ -2660,6 +2660,74 @@ public class KeyManagementServiceClientTest {
   }
 
   @Test
+  public void decapsulateTest() throws Exception {
+    DecapsulateResponse expectedResponse =
+        DecapsulateResponse.newBuilder()
+            .setName("name3373707")
+            .setSharedSecret(ByteString.EMPTY)
+            .setSharedSecretCrc32C(1482306981)
+            .setVerifiedCiphertextCrc32C(true)
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    DecapsulateRequest request =
+        DecapsulateRequest.newBuilder()
+            .setName(
+                CryptoKeyVersionName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[KEY_RING]",
+                        "[CRYPTO_KEY]",
+                        "[CRYPTO_KEY_VERSION]")
+                    .toString())
+            .setCiphertext(ByteString.EMPTY)
+            .setCiphertextCrc32C(Int64Value.newBuilder().build())
+            .build();
+
+    DecapsulateResponse actualResponse = client.decapsulate(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DecapsulateRequest actualRequest = ((DecapsulateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getCiphertext(), actualRequest.getCiphertext());
+    Assert.assertEquals(request.getCiphertextCrc32C(), actualRequest.getCiphertextCrc32C());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void decapsulateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      DecapsulateRequest request =
+          DecapsulateRequest.newBuilder()
+              .setName(
+                  CryptoKeyVersionName.of(
+                          "[PROJECT]",
+                          "[LOCATION]",
+                          "[KEY_RING]",
+                          "[CRYPTO_KEY]",
+                          "[CRYPTO_KEY_VERSION]")
+                      .toString())
+              .setCiphertext(ByteString.EMPTY)
+              .setCiphertextCrc32C(Int64Value.newBuilder().build())
+              .build();
+      client.decapsulate(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void generateRandomBytesTest() throws Exception {
     GenerateRandomBytesResponse expectedResponse =
         GenerateRandomBytesResponse.newBuilder()

@@ -275,6 +275,104 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListAuthzExtensions</td>
+ *      <td><p> Lists `AuthzExtension` resources in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAuthzExtensions(ListAuthzExtensionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAuthzExtensions(LocationName parent)
+ *           <li><p> listAuthzExtensions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAuthzExtensionsPagedCallable()
+ *           <li><p> listAuthzExtensionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAuthzExtension</td>
+ *      <td><p> Gets details of the specified `AuthzExtension` resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAuthzExtension(GetAuthzExtensionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAuthzExtension(AuthzExtensionName name)
+ *           <li><p> getAuthzExtension(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAuthzExtensionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAuthzExtension</td>
+ *      <td><p> Creates a new `AuthzExtension` resource in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAuthzExtensionAsync(CreateAuthzExtensionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createAuthzExtensionAsync(LocationName parent, AuthzExtension authzExtension, String authzExtensionId)
+ *           <li><p> createAuthzExtensionAsync(String parent, AuthzExtension authzExtension, String authzExtensionId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAuthzExtensionOperationCallable()
+ *           <li><p> createAuthzExtensionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAuthzExtension</td>
+ *      <td><p> Updates the parameters of the specified `AuthzExtension` resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAuthzExtensionAsync(UpdateAuthzExtensionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateAuthzExtensionAsync(AuthzExtension authzExtension, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAuthzExtensionOperationCallable()
+ *           <li><p> updateAuthzExtensionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAuthzExtension</td>
+ *      <td><p> Deletes the specified `AuthzExtension` resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAuthzExtensionAsync(DeleteAuthzExtensionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteAuthzExtensionAsync(AuthzExtensionName name)
+ *           <li><p> deleteAuthzExtensionAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAuthzExtensionOperationCallable()
+ *           <li><p> deleteAuthzExtensionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -496,7 +594,8 @@ public class DepServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the `LbTrafficExtension` resources
-   *     are listed, specified in the following format: `projects/{project}/locations/{location}`.
+   *     are listed. These values are specified in the following format:
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListLbTrafficExtensionsPagedResponse listLbTrafficExtensions(LocationName parent) {
@@ -529,7 +628,8 @@ public class DepServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the `LbTrafficExtension` resources
-   *     are listed, specified in the following format: `projects/{project}/locations/{location}`.
+   *     are listed. These values are specified in the following format:
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListLbTrafficExtensionsPagedResponse listLbTrafficExtensions(String parent) {
@@ -973,7 +1073,7 @@ public class DepServiceClient implements BackgroundResource {
    *
    * @param lbTrafficExtension Required. `LbTrafficExtension` resource being updated.
    * @param updateMask Optional. Used to specify the fields to be overwritten in the
-   *     `LbTrafficExtension` resource by the update. The fields specified in the update_mask are
+   *     `LbTrafficExtension` resource by the update. The fields specified in the `update_mask` are
    *     relative to the resource, not the full request. A field is overwritten if it is in the
    *     mask. If the user does not specify a mask, then all fields are overwritten.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1263,7 +1363,8 @@ public class DepServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the `LbRouteExtension` resources
-   *     are listed, specified in the following format: `projects/{project}/locations/{location}`.
+   *     are listed. These values are specified in the following format:
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListLbRouteExtensionsPagedResponse listLbRouteExtensions(LocationName parent) {
@@ -1295,7 +1396,8 @@ public class DepServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the `LbRouteExtension` resources
-   *     are listed, specified in the following format: `projects/{project}/locations/{location}`.
+   *     are listed. These values are specified in the following format:
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListLbRouteExtensionsPagedResponse listLbRouteExtensions(String parent) {
@@ -1738,7 +1840,7 @@ public class DepServiceClient implements BackgroundResource {
    *
    * @param lbRouteExtension Required. `LbRouteExtension` resource being updated.
    * @param updateMask Optional. Used to specify the fields to be overwritten in the
-   *     `LbRouteExtension` resource by the update. The fields specified in the update_mask are
+   *     `LbRouteExtension` resource by the update. The fields specified in the `update_mask` are
    *     relative to the resource, not the full request. A field is overwritten if it is in the
    *     mask. If the user does not specify a mask, then all fields are overwritten.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2001,6 +2103,761 @@ public class DepServiceClient implements BackgroundResource {
   public final UnaryCallable<DeleteLbRouteExtensionRequest, Operation>
       deleteLbRouteExtensionCallable() {
     return stub.deleteLbRouteExtensionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `AuthzExtension` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (AuthzExtension element : depServiceClient.listAuthzExtensions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location from which the `AuthzExtension` resources are
+   *     listed. These values are specified in the following format:
+   *     `projects/{project}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAuthzExtensionsPagedResponse listAuthzExtensions(LocationName parent) {
+    ListAuthzExtensionsRequest request =
+        ListAuthzExtensionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAuthzExtensions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `AuthzExtension` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (AuthzExtension element : depServiceClient.listAuthzExtensions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location from which the `AuthzExtension` resources are
+   *     listed. These values are specified in the following format:
+   *     `projects/{project}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAuthzExtensionsPagedResponse listAuthzExtensions(String parent) {
+    ListAuthzExtensionsRequest request =
+        ListAuthzExtensionsRequest.newBuilder().setParent(parent).build();
+    return listAuthzExtensions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `AuthzExtension` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   ListAuthzExtensionsRequest request =
+   *       ListAuthzExtensionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (AuthzExtension element : depServiceClient.listAuthzExtensions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAuthzExtensionsPagedResponse listAuthzExtensions(
+      ListAuthzExtensionsRequest request) {
+    return listAuthzExtensionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `AuthzExtension` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   ListAuthzExtensionsRequest request =
+   *       ListAuthzExtensionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<AuthzExtension> future =
+   *       depServiceClient.listAuthzExtensionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AuthzExtension element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsPagedResponse>
+      listAuthzExtensionsPagedCallable() {
+    return stub.listAuthzExtensionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `AuthzExtension` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   ListAuthzExtensionsRequest request =
+   *       ListAuthzExtensionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListAuthzExtensionsResponse response =
+   *         depServiceClient.listAuthzExtensionsCallable().call(request);
+   *     for (AuthzExtension element : response.getAuthzExtensionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+      listAuthzExtensionsCallable() {
+    return stub.listAuthzExtensionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the specified `AuthzExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   AuthzExtensionName name =
+   *       AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]");
+   *   AuthzExtension response = depServiceClient.getAuthzExtension(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the `AuthzExtension` resource to get. Must be in the format
+   *     `projects/{project}/locations/{location}/authzExtensions/{authz_extension}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuthzExtension getAuthzExtension(AuthzExtensionName name) {
+    GetAuthzExtensionRequest request =
+        GetAuthzExtensionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAuthzExtension(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the specified `AuthzExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   String name =
+   *       AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString();
+   *   AuthzExtension response = depServiceClient.getAuthzExtension(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the `AuthzExtension` resource to get. Must be in the format
+   *     `projects/{project}/locations/{location}/authzExtensions/{authz_extension}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuthzExtension getAuthzExtension(String name) {
+    GetAuthzExtensionRequest request = GetAuthzExtensionRequest.newBuilder().setName(name).build();
+    return getAuthzExtension(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the specified `AuthzExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   GetAuthzExtensionRequest request =
+   *       GetAuthzExtensionRequest.newBuilder()
+   *           .setName(
+   *               AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString())
+   *           .build();
+   *   AuthzExtension response = depServiceClient.getAuthzExtension(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuthzExtension getAuthzExtension(GetAuthzExtensionRequest request) {
+    return getAuthzExtensionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the specified `AuthzExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   GetAuthzExtensionRequest request =
+   *       GetAuthzExtensionRequest.newBuilder()
+   *           .setName(
+   *               AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString())
+   *           .build();
+   *   ApiFuture<AuthzExtension> future =
+   *       depServiceClient.getAuthzExtensionCallable().futureCall(request);
+   *   // Do something.
+   *   AuthzExtension response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAuthzExtensionRequest, AuthzExtension> getAuthzExtensionCallable() {
+    return stub.getAuthzExtensionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `AuthzExtension` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   AuthzExtension authzExtension = AuthzExtension.newBuilder().build();
+   *   String authzExtensionId = "authzExtensionId-973067640";
+   *   AuthzExtension response =
+   *       depServiceClient
+   *           .createAuthzExtensionAsync(parent, authzExtension, authzExtensionId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the `AuthzExtension` resource. Must be in the
+   *     format `projects/{project}/locations/{location}`.
+   * @param authzExtension Required. `AuthzExtension` resource to be created.
+   * @param authzExtensionId Required. User-provided ID of the `AuthzExtension` resource to be
+   *     created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AuthzExtension, OperationMetadata> createAuthzExtensionAsync(
+      LocationName parent, AuthzExtension authzExtension, String authzExtensionId) {
+    CreateAuthzExtensionRequest request =
+        CreateAuthzExtensionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAuthzExtension(authzExtension)
+            .setAuthzExtensionId(authzExtensionId)
+            .build();
+    return createAuthzExtensionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `AuthzExtension` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   AuthzExtension authzExtension = AuthzExtension.newBuilder().build();
+   *   String authzExtensionId = "authzExtensionId-973067640";
+   *   AuthzExtension response =
+   *       depServiceClient
+   *           .createAuthzExtensionAsync(parent, authzExtension, authzExtensionId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the `AuthzExtension` resource. Must be in the
+   *     format `projects/{project}/locations/{location}`.
+   * @param authzExtension Required. `AuthzExtension` resource to be created.
+   * @param authzExtensionId Required. User-provided ID of the `AuthzExtension` resource to be
+   *     created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AuthzExtension, OperationMetadata> createAuthzExtensionAsync(
+      String parent, AuthzExtension authzExtension, String authzExtensionId) {
+    CreateAuthzExtensionRequest request =
+        CreateAuthzExtensionRequest.newBuilder()
+            .setParent(parent)
+            .setAuthzExtension(authzExtension)
+            .setAuthzExtensionId(authzExtensionId)
+            .build();
+    return createAuthzExtensionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `AuthzExtension` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   CreateAuthzExtensionRequest request =
+   *       CreateAuthzExtensionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAuthzExtensionId("authzExtensionId-973067640")
+   *           .setAuthzExtension(AuthzExtension.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   AuthzExtension response = depServiceClient.createAuthzExtensionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AuthzExtension, OperationMetadata> createAuthzExtensionAsync(
+      CreateAuthzExtensionRequest request) {
+    return createAuthzExtensionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `AuthzExtension` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   CreateAuthzExtensionRequest request =
+   *       CreateAuthzExtensionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAuthzExtensionId("authzExtensionId-973067640")
+   *           .setAuthzExtension(AuthzExtension.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<AuthzExtension, OperationMetadata> future =
+   *       depServiceClient.createAuthzExtensionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AuthzExtension response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      createAuthzExtensionOperationCallable() {
+    return stub.createAuthzExtensionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `AuthzExtension` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   CreateAuthzExtensionRequest request =
+   *       CreateAuthzExtensionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAuthzExtensionId("authzExtensionId-973067640")
+   *           .setAuthzExtension(AuthzExtension.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       depServiceClient.createAuthzExtensionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAuthzExtensionRequest, Operation>
+      createAuthzExtensionCallable() {
+    return stub.createAuthzExtensionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of the specified `AuthzExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   AuthzExtension authzExtension = AuthzExtension.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   AuthzExtension response =
+   *       depServiceClient.updateAuthzExtensionAsync(authzExtension, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param authzExtension Required. `AuthzExtension` resource being updated.
+   * @param updateMask Required. Used to specify the fields to be overwritten in the
+   *     `AuthzExtension` resource by the update. The fields specified in the `update_mask` are
+   *     relative to the resource, not the full request. A field is overwritten if it is in the
+   *     mask. If the user does not specify a mask, then all fields are overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AuthzExtension, OperationMetadata> updateAuthzExtensionAsync(
+      AuthzExtension authzExtension, FieldMask updateMask) {
+    UpdateAuthzExtensionRequest request =
+        UpdateAuthzExtensionRequest.newBuilder()
+            .setAuthzExtension(authzExtension)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAuthzExtensionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of the specified `AuthzExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   UpdateAuthzExtensionRequest request =
+   *       UpdateAuthzExtensionRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAuthzExtension(AuthzExtension.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   AuthzExtension response = depServiceClient.updateAuthzExtensionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AuthzExtension, OperationMetadata> updateAuthzExtensionAsync(
+      UpdateAuthzExtensionRequest request) {
+    return updateAuthzExtensionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of the specified `AuthzExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   UpdateAuthzExtensionRequest request =
+   *       UpdateAuthzExtensionRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAuthzExtension(AuthzExtension.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<AuthzExtension, OperationMetadata> future =
+   *       depServiceClient.updateAuthzExtensionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AuthzExtension response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      updateAuthzExtensionOperationCallable() {
+    return stub.updateAuthzExtensionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of the specified `AuthzExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   UpdateAuthzExtensionRequest request =
+   *       UpdateAuthzExtensionRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAuthzExtension(AuthzExtension.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       depServiceClient.updateAuthzExtensionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAuthzExtensionRequest, Operation>
+      updateAuthzExtensionCallable() {
+    return stub.updateAuthzExtensionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `AuthzExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   AuthzExtensionName name =
+   *       AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]");
+   *   depServiceClient.deleteAuthzExtensionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `AuthzExtension` resource to delete. Must be in the
+   *     format `projects/{project}/locations/{location}/authzExtensions/{authz_extension}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAuthzExtensionAsync(
+      AuthzExtensionName name) {
+    DeleteAuthzExtensionRequest request =
+        DeleteAuthzExtensionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteAuthzExtensionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `AuthzExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   String name =
+   *       AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString();
+   *   depServiceClient.deleteAuthzExtensionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `AuthzExtension` resource to delete. Must be in the
+   *     format `projects/{project}/locations/{location}/authzExtensions/{authz_extension}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAuthzExtensionAsync(String name) {
+    DeleteAuthzExtensionRequest request =
+        DeleteAuthzExtensionRequest.newBuilder().setName(name).build();
+    return deleteAuthzExtensionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `AuthzExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   DeleteAuthzExtensionRequest request =
+   *       DeleteAuthzExtensionRequest.newBuilder()
+   *           .setName(
+   *               AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   depServiceClient.deleteAuthzExtensionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAuthzExtensionAsync(
+      DeleteAuthzExtensionRequest request) {
+    return deleteAuthzExtensionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `AuthzExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   DeleteAuthzExtensionRequest request =
+   *       DeleteAuthzExtensionRequest.newBuilder()
+   *           .setName(
+   *               AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       depServiceClient.deleteAuthzExtensionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteAuthzExtensionRequest, Empty, OperationMetadata>
+      deleteAuthzExtensionOperationCallable() {
+    return stub.deleteAuthzExtensionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `AuthzExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   DeleteAuthzExtensionRequest request =
+   *       DeleteAuthzExtensionRequest.newBuilder()
+   *           .setName(
+   *               AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       depServiceClient.deleteAuthzExtensionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteAuthzExtensionRequest, Operation>
+      deleteAuthzExtensionCallable() {
+    return stub.deleteAuthzExtensionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2554,6 +3411,90 @@ public class DepServiceClient implements BackgroundResource {
     protected ListLbRouteExtensionsFixedSizeCollection createCollection(
         List<ListLbRouteExtensionsPage> pages, int collectionSize) {
       return new ListLbRouteExtensionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAuthzExtensionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAuthzExtensionsRequest,
+          ListAuthzExtensionsResponse,
+          AuthzExtension,
+          ListAuthzExtensionsPage,
+          ListAuthzExtensionsFixedSizeCollection> {
+
+    public static ApiFuture<ListAuthzExtensionsPagedResponse> createAsync(
+        PageContext<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse, AuthzExtension>
+            context,
+        ApiFuture<ListAuthzExtensionsResponse> futureResponse) {
+      ApiFuture<ListAuthzExtensionsPage> futurePage =
+          ListAuthzExtensionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAuthzExtensionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAuthzExtensionsPagedResponse(ListAuthzExtensionsPage page) {
+      super(page, ListAuthzExtensionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAuthzExtensionsPage
+      extends AbstractPage<
+          ListAuthzExtensionsRequest,
+          ListAuthzExtensionsResponse,
+          AuthzExtension,
+          ListAuthzExtensionsPage> {
+
+    private ListAuthzExtensionsPage(
+        PageContext<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse, AuthzExtension>
+            context,
+        ListAuthzExtensionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAuthzExtensionsPage createEmptyPage() {
+      return new ListAuthzExtensionsPage(null, null);
+    }
+
+    @Override
+    protected ListAuthzExtensionsPage createPage(
+        PageContext<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse, AuthzExtension>
+            context,
+        ListAuthzExtensionsResponse response) {
+      return new ListAuthzExtensionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAuthzExtensionsPage> createPageAsync(
+        PageContext<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse, AuthzExtension>
+            context,
+        ApiFuture<ListAuthzExtensionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAuthzExtensionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAuthzExtensionsRequest,
+          ListAuthzExtensionsResponse,
+          AuthzExtension,
+          ListAuthzExtensionsPage,
+          ListAuthzExtensionsFixedSizeCollection> {
+
+    private ListAuthzExtensionsFixedSizeCollection(
+        List<ListAuthzExtensionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAuthzExtensionsFixedSizeCollection createEmptyCollection() {
+      return new ListAuthzExtensionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAuthzExtensionsFixedSizeCollection createCollection(
+        List<ListAuthzExtensionsPage> pages, int collectionSize) {
+      return new ListAuthzExtensionsFixedSizeCollection(pages, collectionSize);
     }
   }
 

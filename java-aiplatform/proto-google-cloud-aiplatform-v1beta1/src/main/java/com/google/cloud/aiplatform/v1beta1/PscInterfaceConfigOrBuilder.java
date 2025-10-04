@@ -28,15 +28,10 @@ public interface PscInterfaceConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The full name of the Compute Engine
+   * Optional. The name of the Compute Engine
    * [network
    * attachment](https://cloud.google.com/vpc/docs/about-network-attachments) to
-   * attach to the resource.
-   * For example, `projects/12345/regions/us-central1/networkAttachments/myNA`.
-   * is of the form
-   * `projects/{project}/regions/{region}/networkAttachments/{networkAttachment}`.
-   * Where {project} is a project number, as in `12345`, and {networkAttachment}
-   * is a network attachment name.
+   * attach to the resource within the region and user project.
    * To specify this field, you must have already [created a network attachment]
    * (https://cloud.google.com/vpc/docs/create-manage-network-attachments#create-network-attachments).
    * This field is only used for resources using PSC-I.
@@ -54,15 +49,10 @@ public interface PscInterfaceConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The full name of the Compute Engine
+   * Optional. The name of the Compute Engine
    * [network
    * attachment](https://cloud.google.com/vpc/docs/about-network-attachments) to
-   * attach to the resource.
-   * For example, `projects/12345/regions/us-central1/networkAttachments/myNA`.
-   * is of the form
-   * `projects/{project}/regions/{region}/networkAttachments/{networkAttachment}`.
-   * Where {project} is a project number, as in `12345`, and {networkAttachment}
-   * is a network attachment name.
+   * attach to the resource within the region and user project.
    * To specify this field, you must have already [created a network attachment]
    * (https://cloud.google.com/vpc/docs/create-manage-network-attachments#create-network-attachments).
    * This field is only used for resources using PSC-I.

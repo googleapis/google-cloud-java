@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -ex
 # This script should be run at the root of the repository.
 # This script is used to update googleapis_commitish, gapic_generator_version,
 # and libraries_bom_version in generation configuration at the time of running
@@ -15,8 +15,10 @@ set -e
 function get_latest_released_version() {
     local group_id=$1
     local artifact_id=$2
-    json_content=$(curl -s "https://search.maven.org/solrsearch/select?q=g:${group_id}+AND+a:${artifact_id}&core=gav&rows=500&wt=json")
-    latest=$(jq -r '.response.docs[] | select(.v | test("^[0-9]+(\\.[0-9]+)*$")) | .v' <<< "${json_content}" | sort -V | tail -n 1)
+    group_id_url_path="$(sed 's|\.|/|g' <<< "${group_id}")"
+    url="https://repo1.maven.org/maven2/${group_id_url_path}/${artifact_id}/maven-metadata.xml"
+    xml_content=$(curl -s --fail "${url}")
+    latest=$(xmllint --xpath 'metadata/versioning/latest/text()' - <<< "${xml_content}")
     if [[ -z "${latest}" ]]; then
         echo "The latest version of ${group_id}:${artifact_id} is empty."
         echo "The returned json from maven.org is invalid: ${json_content}"

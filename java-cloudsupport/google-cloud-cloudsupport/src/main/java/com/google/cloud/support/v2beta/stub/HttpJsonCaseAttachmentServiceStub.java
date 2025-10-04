@@ -31,6 +31,8 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.support.v2beta.Attachment;
+import com.google.cloud.support.v2beta.GetAttachmentRequest;
 import com.google.cloud.support.v2beta.ListAttachmentsRequest;
 import com.google.cloud.support.v2beta.ListAttachmentsResponse;
 import com.google.protobuf.TypeRegistry;
@@ -91,10 +93,45 @@ public class HttpJsonCaseAttachmentServiceStub extends CaseAttachmentServiceStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetAttachmentRequest, Attachment>
+      getAttachmentMethodDescriptor =
+          ApiMethodDescriptor.<GetAttachmentRequest, Attachment>newBuilder()
+              .setFullMethodName("google.cloud.support.v2beta.CaseAttachmentService/GetAttachment")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAttachmentRequest>newBuilder()
+                      .setPath(
+                          "/v2beta/{name=*/*/cases/*/attachments/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Attachment>newBuilder()
+                      .setDefaultInstance(Attachment.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ListAttachmentsRequest, ListAttachmentsResponse>
       listAttachmentsCallable;
   private final UnaryCallable<ListAttachmentsRequest, ListAttachmentsPagedResponse>
       listAttachmentsPagedCallable;
+  private final UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -152,6 +189,17 @@ public class HttpJsonCaseAttachmentServiceStub extends CaseAttachmentServiceStub
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GetAttachmentRequest, Attachment> getAttachmentTransportSettings =
+        HttpJsonCallSettings.<GetAttachmentRequest, Attachment>newBuilder()
+            .setMethodDescriptor(getAttachmentMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.listAttachmentsCallable =
         callableFactory.createUnaryCallable(
@@ -159,6 +207,9 @@ public class HttpJsonCaseAttachmentServiceStub extends CaseAttachmentServiceStub
     this.listAttachmentsPagedCallable =
         callableFactory.createPagedCallable(
             listAttachmentsTransportSettings, settings.listAttachmentsSettings(), clientContext);
+    this.getAttachmentCallable =
+        callableFactory.createUnaryCallable(
+            getAttachmentTransportSettings, settings.getAttachmentSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -168,6 +219,7 @@ public class HttpJsonCaseAttachmentServiceStub extends CaseAttachmentServiceStub
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(listAttachmentsMethodDescriptor);
+    methodDescriptors.add(getAttachmentMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -180,6 +232,11 @@ public class HttpJsonCaseAttachmentServiceStub extends CaseAttachmentServiceStub
   public UnaryCallable<ListAttachmentsRequest, ListAttachmentsPagedResponse>
       listAttachmentsPagedCallable() {
     return listAttachmentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable() {
+    return getAttachmentCallable;
   }
 
   @Override

@@ -504,8 +504,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. API hostname. This is the hostname to use for **Host: Data
-     * Plane** endpoints.
+     * Output only. API hostname.
      * </pre>
      *
      * <code>string api = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -518,8 +517,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. API hostname. This is the hostname to use for **Host: Data
-     * Plane** endpoints.
+     * Output only. API hostname.
      * </pre>
      *
      * <code>string api = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -691,8 +689,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. API hostname. This is the hostname to use for **Host: Data
-     * Plane** endpoints.
+     * Output only. API hostname.
      * </pre>
      *
      * <code>string api = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -716,8 +713,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. API hostname. This is the hostname to use for **Host: Data
-     * Plane** endpoints.
+     * Output only. API hostname.
      * </pre>
      *
      * <code>string api = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1383,8 +1379,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. API hostname. This is the hostname to use for **Host: Data
-       * Plane** endpoints.
+       * Output only. API hostname.
        * </pre>
        *
        * <code>string api = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1407,8 +1402,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. API hostname. This is the hostname to use for **Host: Data
-       * Plane** endpoints.
+       * Output only. API hostname.
        * </pre>
        *
        * <code>string api = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1431,8 +1425,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. API hostname. This is the hostname to use for **Host: Data
-       * Plane** endpoints.
+       * Output only. API hostname.
        * </pre>
        *
        * <code>string api = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1454,8 +1447,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. API hostname. This is the hostname to use for **Host: Data
-       * Plane** endpoints.
+       * Output only. API hostname.
        * </pre>
        *
        * <code>string api = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1473,8 +1465,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. API hostname. This is the hostname to use for **Host: Data
-       * Plane** endpoints.
+       * Output only. API hostname.
        * </pre>
        *
        * <code>string api = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1804,12 +1795,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. CA pool resource, resource must in the format of
+     * Optional. Immutable. CA pool resource, resource must in the format of
      * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
      * </pre>
      *
      * <code>
-     * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The caPool.
@@ -1820,12 +1811,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. CA pool resource, resource must in the format of
+     * Optional. Immutable. CA pool resource, resource must in the format of
      * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
      * </pre>
      *
      * <code>
-     * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for caPool.
@@ -2041,12 +2032,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. CA pool resource, resource must in the format of
+     * Optional. Immutable. CA pool resource, resource must in the format of
      * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
      * </pre>
      *
      * <code>
-     * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The caPool.
@@ -2068,12 +2059,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. CA pool resource, resource must in the format of
+     * Optional. Immutable. CA pool resource, resource must in the format of
      * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
      * </pre>
      *
      * <code>
-     * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for caPool.
@@ -2818,12 +2809,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Immutable. CA pool resource, resource must in the format of
+       * Optional. Immutable. CA pool resource, resource must in the format of
        * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
        * </pre>
        *
        * <code>
-       * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return The caPool.
@@ -2844,12 +2835,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Immutable. CA pool resource, resource must in the format of
+       * Optional. Immutable. CA pool resource, resource must in the format of
        * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
        * </pre>
        *
        * <code>
-       * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return The bytes for caPool.
@@ -2870,12 +2861,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Immutable. CA pool resource, resource must in the format of
+       * Optional. Immutable. CA pool resource, resource must in the format of
        * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
        * </pre>
        *
        * <code>
-       * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param value The caPool to set.
@@ -2895,12 +2886,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Immutable. CA pool resource, resource must in the format of
+       * Optional. Immutable. CA pool resource, resource must in the format of
        * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
        * </pre>
        *
        * <code>
-       * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return This builder for chaining.
@@ -2916,12 +2907,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Immutable. CA pool resource, resource must in the format of
+       * Optional. Immutable. CA pool resource, resource must in the format of
        * `projects/{project}/locations/{location}/caPools/{ca_pool}`.
        * </pre>
        *
        * <code>
-       * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string ca_pool = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param value The bytes for caPool to set.
@@ -3462,6 +3453,604 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface WorkforceIdentityFederationConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Whether Workforce Identity Federation is enabled.
+     * </pre>
+     *
+     * <code>
+     * bool enabled = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enabled.
+     */
+    boolean getEnabled();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * WorkforceIdentityFederationConfig allows this instance to support users
+   * from external identity providers.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig}
+   */
+  public static final class WorkforceIdentityFederationConfig
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig)
+      WorkforceIdentityFederationConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use WorkforceIdentityFederationConfig.newBuilder() to construct.
+    private WorkforceIdentityFederationConfig(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private WorkforceIdentityFederationConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new WorkforceIdentityFederationConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+          .internal_static_google_cloud_securesourcemanager_v1_Instance_WorkforceIdentityFederationConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+          .internal_static_google_cloud_securesourcemanager_v1_Instance_WorkforceIdentityFederationConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+                  .class,
+              com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+                  .Builder.class);
+    }
+
+    public static final int ENABLED_FIELD_NUMBER = 1;
+    private boolean enabled_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Whether Workforce Identity Federation is enabled.
+     * </pre>
+     *
+     * <code>
+     * bool enabled = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enabled_ != false) {
+        output.writeBool(1, enabled_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig other =
+          (com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig) obj;
+
+      if (getEnabled() != other.getEnabled()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * WorkforceIdentityFederationConfig allows this instance to support users
+     * from external identity providers.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig)
+        com.google.cloud.securesourcemanager.v1.Instance
+            .WorkforceIdentityFederationConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+            .internal_static_google_cloud_securesourcemanager_v1_Instance_WorkforceIdentityFederationConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+            .internal_static_google_cloud_securesourcemanager_v1_Instance_WorkforceIdentityFederationConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+                    .class,
+                com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enabled_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+            .internal_static_google_cloud_securesourcemanager_v1_Instance_WorkforceIdentityFederationConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+          build() {
+        com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+          buildPartial() {
+        com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig result =
+            new com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enabled_ = enabled_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig) {
+          return mergeFrom(
+              (com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+              other) {
+        if (other
+            == com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+                .getDefaultInstance()) return this;
+        if (other.getEnabled() != false) {
+          setEnabled(other.getEnabled());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enabled_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enabled_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Immutable. Whether Workforce Identity Federation is enabled.
+       * </pre>
+       *
+       * <code>
+       * bool enabled = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enabled.
+       */
+      @java.lang.Override
+      public boolean getEnabled() {
+        return enabled_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Immutable. Whether Workforce Identity Federation is enabled.
+       * </pre>
+       *
+       * <code>
+       * bool enabled = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnabled(boolean value) {
+
+        enabled_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Immutable. Whether Workforce Identity Federation is enabled.
+       * </pre>
+       *
+       * <code>
+       * bool enabled = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig)
+    private static final com.google.cloud.securesourcemanager.v1.Instance
+            .WorkforceIdentityFederationConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig();
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkforceIdentityFederationConfig> PARSER =
+        new com.google.protobuf.AbstractParser<WorkforceIdentityFederationConfig>() {
+          @java.lang.Override
+          public WorkforceIdentityFederationConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<WorkforceIdentityFederationConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkforceIdentityFederationConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4021,6 +4610,73 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         : hostConfig_;
   }
 
+  public static final int WORKFORCE_IDENTITY_FEDERATION_CONFIG_FIELD_NUMBER = 14;
+  private com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+      workforceIdentityFederationConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Workforce Identity Federation to support
+   * third party identity provider. If unset, defaults to the Google OIDC IdP.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig workforce_identity_federation_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the workforceIdentityFederationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkforceIdentityFederationConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Workforce Identity Federation to support
+   * third party identity provider. If unset, defaults to the Google OIDC IdP.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig workforce_identity_federation_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workforceIdentityFederationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+      getWorkforceIdentityFederationConfig() {
+    return workforceIdentityFederationConfig_ == null
+        ? com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+            .getDefaultInstance()
+        : workforceIdentityFederationConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Workforce Identity Federation to support
+   * third party identity provider. If unset, defaults to the Google OIDC IdP.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig workforce_identity_federation_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfigOrBuilder
+      getWorkforceIdentityFederationConfigOrBuilder() {
+    return workforceIdentityFederationConfig_ == null
+        ? com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+            .getDefaultInstance()
+        : workforceIdentityFederationConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4063,6 +4719,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(13, getPrivateConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(14, getWorkforceIdentityFederationConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4110,6 +4769,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getPrivateConfig());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, getWorkforceIdentityFederationConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4146,6 +4810,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasHostConfig() != other.hasHostConfig()) return false;
     if (hasHostConfig()) {
       if (!getHostConfig().equals(other.getHostConfig())) return false;
+    }
+    if (hasWorkforceIdentityFederationConfig() != other.hasWorkforceIdentityFederationConfig())
+      return false;
+    if (hasWorkforceIdentityFederationConfig()) {
+      if (!getWorkforceIdentityFederationConfig()
+          .equals(other.getWorkforceIdentityFederationConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -4185,6 +4855,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasHostConfig()) {
       hash = (37 * hash) + HOST_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getHostConfig().hashCode();
+    }
+    if (hasWorkforceIdentityFederationConfig()) {
+      hash = (37 * hash) + WORKFORCE_IDENTITY_FEDERATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkforceIdentityFederationConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4353,6 +5027,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         getUpdateTimeFieldBuilder();
         getPrivateConfigFieldBuilder();
         getHostConfigFieldBuilder();
+        getWorkforceIdentityFederationConfigFieldBuilder();
       }
     }
 
@@ -4384,6 +5059,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (hostConfigBuilder_ != null) {
         hostConfigBuilder_.dispose();
         hostConfigBuilder_ = null;
+      }
+      workforceIdentityFederationConfig_ = null;
+      if (workforceIdentityFederationConfigBuilder_ != null) {
+        workforceIdentityFederationConfigBuilder_.dispose();
+        workforceIdentityFederationConfigBuilder_ = null;
       }
       return this;
     }
@@ -4454,6 +5134,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.hostConfig_ = hostConfigBuilder_ == null ? hostConfig_ : hostConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.workforceIdentityFederationConfig_ =
+            workforceIdentityFederationConfigBuilder_ == null
+                ? workforceIdentityFederationConfig_
+                : workforceIdentityFederationConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4533,6 +5220,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasHostConfig()) {
         mergeHostConfig(other.getHostConfig());
+      }
+      if (other.hasWorkforceIdentityFederationConfig()) {
+        mergeWorkforceIdentityFederationConfig(other.getWorkforceIdentityFederationConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4620,6 +5310,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(
+                    getWorkforceIdentityFederationConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6182,6 +6880,247 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         hostConfig_ = null;
       }
       return hostConfigBuilder_;
+    }
+
+    private com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+        workforceIdentityFederationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig,
+            com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+                .Builder,
+            com.google.cloud.securesourcemanager.v1.Instance
+                .WorkforceIdentityFederationConfigOrBuilder>
+        workforceIdentityFederationConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Workforce Identity Federation to support
+     * third party identity provider. If unset, defaults to the Google OIDC IdP.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig workforce_identity_federation_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the workforceIdentityFederationConfig field is set.
+     */
+    public boolean hasWorkforceIdentityFederationConfig() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Workforce Identity Federation to support
+     * third party identity provider. If unset, defaults to the Google OIDC IdP.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig workforce_identity_federation_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The workforceIdentityFederationConfig.
+     */
+    public com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+        getWorkforceIdentityFederationConfig() {
+      if (workforceIdentityFederationConfigBuilder_ == null) {
+        return workforceIdentityFederationConfig_ == null
+            ? com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+                .getDefaultInstance()
+            : workforceIdentityFederationConfig_;
+      } else {
+        return workforceIdentityFederationConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Workforce Identity Federation to support
+     * third party identity provider. If unset, defaults to the Google OIDC IdP.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig workforce_identity_federation_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWorkforceIdentityFederationConfig(
+        com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig value) {
+      if (workforceIdentityFederationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workforceIdentityFederationConfig_ = value;
+      } else {
+        workforceIdentityFederationConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Workforce Identity Federation to support
+     * third party identity provider. If unset, defaults to the Google OIDC IdP.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig workforce_identity_federation_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWorkforceIdentityFederationConfig(
+        com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig.Builder
+            builderForValue) {
+      if (workforceIdentityFederationConfigBuilder_ == null) {
+        workforceIdentityFederationConfig_ = builderForValue.build();
+      } else {
+        workforceIdentityFederationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Workforce Identity Federation to support
+     * third party identity provider. If unset, defaults to the Google OIDC IdP.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig workforce_identity_federation_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeWorkforceIdentityFederationConfig(
+        com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig value) {
+      if (workforceIdentityFederationConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && workforceIdentityFederationConfig_ != null
+            && workforceIdentityFederationConfig_
+                != com.google.cloud.securesourcemanager.v1.Instance
+                    .WorkforceIdentityFederationConfig.getDefaultInstance()) {
+          getWorkforceIdentityFederationConfigBuilder().mergeFrom(value);
+        } else {
+          workforceIdentityFederationConfig_ = value;
+        }
+      } else {
+        workforceIdentityFederationConfigBuilder_.mergeFrom(value);
+      }
+      if (workforceIdentityFederationConfig_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Workforce Identity Federation to support
+     * third party identity provider. If unset, defaults to the Google OIDC IdP.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig workforce_identity_federation_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearWorkforceIdentityFederationConfig() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      workforceIdentityFederationConfig_ = null;
+      if (workforceIdentityFederationConfigBuilder_ != null) {
+        workforceIdentityFederationConfigBuilder_.dispose();
+        workforceIdentityFederationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Workforce Identity Federation to support
+     * third party identity provider. If unset, defaults to the Google OIDC IdP.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig workforce_identity_federation_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+            .Builder
+        getWorkforceIdentityFederationConfigBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getWorkforceIdentityFederationConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Workforce Identity Federation to support
+     * third party identity provider. If unset, defaults to the Google OIDC IdP.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig workforce_identity_federation_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.securesourcemanager.v1.Instance
+            .WorkforceIdentityFederationConfigOrBuilder
+        getWorkforceIdentityFederationConfigOrBuilder() {
+      if (workforceIdentityFederationConfigBuilder_ != null) {
+        return workforceIdentityFederationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return workforceIdentityFederationConfig_ == null
+            ? com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+                .getDefaultInstance()
+            : workforceIdentityFederationConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Workforce Identity Federation to support
+     * third party identity provider. If unset, defaults to the Google OIDC IdP.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig workforce_identity_federation_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig,
+            com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+                .Builder,
+            com.google.cloud.securesourcemanager.v1.Instance
+                .WorkforceIdentityFederationConfigOrBuilder>
+        getWorkforceIdentityFederationConfigFieldBuilder() {
+      if (workforceIdentityFederationConfigBuilder_ == null) {
+        workforceIdentityFederationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig,
+                com.google.cloud.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfig
+                    .Builder,
+                com.google.cloud.securesourcemanager.v1.Instance
+                    .WorkforceIdentityFederationConfigOrBuilder>(
+                getWorkforceIdentityFederationConfig(), getParentForChildren(), isClean());
+        workforceIdentityFederationConfig_ = null;
+      }
+      return workforceIdentityFederationConfigBuilder_;
     }
 
     @java.lang.Override

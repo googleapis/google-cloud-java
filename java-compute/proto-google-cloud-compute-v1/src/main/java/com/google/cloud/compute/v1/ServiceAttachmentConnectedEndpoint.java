@@ -43,6 +43,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
   private ServiceAttachmentConnectedEndpoint() {
     consumerNetwork_ = "";
     endpoint_ = "";
+    natIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
     status_ = "";
   }
 
@@ -443,6 +444,74 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     }
   }
 
+  public static final int NAT_IPS_FIELD_NUMBER = 117635086;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList natIps_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * NAT IPs of the connected PSC endpoint and those of other endpoints propagated from it.
+   * </pre>
+   *
+   * <code>repeated string nat_ips = 117635086;</code>
+   *
+   * @return A list containing the natIps.
+   */
+  public com.google.protobuf.ProtocolStringList getNatIpsList() {
+    return natIps_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * NAT IPs of the connected PSC endpoint and those of other endpoints propagated from it.
+   * </pre>
+   *
+   * <code>repeated string nat_ips = 117635086;</code>
+   *
+   * @return The count of natIps.
+   */
+  public int getNatIpsCount() {
+    return natIps_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * NAT IPs of the connected PSC endpoint and those of other endpoints propagated from it.
+   * </pre>
+   *
+   * <code>repeated string nat_ips = 117635086;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The natIps at the given index.
+   */
+  public java.lang.String getNatIps(int index) {
+    return natIps_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * NAT IPs of the connected PSC endpoint and those of other endpoints propagated from it.
+   * </pre>
+   *
+   * <code>repeated string nat_ips = 117635086;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the natIps at the given index.
+   */
+  public com.google.protobuf.ByteString getNatIpsBytes(int index) {
+    return natIps_.getByteString(index);
+  }
+
   public static final int PROPAGATED_CONNECTION_COUNT_FIELD_NUMBER = 324594130;
   private int propagatedConnectionCount_ = 0;
 
@@ -599,6 +668,9 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    for (int i = 0; i < natIps_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 117635086, natIps_.getRaw(i));
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 130489749, endpoint_);
     }
@@ -623,6 +695,14 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     if (size != -1) return size;
 
     size = 0;
+    {
+      int dataSize = 0;
+      for (int i = 0; i < natIps_.size(); i++) {
+        dataSize += computeStringSizeNoTag(natIps_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getNatIpsList().size();
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(130489749, endpoint_);
     }
@@ -664,6 +744,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     if (hasEndpoint()) {
       if (!getEndpoint().equals(other.getEndpoint())) return false;
     }
+    if (!getNatIpsList().equals(other.getNatIpsList())) return false;
     if (hasPropagatedConnectionCount() != other.hasPropagatedConnectionCount()) return false;
     if (hasPropagatedConnectionCount()) {
       if (getPropagatedConnectionCount() != other.getPropagatedConnectionCount()) return false;
@@ -694,6 +775,10 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     if (hasEndpoint()) {
       hash = (37 * hash) + ENDPOINT_FIELD_NUMBER;
       hash = (53 * hash) + getEndpoint().hashCode();
+    }
+    if (getNatIpsCount() > 0) {
+      hash = (37 * hash) + NAT_IPS_FIELD_NUMBER;
+      hash = (53 * hash) + getNatIpsList().hashCode();
     }
     if (hasPropagatedConnectionCount()) {
       hash = (37 * hash) + PROPAGATED_CONNECTION_COUNT_FIELD_NUMBER;
@@ -850,6 +935,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       bitField0_ = 0;
       consumerNetwork_ = "";
       endpoint_ = "";
+      natIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
       propagatedConnectionCount_ = 0;
       pscConnectionId_ = 0L;
       status_ = "";
@@ -901,14 +987,18 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        natIps_.makeImmutable();
+        result.natIps_ = natIps_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.propagatedConnectionCount_ = propagatedConnectionCount_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.pscConnectionId_ = pscConnectionId_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.status_ = status_;
         to_bitField0_ |= 0x00000010;
       }
@@ -972,6 +1062,16 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.natIps_.isEmpty()) {
+        if (natIps_.isEmpty()) {
+          natIps_ = other.natIps_;
+          bitField0_ |= 0x00000004;
+        } else {
+          ensureNatIpsIsMutable();
+          natIps_.addAll(other.natIps_);
+        }
+        onChanged();
+      }
       if (other.hasPropagatedConnectionCount()) {
         setPropagatedConnectionCount(other.getPropagatedConnectionCount());
       }
@@ -980,7 +1080,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1009,6 +1109,13 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
             case 0:
               done = true;
               break;
+            case 941080690:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureNatIpsIsMutable();
+                natIps_.add(s);
+                break;
+              } // case 941080690
             case 1043917994:
               {
                 endpoint_ = input.readStringRequireUtf8();
@@ -1018,7 +1125,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1450082194
             case 2034857770:
@@ -1030,13 +1137,13 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
             case -1958308120:
               {
                 pscConnectionId_ = input.readUInt64();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -1958308120
             case -1698214256:
               {
                 propagatedConnectionCount_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1698214256
             default:
@@ -1310,6 +1417,189 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList natIps_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureNatIpsIsMutable() {
+      if (!natIps_.isModifiable()) {
+        natIps_ = new com.google.protobuf.LazyStringArrayList(natIps_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * NAT IPs of the connected PSC endpoint and those of other endpoints propagated from it.
+     * </pre>
+     *
+     * <code>repeated string nat_ips = 117635086;</code>
+     *
+     * @return A list containing the natIps.
+     */
+    public com.google.protobuf.ProtocolStringList getNatIpsList() {
+      natIps_.makeImmutable();
+      return natIps_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * NAT IPs of the connected PSC endpoint and those of other endpoints propagated from it.
+     * </pre>
+     *
+     * <code>repeated string nat_ips = 117635086;</code>
+     *
+     * @return The count of natIps.
+     */
+    public int getNatIpsCount() {
+      return natIps_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * NAT IPs of the connected PSC endpoint and those of other endpoints propagated from it.
+     * </pre>
+     *
+     * <code>repeated string nat_ips = 117635086;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The natIps at the given index.
+     */
+    public java.lang.String getNatIps(int index) {
+      return natIps_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * NAT IPs of the connected PSC endpoint and those of other endpoints propagated from it.
+     * </pre>
+     *
+     * <code>repeated string nat_ips = 117635086;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the natIps at the given index.
+     */
+    public com.google.protobuf.ByteString getNatIpsBytes(int index) {
+      return natIps_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * NAT IPs of the connected PSC endpoint and those of other endpoints propagated from it.
+     * </pre>
+     *
+     * <code>repeated string nat_ips = 117635086;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The natIps to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNatIps(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureNatIpsIsMutable();
+      natIps_.set(index, value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * NAT IPs of the connected PSC endpoint and those of other endpoints propagated from it.
+     * </pre>
+     *
+     * <code>repeated string nat_ips = 117635086;</code>
+     *
+     * @param value The natIps to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNatIps(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureNatIpsIsMutable();
+      natIps_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * NAT IPs of the connected PSC endpoint and those of other endpoints propagated from it.
+     * </pre>
+     *
+     * <code>repeated string nat_ips = 117635086;</code>
+     *
+     * @param values The natIps to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllNatIps(java.lang.Iterable<java.lang.String> values) {
+      ensureNatIpsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, natIps_);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * NAT IPs of the connected PSC endpoint and those of other endpoints propagated from it.
+     * </pre>
+     *
+     * <code>repeated string nat_ips = 117635086;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNatIps() {
+      natIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * NAT IPs of the connected PSC endpoint and those of other endpoints propagated from it.
+     * </pre>
+     *
+     * <code>repeated string nat_ips = 117635086;</code>
+     *
+     * @param value The bytes of the natIps to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNatIpsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureNatIpsIsMutable();
+      natIps_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private int propagatedConnectionCount_;
 
     /**
@@ -1325,7 +1615,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      */
     @java.lang.Override
     public boolean hasPropagatedConnectionCount() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1359,7 +1649,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     public Builder setPropagatedConnectionCount(int value) {
 
       propagatedConnectionCount_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1376,7 +1666,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearPropagatedConnectionCount() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       propagatedConnectionCount_ = 0;
       onChanged();
       return this;
@@ -1397,7 +1687,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      */
     @java.lang.Override
     public boolean hasPscConnectionId() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1431,7 +1721,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     public Builder setPscConnectionId(long value) {
 
       pscConnectionId_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1448,7 +1738,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearPscConnectionId() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       pscConnectionId_ = 0L;
       onChanged();
       return this;
@@ -1469,7 +1759,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1538,7 +1828,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1557,7 +1847,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1581,7 +1871,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

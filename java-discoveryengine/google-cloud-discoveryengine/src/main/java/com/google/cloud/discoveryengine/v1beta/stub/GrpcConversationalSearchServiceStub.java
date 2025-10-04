@@ -74,6 +74,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   ProtoUtils.marshaller(ConverseConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ConverseConversationResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateConversationRequest, Conversation>
@@ -85,6 +86,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Conversation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConversationRequest, Empty>
@@ -96,6 +98,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConversationRequest, Conversation>
@@ -107,6 +110,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Conversation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConversationRequest, Conversation>
@@ -118,6 +122,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Conversation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListConversationsRequest, ListConversationsResponse>
@@ -130,6 +135,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                   ProtoUtils.marshaller(ListConversationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConversationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AnswerQueryRequest, AnswerQueryResponse>
@@ -141,6 +147,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               .setRequestMarshaller(ProtoUtils.marshaller(AnswerQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnswerQueryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAnswerRequest, Answer> getAnswerMethodDescriptor =
@@ -150,6 +157,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               "google.cloud.discoveryengine.v1beta.ConversationalSearchService/GetAnswer")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAnswerRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Answer.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateSessionRequest, Session>
@@ -161,6 +169,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Session.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSessionRequest, Empty> deleteSessionMethodDescriptor =
@@ -170,6 +179,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               "google.cloud.discoveryengine.v1beta.ConversationalSearchService/DeleteSession")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteSessionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSessionRequest, Session>
@@ -181,6 +191,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Session.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSessionRequest, Session> getSessionMethodDescriptor =
@@ -190,6 +201,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               "google.cloud.discoveryengine.v1beta.ConversationalSearchService/GetSession")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSessionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Session.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListSessionsRequest, ListSessionsResponse>
@@ -201,6 +213,7 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               .setRequestMarshaller(ProtoUtils.marshaller(ListSessionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSessionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ConverseConversationRequest, ConverseConversationResponse>

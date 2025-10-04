@@ -43,6 +43,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.gdchardwaremanagement.v1alpha.CancelOrderRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.ChangeLogEntry;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Comment;
 import com.google.cloud.gdchardwaremanagement.v1alpha.CreateCommentRequest;
@@ -85,6 +86,7 @@ import com.google.cloud.gdchardwaremanagement.v1alpha.ListZonesResponse;
 import com.google.cloud.gdchardwaremanagement.v1alpha.OperationMetadata;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Order;
 import com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest;
+import com.google.cloud.gdchardwaremanagement.v1alpha.RequestOrderDateChangeRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Site;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Sku;
@@ -370,6 +372,47 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                       .build())
               .setOperationSnapshotFactory(
                   (SubmitOrderRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<CancelOrderRequest, Operation>
+      cancelOrderMethodDescriptor =
+          ApiMethodDescriptor.<CancelOrderRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/CancelOrder")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CancelOrderRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=projects/*/locations/*/orders/*}:cancel",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelOrderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelOrderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CancelOrderRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -1511,6 +1554,47 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<RequestOrderDateChangeRequest, Operation>
+      requestOrderDateChangeMethodDescriptor =
+          ApiMethodDescriptor.<RequestOrderDateChangeRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/RequestOrderDateChange")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RequestOrderDateChangeRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=projects/*/locations/*/orders/*}:requestDateChange",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RequestOrderDateChangeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RequestOrderDateChangeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RequestOrderDateChangeRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1594,6 +1678,9 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
   private final UnaryCallable<SubmitOrderRequest, Operation> submitOrderCallable;
   private final OperationCallable<SubmitOrderRequest, Order, OperationMetadata>
       submitOrderOperationCallable;
+  private final UnaryCallable<CancelOrderRequest, Operation> cancelOrderCallable;
+  private final OperationCallable<CancelOrderRequest, Order, OperationMetadata>
+      cancelOrderOperationCallable;
   private final UnaryCallable<ListSitesRequest, ListSitesResponse> listSitesCallable;
   private final UnaryCallable<ListSitesRequest, ListSitesPagedResponse> listSitesPagedCallable;
   private final UnaryCallable<GetSiteRequest, Site> getSiteCallable;
@@ -1664,6 +1751,10 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
   private final UnaryCallable<SignalZoneStateRequest, Operation> signalZoneStateCallable;
   private final OperationCallable<SignalZoneStateRequest, Zone, OperationMetadata>
       signalZoneStateOperationCallable;
+  private final UnaryCallable<RequestOrderDateChangeRequest, Operation>
+      requestOrderDateChangeCallable;
+  private final OperationCallable<RequestOrderDateChangeRequest, Order, OperationMetadata>
+      requestOrderDateChangeOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1799,6 +1890,17 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
     HttpJsonCallSettings<SubmitOrderRequest, Operation> submitOrderTransportSettings =
         HttpJsonCallSettings.<SubmitOrderRequest, Operation>newBuilder()
             .setMethodDescriptor(submitOrderMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CancelOrderRequest, Operation> cancelOrderTransportSettings =
+        HttpJsonCallSettings.<CancelOrderRequest, Operation>newBuilder()
+            .setMethodDescriptor(cancelOrderMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
@@ -2136,6 +2238,18 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<RequestOrderDateChangeRequest, Operation>
+        requestOrderDateChangeTransportSettings =
+            HttpJsonCallSettings.<RequestOrderDateChangeRequest, Operation>newBuilder()
+                .setMethodDescriptor(requestOrderDateChangeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2203,6 +2317,15 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
         callableFactory.createOperationCallable(
             submitOrderTransportSettings,
             settings.submitOrderOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.cancelOrderCallable =
+        callableFactory.createUnaryCallable(
+            cancelOrderTransportSettings, settings.cancelOrderSettings(), clientContext);
+    this.cancelOrderOperationCallable =
+        callableFactory.createOperationCallable(
+            cancelOrderTransportSettings,
+            settings.cancelOrderOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.listSitesCallable =
@@ -2415,6 +2538,17 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
             settings.signalZoneStateOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.requestOrderDateChangeCallable =
+        callableFactory.createUnaryCallable(
+            requestOrderDateChangeTransportSettings,
+            settings.requestOrderDateChangeSettings(),
+            clientContext);
+    this.requestOrderDateChangeOperationCallable =
+        callableFactory.createOperationCallable(
+            requestOrderDateChangeTransportSettings,
+            settings.requestOrderDateChangeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -2438,6 +2572,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
     methodDescriptors.add(updateOrderMethodDescriptor);
     methodDescriptors.add(deleteOrderMethodDescriptor);
     methodDescriptors.add(submitOrderMethodDescriptor);
+    methodDescriptors.add(cancelOrderMethodDescriptor);
     methodDescriptors.add(listSitesMethodDescriptor);
     methodDescriptors.add(getSiteMethodDescriptor);
     methodDescriptors.add(createSiteMethodDescriptor);
@@ -2467,6 +2602,7 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
     methodDescriptors.add(updateZoneMethodDescriptor);
     methodDescriptors.add(deleteZoneMethodDescriptor);
     methodDescriptors.add(signalZoneStateMethodDescriptor);
+    methodDescriptors.add(requestOrderDateChangeMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -2533,6 +2669,17 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
   public OperationCallable<SubmitOrderRequest, Order, OperationMetadata>
       submitOrderOperationCallable() {
     return submitOrderOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelOrderRequest, Operation> cancelOrderCallable() {
+    return cancelOrderCallable;
+  }
+
+  @Override
+  public OperationCallable<CancelOrderRequest, Order, OperationMetadata>
+      cancelOrderOperationCallable() {
+    return cancelOrderOperationCallable;
   }
 
   @Override
@@ -2801,6 +2948,17 @@ public class HttpJsonGDCHardwareManagementStub extends GDCHardwareManagementStub
   public OperationCallable<SignalZoneStateRequest, Zone, OperationMetadata>
       signalZoneStateOperationCallable() {
     return signalZoneStateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RequestOrderDateChangeRequest, Operation> requestOrderDateChangeCallable() {
+    return requestOrderDateChangeCallable;
+  }
+
+  @Override
+  public OperationCallable<RequestOrderDateChangeRequest, Order, OperationMetadata>
+      requestOrderDateChangeOperationCallable() {
+    return requestOrderDateChangeOperationCallable;
   }
 
   @Override

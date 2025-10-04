@@ -62,6 +62,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
           .setFullMethodName("google.apps.meet.v2beta.SpacesService/CreateSpace")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSpaceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Space.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetSpaceRequest, Space> getSpaceMethodDescriptor =
@@ -70,6 +71,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
           .setFullMethodName("google.apps.meet.v2beta.SpacesService/GetSpace")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSpaceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Space.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSpaceRequest, Space> updateSpaceMethodDescriptor =
@@ -78,6 +80,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
           .setFullMethodName("google.apps.meet.v2beta.SpacesService/UpdateSpace")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSpaceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Space.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<
@@ -91,6 +94,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
                   ProtoUtils.marshaller(ConnectActiveConferenceRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ConnectActiveConferenceResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EndActiveConferenceRequest, Empty>
@@ -101,6 +105,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EndActiveConferenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMemberRequest, Member> createMemberMethodDescriptor =
@@ -109,6 +114,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
           .setFullMethodName("google.apps.meet.v2beta.SpacesService/CreateMember")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateMemberRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Member.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetMemberRequest, Member> getMemberMethodDescriptor =
@@ -117,6 +123,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
           .setFullMethodName("google.apps.meet.v2beta.SpacesService/GetMember")
           .setRequestMarshaller(ProtoUtils.marshaller(GetMemberRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Member.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListMembersRequest, ListMembersResponse>
@@ -127,6 +134,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListMembersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMembersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMemberRequest, Empty> deleteMemberMethodDescriptor =
@@ -135,6 +143,7 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
           .setFullMethodName("google.apps.meet.v2beta.SpacesService/DeleteMember")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteMemberRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateSpaceRequest, Space> createSpaceCallable;

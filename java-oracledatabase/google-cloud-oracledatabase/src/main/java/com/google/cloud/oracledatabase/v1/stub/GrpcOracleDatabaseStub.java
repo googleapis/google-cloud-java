@@ -114,6 +114,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListCloudExadataInfrastructuresResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -128,6 +129,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   ProtoUtils.marshaller(GetCloudExadataInfrastructureRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CloudExadataInfrastructure.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCloudExadataInfrastructureRequest, Operation>
@@ -140,6 +142,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   ProtoUtils.marshaller(
                       CreateCloudExadataInfrastructureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCloudExadataInfrastructureRequest, Operation>
@@ -152,6 +155,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   ProtoUtils.marshaller(
                       DeleteCloudExadataInfrastructureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCloudVmClustersRequest, ListCloudVmClustersResponse>
@@ -164,6 +168,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   ProtoUtils.marshaller(ListCloudVmClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCloudVmClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCloudVmClusterRequest, CloudVmCluster>
@@ -174,6 +179,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCloudVmClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CloudVmCluster.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCloudVmClusterRequest, Operation>
@@ -185,6 +191,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCloudVmClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCloudVmClusterRequest, Operation>
@@ -196,6 +203,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCloudVmClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEntitlementsRequest, ListEntitlementsResponse>
@@ -207,6 +215,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   ProtoUtils.marshaller(ListEntitlementsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntitlementsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDbServersRequest, ListDbServersResponse>
@@ -218,6 +227,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   ProtoUtils.marshaller(ListDbServersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDbServersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDbNodesRequest, ListDbNodesResponse>
@@ -228,6 +238,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListDbNodesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDbNodesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListGiVersionsRequest, ListGiVersionsResponse>
@@ -239,6 +250,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   ProtoUtils.marshaller(ListGiVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGiVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDbSystemShapesRequest, ListDbSystemShapesResponse>
@@ -250,6 +262,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   ProtoUtils.marshaller(ListDbSystemShapesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDbSystemShapesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -264,6 +277,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   ProtoUtils.marshaller(ListAutonomousDatabasesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAutonomousDatabasesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAutonomousDatabaseRequest, AutonomousDatabase>
@@ -275,6 +289,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAutonomousDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AutonomousDatabase.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAutonomousDatabaseRequest, Operation>
@@ -286,6 +301,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAutonomousDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAutonomousDatabaseRequest, Operation>
@@ -297,6 +313,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAutonomousDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RestoreAutonomousDatabaseRequest, Operation>
@@ -308,6 +325,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RestoreAutonomousDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -325,6 +343,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       GenerateAutonomousDatabaseWalletResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -339,6 +358,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   ProtoUtils.marshaller(ListAutonomousDbVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAutonomousDbVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -357,6 +377,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListAutonomousDatabaseCharacterSetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -372,6 +393,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   ProtoUtils.marshaller(ListAutonomousDatabaseBackupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAutonomousDatabaseBackupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopAutonomousDatabaseRequest, Operation>
@@ -383,6 +405,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StopAutonomousDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StartAutonomousDatabaseRequest, Operation>
@@ -394,6 +417,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StartAutonomousDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RestartAutonomousDatabaseRequest, Operation>
@@ -405,6 +429,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RestartAutonomousDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -416,6 +441,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -424,6 +450,7 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<

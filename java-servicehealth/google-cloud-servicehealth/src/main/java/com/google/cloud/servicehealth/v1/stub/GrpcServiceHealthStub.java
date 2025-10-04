@@ -66,6 +66,7 @@ public class GrpcServiceHealthStub extends ServiceHealthStub {
               .setFullMethodName("google.cloud.servicehealth.v1.ServiceHealth/ListEvents")
               .setRequestMarshaller(ProtoUtils.marshaller(ListEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEventRequest, Event> getEventMethodDescriptor =
@@ -74,6 +75,7 @@ public class GrpcServiceHealthStub extends ServiceHealthStub {
           .setFullMethodName("google.cloud.servicehealth.v1.ServiceHealth/GetEvent")
           .setRequestMarshaller(ProtoUtils.marshaller(GetEventRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Event.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<
@@ -88,6 +90,7 @@ public class GrpcServiceHealthStub extends ServiceHealthStub {
                   ProtoUtils.marshaller(ListOrganizationEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOrganizationEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetOrganizationEventRequest, OrganizationEvent>
@@ -98,6 +101,7 @@ public class GrpcServiceHealthStub extends ServiceHealthStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetOrganizationEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(OrganizationEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -112,6 +116,7 @@ public class GrpcServiceHealthStub extends ServiceHealthStub {
                   ProtoUtils.marshaller(ListOrganizationImpactsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOrganizationImpactsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetOrganizationImpactRequest, OrganizationImpact>
@@ -123,6 +128,7 @@ public class GrpcServiceHealthStub extends ServiceHealthStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetOrganizationImpactRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(OrganizationImpact.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -134,6 +140,7 @@ public class GrpcServiceHealthStub extends ServiceHealthStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -142,6 +149,7 @@ public class GrpcServiceHealthStub extends ServiceHealthStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListEventsRequest, ListEventsResponse> listEventsCallable;

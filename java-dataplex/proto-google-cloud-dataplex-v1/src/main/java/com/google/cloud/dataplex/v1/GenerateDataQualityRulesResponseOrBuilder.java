@@ -28,8 +28,8 @@ public interface GenerateDataQualityRulesResponseOrBuilder
    *
    *
    * <pre>
-   * The data quality rules that Dataplex generates based on the results
-   * of a data profiling scan.
+   * The data quality rules that Dataplex Universal Catalog generates based on
+   * the results of a data profiling scan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
@@ -40,8 +40,8 @@ public interface GenerateDataQualityRulesResponseOrBuilder
    *
    *
    * <pre>
-   * The data quality rules that Dataplex generates based on the results
-   * of a data profiling scan.
+   * The data quality rules that Dataplex Universal Catalog generates based on
+   * the results of a data profiling scan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
@@ -52,8 +52,8 @@ public interface GenerateDataQualityRulesResponseOrBuilder
    *
    *
    * <pre>
-   * The data quality rules that Dataplex generates based on the results
-   * of a data profiling scan.
+   * The data quality rules that Dataplex Universal Catalog generates based on
+   * the results of a data profiling scan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
@@ -64,8 +64,8 @@ public interface GenerateDataQualityRulesResponseOrBuilder
    *
    *
    * <pre>
-   * The data quality rules that Dataplex generates based on the results
-   * of a data profiling scan.
+   * The data quality rules that Dataplex Universal Catalog generates based on
+   * the results of a data profiling scan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
@@ -77,8 +77,8 @@ public interface GenerateDataQualityRulesResponseOrBuilder
    *
    *
    * <pre>
-   * The data quality rules that Dataplex generates based on the results
-   * of a data profiling scan.
+   * The data quality rules that Dataplex Universal Catalog generates based on
+   * the results of a data profiling scan.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>

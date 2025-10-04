@@ -28,10 +28,10 @@ public interface DataProfileResultOrBuilder
    *
    *
    * <pre>
-   * The count of rows scanned.
+   * Output only. The count of rows scanned.
    * </pre>
    *
-   * <code>int64 row_count = 3;</code>
+   * <code>int64 row_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The rowCount.
    */
@@ -41,10 +41,12 @@ public interface DataProfileResultOrBuilder
    *
    *
    * <pre>
-   * The profile information per field.
+   * Output only. The profile information per field.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the profile field is set.
    */
@@ -54,10 +56,12 @@ public interface DataProfileResultOrBuilder
    *
    *
    * <pre>
-   * The profile information per field.
+   * Output only. The profile information per field.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The profile.
    */
@@ -67,10 +71,12 @@ public interface DataProfileResultOrBuilder
    *
    *
    * <pre>
-   * The profile information per field.
+   * Output only. The profile information per field.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataplex.v1.DataProfileResult.ProfileOrBuilder getProfileOrBuilder();
 
@@ -78,10 +84,12 @@ public interface DataProfileResultOrBuilder
    *
    *
    * <pre>
-   * The data scanned for this result.
+   * Output only. The data scanned for this result.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.ScannedData scanned_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the scannedData field is set.
    */
@@ -91,10 +99,12 @@ public interface DataProfileResultOrBuilder
    *
    *
    * <pre>
-   * The data scanned for this result.
+   * Output only. The data scanned for this result.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.ScannedData scanned_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The scannedData.
    */
@@ -104,10 +114,12 @@ public interface DataProfileResultOrBuilder
    *
    *
    * <pre>
-   * The data scanned for this result.
+   * Output only. The data scanned for this result.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.ScannedData scanned_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataplex.v1.ScannedDataOrBuilder getScannedDataOrBuilder();
 

@@ -192,7 +192,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. The user-provided ID to be assigned to the GoogleApiSource. It
-   * should match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+   * should match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * </pre>
    *
    * <code>string google_api_source_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -217,7 +217,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. The user-provided ID to be assigned to the GoogleApiSource. It
-   * should match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+   * should match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * </pre>
    *
    * <code>string google_api_source_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1033,7 +1033,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The user-provided ID to be assigned to the GoogleApiSource. It
-     * should match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+     * should match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
      * </pre>
      *
      * <code>string google_api_source_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1057,7 +1057,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The user-provided ID to be assigned to the GoogleApiSource. It
-     * should match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+     * should match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
      * </pre>
      *
      * <code>string google_api_source_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1081,7 +1081,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The user-provided ID to be assigned to the GoogleApiSource. It
-     * should match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+     * should match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
      * </pre>
      *
      * <code>string google_api_source_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1104,7 +1104,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The user-provided ID to be assigned to the GoogleApiSource. It
-     * should match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+     * should match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
      * </pre>
      *
      * <code>string google_api_source_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1123,7 +1123,7 @@ public final class CreateGoogleApiSourceRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The user-provided ID to be assigned to the GoogleApiSource. It
-     * should match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+     * should match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
      * </pre>
      *
      * <code>string google_api_source_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

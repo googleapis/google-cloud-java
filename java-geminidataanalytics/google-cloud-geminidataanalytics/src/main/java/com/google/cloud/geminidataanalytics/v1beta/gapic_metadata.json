@@ -1,0 +1,78 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.geminidataanalytics.v1beta",
+  "libraryPackage": "com.google.cloud.geminidataanalytics.v1beta",
+  "services": {
+    "DataAgentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataAgentServiceClient",
+          "rpcs": {
+            "CreateDataAgent": {
+              "methods": ["createDataAgentAsync", "createDataAgentAsync", "createDataAgentAsync", "createDataAgentOperationCallable", "createDataAgentCallable"]
+            },
+            "DeleteDataAgent": {
+              "methods": ["deleteDataAgentAsync", "deleteDataAgentAsync", "deleteDataAgentAsync", "deleteDataAgentOperationCallable", "deleteDataAgentCallable"]
+            },
+            "GetDataAgent": {
+              "methods": ["getDataAgent", "getDataAgent", "getDataAgent", "getDataAgentCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListAccessibleDataAgents": {
+              "methods": ["listAccessibleDataAgents", "listAccessibleDataAgents", "listAccessibleDataAgents", "listAccessibleDataAgentsPagedCallable", "listAccessibleDataAgentsCallable"]
+            },
+            "ListDataAgents": {
+              "methods": ["listDataAgents", "listDataAgents", "listDataAgents", "listDataAgentsPagedCallable", "listDataAgentsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "UpdateDataAgent": {
+              "methods": ["updateDataAgentAsync", "updateDataAgentAsync", "updateDataAgentOperationCallable", "updateDataAgentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "DataChatService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataChatServiceClient",
+          "rpcs": {
+            "Chat": {
+              "methods": ["chatCallable"]
+            },
+            "CreateConversation": {
+              "methods": ["createConversation", "createConversation", "createConversation", "createConversationCallable"]
+            },
+            "GetConversation": {
+              "methods": ["getConversation", "getConversation", "getConversation", "getConversationCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListConversations": {
+              "methods": ["listConversations", "listConversations", "listConversations", "listConversationsPagedCallable", "listConversationsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListMessages": {
+              "methods": ["listMessages", "listMessages", "listMessages", "listMessagesPagedCallable", "listMessagesCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

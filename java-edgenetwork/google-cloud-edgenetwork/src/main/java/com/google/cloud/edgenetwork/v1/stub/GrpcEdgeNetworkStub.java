@@ -105,6 +105,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   ProtoUtils.marshaller(InitializeZoneRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(InitializeZoneResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListZonesRequest, ListZonesResponse>
@@ -114,6 +115,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
               .setFullMethodName("google.cloud.edgenetwork.v1.EdgeNetwork/ListZones")
               .setRequestMarshaller(ProtoUtils.marshaller(ListZonesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListZonesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetZoneRequest, Zone> getZoneMethodDescriptor =
@@ -122,6 +124,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
           .setFullMethodName("google.cloud.edgenetwork.v1.EdgeNetwork/GetZone")
           .setRequestMarshaller(ProtoUtils.marshaller(GetZoneRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Zone.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListNetworksRequest, ListNetworksResponse>
@@ -132,6 +135,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListNetworksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNetworksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNetworkRequest, Network> getNetworkMethodDescriptor =
@@ -140,6 +144,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
           .setFullMethodName("google.cloud.edgenetwork.v1.EdgeNetwork/GetNetwork")
           .setRequestMarshaller(ProtoUtils.marshaller(GetNetworkRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Network.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DiagnoseNetworkRequest, DiagnoseNetworkResponse>
@@ -151,6 +156,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   ProtoUtils.marshaller(DiagnoseNetworkRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DiagnoseNetworkResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateNetworkRequest, Operation>
@@ -161,6 +167,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNetworkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNetworkRequest, Operation>
@@ -171,6 +178,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNetworkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSubnetsRequest, ListSubnetsResponse>
@@ -181,6 +189,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSubnetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSubnetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSubnetRequest, Subnet> getSubnetMethodDescriptor =
@@ -189,6 +198,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
           .setFullMethodName("google.cloud.edgenetwork.v1.EdgeNetwork/GetSubnet")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSubnetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Subnet.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateSubnetRequest, Operation>
@@ -198,6 +208,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
               .setFullMethodName("google.cloud.edgenetwork.v1.EdgeNetwork/CreateSubnet")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateSubnetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSubnetRequest, Operation>
@@ -207,6 +218,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
               .setFullMethodName("google.cloud.edgenetwork.v1.EdgeNetwork/UpdateSubnet")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateSubnetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSubnetRequest, Operation>
@@ -216,6 +228,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
               .setFullMethodName("google.cloud.edgenetwork.v1.EdgeNetwork/DeleteSubnet")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteSubnetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListInterconnectsRequest, ListInterconnectsResponse>
@@ -227,6 +240,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   ProtoUtils.marshaller(ListInterconnectsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInterconnectsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInterconnectRequest, Interconnect>
@@ -237,6 +251,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetInterconnectRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Interconnect.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DiagnoseInterconnectRequest, DiagnoseInterconnectResponse>
@@ -248,6 +263,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   ProtoUtils.marshaller(DiagnoseInterconnectRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DiagnoseInterconnectResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -262,6 +278,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   ProtoUtils.marshaller(ListInterconnectAttachmentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInterconnectAttachmentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInterconnectAttachmentRequest, InterconnectAttachment>
@@ -274,6 +291,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   ProtoUtils.marshaller(GetInterconnectAttachmentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(InterconnectAttachment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateInterconnectAttachmentRequest, Operation>
@@ -285,6 +303,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateInterconnectAttachmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteInterconnectAttachmentRequest, Operation>
@@ -296,6 +315,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteInterconnectAttachmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRoutersRequest, ListRoutersResponse>
@@ -306,6 +326,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListRoutersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRoutersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRouterRequest, Router> getRouterMethodDescriptor =
@@ -314,6 +335,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
           .setFullMethodName("google.cloud.edgenetwork.v1.EdgeNetwork/GetRouter")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRouterRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Router.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DiagnoseRouterRequest, DiagnoseRouterResponse>
@@ -325,6 +347,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   ProtoUtils.marshaller(DiagnoseRouterRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DiagnoseRouterResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateRouterRequest, Operation>
@@ -334,6 +357,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
               .setFullMethodName("google.cloud.edgenetwork.v1.EdgeNetwork/CreateRouter")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateRouterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRouterRequest, Operation>
@@ -343,6 +367,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
               .setFullMethodName("google.cloud.edgenetwork.v1.EdgeNetwork/UpdateRouter")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateRouterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRouterRequest, Operation>
@@ -352,6 +377,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
               .setFullMethodName("google.cloud.edgenetwork.v1.EdgeNetwork/DeleteRouter")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteRouterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -363,6 +389,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -371,6 +398,7 @@ public class GrpcEdgeNetworkStub extends EdgeNetworkStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<InitializeZoneRequest, InitializeZoneResponse> initializeZoneCallable;

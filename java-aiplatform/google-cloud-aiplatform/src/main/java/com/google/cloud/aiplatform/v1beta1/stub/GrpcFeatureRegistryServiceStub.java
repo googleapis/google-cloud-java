@@ -103,6 +103,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFeatureGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFeatureGroupRequest, FeatureGroup>
@@ -114,6 +115,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFeatureGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FeatureGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFeatureGroupsRequest, ListFeatureGroupsResponse>
@@ -126,6 +128,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   ProtoUtils.marshaller(ListFeatureGroupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFeatureGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFeatureGroupRequest, Operation>
@@ -137,6 +140,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFeatureGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFeatureGroupRequest, Operation>
@@ -148,6 +152,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFeatureGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFeatureRequest, Operation>
@@ -159,6 +164,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFeatureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchCreateFeaturesRequest, Operation>
@@ -170,6 +176,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchCreateFeaturesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFeatureRequest, Feature> getFeatureMethodDescriptor =
@@ -178,6 +185,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.FeatureRegistryService/GetFeature")
           .setRequestMarshaller(ProtoUtils.marshaller(GetFeatureRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Feature.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListFeaturesRequest, ListFeaturesResponse>
@@ -189,6 +197,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListFeaturesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFeaturesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFeatureRequest, Operation>
@@ -200,6 +209,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFeatureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFeatureRequest, Operation>
@@ -211,6 +221,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFeatureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFeatureMonitorRequest, Operation>
@@ -222,6 +233,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFeatureMonitorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFeatureMonitorRequest, FeatureMonitor>
@@ -233,6 +245,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFeatureMonitorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FeatureMonitor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse>
@@ -245,6 +258,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   ProtoUtils.marshaller(ListFeatureMonitorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFeatureMonitorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFeatureMonitorRequest, Operation>
@@ -256,6 +270,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFeatureMonitorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFeatureMonitorRequest, Operation>
@@ -267,6 +282,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFeatureMonitorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFeatureMonitorJobRequest, FeatureMonitorJob>
@@ -278,6 +294,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFeatureMonitorJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FeatureMonitorJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFeatureMonitorJobRequest, FeatureMonitorJob>
@@ -289,6 +306,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFeatureMonitorJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FeatureMonitorJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -303,6 +321,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   ProtoUtils.marshaller(ListFeatureMonitorJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFeatureMonitorJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -314,6 +333,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -322,6 +342,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -330,6 +351,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -338,6 +360,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -349,6 +372,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateFeatureGroupRequest, Operation> createFeatureGroupCallable;

@@ -110,6 +110,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDatasetRequest, Dataset> getDatasetMethodDescriptor =
@@ -118,6 +119,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.DatasetService/GetDataset")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDatasetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateDatasetRequest, Dataset>
@@ -128,6 +130,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDatasetsRequest, ListDatasetsResponse>
@@ -138,6 +141,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListDatasetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatasetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDatasetRequest, Operation>
@@ -148,6 +152,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportDataRequest, Operation> importDataMethodDescriptor =
@@ -156,6 +161,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.DatasetService/ImportData")
           .setRequestMarshaller(ProtoUtils.marshaller(ImportDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ExportDataRequest, Operation> exportDataMethodDescriptor =
@@ -164,6 +170,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.DatasetService/ExportData")
           .setRequestMarshaller(ProtoUtils.marshaller(ExportDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateDatasetVersionRequest, Operation>
@@ -175,6 +182,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDatasetVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDatasetVersionRequest, DatasetVersion>
@@ -186,6 +194,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDatasetVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DatasetVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDatasetVersionRequest, Operation>
@@ -197,6 +206,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDatasetVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDatasetVersionRequest, DatasetVersion>
@@ -207,6 +217,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDatasetVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DatasetVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDatasetVersionsRequest, ListDatasetVersionsResponse>
@@ -219,6 +230,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   ProtoUtils.marshaller(ListDatasetVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatasetVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RestoreDatasetVersionRequest, Operation>
@@ -230,6 +242,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RestoreDatasetVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataItemsRequest, ListDataItemsResponse>
@@ -241,6 +254,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   ProtoUtils.marshaller(ListDataItemsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataItemsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchDataItemsRequest, SearchDataItemsResponse>
@@ -252,6 +266,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   ProtoUtils.marshaller(SearchDataItemsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchDataItemsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSavedQueriesRequest, ListSavedQueriesResponse>
@@ -263,6 +278,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   ProtoUtils.marshaller(ListSavedQueriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSavedQueriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSavedQueryRequest, Operation>
@@ -273,6 +289,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSavedQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAnnotationSpecRequest, AnnotationSpec>
@@ -283,6 +300,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAnnotationSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AnnotationSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAnnotationsRequest, ListAnnotationsResponse>
@@ -294,6 +312,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   ProtoUtils.marshaller(ListAnnotationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAnnotationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AssessDataRequest, Operation> assessDataMethodDescriptor =
@@ -302,6 +321,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.DatasetService/AssessData")
           .setRequestMarshaller(ProtoUtils.marshaller(AssessDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<AssembleDataRequest, Operation>
@@ -311,6 +331,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1beta1.DatasetService/AssembleData")
               .setRequestMarshaller(ProtoUtils.marshaller(AssembleDataRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -322,6 +343,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -330,6 +352,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -338,6 +361,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -346,6 +370,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -357,6 +382,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateDatasetRequest, Operation> createDatasetCallable;

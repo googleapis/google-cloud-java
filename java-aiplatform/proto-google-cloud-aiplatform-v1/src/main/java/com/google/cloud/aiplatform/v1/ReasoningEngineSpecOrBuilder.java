@@ -28,6 +28,57 @@ public interface ReasoningEngineSpecOrBuilder
    *
    *
    * <pre>
+   * Optional. The service account that the Reasoning Engine artifact runs as.
+   * It should have "roles/storage.objectViewer" for reading the user project's
+   * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+   * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+   * will be used.
+   * </pre>
+   *
+   * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the serviceAccount field is set.
+   */
+  boolean hasServiceAccount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The service account that the Reasoning Engine artifact runs as.
+   * It should have "roles/storage.objectViewer" for reading the user project's
+   * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+   * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+   * will be used.
+   * </pre>
+   *
+   * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The serviceAccount.
+   */
+  java.lang.String getServiceAccount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The service account that the Reasoning Engine artifact runs as.
+   * It should have "roles/storage.objectViewer" for reading the user project's
+   * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+   * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+   * will be used.
+   * </pre>
+   *
+   * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  com.google.protobuf.ByteString getServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. User provided package spec of the ReasoningEngine.
    * Ignored when users directly specify a deployment image through
    * `deployment_spec.first_party_image_override`, but keeping the
@@ -195,7 +246,8 @@ public interface ReasoningEngineSpecOrBuilder
    *
    * <pre>
    * Optional. The OSS agent framework used to develop the agent.
-   * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+   * Currently supported values: "google-adk", "langchain", "langgraph", "ag2",
+   * "llama-index", "custom".
    * </pre>
    *
    * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -209,7 +261,8 @@ public interface ReasoningEngineSpecOrBuilder
    *
    * <pre>
    * Optional. The OSS agent framework used to develop the agent.
-   * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+   * Currently supported values: "google-adk", "langchain", "langgraph", "ag2",
+   * "llama-index", "custom".
    * </pre>
    *
    * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

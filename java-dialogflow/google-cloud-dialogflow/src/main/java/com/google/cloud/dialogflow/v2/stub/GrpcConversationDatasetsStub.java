@@ -68,6 +68,7 @@ public class GrpcConversationDatasetsStub extends ConversationDatasetsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConversationDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConversationDatasetRequest, ConversationDataset>
@@ -80,6 +81,7 @@ public class GrpcConversationDatasetsStub extends ConversationDatasetsStub {
                   ProtoUtils.marshaller(GetConversationDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ConversationDataset.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -94,6 +96,7 @@ public class GrpcConversationDatasetsStub extends ConversationDatasetsStub {
                   ProtoUtils.marshaller(ListConversationDatasetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConversationDatasetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConversationDatasetRequest, Operation>
@@ -105,6 +108,7 @@ public class GrpcConversationDatasetsStub extends ConversationDatasetsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConversationDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportConversationDataRequest, Operation>
@@ -116,6 +120,7 @@ public class GrpcConversationDatasetsStub extends ConversationDatasetsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportConversationDataRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -127,6 +132,7 @@ public class GrpcConversationDatasetsStub extends ConversationDatasetsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -135,6 +141,7 @@ public class GrpcConversationDatasetsStub extends ConversationDatasetsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateConversationDatasetRequest, Operation>

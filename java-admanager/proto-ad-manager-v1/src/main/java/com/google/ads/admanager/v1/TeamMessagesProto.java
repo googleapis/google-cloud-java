@@ -44,15 +44,15 @@ public final class TeamMessagesProto {
       "\n+google/ads/admanager/v1/team_messages."
           + "proto\022\027google.ads.admanager.v1\032\037google/a"
           + "pi/field_behavior.proto\032\031google/api/reso"
-          + "urce.proto\"\206\001\n\004Team\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\024"
-          + "\n\007team_id\030\002 \001(\003B\003\340A\003:U\352AR\n\035admanager.goo"
-          + "gleapis.com/Team\022$networks/{network_code"
-          + "}/teams/{team}*\005teams2\004teamB\305\001\n\033com.goog"
-          + "le.ads.admanager.v1B\021TeamMessagesProtoP\001"
-          + "Z@google.golang.org/genproto/googleapis/"
-          + "ads/admanager/v1;admanager\252\002\027Google.Ads."
-          + "AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002"
-          + "\032Google::Ads::AdManager::V1b\006proto3"
+          + "urce.proto\"p\n\004Team\022\021\n\004name\030\001 \001(\tB\003\340A\010:U\352"
+          + "AR\n\035admanager.googleapis.com/Team\022$netwo"
+          + "rks/{network_code}/teams/{team}*\005teams2\004"
+          + "teamB\305\001\n\033com.google.ads.admanager.v1B\021Te"
+          + "amMessagesProtoP\001Z@google.golang.org/gen"
+          + "proto/googleapis/ads/admanager/v1;admana"
+          + "ger\252\002\027Google.Ads.AdManager.V1\312\002\027Google\\A"
+          + "ds\\AdManager\\V1\352\002\032Google::Ads::AdManager"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -67,7 +67,7 @@ public final class TeamMessagesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_Team_descriptor,
             new java.lang.String[] {
-              "Name", "TeamId",
+              "Name",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -1210,6 +1210,38 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
+   * Optional. Output only. True if GPU zonal redundancy is disabled on this
+   * task.
+   * </pre>
+   *
+   * <code>
+   * optional bool gpu_zonal_redundancy_disabled = 37 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the gpuZonalRedundancyDisabled field is set.
+   */
+  boolean hasGpuZonalRedundancyDisabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. True if GPU zonal redundancy is disabled on this
+   * task.
+   * </pre>
+   *
+   * <code>
+   * optional bool gpu_zonal_redundancy_disabled = 37 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The gpuZonalRedundancyDisabled.
+   */
+  boolean getGpuZonalRedundancyDisabled();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. A system-generated fingerprint for this version of the
    * resource. May be used to detect modification conflict during updates.
    * </pre>

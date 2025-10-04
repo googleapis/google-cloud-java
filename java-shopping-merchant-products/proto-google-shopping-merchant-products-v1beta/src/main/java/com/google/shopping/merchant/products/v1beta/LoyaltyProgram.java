@@ -77,10 +77,10 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The label of the loyalty program. This is an internal label that uniquely
-   * identifies the relationship between a merchant entity and a loyalty
+   * identifies the relationship between a business entity and a loyalty
    * program entity. The label must be provided so that the system can associate
-   * the assets below (for example, price and points) with a merchant. The
-   * corresponding program must be linked to the merchant account.
+   * the assets below (for example, price and points) with a business. The
+   * corresponding program must be linked to the Merchant Center account.
    * </pre>
    *
    * <code>optional string program_label = 1;</code>
@@ -97,10 +97,10 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The label of the loyalty program. This is an internal label that uniquely
-   * identifies the relationship between a merchant entity and a loyalty
+   * identifies the relationship between a business entity and a loyalty
    * program entity. The label must be provided so that the system can associate
-   * the assets below (for example, price and points) with a merchant. The
-   * corresponding program must be linked to the merchant account.
+   * the assets below (for example, price and points) with a business. The
+   * corresponding program must be linked to the Merchant Center account.
    * </pre>
    *
    * <code>optional string program_label = 1;</code>
@@ -125,10 +125,10 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The label of the loyalty program. This is an internal label that uniquely
-   * identifies the relationship between a merchant entity and a loyalty
+   * identifies the relationship between a business entity and a loyalty
    * program entity. The label must be provided so that the system can associate
-   * the assets below (for example, price and points) with a merchant. The
-   * corresponding program must be linked to the merchant account.
+   * the assets below (for example, price and points) with a business. The
+   * corresponding program must be linked to the Merchant Center account.
    * </pre>
    *
    * <code>optional string program_label = 1;</code>
@@ -1062,10 +1062,10 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The label of the loyalty program. This is an internal label that uniquely
-     * identifies the relationship between a merchant entity and a loyalty
+     * identifies the relationship between a business entity and a loyalty
      * program entity. The label must be provided so that the system can associate
-     * the assets below (for example, price and points) with a merchant. The
-     * corresponding program must be linked to the merchant account.
+     * the assets below (for example, price and points) with a business. The
+     * corresponding program must be linked to the Merchant Center account.
      * </pre>
      *
      * <code>optional string program_label = 1;</code>
@@ -1081,10 +1081,10 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The label of the loyalty program. This is an internal label that uniquely
-     * identifies the relationship between a merchant entity and a loyalty
+     * identifies the relationship between a business entity and a loyalty
      * program entity. The label must be provided so that the system can associate
-     * the assets below (for example, price and points) with a merchant. The
-     * corresponding program must be linked to the merchant account.
+     * the assets below (for example, price and points) with a business. The
+     * corresponding program must be linked to the Merchant Center account.
      * </pre>
      *
      * <code>optional string program_label = 1;</code>
@@ -1108,10 +1108,10 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The label of the loyalty program. This is an internal label that uniquely
-     * identifies the relationship between a merchant entity and a loyalty
+     * identifies the relationship between a business entity and a loyalty
      * program entity. The label must be provided so that the system can associate
-     * the assets below (for example, price and points) with a merchant. The
-     * corresponding program must be linked to the merchant account.
+     * the assets below (for example, price and points) with a business. The
+     * corresponding program must be linked to the Merchant Center account.
      * </pre>
      *
      * <code>optional string program_label = 1;</code>
@@ -1135,10 +1135,10 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The label of the loyalty program. This is an internal label that uniquely
-     * identifies the relationship between a merchant entity and a loyalty
+     * identifies the relationship between a business entity and a loyalty
      * program entity. The label must be provided so that the system can associate
-     * the assets below (for example, price and points) with a merchant. The
-     * corresponding program must be linked to the merchant account.
+     * the assets below (for example, price and points) with a business. The
+     * corresponding program must be linked to the Merchant Center account.
      * </pre>
      *
      * <code>optional string program_label = 1;</code>
@@ -1161,10 +1161,10 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The label of the loyalty program. This is an internal label that uniquely
-     * identifies the relationship between a merchant entity and a loyalty
+     * identifies the relationship between a business entity and a loyalty
      * program entity. The label must be provided so that the system can associate
-     * the assets below (for example, price and points) with a merchant. The
-     * corresponding program must be linked to the merchant account.
+     * the assets below (for example, price and points) with a business. The
+     * corresponding program must be linked to the Merchant Center account.
      * </pre>
      *
      * <code>optional string program_label = 1;</code>
@@ -1183,10 +1183,10 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The label of the loyalty program. This is an internal label that uniquely
-     * identifies the relationship between a merchant entity and a loyalty
+     * identifies the relationship between a business entity and a loyalty
      * program entity. The label must be provided so that the system can associate
-     * the assets below (for example, price and points) with a merchant. The
-     * corresponding program must be linked to the merchant account.
+     * the assets below (for example, price and points) with a business. The
+     * corresponding program must be linked to the Merchant Center account.
      * </pre>
      *
      * <code>optional string program_label = 1;</code>

@@ -16,10 +16,14 @@
 
 package com.google.cloud.vmmigration.v1.stub;
 
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.FetchStorageInventoryPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCloneJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCutoverJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDatacenterConnectorsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDiskMigrationJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListGroupsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListImageImportJobsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListImageImportsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListLocationsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListMigratingVmsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListReplicationCyclesPagedResponse;
@@ -53,11 +57,17 @@ import com.google.cloud.vmmigration.v1.CancelCloneJobRequest;
 import com.google.cloud.vmmigration.v1.CancelCloneJobResponse;
 import com.google.cloud.vmmigration.v1.CancelCutoverJobRequest;
 import com.google.cloud.vmmigration.v1.CancelCutoverJobResponse;
+import com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest;
+import com.google.cloud.vmmigration.v1.CancelDiskMigrationJobResponse;
+import com.google.cloud.vmmigration.v1.CancelImageImportJobRequest;
+import com.google.cloud.vmmigration.v1.CancelImageImportJobResponse;
 import com.google.cloud.vmmigration.v1.CloneJob;
 import com.google.cloud.vmmigration.v1.CreateCloneJobRequest;
 import com.google.cloud.vmmigration.v1.CreateCutoverJobRequest;
 import com.google.cloud.vmmigration.v1.CreateDatacenterConnectorRequest;
+import com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest;
 import com.google.cloud.vmmigration.v1.CreateGroupRequest;
+import com.google.cloud.vmmigration.v1.CreateImageImportRequest;
 import com.google.cloud.vmmigration.v1.CreateMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.CreateSourceRequest;
 import com.google.cloud.vmmigration.v1.CreateTargetProjectRequest;
@@ -65,33 +75,51 @@ import com.google.cloud.vmmigration.v1.CreateUtilizationReportRequest;
 import com.google.cloud.vmmigration.v1.CutoverJob;
 import com.google.cloud.vmmigration.v1.DatacenterConnector;
 import com.google.cloud.vmmigration.v1.DeleteDatacenterConnectorRequest;
+import com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest;
 import com.google.cloud.vmmigration.v1.DeleteGroupRequest;
+import com.google.cloud.vmmigration.v1.DeleteImageImportRequest;
 import com.google.cloud.vmmigration.v1.DeleteMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.DeleteSourceRequest;
 import com.google.cloud.vmmigration.v1.DeleteTargetProjectRequest;
 import com.google.cloud.vmmigration.v1.DeleteUtilizationReportRequest;
+import com.google.cloud.vmmigration.v1.DiskMigrationJob;
+import com.google.cloud.vmmigration.v1.ExtendMigrationRequest;
+import com.google.cloud.vmmigration.v1.ExtendMigrationResponse;
 import com.google.cloud.vmmigration.v1.FetchInventoryRequest;
 import com.google.cloud.vmmigration.v1.FetchInventoryResponse;
+import com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest;
+import com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse;
 import com.google.cloud.vmmigration.v1.FinalizeMigrationRequest;
 import com.google.cloud.vmmigration.v1.FinalizeMigrationResponse;
 import com.google.cloud.vmmigration.v1.GetCloneJobRequest;
 import com.google.cloud.vmmigration.v1.GetCutoverJobRequest;
 import com.google.cloud.vmmigration.v1.GetDatacenterConnectorRequest;
+import com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest;
 import com.google.cloud.vmmigration.v1.GetGroupRequest;
+import com.google.cloud.vmmigration.v1.GetImageImportJobRequest;
+import com.google.cloud.vmmigration.v1.GetImageImportRequest;
 import com.google.cloud.vmmigration.v1.GetMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.GetReplicationCycleRequest;
 import com.google.cloud.vmmigration.v1.GetSourceRequest;
 import com.google.cloud.vmmigration.v1.GetTargetProjectRequest;
 import com.google.cloud.vmmigration.v1.GetUtilizationReportRequest;
 import com.google.cloud.vmmigration.v1.Group;
+import com.google.cloud.vmmigration.v1.ImageImport;
+import com.google.cloud.vmmigration.v1.ImageImportJob;
 import com.google.cloud.vmmigration.v1.ListCloneJobsRequest;
 import com.google.cloud.vmmigration.v1.ListCloneJobsResponse;
 import com.google.cloud.vmmigration.v1.ListCutoverJobsRequest;
 import com.google.cloud.vmmigration.v1.ListCutoverJobsResponse;
 import com.google.cloud.vmmigration.v1.ListDatacenterConnectorsRequest;
 import com.google.cloud.vmmigration.v1.ListDatacenterConnectorsResponse;
+import com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest;
+import com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse;
 import com.google.cloud.vmmigration.v1.ListGroupsRequest;
 import com.google.cloud.vmmigration.v1.ListGroupsResponse;
+import com.google.cloud.vmmigration.v1.ListImageImportJobsRequest;
+import com.google.cloud.vmmigration.v1.ListImageImportJobsResponse;
+import com.google.cloud.vmmigration.v1.ListImageImportsRequest;
+import com.google.cloud.vmmigration.v1.ListImageImportsResponse;
 import com.google.cloud.vmmigration.v1.ListMigratingVmsRequest;
 import com.google.cloud.vmmigration.v1.ListMigratingVmsResponse;
 import com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest;
@@ -111,10 +139,13 @@ import com.google.cloud.vmmigration.v1.RemoveGroupMigrationResponse;
 import com.google.cloud.vmmigration.v1.ReplicationCycle;
 import com.google.cloud.vmmigration.v1.ResumeMigrationRequest;
 import com.google.cloud.vmmigration.v1.ResumeMigrationResponse;
+import com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest;
+import com.google.cloud.vmmigration.v1.RunDiskMigrationJobResponse;
 import com.google.cloud.vmmigration.v1.Source;
 import com.google.cloud.vmmigration.v1.StartMigrationRequest;
 import com.google.cloud.vmmigration.v1.StartMigrationResponse;
 import com.google.cloud.vmmigration.v1.TargetProject;
+import com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest;
 import com.google.cloud.vmmigration.v1.UpdateGroupRequest;
 import com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.UpdateSourceRequest;
@@ -144,21 +175,27 @@ import javax.annotation.Generated;
 public class HttpJsonVmMigrationStub extends VmMigrationStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
+          .add(DiskMigrationJob.getDescriptor())
           .add(DatacenterConnector.getDescriptor())
           .add(MigratingVm.getDescriptor())
-          .add(ResumeMigrationResponse.getDescriptor())
-          .add(UtilizationReport.getDescriptor())
-          .add(CutoverJob.getDescriptor())
-          .add(CancelCloneJobResponse.getDescriptor())
-          .add(FinalizeMigrationResponse.getDescriptor())
-          .add(RemoveGroupMigrationResponse.getDescriptor())
           .add(Empty.getDescriptor())
           .add(TargetProject.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(CancelCutoverJobResponse.getDescriptor())
           .add(Source.getDescriptor())
+          .add(ExtendMigrationResponse.getDescriptor())
           .add(CloneJob.getDescriptor())
           .add(AddGroupMigrationResponse.getDescriptor())
+          .add(CancelDiskMigrationJobResponse.getDescriptor())
+          .add(ResumeMigrationResponse.getDescriptor())
+          .add(UtilizationReport.getDescriptor())
+          .add(CutoverJob.getDescriptor())
+          .add(ImageImport.getDescriptor())
+          .add(CancelCloneJobResponse.getDescriptor())
+          .add(FinalizeMigrationResponse.getDescriptor())
+          .add(RemoveGroupMigrationResponse.getDescriptor())
+          .add(CancelImageImportJobResponse.getDescriptor())
+          .add(RunDiskMigrationJobResponse.getDescriptor())
           .add(Group.getDescriptor())
           .add(StartMigrationResponse.getDescriptor())
           .add(UpgradeApplianceResponse.getDescriptor())
@@ -391,6 +428,47 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<FetchInventoryResponse>newBuilder()
                       .setDefaultInstance(FetchInventoryResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          FetchStorageInventoryRequest, FetchStorageInventoryResponse>
+      fetchStorageInventoryMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchStorageInventoryRequest, FetchStorageInventoryResponse>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/FetchStorageInventory")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchStorageInventoryRequest>newBuilder()
+                      .setPath(
+                          "/v1/{source=projects/*/locations/*/sources/*}:fetchStorageInventory",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchStorageInventoryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "source", request.getSource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchStorageInventoryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "forceRefresh", request.getForceRefresh());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "type", request.getTypeValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchStorageInventoryResponse>newBuilder()
+                      .setDefaultInstance(FetchStorageInventoryResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1121,6 +1199,48 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .build())
               .setOperationSnapshotFactory(
                   (FinalizeMigrationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ExtendMigrationRequest, Operation>
+      extendMigrationMethodDescriptor =
+          ApiMethodDescriptor.<ExtendMigrationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/ExtendMigration")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExtendMigrationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{migratingVm=projects/*/locations/*/sources/*/migratingVms/*}:extendMigration",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExtendMigrationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "migratingVm", request.getMigratingVm());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExtendMigrationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearMigratingVm().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ExtendMigrationRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -1977,6 +2097,550 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ListImageImportsRequest, ListImageImportsResponse>
+      listImageImportsMethodDescriptor =
+          ApiMethodDescriptor.<ListImageImportsRequest, ListImageImportsResponse>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/ListImageImports")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListImageImportsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/imageImports",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListImageImportsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListImageImportsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListImageImportsResponse>newBuilder()
+                      .setDefaultInstance(ListImageImportsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetImageImportRequest, ImageImport>
+      getImageImportMethodDescriptor =
+          ApiMethodDescriptor.<GetImageImportRequest, ImageImport>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/GetImageImport")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetImageImportRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/imageImports/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetImageImportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetImageImportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ImageImport>newBuilder()
+                      .setDefaultInstance(ImageImport.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateImageImportRequest, Operation>
+      createImageImportMethodDescriptor =
+          ApiMethodDescriptor.<CreateImageImportRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/CreateImageImport")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateImageImportRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/imageImports",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateImageImportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateImageImportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "imageImportId", request.getImageImportId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("imageImport", request.getImageImport(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateImageImportRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteImageImportRequest, Operation>
+      deleteImageImportMethodDescriptor =
+          ApiMethodDescriptor.<DeleteImageImportRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/DeleteImageImport")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteImageImportRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/imageImports/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteImageImportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteImageImportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteImageImportRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ListImageImportJobsRequest, ListImageImportJobsResponse>
+      listImageImportJobsMethodDescriptor =
+          ApiMethodDescriptor.<ListImageImportJobsRequest, ListImageImportJobsResponse>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/ListImageImportJobs")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListImageImportJobsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/imageImports/*}/imageImportJobs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListImageImportJobsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListImageImportJobsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListImageImportJobsResponse>newBuilder()
+                      .setDefaultInstance(ListImageImportJobsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetImageImportJobRequest, ImageImportJob>
+      getImageImportJobMethodDescriptor =
+          ApiMethodDescriptor.<GetImageImportJobRequest, ImageImportJob>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/GetImageImportJob")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetImageImportJobRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/imageImports/*/imageImportJobs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetImageImportJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetImageImportJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ImageImportJob>newBuilder()
+                      .setDefaultInstance(ImageImportJob.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CancelImageImportJobRequest, Operation>
+      cancelImageImportJobMethodDescriptor =
+          ApiMethodDescriptor.<CancelImageImportJobRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/CancelImageImportJob")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CancelImageImportJobRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/imageImports/*/imageImportJobs/*}:cancel",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelImageImportJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelImageImportJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CancelImageImportJobRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<CreateDiskMigrationJobRequest, Operation>
+      createDiskMigrationJobMethodDescriptor =
+          ApiMethodDescriptor.<CreateDiskMigrationJobRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/CreateDiskMigrationJob")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateDiskMigrationJobRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/sources/*}/diskMigrationJobs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDiskMigrationJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDiskMigrationJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "diskMigrationJobId", request.getDiskMigrationJobId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("diskMigrationJob", request.getDiskMigrationJob(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateDiskMigrationJobRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse>
+      listDiskMigrationJobsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/ListDiskMigrationJobs")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDiskMigrationJobsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/sources/*}/diskMigrationJobs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDiskMigrationJobsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDiskMigrationJobsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDiskMigrationJobsResponse>newBuilder()
+                      .setDefaultInstance(ListDiskMigrationJobsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetDiskMigrationJobRequest, DiskMigrationJob>
+      getDiskMigrationJobMethodDescriptor =
+          ApiMethodDescriptor.<GetDiskMigrationJobRequest, DiskMigrationJob>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/GetDiskMigrationJob")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetDiskMigrationJobRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/sources/*/diskMigrationJobs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDiskMigrationJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDiskMigrationJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DiskMigrationJob>newBuilder()
+                      .setDefaultInstance(DiskMigrationJob.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateDiskMigrationJobRequest, Operation>
+      updateDiskMigrationJobMethodDescriptor =
+          ApiMethodDescriptor.<UpdateDiskMigrationJobRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/UpdateDiskMigrationJob")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateDiskMigrationJobRequest>newBuilder()
+                      .setPath(
+                          "/v1/{diskMigrationJob.name=projects/*/locations/*/sources/*/diskMigrationJobs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDiskMigrationJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "diskMigrationJob.name",
+                                request.getDiskMigrationJob().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDiskMigrationJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("diskMigrationJob", request.getDiskMigrationJob(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateDiskMigrationJobRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteDiskMigrationJobRequest, Operation>
+      deleteDiskMigrationJobMethodDescriptor =
+          ApiMethodDescriptor.<DeleteDiskMigrationJobRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/DeleteDiskMigrationJob")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteDiskMigrationJobRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/sources/*/diskMigrationJobs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDiskMigrationJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDiskMigrationJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteDiskMigrationJobRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<RunDiskMigrationJobRequest, Operation>
+      runDiskMigrationJobMethodDescriptor =
+          ApiMethodDescriptor.<RunDiskMigrationJobRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/RunDiskMigrationJob")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RunDiskMigrationJobRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/sources/*/diskMigrationJobs/*}:run",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RunDiskMigrationJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RunDiskMigrationJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RunDiskMigrationJobRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<CancelDiskMigrationJobRequest, Operation>
+      cancelDiskMigrationJobMethodDescriptor =
+          ApiMethodDescriptor.<CancelDiskMigrationJobRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/CancelDiskMigrationJob")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CancelDiskMigrationJobRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/sources/*/diskMigrationJobs/*}:cancel",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelDiskMigrationJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelDiskMigrationJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CancelDiskMigrationJobRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2059,6 +2723,10 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
   private final OperationCallable<DeleteSourceRequest, Empty, OperationMetadata>
       deleteSourceOperationCallable;
   private final UnaryCallable<FetchInventoryRequest, FetchInventoryResponse> fetchInventoryCallable;
+  private final UnaryCallable<FetchStorageInventoryRequest, FetchStorageInventoryResponse>
+      fetchStorageInventoryCallable;
+  private final UnaryCallable<FetchStorageInventoryRequest, FetchStorageInventoryPagedResponse>
+      fetchStorageInventoryPagedCallable;
   private final UnaryCallable<ListUtilizationReportsRequest, ListUtilizationReportsResponse>
       listUtilizationReportsCallable;
   private final UnaryCallable<ListUtilizationReportsRequest, ListUtilizationReportsPagedResponse>
@@ -2122,6 +2790,10 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
   private final OperationCallable<
           FinalizeMigrationRequest, FinalizeMigrationResponse, OperationMetadata>
       finalizeMigrationOperationCallable;
+  private final UnaryCallable<ExtendMigrationRequest, Operation> extendMigrationCallable;
+  private final OperationCallable<
+          ExtendMigrationRequest, ExtendMigrationResponse, OperationMetadata>
+      extendMigrationOperationCallable;
   private final UnaryCallable<CreateCloneJobRequest, Operation> createCloneJobCallable;
   private final OperationCallable<CreateCloneJobRequest, CloneJob, OperationMetadata>
       createCloneJobOperationCallable;
@@ -2184,6 +2856,55 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
       listReplicationCyclesPagedCallable;
   private final UnaryCallable<GetReplicationCycleRequest, ReplicationCycle>
       getReplicationCycleCallable;
+  private final UnaryCallable<ListImageImportsRequest, ListImageImportsResponse>
+      listImageImportsCallable;
+  private final UnaryCallable<ListImageImportsRequest, ListImageImportsPagedResponse>
+      listImageImportsPagedCallable;
+  private final UnaryCallable<GetImageImportRequest, ImageImport> getImageImportCallable;
+  private final UnaryCallable<CreateImageImportRequest, Operation> createImageImportCallable;
+  private final OperationCallable<CreateImageImportRequest, ImageImport, OperationMetadata>
+      createImageImportOperationCallable;
+  private final UnaryCallable<DeleteImageImportRequest, Operation> deleteImageImportCallable;
+  private final OperationCallable<DeleteImageImportRequest, Empty, OperationMetadata>
+      deleteImageImportOperationCallable;
+  private final UnaryCallable<ListImageImportJobsRequest, ListImageImportJobsResponse>
+      listImageImportJobsCallable;
+  private final UnaryCallable<ListImageImportJobsRequest, ListImageImportJobsPagedResponse>
+      listImageImportJobsPagedCallable;
+  private final UnaryCallable<GetImageImportJobRequest, ImageImportJob> getImageImportJobCallable;
+  private final UnaryCallable<CancelImageImportJobRequest, Operation> cancelImageImportJobCallable;
+  private final OperationCallable<
+          CancelImageImportJobRequest, CancelImageImportJobResponse, OperationMetadata>
+      cancelImageImportJobOperationCallable;
+  private final UnaryCallable<CreateDiskMigrationJobRequest, Operation>
+      createDiskMigrationJobCallable;
+  private final OperationCallable<
+          CreateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      createDiskMigrationJobOperationCallable;
+  private final UnaryCallable<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse>
+      listDiskMigrationJobsCallable;
+  private final UnaryCallable<ListDiskMigrationJobsRequest, ListDiskMigrationJobsPagedResponse>
+      listDiskMigrationJobsPagedCallable;
+  private final UnaryCallable<GetDiskMigrationJobRequest, DiskMigrationJob>
+      getDiskMigrationJobCallable;
+  private final UnaryCallable<UpdateDiskMigrationJobRequest, Operation>
+      updateDiskMigrationJobCallable;
+  private final OperationCallable<
+          UpdateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      updateDiskMigrationJobOperationCallable;
+  private final UnaryCallable<DeleteDiskMigrationJobRequest, Operation>
+      deleteDiskMigrationJobCallable;
+  private final OperationCallable<DeleteDiskMigrationJobRequest, Empty, OperationMetadata>
+      deleteDiskMigrationJobOperationCallable;
+  private final UnaryCallable<RunDiskMigrationJobRequest, Operation> runDiskMigrationJobCallable;
+  private final OperationCallable<
+          RunDiskMigrationJobRequest, RunDiskMigrationJobResponse, OperationMetadata>
+      runDiskMigrationJobOperationCallable;
+  private final UnaryCallable<CancelDiskMigrationJobRequest, Operation>
+      cancelDiskMigrationJobCallable;
+  private final OperationCallable<
+          CancelDiskMigrationJobRequest, CancelDiskMigrationJobResponse, OperationMetadata>
+      cancelDiskMigrationJobOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -2318,6 +3039,19 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
         fetchInventoryTransportSettings =
             HttpJsonCallSettings.<FetchInventoryRequest, FetchInventoryResponse>newBuilder()
                 .setMethodDescriptor(fetchInventoryMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("source", String.valueOf(request.getSource()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<FetchStorageInventoryRequest, FetchStorageInventoryResponse>
+        fetchStorageInventoryTransportSettings =
+            HttpJsonCallSettings
+                .<FetchStorageInventoryRequest, FetchStorageInventoryResponse>newBuilder()
+                .setMethodDescriptor(fetchStorageInventoryMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -2529,6 +3263,17 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
     HttpJsonCallSettings<FinalizeMigrationRequest, Operation> finalizeMigrationTransportSettings =
         HttpJsonCallSettings.<FinalizeMigrationRequest, Operation>newBuilder()
             .setMethodDescriptor(finalizeMigrationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("migrating_vm", String.valueOf(request.getMigratingVm()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ExtendMigrationRequest, Operation> extendMigrationTransportSettings =
+        HttpJsonCallSettings.<ExtendMigrationRequest, Operation>newBuilder()
+            .setMethodDescriptor(extendMigrationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
@@ -2791,6 +3536,175 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ListImageImportsRequest, ListImageImportsResponse>
+        listImageImportsTransportSettings =
+            HttpJsonCallSettings.<ListImageImportsRequest, ListImageImportsResponse>newBuilder()
+                .setMethodDescriptor(listImageImportsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetImageImportRequest, ImageImport> getImageImportTransportSettings =
+        HttpJsonCallSettings.<GetImageImportRequest, ImageImport>newBuilder()
+            .setMethodDescriptor(getImageImportMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateImageImportRequest, Operation> createImageImportTransportSettings =
+        HttpJsonCallSettings.<CreateImageImportRequest, Operation>newBuilder()
+            .setMethodDescriptor(createImageImportMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteImageImportRequest, Operation> deleteImageImportTransportSettings =
+        HttpJsonCallSettings.<DeleteImageImportRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteImageImportMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListImageImportJobsRequest, ListImageImportJobsResponse>
+        listImageImportJobsTransportSettings =
+            HttpJsonCallSettings
+                .<ListImageImportJobsRequest, ListImageImportJobsResponse>newBuilder()
+                .setMethodDescriptor(listImageImportJobsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetImageImportJobRequest, ImageImportJob>
+        getImageImportJobTransportSettings =
+            HttpJsonCallSettings.<GetImageImportJobRequest, ImageImportJob>newBuilder()
+                .setMethodDescriptor(getImageImportJobMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CancelImageImportJobRequest, Operation>
+        cancelImageImportJobTransportSettings =
+            HttpJsonCallSettings.<CancelImageImportJobRequest, Operation>newBuilder()
+                .setMethodDescriptor(cancelImageImportJobMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CreateDiskMigrationJobRequest, Operation>
+        createDiskMigrationJobTransportSettings =
+            HttpJsonCallSettings.<CreateDiskMigrationJobRequest, Operation>newBuilder()
+                .setMethodDescriptor(createDiskMigrationJobMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse>
+        listDiskMigrationJobsTransportSettings =
+            HttpJsonCallSettings
+                .<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse>newBuilder()
+                .setMethodDescriptor(listDiskMigrationJobsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetDiskMigrationJobRequest, DiskMigrationJob>
+        getDiskMigrationJobTransportSettings =
+            HttpJsonCallSettings.<GetDiskMigrationJobRequest, DiskMigrationJob>newBuilder()
+                .setMethodDescriptor(getDiskMigrationJobMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateDiskMigrationJobRequest, Operation>
+        updateDiskMigrationJobTransportSettings =
+            HttpJsonCallSettings.<UpdateDiskMigrationJobRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateDiskMigrationJobMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "disk_migration_job.name",
+                          String.valueOf(request.getDiskMigrationJob().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteDiskMigrationJobRequest, Operation>
+        deleteDiskMigrationJobTransportSettings =
+            HttpJsonCallSettings.<DeleteDiskMigrationJobRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteDiskMigrationJobMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<RunDiskMigrationJobRequest, Operation>
+        runDiskMigrationJobTransportSettings =
+            HttpJsonCallSettings.<RunDiskMigrationJobRequest, Operation>newBuilder()
+                .setMethodDescriptor(runDiskMigrationJobMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CancelDiskMigrationJobRequest, Operation>
+        cancelDiskMigrationJobTransportSettings =
+            HttpJsonCallSettings.<CancelDiskMigrationJobRequest, Operation>newBuilder()
+                .setMethodDescriptor(cancelDiskMigrationJobMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2854,6 +3768,16 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
     this.fetchInventoryCallable =
         callableFactory.createUnaryCallable(
             fetchInventoryTransportSettings, settings.fetchInventorySettings(), clientContext);
+    this.fetchStorageInventoryCallable =
+        callableFactory.createUnaryCallable(
+            fetchStorageInventoryTransportSettings,
+            settings.fetchStorageInventorySettings(),
+            clientContext);
+    this.fetchStorageInventoryPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchStorageInventoryTransportSettings,
+            settings.fetchStorageInventorySettings(),
+            clientContext);
     this.listUtilizationReportsCallable =
         callableFactory.createUnaryCallable(
             listUtilizationReportsTransportSettings,
@@ -3015,6 +3939,15 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
         callableFactory.createOperationCallable(
             finalizeMigrationTransportSettings,
             settings.finalizeMigrationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.extendMigrationCallable =
+        callableFactory.createUnaryCallable(
+            extendMigrationTransportSettings, settings.extendMigrationSettings(), clientContext);
+    this.extendMigrationOperationCallable =
+        callableFactory.createOperationCallable(
+            extendMigrationTransportSettings,
+            settings.extendMigrationOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.createCloneJobCallable =
@@ -3190,6 +4123,133 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
             getReplicationCycleTransportSettings,
             settings.getReplicationCycleSettings(),
             clientContext);
+    this.listImageImportsCallable =
+        callableFactory.createUnaryCallable(
+            listImageImportsTransportSettings, settings.listImageImportsSettings(), clientContext);
+    this.listImageImportsPagedCallable =
+        callableFactory.createPagedCallable(
+            listImageImportsTransportSettings, settings.listImageImportsSettings(), clientContext);
+    this.getImageImportCallable =
+        callableFactory.createUnaryCallable(
+            getImageImportTransportSettings, settings.getImageImportSettings(), clientContext);
+    this.createImageImportCallable =
+        callableFactory.createUnaryCallable(
+            createImageImportTransportSettings,
+            settings.createImageImportSettings(),
+            clientContext);
+    this.createImageImportOperationCallable =
+        callableFactory.createOperationCallable(
+            createImageImportTransportSettings,
+            settings.createImageImportOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteImageImportCallable =
+        callableFactory.createUnaryCallable(
+            deleteImageImportTransportSettings,
+            settings.deleteImageImportSettings(),
+            clientContext);
+    this.deleteImageImportOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteImageImportTransportSettings,
+            settings.deleteImageImportOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listImageImportJobsCallable =
+        callableFactory.createUnaryCallable(
+            listImageImportJobsTransportSettings,
+            settings.listImageImportJobsSettings(),
+            clientContext);
+    this.listImageImportJobsPagedCallable =
+        callableFactory.createPagedCallable(
+            listImageImportJobsTransportSettings,
+            settings.listImageImportJobsSettings(),
+            clientContext);
+    this.getImageImportJobCallable =
+        callableFactory.createUnaryCallable(
+            getImageImportJobTransportSettings,
+            settings.getImageImportJobSettings(),
+            clientContext);
+    this.cancelImageImportJobCallable =
+        callableFactory.createUnaryCallable(
+            cancelImageImportJobTransportSettings,
+            settings.cancelImageImportJobSettings(),
+            clientContext);
+    this.cancelImageImportJobOperationCallable =
+        callableFactory.createOperationCallable(
+            cancelImageImportJobTransportSettings,
+            settings.cancelImageImportJobOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.createDiskMigrationJobCallable =
+        callableFactory.createUnaryCallable(
+            createDiskMigrationJobTransportSettings,
+            settings.createDiskMigrationJobSettings(),
+            clientContext);
+    this.createDiskMigrationJobOperationCallable =
+        callableFactory.createOperationCallable(
+            createDiskMigrationJobTransportSettings,
+            settings.createDiskMigrationJobOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listDiskMigrationJobsCallable =
+        callableFactory.createUnaryCallable(
+            listDiskMigrationJobsTransportSettings,
+            settings.listDiskMigrationJobsSettings(),
+            clientContext);
+    this.listDiskMigrationJobsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDiskMigrationJobsTransportSettings,
+            settings.listDiskMigrationJobsSettings(),
+            clientContext);
+    this.getDiskMigrationJobCallable =
+        callableFactory.createUnaryCallable(
+            getDiskMigrationJobTransportSettings,
+            settings.getDiskMigrationJobSettings(),
+            clientContext);
+    this.updateDiskMigrationJobCallable =
+        callableFactory.createUnaryCallable(
+            updateDiskMigrationJobTransportSettings,
+            settings.updateDiskMigrationJobSettings(),
+            clientContext);
+    this.updateDiskMigrationJobOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDiskMigrationJobTransportSettings,
+            settings.updateDiskMigrationJobOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteDiskMigrationJobCallable =
+        callableFactory.createUnaryCallable(
+            deleteDiskMigrationJobTransportSettings,
+            settings.deleteDiskMigrationJobSettings(),
+            clientContext);
+    this.deleteDiskMigrationJobOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDiskMigrationJobTransportSettings,
+            settings.deleteDiskMigrationJobOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.runDiskMigrationJobCallable =
+        callableFactory.createUnaryCallable(
+            runDiskMigrationJobTransportSettings,
+            settings.runDiskMigrationJobSettings(),
+            clientContext);
+    this.runDiskMigrationJobOperationCallable =
+        callableFactory.createOperationCallable(
+            runDiskMigrationJobTransportSettings,
+            settings.runDiskMigrationJobOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.cancelDiskMigrationJobCallable =
+        callableFactory.createUnaryCallable(
+            cancelDiskMigrationJobTransportSettings,
+            settings.cancelDiskMigrationJobSettings(),
+            clientContext);
+    this.cancelDiskMigrationJobOperationCallable =
+        callableFactory.createOperationCallable(
+            cancelDiskMigrationJobTransportSettings,
+            settings.cancelDiskMigrationJobOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -3213,6 +4273,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
     methodDescriptors.add(updateSourceMethodDescriptor);
     methodDescriptors.add(deleteSourceMethodDescriptor);
     methodDescriptors.add(fetchInventoryMethodDescriptor);
+    methodDescriptors.add(fetchStorageInventoryMethodDescriptor);
     methodDescriptors.add(listUtilizationReportsMethodDescriptor);
     methodDescriptors.add(getUtilizationReportMethodDescriptor);
     methodDescriptors.add(createUtilizationReportMethodDescriptor);
@@ -3231,6 +4292,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
     methodDescriptors.add(resumeMigrationMethodDescriptor);
     methodDescriptors.add(pauseMigrationMethodDescriptor);
     methodDescriptors.add(finalizeMigrationMethodDescriptor);
+    methodDescriptors.add(extendMigrationMethodDescriptor);
     methodDescriptors.add(createCloneJobMethodDescriptor);
     methodDescriptors.add(cancelCloneJobMethodDescriptor);
     methodDescriptors.add(listCloneJobsMethodDescriptor);
@@ -3253,6 +4315,20 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
     methodDescriptors.add(deleteTargetProjectMethodDescriptor);
     methodDescriptors.add(listReplicationCyclesMethodDescriptor);
     methodDescriptors.add(getReplicationCycleMethodDescriptor);
+    methodDescriptors.add(listImageImportsMethodDescriptor);
+    methodDescriptors.add(getImageImportMethodDescriptor);
+    methodDescriptors.add(createImageImportMethodDescriptor);
+    methodDescriptors.add(deleteImageImportMethodDescriptor);
+    methodDescriptors.add(listImageImportJobsMethodDescriptor);
+    methodDescriptors.add(getImageImportJobMethodDescriptor);
+    methodDescriptors.add(cancelImageImportJobMethodDescriptor);
+    methodDescriptors.add(createDiskMigrationJobMethodDescriptor);
+    methodDescriptors.add(listDiskMigrationJobsMethodDescriptor);
+    methodDescriptors.add(getDiskMigrationJobMethodDescriptor);
+    methodDescriptors.add(updateDiskMigrationJobMethodDescriptor);
+    methodDescriptors.add(deleteDiskMigrationJobMethodDescriptor);
+    methodDescriptors.add(runDiskMigrationJobMethodDescriptor);
+    methodDescriptors.add(cancelDiskMigrationJobMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -3313,6 +4389,18 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
   @Override
   public UnaryCallable<FetchInventoryRequest, FetchInventoryResponse> fetchInventoryCallable() {
     return fetchInventoryCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchStorageInventoryRequest, FetchStorageInventoryResponse>
+      fetchStorageInventoryCallable() {
+    return fetchStorageInventoryCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchStorageInventoryRequest, FetchStorageInventoryPagedResponse>
+      fetchStorageInventoryPagedCallable() {
+    return fetchStorageInventoryPagedCallable;
   }
 
   @Override
@@ -3502,6 +4590,17 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
   public OperationCallable<FinalizeMigrationRequest, FinalizeMigrationResponse, OperationMetadata>
       finalizeMigrationOperationCallable() {
     return finalizeMigrationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExtendMigrationRequest, Operation> extendMigrationCallable() {
+    return extendMigrationCallable;
+  }
+
+  @Override
+  public OperationCallable<ExtendMigrationRequest, ExtendMigrationResponse, OperationMetadata>
+      extendMigrationOperationCallable() {
+    return extendMigrationOperationCallable;
   }
 
   @Override
@@ -3716,6 +4815,148 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
   @Override
   public UnaryCallable<GetReplicationCycleRequest, ReplicationCycle> getReplicationCycleCallable() {
     return getReplicationCycleCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListImageImportsRequest, ListImageImportsResponse>
+      listImageImportsCallable() {
+    return listImageImportsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListImageImportsRequest, ListImageImportsPagedResponse>
+      listImageImportsPagedCallable() {
+    return listImageImportsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetImageImportRequest, ImageImport> getImageImportCallable() {
+    return getImageImportCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateImageImportRequest, Operation> createImageImportCallable() {
+    return createImageImportCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateImageImportRequest, ImageImport, OperationMetadata>
+      createImageImportOperationCallable() {
+    return createImageImportOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteImageImportRequest, Operation> deleteImageImportCallable() {
+    return deleteImageImportCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteImageImportRequest, Empty, OperationMetadata>
+      deleteImageImportOperationCallable() {
+    return deleteImageImportOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListImageImportJobsRequest, ListImageImportJobsResponse>
+      listImageImportJobsCallable() {
+    return listImageImportJobsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListImageImportJobsRequest, ListImageImportJobsPagedResponse>
+      listImageImportJobsPagedCallable() {
+    return listImageImportJobsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetImageImportJobRequest, ImageImportJob> getImageImportJobCallable() {
+    return getImageImportJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelImageImportJobRequest, Operation> cancelImageImportJobCallable() {
+    return cancelImageImportJobCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CancelImageImportJobRequest, CancelImageImportJobResponse, OperationMetadata>
+      cancelImageImportJobOperationCallable() {
+    return cancelImageImportJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDiskMigrationJobRequest, Operation> createDiskMigrationJobCallable() {
+    return createDiskMigrationJobCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      createDiskMigrationJobOperationCallable() {
+    return createDiskMigrationJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse>
+      listDiskMigrationJobsCallable() {
+    return listDiskMigrationJobsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDiskMigrationJobsRequest, ListDiskMigrationJobsPagedResponse>
+      listDiskMigrationJobsPagedCallable() {
+    return listDiskMigrationJobsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDiskMigrationJobRequest, DiskMigrationJob> getDiskMigrationJobCallable() {
+    return getDiskMigrationJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDiskMigrationJobRequest, Operation> updateDiskMigrationJobCallable() {
+    return updateDiskMigrationJobCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      updateDiskMigrationJobOperationCallable() {
+    return updateDiskMigrationJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDiskMigrationJobRequest, Operation> deleteDiskMigrationJobCallable() {
+    return deleteDiskMigrationJobCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteDiskMigrationJobRequest, Empty, OperationMetadata>
+      deleteDiskMigrationJobOperationCallable() {
+    return deleteDiskMigrationJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RunDiskMigrationJobRequest, Operation> runDiskMigrationJobCallable() {
+    return runDiskMigrationJobCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          RunDiskMigrationJobRequest, RunDiskMigrationJobResponse, OperationMetadata>
+      runDiskMigrationJobOperationCallable() {
+    return runDiskMigrationJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelDiskMigrationJobRequest, Operation> cancelDiskMigrationJobCallable() {
+    return cancelDiskMigrationJobCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CancelDiskMigrationJobRequest, CancelDiskMigrationJobResponse, OperationMetadata>
+      cancelDiskMigrationJobOperationCallable() {
+    return cancelDiskMigrationJobOperationCallable;
   }
 
   @Override

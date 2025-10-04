@@ -40,7 +40,12 @@ import java.util.Optional;
  * Represents a conversation between the user and the model.
  *
  * <p>Note: this class is NOT thread-safe.
+ *
+ * @deprecated This class and its package are deprecated. See the <a
+ *     href="https://cloud.google.com/vertex-ai/generative-ai/docs/deprecations/genai-vertexai-sdk#java">
+ *     migration guide</a> for more details.
  */
+@Deprecated
 public final class ChatSession {
   private final GenerativeModel model;
   private final Optional<ChatSession> rootChatSession;

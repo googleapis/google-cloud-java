@@ -106,6 +106,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
                   ProtoUtils.marshaller(
                       ListEffectiveSecurityHealthAnalyticsCustomModulesResponse
                           .getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -125,6 +126,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       EffectiveSecurityHealthAnalyticsCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -144,6 +146,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListSecurityHealthAnalyticsCustomModulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -165,6 +168,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
                   ProtoUtils.marshaller(
                       ListDescendantSecurityHealthAnalyticsCustomModulesResponse
                           .getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -181,6 +185,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
                       GetSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SecurityHealthAnalyticsCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -198,6 +203,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
                       CreateSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SecurityHealthAnalyticsCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -215,6 +221,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
                       UpdateSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SecurityHealthAnalyticsCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
@@ -227,6 +234,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
                   ProtoUtils.marshaller(
                       DeleteSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -246,6 +254,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       SimulateSecurityHealthAnalyticsCustomModuleResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -265,6 +274,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListEffectiveEventThreatDetectionCustomModulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -284,6 +294,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       EffectiveEventThreatDetectionCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -303,6 +314,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListEventThreatDetectionCustomModulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -322,6 +334,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListDescendantEventThreatDetectionCustomModulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -338,6 +351,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
                       GetEventThreatDetectionCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(EventThreatDetectionCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -354,6 +368,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
                       CreateEventThreatDetectionCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(EventThreatDetectionCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -370,6 +385,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
                       UpdateEventThreatDetectionCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(EventThreatDetectionCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEventThreatDetectionCustomModuleRequest, Empty>
@@ -382,6 +398,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
                   ProtoUtils.marshaller(
                       DeleteEventThreatDetectionCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -401,6 +418,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ValidateEventThreatDetectionCustomModuleResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSecurityCenterServiceRequest, SecurityCenterService>
@@ -413,6 +431,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
                   ProtoUtils.marshaller(GetSecurityCenterServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SecurityCenterService.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -427,6 +446,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
                   ProtoUtils.marshaller(ListSecurityCenterServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSecurityCenterServicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSecurityCenterServiceRequest, SecurityCenterService>
@@ -439,6 +459,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
                   ProtoUtils.marshaller(UpdateSecurityCenterServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SecurityCenterService.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -450,6 +471,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -458,6 +480,7 @@ public class GrpcSecurityCenterManagementStub extends SecurityCenterManagementSt
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<

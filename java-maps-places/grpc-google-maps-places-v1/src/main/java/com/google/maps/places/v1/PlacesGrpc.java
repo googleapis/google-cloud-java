@@ -22,9 +22,10 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * Service definition for the Places API.
- * Note: every request (except for Autocomplete requests) requires a field mask
- * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
- * can be set via the HTTP header `X-Goog-FieldMask`. See:
+ * Note: every request (except for Autocomplete and GetPhotoMedia requests)
+ * requires a field mask set outside of the request proto (`all/&#42;`, is not
+ * assumed). The field mask can be set via the HTTP header `X-Goog-FieldMask`.
+ * See:
  * https://developers.google.com/maps/documentation/places/web-service/choose-fields
  * </pre>
  */
@@ -310,9 +311,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
-   * Note: every request (except for Autocomplete requests) requires a field mask
-   * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
-   * can be set via the HTTP header `X-Goog-FieldMask`. See:
+   * Note: every request (except for Autocomplete and GetPhotoMedia requests)
+   * requires a field mask set outside of the request proto (`all/&#42;`, is not
+   * assumed). The field mask can be set via the HTTP header `X-Goog-FieldMask`.
+   * See:
    * https://developers.google.com/maps/documentation/places/web-service/choose-fields
    * </pre>
    */
@@ -396,9 +398,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
-   * Note: every request (except for Autocomplete requests) requires a field mask
-   * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
-   * can be set via the HTTP header `X-Goog-FieldMask`. See:
+   * Note: every request (except for Autocomplete and GetPhotoMedia requests)
+   * requires a field mask set outside of the request proto (`all/&#42;`, is not
+   * assumed). The field mask can be set via the HTTP header `X-Goog-FieldMask`.
+   * See:
    * https://developers.google.com/maps/documentation/places/web-service/choose-fields
    * </pre>
    */
@@ -415,9 +418,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
-   * Note: every request (except for Autocomplete requests) requires a field mask
-   * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
-   * can be set via the HTTP header `X-Goog-FieldMask`. See:
+   * Note: every request (except for Autocomplete and GetPhotoMedia requests)
+   * requires a field mask set outside of the request proto (`all/&#42;`, is not
+   * assumed). The field mask can be set via the HTTP header `X-Goog-FieldMask`.
+   * See:
    * https://developers.google.com/maps/documentation/places/web-service/choose-fields
    * </pre>
    */
@@ -517,9 +521,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
-   * Note: every request (except for Autocomplete requests) requires a field mask
-   * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
-   * can be set via the HTTP header `X-Goog-FieldMask`. See:
+   * Note: every request (except for Autocomplete and GetPhotoMedia requests)
+   * requires a field mask set outside of the request proto (`all/&#42;`, is not
+   * assumed). The field mask can be set via the HTTP header `X-Goog-FieldMask`.
+   * See:
    * https://developers.google.com/maps/documentation/places/web-service/choose-fields
    * </pre>
    */
@@ -606,9 +611,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
-   * Note: every request (except for Autocomplete requests) requires a field mask
-   * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
-   * can be set via the HTTP header `X-Goog-FieldMask`. See:
+   * Note: every request (except for Autocomplete and GetPhotoMedia requests)
+   * requires a field mask set outside of the request proto (`all/&#42;`, is not
+   * assumed). The field mask can be set via the HTTP header `X-Goog-FieldMask`.
+   * See:
    * https://developers.google.com/maps/documentation/places/web-service/choose-fields
    * </pre>
    */
@@ -695,9 +701,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
-   * Note: every request (except for Autocomplete requests) requires a field mask
-   * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
-   * can be set via the HTTP header `X-Goog-FieldMask`. See:
+   * Note: every request (except for Autocomplete and GetPhotoMedia requests)
+   * requires a field mask set outside of the request proto (`all/&#42;`, is not
+   * assumed). The field mask can be set via the HTTP header `X-Goog-FieldMask`.
+   * See:
    * https://developers.google.com/maps/documentation/places/web-service/choose-fields
    * </pre>
    */

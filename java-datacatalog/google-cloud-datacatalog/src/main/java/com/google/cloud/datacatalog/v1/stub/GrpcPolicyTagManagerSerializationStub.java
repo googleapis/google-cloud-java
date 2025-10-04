@@ -53,6 +53,7 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReplaceTaxonomyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Taxonomy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
@@ -65,6 +66,7 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
                   ProtoUtils.marshaller(ImportTaxonomiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ImportTaxonomiesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportTaxonomiesRequest, ExportTaxonomiesResponse>
@@ -77,6 +79,7 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
                   ProtoUtils.marshaller(ExportTaxonomiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ExportTaxonomiesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ReplaceTaxonomyRequest, Taxonomy> replaceTaxonomyCallable;

@@ -68,6 +68,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.dialogflow.v2.Agents/GetAgent")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Agent.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetAgentRequest, Agent> setAgentMethodDescriptor =
@@ -76,6 +77,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.dialogflow.v2.Agents/SetAgent")
           .setRequestMarshaller(ProtoUtils.marshaller(SetAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Agent.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteAgentRequest, Empty> deleteAgentMethodDescriptor =
@@ -84,6 +86,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.dialogflow.v2.Agents/DeleteAgent")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SearchAgentsRequest, SearchAgentsResponse>
@@ -94,6 +97,7 @@ public class GrpcAgentsStub extends AgentsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(SearchAgentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchAgentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TrainAgentRequest, Operation> trainAgentMethodDescriptor =
@@ -102,6 +106,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.dialogflow.v2.Agents/TrainAgent")
           .setRequestMarshaller(ProtoUtils.marshaller(TrainAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ExportAgentRequest, Operation> exportAgentMethodDescriptor =
@@ -110,6 +115,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.dialogflow.v2.Agents/ExportAgent")
           .setRequestMarshaller(ProtoUtils.marshaller(ExportAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ImportAgentRequest, Operation> importAgentMethodDescriptor =
@@ -118,6 +124,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.dialogflow.v2.Agents/ImportAgent")
           .setRequestMarshaller(ProtoUtils.marshaller(ImportAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RestoreAgentRequest, Operation>
@@ -127,6 +134,7 @@ public class GrpcAgentsStub extends AgentsStub {
               .setFullMethodName("google.cloud.dialogflow.v2.Agents/RestoreAgent")
               .setRequestMarshaller(ProtoUtils.marshaller(RestoreAgentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetValidationResultRequest, ValidationResult>
@@ -137,6 +145,7 @@ public class GrpcAgentsStub extends AgentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetValidationResultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ValidationResult.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -148,6 +157,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -156,6 +166,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<GetAgentRequest, Agent> getAgentCallable;

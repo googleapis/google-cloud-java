@@ -77,6 +77,7 @@ public class GrpcDeploymentResourcePoolServiceStub extends DeploymentResourcePoo
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDeploymentResourcePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDeploymentResourcePoolRequest, DeploymentResourcePool>
@@ -89,6 +90,7 @@ public class GrpcDeploymentResourcePoolServiceStub extends DeploymentResourcePoo
                   ProtoUtils.marshaller(GetDeploymentResourcePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DeploymentResourcePool.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -103,6 +105,7 @@ public class GrpcDeploymentResourcePoolServiceStub extends DeploymentResourcePoo
                   ProtoUtils.marshaller(ListDeploymentResourcePoolsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeploymentResourcePoolsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDeploymentResourcePoolRequest, Operation>
@@ -114,6 +117,7 @@ public class GrpcDeploymentResourcePoolServiceStub extends DeploymentResourcePoo
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDeploymentResourcePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDeploymentResourcePoolRequest, Operation>
@@ -125,6 +129,7 @@ public class GrpcDeploymentResourcePoolServiceStub extends DeploymentResourcePoo
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDeploymentResourcePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<QueryDeployedModelsRequest, QueryDeployedModelsResponse>
@@ -137,6 +142,7 @@ public class GrpcDeploymentResourcePoolServiceStub extends DeploymentResourcePoo
                   ProtoUtils.marshaller(QueryDeployedModelsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryDeployedModelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -148,6 +154,7 @@ public class GrpcDeploymentResourcePoolServiceStub extends DeploymentResourcePoo
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -156,6 +163,7 @@ public class GrpcDeploymentResourcePoolServiceStub extends DeploymentResourcePoo
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -164,6 +172,7 @@ public class GrpcDeploymentResourcePoolServiceStub extends DeploymentResourcePoo
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -172,6 +181,7 @@ public class GrpcDeploymentResourcePoolServiceStub extends DeploymentResourcePoo
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -183,6 +193,7 @@ public class GrpcDeploymentResourcePoolServiceStub extends DeploymentResourcePoo
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateDeploymentResourcePoolRequest, Operation>

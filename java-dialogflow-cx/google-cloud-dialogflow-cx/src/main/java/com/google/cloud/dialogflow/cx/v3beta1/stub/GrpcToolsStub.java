@@ -75,6 +75,7 @@ public class GrpcToolsStub extends ToolsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Tools/CreateTool")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateToolRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tool.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListToolsRequest, ListToolsResponse>
@@ -84,6 +85,7 @@ public class GrpcToolsStub extends ToolsStub {
               .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Tools/ListTools")
               .setRequestMarshaller(ProtoUtils.marshaller(ListToolsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListToolsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportToolsRequest, Operation> exportToolsMethodDescriptor =
@@ -92,6 +94,7 @@ public class GrpcToolsStub extends ToolsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Tools/ExportTools")
           .setRequestMarshaller(ProtoUtils.marshaller(ExportToolsRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetToolRequest, Tool> getToolMethodDescriptor =
@@ -100,6 +103,7 @@ public class GrpcToolsStub extends ToolsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Tools/GetTool")
           .setRequestMarshaller(ProtoUtils.marshaller(GetToolRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tool.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateToolRequest, Tool> updateToolMethodDescriptor =
@@ -108,6 +112,7 @@ public class GrpcToolsStub extends ToolsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Tools/UpdateTool")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateToolRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tool.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteToolRequest, Empty> deleteToolMethodDescriptor =
@@ -116,6 +121,7 @@ public class GrpcToolsStub extends ToolsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Tools/DeleteTool")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteToolRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListToolVersionsRequest, ListToolVersionsResponse>
@@ -127,6 +133,7 @@ public class GrpcToolsStub extends ToolsStub {
                   ProtoUtils.marshaller(ListToolVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListToolVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateToolVersionRequest, ToolVersion>
@@ -137,6 +144,7 @@ public class GrpcToolsStub extends ToolsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateToolVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ToolVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetToolVersionRequest, ToolVersion>
@@ -147,6 +155,7 @@ public class GrpcToolsStub extends ToolsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetToolVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ToolVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteToolVersionRequest, Empty>
@@ -157,6 +166,7 @@ public class GrpcToolsStub extends ToolsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteToolVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RestoreToolVersionRequest, RestoreToolVersionResponse>
@@ -168,6 +178,7 @@ public class GrpcToolsStub extends ToolsStub {
                   ProtoUtils.marshaller(RestoreToolVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RestoreToolVersionResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -179,6 +190,7 @@ public class GrpcToolsStub extends ToolsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -187,6 +199,7 @@ public class GrpcToolsStub extends ToolsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateToolRequest, Tool> createToolCallable;

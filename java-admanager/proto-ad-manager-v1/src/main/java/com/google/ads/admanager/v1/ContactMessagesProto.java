@@ -44,11 +44,12 @@ public final class ContactMessagesProto {
       "\n.google/ads/admanager/v1/contact_messag"
           + "es.proto\022\027google.ads.admanager.v1\032\037googl"
           + "e/api/field_behavior.proto\032\031google/api/r"
-          + "esource.proto\"\233\001\n\007Contact\022\021\n\004name\030\001 \001(\tB"
-          + "\003\340A\010\022\027\n\ncontact_id\030\002 \001(\003B\003\340A\003:d\352Aa\n adma"
-          + "nager.googleapis.com/Contact\022*networks/{"
-          + "network_code}/contacts/{contact}*\010contac"
-          + "ts2\007contactB\310\001\n\033com.google.ads.admanager"
+          + "esource.proto\"\303\001\n\007Contact\022\021\n\004name\030\001 \001(\tB"
+          + "\003\340A\010\022&\n\024company_display_name\030\023 \001(\tB\003\340A\003H"
+          + "\000\210\001\001:d\352Aa\n admanager.googleapis.com/Cont"
+          + "act\022*networks/{network_code}/contacts/{c"
+          + "ontact}*\010contacts2\007contactB\027\n\025_company_d"
+          + "isplay_nameB\310\001\n\033com.google.ads.admanager"
           + ".v1B\024ContactMessagesProtoP\001Z@google.gola"
           + "ng.org/genproto/googleapis/ads/admanager"
           + "/v1;admanager\252\002\027Google.Ads.AdManager.V1\312"
@@ -68,7 +69,7 @@ public final class ContactMessagesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_Contact_descriptor,
             new java.lang.String[] {
-              "Name", "ContactId",
+              "Name", "CompanyDisplayName",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

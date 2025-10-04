@@ -794,7 +794,7 @@ public interface PreviewOrBuilder
    *
    * <pre>
    * Optional. Arbitrary key-value metadata storage e.g. to help client tools
-   * identifiy preview during automation. See
+   * identify preview during automation. See
    * https://google.aip.dev/148#annotations for details on format and size
    * limitations.
    * </pre>
@@ -809,7 +809,7 @@ public interface PreviewOrBuilder
    *
    * <pre>
    * Optional. Arbitrary key-value metadata storage e.g. to help client tools
-   * identifiy preview during automation. See
+   * identify preview during automation. See
    * https://google.aip.dev/148#annotations for details on format and size
    * limitations.
    * </pre>
@@ -828,7 +828,7 @@ public interface PreviewOrBuilder
    *
    * <pre>
    * Optional. Arbitrary key-value metadata storage e.g. to help client tools
-   * identifiy preview during automation. See
+   * identify preview during automation. See
    * https://google.aip.dev/148#annotations for details on format and size
    * limitations.
    * </pre>
@@ -843,7 +843,7 @@ public interface PreviewOrBuilder
    *
    * <pre>
    * Optional. Arbitrary key-value metadata storage e.g. to help client tools
-   * identifiy preview during automation. See
+   * identify preview during automation. See
    * https://google.aip.dev/148#annotations for details on format and size
    * limitations.
    * </pre>
@@ -862,7 +862,7 @@ public interface PreviewOrBuilder
    *
    * <pre>
    * Optional. Arbitrary key-value metadata storage e.g. to help client tools
-   * identifiy preview during automation. See
+   * identify preview during automation. See
    * https://google.aip.dev/148#annotations for details on format and size
    * limitations.
    * </pre>
@@ -871,6 +871,49 @@ public interface PreviewOrBuilder
    * </code>
    */
   java.lang.String getAnnotationsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies the provider configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the providerConfig field is set.
+   */
+  boolean hasProviderConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies the provider configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The providerConfig.
+   */
+  com.google.cloud.config.v1.ProviderConfig getProviderConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies the provider configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.config.v1.ProviderConfigOrBuilder getProviderConfigOrBuilder();
 
   com.google.cloud.config.v1.Preview.BlueprintCase getBlueprintCase();
 }

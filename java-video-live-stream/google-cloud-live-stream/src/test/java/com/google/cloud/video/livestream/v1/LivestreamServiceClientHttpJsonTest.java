@@ -108,6 +108,8 @@ public class LivestreamServiceClientHttpJsonTest {
             .addAllElementaryStreams(new ArrayList<ElementaryStream>())
             .addAllMuxStreams(new ArrayList<MuxStream>())
             .addAllManifests(new ArrayList<Manifest>())
+            .addAllDistributionStreams(new ArrayList<DistributionStream>())
+            .addAllDistributions(new ArrayList<Distribution>())
             .addAllSpriteSheets(new ArrayList<SpriteSheet>())
             .setStreamingError(Status.newBuilder().build())
             .setLogConfig(LogConfig.newBuilder().build())
@@ -116,6 +118,7 @@ public class LivestreamServiceClientHttpJsonTest {
             .setInputConfig(InputConfig.newBuilder().build())
             .setRetentionConfig(RetentionConfig.newBuilder().build())
             .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+            .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -178,6 +181,8 @@ public class LivestreamServiceClientHttpJsonTest {
             .addAllElementaryStreams(new ArrayList<ElementaryStream>())
             .addAllMuxStreams(new ArrayList<MuxStream>())
             .addAllManifests(new ArrayList<Manifest>())
+            .addAllDistributionStreams(new ArrayList<DistributionStream>())
+            .addAllDistributions(new ArrayList<Distribution>())
             .addAllSpriteSheets(new ArrayList<SpriteSheet>())
             .setStreamingError(Status.newBuilder().build())
             .setLogConfig(LogConfig.newBuilder().build())
@@ -186,6 +191,7 @@ public class LivestreamServiceClientHttpJsonTest {
             .setInputConfig(InputConfig.newBuilder().build())
             .setRetentionConfig(RetentionConfig.newBuilder().build())
             .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+            .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -348,6 +354,8 @@ public class LivestreamServiceClientHttpJsonTest {
             .addAllElementaryStreams(new ArrayList<ElementaryStream>())
             .addAllMuxStreams(new ArrayList<MuxStream>())
             .addAllManifests(new ArrayList<Manifest>())
+            .addAllDistributionStreams(new ArrayList<DistributionStream>())
+            .addAllDistributions(new ArrayList<Distribution>())
             .addAllSpriteSheets(new ArrayList<SpriteSheet>())
             .setStreamingError(Status.newBuilder().build())
             .setLogConfig(LogConfig.newBuilder().build())
@@ -356,6 +364,7 @@ public class LivestreamServiceClientHttpJsonTest {
             .setInputConfig(InputConfig.newBuilder().build())
             .setRetentionConfig(RetentionConfig.newBuilder().build())
             .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+            .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -409,6 +418,8 @@ public class LivestreamServiceClientHttpJsonTest {
             .addAllElementaryStreams(new ArrayList<ElementaryStream>())
             .addAllMuxStreams(new ArrayList<MuxStream>())
             .addAllManifests(new ArrayList<Manifest>())
+            .addAllDistributionStreams(new ArrayList<DistributionStream>())
+            .addAllDistributions(new ArrayList<Distribution>())
             .addAllSpriteSheets(new ArrayList<SpriteSheet>())
             .setStreamingError(Status.newBuilder().build())
             .setLogConfig(LogConfig.newBuilder().build())
@@ -417,6 +428,7 @@ public class LivestreamServiceClientHttpJsonTest {
             .setInputConfig(InputConfig.newBuilder().build())
             .setRetentionConfig(RetentionConfig.newBuilder().build())
             .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+            .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -560,6 +572,8 @@ public class LivestreamServiceClientHttpJsonTest {
             .addAllElementaryStreams(new ArrayList<ElementaryStream>())
             .addAllMuxStreams(new ArrayList<MuxStream>())
             .addAllManifests(new ArrayList<Manifest>())
+            .addAllDistributionStreams(new ArrayList<DistributionStream>())
+            .addAllDistributions(new ArrayList<Distribution>())
             .addAllSpriteSheets(new ArrayList<SpriteSheet>())
             .setStreamingError(Status.newBuilder().build())
             .setLogConfig(LogConfig.newBuilder().build())
@@ -568,6 +582,7 @@ public class LivestreamServiceClientHttpJsonTest {
             .setInputConfig(InputConfig.newBuilder().build())
             .setRetentionConfig(RetentionConfig.newBuilder().build())
             .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+            .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -589,6 +604,8 @@ public class LivestreamServiceClientHttpJsonTest {
             .addAllElementaryStreams(new ArrayList<ElementaryStream>())
             .addAllMuxStreams(new ArrayList<MuxStream>())
             .addAllManifests(new ArrayList<Manifest>())
+            .addAllDistributionStreams(new ArrayList<DistributionStream>())
+            .addAllDistributions(new ArrayList<Distribution>())
             .addAllSpriteSheets(new ArrayList<SpriteSheet>())
             .setStreamingError(Status.newBuilder().build())
             .setLogConfig(LogConfig.newBuilder().build())
@@ -597,6 +614,7 @@ public class LivestreamServiceClientHttpJsonTest {
             .setInputConfig(InputConfig.newBuilder().build())
             .setRetentionConfig(RetentionConfig.newBuilder().build())
             .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+            .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -638,6 +656,8 @@ public class LivestreamServiceClientHttpJsonTest {
               .addAllElementaryStreams(new ArrayList<ElementaryStream>())
               .addAllMuxStreams(new ArrayList<MuxStream>())
               .addAllManifests(new ArrayList<Manifest>())
+              .addAllDistributionStreams(new ArrayList<DistributionStream>())
+              .addAllDistributions(new ArrayList<Distribution>())
               .addAllSpriteSheets(new ArrayList<SpriteSheet>())
               .setStreamingError(Status.newBuilder().build())
               .setLogConfig(LogConfig.newBuilder().build())
@@ -646,6 +666,7 @@ public class LivestreamServiceClientHttpJsonTest {
               .setInputConfig(InputConfig.newBuilder().build())
               .setRetentionConfig(RetentionConfig.newBuilder().build())
               .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+              .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateChannelAsync(channel, updateMask).get();
@@ -833,6 +854,202 @@ public class LivestreamServiceClientHttpJsonTest {
     try {
       String name = "projects/project-3296/locations/location-3296/channels/channel-3296";
       client.stopChannelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void startDistributionTest() throws Exception {
+    ChannelOperationResponse expectedResponse = ChannelOperationResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startDistributionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+    List<String> distributionKeys = new ArrayList<>();
+
+    ChannelOperationResponse actualResponse =
+        client.startDistributionAsync(name, distributionKeys).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void startDistributionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+      List<String> distributionKeys = new ArrayList<>();
+      client.startDistributionAsync(name, distributionKeys).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void startDistributionTest2() throws Exception {
+    ChannelOperationResponse expectedResponse = ChannelOperationResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startDistributionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-3296/locations/location-3296/channels/channel-3296";
+    List<String> distributionKeys = new ArrayList<>();
+
+    ChannelOperationResponse actualResponse =
+        client.startDistributionAsync(name, distributionKeys).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void startDistributionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3296/locations/location-3296/channels/channel-3296";
+      List<String> distributionKeys = new ArrayList<>();
+      client.startDistributionAsync(name, distributionKeys).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void stopDistributionTest() throws Exception {
+    ChannelOperationResponse expectedResponse = ChannelOperationResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopDistributionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+    List<String> distributionKeys = new ArrayList<>();
+
+    ChannelOperationResponse actualResponse =
+        client.stopDistributionAsync(name, distributionKeys).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void stopDistributionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+      List<String> distributionKeys = new ArrayList<>();
+      client.stopDistributionAsync(name, distributionKeys).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void stopDistributionTest2() throws Exception {
+    ChannelOperationResponse expectedResponse = ChannelOperationResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopDistributionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-3296/locations/location-3296/channels/channel-3296";
+    List<String> distributionKeys = new ArrayList<>();
+
+    ChannelOperationResponse actualResponse =
+        client.stopDistributionAsync(name, distributionKeys).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void stopDistributionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3296/locations/location-3296/channels/channel-3296";
+      List<String> distributionKeys = new ArrayList<>();
+      client.stopDistributionAsync(name, distributionKeys).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -1325,6 +1542,96 @@ public class LivestreamServiceClientHttpJsonTest {
       client.updateInputAsync(input, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void previewInputTest() throws Exception {
+    PreviewInputResponse expectedResponse =
+        PreviewInputResponse.newBuilder()
+            .setUri("uri116076")
+            .setBearerToken("bearerToken1995160344")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    InputName name = InputName.of("[PROJECT]", "[LOCATION]", "[INPUT]");
+
+    PreviewInputResponse actualResponse = client.previewInput(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void previewInputExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InputName name = InputName.of("[PROJECT]", "[LOCATION]", "[INPUT]");
+      client.previewInput(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void previewInputTest2() throws Exception {
+    PreviewInputResponse expectedResponse =
+        PreviewInputResponse.newBuilder()
+            .setUri("uri116076")
+            .setBearerToken("bearerToken1995160344")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-1641/locations/location-1641/inputs/input-1641";
+
+    PreviewInputResponse actualResponse = client.previewInput(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void previewInputExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1641/locations/location-1641/inputs/input-1641";
+      client.previewInput(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

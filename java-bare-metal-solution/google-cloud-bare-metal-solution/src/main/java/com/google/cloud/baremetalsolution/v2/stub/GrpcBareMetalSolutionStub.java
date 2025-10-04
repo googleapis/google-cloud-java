@@ -135,6 +135,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   ProtoUtils.marshaller(ListInstancesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstancesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInstanceRequest, Instance> getInstanceMethodDescriptor =
@@ -143,6 +144,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
           .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/GetInstance")
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateInstanceRequest, Operation>
@@ -154,6 +156,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RenameInstanceRequest, Instance>
@@ -165,6 +168,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RenameInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResetInstanceRequest, Operation>
@@ -176,6 +180,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResetInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StartInstanceRequest, Operation>
@@ -187,6 +192,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StartInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopInstanceRequest, Operation>
@@ -196,6 +202,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/StopInstance")
               .setRequestMarshaller(ProtoUtils.marshaller(StopInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EnableInteractiveSerialConsoleRequest, Operation>
@@ -207,6 +214,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EnableInteractiveSerialConsoleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DisableInteractiveSerialConsoleRequest, Operation>
@@ -219,6 +227,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   ProtoUtils.marshaller(
                       DisableInteractiveSerialConsoleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DetachLunRequest, Operation> detachLunMethodDescriptor =
@@ -227,6 +236,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
           .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/DetachLun")
           .setRequestMarshaller(ProtoUtils.marshaller(DetachLunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListSSHKeysRequest, ListSSHKeysResponse>
@@ -237,6 +247,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSSHKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSSHKeysResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSSHKeyRequest, SSHKey> createSSHKeyMethodDescriptor =
@@ -245,6 +256,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
           .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/CreateSSHKey")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSSHKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(SSHKey.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteSSHKeyRequest, Empty> deleteSSHKeyMethodDescriptor =
@@ -253,6 +265,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
           .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/DeleteSSHKey")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteSSHKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListVolumesRequest, ListVolumesResponse>
@@ -263,6 +276,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListVolumesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVolumesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVolumeRequest, Volume> getVolumeMethodDescriptor =
@@ -271,6 +285,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
           .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/GetVolume")
           .setRequestMarshaller(ProtoUtils.marshaller(GetVolumeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Volume.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateVolumeRequest, Operation>
@@ -280,6 +295,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/UpdateVolume")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RenameVolumeRequest, Volume> renameVolumeMethodDescriptor =
@@ -288,6 +304,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
           .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/RenameVolume")
           .setRequestMarshaller(ProtoUtils.marshaller(RenameVolumeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Volume.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<EvictVolumeRequest, Operation> evictVolumeMethodDescriptor =
@@ -296,6 +313,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
           .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/EvictVolume")
           .setRequestMarshaller(ProtoUtils.marshaller(EvictVolumeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ResizeVolumeRequest, Operation>
@@ -305,6 +323,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/ResizeVolume")
               .setRequestMarshaller(ProtoUtils.marshaller(ResizeVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListNetworksRequest, ListNetworksResponse>
@@ -315,6 +334,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListNetworksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNetworksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListNetworkUsageRequest, ListNetworkUsageResponse>
@@ -327,6 +347,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   ProtoUtils.marshaller(ListNetworkUsageRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNetworkUsageResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNetworkRequest, Network> getNetworkMethodDescriptor =
@@ -335,6 +356,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
           .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/GetNetwork")
           .setRequestMarshaller(ProtoUtils.marshaller(GetNetworkRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Network.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateNetworkRequest, Operation>
@@ -346,6 +368,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateNetworkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateVolumeSnapshotRequest, VolumeSnapshot>
@@ -357,6 +380,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateVolumeSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(VolumeSnapshot.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RestoreVolumeSnapshotRequest, Operation>
@@ -368,6 +392,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RestoreVolumeSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteVolumeSnapshotRequest, Empty>
@@ -379,6 +404,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteVolumeSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVolumeSnapshotRequest, VolumeSnapshot>
@@ -390,6 +416,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetVolumeSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(VolumeSnapshot.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>
@@ -402,6 +429,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   ProtoUtils.marshaller(ListVolumeSnapshotsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVolumeSnapshotsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLunRequest, Lun> getLunMethodDescriptor =
@@ -410,6 +438,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
           .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/GetLun")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Lun.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLunsRequest, ListLunsResponse>
@@ -419,6 +448,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/ListLuns")
               .setRequestMarshaller(ProtoUtils.marshaller(ListLunsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListLunsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EvictLunRequest, Operation> evictLunMethodDescriptor =
@@ -427,6 +457,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
           .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/EvictLun")
           .setRequestMarshaller(ProtoUtils.marshaller(EvictLunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetNfsShareRequest, NfsShare> getNfsShareMethodDescriptor =
@@ -435,6 +466,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
           .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/GetNfsShare")
           .setRequestMarshaller(ProtoUtils.marshaller(GetNfsShareRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(NfsShare.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListNfsSharesRequest, ListNfsSharesResponse>
@@ -447,6 +479,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   ProtoUtils.marshaller(ListNfsSharesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNfsSharesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateNfsShareRequest, Operation>
@@ -458,6 +491,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateNfsShareRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateNfsShareRequest, Operation>
@@ -469,6 +503,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNfsShareRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RenameNfsShareRequest, NfsShare>
@@ -480,6 +515,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RenameNfsShareRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NfsShare.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNfsShareRequest, Operation>
@@ -491,6 +527,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNfsShareRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -505,6 +542,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   ProtoUtils.marshaller(ListProvisioningQuotasRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProvisioningQuotasResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -519,6 +557,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   ProtoUtils.marshaller(SubmitProvisioningConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SubmitProvisioningConfigResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProvisioningConfigRequest, ProvisioningConfig>
@@ -530,6 +569,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetProvisioningConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProvisioningConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateProvisioningConfigRequest, ProvisioningConfig>
@@ -541,6 +581,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateProvisioningConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProvisioningConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateProvisioningConfigRequest, ProvisioningConfig>
@@ -552,6 +593,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateProvisioningConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProvisioningConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RenameNetworkRequest, Network>
@@ -563,6 +605,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RenameNetworkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Network.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListOSImagesRequest, ListOSImagesResponse>
@@ -573,6 +616,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListOSImagesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOSImagesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -584,6 +628,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -592,6 +637,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;

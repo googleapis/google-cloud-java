@@ -377,8 +377,7 @@ public interface GitRepositoryLinkOrBuilder
    *
    *
    * <pre>
-   * Output only. A system-assigned unique identifier for a the
-   * GitRepositoryLink.
+   * Output only. A system-assigned unique identifier for the GitRepositoryLink.
    * </pre>
    *
    * <code>
@@ -393,8 +392,7 @@ public interface GitRepositoryLinkOrBuilder
    *
    *
    * <pre>
-   * Output only. A system-assigned unique identifier for a the
-   * GitRepositoryLink.
+   * Output only. A system-assigned unique identifier for the GitRepositoryLink.
    * </pre>
    *
    * <code>
@@ -430,4 +428,34 @@ public interface GitRepositoryLinkOrBuilder
    * @return The bytes for webhookId.
    */
   com.google.protobuf.ByteString getWebhookIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URI to access the linked repository through the Git Proxy.
+   * This field is only populated if the git proxy is enabled for the
+   * connection.
+   * </pre>
+   *
+   * <code>string git_proxy_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The gitProxyUri.
+   */
+  java.lang.String getGitProxyUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URI to access the linked repository through the Git Proxy.
+   * This field is only populated if the git proxy is enabled for the
+   * connection.
+   * </pre>
+   *
+   * <code>string git_proxy_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for gitProxyUri.
+   */
+  com.google.protobuf.ByteString getGitProxyUriBytes();
 }

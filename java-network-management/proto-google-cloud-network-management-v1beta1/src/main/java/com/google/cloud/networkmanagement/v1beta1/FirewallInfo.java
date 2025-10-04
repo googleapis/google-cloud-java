@@ -1027,6 +1027,27 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int POLICY_PRIORITY_FIELD_NUMBER = 12;
+  private int policyPriority_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The priority of the firewall policy that this rule is associated with.
+   * This field is not applicable to VPC firewall rules and implied VPC firewall
+   * rules.
+   * </pre>
+   *
+   * <code>int32 policy_priority = 12;</code>
+   *
+   * @return The policyPriority.
+   */
+  @java.lang.Override
+  public int getPolicyPriority() {
+    return policyPriority_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1077,6 +1098,9 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, policyUri_);
+    }
+    if (policyPriority_ != 0) {
+      output.writeInt32(12, policyPriority_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1133,6 +1157,9 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, policyUri_);
     }
+    if (policyPriority_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, policyPriority_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1160,6 +1187,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     if (!getPolicy().equals(other.getPolicy())) return false;
     if (!getPolicyUri().equals(other.getPolicyUri())) return false;
     if (firewallRuleType_ != other.firewallRuleType_) return false;
+    if (getPolicyPriority() != other.getPolicyPriority()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1197,6 +1225,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getPolicyUri().hashCode();
     hash = (37 * hash) + FIREWALL_RULE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + firewallRuleType_;
+    hash = (37 * hash) + POLICY_PRIORITY_FIELD_NUMBER;
+    hash = (53 * hash) + getPolicyPriority();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1350,6 +1380,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       policy_ = "";
       policyUri_ = "";
       firewallRuleType_ = 0;
+      policyPriority_ = 0;
       return this;
     }
 
@@ -1420,6 +1451,9 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.firewallRuleType_ = firewallRuleType_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.policyPriority_ = policyPriority_;
       }
     }
 
@@ -1530,6 +1564,9 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       if (other.firewallRuleType_ != 0) {
         setFirewallRuleTypeValue(other.getFirewallRuleTypeValue());
       }
+      if (other.getPolicyPriority() != 0) {
+        setPolicyPriority(other.getPolicyPriority());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1624,6 +1661,12 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 90
+            case 96:
+              {
+                policyPriority_ = input.readInt32();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2993,6 +3036,68 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFirewallRuleType() {
       bitField0_ = (bitField0_ & ~0x00000400);
       firewallRuleType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int policyPriority_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The priority of the firewall policy that this rule is associated with.
+     * This field is not applicable to VPC firewall rules and implied VPC firewall
+     * rules.
+     * </pre>
+     *
+     * <code>int32 policy_priority = 12;</code>
+     *
+     * @return The policyPriority.
+     */
+    @java.lang.Override
+    public int getPolicyPriority() {
+      return policyPriority_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The priority of the firewall policy that this rule is associated with.
+     * This field is not applicable to VPC firewall rules and implied VPC firewall
+     * rules.
+     * </pre>
+     *
+     * <code>int32 policy_priority = 12;</code>
+     *
+     * @param value The policyPriority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicyPriority(int value) {
+
+      policyPriority_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The priority of the firewall policy that this rule is associated with.
+     * This field is not applicable to VPC firewall rules and implied VPC firewall
+     * rules.
+     * </pre>
+     *
+     * <code>int32 policy_priority = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPolicyPriority() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      policyPriority_ = 0;
       onChanged();
       return this;
     }

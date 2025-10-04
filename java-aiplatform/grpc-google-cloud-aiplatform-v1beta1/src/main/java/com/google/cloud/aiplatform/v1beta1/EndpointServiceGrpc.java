@@ -742,9 +742,9 @@ public final class EndpointServiceGrpc {
      *
      * <pre>
      * Updates an existing deployed model. Updatable fields include
-     * `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`,
-     * `disable_container_logging` (v1 only), and `enable_container_logging`
-     * (v1beta1 only).
+     * `min_replica_count`, `max_replica_count`, `required_replica_count`,
+     * `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
+     * `enable_container_logging` (v1beta1 only).
      * </pre>
      */
     default void mutateDeployedModel(
@@ -956,9 +956,9 @@ public final class EndpointServiceGrpc {
      *
      * <pre>
      * Updates an existing deployed model. Updatable fields include
-     * `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`,
-     * `disable_container_logging` (v1 only), and `enable_container_logging`
-     * (v1beta1 only).
+     * `min_replica_count`, `max_replica_count`, `required_replica_count`,
+     * `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
+     * `enable_container_logging` (v1beta1 only).
      * </pre>
      */
     public void mutateDeployedModel(
@@ -1135,9 +1135,9 @@ public final class EndpointServiceGrpc {
      *
      * <pre>
      * Updates an existing deployed model. Updatable fields include
-     * `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`,
-     * `disable_container_logging` (v1 only), and `enable_container_logging`
-     * (v1beta1 only).
+     * `min_replica_count`, `max_replica_count`, `required_replica_count`,
+     * `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
+     * `enable_container_logging` (v1beta1 only).
      * </pre>
      */
     public com.google.longrunning.Operation mutateDeployedModel(
@@ -1303,9 +1303,9 @@ public final class EndpointServiceGrpc {
      *
      * <pre>
      * Updates an existing deployed model. Updatable fields include
-     * `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`,
-     * `disable_container_logging` (v1 only), and `enable_container_logging`
-     * (v1beta1 only).
+     * `min_replica_count`, `max_replica_count`, `required_replica_count`,
+     * `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
+     * `enable_container_logging` (v1beta1 only).
      * </pre>
      */
     public com.google.longrunning.Operation mutateDeployedModel(
@@ -1475,9 +1475,9 @@ public final class EndpointServiceGrpc {
      *
      * <pre>
      * Updates an existing deployed model. Updatable fields include
-     * `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`,
-     * `disable_container_logging` (v1 only), and `enable_container_logging`
-     * (v1beta1 only).
+     * `min_replica_count`, `max_replica_count`, `required_replica_count`,
+     * `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
+     * `enable_container_logging` (v1beta1 only).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

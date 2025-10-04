@@ -22,4 +22,63 @@ package com.google.cloud.aiplatform.v1beta1;
 public interface EnterpriseWebSearchOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.EnterpriseWebSearch)
-    com.google.protobuf.MessageOrBuilder {}
+    com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of domains to be excluded from the search results.
+   * The default limit is 2000 domains.
+   * </pre>
+   *
+   * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the excludeDomains.
+   */
+  java.util.List<java.lang.String> getExcludeDomainsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of domains to be excluded from the search results.
+   * The default limit is 2000 domains.
+   * </pre>
+   *
+   * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of excludeDomains.
+   */
+  int getExcludeDomainsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of domains to be excluded from the search results.
+   * The default limit is 2000 domains.
+   * </pre>
+   *
+   * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The excludeDomains at the given index.
+   */
+  java.lang.String getExcludeDomains(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of domains to be excluded from the search results.
+   * The default limit is 2000 domains.
+   * </pre>
+   *
+   * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the excludeDomains at the given index.
+   */
+  com.google.protobuf.ByteString getExcludeDomainsBytes(int index);
+}

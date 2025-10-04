@@ -58,6 +58,7 @@ public class GrpcLicenseManagementServiceStub extends LicenseManagementServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetLicensePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LicensePool.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateLicensePoolRequest, LicensePool>
@@ -69,6 +70,7 @@ public class GrpcLicenseManagementServiceStub extends LicenseManagementServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateLicensePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LicensePool.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AssignRequest, AssignResponse> assignMethodDescriptor =
@@ -78,6 +80,7 @@ public class GrpcLicenseManagementServiceStub extends LicenseManagementServiceSt
               "google.cloud.commerce.consumer.procurement.v1.LicenseManagementService/Assign")
           .setRequestMarshaller(ProtoUtils.marshaller(AssignRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(AssignResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UnassignRequest, UnassignResponse>
@@ -88,6 +91,7 @@ public class GrpcLicenseManagementServiceStub extends LicenseManagementServiceSt
                   "google.cloud.commerce.consumer.procurement.v1.LicenseManagementService/Unassign")
               .setRequestMarshaller(ProtoUtils.marshaller(UnassignRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UnassignResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -102,6 +106,7 @@ public class GrpcLicenseManagementServiceStub extends LicenseManagementServiceSt
                   ProtoUtils.marshaller(EnumerateLicensedUsersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(EnumerateLicensedUsersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetLicensePoolRequest, LicensePool> getLicensePoolCallable;

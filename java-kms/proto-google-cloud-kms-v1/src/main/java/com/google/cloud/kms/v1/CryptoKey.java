@@ -172,6 +172,19 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * <code>MAC = 9;</code>
      */
     MAC(9),
+    /**
+     *
+     *
+     * <pre>
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] with this purpose may be used
+     * with
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey]
+     * and [Decapsulate][google.cloud.kms.v1.KeyManagementService.Decapsulate].
+     * </pre>
+     *
+     * <code>KEY_ENCAPSULATION = 10;</code>
+     */
+    KEY_ENCAPSULATION(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -256,6 +269,20 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int MAC_VALUE = 9;
 
+    /**
+     *
+     *
+     * <pre>
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] with this purpose may be used
+     * with
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey]
+     * and [Decapsulate][google.cloud.kms.v1.KeyManagementService.Decapsulate].
+     * </pre>
+     *
+     * <code>KEY_ENCAPSULATION = 10;</code>
+     */
+    public static final int KEY_ENCAPSULATION_VALUE = 10;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -292,6 +319,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
           return RAW_ENCRYPT_DECRYPT;
         case 9:
           return MAC;
+        case 10:
+          return KEY_ENCAPSULATION;
         default:
           return null;
       }

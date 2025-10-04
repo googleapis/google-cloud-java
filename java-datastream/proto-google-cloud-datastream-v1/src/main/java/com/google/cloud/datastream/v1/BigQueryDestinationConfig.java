@@ -810,6 +810,48 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     com.google.cloud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasets
             .DatasetTemplateOrBuilder
         getDatasetTemplateOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project id of the BigQuery dataset. If not specified, the
+     * project will be inferred from the stream resource.
+     * </pre>
+     *
+     * <code>optional string project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the projectId field is set.
+     */
+    boolean hasProjectId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project id of the BigQuery dataset. If not specified, the
+     * project will be inferred from the stream resource.
+     * </pre>
+     *
+     * <code>optional string project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The projectId.
+     */
+    java.lang.String getProjectId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project id of the BigQuery dataset. If not specified, the
+     * project will be inferred from the stream resource.
+     * </pre>
+     *
+     * <code>optional string project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString getProjectIdBytes();
   }
 
   /**
@@ -834,7 +876,9 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       super(builder);
     }
 
-    private SourceHierarchyDatasets() {}
+    private SourceHierarchyDatasets() {
+      projectId_ = "";
+    }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
@@ -2170,6 +2214,78 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           : datasetTemplate_;
     }
 
+    public static final int PROJECT_ID_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project id of the BigQuery dataset. If not specified, the
+     * project will be inferred from the stream resource.
+     * </pre>
+     *
+     * <code>optional string project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the projectId field is set.
+     */
+    @java.lang.Override
+    public boolean hasProjectId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project id of the BigQuery dataset. If not specified, the
+     * project will be inferred from the stream resource.
+     * </pre>
+     *
+     * <code>optional string project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The projectId.
+     */
+    @java.lang.Override
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project id of the BigQuery dataset. If not specified, the
+     * project will be inferred from the stream resource.
+     * </pre>
+     *
+     * <code>optional string project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2187,6 +2303,9 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(2, getDatasetTemplate());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, projectId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2198,6 +2317,9 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDatasetTemplate());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, projectId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2221,6 +2343,10 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       if (hasDatasetTemplate()) {
         if (!getDatasetTemplate().equals(other.getDatasetTemplate())) return false;
       }
+      if (hasProjectId() != other.hasProjectId()) return false;
+      if (hasProjectId()) {
+        if (!getProjectId().equals(other.getProjectId())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2235,6 +2361,10 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       if (hasDatasetTemplate()) {
         hash = (37 * hash) + DATASET_TEMPLATE_FIELD_NUMBER;
         hash = (53 * hash) + getDatasetTemplate().hashCode();
+      }
+      if (hasProjectId()) {
+        hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getProjectId().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -2405,6 +2535,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           datasetTemplateBuilder_.dispose();
           datasetTemplateBuilder_ = null;
         }
+        projectId_ = "";
         return this;
       }
 
@@ -2453,6 +2584,10 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           result.datasetTemplate_ =
               datasetTemplateBuilder_ == null ? datasetTemplate_ : datasetTemplateBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.projectId_ = projectId_;
+          to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2514,6 +2649,11 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         if (other.hasDatasetTemplate()) {
           mergeDatasetTemplate(other.getDatasetTemplate());
         }
+        if (other.hasProjectId()) {
+          projectId_ = other.projectId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2547,6 +2687,12 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 18
+              case 26:
+                {
+                  projectId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2806,6 +2952,138 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           datasetTemplate_ = null;
         }
         return datasetTemplateBuilder_;
+      }
+
+      private java.lang.Object projectId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project id of the BigQuery dataset. If not specified, the
+       * project will be inferred from the stream resource.
+       * </pre>
+       *
+       * <code>optional string project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the projectId field is set.
+       */
+      public boolean hasProjectId() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project id of the BigQuery dataset. If not specified, the
+       * project will be inferred from the stream resource.
+       * </pre>
+       *
+       * <code>optional string project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The projectId.
+       */
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project id of the BigQuery dataset. If not specified, the
+       * project will be inferred from the stream resource.
+       * </pre>
+       *
+       * <code>optional string project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project id of the BigQuery dataset. If not specified, the
+       * project will be inferred from the stream resource.
+       * </pre>
+       *
+       * <code>optional string project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        projectId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project id of the BigQuery dataset. If not specified, the
+       * project will be inferred from the stream resource.
+       * </pre>
+       *
+       * <code>optional string project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectId() {
+        projectId_ = getDefaultInstance().getProjectId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project id of the BigQuery dataset. If not specified, the
+       * project will be inferred from the stream resource.
+       * </pre>
+       *
+       * <code>optional string project_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        projectId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override

@@ -89,10 +89,9 @@ public interface RepositoryOrBuilder
    * Optional. The name of the instance in which the repository is hosted,
    * formatted as
    * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
-   * When creating repository via
-   * securesourcemanager.googleapis.com (Control Plane API), this field is used
-   * as input. When creating repository via *.sourcemanager.dev (Data Plane
-   * API), this field is output only.
+   * When creating repository via securesourcemanager.googleapis.com, this field
+   * is used as input. When creating repository via *.sourcemanager.dev, this
+   * field is output only.
    * </pre>
    *
    * <code>
@@ -110,10 +109,9 @@ public interface RepositoryOrBuilder
    * Optional. The name of the instance in which the repository is hosted,
    * formatted as
    * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
-   * When creating repository via
-   * securesourcemanager.googleapis.com (Control Plane API), this field is used
-   * as input. When creating repository via *.sourcemanager.dev (Data Plane
-   * API), this field is output only.
+   * When creating repository via securesourcemanager.googleapis.com, this field
+   * is used as input. When creating repository via *.sourcemanager.dev, this
+   * field is output only.
    * </pre>
    *
    * <code>

@@ -32,7 +32,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
-/** A responder that automatically calls functions when requested by the GenAI model. */
+/**
+ * A responder that automatically calls functions when requested by the GenAI model.
+ *
+ * @deprecated This class and its package are deprecated. See the <a
+ *     href="https://cloud.google.com/vertex-ai/generative-ai/docs/deprecations/genai-vertexai-sdk#java">
+ *     migration guide</a> for more details.
+ */
+@Deprecated
 public final class AutomaticFunctionCallingResponder {
   private int maxFunctionCalls = 1;
   private int remainingFunctionCalls;

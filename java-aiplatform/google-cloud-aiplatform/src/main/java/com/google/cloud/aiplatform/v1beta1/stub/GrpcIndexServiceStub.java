@@ -77,6 +77,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.IndexService/CreateIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIndexRequest, Index> getIndexMethodDescriptor =
@@ -85,6 +86,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.IndexService/GetIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Index.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ImportIndexRequest, Operation> importIndexMethodDescriptor =
@@ -93,6 +95,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.IndexService/ImportIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(ImportIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListIndexesRequest, ListIndexesResponse>
@@ -103,6 +106,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListIndexesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListIndexesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateIndexRequest, Operation> updateIndexMethodDescriptor =
@@ -111,6 +115,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.IndexService/UpdateIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteIndexRequest, Operation> deleteIndexMethodDescriptor =
@@ -119,6 +124,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.IndexService/DeleteIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpsertDatapointsRequest, UpsertDatapointsResponse>
@@ -130,6 +136,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                   ProtoUtils.marshaller(UpsertDatapointsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UpsertDatapointsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveDatapointsRequest, RemoveDatapointsResponse>
@@ -141,6 +148,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                   ProtoUtils.marshaller(RemoveDatapointsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RemoveDatapointsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -152,6 +160,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -160,6 +169,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -168,6 +178,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -176,6 +187,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -187,6 +199,7 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateIndexRequest, Operation> createIndexCallable;

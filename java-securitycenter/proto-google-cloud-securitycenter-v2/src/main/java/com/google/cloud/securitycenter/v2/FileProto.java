@@ -36,6 +36,10 @@ public final class FileProto {
       internal_static_google_cloud_securitycenter_v2_File_DiskPath_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securitycenter_v2_File_DiskPath_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v2_File_FileOperation_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v2_File_FileOperation_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -46,7 +50,7 @@ public final class FileProto {
   static {
     java.lang.String[] descriptorData = {
       "\n"
-          + ")google/cloud/securitycenter/v2/file.proto\022\036google.cloud.securitycenter.v2\"\360\001\n"
+          + ")google/cloud/securitycenter/v2/file.proto\022\036google.cloud.securitycenter.v2\"\203\004\n"
           + "\004File\022\014\n"
           + "\004path\030\001 \001(\t\022\014\n"
           + "\004size\030\002 \001(\003\022\016\n"
@@ -54,15 +58,26 @@ public final class FileProto {
           + "\013hashed_size\030\004 \001(\003\022\030\n"
           + "\020partially_hashed\030\005 \001(\010\022\020\n"
           + "\010contents\030\006 \001(\t\022@\n"
-          + "\tdisk_path\030\007 \001(\0132-.google.cloud.securitycenter.v2.File.DiskPath\0329\n"
+          + "\tdisk_path\030\007 \001(\0132-.google.cloud.securitycenter.v2.File.DiskPath\022F\n\n"
+          + "operations\030\010 \003(\0132"
+          + "2.google.cloud.securitycenter.v2.File.FileOperation\0329\n"
           + "\010DiskPath\022\026\n"
           + "\016partition_uuid\030\001 \001(\t\022\025\n\r"
-          + "relative_path\030\002 \001(\tB\343\001\n"
-          + "\"com.google.cloud.securitycenter.v2B\tFileProtoP\001ZJcloud.google.com/go/security"
-          + "center/apiv2/securitycenterpb;securityce"
-          + "nterpb\252\002\036Google.Cloud.SecurityCenter.V2\312"
-          + "\002\036Google\\Cloud\\SecurityCenter\\V2\352\002!Googl"
-          + "e::Cloud::SecurityCenter::V2b\006proto3"
+          + "relative_path\030\002 \001(\t\032\310\001\n\r"
+          + "FileOperation\022N\n"
+          + "\004type\030\001 \001(\0162@.google.cloud.se"
+          + "curitycenter.v2.File.FileOperation.OperationType\"g\n\r"
+          + "OperationType\022\036\n"
+          + "\032OPERATION_TYPE_UNSPECIFIED\020\000\022\010\n"
+          + "\004OPEN\020\001\022\010\n"
+          + "\004READ\020\002\022\n\n"
+          + "\006RENAME\020\003\022\t\n"
+          + "\005WRITE\020\004\022\013\n"
+          + "\007EXECUTE\020\005B\343\001\n"
+          + "\"com.google.cloud.securitycenter.v2B\tFilePr"
+          + "otoP\001ZJcloud.google.com/go/securitycenter/apiv2/securitycenterpb;securitycenterp"
+          + "b\252\002\036Google.Cloud.SecurityCenter.V2\312\002\036Goo"
+          + "gle\\Cloud\\SecurityCenter\\V2\352\002!Google::Cloud::SecurityCenter::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -73,7 +88,14 @@ public final class FileProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v2_File_descriptor,
             new java.lang.String[] {
-              "Path", "Size", "Sha256", "HashedSize", "PartiallyHashed", "Contents", "DiskPath",
+              "Path",
+              "Size",
+              "Sha256",
+              "HashedSize",
+              "PartiallyHashed",
+              "Contents",
+              "DiskPath",
+              "Operations",
             });
     internal_static_google_cloud_securitycenter_v2_File_DiskPath_descriptor =
         internal_static_google_cloud_securitycenter_v2_File_descriptor.getNestedTypes().get(0);
@@ -82,6 +104,14 @@ public final class FileProto {
             internal_static_google_cloud_securitycenter_v2_File_DiskPath_descriptor,
             new java.lang.String[] {
               "PartitionUuid", "RelativePath",
+            });
+    internal_static_google_cloud_securitycenter_v2_File_FileOperation_descriptor =
+        internal_static_google_cloud_securitycenter_v2_File_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_securitycenter_v2_File_FileOperation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v2_File_FileOperation_descriptor,
+            new java.lang.String[] {
+              "Type",
             });
   }
 

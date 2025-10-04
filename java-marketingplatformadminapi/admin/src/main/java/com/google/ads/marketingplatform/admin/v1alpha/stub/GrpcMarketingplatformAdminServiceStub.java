@@ -61,6 +61,7 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetOrganizationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Organization.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -75,6 +76,7 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
                   ProtoUtils.marshaller(ListAnalyticsAccountLinksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAnalyticsAccountLinksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAnalyticsAccountLinkRequest, AnalyticsAccountLink>
@@ -87,6 +89,7 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
                   ProtoUtils.marshaller(CreateAnalyticsAccountLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnalyticsAccountLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAnalyticsAccountLinkRequest, Empty>
@@ -98,6 +101,7 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAnalyticsAccountLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -112,6 +116,7 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
                   ProtoUtils.marshaller(SetPropertyServiceLevelRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SetPropertyServiceLevelResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetOrganizationRequest, Organization> getOrganizationCallable;

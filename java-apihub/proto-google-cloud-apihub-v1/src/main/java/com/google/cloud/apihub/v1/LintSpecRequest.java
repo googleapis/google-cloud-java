@@ -23,7 +23,8 @@ package com.google.cloud.apihub.v1;
  *
  *
  * <pre>
- * The [LintSpec][ApiHub.LintSpec] method's request.
+ * The [LintSpec][google.cloud.apihub.v1.LintingService.LintSpec] method's
+ * request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.apihub.v1.LintSpecRequest}
@@ -289,7 +290,8 @@ public final class LintSpecRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The [LintSpec][ApiHub.LintSpec] method's request.
+   * The [LintSpec][google.cloud.apihub.v1.LintingService.LintSpec] method's
+   * request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.apihub.v1.LintSpecRequest}

@@ -434,8 +434,9 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. A list of references to the forwarding rules to which this
-   * service extension is attached to. At least one forwarding rule is required.
-   * There can be only one `LbRouteExtension` resource per forwarding rule.
+   * service extension is attached. At least one forwarding rule is required.
+   * Only one `LbRouteExtension` resource can be associated with a forwarding
+   * rule.
    * </pre>
    *
    * <code>repeated string forwarding_rules = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -451,8 +452,9 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. A list of references to the forwarding rules to which this
-   * service extension is attached to. At least one forwarding rule is required.
-   * There can be only one `LbRouteExtension` resource per forwarding rule.
+   * service extension is attached. At least one forwarding rule is required.
+   * Only one `LbRouteExtension` resource can be associated with a forwarding
+   * rule.
    * </pre>
    *
    * <code>repeated string forwarding_rules = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -468,8 +470,9 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. A list of references to the forwarding rules to which this
-   * service extension is attached to. At least one forwarding rule is required.
-   * There can be only one `LbRouteExtension` resource per forwarding rule.
+   * service extension is attached. At least one forwarding rule is required.
+   * Only one `LbRouteExtension` resource can be associated with a forwarding
+   * rule.
    * </pre>
    *
    * <code>repeated string forwarding_rules = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -486,8 +489,9 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. A list of references to the forwarding rules to which this
-   * service extension is attached to. At least one forwarding rule is required.
-   * There can be only one `LbRouteExtension` resource per forwarding rule.
+   * service extension is attached. At least one forwarding rule is required.
+   * Only one `LbRouteExtension` resource can be associated with a forwarding
+   * rule.
    * </pre>
    *
    * <code>repeated string forwarding_rules = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -622,8 +626,8 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
    * Required. All backend services and forwarding rules referenced by this
    * extension must share the same load balancing scheme. Supported values:
    * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. For more information, refer to
-   * [Choosing a load
-   * balancer](https://cloud.google.com/load-balancing/docs/backend-service).
+   * [Backend services
+   * overview](https://cloud.google.com/load-balancing/docs/backend-service).
    * </pre>
    *
    * <code>
@@ -644,8 +648,8 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
    * Required. All backend services and forwarding rules referenced by this
    * extension must share the same load balancing scheme. Supported values:
    * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. For more information, refer to
-   * [Choosing a load
-   * balancer](https://cloud.google.com/load-balancing/docs/backend-service).
+   * [Backend services
+   * overview](https://cloud.google.com/load-balancing/docs/backend-service).
    * </pre>
    *
    * <code>
@@ -672,13 +676,25 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The metadata provided here is included as part of the
    * `metadata_context` (of type `google.protobuf.Struct`) in the
-   * `ProcessingRequest` message sent to the extension
-   * server. The metadata is available under the namespace
+   * `ProcessingRequest` message sent to the extension server.
+   *
+   * The metadata applies to all extensions in all extensions chains in this
+   * resource.
+   *
+   * The metadata is available under the key
    * `com.google.lb_route_extension.&lt;resource_name&gt;`.
-   * The following variables are supported in the metadata Struct:
+   *
+   * The following variables are supported in the metadata:
    *
    * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
    *   qualified resource name.
+   *
+   * This field must not be set if at least one of the extension chains
+   * contains plugin extensions. Setting it results in a validation error.
+   *
+   * You can set metadata at either the resource level or the extension level.
+   * The extension level metadata is recommended because you can pass a
+   * different set of metadata through each extension to the backend.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -696,13 +712,25 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The metadata provided here is included as part of the
    * `metadata_context` (of type `google.protobuf.Struct`) in the
-   * `ProcessingRequest` message sent to the extension
-   * server. The metadata is available under the namespace
+   * `ProcessingRequest` message sent to the extension server.
+   *
+   * The metadata applies to all extensions in all extensions chains in this
+   * resource.
+   *
+   * The metadata is available under the key
    * `com.google.lb_route_extension.&lt;resource_name&gt;`.
-   * The following variables are supported in the metadata Struct:
+   *
+   * The following variables are supported in the metadata:
    *
    * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
    *   qualified resource name.
+   *
+   * This field must not be set if at least one of the extension chains
+   * contains plugin extensions. Setting it results in a validation error.
+   *
+   * You can set metadata at either the resource level or the extension level.
+   * The extension level metadata is recommended because you can pass a
+   * different set of metadata through each extension to the backend.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -720,13 +748,25 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The metadata provided here is included as part of the
    * `metadata_context` (of type `google.protobuf.Struct`) in the
-   * `ProcessingRequest` message sent to the extension
-   * server. The metadata is available under the namespace
+   * `ProcessingRequest` message sent to the extension server.
+   *
+   * The metadata applies to all extensions in all extensions chains in this
+   * resource.
+   *
+   * The metadata is available under the key
    * `com.google.lb_route_extension.&lt;resource_name&gt;`.
-   * The following variables are supported in the metadata Struct:
+   *
+   * The following variables are supported in the metadata:
    *
    * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
    *   qualified resource name.
+   *
+   * This field must not be set if at least one of the extension chains
+   * contains plugin extensions. Setting it results in a validation error.
+   *
+   * You can set metadata at either the resource level or the extension level.
+   * The extension level metadata is recommended because you can pass a
+   * different set of metadata through each extension to the backend.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2290,8 +2330,9 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A list of references to the forwarding rules to which this
-     * service extension is attached to. At least one forwarding rule is required.
-     * There can be only one `LbRouteExtension` resource per forwarding rule.
+     * service extension is attached. At least one forwarding rule is required.
+     * Only one `LbRouteExtension` resource can be associated with a forwarding
+     * rule.
      * </pre>
      *
      * <code>repeated string forwarding_rules = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2308,8 +2349,9 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A list of references to the forwarding rules to which this
-     * service extension is attached to. At least one forwarding rule is required.
-     * There can be only one `LbRouteExtension` resource per forwarding rule.
+     * service extension is attached. At least one forwarding rule is required.
+     * Only one `LbRouteExtension` resource can be associated with a forwarding
+     * rule.
      * </pre>
      *
      * <code>repeated string forwarding_rules = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2325,8 +2367,9 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A list of references to the forwarding rules to which this
-     * service extension is attached to. At least one forwarding rule is required.
-     * There can be only one `LbRouteExtension` resource per forwarding rule.
+     * service extension is attached. At least one forwarding rule is required.
+     * Only one `LbRouteExtension` resource can be associated with a forwarding
+     * rule.
      * </pre>
      *
      * <code>repeated string forwarding_rules = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2343,8 +2386,9 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A list of references to the forwarding rules to which this
-     * service extension is attached to. At least one forwarding rule is required.
-     * There can be only one `LbRouteExtension` resource per forwarding rule.
+     * service extension is attached. At least one forwarding rule is required.
+     * Only one `LbRouteExtension` resource can be associated with a forwarding
+     * rule.
      * </pre>
      *
      * <code>repeated string forwarding_rules = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2361,8 +2405,9 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A list of references to the forwarding rules to which this
-     * service extension is attached to. At least one forwarding rule is required.
-     * There can be only one `LbRouteExtension` resource per forwarding rule.
+     * service extension is attached. At least one forwarding rule is required.
+     * Only one `LbRouteExtension` resource can be associated with a forwarding
+     * rule.
      * </pre>
      *
      * <code>repeated string forwarding_rules = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2387,8 +2432,9 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A list of references to the forwarding rules to which this
-     * service extension is attached to. At least one forwarding rule is required.
-     * There can be only one `LbRouteExtension` resource per forwarding rule.
+     * service extension is attached. At least one forwarding rule is required.
+     * Only one `LbRouteExtension` resource can be associated with a forwarding
+     * rule.
      * </pre>
      *
      * <code>repeated string forwarding_rules = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2412,8 +2458,9 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A list of references to the forwarding rules to which this
-     * service extension is attached to. At least one forwarding rule is required.
-     * There can be only one `LbRouteExtension` resource per forwarding rule.
+     * service extension is attached. At least one forwarding rule is required.
+     * Only one `LbRouteExtension` resource can be associated with a forwarding
+     * rule.
      * </pre>
      *
      * <code>repeated string forwarding_rules = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2434,8 +2481,9 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A list of references to the forwarding rules to which this
-     * service extension is attached to. At least one forwarding rule is required.
-     * There can be only one `LbRouteExtension` resource per forwarding rule.
+     * service extension is attached. At least one forwarding rule is required.
+     * Only one `LbRouteExtension` resource can be associated with a forwarding
+     * rule.
      * </pre>
      *
      * <code>repeated string forwarding_rules = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2455,8 +2503,9 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A list of references to the forwarding rules to which this
-     * service extension is attached to. At least one forwarding rule is required.
-     * There can be only one `LbRouteExtension` resource per forwarding rule.
+     * service extension is attached. At least one forwarding rule is required.
+     * Only one `LbRouteExtension` resource can be associated with a forwarding
+     * rule.
      * </pre>
      *
      * <code>repeated string forwarding_rules = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2990,8 +3039,8 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      * Required. All backend services and forwarding rules referenced by this
      * extension must share the same load balancing scheme. Supported values:
      * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. For more information, refer to
-     * [Choosing a load
-     * balancer](https://cloud.google.com/load-balancing/docs/backend-service).
+     * [Backend services
+     * overview](https://cloud.google.com/load-balancing/docs/backend-service).
      * </pre>
      *
      * <code>
@@ -3012,8 +3061,8 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      * Required. All backend services and forwarding rules referenced by this
      * extension must share the same load balancing scheme. Supported values:
      * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. For more information, refer to
-     * [Choosing a load
-     * balancer](https://cloud.google.com/load-balancing/docs/backend-service).
+     * [Backend services
+     * overview](https://cloud.google.com/load-balancing/docs/backend-service).
      * </pre>
      *
      * <code>
@@ -3037,8 +3086,8 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      * Required. All backend services and forwarding rules referenced by this
      * extension must share the same load balancing scheme. Supported values:
      * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. For more information, refer to
-     * [Choosing a load
-     * balancer](https://cloud.google.com/load-balancing/docs/backend-service).
+     * [Backend services
+     * overview](https://cloud.google.com/load-balancing/docs/backend-service).
      * </pre>
      *
      * <code>
@@ -3063,8 +3112,8 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      * Required. All backend services and forwarding rules referenced by this
      * extension must share the same load balancing scheme. Supported values:
      * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. For more information, refer to
-     * [Choosing a load
-     * balancer](https://cloud.google.com/load-balancing/docs/backend-service).
+     * [Backend services
+     * overview](https://cloud.google.com/load-balancing/docs/backend-service).
      * </pre>
      *
      * <code>
@@ -3092,8 +3141,8 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      * Required. All backend services and forwarding rules referenced by this
      * extension must share the same load balancing scheme. Supported values:
      * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. For more information, refer to
-     * [Choosing a load
-     * balancer](https://cloud.google.com/load-balancing/docs/backend-service).
+     * [Backend services
+     * overview](https://cloud.google.com/load-balancing/docs/backend-service).
      * </pre>
      *
      * <code>
@@ -3122,13 +3171,25 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The metadata provided here is included as part of the
      * `metadata_context` (of type `google.protobuf.Struct`) in the
-     * `ProcessingRequest` message sent to the extension
-     * server. The metadata is available under the namespace
+     * `ProcessingRequest` message sent to the extension server.
+     *
+     * The metadata applies to all extensions in all extensions chains in this
+     * resource.
+     *
+     * The metadata is available under the key
      * `com.google.lb_route_extension.&lt;resource_name&gt;`.
-     * The following variables are supported in the metadata Struct:
+     *
+     * The following variables are supported in the metadata:
      *
      * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
      *   qualified resource name.
+     *
+     * This field must not be set if at least one of the extension chains
+     * contains plugin extensions. Setting it results in a validation error.
+     *
+     * You can set metadata at either the resource level or the extension level.
+     * The extension level metadata is recommended because you can pass a
+     * different set of metadata through each extension to the backend.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3145,13 +3206,25 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The metadata provided here is included as part of the
      * `metadata_context` (of type `google.protobuf.Struct`) in the
-     * `ProcessingRequest` message sent to the extension
-     * server. The metadata is available under the namespace
+     * `ProcessingRequest` message sent to the extension server.
+     *
+     * The metadata applies to all extensions in all extensions chains in this
+     * resource.
+     *
+     * The metadata is available under the key
      * `com.google.lb_route_extension.&lt;resource_name&gt;`.
-     * The following variables are supported in the metadata Struct:
+     *
+     * The following variables are supported in the metadata:
      *
      * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
      *   qualified resource name.
+     *
+     * This field must not be set if at least one of the extension chains
+     * contains plugin extensions. Setting it results in a validation error.
+     *
+     * You can set metadata at either the resource level or the extension level.
+     * The extension level metadata is recommended because you can pass a
+     * different set of metadata through each extension to the backend.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3172,13 +3245,25 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The metadata provided here is included as part of the
      * `metadata_context` (of type `google.protobuf.Struct`) in the
-     * `ProcessingRequest` message sent to the extension
-     * server. The metadata is available under the namespace
+     * `ProcessingRequest` message sent to the extension server.
+     *
+     * The metadata applies to all extensions in all extensions chains in this
+     * resource.
+     *
+     * The metadata is available under the key
      * `com.google.lb_route_extension.&lt;resource_name&gt;`.
-     * The following variables are supported in the metadata Struct:
+     *
+     * The following variables are supported in the metadata:
      *
      * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
      *   qualified resource name.
+     *
+     * This field must not be set if at least one of the extension chains
+     * contains plugin extensions. Setting it results in a validation error.
+     *
+     * You can set metadata at either the resource level or the extension level.
+     * The extension level metadata is recommended because you can pass a
+     * different set of metadata through each extension to the backend.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3203,13 +3288,25 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The metadata provided here is included as part of the
      * `metadata_context` (of type `google.protobuf.Struct`) in the
-     * `ProcessingRequest` message sent to the extension
-     * server. The metadata is available under the namespace
+     * `ProcessingRequest` message sent to the extension server.
+     *
+     * The metadata applies to all extensions in all extensions chains in this
+     * resource.
+     *
+     * The metadata is available under the key
      * `com.google.lb_route_extension.&lt;resource_name&gt;`.
-     * The following variables are supported in the metadata Struct:
+     *
+     * The following variables are supported in the metadata:
      *
      * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
      *   qualified resource name.
+     *
+     * This field must not be set if at least one of the extension chains
+     * contains plugin extensions. Setting it results in a validation error.
+     *
+     * You can set metadata at either the resource level or the extension level.
+     * The extension level metadata is recommended because you can pass a
+     * different set of metadata through each extension to the backend.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3231,13 +3328,25 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The metadata provided here is included as part of the
      * `metadata_context` (of type `google.protobuf.Struct`) in the
-     * `ProcessingRequest` message sent to the extension
-     * server. The metadata is available under the namespace
+     * `ProcessingRequest` message sent to the extension server.
+     *
+     * The metadata applies to all extensions in all extensions chains in this
+     * resource.
+     *
+     * The metadata is available under the key
      * `com.google.lb_route_extension.&lt;resource_name&gt;`.
-     * The following variables are supported in the metadata Struct:
+     *
+     * The following variables are supported in the metadata:
      *
      * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
      *   qualified resource name.
+     *
+     * This field must not be set if at least one of the extension chains
+     * contains plugin extensions. Setting it results in a validation error.
+     *
+     * You can set metadata at either the resource level or the extension level.
+     * The extension level metadata is recommended because you can pass a
+     * different set of metadata through each extension to the backend.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3267,13 +3376,25 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The metadata provided here is included as part of the
      * `metadata_context` (of type `google.protobuf.Struct`) in the
-     * `ProcessingRequest` message sent to the extension
-     * server. The metadata is available under the namespace
+     * `ProcessingRequest` message sent to the extension server.
+     *
+     * The metadata applies to all extensions in all extensions chains in this
+     * resource.
+     *
+     * The metadata is available under the key
      * `com.google.lb_route_extension.&lt;resource_name&gt;`.
-     * The following variables are supported in the metadata Struct:
+     *
+     * The following variables are supported in the metadata:
      *
      * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
      *   qualified resource name.
+     *
+     * This field must not be set if at least one of the extension chains
+     * contains plugin extensions. Setting it results in a validation error.
+     *
+     * You can set metadata at either the resource level or the extension level.
+     * The extension level metadata is recommended because you can pass a
+     * different set of metadata through each extension to the backend.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3295,13 +3416,25 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The metadata provided here is included as part of the
      * `metadata_context` (of type `google.protobuf.Struct`) in the
-     * `ProcessingRequest` message sent to the extension
-     * server. The metadata is available under the namespace
+     * `ProcessingRequest` message sent to the extension server.
+     *
+     * The metadata applies to all extensions in all extensions chains in this
+     * resource.
+     *
+     * The metadata is available under the key
      * `com.google.lb_route_extension.&lt;resource_name&gt;`.
-     * The following variables are supported in the metadata Struct:
+     *
+     * The following variables are supported in the metadata:
      *
      * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
      *   qualified resource name.
+     *
+     * This field must not be set if at least one of the extension chains
+     * contains plugin extensions. Setting it results in a validation error.
+     *
+     * You can set metadata at either the resource level or the extension level.
+     * The extension level metadata is recommended because you can pass a
+     * different set of metadata through each extension to the backend.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3318,13 +3451,25 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The metadata provided here is included as part of the
      * `metadata_context` (of type `google.protobuf.Struct`) in the
-     * `ProcessingRequest` message sent to the extension
-     * server. The metadata is available under the namespace
+     * `ProcessingRequest` message sent to the extension server.
+     *
+     * The metadata applies to all extensions in all extensions chains in this
+     * resource.
+     *
+     * The metadata is available under the key
      * `com.google.lb_route_extension.&lt;resource_name&gt;`.
-     * The following variables are supported in the metadata Struct:
+     *
+     * The following variables are supported in the metadata:
      *
      * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
      *   qualified resource name.
+     *
+     * This field must not be set if at least one of the extension chains
+     * contains plugin extensions. Setting it results in a validation error.
+     *
+     * You can set metadata at either the resource level or the extension level.
+     * The extension level metadata is recommended because you can pass a
+     * different set of metadata through each extension to the backend.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3343,13 +3488,25 @@ public final class LbRouteExtension extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The metadata provided here is included as part of the
      * `metadata_context` (of type `google.protobuf.Struct`) in the
-     * `ProcessingRequest` message sent to the extension
-     * server. The metadata is available under the namespace
+     * `ProcessingRequest` message sent to the extension server.
+     *
+     * The metadata applies to all extensions in all extensions chains in this
+     * resource.
+     *
+     * The metadata is available under the key
      * `com.google.lb_route_extension.&lt;resource_name&gt;`.
-     * The following variables are supported in the metadata Struct:
+     *
+     * The following variables are supported in the metadata:
      *
      * `{forwarding_rule_id}` - substituted with the forwarding rule's fully
      *   qualified resource name.
+     *
+     * This field must not be set if at least one of the extension chains
+     * contains plugin extensions. Setting it results in a validation error.
+     *
+     * You can set metadata at either the resource level or the extension level.
+     * The extension level metadata is recommended because you can pass a
+     * different set of metadata through each extension to the backend.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 10 [(.google.api.field_behavior) = OPTIONAL];</code>

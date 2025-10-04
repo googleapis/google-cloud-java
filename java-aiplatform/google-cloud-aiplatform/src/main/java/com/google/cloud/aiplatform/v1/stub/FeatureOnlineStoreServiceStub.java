@@ -19,7 +19,10 @@ package com.google.cloud.aiplatform.v1.stub;
 import static com.google.cloud.aiplatform.v1.FeatureOnlineStoreServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1.FeatureViewDirectWriteRequest;
+import com.google.cloud.aiplatform.v1.FeatureViewDirectWriteResponse;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesResponse;
 import com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest;
@@ -52,6 +55,11 @@ public abstract class FeatureOnlineStoreServiceStub implements BackgroundResourc
   public UnaryCallable<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesCallable() {
     throw new UnsupportedOperationException("Not implemented: searchNearestEntitiesCallable()");
+  }
+
+  public BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteCallable() {
+    throw new UnsupportedOperationException("Not implemented: featureViewDirectWriteCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -145,6 +145,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(InspectContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(InspectContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RedactImageRequest, RedactImageResponse>
@@ -155,6 +156,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(RedactImageRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RedactImageResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeidentifyContentRequest, DeidentifyContentResponse>
@@ -166,6 +168,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(DeidentifyContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DeidentifyContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReidentifyContentRequest, ReidentifyContentResponse>
@@ -177,6 +180,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ReidentifyContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReidentifyContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListInfoTypesRequest, ListInfoTypesResponse>
@@ -188,6 +192,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListInfoTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInfoTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateInspectTemplateRequest, InspectTemplate>
@@ -198,6 +203,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateInspectTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InspectTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateInspectTemplateRequest, InspectTemplate>
@@ -208,6 +214,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateInspectTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InspectTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInspectTemplateRequest, InspectTemplate>
@@ -218,6 +225,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetInspectTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InspectTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListInspectTemplatesRequest, ListInspectTemplatesResponse>
@@ -229,6 +237,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListInspectTemplatesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInspectTemplatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteInspectTemplateRequest, Empty>
@@ -239,6 +248,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteInspectTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDeidentifyTemplateRequest, DeidentifyTemplate>
@@ -249,6 +259,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDeidentifyTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeidentifyTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDeidentifyTemplateRequest, DeidentifyTemplate>
@@ -259,6 +270,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDeidentifyTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeidentifyTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDeidentifyTemplateRequest, DeidentifyTemplate>
@@ -269,6 +281,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDeidentifyTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeidentifyTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -282,6 +295,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListDeidentifyTemplatesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeidentifyTemplatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDeidentifyTemplateRequest, Empty>
@@ -292,6 +306,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDeidentifyTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateJobTriggerRequest, JobTrigger>
@@ -302,6 +317,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobTrigger.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateJobTriggerRequest, JobTrigger>
@@ -312,6 +328,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobTrigger.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<HybridInspectJobTriggerRequest, HybridInspectResponse>
@@ -323,6 +340,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(HybridInspectJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(HybridInspectResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetJobTriggerRequest, JobTrigger>
@@ -333,6 +351,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobTrigger.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListJobTriggersRequest, ListJobTriggersResponse>
@@ -344,6 +363,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListJobTriggersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListJobTriggersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteJobTriggerRequest, Empty>
@@ -354,6 +374,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ActivateJobTriggerRequest, DlpJob>
@@ -364,6 +385,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ActivateJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DlpJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDiscoveryConfigRequest, DiscoveryConfig>
@@ -374,6 +396,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDiscoveryConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DiscoveryConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDiscoveryConfigRequest, DiscoveryConfig>
@@ -384,6 +407,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDiscoveryConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DiscoveryConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDiscoveryConfigRequest, DiscoveryConfig>
@@ -394,6 +418,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDiscoveryConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DiscoveryConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
@@ -405,6 +430,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListDiscoveryConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDiscoveryConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDiscoveryConfigRequest, Empty>
@@ -415,6 +441,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDiscoveryConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDlpJobRequest, DlpJob> createDlpJobMethodDescriptor =
@@ -423,6 +450,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
           .setFullMethodName("google.privacy.dlp.v2.DlpService/CreateDlpJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateDlpJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(DlpJob.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListDlpJobsRequest, ListDlpJobsResponse>
@@ -433,6 +461,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListDlpJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDlpJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDlpJobRequest, DlpJob> getDlpJobMethodDescriptor =
@@ -441,6 +470,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
           .setFullMethodName("google.privacy.dlp.v2.DlpService/GetDlpJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDlpJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(DlpJob.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteDlpJobRequest, Empty> deleteDlpJobMethodDescriptor =
@@ -449,6 +479,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
           .setFullMethodName("google.privacy.dlp.v2.DlpService/DeleteDlpJob")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteDlpJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CancelDlpJobRequest, Empty> cancelDlpJobMethodDescriptor =
@@ -457,6 +488,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
           .setFullMethodName("google.privacy.dlp.v2.DlpService/CancelDlpJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CancelDlpJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateStoredInfoTypeRequest, StoredInfoType>
@@ -467,6 +499,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateStoredInfoTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(StoredInfoType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateStoredInfoTypeRequest, StoredInfoType>
@@ -477,6 +510,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateStoredInfoTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(StoredInfoType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetStoredInfoTypeRequest, StoredInfoType>
@@ -487,6 +521,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetStoredInfoTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(StoredInfoType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>
@@ -498,6 +533,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListStoredInfoTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListStoredInfoTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteStoredInfoTypeRequest, Empty>
@@ -508,6 +544,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteStoredInfoTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -521,6 +558,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListProjectDataProfilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProjectDataProfilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTableDataProfilesRequest, ListTableDataProfilesResponse>
@@ -532,6 +570,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListTableDataProfilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTableDataProfilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -545,6 +584,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListColumnDataProfilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListColumnDataProfilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProjectDataProfileRequest, ProjectDataProfile>
@@ -555,6 +595,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetProjectDataProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProjectDataProfile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -568,6 +609,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListFileStoreDataProfilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFileStoreDataProfilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFileStoreDataProfileRequest, FileStoreDataProfile>
@@ -579,6 +621,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(GetFileStoreDataProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FileStoreDataProfile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFileStoreDataProfileRequest, Empty>
@@ -589,6 +632,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFileStoreDataProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTableDataProfileRequest, TableDataProfile>
@@ -599,6 +643,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTableDataProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TableDataProfile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetColumnDataProfileRequest, ColumnDataProfile>
@@ -609,6 +654,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetColumnDataProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ColumnDataProfile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTableDataProfileRequest, Empty>
@@ -619,6 +665,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTableDataProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<HybridInspectDlpJobRequest, HybridInspectResponse>
@@ -630,6 +677,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(HybridInspectDlpJobRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(HybridInspectResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FinishDlpJobRequest, Empty> finishDlpJobMethodDescriptor =
@@ -638,6 +686,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
           .setFullMethodName("google.privacy.dlp.v2.DlpService/FinishDlpJob")
           .setRequestMarshaller(ProtoUtils.marshaller(FinishDlpJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateConnectionRequest, Connection>
@@ -648,6 +697,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConnectionRequest, Connection>
@@ -658,6 +708,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListConnectionsRequest, ListConnectionsResponse>
@@ -669,6 +720,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(ListConnectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchConnectionsRequest, SearchConnectionsResponse>
@@ -680,6 +732,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(SearchConnectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConnectionRequest, Empty>
@@ -690,6 +743,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConnectionRequest, Connection>
@@ -700,6 +754,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable;

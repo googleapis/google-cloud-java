@@ -61,6 +61,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
           .setFullMethodName("google.api.apikeys.v2.ApiKeys/CreateKey")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListKeysRequest, ListKeysResponse>
@@ -70,6 +71,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
               .setFullMethodName("google.api.apikeys.v2.ApiKeys/ListKeys")
               .setRequestMarshaller(ProtoUtils.marshaller(ListKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListKeysResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetKeyRequest, Key> getKeyMethodDescriptor =
@@ -78,6 +80,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
           .setFullMethodName("google.api.apikeys.v2.ApiKeys/GetKey")
           .setRequestMarshaller(ProtoUtils.marshaller(GetKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Key.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetKeyStringRequest, GetKeyStringResponse>
@@ -88,6 +91,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
               .setRequestMarshaller(ProtoUtils.marshaller(GetKeyStringRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GetKeyStringResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateKeyRequest, Operation> updateKeyMethodDescriptor =
@@ -96,6 +100,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
           .setFullMethodName("google.api.apikeys.v2.ApiKeys/UpdateKey")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteKeyRequest, Operation> deleteKeyMethodDescriptor =
@@ -104,6 +109,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
           .setFullMethodName("google.api.apikeys.v2.ApiKeys/DeleteKey")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UndeleteKeyRequest, Operation> undeleteKeyMethodDescriptor =
@@ -112,6 +118,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
           .setFullMethodName("google.api.apikeys.v2.ApiKeys/UndeleteKey")
           .setRequestMarshaller(ProtoUtils.marshaller(UndeleteKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<LookupKeyRequest, LookupKeyResponse>
@@ -121,6 +128,7 @@ public class GrpcApiKeysStub extends ApiKeysStub {
               .setFullMethodName("google.api.apikeys.v2.ApiKeys/LookupKey")
               .setRequestMarshaller(ProtoUtils.marshaller(LookupKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LookupKeyResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateKeyRequest, Operation> createKeyCallable;

@@ -51,6 +51,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ProvisionProjectRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ProvisionProjectRequest, Operation> provisionProjectCallable;

@@ -187,6 +187,17 @@ public class GDCHardwareManagementSettings extends ClientSettings<GDCHardwareMan
     return ((GDCHardwareManagementStubSettings) getStubSettings()).submitOrderOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to cancelOrder. */
+  public UnaryCallSettings<CancelOrderRequest, Operation> cancelOrderSettings() {
+    return ((GDCHardwareManagementStubSettings) getStubSettings()).cancelOrderSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelOrder. */
+  public OperationCallSettings<CancelOrderRequest, Order, OperationMetadata>
+      cancelOrderOperationSettings() {
+    return ((GDCHardwareManagementStubSettings) getStubSettings()).cancelOrderOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listSites. */
   public PagedCallSettings<ListSitesRequest, ListSitesResponse, ListSitesPagedResponse>
       listSitesSettings() {
@@ -434,6 +445,19 @@ public class GDCHardwareManagementSettings extends ClientSettings<GDCHardwareMan
         .signalZoneStateOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to requestOrderDateChange. */
+  public UnaryCallSettings<RequestOrderDateChangeRequest, Operation>
+      requestOrderDateChangeSettings() {
+    return ((GDCHardwareManagementStubSettings) getStubSettings()).requestOrderDateChangeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to requestOrderDateChange. */
+  public OperationCallSettings<RequestOrderDateChangeRequest, Order, OperationMetadata>
+      requestOrderDateChangeOperationSettings() {
+    return ((GDCHardwareManagementStubSettings) getStubSettings())
+        .requestOrderDateChangeOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -611,6 +635,17 @@ public class GDCHardwareManagementSettings extends ClientSettings<GDCHardwareMan
     public OperationCallSettings.Builder<SubmitOrderRequest, Order, OperationMetadata>
         submitOrderOperationSettings() {
       return getStubSettingsBuilder().submitOrderOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelOrder. */
+    public UnaryCallSettings.Builder<CancelOrderRequest, Operation> cancelOrderSettings() {
+      return getStubSettingsBuilder().cancelOrderSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelOrder. */
+    public OperationCallSettings.Builder<CancelOrderRequest, Order, OperationMetadata>
+        cancelOrderOperationSettings() {
+      return getStubSettingsBuilder().cancelOrderOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listSites. */
@@ -861,6 +896,18 @@ public class GDCHardwareManagementSettings extends ClientSettings<GDCHardwareMan
     public OperationCallSettings.Builder<SignalZoneStateRequest, Zone, OperationMetadata>
         signalZoneStateOperationSettings() {
       return getStubSettingsBuilder().signalZoneStateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to requestOrderDateChange. */
+    public UnaryCallSettings.Builder<RequestOrderDateChangeRequest, Operation>
+        requestOrderDateChangeSettings() {
+      return getStubSettingsBuilder().requestOrderDateChangeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to requestOrderDateChange. */
+    public OperationCallSettings.Builder<RequestOrderDateChangeRequest, Order, OperationMetadata>
+        requestOrderDateChangeOperationSettings() {
+      return getStubSettingsBuilder().requestOrderDateChangeOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

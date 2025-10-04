@@ -76,8 +76,6 @@ import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
 import com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateChannelGroupRequest;
-import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
-import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
@@ -111,7 +109,6 @@ import com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest;
-import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
@@ -135,10 +132,6 @@ import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.EventCreateRule;
 import com.google.analytics.admin.v1alpha.EventEditRule;
 import com.google.analytics.admin.v1alpha.ExpandedDataSet;
-import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
-import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
-import com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest;
-import com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
@@ -167,6 +160,7 @@ import com.google.analytics.admin.v1alpha.GetKeyEventRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
 import com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest;
+import com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest;
 import com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
@@ -192,8 +186,6 @@ import com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest;
 import com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse;
 import com.google.analytics.admin.v1alpha.ListChannelGroupsRequest;
 import com.google.analytics.admin.v1alpha.ListChannelGroupsResponse;
-import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest;
-import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
 import com.google.analytics.admin.v1alpha.ListConversionEventsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
@@ -242,6 +234,7 @@ import com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest;
 import com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse;
 import com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest;
 import com.google.analytics.admin.v1alpha.ReportingDataAnnotation;
+import com.google.analytics.admin.v1alpha.ReportingIdentitySettings;
 import com.google.analytics.admin.v1alpha.RollupPropertySourceLink;
 import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
 import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
@@ -249,8 +242,6 @@ import com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema;
 import com.google.analytics.admin.v1alpha.SearchAds360Link;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
-import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest;
-import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse;
 import com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest;
 import com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse;
 import com.google.analytics.admin.v1alpha.SubpropertyEventFilter;
@@ -923,20 +914,6 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteChannelGroupCallable()");
   }
 
-  public UnaryCallable<
-          SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
-      setAutomatedGa4ConfigurationOptOutCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: setAutomatedGa4ConfigurationOptOutCallable()");
-  }
-
-  public UnaryCallable<
-          FetchAutomatedGa4ConfigurationOptOutRequest, FetchAutomatedGa4ConfigurationOptOutResponse>
-      fetchAutomatedGa4ConfigurationOptOutCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: fetchAutomatedGa4ConfigurationOptOutCallable()");
-  }
-
   public UnaryCallable<CreateBigQueryLinkRequest, BigQueryLink> createBigQueryLinkCallable() {
     throw new UnsupportedOperationException("Not implemented: createBigQueryLinkCallable()");
   }
@@ -973,25 +950,6 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
       updateEnhancedMeasurementSettingsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: updateEnhancedMeasurementSettingsCallable()");
-  }
-
-  public UnaryCallable<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
-      createConnectedSiteTagCallable() {
-    throw new UnsupportedOperationException("Not implemented: createConnectedSiteTagCallable()");
-  }
-
-  public UnaryCallable<DeleteConnectedSiteTagRequest, Empty> deleteConnectedSiteTagCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteConnectedSiteTagCallable()");
-  }
-
-  public UnaryCallable<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
-      listConnectedSiteTagsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listConnectedSiteTagsCallable()");
-  }
-
-  public UnaryCallable<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
-      fetchConnectedGa4PropertyCallable() {
-    throw new UnsupportedOperationException("Not implemented: fetchConnectedGa4PropertyCallable()");
   }
 
   public UnaryCallable<GetAdSenseLinkRequest, AdSenseLink> getAdSenseLinkCallable() {
@@ -1253,6 +1211,12 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
   public UnaryCallable<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
       getSubpropertySyncConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: getSubpropertySyncConfigCallable()");
+  }
+
+  public UnaryCallable<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
+      getReportingIdentitySettingsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getReportingIdentitySettingsCallable()");
   }
 
   @Override

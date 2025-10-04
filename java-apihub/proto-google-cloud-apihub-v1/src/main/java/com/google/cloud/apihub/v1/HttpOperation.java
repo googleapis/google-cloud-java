@@ -369,11 +369,13 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The path details for the Operation.
+   * Optional. The path details for the Operation.
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
-   * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the path field is set.
    */
@@ -386,11 +388,13 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The path details for the Operation.
+   * Optional. The path details for the Operation.
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
-   * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The path.
    */
@@ -403,11 +407,13 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The path details for the Operation.
+   * Optional. The path details for the Operation.
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
-   * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public com.google.cloud.apihub.v1.PathOrBuilder getPathOrBuilder() {
@@ -421,11 +427,14 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Operation method
+   * Optional. Operation method
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for method.
@@ -439,11 +448,14 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Operation method
+   * Optional. Operation method
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The method.
@@ -848,11 +860,13 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The path details for the Operation.
+     * Optional. The path details for the Operation.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
-     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the path field is set.
      */
@@ -864,11 +878,13 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The path details for the Operation.
+     * Optional. The path details for the Operation.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
-     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The path.
      */
@@ -884,11 +900,13 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The path details for the Operation.
+     * Optional. The path details for the Operation.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
-     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPath(com.google.cloud.apihub.v1.Path value) {
       if (pathBuilder_ == null) {
@@ -908,11 +926,13 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The path details for the Operation.
+     * Optional. The path details for the Operation.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
-     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPath(com.google.cloud.apihub.v1.Path.Builder builderForValue) {
       if (pathBuilder_ == null) {
@@ -929,11 +949,13 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The path details for the Operation.
+     * Optional. The path details for the Operation.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
-     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergePath(com.google.cloud.apihub.v1.Path value) {
       if (pathBuilder_ == null) {
@@ -958,11 +980,13 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The path details for the Operation.
+     * Optional. The path details for the Operation.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
-     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearPath() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -979,11 +1003,13 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The path details for the Operation.
+     * Optional. The path details for the Operation.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
-     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.cloud.apihub.v1.Path.Builder getPathBuilder() {
       bitField0_ |= 0x00000001;
@@ -995,11 +1021,13 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The path details for the Operation.
+     * Optional. The path details for the Operation.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
-     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.cloud.apihub.v1.PathOrBuilder getPathOrBuilder() {
       if (pathBuilder_ != null) {
@@ -1013,11 +1041,13 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The path details for the Operation.
+     * Optional. The path details for the Operation.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
-     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.apihub.v1.Path,
@@ -1042,11 +1072,14 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Operation method
+     * Optional. Operation method
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for method.
@@ -1060,11 +1093,14 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Operation method
+     * Optional. Operation method
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for method to set.
@@ -1081,11 +1117,14 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Operation method
+     * Optional. Operation method
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The method.
@@ -1101,11 +1140,14 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Operation method
+     * Optional. Operation method
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The method to set.
@@ -1125,11 +1167,14 @@ public final class HttpOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Operation method
+     * Optional. Operation method
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.

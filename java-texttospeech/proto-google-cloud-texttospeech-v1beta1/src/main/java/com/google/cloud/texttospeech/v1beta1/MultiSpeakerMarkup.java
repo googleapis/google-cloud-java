@@ -128,7 +128,7 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A Multi-speaker turn.
+   * A multi-speaker turn.
    * </pre>
    *
    * Protobuf type {@code google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup.Turn}
@@ -453,7 +453,7 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A Multi-speaker turn.
+     * A multi-speaker turn.
      * </pre>
      *
      * Protobuf type {@code google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup.Turn}

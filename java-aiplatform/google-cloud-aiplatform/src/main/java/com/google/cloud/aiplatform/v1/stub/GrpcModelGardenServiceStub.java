@@ -64,6 +64,7 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPublisherModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PublisherModel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeployRequest, Operation> deployMethodDescriptor =
@@ -72,6 +73,7 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1.ModelGardenService/Deploy")
           .setRequestMarshaller(ProtoUtils.marshaller(DeployRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -83,6 +85,7 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -91,6 +94,7 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -99,6 +103,7 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -107,6 +112,7 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -118,6 +124,7 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetPublisherModelRequest, PublisherModel> getPublisherModelCallable;

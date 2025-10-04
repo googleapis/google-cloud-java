@@ -44,6 +44,10 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     description_ = "";
     state_ = 0;
+    ownershipType_ = 0;
+    actionsConfig_ = java.util.Collections.emptyList();
+    pluginCategory_ = 0;
+    gatewayType_ = 0;
   }
 
   @java.lang.Override
@@ -228,6 +232,3844 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.apihub.v1.Plugin.State)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Ownership type of the plugin.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.apihub.v1.Plugin.OwnershipType}
+   */
+  public enum OwnershipType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default unspecified type.
+     * </pre>
+     *
+     * <code>OWNERSHIP_TYPE_UNSPECIFIED = 0;</code>
+     */
+    OWNERSHIP_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * System owned plugins are defined by API hub and are available out of the
+     * box in API hub.
+     * </pre>
+     *
+     * <code>SYSTEM_OWNED = 1;</code>
+     */
+    SYSTEM_OWNED(1),
+    /**
+     *
+     *
+     * <pre>
+     * User owned plugins are defined by the user and need to be explicitly
+     * added to API hub via
+     * [CreatePlugin][google.cloud.apihub.v1.ApiHubPlugin.CreatePlugin] method.
+     * </pre>
+     *
+     * <code>USER_OWNED = 2;</code>
+     */
+    USER_OWNED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default unspecified type.
+     * </pre>
+     *
+     * <code>OWNERSHIP_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int OWNERSHIP_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * System owned plugins are defined by API hub and are available out of the
+     * box in API hub.
+     * </pre>
+     *
+     * <code>SYSTEM_OWNED = 1;</code>
+     */
+    public static final int SYSTEM_OWNED_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * User owned plugins are defined by the user and need to be explicitly
+     * added to API hub via
+     * [CreatePlugin][google.cloud.apihub.v1.ApiHubPlugin.CreatePlugin] method.
+     * </pre>
+     *
+     * <code>USER_OWNED = 2;</code>
+     */
+    public static final int USER_OWNED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static OwnershipType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static OwnershipType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return OWNERSHIP_TYPE_UNSPECIFIED;
+        case 1:
+          return SYSTEM_OWNED;
+        case 2:
+          return USER_OWNED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<OwnershipType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<OwnershipType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<OwnershipType>() {
+          public OwnershipType findValueByNumber(int number) {
+            return OwnershipType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.apihub.v1.Plugin.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final OwnershipType[] VALUES = values();
+
+    public static OwnershipType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private OwnershipType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.apihub.v1.Plugin.OwnershipType)
+  }
+
+  public interface HostingServiceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.apihub.v1.Plugin.HostingService)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The URI of the service implemented by the plugin developer,
+     * used to invoke the plugin's functionality. This information is only
+     * required for user defined plugins.
+     * </pre>
+     *
+     * <code>string service_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The serviceUri.
+     */
+    java.lang.String getServiceUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The URI of the service implemented by the plugin developer,
+     * used to invoke the plugin's functionality. This information is only
+     * required for user defined plugins.
+     * </pre>
+     *
+     * <code>string service_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for serviceUri.
+     */
+    com.google.protobuf.ByteString getServiceUriBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The information related to the service implemented by the plugin
+   * developer, used to invoke the plugin's functionality.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.apihub.v1.Plugin.HostingService}
+   */
+  public static final class HostingService extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.Plugin.HostingService)
+      HostingServiceOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use HostingService.newBuilder() to construct.
+    private HostingService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private HostingService() {
+      serviceUri_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new HostingService();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.apihub.v1.PluginServiceProto
+          .internal_static_google_cloud_apihub_v1_Plugin_HostingService_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.apihub.v1.PluginServiceProto
+          .internal_static_google_cloud_apihub_v1_Plugin_HostingService_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.apihub.v1.Plugin.HostingService.class,
+              com.google.cloud.apihub.v1.Plugin.HostingService.Builder.class);
+    }
+
+    public static final int SERVICE_URI_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serviceUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The URI of the service implemented by the plugin developer,
+     * used to invoke the plugin's functionality. This information is only
+     * required for user defined plugins.
+     * </pre>
+     *
+     * <code>string service_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The serviceUri.
+     */
+    @java.lang.Override
+    public java.lang.String getServiceUri() {
+      java.lang.Object ref = serviceUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceUri_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The URI of the service implemented by the plugin developer,
+     * used to invoke the plugin's functionality. This information is only
+     * required for user defined plugins.
+     * </pre>
+     *
+     * <code>string service_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for serviceUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getServiceUriBytes() {
+      java.lang.Object ref = serviceUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceUri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceUri_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceUri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceUri_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.apihub.v1.Plugin.HostingService)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.apihub.v1.Plugin.HostingService other =
+          (com.google.cloud.apihub.v1.Plugin.HostingService) obj;
+
+      if (!getServiceUri().equals(other.getServiceUri())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SERVICE_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceUri().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.HostingService parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.HostingService parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.HostingService parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.HostingService parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.HostingService parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.HostingService parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.HostingService parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.HostingService parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.HostingService parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.HostingService parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.HostingService parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.HostingService parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.apihub.v1.Plugin.HostingService prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The information related to the service implemented by the plugin
+     * developer, used to invoke the plugin's functionality.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.apihub.v1.Plugin.HostingService}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.apihub.v1.Plugin.HostingService)
+        com.google.cloud.apihub.v1.Plugin.HostingServiceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.apihub.v1.PluginServiceProto
+            .internal_static_google_cloud_apihub_v1_Plugin_HostingService_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.apihub.v1.PluginServiceProto
+            .internal_static_google_cloud_apihub_v1_Plugin_HostingService_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.apihub.v1.Plugin.HostingService.class,
+                com.google.cloud.apihub.v1.Plugin.HostingService.Builder.class);
+      }
+
+      // Construct using com.google.cloud.apihub.v1.Plugin.HostingService.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        serviceUri_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.apihub.v1.PluginServiceProto
+            .internal_static_google_cloud_apihub_v1_Plugin_HostingService_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.apihub.v1.Plugin.HostingService getDefaultInstanceForType() {
+        return com.google.cloud.apihub.v1.Plugin.HostingService.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.apihub.v1.Plugin.HostingService build() {
+        com.google.cloud.apihub.v1.Plugin.HostingService result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.apihub.v1.Plugin.HostingService buildPartial() {
+        com.google.cloud.apihub.v1.Plugin.HostingService result =
+            new com.google.cloud.apihub.v1.Plugin.HostingService(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.apihub.v1.Plugin.HostingService result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.serviceUri_ = serviceUri_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.apihub.v1.Plugin.HostingService) {
+          return mergeFrom((com.google.cloud.apihub.v1.Plugin.HostingService) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.apihub.v1.Plugin.HostingService other) {
+        if (other == com.google.cloud.apihub.v1.Plugin.HostingService.getDefaultInstance())
+          return this;
+        if (!other.getServiceUri().isEmpty()) {
+          serviceUri_ = other.serviceUri_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  serviceUri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object serviceUri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The URI of the service implemented by the plugin developer,
+       * used to invoke the plugin's functionality. This information is only
+       * required for user defined plugins.
+       * </pre>
+       *
+       * <code>string service_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The serviceUri.
+       */
+      public java.lang.String getServiceUri() {
+        java.lang.Object ref = serviceUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The URI of the service implemented by the plugin developer,
+       * used to invoke the plugin's functionality. This information is only
+       * required for user defined plugins.
+       * </pre>
+       *
+       * <code>string service_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for serviceUri.
+       */
+      public com.google.protobuf.ByteString getServiceUriBytes() {
+        java.lang.Object ref = serviceUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serviceUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The URI of the service implemented by the plugin developer,
+       * used to invoke the plugin's functionality. This information is only
+       * required for user defined plugins.
+       * </pre>
+       *
+       * <code>string service_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The serviceUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceUri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The URI of the service implemented by the plugin developer,
+       * used to invoke the plugin's functionality. This information is only
+       * required for user defined plugins.
+       * </pre>
+       *
+       * <code>string service_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearServiceUri() {
+        serviceUri_ = getDefaultInstance().getServiceUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The URI of the service implemented by the plugin developer,
+       * used to invoke the plugin's functionality. This information is only
+       * required for user defined plugins.
+       * </pre>
+       *
+       * <code>string service_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for serviceUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        serviceUri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.apihub.v1.Plugin.HostingService)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.apihub.v1.Plugin.HostingService)
+    private static final com.google.cloud.apihub.v1.Plugin.HostingService DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.apihub.v1.Plugin.HostingService();
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.HostingService getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HostingService> PARSER =
+        new com.google.protobuf.AbstractParser<HostingService>() {
+          @java.lang.Override
+          public HostingService parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<HostingService> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HostingService> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.apihub.v1.Plugin.HostingService getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ConfigTemplateOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.apihub.v1.Plugin.ConfigTemplate)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The authentication template for the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate auth_config_template = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the authConfigTemplate field is set.
+     */
+    boolean hasAuthConfigTemplate();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The authentication template for the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate auth_config_template = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The authConfigTemplate.
+     */
+    com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate getAuthConfigTemplate();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The authentication template for the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate auth_config_template = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplateOrBuilder
+        getAuthConfigTemplateOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional configuration variables for the plugin's
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<com.google.cloud.apihub.v1.ConfigVariableTemplate>
+        getAdditionalConfigTemplateList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional configuration variables for the plugin's
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.apihub.v1.ConfigVariableTemplate getAdditionalConfigTemplate(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional configuration variables for the plugin's
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getAdditionalConfigTemplateCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional configuration variables for the plugin's
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.apihub.v1.ConfigVariableTemplateOrBuilder>
+        getAdditionalConfigTemplateOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional configuration variables for the plugin's
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.apihub.v1.ConfigVariableTemplateOrBuilder getAdditionalConfigTemplateOrBuilder(
+        int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * ConfigTemplate represents the configuration template for a plugin.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.apihub.v1.Plugin.ConfigTemplate}
+   */
+  public static final class ConfigTemplate extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.Plugin.ConfigTemplate)
+      ConfigTemplateOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use ConfigTemplate.newBuilder() to construct.
+    private ConfigTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ConfigTemplate() {
+      additionalConfigTemplate_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ConfigTemplate();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.apihub.v1.PluginServiceProto
+          .internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.apihub.v1.PluginServiceProto
+          .internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.apihub.v1.Plugin.ConfigTemplate.class,
+              com.google.cloud.apihub.v1.Plugin.ConfigTemplate.Builder.class);
+    }
+
+    public interface AuthConfigTemplateOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of authentication types supported by the plugin.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return A list containing the supportedAuthTypes.
+       */
+      java.util.List<com.google.cloud.apihub.v1.AuthType> getSupportedAuthTypesList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of authentication types supported by the plugin.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The count of supportedAuthTypes.
+       */
+      int getSupportedAuthTypesCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of authentication types supported by the plugin.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The supportedAuthTypes at the given index.
+       */
+      com.google.cloud.apihub.v1.AuthType getSupportedAuthTypes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of authentication types supported by the plugin.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for supportedAuthTypes.
+       */
+      java.util.List<java.lang.Integer> getSupportedAuthTypesValueList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of authentication types supported by the plugin.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of supportedAuthTypes at the given index.
+       */
+      int getSupportedAuthTypesValue(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The service account of the plugin hosting service.
+       * This service account should be granted the required permissions on the
+       * Auth Config parameters provided while creating the plugin instances
+       * corresponding to this plugin.
+       *
+       * For example, if the plugin instance auth config requires a secret
+       * manager secret, the service account should be granted the
+       * secretmanager.versions.access permission on the corresponding secret,
+       * if the plugin instance auth config contains a service account, the
+       * service account should be granted the
+       * iam.serviceAccounts.getAccessToken permission on the corresponding
+       * service account.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.GoogleServiceAccountConfig service_account = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the serviceAccount field is set.
+       */
+      boolean hasServiceAccount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The service account of the plugin hosting service.
+       * This service account should be granted the required permissions on the
+       * Auth Config parameters provided while creating the plugin instances
+       * corresponding to this plugin.
+       *
+       * For example, if the plugin instance auth config requires a secret
+       * manager secret, the service account should be granted the
+       * secretmanager.versions.access permission on the corresponding secret,
+       * if the plugin instance auth config contains a service account, the
+       * service account should be granted the
+       * iam.serviceAccounts.getAccessToken permission on the corresponding
+       * service account.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.GoogleServiceAccountConfig service_account = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The serviceAccount.
+       */
+      com.google.cloud.apihub.v1.GoogleServiceAccountConfig getServiceAccount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The service account of the plugin hosting service.
+       * This service account should be granted the required permissions on the
+       * Auth Config parameters provided while creating the plugin instances
+       * corresponding to this plugin.
+       *
+       * For example, if the plugin instance auth config requires a secret
+       * manager secret, the service account should be granted the
+       * secretmanager.versions.access permission on the corresponding secret,
+       * if the plugin instance auth config contains a service account, the
+       * service account should be granted the
+       * iam.serviceAccounts.getAccessToken permission on the corresponding
+       * service account.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.GoogleServiceAccountConfig service_account = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.apihub.v1.GoogleServiceAccountConfigOrBuilder getServiceAccountOrBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * AuthConfigTemplate represents the authentication template for a plugin.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate}
+     */
+    public static final class AuthConfigTemplate extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate)
+        AuthConfigTemplateOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use AuthConfigTemplate.newBuilder() to construct.
+      private AuthConfigTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private AuthConfigTemplate() {
+        supportedAuthTypes_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new AuthConfigTemplate();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.apihub.v1.PluginServiceProto
+            .internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_AuthConfigTemplate_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.apihub.v1.PluginServiceProto
+            .internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_AuthConfigTemplate_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate.class,
+                com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int SUPPORTED_AUTH_TYPES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private java.util.List<java.lang.Integer> supportedAuthTypes_;
+
+      private static final com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.google.cloud.apihub.v1.AuthType>
+          supportedAuthTypes_converter_ =
+              new com.google.protobuf.Internal.ListAdapter.Converter<
+                  java.lang.Integer, com.google.cloud.apihub.v1.AuthType>() {
+                public com.google.cloud.apihub.v1.AuthType convert(java.lang.Integer from) {
+                  com.google.cloud.apihub.v1.AuthType result =
+                      com.google.cloud.apihub.v1.AuthType.forNumber(from);
+                  return result == null ? com.google.cloud.apihub.v1.AuthType.UNRECOGNIZED : result;
+                }
+              };
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of authentication types supported by the plugin.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return A list containing the supportedAuthTypes.
+       */
+      @java.lang.Override
+      public java.util.List<com.google.cloud.apihub.v1.AuthType> getSupportedAuthTypesList() {
+        return new com.google.protobuf.Internal.ListAdapter<
+            java.lang.Integer, com.google.cloud.apihub.v1.AuthType>(
+            supportedAuthTypes_, supportedAuthTypes_converter_);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of authentication types supported by the plugin.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The count of supportedAuthTypes.
+       */
+      @java.lang.Override
+      public int getSupportedAuthTypesCount() {
+        return supportedAuthTypes_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of authentication types supported by the plugin.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The supportedAuthTypes at the given index.
+       */
+      @java.lang.Override
+      public com.google.cloud.apihub.v1.AuthType getSupportedAuthTypes(int index) {
+        return supportedAuthTypes_converter_.convert(supportedAuthTypes_.get(index));
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of authentication types supported by the plugin.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for supportedAuthTypes.
+       */
+      @java.lang.Override
+      public java.util.List<java.lang.Integer> getSupportedAuthTypesValueList() {
+        return supportedAuthTypes_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of authentication types supported by the plugin.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of supportedAuthTypes at the given index.
+       */
+      @java.lang.Override
+      public int getSupportedAuthTypesValue(int index) {
+        return supportedAuthTypes_.get(index);
+      }
+
+      private int supportedAuthTypesMemoizedSerializedSize;
+
+      public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 2;
+      private com.google.cloud.apihub.v1.GoogleServiceAccountConfig serviceAccount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The service account of the plugin hosting service.
+       * This service account should be granted the required permissions on the
+       * Auth Config parameters provided while creating the plugin instances
+       * corresponding to this plugin.
+       *
+       * For example, if the plugin instance auth config requires a secret
+       * manager secret, the service account should be granted the
+       * secretmanager.versions.access permission on the corresponding secret,
+       * if the plugin instance auth config contains a service account, the
+       * service account should be granted the
+       * iam.serviceAccounts.getAccessToken permission on the corresponding
+       * service account.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.GoogleServiceAccountConfig service_account = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the serviceAccount field is set.
+       */
+      @java.lang.Override
+      public boolean hasServiceAccount() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The service account of the plugin hosting service.
+       * This service account should be granted the required permissions on the
+       * Auth Config parameters provided while creating the plugin instances
+       * corresponding to this plugin.
+       *
+       * For example, if the plugin instance auth config requires a secret
+       * manager secret, the service account should be granted the
+       * secretmanager.versions.access permission on the corresponding secret,
+       * if the plugin instance auth config contains a service account, the
+       * service account should be granted the
+       * iam.serviceAccounts.getAccessToken permission on the corresponding
+       * service account.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.GoogleServiceAccountConfig service_account = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The serviceAccount.
+       */
+      @java.lang.Override
+      public com.google.cloud.apihub.v1.GoogleServiceAccountConfig getServiceAccount() {
+        return serviceAccount_ == null
+            ? com.google.cloud.apihub.v1.GoogleServiceAccountConfig.getDefaultInstance()
+            : serviceAccount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The service account of the plugin hosting service.
+       * This service account should be granted the required permissions on the
+       * Auth Config parameters provided while creating the plugin instances
+       * corresponding to this plugin.
+       *
+       * For example, if the plugin instance auth config requires a secret
+       * manager secret, the service account should be granted the
+       * secretmanager.versions.access permission on the corresponding secret,
+       * if the plugin instance auth config contains a service account, the
+       * service account should be granted the
+       * iam.serviceAccounts.getAccessToken permission on the corresponding
+       * service account.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.GoogleServiceAccountConfig service_account = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.apihub.v1.GoogleServiceAccountConfigOrBuilder
+          getServiceAccountOrBuilder() {
+        return serviceAccount_ == null
+            ? com.google.cloud.apihub.v1.GoogleServiceAccountConfig.getDefaultInstance()
+            : serviceAccount_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getSerializedSize();
+        if (getSupportedAuthTypesList().size() > 0) {
+          output.writeUInt32NoTag(10);
+          output.writeUInt32NoTag(supportedAuthTypesMemoizedSerializedSize);
+        }
+        for (int i = 0; i < supportedAuthTypes_.size(); i++) {
+          output.writeEnumNoTag(supportedAuthTypes_.get(i));
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(2, getServiceAccount());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < supportedAuthTypes_.size(); i++) {
+            dataSize +=
+                com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                    supportedAuthTypes_.get(i));
+          }
+          size += dataSize;
+          if (!getSupportedAuthTypesList().isEmpty()) {
+            size += 1;
+            size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+          }
+          supportedAuthTypesMemoizedSerializedSize = dataSize;
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getServiceAccount());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate other =
+            (com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate) obj;
+
+        if (!supportedAuthTypes_.equals(other.supportedAuthTypes_)) return false;
+        if (hasServiceAccount() != other.hasServiceAccount()) return false;
+        if (hasServiceAccount()) {
+          if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getSupportedAuthTypesCount() > 0) {
+          hash = (37 * hash) + SUPPORTED_AUTH_TYPES_FIELD_NUMBER;
+          hash = (53 * hash) + supportedAuthTypes_.hashCode();
+        }
+        if (hasServiceAccount()) {
+          hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+          hash = (53 * hash) + getServiceAccount().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * AuthConfigTemplate represents the authentication template for a plugin.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate)
+          com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplateOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.apihub.v1.PluginServiceProto
+              .internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_AuthConfigTemplate_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.apihub.v1.PluginServiceProto
+              .internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_AuthConfigTemplate_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate.class,
+                  com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getServiceAccountFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          supportedAuthTypes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          serviceAccount_ = null;
+          if (serviceAccountBuilder_ != null) {
+            serviceAccountBuilder_.dispose();
+            serviceAccountBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.apihub.v1.PluginServiceProto
+              .internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_AuthConfigTemplate_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate
+            getDefaultInstanceForType() {
+          return com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate build() {
+          com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate buildPartial() {
+          com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate result =
+              new com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate(this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate result) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            supportedAuthTypes_ = java.util.Collections.unmodifiableList(supportedAuthTypes_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.supportedAuthTypes_ = supportedAuthTypes_;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.serviceAccount_ =
+                serviceAccountBuilder_ == null ? serviceAccount_ : serviceAccountBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate) {
+            return mergeFrom(
+                (com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate other) {
+          if (other
+              == com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate
+                  .getDefaultInstance()) return this;
+          if (!other.supportedAuthTypes_.isEmpty()) {
+            if (supportedAuthTypes_.isEmpty()) {
+              supportedAuthTypes_ = other.supportedAuthTypes_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureSupportedAuthTypesIsMutable();
+              supportedAuthTypes_.addAll(other.supportedAuthTypes_);
+            }
+            onChanged();
+          }
+          if (other.hasServiceAccount()) {
+            mergeServiceAccount(other.getServiceAccount());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    int tmpRaw = input.readEnum();
+                    ensureSupportedAuthTypesIsMutable();
+                    supportedAuthTypes_.add(tmpRaw);
+                    break;
+                  } // case 8
+                case 10:
+                  {
+                    int length = input.readRawVarint32();
+                    int oldLimit = input.pushLimit(length);
+                    while (input.getBytesUntilLimit() > 0) {
+                      int tmpRaw = input.readEnum();
+                      ensureSupportedAuthTypesIsMutable();
+                      supportedAuthTypes_.add(tmpRaw);
+                    }
+                    input.popLimit(oldLimit);
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        getServiceAccountFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.util.List<java.lang.Integer> supportedAuthTypes_ =
+            java.util.Collections.emptyList();
+
+        private void ensureSupportedAuthTypesIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            supportedAuthTypes_ = new java.util.ArrayList<java.lang.Integer>(supportedAuthTypes_);
+            bitField0_ |= 0x00000001;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of authentication types supported by the plugin.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return A list containing the supportedAuthTypes.
+         */
+        public java.util.List<com.google.cloud.apihub.v1.AuthType> getSupportedAuthTypesList() {
+          return new com.google.protobuf.Internal.ListAdapter<
+              java.lang.Integer, com.google.cloud.apihub.v1.AuthType>(
+              supportedAuthTypes_, supportedAuthTypes_converter_);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of authentication types supported by the plugin.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The count of supportedAuthTypes.
+         */
+        public int getSupportedAuthTypesCount() {
+          return supportedAuthTypes_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of authentication types supported by the plugin.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The supportedAuthTypes at the given index.
+         */
+        public com.google.cloud.apihub.v1.AuthType getSupportedAuthTypes(int index) {
+          return supportedAuthTypes_converter_.convert(supportedAuthTypes_.get(index));
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of authentication types supported by the plugin.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The supportedAuthTypes to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSupportedAuthTypes(int index, com.google.cloud.apihub.v1.AuthType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSupportedAuthTypesIsMutable();
+          supportedAuthTypes_.set(index, value.getNumber());
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of authentication types supported by the plugin.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param value The supportedAuthTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addSupportedAuthTypes(com.google.cloud.apihub.v1.AuthType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSupportedAuthTypesIsMutable();
+          supportedAuthTypes_.add(value.getNumber());
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of authentication types supported by the plugin.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param values The supportedAuthTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllSupportedAuthTypes(
+            java.lang.Iterable<? extends com.google.cloud.apihub.v1.AuthType> values) {
+          ensureSupportedAuthTypesIsMutable();
+          for (com.google.cloud.apihub.v1.AuthType value : values) {
+            supportedAuthTypes_.add(value.getNumber());
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of authentication types supported by the plugin.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSupportedAuthTypes() {
+          supportedAuthTypes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of authentication types supported by the plugin.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return A list containing the enum numeric values on the wire for supportedAuthTypes.
+         */
+        public java.util.List<java.lang.Integer> getSupportedAuthTypesValueList() {
+          return java.util.Collections.unmodifiableList(supportedAuthTypes_);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of authentication types supported by the plugin.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The enum numeric value on the wire of supportedAuthTypes at the given index.
+         */
+        public int getSupportedAuthTypesValue(int index) {
+          return supportedAuthTypes_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of authentication types supported by the plugin.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The enum numeric value on the wire for supportedAuthTypes to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSupportedAuthTypesValue(int index, int value) {
+          ensureSupportedAuthTypesIsMutable();
+          supportedAuthTypes_.set(index, value);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of authentication types supported by the plugin.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for supportedAuthTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addSupportedAuthTypesValue(int value) {
+          ensureSupportedAuthTypesIsMutable();
+          supportedAuthTypes_.add(value);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of authentication types supported by the plugin.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.apihub.v1.AuthType supported_auth_types = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param values The enum numeric values on the wire for supportedAuthTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllSupportedAuthTypesValue(java.lang.Iterable<java.lang.Integer> values) {
+          ensureSupportedAuthTypesIsMutable();
+          for (int value : values) {
+            supportedAuthTypes_.add(value);
+          }
+          onChanged();
+          return this;
+        }
+
+        private com.google.cloud.apihub.v1.GoogleServiceAccountConfig serviceAccount_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.apihub.v1.GoogleServiceAccountConfig,
+                com.google.cloud.apihub.v1.GoogleServiceAccountConfig.Builder,
+                com.google.cloud.apihub.v1.GoogleServiceAccountConfigOrBuilder>
+            serviceAccountBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The service account of the plugin hosting service.
+         * This service account should be granted the required permissions on the
+         * Auth Config parameters provided while creating the plugin instances
+         * corresponding to this plugin.
+         *
+         * For example, if the plugin instance auth config requires a secret
+         * manager secret, the service account should be granted the
+         * secretmanager.versions.access permission on the corresponding secret,
+         * if the plugin instance auth config contains a service account, the
+         * service account should be granted the
+         * iam.serviceAccounts.getAccessToken permission on the corresponding
+         * service account.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.apihub.v1.GoogleServiceAccountConfig service_account = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the serviceAccount field is set.
+         */
+        public boolean hasServiceAccount() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The service account of the plugin hosting service.
+         * This service account should be granted the required permissions on the
+         * Auth Config parameters provided while creating the plugin instances
+         * corresponding to this plugin.
+         *
+         * For example, if the plugin instance auth config requires a secret
+         * manager secret, the service account should be granted the
+         * secretmanager.versions.access permission on the corresponding secret,
+         * if the plugin instance auth config contains a service account, the
+         * service account should be granted the
+         * iam.serviceAccounts.getAccessToken permission on the corresponding
+         * service account.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.apihub.v1.GoogleServiceAccountConfig service_account = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The serviceAccount.
+         */
+        public com.google.cloud.apihub.v1.GoogleServiceAccountConfig getServiceAccount() {
+          if (serviceAccountBuilder_ == null) {
+            return serviceAccount_ == null
+                ? com.google.cloud.apihub.v1.GoogleServiceAccountConfig.getDefaultInstance()
+                : serviceAccount_;
+          } else {
+            return serviceAccountBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The service account of the plugin hosting service.
+         * This service account should be granted the required permissions on the
+         * Auth Config parameters provided while creating the plugin instances
+         * corresponding to this plugin.
+         *
+         * For example, if the plugin instance auth config requires a secret
+         * manager secret, the service account should be granted the
+         * secretmanager.versions.access permission on the corresponding secret,
+         * if the plugin instance auth config contains a service account, the
+         * service account should be granted the
+         * iam.serviceAccounts.getAccessToken permission on the corresponding
+         * service account.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.apihub.v1.GoogleServiceAccountConfig service_account = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setServiceAccount(
+            com.google.cloud.apihub.v1.GoogleServiceAccountConfig value) {
+          if (serviceAccountBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            serviceAccount_ = value;
+          } else {
+            serviceAccountBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The service account of the plugin hosting service.
+         * This service account should be granted the required permissions on the
+         * Auth Config parameters provided while creating the plugin instances
+         * corresponding to this plugin.
+         *
+         * For example, if the plugin instance auth config requires a secret
+         * manager secret, the service account should be granted the
+         * secretmanager.versions.access permission on the corresponding secret,
+         * if the plugin instance auth config contains a service account, the
+         * service account should be granted the
+         * iam.serviceAccounts.getAccessToken permission on the corresponding
+         * service account.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.apihub.v1.GoogleServiceAccountConfig service_account = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setServiceAccount(
+            com.google.cloud.apihub.v1.GoogleServiceAccountConfig.Builder builderForValue) {
+          if (serviceAccountBuilder_ == null) {
+            serviceAccount_ = builderForValue.build();
+          } else {
+            serviceAccountBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The service account of the plugin hosting service.
+         * This service account should be granted the required permissions on the
+         * Auth Config parameters provided while creating the plugin instances
+         * corresponding to this plugin.
+         *
+         * For example, if the plugin instance auth config requires a secret
+         * manager secret, the service account should be granted the
+         * secretmanager.versions.access permission on the corresponding secret,
+         * if the plugin instance auth config contains a service account, the
+         * service account should be granted the
+         * iam.serviceAccounts.getAccessToken permission on the corresponding
+         * service account.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.apihub.v1.GoogleServiceAccountConfig service_account = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder mergeServiceAccount(
+            com.google.cloud.apihub.v1.GoogleServiceAccountConfig value) {
+          if (serviceAccountBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)
+                && serviceAccount_ != null
+                && serviceAccount_
+                    != com.google.cloud.apihub.v1.GoogleServiceAccountConfig.getDefaultInstance()) {
+              getServiceAccountBuilder().mergeFrom(value);
+            } else {
+              serviceAccount_ = value;
+            }
+          } else {
+            serviceAccountBuilder_.mergeFrom(value);
+          }
+          if (serviceAccount_ != null) {
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The service account of the plugin hosting service.
+         * This service account should be granted the required permissions on the
+         * Auth Config parameters provided while creating the plugin instances
+         * corresponding to this plugin.
+         *
+         * For example, if the plugin instance auth config requires a secret
+         * manager secret, the service account should be granted the
+         * secretmanager.versions.access permission on the corresponding secret,
+         * if the plugin instance auth config contains a service account, the
+         * service account should be granted the
+         * iam.serviceAccounts.getAccessToken permission on the corresponding
+         * service account.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.apihub.v1.GoogleServiceAccountConfig service_account = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearServiceAccount() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          serviceAccount_ = null;
+          if (serviceAccountBuilder_ != null) {
+            serviceAccountBuilder_.dispose();
+            serviceAccountBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The service account of the plugin hosting service.
+         * This service account should be granted the required permissions on the
+         * Auth Config parameters provided while creating the plugin instances
+         * corresponding to this plugin.
+         *
+         * For example, if the plugin instance auth config requires a secret
+         * manager secret, the service account should be granted the
+         * secretmanager.versions.access permission on the corresponding secret,
+         * if the plugin instance auth config contains a service account, the
+         * service account should be granted the
+         * iam.serviceAccounts.getAccessToken permission on the corresponding
+         * service account.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.apihub.v1.GoogleServiceAccountConfig service_account = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.apihub.v1.GoogleServiceAccountConfig.Builder
+            getServiceAccountBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return getServiceAccountFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The service account of the plugin hosting service.
+         * This service account should be granted the required permissions on the
+         * Auth Config parameters provided while creating the plugin instances
+         * corresponding to this plugin.
+         *
+         * For example, if the plugin instance auth config requires a secret
+         * manager secret, the service account should be granted the
+         * secretmanager.versions.access permission on the corresponding secret,
+         * if the plugin instance auth config contains a service account, the
+         * service account should be granted the
+         * iam.serviceAccounts.getAccessToken permission on the corresponding
+         * service account.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.apihub.v1.GoogleServiceAccountConfig service_account = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.apihub.v1.GoogleServiceAccountConfigOrBuilder
+            getServiceAccountOrBuilder() {
+          if (serviceAccountBuilder_ != null) {
+            return serviceAccountBuilder_.getMessageOrBuilder();
+          } else {
+            return serviceAccount_ == null
+                ? com.google.cloud.apihub.v1.GoogleServiceAccountConfig.getDefaultInstance()
+                : serviceAccount_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The service account of the plugin hosting service.
+         * This service account should be granted the required permissions on the
+         * Auth Config parameters provided while creating the plugin instances
+         * corresponding to this plugin.
+         *
+         * For example, if the plugin instance auth config requires a secret
+         * manager secret, the service account should be granted the
+         * secretmanager.versions.access permission on the corresponding secret,
+         * if the plugin instance auth config contains a service account, the
+         * service account should be granted the
+         * iam.serviceAccounts.getAccessToken permission on the corresponding
+         * service account.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.apihub.v1.GoogleServiceAccountConfig service_account = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.apihub.v1.GoogleServiceAccountConfig,
+                com.google.cloud.apihub.v1.GoogleServiceAccountConfig.Builder,
+                com.google.cloud.apihub.v1.GoogleServiceAccountConfigOrBuilder>
+            getServiceAccountFieldBuilder() {
+          if (serviceAccountBuilder_ == null) {
+            serviceAccountBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.apihub.v1.GoogleServiceAccountConfig,
+                    com.google.cloud.apihub.v1.GoogleServiceAccountConfig.Builder,
+                    com.google.cloud.apihub.v1.GoogleServiceAccountConfigOrBuilder>(
+                    getServiceAccount(), getParentForChildren(), isClean());
+            serviceAccount_ = null;
+          }
+          return serviceAccountBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate)
+      private static final com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate();
+      }
+
+      public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<AuthConfigTemplate> PARSER =
+          new com.google.protobuf.AbstractParser<AuthConfigTemplate>() {
+            @java.lang.Override
+            public AuthConfigTemplate parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<AuthConfigTemplate> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<AuthConfigTemplate> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int AUTH_CONFIG_TEMPLATE_FIELD_NUMBER = 1;
+    private com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate authConfigTemplate_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The authentication template for the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate auth_config_template = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the authConfigTemplate field is set.
+     */
+    @java.lang.Override
+    public boolean hasAuthConfigTemplate() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The authentication template for the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate auth_config_template = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The authConfigTemplate.
+     */
+    @java.lang.Override
+    public com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate
+        getAuthConfigTemplate() {
+      return authConfigTemplate_ == null
+          ? com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate.getDefaultInstance()
+          : authConfigTemplate_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The authentication template for the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate auth_config_template = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplateOrBuilder
+        getAuthConfigTemplateOrBuilder() {
+      return authConfigTemplate_ == null
+          ? com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate.getDefaultInstance()
+          : authConfigTemplate_;
+    }
+
+    public static final int ADDITIONAL_CONFIG_TEMPLATE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.apihub.v1.ConfigVariableTemplate>
+        additionalConfigTemplate_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional configuration variables for the plugin's
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.apihub.v1.ConfigVariableTemplate>
+        getAdditionalConfigTemplateList() {
+      return additionalConfigTemplate_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional configuration variables for the plugin's
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.apihub.v1.ConfigVariableTemplateOrBuilder>
+        getAdditionalConfigTemplateOrBuilderList() {
+      return additionalConfigTemplate_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional configuration variables for the plugin's
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getAdditionalConfigTemplateCount() {
+      return additionalConfigTemplate_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional configuration variables for the plugin's
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.apihub.v1.ConfigVariableTemplate getAdditionalConfigTemplate(
+        int index) {
+      return additionalConfigTemplate_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional configuration variables for the plugin's
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.apihub.v1.ConfigVariableTemplateOrBuilder
+        getAdditionalConfigTemplateOrBuilder(int index) {
+      return additionalConfigTemplate_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getAuthConfigTemplate());
+      }
+      for (int i = 0; i < additionalConfigTemplate_.size(); i++) {
+        output.writeMessage(2, additionalConfigTemplate_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, getAuthConfigTemplate());
+      }
+      for (int i = 0; i < additionalConfigTemplate_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2, additionalConfigTemplate_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.apihub.v1.Plugin.ConfigTemplate)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.apihub.v1.Plugin.ConfigTemplate other =
+          (com.google.cloud.apihub.v1.Plugin.ConfigTemplate) obj;
+
+      if (hasAuthConfigTemplate() != other.hasAuthConfigTemplate()) return false;
+      if (hasAuthConfigTemplate()) {
+        if (!getAuthConfigTemplate().equals(other.getAuthConfigTemplate())) return false;
+      }
+      if (!getAdditionalConfigTemplateList().equals(other.getAdditionalConfigTemplateList()))
+        return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAuthConfigTemplate()) {
+        hash = (37 * hash) + AUTH_CONFIG_TEMPLATE_FIELD_NUMBER;
+        hash = (53 * hash) + getAuthConfigTemplate().hashCode();
+      }
+      if (getAdditionalConfigTemplateCount() > 0) {
+        hash = (37 * hash) + ADDITIONAL_CONFIG_TEMPLATE_FIELD_NUMBER;
+        hash = (53 * hash) + getAdditionalConfigTemplateList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.apihub.v1.Plugin.ConfigTemplate prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ConfigTemplate represents the configuration template for a plugin.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.apihub.v1.Plugin.ConfigTemplate}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.apihub.v1.Plugin.ConfigTemplate)
+        com.google.cloud.apihub.v1.Plugin.ConfigTemplateOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.apihub.v1.PluginServiceProto
+            .internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.apihub.v1.PluginServiceProto
+            .internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.apihub.v1.Plugin.ConfigTemplate.class,
+                com.google.cloud.apihub.v1.Plugin.ConfigTemplate.Builder.class);
+      }
+
+      // Construct using com.google.cloud.apihub.v1.Plugin.ConfigTemplate.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getAuthConfigTemplateFieldBuilder();
+          getAdditionalConfigTemplateFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        authConfigTemplate_ = null;
+        if (authConfigTemplateBuilder_ != null) {
+          authConfigTemplateBuilder_.dispose();
+          authConfigTemplateBuilder_ = null;
+        }
+        if (additionalConfigTemplateBuilder_ == null) {
+          additionalConfigTemplate_ = java.util.Collections.emptyList();
+        } else {
+          additionalConfigTemplate_ = null;
+          additionalConfigTemplateBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.apihub.v1.PluginServiceProto
+            .internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.apihub.v1.Plugin.ConfigTemplate getDefaultInstanceForType() {
+        return com.google.cloud.apihub.v1.Plugin.ConfigTemplate.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.apihub.v1.Plugin.ConfigTemplate build() {
+        com.google.cloud.apihub.v1.Plugin.ConfigTemplate result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.apihub.v1.Plugin.ConfigTemplate buildPartial() {
+        com.google.cloud.apihub.v1.Plugin.ConfigTemplate result =
+            new com.google.cloud.apihub.v1.Plugin.ConfigTemplate(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.apihub.v1.Plugin.ConfigTemplate result) {
+        if (additionalConfigTemplateBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            additionalConfigTemplate_ =
+                java.util.Collections.unmodifiableList(additionalConfigTemplate_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.additionalConfigTemplate_ = additionalConfigTemplate_;
+        } else {
+          result.additionalConfigTemplate_ = additionalConfigTemplateBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.google.cloud.apihub.v1.Plugin.ConfigTemplate result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.authConfigTemplate_ =
+              authConfigTemplateBuilder_ == null
+                  ? authConfigTemplate_
+                  : authConfigTemplateBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.apihub.v1.Plugin.ConfigTemplate) {
+          return mergeFrom((com.google.cloud.apihub.v1.Plugin.ConfigTemplate) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.apihub.v1.Plugin.ConfigTemplate other) {
+        if (other == com.google.cloud.apihub.v1.Plugin.ConfigTemplate.getDefaultInstance())
+          return this;
+        if (other.hasAuthConfigTemplate()) {
+          mergeAuthConfigTemplate(other.getAuthConfigTemplate());
+        }
+        if (additionalConfigTemplateBuilder_ == null) {
+          if (!other.additionalConfigTemplate_.isEmpty()) {
+            if (additionalConfigTemplate_.isEmpty()) {
+              additionalConfigTemplate_ = other.additionalConfigTemplate_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureAdditionalConfigTemplateIsMutable();
+              additionalConfigTemplate_.addAll(other.additionalConfigTemplate_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.additionalConfigTemplate_.isEmpty()) {
+            if (additionalConfigTemplateBuilder_.isEmpty()) {
+              additionalConfigTemplateBuilder_.dispose();
+              additionalConfigTemplateBuilder_ = null;
+              additionalConfigTemplate_ = other.additionalConfigTemplate_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              additionalConfigTemplateBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getAdditionalConfigTemplateFieldBuilder()
+                      : null;
+            } else {
+              additionalConfigTemplateBuilder_.addAllMessages(other.additionalConfigTemplate_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getAuthConfigTemplateFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.cloud.apihub.v1.ConfigVariableTemplate m =
+                      input.readMessage(
+                          com.google.cloud.apihub.v1.ConfigVariableTemplate.parser(),
+                          extensionRegistry);
+                  if (additionalConfigTemplateBuilder_ == null) {
+                    ensureAdditionalConfigTemplateIsMutable();
+                    additionalConfigTemplate_.add(m);
+                  } else {
+                    additionalConfigTemplateBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate
+          authConfigTemplate_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate,
+              com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate.Builder,
+              com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplateOrBuilder>
+          authConfigTemplateBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The authentication template for the plugin.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate auth_config_template = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the authConfigTemplate field is set.
+       */
+      public boolean hasAuthConfigTemplate() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The authentication template for the plugin.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate auth_config_template = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The authConfigTemplate.
+       */
+      public com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate
+          getAuthConfigTemplate() {
+        if (authConfigTemplateBuilder_ == null) {
+          return authConfigTemplate_ == null
+              ? com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate
+                  .getDefaultInstance()
+              : authConfigTemplate_;
+        } else {
+          return authConfigTemplateBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The authentication template for the plugin.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate auth_config_template = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAuthConfigTemplate(
+          com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate value) {
+        if (authConfigTemplateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          authConfigTemplate_ = value;
+        } else {
+          authConfigTemplateBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The authentication template for the plugin.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate auth_config_template = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAuthConfigTemplate(
+          com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate.Builder
+              builderForValue) {
+        if (authConfigTemplateBuilder_ == null) {
+          authConfigTemplate_ = builderForValue.build();
+        } else {
+          authConfigTemplateBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The authentication template for the plugin.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate auth_config_template = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeAuthConfigTemplate(
+          com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate value) {
+        if (authConfigTemplateBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && authConfigTemplate_ != null
+              && authConfigTemplate_
+                  != com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate
+                      .getDefaultInstance()) {
+            getAuthConfigTemplateBuilder().mergeFrom(value);
+          } else {
+            authConfigTemplate_ = value;
+          }
+        } else {
+          authConfigTemplateBuilder_.mergeFrom(value);
+        }
+        if (authConfigTemplate_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The authentication template for the plugin.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate auth_config_template = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearAuthConfigTemplate() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        authConfigTemplate_ = null;
+        if (authConfigTemplateBuilder_ != null) {
+          authConfigTemplateBuilder_.dispose();
+          authConfigTemplateBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The authentication template for the plugin.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate auth_config_template = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate.Builder
+          getAuthConfigTemplateBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getAuthConfigTemplateFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The authentication template for the plugin.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate auth_config_template = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplateOrBuilder
+          getAuthConfigTemplateOrBuilder() {
+        if (authConfigTemplateBuilder_ != null) {
+          return authConfigTemplateBuilder_.getMessageOrBuilder();
+        } else {
+          return authConfigTemplate_ == null
+              ? com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate
+                  .getDefaultInstance()
+              : authConfigTemplate_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The authentication template for the plugin.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate auth_config_template = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate,
+              com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate.Builder,
+              com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplateOrBuilder>
+          getAuthConfigTemplateFieldBuilder() {
+        if (authConfigTemplateBuilder_ == null) {
+          authConfigTemplateBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate,
+                  com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplate.Builder,
+                  com.google.cloud.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplateOrBuilder>(
+                  getAuthConfigTemplate(), getParentForChildren(), isClean());
+          authConfigTemplate_ = null;
+        }
+        return authConfigTemplateBuilder_;
+      }
+
+      private java.util.List<com.google.cloud.apihub.v1.ConfigVariableTemplate>
+          additionalConfigTemplate_ = java.util.Collections.emptyList();
+
+      private void ensureAdditionalConfigTemplateIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          additionalConfigTemplate_ =
+              new java.util.ArrayList<com.google.cloud.apihub.v1.ConfigVariableTemplate>(
+                  additionalConfigTemplate_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.apihub.v1.ConfigVariableTemplate,
+              com.google.cloud.apihub.v1.ConfigVariableTemplate.Builder,
+              com.google.cloud.apihub.v1.ConfigVariableTemplateOrBuilder>
+          additionalConfigTemplateBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.apihub.v1.ConfigVariableTemplate>
+          getAdditionalConfigTemplateList() {
+        if (additionalConfigTemplateBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(additionalConfigTemplate_);
+        } else {
+          return additionalConfigTemplateBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public int getAdditionalConfigTemplateCount() {
+        if (additionalConfigTemplateBuilder_ == null) {
+          return additionalConfigTemplate_.size();
+        } else {
+          return additionalConfigTemplateBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.apihub.v1.ConfigVariableTemplate getAdditionalConfigTemplate(
+          int index) {
+        if (additionalConfigTemplateBuilder_ == null) {
+          return additionalConfigTemplate_.get(index);
+        } else {
+          return additionalConfigTemplateBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAdditionalConfigTemplate(
+          int index, com.google.cloud.apihub.v1.ConfigVariableTemplate value) {
+        if (additionalConfigTemplateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAdditionalConfigTemplateIsMutable();
+          additionalConfigTemplate_.set(index, value);
+          onChanged();
+        } else {
+          additionalConfigTemplateBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAdditionalConfigTemplate(
+          int index, com.google.cloud.apihub.v1.ConfigVariableTemplate.Builder builderForValue) {
+        if (additionalConfigTemplateBuilder_ == null) {
+          ensureAdditionalConfigTemplateIsMutable();
+          additionalConfigTemplate_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          additionalConfigTemplateBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAdditionalConfigTemplate(
+          com.google.cloud.apihub.v1.ConfigVariableTemplate value) {
+        if (additionalConfigTemplateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAdditionalConfigTemplateIsMutable();
+          additionalConfigTemplate_.add(value);
+          onChanged();
+        } else {
+          additionalConfigTemplateBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAdditionalConfigTemplate(
+          int index, com.google.cloud.apihub.v1.ConfigVariableTemplate value) {
+        if (additionalConfigTemplateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAdditionalConfigTemplateIsMutable();
+          additionalConfigTemplate_.add(index, value);
+          onChanged();
+        } else {
+          additionalConfigTemplateBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAdditionalConfigTemplate(
+          com.google.cloud.apihub.v1.ConfigVariableTemplate.Builder builderForValue) {
+        if (additionalConfigTemplateBuilder_ == null) {
+          ensureAdditionalConfigTemplateIsMutable();
+          additionalConfigTemplate_.add(builderForValue.build());
+          onChanged();
+        } else {
+          additionalConfigTemplateBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAdditionalConfigTemplate(
+          int index, com.google.cloud.apihub.v1.ConfigVariableTemplate.Builder builderForValue) {
+        if (additionalConfigTemplateBuilder_ == null) {
+          ensureAdditionalConfigTemplateIsMutable();
+          additionalConfigTemplate_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          additionalConfigTemplateBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAllAdditionalConfigTemplate(
+          java.lang.Iterable<? extends com.google.cloud.apihub.v1.ConfigVariableTemplate> values) {
+        if (additionalConfigTemplateBuilder_ == null) {
+          ensureAdditionalConfigTemplateIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, additionalConfigTemplate_);
+          onChanged();
+        } else {
+          additionalConfigTemplateBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearAdditionalConfigTemplate() {
+        if (additionalConfigTemplateBuilder_ == null) {
+          additionalConfigTemplate_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          additionalConfigTemplateBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeAdditionalConfigTemplate(int index) {
+        if (additionalConfigTemplateBuilder_ == null) {
+          ensureAdditionalConfigTemplateIsMutable();
+          additionalConfigTemplate_.remove(index);
+          onChanged();
+        } else {
+          additionalConfigTemplateBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.apihub.v1.ConfigVariableTemplate.Builder
+          getAdditionalConfigTemplateBuilder(int index) {
+        return getAdditionalConfigTemplateFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.apihub.v1.ConfigVariableTemplateOrBuilder
+          getAdditionalConfigTemplateOrBuilder(int index) {
+        if (additionalConfigTemplateBuilder_ == null) {
+          return additionalConfigTemplate_.get(index);
+        } else {
+          return additionalConfigTemplateBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<? extends com.google.cloud.apihub.v1.ConfigVariableTemplateOrBuilder>
+          getAdditionalConfigTemplateOrBuilderList() {
+        if (additionalConfigTemplateBuilder_ != null) {
+          return additionalConfigTemplateBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(additionalConfigTemplate_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.apihub.v1.ConfigVariableTemplate.Builder
+          addAdditionalConfigTemplateBuilder() {
+        return getAdditionalConfigTemplateFieldBuilder()
+            .addBuilder(com.google.cloud.apihub.v1.ConfigVariableTemplate.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.apihub.v1.ConfigVariableTemplate.Builder
+          addAdditionalConfigTemplateBuilder(int index) {
+        return getAdditionalConfigTemplateFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.apihub.v1.ConfigVariableTemplate.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The list of additional configuration variables for the plugin's
+       * configuration.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.apihub.v1.ConfigVariableTemplate additional_config_template = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.apihub.v1.ConfigVariableTemplate.Builder>
+          getAdditionalConfigTemplateBuilderList() {
+        return getAdditionalConfigTemplateFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.apihub.v1.ConfigVariableTemplate,
+              com.google.cloud.apihub.v1.ConfigVariableTemplate.Builder,
+              com.google.cloud.apihub.v1.ConfigVariableTemplateOrBuilder>
+          getAdditionalConfigTemplateFieldBuilder() {
+        if (additionalConfigTemplateBuilder_ == null) {
+          additionalConfigTemplateBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.apihub.v1.ConfigVariableTemplate,
+                  com.google.cloud.apihub.v1.ConfigVariableTemplate.Builder,
+                  com.google.cloud.apihub.v1.ConfigVariableTemplateOrBuilder>(
+                  additionalConfigTemplate_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          additionalConfigTemplate_ = null;
+        }
+        return additionalConfigTemplateBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.apihub.v1.Plugin.ConfigTemplate)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.apihub.v1.Plugin.ConfigTemplate)
+    private static final com.google.cloud.apihub.v1.Plugin.ConfigTemplate DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.apihub.v1.Plugin.ConfigTemplate();
+    }
+
+    public static com.google.cloud.apihub.v1.Plugin.ConfigTemplate getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConfigTemplate> PARSER =
+        new com.google.protobuf.AbstractParser<ConfigTemplate>() {
+          @java.lang.Override
+          public ConfigTemplate parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ConfigTemplate> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfigTemplate> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.apihub.v1.Plugin.ConfigTemplate getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -346,7 +4188,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The type of the API.
+   * Optional. The type of the API.
    * This maps to the following system defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-plugin-type`
    * attribute.
@@ -354,10 +4196,11 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
    * cardinality of the attribute. The same can be retrieved via GetAttribute
    * API. All values should be from the list of allowed values defined for the
    * attribute.
+   * Note this field is not required for plugins developed via plugin framework.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the type field is set.
@@ -371,7 +4214,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The type of the API.
+   * Optional. The type of the API.
    * This maps to the following system defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-plugin-type`
    * attribute.
@@ -379,10 +4222,11 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
    * cardinality of the attribute. The same can be retrieved via GetAttribute
    * API. All values should be from the list of allowed values defined for the
    * attribute.
+   * Note this field is not required for plugins developed via plugin framework.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The type.
@@ -396,7 +4240,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The type of the API.
+   * Optional. The type of the API.
    * This maps to the following system defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-plugin-type`
    * attribute.
@@ -404,10 +4248,11 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
    * cardinality of the attribute. The same can be retrieved via GetAttribute
    * API. All values should be from the list of allowed values defined for the
    * attribute.
+   * Note this field is not required for plugins developed via plugin framework.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -478,6 +4323,8 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Represents the state of the plugin.
+   * Note this field will not be set for plugins developed via plugin
+   * framework as the state will be managed at plugin instance level.
    * </pre>
    *
    * <code>
@@ -496,6 +4343,8 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Represents the state of the plugin.
+   * Note this field will not be set for plugins developed via plugin
+   * framework as the state will be managed at plugin instance level.
    * </pre>
    *
    * <code>
@@ -509,6 +4358,553 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.apihub.v1.Plugin.State result =
         com.google.cloud.apihub.v1.Plugin.State.forNumber(state_);
     return result == null ? com.google.cloud.apihub.v1.Plugin.State.UNRECOGNIZED : result;
+  }
+
+  public static final int OWNERSHIP_TYPE_FIELD_NUMBER = 6;
+  private int ownershipType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of the plugin, indicating whether it is
+   * 'SYSTEM_OWNED' or 'USER_OWNED'.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Plugin.OwnershipType ownership_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for ownershipType.
+   */
+  @java.lang.Override
+  public int getOwnershipTypeValue() {
+    return ownershipType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of the plugin, indicating whether it is
+   * 'SYSTEM_OWNED' or 'USER_OWNED'.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Plugin.OwnershipType ownership_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The ownershipType.
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.Plugin.OwnershipType getOwnershipType() {
+    com.google.cloud.apihub.v1.Plugin.OwnershipType result =
+        com.google.cloud.apihub.v1.Plugin.OwnershipType.forNumber(ownershipType_);
+    return result == null ? com.google.cloud.apihub.v1.Plugin.OwnershipType.UNRECOGNIZED : result;
+  }
+
+  public static final int HOSTING_SERVICE_FIELD_NUMBER = 7;
+  private com.google.cloud.apihub.v1.Plugin.HostingService hostingService_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional. It is used to notify the plugin hosting
+   * service for any lifecycle changes of the plugin instance and trigger
+   * execution of plugin instance actions in case of API hub managed actions.
+   *
+   * This field should be provided if the plugin instance lifecycle of the
+   * developed plugin needs to be managed from API hub. Also, in this case the
+   * plugin hosting service interface needs to be implemented.
+   *
+   * This field should not be provided if the plugin wants to manage plugin
+   * instance lifecycle events outside of hub interface and use plugin framework
+   * for only registering of plugin and plugin instances to capture the source
+   * of data into hub. Note, in this case the plugin hosting service interface
+   * is not required to be implemented. Also, the plugin instance lifecycle
+   * actions will be disabled from API hub's UI.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Plugin.HostingService hosting_service = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the hostingService field is set.
+   */
+  @java.lang.Override
+  public boolean hasHostingService() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional. It is used to notify the plugin hosting
+   * service for any lifecycle changes of the plugin instance and trigger
+   * execution of plugin instance actions in case of API hub managed actions.
+   *
+   * This field should be provided if the plugin instance lifecycle of the
+   * developed plugin needs to be managed from API hub. Also, in this case the
+   * plugin hosting service interface needs to be implemented.
+   *
+   * This field should not be provided if the plugin wants to manage plugin
+   * instance lifecycle events outside of hub interface and use plugin framework
+   * for only registering of plugin and plugin instances to capture the source
+   * of data into hub. Note, in this case the plugin hosting service interface
+   * is not required to be implemented. Also, the plugin instance lifecycle
+   * actions will be disabled from API hub's UI.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Plugin.HostingService hosting_service = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The hostingService.
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.Plugin.HostingService getHostingService() {
+    return hostingService_ == null
+        ? com.google.cloud.apihub.v1.Plugin.HostingService.getDefaultInstance()
+        : hostingService_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional. It is used to notify the plugin hosting
+   * service for any lifecycle changes of the plugin instance and trigger
+   * execution of plugin instance actions in case of API hub managed actions.
+   *
+   * This field should be provided if the plugin instance lifecycle of the
+   * developed plugin needs to be managed from API hub. Also, in this case the
+   * plugin hosting service interface needs to be implemented.
+   *
+   * This field should not be provided if the plugin wants to manage plugin
+   * instance lifecycle events outside of hub interface and use plugin framework
+   * for only registering of plugin and plugin instances to capture the source
+   * of data into hub. Note, in this case the plugin hosting service interface
+   * is not required to be implemented. Also, the plugin instance lifecycle
+   * actions will be disabled from API hub's UI.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Plugin.HostingService hosting_service = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.Plugin.HostingServiceOrBuilder getHostingServiceOrBuilder() {
+    return hostingService_ == null
+        ? com.google.cloud.apihub.v1.Plugin.HostingService.getDefaultInstance()
+        : hostingService_;
+  }
+
+  public static final int ACTIONS_CONFIG_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.apihub.v1.PluginActionConfig> actionsConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of actions supported by the plugin.
+   * **REQUIRED**: This field must be provided when creating or updating a
+   * Plugin. The server will reject requests if this field is missing.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.apihub.v1.PluginActionConfig> getActionsConfigList() {
+    return actionsConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of actions supported by the plugin.
+   * **REQUIRED**: This field must be provided when creating or updating a
+   * Plugin. The server will reject requests if this field is missing.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.apihub.v1.PluginActionConfigOrBuilder>
+      getActionsConfigOrBuilderList() {
+    return actionsConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of actions supported by the plugin.
+   * **REQUIRED**: This field must be provided when creating or updating a
+   * Plugin. The server will reject requests if this field is missing.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getActionsConfigCount() {
+    return actionsConfig_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of actions supported by the plugin.
+   * **REQUIRED**: This field must be provided when creating or updating a
+   * Plugin. The server will reject requests if this field is missing.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.PluginActionConfig getActionsConfig(int index) {
+    return actionsConfig_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of actions supported by the plugin.
+   * **REQUIRED**: This field must be provided when creating or updating a
+   * Plugin. The server will reject requests if this field is missing.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.PluginActionConfigOrBuilder getActionsConfigOrBuilder(
+      int index) {
+    return actionsConfig_.get(index);
+  }
+
+  public static final int DOCUMENTATION_FIELD_NUMBER = 9;
+  private com.google.cloud.apihub.v1.Documentation documentation_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The documentation of the plugin, that explains how to set up and
+   * use the plugin.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Documentation documentation = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the documentation field is set.
+   */
+  @java.lang.Override
+  public boolean hasDocumentation() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The documentation of the plugin, that explains how to set up and
+   * use the plugin.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Documentation documentation = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The documentation.
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.Documentation getDocumentation() {
+    return documentation_ == null
+        ? com.google.cloud.apihub.v1.Documentation.getDefaultInstance()
+        : documentation_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The documentation of the plugin, that explains how to set up and
+   * use the plugin.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Documentation documentation = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.DocumentationOrBuilder getDocumentationOrBuilder() {
+    return documentation_ == null
+        ? com.google.cloud.apihub.v1.Documentation.getDefaultInstance()
+        : documentation_;
+  }
+
+  public static final int PLUGIN_CATEGORY_FIELD_NUMBER = 11;
+  private int pluginCategory_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The category of the plugin, identifying its primary category or
+   * purpose. This field is required for all plugins.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.PluginCategory plugin_category = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for pluginCategory.
+   */
+  @java.lang.Override
+  public int getPluginCategoryValue() {
+    return pluginCategory_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The category of the plugin, identifying its primary category or
+   * purpose. This field is required for all plugins.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.PluginCategory plugin_category = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pluginCategory.
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.PluginCategory getPluginCategory() {
+    com.google.cloud.apihub.v1.PluginCategory result =
+        com.google.cloud.apihub.v1.PluginCategory.forNumber(pluginCategory_);
+    return result == null ? com.google.cloud.apihub.v1.PluginCategory.UNRECOGNIZED : result;
+  }
+
+  public static final int CONFIG_TEMPLATE_FIELD_NUMBER = 12;
+  private com.google.cloud.apihub.v1.Plugin.ConfigTemplate configTemplate_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration template for the plugin.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Plugin.ConfigTemplate config_template = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the configTemplate field is set.
+   */
+  @java.lang.Override
+  public boolean hasConfigTemplate() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration template for the plugin.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Plugin.ConfigTemplate config_template = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The configTemplate.
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.Plugin.ConfigTemplate getConfigTemplate() {
+    return configTemplate_ == null
+        ? com.google.cloud.apihub.v1.Plugin.ConfigTemplate.getDefaultInstance()
+        : configTemplate_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration template for the plugin.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Plugin.ConfigTemplate config_template = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.Plugin.ConfigTemplateOrBuilder getConfigTemplateOrBuilder() {
+    return configTemplate_ == null
+        ? com.google.cloud.apihub.v1.Plugin.ConfigTemplate.getDefaultInstance()
+        : configTemplate_;
+  }
+
+  public static final int CREATE_TIME_FIELD_NUMBER = 13;
+  private com.google.protobuf.Timestamp createTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp indicating when the plugin was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp indicating when the plugin was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp indicating when the plugin was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+
+  public static final int UPDATE_TIME_FIELD_NUMBER = 14;
+  private com.google.protobuf.Timestamp updateTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp indicating when the plugin was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp indicating when the plugin was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp indicating when the plugin was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  public static final int GATEWAY_TYPE_FIELD_NUMBER = 15;
+  private int gatewayType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the gateway.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.GatewayType gateway_type = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for gatewayType.
+   */
+  @java.lang.Override
+  public int getGatewayTypeValue() {
+    return gatewayType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the gateway.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.GatewayType gateway_type = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gatewayType.
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.GatewayType getGatewayType() {
+    com.google.cloud.apihub.v1.GatewayType result =
+        com.google.cloud.apihub.v1.GatewayType.forNumber(gatewayType_);
+    return result == null ? com.google.cloud.apihub.v1.GatewayType.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -540,6 +4936,36 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.cloud.apihub.v1.Plugin.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, state_);
     }
+    if (ownershipType_
+        != com.google.cloud.apihub.v1.Plugin.OwnershipType.OWNERSHIP_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(6, ownershipType_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(7, getHostingService());
+    }
+    for (int i = 0; i < actionsConfig_.size(); i++) {
+      output.writeMessage(8, actionsConfig_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(9, getDocumentation());
+    }
+    if (pluginCategory_
+        != com.google.cloud.apihub.v1.PluginCategory.PLUGIN_CATEGORY_UNSPECIFIED.getNumber()) {
+      output.writeEnum(11, pluginCategory_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(12, getConfigTemplate());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(13, getCreateTime());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(14, getUpdateTime());
+    }
+    if (gatewayType_
+        != com.google.cloud.apihub.v1.GatewayType.GATEWAY_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(15, gatewayType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -564,6 +4990,36 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.cloud.apihub.v1.Plugin.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, state_);
     }
+    if (ownershipType_
+        != com.google.cloud.apihub.v1.Plugin.OwnershipType.OWNERSHIP_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, ownershipType_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getHostingService());
+    }
+    for (int i = 0; i < actionsConfig_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, actionsConfig_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getDocumentation());
+    }
+    if (pluginCategory_
+        != com.google.cloud.apihub.v1.PluginCategory.PLUGIN_CATEGORY_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, pluginCategory_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getConfigTemplate());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getCreateTime());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getUpdateTime());
+    }
+    if (gatewayType_
+        != com.google.cloud.apihub.v1.GatewayType.GATEWAY_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, gatewayType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -587,6 +5043,30 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getDescription().equals(other.getDescription())) return false;
     if (state_ != other.state_) return false;
+    if (ownershipType_ != other.ownershipType_) return false;
+    if (hasHostingService() != other.hasHostingService()) return false;
+    if (hasHostingService()) {
+      if (!getHostingService().equals(other.getHostingService())) return false;
+    }
+    if (!getActionsConfigList().equals(other.getActionsConfigList())) return false;
+    if (hasDocumentation() != other.hasDocumentation()) return false;
+    if (hasDocumentation()) {
+      if (!getDocumentation().equals(other.getDocumentation())) return false;
+    }
+    if (pluginCategory_ != other.pluginCategory_) return false;
+    if (hasConfigTemplate() != other.hasConfigTemplate()) return false;
+    if (hasConfigTemplate()) {
+      if (!getConfigTemplate().equals(other.getConfigTemplate())) return false;
+    }
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
+    if (gatewayType_ != other.gatewayType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -610,6 +5090,36 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    hash = (37 * hash) + OWNERSHIP_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + ownershipType_;
+    if (hasHostingService()) {
+      hash = (37 * hash) + HOSTING_SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getHostingService().hashCode();
+    }
+    if (getActionsConfigCount() > 0) {
+      hash = (37 * hash) + ACTIONS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getActionsConfigList().hashCode();
+    }
+    if (hasDocumentation()) {
+      hash = (37 * hash) + DOCUMENTATION_FIELD_NUMBER;
+      hash = (53 * hash) + getDocumentation().hashCode();
+    }
+    hash = (37 * hash) + PLUGIN_CATEGORY_FIELD_NUMBER;
+    hash = (53 * hash) + pluginCategory_;
+    if (hasConfigTemplate()) {
+      hash = (37 * hash) + CONFIG_TEMPLATE_FIELD_NUMBER;
+      hash = (53 * hash) + getConfigTemplate().hashCode();
+    }
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    hash = (37 * hash) + GATEWAY_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + gatewayType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -751,6 +5261,12 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getTypeFieldBuilder();
+        getHostingServiceFieldBuilder();
+        getActionsConfigFieldBuilder();
+        getDocumentationFieldBuilder();
+        getConfigTemplateFieldBuilder();
+        getCreateTimeFieldBuilder();
+        getUpdateTimeFieldBuilder();
       }
     }
 
@@ -767,6 +5283,41 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       }
       description_ = "";
       state_ = 0;
+      ownershipType_ = 0;
+      hostingService_ = null;
+      if (hostingServiceBuilder_ != null) {
+        hostingServiceBuilder_.dispose();
+        hostingServiceBuilder_ = null;
+      }
+      if (actionsConfigBuilder_ == null) {
+        actionsConfig_ = java.util.Collections.emptyList();
+      } else {
+        actionsConfig_ = null;
+        actionsConfigBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000080);
+      documentation_ = null;
+      if (documentationBuilder_ != null) {
+        documentationBuilder_.dispose();
+        documentationBuilder_ = null;
+      }
+      pluginCategory_ = 0;
+      configTemplate_ = null;
+      if (configTemplateBuilder_ != null) {
+        configTemplateBuilder_.dispose();
+        configTemplateBuilder_ = null;
+      }
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      gatewayType_ = 0;
       return this;
     }
 
@@ -793,11 +5344,24 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.apihub.v1.Plugin buildPartial() {
       com.google.cloud.apihub.v1.Plugin result = new com.google.cloud.apihub.v1.Plugin(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.apihub.v1.Plugin result) {
+      if (actionsConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)) {
+          actionsConfig_ = java.util.Collections.unmodifiableList(actionsConfig_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.actionsConfig_ = actionsConfig_;
+      } else {
+        result.actionsConfig_ = actionsConfigBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.apihub.v1.Plugin result) {
@@ -818,6 +5382,38 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.ownershipType_ = ownershipType_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.hostingService_ =
+            hostingServiceBuilder_ == null ? hostingService_ : hostingServiceBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.documentation_ =
+            documentationBuilder_ == null ? documentation_ : documentationBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.pluginCategory_ = pluginCategory_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.configTemplate_ =
+            configTemplateBuilder_ == null ? configTemplate_ : configTemplateBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.gatewayType_ = gatewayType_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -888,6 +5484,57 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
+      if (other.ownershipType_ != 0) {
+        setOwnershipTypeValue(other.getOwnershipTypeValue());
+      }
+      if (other.hasHostingService()) {
+        mergeHostingService(other.getHostingService());
+      }
+      if (actionsConfigBuilder_ == null) {
+        if (!other.actionsConfig_.isEmpty()) {
+          if (actionsConfig_.isEmpty()) {
+            actionsConfig_ = other.actionsConfig_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureActionsConfigIsMutable();
+            actionsConfig_.addAll(other.actionsConfig_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.actionsConfig_.isEmpty()) {
+          if (actionsConfigBuilder_.isEmpty()) {
+            actionsConfigBuilder_.dispose();
+            actionsConfigBuilder_ = null;
+            actionsConfig_ = other.actionsConfig_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            actionsConfigBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getActionsConfigFieldBuilder()
+                    : null;
+          } else {
+            actionsConfigBuilder_.addAllMessages(other.actionsConfig_);
+          }
+        }
+      }
+      if (other.hasDocumentation()) {
+        mergeDocumentation(other.getDocumentation());
+      }
+      if (other.pluginCategory_ != 0) {
+        setPluginCategoryValue(other.getPluginCategoryValue());
+      }
+      if (other.hasConfigTemplate()) {
+        mergeConfigTemplate(other.getConfigTemplate());
+      }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
+      }
+      if (other.gatewayType_ != 0) {
+        setGatewayTypeValue(other.getGatewayTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -944,6 +5591,67 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 48:
+              {
+                ownershipType_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+            case 58:
+              {
+                input.readMessage(getHostingServiceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+            case 66:
+              {
+                com.google.cloud.apihub.v1.PluginActionConfig m =
+                    input.readMessage(
+                        com.google.cloud.apihub.v1.PluginActionConfig.parser(), extensionRegistry);
+                if (actionsConfigBuilder_ == null) {
+                  ensureActionsConfigIsMutable();
+                  actionsConfig_.add(m);
+                } else {
+                  actionsConfigBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getDocumentationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+            case 88:
+              {
+                pluginCategory_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 88
+            case 98:
+              {
+                input.readMessage(getConfigTemplateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 114
+            case 120:
+              {
+                gatewayType_ = input.readEnum();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 120
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1206,7 +5914,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of the API.
+     * Optional. The type of the API.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-plugin-type`
      * attribute.
@@ -1214,10 +5922,11 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      * cardinality of the attribute. The same can be retrieved via GetAttribute
      * API. All values should be from the list of allowed values defined for the
      * attribute.
+     * Note this field is not required for plugins developed via plugin framework.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the type field is set.
@@ -1230,7 +5939,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of the API.
+     * Optional. The type of the API.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-plugin-type`
      * attribute.
@@ -1238,10 +5947,11 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      * cardinality of the attribute. The same can be retrieved via GetAttribute
      * API. All values should be from the list of allowed values defined for the
      * attribute.
+     * Note this field is not required for plugins developed via plugin framework.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The type.
@@ -1260,7 +5970,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of the API.
+     * Optional. The type of the API.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-plugin-type`
      * attribute.
@@ -1268,10 +5978,11 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      * cardinality of the attribute. The same can be retrieved via GetAttribute
      * API. All values should be from the list of allowed values defined for the
      * attribute.
+     * Note this field is not required for plugins developed via plugin framework.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setType(com.google.cloud.apihub.v1.AttributeValues value) {
@@ -1292,7 +6003,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of the API.
+     * Optional. The type of the API.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-plugin-type`
      * attribute.
@@ -1300,10 +6011,11 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      * cardinality of the attribute. The same can be retrieved via GetAttribute
      * API. All values should be from the list of allowed values defined for the
      * attribute.
+     * Note this field is not required for plugins developed via plugin framework.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setType(com.google.cloud.apihub.v1.AttributeValues.Builder builderForValue) {
@@ -1321,7 +6033,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of the API.
+     * Optional. The type of the API.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-plugin-type`
      * attribute.
@@ -1329,10 +6041,11 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      * cardinality of the attribute. The same can be retrieved via GetAttribute
      * API. All values should be from the list of allowed values defined for the
      * attribute.
+     * Note this field is not required for plugins developed via plugin framework.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeType(com.google.cloud.apihub.v1.AttributeValues value) {
@@ -1358,7 +6071,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of the API.
+     * Optional. The type of the API.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-plugin-type`
      * attribute.
@@ -1366,10 +6079,11 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      * cardinality of the attribute. The same can be retrieved via GetAttribute
      * API. All values should be from the list of allowed values defined for the
      * attribute.
+     * Note this field is not required for plugins developed via plugin framework.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearType() {
@@ -1387,7 +6101,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of the API.
+     * Optional. The type of the API.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-plugin-type`
      * attribute.
@@ -1395,10 +6109,11 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      * cardinality of the attribute. The same can be retrieved via GetAttribute
      * API. All values should be from the list of allowed values defined for the
      * attribute.
+     * Note this field is not required for plugins developed via plugin framework.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.apihub.v1.AttributeValues.Builder getTypeBuilder() {
@@ -1411,7 +6126,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of the API.
+     * Optional. The type of the API.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-plugin-type`
      * attribute.
@@ -1419,10 +6134,11 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      * cardinality of the attribute. The same can be retrieved via GetAttribute
      * API. All values should be from the list of allowed values defined for the
      * attribute.
+     * Note this field is not required for plugins developed via plugin framework.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.apihub.v1.AttributeValuesOrBuilder getTypeOrBuilder() {
@@ -1439,7 +6155,7 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of the API.
+     * Optional. The type of the API.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-plugin-type`
      * attribute.
@@ -1447,10 +6163,11 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      * cardinality of the attribute. The same can be retrieved via GetAttribute
      * API. All values should be from the list of allowed values defined for the
      * attribute.
+     * Note this field is not required for plugins developed via plugin framework.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1593,6 +6310,8 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Represents the state of the plugin.
+     * Note this field will not be set for plugins developed via plugin
+     * framework as the state will be managed at plugin instance level.
      * </pre>
      *
      * <code>
@@ -1611,6 +6330,8 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Represents the state of the plugin.
+     * Note this field will not be set for plugins developed via plugin
+     * framework as the state will be managed at plugin instance level.
      * </pre>
      *
      * <code>
@@ -1632,6 +6353,8 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Represents the state of the plugin.
+     * Note this field will not be set for plugins developed via plugin
+     * framework as the state will be managed at plugin instance level.
      * </pre>
      *
      * <code>
@@ -1652,6 +6375,8 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Represents the state of the plugin.
+     * Note this field will not be set for plugins developed via plugin
+     * framework as the state will be managed at plugin instance level.
      * </pre>
      *
      * <code>
@@ -1676,6 +6401,8 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Represents the state of the plugin.
+     * Note this field will not be set for plugins developed via plugin
+     * framework as the state will be managed at plugin instance level.
      * </pre>
      *
      * <code>
@@ -1687,6 +6414,1970 @@ public final class Plugin extends com.google.protobuf.GeneratedMessageV3
     public Builder clearState() {
       bitField0_ = (bitField0_ & ~0x00000010);
       state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int ownershipType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the plugin, indicating whether it is
+     * 'SYSTEM_OWNED' or 'USER_OWNED'.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.OwnershipType ownership_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for ownershipType.
+     */
+    @java.lang.Override
+    public int getOwnershipTypeValue() {
+      return ownershipType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the plugin, indicating whether it is
+     * 'SYSTEM_OWNED' or 'USER_OWNED'.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.OwnershipType ownership_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for ownershipType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOwnershipTypeValue(int value) {
+      ownershipType_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the plugin, indicating whether it is
+     * 'SYSTEM_OWNED' or 'USER_OWNED'.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.OwnershipType ownership_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The ownershipType.
+     */
+    @java.lang.Override
+    public com.google.cloud.apihub.v1.Plugin.OwnershipType getOwnershipType() {
+      com.google.cloud.apihub.v1.Plugin.OwnershipType result =
+          com.google.cloud.apihub.v1.Plugin.OwnershipType.forNumber(ownershipType_);
+      return result == null ? com.google.cloud.apihub.v1.Plugin.OwnershipType.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the plugin, indicating whether it is
+     * 'SYSTEM_OWNED' or 'USER_OWNED'.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.OwnershipType ownership_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The ownershipType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOwnershipType(com.google.cloud.apihub.v1.Plugin.OwnershipType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      ownershipType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the plugin, indicating whether it is
+     * 'SYSTEM_OWNED' or 'USER_OWNED'.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.OwnershipType ownership_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOwnershipType() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      ownershipType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.apihub.v1.Plugin.HostingService hostingService_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.Plugin.HostingService,
+            com.google.cloud.apihub.v1.Plugin.HostingService.Builder,
+            com.google.cloud.apihub.v1.Plugin.HostingServiceOrBuilder>
+        hostingServiceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional. It is used to notify the plugin hosting
+     * service for any lifecycle changes of the plugin instance and trigger
+     * execution of plugin instance actions in case of API hub managed actions.
+     *
+     * This field should be provided if the plugin instance lifecycle of the
+     * developed plugin needs to be managed from API hub. Also, in this case the
+     * plugin hosting service interface needs to be implemented.
+     *
+     * This field should not be provided if the plugin wants to manage plugin
+     * instance lifecycle events outside of hub interface and use plugin framework
+     * for only registering of plugin and plugin instances to capture the source
+     * of data into hub. Note, in this case the plugin hosting service interface
+     * is not required to be implemented. Also, the plugin instance lifecycle
+     * actions will be disabled from API hub's UI.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.HostingService hosting_service = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the hostingService field is set.
+     */
+    public boolean hasHostingService() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional. It is used to notify the plugin hosting
+     * service for any lifecycle changes of the plugin instance and trigger
+     * execution of plugin instance actions in case of API hub managed actions.
+     *
+     * This field should be provided if the plugin instance lifecycle of the
+     * developed plugin needs to be managed from API hub. Also, in this case the
+     * plugin hosting service interface needs to be implemented.
+     *
+     * This field should not be provided if the plugin wants to manage plugin
+     * instance lifecycle events outside of hub interface and use plugin framework
+     * for only registering of plugin and plugin instances to capture the source
+     * of data into hub. Note, in this case the plugin hosting service interface
+     * is not required to be implemented. Also, the plugin instance lifecycle
+     * actions will be disabled from API hub's UI.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.HostingService hosting_service = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The hostingService.
+     */
+    public com.google.cloud.apihub.v1.Plugin.HostingService getHostingService() {
+      if (hostingServiceBuilder_ == null) {
+        return hostingService_ == null
+            ? com.google.cloud.apihub.v1.Plugin.HostingService.getDefaultInstance()
+            : hostingService_;
+      } else {
+        return hostingServiceBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional. It is used to notify the plugin hosting
+     * service for any lifecycle changes of the plugin instance and trigger
+     * execution of plugin instance actions in case of API hub managed actions.
+     *
+     * This field should be provided if the plugin instance lifecycle of the
+     * developed plugin needs to be managed from API hub. Also, in this case the
+     * plugin hosting service interface needs to be implemented.
+     *
+     * This field should not be provided if the plugin wants to manage plugin
+     * instance lifecycle events outside of hub interface and use plugin framework
+     * for only registering of plugin and plugin instances to capture the source
+     * of data into hub. Note, in this case the plugin hosting service interface
+     * is not required to be implemented. Also, the plugin instance lifecycle
+     * actions will be disabled from API hub's UI.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.HostingService hosting_service = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setHostingService(com.google.cloud.apihub.v1.Plugin.HostingService value) {
+      if (hostingServiceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        hostingService_ = value;
+      } else {
+        hostingServiceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional. It is used to notify the plugin hosting
+     * service for any lifecycle changes of the plugin instance and trigger
+     * execution of plugin instance actions in case of API hub managed actions.
+     *
+     * This field should be provided if the plugin instance lifecycle of the
+     * developed plugin needs to be managed from API hub. Also, in this case the
+     * plugin hosting service interface needs to be implemented.
+     *
+     * This field should not be provided if the plugin wants to manage plugin
+     * instance lifecycle events outside of hub interface and use plugin framework
+     * for only registering of plugin and plugin instances to capture the source
+     * of data into hub. Note, in this case the plugin hosting service interface
+     * is not required to be implemented. Also, the plugin instance lifecycle
+     * actions will be disabled from API hub's UI.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.HostingService hosting_service = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setHostingService(
+        com.google.cloud.apihub.v1.Plugin.HostingService.Builder builderForValue) {
+      if (hostingServiceBuilder_ == null) {
+        hostingService_ = builderForValue.build();
+      } else {
+        hostingServiceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional. It is used to notify the plugin hosting
+     * service for any lifecycle changes of the plugin instance and trigger
+     * execution of plugin instance actions in case of API hub managed actions.
+     *
+     * This field should be provided if the plugin instance lifecycle of the
+     * developed plugin needs to be managed from API hub. Also, in this case the
+     * plugin hosting service interface needs to be implemented.
+     *
+     * This field should not be provided if the plugin wants to manage plugin
+     * instance lifecycle events outside of hub interface and use plugin framework
+     * for only registering of plugin and plugin instances to capture the source
+     * of data into hub. Note, in this case the plugin hosting service interface
+     * is not required to be implemented. Also, the plugin instance lifecycle
+     * actions will be disabled from API hub's UI.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.HostingService hosting_service = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeHostingService(com.google.cloud.apihub.v1.Plugin.HostingService value) {
+      if (hostingServiceBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && hostingService_ != null
+            && hostingService_
+                != com.google.cloud.apihub.v1.Plugin.HostingService.getDefaultInstance()) {
+          getHostingServiceBuilder().mergeFrom(value);
+        } else {
+          hostingService_ = value;
+        }
+      } else {
+        hostingServiceBuilder_.mergeFrom(value);
+      }
+      if (hostingService_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional. It is used to notify the plugin hosting
+     * service for any lifecycle changes of the plugin instance and trigger
+     * execution of plugin instance actions in case of API hub managed actions.
+     *
+     * This field should be provided if the plugin instance lifecycle of the
+     * developed plugin needs to be managed from API hub. Also, in this case the
+     * plugin hosting service interface needs to be implemented.
+     *
+     * This field should not be provided if the plugin wants to manage plugin
+     * instance lifecycle events outside of hub interface and use plugin framework
+     * for only registering of plugin and plugin instances to capture the source
+     * of data into hub. Note, in this case the plugin hosting service interface
+     * is not required to be implemented. Also, the plugin instance lifecycle
+     * actions will be disabled from API hub's UI.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.HostingService hosting_service = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearHostingService() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      hostingService_ = null;
+      if (hostingServiceBuilder_ != null) {
+        hostingServiceBuilder_.dispose();
+        hostingServiceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional. It is used to notify the plugin hosting
+     * service for any lifecycle changes of the plugin instance and trigger
+     * execution of plugin instance actions in case of API hub managed actions.
+     *
+     * This field should be provided if the plugin instance lifecycle of the
+     * developed plugin needs to be managed from API hub. Also, in this case the
+     * plugin hosting service interface needs to be implemented.
+     *
+     * This field should not be provided if the plugin wants to manage plugin
+     * instance lifecycle events outside of hub interface and use plugin framework
+     * for only registering of plugin and plugin instances to capture the source
+     * of data into hub. Note, in this case the plugin hosting service interface
+     * is not required to be implemented. Also, the plugin instance lifecycle
+     * actions will be disabled from API hub's UI.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.HostingService hosting_service = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.Plugin.HostingService.Builder getHostingServiceBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getHostingServiceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional. It is used to notify the plugin hosting
+     * service for any lifecycle changes of the plugin instance and trigger
+     * execution of plugin instance actions in case of API hub managed actions.
+     *
+     * This field should be provided if the plugin instance lifecycle of the
+     * developed plugin needs to be managed from API hub. Also, in this case the
+     * plugin hosting service interface needs to be implemented.
+     *
+     * This field should not be provided if the plugin wants to manage plugin
+     * instance lifecycle events outside of hub interface and use plugin framework
+     * for only registering of plugin and plugin instances to capture the source
+     * of data into hub. Note, in this case the plugin hosting service interface
+     * is not required to be implemented. Also, the plugin instance lifecycle
+     * actions will be disabled from API hub's UI.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.HostingService hosting_service = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.Plugin.HostingServiceOrBuilder getHostingServiceOrBuilder() {
+      if (hostingServiceBuilder_ != null) {
+        return hostingServiceBuilder_.getMessageOrBuilder();
+      } else {
+        return hostingService_ == null
+            ? com.google.cloud.apihub.v1.Plugin.HostingService.getDefaultInstance()
+            : hostingService_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional. It is used to notify the plugin hosting
+     * service for any lifecycle changes of the plugin instance and trigger
+     * execution of plugin instance actions in case of API hub managed actions.
+     *
+     * This field should be provided if the plugin instance lifecycle of the
+     * developed plugin needs to be managed from API hub. Also, in this case the
+     * plugin hosting service interface needs to be implemented.
+     *
+     * This field should not be provided if the plugin wants to manage plugin
+     * instance lifecycle events outside of hub interface and use plugin framework
+     * for only registering of plugin and plugin instances to capture the source
+     * of data into hub. Note, in this case the plugin hosting service interface
+     * is not required to be implemented. Also, the plugin instance lifecycle
+     * actions will be disabled from API hub's UI.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.HostingService hosting_service = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.Plugin.HostingService,
+            com.google.cloud.apihub.v1.Plugin.HostingService.Builder,
+            com.google.cloud.apihub.v1.Plugin.HostingServiceOrBuilder>
+        getHostingServiceFieldBuilder() {
+      if (hostingServiceBuilder_ == null) {
+        hostingServiceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.apihub.v1.Plugin.HostingService,
+                com.google.cloud.apihub.v1.Plugin.HostingService.Builder,
+                com.google.cloud.apihub.v1.Plugin.HostingServiceOrBuilder>(
+                getHostingService(), getParentForChildren(), isClean());
+        hostingService_ = null;
+      }
+      return hostingServiceBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.apihub.v1.PluginActionConfig> actionsConfig_ =
+        java.util.Collections.emptyList();
+
+    private void ensureActionsConfigIsMutable() {
+      if (!((bitField0_ & 0x00000080) != 0)) {
+        actionsConfig_ =
+            new java.util.ArrayList<com.google.cloud.apihub.v1.PluginActionConfig>(actionsConfig_);
+        bitField0_ |= 0x00000080;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.apihub.v1.PluginActionConfig,
+            com.google.cloud.apihub.v1.PluginActionConfig.Builder,
+            com.google.cloud.apihub.v1.PluginActionConfigOrBuilder>
+        actionsConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.apihub.v1.PluginActionConfig> getActionsConfigList() {
+      if (actionsConfigBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(actionsConfig_);
+      } else {
+        return actionsConfigBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getActionsConfigCount() {
+      if (actionsConfigBuilder_ == null) {
+        return actionsConfig_.size();
+      } else {
+        return actionsConfigBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.PluginActionConfig getActionsConfig(int index) {
+      if (actionsConfigBuilder_ == null) {
+        return actionsConfig_.get(index);
+      } else {
+        return actionsConfigBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setActionsConfig(
+        int index, com.google.cloud.apihub.v1.PluginActionConfig value) {
+      if (actionsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureActionsConfigIsMutable();
+        actionsConfig_.set(index, value);
+        onChanged();
+      } else {
+        actionsConfigBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setActionsConfig(
+        int index, com.google.cloud.apihub.v1.PluginActionConfig.Builder builderForValue) {
+      if (actionsConfigBuilder_ == null) {
+        ensureActionsConfigIsMutable();
+        actionsConfig_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        actionsConfigBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addActionsConfig(com.google.cloud.apihub.v1.PluginActionConfig value) {
+      if (actionsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureActionsConfigIsMutable();
+        actionsConfig_.add(value);
+        onChanged();
+      } else {
+        actionsConfigBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addActionsConfig(
+        int index, com.google.cloud.apihub.v1.PluginActionConfig value) {
+      if (actionsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureActionsConfigIsMutable();
+        actionsConfig_.add(index, value);
+        onChanged();
+      } else {
+        actionsConfigBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addActionsConfig(
+        com.google.cloud.apihub.v1.PluginActionConfig.Builder builderForValue) {
+      if (actionsConfigBuilder_ == null) {
+        ensureActionsConfigIsMutable();
+        actionsConfig_.add(builderForValue.build());
+        onChanged();
+      } else {
+        actionsConfigBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addActionsConfig(
+        int index, com.google.cloud.apihub.v1.PluginActionConfig.Builder builderForValue) {
+      if (actionsConfigBuilder_ == null) {
+        ensureActionsConfigIsMutable();
+        actionsConfig_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        actionsConfigBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllActionsConfig(
+        java.lang.Iterable<? extends com.google.cloud.apihub.v1.PluginActionConfig> values) {
+      if (actionsConfigBuilder_ == null) {
+        ensureActionsConfigIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, actionsConfig_);
+        onChanged();
+      } else {
+        actionsConfigBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearActionsConfig() {
+      if (actionsConfigBuilder_ == null) {
+        actionsConfig_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        actionsConfigBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeActionsConfig(int index) {
+      if (actionsConfigBuilder_ == null) {
+        ensureActionsConfigIsMutable();
+        actionsConfig_.remove(index);
+        onChanged();
+      } else {
+        actionsConfigBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.PluginActionConfig.Builder getActionsConfigBuilder(
+        int index) {
+      return getActionsConfigFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.PluginActionConfigOrBuilder getActionsConfigOrBuilder(
+        int index) {
+      if (actionsConfigBuilder_ == null) {
+        return actionsConfig_.get(index);
+      } else {
+        return actionsConfigBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.apihub.v1.PluginActionConfigOrBuilder>
+        getActionsConfigOrBuilderList() {
+      if (actionsConfigBuilder_ != null) {
+        return actionsConfigBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(actionsConfig_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.PluginActionConfig.Builder addActionsConfigBuilder() {
+      return getActionsConfigFieldBuilder()
+          .addBuilder(com.google.cloud.apihub.v1.PluginActionConfig.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.PluginActionConfig.Builder addActionsConfigBuilder(
+        int index) {
+      return getActionsConfigFieldBuilder()
+          .addBuilder(index, com.google.cloud.apihub.v1.PluginActionConfig.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration of actions supported by the plugin.
+     * **REQUIRED**: This field must be provided when creating or updating a
+     * Plugin. The server will reject requests if this field is missing.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.apihub.v1.PluginActionConfig.Builder>
+        getActionsConfigBuilderList() {
+      return getActionsConfigFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.apihub.v1.PluginActionConfig,
+            com.google.cloud.apihub.v1.PluginActionConfig.Builder,
+            com.google.cloud.apihub.v1.PluginActionConfigOrBuilder>
+        getActionsConfigFieldBuilder() {
+      if (actionsConfigBuilder_ == null) {
+        actionsConfigBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.apihub.v1.PluginActionConfig,
+                com.google.cloud.apihub.v1.PluginActionConfig.Builder,
+                com.google.cloud.apihub.v1.PluginActionConfigOrBuilder>(
+                actionsConfig_,
+                ((bitField0_ & 0x00000080) != 0),
+                getParentForChildren(),
+                isClean());
+        actionsConfig_ = null;
+      }
+      return actionsConfigBuilder_;
+    }
+
+    private com.google.cloud.apihub.v1.Documentation documentation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.Documentation,
+            com.google.cloud.apihub.v1.Documentation.Builder,
+            com.google.cloud.apihub.v1.DocumentationOrBuilder>
+        documentationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The documentation of the plugin, that explains how to set up and
+     * use the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Documentation documentation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the documentation field is set.
+     */
+    public boolean hasDocumentation() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The documentation of the plugin, that explains how to set up and
+     * use the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Documentation documentation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The documentation.
+     */
+    public com.google.cloud.apihub.v1.Documentation getDocumentation() {
+      if (documentationBuilder_ == null) {
+        return documentation_ == null
+            ? com.google.cloud.apihub.v1.Documentation.getDefaultInstance()
+            : documentation_;
+      } else {
+        return documentationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The documentation of the plugin, that explains how to set up and
+     * use the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Documentation documentation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDocumentation(com.google.cloud.apihub.v1.Documentation value) {
+      if (documentationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        documentation_ = value;
+      } else {
+        documentationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The documentation of the plugin, that explains how to set up and
+     * use the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Documentation documentation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDocumentation(
+        com.google.cloud.apihub.v1.Documentation.Builder builderForValue) {
+      if (documentationBuilder_ == null) {
+        documentation_ = builderForValue.build();
+      } else {
+        documentationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The documentation of the plugin, that explains how to set up and
+     * use the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Documentation documentation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDocumentation(com.google.cloud.apihub.v1.Documentation value) {
+      if (documentationBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && documentation_ != null
+            && documentation_ != com.google.cloud.apihub.v1.Documentation.getDefaultInstance()) {
+          getDocumentationBuilder().mergeFrom(value);
+        } else {
+          documentation_ = value;
+        }
+      } else {
+        documentationBuilder_.mergeFrom(value);
+      }
+      if (documentation_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The documentation of the plugin, that explains how to set up and
+     * use the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Documentation documentation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDocumentation() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      documentation_ = null;
+      if (documentationBuilder_ != null) {
+        documentationBuilder_.dispose();
+        documentationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The documentation of the plugin, that explains how to set up and
+     * use the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Documentation documentation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.Documentation.Builder getDocumentationBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getDocumentationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The documentation of the plugin, that explains how to set up and
+     * use the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Documentation documentation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.DocumentationOrBuilder getDocumentationOrBuilder() {
+      if (documentationBuilder_ != null) {
+        return documentationBuilder_.getMessageOrBuilder();
+      } else {
+        return documentation_ == null
+            ? com.google.cloud.apihub.v1.Documentation.getDefaultInstance()
+            : documentation_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The documentation of the plugin, that explains how to set up and
+     * use the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Documentation documentation = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.Documentation,
+            com.google.cloud.apihub.v1.Documentation.Builder,
+            com.google.cloud.apihub.v1.DocumentationOrBuilder>
+        getDocumentationFieldBuilder() {
+      if (documentationBuilder_ == null) {
+        documentationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.apihub.v1.Documentation,
+                com.google.cloud.apihub.v1.Documentation.Builder,
+                com.google.cloud.apihub.v1.DocumentationOrBuilder>(
+                getDocumentation(), getParentForChildren(), isClean());
+        documentation_ = null;
+      }
+      return documentationBuilder_;
+    }
+
+    private int pluginCategory_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The category of the plugin, identifying its primary category or
+     * purpose. This field is required for all plugins.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.PluginCategory plugin_category = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for pluginCategory.
+     */
+    @java.lang.Override
+    public int getPluginCategoryValue() {
+      return pluginCategory_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The category of the plugin, identifying its primary category or
+     * purpose. This field is required for all plugins.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.PluginCategory plugin_category = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for pluginCategory to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPluginCategoryValue(int value) {
+      pluginCategory_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The category of the plugin, identifying its primary category or
+     * purpose. This field is required for all plugins.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.PluginCategory plugin_category = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The pluginCategory.
+     */
+    @java.lang.Override
+    public com.google.cloud.apihub.v1.PluginCategory getPluginCategory() {
+      com.google.cloud.apihub.v1.PluginCategory result =
+          com.google.cloud.apihub.v1.PluginCategory.forNumber(pluginCategory_);
+      return result == null ? com.google.cloud.apihub.v1.PluginCategory.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The category of the plugin, identifying its primary category or
+     * purpose. This field is required for all plugins.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.PluginCategory plugin_category = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The pluginCategory to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPluginCategory(com.google.cloud.apihub.v1.PluginCategory value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      pluginCategory_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The category of the plugin, identifying its primary category or
+     * purpose. This field is required for all plugins.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.PluginCategory plugin_category = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPluginCategory() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      pluginCategory_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.apihub.v1.Plugin.ConfigTemplate configTemplate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.Plugin.ConfigTemplate,
+            com.google.cloud.apihub.v1.Plugin.ConfigTemplate.Builder,
+            com.google.cloud.apihub.v1.Plugin.ConfigTemplateOrBuilder>
+        configTemplateBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration template for the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.ConfigTemplate config_template = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the configTemplate field is set.
+     */
+    public boolean hasConfigTemplate() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration template for the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.ConfigTemplate config_template = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The configTemplate.
+     */
+    public com.google.cloud.apihub.v1.Plugin.ConfigTemplate getConfigTemplate() {
+      if (configTemplateBuilder_ == null) {
+        return configTemplate_ == null
+            ? com.google.cloud.apihub.v1.Plugin.ConfigTemplate.getDefaultInstance()
+            : configTemplate_;
+      } else {
+        return configTemplateBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration template for the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.ConfigTemplate config_template = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConfigTemplate(com.google.cloud.apihub.v1.Plugin.ConfigTemplate value) {
+      if (configTemplateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        configTemplate_ = value;
+      } else {
+        configTemplateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration template for the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.ConfigTemplate config_template = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConfigTemplate(
+        com.google.cloud.apihub.v1.Plugin.ConfigTemplate.Builder builderForValue) {
+      if (configTemplateBuilder_ == null) {
+        configTemplate_ = builderForValue.build();
+      } else {
+        configTemplateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration template for the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.ConfigTemplate config_template = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeConfigTemplate(com.google.cloud.apihub.v1.Plugin.ConfigTemplate value) {
+      if (configTemplateBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && configTemplate_ != null
+            && configTemplate_
+                != com.google.cloud.apihub.v1.Plugin.ConfigTemplate.getDefaultInstance()) {
+          getConfigTemplateBuilder().mergeFrom(value);
+        } else {
+          configTemplate_ = value;
+        }
+      } else {
+        configTemplateBuilder_.mergeFrom(value);
+      }
+      if (configTemplate_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration template for the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.ConfigTemplate config_template = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearConfigTemplate() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      configTemplate_ = null;
+      if (configTemplateBuilder_ != null) {
+        configTemplateBuilder_.dispose();
+        configTemplateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration template for the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.ConfigTemplate config_template = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.Plugin.ConfigTemplate.Builder getConfigTemplateBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getConfigTemplateFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration template for the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.ConfigTemplate config_template = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.Plugin.ConfigTemplateOrBuilder getConfigTemplateOrBuilder() {
+      if (configTemplateBuilder_ != null) {
+        return configTemplateBuilder_.getMessageOrBuilder();
+      } else {
+        return configTemplate_ == null
+            ? com.google.cloud.apihub.v1.Plugin.ConfigTemplate.getDefaultInstance()
+            : configTemplate_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration template for the plugin.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.Plugin.ConfigTemplate config_template = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.Plugin.ConfigTemplate,
+            com.google.cloud.apihub.v1.Plugin.ConfigTemplate.Builder,
+            com.google.cloud.apihub.v1.Plugin.ConfigTemplateOrBuilder>
+        getConfigTemplateFieldBuilder() {
+      if (configTemplateBuilder_ == null) {
+        configTemplateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.apihub.v1.Plugin.ConfigTemplate,
+                com.google.cloud.apihub.v1.Plugin.ConfigTemplate.Builder,
+                com.google.cloud.apihub.v1.Plugin.ConfigTemplateOrBuilder>(
+                getConfigTemplate(), getParentForChildren(), isClean());
+        configTemplate_ = null;
+      }
+      return configTemplateBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
+        } else {
+          createTime_ = value;
+        }
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+      if (createTime_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateTime() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
+        } else {
+          updateTime_ = value;
+        }
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+      if (updateTime_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp indicating when the plugin was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
+    }
+
+    private int gatewayType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the gateway.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.GatewayType gateway_type = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for gatewayType.
+     */
+    @java.lang.Override
+    public int getGatewayTypeValue() {
+      return gatewayType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the gateway.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.GatewayType gateway_type = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for gatewayType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGatewayTypeValue(int value) {
+      gatewayType_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the gateway.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.GatewayType gateway_type = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The gatewayType.
+     */
+    @java.lang.Override
+    public com.google.cloud.apihub.v1.GatewayType getGatewayType() {
+      com.google.cloud.apihub.v1.GatewayType result =
+          com.google.cloud.apihub.v1.GatewayType.forNumber(gatewayType_);
+      return result == null ? com.google.cloud.apihub.v1.GatewayType.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the gateway.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.GatewayType gateway_type = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The gatewayType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGatewayType(com.google.cloud.apihub.v1.GatewayType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00002000;
+      gatewayType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the gateway.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.GatewayType gateway_type = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGatewayType() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      gatewayType_ = 0;
       onChanged();
       return this;
     }

@@ -193,10 +193,10 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Unique Id for the query.
+   * Output only. Unique Id for the query.
    * </pre>
    *
-   * <code>string query_id = 1;</code>
+   * <code>string query_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The queryId.
    */
@@ -217,10 +217,10 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Unique Id for the query.
+   * Output only. Unique Id for the query.
    * </pre>
    *
-   * <code>string query_id = 1;</code>
+   * <code>string query_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for queryId.
    */
@@ -788,10 +788,10 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unique Id for the query.
+     * Output only. Unique Id for the query.
      * </pre>
      *
-     * <code>string query_id = 1;</code>
+     * <code>string query_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The queryId.
      */
@@ -811,10 +811,10 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unique Id for the query.
+     * Output only. Unique Id for the query.
      * </pre>
      *
-     * <code>string query_id = 1;</code>
+     * <code>string query_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for queryId.
      */
@@ -834,10 +834,10 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unique Id for the query.
+     * Output only. Unique Id for the query.
      * </pre>
      *
-     * <code>string query_id = 1;</code>
+     * <code>string query_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The queryId to set.
      * @return This builder for chaining.
@@ -856,10 +856,10 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unique Id for the query.
+     * Output only. Unique Id for the query.
      * </pre>
      *
-     * <code>string query_id = 1;</code>
+     * <code>string query_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -874,10 +874,10 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unique Id for the query.
+     * Output only. Unique Id for the query.
      * </pre>
      *
-     * <code>string query_id = 1;</code>
+     * <code>string query_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for queryId to set.
      * @return This builder for chaining.

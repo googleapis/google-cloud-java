@@ -58,6 +58,7 @@ public class GrpcLocalInventoryServiceStub extends LocalInventoryServiceStub {
                   ProtoUtils.marshaller(ListLocalInventoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocalInventoriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InsertLocalInventoryRequest, LocalInventory>
@@ -69,6 +70,7 @@ public class GrpcLocalInventoryServiceStub extends LocalInventoryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InsertLocalInventoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LocalInventory.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteLocalInventoryRequest, Empty>
@@ -80,6 +82,7 @@ public class GrpcLocalInventoryServiceStub extends LocalInventoryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteLocalInventoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListLocalInventoriesRequest, ListLocalInventoriesResponse>

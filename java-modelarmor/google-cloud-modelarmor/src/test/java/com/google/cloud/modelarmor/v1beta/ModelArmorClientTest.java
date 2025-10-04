@@ -38,6 +38,7 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -486,6 +487,9 @@ public class ModelArmorClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setFilterConfig(FilterConfig.newBuilder().build())
             .setEnableFloorSettingEnforcement(true)
+            .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
+            .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
+            .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
             .build();
     mockModelArmor.addResponse(expectedResponse);
 
@@ -528,6 +532,9 @@ public class ModelArmorClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setFilterConfig(FilterConfig.newBuilder().build())
             .setEnableFloorSettingEnforcement(true)
+            .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
+            .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
+            .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
             .build();
     mockModelArmor.addResponse(expectedResponse);
 
@@ -570,6 +577,9 @@ public class ModelArmorClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setFilterConfig(FilterConfig.newBuilder().build())
             .setEnableFloorSettingEnforcement(true)
+            .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
+            .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
+            .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
             .build();
     mockModelArmor.addResponse(expectedResponse);
 
@@ -618,6 +628,7 @@ public class ModelArmorClientTest {
         SanitizeUserPromptRequest.newBuilder()
             .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
             .setUserPromptData(DataItem.newBuilder().build())
+            .setMultiLanguageDetectionMetadata(MultiLanguageDetectionMetadata.newBuilder().build())
             .build();
 
     SanitizeUserPromptResponse actualResponse = client.sanitizeUserPrompt(request);
@@ -629,6 +640,9 @@ public class ModelArmorClientTest {
 
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(request.getUserPromptData(), actualRequest.getUserPromptData());
+    Assert.assertEquals(
+        request.getMultiLanguageDetectionMetadata(),
+        actualRequest.getMultiLanguageDetectionMetadata());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -645,6 +659,8 @@ public class ModelArmorClientTest {
           SanitizeUserPromptRequest.newBuilder()
               .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
               .setUserPromptData(DataItem.newBuilder().build())
+              .setMultiLanguageDetectionMetadata(
+                  MultiLanguageDetectionMetadata.newBuilder().build())
               .build();
       client.sanitizeUserPrompt(request);
       Assert.fail("No exception raised");

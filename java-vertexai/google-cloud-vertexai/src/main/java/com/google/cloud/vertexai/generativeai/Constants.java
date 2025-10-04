@@ -18,7 +18,14 @@ package com.google.cloud.vertexai.generativeai;
 
 import com.google.common.collect.ImmutableSet;
 
-/** A class that holds all constants for vertexai/generativeai. */
+/**
+ * A class that holds all constants for vertexai/generativeai.
+ *
+ * @deprecated This class and its package are deprecated. See the <a
+ *     href="https://cloud.google.com/vertex-ai/generative-ai/docs/deprecations/genai-vertexai-sdk#java">
+ *     migration guide</a> for more details.
+ */
+@Deprecated
 public final class Constants {
   public static final String MODEL_NAME_PREFIX_PROJECTS = "projects/";
   public static final String MODEL_NAME_PREFIX_PUBLISHERS = "publishers/";

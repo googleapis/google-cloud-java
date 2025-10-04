@@ -34,7 +34,8 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Not specified. Will return result
+   * Not specified. Only used by GenerateVoiceCloningKey. Otherwise, will return
+   * result
    * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
    * </pre>
    *
@@ -76,7 +77,7 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Opus encoded audio wrapped in an ogg container. The result will be a
+   * Opus encoded audio wrapped in an ogg container. The result is a
    * file which can be played natively on Android, and in browsers (at least
    * Chrome and Firefox). The quality of the encoding is considerably higher
    * than MP3 while using approximately the same bitrate.
@@ -112,13 +113,23 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Uncompressed 16-bit signed little-endian samples (Linear PCM).
-   * Note that as opposed to LINEAR16, audio will not be wrapped in a WAV (or
+   * Note that as opposed to LINEAR16, audio won't be wrapped in a WAV (or
    * any other) header.
    * </pre>
    *
    * <code>PCM = 7;</code>
    */
   PCM(7),
+  /**
+   *
+   *
+   * <pre>
+   * M4A audio.
+   * </pre>
+   *
+   * <code>M4A = 8;</code>
+   */
+  M4A(8),
   UNRECOGNIZED(-1),
   ;
 
@@ -126,7 +137,8 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Not specified. Will return result
+   * Not specified. Only used by GenerateVoiceCloningKey. Otherwise, will return
+   * result
    * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
    * </pre>
    *
@@ -172,7 +184,7 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Opus encoded audio wrapped in an ogg container. The result will be a
+   * Opus encoded audio wrapped in an ogg container. The result is a
    * file which can be played natively on Android, and in browsers (at least
    * Chrome and Firefox). The quality of the encoding is considerably higher
    * than MP3 while using approximately the same bitrate.
@@ -211,13 +223,24 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Uncompressed 16-bit signed little-endian samples (Linear PCM).
-   * Note that as opposed to LINEAR16, audio will not be wrapped in a WAV (or
+   * Note that as opposed to LINEAR16, audio won't be wrapped in a WAV (or
    * any other) header.
    * </pre>
    *
    * <code>PCM = 7;</code>
    */
   public static final int PCM_VALUE = 7;
+
+  /**
+   *
+   *
+   * <pre>
+   * M4A audio.
+   * </pre>
+   *
+   * <code>M4A = 8;</code>
+   */
+  public static final int M4A_VALUE = 8;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -259,6 +282,8 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
         return ALAW;
       case 7:
         return PCM;
+      case 8:
+        return M4A;
       default:
         return null;
     }

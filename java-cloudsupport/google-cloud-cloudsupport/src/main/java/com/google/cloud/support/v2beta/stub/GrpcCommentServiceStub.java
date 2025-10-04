@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.support.v2beta.Comment;
 import com.google.cloud.support.v2beta.CreateCommentRequest;
+import com.google.cloud.support.v2beta.GetCommentRequest;
 import com.google.cloud.support.v2beta.ListCommentsRequest;
 import com.google.cloud.support.v2beta.ListCommentsResponse;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -54,6 +55,7 @@ public class GrpcCommentServiceStub extends CommentServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListCommentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCommentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCommentRequest, Comment>
@@ -64,12 +66,23 @@ public class GrpcCommentServiceStub extends CommentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCommentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Comment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
+
+  private static final MethodDescriptor<GetCommentRequest, Comment> getCommentMethodDescriptor =
+      MethodDescriptor.<GetCommentRequest, Comment>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.support.v2beta.CommentService/GetComment")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetCommentRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Comment.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
 
   private final UnaryCallable<ListCommentsRequest, ListCommentsResponse> listCommentsCallable;
   private final UnaryCallable<ListCommentsRequest, ListCommentsPagedResponse>
       listCommentsPagedCallable;
   private final UnaryCallable<CreateCommentRequest, Comment> createCommentCallable;
+  private final UnaryCallable<GetCommentRequest, Comment> getCommentCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -135,6 +148,16 @@ public class GrpcCommentServiceStub extends CommentServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GetCommentRequest, Comment> getCommentTransportSettings =
+        GrpcCallSettings.<GetCommentRequest, Comment>newBuilder()
+            .setMethodDescriptor(getCommentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.listCommentsCallable =
         callableFactory.createUnaryCallable(
@@ -145,6 +168,9 @@ public class GrpcCommentServiceStub extends CommentServiceStub {
     this.createCommentCallable =
         callableFactory.createUnaryCallable(
             createCommentTransportSettings, settings.createCommentSettings(), clientContext);
+    this.getCommentCallable =
+        callableFactory.createUnaryCallable(
+            getCommentTransportSettings, settings.getCommentSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -167,6 +193,11 @@ public class GrpcCommentServiceStub extends CommentServiceStub {
   @Override
   public UnaryCallable<CreateCommentRequest, Comment> createCommentCallable() {
     return createCommentCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCommentRequest, Comment> getCommentCallable() {
+    return getCommentCallable;
   }
 
   @Override

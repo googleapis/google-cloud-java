@@ -19,6 +19,8 @@ package com.google.cloud.config.v1.stub;
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceChangesPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceDriftsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
@@ -44,6 +46,8 @@ import com.google.cloud.config.v1.ExportPreviewResultResponse;
 import com.google.cloud.config.v1.ExportRevisionStatefileRequest;
 import com.google.cloud.config.v1.GetDeploymentRequest;
 import com.google.cloud.config.v1.GetPreviewRequest;
+import com.google.cloud.config.v1.GetResourceChangeRequest;
+import com.google.cloud.config.v1.GetResourceDriftRequest;
 import com.google.cloud.config.v1.GetResourceRequest;
 import com.google.cloud.config.v1.GetRevisionRequest;
 import com.google.cloud.config.v1.GetTerraformVersionRequest;
@@ -52,6 +56,10 @@ import com.google.cloud.config.v1.ListDeploymentsRequest;
 import com.google.cloud.config.v1.ListDeploymentsResponse;
 import com.google.cloud.config.v1.ListPreviewsRequest;
 import com.google.cloud.config.v1.ListPreviewsResponse;
+import com.google.cloud.config.v1.ListResourceChangesRequest;
+import com.google.cloud.config.v1.ListResourceChangesResponse;
+import com.google.cloud.config.v1.ListResourceDriftsRequest;
+import com.google.cloud.config.v1.ListResourceDriftsResponse;
 import com.google.cloud.config.v1.ListResourcesRequest;
 import com.google.cloud.config.v1.ListResourcesResponse;
 import com.google.cloud.config.v1.ListRevisionsRequest;
@@ -63,6 +71,8 @@ import com.google.cloud.config.v1.LockInfo;
 import com.google.cloud.config.v1.OperationMetadata;
 import com.google.cloud.config.v1.Preview;
 import com.google.cloud.config.v1.Resource;
+import com.google.cloud.config.v1.ResourceChange;
+import com.google.cloud.config.v1.ResourceDrift;
 import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
 import com.google.cloud.config.v1.TerraformVersion;
@@ -103,6 +113,7 @@ public class GrpcConfigStub extends ConfigStub {
                   ProtoUtils.marshaller(ListDeploymentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeploymentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDeploymentRequest, Deployment>
@@ -113,6 +124,7 @@ public class GrpcConfigStub extends ConfigStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDeploymentRequest, Operation>
@@ -123,6 +135,7 @@ public class GrpcConfigStub extends ConfigStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDeploymentRequest, Operation>
@@ -133,6 +146,7 @@ public class GrpcConfigStub extends ConfigStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDeploymentRequest, Operation>
@@ -143,6 +157,7 @@ public class GrpcConfigStub extends ConfigStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRevisionsRequest, ListRevisionsResponse>
@@ -154,6 +169,7 @@ public class GrpcConfigStub extends ConfigStub {
                   ProtoUtils.marshaller(ListRevisionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRevisionRequest, Revision> getRevisionMethodDescriptor =
@@ -162,6 +178,7 @@ public class GrpcConfigStub extends ConfigStub {
           .setFullMethodName("google.cloud.config.v1.Config/GetRevision")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRevisionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Revision.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetResourceRequest, Resource> getResourceMethodDescriptor =
@@ -170,6 +187,7 @@ public class GrpcConfigStub extends ConfigStub {
           .setFullMethodName("google.cloud.config.v1.Config/GetResource")
           .setRequestMarshaller(ProtoUtils.marshaller(GetResourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Resource.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListResourcesRequest, ListResourcesResponse>
@@ -181,6 +199,7 @@ public class GrpcConfigStub extends ConfigStub {
                   ProtoUtils.marshaller(ListResourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListResourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportDeploymentStatefileRequest, Statefile>
@@ -191,6 +210,7 @@ public class GrpcConfigStub extends ConfigStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportDeploymentStatefileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Statefile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportRevisionStatefileRequest, Statefile>
@@ -201,6 +221,7 @@ public class GrpcConfigStub extends ConfigStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportRevisionStatefileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Statefile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportStatefileRequest, Statefile>
@@ -211,6 +232,7 @@ public class GrpcConfigStub extends ConfigStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportStatefileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Statefile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteStatefileRequest, Empty>
@@ -221,6 +243,7 @@ public class GrpcConfigStub extends ConfigStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteStatefileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<LockDeploymentRequest, Operation>
@@ -231,6 +254,7 @@ public class GrpcConfigStub extends ConfigStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(LockDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UnlockDeploymentRequest, Operation>
@@ -241,6 +265,7 @@ public class GrpcConfigStub extends ConfigStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UnlockDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportLockInfoRequest, LockInfo>
@@ -251,6 +276,7 @@ public class GrpcConfigStub extends ConfigStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportLockInfoRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LockInfo.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePreviewRequest, Operation>
@@ -261,6 +287,7 @@ public class GrpcConfigStub extends ConfigStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePreviewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPreviewRequest, Preview> getPreviewMethodDescriptor =
@@ -269,6 +296,7 @@ public class GrpcConfigStub extends ConfigStub {
           .setFullMethodName("google.cloud.config.v1.Config/GetPreview")
           .setRequestMarshaller(ProtoUtils.marshaller(GetPreviewRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Preview.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListPreviewsRequest, ListPreviewsResponse>
@@ -279,6 +307,7 @@ public class GrpcConfigStub extends ConfigStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListPreviewsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPreviewsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePreviewRequest, Operation>
@@ -289,6 +318,7 @@ public class GrpcConfigStub extends ConfigStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePreviewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportPreviewResultRequest, ExportPreviewResultResponse>
@@ -300,6 +330,7 @@ public class GrpcConfigStub extends ConfigStub {
                   ProtoUtils.marshaller(ExportPreviewResultRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ExportPreviewResultResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTerraformVersionsRequest, ListTerraformVersionsResponse>
@@ -311,6 +342,7 @@ public class GrpcConfigStub extends ConfigStub {
                   ProtoUtils.marshaller(ListTerraformVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTerraformVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTerraformVersionRequest, TerraformVersion>
@@ -321,6 +353,53 @@ public class GrpcConfigStub extends ConfigStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTerraformVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TerraformVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListResourceChangesRequest, ListResourceChangesResponse>
+      listResourceChangesMethodDescriptor =
+          MethodDescriptor.<ListResourceChangesRequest, ListResourceChangesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/ListResourceChanges")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListResourceChangesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListResourceChangesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetResourceChangeRequest, ResourceChange>
+      getResourceChangeMethodDescriptor =
+          MethodDescriptor.<GetResourceChangeRequest, ResourceChange>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/GetResourceChange")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetResourceChangeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ResourceChange.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListResourceDriftsRequest, ListResourceDriftsResponse>
+      listResourceDriftsMethodDescriptor =
+          MethodDescriptor.<ListResourceDriftsRequest, ListResourceDriftsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/ListResourceDrifts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListResourceDriftsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListResourceDriftsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetResourceDriftRequest, ResourceDrift>
+      getResourceDriftMethodDescriptor =
+          MethodDescriptor.<GetResourceDriftRequest, ResourceDrift>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/GetResourceDrift")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetResourceDriftRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ResourceDrift.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -332,6 +411,7 @@ public class GrpcConfigStub extends ConfigStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -340,6 +420,7 @@ public class GrpcConfigStub extends ConfigStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -348,6 +429,7 @@ public class GrpcConfigStub extends ConfigStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -356,6 +438,7 @@ public class GrpcConfigStub extends ConfigStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -367,6 +450,7 @@ public class GrpcConfigStub extends ConfigStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListDeploymentsRequest, ListDeploymentsResponse>
@@ -422,6 +506,16 @@ public class GrpcConfigStub extends ConfigStub {
       listTerraformVersionsPagedCallable;
   private final UnaryCallable<GetTerraformVersionRequest, TerraformVersion>
       getTerraformVersionCallable;
+  private final UnaryCallable<ListResourceChangesRequest, ListResourceChangesResponse>
+      listResourceChangesCallable;
+  private final UnaryCallable<ListResourceChangesRequest, ListResourceChangesPagedResponse>
+      listResourceChangesPagedCallable;
+  private final UnaryCallable<GetResourceChangeRequest, ResourceChange> getResourceChangeCallable;
+  private final UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsResponse>
+      listResourceDriftsCallable;
+  private final UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsPagedResponse>
+      listResourceDriftsPagedCallable;
+  private final UnaryCallable<GetResourceDriftRequest, ResourceDrift> getResourceDriftCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -707,6 +801,48 @@ public class GrpcConfigStub extends ConfigStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<ListResourceChangesRequest, ListResourceChangesResponse>
+        listResourceChangesTransportSettings =
+            GrpcCallSettings.<ListResourceChangesRequest, ListResourceChangesResponse>newBuilder()
+                .setMethodDescriptor(listResourceChangesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetResourceChangeRequest, ResourceChange> getResourceChangeTransportSettings =
+        GrpcCallSettings.<GetResourceChangeRequest, ResourceChange>newBuilder()
+            .setMethodDescriptor(getResourceChangeMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListResourceDriftsRequest, ListResourceDriftsResponse>
+        listResourceDriftsTransportSettings =
+            GrpcCallSettings.<ListResourceDriftsRequest, ListResourceDriftsResponse>newBuilder()
+                .setMethodDescriptor(listResourceDriftsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetResourceDriftRequest, ResourceDrift> getResourceDriftTransportSettings =
+        GrpcCallSettings.<GetResourceDriftRequest, ResourceDrift>newBuilder()
+            .setMethodDescriptor(getResourceDriftMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -897,6 +1033,34 @@ public class GrpcConfigStub extends ConfigStub {
             getTerraformVersionTransportSettings,
             settings.getTerraformVersionSettings(),
             clientContext);
+    this.listResourceChangesCallable =
+        callableFactory.createUnaryCallable(
+            listResourceChangesTransportSettings,
+            settings.listResourceChangesSettings(),
+            clientContext);
+    this.listResourceChangesPagedCallable =
+        callableFactory.createPagedCallable(
+            listResourceChangesTransportSettings,
+            settings.listResourceChangesSettings(),
+            clientContext);
+    this.getResourceChangeCallable =
+        callableFactory.createUnaryCallable(
+            getResourceChangeTransportSettings,
+            settings.getResourceChangeSettings(),
+            clientContext);
+    this.listResourceDriftsCallable =
+        callableFactory.createUnaryCallable(
+            listResourceDriftsTransportSettings,
+            settings.listResourceDriftsSettings(),
+            clientContext);
+    this.listResourceDriftsPagedCallable =
+        callableFactory.createPagedCallable(
+            listResourceDriftsTransportSettings,
+            settings.listResourceDriftsSettings(),
+            clientContext);
+    this.getResourceDriftCallable =
+        callableFactory.createUnaryCallable(
+            getResourceDriftTransportSettings, settings.getResourceDriftSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1114,6 +1278,40 @@ public class GrpcConfigStub extends ConfigStub {
   @Override
   public UnaryCallable<GetTerraformVersionRequest, TerraformVersion> getTerraformVersionCallable() {
     return getTerraformVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceChangesRequest, ListResourceChangesResponse>
+      listResourceChangesCallable() {
+    return listResourceChangesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceChangesRequest, ListResourceChangesPagedResponse>
+      listResourceChangesPagedCallable() {
+    return listResourceChangesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetResourceChangeRequest, ResourceChange> getResourceChangeCallable() {
+    return getResourceChangeCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsResponse>
+      listResourceDriftsCallable() {
+    return listResourceDriftsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceDriftsRequest, ListResourceDriftsPagedResponse>
+      listResourceDriftsPagedCallable() {
+    return listResourceDriftsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetResourceDriftRequest, ResourceDrift> getResourceDriftCallable() {
+    return getResourceDriftCallable;
   }
 
   @Override

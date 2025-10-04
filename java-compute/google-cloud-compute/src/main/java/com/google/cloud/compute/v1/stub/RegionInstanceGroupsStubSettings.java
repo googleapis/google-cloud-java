@@ -54,6 +54,8 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.RegionInstanceGroupList;
 import com.google.cloud.compute.v1.RegionInstanceGroupsListInstances;
 import com.google.cloud.compute.v1.SetNamedPortsRegionInstanceGroupRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionInstanceGroupRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -163,6 +165,9 @@ public class RegionInstanceGroupsStubSettings
       setNamedPortsSettings;
   private final OperationCallSettings<SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
       setNamedPortsOperationSettings;
+  private final UnaryCallSettings<
+          TestIamPermissionsRegionInstanceGroupRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           ListRegionInstanceGroupsRequest, RegionInstanceGroupList, InstanceGroup>
@@ -330,6 +335,12 @@ public class RegionInstanceGroupsStubSettings
     return setNamedPortsOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRegionInstanceGroupRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public RegionInstanceGroupsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -417,6 +428,7 @@ public class RegionInstanceGroupsStubSettings
     listInstancesSettings = settingsBuilder.listInstancesSettings().build();
     setNamedPortsSettings = settingsBuilder.setNamedPortsSettings().build();
     setNamedPortsOperationSettings = settingsBuilder.setNamedPortsOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for RegionInstanceGroupsStubSettings. */
@@ -438,6 +450,9 @@ public class RegionInstanceGroupsStubSettings
     private final OperationCallSettings.Builder<
             SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
         setNamedPortsOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsRegionInstanceGroupRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -493,10 +508,15 @@ public class RegionInstanceGroupsStubSettings
       listInstancesSettings = PagedCallSettings.newBuilder(LIST_INSTANCES_PAGE_STR_FACT);
       setNamedPortsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setNamedPortsOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getSettings, listSettings, listInstancesSettings, setNamedPortsSettings);
+              getSettings,
+              listSettings,
+              listInstancesSettings,
+              setNamedPortsSettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -508,10 +528,15 @@ public class RegionInstanceGroupsStubSettings
       listInstancesSettings = settings.listInstancesSettings.toBuilder();
       setNamedPortsSettings = settings.setNamedPortsSettings.toBuilder();
       setNamedPortsOperationSettings = settings.setNamedPortsOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getSettings, listSettings, listInstancesSettings, setNamedPortsSettings);
+              getSettings,
+              listSettings,
+              listInstancesSettings,
+              setNamedPortsSettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -544,6 +569,11 @@ public class RegionInstanceGroupsStubSettings
 
       builder
           .setNamedPortsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -622,6 +652,13 @@ public class RegionInstanceGroupsStubSettings
             SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
         setNamedPortsOperationSettings() {
       return setNamedPortsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsRegionInstanceGroupRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

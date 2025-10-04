@@ -71,13 +71,13 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Machine type of a worker, such as `e2-medium`.
+     * Optional. Machine type of a worker, such as `e2-medium`.
      * See [Worker pool config
      * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
      * If left blank, Cloud Build will use a sensible default.
      * </pre>
      *
-     * <code>string machine_type = 1;</code>
+     * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The machineType.
      */
@@ -87,13 +87,13 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Machine type of a worker, such as `e2-medium`.
+     * Optional. Machine type of a worker, such as `e2-medium`.
      * See [Worker pool config
      * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
      * If left blank, Cloud Build will use a sensible default.
      * </pre>
      *
-     * <code>string machine_type = 1;</code>
+     * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for machineType.
      */
@@ -106,7 +106,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      * Size of the disk attached to the worker, in GB.
      * See [Worker pool config
      * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
-     * Specify a value of up to 2000. If `0` is specified, Cloud Build will use
+     * Specify a value of up to 4000. If `0` is specified, Cloud Build will use
      * a standard disk size.
      * </pre>
      *
@@ -115,6 +115,38 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      * @return The diskSizeGb.
      */
     long getDiskSizeGb();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable nested virtualization on the worker, if supported by the
+     * machine type. By default, nested virtualization is disabled.
+     * </pre>
+     *
+     * <code>
+     * optional bool enable_nested_virtualization = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the enableNestedVirtualization field is set.
+     */
+    boolean hasEnableNestedVirtualization();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable nested virtualization on the worker, if supported by the
+     * machine type. By default, nested virtualization is disabled.
+     * </pre>
+     *
+     * <code>
+     * optional bool enable_nested_virtualization = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableNestedVirtualization.
+     */
+    boolean getEnableNestedVirtualization();
   }
 
   /**
@@ -163,6 +195,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
               com.google.cloudbuild.v1.PrivatePoolV1Config.WorkerConfig.Builder.class);
     }
 
+    private int bitField0_;
     public static final int MACHINE_TYPE_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -172,13 +205,13 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Machine type of a worker, such as `e2-medium`.
+     * Optional. Machine type of a worker, such as `e2-medium`.
      * See [Worker pool config
      * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
      * If left blank, Cloud Build will use a sensible default.
      * </pre>
      *
-     * <code>string machine_type = 1;</code>
+     * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The machineType.
      */
@@ -199,13 +232,13 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Machine type of a worker, such as `e2-medium`.
+     * Optional. Machine type of a worker, such as `e2-medium`.
      * See [Worker pool config
      * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
      * If left blank, Cloud Build will use a sensible default.
      * </pre>
      *
-     * <code>string machine_type = 1;</code>
+     * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for machineType.
      */
@@ -232,7 +265,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      * Size of the disk attached to the worker, in GB.
      * See [Worker pool config
      * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
-     * Specify a value of up to 2000. If `0` is specified, Cloud Build will use
+     * Specify a value of up to 4000. If `0` is specified, Cloud Build will use
      * a standard disk size.
      * </pre>
      *
@@ -243,6 +276,47 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public long getDiskSizeGb() {
       return diskSizeGb_;
+    }
+
+    public static final int ENABLE_NESTED_VIRTUALIZATION_FIELD_NUMBER = 3;
+    private boolean enableNestedVirtualization_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable nested virtualization on the worker, if supported by the
+     * machine type. By default, nested virtualization is disabled.
+     * </pre>
+     *
+     * <code>
+     * optional bool enable_nested_virtualization = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the enableNestedVirtualization field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableNestedVirtualization() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable nested virtualization on the worker, if supported by the
+     * machine type. By default, nested virtualization is disabled.
+     * </pre>
+     *
+     * <code>
+     * optional bool enable_nested_virtualization = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableNestedVirtualization.
+     */
+    @java.lang.Override
+    public boolean getEnableNestedVirtualization() {
+      return enableNestedVirtualization_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -265,6 +339,9 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       if (diskSizeGb_ != 0L) {
         output.writeInt64(2, diskSizeGb_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeBool(3, enableNestedVirtualization_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -279,6 +356,10 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       }
       if (diskSizeGb_ != 0L) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, diskSizeGb_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(3, enableNestedVirtualization_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -298,6 +379,10 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
 
       if (!getMachineType().equals(other.getMachineType())) return false;
       if (getDiskSizeGb() != other.getDiskSizeGb()) return false;
+      if (hasEnableNestedVirtualization() != other.hasEnableNestedVirtualization()) return false;
+      if (hasEnableNestedVirtualization()) {
+        if (getEnableNestedVirtualization() != other.getEnableNestedVirtualization()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -313,6 +398,11 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       hash = (53 * hash) + getMachineType().hashCode();
       hash = (37 * hash) + DISK_SIZE_GB_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDiskSizeGb());
+      if (hasEnableNestedVirtualization()) {
+        hash = (37 * hash) + ENABLE_NESTED_VIRTUALIZATION_FIELD_NUMBER;
+        hash =
+            (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableNestedVirtualization());
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -459,6 +549,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         bitField0_ = 0;
         machineType_ = "";
         diskSizeGb_ = 0L;
+        enableNestedVirtualization_ = false;
         return this;
       }
 
@@ -501,6 +592,12 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.diskSizeGb_ = diskSizeGb_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.enableNestedVirtualization_ = enableNestedVirtualization_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -559,6 +656,9 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         if (other.getDiskSizeGb() != 0L) {
           setDiskSizeGb(other.getDiskSizeGb());
         }
+        if (other.hasEnableNestedVirtualization()) {
+          setEnableNestedVirtualization(other.getEnableNestedVirtualization());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -597,6 +697,12 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 24:
+                {
+                  enableNestedVirtualization_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -622,13 +728,13 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Machine type of a worker, such as `e2-medium`.
+       * Optional. Machine type of a worker, such as `e2-medium`.
        * See [Worker pool config
        * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
        * If left blank, Cloud Build will use a sensible default.
        * </pre>
        *
-       * <code>string machine_type = 1;</code>
+       * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The machineType.
        */
@@ -648,13 +754,13 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Machine type of a worker, such as `e2-medium`.
+       * Optional. Machine type of a worker, such as `e2-medium`.
        * See [Worker pool config
        * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
        * If left blank, Cloud Build will use a sensible default.
        * </pre>
        *
-       * <code>string machine_type = 1;</code>
+       * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for machineType.
        */
@@ -674,13 +780,13 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Machine type of a worker, such as `e2-medium`.
+       * Optional. Machine type of a worker, such as `e2-medium`.
        * See [Worker pool config
        * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
        * If left blank, Cloud Build will use a sensible default.
        * </pre>
        *
-       * <code>string machine_type = 1;</code>
+       * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The machineType to set.
        * @return This builder for chaining.
@@ -699,13 +805,13 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Machine type of a worker, such as `e2-medium`.
+       * Optional. Machine type of a worker, such as `e2-medium`.
        * See [Worker pool config
        * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
        * If left blank, Cloud Build will use a sensible default.
        * </pre>
        *
-       * <code>string machine_type = 1;</code>
+       * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -720,13 +826,13 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Machine type of a worker, such as `e2-medium`.
+       * Optional. Machine type of a worker, such as `e2-medium`.
        * See [Worker pool config
        * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
        * If left blank, Cloud Build will use a sensible default.
        * </pre>
        *
-       * <code>string machine_type = 1;</code>
+       * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for machineType to set.
        * @return This builder for chaining.
@@ -751,7 +857,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        * Size of the disk attached to the worker, in GB.
        * See [Worker pool config
        * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
-       * Specify a value of up to 2000. If `0` is specified, Cloud Build will use
+       * Specify a value of up to 4000. If `0` is specified, Cloud Build will use
        * a standard disk size.
        * </pre>
        *
@@ -771,7 +877,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        * Size of the disk attached to the worker, in GB.
        * See [Worker pool config
        * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
-       * Specify a value of up to 2000. If `0` is specified, Cloud Build will use
+       * Specify a value of up to 4000. If `0` is specified, Cloud Build will use
        * a standard disk size.
        * </pre>
        *
@@ -795,7 +901,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        * Size of the disk attached to the worker, in GB.
        * See [Worker pool config
        * file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema).
-       * Specify a value of up to 2000. If `0` is specified, Cloud Build will use
+       * Specify a value of up to 4000. If `0` is specified, Cloud Build will use
        * a standard disk size.
        * </pre>
        *
@@ -806,6 +912,90 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       public Builder clearDiskSizeGb() {
         bitField0_ = (bitField0_ & ~0x00000002);
         diskSizeGb_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableNestedVirtualization_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable nested virtualization on the worker, if supported by the
+       * machine type. By default, nested virtualization is disabled.
+       * </pre>
+       *
+       * <code>
+       * optional bool enable_nested_virtualization = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the enableNestedVirtualization field is set.
+       */
+      @java.lang.Override
+      public boolean hasEnableNestedVirtualization() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable nested virtualization on the worker, if supported by the
+       * machine type. By default, nested virtualization is disabled.
+       * </pre>
+       *
+       * <code>
+       * optional bool enable_nested_virtualization = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enableNestedVirtualization.
+       */
+      @java.lang.Override
+      public boolean getEnableNestedVirtualization() {
+        return enableNestedVirtualization_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable nested virtualization on the worker, if supported by the
+       * machine type. By default, nested virtualization is disabled.
+       * </pre>
+       *
+       * <code>
+       * optional bool enable_nested_virtualization = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enableNestedVirtualization to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableNestedVirtualization(boolean value) {
+
+        enableNestedVirtualization_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable nested virtualization on the worker, if supported by the
+       * machine type. By default, nested virtualization is disabled.
+       * </pre>
+       *
+       * <code>
+       * optional bool enable_nested_virtualization = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableNestedVirtualization() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        enableNestedVirtualization_ = false;
         onChanged();
         return this;
       }
@@ -2346,8 +2536,8 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      * want full control of traffic in the private pool. Configure Cloud NAT for
      * the subnet of network attachment if you need to access public Internet.
      *
-     * If false, Only route private IPs, e.g. 10.0.0.0/8, 172.16.0.0/12, and
-     * 192.168.0.0/16 through PSC interface.
+     * If false, Only route RFC 1918 (10.0.0.0/8, 172.16.0.0/12, and
+     * 192.168.0.0/16) and RFC 6598 (100.64.0.0/10) through PSC interface.
      * </pre>
      *
      * <code>bool route_all_traffic = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2509,8 +2699,8 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      * want full control of traffic in the private pool. Configure Cloud NAT for
      * the subnet of network attachment if you need to access public Internet.
      *
-     * If false, Only route private IPs, e.g. 10.0.0.0/8, 172.16.0.0/12, and
-     * 192.168.0.0/16 through PSC interface.
+     * If false, Only route RFC 1918 (10.0.0.0/8, 172.16.0.0/12, and
+     * 192.168.0.0/16) and RFC 6598 (100.64.0.0/10) through PSC interface.
      * </pre>
      *
      * <code>bool route_all_traffic = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3164,8 +3354,8 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        * want full control of traffic in the private pool. Configure Cloud NAT for
        * the subnet of network attachment if you need to access public Internet.
        *
-       * If false, Only route private IPs, e.g. 10.0.0.0/8, 172.16.0.0/12, and
-       * 192.168.0.0/16 through PSC interface.
+       * If false, Only route RFC 1918 (10.0.0.0/8, 172.16.0.0/12, and
+       * 192.168.0.0/16) and RFC 6598 (100.64.0.0/10) through PSC interface.
        * </pre>
        *
        * <code>bool route_all_traffic = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3185,8 +3375,8 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        * want full control of traffic in the private pool. Configure Cloud NAT for
        * the subnet of network attachment if you need to access public Internet.
        *
-       * If false, Only route private IPs, e.g. 10.0.0.0/8, 172.16.0.0/12, and
-       * 192.168.0.0/16 through PSC interface.
+       * If false, Only route RFC 1918 (10.0.0.0/8, 172.16.0.0/12, and
+       * 192.168.0.0/16) and RFC 6598 (100.64.0.0/10) through PSC interface.
        * </pre>
        *
        * <code>bool route_all_traffic = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3210,8 +3400,8 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
        * want full control of traffic in the private pool. Configure Cloud NAT for
        * the subnet of network attachment if you need to access public Internet.
        *
-       * If false, Only route private IPs, e.g. 10.0.0.0/8, 172.16.0.0/12, and
-       * 192.168.0.0/16 through PSC interface.
+       * If false, Only route RFC 1918 (10.0.0.0/8, 172.16.0.0/12, and
+       * 192.168.0.0/16) and RFC 6598 (100.64.0.0/10) through PSC interface.
        * </pre>
        *
        * <code>bool route_all_traffic = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>

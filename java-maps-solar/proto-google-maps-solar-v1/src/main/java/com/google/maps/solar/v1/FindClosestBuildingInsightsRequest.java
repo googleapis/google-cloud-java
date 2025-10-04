@@ -42,6 +42,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
 
   private FindClosestBuildingInsightsRequest() {
     requiredQuality_ = 0;
+    experiments_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -187,6 +188,119 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     return exactQualityRequired_;
   }
 
+  public static final int EXPERIMENTS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private java.util.List<java.lang.Integer> experiments_;
+
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer, com.google.maps.solar.v1.Experiment>
+      experiments_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.google.maps.solar.v1.Experiment>() {
+            public com.google.maps.solar.v1.Experiment convert(java.lang.Integer from) {
+              com.google.maps.solar.v1.Experiment result =
+                  com.google.maps.solar.v1.Experiment.forNumber(from);
+              return result == null ? com.google.maps.solar.v1.Experiment.UNRECOGNIZED : result;
+            }
+          };
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the pre-GA features to enable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the experiments.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.maps.solar.v1.Experiment> getExperimentsList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.google.maps.solar.v1.Experiment>(
+        experiments_, experiments_converter_);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the pre-GA features to enable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of experiments.
+   */
+  @java.lang.Override
+  public int getExperimentsCount() {
+    return experiments_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the pre-GA features to enable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The experiments at the given index.
+   */
+  @java.lang.Override
+  public com.google.maps.solar.v1.Experiment getExperiments(int index) {
+    return experiments_converter_.convert(experiments_.get(index));
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the pre-GA features to enable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for experiments.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getExperimentsValueList() {
+    return experiments_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the pre-GA features to enable.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of experiments at the given index.
+   */
+  @java.lang.Override
+  public int getExperimentsValue(int index) {
+    return experiments_.get(index);
+  }
+
+  private int experimentsMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -201,6 +315,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getLocation());
     }
@@ -210,6 +325,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     }
     if (exactQualityRequired_ != false) {
       output.writeBool(4, exactQualityRequired_);
+    }
+    if (getExperimentsList().size() > 0) {
+      output.writeUInt32NoTag(42);
+      output.writeUInt32NoTag(experimentsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < experiments_.size(); i++) {
+      output.writeEnumNoTag(experiments_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -229,6 +351,18 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     }
     if (exactQualityRequired_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, exactQualityRequired_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < experiments_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(experiments_.get(i));
+      }
+      size += dataSize;
+      if (!getExperimentsList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      experimentsMemoizedSerializedSize = dataSize;
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -252,6 +386,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     }
     if (requiredQuality_ != other.requiredQuality_) return false;
     if (getExactQualityRequired() != other.getExactQualityRequired()) return false;
+    if (!experiments_.equals(other.experiments_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -271,6 +406,10 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     hash = (53 * hash) + requiredQuality_;
     hash = (37 * hash) + EXACT_QUALITY_REQUIRED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExactQualityRequired());
+    if (getExperimentsCount() > 0) {
+      hash = (37 * hash) + EXPERIMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + experiments_.hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -428,6 +567,8 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
       }
       requiredQuality_ = 0;
       exactQualityRequired_ = false;
+      experiments_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -455,11 +596,21 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     public com.google.maps.solar.v1.FindClosestBuildingInsightsRequest buildPartial() {
       com.google.maps.solar.v1.FindClosestBuildingInsightsRequest result =
           new com.google.maps.solar.v1.FindClosestBuildingInsightsRequest(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.maps.solar.v1.FindClosestBuildingInsightsRequest result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        experiments_ = java.util.Collections.unmodifiableList(experiments_);
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.experiments_ = experiments_;
     }
 
     private void buildPartial0(com.google.maps.solar.v1.FindClosestBuildingInsightsRequest result) {
@@ -533,6 +684,16 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
       if (other.getExactQualityRequired() != false) {
         setExactQualityRequired(other.getExactQualityRequired());
       }
+      if (!other.experiments_.isEmpty()) {
+        if (experiments_.isEmpty()) {
+          experiments_ = other.experiments_;
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ensureExperimentsIsMutable();
+          experiments_.addAll(other.experiments_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -577,6 +738,25 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
                 bitField0_ |= 0x00000004;
                 break;
               } // case 32
+            case 40:
+              {
+                int tmpRaw = input.readEnum();
+                ensureExperimentsIsMutable();
+                experiments_.add(tmpRaw);
+                break;
+              } // case 40
+            case 42:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureExperimentsIsMutable();
+                  experiments_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -972,6 +1152,263 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     public Builder clearExactQualityRequired() {
       bitField0_ = (bitField0_ & ~0x00000004);
       exactQualityRequired_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> experiments_ = java.util.Collections.emptyList();
+
+    private void ensureExperimentsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        experiments_ = new java.util.ArrayList<java.lang.Integer>(experiments_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the pre-GA features to enable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the experiments.
+     */
+    public java.util.List<com.google.maps.solar.v1.Experiment> getExperimentsList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.maps.solar.v1.Experiment>(
+          experiments_, experiments_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the pre-GA features to enable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of experiments.
+     */
+    public int getExperimentsCount() {
+      return experiments_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the pre-GA features to enable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The experiments at the given index.
+     */
+    public com.google.maps.solar.v1.Experiment getExperiments(int index) {
+      return experiments_converter_.convert(experiments_.get(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the pre-GA features to enable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The experiments to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExperiments(int index, com.google.maps.solar.v1.Experiment value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExperimentsIsMutable();
+      experiments_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the pre-GA features to enable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The experiments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExperiments(com.google.maps.solar.v1.Experiment value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExperimentsIsMutable();
+      experiments_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the pre-GA features to enable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The experiments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllExperiments(
+        java.lang.Iterable<? extends com.google.maps.solar.v1.Experiment> values) {
+      ensureExperimentsIsMutable();
+      for (com.google.maps.solar.v1.Experiment value : values) {
+        experiments_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the pre-GA features to enable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExperiments() {
+      experiments_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the pre-GA features to enable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for experiments.
+     */
+    public java.util.List<java.lang.Integer> getExperimentsValueList() {
+      return java.util.Collections.unmodifiableList(experiments_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the pre-GA features to enable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of experiments at the given index.
+     */
+    public int getExperimentsValue(int index) {
+      return experiments_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the pre-GA features to enable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for experiments to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExperimentsValue(int index, int value) {
+      ensureExperimentsIsMutable();
+      experiments_.set(index, value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the pre-GA features to enable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for experiments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExperimentsValue(int value) {
+      ensureExperimentsIsMutable();
+      experiments_.add(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the pre-GA features to enable.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.Experiment experiments = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for experiments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllExperimentsValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureExperimentsIsMutable();
+      for (int value : values) {
+        experiments_.add(value);
+      }
       onChanged();
       return this;
     }

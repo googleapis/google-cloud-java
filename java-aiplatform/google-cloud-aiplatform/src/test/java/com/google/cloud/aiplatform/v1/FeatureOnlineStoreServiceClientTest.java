@@ -23,8 +23,12 @@ import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.grpc.testing.MockStreamObserver;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -42,6 +46,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.FieldMask;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -49,6 +54,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -239,6 +245,74 @@ public class FeatureOnlineStoreServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void featureViewDirectWriteTest() throws Exception {
+    FeatureViewDirectWriteResponse expectedResponse =
+        FeatureViewDirectWriteResponse.newBuilder()
+            .setStatus(Status.newBuilder().build())
+            .addAllWriteResponses(new ArrayList<FeatureViewDirectWriteResponse.WriteResponse>())
+            .build();
+    mockFeatureOnlineStoreService.addResponse(expectedResponse);
+    FeatureViewDirectWriteRequest request =
+        FeatureViewDirectWriteRequest.newBuilder()
+            .setFeatureView(
+                FeatureViewName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+                    .toString())
+            .addAllDataKeyAndFeatureValues(
+                new ArrayList<FeatureViewDirectWriteRequest.DataKeyAndFeatureValues>())
+            .build();
+
+    MockStreamObserver<FeatureViewDirectWriteResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse> callable =
+        client.featureViewDirectWriteCallable();
+    ApiStreamObserver<FeatureViewDirectWriteRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+    requestObserver.onCompleted();
+
+    List<FeatureViewDirectWriteResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void featureViewDirectWriteExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureOnlineStoreService.addException(exception);
+    FeatureViewDirectWriteRequest request =
+        FeatureViewDirectWriteRequest.newBuilder()
+            .setFeatureView(
+                FeatureViewName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+                    .toString())
+            .addAllDataKeyAndFeatureValues(
+                new ArrayList<FeatureViewDirectWriteRequest.DataKeyAndFeatureValues>())
+            .build();
+
+    MockStreamObserver<FeatureViewDirectWriteResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse> callable =
+        client.featureViewDirectWriteCallable();
+    ApiStreamObserver<FeatureViewDirectWriteRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+
+    try {
+      List<FeatureViewDirectWriteResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

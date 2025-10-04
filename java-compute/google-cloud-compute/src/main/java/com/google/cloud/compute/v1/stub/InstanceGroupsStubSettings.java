@@ -62,6 +62,8 @@ import com.google.cloud.compute.v1.ListInstancesInstanceGroupsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.RemoveInstancesInstanceGroupRequest;
 import com.google.cloud.compute.v1.SetNamedPortsInstanceGroupRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsInstanceGroupRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -187,6 +189,8 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
       setNamedPortsSettings;
   private final OperationCallSettings<SetNamedPortsInstanceGroupRequest, Operation, Operation>
       setNamedPortsOperationSettings;
+  private final UnaryCallSettings<TestIamPermissionsInstanceGroupRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           AggregatedListInstanceGroupsRequest,
@@ -471,6 +475,12 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
     return setNamedPortsOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsInstanceGroupRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public InstanceGroupsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -567,6 +577,7 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
     removeInstancesOperationSettings = settingsBuilder.removeInstancesOperationSettings().build();
     setNamedPortsSettings = settingsBuilder.setNamedPortsSettings().build();
     setNamedPortsOperationSettings = settingsBuilder.setNamedPortsOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for InstanceGroupsStubSettings. */
@@ -607,6 +618,9 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
     private final OperationCallSettings.Builder<
             SetNamedPortsInstanceGroupRequest, Operation, Operation>
         setNamedPortsOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsInstanceGroupRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -671,6 +685,7 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
       removeInstancesOperationSettings = OperationCallSettings.newBuilder();
       setNamedPortsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setNamedPortsOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -682,7 +697,8 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
               listSettings,
               listInstancesSettings,
               removeInstancesSettings,
-              setNamedPortsSettings);
+              setNamedPortsSettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -703,6 +719,7 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
       removeInstancesOperationSettings = settings.removeInstancesOperationSettings.toBuilder();
       setNamedPortsSettings = settings.setNamedPortsSettings.toBuilder();
       setNamedPortsOperationSettings = settings.setNamedPortsOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -714,7 +731,8 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
               listSettings,
               listInstancesSettings,
               removeInstancesSettings,
-              setNamedPortsSettings);
+              setNamedPortsSettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -772,6 +790,11 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
 
       builder
           .setNamedPortsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1002,6 +1025,13 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
     public OperationCallSettings.Builder<SetNamedPortsInstanceGroupRequest, Operation, Operation>
         setNamedPortsOperationSettings() {
       return setNamedPortsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsInstanceGroupRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

@@ -30,7 +30,7 @@ public interface GetCustomTargetingValueRequestOrBuilder
    * <pre>
    * Required. The resource name of the CustomTargetingValue.
    * Format:
-   * `networks/{network_code}/customTargetingKeys/{custom_targeting_key_id}/customTargetingValues/{custom_targeting_value_id}`
+   * `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface GetCustomTargetingValueRequestOrBuilder
    * <pre>
    * Required. The resource name of the CustomTargetingValue.
    * Format:
-   * `networks/{network_code}/customTargetingKeys/{custom_targeting_key_id}/customTargetingValues/{custom_targeting_value_id}`
+   * `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
    * </pre>
    *
    * <code>

@@ -61,6 +61,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
           .setFullMethodName("google.cloud.dataproc.v1.BatchController/CreateBatch")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateBatchRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetBatchRequest, Batch> getBatchMethodDescriptor =
@@ -69,6 +70,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
           .setFullMethodName("google.cloud.dataproc.v1.BatchController/GetBatch")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBatchRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Batch.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListBatchesRequest, ListBatchesResponse>
@@ -79,6 +81,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListBatchesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBatchesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBatchRequest, Empty> deleteBatchMethodDescriptor =
@@ -87,6 +90,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
           .setFullMethodName("google.cloud.dataproc.v1.BatchController/DeleteBatch")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteBatchRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -95,6 +99,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -103,6 +108,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -114,6 +120,7 @@ public class GrpcBatchControllerStub extends BatchControllerStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateBatchRequest, Operation> createBatchCallable;

@@ -74,6 +74,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   ProtoUtils.marshaller(SearchDomainsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchDomainsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -87,6 +88,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   ProtoUtils.marshaller(RetrieveRegisterParametersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RetrieveRegisterParametersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RegisterDomainRequest, Operation>
@@ -97,6 +99,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RegisterDomainRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -110,6 +113,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   ProtoUtils.marshaller(RetrieveTransferParametersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RetrieveTransferParametersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TransferDomainRequest, Operation>
@@ -120,6 +124,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(TransferDomainRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRegistrationsRequest, ListRegistrationsResponse>
@@ -131,6 +136,7 @@ public class GrpcDomainsStub extends DomainsStub {
                   ProtoUtils.marshaller(ListRegistrationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRegistrationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRegistrationRequest, Registration>
@@ -141,6 +147,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRegistrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Registration.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRegistrationRequest, Operation>
@@ -151,6 +158,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRegistrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ConfigureManagementSettingsRequest, Operation>
@@ -161,6 +169,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ConfigureManagementSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ConfigureDnsSettingsRequest, Operation>
@@ -171,6 +180,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ConfigureDnsSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ConfigureContactSettingsRequest, Operation>
@@ -181,6 +191,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ConfigureContactSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportRegistrationRequest, Operation>
@@ -191,6 +202,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportRegistrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRegistrationRequest, Operation>
@@ -201,6 +213,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRegistrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RetrieveAuthorizationCodeRequest, AuthorizationCode>
@@ -211,6 +224,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RetrieveAuthorizationCodeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AuthorizationCode.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResetAuthorizationCodeRequest, AuthorizationCode>
@@ -221,6 +235,7 @@ public class GrpcDomainsStub extends DomainsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResetAuthorizationCodeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AuthorizationCode.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<SearchDomainsRequest, SearchDomainsResponse> searchDomainsCallable;

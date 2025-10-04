@@ -94,7 +94,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3319
+   *     google/container/v1/cluster_service.proto;l=3679
    * @return The projectId.
    */
   @java.lang.Override
@@ -123,7 +123,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3319
+   *     google/container/v1/cluster_service.proto;l=3679
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -150,15 +150,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster resides. This field has been deprecated and replaced by the name
-   * field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster resides. This field has been deprecated and replaced
+   * by the name field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3325
+   *     google/container/v1/cluster_service.proto;l=3685
    * @return The zone.
    */
   @java.lang.Override
@@ -180,15 +180,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster resides. This field has been deprecated and replaced by the name
-   * field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster resides. This field has been deprecated and replaced
+   * by the name field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3325
+   *     google/container/v1/cluster_service.proto;l=3685
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -221,7 +221,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3329
+   *     google/container/v1/cluster_service.proto;l=3689
    * @return The clusterId.
    */
   @java.lang.Override
@@ -249,7 +249,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3329
+   *     google/container/v1/cluster_service.proto;l=3689
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -282,7 +282,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3333
+   *     google/container/v1/cluster_service.proto;l=3693
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -310,7 +310,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3333
+   *     google/container/v1/cluster_service.proto;l=3693
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -410,8 +410,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The desired image type for the node pool. Please see
-   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-   * available image types.
+   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
+   * for available image types.
    * </pre>
    *
    * <code>string image_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -436,8 +436,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The desired image type for the node pool. Please see
-   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-   * available image types.
+   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
+   * for available image types.
    * </pre>
    *
    * <code>string image_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -525,10 +525,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * node pool's nodes should be located. Changing the locations for a node pool
-   * will result in nodes being either created or removed from the node pool,
-   * depending on whether locations are being added or removed.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the node pool's nodes should be located. Changing the locations
+   * for a node pool will result in nodes being either created or removed from
+   * the node pool, depending on whether locations are being added or removed.
    * </pre>
    *
    * <code>repeated string locations = 13;</code>
@@ -544,10 +544,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * node pool's nodes should be located. Changing the locations for a node pool
-   * will result in nodes being either created or removed from the node pool,
-   * depending on whether locations are being added or removed.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the node pool's nodes should be located. Changing the locations
+   * for a node pool will result in nodes being either created or removed from
+   * the node pool, depending on whether locations are being added or removed.
    * </pre>
    *
    * <code>repeated string locations = 13;</code>
@@ -563,10 +563,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * node pool's nodes should be located. Changing the locations for a node pool
-   * will result in nodes being either created or removed from the node pool,
-   * depending on whether locations are being added or removed.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the node pool's nodes should be located. Changing the locations
+   * for a node pool will result in nodes being either created or removed from
+   * the node pool, depending on whether locations are being added or removed.
    * </pre>
    *
    * <code>repeated string locations = 13;</code>
@@ -583,10 +583,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * node pool's nodes should be located. Changing the locations for a node pool
-   * will result in nodes being either created or removed from the node pool,
-   * depending on whether locations are being added or removed.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the node pool's nodes should be located. Changing the locations
+   * for a node pool will result in nodes being either created or removed from
+   * the node pool, depending on whether locations are being added or removed.
    * </pre>
    *
    * <code>repeated string locations = 13;</code>
@@ -1469,8 +1469,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A list of hardware accelerators to be attached to each node.
-   * See https://cloud.google.com/compute/docs/gpus for more information about
-   * support for GPUs.
+   * See
+   * https://cloud.google.com/compute/docs/gpus
+   * for more information about support for GPUs.
    * </pre>
    *
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -1485,8 +1486,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A list of hardware accelerators to be attached to each node.
-   * See https://cloud.google.com/compute/docs/gpus for more information about
-   * support for GPUs.
+   * See
+   * https://cloud.google.com/compute/docs/gpus
+   * for more information about support for GPUs.
    * </pre>
    *
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -1502,8 +1504,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A list of hardware accelerators to be attached to each node.
-   * See https://cloud.google.com/compute/docs/gpus for more information about
-   * support for GPUs.
+   * See
+   * https://cloud.google.com/compute/docs/gpus
+   * for more information about support for GPUs.
    * </pre>
    *
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -1518,8 +1521,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A list of hardware accelerators to be attached to each node.
-   * See https://cloud.google.com/compute/docs/gpus for more information about
-   * support for GPUs.
+   * See
+   * https://cloud.google.com/compute/docs/gpus
+   * for more information about support for GPUs.
    * </pre>
    *
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -1534,8 +1538,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A list of hardware accelerators to be attached to each node.
-   * See https://cloud.google.com/compute/docs/gpus for more information about
-   * support for GPUs.
+   * See
+   * https://cloud.google.com/compute/docs/gpus
+   * for more information about support for GPUs.
    * </pre>
    *
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -1555,9 +1560,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. The desired [Google Compute Engine machine
-   * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
-   * node pool. Initiates an upgrade operation that migrates the nodes in the
-   * node pool to the specified machine type.
+   * type](https://cloud.google.com/compute/docs/machine-types)
+   * for nodes in the node pool. Initiates an upgrade operation that migrates
+   * the nodes in the node pool to the specified machine type.
    * </pre>
    *
    * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1582,9 +1587,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. The desired [Google Compute Engine machine
-   * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
-   * node pool. Initiates an upgrade operation that migrates the nodes in the
-   * node pool to the specified machine type.
+   * type](https://cloud.google.com/compute/docs/machine-types)
+   * for nodes in the node pool. Initiates an upgrade operation that migrates
+   * the nodes in the node pool to the specified machine type.
    * </pre>
    *
    * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2020,6 +2025,61 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     return flexStart_;
   }
 
+  public static final int BOOT_DISK_FIELD_NUMBER = 47;
+  private com.google.container.v1.BootDisk bootDisk_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired boot disk config for nodes in the node pool.
+   * Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified boot disk config.
+   * </pre>
+   *
+   * <code>.google.container.v1.BootDisk boot_disk = 47;</code>
+   *
+   * @return Whether the bootDisk field is set.
+   */
+  @java.lang.Override
+  public boolean hasBootDisk() {
+    return ((bitField0_ & 0x00100000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired boot disk config for nodes in the node pool.
+   * Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified boot disk config.
+   * </pre>
+   *
+   * <code>.google.container.v1.BootDisk boot_disk = 47;</code>
+   *
+   * @return The bootDisk.
+   */
+  @java.lang.Override
+  public com.google.container.v1.BootDisk getBootDisk() {
+    return bootDisk_ == null ? com.google.container.v1.BootDisk.getDefaultInstance() : bootDisk_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired boot disk config for nodes in the node pool.
+   * Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified boot disk config.
+   * </pre>
+   *
+   * <code>.google.container.v1.BootDisk boot_disk = 47;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.BootDiskOrBuilder getBootDiskOrBuilder() {
+    return bootDisk_ == null ? com.google.container.v1.BootDisk.getDefaultInstance() : bootDisk_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2135,6 +2195,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     }
     if (((bitField0_ & 0x00080000) != 0)) {
       output.writeBool(46, flexStart_);
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
+      output.writeMessage(47, getBootDisk());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2259,6 +2322,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(46, flexStart_);
     }
+    if (((bitField0_ & 0x00100000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(47, getBootDisk());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2368,6 +2434,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasFlexStart() != other.hasFlexStart()) return false;
     if (hasFlexStart()) {
       if (getFlexStart() != other.getFlexStart()) return false;
+    }
+    if (hasBootDisk() != other.hasBootDisk()) return false;
+    if (hasBootDisk()) {
+      if (!getBootDisk().equals(other.getBootDisk())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2493,6 +2563,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasFlexStart()) {
       hash = (37 * hash) + FLEX_START_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFlexStart());
+    }
+    if (hasBootDisk()) {
+      hash = (37 * hash) + BOOT_DISK_FIELD_NUMBER;
+      hash = (53 * hash) + getBootDisk().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2655,6 +2729,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         getContainerdConfigFieldBuilder();
         getQueuedProvisioningFieldBuilder();
         getMaxRunDurationFieldBuilder();
+        getBootDiskFieldBuilder();
       }
     }
 
@@ -2779,6 +2854,11 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         maxRunDurationBuilder_ = null;
       }
       flexStart_ = false;
+      bootDisk_ = null;
+      if (bootDiskBuilder_ != null) {
+        bootDiskBuilder_.dispose();
+        bootDiskBuilder_ = null;
+      }
       return this;
     }
 
@@ -2983,6 +3063,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (((from_bitField1_ & 0x00000002) != 0)) {
         result.flexStart_ = flexStart_;
         to_bitField0_ |= 0x00080000;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.bootDisk_ = bootDiskBuilder_ == null ? bootDisk_ : bootDiskBuilder_.build();
+        to_bitField0_ |= 0x00100000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3191,6 +3275,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasFlexStart()) {
         setFlexStart(other.getFlexStart());
+      }
+      if (other.hasBootDisk()) {
+        mergeBootDisk(other.getBootDisk());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3438,6 +3525,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
                 bitField1_ |= 0x00000002;
                 break;
               } // case 368
+            case 378:
+              {
+                input.readMessage(getBootDiskFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000004;
+                break;
+              } // case 378
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3472,7 +3565,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3319
+     *     google/container/v1/cluster_service.proto;l=3679
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -3500,7 +3593,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3319
+     *     google/container/v1/cluster_service.proto;l=3679
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -3528,7 +3621,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3319
+     *     google/container/v1/cluster_service.proto;l=3679
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -3555,7 +3648,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3319
+     *     google/container/v1/cluster_service.proto;l=3679
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3578,7 +3671,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3319
+     *     google/container/v1/cluster_service.proto;l=3679
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -3601,15 +3694,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster resides. This field has been deprecated and replaced by the name
-     * field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster resides. This field has been deprecated and replaced
+     * by the name field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3325
+     *     google/container/v1/cluster_service.proto;l=3685
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -3630,15 +3723,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster resides. This field has been deprecated and replaced by the name
-     * field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster resides. This field has been deprecated and replaced
+     * by the name field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3325
+     *     google/container/v1/cluster_service.proto;l=3685
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -3659,15 +3752,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster resides. This field has been deprecated and replaced by the name
-     * field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster resides. This field has been deprecated and replaced
+     * by the name field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3325
+     *     google/container/v1/cluster_service.proto;l=3685
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -3687,15 +3780,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster resides. This field has been deprecated and replaced by the name
-     * field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster resides. This field has been deprecated and replaced
+     * by the name field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3325
+     *     google/container/v1/cluster_service.proto;l=3685
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3711,15 +3804,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster resides. This field has been deprecated and replaced by the name
-     * field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster resides. This field has been deprecated and replaced
+     * by the name field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3325
+     *     google/container/v1/cluster_service.proto;l=3685
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -3748,7 +3841,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3329
+     *     google/container/v1/cluster_service.proto;l=3689
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -3775,7 +3868,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3329
+     *     google/container/v1/cluster_service.proto;l=3689
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -3802,7 +3895,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3329
+     *     google/container/v1/cluster_service.proto;l=3689
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -3828,7 +3921,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3329
+     *     google/container/v1/cluster_service.proto;l=3689
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3850,7 +3943,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3329
+     *     google/container/v1/cluster_service.proto;l=3689
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -3879,7 +3972,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3333
+     *     google/container/v1/cluster_service.proto;l=3693
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -3906,7 +3999,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3333
+     *     google/container/v1/cluster_service.proto;l=3693
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -3933,7 +4026,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3333
+     *     google/container/v1/cluster_service.proto;l=3693
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -3959,7 +4052,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3333
+     *     google/container/v1/cluster_service.proto;l=3693
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3981,7 +4074,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3333
+     *     google/container/v1/cluster_service.proto;l=3693
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -4165,8 +4258,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The desired image type for the node pool. Please see
-     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-     * available image types.
+     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
+     * for available image types.
      * </pre>
      *
      * <code>string image_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4190,8 +4283,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The desired image type for the node pool. Please see
-     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-     * available image types.
+     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
+     * for available image types.
      * </pre>
      *
      * <code>string image_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4215,8 +4308,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The desired image type for the node pool. Please see
-     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-     * available image types.
+     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
+     * for available image types.
      * </pre>
      *
      * <code>string image_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4239,8 +4332,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The desired image type for the node pool. Please see
-     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-     * available image types.
+     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
+     * for available image types.
      * </pre>
      *
      * <code>string image_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4259,8 +4352,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The desired image type for the node pool. Please see
-     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-     * available image types.
+     * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
+     * for available image types.
      * </pre>
      *
      * <code>string image_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4415,10 +4508,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * node pool's nodes should be located. Changing the locations for a node pool
-     * will result in nodes being either created or removed from the node pool,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the node pool's nodes should be located. Changing the locations
+     * for a node pool will result in nodes being either created or removed from
+     * the node pool, depending on whether locations are being added or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -4435,10 +4528,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * node pool's nodes should be located. Changing the locations for a node pool
-     * will result in nodes being either created or removed from the node pool,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the node pool's nodes should be located. Changing the locations
+     * for a node pool will result in nodes being either created or removed from
+     * the node pool, depending on whether locations are being added or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -4454,10 +4547,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * node pool's nodes should be located. Changing the locations for a node pool
-     * will result in nodes being either created or removed from the node pool,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the node pool's nodes should be located. Changing the locations
+     * for a node pool will result in nodes being either created or removed from
+     * the node pool, depending on whether locations are being added or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -4474,10 +4567,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * node pool's nodes should be located. Changing the locations for a node pool
-     * will result in nodes being either created or removed from the node pool,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the node pool's nodes should be located. Changing the locations
+     * for a node pool will result in nodes being either created or removed from
+     * the node pool, depending on whether locations are being added or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -4494,10 +4587,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * node pool's nodes should be located. Changing the locations for a node pool
-     * will result in nodes being either created or removed from the node pool,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the node pool's nodes should be located. Changing the locations
+     * for a node pool will result in nodes being either created or removed from
+     * the node pool, depending on whether locations are being added or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -4522,10 +4615,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * node pool's nodes should be located. Changing the locations for a node pool
-     * will result in nodes being either created or removed from the node pool,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the node pool's nodes should be located. Changing the locations
+     * for a node pool will result in nodes being either created or removed from
+     * the node pool, depending on whether locations are being added or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -4549,10 +4642,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * node pool's nodes should be located. Changing the locations for a node pool
-     * will result in nodes being either created or removed from the node pool,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the node pool's nodes should be located. Changing the locations
+     * for a node pool will result in nodes being either created or removed from
+     * the node pool, depending on whether locations are being added or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -4573,10 +4666,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * node pool's nodes should be located. Changing the locations for a node pool
-     * will result in nodes being either created or removed from the node pool,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the node pool's nodes should be located. Changing the locations
+     * for a node pool will result in nodes being either created or removed from
+     * the node pool, depending on whether locations are being added or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -4596,10 +4689,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * node pool's nodes should be located. Changing the locations for a node pool
-     * will result in nodes being either created or removed from the node pool,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the node pool's nodes should be located. Changing the locations
+     * for a node pool will result in nodes being either created or removed from
+     * the node pool, depending on whether locations are being added or removed.
      * </pre>
      *
      * <code>repeated string locations = 13;</code>
@@ -7746,8 +7839,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -7765,8 +7859,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -7784,8 +7879,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -7803,8 +7899,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -7828,8 +7925,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -7851,8 +7949,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -7876,8 +7975,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -7901,8 +8001,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -7924,8 +8025,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -7947,8 +8049,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -7970,8 +8073,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -7992,8 +8096,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -8014,8 +8119,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -8029,8 +8135,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -8048,8 +8155,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -8068,8 +8176,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -8084,8 +8193,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -8100,8 +8210,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of hardware accelerators to be attached to each node.
-     * See https://cloud.google.com/compute/docs/gpus for more information about
-     * support for GPUs.
+     * See
+     * https://cloud.google.com/compute/docs/gpus
+     * for more information about support for GPUs.
      * </pre>
      *
      * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
@@ -8135,9 +8246,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The desired [Google Compute Engine machine
-     * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
-     * node pool. Initiates an upgrade operation that migrates the nodes in the
-     * node pool to the specified machine type.
+     * type](https://cloud.google.com/compute/docs/machine-types)
+     * for nodes in the node pool. Initiates an upgrade operation that migrates
+     * the nodes in the node pool to the specified machine type.
      * </pre>
      *
      * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8161,9 +8272,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The desired [Google Compute Engine machine
-     * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
-     * node pool. Initiates an upgrade operation that migrates the nodes in the
-     * node pool to the specified machine type.
+     * type](https://cloud.google.com/compute/docs/machine-types)
+     * for nodes in the node pool. Initiates an upgrade operation that migrates
+     * the nodes in the node pool to the specified machine type.
      * </pre>
      *
      * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8187,9 +8298,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The desired [Google Compute Engine machine
-     * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
-     * node pool. Initiates an upgrade operation that migrates the nodes in the
-     * node pool to the specified machine type.
+     * type](https://cloud.google.com/compute/docs/machine-types)
+     * for nodes in the node pool. Initiates an upgrade operation that migrates
+     * the nodes in the node pool to the specified machine type.
      * </pre>
      *
      * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8212,9 +8323,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The desired [Google Compute Engine machine
-     * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
-     * node pool. Initiates an upgrade operation that migrates the nodes in the
-     * node pool to the specified machine type.
+     * type](https://cloud.google.com/compute/docs/machine-types)
+     * for nodes in the node pool. Initiates an upgrade operation that migrates
+     * the nodes in the node pool to the specified machine type.
      * </pre>
      *
      * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8233,9 +8344,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The desired [Google Compute Engine machine
-     * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
-     * node pool. Initiates an upgrade operation that migrates the nodes in the
-     * node pool to the specified machine type.
+     * type](https://cloud.google.com/compute/docs/machine-types)
+     * for nodes in the node pool. Initiates an upgrade operation that migrates
+     * the nodes in the node pool to the specified machine type.
      * </pre>
      *
      * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9537,6 +9648,218 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       flexStart_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.BootDisk bootDisk_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.BootDisk,
+            com.google.container.v1.BootDisk.Builder,
+            com.google.container.v1.BootDiskOrBuilder>
+        bootDiskBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired boot disk config for nodes in the node pool.
+     * Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified boot disk config.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 47;</code>
+     *
+     * @return Whether the bootDisk field is set.
+     */
+    public boolean hasBootDisk() {
+      return ((bitField1_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired boot disk config for nodes in the node pool.
+     * Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified boot disk config.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 47;</code>
+     *
+     * @return The bootDisk.
+     */
+    public com.google.container.v1.BootDisk getBootDisk() {
+      if (bootDiskBuilder_ == null) {
+        return bootDisk_ == null
+            ? com.google.container.v1.BootDisk.getDefaultInstance()
+            : bootDisk_;
+      } else {
+        return bootDiskBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired boot disk config for nodes in the node pool.
+     * Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified boot disk config.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 47;</code>
+     */
+    public Builder setBootDisk(com.google.container.v1.BootDisk value) {
+      if (bootDiskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bootDisk_ = value;
+      } else {
+        bootDiskBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired boot disk config for nodes in the node pool.
+     * Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified boot disk config.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 47;</code>
+     */
+    public Builder setBootDisk(com.google.container.v1.BootDisk.Builder builderForValue) {
+      if (bootDiskBuilder_ == null) {
+        bootDisk_ = builderForValue.build();
+      } else {
+        bootDiskBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired boot disk config for nodes in the node pool.
+     * Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified boot disk config.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 47;</code>
+     */
+    public Builder mergeBootDisk(com.google.container.v1.BootDisk value) {
+      if (bootDiskBuilder_ == null) {
+        if (((bitField1_ & 0x00000004) != 0)
+            && bootDisk_ != null
+            && bootDisk_ != com.google.container.v1.BootDisk.getDefaultInstance()) {
+          getBootDiskBuilder().mergeFrom(value);
+        } else {
+          bootDisk_ = value;
+        }
+      } else {
+        bootDiskBuilder_.mergeFrom(value);
+      }
+      if (bootDisk_ != null) {
+        bitField1_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired boot disk config for nodes in the node pool.
+     * Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified boot disk config.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 47;</code>
+     */
+    public Builder clearBootDisk() {
+      bitField1_ = (bitField1_ & ~0x00000004);
+      bootDisk_ = null;
+      if (bootDiskBuilder_ != null) {
+        bootDiskBuilder_.dispose();
+        bootDiskBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired boot disk config for nodes in the node pool.
+     * Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified boot disk config.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 47;</code>
+     */
+    public com.google.container.v1.BootDisk.Builder getBootDiskBuilder() {
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return getBootDiskFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired boot disk config for nodes in the node pool.
+     * Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified boot disk config.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 47;</code>
+     */
+    public com.google.container.v1.BootDiskOrBuilder getBootDiskOrBuilder() {
+      if (bootDiskBuilder_ != null) {
+        return bootDiskBuilder_.getMessageOrBuilder();
+      } else {
+        return bootDisk_ == null
+            ? com.google.container.v1.BootDisk.getDefaultInstance()
+            : bootDisk_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired boot disk config for nodes in the node pool.
+     * Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified boot disk config.
+     * </pre>
+     *
+     * <code>.google.container.v1.BootDisk boot_disk = 47;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.BootDisk,
+            com.google.container.v1.BootDisk.Builder,
+            com.google.container.v1.BootDiskOrBuilder>
+        getBootDiskFieldBuilder() {
+      if (bootDiskBuilder_ == null) {
+        bootDiskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.BootDisk,
+                com.google.container.v1.BootDisk.Builder,
+                com.google.container.v1.BootDiskOrBuilder>(
+                getBootDisk(), getParentForChildren(), isClean());
+        bootDisk_ = null;
+      }
+      return bootDiskBuilder_;
     }
 
     @java.lang.Override

@@ -70,6 +70,7 @@ public class GrpcPolicyBasedRoutingServiceStub extends PolicyBasedRoutingService
                   ProtoUtils.marshaller(ListPolicyBasedRoutesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPolicyBasedRoutesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPolicyBasedRouteRequest, PolicyBasedRoute>
@@ -81,6 +82,7 @@ public class GrpcPolicyBasedRoutingServiceStub extends PolicyBasedRoutingService
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPolicyBasedRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PolicyBasedRoute.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePolicyBasedRouteRequest, Operation>
@@ -92,6 +94,7 @@ public class GrpcPolicyBasedRoutingServiceStub extends PolicyBasedRoutingService
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePolicyBasedRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePolicyBasedRouteRequest, Operation>
@@ -103,6 +106,7 @@ public class GrpcPolicyBasedRoutingServiceStub extends PolicyBasedRoutingService
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePolicyBasedRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -114,6 +118,7 @@ public class GrpcPolicyBasedRoutingServiceStub extends PolicyBasedRoutingService
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -122,6 +127,7 @@ public class GrpcPolicyBasedRoutingServiceStub extends PolicyBasedRoutingService
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -130,6 +136,7 @@ public class GrpcPolicyBasedRoutingServiceStub extends PolicyBasedRoutingService
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -138,6 +145,7 @@ public class GrpcPolicyBasedRoutingServiceStub extends PolicyBasedRoutingService
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -149,6 +157,7 @@ public class GrpcPolicyBasedRoutingServiceStub extends PolicyBasedRoutingService
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListPolicyBasedRoutesRequest, ListPolicyBasedRoutesResponse>

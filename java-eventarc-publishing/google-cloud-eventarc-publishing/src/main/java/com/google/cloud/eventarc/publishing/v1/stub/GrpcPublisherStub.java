@@ -58,6 +58,7 @@ public class GrpcPublisherStub extends PublisherStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       PublishChannelConnectionEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PublishEventsRequest, PublishEventsResponse>
@@ -69,6 +70,7 @@ public class GrpcPublisherStub extends PublisherStub {
                   ProtoUtils.marshaller(PublishEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PublishEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PublishRequest, PublishResponse> publishMethodDescriptor =
@@ -77,6 +79,7 @@ public class GrpcPublisherStub extends PublisherStub {
           .setFullMethodName("google.cloud.eventarc.publishing.v1.Publisher/Publish")
           .setRequestMarshaller(ProtoUtils.marshaller(PublishRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(PublishResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<

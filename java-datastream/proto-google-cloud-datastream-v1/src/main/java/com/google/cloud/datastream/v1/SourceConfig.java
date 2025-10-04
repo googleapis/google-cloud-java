@@ -78,6 +78,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     POSTGRESQL_SOURCE_CONFIG(102),
     SQL_SERVER_SOURCE_CONFIG(103),
     SALESFORCE_SOURCE_CONFIG(104),
+    MONGODB_SOURCE_CONFIG(105),
     SOURCESTREAMCONFIG_NOT_SET(0);
     private final int value;
 
@@ -107,6 +108,8 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
           return SQL_SERVER_SOURCE_CONFIG;
         case 104:
           return SALESFORCE_SOURCE_CONFIG;
+        case 105:
+          return MONGODB_SOURCE_CONFIG;
         case 0:
           return SOURCESTREAMCONFIG_NOT_SET;
         default:
@@ -456,6 +459,61 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.datastream.v1.SalesforceSourceConfig.getDefaultInstance();
   }
 
+  public static final int MONGODB_SOURCE_CONFIG_FIELD_NUMBER = 105;
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbSourceConfig mongodb_source_config = 105;</code>
+   *
+   * @return Whether the mongodbSourceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMongodbSourceConfig() {
+    return sourceStreamConfigCase_ == 105;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbSourceConfig mongodb_source_config = 105;</code>
+   *
+   * @return The mongodbSourceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.MongodbSourceConfig getMongodbSourceConfig() {
+    if (sourceStreamConfigCase_ == 105) {
+      return (com.google.cloud.datastream.v1.MongodbSourceConfig) sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.MongodbSourceConfig.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbSourceConfig mongodb_source_config = 105;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.MongodbSourceConfigOrBuilder
+      getMongodbSourceConfigOrBuilder() {
+    if (sourceStreamConfigCase_ == 105) {
+      return (com.google.cloud.datastream.v1.MongodbSourceConfig) sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.MongodbSourceConfig.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -492,6 +550,10 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     if (sourceStreamConfigCase_ == 104) {
       output.writeMessage(
           104, (com.google.cloud.datastream.v1.SalesforceSourceConfig) sourceStreamConfig_);
+    }
+    if (sourceStreamConfigCase_ == 105) {
+      output.writeMessage(
+          105, (com.google.cloud.datastream.v1.MongodbSourceConfig) sourceStreamConfig_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -530,6 +592,11 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               104, (com.google.cloud.datastream.v1.SalesforceSourceConfig) sourceStreamConfig_);
     }
+    if (sourceStreamConfigCase_ == 105) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              105, (com.google.cloud.datastream.v1.MongodbSourceConfig) sourceStreamConfig_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -563,6 +630,9 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         break;
       case 104:
         if (!getSalesforceSourceConfig().equals(other.getSalesforceSourceConfig())) return false;
+        break;
+      case 105:
+        if (!getMongodbSourceConfig().equals(other.getMongodbSourceConfig())) return false;
         break;
       case 0:
       default:
@@ -600,6 +670,10 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       case 104:
         hash = (37 * hash) + SALESFORCE_SOURCE_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getSalesforceSourceConfig().hashCode();
+        break;
+      case 105:
+        hash = (37 * hash) + MONGODB_SOURCE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getMongodbSourceConfig().hashCode();
         break;
       case 0:
       default:
@@ -760,6 +834,9 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       if (salesforceSourceConfigBuilder_ != null) {
         salesforceSourceConfigBuilder_.clear();
       }
+      if (mongodbSourceConfigBuilder_ != null) {
+        mongodbSourceConfigBuilder_.clear();
+      }
       sourceStreamConfigCase_ = 0;
       sourceStreamConfig_ = null;
       return this;
@@ -821,6 +898,9 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (sourceStreamConfigCase_ == 104 && salesforceSourceConfigBuilder_ != null) {
         result.sourceStreamConfig_ = salesforceSourceConfigBuilder_.build();
+      }
+      if (sourceStreamConfigCase_ == 105 && mongodbSourceConfigBuilder_ != null) {
+        result.sourceStreamConfig_ = mongodbSourceConfigBuilder_.build();
       }
     }
 
@@ -900,6 +980,11 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
             mergeSalesforceSourceConfig(other.getSalesforceSourceConfig());
             break;
           }
+        case MONGODB_SOURCE_CONFIG:
+          {
+            mergeMongodbSourceConfig(other.getMongodbSourceConfig());
+            break;
+          }
         case SOURCESTREAMCONFIG_NOT_SET:
           {
             break;
@@ -972,6 +1057,13 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
                 sourceStreamConfigCase_ = 104;
                 break;
               } // case 834
+            case 842:
+              {
+                input.readMessage(
+                    getMongodbSourceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                sourceStreamConfigCase_ = 105;
+                break;
+              } // case 842
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2272,6 +2364,230 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       sourceStreamConfigCase_ = 104;
       onChanged();
       return salesforceSourceConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.MongodbSourceConfig,
+            com.google.cloud.datastream.v1.MongodbSourceConfig.Builder,
+            com.google.cloud.datastream.v1.MongodbSourceConfigOrBuilder>
+        mongodbSourceConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbSourceConfig mongodb_source_config = 105;</code>
+     *
+     * @return Whether the mongodbSourceConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasMongodbSourceConfig() {
+      return sourceStreamConfigCase_ == 105;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbSourceConfig mongodb_source_config = 105;</code>
+     *
+     * @return The mongodbSourceConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MongodbSourceConfig getMongodbSourceConfig() {
+      if (mongodbSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 105) {
+          return (com.google.cloud.datastream.v1.MongodbSourceConfig) sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.MongodbSourceConfig.getDefaultInstance();
+      } else {
+        if (sourceStreamConfigCase_ == 105) {
+          return mongodbSourceConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.MongodbSourceConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbSourceConfig mongodb_source_config = 105;</code>
+     */
+    public Builder setMongodbSourceConfig(
+        com.google.cloud.datastream.v1.MongodbSourceConfig value) {
+      if (mongodbSourceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceStreamConfig_ = value;
+        onChanged();
+      } else {
+        mongodbSourceConfigBuilder_.setMessage(value);
+      }
+      sourceStreamConfigCase_ = 105;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbSourceConfig mongodb_source_config = 105;</code>
+     */
+    public Builder setMongodbSourceConfig(
+        com.google.cloud.datastream.v1.MongodbSourceConfig.Builder builderForValue) {
+      if (mongodbSourceConfigBuilder_ == null) {
+        sourceStreamConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        mongodbSourceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      sourceStreamConfigCase_ = 105;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbSourceConfig mongodb_source_config = 105;</code>
+     */
+    public Builder mergeMongodbSourceConfig(
+        com.google.cloud.datastream.v1.MongodbSourceConfig value) {
+      if (mongodbSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 105
+            && sourceStreamConfig_
+                != com.google.cloud.datastream.v1.MongodbSourceConfig.getDefaultInstance()) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.MongodbSourceConfig.newBuilder(
+                      (com.google.cloud.datastream.v1.MongodbSourceConfig) sourceStreamConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceStreamConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceStreamConfigCase_ == 105) {
+          mongodbSourceConfigBuilder_.mergeFrom(value);
+        } else {
+          mongodbSourceConfigBuilder_.setMessage(value);
+        }
+      }
+      sourceStreamConfigCase_ = 105;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbSourceConfig mongodb_source_config = 105;</code>
+     */
+    public Builder clearMongodbSourceConfig() {
+      if (mongodbSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 105) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceStreamConfigCase_ == 105) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+        }
+        mongodbSourceConfigBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbSourceConfig mongodb_source_config = 105;</code>
+     */
+    public com.google.cloud.datastream.v1.MongodbSourceConfig.Builder
+        getMongodbSourceConfigBuilder() {
+      return getMongodbSourceConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbSourceConfig mongodb_source_config = 105;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MongodbSourceConfigOrBuilder
+        getMongodbSourceConfigOrBuilder() {
+      if ((sourceStreamConfigCase_ == 105) && (mongodbSourceConfigBuilder_ != null)) {
+        return mongodbSourceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceStreamConfigCase_ == 105) {
+          return (com.google.cloud.datastream.v1.MongodbSourceConfig) sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.MongodbSourceConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbSourceConfig mongodb_source_config = 105;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.MongodbSourceConfig,
+            com.google.cloud.datastream.v1.MongodbSourceConfig.Builder,
+            com.google.cloud.datastream.v1.MongodbSourceConfigOrBuilder>
+        getMongodbSourceConfigFieldBuilder() {
+      if (mongodbSourceConfigBuilder_ == null) {
+        if (!(sourceStreamConfigCase_ == 105)) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.MongodbSourceConfig.getDefaultInstance();
+        }
+        mongodbSourceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.MongodbSourceConfig,
+                com.google.cloud.datastream.v1.MongodbSourceConfig.Builder,
+                com.google.cloud.datastream.v1.MongodbSourceConfigOrBuilder>(
+                (com.google.cloud.datastream.v1.MongodbSourceConfig) sourceStreamConfig_,
+                getParentForChildren(),
+                isClean());
+        sourceStreamConfig_ = null;
+      }
+      sourceStreamConfigCase_ = 105;
+      onChanged();
+      return mongodbSourceConfigBuilder_;
     }
 
     @java.lang.Override

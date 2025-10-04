@@ -35,7 +35,14 @@ import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
 import java.util.*;
 
-/** Helper class to post-process GenerateContentResponse. */
+/**
+ * Helper class to post-process GenerateContentResponse.
+ *
+ * @deprecated This class and its package are deprecated. See the <a
+ *     href="https://cloud.google.com/vertex-ai/generative-ai/docs/deprecations/genai-vertexai-sdk#java">
+ *     migration guide</a> for more details.
+ */
+@Deprecated
 public class ResponseHandler {
   private static final ObjectMapper DEFAULT_MAPPER = JsonMapper.builder()
           .enable(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS)

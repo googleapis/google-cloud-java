@@ -56,6 +56,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateControlRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Control.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteControlRequest, Empty> deleteControlMethodDescriptor =
@@ -64,6 +65,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1.ControlService/DeleteControl")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteControlRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateControlRequest, Control>
@@ -74,6 +76,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateControlRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Control.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetControlRequest, Control> getControlMethodDescriptor =
@@ -82,6 +85,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1.ControlService/GetControl")
           .setRequestMarshaller(ProtoUtils.marshaller(GetControlRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Control.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListControlsRequest, ListControlsResponse>
@@ -92,6 +96,7 @@ public class GrpcControlServiceStub extends ControlServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListControlsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListControlsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateControlRequest, Control> createControlCallable;

@@ -95,7 +95,7 @@ import javax.annotation.Generated;
 public class UserServiceStubSettings extends StubSettings<UserServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().build();
+      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/admanager").build();
 
   private final UnaryCallSettings<GetUserRequest, User> getUserSettings;
 

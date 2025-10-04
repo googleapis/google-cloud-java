@@ -248,6 +248,51 @@ public interface SourceObjectIdentifierOrBuilder
   com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifierOrBuilder
       getSalesforceIdentifierOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier mongodb_identifier = 6;
+   * </code>
+   *
+   * @return Whether the mongodbIdentifier field is set.
+   */
+  boolean hasMongodbIdentifier();
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier mongodb_identifier = 6;
+   * </code>
+   *
+   * @return The mongodbIdentifier.
+   */
+  com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+      getMongodbIdentifier();
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier mongodb_identifier = 6;
+   * </code>
+   */
+  com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifierOrBuilder
+      getMongodbIdentifierOrBuilder();
+
   com.google.cloud.datastream.v1.SourceObjectIdentifier.SourceIdentifierCase
       getSourceIdentifierCase();
 }

@@ -48,10 +48,10 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (CaseAttachmentServiceClient caseAttachmentServiceClient =
  *     CaseAttachmentServiceClient.create()) {
- *   CaseName parent = CaseName.ofProjectCaseName("[PROJECT]", "[CASE]");
- *   for (Attachment element : caseAttachmentServiceClient.listAttachments(parent).iterateAll()) {
- *     // doThingsWith(element);
- *   }
+ *   AttachmentName name =
+ *       AttachmentName.ofOrganizationCaseAttachmentIdName(
+ *           "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]");
+ *   Attachment response = caseAttachmentServiceClient.getAttachment(name);
  * }
  * }</pre>
  *
@@ -83,6 +83,25 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listAttachmentsPagedCallable()
  *           <li><p> listAttachmentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAttachment</td>
+ *      <td><p> Retrieve an attachment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAttachment(GetAttachmentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAttachment(AttachmentName name)
+ *           <li><p> getAttachment(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAttachmentCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -362,6 +381,130 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
   public final UnaryCallable<ListAttachmentsRequest, ListAttachmentsResponse>
       listAttachmentsCallable() {
     return stub.listAttachmentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve an attachment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CaseAttachmentServiceClient caseAttachmentServiceClient =
+   *     CaseAttachmentServiceClient.create()) {
+   *   AttachmentName name =
+   *       AttachmentName.ofOrganizationCaseAttachmentIdName(
+   *           "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]");
+   *   Attachment response = caseAttachmentServiceClient.getAttachment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the attachment to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Attachment getAttachment(AttachmentName name) {
+    GetAttachmentRequest request =
+        GetAttachmentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAttachment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve an attachment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CaseAttachmentServiceClient caseAttachmentServiceClient =
+   *     CaseAttachmentServiceClient.create()) {
+   *   String name =
+   *       AttachmentName.ofOrganizationCaseAttachmentIdName(
+   *               "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]")
+   *           .toString();
+   *   Attachment response = caseAttachmentServiceClient.getAttachment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the attachment to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Attachment getAttachment(String name) {
+    GetAttachmentRequest request = GetAttachmentRequest.newBuilder().setName(name).build();
+    return getAttachment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve an attachment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CaseAttachmentServiceClient caseAttachmentServiceClient =
+   *     CaseAttachmentServiceClient.create()) {
+   *   GetAttachmentRequest request =
+   *       GetAttachmentRequest.newBuilder()
+   *           .setName(
+   *               AttachmentName.ofOrganizationCaseAttachmentIdName(
+   *                       "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]")
+   *                   .toString())
+   *           .build();
+   *   Attachment response = caseAttachmentServiceClient.getAttachment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Attachment getAttachment(GetAttachmentRequest request) {
+    return getAttachmentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve an attachment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CaseAttachmentServiceClient caseAttachmentServiceClient =
+   *     CaseAttachmentServiceClient.create()) {
+   *   GetAttachmentRequest request =
+   *       GetAttachmentRequest.newBuilder()
+   *           .setName(
+   *               AttachmentName.ofOrganizationCaseAttachmentIdName(
+   *                       "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Attachment> future =
+   *       caseAttachmentServiceClient.getAttachmentCallable().futureCall(request);
+   *   // Do something.
+   *   Attachment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable() {
+    return stub.getAttachmentCallable();
   }
 
   @Override

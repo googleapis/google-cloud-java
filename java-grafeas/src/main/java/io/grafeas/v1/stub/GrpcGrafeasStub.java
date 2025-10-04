@@ -72,6 +72,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Occurrence.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListOccurrencesRequest, ListOccurrencesResponse>
@@ -83,6 +84,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   ProtoUtils.marshaller(ListOccurrencesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOccurrencesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteOccurrenceRequest, Empty>
@@ -93,6 +95,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateOccurrenceRequest, Occurrence>
@@ -103,6 +106,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Occurrence.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -116,6 +120,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   ProtoUtils.marshaller(BatchCreateOccurrencesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchCreateOccurrencesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateOccurrenceRequest, Occurrence>
@@ -126,6 +131,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Occurrence.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetOccurrenceNoteRequest, Note>
@@ -136,6 +142,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetOccurrenceNoteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNoteRequest, Note> getNoteMethodDescriptor =
@@ -144,6 +151,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
           .setFullMethodName("grafeas.v1.Grafeas/GetNote")
           .setRequestMarshaller(ProtoUtils.marshaller(GetNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListNotesRequest, ListNotesResponse>
@@ -153,6 +161,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
               .setFullMethodName("grafeas.v1.Grafeas/ListNotes")
               .setRequestMarshaller(ProtoUtils.marshaller(ListNotesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListNotesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNoteRequest, Empty> deleteNoteMethodDescriptor =
@@ -161,6 +170,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
           .setFullMethodName("grafeas.v1.Grafeas/DeleteNote")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateNoteRequest, Note> createNoteMethodDescriptor =
@@ -169,6 +179,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
           .setFullMethodName("grafeas.v1.Grafeas/CreateNote")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<BatchCreateNotesRequest, BatchCreateNotesResponse>
@@ -180,6 +191,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   ProtoUtils.marshaller(BatchCreateNotesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchCreateNotesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateNoteRequest, Note> updateNoteMethodDescriptor =
@@ -188,6 +200,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
           .setFullMethodName("grafeas.v1.Grafeas/UpdateNote")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>
@@ -199,6 +212,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   ProtoUtils.marshaller(ListNoteOccurrencesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNoteOccurrencesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetOccurrenceRequest, Occurrence> getOccurrenceCallable;

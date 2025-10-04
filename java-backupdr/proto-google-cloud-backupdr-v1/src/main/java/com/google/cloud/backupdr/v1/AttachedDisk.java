@@ -2069,7 +2069,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.backupdr.v1.AttachedDisk.disk_type_deprecated is deprecated. See
-   *     google/cloud/backupdr/v1/backupvault_gce.proto;l=824
+   *     google/cloud/backupdr/v1/backupvault_gce.proto;l=832
    * @return Whether the diskTypeDeprecated field is set.
    */
   @java.lang.Override
@@ -2090,7 +2090,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.backupdr.v1.AttachedDisk.disk_type_deprecated is deprecated. See
-   *     google/cloud/backupdr/v1/backupvault_gce.proto;l=824
+   *     google/cloud/backupdr/v1/backupvault_gce.proto;l=832
    * @return The enum numeric value on the wire for diskTypeDeprecated.
    */
   @java.lang.Override
@@ -2111,7 +2111,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.backupdr.v1.AttachedDisk.disk_type_deprecated is deprecated. See
-   *     google/cloud/backupdr/v1/backupvault_gce.proto;l=824
+   *     google/cloud/backupdr/v1/backupvault_gce.proto;l=832
    * @return The diskTypeDeprecated.
    */
   @java.lang.Override
@@ -4266,7 +4266,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.backupdr.v1.AttachedDisk.disk_type_deprecated is deprecated. See
-     *     google/cloud/backupdr/v1/backupvault_gce.proto;l=824
+     *     google/cloud/backupdr/v1/backupvault_gce.proto;l=832
      * @return Whether the diskTypeDeprecated field is set.
      */
     @java.lang.Override
@@ -4287,7 +4287,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.backupdr.v1.AttachedDisk.disk_type_deprecated is deprecated. See
-     *     google/cloud/backupdr/v1/backupvault_gce.proto;l=824
+     *     google/cloud/backupdr/v1/backupvault_gce.proto;l=832
      * @return The enum numeric value on the wire for diskTypeDeprecated.
      */
     @java.lang.Override
@@ -4308,7 +4308,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.backupdr.v1.AttachedDisk.disk_type_deprecated is deprecated. See
-     *     google/cloud/backupdr/v1/backupvault_gce.proto;l=824
+     *     google/cloud/backupdr/v1/backupvault_gce.proto;l=832
      * @param value The enum numeric value on the wire for diskTypeDeprecated to set.
      * @return This builder for chaining.
      */
@@ -4332,7 +4332,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.backupdr.v1.AttachedDisk.disk_type_deprecated is deprecated. See
-     *     google/cloud/backupdr/v1/backupvault_gce.proto;l=824
+     *     google/cloud/backupdr/v1/backupvault_gce.proto;l=832
      * @return The diskTypeDeprecated.
      */
     @java.lang.Override
@@ -4357,7 +4357,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.backupdr.v1.AttachedDisk.disk_type_deprecated is deprecated. See
-     *     google/cloud/backupdr/v1/backupvault_gce.proto;l=824
+     *     google/cloud/backupdr/v1/backupvault_gce.proto;l=832
      * @param value The diskTypeDeprecated to set.
      * @return This builder for chaining.
      */
@@ -4384,7 +4384,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.backupdr.v1.AttachedDisk.disk_type_deprecated is deprecated. See
-     *     google/cloud/backupdr/v1/backupvault_gce.proto;l=824
+     *     google/cloud/backupdr/v1/backupvault_gce.proto;l=832
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

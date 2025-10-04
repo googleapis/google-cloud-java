@@ -156,7 +156,7 @@ public enum ComputeEngineBootOption implements com.google.protobuf.ProtocolMessa
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.vmmigration.v1.VmMigrationProto.getDescriptor().getEnumTypes().get(4);
+    return com.google.cloud.vmmigration.v1.VmMigrationProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final ComputeEngineBootOption[] VALUES = values();

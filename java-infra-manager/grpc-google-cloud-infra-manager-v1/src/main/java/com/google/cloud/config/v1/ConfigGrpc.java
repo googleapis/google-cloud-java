@@ -1038,6 +1038,190 @@ public final class ConfigGrpc {
     return getGetTerraformVersionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListResourceChangesRequest,
+          com.google.cloud.config.v1.ListResourceChangesResponse>
+      getListResourceChangesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListResourceChanges",
+      requestType = com.google.cloud.config.v1.ListResourceChangesRequest.class,
+      responseType = com.google.cloud.config.v1.ListResourceChangesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListResourceChangesRequest,
+          com.google.cloud.config.v1.ListResourceChangesResponse>
+      getListResourceChangesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.ListResourceChangesRequest,
+            com.google.cloud.config.v1.ListResourceChangesResponse>
+        getListResourceChangesMethod;
+    if ((getListResourceChangesMethod = ConfigGrpc.getListResourceChangesMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getListResourceChangesMethod = ConfigGrpc.getListResourceChangesMethod) == null) {
+          ConfigGrpc.getListResourceChangesMethod =
+              getListResourceChangesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.ListResourceChangesRequest,
+                          com.google.cloud.config.v1.ListResourceChangesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListResourceChanges"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListResourceChangesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListResourceChangesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("ListResourceChanges"))
+                      .build();
+        }
+      }
+    }
+    return getListResourceChangesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetResourceChangeRequest,
+          com.google.cloud.config.v1.ResourceChange>
+      getGetResourceChangeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetResourceChange",
+      requestType = com.google.cloud.config.v1.GetResourceChangeRequest.class,
+      responseType = com.google.cloud.config.v1.ResourceChange.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetResourceChangeRequest,
+          com.google.cloud.config.v1.ResourceChange>
+      getGetResourceChangeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.GetResourceChangeRequest,
+            com.google.cloud.config.v1.ResourceChange>
+        getGetResourceChangeMethod;
+    if ((getGetResourceChangeMethod = ConfigGrpc.getGetResourceChangeMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getGetResourceChangeMethod = ConfigGrpc.getGetResourceChangeMethod) == null) {
+          ConfigGrpc.getGetResourceChangeMethod =
+              getGetResourceChangeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.GetResourceChangeRequest,
+                          com.google.cloud.config.v1.ResourceChange>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetResourceChange"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.GetResourceChangeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ResourceChange.getDefaultInstance()))
+                      .setSchemaDescriptor(new ConfigMethodDescriptorSupplier("GetResourceChange"))
+                      .build();
+        }
+      }
+    }
+    return getGetResourceChangeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListResourceDriftsRequest,
+          com.google.cloud.config.v1.ListResourceDriftsResponse>
+      getListResourceDriftsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListResourceDrifts",
+      requestType = com.google.cloud.config.v1.ListResourceDriftsRequest.class,
+      responseType = com.google.cloud.config.v1.ListResourceDriftsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListResourceDriftsRequest,
+          com.google.cloud.config.v1.ListResourceDriftsResponse>
+      getListResourceDriftsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.ListResourceDriftsRequest,
+            com.google.cloud.config.v1.ListResourceDriftsResponse>
+        getListResourceDriftsMethod;
+    if ((getListResourceDriftsMethod = ConfigGrpc.getListResourceDriftsMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getListResourceDriftsMethod = ConfigGrpc.getListResourceDriftsMethod) == null) {
+          ConfigGrpc.getListResourceDriftsMethod =
+              getListResourceDriftsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.ListResourceDriftsRequest,
+                          com.google.cloud.config.v1.ListResourceDriftsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListResourceDrifts"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListResourceDriftsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListResourceDriftsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new ConfigMethodDescriptorSupplier("ListResourceDrifts"))
+                      .build();
+        }
+      }
+    }
+    return getListResourceDriftsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetResourceDriftRequest,
+          com.google.cloud.config.v1.ResourceDrift>
+      getGetResourceDriftMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetResourceDrift",
+      requestType = com.google.cloud.config.v1.GetResourceDriftRequest.class,
+      responseType = com.google.cloud.config.v1.ResourceDrift.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetResourceDriftRequest,
+          com.google.cloud.config.v1.ResourceDrift>
+      getGetResourceDriftMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.GetResourceDriftRequest,
+            com.google.cloud.config.v1.ResourceDrift>
+        getGetResourceDriftMethod;
+    if ((getGetResourceDriftMethod = ConfigGrpc.getGetResourceDriftMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getGetResourceDriftMethod = ConfigGrpc.getGetResourceDriftMethod) == null) {
+          ConfigGrpc.getGetResourceDriftMethod =
+              getGetResourceDriftMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.GetResourceDriftRequest,
+                          com.google.cloud.config.v1.ResourceDrift>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetResourceDrift"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.GetResourceDriftRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ResourceDrift.getDefaultInstance()))
+                      .setSchemaDescriptor(new ConfigMethodDescriptorSupplier("GetResourceDrift"))
+                      .build();
+        }
+      }
+    }
+    return getGetResourceDriftMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ConfigStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ConfigStub> factory =
@@ -1432,6 +1616,64 @@ public final class ConfigGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.config.v1.TerraformVersion> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetTerraformVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ResourceChanges for a given preview.
+     * </pre>
+     */
+    default void listResourceChanges(
+        com.google.cloud.config.v1.ListResourceChangesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListResourceChangesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListResourceChangesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceChange for a given preview.
+     * </pre>
+     */
+    default void getResourceChange(
+        com.google.cloud.config.v1.GetResourceChangeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ResourceChange> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetResourceChangeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List ResourceDrifts for a given preview.
+     * </pre>
+     */
+    default void listResourceDrifts(
+        com.google.cloud.config.v1.ListResourceDriftsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListResourceDriftsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListResourceDriftsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceDrift for a given preview.
+     * </pre>
+     */
+    default void getResourceDrift(
+        com.google.cloud.config.v1.GetResourceDriftRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ResourceDrift> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetResourceDriftMethod(), responseObserver);
     }
   }
 
@@ -1846,6 +2088,72 @@ public final class ConfigGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ResourceChanges for a given preview.
+     * </pre>
+     */
+    public void listResourceChanges(
+        com.google.cloud.config.v1.ListResourceChangesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListResourceChangesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListResourceChangesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceChange for a given preview.
+     * </pre>
+     */
+    public void getResourceChange(
+        com.google.cloud.config.v1.GetResourceChangeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ResourceChange> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetResourceChangeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List ResourceDrifts for a given preview.
+     * </pre>
+     */
+    public void listResourceDrifts(
+        com.google.cloud.config.v1.ListResourceDriftsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListResourceDriftsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListResourceDriftsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceDrift for a given preview.
+     * </pre>
+     */
+    public void getResourceDrift(
+        com.google.cloud.config.v1.GetResourceDriftRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ResourceDrift> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetResourceDriftMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2171,6 +2479,58 @@ public final class ConfigGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetTerraformVersionMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ResourceChanges for a given preview.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListResourceChangesResponse listResourceChanges(
+        com.google.cloud.config.v1.ListResourceChangesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListResourceChangesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceChange for a given preview.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ResourceChange getResourceChange(
+        com.google.cloud.config.v1.GetResourceChangeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetResourceChangeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List ResourceDrifts for a given preview.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListResourceDriftsResponse listResourceDrifts(
+        com.google.cloud.config.v1.ListResourceDriftsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListResourceDriftsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceDrift for a given preview.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ResourceDrift getResourceDrift(
+        com.google.cloud.config.v1.GetResourceDriftRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetResourceDriftMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2495,6 +2855,58 @@ public final class ConfigGrpc {
         com.google.cloud.config.v1.GetTerraformVersionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetTerraformVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ResourceChanges for a given preview.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListResourceChangesResponse listResourceChanges(
+        com.google.cloud.config.v1.ListResourceChangesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListResourceChangesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceChange for a given preview.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ResourceChange getResourceChange(
+        com.google.cloud.config.v1.GetResourceChangeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetResourceChangeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List ResourceDrifts for a given preview.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListResourceDriftsResponse listResourceDrifts(
+        com.google.cloud.config.v1.ListResourceDriftsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListResourceDriftsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceDrift for a given preview.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ResourceDrift getResourceDrift(
+        com.google.cloud.config.v1.GetResourceDriftRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetResourceDriftMethod(), getCallOptions(), request);
     }
   }
 
@@ -2829,6 +3241,62 @@ public final class ConfigGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetTerraformVersionMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ResourceChanges for a given preview.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.ListResourceChangesResponse>
+        listResourceChanges(com.google.cloud.config.v1.ListResourceChangesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListResourceChangesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceChange for a given preview.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.ResourceChange>
+        getResourceChange(com.google.cloud.config.v1.GetResourceChangeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetResourceChangeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List ResourceDrifts for a given preview.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.ListResourceDriftsResponse>
+        listResourceDrifts(com.google.cloud.config.v1.ListResourceDriftsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListResourceDriftsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceDrift for a given preview.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.ResourceDrift>
+        getResourceDrift(com.google.cloud.config.v1.GetResourceDriftRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetResourceDriftMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_DEPLOYMENTS = 0;
@@ -2854,6 +3322,10 @@ public final class ConfigGrpc {
   private static final int METHODID_EXPORT_PREVIEW_RESULT = 20;
   private static final int METHODID_LIST_TERRAFORM_VERSIONS = 21;
   private static final int METHODID_GET_TERRAFORM_VERSION = 22;
+  private static final int METHODID_LIST_RESOURCE_CHANGES = 23;
+  private static final int METHODID_GET_RESOURCE_CHANGE = 24;
+  private static final int METHODID_LIST_RESOURCE_DRIFTS = 25;
+  private static final int METHODID_GET_RESOURCE_DRIFT = 26;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2994,6 +3466,30 @@ public final class ConfigGrpc {
           serviceImpl.getTerraformVersion(
               (com.google.cloud.config.v1.GetTerraformVersionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.TerraformVersion>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_RESOURCE_CHANGES:
+          serviceImpl.listResourceChanges(
+              (com.google.cloud.config.v1.ListResourceChangesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListResourceChangesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_RESOURCE_CHANGE:
+          serviceImpl.getResourceChange(
+              (com.google.cloud.config.v1.GetResourceChangeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ResourceChange>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_RESOURCE_DRIFTS:
+          serviceImpl.listResourceDrifts(
+              (com.google.cloud.config.v1.ListResourceDriftsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListResourceDriftsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_RESOURCE_DRIFT:
+          serviceImpl.getResourceDrift(
+              (com.google.cloud.config.v1.GetResourceDriftRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ResourceDrift>)
                   responseObserver);
           break;
         default:
@@ -3161,6 +3657,34 @@ public final class ConfigGrpc {
                     com.google.cloud.config.v1.GetTerraformVersionRequest,
                     com.google.cloud.config.v1.TerraformVersion>(
                     service, METHODID_GET_TERRAFORM_VERSION)))
+        .addMethod(
+            getListResourceChangesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.ListResourceChangesRequest,
+                    com.google.cloud.config.v1.ListResourceChangesResponse>(
+                    service, METHODID_LIST_RESOURCE_CHANGES)))
+        .addMethod(
+            getGetResourceChangeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.GetResourceChangeRequest,
+                    com.google.cloud.config.v1.ResourceChange>(
+                    service, METHODID_GET_RESOURCE_CHANGE)))
+        .addMethod(
+            getListResourceDriftsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.ListResourceDriftsRequest,
+                    com.google.cloud.config.v1.ListResourceDriftsResponse>(
+                    service, METHODID_LIST_RESOURCE_DRIFTS)))
+        .addMethod(
+            getGetResourceDriftMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.GetResourceDriftRequest,
+                    com.google.cloud.config.v1.ResourceDrift>(
+                    service, METHODID_GET_RESOURCE_DRIFT)))
         .build();
   }
 
@@ -3233,6 +3757,10 @@ public final class ConfigGrpc {
                       .addMethod(getExportPreviewResultMethod())
                       .addMethod(getListTerraformVersionsMethod())
                       .addMethod(getGetTerraformVersionMethod())
+                      .addMethod(getListResourceChangesMethod())
+                      .addMethod(getGetResourceChangeMethod())
+                      .addMethod(getListResourceDriftsMethod())
+                      .addMethod(getGetResourceDriftMethod())
                       .build();
         }
       }

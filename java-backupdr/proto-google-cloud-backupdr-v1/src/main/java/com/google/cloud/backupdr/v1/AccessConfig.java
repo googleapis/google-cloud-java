@@ -401,9 +401,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. In accessConfigs (IPv4), the
-   *  default and only option is ONE_TO_ONE_NAT. In
-   *  ipv6AccessConfigs, the default and only option is
-   *  DIRECT_IPV6.
+   * default and only option is ONE_TO_ONE_NAT. In
+   * ipv6AccessConfigs, the default and only option is
+   * DIRECT_IPV6.
    * </pre>
    *
    * <code>
@@ -422,9 +422,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. In accessConfigs (IPv4), the
-   *  default and only option is ONE_TO_ONE_NAT. In
-   *  ipv6AccessConfigs, the default and only option is
-   *  DIRECT_IPV6.
+   * default and only option is ONE_TO_ONE_NAT. In
+   * ipv6AccessConfigs, the default and only option is
+   * DIRECT_IPV6.
    * </pre>
    *
    * <code>
@@ -443,9 +443,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. In accessConfigs (IPv4), the
-   *  default and only option is ONE_TO_ONE_NAT. In
-   *  ipv6AccessConfigs, the default and only option is
-   *  DIRECT_IPV6.
+   * default and only option is ONE_TO_ONE_NAT. In
+   * ipv6AccessConfigs, the default and only option is
+   * DIRECT_IPV6.
    * </pre>
    *
    * <code>
@@ -544,7 +544,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. The external IP address of this access configuration.
    * </pre>
    *
-   * <code>optional string external_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional string external_ip = 3 [json_name = "natIP", (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the externalIp field is set.
    */
@@ -560,7 +562,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. The external IP address of this access configuration.
    * </pre>
    *
-   * <code>optional string external_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional string external_ip = 3 [json_name = "natIP", (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The externalIp.
    */
@@ -584,7 +588,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. The external IP address of this access configuration.
    * </pre>
    *
-   * <code>optional string external_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional string external_ip = 3 [json_name = "natIP", (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The bytes for externalIp.
    */
@@ -1440,9 +1446,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. In accessConfigs (IPv4), the
-     *  default and only option is ONE_TO_ONE_NAT. In
-     *  ipv6AccessConfigs, the default and only option is
-     *  DIRECT_IPV6.
+     * default and only option is ONE_TO_ONE_NAT. In
+     * ipv6AccessConfigs, the default and only option is
+     * DIRECT_IPV6.
      * </pre>
      *
      * <code>
@@ -1461,9 +1467,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. In accessConfigs (IPv4), the
-     *  default and only option is ONE_TO_ONE_NAT. In
-     *  ipv6AccessConfigs, the default and only option is
-     *  DIRECT_IPV6.
+     * default and only option is ONE_TO_ONE_NAT. In
+     * ipv6AccessConfigs, the default and only option is
+     * DIRECT_IPV6.
      * </pre>
      *
      * <code>
@@ -1482,9 +1488,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. In accessConfigs (IPv4), the
-     *  default and only option is ONE_TO_ONE_NAT. In
-     *  ipv6AccessConfigs, the default and only option is
-     *  DIRECT_IPV6.
+     * default and only option is ONE_TO_ONE_NAT. In
+     * ipv6AccessConfigs, the default and only option is
+     * DIRECT_IPV6.
      * </pre>
      *
      * <code>
@@ -1506,9 +1512,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. In accessConfigs (IPv4), the
-     *  default and only option is ONE_TO_ONE_NAT. In
-     *  ipv6AccessConfigs, the default and only option is
-     *  DIRECT_IPV6.
+     * default and only option is ONE_TO_ONE_NAT. In
+     * ipv6AccessConfigs, the default and only option is
+     * DIRECT_IPV6.
      * </pre>
      *
      * <code>
@@ -1531,9 +1537,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. In accessConfigs (IPv4), the
-     *  default and only option is ONE_TO_ONE_NAT. In
-     *  ipv6AccessConfigs, the default and only option is
-     *  DIRECT_IPV6.
+     * default and only option is ONE_TO_ONE_NAT. In
+     * ipv6AccessConfigs, the default and only option is
+     * DIRECT_IPV6.
      * </pre>
      *
      * <code>
@@ -1558,9 +1564,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. In accessConfigs (IPv4), the
-     *  default and only option is ONE_TO_ONE_NAT. In
-     *  ipv6AccessConfigs, the default and only option is
-     *  DIRECT_IPV6.
+     * default and only option is ONE_TO_ONE_NAT. In
+     * ipv6AccessConfigs, the default and only option is
+     * DIRECT_IPV6.
      * </pre>
      *
      * <code>
@@ -1711,7 +1717,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The external IP address of this access configuration.
      * </pre>
      *
-     * <code>optional string external_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * optional string external_ip = 3 [json_name = "natIP", (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the externalIp field is set.
      */
@@ -1726,7 +1734,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The external IP address of this access configuration.
      * </pre>
      *
-     * <code>optional string external_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * optional string external_ip = 3 [json_name = "natIP", (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The externalIp.
      */
@@ -1749,7 +1759,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The external IP address of this access configuration.
      * </pre>
      *
-     * <code>optional string external_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * optional string external_ip = 3 [json_name = "natIP", (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The bytes for externalIp.
      */
@@ -1772,7 +1784,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The external IP address of this access configuration.
      * </pre>
      *
-     * <code>optional string external_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * optional string external_ip = 3 [json_name = "natIP", (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The externalIp to set.
      * @return This builder for chaining.
@@ -1794,7 +1808,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The external IP address of this access configuration.
      * </pre>
      *
-     * <code>optional string external_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * optional string external_ip = 3 [json_name = "natIP", (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1812,7 +1828,9 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The external IP address of this access configuration.
      * </pre>
      *
-     * <code>optional string external_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * optional string external_ip = 3 [json_name = "natIP", (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes for externalIp to set.
      * @return This builder for chaining.

@@ -93,7 +93,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> StreamingSynthesize</td>
- *      <td><p> Performs bidirectional streaming speech synthesis: receive audio while sending text.</td>
+ *      <td><p> Performs bidirectional streaming speech synthesis: receives audio while sending text.</td>
  *      <td>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -393,7 +393,7 @@ public class TextToSpeechClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Performs bidirectional streaming speech synthesis: receive audio while sending text.
+   * Performs bidirectional streaming speech synthesis: receives audio while sending text.
    *
    * <p>Sample code:
    *

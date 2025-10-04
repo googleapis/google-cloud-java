@@ -105,7 +105,7 @@ public final class IndexProto {
           + "\014BATCH_UPDATE\020\001\022\021\n\r"
           + "STREAM_UPDATE\020\002:]\352AZ\n"
           + "\037aiplatform.goo"
-          + "gleapis.com/Index\0227projects/{project}/locations/{location}/indexes/{index}\"\270\007\n"
+          + "gleapis.com/Index\0227projects/{project}/locations/{location}/indexes/{index}\"\362\007\n"
           + "\016IndexDatapoint\022\031\n"
           + "\014datapoint_id\030\001 \001(\tB\003\340A\002\022\033\n"
           + "\016feature_vector\030\002 \003(\002B\003\340A\002\022^\n"
@@ -116,7 +116,9 @@ public final class IndexProto {
           + "\021numeric_restricts\030\006 \003(\0132B."
           + "google.cloud.aiplatform.v1beta1.IndexDatapoint.NumericRestrictionB\003\340A\001\022V\n"
           + "\014crowding_tag\030\005 \001(\0132;.google.cloud.aiplatform.v"
-          + "1beta1.IndexDatapoint.CrowdingTagB\003\340A\001\032?\n"
+          + "1beta1.IndexDatapoint.CrowdingTagB\003\340A\001\0228\n"
+          + "\022embedding_metadata\030\010"
+          + " \001(\0132\027.google.protobuf.StructB\003\340A\001\032?\n"
           + "\017SparseEmbedding\022\023\n"
           + "\006values\030\001 \003(\002B\003\340A\002\022\027\n\n"
           + "dimensions\030\002 \003(\003B\003\340A\002\032G\n"
@@ -129,8 +131,8 @@ public final class IndexProto {
           + "\013value_float\030\003 \001(\002H\000\022\026\n"
           + "\014value_double\030\004 \001(\001H\000\022\021\n"
           + "\tnamespace\030\001 \001(\t\022W\n"
-          + "\002op\030\005 \001(\0162K.google.cloud.aiplat"
-          + "form.v1beta1.IndexDatapoint.NumericRestriction.Operator\"x\n"
+          + "\002op\030\005 \001(\0162K.g"
+          + "oogle.cloud.aiplatform.v1beta1.IndexDatapoint.NumericRestriction.Operator\"x\n"
           + "\010Operator\022\030\n"
           + "\024OPERATOR_UNSPECIFIED\020\000\022\010\n"
           + "\004LESS\020\001\022\016\n\n"
@@ -147,10 +149,10 @@ public final class IndexProto {
           + "\024sparse_vectors_count\030\003 \001(\003B\003\340A\003\022\031\n"
           + "\014shards_count\030\002 \001(\005B\003\340A\003B\341\001\n"
           + "#com.google.cloud.aiplatform.v1beta1B\n"
-          + "IndexProtoP\001ZCcloud.google.com/go/aiplatform/apiv1beta1/aiplatfor"
-          + "mpb;aiplatformpb\252\002\037Google.Cloud.AIPlatfo"
-          + "rm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1b"
-          + "eta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "IndexProtoP\001ZCcloud.google.com/go/aiplatform/ap"
+          + "iv1beta1/aiplatformpb;aiplatformpb\252\002\037Goo"
+          + "gle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cl"
+          + "oud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -205,6 +207,7 @@ public final class IndexProto {
               "Restricts",
               "NumericRestricts",
               "CrowdingTag",
+              "EmbeddingMetadata",
             });
     internal_static_google_cloud_aiplatform_v1beta1_IndexDatapoint_SparseEmbedding_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_IndexDatapoint_descriptor

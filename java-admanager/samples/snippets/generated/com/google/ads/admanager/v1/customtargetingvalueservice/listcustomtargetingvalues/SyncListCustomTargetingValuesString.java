@@ -17,9 +17,9 @@
 package com.google.ads.admanager.v1.samples;
 
 // [START admanager_v1_generated_CustomTargetingValueService_ListCustomTargetingValues_String_sync]
-import com.google.ads.admanager.v1.CustomTargetingKeyName;
 import com.google.ads.admanager.v1.CustomTargetingValue;
 import com.google.ads.admanager.v1.CustomTargetingValueServiceClient;
+import com.google.ads.admanager.v1.NetworkName;
 
 public class SyncListCustomTargetingValuesString {
 
@@ -35,8 +35,7 @@ public class SyncListCustomTargetingValuesString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
         CustomTargetingValueServiceClient.create()) {
-      String parent =
-          CustomTargetingKeyName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]").toString();
+      String parent = NetworkName.of("[NETWORK_CODE]").toString();
       for (CustomTargetingValue element :
           customTargetingValueServiceClient.listCustomTargetingValues(parent).iterateAll()) {
         // doThingsWith(element);

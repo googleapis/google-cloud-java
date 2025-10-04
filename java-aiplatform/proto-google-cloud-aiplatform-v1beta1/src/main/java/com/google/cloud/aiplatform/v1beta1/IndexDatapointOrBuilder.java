@@ -344,4 +344,44 @@ public interface IndexDatapointOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.IndexDatapoint.CrowdingTagOrBuilder getCrowdingTagOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The key-value map of additional metadata for the datapoint.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct embedding_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the embeddingMetadata field is set.
+   */
+  boolean hasEmbeddingMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The key-value map of additional metadata for the datapoint.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct embedding_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The embeddingMetadata.
+   */
+  com.google.protobuf.Struct getEmbeddingMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The key-value map of additional metadata for the datapoint.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct embedding_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.StructOrBuilder getEmbeddingMetadataOrBuilder();
 }

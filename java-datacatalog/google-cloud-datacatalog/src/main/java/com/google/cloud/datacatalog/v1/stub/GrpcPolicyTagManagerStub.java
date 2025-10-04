@@ -69,6 +69,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTaxonomyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Taxonomy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTaxonomyRequest, Empty>
@@ -79,6 +80,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTaxonomyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTaxonomyRequest, Taxonomy>
@@ -89,6 +91,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTaxonomyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Taxonomy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTaxonomiesRequest, ListTaxonomiesResponse>
@@ -100,6 +103,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                   ProtoUtils.marshaller(ListTaxonomiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTaxonomiesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTaxonomyRequest, Taxonomy> getTaxonomyMethodDescriptor =
@@ -108,6 +112,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
           .setFullMethodName("google.cloud.datacatalog.v1.PolicyTagManager/GetTaxonomy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTaxonomyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Taxonomy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreatePolicyTagRequest, PolicyTag>
@@ -118,6 +123,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePolicyTagRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PolicyTag.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePolicyTagRequest, Empty>
@@ -128,6 +134,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePolicyTagRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePolicyTagRequest, PolicyTag>
@@ -138,6 +145,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePolicyTagRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PolicyTag.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPolicyTagsRequest, ListPolicyTagsResponse>
@@ -149,6 +157,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                   ProtoUtils.marshaller(ListPolicyTagsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPolicyTagsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPolicyTagRequest, PolicyTag>
@@ -158,6 +167,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
               .setFullMethodName("google.cloud.datacatalog.v1.PolicyTagManager/GetPolicyTag")
               .setRequestMarshaller(ProtoUtils.marshaller(GetPolicyTagRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PolicyTag.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -166,6 +176,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
           .setFullMethodName("google.cloud.datacatalog.v1.PolicyTagManager/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -174,6 +185,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
           .setFullMethodName("google.cloud.datacatalog.v1.PolicyTagManager/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -185,6 +197,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateTaxonomyRequest, Taxonomy> createTaxonomyCallable;

@@ -888,6 +888,302 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     return allowedUnsafeSysctls_.getByteString(index);
   }
 
+  public static final int EVICTION_SOFT_FIELD_NUMBER = 17;
+  private com.google.container.v1beta1.EvictionSignals evictionSoft_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_soft is a map of signal names to quantities that defines
+   * soft eviction thresholds. Each signal is compared to its corresponding
+   * threshold to determine if a pod eviction should occur.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionSignals eviction_soft = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the evictionSoft field is set.
+   */
+  @java.lang.Override
+  public boolean hasEvictionSoft() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_soft is a map of signal names to quantities that defines
+   * soft eviction thresholds. Each signal is compared to its corresponding
+   * threshold to determine if a pod eviction should occur.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionSignals eviction_soft = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evictionSoft.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.EvictionSignals getEvictionSoft() {
+    return evictionSoft_ == null
+        ? com.google.container.v1beta1.EvictionSignals.getDefaultInstance()
+        : evictionSoft_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_soft is a map of signal names to quantities that defines
+   * soft eviction thresholds. Each signal is compared to its corresponding
+   * threshold to determine if a pod eviction should occur.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionSignals eviction_soft = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.EvictionSignalsOrBuilder getEvictionSoftOrBuilder() {
+    return evictionSoft_ == null
+        ? com.google.container.v1beta1.EvictionSignals.getDefaultInstance()
+        : evictionSoft_;
+  }
+
+  public static final int EVICTION_SOFT_GRACE_PERIOD_FIELD_NUMBER = 18;
+  private com.google.container.v1beta1.EvictionGracePeriod evictionSoftGracePeriod_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_soft_grace_period is a map of signal names to quantities
+   * that defines grace periods for each soft eviction signal. The grace period
+   * is the amount of time that a pod must be under pressure before an eviction
+   * occurs.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionGracePeriod eviction_soft_grace_period = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the evictionSoftGracePeriod field is set.
+   */
+  @java.lang.Override
+  public boolean hasEvictionSoftGracePeriod() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_soft_grace_period is a map of signal names to quantities
+   * that defines grace periods for each soft eviction signal. The grace period
+   * is the amount of time that a pod must be under pressure before an eviction
+   * occurs.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionGracePeriod eviction_soft_grace_period = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evictionSoftGracePeriod.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.EvictionGracePeriod getEvictionSoftGracePeriod() {
+    return evictionSoftGracePeriod_ == null
+        ? com.google.container.v1beta1.EvictionGracePeriod.getDefaultInstance()
+        : evictionSoftGracePeriod_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_soft_grace_period is a map of signal names to quantities
+   * that defines grace periods for each soft eviction signal. The grace period
+   * is the amount of time that a pod must be under pressure before an eviction
+   * occurs.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionGracePeriod eviction_soft_grace_period = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.EvictionGracePeriodOrBuilder
+      getEvictionSoftGracePeriodOrBuilder() {
+    return evictionSoftGracePeriod_ == null
+        ? com.google.container.v1beta1.EvictionGracePeriod.getDefaultInstance()
+        : evictionSoftGracePeriod_;
+  }
+
+  public static final int EVICTION_MINIMUM_RECLAIM_FIELD_NUMBER = 19;
+  private com.google.container.v1beta1.EvictionMinimumReclaim evictionMinimumReclaim_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_minimum_reclaim is a map of signal names to quantities
+   * that defines minimum reclaims, which describe the minimum amount of a given
+   * resource the kubelet will reclaim when performing a pod eviction while that
+   * resource is under pressure.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionMinimumReclaim eviction_minimum_reclaim = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the evictionMinimumReclaim field is set.
+   */
+  @java.lang.Override
+  public boolean hasEvictionMinimumReclaim() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_minimum_reclaim is a map of signal names to quantities
+   * that defines minimum reclaims, which describe the minimum amount of a given
+   * resource the kubelet will reclaim when performing a pod eviction while that
+   * resource is under pressure.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionMinimumReclaim eviction_minimum_reclaim = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evictionMinimumReclaim.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.EvictionMinimumReclaim getEvictionMinimumReclaim() {
+    return evictionMinimumReclaim_ == null
+        ? com.google.container.v1beta1.EvictionMinimumReclaim.getDefaultInstance()
+        : evictionMinimumReclaim_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_minimum_reclaim is a map of signal names to quantities
+   * that defines minimum reclaims, which describe the minimum amount of a given
+   * resource the kubelet will reclaim when performing a pod eviction while that
+   * resource is under pressure.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionMinimumReclaim eviction_minimum_reclaim = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.EvictionMinimumReclaimOrBuilder
+      getEvictionMinimumReclaimOrBuilder() {
+    return evictionMinimumReclaim_ == null
+        ? com.google.container.v1beta1.EvictionMinimumReclaim.getDefaultInstance()
+        : evictionMinimumReclaim_;
+  }
+
+  public static final int EVICTION_MAX_POD_GRACE_PERIOD_SECONDS_FIELD_NUMBER = 20;
+  private int evictionMaxPodGracePeriodSeconds_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_max_pod_grace_period_seconds is the maximum allowed
+   * grace period (in seconds) to use when terminating pods in response to a
+   * soft eviction threshold being met. This value effectively caps the Pod's
+   * terminationGracePeriodSeconds value during soft evictions. Default: 0.
+   * Range: [0, 300].
+   * </pre>
+   *
+   * <code>
+   * int32 eviction_max_pod_grace_period_seconds = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evictionMaxPodGracePeriodSeconds.
+   */
+  @java.lang.Override
+  public int getEvictionMaxPodGracePeriodSeconds() {
+    return evictionMaxPodGracePeriodSeconds_;
+  }
+
+  public static final int MAX_PARALLEL_IMAGE_PULLS_FIELD_NUMBER = 21;
+  private int maxParallelImagePulls_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines the maximum number of image pulls in parallel.
+   * The range is 2 to 5, inclusive.
+   * The default value is 2 or 3 depending on the disk type.
+   *
+   * See
+   * https://kubernetes.io/docs/concepts/containers/images/#maximum-parallel-image-pulls
+   * for more details.
+   * </pre>
+   *
+   * <code>int32 max_parallel_image_pulls = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxParallelImagePulls.
+   */
+  @java.lang.Override
+  public int getMaxParallelImagePulls() {
+    return maxParallelImagePulls_;
+  }
+
+  public static final int SINGLE_PROCESS_OOM_KILL_FIELD_NUMBER = 22;
+  private boolean singleProcessOomKill_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines whether to enable single process OOM killer.
+   * If true, will prevent the memory.oom.group flag from being set for
+   * container cgroups in cgroups v2. This causes processes in the container to
+   * be OOM killed individually instead of as a group.
+   * </pre>
+   *
+   * <code>optional bool single_process_oom_kill = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the singleProcessOomKill field is set.
+   */
+  @java.lang.Override
+  public boolean hasSingleProcessOomKill() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines whether to enable single process OOM killer.
+   * If true, will prevent the memory.oom.group flag from being set for
+   * container cgroups in cgroups v2. This causes processes in the container to
+   * be OOM killed individually instead of as a group.
+   * </pre>
+   *
+   * <code>optional bool single_process_oom_kill = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The singleProcessOomKill.
+   */
+  @java.lang.Override
+  public boolean getSingleProcessOomKill() {
+    return singleProcessOomKill_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -944,6 +1240,24 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < allowedUnsafeSysctls_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 16, allowedUnsafeSysctls_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(17, getEvictionSoft());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(18, getEvictionSoftGracePeriod());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(19, getEvictionMinimumReclaim());
+    }
+    if (evictionMaxPodGracePeriodSeconds_ != 0) {
+      output.writeInt32(20, evictionMaxPodGracePeriodSeconds_);
+    }
+    if (maxParallelImagePulls_ != 0) {
+      output.writeInt32(21, maxParallelImagePulls_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeBool(22, singleProcessOomKill_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1005,6 +1319,29 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 2 * getAllowedUnsafeSysctlsList().size();
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getEvictionSoft());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              18, getEvictionSoftGracePeriod());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(19, getEvictionMinimumReclaim());
+    }
+    if (evictionMaxPodGracePeriodSeconds_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              20, evictionMaxPodGracePeriodSeconds_);
+    }
+    if (maxParallelImagePulls_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(21, maxParallelImagePulls_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, singleProcessOomKill_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1049,6 +1386,25 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     if (!getContainerLogMaxSize().equals(other.getContainerLogMaxSize())) return false;
     if (getContainerLogMaxFiles() != other.getContainerLogMaxFiles()) return false;
     if (!getAllowedUnsafeSysctlsList().equals(other.getAllowedUnsafeSysctlsList())) return false;
+    if (hasEvictionSoft() != other.hasEvictionSoft()) return false;
+    if (hasEvictionSoft()) {
+      if (!getEvictionSoft().equals(other.getEvictionSoft())) return false;
+    }
+    if (hasEvictionSoftGracePeriod() != other.hasEvictionSoftGracePeriod()) return false;
+    if (hasEvictionSoftGracePeriod()) {
+      if (!getEvictionSoftGracePeriod().equals(other.getEvictionSoftGracePeriod())) return false;
+    }
+    if (hasEvictionMinimumReclaim() != other.hasEvictionMinimumReclaim()) return false;
+    if (hasEvictionMinimumReclaim()) {
+      if (!getEvictionMinimumReclaim().equals(other.getEvictionMinimumReclaim())) return false;
+    }
+    if (getEvictionMaxPodGracePeriodSeconds() != other.getEvictionMaxPodGracePeriodSeconds())
+      return false;
+    if (getMaxParallelImagePulls() != other.getMaxParallelImagePulls()) return false;
+    if (hasSingleProcessOomKill() != other.hasSingleProcessOomKill()) return false;
+    if (hasSingleProcessOomKill()) {
+      if (getSingleProcessOomKill() != other.getSingleProcessOomKill()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1099,6 +1455,26 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     if (getAllowedUnsafeSysctlsCount() > 0) {
       hash = (37 * hash) + ALLOWED_UNSAFE_SYSCTLS_FIELD_NUMBER;
       hash = (53 * hash) + getAllowedUnsafeSysctlsList().hashCode();
+    }
+    if (hasEvictionSoft()) {
+      hash = (37 * hash) + EVICTION_SOFT_FIELD_NUMBER;
+      hash = (53 * hash) + getEvictionSoft().hashCode();
+    }
+    if (hasEvictionSoftGracePeriod()) {
+      hash = (37 * hash) + EVICTION_SOFT_GRACE_PERIOD_FIELD_NUMBER;
+      hash = (53 * hash) + getEvictionSoftGracePeriod().hashCode();
+    }
+    if (hasEvictionMinimumReclaim()) {
+      hash = (37 * hash) + EVICTION_MINIMUM_RECLAIM_FIELD_NUMBER;
+      hash = (53 * hash) + getEvictionMinimumReclaim().hashCode();
+    }
+    hash = (37 * hash) + EVICTION_MAX_POD_GRACE_PERIOD_SECONDS_FIELD_NUMBER;
+    hash = (53 * hash) + getEvictionMaxPodGracePeriodSeconds();
+    hash = (37 * hash) + MAX_PARALLEL_IMAGE_PULLS_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxParallelImagePulls();
+    if (hasSingleProcessOomKill()) {
+      hash = (37 * hash) + SINGLE_PROCESS_OOM_KILL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSingleProcessOomKill());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1244,6 +1620,9 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
         getTopologyManagerFieldBuilder();
         getMemoryManagerFieldBuilder();
         getCpuCfsQuotaFieldBuilder();
+        getEvictionSoftFieldBuilder();
+        getEvictionSoftGracePeriodFieldBuilder();
+        getEvictionMinimumReclaimFieldBuilder();
       }
     }
 
@@ -1277,6 +1656,24 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       containerLogMaxSize_ = "";
       containerLogMaxFiles_ = 0;
       allowedUnsafeSysctls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      evictionSoft_ = null;
+      if (evictionSoftBuilder_ != null) {
+        evictionSoftBuilder_.dispose();
+        evictionSoftBuilder_ = null;
+      }
+      evictionSoftGracePeriod_ = null;
+      if (evictionSoftGracePeriodBuilder_ != null) {
+        evictionSoftGracePeriodBuilder_.dispose();
+        evictionSoftGracePeriodBuilder_ = null;
+      }
+      evictionMinimumReclaim_ = null;
+      if (evictionMinimumReclaimBuilder_ != null) {
+        evictionMinimumReclaimBuilder_.dispose();
+        evictionMinimumReclaimBuilder_ = null;
+      }
+      evictionMaxPodGracePeriodSeconds_ = 0;
+      maxParallelImagePulls_ = 0;
+      singleProcessOomKill_ = false;
       return this;
     }
 
@@ -1363,6 +1760,35 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00002000) != 0)) {
         allowedUnsafeSysctls_.makeImmutable();
         result.allowedUnsafeSysctls_ = allowedUnsafeSysctls_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.evictionSoft_ =
+            evictionSoftBuilder_ == null ? evictionSoft_ : evictionSoftBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.evictionSoftGracePeriod_ =
+            evictionSoftGracePeriodBuilder_ == null
+                ? evictionSoftGracePeriod_
+                : evictionSoftGracePeriodBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.evictionMinimumReclaim_ =
+            evictionMinimumReclaimBuilder_ == null
+                ? evictionMinimumReclaim_
+                : evictionMinimumReclaimBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.evictionMaxPodGracePeriodSeconds_ = evictionMaxPodGracePeriodSeconds_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.maxParallelImagePulls_ = maxParallelImagePulls_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.singleProcessOomKill_ = singleProcessOomKill_;
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1470,6 +1896,24 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
           allowedUnsafeSysctls_.addAll(other.allowedUnsafeSysctls_);
         }
         onChanged();
+      }
+      if (other.hasEvictionSoft()) {
+        mergeEvictionSoft(other.getEvictionSoft());
+      }
+      if (other.hasEvictionSoftGracePeriod()) {
+        mergeEvictionSoftGracePeriod(other.getEvictionSoftGracePeriod());
+      }
+      if (other.hasEvictionMinimumReclaim()) {
+        mergeEvictionMinimumReclaim(other.getEvictionMinimumReclaim());
+      }
+      if (other.getEvictionMaxPodGracePeriodSeconds() != 0) {
+        setEvictionMaxPodGracePeriodSeconds(other.getEvictionMaxPodGracePeriodSeconds());
+      }
+      if (other.getMaxParallelImagePulls() != 0) {
+        setMaxParallelImagePulls(other.getMaxParallelImagePulls());
+      }
+      if (other.hasSingleProcessOomKill()) {
+        setSingleProcessOomKill(other.getSingleProcessOomKill());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1582,6 +2026,44 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
                 allowedUnsafeSysctls_.add(s);
                 break;
               } // case 130
+            case 138:
+              {
+                input.readMessage(getEvictionSoftFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 138
+            case 146:
+              {
+                input.readMessage(
+                    getEvictionSoftGracePeriodFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 146
+            case 154:
+              {
+                input.readMessage(
+                    getEvictionMinimumReclaimFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 154
+            case 160:
+              {
+                evictionMaxPodGracePeriodSeconds_ = input.readInt32();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 160
+            case 168:
+              {
+                maxParallelImagePulls_ = input.readInt32();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 168
+            case 176:
+              {
+                singleProcessOomKill_ = input.readBool();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3790,6 +4272,963 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       ensureAllowedUnsafeSysctlsIsMutable();
       allowedUnsafeSysctls_.add(value);
       bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.container.v1beta1.EvictionSignals evictionSoft_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.EvictionSignals,
+            com.google.container.v1beta1.EvictionSignals.Builder,
+            com.google.container.v1beta1.EvictionSignalsOrBuilder>
+        evictionSoftBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft is a map of signal names to quantities that defines
+     * soft eviction thresholds. Each signal is compared to its corresponding
+     * threshold to determine if a pod eviction should occur.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionSignals eviction_soft = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the evictionSoft field is set.
+     */
+    public boolean hasEvictionSoft() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft is a map of signal names to quantities that defines
+     * soft eviction thresholds. Each signal is compared to its corresponding
+     * threshold to determine if a pod eviction should occur.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionSignals eviction_soft = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The evictionSoft.
+     */
+    public com.google.container.v1beta1.EvictionSignals getEvictionSoft() {
+      if (evictionSoftBuilder_ == null) {
+        return evictionSoft_ == null
+            ? com.google.container.v1beta1.EvictionSignals.getDefaultInstance()
+            : evictionSoft_;
+      } else {
+        return evictionSoftBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft is a map of signal names to quantities that defines
+     * soft eviction thresholds. Each signal is compared to its corresponding
+     * threshold to determine if a pod eviction should occur.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionSignals eviction_soft = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEvictionSoft(com.google.container.v1beta1.EvictionSignals value) {
+      if (evictionSoftBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        evictionSoft_ = value;
+      } else {
+        evictionSoftBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft is a map of signal names to quantities that defines
+     * soft eviction thresholds. Each signal is compared to its corresponding
+     * threshold to determine if a pod eviction should occur.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionSignals eviction_soft = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEvictionSoft(
+        com.google.container.v1beta1.EvictionSignals.Builder builderForValue) {
+      if (evictionSoftBuilder_ == null) {
+        evictionSoft_ = builderForValue.build();
+      } else {
+        evictionSoftBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft is a map of signal names to quantities that defines
+     * soft eviction thresholds. Each signal is compared to its corresponding
+     * threshold to determine if a pod eviction should occur.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionSignals eviction_soft = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEvictionSoft(com.google.container.v1beta1.EvictionSignals value) {
+      if (evictionSoftBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && evictionSoft_ != null
+            && evictionSoft_ != com.google.container.v1beta1.EvictionSignals.getDefaultInstance()) {
+          getEvictionSoftBuilder().mergeFrom(value);
+        } else {
+          evictionSoft_ = value;
+        }
+      } else {
+        evictionSoftBuilder_.mergeFrom(value);
+      }
+      if (evictionSoft_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft is a map of signal names to quantities that defines
+     * soft eviction thresholds. Each signal is compared to its corresponding
+     * threshold to determine if a pod eviction should occur.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionSignals eviction_soft = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEvictionSoft() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      evictionSoft_ = null;
+      if (evictionSoftBuilder_ != null) {
+        evictionSoftBuilder_.dispose();
+        evictionSoftBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft is a map of signal names to quantities that defines
+     * soft eviction thresholds. Each signal is compared to its corresponding
+     * threshold to determine if a pod eviction should occur.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionSignals eviction_soft = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.EvictionSignals.Builder getEvictionSoftBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getEvictionSoftFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft is a map of signal names to quantities that defines
+     * soft eviction thresholds. Each signal is compared to its corresponding
+     * threshold to determine if a pod eviction should occur.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionSignals eviction_soft = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.EvictionSignalsOrBuilder getEvictionSoftOrBuilder() {
+      if (evictionSoftBuilder_ != null) {
+        return evictionSoftBuilder_.getMessageOrBuilder();
+      } else {
+        return evictionSoft_ == null
+            ? com.google.container.v1beta1.EvictionSignals.getDefaultInstance()
+            : evictionSoft_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft is a map of signal names to quantities that defines
+     * soft eviction thresholds. Each signal is compared to its corresponding
+     * threshold to determine if a pod eviction should occur.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionSignals eviction_soft = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.EvictionSignals,
+            com.google.container.v1beta1.EvictionSignals.Builder,
+            com.google.container.v1beta1.EvictionSignalsOrBuilder>
+        getEvictionSoftFieldBuilder() {
+      if (evictionSoftBuilder_ == null) {
+        evictionSoftBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.EvictionSignals,
+                com.google.container.v1beta1.EvictionSignals.Builder,
+                com.google.container.v1beta1.EvictionSignalsOrBuilder>(
+                getEvictionSoft(), getParentForChildren(), isClean());
+        evictionSoft_ = null;
+      }
+      return evictionSoftBuilder_;
+    }
+
+    private com.google.container.v1beta1.EvictionGracePeriod evictionSoftGracePeriod_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.EvictionGracePeriod,
+            com.google.container.v1beta1.EvictionGracePeriod.Builder,
+            com.google.container.v1beta1.EvictionGracePeriodOrBuilder>
+        evictionSoftGracePeriodBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft_grace_period is a map of signal names to quantities
+     * that defines grace periods for each soft eviction signal. The grace period
+     * is the amount of time that a pod must be under pressure before an eviction
+     * occurs.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionGracePeriod eviction_soft_grace_period = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the evictionSoftGracePeriod field is set.
+     */
+    public boolean hasEvictionSoftGracePeriod() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft_grace_period is a map of signal names to quantities
+     * that defines grace periods for each soft eviction signal. The grace period
+     * is the amount of time that a pod must be under pressure before an eviction
+     * occurs.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionGracePeriod eviction_soft_grace_period = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The evictionSoftGracePeriod.
+     */
+    public com.google.container.v1beta1.EvictionGracePeriod getEvictionSoftGracePeriod() {
+      if (evictionSoftGracePeriodBuilder_ == null) {
+        return evictionSoftGracePeriod_ == null
+            ? com.google.container.v1beta1.EvictionGracePeriod.getDefaultInstance()
+            : evictionSoftGracePeriod_;
+      } else {
+        return evictionSoftGracePeriodBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft_grace_period is a map of signal names to quantities
+     * that defines grace periods for each soft eviction signal. The grace period
+     * is the amount of time that a pod must be under pressure before an eviction
+     * occurs.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionGracePeriod eviction_soft_grace_period = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEvictionSoftGracePeriod(
+        com.google.container.v1beta1.EvictionGracePeriod value) {
+      if (evictionSoftGracePeriodBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        evictionSoftGracePeriod_ = value;
+      } else {
+        evictionSoftGracePeriodBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft_grace_period is a map of signal names to quantities
+     * that defines grace periods for each soft eviction signal. The grace period
+     * is the amount of time that a pod must be under pressure before an eviction
+     * occurs.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionGracePeriod eviction_soft_grace_period = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEvictionSoftGracePeriod(
+        com.google.container.v1beta1.EvictionGracePeriod.Builder builderForValue) {
+      if (evictionSoftGracePeriodBuilder_ == null) {
+        evictionSoftGracePeriod_ = builderForValue.build();
+      } else {
+        evictionSoftGracePeriodBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft_grace_period is a map of signal names to quantities
+     * that defines grace periods for each soft eviction signal. The grace period
+     * is the amount of time that a pod must be under pressure before an eviction
+     * occurs.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionGracePeriod eviction_soft_grace_period = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEvictionSoftGracePeriod(
+        com.google.container.v1beta1.EvictionGracePeriod value) {
+      if (evictionSoftGracePeriodBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && evictionSoftGracePeriod_ != null
+            && evictionSoftGracePeriod_
+                != com.google.container.v1beta1.EvictionGracePeriod.getDefaultInstance()) {
+          getEvictionSoftGracePeriodBuilder().mergeFrom(value);
+        } else {
+          evictionSoftGracePeriod_ = value;
+        }
+      } else {
+        evictionSoftGracePeriodBuilder_.mergeFrom(value);
+      }
+      if (evictionSoftGracePeriod_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft_grace_period is a map of signal names to quantities
+     * that defines grace periods for each soft eviction signal. The grace period
+     * is the amount of time that a pod must be under pressure before an eviction
+     * occurs.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionGracePeriod eviction_soft_grace_period = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEvictionSoftGracePeriod() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      evictionSoftGracePeriod_ = null;
+      if (evictionSoftGracePeriodBuilder_ != null) {
+        evictionSoftGracePeriodBuilder_.dispose();
+        evictionSoftGracePeriodBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft_grace_period is a map of signal names to quantities
+     * that defines grace periods for each soft eviction signal. The grace period
+     * is the amount of time that a pod must be under pressure before an eviction
+     * occurs.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionGracePeriod eviction_soft_grace_period = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.EvictionGracePeriod.Builder
+        getEvictionSoftGracePeriodBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return getEvictionSoftGracePeriodFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft_grace_period is a map of signal names to quantities
+     * that defines grace periods for each soft eviction signal. The grace period
+     * is the amount of time that a pod must be under pressure before an eviction
+     * occurs.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionGracePeriod eviction_soft_grace_period = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.EvictionGracePeriodOrBuilder
+        getEvictionSoftGracePeriodOrBuilder() {
+      if (evictionSoftGracePeriodBuilder_ != null) {
+        return evictionSoftGracePeriodBuilder_.getMessageOrBuilder();
+      } else {
+        return evictionSoftGracePeriod_ == null
+            ? com.google.container.v1beta1.EvictionGracePeriod.getDefaultInstance()
+            : evictionSoftGracePeriod_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_soft_grace_period is a map of signal names to quantities
+     * that defines grace periods for each soft eviction signal. The grace period
+     * is the amount of time that a pod must be under pressure before an eviction
+     * occurs.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionGracePeriod eviction_soft_grace_period = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.EvictionGracePeriod,
+            com.google.container.v1beta1.EvictionGracePeriod.Builder,
+            com.google.container.v1beta1.EvictionGracePeriodOrBuilder>
+        getEvictionSoftGracePeriodFieldBuilder() {
+      if (evictionSoftGracePeriodBuilder_ == null) {
+        evictionSoftGracePeriodBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.EvictionGracePeriod,
+                com.google.container.v1beta1.EvictionGracePeriod.Builder,
+                com.google.container.v1beta1.EvictionGracePeriodOrBuilder>(
+                getEvictionSoftGracePeriod(), getParentForChildren(), isClean());
+        evictionSoftGracePeriod_ = null;
+      }
+      return evictionSoftGracePeriodBuilder_;
+    }
+
+    private com.google.container.v1beta1.EvictionMinimumReclaim evictionMinimumReclaim_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.EvictionMinimumReclaim,
+            com.google.container.v1beta1.EvictionMinimumReclaim.Builder,
+            com.google.container.v1beta1.EvictionMinimumReclaimOrBuilder>
+        evictionMinimumReclaimBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_minimum_reclaim is a map of signal names to quantities
+     * that defines minimum reclaims, which describe the minimum amount of a given
+     * resource the kubelet will reclaim when performing a pod eviction while that
+     * resource is under pressure.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionMinimumReclaim eviction_minimum_reclaim = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the evictionMinimumReclaim field is set.
+     */
+    public boolean hasEvictionMinimumReclaim() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_minimum_reclaim is a map of signal names to quantities
+     * that defines minimum reclaims, which describe the minimum amount of a given
+     * resource the kubelet will reclaim when performing a pod eviction while that
+     * resource is under pressure.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionMinimumReclaim eviction_minimum_reclaim = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The evictionMinimumReclaim.
+     */
+    public com.google.container.v1beta1.EvictionMinimumReclaim getEvictionMinimumReclaim() {
+      if (evictionMinimumReclaimBuilder_ == null) {
+        return evictionMinimumReclaim_ == null
+            ? com.google.container.v1beta1.EvictionMinimumReclaim.getDefaultInstance()
+            : evictionMinimumReclaim_;
+      } else {
+        return evictionMinimumReclaimBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_minimum_reclaim is a map of signal names to quantities
+     * that defines minimum reclaims, which describe the minimum amount of a given
+     * resource the kubelet will reclaim when performing a pod eviction while that
+     * resource is under pressure.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionMinimumReclaim eviction_minimum_reclaim = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEvictionMinimumReclaim(
+        com.google.container.v1beta1.EvictionMinimumReclaim value) {
+      if (evictionMinimumReclaimBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        evictionMinimumReclaim_ = value;
+      } else {
+        evictionMinimumReclaimBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_minimum_reclaim is a map of signal names to quantities
+     * that defines minimum reclaims, which describe the minimum amount of a given
+     * resource the kubelet will reclaim when performing a pod eviction while that
+     * resource is under pressure.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionMinimumReclaim eviction_minimum_reclaim = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEvictionMinimumReclaim(
+        com.google.container.v1beta1.EvictionMinimumReclaim.Builder builderForValue) {
+      if (evictionMinimumReclaimBuilder_ == null) {
+        evictionMinimumReclaim_ = builderForValue.build();
+      } else {
+        evictionMinimumReclaimBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_minimum_reclaim is a map of signal names to quantities
+     * that defines minimum reclaims, which describe the minimum amount of a given
+     * resource the kubelet will reclaim when performing a pod eviction while that
+     * resource is under pressure.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionMinimumReclaim eviction_minimum_reclaim = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEvictionMinimumReclaim(
+        com.google.container.v1beta1.EvictionMinimumReclaim value) {
+      if (evictionMinimumReclaimBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && evictionMinimumReclaim_ != null
+            && evictionMinimumReclaim_
+                != com.google.container.v1beta1.EvictionMinimumReclaim.getDefaultInstance()) {
+          getEvictionMinimumReclaimBuilder().mergeFrom(value);
+        } else {
+          evictionMinimumReclaim_ = value;
+        }
+      } else {
+        evictionMinimumReclaimBuilder_.mergeFrom(value);
+      }
+      if (evictionMinimumReclaim_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_minimum_reclaim is a map of signal names to quantities
+     * that defines minimum reclaims, which describe the minimum amount of a given
+     * resource the kubelet will reclaim when performing a pod eviction while that
+     * resource is under pressure.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionMinimumReclaim eviction_minimum_reclaim = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEvictionMinimumReclaim() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      evictionMinimumReclaim_ = null;
+      if (evictionMinimumReclaimBuilder_ != null) {
+        evictionMinimumReclaimBuilder_.dispose();
+        evictionMinimumReclaimBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_minimum_reclaim is a map of signal names to quantities
+     * that defines minimum reclaims, which describe the minimum amount of a given
+     * resource the kubelet will reclaim when performing a pod eviction while that
+     * resource is under pressure.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionMinimumReclaim eviction_minimum_reclaim = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.EvictionMinimumReclaim.Builder
+        getEvictionMinimumReclaimBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return getEvictionMinimumReclaimFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_minimum_reclaim is a map of signal names to quantities
+     * that defines minimum reclaims, which describe the minimum amount of a given
+     * resource the kubelet will reclaim when performing a pod eviction while that
+     * resource is under pressure.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionMinimumReclaim eviction_minimum_reclaim = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.EvictionMinimumReclaimOrBuilder
+        getEvictionMinimumReclaimOrBuilder() {
+      if (evictionMinimumReclaimBuilder_ != null) {
+        return evictionMinimumReclaimBuilder_.getMessageOrBuilder();
+      } else {
+        return evictionMinimumReclaim_ == null
+            ? com.google.container.v1beta1.EvictionMinimumReclaim.getDefaultInstance()
+            : evictionMinimumReclaim_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_minimum_reclaim is a map of signal names to quantities
+     * that defines minimum reclaims, which describe the minimum amount of a given
+     * resource the kubelet will reclaim when performing a pod eviction while that
+     * resource is under pressure.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EvictionMinimumReclaim eviction_minimum_reclaim = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.EvictionMinimumReclaim,
+            com.google.container.v1beta1.EvictionMinimumReclaim.Builder,
+            com.google.container.v1beta1.EvictionMinimumReclaimOrBuilder>
+        getEvictionMinimumReclaimFieldBuilder() {
+      if (evictionMinimumReclaimBuilder_ == null) {
+        evictionMinimumReclaimBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.EvictionMinimumReclaim,
+                com.google.container.v1beta1.EvictionMinimumReclaim.Builder,
+                com.google.container.v1beta1.EvictionMinimumReclaimOrBuilder>(
+                getEvictionMinimumReclaim(), getParentForChildren(), isClean());
+        evictionMinimumReclaim_ = null;
+      }
+      return evictionMinimumReclaimBuilder_;
+    }
+
+    private int evictionMaxPodGracePeriodSeconds_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_max_pod_grace_period_seconds is the maximum allowed
+     * grace period (in seconds) to use when terminating pods in response to a
+     * soft eviction threshold being met. This value effectively caps the Pod's
+     * terminationGracePeriodSeconds value during soft evictions. Default: 0.
+     * Range: [0, 300].
+     * </pre>
+     *
+     * <code>
+     * int32 eviction_max_pod_grace_period_seconds = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The evictionMaxPodGracePeriodSeconds.
+     */
+    @java.lang.Override
+    public int getEvictionMaxPodGracePeriodSeconds() {
+      return evictionMaxPodGracePeriodSeconds_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_max_pod_grace_period_seconds is the maximum allowed
+     * grace period (in seconds) to use when terminating pods in response to a
+     * soft eviction threshold being met. This value effectively caps the Pod's
+     * terminationGracePeriodSeconds value during soft evictions. Default: 0.
+     * Range: [0, 300].
+     * </pre>
+     *
+     * <code>
+     * int32 eviction_max_pod_grace_period_seconds = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The evictionMaxPodGracePeriodSeconds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvictionMaxPodGracePeriodSeconds(int value) {
+
+      evictionMaxPodGracePeriodSeconds_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. eviction_max_pod_grace_period_seconds is the maximum allowed
+     * grace period (in seconds) to use when terminating pods in response to a
+     * soft eviction threshold being met. This value effectively caps the Pod's
+     * terminationGracePeriodSeconds value during soft evictions. Default: 0.
+     * Range: [0, 300].
+     * </pre>
+     *
+     * <code>
+     * int32 eviction_max_pod_grace_period_seconds = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEvictionMaxPodGracePeriodSeconds() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      evictionMaxPodGracePeriodSeconds_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int maxParallelImagePulls_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the maximum number of image pulls in parallel.
+     * The range is 2 to 5, inclusive.
+     * The default value is 2 or 3 depending on the disk type.
+     *
+     * See
+     * https://kubernetes.io/docs/concepts/containers/images/#maximum-parallel-image-pulls
+     * for more details.
+     * </pre>
+     *
+     * <code>int32 max_parallel_image_pulls = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxParallelImagePulls.
+     */
+    @java.lang.Override
+    public int getMaxParallelImagePulls() {
+      return maxParallelImagePulls_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the maximum number of image pulls in parallel.
+     * The range is 2 to 5, inclusive.
+     * The default value is 2 or 3 depending on the disk type.
+     *
+     * See
+     * https://kubernetes.io/docs/concepts/containers/images/#maximum-parallel-image-pulls
+     * for more details.
+     * </pre>
+     *
+     * <code>int32 max_parallel_image_pulls = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The maxParallelImagePulls to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxParallelImagePulls(int value) {
+
+      maxParallelImagePulls_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the maximum number of image pulls in parallel.
+     * The range is 2 to 5, inclusive.
+     * The default value is 2 or 3 depending on the disk type.
+     *
+     * See
+     * https://kubernetes.io/docs/concepts/containers/images/#maximum-parallel-image-pulls
+     * for more details.
+     * </pre>
+     *
+     * <code>int32 max_parallel_image_pulls = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxParallelImagePulls() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      maxParallelImagePulls_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean singleProcessOomKill_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines whether to enable single process OOM killer.
+     * If true, will prevent the memory.oom.group flag from being set for
+     * container cgroups in cgroups v2. This causes processes in the container to
+     * be OOM killed individually instead of as a group.
+     * </pre>
+     *
+     * <code>optional bool single_process_oom_kill = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the singleProcessOomKill field is set.
+     */
+    @java.lang.Override
+    public boolean hasSingleProcessOomKill() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines whether to enable single process OOM killer.
+     * If true, will prevent the memory.oom.group flag from being set for
+     * container cgroups in cgroups v2. This causes processes in the container to
+     * be OOM killed individually instead of as a group.
+     * </pre>
+     *
+     * <code>optional bool single_process_oom_kill = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The singleProcessOomKill.
+     */
+    @java.lang.Override
+    public boolean getSingleProcessOomKill() {
+      return singleProcessOomKill_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines whether to enable single process OOM killer.
+     * If true, will prevent the memory.oom.group flag from being set for
+     * container cgroups in cgroups v2. This causes processes in the container to
+     * be OOM killed individually instead of as a group.
+     * </pre>
+     *
+     * <code>optional bool single_process_oom_kill = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The singleProcessOomKill to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSingleProcessOomKill(boolean value) {
+
+      singleProcessOomKill_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines whether to enable single process OOM killer.
+     * If true, will prevent the memory.oom.group flag from being set for
+     * container cgroups in cgroups v2. This causes processes in the container to
+     * be OOM killed individually instead of as a group.
+     * </pre>
+     *
+     * <code>optional bool single_process_oom_kill = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSingleProcessOomKill() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      singleProcessOomKill_ = false;
       onChanged();
       return this;
     }

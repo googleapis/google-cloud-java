@@ -509,8 +509,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * MITRE ATT&amp;CK techniques that can be referenced by SCC findings.
-   * See: https://attack.mitre.org/techniques/enterprise/
+   * MITRE ATT&amp;CK techniques that can be referenced by Security Command Center
+   * findings. See: https://attack.mitre.org/techniques/enterprise/
    * </pre>
    *
    * Protobuf enum {@code google.cloud.securitycenter.v2.MitreAttack.Technique}
@@ -526,6 +526,136 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>TECHNIQUE_UNSPECIFIED = 0;</code>
      */
     TECHNIQUE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * T1001
+     * </pre>
+     *
+     * <code>DATA_OBFUSCATION = 70;</code>
+     */
+    DATA_OBFUSCATION(70),
+    /**
+     *
+     *
+     * <pre>
+     * T1001.002
+     * </pre>
+     *
+     * <code>DATA_OBFUSCATION_STEGANOGRAPHY = 71;</code>
+     */
+    DATA_OBFUSCATION_STEGANOGRAPHY(71),
+    /**
+     *
+     *
+     * <pre>
+     * T1003
+     * </pre>
+     *
+     * <code>OS_CREDENTIAL_DUMPING = 114;</code>
+     */
+    OS_CREDENTIAL_DUMPING(114),
+    /**
+     *
+     *
+     * <pre>
+     * T1003.007
+     * </pre>
+     *
+     * <code>OS_CREDENTIAL_DUMPING_PROC_FILESYSTEM = 115;</code>
+     */
+    OS_CREDENTIAL_DUMPING_PROC_FILESYSTEM(115),
+    /**
+     *
+     *
+     * <pre>
+     * T1003.008
+     * </pre>
+     *
+     * <code>OS_CREDENTIAL_DUMPING_ETC_PASSWORD_AND_ETC_SHADOW = 122;</code>
+     */
+    OS_CREDENTIAL_DUMPING_ETC_PASSWORD_AND_ETC_SHADOW(122),
+    /**
+     *
+     *
+     * <pre>
+     * T1005
+     * </pre>
+     *
+     * <code>DATA_FROM_LOCAL_SYSTEM = 117;</code>
+     */
+    DATA_FROM_LOCAL_SYSTEM(117),
+    /**
+     *
+     *
+     * <pre>
+     * T1020
+     * </pre>
+     *
+     * <code>AUTOMATED_EXFILTRATION = 68;</code>
+     */
+    AUTOMATED_EXFILTRATION(68),
+    /**
+     *
+     *
+     * <pre>
+     * T1027
+     * </pre>
+     *
+     * <code>OBFUSCATED_FILES_OR_INFO = 72;</code>
+     */
+    OBFUSCATED_FILES_OR_INFO(72),
+    /**
+     *
+     *
+     * <pre>
+     * T1027.003
+     * </pre>
+     *
+     * <code>STEGANOGRAPHY = 73;</code>
+     */
+    STEGANOGRAPHY(73),
+    /**
+     *
+     *
+     * <pre>
+     * T1027.004
+     * </pre>
+     *
+     * <code>COMPILE_AFTER_DELIVERY = 74;</code>
+     */
+    COMPILE_AFTER_DELIVERY(74),
+    /**
+     *
+     *
+     * <pre>
+     * T1027.010
+     * </pre>
+     *
+     * <code>COMMAND_OBFUSCATION = 75;</code>
+     */
+    COMMAND_OBFUSCATION(75),
+    /**
+     *
+     *
+     * <pre>
+     * T1029
+     * </pre>
+     *
+     * <code>SCHEDULED_TRANSFER = 120;</code>
+     */
+    SCHEDULED_TRANSFER(120),
+    /**
+     *
+     *
+     * <pre>
+     * T1033
+     * </pre>
+     *
+     * <code>SYSTEM_OWNER_USER_DISCOVERY = 118;</code>
+     */
+    SYSTEM_OWNER_USER_DISCOVERY(118),
     /**
      *
      *
@@ -576,6 +706,66 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>NETWORK_SERVICE_DISCOVERY = 32;</code>
      */
     NETWORK_SERVICE_DISCOVERY(32),
+    /**
+     *
+     *
+     * <pre>
+     * T1053
+     * </pre>
+     *
+     * <code>SCHEDULED_TASK_JOB = 89;</code>
+     */
+    SCHEDULED_TASK_JOB(89),
+    /**
+     *
+     *
+     * <pre>
+     * T1053.003
+     * </pre>
+     *
+     * <code>SCHEDULED_TASK_JOB_CRON = 119;</code>
+     */
+    SCHEDULED_TASK_JOB_CRON(119),
+    /**
+     *
+     *
+     * <pre>
+     * T1053.007
+     * </pre>
+     *
+     * <code>CONTAINER_ORCHESTRATION_JOB = 90;</code>
+     */
+    CONTAINER_ORCHESTRATION_JOB(90),
+    /**
+     *
+     *
+     * <pre>
+     * T1055
+     * </pre>
+     *
+     * <code>PROCESS_INJECTION = 93;</code>
+     */
+    PROCESS_INJECTION(93),
+    /**
+     *
+     *
+     * <pre>
+     * T1056
+     * </pre>
+     *
+     * <code>INPUT_CAPTURE = 103;</code>
+     */
+    INPUT_CAPTURE(103),
+    /**
+     *
+     *
+     * <pre>
+     * T1056.001
+     * </pre>
+     *
+     * <code>INPUT_CAPTURE_KEYLOGGING = 104;</code>
+     */
+    INPUT_CAPTURE_KEYLOGGING(104),
     /**
      *
      *
@@ -650,12 +840,62 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1070
+     * </pre>
+     *
+     * <code>INDICATOR_REMOVAL = 123;</code>
+     */
+    INDICATOR_REMOVAL(123),
+    /**
+     *
+     *
+     * <pre>
+     * T1070.002
+     * </pre>
+     *
+     * <code>INDICATOR_REMOVAL_CLEAR_LINUX_OR_MAC_SYSTEM_LOGS = 124;</code>
+     */
+    INDICATOR_REMOVAL_CLEAR_LINUX_OR_MAC_SYSTEM_LOGS(124),
+    /**
+     *
+     *
+     * <pre>
+     * T1070.003
+     * </pre>
+     *
+     * <code>INDICATOR_REMOVAL_CLEAR_COMMAND_HISTORY = 125;</code>
+     */
+    INDICATOR_REMOVAL_CLEAR_COMMAND_HISTORY(125),
+    /**
+     *
+     *
+     * <pre>
      * T1070.004
      * </pre>
      *
      * <code>INDICATOR_REMOVAL_FILE_DELETION = 64;</code>
      */
     INDICATOR_REMOVAL_FILE_DELETION(64),
+    /**
+     *
+     *
+     * <pre>
+     * T1070.006
+     * </pre>
+     *
+     * <code>INDICATOR_REMOVAL_TIMESTOMP = 128;</code>
+     */
+    INDICATOR_REMOVAL_TIMESTOMP(128),
+    /**
+     *
+     *
+     * <pre>
+     * T1070.008
+     * </pre>
+     *
+     * <code>INDICATOR_REMOVAL_CLEAR_MAILBOX_DATA = 126;</code>
+     */
+    INDICATOR_REMOVAL_CLEAR_MAILBOX_DATA(126),
     /**
      *
      *
@@ -730,6 +970,26 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1083
+     * </pre>
+     *
+     * <code>FILE_AND_DIRECTORY_DISCOVERY = 121;</code>
+     */
+    FILE_AND_DIRECTORY_DISCOVERY(121),
+    /**
+     *
+     *
+     * <pre>
+     * T1087.001
+     * </pre>
+     *
+     * <code>ACCOUNT_DISCOVERY_LOCAL_ACCOUNT = 116;</code>
+     */
+    ACCOUNT_DISCOVERY_LOCAL_ACCOUNT(116),
+    /**
+     *
+     *
+     * <pre>
      * T1090
      * </pre>
      *
@@ -780,6 +1040,16 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1098.003
+     * </pre>
+     *
+     * <code>ADDITIONAL_CLOUD_ROLES = 67;</code>
+     */
+    ADDITIONAL_CLOUD_ROLES(67),
+    /**
+     *
+     *
+     * <pre>
      * T1098.004
      * </pre>
      *
@@ -796,6 +1066,16 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>ADDITIONAL_CONTAINER_CLUSTER_ROLES = 58;</code>
      */
     ADDITIONAL_CONTAINER_CLUSTER_ROLES(58),
+    /**
+     *
+     *
+     * <pre>
+     * T1104
+     * </pre>
+     *
+     * <code>MULTI_STAGE_CHANNELS = 76;</code>
+     */
+    MULTI_STAGE_CHANNELS(76),
     /**
      *
      *
@@ -830,12 +1110,42 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1119
+     * </pre>
+     *
+     * <code>AUTOMATED_COLLECTION = 94;</code>
+     */
+    AUTOMATED_COLLECTION(94),
+    /**
+     *
+     *
+     * <pre>
      * T1129
      * </pre>
      *
      * <code>SHARED_MODULES = 5;</code>
      */
     SHARED_MODULES(5),
+    /**
+     *
+     *
+     * <pre>
+     * T1132
+     * </pre>
+     *
+     * <code>DATA_ENCODING = 77;</code>
+     */
+    DATA_ENCODING(77),
+    /**
+     *
+     *
+     * <pre>
+     * T1132.001
+     * </pre>
+     *
+     * <code>STANDARD_ENCODING = 78;</code>
+     */
+    STANDARD_ENCODING(78),
     /**
      *
      *
@@ -860,12 +1170,92 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1136
+     * </pre>
+     *
+     * <code>CREATE_ACCOUNT = 79;</code>
+     */
+    CREATE_ACCOUNT(79),
+    /**
+     *
+     *
+     * <pre>
+     * T1136.001
+     * </pre>
+     *
+     * <code>LOCAL_ACCOUNT = 80;</code>
+     */
+    LOCAL_ACCOUNT(80),
+    /**
+     *
+     *
+     * <pre>
+     * T1140
+     * </pre>
+     *
+     * <code>DEOBFUSCATE_DECODE_FILES_OR_INFO = 95;</code>
+     */
+    DEOBFUSCATE_DECODE_FILES_OR_INFO(95),
+    /**
+     *
+     *
+     * <pre>
      * T1190
      * </pre>
      *
      * <code>EXPLOIT_PUBLIC_FACING_APPLICATION = 27;</code>
      */
     EXPLOIT_PUBLIC_FACING_APPLICATION(27),
+    /**
+     *
+     *
+     * <pre>
+     * T1195
+     * </pre>
+     *
+     * <code>SUPPLY_CHAIN_COMPROMISE = 129;</code>
+     */
+    SUPPLY_CHAIN_COMPROMISE(129),
+    /**
+     *
+     *
+     * <pre>
+     * T1195.001
+     * </pre>
+     *
+     * <code>COMPROMISE_SOFTWARE_DEPENDENCIES_AND_DEVELOPMENT_TOOLS = 130;</code>
+     */
+    COMPROMISE_SOFTWARE_DEPENDENCIES_AND_DEVELOPMENT_TOOLS(130),
+    /**
+     *
+     *
+     * <pre>
+     * T1203
+     * </pre>
+     *
+     * <code>EXPLOITATION_FOR_CLIENT_EXECUTION = 134;</code>
+     */
+    EXPLOITATION_FOR_CLIENT_EXECUTION(134),
+    /**
+     *
+     *
+     * <pre>
+     * T1204
+     * </pre>
+     *
+     * <code>USER_EXECUTION = 69;</code>
+     */
+    USER_EXECUTION(69),
+    /**
+     *
+     *
+     * <pre>
+     * T1222.002
+     * </pre>
+     *
+     * <code>LINUX_AND_MAC_FILE_AND_DIRECTORY_PERMISSIONS_MODIFICATION = 135;</code>
+     */
+    LINUX_AND_MAC_FILE_AND_DIRECTORY_PERMISSIONS_MODIFICATION(135),
     /**
      *
      *
@@ -890,6 +1280,16 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1486
+     * </pre>
+     *
+     * <code>DATA_ENCRYPTED_FOR_IMPACT = 132;</code>
+     */
+    DATA_ENCRYPTED_FOR_IMPACT(132),
+    /**
+     *
+     *
+     * <pre>
      * T1489
      * </pre>
      *
@@ -906,6 +1306,16 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>INHIBIT_SYSTEM_RECOVERY = 36;</code>
      */
     INHIBIT_SYSTEM_RECOVERY(36),
+    /**
+     *
+     *
+     * <pre>
+     * T1495
+     * </pre>
+     *
+     * <code>FIRMWARE_CORRUPTION = 81;</code>
+     */
+    FIRMWARE_CORRUPTION(81),
     /**
      *
      *
@@ -960,6 +1370,16 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1537
+     * </pre>
+     *
+     * <code>TRANSFER_DATA_TO_CLOUD_ACCOUNT = 91;</code>
+     */
+    TRANSFER_DATA_TO_CLOUD_ACCOUNT(91),
+    /**
+     *
+     *
+     * <pre>
      * T1539
      * </pre>
      *
@@ -990,12 +1410,62 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1547
+     * </pre>
+     *
+     * <code>BOOT_OR_LOGON_AUTOSTART_EXECUTION = 82;</code>
+     */
+    BOOT_OR_LOGON_AUTOSTART_EXECUTION(82),
+    /**
+     *
+     *
+     * <pre>
+     * T1547.006
+     * </pre>
+     *
+     * <code>KERNEL_MODULES_AND_EXTENSIONS = 83;</code>
+     */
+    KERNEL_MODULES_AND_EXTENSIONS(83),
+    /**
+     *
+     *
+     * <pre>
+     * T1547.009
+     * </pre>
+     *
+     * <code>SHORTCUT_MODIFICATION = 127;</code>
+     */
+    SHORTCUT_MODIFICATION(127),
+    /**
+     *
+     *
+     * <pre>
      * T1548
      * </pre>
      *
      * <code>ABUSE_ELEVATION_CONTROL_MECHANISM = 34;</code>
      */
     ABUSE_ELEVATION_CONTROL_MECHANISM(34),
+    /**
+     *
+     *
+     * <pre>
+     * T1548.001
+     * </pre>
+     *
+     * <code>ABUSE_ELEVATION_CONTROL_MECHANISM_SETUID_AND_SETGID = 136;</code>
+     */
+    ABUSE_ELEVATION_CONTROL_MECHANISM_SETUID_AND_SETGID(136),
+    /**
+     *
+     *
+     * <pre>
+     * T1548.003
+     * </pre>
+     *
+     * <code>ABUSE_ELEVATION_CONTROL_MECHANISM_SUDO_AND_SUDO_CACHING = 109;</code>
+     */
+    ABUSE_ELEVATION_CONTROL_MECHANISM_SUDO_AND_SUDO_CACHING(109),
     /**
      *
      *
@@ -1010,12 +1480,102 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1552.001
+     * </pre>
+     *
+     * <code>CREDENTIALS_IN_FILES = 105;</code>
+     */
+    CREDENTIALS_IN_FILES(105),
+    /**
+     *
+     *
+     * <pre>
+     * T1552.003
+     * </pre>
+     *
+     * <code>BASH_HISTORY = 96;</code>
+     */
+    BASH_HISTORY(96),
+    /**
+     *
+     *
+     * <pre>
+     * T1552.004
+     * </pre>
+     *
+     * <code>PRIVATE_KEYS = 97;</code>
+     */
+    PRIVATE_KEYS(97),
+    /**
+     *
+     *
+     * <pre>
+     * T1553
+     * </pre>
+     *
+     * <code>SUBVERT_TRUST_CONTROL = 106;</code>
+     */
+    SUBVERT_TRUST_CONTROL(106),
+    /**
+     *
+     *
+     * <pre>
+     * T1553.004
+     * </pre>
+     *
+     * <code>INSTALL_ROOT_CERTIFICATE = 107;</code>
+     */
+    INSTALL_ROOT_CERTIFICATE(107),
+    /**
+     *
+     *
+     * <pre>
+     * T1554
+     * </pre>
+     *
+     * <code>COMPROMISE_HOST_SOFTWARE_BINARY = 84;</code>
+     */
+    COMPROMISE_HOST_SOFTWARE_BINARY(84),
+    /**
+     *
+     *
+     * <pre>
+     * T1555
+     * </pre>
+     *
+     * <code>CREDENTIALS_FROM_PASSWORD_STORES = 98;</code>
+     */
+    CREDENTIALS_FROM_PASSWORD_STORES(98),
+    /**
+     *
+     *
+     * <pre>
      * T1556
      * </pre>
      *
      * <code>MODIFY_AUTHENTICATION_PROCESS = 28;</code>
      */
     MODIFY_AUTHENTICATION_PROCESS(28),
+    /**
+     *
+     *
+     * <pre>
+     * T1556.003
+     * </pre>
+     *
+     * <code>PLUGGABLE_AUTHENTICATION_MODULES = 108;</code>
+     */
+    PLUGGABLE_AUTHENTICATION_MODULES(108),
+    /**
+     *
+     *
+     * <pre>
+     * T1556.006
+     * </pre>
+     *
+     * <code>MULTI_FACTOR_AUTHENTICATION = 137;</code>
+     */
+    MULTI_FACTOR_AUTHENTICATION(137),
     /**
      *
      *
@@ -1036,6 +1596,56 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>DISABLE_OR_MODIFY_TOOLS = 55;</code>
      */
     DISABLE_OR_MODIFY_TOOLS(55),
+    /**
+     *
+     *
+     * <pre>
+     * T1562.006
+     * </pre>
+     *
+     * <code>INDICATOR_BLOCKING = 110;</code>
+     */
+    INDICATOR_BLOCKING(110),
+    /**
+     *
+     *
+     * <pre>
+     * T1562.012
+     * </pre>
+     *
+     * <code>DISABLE_OR_MODIFY_LINUX_AUDIT_SYSTEM = 111;</code>
+     */
+    DISABLE_OR_MODIFY_LINUX_AUDIT_SYSTEM(111),
+    /**
+     *
+     *
+     * <pre>
+     * T1564
+     * </pre>
+     *
+     * <code>HIDE_ARTIFACTS = 85;</code>
+     */
+    HIDE_ARTIFACTS(85),
+    /**
+     *
+     *
+     * <pre>
+     * T1564.001
+     * </pre>
+     *
+     * <code>HIDDEN_FILES_AND_DIRECTORIES = 86;</code>
+     */
+    HIDDEN_FILES_AND_DIRECTORIES(86),
+    /**
+     *
+     *
+     * <pre>
+     * T1564.002
+     * </pre>
+     *
+     * <code>HIDDEN_USERS = 87;</code>
+     */
+    HIDDEN_USERS(87),
     /**
      *
      *
@@ -1080,6 +1690,26 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1574
+     * </pre>
+     *
+     * <code>HIJACK_EXECUTION_FLOW = 112;</code>
+     */
+    HIJACK_EXECUTION_FLOW(112),
+    /**
+     *
+     *
+     * <pre>
+     * T1574.006
+     * </pre>
+     *
+     * <code>HIJACK_EXECUTION_FLOW_DYNAMIC_LINKER_HIJACKING = 113;</code>
+     */
+    HIJACK_EXECUTION_FLOW_DYNAMIC_LINKER_HIJACKING(113),
+    /**
+     *
+     *
+     * <pre>
      * T1578
      * </pre>
      *
@@ -1110,12 +1740,52 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1587
+     * </pre>
+     *
+     * <code>DEVELOP_CAPABILITIES = 99;</code>
+     */
+    DEVELOP_CAPABILITIES(99),
+    /**
+     *
+     *
+     * <pre>
+     * T1587.001
+     * </pre>
+     *
+     * <code>DEVELOP_CAPABILITIES_MALWARE = 100;</code>
+     */
+    DEVELOP_CAPABILITIES_MALWARE(100),
+    /**
+     *
+     *
+     * <pre>
      * T1588
      * </pre>
      *
      * <code>OBTAIN_CAPABILITIES = 43;</code>
      */
     OBTAIN_CAPABILITIES(43),
+    /**
+     *
+     *
+     * <pre>
+     * T1588.001
+     * </pre>
+     *
+     * <code>OBTAIN_CAPABILITIES_MALWARE = 101;</code>
+     */
+    OBTAIN_CAPABILITIES_MALWARE(101),
+    /**
+     *
+     *
+     * <pre>
+     * T1588.006
+     * </pre>
+     *
+     * <code>OBTAIN_CAPABILITIES_VULNERABILITIES = 133;</code>
+     */
+    OBTAIN_CAPABILITIES_VULNERABILITIES(133),
     /**
      *
      *
@@ -1136,6 +1806,26 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>SCANNING_IP_BLOCKS = 2;</code>
      */
     SCANNING_IP_BLOCKS(2),
+    /**
+     *
+     *
+     * <pre>
+     * T1608
+     * </pre>
+     *
+     * <code>STAGE_CAPABILITIES = 88;</code>
+     */
+    STAGE_CAPABILITIES(88),
+    /**
+     *
+     *
+     * <pre>
+     * T1608.001
+     * </pre>
+     *
+     * <code>UPLOAD_MALWARE = 102;</code>
+     */
+    UPLOAD_MALWARE(102),
     /**
      *
      *
@@ -1180,12 +1870,32 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1620
+     * </pre>
+     *
+     * <code>REFLECTIVE_CODE_LOADING = 92;</code>
+     */
+    REFLECTIVE_CODE_LOADING(92),
+    /**
+     *
+     *
+     * <pre>
      * T1649
      * </pre>
      *
      * <code>STEAL_OR_FORGE_AUTHENTICATION_CERTIFICATES = 62;</code>
      */
     STEAL_OR_FORGE_AUTHENTICATION_CERTIFICATES(62),
+    /**
+     *
+     *
+     * <pre>
+     * T1657
+     * </pre>
+     *
+     * <code>FINANCIAL_THEFT = 131;</code>
+     */
+    FINANCIAL_THEFT(131),
     UNRECOGNIZED(-1),
     ;
 
@@ -1199,6 +1909,149 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>TECHNIQUE_UNSPECIFIED = 0;</code>
      */
     public static final int TECHNIQUE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1001
+     * </pre>
+     *
+     * <code>DATA_OBFUSCATION = 70;</code>
+     */
+    public static final int DATA_OBFUSCATION_VALUE = 70;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1001.002
+     * </pre>
+     *
+     * <code>DATA_OBFUSCATION_STEGANOGRAPHY = 71;</code>
+     */
+    public static final int DATA_OBFUSCATION_STEGANOGRAPHY_VALUE = 71;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1003
+     * </pre>
+     *
+     * <code>OS_CREDENTIAL_DUMPING = 114;</code>
+     */
+    public static final int OS_CREDENTIAL_DUMPING_VALUE = 114;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1003.007
+     * </pre>
+     *
+     * <code>OS_CREDENTIAL_DUMPING_PROC_FILESYSTEM = 115;</code>
+     */
+    public static final int OS_CREDENTIAL_DUMPING_PROC_FILESYSTEM_VALUE = 115;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1003.008
+     * </pre>
+     *
+     * <code>OS_CREDENTIAL_DUMPING_ETC_PASSWORD_AND_ETC_SHADOW = 122;</code>
+     */
+    public static final int OS_CREDENTIAL_DUMPING_ETC_PASSWORD_AND_ETC_SHADOW_VALUE = 122;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1005
+     * </pre>
+     *
+     * <code>DATA_FROM_LOCAL_SYSTEM = 117;</code>
+     */
+    public static final int DATA_FROM_LOCAL_SYSTEM_VALUE = 117;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1020
+     * </pre>
+     *
+     * <code>AUTOMATED_EXFILTRATION = 68;</code>
+     */
+    public static final int AUTOMATED_EXFILTRATION_VALUE = 68;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1027
+     * </pre>
+     *
+     * <code>OBFUSCATED_FILES_OR_INFO = 72;</code>
+     */
+    public static final int OBFUSCATED_FILES_OR_INFO_VALUE = 72;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1027.003
+     * </pre>
+     *
+     * <code>STEGANOGRAPHY = 73;</code>
+     */
+    public static final int STEGANOGRAPHY_VALUE = 73;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1027.004
+     * </pre>
+     *
+     * <code>COMPILE_AFTER_DELIVERY = 74;</code>
+     */
+    public static final int COMPILE_AFTER_DELIVERY_VALUE = 74;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1027.010
+     * </pre>
+     *
+     * <code>COMMAND_OBFUSCATION = 75;</code>
+     */
+    public static final int COMMAND_OBFUSCATION_VALUE = 75;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1029
+     * </pre>
+     *
+     * <code>SCHEDULED_TRANSFER = 120;</code>
+     */
+    public static final int SCHEDULED_TRANSFER_VALUE = 120;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1033
+     * </pre>
+     *
+     * <code>SYSTEM_OWNER_USER_DISCOVERY = 118;</code>
+     */
+    public static final int SYSTEM_OWNER_USER_DISCOVERY_VALUE = 118;
 
     /**
      *
@@ -1254,6 +2107,72 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>NETWORK_SERVICE_DISCOVERY = 32;</code>
      */
     public static final int NETWORK_SERVICE_DISCOVERY_VALUE = 32;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1053
+     * </pre>
+     *
+     * <code>SCHEDULED_TASK_JOB = 89;</code>
+     */
+    public static final int SCHEDULED_TASK_JOB_VALUE = 89;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1053.003
+     * </pre>
+     *
+     * <code>SCHEDULED_TASK_JOB_CRON = 119;</code>
+     */
+    public static final int SCHEDULED_TASK_JOB_CRON_VALUE = 119;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1053.007
+     * </pre>
+     *
+     * <code>CONTAINER_ORCHESTRATION_JOB = 90;</code>
+     */
+    public static final int CONTAINER_ORCHESTRATION_JOB_VALUE = 90;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1055
+     * </pre>
+     *
+     * <code>PROCESS_INJECTION = 93;</code>
+     */
+    public static final int PROCESS_INJECTION_VALUE = 93;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1056
+     * </pre>
+     *
+     * <code>INPUT_CAPTURE = 103;</code>
+     */
+    public static final int INPUT_CAPTURE_VALUE = 103;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1056.001
+     * </pre>
+     *
+     * <code>INPUT_CAPTURE_KEYLOGGING = 104;</code>
+     */
+    public static final int INPUT_CAPTURE_KEYLOGGING_VALUE = 104;
 
     /**
      *
@@ -1336,12 +2255,67 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1070
+     * </pre>
+     *
+     * <code>INDICATOR_REMOVAL = 123;</code>
+     */
+    public static final int INDICATOR_REMOVAL_VALUE = 123;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1070.002
+     * </pre>
+     *
+     * <code>INDICATOR_REMOVAL_CLEAR_LINUX_OR_MAC_SYSTEM_LOGS = 124;</code>
+     */
+    public static final int INDICATOR_REMOVAL_CLEAR_LINUX_OR_MAC_SYSTEM_LOGS_VALUE = 124;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1070.003
+     * </pre>
+     *
+     * <code>INDICATOR_REMOVAL_CLEAR_COMMAND_HISTORY = 125;</code>
+     */
+    public static final int INDICATOR_REMOVAL_CLEAR_COMMAND_HISTORY_VALUE = 125;
+
+    /**
+     *
+     *
+     * <pre>
      * T1070.004
      * </pre>
      *
      * <code>INDICATOR_REMOVAL_FILE_DELETION = 64;</code>
      */
     public static final int INDICATOR_REMOVAL_FILE_DELETION_VALUE = 64;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1070.006
+     * </pre>
+     *
+     * <code>INDICATOR_REMOVAL_TIMESTOMP = 128;</code>
+     */
+    public static final int INDICATOR_REMOVAL_TIMESTOMP_VALUE = 128;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1070.008
+     * </pre>
+     *
+     * <code>INDICATOR_REMOVAL_CLEAR_MAILBOX_DATA = 126;</code>
+     */
+    public static final int INDICATOR_REMOVAL_CLEAR_MAILBOX_DATA_VALUE = 126;
 
     /**
      *
@@ -1424,6 +2398,28 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1083
+     * </pre>
+     *
+     * <code>FILE_AND_DIRECTORY_DISCOVERY = 121;</code>
+     */
+    public static final int FILE_AND_DIRECTORY_DISCOVERY_VALUE = 121;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1087.001
+     * </pre>
+     *
+     * <code>ACCOUNT_DISCOVERY_LOCAL_ACCOUNT = 116;</code>
+     */
+    public static final int ACCOUNT_DISCOVERY_LOCAL_ACCOUNT_VALUE = 116;
+
+    /**
+     *
+     *
+     * <pre>
      * T1090
      * </pre>
      *
@@ -1479,6 +2475,17 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1098.003
+     * </pre>
+     *
+     * <code>ADDITIONAL_CLOUD_ROLES = 67;</code>
+     */
+    public static final int ADDITIONAL_CLOUD_ROLES_VALUE = 67;
+
+    /**
+     *
+     *
+     * <pre>
      * T1098.004
      * </pre>
      *
@@ -1496,6 +2503,17 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>ADDITIONAL_CONTAINER_CLUSTER_ROLES = 58;</code>
      */
     public static final int ADDITIONAL_CONTAINER_CLUSTER_ROLES_VALUE = 58;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1104
+     * </pre>
+     *
+     * <code>MULTI_STAGE_CHANNELS = 76;</code>
+     */
+    public static final int MULTI_STAGE_CHANNELS_VALUE = 76;
 
     /**
      *
@@ -1534,12 +2552,45 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1119
+     * </pre>
+     *
+     * <code>AUTOMATED_COLLECTION = 94;</code>
+     */
+    public static final int AUTOMATED_COLLECTION_VALUE = 94;
+
+    /**
+     *
+     *
+     * <pre>
      * T1129
      * </pre>
      *
      * <code>SHARED_MODULES = 5;</code>
      */
     public static final int SHARED_MODULES_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1132
+     * </pre>
+     *
+     * <code>DATA_ENCODING = 77;</code>
+     */
+    public static final int DATA_ENCODING_VALUE = 77;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1132.001
+     * </pre>
+     *
+     * <code>STANDARD_ENCODING = 78;</code>
+     */
+    public static final int STANDARD_ENCODING_VALUE = 78;
 
     /**
      *
@@ -1567,12 +2618,100 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1136
+     * </pre>
+     *
+     * <code>CREATE_ACCOUNT = 79;</code>
+     */
+    public static final int CREATE_ACCOUNT_VALUE = 79;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1136.001
+     * </pre>
+     *
+     * <code>LOCAL_ACCOUNT = 80;</code>
+     */
+    public static final int LOCAL_ACCOUNT_VALUE = 80;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1140
+     * </pre>
+     *
+     * <code>DEOBFUSCATE_DECODE_FILES_OR_INFO = 95;</code>
+     */
+    public static final int DEOBFUSCATE_DECODE_FILES_OR_INFO_VALUE = 95;
+
+    /**
+     *
+     *
+     * <pre>
      * T1190
      * </pre>
      *
      * <code>EXPLOIT_PUBLIC_FACING_APPLICATION = 27;</code>
      */
     public static final int EXPLOIT_PUBLIC_FACING_APPLICATION_VALUE = 27;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1195
+     * </pre>
+     *
+     * <code>SUPPLY_CHAIN_COMPROMISE = 129;</code>
+     */
+    public static final int SUPPLY_CHAIN_COMPROMISE_VALUE = 129;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1195.001
+     * </pre>
+     *
+     * <code>COMPROMISE_SOFTWARE_DEPENDENCIES_AND_DEVELOPMENT_TOOLS = 130;</code>
+     */
+    public static final int COMPROMISE_SOFTWARE_DEPENDENCIES_AND_DEVELOPMENT_TOOLS_VALUE = 130;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1203
+     * </pre>
+     *
+     * <code>EXPLOITATION_FOR_CLIENT_EXECUTION = 134;</code>
+     */
+    public static final int EXPLOITATION_FOR_CLIENT_EXECUTION_VALUE = 134;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1204
+     * </pre>
+     *
+     * <code>USER_EXECUTION = 69;</code>
+     */
+    public static final int USER_EXECUTION_VALUE = 69;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1222.002
+     * </pre>
+     *
+     * <code>LINUX_AND_MAC_FILE_AND_DIRECTORY_PERMISSIONS_MODIFICATION = 135;</code>
+     */
+    public static final int LINUX_AND_MAC_FILE_AND_DIRECTORY_PERMISSIONS_MODIFICATION_VALUE = 135;
 
     /**
      *
@@ -1600,6 +2739,17 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1486
+     * </pre>
+     *
+     * <code>DATA_ENCRYPTED_FOR_IMPACT = 132;</code>
+     */
+    public static final int DATA_ENCRYPTED_FOR_IMPACT_VALUE = 132;
+
+    /**
+     *
+     *
+     * <pre>
      * T1489
      * </pre>
      *
@@ -1617,6 +2767,17 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>INHIBIT_SYSTEM_RECOVERY = 36;</code>
      */
     public static final int INHIBIT_SYSTEM_RECOVERY_VALUE = 36;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1495
+     * </pre>
+     *
+     * <code>FIRMWARE_CORRUPTION = 81;</code>
+     */
+    public static final int FIRMWARE_CORRUPTION_VALUE = 81;
 
     /**
      *
@@ -1677,6 +2838,17 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1537
+     * </pre>
+     *
+     * <code>TRANSFER_DATA_TO_CLOUD_ACCOUNT = 91;</code>
+     */
+    public static final int TRANSFER_DATA_TO_CLOUD_ACCOUNT_VALUE = 91;
+
+    /**
+     *
+     *
+     * <pre>
      * T1539
      * </pre>
      *
@@ -1710,12 +2882,67 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1547
+     * </pre>
+     *
+     * <code>BOOT_OR_LOGON_AUTOSTART_EXECUTION = 82;</code>
+     */
+    public static final int BOOT_OR_LOGON_AUTOSTART_EXECUTION_VALUE = 82;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1547.006
+     * </pre>
+     *
+     * <code>KERNEL_MODULES_AND_EXTENSIONS = 83;</code>
+     */
+    public static final int KERNEL_MODULES_AND_EXTENSIONS_VALUE = 83;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1547.009
+     * </pre>
+     *
+     * <code>SHORTCUT_MODIFICATION = 127;</code>
+     */
+    public static final int SHORTCUT_MODIFICATION_VALUE = 127;
+
+    /**
+     *
+     *
+     * <pre>
      * T1548
      * </pre>
      *
      * <code>ABUSE_ELEVATION_CONTROL_MECHANISM = 34;</code>
      */
     public static final int ABUSE_ELEVATION_CONTROL_MECHANISM_VALUE = 34;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1548.001
+     * </pre>
+     *
+     * <code>ABUSE_ELEVATION_CONTROL_MECHANISM_SETUID_AND_SETGID = 136;</code>
+     */
+    public static final int ABUSE_ELEVATION_CONTROL_MECHANISM_SETUID_AND_SETGID_VALUE = 136;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1548.003
+     * </pre>
+     *
+     * <code>ABUSE_ELEVATION_CONTROL_MECHANISM_SUDO_AND_SUDO_CACHING = 109;</code>
+     */
+    public static final int ABUSE_ELEVATION_CONTROL_MECHANISM_SUDO_AND_SUDO_CACHING_VALUE = 109;
 
     /**
      *
@@ -1732,12 +2959,111 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1552.001
+     * </pre>
+     *
+     * <code>CREDENTIALS_IN_FILES = 105;</code>
+     */
+    public static final int CREDENTIALS_IN_FILES_VALUE = 105;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1552.003
+     * </pre>
+     *
+     * <code>BASH_HISTORY = 96;</code>
+     */
+    public static final int BASH_HISTORY_VALUE = 96;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1552.004
+     * </pre>
+     *
+     * <code>PRIVATE_KEYS = 97;</code>
+     */
+    public static final int PRIVATE_KEYS_VALUE = 97;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1553
+     * </pre>
+     *
+     * <code>SUBVERT_TRUST_CONTROL = 106;</code>
+     */
+    public static final int SUBVERT_TRUST_CONTROL_VALUE = 106;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1553.004
+     * </pre>
+     *
+     * <code>INSTALL_ROOT_CERTIFICATE = 107;</code>
+     */
+    public static final int INSTALL_ROOT_CERTIFICATE_VALUE = 107;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1554
+     * </pre>
+     *
+     * <code>COMPROMISE_HOST_SOFTWARE_BINARY = 84;</code>
+     */
+    public static final int COMPROMISE_HOST_SOFTWARE_BINARY_VALUE = 84;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1555
+     * </pre>
+     *
+     * <code>CREDENTIALS_FROM_PASSWORD_STORES = 98;</code>
+     */
+    public static final int CREDENTIALS_FROM_PASSWORD_STORES_VALUE = 98;
+
+    /**
+     *
+     *
+     * <pre>
      * T1556
      * </pre>
      *
      * <code>MODIFY_AUTHENTICATION_PROCESS = 28;</code>
      */
     public static final int MODIFY_AUTHENTICATION_PROCESS_VALUE = 28;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1556.003
+     * </pre>
+     *
+     * <code>PLUGGABLE_AUTHENTICATION_MODULES = 108;</code>
+     */
+    public static final int PLUGGABLE_AUTHENTICATION_MODULES_VALUE = 108;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1556.006
+     * </pre>
+     *
+     * <code>MULTI_FACTOR_AUTHENTICATION = 137;</code>
+     */
+    public static final int MULTI_FACTOR_AUTHENTICATION_VALUE = 137;
 
     /**
      *
@@ -1760,6 +3086,61 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>DISABLE_OR_MODIFY_TOOLS = 55;</code>
      */
     public static final int DISABLE_OR_MODIFY_TOOLS_VALUE = 55;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1562.006
+     * </pre>
+     *
+     * <code>INDICATOR_BLOCKING = 110;</code>
+     */
+    public static final int INDICATOR_BLOCKING_VALUE = 110;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1562.012
+     * </pre>
+     *
+     * <code>DISABLE_OR_MODIFY_LINUX_AUDIT_SYSTEM = 111;</code>
+     */
+    public static final int DISABLE_OR_MODIFY_LINUX_AUDIT_SYSTEM_VALUE = 111;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1564
+     * </pre>
+     *
+     * <code>HIDE_ARTIFACTS = 85;</code>
+     */
+    public static final int HIDE_ARTIFACTS_VALUE = 85;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1564.001
+     * </pre>
+     *
+     * <code>HIDDEN_FILES_AND_DIRECTORIES = 86;</code>
+     */
+    public static final int HIDDEN_FILES_AND_DIRECTORIES_VALUE = 86;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1564.002
+     * </pre>
+     *
+     * <code>HIDDEN_USERS = 87;</code>
+     */
+    public static final int HIDDEN_USERS_VALUE = 87;
 
     /**
      *
@@ -1809,6 +3190,28 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1574
+     * </pre>
+     *
+     * <code>HIJACK_EXECUTION_FLOW = 112;</code>
+     */
+    public static final int HIJACK_EXECUTION_FLOW_VALUE = 112;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1574.006
+     * </pre>
+     *
+     * <code>HIJACK_EXECUTION_FLOW_DYNAMIC_LINKER_HIJACKING = 113;</code>
+     */
+    public static final int HIJACK_EXECUTION_FLOW_DYNAMIC_LINKER_HIJACKING_VALUE = 113;
+
+    /**
+     *
+     *
+     * <pre>
      * T1578
      * </pre>
      *
@@ -1842,12 +3245,56 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1587
+     * </pre>
+     *
+     * <code>DEVELOP_CAPABILITIES = 99;</code>
+     */
+    public static final int DEVELOP_CAPABILITIES_VALUE = 99;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1587.001
+     * </pre>
+     *
+     * <code>DEVELOP_CAPABILITIES_MALWARE = 100;</code>
+     */
+    public static final int DEVELOP_CAPABILITIES_MALWARE_VALUE = 100;
+
+    /**
+     *
+     *
+     * <pre>
      * T1588
      * </pre>
      *
      * <code>OBTAIN_CAPABILITIES = 43;</code>
      */
     public static final int OBTAIN_CAPABILITIES_VALUE = 43;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1588.001
+     * </pre>
+     *
+     * <code>OBTAIN_CAPABILITIES_MALWARE = 101;</code>
+     */
+    public static final int OBTAIN_CAPABILITIES_MALWARE_VALUE = 101;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1588.006
+     * </pre>
+     *
+     * <code>OBTAIN_CAPABILITIES_VULNERABILITIES = 133;</code>
+     */
+    public static final int OBTAIN_CAPABILITIES_VULNERABILITIES_VALUE = 133;
 
     /**
      *
@@ -1870,6 +3317,28 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>SCANNING_IP_BLOCKS = 2;</code>
      */
     public static final int SCANNING_IP_BLOCKS_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1608
+     * </pre>
+     *
+     * <code>STAGE_CAPABILITIES = 88;</code>
+     */
+    public static final int STAGE_CAPABILITIES_VALUE = 88;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1608.001
+     * </pre>
+     *
+     * <code>UPLOAD_MALWARE = 102;</code>
+     */
+    public static final int UPLOAD_MALWARE_VALUE = 102;
 
     /**
      *
@@ -1919,12 +3388,34 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1620
+     * </pre>
+     *
+     * <code>REFLECTIVE_CODE_LOADING = 92;</code>
+     */
+    public static final int REFLECTIVE_CODE_LOADING_VALUE = 92;
+
+    /**
+     *
+     *
+     * <pre>
      * T1649
      * </pre>
      *
      * <code>STEAL_OR_FORGE_AUTHENTICATION_CERTIFICATES = 62;</code>
      */
     public static final int STEAL_OR_FORGE_AUTHENTICATION_CERTIFICATES_VALUE = 62;
+
+    /**
+     *
+     *
+     * <pre>
+     * T1657
+     * </pre>
+     *
+     * <code>FINANCIAL_THEFT = 131;</code>
+     */
+    public static final int FINANCIAL_THEFT_VALUE = 131;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1952,6 +3443,32 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return TECHNIQUE_UNSPECIFIED;
+        case 70:
+          return DATA_OBFUSCATION;
+        case 71:
+          return DATA_OBFUSCATION_STEGANOGRAPHY;
+        case 114:
+          return OS_CREDENTIAL_DUMPING;
+        case 115:
+          return OS_CREDENTIAL_DUMPING_PROC_FILESYSTEM;
+        case 122:
+          return OS_CREDENTIAL_DUMPING_ETC_PASSWORD_AND_ETC_SHADOW;
+        case 117:
+          return DATA_FROM_LOCAL_SYSTEM;
+        case 68:
+          return AUTOMATED_EXFILTRATION;
+        case 72:
+          return OBFUSCATED_FILES_OR_INFO;
+        case 73:
+          return STEGANOGRAPHY;
+        case 74:
+          return COMPILE_AFTER_DELIVERY;
+        case 75:
+          return COMMAND_OBFUSCATION;
+        case 120:
+          return SCHEDULED_TRANSFER;
+        case 118:
+          return SYSTEM_OWNER_USER_DISCOVERY;
         case 49:
           return MASQUERADING;
         case 50:
@@ -1962,6 +3479,18 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           return STARTUP_ITEMS;
         case 32:
           return NETWORK_SERVICE_DISCOVERY;
+        case 89:
+          return SCHEDULED_TASK_JOB;
+        case 119:
+          return SCHEDULED_TASK_JOB_CRON;
+        case 90:
+          return CONTAINER_ORCHESTRATION_JOB;
+        case 93:
+          return PROCESS_INJECTION;
+        case 103:
+          return INPUT_CAPTURE;
+        case 104:
+          return INPUT_CAPTURE_KEYLOGGING;
         case 56:
           return PROCESS_DISCOVERY;
         case 6:
@@ -1976,8 +3505,18 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           return PERMISSION_GROUPS_DISCOVERY;
         case 19:
           return CLOUD_GROUPS;
+        case 123:
+          return INDICATOR_REMOVAL;
+        case 124:
+          return INDICATOR_REMOVAL_CLEAR_LINUX_OR_MAC_SYSTEM_LOGS;
+        case 125:
+          return INDICATOR_REMOVAL_CLEAR_COMMAND_HISTORY;
         case 64:
           return INDICATOR_REMOVAL_FILE_DELETION;
+        case 128:
+          return INDICATOR_REMOVAL_TIMESTOMP;
+        case 126:
+          return INDICATOR_REMOVAL_CLEAR_MAILBOX_DATA;
         case 45:
           return APPLICATION_LAYER_PROTOCOL;
         case 46:
@@ -1992,6 +3531,10 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           return LOCAL_ACCOUNTS;
         case 16:
           return CLOUD_ACCOUNTS;
+        case 121:
+          return FILE_AND_DIRECTORY_DISCOVERY;
+        case 116:
+          return ACCOUNT_DISCOVERY_LOCAL_ACCOUNT;
         case 9:
           return PROXY;
         case 10:
@@ -2002,32 +3545,62 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           return ACCOUNT_MANIPULATION;
         case 40:
           return ADDITIONAL_CLOUD_CREDENTIALS;
+        case 67:
+          return ADDITIONAL_CLOUD_ROLES;
         case 23:
           return SSH_AUTHORIZED_KEYS;
         case 58:
           return ADDITIONAL_CONTAINER_CLUSTER_ROLES;
+        case 76:
+          return MULTI_STAGE_CHANNELS;
         case 3:
           return INGRESS_TOOL_TRANSFER;
         case 4:
           return NATIVE_API;
         case 44:
           return BRUTE_FORCE;
+        case 94:
+          return AUTOMATED_COLLECTION;
         case 5:
           return SHARED_MODULES;
+        case 77:
+          return DATA_ENCODING;
+        case 78:
+          return STANDARD_ENCODING;
         case 33:
           return ACCESS_TOKEN_MANIPULATION;
         case 39:
           return TOKEN_IMPERSONATION_OR_THEFT;
+        case 79:
+          return CREATE_ACCOUNT;
+        case 80:
+          return LOCAL_ACCOUNT;
+        case 95:
+          return DEOBFUSCATE_DECODE_FILES_OR_INFO;
         case 27:
           return EXPLOIT_PUBLIC_FACING_APPLICATION;
+        case 129:
+          return SUPPLY_CHAIN_COMPROMISE;
+        case 130:
+          return COMPROMISE_SOFTWARE_DEPENDENCIES_AND_DEVELOPMENT_TOOLS;
+        case 134:
+          return EXPLOITATION_FOR_CLIENT_EXECUTION;
+        case 69:
+          return USER_EXECUTION;
+        case 135:
+          return LINUX_AND_MAC_FILE_AND_DIRECTORY_PERMISSIONS_MODIFICATION;
         case 30:
           return DOMAIN_POLICY_MODIFICATION;
         case 29:
           return DATA_DESTRUCTION;
+        case 132:
+          return DATA_ENCRYPTED_FOR_IMPACT;
         case 52:
           return SERVICE_STOP;
         case 36:
           return INHIBIT_SYSTEM_RECOVERY;
+        case 81:
+          return FIRMWARE_CORRUPTION;
         case 8:
           return RESOURCE_HIJACKING;
         case 17:
@@ -2038,22 +3611,62 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           return STEAL_APPLICATION_ACCESS_TOKEN;
         case 51:
           return ACCOUNT_ACCESS_REMOVAL;
+        case 91:
+          return TRANSFER_DATA_TO_CLOUD_ACCOUNT;
         case 25:
           return STEAL_WEB_SESSION_COOKIE;
         case 24:
           return CREATE_OR_MODIFY_SYSTEM_PROCESS;
         case 65:
           return EVENT_TRIGGERED_EXECUTION;
+        case 82:
+          return BOOT_OR_LOGON_AUTOSTART_EXECUTION;
+        case 83:
+          return KERNEL_MODULES_AND_EXTENSIONS;
+        case 127:
+          return SHORTCUT_MODIFICATION;
         case 34:
           return ABUSE_ELEVATION_CONTROL_MECHANISM;
+        case 136:
+          return ABUSE_ELEVATION_CONTROL_MECHANISM_SETUID_AND_SETGID;
+        case 109:
+          return ABUSE_ELEVATION_CONTROL_MECHANISM_SUDO_AND_SUDO_CACHING;
         case 13:
           return UNSECURED_CREDENTIALS;
+        case 105:
+          return CREDENTIALS_IN_FILES;
+        case 96:
+          return BASH_HISTORY;
+        case 97:
+          return PRIVATE_KEYS;
+        case 106:
+          return SUBVERT_TRUST_CONTROL;
+        case 107:
+          return INSTALL_ROOT_CERTIFICATE;
+        case 84:
+          return COMPROMISE_HOST_SOFTWARE_BINARY;
+        case 98:
+          return CREDENTIALS_FROM_PASSWORD_STORES;
         case 28:
           return MODIFY_AUTHENTICATION_PROCESS;
+        case 108:
+          return PLUGGABLE_AUTHENTICATION_MODULES;
+        case 137:
+          return MULTI_FACTOR_AUTHENTICATION;
         case 31:
           return IMPAIR_DEFENSES;
         case 55:
           return DISABLE_OR_MODIFY_TOOLS;
+        case 110:
+          return INDICATOR_BLOCKING;
+        case 111:
+          return DISABLE_OR_MODIFY_LINUX_AUDIT_SYSTEM;
+        case 85:
+          return HIDE_ARTIFACTS;
+        case 86:
+          return HIDDEN_FILES_AND_DIRECTORIES;
+        case 87:
+          return HIDDEN_USERS;
         case 20:
           return EXFILTRATION_OVER_WEB_SERVICE;
         case 21:
@@ -2062,18 +3675,34 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           return DYNAMIC_RESOLUTION;
         case 41:
           return LATERAL_TOOL_TRANSFER;
+        case 112:
+          return HIJACK_EXECUTION_FLOW;
+        case 113:
+          return HIJACK_EXECUTION_FLOW_DYNAMIC_LINKER_HIJACKING;
         case 26:
           return MODIFY_CLOUD_COMPUTE_INFRASTRUCTURE;
         case 54:
           return CREATE_SNAPSHOT;
         case 53:
           return CLOUD_INFRASTRUCTURE_DISCOVERY;
+        case 99:
+          return DEVELOP_CAPABILITIES;
+        case 100:
+          return DEVELOP_CAPABILITIES_MALWARE;
         case 43:
           return OBTAIN_CAPABILITIES;
+        case 101:
+          return OBTAIN_CAPABILITIES_MALWARE;
+        case 133:
+          return OBTAIN_CAPABILITIES_VULNERABILITIES;
         case 1:
           return ACTIVE_SCANNING;
         case 2:
           return SCANNING_IP_BLOCKS;
+        case 88:
+          return STAGE_CAPABILITIES;
+        case 102:
+          return UPLOAD_MALWARE;
         case 60:
           return CONTAINER_ADMINISTRATION_COMMAND;
         case 66:
@@ -2082,8 +3711,12 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           return ESCAPE_TO_HOST;
         case 57:
           return CONTAINER_AND_RESOURCE_DISCOVERY;
+        case 92:
+          return REFLECTIVE_CODE_LOADING;
         case 62:
           return STEAL_OR_FORGE_AUTHENTICATION_CERTIFICATES;
+        case 131:
+          return FINANCIAL_THEFT;
         default:
           return null;
       }

@@ -66,6 +66,7 @@ public class GrpcContentServiceStub extends ContentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateContentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Content.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateContentRequest, Content>
@@ -76,6 +77,7 @@ public class GrpcContentServiceStub extends ContentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateContentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Content.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteContentRequest, Empty> deleteContentMethodDescriptor =
@@ -84,6 +86,7 @@ public class GrpcContentServiceStub extends ContentServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.ContentService/DeleteContent")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteContentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetContentRequest, Content> getContentMethodDescriptor =
@@ -92,6 +95,7 @@ public class GrpcContentServiceStub extends ContentServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.ContentService/GetContent")
           .setRequestMarshaller(ProtoUtils.marshaller(GetContentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Content.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -100,6 +104,7 @@ public class GrpcContentServiceStub extends ContentServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.ContentService/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -108,6 +113,7 @@ public class GrpcContentServiceStub extends ContentServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.ContentService/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -119,6 +125,7 @@ public class GrpcContentServiceStub extends ContentServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListContentRequest, ListContentResponse>
@@ -129,6 +136,7 @@ public class GrpcContentServiceStub extends ContentServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -140,6 +148,7 @@ public class GrpcContentServiceStub extends ContentServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -148,6 +157,7 @@ public class GrpcContentServiceStub extends ContentServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateContentRequest, Content> createContentCallable;

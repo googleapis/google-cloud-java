@@ -56,6 +56,7 @@ public class GrpcTextSuggestionsServiceStub extends TextSuggestionsServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       GenerateProductTextSuggestionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<

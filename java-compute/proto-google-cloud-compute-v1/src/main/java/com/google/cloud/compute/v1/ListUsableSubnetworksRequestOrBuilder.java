@@ -218,4 +218,43 @@ public interface ListUsableSubnetworksRequestOrBuilder
    * @return The returnPartialSuccess.
    */
   boolean getReturnPartialSuccess();
+
+  /**
+   *
+   *
+   * <pre>
+   * The project id or project number in which the subnetwork is intended to be used. Only applied for Shared VPC. See [Shared VPC documentation](https://cloud.google.com/vpc/docs/shared-vpc/)
+   * </pre>
+   *
+   * <code>optional string service_project = 530592655;</code>
+   *
+   * @return Whether the serviceProject field is set.
+   */
+  boolean hasServiceProject();
+
+  /**
+   *
+   *
+   * <pre>
+   * The project id or project number in which the subnetwork is intended to be used. Only applied for Shared VPC. See [Shared VPC documentation](https://cloud.google.com/vpc/docs/shared-vpc/)
+   * </pre>
+   *
+   * <code>optional string service_project = 530592655;</code>
+   *
+   * @return The serviceProject.
+   */
+  java.lang.String getServiceProject();
+
+  /**
+   *
+   *
+   * <pre>
+   * The project id or project number in which the subnetwork is intended to be used. Only applied for Shared VPC. See [Shared VPC documentation](https://cloud.google.com/vpc/docs/shared-vpc/)
+   * </pre>
+   *
+   * <code>optional string service_project = 530592655;</code>
+   *
+   * @return The bytes for serviceProject.
+   */
+  com.google.protobuf.ByteString getServiceProjectBytes();
 }

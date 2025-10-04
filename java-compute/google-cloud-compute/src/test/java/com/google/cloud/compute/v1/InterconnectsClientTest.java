@@ -155,7 +155,10 @@ public class InterconnectsClientTest {
   public void getTest() throws Exception {
     Interconnect expectedResponse =
         Interconnect.newBuilder()
+            .setAaiEnabled(true)
             .setAdminEnabled(true)
+            .setApplicationAwareInterconnect(
+                InterconnectApplicationAwareInterconnect.newBuilder().build())
             .addAllAvailableFeatures(new ArrayList<String>())
             .addAllCircuitInfos(new ArrayList<InterconnectCircuitInfo>())
             .setCreationTimestamp("creationTimestamp-370203401")

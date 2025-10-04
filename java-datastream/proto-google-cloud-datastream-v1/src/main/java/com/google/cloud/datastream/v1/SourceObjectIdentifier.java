@@ -4340,6 +4340,902 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     }
   }
 
+  public interface MongodbObjectIdentifierOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The database name.
+     * </pre>
+     *
+     * <code>string database = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The database.
+     */
+    java.lang.String getDatabase();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The database name.
+     * </pre>
+     *
+     * <code>string database = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for database.
+     */
+    com.google.protobuf.ByteString getDatabaseBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The collection name.
+     * </pre>
+     *
+     * <code>string collection = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The collection.
+     */
+    java.lang.String getCollection();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The collection name.
+     * </pre>
+     *
+     * <code>string collection = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for collection.
+     */
+    com.google.protobuf.ByteString getCollectionBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB data source object identifier.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier}
+   */
+  public static final class MongodbObjectIdentifier extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier)
+      MongodbObjectIdentifierOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use MongodbObjectIdentifier.newBuilder() to construct.
+    private MongodbObjectIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private MongodbObjectIdentifier() {
+      database_ = "";
+      collection_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new MongodbObjectIdentifier();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_MongodbObjectIdentifier_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_MongodbObjectIdentifier_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier.class,
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier.Builder
+                  .class);
+    }
+
+    public static final int DATABASE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object database_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The database name.
+     * </pre>
+     *
+     * <code>string database = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The database.
+     */
+    @java.lang.Override
+    public java.lang.String getDatabase() {
+      java.lang.Object ref = database_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        database_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The database name.
+     * </pre>
+     *
+     * <code>string database = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for database.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDatabaseBytes() {
+      java.lang.Object ref = database_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        database_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COLLECTION_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object collection_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The collection name.
+     * </pre>
+     *
+     * <code>string collection = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The collection.
+     */
+    @java.lang.Override
+    public java.lang.String getCollection() {
+      java.lang.Object ref = collection_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        collection_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The collection name.
+     * </pre>
+     *
+     * <code>string collection = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for collection.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCollectionBytes() {
+      java.lang.Object ref = collection_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        collection_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, database_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collection_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, collection_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(database_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, database_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collection_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, collection_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier other =
+          (com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier) obj;
+
+      if (!getDatabase().equals(other.getDatabase())) return false;
+      if (!getCollection().equals(other.getCollection())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DATABASE_FIELD_NUMBER;
+      hash = (53 * hash) + getDatabase().hashCode();
+      hash = (37 * hash) + COLLECTION_FIELD_NUMBER;
+      hash = (53 * hash) + getCollection().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source object identifier.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier)
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifierOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_MongodbObjectIdentifier_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_MongodbObjectIdentifier_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier.class,
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        database_ = "";
+        collection_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_MongodbObjectIdentifier_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+          getDefaultInstanceForType() {
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier build() {
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+          buildPartial() {
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier result =
+            new com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.database_ = database_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.collection_ = collection_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier) {
+          return mergeFrom(
+              (com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier other) {
+        if (other
+            == com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+                .getDefaultInstance()) return this;
+        if (!other.getDatabase().isEmpty()) {
+          database_ = other.database_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getCollection().isEmpty()) {
+          collection_ = other.collection_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  database_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  collection_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object database_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The database name.
+       * </pre>
+       *
+       * <code>string database = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The database.
+       */
+      public java.lang.String getDatabase() {
+        java.lang.Object ref = database_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          database_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The database name.
+       * </pre>
+       *
+       * <code>string database = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for database.
+       */
+      public com.google.protobuf.ByteString getDatabaseBytes() {
+        java.lang.Object ref = database_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          database_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The database name.
+       * </pre>
+       *
+       * <code>string database = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The database to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDatabase(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        database_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The database name.
+       * </pre>
+       *
+       * <code>string database = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDatabase() {
+        database_ = getDefaultInstance().getDatabase();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The database name.
+       * </pre>
+       *
+       * <code>string database = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for database to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDatabaseBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        database_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object collection_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The collection name.
+       * </pre>
+       *
+       * <code>string collection = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The collection.
+       */
+      public java.lang.String getCollection() {
+        java.lang.Object ref = collection_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          collection_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The collection name.
+       * </pre>
+       *
+       * <code>string collection = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for collection.
+       */
+      public com.google.protobuf.ByteString getCollectionBytes() {
+        java.lang.Object ref = collection_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          collection_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The collection name.
+       * </pre>
+       *
+       * <code>string collection = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The collection to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCollection(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        collection_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The collection name.
+       * </pre>
+       *
+       * <code>string collection = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCollection() {
+        collection_ = getDefaultInstance().getCollection();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The collection name.
+       * </pre>
+       *
+       * <code>string collection = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for collection to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCollectionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        collection_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier)
+    private static final com.google.cloud.datastream.v1.SourceObjectIdentifier
+            .MongodbObjectIdentifier
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier();
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MongodbObjectIdentifier> PARSER =
+        new com.google.protobuf.AbstractParser<MongodbObjectIdentifier>() {
+          @java.lang.Override
+          public MongodbObjectIdentifier parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<MongodbObjectIdentifier> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MongodbObjectIdentifier> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int sourceIdentifierCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -4354,6 +5250,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     POSTGRESQL_IDENTIFIER(3),
     SQL_SERVER_IDENTIFIER(4),
     SALESFORCE_IDENTIFIER(5),
+    MONGODB_IDENTIFIER(6),
     SOURCEIDENTIFIER_NOT_SET(0);
     private final int value;
 
@@ -4383,6 +5280,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return SQL_SERVER_IDENTIFIER;
         case 5:
           return SALESFORCE_IDENTIFIER;
+        case 6:
+          return MONGODB_IDENTIFIER;
         case 0:
           return SOURCEIDENTIFIER_NOT_SET;
         default:
@@ -4729,6 +5628,72 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         .getDefaultInstance();
   }
 
+  public static final int MONGODB_IDENTIFIER_FIELD_NUMBER = 6;
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier mongodb_identifier = 6;
+   * </code>
+   *
+   * @return Whether the mongodbIdentifier field is set.
+   */
+  @java.lang.Override
+  public boolean hasMongodbIdentifier() {
+    return sourceIdentifierCase_ == 6;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier mongodb_identifier = 6;
+   * </code>
+   *
+   * @return The mongodbIdentifier.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+      getMongodbIdentifier() {
+    if (sourceIdentifierCase_ == 6) {
+      return (com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier)
+          sourceIdentifier_;
+    }
+    return com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier mongodb_identifier = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifierOrBuilder
+      getMongodbIdentifierOrBuilder() {
+    if (sourceIdentifierCase_ == 6) {
+      return (com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier)
+          sourceIdentifier_;
+    }
+    return com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+        .getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4771,6 +5736,12 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       output.writeMessage(
           5,
           (com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier)
+              sourceIdentifier_);
+    }
+    if (sourceIdentifierCase_ == 6) {
+      output.writeMessage(
+          6,
+          (com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier)
               sourceIdentifier_);
     }
     getUnknownFields().writeTo(output);
@@ -4817,6 +5788,13 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
               (com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier)
                   sourceIdentifier_);
     }
+    if (sourceIdentifierCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6,
+              (com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier)
+                  sourceIdentifier_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4849,6 +5827,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         break;
       case 5:
         if (!getSalesforceIdentifier().equals(other.getSalesforceIdentifier())) return false;
+        break;
+      case 6:
+        if (!getMongodbIdentifier().equals(other.getMongodbIdentifier())) return false;
         break;
       case 0:
       default:
@@ -4884,6 +5865,10 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       case 5:
         hash = (37 * hash) + SALESFORCE_IDENTIFIER_FIELD_NUMBER;
         hash = (53 * hash) + getSalesforceIdentifier().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + MONGODB_IDENTIFIER_FIELD_NUMBER;
+        hash = (53 * hash) + getMongodbIdentifier().hashCode();
         break;
       case 0:
       default:
@@ -5044,6 +6029,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       if (salesforceIdentifierBuilder_ != null) {
         salesforceIdentifierBuilder_.clear();
       }
+      if (mongodbIdentifierBuilder_ != null) {
+        mongodbIdentifierBuilder_.clear();
+      }
       sourceIdentifierCase_ = 0;
       sourceIdentifier_ = null;
       return this;
@@ -5102,6 +6090,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
       if (sourceIdentifierCase_ == 5 && salesforceIdentifierBuilder_ != null) {
         result.sourceIdentifier_ = salesforceIdentifierBuilder_.build();
+      }
+      if (sourceIdentifierCase_ == 6 && mongodbIdentifierBuilder_ != null) {
+        result.sourceIdentifier_ = mongodbIdentifierBuilder_.build();
       }
     }
 
@@ -5177,6 +6168,11 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             mergeSalesforceIdentifier(other.getSalesforceIdentifier());
             break;
           }
+        case MONGODB_IDENTIFIER:
+          {
+            mergeMongodbIdentifier(other.getMongodbIdentifier());
+            break;
+          }
         case SOURCEIDENTIFIER_NOT_SET:
           {
             break;
@@ -5242,6 +6238,13 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
                 sourceIdentifierCase_ = 5;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getMongodbIdentifierFieldBuilder().getBuilder(), extensionRegistry);
+                sourceIdentifierCase_ = 6;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6565,6 +7568,263 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 5;
       onChanged();
       return salesforceIdentifierBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier.Builder,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifierOrBuilder>
+        mongodbIdentifierBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier mongodb_identifier = 6;
+     * </code>
+     *
+     * @return Whether the mongodbIdentifier field is set.
+     */
+    @java.lang.Override
+    public boolean hasMongodbIdentifier() {
+      return sourceIdentifierCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier mongodb_identifier = 6;
+     * </code>
+     *
+     * @return The mongodbIdentifier.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+        getMongodbIdentifier() {
+      if (mongodbIdentifierBuilder_ == null) {
+        if (sourceIdentifierCase_ == 6) {
+          return (com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier)
+              sourceIdentifier_;
+        }
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+            .getDefaultInstance();
+      } else {
+        if (sourceIdentifierCase_ == 6) {
+          return mongodbIdentifierBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier mongodb_identifier = 6;
+     * </code>
+     */
+    public Builder setMongodbIdentifier(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier value) {
+      if (mongodbIdentifierBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceIdentifier_ = value;
+        onChanged();
+      } else {
+        mongodbIdentifierBuilder_.setMessage(value);
+      }
+      sourceIdentifierCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier mongodb_identifier = 6;
+     * </code>
+     */
+    public Builder setMongodbIdentifier(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier.Builder
+            builderForValue) {
+      if (mongodbIdentifierBuilder_ == null) {
+        sourceIdentifier_ = builderForValue.build();
+        onChanged();
+      } else {
+        mongodbIdentifierBuilder_.setMessage(builderForValue.build());
+      }
+      sourceIdentifierCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier mongodb_identifier = 6;
+     * </code>
+     */
+    public Builder mergeMongodbIdentifier(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier value) {
+      if (mongodbIdentifierBuilder_ == null) {
+        if (sourceIdentifierCase_ == 6
+            && sourceIdentifier_
+                != com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+                    .getDefaultInstance()) {
+          sourceIdentifier_ =
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+                  .newBuilder(
+                      (com.google.cloud.datastream.v1.SourceObjectIdentifier
+                              .MongodbObjectIdentifier)
+                          sourceIdentifier_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceIdentifier_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceIdentifierCase_ == 6) {
+          mongodbIdentifierBuilder_.mergeFrom(value);
+        } else {
+          mongodbIdentifierBuilder_.setMessage(value);
+        }
+      }
+      sourceIdentifierCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier mongodb_identifier = 6;
+     * </code>
+     */
+    public Builder clearMongodbIdentifier() {
+      if (mongodbIdentifierBuilder_ == null) {
+        if (sourceIdentifierCase_ == 6) {
+          sourceIdentifierCase_ = 0;
+          sourceIdentifier_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceIdentifierCase_ == 6) {
+          sourceIdentifierCase_ = 0;
+          sourceIdentifier_ = null;
+        }
+        mongodbIdentifierBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier mongodb_identifier = 6;
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier.Builder
+        getMongodbIdentifierBuilder() {
+      return getMongodbIdentifierFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier mongodb_identifier = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifierOrBuilder
+        getMongodbIdentifierOrBuilder() {
+      if ((sourceIdentifierCase_ == 6) && (mongodbIdentifierBuilder_ != null)) {
+        return mongodbIdentifierBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceIdentifierCase_ == 6) {
+          return (com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier)
+              sourceIdentifier_;
+        }
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier mongodb_identifier = 6;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier.Builder,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifierOrBuilder>
+        getMongodbIdentifierFieldBuilder() {
+      if (mongodbIdentifierBuilder_ == null) {
+        if (!(sourceIdentifierCase_ == 6)) {
+          sourceIdentifier_ =
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+                  .getDefaultInstance();
+        }
+        mongodbIdentifierBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier,
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier
+                    .Builder,
+                com.google.cloud.datastream.v1.SourceObjectIdentifier
+                    .MongodbObjectIdentifierOrBuilder>(
+                (com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier)
+                    sourceIdentifier_,
+                getParentForChildren(),
+                isClean());
+        sourceIdentifier_ = null;
+      }
+      sourceIdentifierCase_ = 6;
+      onChanged();
+      return mongodbIdentifierBuilder_;
     }
 
     @java.lang.Override

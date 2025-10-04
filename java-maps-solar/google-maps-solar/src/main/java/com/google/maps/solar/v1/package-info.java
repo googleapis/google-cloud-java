@@ -37,6 +37,7 @@
  *           .setLocation(LatLng.newBuilder().build())
  *           .setRequiredQuality(ImageryQuality.forNumber(0))
  *           .setExactQualityRequired(true)
+ *           .addAllExperiments(new ArrayList<Experiment>())
  *           .build();
  *   BuildingInsights response = solarClient.findClosestBuildingInsights(request);
  * }

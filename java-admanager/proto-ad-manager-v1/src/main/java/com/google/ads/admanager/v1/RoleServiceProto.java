@@ -69,18 +69,19 @@ public final class RoleServiceProto {
           + "\021ListRolesResponse\022,\n"
           + "\005roles\030\001 \003(\0132\035.google.ads.admanager.v1.Role\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\300\002\n"
+          + "total_size\030\003 \001(\0052\354\002\n"
           + "\013RoleService\022\177\n"
           + "\007GetRole\022\'.google.ads.admanager.v1.GetRoleRequest\032\035.google"
           + ".ads.admanager.v1.Role\",\332A\004name\202\323\344\223\002\037\022\035/v1/{name=networks/*/roles/*}\022\222\001\n"
           + "\tListRoles\022).google.ads.admanager.v1.ListRolesRe"
           + "quest\032*.google.ads.admanager.v1.ListRole"
           + "sResponse\".\332A\006parent\202\323\344\223\002\037\022\035/v1/{parent="
-          + "networks/*}/roles\032\033\312A\030admanager.googleapis.comB\304\001\n"
-          + "\033com.google.ads.admanager.v1B\020RoleServiceProtoP\001Z@google.golang.org/ge"
-          + "nproto/googleapis/ads/admanager/v1;adman"
-          + "ager\252\002\027Google.Ads.AdManager.V1\312\002\027Google\\"
-          + "Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "networks/*}/roles\032G\312A\030admanager.googleap"
+          + "is.com\322A)https://www.googleapis.com/auth/admanagerB\304\001\n"
+          + "\033com.google.ads.admanager.v1B\020RoleServiceProtoP\001Z@google.golang.or"
+          + "g/genproto/googleapis/ads/admanager/v1;a"
+          + "dmanager\252\002\027Google.Ads.AdManager.V1\312\002\027Goo"
+          + "gle\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -122,6 +123,7 @@ public final class RoleServiceProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

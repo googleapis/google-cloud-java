@@ -119,6 +119,7 @@ public class ReasoningEngineServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -177,6 +178,7 @@ public class ReasoningEngineServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -235,6 +237,7 @@ public class ReasoningEngineServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockReasoningEngineService.addResponse(expectedResponse);
 
@@ -282,6 +285,7 @@ public class ReasoningEngineServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockReasoningEngineService.addResponse(expectedResponse);
 
@@ -417,6 +421,7 @@ public class ReasoningEngineServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

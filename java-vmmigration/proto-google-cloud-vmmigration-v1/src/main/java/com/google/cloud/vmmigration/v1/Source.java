@@ -90,6 +90,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     VMWARE(10),
     AWS(12),
+    AZURE(13),
     SOURCEDETAILS_NOT_SET(0);
     private final int value;
 
@@ -113,6 +114,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
           return VMWARE;
         case 12:
           return AWS;
+        case 13:
+          return AZURE;
         case 0:
           return SOURCEDETAILS_NOT_SET;
         default:
@@ -235,6 +238,60 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.vmmigration.v1.AwsSourceDetails) sourceDetails_;
     }
     return com.google.cloud.vmmigration.v1.AwsSourceDetails.getDefaultInstance();
+  }
+
+  public static final int AZURE_FIELD_NUMBER = 13;
+
+  /**
+   *
+   *
+   * <pre>
+   * Azure type source details.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AzureSourceDetails azure = 13;</code>
+   *
+   * @return Whether the azure field is set.
+   */
+  @java.lang.Override
+  public boolean hasAzure() {
+    return sourceDetailsCase_ == 13;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Azure type source details.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AzureSourceDetails azure = 13;</code>
+   *
+   * @return The azure.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AzureSourceDetails getAzure() {
+    if (sourceDetailsCase_ == 13) {
+      return (com.google.cloud.vmmigration.v1.AzureSourceDetails) sourceDetails_;
+    }
+    return com.google.cloud.vmmigration.v1.AzureSourceDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Azure type source details.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AzureSourceDetails azure = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AzureSourceDetailsOrBuilder getAzureOrBuilder() {
+    if (sourceDetailsCase_ == 13) {
+      return (com.google.cloud.vmmigration.v1.AzureSourceDetails) sourceDetails_;
+    }
+    return com.google.cloud.vmmigration.v1.AzureSourceDetails.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -554,6 +611,68 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int ENCRYPTION_FIELD_NUMBER = 14;
+  private com.google.cloud.vmmigration.v1.Encryption encryption_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The encryption details of the source data stored by
+   * the service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.Encryption encryption = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the encryption field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryption() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The encryption details of the source data stored by
+   * the service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.Encryption encryption = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The encryption.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.Encryption getEncryption() {
+    return encryption_ == null
+        ? com.google.cloud.vmmigration.v1.Encryption.getDefaultInstance()
+        : encryption_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The encryption details of the source data stored by
+   * the service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.Encryption encryption = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.EncryptionOrBuilder getEncryptionOrBuilder() {
+    return encryption_ == null
+        ? com.google.cloud.vmmigration.v1.Encryption.getDefaultInstance()
+        : encryption_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -587,6 +706,12 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     }
     if (sourceDetailsCase_ == 12) {
       output.writeMessage(12, (com.google.cloud.vmmigration.v1.AwsSourceDetails) sourceDetails_);
+    }
+    if (sourceDetailsCase_ == 13) {
+      output.writeMessage(13, (com.google.cloud.vmmigration.v1.AzureSourceDetails) sourceDetails_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(14, getEncryption());
     }
     getUnknownFields().writeTo(output);
   }
@@ -629,6 +754,14 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               12, (com.google.cloud.vmmigration.v1.AwsSourceDetails) sourceDetails_);
     }
+    if (sourceDetailsCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.cloud.vmmigration.v1.AzureSourceDetails) sourceDetails_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getEncryption());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -655,6 +788,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (hasEncryption() != other.hasEncryption()) return false;
+    if (hasEncryption()) {
+      if (!getEncryption().equals(other.getEncryption())) return false;
+    }
     if (!getSourceDetailsCase().equals(other.getSourceDetailsCase())) return false;
     switch (sourceDetailsCase_) {
       case 10:
@@ -662,6 +799,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         break;
       case 12:
         if (!getAws().equals(other.getAws())) return false;
+        break;
+      case 13:
+        if (!getAzure().equals(other.getAzure())) return false;
         break;
       case 0:
       default:
@@ -693,6 +833,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    if (hasEncryption()) {
+      hash = (37 * hash) + ENCRYPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryption().hashCode();
+    }
     switch (sourceDetailsCase_) {
       case 10:
         hash = (37 * hash) + VMWARE_FIELD_NUMBER;
@@ -701,6 +845,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       case 12:
         hash = (37 * hash) + AWS_FIELD_NUMBER;
         hash = (53 * hash) + getAws().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + AZURE_FIELD_NUMBER;
+        hash = (53 * hash) + getAzure().hashCode();
         break;
       case 0:
       default:
@@ -871,6 +1019,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getEncryptionFieldBuilder();
       }
     }
 
@@ -883,6 +1032,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       if (awsBuilder_ != null) {
         awsBuilder_.clear();
+      }
+      if (azureBuilder_ != null) {
+        azureBuilder_.clear();
       }
       name_ = "";
       createTime_ = null;
@@ -897,6 +1049,11 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableLabels().clear();
       description_ = "";
+      encryption_ = null;
+      if (encryptionBuilder_ != null) {
+        encryptionBuilder_.dispose();
+        encryptionBuilder_ = null;
+      }
       sourceDetailsCase_ = 0;
       sourceDetails_ = null;
       return this;
@@ -936,24 +1093,28 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.vmmigration.v1.Source result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.name_ = name_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.encryption_ = encryptionBuilder_ == null ? encryption_ : encryptionBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -966,6 +1127,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       if (sourceDetailsCase_ == 12 && awsBuilder_ != null) {
         result.sourceDetails_ = awsBuilder_.build();
+      }
+      if (sourceDetailsCase_ == 13 && azureBuilder_ != null) {
+        result.sourceDetails_ = azureBuilder_.build();
       }
     }
 
@@ -1016,7 +1180,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.vmmigration.v1.Source.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1026,11 +1190,14 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
+      }
+      if (other.hasEncryption()) {
+        mergeEncryption(other.getEncryption());
       }
       switch (other.getSourceDetailsCase()) {
         case VMWARE:
@@ -1041,6 +1208,11 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         case AWS:
           {
             mergeAws(other.getAws());
+            break;
+          }
+        case AZURE:
+          {
+            mergeAzure(other.getAzure());
             break;
           }
         case SOURCEDETAILS_NOT_SET:
@@ -1077,19 +1249,19 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
@@ -1101,13 +1273,13 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
             case 50:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 82:
@@ -1122,6 +1294,18 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
                 sourceDetailsCase_ = 12;
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(getAzureFieldBuilder().getBuilder(), extensionRegistry);
+                sourceDetailsCase_ = 13;
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(getEncryptionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1593,6 +1777,225 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       return awsBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AzureSourceDetails,
+            com.google.cloud.vmmigration.v1.AzureSourceDetails.Builder,
+            com.google.cloud.vmmigration.v1.AzureSourceDetailsOrBuilder>
+        azureBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Azure type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureSourceDetails azure = 13;</code>
+     *
+     * @return Whether the azure field is set.
+     */
+    @java.lang.Override
+    public boolean hasAzure() {
+      return sourceDetailsCase_ == 13;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Azure type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureSourceDetails azure = 13;</code>
+     *
+     * @return The azure.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.AzureSourceDetails getAzure() {
+      if (azureBuilder_ == null) {
+        if (sourceDetailsCase_ == 13) {
+          return (com.google.cloud.vmmigration.v1.AzureSourceDetails) sourceDetails_;
+        }
+        return com.google.cloud.vmmigration.v1.AzureSourceDetails.getDefaultInstance();
+      } else {
+        if (sourceDetailsCase_ == 13) {
+          return azureBuilder_.getMessage();
+        }
+        return com.google.cloud.vmmigration.v1.AzureSourceDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Azure type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureSourceDetails azure = 13;</code>
+     */
+    public Builder setAzure(com.google.cloud.vmmigration.v1.AzureSourceDetails value) {
+      if (azureBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceDetails_ = value;
+        onChanged();
+      } else {
+        azureBuilder_.setMessage(value);
+      }
+      sourceDetailsCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Azure type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureSourceDetails azure = 13;</code>
+     */
+    public Builder setAzure(
+        com.google.cloud.vmmigration.v1.AzureSourceDetails.Builder builderForValue) {
+      if (azureBuilder_ == null) {
+        sourceDetails_ = builderForValue.build();
+        onChanged();
+      } else {
+        azureBuilder_.setMessage(builderForValue.build());
+      }
+      sourceDetailsCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Azure type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureSourceDetails azure = 13;</code>
+     */
+    public Builder mergeAzure(com.google.cloud.vmmigration.v1.AzureSourceDetails value) {
+      if (azureBuilder_ == null) {
+        if (sourceDetailsCase_ == 13
+            && sourceDetails_
+                != com.google.cloud.vmmigration.v1.AzureSourceDetails.getDefaultInstance()) {
+          sourceDetails_ =
+              com.google.cloud.vmmigration.v1.AzureSourceDetails.newBuilder(
+                      (com.google.cloud.vmmigration.v1.AzureSourceDetails) sourceDetails_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceDetails_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceDetailsCase_ == 13) {
+          azureBuilder_.mergeFrom(value);
+        } else {
+          azureBuilder_.setMessage(value);
+        }
+      }
+      sourceDetailsCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Azure type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureSourceDetails azure = 13;</code>
+     */
+    public Builder clearAzure() {
+      if (azureBuilder_ == null) {
+        if (sourceDetailsCase_ == 13) {
+          sourceDetailsCase_ = 0;
+          sourceDetails_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceDetailsCase_ == 13) {
+          sourceDetailsCase_ = 0;
+          sourceDetails_ = null;
+        }
+        azureBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Azure type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureSourceDetails azure = 13;</code>
+     */
+    public com.google.cloud.vmmigration.v1.AzureSourceDetails.Builder getAzureBuilder() {
+      return getAzureFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Azure type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureSourceDetails azure = 13;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.AzureSourceDetailsOrBuilder getAzureOrBuilder() {
+      if ((sourceDetailsCase_ == 13) && (azureBuilder_ != null)) {
+        return azureBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceDetailsCase_ == 13) {
+          return (com.google.cloud.vmmigration.v1.AzureSourceDetails) sourceDetails_;
+        }
+        return com.google.cloud.vmmigration.v1.AzureSourceDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Azure type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureSourceDetails azure = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AzureSourceDetails,
+            com.google.cloud.vmmigration.v1.AzureSourceDetails.Builder,
+            com.google.cloud.vmmigration.v1.AzureSourceDetailsOrBuilder>
+        getAzureFieldBuilder() {
+      if (azureBuilder_ == null) {
+        if (!(sourceDetailsCase_ == 13)) {
+          sourceDetails_ = com.google.cloud.vmmigration.v1.AzureSourceDetails.getDefaultInstance();
+        }
+        azureBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.AzureSourceDetails,
+                com.google.cloud.vmmigration.v1.AzureSourceDetails.Builder,
+                com.google.cloud.vmmigration.v1.AzureSourceDetailsOrBuilder>(
+                (com.google.cloud.vmmigration.v1.AzureSourceDetails) sourceDetails_,
+                getParentForChildren(),
+                isClean());
+        sourceDetails_ = null;
+      }
+      sourceDetailsCase_ = 13;
+      onChanged();
+      return azureBuilder_;
+    }
+
     private java.lang.Object name_ = "";
 
     /**
@@ -1658,7 +2061,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1676,7 +2079,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1699,7 +2102,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1725,7 +2128,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1771,7 +2174,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1793,7 +2196,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1811,7 +2214,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -1822,7 +2225,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1840,7 +2243,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1862,7 +2265,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1937,7 +2340,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1983,7 +2386,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2005,7 +2408,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2023,7 +2426,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -2034,7 +2437,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -2052,7 +2455,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -2074,7 +2477,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2145,7 +2548,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return labels_;
     }
@@ -2235,7 +2638,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2260,7 +2663,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -2281,7 +2684,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
 
@@ -2296,7 +2699,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
 
@@ -2365,7 +2768,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2383,7 +2786,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2406,9 +2809,231 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.vmmigration.v1.Encryption encryption_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.Encryption,
+            com.google.cloud.vmmigration.v1.Encryption.Builder,
+            com.google.cloud.vmmigration.v1.EncryptionOrBuilder>
+        encryptionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The encryption details of the source data stored by
+     * the service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the encryption field is set.
+     */
+    public boolean hasEncryption() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The encryption details of the source data stored by
+     * the service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The encryption.
+     */
+    public com.google.cloud.vmmigration.v1.Encryption getEncryption() {
+      if (encryptionBuilder_ == null) {
+        return encryption_ == null
+            ? com.google.cloud.vmmigration.v1.Encryption.getDefaultInstance()
+            : encryption_;
+      } else {
+        return encryptionBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The encryption details of the source data stored by
+     * the service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setEncryption(com.google.cloud.vmmigration.v1.Encryption value) {
+      if (encryptionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryption_ = value;
+      } else {
+        encryptionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The encryption details of the source data stored by
+     * the service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setEncryption(
+        com.google.cloud.vmmigration.v1.Encryption.Builder builderForValue) {
+      if (encryptionBuilder_ == null) {
+        encryption_ = builderForValue.build();
+      } else {
+        encryptionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The encryption details of the source data stored by
+     * the service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeEncryption(com.google.cloud.vmmigration.v1.Encryption value) {
+      if (encryptionBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && encryption_ != null
+            && encryption_ != com.google.cloud.vmmigration.v1.Encryption.getDefaultInstance()) {
+          getEncryptionBuilder().mergeFrom(value);
+        } else {
+          encryption_ = value;
+        }
+      } else {
+        encryptionBuilder_.mergeFrom(value);
+      }
+      if (encryption_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The encryption details of the source data stored by
+     * the service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearEncryption() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      encryption_ = null;
+      if (encryptionBuilder_ != null) {
+        encryptionBuilder_.dispose();
+        encryptionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The encryption details of the source data stored by
+     * the service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.Encryption.Builder getEncryptionBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getEncryptionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The encryption details of the source data stored by
+     * the service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.EncryptionOrBuilder getEncryptionOrBuilder() {
+      if (encryptionBuilder_ != null) {
+        return encryptionBuilder_.getMessageOrBuilder();
+      } else {
+        return encryption_ == null
+            ? com.google.cloud.vmmigration.v1.Encryption.getDefaultInstance()
+            : encryption_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The encryption details of the source data stored by
+     * the service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.Encryption,
+            com.google.cloud.vmmigration.v1.Encryption.Builder,
+            com.google.cloud.vmmigration.v1.EncryptionOrBuilder>
+        getEncryptionFieldBuilder() {
+      if (encryptionBuilder_ == null) {
+        encryptionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.Encryption,
+                com.google.cloud.vmmigration.v1.Encryption.Builder,
+                com.google.cloud.vmmigration.v1.EncryptionOrBuilder>(
+                getEncryption(), getParentForChildren(), isClean());
+        encryption_ = null;
+      }
+      return encryptionBuilder_;
     }
 
     @java.lang.Override

@@ -78,6 +78,10 @@ public interface ListDeploymentsRequestOrBuilder
    *   comparison operators: `=`.
    *   * `api_versions` - The API versions linked to this deployment. Allowed
    *   comparison operators: `:`.
+   *   * `source_project` - The project/organization at source for the
+   *   deployment. Allowed comparison operators: `=`.
+   *   * `source_environment` - The environment at source for the
+   *   deployment. Allowed comparison operators: `=`.
    *   * `deployment_type.enum_values.values.id` - The allowed value id of the
    *   deployment_type attribute associated with the Deployment. Allowed
    *   comparison operators: `:`.
@@ -93,6 +97,38 @@ public interface ListDeploymentsRequestOrBuilder
    *   * `environment.enum_values.values.display_name` - The allowed value
    *   display name of the environment attribute associated with the deployment.
    *   Allowed comparison operators: `:`.
+   *   * `attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/user-defined-attribute-id.enum_values.values.id` - The
+   *   allowed value id of the user defined enum attribute associated with the
+   *   Resource. Allowed comparison operator is `:`. Here
+   *   user-defined-attribute-enum-id is a placeholder that can be replaced with
+   *   any user defined enum attribute name.
+   *   * `attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/user-defined-attribute-id.enum_values.values.display_name`
+   *   - The allowed value display name of the user defined enum attribute
+   *   associated with the Resource. Allowed comparison operator is `:`. Here
+   *   user-defined-attribute-enum-display-name is a placeholder that can be
+   *   replaced with any user defined enum attribute enum name.
+   *   * `attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/user-defined-attribute-id.string_values.values` - The
+   *   allowed value of the user defined string attribute associated with the
+   *   Resource. Allowed comparison operator is `:`. Here
+   *   user-defined-attribute-string is a placeholder that can be replaced with
+   *   any user defined string attribute name.
+   *   * `attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/user-defined-attribute-id.json_values.values` - The
+   *   allowed value of the user defined JSON attribute associated with the
+   *   Resource. Allowed comparison operator is `:`. Here
+   *   user-defined-attribute-json is a placeholder that can be replaced with
+   *   any user defined JSON attribute name.
+   *
+   * A filter function is also supported in the filter string. The filter
+   * function is `id(name)`. The `id(name)` function returns the id of the
+   * resource name. For example, `id(name) = &#92;"deployment-1&#92;"` is equivalent to
+   * `name =
+   * &#92;"projects/test-project-id/locations/test-location-id/deployments/deployment-1&#92;"`
+   * provided the parent is
+   * `projects/test-project-id/locations/test-location-id`.
    *
    * Expressions are combined with either `AND` logic operator or `OR` logical
    * operator but not both of them together i.e. only one of the `AND` or `OR`
@@ -118,6 +154,12 @@ public interface ListDeploymentsRequestOrBuilder
    *   slo.string_values.values: &#92;"99.99%&#92;"`
    *   - The allowed value id of the environment attribute Deployment is
    *   _production-id_ or string value of the slo attribute is _99.99%_.
+   *   * `environment.enum_values.values.id: staging-id AND
+   *   attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/17650f90-4a29-4971-b3c0-d5532da3764b.string_values.values:
+   *   test`  - The filter string specifies that the allowed value id of the
+   *   environment attribute associated with the Deployment is _staging-id_ and
+   *   the value of the user defined attribute of type string is _test_.
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -148,6 +190,10 @@ public interface ListDeploymentsRequestOrBuilder
    *   comparison operators: `=`.
    *   * `api_versions` - The API versions linked to this deployment. Allowed
    *   comparison operators: `:`.
+   *   * `source_project` - The project/organization at source for the
+   *   deployment. Allowed comparison operators: `=`.
+   *   * `source_environment` - The environment at source for the
+   *   deployment. Allowed comparison operators: `=`.
    *   * `deployment_type.enum_values.values.id` - The allowed value id of the
    *   deployment_type attribute associated with the Deployment. Allowed
    *   comparison operators: `:`.
@@ -163,6 +209,38 @@ public interface ListDeploymentsRequestOrBuilder
    *   * `environment.enum_values.values.display_name` - The allowed value
    *   display name of the environment attribute associated with the deployment.
    *   Allowed comparison operators: `:`.
+   *   * `attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/user-defined-attribute-id.enum_values.values.id` - The
+   *   allowed value id of the user defined enum attribute associated with the
+   *   Resource. Allowed comparison operator is `:`. Here
+   *   user-defined-attribute-enum-id is a placeholder that can be replaced with
+   *   any user defined enum attribute name.
+   *   * `attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/user-defined-attribute-id.enum_values.values.display_name`
+   *   - The allowed value display name of the user defined enum attribute
+   *   associated with the Resource. Allowed comparison operator is `:`. Here
+   *   user-defined-attribute-enum-display-name is a placeholder that can be
+   *   replaced with any user defined enum attribute enum name.
+   *   * `attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/user-defined-attribute-id.string_values.values` - The
+   *   allowed value of the user defined string attribute associated with the
+   *   Resource. Allowed comparison operator is `:`. Here
+   *   user-defined-attribute-string is a placeholder that can be replaced with
+   *   any user defined string attribute name.
+   *   * `attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/user-defined-attribute-id.json_values.values` - The
+   *   allowed value of the user defined JSON attribute associated with the
+   *   Resource. Allowed comparison operator is `:`. Here
+   *   user-defined-attribute-json is a placeholder that can be replaced with
+   *   any user defined JSON attribute name.
+   *
+   * A filter function is also supported in the filter string. The filter
+   * function is `id(name)`. The `id(name)` function returns the id of the
+   * resource name. For example, `id(name) = &#92;"deployment-1&#92;"` is equivalent to
+   * `name =
+   * &#92;"projects/test-project-id/locations/test-location-id/deployments/deployment-1&#92;"`
+   * provided the parent is
+   * `projects/test-project-id/locations/test-location-id`.
    *
    * Expressions are combined with either `AND` logic operator or `OR` logical
    * operator but not both of them together i.e. only one of the `AND` or `OR`
@@ -188,6 +266,12 @@ public interface ListDeploymentsRequestOrBuilder
    *   slo.string_values.values: &#92;"99.99%&#92;"`
    *   - The allowed value id of the environment attribute Deployment is
    *   _production-id_ or string value of the slo attribute is _99.99%_.
+   *   * `environment.enum_values.values.id: staging-id AND
+   *   attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/17650f90-4a29-4971-b3c0-d5532da3764b.string_values.values:
+   *   test`  - The filter string specifies that the allowed value id of the
+   *   environment attribute associated with the Deployment is _staging-id_ and
+   *   the value of the user defined attribute of type string is _test_.
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

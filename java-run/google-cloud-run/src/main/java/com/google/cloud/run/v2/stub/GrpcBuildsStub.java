@@ -48,6 +48,7 @@ public class GrpcBuildsStub extends BuildsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(SubmitBuildRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SubmitBuildResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<SubmitBuildRequest, SubmitBuildResponse> submitBuildCallable;

@@ -303,14 +303,16 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
-   * Resource name of a KMS crypto key (managed by the user) used to
+   * Optional. Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt their event data.
    *
    * It must match the pattern
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
-   * <code>string crypto_key_name = 11 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The cryptoKeyName.
    */
@@ -320,14 +322,16 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
-   * Resource name of a KMS crypto key (managed by the user) used to
+   * Optional. Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt their event data.
    *
    * It must match the pattern
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
-   * <code>string crypto_key_name = 11 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for cryptoKeyName.
    */
@@ -346,6 +350,69 @@ public interface ChannelOrBuilder
    * @return The satisfiesPzs.
    */
   boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  int getLabelsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  boolean containsLabels(java.lang.String key);
+
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   com.google.cloud.eventarc.v1.Channel.TransportCase getTransportCase();
 }

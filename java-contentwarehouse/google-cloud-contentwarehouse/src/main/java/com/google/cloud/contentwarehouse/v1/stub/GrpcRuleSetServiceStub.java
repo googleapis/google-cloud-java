@@ -56,6 +56,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRuleSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RuleSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRuleSetRequest, RuleSet> getRuleSetMethodDescriptor =
@@ -64,6 +65,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
           .setFullMethodName("google.cloud.contentwarehouse.v1.RuleSetService/GetRuleSet")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRuleSetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(RuleSet.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateRuleSetRequest, RuleSet>
@@ -74,6 +76,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRuleSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RuleSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRuleSetRequest, Empty> deleteRuleSetMethodDescriptor =
@@ -82,6 +85,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
           .setFullMethodName("google.cloud.contentwarehouse.v1.RuleSetService/DeleteRuleSet")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteRuleSetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListRuleSetsRequest, ListRuleSetsResponse>
@@ -92,6 +96,7 @@ public class GrpcRuleSetServiceStub extends RuleSetServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListRuleSetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRuleSetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateRuleSetRequest, RuleSet> createRuleSetCallable;

@@ -53,6 +53,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
           .setFullMethodName("google.devtools.containeranalysis.v1.ContainerAnalysis/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -61,6 +62,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
           .setFullMethodName("google.devtools.containeranalysis.v1.ContainerAnalysis/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -73,6 +75,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -89,6 +92,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
                       GetVulnerabilityOccurrencesSummaryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(VulnerabilityOccurrencesSummary.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportSBOMRequest, ExportSBOMResponse>
@@ -99,6 +103,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
                   "google.devtools.containeranalysis.v1.ContainerAnalysis/ExportSBOM")
               .setRequestMarshaller(ProtoUtils.marshaller(ExportSBOMRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ExportSBOMResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;

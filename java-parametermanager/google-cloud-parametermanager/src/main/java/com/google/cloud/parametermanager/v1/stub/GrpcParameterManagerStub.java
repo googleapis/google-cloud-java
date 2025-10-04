@@ -72,6 +72,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
                   ProtoUtils.marshaller(ListParametersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListParametersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetParameterRequest, Parameter>
@@ -81,6 +82,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
               .setFullMethodName("google.cloud.parametermanager.v1.ParameterManager/GetParameter")
               .setRequestMarshaller(ProtoUtils.marshaller(GetParameterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Parameter.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateParameterRequest, Parameter>
@@ -92,6 +94,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateParameterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Parameter.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateParameterRequest, Parameter>
@@ -103,6 +106,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateParameterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Parameter.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteParameterRequest, Empty>
@@ -114,6 +118,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteParameterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListParameterVersionsRequest, ListParameterVersionsResponse>
@@ -126,6 +131,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
                   ProtoUtils.marshaller(ListParameterVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListParameterVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetParameterVersionRequest, ParameterVersion>
@@ -137,6 +143,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetParameterVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ParameterVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -151,6 +158,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
                   ProtoUtils.marshaller(RenderParameterVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RenderParameterVersionResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateParameterVersionRequest, ParameterVersion>
@@ -162,6 +170,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateParameterVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ParameterVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateParameterVersionRequest, ParameterVersion>
@@ -173,6 +182,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateParameterVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ParameterVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteParameterVersionRequest, Empty>
@@ -184,6 +194,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteParameterVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -195,6 +206,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -203,6 +215,7 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListParametersRequest, ListParametersResponse> listParametersCallable;

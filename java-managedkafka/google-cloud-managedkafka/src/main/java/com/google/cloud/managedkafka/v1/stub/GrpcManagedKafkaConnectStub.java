@@ -82,6 +82,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                   ProtoUtils.marshaller(ListConnectClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConnectClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConnectClusterRequest, ConnectCluster>
@@ -93,6 +94,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConnectClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConnectCluster.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateConnectClusterRequest, Operation>
@@ -104,6 +106,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConnectClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConnectClusterRequest, Operation>
@@ -115,6 +118,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConnectClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConnectClusterRequest, Operation>
@@ -126,6 +130,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConnectClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListConnectorsRequest, ListConnectorsResponse>
@@ -137,6 +142,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                   ProtoUtils.marshaller(ListConnectorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConnectorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConnectorRequest, Connector>
@@ -146,6 +152,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
               .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafkaConnect/GetConnector")
               .setRequestMarshaller(ProtoUtils.marshaller(GetConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Connector.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateConnectorRequest, Connector>
@@ -156,6 +163,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Connector.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConnectorRequest, Connector>
@@ -166,6 +174,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Connector.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConnectorRequest, Empty>
@@ -176,6 +185,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PauseConnectorRequest, PauseConnectorResponse>
@@ -187,6 +197,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                   ProtoUtils.marshaller(PauseConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PauseConnectorResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResumeConnectorRequest, ResumeConnectorResponse>
@@ -198,6 +209,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                   ProtoUtils.marshaller(ResumeConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ResumeConnectorResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RestartConnectorRequest, RestartConnectorResponse>
@@ -210,6 +222,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                   ProtoUtils.marshaller(RestartConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RestartConnectorResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopConnectorRequest, StopConnectorResponse>
@@ -221,6 +234,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                   ProtoUtils.marshaller(StopConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StopConnectorResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -232,6 +246,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -240,6 +255,7 @@ public class GrpcManagedKafkaConnectStub extends ManagedKafkaConnectStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListConnectClustersRequest, ListConnectClustersResponse>

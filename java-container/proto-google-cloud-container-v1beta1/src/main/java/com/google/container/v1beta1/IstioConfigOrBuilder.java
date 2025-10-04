@@ -34,7 +34,7 @@ public interface IstioConfigOrBuilder
    * <code>bool disabled = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IstioConfig.disabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1918
+   *     google/container/v1beta1/cluster_service.proto;l=2198
    * @return The disabled.
    */
   @java.lang.Deprecated
@@ -50,7 +50,7 @@ public interface IstioConfigOrBuilder
    * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1921
+   *     google/container/v1beta1/cluster_service.proto;l=2201
    * @return The enum numeric value on the wire for auth.
    */
   @java.lang.Deprecated
@@ -66,7 +66,7 @@ public interface IstioConfigOrBuilder
    * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1921
+   *     google/container/v1beta1/cluster_service.proto;l=2201
    * @return The auth.
    */
   @java.lang.Deprecated

@@ -43,7 +43,7 @@ public enum CloudProvider implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The cloud provider is Google Cloud Platform.
+   * The cloud provider is Google Cloud.
    * </pre>
    *
    * <code>GOOGLE_CLOUD_PLATFORM = 1;</code>
@@ -87,7 +87,7 @@ public enum CloudProvider implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The cloud provider is Google Cloud Platform.
+   * The cloud provider is Google Cloud.
    * </pre>
    *
    * <code>GOOGLE_CLOUD_PLATFORM = 1;</code>

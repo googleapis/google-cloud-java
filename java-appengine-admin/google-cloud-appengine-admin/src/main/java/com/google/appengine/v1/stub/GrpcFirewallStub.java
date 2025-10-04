@@ -59,6 +59,7 @@ public class GrpcFirewallStub extends FirewallStub {
                   ProtoUtils.marshaller(ListIngressRulesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListIngressRulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -72,6 +73,7 @@ public class GrpcFirewallStub extends FirewallStub {
                   ProtoUtils.marshaller(BatchUpdateIngressRulesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchUpdateIngressRulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateIngressRuleRequest, FirewallRule>
@@ -82,6 +84,7 @@ public class GrpcFirewallStub extends FirewallStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateIngressRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FirewallRule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIngressRuleRequest, FirewallRule>
@@ -92,6 +95,7 @@ public class GrpcFirewallStub extends FirewallStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetIngressRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FirewallRule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateIngressRuleRequest, FirewallRule>
@@ -102,6 +106,7 @@ public class GrpcFirewallStub extends FirewallStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateIngressRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FirewallRule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteIngressRuleRequest, Empty>
@@ -112,6 +117,7 @@ public class GrpcFirewallStub extends FirewallStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteIngressRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListIngressRulesRequest, ListIngressRulesResponse>

@@ -22,9 +22,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1.FeatureViewDirectWriteRequest;
+import com.google.cloud.aiplatform.v1.FeatureViewDirectWriteResponse;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1.FetchFeatureValuesResponse;
 import com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest;
@@ -63,6 +66,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   ProtoUtils.marshaller(FetchFeatureValuesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchFeatureValuesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
@@ -75,6 +79,22 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   ProtoUtils.marshaller(SearchNearestEntitiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchNearestEntitiesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteMethodDescriptor =
+          MethodDescriptor
+              .<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.FeatureOnlineStoreService/FeatureViewDirectWrite")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FeatureViewDirectWriteRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FeatureViewDirectWriteResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -86,6 +106,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -94,6 +115,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -102,6 +124,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -110,6 +133,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -121,12 +145,15 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
       fetchFeatureValuesCallable;
   private final UnaryCallable<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesCallable;
+  private final BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -204,6 +231,18 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+        featureViewDirectWriteTransportSettings =
+            GrpcCallSettings
+                .<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>newBuilder()
+                .setMethodDescriptor(featureViewDirectWriteMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("feature_view", String.valueOf(request.getFeatureView()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -266,6 +305,11 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
             searchNearestEntitiesTransportSettings,
             settings.searchNearestEntitiesSettings(),
             clientContext);
+    this.featureViewDirectWriteCallable =
+        callableFactory.createBidiStreamingCallable(
+            featureViewDirectWriteTransportSettings,
+            settings.featureViewDirectWriteSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -305,6 +349,12 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
   public UnaryCallable<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesCallable() {
     return searchNearestEntitiesCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteCallable() {
+    return featureViewDirectWriteCallable;
   }
 
   @Override

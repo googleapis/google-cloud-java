@@ -25,6 +25,12 @@ public interface ResourcePolicyWorkloadPolicyOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+   * </pre>
+   *
    * <code>optional string accelerator_topology = 389323203;</code>
    *
    * @return Whether the acceleratorTopology field is set.
@@ -32,6 +38,12 @@ public interface ResourcePolicyWorkloadPolicyOrBuilder
   boolean hasAcceleratorTopology();
 
   /**
+   *
+   *
+   * <pre>
+   * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+   * </pre>
+   *
    * <code>optional string accelerator_topology = 389323203;</code>
    *
    * @return The acceleratorTopology.
@@ -39,6 +51,12 @@ public interface ResourcePolicyWorkloadPolicyOrBuilder
   java.lang.String getAcceleratorTopology();
 
   /**
+   *
+   *
+   * <pre>
+   * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+   * </pre>
+   *
    * <code>optional string accelerator_topology = 389323203;</code>
    *
    * @return The bytes for acceleratorTopology.
@@ -49,7 +67,7 @@ public interface ResourcePolicyWorkloadPolicyOrBuilder
    *
    *
    * <pre>
-   *
+   * Specifies the maximum distance between instances.
    * Check the MaxTopologyDistance enum for the list of possible values.
    * </pre>
    *
@@ -63,7 +81,7 @@ public interface ResourcePolicyWorkloadPolicyOrBuilder
    *
    *
    * <pre>
-   *
+   * Specifies the maximum distance between instances.
    * Check the MaxTopologyDistance enum for the list of possible values.
    * </pre>
    *
@@ -77,7 +95,7 @@ public interface ResourcePolicyWorkloadPolicyOrBuilder
    *
    *
    * <pre>
-   *
+   * Specifies the maximum distance between instances.
    * Check the MaxTopologyDistance enum for the list of possible values.
    * </pre>
    *
@@ -91,7 +109,7 @@ public interface ResourcePolicyWorkloadPolicyOrBuilder
    *
    *
    * <pre>
-   *
+   * Specifies the intent of the instance placement in the MIG.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -105,7 +123,7 @@ public interface ResourcePolicyWorkloadPolicyOrBuilder
    *
    *
    * <pre>
-   *
+   * Specifies the intent of the instance placement in the MIG.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -119,7 +137,7 @@ public interface ResourcePolicyWorkloadPolicyOrBuilder
    *
    *
    * <pre>
-   *
+   * Specifies the intent of the instance placement in the MIG.
    * Check the Type enum for the list of possible values.
    * </pre>
    *

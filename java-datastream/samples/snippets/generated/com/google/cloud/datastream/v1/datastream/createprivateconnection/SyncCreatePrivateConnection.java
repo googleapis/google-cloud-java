@@ -42,6 +42,7 @@ public class SyncCreatePrivateConnection {
               .setPrivateConnection(PrivateConnection.newBuilder().build())
               .setRequestId("requestId693933066")
               .setForce(true)
+              .setValidateOnly(true)
               .build();
       PrivateConnection response = datastreamClient.createPrivateConnectionAsync(request).get();
     }

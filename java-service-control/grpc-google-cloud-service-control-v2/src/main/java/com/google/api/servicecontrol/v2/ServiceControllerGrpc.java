@@ -23,7 +23,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * <pre>
  * [Service Control API
  * v2](https://cloud.google.com/service-infrastructure/docs/service-control/access-control)
- * Private Preview. This feature is only available for approved services.
  * This API provides admission control and telemetry reporting for services
  * that are integrated with [Service
  * Infrastructure](https://cloud.google.com/service-infrastructure).
@@ -189,7 +188,6 @@ public final class ServiceControllerGrpc {
    * <pre>
    * [Service Control API
    * v2](https://cloud.google.com/service-infrastructure/docs/service-control/access-control)
-   * Private Preview. This feature is only available for approved services.
    * This API provides admission control and telemetry reporting for services
    * that are integrated with [Service
    * Infrastructure](https://cloud.google.com/service-infrastructure).
@@ -201,7 +199,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides admission control for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It checks
@@ -232,7 +229,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides telemetry reporting for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It
@@ -240,9 +236,8 @@ public final class ServiceControllerGrpc {
      * called after the operations have been executed. For more information, see
      * [Telemetry
      * Reporting](https://cloud.google.com/service-infrastructure/docs/telemetry-reporting).
-     * NOTE: The telemetry reporting has a hard limit of 1000 operations and 1MB
-     * per Report call. It is recommended to have no more than 100 operations per
-     * call.
+     * NOTE: The telemetry reporting has a hard limit of 100 operations and 1MB
+     * per Report call.
      * This method requires the `servicemanagement.services.report` permission
      * on the specified service. For more information, see
      * [Service Control API Access
@@ -263,7 +258,6 @@ public final class ServiceControllerGrpc {
    * <pre>
    * [Service Control API
    * v2](https://cloud.google.com/service-infrastructure/docs/service-control/access-control)
-   * Private Preview. This feature is only available for approved services.
    * This API provides admission control and telemetry reporting for services
    * that are integrated with [Service
    * Infrastructure](https://cloud.google.com/service-infrastructure).
@@ -284,7 +278,6 @@ public final class ServiceControllerGrpc {
    * <pre>
    * [Service Control API
    * v2](https://cloud.google.com/service-infrastructure/docs/service-control/access-control)
-   * Private Preview. This feature is only available for approved services.
    * This API provides admission control and telemetry reporting for services
    * that are integrated with [Service
    * Infrastructure](https://cloud.google.com/service-infrastructure).
@@ -306,7 +299,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides admission control for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It checks
@@ -338,7 +330,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides telemetry reporting for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It
@@ -346,9 +337,8 @@ public final class ServiceControllerGrpc {
      * called after the operations have been executed. For more information, see
      * [Telemetry
      * Reporting](https://cloud.google.com/service-infrastructure/docs/telemetry-reporting).
-     * NOTE: The telemetry reporting has a hard limit of 1000 operations and 1MB
-     * per Report call. It is recommended to have no more than 100 operations per
-     * call.
+     * NOTE: The telemetry reporting has a hard limit of 100 operations and 1MB
+     * per Report call.
      * This method requires the `servicemanagement.services.report` permission
      * on the specified service. For more information, see
      * [Service Control API Access
@@ -370,7 +360,6 @@ public final class ServiceControllerGrpc {
    * <pre>
    * [Service Control API
    * v2](https://cloud.google.com/service-infrastructure/docs/service-control/access-control)
-   * Private Preview. This feature is only available for approved services.
    * This API provides admission control and telemetry reporting for services
    * that are integrated with [Service
    * Infrastructure](https://cloud.google.com/service-infrastructure).
@@ -393,7 +382,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides admission control for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It checks
@@ -423,7 +411,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides telemetry reporting for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It
@@ -431,9 +418,8 @@ public final class ServiceControllerGrpc {
      * called after the operations have been executed. For more information, see
      * [Telemetry
      * Reporting](https://cloud.google.com/service-infrastructure/docs/telemetry-reporting).
-     * NOTE: The telemetry reporting has a hard limit of 1000 operations and 1MB
-     * per Report call. It is recommended to have no more than 100 operations per
-     * call.
+     * NOTE: The telemetry reporting has a hard limit of 100 operations and 1MB
+     * per Report call.
      * This method requires the `servicemanagement.services.report` permission
      * on the specified service. For more information, see
      * [Service Control API Access
@@ -453,7 +439,6 @@ public final class ServiceControllerGrpc {
    * <pre>
    * [Service Control API
    * v2](https://cloud.google.com/service-infrastructure/docs/service-control/access-control)
-   * Private Preview. This feature is only available for approved services.
    * This API provides admission control and telemetry reporting for services
    * that are integrated with [Service
    * Infrastructure](https://cloud.google.com/service-infrastructure).
@@ -476,7 +461,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides admission control for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It checks
@@ -506,7 +490,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides telemetry reporting for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It
@@ -514,9 +497,8 @@ public final class ServiceControllerGrpc {
      * called after the operations have been executed. For more information, see
      * [Telemetry
      * Reporting](https://cloud.google.com/service-infrastructure/docs/telemetry-reporting).
-     * NOTE: The telemetry reporting has a hard limit of 1000 operations and 1MB
-     * per Report call. It is recommended to have no more than 100 operations per
-     * call.
+     * NOTE: The telemetry reporting has a hard limit of 100 operations and 1MB
+     * per Report call.
      * This method requires the `servicemanagement.services.report` permission
      * on the specified service. For more information, see
      * [Service Control API Access
@@ -536,7 +518,6 @@ public final class ServiceControllerGrpc {
    * <pre>
    * [Service Control API
    * v2](https://cloud.google.com/service-infrastructure/docs/service-control/access-control)
-   * Private Preview. This feature is only available for approved services.
    * This API provides admission control and telemetry reporting for services
    * that are integrated with [Service
    * Infrastructure](https://cloud.google.com/service-infrastructure).
@@ -558,7 +539,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides admission control for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It checks
@@ -589,7 +569,6 @@ public final class ServiceControllerGrpc {
      *
      *
      * <pre>
-     * Private Preview. This feature is only available for approved services.
      * This method provides telemetry reporting for services that are integrated
      * with [Service
      * Infrastructure](https://cloud.google.com/service-infrastructure). It
@@ -597,9 +576,8 @@ public final class ServiceControllerGrpc {
      * called after the operations have been executed. For more information, see
      * [Telemetry
      * Reporting](https://cloud.google.com/service-infrastructure/docs/telemetry-reporting).
-     * NOTE: The telemetry reporting has a hard limit of 1000 operations and 1MB
-     * per Report call. It is recommended to have no more than 100 operations per
-     * call.
+     * NOTE: The telemetry reporting has a hard limit of 100 operations and 1MB
+     * per Report call.
      * This method requires the `servicemanagement.services.report` permission
      * on the specified service. For more information, see
      * [Service Control API Access

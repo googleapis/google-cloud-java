@@ -44,6 +44,7 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
     orderBy_ = "";
     pageToken_ = "";
     project_ = "";
+    serviceProject_ = "";
   }
 
   @java.lang.Override
@@ -398,6 +399,75 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
     return returnPartialSuccess_;
   }
 
+  public static final int SERVICE_PROJECT_FIELD_NUMBER = 530592655;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceProject_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The project id or project number in which the subnetwork is intended to be used. Only applied for Shared VPC. See [Shared VPC documentation](https://cloud.google.com/vpc/docs/shared-vpc/)
+   * </pre>
+   *
+   * <code>optional string service_project = 530592655;</code>
+   *
+   * @return Whether the serviceProject field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceProject() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The project id or project number in which the subnetwork is intended to be used. Only applied for Shared VPC. See [Shared VPC documentation](https://cloud.google.com/vpc/docs/shared-vpc/)
+   * </pre>
+   *
+   * <code>optional string service_project = 530592655;</code>
+   *
+   * @return The serviceProject.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceProject() {
+    java.lang.Object ref = serviceProject_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceProject_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The project id or project number in which the subnetwork is intended to be used. Only applied for Shared VPC. See [Shared VPC documentation](https://cloud.google.com/vpc/docs/shared-vpc/)
+   * </pre>
+   *
+   * <code>optional string service_project = 530592655;</code>
+   *
+   * @return The bytes for serviceProject.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceProjectBytes() {
+    java.lang.Object ref = serviceProject_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceProject_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -430,6 +500,9 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeBool(517198390, returnPartialSuccess_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 530592655, serviceProject_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -457,6 +530,9 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
     if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(517198390, returnPartialSuccess_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(530592655, serviceProject_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -495,6 +571,10 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
     if (hasReturnPartialSuccess()) {
       if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
     }
+    if (hasServiceProject() != other.hasServiceProject()) return false;
+    if (hasServiceProject()) {
+      if (!getServiceProject().equals(other.getServiceProject())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -527,6 +607,10 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
     if (hasReturnPartialSuccess()) {
       hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
+    }
+    if (hasServiceProject()) {
+      hash = (37 * hash) + SERVICE_PROJECT_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceProject().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -675,6 +759,7 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
       pageToken_ = "";
       project_ = "";
       returnPartialSuccess_ = false;
+      serviceProject_ = "";
       return this;
     }
 
@@ -734,6 +819,10 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.returnPartialSuccess_ = returnPartialSuccess_;
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.serviceProject_ = serviceProject_;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -810,6 +899,11 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
       if (other.hasReturnPartialSuccess()) {
         setReturnPartialSuccess(other.getReturnPartialSuccess());
       }
+      if (other.hasServiceProject()) {
+        serviceProject_ = other.serviceProject_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -872,6 +966,12 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
                 bitField0_ |= 0x00000020;
                 break;
               } // case -157380176
+            case -50226054:
+              {
+                serviceProject_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case -50226054
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1520,6 +1620,132 @@ public final class ListUsableSubnetworksRequest extends com.google.protobuf.Gene
     public Builder clearReturnPartialSuccess() {
       bitField0_ = (bitField0_ & ~0x00000020);
       returnPartialSuccess_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object serviceProject_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The project id or project number in which the subnetwork is intended to be used. Only applied for Shared VPC. See [Shared VPC documentation](https://cloud.google.com/vpc/docs/shared-vpc/)
+     * </pre>
+     *
+     * <code>optional string service_project = 530592655;</code>
+     *
+     * @return Whether the serviceProject field is set.
+     */
+    public boolean hasServiceProject() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The project id or project number in which the subnetwork is intended to be used. Only applied for Shared VPC. See [Shared VPC documentation](https://cloud.google.com/vpc/docs/shared-vpc/)
+     * </pre>
+     *
+     * <code>optional string service_project = 530592655;</code>
+     *
+     * @return The serviceProject.
+     */
+    public java.lang.String getServiceProject() {
+      java.lang.Object ref = serviceProject_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceProject_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The project id or project number in which the subnetwork is intended to be used. Only applied for Shared VPC. See [Shared VPC documentation](https://cloud.google.com/vpc/docs/shared-vpc/)
+     * </pre>
+     *
+     * <code>optional string service_project = 530592655;</code>
+     *
+     * @return The bytes for serviceProject.
+     */
+    public com.google.protobuf.ByteString getServiceProjectBytes() {
+      java.lang.Object ref = serviceProject_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceProject_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The project id or project number in which the subnetwork is intended to be used. Only applied for Shared VPC. See [Shared VPC documentation](https://cloud.google.com/vpc/docs/shared-vpc/)
+     * </pre>
+     *
+     * <code>optional string service_project = 530592655;</code>
+     *
+     * @param value The serviceProject to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceProject(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serviceProject_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The project id or project number in which the subnetwork is intended to be used. Only applied for Shared VPC. See [Shared VPC documentation](https://cloud.google.com/vpc/docs/shared-vpc/)
+     * </pre>
+     *
+     * <code>optional string service_project = 530592655;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceProject() {
+      serviceProject_ = getDefaultInstance().getServiceProject();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The project id or project number in which the subnetwork is intended to be used. Only applied for Shared VPC. See [Shared VPC documentation](https://cloud.google.com/vpc/docs/shared-vpc/)
+     * </pre>
+     *
+     * <code>optional string service_project = 530592655;</code>
+     *
+     * @param value The bytes for serviceProject to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceProjectBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serviceProject_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

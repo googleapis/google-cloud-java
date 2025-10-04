@@ -89,7 +89,7 @@ public final class AdUnitServiceProto {
           + "\027ListAdUnitSizesResponse\022:\n\r"
           + "ad_unit_sizes\030\001 \003(\0132#.google.ads.admanager.v1.AdUnitSize\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\200\004\n\r"
+          + "total_size\030\003 \001(\0052\254\004\n\r"
           + "AdUnitService\022\207\001\n"
           + "\tGetAdUnit\022).google.ads.admanager.v1.GetAdUnitRequest\032\037.google.ads"
           + ".admanager.v1.AdUnit\".\332A\004name\202\323\344\223\002!\022\037/v1/{name=networks/*/adUnits/*}\022\232\001\n"
@@ -99,12 +99,13 @@ public final class AdUnitServiceProto {
           + "\017ListAdUnitSizes\022/.google.ads.admanager.v1.ListAdUn"
           + "itSizesRequest\0320.google.ads.admanager.v1"
           + ".ListAdUnitSizesResponse\"4\332A\006parent\202\323\344\223\002"
-          + "%\022#/v1/{parent=networks/*}/adUnitSizes\032\033\312A\030admanager.googleapis.comB\306\001\n"
-          + "\033com.google.ads.admanager.v1B\022AdUnitServiceProtoP"
-          + "\001Z@google.golang.org/genproto/googleapis"
-          + "/ads/admanager/v1;admanager\252\002\027Google.Ads"
-          + ".AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1\352"
-          + "\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "%\022#/v1/{parent=networks/*}/adUnitSizes\032G"
+          + "\312A\030admanager.googleapis.com\322A)https://www.googleapis.com/auth/admanagerB\306\001\n"
+          + "\033com.google.ads.admanager.v1B\022AdUnitServicePr"
+          + "otoP\001Z@google.golang.org/genproto/google"
+          + "apis/ads/admanager/v1;admanager\252\002\027Google"
+          + ".Ads.AdManager.V1\312\002\027Google\\Ads\\AdManager"
+          + "\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -162,6 +163,7 @@ public final class AdUnitServiceProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

@@ -1404,6 +1404,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setToolConfig(ToolConfig.newBuilder().build())
    *           .putAllLabels(new HashMap<String, String>())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
+   *           .setModelArmorConfig(ModelArmorConfig.newBuilder().build())
    *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();
    *   GenerateContentResponse response = predictionServiceClient.generateContent(request);
@@ -1441,6 +1442,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setToolConfig(ToolConfig.newBuilder().build())
    *           .putAllLabels(new HashMap<String, String>())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
+   *           .setModelArmorConfig(ModelArmorConfig.newBuilder().build())
    *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<GenerateContentResponse> future =
@@ -1479,6 +1481,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setToolConfig(ToolConfig.newBuilder().build())
    *           .putAllLabels(new HashMap<String, String>())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
+   *           .setModelArmorConfig(ModelArmorConfig.newBuilder().build())
    *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();
    *   ServerStream<GenerateContentResponse> stream =

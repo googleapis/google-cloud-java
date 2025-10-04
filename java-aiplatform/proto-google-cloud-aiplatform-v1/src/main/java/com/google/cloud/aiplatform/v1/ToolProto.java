@@ -41,6 +41,10 @@ public final class ToolProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_Tool_CodeExecution_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_Tool_ComputerUse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_Tool_ComputerUse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_UrlContext_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_UrlContext_fieldAccessorTable;
@@ -88,6 +92,10 @@ public final class ToolProto {
       internal_static_google_cloud_aiplatform_v1_GoogleSearchRetrieval_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_GoogleSearchRetrieval_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_GoogleMaps_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_GoogleMaps_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_EnterpriseWebSearch_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -142,7 +150,7 @@ public final class ToolProto {
           + "\032google.cloud.aiplatform.v1\032\037google/api/"
           + "field_behavior.proto\032\031google/api/resourc"
           + "e.proto\032(google/cloud/aiplatform/v1/open"
-          + "api.proto\032\034google/protobuf/struct.proto\032\030google/type/latlng.proto\"\303\004\n"
+          + "api.proto\032\034google/protobuf/struct.proto\032\030google/type/latlng.proto\"\225\007\n"
           + "\004Tool\022S\n"
           + "\025function_declarations\030\001 \003(\0132/.google.cloud"
           + ".aiplatform.v1.FunctionDeclarationB\003\340A\001\022=\n"
@@ -151,15 +159,26 @@ public final class ToolProto {
           + "google_search\030\007"
           + " \001(\0132-.google.cloud.aiplatform.v1.Tool.GoogleSearchB\003\340A\001\022W\n"
           + "\027google_search_retrieval\030\003"
-          + " \001(\01321.google.cloud.aiplatform.v1.GoogleSearchRetrievalB\003\340A\001\022S\n"
-          + "\025enterprise_web_search\030\006"
-          + " \001(\0132/.google.cloud.aiplatform.v1.EnterpriseWebSearchB\003\340A\001\022K\n"
-          + "\016code_execution\030\004"
-          + " \001(\0132..google.cloud.aiplatform.v1.Tool.CodeExecutionB\003\340A\001\022@\n"
-          + "\013url_context\030\010"
-          + " \001(\0132&.google.cloud.aiplatform.v1.UrlContextB\003\340A\001\032\016\n"
-          + "\014GoogleSearch\032\017\n\r"
-          + "CodeExecution\"\014\n\n"
+          + " \001(\01321.google.cloud.aiplatform.v1.GoogleSearchRetrievalB\003\340A\001\022@\n"
+          + "\013google_maps\030\005"
+          + " \001(\0132&.google.cloud.aiplatform.v1.GoogleMapsB\003\340A\001\022S\n"
+          + "\025enterprise_web_search\030\006 "
+          + "\001(\0132/.google.cloud.aiplatform.v1.EnterpriseWebSearchB\003\340A\001\022K\n"
+          + "\016code_execution\030\004 \001("
+          + "\0132..google.cloud.aiplatform.v1.Tool.CodeExecutionB\003\340A\001\022@\n"
+          + "\013url_context\030\010 \001(\0132&.go"
+          + "ogle.cloud.aiplatform.v1.UrlContextB\003\340A\001\022G\n"
+          + "\014computer_use\030\013"
+          + " \001(\0132,.google.cloud.aiplatform.v1.Tool.ComputerUseB\003\340A\001\032,\n"
+          + "\014GoogleSearch\022\034\n"
+          + "\017exclude_domains\030\003 \003(\tB\003\340A\001\032\017\n\r"
+          + "CodeExecution\032\246\001\n"
+          + "\013ComputerUse\022R\n"
+          + "\013environment\030\001"
+          + " \001(\01628.google.cloud.aiplatform.v1.Tool.ComputerUse.EnvironmentB\003\340A\002\"C\n"
+          + "\013Environment\022\033\n"
+          + "\027ENVIRONMENT_UNSPECIFIED\020\000\022\027\n"
+          + "\023ENVIRONMENT_BROWSER\020\001\"\014\n\n"
           + "UrlContext\"\262\002\n"
           + "\023FunctionDeclaration\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022\030\n"
@@ -178,15 +197,15 @@ public final class ToolProto {
           + "\004name\030\001 \001(\tB\003\340A\002\022.\n"
           + "\010response\030\002 \001(\0132\027.google.protobuf.StructB\003\340A\002\"\241\001\n"
           + "\016ExecutableCode\022J\n"
-          + "\010language\030\001"
-          + " \001(\01623.google.cloud.aiplatform.v1.ExecutableCode.LanguageB\003\340A\002\022\021\n"
+          + "\010language\030\001 \001(\01623.google"
+          + ".cloud.aiplatform.v1.ExecutableCode.LanguageB\003\340A\002\022\021\n"
           + "\004code\030\002 \001(\tB\003\340A\002\"0\n"
           + "\010Language\022\030\n"
           + "\024LANGUAGE_UNSPECIFIED\020\000\022\n\n"
           + "\006PYTHON\020\001\"\340\001\n"
           + "\023CodeExecutionResult\022M\n"
-          + "\007outcome\030\001 \001(\01627.google.cloud.aip"
-          + "latform.v1.CodeExecutionResult.OutcomeB\003\340A\002\022\023\n"
+          + "\007outcome\030\001 \001(\0162"
+          + "7.google.cloud.aiplatform.v1.CodeExecutionResult.OutcomeB\003\340A\002\022\023\n"
           + "\006output\030\002 \001(\tB\003\340A\001\"e\n"
           + "\007Outcome\022\027\n"
           + "\023OUTCOME_UNSPECIFIED\020\000\022\016\n\n"
@@ -196,18 +215,18 @@ public final class ToolProto {
           + "\tRetrieval\022F\n"
           + "\020vertex_ai_search\030\002"
           + " \001(\0132*.google.cloud.aiplatform.v1.VertexAISearchH\000\022F\n"
-          + "\020vertex_rag_store\030\004 \001(\0132"
-          + "*.google.cloud.aiplatform.v1.VertexRagStoreH\000\022\"\n"
+          + "\020vertex_rag_store\030\004"
+          + " \001(\0132*.google.cloud.aiplatform.v1.VertexRagStoreH\000\022\"\n"
           + "\023disable_attribution\030\003 \001(\010B\005\030\001\340A\001B\010\n"
           + "\006source\"\252\003\n"
           + "\016VertexRagStore\022R\n\r"
-          + "rag_resources\030\004"
-          + " \003(\01326.google.cloud.aiplatform.v1.VertexRagStore.RagResourceB\003\340A\001\022$\n"
+          + "rag_resources\030\004 \003(\01326.google"
+          + ".cloud.aiplatform.v1.VertexRagStore.RagResourceB\003\340A\001\022$\n"
           + "\020similarity_top_k\030\002 \001(\005B\005\030\001\340A\001H\000\210\001\001\022-\n"
           + "\031vector_distance_threshold\030\003"
           + " \001(\001B\005\030\001\340A\001H\001\210\001\001\022Q\n"
-          + "\024rag_retrieval_config\030\006 \001(\0132..google.c"
-          + "loud.aiplatform.v1.RagRetrievalConfigB\003\340A\001\032i\n"
+          + "\024rag_retrieval_config\030\006"
+          + " \001(\0132..google.cloud.aiplatform.v1.RagRetrievalConfigB\003\340A\001\032i\n"
           + "\013RagResource\022?\n\n"
           + "rag_corpus\030\001 \001(\tB+\340A\001\372A%\n"
           + "#aiplatform.googleapis.com/RagCorpus\022\031\n"
@@ -219,31 +238,33 @@ public final class ToolProto {
           + "\006engine\030\002 \001(\tB\003\340A\001\022\030\n"
           + "\013max_results\030\003 \001(\005B\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022R\n"
-          + "\020data_store_specs\030\005"
-          + " \003(\01328.google.cloud.aiplatform.v1.VertexAISearch.DataStoreSpec\0328\n\r"
+          + "\020data_store_specs\030\005 \003(\01328.go"
+          + "ogle.cloud.aiplatform.v1.VertexAISearch.DataStoreSpec\0328\n\r"
           + "DataStoreSpec\022\022\n\n"
           + "data_store\030\001 \001(\t\022\023\n"
           + "\006filter\030\002 \001(\tB\003\340A\001\"m\n"
           + "\025GoogleSearchRetrieval\022T\n"
-          + "\030dynamic_retrieval_config\030\002 \001(\01322.googl"
-          + "e.cloud.aiplatform.v1.DynamicRetrievalConfig\"\025\n"
-          + "\023EnterpriseWebSearch\"\312\001\n"
+          + "\030dynamic_retrieval_config\030\002"
+          + " \001(\01322.google.cloud.aiplatform.v1.DynamicRetrievalConfig\"\014\n\n"
+          + "GoogleMaps\"3\n"
+          + "\023EnterpriseWebSearch\022\034\n"
+          + "\017exclude_domains\030\001 \003(\tB\003\340A\001\"\312\001\n"
           + "\026DynamicRetrievalConfig\022E\n"
-          + "\004mode\030\001 \001(\01627.google.cl"
-          + "oud.aiplatform.v1.DynamicRetrievalConfig.Mode\022#\n"
+          + "\004mode\030\001"
+          + " \001(\01627.google.cloud.aiplatform.v1.DynamicRetrievalConfig.Mode\022#\n"
           + "\021dynamic_threshold\030\002 \001(\002B\003\340A\001H\000\210\001\001\".\n"
           + "\004Mode\022\024\n"
           + "\020MODE_UNSPECIFIED\020\000\022\020\n"
           + "\014MODE_DYNAMIC\020\001B\024\n"
           + "\022_dynamic_threshold\"\261\001\n\n"
           + "ToolConfig\022W\n"
-          + "\027function_calling_config\030\001 \001(\013"
-          + "21.google.cloud.aiplatform.v1.FunctionCallingConfigB\003\340A\001\022J\n"
-          + "\020retrieval_config\030\002 \001"
-          + "(\0132+.google.cloud.aiplatform.v1.RetrievalConfigB\003\340A\001\"\302\001\n"
+          + "\027function_calling_config\030\001 \001(\01321.google.cloud.ai"
+          + "platform.v1.FunctionCallingConfigB\003\340A\001\022J\n"
+          + "\020retrieval_config\030\002"
+          + " \001(\0132+.google.cloud.aiplatform.v1.RetrievalConfigB\003\340A\001\"\302\001\n"
           + "\025FunctionCallingConfig\022I\n"
-          + "\004mode\030\001"
-          + " \001(\01626.google.cloud.aiplatform.v1.FunctionCallingConfig.ModeB\003\340A\001\022#\n"
+          + "\004mode\030\001 \001(\01626.goo"
+          + "gle.cloud.aiplatform.v1.FunctionCallingConfig.ModeB\003\340A\001\022#\n"
           + "\026allowed_function_names\030\002 \003(\tB\003\340A\001\"9\n"
           + "\004Mode\022\024\n"
           + "\020MODE_UNSPECIFIED\020\000\022\010\n"
@@ -257,20 +278,20 @@ public final class ToolProto {
           + "\016_language_code\"\252\005\n"
           + "\022RagRetrievalConfig\022\022\n"
           + "\005top_k\030\001 \001(\005B\003\340A\001\022J\n"
-          + "\006filter\030\003 \001(\01325.google.cl"
-          + "oud.aiplatform.v1.RagRetrievalConfig.FilterB\003\340A\001\022L\n"
-          + "\007ranking\030\004 \001(\01326.google.cloud"
-          + ".aiplatform.v1.RagRetrievalConfig.RankingB\003\340A\001\032\223\001\n"
+          + "\006filter\030\003"
+          + " \001(\01325.google.cloud.aiplatform.v1.RagRetrievalConfig.FilterB\003\340A\001\022L\n"
+          + "\007ranking\030\004"
+          + " \001(\01326.google.cloud.aiplatform.v1.RagRetrievalConfig.RankingB\003\340A\001\032\223\001\n"
           + "\006Filter\022(\n"
           + "\031vector_distance_threshold\030\003 \001(\001B\003\340A\001H\000\022*\n"
           + "\033vector_similarity_threshold\030\004 \001(\001B\003\340A\001H\000\022\034\n"
           + "\017metadata_filter\030\002 \001(\tB\003\340A\001B\025\n"
           + "\023vector_db_threshold\032\317\002\n"
           + "\007Ranking\022_\n"
-          + "\014rank_service\030\001 \001(\0132B.google."
-          + "cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankServiceB\003\340A\001H\000\022[\n\n"
-          + "llm_ranker\030\003 \001(\0132@.google.cloud.aiplatform.v1.RagRe"
-          + "trievalConfig.Ranking.LlmRankerB\003\340A\001H\000\032:\n"
+          + "\014rank_service\030\001 \001(\0132B.google.cloud.aiplatform.v"
+          + "1.RagRetrievalConfig.Ranking.RankServiceB\003\340A\001H\000\022[\n\n"
+          + "llm_ranker\030\003 \001(\0132@.google.clo"
+          + "ud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRankerB\003\340A\001H\000\032:\n"
           + "\013RankService\022\034\n\n"
           + "model_name\030\001 \001(\tB\003\340A\001H\000\210\001\001B\r\n"
           + "\013_model_name\0328\n"
@@ -278,10 +299,11 @@ public final class ToolProto {
           + "model_name\030\001 \001(\tB\003\340A\001H\000\210\001\001B\r\n"
           + "\013_model_nameB\020\n"
           + "\016ranking_configB\307\001\n"
-          + "\036com.google.cloud.aiplatform.v1B\tToolProtoP\001Z>cloud.google.com"
-          + "/go/aiplatform/apiv1/aiplatformpb;aiplat"
-          + "formpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Go"
-          + "ogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
+          + "\036com.google.cloud.aiplatform.v1B\tToolPro"
+          + "toP\001Z>cloud.google.com/go/aiplatform/api"
+          + "v1/aiplatformpb;aiplatformpb\252\002\032Google.Cl"
+          + "oud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatf"
+          + "orm\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -303,22 +325,34 @@ public final class ToolProto {
               "Retrieval",
               "GoogleSearch",
               "GoogleSearchRetrieval",
+              "GoogleMaps",
               "EnterpriseWebSearch",
               "CodeExecution",
               "UrlContext",
+              "ComputerUse",
             });
     internal_static_google_cloud_aiplatform_v1_Tool_GoogleSearch_descriptor =
         internal_static_google_cloud_aiplatform_v1_Tool_descriptor.getNestedTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_Tool_GoogleSearch_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_Tool_GoogleSearch_descriptor,
-            new java.lang.String[] {});
+            new java.lang.String[] {
+              "ExcludeDomains",
+            });
     internal_static_google_cloud_aiplatform_v1_Tool_CodeExecution_descriptor =
         internal_static_google_cloud_aiplatform_v1_Tool_descriptor.getNestedTypes().get(1);
     internal_static_google_cloud_aiplatform_v1_Tool_CodeExecution_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_Tool_CodeExecution_descriptor,
             new java.lang.String[] {});
+    internal_static_google_cloud_aiplatform_v1_Tool_ComputerUse_descriptor =
+        internal_static_google_cloud_aiplatform_v1_Tool_descriptor.getNestedTypes().get(2);
+    internal_static_google_cloud_aiplatform_v1_Tool_ComputerUse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_Tool_ComputerUse_descriptor,
+            new java.lang.String[] {
+              "Environment",
+            });
     internal_static_google_cloud_aiplatform_v1_UrlContext_descriptor =
         getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_aiplatform_v1_UrlContext_fieldAccessorTable =
@@ -422,14 +456,22 @@ public final class ToolProto {
             new java.lang.String[] {
               "DynamicRetrievalConfig",
             });
-    internal_static_google_cloud_aiplatform_v1_EnterpriseWebSearch_descriptor =
+    internal_static_google_cloud_aiplatform_v1_GoogleMaps_descriptor =
         getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_aiplatform_v1_GoogleMaps_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_GoogleMaps_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_aiplatform_v1_EnterpriseWebSearch_descriptor =
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_aiplatform_v1_EnterpriseWebSearch_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_EnterpriseWebSearch_descriptor,
-            new java.lang.String[] {});
+            new java.lang.String[] {
+              "ExcludeDomains",
+            });
     internal_static_google_cloud_aiplatform_v1_DynamicRetrievalConfig_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_aiplatform_v1_DynamicRetrievalConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_DynamicRetrievalConfig_descriptor,
@@ -437,7 +479,7 @@ public final class ToolProto {
               "Mode", "DynamicThreshold",
             });
     internal_static_google_cloud_aiplatform_v1_ToolConfig_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_aiplatform_v1_ToolConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ToolConfig_descriptor,
@@ -445,7 +487,7 @@ public final class ToolProto {
               "FunctionCallingConfig", "RetrievalConfig",
             });
     internal_static_google_cloud_aiplatform_v1_FunctionCallingConfig_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_aiplatform_v1_FunctionCallingConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_FunctionCallingConfig_descriptor,
@@ -453,7 +495,7 @@ public final class ToolProto {
               "Mode", "AllowedFunctionNames",
             });
     internal_static_google_cloud_aiplatform_v1_RetrievalConfig_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_aiplatform_v1_RetrievalConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_RetrievalConfig_descriptor,
@@ -461,7 +503,7 @@ public final class ToolProto {
               "LatLng", "LanguageCode",
             });
     internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_descriptor,

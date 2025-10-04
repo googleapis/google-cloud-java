@@ -23,7 +23,10 @@ package com.google.chat.v1;
  *
  *
  * <pre>
- * A rich link to a resource.
+ * A rich link to a resource. Rich links can be associated with the plain-text
+ * body of the message or represent chips that link to Google Workspace
+ * resources like Google Docs or Sheets with `start_index` and `length`
+ * of 0.
  * </pre>
  *
  * Protobuf type {@code google.chat.v1.RichLinkMetadata}
@@ -105,6 +108,26 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
      * <code>CHAT_SPACE = 2;</code>
      */
     CHAT_SPACE(2),
+    /**
+     *
+     *
+     * <pre>
+     * A Meet message rich link type. For example, a Meet chip.
+     * </pre>
+     *
+     * <code>MEET_SPACE = 4;</code>
+     */
+    MEET_SPACE(4),
+    /**
+     *
+     *
+     * <pre>
+     * A Calendar message rich link type. For example, a Calendar chip.
+     * </pre>
+     *
+     * <code>CALENDAR_EVENT = 5;</code>
+     */
+    CALENDAR_EVENT(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -141,6 +164,28 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
      */
     public static final int CHAT_SPACE_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * A Meet message rich link type. For example, a Meet chip.
+     * </pre>
+     *
+     * <code>MEET_SPACE = 4;</code>
+     */
+    public static final int MEET_SPACE_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * A Calendar message rich link type. For example, a Calendar chip.
+     * </pre>
+     *
+     * <code>CALENDAR_EVENT = 5;</code>
+     */
+    public static final int CALENDAR_EVENT_VALUE = 5;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -171,6 +216,10 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
           return DRIVE_FILE;
         case 2:
           return CHAT_SPACE;
+        case 4:
+          return MEET_SPACE;
+        case 5:
+          return CALENDAR_EVENT;
         default:
           return null;
       }
@@ -235,6 +284,8 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DRIVE_LINK_DATA(3),
     CHAT_SPACE_LINK_DATA(4),
+    MEET_SPACE_LINK_DATA(5),
+    CALENDAR_EVENT_LINK_DATA(6),
     DATA_NOT_SET(0);
     private final int value;
 
@@ -258,6 +309,10 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
           return DRIVE_LINK_DATA;
         case 4:
           return CHAT_SPACE_LINK_DATA;
+        case 5:
+          return MEET_SPACE_LINK_DATA;
+        case 6:
+          return CALENDAR_EVENT_LINK_DATA;
         case 0:
           return DATA_NOT_SET;
         default:
@@ -472,6 +527,114 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
     return com.google.chat.v1.ChatSpaceLinkData.getDefaultInstance();
   }
 
+  public static final int MEET_SPACE_LINK_DATA_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for a Meet space link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.MeetSpaceLinkData meet_space_link_data = 5;</code>
+   *
+   * @return Whether the meetSpaceLinkData field is set.
+   */
+  @java.lang.Override
+  public boolean hasMeetSpaceLinkData() {
+    return dataCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for a Meet space link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.MeetSpaceLinkData meet_space_link_data = 5;</code>
+   *
+   * @return The meetSpaceLinkData.
+   */
+  @java.lang.Override
+  public com.google.chat.v1.MeetSpaceLinkData getMeetSpaceLinkData() {
+    if (dataCase_ == 5) {
+      return (com.google.chat.v1.MeetSpaceLinkData) data_;
+    }
+    return com.google.chat.v1.MeetSpaceLinkData.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for a Meet space link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.MeetSpaceLinkData meet_space_link_data = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.chat.v1.MeetSpaceLinkDataOrBuilder getMeetSpaceLinkDataOrBuilder() {
+    if (dataCase_ == 5) {
+      return (com.google.chat.v1.MeetSpaceLinkData) data_;
+    }
+    return com.google.chat.v1.MeetSpaceLinkData.getDefaultInstance();
+  }
+
+  public static final int CALENDAR_EVENT_LINK_DATA_FIELD_NUMBER = 6;
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for a Calendar event link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.CalendarEventLinkData calendar_event_link_data = 6;</code>
+   *
+   * @return Whether the calendarEventLinkData field is set.
+   */
+  @java.lang.Override
+  public boolean hasCalendarEventLinkData() {
+    return dataCase_ == 6;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for a Calendar event link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.CalendarEventLinkData calendar_event_link_data = 6;</code>
+   *
+   * @return The calendarEventLinkData.
+   */
+  @java.lang.Override
+  public com.google.chat.v1.CalendarEventLinkData getCalendarEventLinkData() {
+    if (dataCase_ == 6) {
+      return (com.google.chat.v1.CalendarEventLinkData) data_;
+    }
+    return com.google.chat.v1.CalendarEventLinkData.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for a Calendar event link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.CalendarEventLinkData calendar_event_link_data = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.chat.v1.CalendarEventLinkDataOrBuilder getCalendarEventLinkDataOrBuilder() {
+    if (dataCase_ == 6) {
+      return (com.google.chat.v1.CalendarEventLinkData) data_;
+    }
+    return com.google.chat.v1.CalendarEventLinkData.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -500,6 +663,12 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
     if (dataCase_ == 4) {
       output.writeMessage(4, (com.google.chat.v1.ChatSpaceLinkData) data_);
     }
+    if (dataCase_ == 5) {
+      output.writeMessage(5, (com.google.chat.v1.MeetSpaceLinkData) data_);
+    }
+    if (dataCase_ == 6) {
+      output.writeMessage(6, (com.google.chat.v1.CalendarEventLinkData) data_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -527,6 +696,16 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.chat.v1.ChatSpaceLinkData) data_);
     }
+    if (dataCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.chat.v1.MeetSpaceLinkData) data_);
+    }
+    if (dataCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.chat.v1.CalendarEventLinkData) data_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -551,6 +730,12 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
         break;
       case 4:
         if (!getChatSpaceLinkData().equals(other.getChatSpaceLinkData())) return false;
+        break;
+      case 5:
+        if (!getMeetSpaceLinkData().equals(other.getMeetSpaceLinkData())) return false;
+        break;
+      case 6:
+        if (!getCalendarEventLinkData().equals(other.getCalendarEventLinkData())) return false;
         break;
       case 0:
       default:
@@ -578,6 +763,14 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       case 4:
         hash = (37 * hash) + CHAT_SPACE_LINK_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getChatSpaceLinkData().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + MEET_SPACE_LINK_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMeetSpaceLinkData().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + CALENDAR_EVENT_LINK_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getCalendarEventLinkData().hashCode();
         break;
       case 0:
       default:
@@ -686,7 +879,10 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A rich link to a resource.
+   * A rich link to a resource. Rich links can be associated with the plain-text
+   * body of the message or represent chips that link to Google Workspace
+   * resources like Google Docs or Sheets with `start_index` and `length`
+   * of 0.
    * </pre>
    *
    * Protobuf type {@code google.chat.v1.RichLinkMetadata}
@@ -728,6 +924,12 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       }
       if (chatSpaceLinkDataBuilder_ != null) {
         chatSpaceLinkDataBuilder_.clear();
+      }
+      if (meetSpaceLinkDataBuilder_ != null) {
+        meetSpaceLinkDataBuilder_.clear();
+      }
+      if (calendarEventLinkDataBuilder_ != null) {
+        calendarEventLinkDataBuilder_.clear();
       }
       dataCase_ = 0;
       data_ = null;
@@ -783,6 +985,12 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       }
       if (dataCase_ == 4 && chatSpaceLinkDataBuilder_ != null) {
         result.data_ = chatSpaceLinkDataBuilder_.build();
+      }
+      if (dataCase_ == 5 && meetSpaceLinkDataBuilder_ != null) {
+        result.data_ = meetSpaceLinkDataBuilder_.build();
+      }
+      if (dataCase_ == 6 && calendarEventLinkDataBuilder_ != null) {
+        result.data_ = calendarEventLinkDataBuilder_.build();
       }
     }
 
@@ -850,6 +1058,16 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
             mergeChatSpaceLinkData(other.getChatSpaceLinkData());
             break;
           }
+        case MEET_SPACE_LINK_DATA:
+          {
+            mergeMeetSpaceLinkData(other.getMeetSpaceLinkData());
+            break;
+          }
+        case CALENDAR_EVENT_LINK_DATA:
+          {
+            mergeCalendarEventLinkData(other.getCalendarEventLinkData());
+            break;
+          }
         case DATA_NOT_SET:
           {
             break;
@@ -906,6 +1124,20 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
                 dataCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getMeetSpaceLinkDataFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getCalendarEventLinkDataFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 6;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1573,6 +1805,439 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
       dataCase_ = 4;
       onChanged();
       return chatSpaceLinkDataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.chat.v1.MeetSpaceLinkData,
+            com.google.chat.v1.MeetSpaceLinkData.Builder,
+            com.google.chat.v1.MeetSpaceLinkDataOrBuilder>
+        meetSpaceLinkDataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Meet space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.MeetSpaceLinkData meet_space_link_data = 5;</code>
+     *
+     * @return Whether the meetSpaceLinkData field is set.
+     */
+    @java.lang.Override
+    public boolean hasMeetSpaceLinkData() {
+      return dataCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Meet space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.MeetSpaceLinkData meet_space_link_data = 5;</code>
+     *
+     * @return The meetSpaceLinkData.
+     */
+    @java.lang.Override
+    public com.google.chat.v1.MeetSpaceLinkData getMeetSpaceLinkData() {
+      if (meetSpaceLinkDataBuilder_ == null) {
+        if (dataCase_ == 5) {
+          return (com.google.chat.v1.MeetSpaceLinkData) data_;
+        }
+        return com.google.chat.v1.MeetSpaceLinkData.getDefaultInstance();
+      } else {
+        if (dataCase_ == 5) {
+          return meetSpaceLinkDataBuilder_.getMessage();
+        }
+        return com.google.chat.v1.MeetSpaceLinkData.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Meet space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.MeetSpaceLinkData meet_space_link_data = 5;</code>
+     */
+    public Builder setMeetSpaceLinkData(com.google.chat.v1.MeetSpaceLinkData value) {
+      if (meetSpaceLinkDataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        meetSpaceLinkDataBuilder_.setMessage(value);
+      }
+      dataCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Meet space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.MeetSpaceLinkData meet_space_link_data = 5;</code>
+     */
+    public Builder setMeetSpaceLinkData(
+        com.google.chat.v1.MeetSpaceLinkData.Builder builderForValue) {
+      if (meetSpaceLinkDataBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        meetSpaceLinkDataBuilder_.setMessage(builderForValue.build());
+      }
+      dataCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Meet space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.MeetSpaceLinkData meet_space_link_data = 5;</code>
+     */
+    public Builder mergeMeetSpaceLinkData(com.google.chat.v1.MeetSpaceLinkData value) {
+      if (meetSpaceLinkDataBuilder_ == null) {
+        if (dataCase_ == 5 && data_ != com.google.chat.v1.MeetSpaceLinkData.getDefaultInstance()) {
+          data_ =
+              com.google.chat.v1.MeetSpaceLinkData.newBuilder(
+                      (com.google.chat.v1.MeetSpaceLinkData) data_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataCase_ == 5) {
+          meetSpaceLinkDataBuilder_.mergeFrom(value);
+        } else {
+          meetSpaceLinkDataBuilder_.setMessage(value);
+        }
+      }
+      dataCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Meet space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.MeetSpaceLinkData meet_space_link_data = 5;</code>
+     */
+    public Builder clearMeetSpaceLinkData() {
+      if (meetSpaceLinkDataBuilder_ == null) {
+        if (dataCase_ == 5) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataCase_ == 5) {
+          dataCase_ = 0;
+          data_ = null;
+        }
+        meetSpaceLinkDataBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Meet space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.MeetSpaceLinkData meet_space_link_data = 5;</code>
+     */
+    public com.google.chat.v1.MeetSpaceLinkData.Builder getMeetSpaceLinkDataBuilder() {
+      return getMeetSpaceLinkDataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Meet space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.MeetSpaceLinkData meet_space_link_data = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.chat.v1.MeetSpaceLinkDataOrBuilder getMeetSpaceLinkDataOrBuilder() {
+      if ((dataCase_ == 5) && (meetSpaceLinkDataBuilder_ != null)) {
+        return meetSpaceLinkDataBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataCase_ == 5) {
+          return (com.google.chat.v1.MeetSpaceLinkData) data_;
+        }
+        return com.google.chat.v1.MeetSpaceLinkData.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Meet space link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.MeetSpaceLinkData meet_space_link_data = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.chat.v1.MeetSpaceLinkData,
+            com.google.chat.v1.MeetSpaceLinkData.Builder,
+            com.google.chat.v1.MeetSpaceLinkDataOrBuilder>
+        getMeetSpaceLinkDataFieldBuilder() {
+      if (meetSpaceLinkDataBuilder_ == null) {
+        if (!(dataCase_ == 5)) {
+          data_ = com.google.chat.v1.MeetSpaceLinkData.getDefaultInstance();
+        }
+        meetSpaceLinkDataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.chat.v1.MeetSpaceLinkData,
+                com.google.chat.v1.MeetSpaceLinkData.Builder,
+                com.google.chat.v1.MeetSpaceLinkDataOrBuilder>(
+                (com.google.chat.v1.MeetSpaceLinkData) data_, getParentForChildren(), isClean());
+        data_ = null;
+      }
+      dataCase_ = 5;
+      onChanged();
+      return meetSpaceLinkDataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.chat.v1.CalendarEventLinkData,
+            com.google.chat.v1.CalendarEventLinkData.Builder,
+            com.google.chat.v1.CalendarEventLinkDataOrBuilder>
+        calendarEventLinkDataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Calendar event link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CalendarEventLinkData calendar_event_link_data = 6;</code>
+     *
+     * @return Whether the calendarEventLinkData field is set.
+     */
+    @java.lang.Override
+    public boolean hasCalendarEventLinkData() {
+      return dataCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Calendar event link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CalendarEventLinkData calendar_event_link_data = 6;</code>
+     *
+     * @return The calendarEventLinkData.
+     */
+    @java.lang.Override
+    public com.google.chat.v1.CalendarEventLinkData getCalendarEventLinkData() {
+      if (calendarEventLinkDataBuilder_ == null) {
+        if (dataCase_ == 6) {
+          return (com.google.chat.v1.CalendarEventLinkData) data_;
+        }
+        return com.google.chat.v1.CalendarEventLinkData.getDefaultInstance();
+      } else {
+        if (dataCase_ == 6) {
+          return calendarEventLinkDataBuilder_.getMessage();
+        }
+        return com.google.chat.v1.CalendarEventLinkData.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Calendar event link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CalendarEventLinkData calendar_event_link_data = 6;</code>
+     */
+    public Builder setCalendarEventLinkData(com.google.chat.v1.CalendarEventLinkData value) {
+      if (calendarEventLinkDataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        calendarEventLinkDataBuilder_.setMessage(value);
+      }
+      dataCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Calendar event link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CalendarEventLinkData calendar_event_link_data = 6;</code>
+     */
+    public Builder setCalendarEventLinkData(
+        com.google.chat.v1.CalendarEventLinkData.Builder builderForValue) {
+      if (calendarEventLinkDataBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        calendarEventLinkDataBuilder_.setMessage(builderForValue.build());
+      }
+      dataCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Calendar event link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CalendarEventLinkData calendar_event_link_data = 6;</code>
+     */
+    public Builder mergeCalendarEventLinkData(com.google.chat.v1.CalendarEventLinkData value) {
+      if (calendarEventLinkDataBuilder_ == null) {
+        if (dataCase_ == 6
+            && data_ != com.google.chat.v1.CalendarEventLinkData.getDefaultInstance()) {
+          data_ =
+              com.google.chat.v1.CalendarEventLinkData.newBuilder(
+                      (com.google.chat.v1.CalendarEventLinkData) data_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataCase_ == 6) {
+          calendarEventLinkDataBuilder_.mergeFrom(value);
+        } else {
+          calendarEventLinkDataBuilder_.setMessage(value);
+        }
+      }
+      dataCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Calendar event link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CalendarEventLinkData calendar_event_link_data = 6;</code>
+     */
+    public Builder clearCalendarEventLinkData() {
+      if (calendarEventLinkDataBuilder_ == null) {
+        if (dataCase_ == 6) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataCase_ == 6) {
+          dataCase_ = 0;
+          data_ = null;
+        }
+        calendarEventLinkDataBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Calendar event link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CalendarEventLinkData calendar_event_link_data = 6;</code>
+     */
+    public com.google.chat.v1.CalendarEventLinkData.Builder getCalendarEventLinkDataBuilder() {
+      return getCalendarEventLinkDataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Calendar event link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CalendarEventLinkData calendar_event_link_data = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.chat.v1.CalendarEventLinkDataOrBuilder getCalendarEventLinkDataOrBuilder() {
+      if ((dataCase_ == 6) && (calendarEventLinkDataBuilder_ != null)) {
+        return calendarEventLinkDataBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataCase_ == 6) {
+          return (com.google.chat.v1.CalendarEventLinkData) data_;
+        }
+        return com.google.chat.v1.CalendarEventLinkData.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data for a Calendar event link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.CalendarEventLinkData calendar_event_link_data = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.chat.v1.CalendarEventLinkData,
+            com.google.chat.v1.CalendarEventLinkData.Builder,
+            com.google.chat.v1.CalendarEventLinkDataOrBuilder>
+        getCalendarEventLinkDataFieldBuilder() {
+      if (calendarEventLinkDataBuilder_ == null) {
+        if (!(dataCase_ == 6)) {
+          data_ = com.google.chat.v1.CalendarEventLinkData.getDefaultInstance();
+        }
+        calendarEventLinkDataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.chat.v1.CalendarEventLinkData,
+                com.google.chat.v1.CalendarEventLinkData.Builder,
+                com.google.chat.v1.CalendarEventLinkDataOrBuilder>(
+                (com.google.chat.v1.CalendarEventLinkData) data_,
+                getParentForChildren(),
+                isClean());
+        data_ = null;
+      }
+      dataCase_ = 6;
+      onChanged();
+      return calendarEventLinkDataBuilder_;
     }
 
     @java.lang.Override

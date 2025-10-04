@@ -42,6 +42,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
   private ReservationBlockPhysicalTopology() {
     block_ = "";
     cluster_ = "";
+    instances_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -204,6 +205,97 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
     }
   }
 
+  public static final int INSTANCES_FIELD_NUMBER = 29097598;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance>
+      instances_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The detailed instances information for a given Block
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance>
+      getInstancesList() {
+    return instances_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The detailed instances information for a given Block
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstanceOrBuilder>
+      getInstancesOrBuilderList() {
+    return instances_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The detailed instances information for a given Block
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+   * </code>
+   */
+  @java.lang.Override
+  public int getInstancesCount() {
+    return instances_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The detailed instances information for a given Block
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance getInstances(
+      int index) {
+    return instances_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The detailed instances information for a given Block
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstanceOrBuilder
+      getInstancesOrBuilder(int index) {
+    return instances_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -218,6 +310,9 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    for (int i = 0; i < instances_.size(); i++) {
+      output.writeMessage(29097598, instances_.get(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 93832333, block_);
     }
@@ -233,6 +328,9 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
     if (size != -1) return size;
 
     size = 0;
+    for (int i = 0; i < instances_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(29097598, instances_.get(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(93832333, block_);
     }
@@ -263,6 +361,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
     if (hasCluster()) {
       if (!getCluster().equals(other.getCluster())) return false;
     }
+    if (!getInstancesList().equals(other.getInstancesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -281,6 +380,10 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
     if (hasCluster()) {
       hash = (37 * hash) + CLUSTER_FIELD_NUMBER;
       hash = (53 * hash) + getCluster().hashCode();
+    }
+    if (getInstancesCount() > 0) {
+      hash = (37 * hash) + INSTANCES_FIELD_NUMBER;
+      hash = (53 * hash) + getInstancesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -424,6 +527,13 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
       bitField0_ = 0;
       block_ = "";
       cluster_ = "";
+      if (instancesBuilder_ == null) {
+        instances_ = java.util.Collections.emptyList();
+      } else {
+        instances_ = null;
+        instancesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -452,11 +562,25 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
     public com.google.cloud.compute.v1.ReservationBlockPhysicalTopology buildPartial() {
       com.google.cloud.compute.v1.ReservationBlockPhysicalTopology result =
           new com.google.cloud.compute.v1.ReservationBlockPhysicalTopology(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.ReservationBlockPhysicalTopology result) {
+      if (instancesBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          instances_ = java.util.Collections.unmodifiableList(instances_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.instances_ = instances_;
+      } else {
+        result.instances_ = instancesBuilder_.build();
+      }
     }
 
     private void buildPartial0(
@@ -531,6 +655,33 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (instancesBuilder_ == null) {
+        if (!other.instances_.isEmpty()) {
+          if (instances_.isEmpty()) {
+            instances_ = other.instances_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureInstancesIsMutable();
+            instances_.addAll(other.instances_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.instances_.isEmpty()) {
+          if (instancesBuilder_.isEmpty()) {
+            instancesBuilder_.dispose();
+            instancesBuilder_ = null;
+            instances_ = other.instances_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            instancesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getInstancesFieldBuilder()
+                    : null;
+          } else {
+            instancesBuilder_.addAllMessages(other.instances_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -557,6 +708,21 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
             case 0:
               done = true;
               break;
+            case 232780786:
+              {
+                com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance
+                            .parser(),
+                        extensionRegistry);
+                if (instancesBuilder_ == null) {
+                  ensureInstancesIsMutable();
+                  instances_.add(m);
+                } else {
+                  instancesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 232780786
             case 750658666:
               {
                 block_ = input.readStringRequireUtf8();
@@ -838,6 +1004,434 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance>
+        instances_ = java.util.Collections.emptyList();
+
+    private void ensureInstancesIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        instances_ =
+            new java.util.ArrayList<
+                com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance>(instances_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance,
+            com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance.Builder,
+            com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstanceOrBuilder>
+        instancesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance>
+        getInstancesList() {
+      if (instancesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(instances_);
+      } else {
+        return instancesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public int getInstancesCount() {
+      if (instancesBuilder_ == null) {
+        return instances_.size();
+      } else {
+        return instancesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance getInstances(
+        int index) {
+      if (instancesBuilder_ == null) {
+        return instances_.get(index);
+      } else {
+        return instancesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public Builder setInstances(
+        int index, com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance value) {
+      if (instancesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstancesIsMutable();
+        instances_.set(index, value);
+        onChanged();
+      } else {
+        instancesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public Builder setInstances(
+        int index,
+        com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance.Builder
+            builderForValue) {
+      if (instancesBuilder_ == null) {
+        ensureInstancesIsMutable();
+        instances_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        instancesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public Builder addInstances(
+        com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance value) {
+      if (instancesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstancesIsMutable();
+        instances_.add(value);
+        onChanged();
+      } else {
+        instancesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public Builder addInstances(
+        int index, com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance value) {
+      if (instancesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstancesIsMutable();
+        instances_.add(index, value);
+        onChanged();
+      } else {
+        instancesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public Builder addInstances(
+        com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance.Builder
+            builderForValue) {
+      if (instancesBuilder_ == null) {
+        ensureInstancesIsMutable();
+        instances_.add(builderForValue.build());
+        onChanged();
+      } else {
+        instancesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public Builder addInstances(
+        int index,
+        com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance.Builder
+            builderForValue) {
+      if (instancesBuilder_ == null) {
+        ensureInstancesIsMutable();
+        instances_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        instancesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public Builder addAllInstances(
+        java.lang.Iterable<
+                ? extends com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance>
+            values) {
+      if (instancesBuilder_ == null) {
+        ensureInstancesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instances_);
+        onChanged();
+      } else {
+        instancesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public Builder clearInstances() {
+      if (instancesBuilder_ == null) {
+        instances_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        instancesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public Builder removeInstances(int index) {
+      if (instancesBuilder_ == null) {
+        ensureInstancesIsMutable();
+        instances_.remove(index);
+        onChanged();
+      } else {
+        instancesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance.Builder
+        getInstancesBuilder(int index) {
+      return getInstancesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstanceOrBuilder
+        getInstancesOrBuilder(int index) {
+      if (instancesBuilder_ == null) {
+        return instances_.get(index);
+      } else {
+        return instancesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstanceOrBuilder>
+        getInstancesOrBuilderList() {
+      if (instancesBuilder_ != null) {
+        return instancesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(instances_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance.Builder
+        addInstancesBuilder() {
+      return getInstancesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance.Builder
+        addInstancesBuilder(int index) {
+      return getInstancesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The detailed instances information for a given Block
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance instances = 29097598;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance.Builder>
+        getInstancesBuilderList() {
+      return getInstancesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance,
+            com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance.Builder,
+            com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstanceOrBuilder>
+        getInstancesFieldBuilder() {
+      if (instancesBuilder_ == null) {
+        instancesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance,
+                com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstance.Builder,
+                com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyInstanceOrBuilder>(
+                instances_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+        instances_ = null;
+      }
+      return instancesBuilder_;
     }
 
     @java.lang.Override

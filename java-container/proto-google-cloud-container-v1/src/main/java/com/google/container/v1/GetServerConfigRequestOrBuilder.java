@@ -36,7 +36,7 @@ public interface GetServerConfigRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.GetServerConfigRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3838
+   *     google/container/v1/cluster_service.proto;l=4204
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface GetServerConfigRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.GetServerConfigRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3838
+   *     google/container/v1/cluster_service.proto;l=4204
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -65,15 +65,15 @@ public interface GetServerConfigRequestOrBuilder
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) to return
-   * operations for. This field has been deprecated and replaced by the name
-   * field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available)
+   * to return operations for. This field has been deprecated and replaced by
+   * the name field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.GetServerConfigRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3844
+   *     google/container/v1/cluster_service.proto;l=4210
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -84,15 +84,15 @@ public interface GetServerConfigRequestOrBuilder
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) to return
-   * operations for. This field has been deprecated and replaced by the name
-   * field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available)
+   * to return operations for. This field has been deprecated and replaced by
+   * the name field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.GetServerConfigRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3844
+   *     google/container/v1/cluster_service.proto;l=4210
    * @return The bytes for zone.
    */
   @java.lang.Deprecated

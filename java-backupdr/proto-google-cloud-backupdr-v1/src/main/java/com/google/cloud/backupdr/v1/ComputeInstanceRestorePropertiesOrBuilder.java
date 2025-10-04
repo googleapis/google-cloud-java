@@ -252,7 +252,8 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    *
    * <pre>
    * Optional. Array of disks associated with this instance. Persistent disks
-   * must be created before you can assign them.
+   * must be created before you can assign them. Source regional persistent
+   * disks will be restored with default replica zones if not specified.
    * </pre>
    *
    * <code>
@@ -266,7 +267,8 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    *
    * <pre>
    * Optional. Array of disks associated with this instance. Persistent disks
-   * must be created before you can assign them.
+   * must be created before you can assign them. Source regional persistent
+   * disks will be restored with default replica zones if not specified.
    * </pre>
    *
    * <code>
@@ -280,7 +282,8 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    *
    * <pre>
    * Optional. Array of disks associated with this instance. Persistent disks
-   * must be created before you can assign them.
+   * must be created before you can assign them. Source regional persistent
+   * disks will be restored with default replica zones if not specified.
    * </pre>
    *
    * <code>
@@ -294,7 +297,8 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    *
    * <pre>
    * Optional. Array of disks associated with this instance. Persistent disks
-   * must be created before you can assign them.
+   * must be created before you can assign them. Source regional persistent
+   * disks will be restored with default replica zones if not specified.
    * </pre>
    *
    * <code>
@@ -309,7 +313,8 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    *
    * <pre>
    * Optional. Array of disks associated with this instance. Persistent disks
-   * must be created before you can assign them.
+   * must be created before you can assign them. Source regional persistent
+   * disks will be restored with default replica zones if not specified.
    * </pre>
    *
    * <code>
@@ -768,7 +773,7 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * Optional. An array of network configurations for this instance. These
    * specify how interfaces are configured to interact with other network
    * services, such as connecting to the internet. Multiple interfaces are
-   * supported per instance.
+   * supported per instance. Required to restore in different project or region.
    * </pre>
    *
    * <code>
@@ -784,7 +789,7 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * Optional. An array of network configurations for this instance. These
    * specify how interfaces are configured to interact with other network
    * services, such as connecting to the internet. Multiple interfaces are
-   * supported per instance.
+   * supported per instance. Required to restore in different project or region.
    * </pre>
    *
    * <code>
@@ -800,7 +805,7 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * Optional. An array of network configurations for this instance. These
    * specify how interfaces are configured to interact with other network
    * services, such as connecting to the internet. Multiple interfaces are
-   * supported per instance.
+   * supported per instance. Required to restore in different project or region.
    * </pre>
    *
    * <code>
@@ -816,7 +821,7 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * Optional. An array of network configurations for this instance. These
    * specify how interfaces are configured to interact with other network
    * services, such as connecting to the internet. Multiple interfaces are
-   * supported per instance.
+   * supported per instance. Required to restore in different project or region.
    * </pre>
    *
    * <code>
@@ -833,7 +838,7 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * Optional. An array of network configurations for this instance. These
    * specify how interfaces are configured to interact with other network
    * services, such as connecting to the internet. Multiple interfaces are
-   * supported per instance.
+   * supported per instance. Required to restore in different project or region.
    * </pre>
    *
    * <code>
@@ -989,7 +994,7 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.cloud.backupdr.v1.AllocationAffinity allocation_affinity = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.backupdr.v1.AllocationAffinity allocation_affinity = 21 [json_name = "reservationAffinity", (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the allocationAffinity field is set.
@@ -1004,7 +1009,7 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.cloud.backupdr.v1.AllocationAffinity allocation_affinity = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.backupdr.v1.AllocationAffinity allocation_affinity = 21 [json_name = "reservationAffinity", (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The allocationAffinity.
@@ -1019,7 +1024,7 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.cloud.backupdr.v1.AllocationAffinity allocation_affinity = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.backupdr.v1.AllocationAffinity allocation_affinity = 21 [json_name = "reservationAffinity", (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.backupdr.v1.AllocationAffinityOrBuilder getAllocationAffinityOrBuilder();
@@ -1029,6 +1034,7 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    *
    * <pre>
    * Optional. Resource policies applied to this instance.
+   * By default, no resource policies will be applied.
    * </pre>
    *
    * <code>repeated string resource_policies = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1042,6 +1048,7 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    *
    * <pre>
    * Optional. Resource policies applied to this instance.
+   * By default, no resource policies will be applied.
    * </pre>
    *
    * <code>repeated string resource_policies = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1055,6 +1062,7 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    *
    * <pre>
    * Optional. Resource policies applied to this instance.
+   * By default, no resource policies will be applied.
    * </pre>
    *
    * <code>repeated string resource_policies = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1069,6 +1077,7 @@ public interface ComputeInstanceRestorePropertiesOrBuilder
    *
    * <pre>
    * Optional. Resource policies applied to this instance.
+   * By default, no resource policies will be applied.
    * </pre>
    *
    * <code>repeated string resource_policies = 22 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -102,7 +102,7 @@ public interface CreateEnrollmentRequestOrBuilder
    *
    * <pre>
    * Required. The user-provided ID to be assigned to the Enrollment. It should
-   * match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+   * match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * </pre>
    *
    * <code>string enrollment_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -116,7 +116,7 @@ public interface CreateEnrollmentRequestOrBuilder
    *
    * <pre>
    * Required. The user-provided ID to be assigned to the Enrollment. It should
-   * match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+   * match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * </pre>
    *
    * <code>string enrollment_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

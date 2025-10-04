@@ -428,7 +428,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * GCPSecretManagerCertificateConfig configures a secret from
-       * [Google Secret Manager](https://cloud.google.com/secret-manager).
+       * [Google Secret
+       * Manager](https://cloud.google.com/secret-manager).
        * </pre>
        *
        * Protobuf type {@code
@@ -731,7 +732,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * GCPSecretManagerCertificateConfig configures a secret from
-         * [Google Secret Manager](https://cloud.google.com/secret-manager).
+         * [Google Secret
+         * Manager](https://cloud.google.com/secret-manager).
          * </pre>
          *
          * Protobuf type {@code

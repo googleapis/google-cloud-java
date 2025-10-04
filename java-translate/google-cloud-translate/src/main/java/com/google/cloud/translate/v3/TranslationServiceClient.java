@@ -966,7 +966,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     <p>Models and glossaries must be within the same region (have same location-id), otherwise
    *     an INVALID_ARGUMENT (400) error is returned.
    * @param targetLanguageCode Required. The ISO-639 language code to use for translation of the
-   *     input text, set to one of the language codes listed in Language Support.
+   *     input text, set to one of the language codes listed in [Language
+   *     Support](https://cloud.google.com/translate/docs/languages).
    * @param contents Required. The content of the input in string format. We recommend the total
    *     content be less than 30,000 codepoints. The max length of this field is 1024. Use
    *     BatchTranslateText for larger text.
@@ -1013,7 +1014,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     <p>Models and glossaries must be within the same region (have same location-id), otherwise
    *     an INVALID_ARGUMENT (400) error is returned.
    * @param targetLanguageCode Required. The ISO-639 language code to use for translation of the
-   *     input text, set to one of the language codes listed in Language Support.
+   *     input text, set to one of the language codes listed in [Language
+   *     Support](https://cloud.google.com/translate/docs/languages).
    * @param contents Required. The content of the input in string format. We recommend the total
    *     content be less than 30,000 codepoints. The max length of this field is 1024. Use
    *     BatchTranslateText for larger text.
@@ -1077,11 +1079,13 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param mimeType Optional. The format of the source text, for example, "text/html",
    *     "text/plain". If left blank, the MIME type defaults to "text/html".
    * @param sourceLanguageCode Optional. The ISO-639 language code of the input text if known, for
-   *     example, "en-US" or "sr-Latn". Supported language codes are listed in Language Support. If
-   *     the source language isn't specified, the API attempts to identify the source language
-   *     automatically and returns the source language within the response.
+   *     example, "en-US" or "sr-Latn". Supported language codes are listed in [Language
+   *     Support](https://cloud.google.com/translate/docs/languages). If the source language isn't
+   *     specified, the API attempts to identify the source language automatically and returns the
+   *     source language within the response.
    * @param targetLanguageCode Required. The ISO-639 language code to use for translation of the
-   *     input text, set to one of the language codes listed in Language Support.
+   *     input text, set to one of the language codes listed in [Language
+   *     Support](https://cloud.google.com/translate/docs/languages).
    * @param contents Required. The content of the input in string format. We recommend the total
    *     content be less than 30,000 codepoints. The max length of this field is 1024. Use
    *     BatchTranslateText for larger text.
@@ -1153,11 +1157,13 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param mimeType Optional. The format of the source text, for example, "text/html",
    *     "text/plain". If left blank, the MIME type defaults to "text/html".
    * @param sourceLanguageCode Optional. The ISO-639 language code of the input text if known, for
-   *     example, "en-US" or "sr-Latn". Supported language codes are listed in Language Support. If
-   *     the source language isn't specified, the API attempts to identify the source language
-   *     automatically and returns the source language within the response.
+   *     example, "en-US" or "sr-Latn". Supported language codes are listed in [Language
+   *     Support](https://cloud.google.com/translate/docs/languages). If the source language isn't
+   *     specified, the API attempts to identify the source language automatically and returns the
+   *     source language within the response.
    * @param targetLanguageCode Required. The ISO-639 language code to use for translation of the
-   *     input text, set to one of the language codes listed in Language Support.
+   *     input text, set to one of the language codes listed in [Language
+   *     Support](https://cloud.google.com/translate/docs/languages).
    * @param contents Required. The content of the input in string format. We recommend the total
    *     content be less than 30,000 codepoints. The max length of this field is 1024. Use
    *     BatchTranslateText for larger text.
@@ -1961,7 +1967,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     for example, "en-US" or "sr-Latn". Supported language codes are listed in [Language
    *     Support](https://cloud.google.com/translate/docs/languages).
    * @param targetLanguageCodes Required. The ISO-639 language code to use for translation of the
-   *     input document. Specify up to 10 language codes here.
+   *     input document. Specify up to 10 language codes here. Supported language codes are listed
+   *     in [Language Support](https://cloud.google.com/translate/docs/languages).
    * @param inputConfigs Required. Input configurations. The total number of files matched should be
    *     &lt;= 100. The total content size to translate should be &lt;= 100M Unicode codepoints. The
    *     files must use UTF-8 encoding.
@@ -2028,7 +2035,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     for example, "en-US" or "sr-Latn". Supported language codes are listed in [Language
    *     Support](https://cloud.google.com/translate/docs/languages).
    * @param targetLanguageCodes Required. The ISO-639 language code to use for translation of the
-   *     input document. Specify up to 10 language codes here.
+   *     input document. Specify up to 10 language codes here. Supported language codes are listed
+   *     in [Language Support](https://cloud.google.com/translate/docs/languages).
    * @param inputConfigs Required. Input configurations. The total number of files matched should be
    *     &lt;= 100. The total content size to translate should be &lt;= 100M Unicode codepoints. The
    *     files must use UTF-8 encoding.

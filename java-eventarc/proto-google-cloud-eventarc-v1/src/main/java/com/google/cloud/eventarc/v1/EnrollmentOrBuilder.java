@@ -381,13 +381,13 @@ public interface EnrollmentOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the message bus identifying the source of the
-   * messages. It matches the form
+   * Required. Immutable. Resource name of the message bus identifying the
+   * source of the messages. It matches the form
    * projects/{project}/locations/{location}/messageBuses/{messageBus}.
    * </pre>
    *
    * <code>
-   * string message_bus = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string message_bus = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The messageBus.
@@ -398,13 +398,13 @@ public interface EnrollmentOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the message bus identifying the source of the
-   * messages. It matches the form
+   * Required. Immutable. Resource name of the message bus identifying the
+   * source of the messages. It matches the form
    * projects/{project}/locations/{location}/messageBuses/{messageBus}.
    * </pre>
    *
    * <code>
-   * string message_bus = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string message_bus = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for messageBus.

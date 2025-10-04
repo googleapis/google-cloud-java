@@ -81,6 +81,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
           .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/CreateBuild")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateBuildRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetBuildRequest, Build> getBuildMethodDescriptor =
@@ -89,6 +90,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
           .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/GetBuild")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBuildRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Build.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListBuildsRequest, ListBuildsResponse>
@@ -98,6 +100,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/ListBuilds")
               .setRequestMarshaller(ProtoUtils.marshaller(ListBuildsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListBuildsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelBuildRequest, Build> cancelBuildMethodDescriptor =
@@ -106,6 +109,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
           .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/CancelBuild")
           .setRequestMarshaller(ProtoUtils.marshaller(CancelBuildRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Build.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RetryBuildRequest, Operation> retryBuildMethodDescriptor =
@@ -114,6 +118,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
           .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/RetryBuild")
           .setRequestMarshaller(ProtoUtils.marshaller(RetryBuildRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ApproveBuildRequest, Operation>
@@ -123,6 +128,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/ApproveBuild")
               .setRequestMarshaller(ProtoUtils.marshaller(ApproveBuildRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBuildTriggerRequest, BuildTrigger>
@@ -133,6 +139,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBuildTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BuildTrigger.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBuildTriggerRequest, BuildTrigger>
@@ -143,6 +150,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBuildTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BuildTrigger.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBuildTriggersRequest, ListBuildTriggersResponse>
@@ -154,6 +162,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   ProtoUtils.marshaller(ListBuildTriggersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBuildTriggersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBuildTriggerRequest, Empty>
@@ -164,6 +173,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBuildTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBuildTriggerRequest, BuildTrigger>
@@ -174,6 +184,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBuildTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BuildTrigger.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunBuildTriggerRequest, Operation>
@@ -184,6 +195,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RunBuildTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
@@ -195,6 +207,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   ProtoUtils.marshaller(ReceiveTriggerWebhookRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReceiveTriggerWebhookResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateWorkerPoolRequest, Operation>
@@ -205,6 +218,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkerPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWorkerPoolRequest, WorkerPool>
@@ -215,6 +229,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetWorkerPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WorkerPool.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWorkerPoolRequest, Operation>
@@ -225,6 +240,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWorkerPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateWorkerPoolRequest, Operation>
@@ -235,6 +251,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWorkerPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
@@ -246,6 +263,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   ProtoUtils.marshaller(ListWorkerPoolsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkerPoolsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateBuildRequest, Operation> createBuildCallable;

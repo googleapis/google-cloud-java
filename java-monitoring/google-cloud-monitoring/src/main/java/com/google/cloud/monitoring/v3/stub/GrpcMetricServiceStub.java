@@ -71,6 +71,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListMonitoredResourceDescriptorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -85,6 +86,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   ProtoUtils.marshaller(GetMonitoredResourceDescriptorRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(MonitoredResourceDescriptor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
@@ -96,6 +98,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   ProtoUtils.marshaller(ListMetricDescriptorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMetricDescriptorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMetricDescriptorRequest, MetricDescriptor>
@@ -106,6 +109,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMetricDescriptorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MetricDescriptor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMetricDescriptorRequest, MetricDescriptor>
@@ -116,6 +120,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMetricDescriptorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MetricDescriptor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMetricDescriptorRequest, Empty>
@@ -126,6 +131,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteMetricDescriptorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTimeSeriesRequest, ListTimeSeriesResponse>
@@ -137,6 +143,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   ProtoUtils.marshaller(ListTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTimeSeriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTimeSeriesRequest, Empty>
@@ -147,6 +154,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTimeSeriesRequest, Empty>
@@ -157,6 +165,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<

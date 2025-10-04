@@ -110,7 +110,7 @@ public interface StopLocationOrBuilder
    * </code>
    *
    * @deprecated maps.fleetengine.v1.StopLocation.stop_time is deprecated. See
-   *     google/maps/fleetengine/v1/trips.proto;l=237
+   *     google/maps/fleetengine/v1/trips.proto;l=240
    * @return Whether the stopTime field is set.
    */
   @java.lang.Deprecated
@@ -128,7 +128,7 @@ public interface StopLocationOrBuilder
    * </code>
    *
    * @deprecated maps.fleetengine.v1.StopLocation.stop_time is deprecated. See
-   *     google/maps/fleetengine/v1/trips.proto;l=237
+   *     google/maps/fleetengine/v1/trips.proto;l=240
    * @return The stopTime.
    */
   @java.lang.Deprecated

@@ -85,7 +85,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3602
+   *     google/container/v1/cluster_service.proto;l=3968
    * @return The projectId.
    */
   @java.lang.Override
@@ -114,7 +114,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3602
+   *     google/container/v1/cluster_service.proto;l=3968
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -141,15 +141,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster resides. This field has been deprecated and replaced by the name
-   * field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster resides. This field has been deprecated and replaced
+   * by the name field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3608
+   *     google/container/v1/cluster_service.proto;l=3974
    * @return The zone.
    */
   @java.lang.Override
@@ -171,15 +171,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster resides. This field has been deprecated and replaced by the name
-   * field.
+   * [zone](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster resides. This field has been deprecated and replaced
+   * by the name field.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3608
+   *     google/container/v1/cluster_service.proto;l=3974
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -212,7 +212,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3612
+   *     google/container/v1/cluster_service.proto;l=3978
    * @return The clusterId.
    */
   @java.lang.Override
@@ -240,7 +240,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3612
+   *     google/container/v1/cluster_service.proto;l=3978
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -268,10 +268,10 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster's nodes should be located. Changing the locations a cluster is in
-   * will result in nodes being either created or removed from the cluster,
-   * depending on whether locations are being added or removed.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster's nodes should be located. Changing the locations a
+   * cluster is in will result in nodes being either created or removed from the
+   * cluster, depending on whether locations are being added or removed.
    *
    * This list must always include the cluster's primary zone.
    * </pre>
@@ -289,10 +289,10 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster's nodes should be located. Changing the locations a cluster is in
-   * will result in nodes being either created or removed from the cluster,
-   * depending on whether locations are being added or removed.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster's nodes should be located. Changing the locations a
+   * cluster is in will result in nodes being either created or removed from the
+   * cluster, depending on whether locations are being added or removed.
    *
    * This list must always include the cluster's primary zone.
    * </pre>
@@ -310,10 +310,10 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster's nodes should be located. Changing the locations a cluster is in
-   * will result in nodes being either created or removed from the cluster,
-   * depending on whether locations are being added or removed.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster's nodes should be located. Changing the locations a
+   * cluster is in will result in nodes being either created or removed from the
+   * cluster, depending on whether locations are being added or removed.
    *
    * This list must always include the cluster's primary zone.
    * </pre>
@@ -332,10 +332,10 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster's nodes should be located. Changing the locations a cluster is in
-   * will result in nodes being either created or removed from the cluster,
-   * depending on whether locations are being added or removed.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster's nodes should be located. Changing the locations a
+   * cluster is in will result in nodes being either created or removed from the
+   * cluster, depending on whether locations are being added or removed.
    *
    * This list must always include the cluster's primary zone.
    * </pre>
@@ -870,7 +870,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3602
+     *     google/container/v1/cluster_service.proto;l=3968
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -898,7 +898,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3602
+     *     google/container/v1/cluster_service.proto;l=3968
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -926,7 +926,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3602
+     *     google/container/v1/cluster_service.proto;l=3968
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -953,7 +953,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3602
+     *     google/container/v1/cluster_service.proto;l=3968
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -976,7 +976,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3602
+     *     google/container/v1/cluster_service.proto;l=3968
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -999,15 +999,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster resides. This field has been deprecated and replaced by the name
-     * field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster resides. This field has been deprecated and replaced
+     * by the name field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3608
+     *     google/container/v1/cluster_service.proto;l=3974
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -1028,15 +1028,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster resides. This field has been deprecated and replaced by the name
-     * field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster resides. This field has been deprecated and replaced
+     * by the name field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3608
+     *     google/container/v1/cluster_service.proto;l=3974
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -1057,15 +1057,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster resides. This field has been deprecated and replaced by the name
-     * field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster resides. This field has been deprecated and replaced
+     * by the name field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3608
+     *     google/container/v1/cluster_service.proto;l=3974
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1085,15 +1085,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster resides. This field has been deprecated and replaced by the name
-     * field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster resides. This field has been deprecated and replaced
+     * by the name field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3608
+     *     google/container/v1/cluster_service.proto;l=3974
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1109,15 +1109,15 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Deprecated. The name of the Google Compute Engine
-     * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster resides. This field has been deprecated and replaced by the name
-     * field.
+     * [zone](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster resides. This field has been deprecated and replaced
+     * by the name field.
      * </pre>
      *
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3608
+     *     google/container/v1/cluster_service.proto;l=3974
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1146,7 +1146,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3612
+     *     google/container/v1/cluster_service.proto;l=3978
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1173,7 +1173,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3612
+     *     google/container/v1/cluster_service.proto;l=3978
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1200,7 +1200,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3612
+     *     google/container/v1/cluster_service.proto;l=3978
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1226,7 +1226,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3612
+     *     google/container/v1/cluster_service.proto;l=3978
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1248,7 +1248,7 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetLocationsRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3612
+     *     google/container/v1/cluster_service.proto;l=3978
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -1279,10 +1279,10 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster's nodes should be located. Changing the locations a cluster is in
-     * will result in nodes being either created or removed from the cluster,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster's nodes should be located. Changing the locations a
+     * cluster is in will result in nodes being either created or removed from the
+     * cluster, depending on whether locations are being added or removed.
      *
      * This list must always include the cluster's primary zone.
      * </pre>
@@ -1301,10 +1301,10 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster's nodes should be located. Changing the locations a cluster is in
-     * will result in nodes being either created or removed from the cluster,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster's nodes should be located. Changing the locations a
+     * cluster is in will result in nodes being either created or removed from the
+     * cluster, depending on whether locations are being added or removed.
      *
      * This list must always include the cluster's primary zone.
      * </pre>
@@ -1322,10 +1322,10 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster's nodes should be located. Changing the locations a cluster is in
-     * will result in nodes being either created or removed from the cluster,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster's nodes should be located. Changing the locations a
+     * cluster is in will result in nodes being either created or removed from the
+     * cluster, depending on whether locations are being added or removed.
      *
      * This list must always include the cluster's primary zone.
      * </pre>
@@ -1344,10 +1344,10 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster's nodes should be located. Changing the locations a cluster is in
-     * will result in nodes being either created or removed from the cluster,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster's nodes should be located. Changing the locations a
+     * cluster is in will result in nodes being either created or removed from the
+     * cluster, depending on whether locations are being added or removed.
      *
      * This list must always include the cluster's primary zone.
      * </pre>
@@ -1366,10 +1366,10 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster's nodes should be located. Changing the locations a cluster is in
-     * will result in nodes being either created or removed from the cluster,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster's nodes should be located. Changing the locations a
+     * cluster is in will result in nodes being either created or removed from the
+     * cluster, depending on whether locations are being added or removed.
      *
      * This list must always include the cluster's primary zone.
      * </pre>
@@ -1396,10 +1396,10 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster's nodes should be located. Changing the locations a cluster is in
-     * will result in nodes being either created or removed from the cluster,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster's nodes should be located. Changing the locations a
+     * cluster is in will result in nodes being either created or removed from the
+     * cluster, depending on whether locations are being added or removed.
      *
      * This list must always include the cluster's primary zone.
      * </pre>
@@ -1425,10 +1425,10 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster's nodes should be located. Changing the locations a cluster is in
-     * will result in nodes being either created or removed from the cluster,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster's nodes should be located. Changing the locations a
+     * cluster is in will result in nodes being either created or removed from the
+     * cluster, depending on whether locations are being added or removed.
      *
      * This list must always include the cluster's primary zone.
      * </pre>
@@ -1451,10 +1451,10 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster's nodes should be located. Changing the locations a cluster is in
-     * will result in nodes being either created or removed from the cluster,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster's nodes should be located. Changing the locations a
+     * cluster is in will result in nodes being either created or removed from the
+     * cluster, depending on whether locations are being added or removed.
      *
      * This list must always include the cluster's primary zone.
      * </pre>
@@ -1476,10 +1476,10 @@ public final class SetLocationsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The desired list of Google Compute Engine
-     * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-     * cluster's nodes should be located. Changing the locations a cluster is in
-     * will result in nodes being either created or removed from the cluster,
-     * depending on whether locations are being added or removed.
+     * [zones](https://cloud.google.com/compute/docs/zones#available)
+     * in which the cluster's nodes should be located. Changing the locations a
+     * cluster is in will result in nodes being either created or removed from the
+     * cluster, depending on whether locations are being added or removed.
      *
      * This list must always include the cluster's primary zone.
      * </pre>

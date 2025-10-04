@@ -62,6 +62,7 @@ public class GrpcContextsStub extends ContextsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListContextsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListContextsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetContextRequest, Context> getContextMethodDescriptor =
@@ -70,6 +71,7 @@ public class GrpcContextsStub extends ContextsStub {
           .setFullMethodName("google.cloud.dialogflow.v2.Contexts/GetContext")
           .setRequestMarshaller(ProtoUtils.marshaller(GetContextRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Context.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateContextRequest, Context>
@@ -80,6 +82,7 @@ public class GrpcContextsStub extends ContextsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateContextRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Context.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateContextRequest, Context>
@@ -90,6 +93,7 @@ public class GrpcContextsStub extends ContextsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateContextRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Context.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteContextRequest, Empty> deleteContextMethodDescriptor =
@@ -98,6 +102,7 @@ public class GrpcContextsStub extends ContextsStub {
           .setFullMethodName("google.cloud.dialogflow.v2.Contexts/DeleteContext")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteContextRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteAllContextsRequest, Empty>
@@ -108,6 +113,7 @@ public class GrpcContextsStub extends ContextsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAllContextsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -119,6 +125,7 @@ public class GrpcContextsStub extends ContextsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -127,6 +134,7 @@ public class GrpcContextsStub extends ContextsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListContextsRequest, ListContextsResponse> listContextsCallable;

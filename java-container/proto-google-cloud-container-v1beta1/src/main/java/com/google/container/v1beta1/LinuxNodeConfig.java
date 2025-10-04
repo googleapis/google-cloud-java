@@ -41,6 +41,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
 
   private LinuxNodeConfig() {
     cgroupMode_ = 0;
+    transparentHugepageEnabled_ = 0;
+    transparentHugepageDefrag_ = 0;
   }
 
   @java.lang.Override
@@ -239,6 +241,448 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     // @@protoc_insertion_point(enum_scope:google.container.v1beta1.LinuxNodeConfig.CgroupMode)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Possible values for transparent hugepage enabled support.
+   * </pre>
+   *
+   * Protobuf enum {@code google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled}
+   */
+  public enum TransparentHugepageEnabled implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. GKE will not modify the kernel configuration.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_ENABLED_UNSPECIFIED = 0;</code>
+     */
+    TRANSPARENT_HUGEPAGE_ENABLED_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Transparent hugepage support for anonymous memory is enabled system wide.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_ENABLED_ALWAYS = 1;</code>
+     */
+    TRANSPARENT_HUGEPAGE_ENABLED_ALWAYS(1),
+    /**
+     *
+     *
+     * <pre>
+     * Transparent hugepage support for anonymous memory is enabled inside
+     * MADV_HUGEPAGE regions. This is the default kernel configuration.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_ENABLED_MADVISE = 2;</code>
+     */
+    TRANSPARENT_HUGEPAGE_ENABLED_MADVISE(2),
+    /**
+     *
+     *
+     * <pre>
+     * Transparent hugepage support for anonymous memory is disabled.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_ENABLED_NEVER = 3;</code>
+     */
+    TRANSPARENT_HUGEPAGE_ENABLED_NEVER(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. GKE will not modify the kernel configuration.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_ENABLED_UNSPECIFIED = 0;</code>
+     */
+    public static final int TRANSPARENT_HUGEPAGE_ENABLED_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Transparent hugepage support for anonymous memory is enabled system wide.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_ENABLED_ALWAYS = 1;</code>
+     */
+    public static final int TRANSPARENT_HUGEPAGE_ENABLED_ALWAYS_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Transparent hugepage support for anonymous memory is enabled inside
+     * MADV_HUGEPAGE regions. This is the default kernel configuration.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_ENABLED_MADVISE = 2;</code>
+     */
+    public static final int TRANSPARENT_HUGEPAGE_ENABLED_MADVISE_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Transparent hugepage support for anonymous memory is disabled.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_ENABLED_NEVER = 3;</code>
+     */
+    public static final int TRANSPARENT_HUGEPAGE_ENABLED_NEVER_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TransparentHugepageEnabled valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TransparentHugepageEnabled forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TRANSPARENT_HUGEPAGE_ENABLED_UNSPECIFIED;
+        case 1:
+          return TRANSPARENT_HUGEPAGE_ENABLED_ALWAYS;
+        case 2:
+          return TRANSPARENT_HUGEPAGE_ENABLED_MADVISE;
+        case 3:
+          return TRANSPARENT_HUGEPAGE_ENABLED_NEVER;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TransparentHugepageEnabled>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TransparentHugepageEnabled>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<TransparentHugepageEnabled>() {
+              public TransparentHugepageEnabled findValueByNumber(int number) {
+                return TransparentHugepageEnabled.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.container.v1beta1.LinuxNodeConfig.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final TransparentHugepageEnabled[] VALUES = values();
+
+    public static TransparentHugepageEnabled valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TransparentHugepageEnabled(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Possible values for transparent hugepage defrag support.
+   * </pre>
+   *
+   * Protobuf enum {@code google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag}
+   */
+  public enum TransparentHugepageDefrag implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. GKE will not modify the kernel configuration.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_DEFRAG_UNSPECIFIED = 0;</code>
+     */
+    TRANSPARENT_HUGEPAGE_DEFRAG_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * It means that an application requesting THP will stall on allocation
+     * failure and directly reclaim pages and compact memory in an effort to
+     * allocate a THP immediately.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_DEFRAG_ALWAYS = 1;</code>
+     */
+    TRANSPARENT_HUGEPAGE_DEFRAG_ALWAYS(1),
+    /**
+     *
+     *
+     * <pre>
+     * It means that an application will wake kswapd in the background to
+     * reclaim pages and wake kcompactd to compact memory so that THP is
+     * available in the near future. It’s the responsibility of khugepaged to
+     * then install the THP pages later.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_DEFRAG_DEFER = 2;</code>
+     */
+    TRANSPARENT_HUGEPAGE_DEFRAG_DEFER(2),
+    /**
+     *
+     *
+     * <pre>
+     * It means that an application will enter direct reclaim and compaction
+     * like always, but only for regions that have used madvise(MADV_HUGEPAGE);
+     * all other regions will wake kswapd in the background to reclaim pages and
+     * wake kcompactd to compact memory so that THP is available in the near
+     * future.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_DEFRAG_DEFER_WITH_MADVISE = 3;</code>
+     */
+    TRANSPARENT_HUGEPAGE_DEFRAG_DEFER_WITH_MADVISE(3),
+    /**
+     *
+     *
+     * <pre>
+     * It means that an application will enter direct reclaim like always but
+     * only for regions that are have used madvise(MADV_HUGEPAGE). This is the
+     * default kernel configuration.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_DEFRAG_MADVISE = 4;</code>
+     */
+    TRANSPARENT_HUGEPAGE_DEFRAG_MADVISE(4),
+    /**
+     *
+     *
+     * <pre>
+     * It means that an application will never enter direct reclaim or
+     * compaction.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_DEFRAG_NEVER = 5;</code>
+     */
+    TRANSPARENT_HUGEPAGE_DEFRAG_NEVER(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. GKE will not modify the kernel configuration.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_DEFRAG_UNSPECIFIED = 0;</code>
+     */
+    public static final int TRANSPARENT_HUGEPAGE_DEFRAG_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * It means that an application requesting THP will stall on allocation
+     * failure and directly reclaim pages and compact memory in an effort to
+     * allocate a THP immediately.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_DEFRAG_ALWAYS = 1;</code>
+     */
+    public static final int TRANSPARENT_HUGEPAGE_DEFRAG_ALWAYS_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * It means that an application will wake kswapd in the background to
+     * reclaim pages and wake kcompactd to compact memory so that THP is
+     * available in the near future. It’s the responsibility of khugepaged to
+     * then install the THP pages later.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_DEFRAG_DEFER = 2;</code>
+     */
+    public static final int TRANSPARENT_HUGEPAGE_DEFRAG_DEFER_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * It means that an application will enter direct reclaim and compaction
+     * like always, but only for regions that have used madvise(MADV_HUGEPAGE);
+     * all other regions will wake kswapd in the background to reclaim pages and
+     * wake kcompactd to compact memory so that THP is available in the near
+     * future.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_DEFRAG_DEFER_WITH_MADVISE = 3;</code>
+     */
+    public static final int TRANSPARENT_HUGEPAGE_DEFRAG_DEFER_WITH_MADVISE_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * It means that an application will enter direct reclaim like always but
+     * only for regions that are have used madvise(MADV_HUGEPAGE). This is the
+     * default kernel configuration.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_DEFRAG_MADVISE = 4;</code>
+     */
+    public static final int TRANSPARENT_HUGEPAGE_DEFRAG_MADVISE_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * It means that an application will never enter direct reclaim or
+     * compaction.
+     * </pre>
+     *
+     * <code>TRANSPARENT_HUGEPAGE_DEFRAG_NEVER = 5;</code>
+     */
+    public static final int TRANSPARENT_HUGEPAGE_DEFRAG_NEVER_VALUE = 5;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TransparentHugepageDefrag valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TransparentHugepageDefrag forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TRANSPARENT_HUGEPAGE_DEFRAG_UNSPECIFIED;
+        case 1:
+          return TRANSPARENT_HUGEPAGE_DEFRAG_ALWAYS;
+        case 2:
+          return TRANSPARENT_HUGEPAGE_DEFRAG_DEFER;
+        case 3:
+          return TRANSPARENT_HUGEPAGE_DEFRAG_DEFER_WITH_MADVISE;
+        case 4:
+          return TRANSPARENT_HUGEPAGE_DEFRAG_MADVISE;
+        case 5:
+          return TRANSPARENT_HUGEPAGE_DEFRAG_NEVER;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TransparentHugepageDefrag>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TransparentHugepageDefrag>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<TransparentHugepageDefrag>() {
+              public TransparentHugepageDefrag findValueByNumber(int number) {
+                return TransparentHugepageDefrag.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.container.v1beta1.LinuxNodeConfig.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final TransparentHugepageDefrag[] VALUES = values();
+
+    public static TransparentHugepageDefrag valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TransparentHugepageDefrag(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag)
   }
 
   public interface HugepagesConfigOrBuilder
@@ -1058,6 +1502,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.ipv4.tcp_max_orphans
    * net.netfilter.nf_conntrack_max
    * net.netfilter.nf_conntrack_buckets
    * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -1067,7 +1512,22 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * fs.aio-max-nr
+   * fs.file-max
+   * fs.inotify.max_user_instances
+   * fs.inotify.max_user_watches
+   * fs.nr_open
+   * vm.dirty_background_ratio
+   * vm.dirty_expire_centisecs
+   * vm.dirty_ratio
+   * vm.dirty_writeback_centisecs
    * vm.max_map_count
+   * vm.overcommit_memory
+   * vm.overcommit_ratio
+   * vm.vfs_cache_pressure
+   * vm.swappiness
+   * vm.watermark_scale_factor
+   * vm.min_free_kbytes
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -1108,6 +1568,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.ipv4.tcp_max_orphans
    * net.netfilter.nf_conntrack_max
    * net.netfilter.nf_conntrack_buckets
    * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -1117,7 +1578,22 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * fs.aio-max-nr
+   * fs.file-max
+   * fs.inotify.max_user_instances
+   * fs.inotify.max_user_watches
+   * fs.nr_open
+   * vm.dirty_background_ratio
+   * vm.dirty_expire_centisecs
+   * vm.dirty_ratio
+   * vm.dirty_writeback_centisecs
    * vm.max_map_count
+   * vm.overcommit_memory
+   * vm.overcommit_ratio
+   * vm.vfs_cache_pressure
+   * vm.swappiness
+   * vm.watermark_scale_factor
+   * vm.min_free_kbytes
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -1148,6 +1624,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.ipv4.tcp_max_orphans
    * net.netfilter.nf_conntrack_max
    * net.netfilter.nf_conntrack_buckets
    * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -1157,7 +1634,22 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * fs.aio-max-nr
+   * fs.file-max
+   * fs.inotify.max_user_instances
+   * fs.inotify.max_user_watches
+   * fs.nr_open
+   * vm.dirty_background_ratio
+   * vm.dirty_expire_centisecs
+   * vm.dirty_ratio
+   * vm.dirty_writeback_centisecs
    * vm.max_map_count
+   * vm.overcommit_memory
+   * vm.overcommit_ratio
+   * vm.vfs_cache_pressure
+   * vm.swappiness
+   * vm.watermark_scale_factor
+   * vm.min_free_kbytes
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -1195,6 +1687,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.ipv4.tcp_max_orphans
    * net.netfilter.nf_conntrack_max
    * net.netfilter.nf_conntrack_buckets
    * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -1204,7 +1697,22 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * fs.aio-max-nr
+   * fs.file-max
+   * fs.inotify.max_user_instances
+   * fs.inotify.max_user_watches
+   * fs.nr_open
+   * vm.dirty_background_ratio
+   * vm.dirty_expire_centisecs
+   * vm.dirty_ratio
+   * vm.dirty_writeback_centisecs
    * vm.max_map_count
+   * vm.overcommit_memory
+   * vm.overcommit_ratio
+   * vm.vfs_cache_pressure
+   * vm.swappiness
+   * vm.watermark_scale_factor
+   * vm.min_free_kbytes
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -1320,6 +1828,120 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
         : hugepages_;
   }
 
+  public static final int TRANSPARENT_HUGEPAGE_ENABLED_FIELD_NUMBER = 4;
+  private int transparentHugepageEnabled_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transparent hugepage support for anonymous memory can be entirely
+   * disabled (mostly for debugging purposes) or only enabled inside
+   * MADV_HUGEPAGE regions (to avoid the risk of consuming more memory
+   * resources) or enabled system wide.
+   *
+   * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+   * for more details.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled transparent_hugepage_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for transparentHugepageEnabled.
+   */
+  @java.lang.Override
+  public int getTransparentHugepageEnabledValue() {
+    return transparentHugepageEnabled_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transparent hugepage support for anonymous memory can be entirely
+   * disabled (mostly for debugging purposes) or only enabled inside
+   * MADV_HUGEPAGE regions (to avoid the risk of consuming more memory
+   * resources) or enabled system wide.
+   *
+   * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+   * for more details.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled transparent_hugepage_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transparentHugepageEnabled.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled
+      getTransparentHugepageEnabled() {
+    com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled result =
+        com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled.forNumber(
+            transparentHugepageEnabled_);
+    return result == null
+        ? com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int TRANSPARENT_HUGEPAGE_DEFRAG_FIELD_NUMBER = 5;
+  private int transparentHugepageDefrag_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines the transparent hugepage defrag configuration on the
+   * node. VM hugepage allocation can be managed by either limiting
+   * defragmentation for delayed allocation or skipping it entirely for
+   * immediate allocation only.
+   *
+   * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+   * for more details.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag transparent_hugepage_defrag = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for transparentHugepageDefrag.
+   */
+  @java.lang.Override
+  public int getTransparentHugepageDefragValue() {
+    return transparentHugepageDefrag_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines the transparent hugepage defrag configuration on the
+   * node. VM hugepage allocation can be managed by either limiting
+   * defragmentation for delayed allocation or skipping it entirely for
+   * immediate allocation only.
+   *
+   * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+   * for more details.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag transparent_hugepage_defrag = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transparentHugepageDefrag.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag
+      getTransparentHugepageDefrag() {
+    com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag result =
+        com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag.forNumber(
+            transparentHugepageDefrag_);
+    return result == null
+        ? com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1343,6 +1965,18 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getHugepages());
+    }
+    if (transparentHugepageEnabled_
+        != com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled
+            .TRANSPARENT_HUGEPAGE_ENABLED_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, transparentHugepageEnabled_);
+    }
+    if (transparentHugepageDefrag_
+        != com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag
+            .TRANSPARENT_HUGEPAGE_DEFRAG_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, transparentHugepageDefrag_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1371,6 +2005,18 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getHugepages());
     }
+    if (transparentHugepageEnabled_
+        != com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled
+            .TRANSPARENT_HUGEPAGE_ENABLED_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, transparentHugepageEnabled_);
+    }
+    if (transparentHugepageDefrag_
+        != com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag
+            .TRANSPARENT_HUGEPAGE_DEFRAG_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, transparentHugepageDefrag_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1393,6 +2039,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     if (hasHugepages()) {
       if (!getHugepages().equals(other.getHugepages())) return false;
     }
+    if (transparentHugepageEnabled_ != other.transparentHugepageEnabled_) return false;
+    if (transparentHugepageDefrag_ != other.transparentHugepageDefrag_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1414,6 +2062,10 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + HUGEPAGES_FIELD_NUMBER;
       hash = (53 * hash) + getHugepages().hashCode();
     }
+    hash = (37 * hash) + TRANSPARENT_HUGEPAGE_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + transparentHugepageEnabled_;
+    hash = (37 * hash) + TRANSPARENT_HUGEPAGE_DEFRAG_FIELD_NUMBER;
+    hash = (53 * hash) + transparentHugepageDefrag_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1592,6 +2244,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
         hugepagesBuilder_.dispose();
         hugepagesBuilder_ = null;
       }
+      transparentHugepageEnabled_ = 0;
+      transparentHugepageDefrag_ = 0;
       return this;
     }
 
@@ -1639,6 +2293,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.hugepages_ = hugepagesBuilder_ == null ? hugepages_ : hugepagesBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.transparentHugepageEnabled_ = transparentHugepageEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.transparentHugepageDefrag_ = transparentHugepageDefrag_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1696,6 +2356,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       if (other.hasHugepages()) {
         mergeHugepages(other.getHugepages());
       }
+      if (other.transparentHugepageEnabled_ != 0) {
+        setTransparentHugepageEnabledValue(other.getTransparentHugepageEnabledValue());
+      }
+      if (other.transparentHugepageDefrag_ != 0) {
+        setTransparentHugepageDefragValue(other.getTransparentHugepageDefragValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1746,6 +2412,18 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 32:
+              {
+                transparentHugepageEnabled_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+            case 40:
+              {
+                transparentHugepageDefrag_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1812,6 +2490,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_max_orphans
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -1821,7 +2500,22 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * fs.aio-max-nr
+     * fs.file-max
+     * fs.inotify.max_user_instances
+     * fs.inotify.max_user_watches
+     * fs.nr_open
+     * vm.dirty_background_ratio
+     * vm.dirty_expire_centisecs
+     * vm.dirty_ratio
+     * vm.dirty_writeback_centisecs
      * vm.max_map_count
+     * vm.overcommit_memory
+     * vm.overcommit_ratio
+     * vm.vfs_cache_pressure
+     * vm.swappiness
+     * vm.watermark_scale_factor
+     * vm.min_free_kbytes
      * </pre>
      *
      * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -1862,6 +2556,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_max_orphans
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -1871,7 +2566,22 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * fs.aio-max-nr
+     * fs.file-max
+     * fs.inotify.max_user_instances
+     * fs.inotify.max_user_watches
+     * fs.nr_open
+     * vm.dirty_background_ratio
+     * vm.dirty_expire_centisecs
+     * vm.dirty_ratio
+     * vm.dirty_writeback_centisecs
      * vm.max_map_count
+     * vm.overcommit_memory
+     * vm.overcommit_ratio
+     * vm.vfs_cache_pressure
+     * vm.swappiness
+     * vm.watermark_scale_factor
+     * vm.min_free_kbytes
      * </pre>
      *
      * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -1902,6 +2612,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_max_orphans
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -1911,7 +2622,22 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * fs.aio-max-nr
+     * fs.file-max
+     * fs.inotify.max_user_instances
+     * fs.inotify.max_user_watches
+     * fs.nr_open
+     * vm.dirty_background_ratio
+     * vm.dirty_expire_centisecs
+     * vm.dirty_ratio
+     * vm.dirty_writeback_centisecs
      * vm.max_map_count
+     * vm.overcommit_memory
+     * vm.overcommit_ratio
+     * vm.vfs_cache_pressure
+     * vm.swappiness
+     * vm.watermark_scale_factor
+     * vm.min_free_kbytes
      * </pre>
      *
      * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -1949,6 +2675,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_max_orphans
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -1958,7 +2685,22 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * fs.aio-max-nr
+     * fs.file-max
+     * fs.inotify.max_user_instances
+     * fs.inotify.max_user_watches
+     * fs.nr_open
+     * vm.dirty_background_ratio
+     * vm.dirty_expire_centisecs
+     * vm.dirty_ratio
+     * vm.dirty_writeback_centisecs
      * vm.max_map_count
+     * vm.overcommit_memory
+     * vm.overcommit_ratio
+     * vm.vfs_cache_pressure
+     * vm.swappiness
+     * vm.watermark_scale_factor
+     * vm.min_free_kbytes
      * </pre>
      *
      * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -2002,6 +2744,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_max_orphans
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -2011,7 +2754,22 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * fs.aio-max-nr
+     * fs.file-max
+     * fs.inotify.max_user_instances
+     * fs.inotify.max_user_watches
+     * fs.nr_open
+     * vm.dirty_background_ratio
+     * vm.dirty_expire_centisecs
+     * vm.dirty_ratio
+     * vm.dirty_writeback_centisecs
      * vm.max_map_count
+     * vm.overcommit_memory
+     * vm.overcommit_ratio
+     * vm.vfs_cache_pressure
+     * vm.swappiness
+     * vm.watermark_scale_factor
+     * vm.min_free_kbytes
      * </pre>
      *
      * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -2052,6 +2810,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_max_orphans
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -2061,7 +2820,22 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * fs.aio-max-nr
+     * fs.file-max
+     * fs.inotify.max_user_instances
+     * fs.inotify.max_user_watches
+     * fs.nr_open
+     * vm.dirty_background_ratio
+     * vm.dirty_expire_centisecs
+     * vm.dirty_ratio
+     * vm.dirty_writeback_centisecs
      * vm.max_map_count
+     * vm.overcommit_memory
+     * vm.overcommit_ratio
+     * vm.vfs_cache_pressure
+     * vm.swappiness
+     * vm.watermark_scale_factor
+     * vm.min_free_kbytes
      * </pre>
      *
      * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -2099,6 +2873,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_max_orphans
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -2108,7 +2883,22 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * fs.aio-max-nr
+     * fs.file-max
+     * fs.inotify.max_user_instances
+     * fs.inotify.max_user_watches
+     * fs.nr_open
+     * vm.dirty_background_ratio
+     * vm.dirty_expire_centisecs
+     * vm.dirty_ratio
+     * vm.dirty_writeback_centisecs
      * vm.max_map_count
+     * vm.overcommit_memory
+     * vm.overcommit_ratio
+     * vm.vfs_cache_pressure
+     * vm.swappiness
+     * vm.watermark_scale_factor
+     * vm.min_free_kbytes
      * </pre>
      *
      * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -2433,6 +3223,286 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
         hugepages_ = null;
       }
       return hugepagesBuilder_;
+    }
+
+    private int transparentHugepageEnabled_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transparent hugepage support for anonymous memory can be entirely
+     * disabled (mostly for debugging purposes) or only enabled inside
+     * MADV_HUGEPAGE regions (to avoid the risk of consuming more memory
+     * resources) or enabled system wide.
+     *
+     * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled transparent_hugepage_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for transparentHugepageEnabled.
+     */
+    @java.lang.Override
+    public int getTransparentHugepageEnabledValue() {
+      return transparentHugepageEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transparent hugepage support for anonymous memory can be entirely
+     * disabled (mostly for debugging purposes) or only enabled inside
+     * MADV_HUGEPAGE regions (to avoid the risk of consuming more memory
+     * resources) or enabled system wide.
+     *
+     * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled transparent_hugepage_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for transparentHugepageEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTransparentHugepageEnabledValue(int value) {
+      transparentHugepageEnabled_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transparent hugepage support for anonymous memory can be entirely
+     * disabled (mostly for debugging purposes) or only enabled inside
+     * MADV_HUGEPAGE regions (to avoid the risk of consuming more memory
+     * resources) or enabled system wide.
+     *
+     * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled transparent_hugepage_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The transparentHugepageEnabled.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled
+        getTransparentHugepageEnabled() {
+      com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled result =
+          com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled.forNumber(
+              transparentHugepageEnabled_);
+      return result == null
+          ? com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transparent hugepage support for anonymous memory can be entirely
+     * disabled (mostly for debugging purposes) or only enabled inside
+     * MADV_HUGEPAGE regions (to avoid the risk of consuming more memory
+     * resources) or enabled system wide.
+     *
+     * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled transparent_hugepage_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The transparentHugepageEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTransparentHugepageEnabled(
+        com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      transparentHugepageEnabled_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transparent hugepage support for anonymous memory can be entirely
+     * disabled (mostly for debugging purposes) or only enabled inside
+     * MADV_HUGEPAGE regions (to avoid the risk of consuming more memory
+     * resources) or enabled system wide.
+     *
+     * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.TransparentHugepageEnabled transparent_hugepage_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTransparentHugepageEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      transparentHugepageEnabled_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int transparentHugepageDefrag_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the transparent hugepage defrag configuration on the
+     * node. VM hugepage allocation can be managed by either limiting
+     * defragmentation for delayed allocation or skipping it entirely for
+     * immediate allocation only.
+     *
+     * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag transparent_hugepage_defrag = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for transparentHugepageDefrag.
+     */
+    @java.lang.Override
+    public int getTransparentHugepageDefragValue() {
+      return transparentHugepageDefrag_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the transparent hugepage defrag configuration on the
+     * node. VM hugepage allocation can be managed by either limiting
+     * defragmentation for delayed allocation or skipping it entirely for
+     * immediate allocation only.
+     *
+     * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag transparent_hugepage_defrag = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for transparentHugepageDefrag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTransparentHugepageDefragValue(int value) {
+      transparentHugepageDefrag_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the transparent hugepage defrag configuration on the
+     * node. VM hugepage allocation can be managed by either limiting
+     * defragmentation for delayed allocation or skipping it entirely for
+     * immediate allocation only.
+     *
+     * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag transparent_hugepage_defrag = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The transparentHugepageDefrag.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag
+        getTransparentHugepageDefrag() {
+      com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag result =
+          com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag.forNumber(
+              transparentHugepageDefrag_);
+      return result == null
+          ? com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the transparent hugepage defrag configuration on the
+     * node. VM hugepage allocation can be managed by either limiting
+     * defragmentation for delayed allocation or skipping it entirely for
+     * immediate allocation only.
+     *
+     * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag transparent_hugepage_defrag = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The transparentHugepageDefrag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTransparentHugepageDefrag(
+        com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      transparentHugepageDefrag_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the transparent hugepage defrag configuration on the
+     * node. VM hugepage allocation can be managed by either limiting
+     * defragmentation for delayed allocation or skipping it entirely for
+     * immediate allocation only.
+     *
+     * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag transparent_hugepage_defrag = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTransparentHugepageDefrag() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      transparentHugepageDefrag_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

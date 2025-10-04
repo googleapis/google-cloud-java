@@ -511,6 +511,12 @@ public interface ResourcePolicyOrBuilder
   com.google.protobuf.ByteString getStatusBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * Resource policy for defining instance placement for MIGs.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
    * </code>
@@ -520,6 +526,12 @@ public interface ResourcePolicyOrBuilder
   boolean hasWorkloadPolicy();
 
   /**
+   *
+   *
+   * <pre>
+   * Resource policy for defining instance placement for MIGs.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
    * </code>
@@ -529,6 +541,12 @@ public interface ResourcePolicyOrBuilder
   com.google.cloud.compute.v1.ResourcePolicyWorkloadPolicy getWorkloadPolicy();
 
   /**
+   *
+   *
+   * <pre>
+   * Resource policy for defining instance placement for MIGs.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.ResourcePolicyWorkloadPolicy workload_policy = 114721530;
    * </code>

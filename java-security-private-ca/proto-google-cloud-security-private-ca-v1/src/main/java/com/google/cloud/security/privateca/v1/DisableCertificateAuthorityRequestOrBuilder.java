@@ -77,7 +77,9 @@ public interface DisableCertificateAuthorityRequestOrBuilder
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string request_id = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The requestId.
    */
@@ -102,7 +104,9 @@ public interface DisableCertificateAuthorityRequestOrBuilder
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string request_id = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for requestId.
    */

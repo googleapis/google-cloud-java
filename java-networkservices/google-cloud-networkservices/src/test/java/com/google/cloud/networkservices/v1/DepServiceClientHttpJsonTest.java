@@ -16,6 +16,7 @@
 
 package com.google.cloud.networkservices.v1;
 
+import static com.google.cloud.networkservices.v1.DepServiceClient.ListAuthzExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbRouteExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbTrafficExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLocationsPagedResponse;
@@ -46,6 +47,7 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
@@ -1141,6 +1143,547 @@ public class DepServiceClientHttpJsonTest {
       String name =
           "projects/project-3523/locations/location-3523/lbRouteExtensions/lbRouteExtension-3523";
       client.deleteLbRouteExtensionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listAuthzExtensionsTest() throws Exception {
+    AuthzExtension responsesElement = AuthzExtension.newBuilder().build();
+    ListAuthzExtensionsResponse expectedResponse =
+        ListAuthzExtensionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuthzExtensions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAuthzExtensionsPagedResponse pagedListResponse = client.listAuthzExtensions(parent);
+
+    List<AuthzExtension> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuthzExtensionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAuthzExtensionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAuthzExtensions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAuthzExtensionsTest2() throws Exception {
+    AuthzExtension responsesElement = AuthzExtension.newBuilder().build();
+    ListAuthzExtensionsResponse expectedResponse =
+        ListAuthzExtensionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuthzExtensions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListAuthzExtensionsPagedResponse pagedListResponse = client.listAuthzExtensions(parent);
+
+    List<AuthzExtension> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuthzExtensionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAuthzExtensionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listAuthzExtensions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAuthzExtensionTest() throws Exception {
+    AuthzExtension expectedResponse =
+        AuthzExtension.newBuilder()
+            .setName(
+                AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setLoadBalancingScheme(LoadBalancingScheme.forNumber(0))
+            .setAuthority("authority1475610435")
+            .setService("service1984153269")
+            .setTimeout(Duration.newBuilder().build())
+            .setFailOpen(true)
+            .setMetadata(Struct.newBuilder().build())
+            .addAllForwardHeaders(new ArrayList<String>())
+            .setWireFormat(WireFormat.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AuthzExtensionName name = AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]");
+
+    AuthzExtension actualResponse = client.getAuthzExtension(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAuthzExtensionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AuthzExtensionName name =
+          AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]");
+      client.getAuthzExtension(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAuthzExtensionTest2() throws Exception {
+    AuthzExtension expectedResponse =
+        AuthzExtension.newBuilder()
+            .setName(
+                AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setLoadBalancingScheme(LoadBalancingScheme.forNumber(0))
+            .setAuthority("authority1475610435")
+            .setService("service1984153269")
+            .setTimeout(Duration.newBuilder().build())
+            .setFailOpen(true)
+            .setMetadata(Struct.newBuilder().build())
+            .addAllForwardHeaders(new ArrayList<String>())
+            .setWireFormat(WireFormat.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9172/locations/location-9172/authzExtensions/authzExtension-9172";
+
+    AuthzExtension actualResponse = client.getAuthzExtension(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAuthzExtensionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9172/locations/location-9172/authzExtensions/authzExtension-9172";
+      client.getAuthzExtension(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAuthzExtensionTest() throws Exception {
+    AuthzExtension expectedResponse =
+        AuthzExtension.newBuilder()
+            .setName(
+                AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setLoadBalancingScheme(LoadBalancingScheme.forNumber(0))
+            .setAuthority("authority1475610435")
+            .setService("service1984153269")
+            .setTimeout(Duration.newBuilder().build())
+            .setFailOpen(true)
+            .setMetadata(Struct.newBuilder().build())
+            .addAllForwardHeaders(new ArrayList<String>())
+            .setWireFormat(WireFormat.forNumber(0))
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAuthzExtensionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    AuthzExtension authzExtension = AuthzExtension.newBuilder().build();
+    String authzExtensionId = "authzExtensionId-973067640";
+
+    AuthzExtension actualResponse =
+        client.createAuthzExtensionAsync(parent, authzExtension, authzExtensionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAuthzExtensionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      AuthzExtension authzExtension = AuthzExtension.newBuilder().build();
+      String authzExtensionId = "authzExtensionId-973067640";
+      client.createAuthzExtensionAsync(parent, authzExtension, authzExtensionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createAuthzExtensionTest2() throws Exception {
+    AuthzExtension expectedResponse =
+        AuthzExtension.newBuilder()
+            .setName(
+                AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setLoadBalancingScheme(LoadBalancingScheme.forNumber(0))
+            .setAuthority("authority1475610435")
+            .setService("service1984153269")
+            .setTimeout(Duration.newBuilder().build())
+            .setFailOpen(true)
+            .setMetadata(Struct.newBuilder().build())
+            .addAllForwardHeaders(new ArrayList<String>())
+            .setWireFormat(WireFormat.forNumber(0))
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAuthzExtensionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    AuthzExtension authzExtension = AuthzExtension.newBuilder().build();
+    String authzExtensionId = "authzExtensionId-973067640";
+
+    AuthzExtension actualResponse =
+        client.createAuthzExtensionAsync(parent, authzExtension, authzExtensionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAuthzExtensionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      AuthzExtension authzExtension = AuthzExtension.newBuilder().build();
+      String authzExtensionId = "authzExtensionId-973067640";
+      client.createAuthzExtensionAsync(parent, authzExtension, authzExtensionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateAuthzExtensionTest() throws Exception {
+    AuthzExtension expectedResponse =
+        AuthzExtension.newBuilder()
+            .setName(
+                AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setLoadBalancingScheme(LoadBalancingScheme.forNumber(0))
+            .setAuthority("authority1475610435")
+            .setService("service1984153269")
+            .setTimeout(Duration.newBuilder().build())
+            .setFailOpen(true)
+            .setMetadata(Struct.newBuilder().build())
+            .addAllForwardHeaders(new ArrayList<String>())
+            .setWireFormat(WireFormat.forNumber(0))
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateAuthzExtensionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AuthzExtension authzExtension =
+        AuthzExtension.newBuilder()
+            .setName(
+                AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setLoadBalancingScheme(LoadBalancingScheme.forNumber(0))
+            .setAuthority("authority1475610435")
+            .setService("service1984153269")
+            .setTimeout(Duration.newBuilder().build())
+            .setFailOpen(true)
+            .setMetadata(Struct.newBuilder().build())
+            .addAllForwardHeaders(new ArrayList<String>())
+            .setWireFormat(WireFormat.forNumber(0))
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AuthzExtension actualResponse =
+        client.updateAuthzExtensionAsync(authzExtension, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateAuthzExtensionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AuthzExtension authzExtension =
+          AuthzExtension.newBuilder()
+              .setName(
+                  AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]").toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setDescription("description-1724546052")
+              .putAllLabels(new HashMap<String, String>())
+              .setLoadBalancingScheme(LoadBalancingScheme.forNumber(0))
+              .setAuthority("authority1475610435")
+              .setService("service1984153269")
+              .setTimeout(Duration.newBuilder().build())
+              .setFailOpen(true)
+              .setMetadata(Struct.newBuilder().build())
+              .addAllForwardHeaders(new ArrayList<String>())
+              .setWireFormat(WireFormat.forNumber(0))
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAuthzExtensionAsync(authzExtension, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteAuthzExtensionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAuthzExtensionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AuthzExtensionName name = AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]");
+
+    client.deleteAuthzExtensionAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAuthzExtensionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AuthzExtensionName name =
+          AuthzExtensionName.of("[PROJECT]", "[LOCATION]", "[AUTHZ_EXTENSION]");
+      client.deleteAuthzExtensionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteAuthzExtensionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAuthzExtensionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-9172/locations/location-9172/authzExtensions/authzExtension-9172";
+
+    client.deleteAuthzExtensionAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAuthzExtensionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9172/locations/location-9172/authzExtensions/authzExtension-9172";
+      client.deleteAuthzExtensionAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

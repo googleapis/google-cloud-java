@@ -43,6 +43,7 @@ public interface SupervisedHyperParametersOrBuilder
    *
    * <pre>
    * Optional. Multiplier for adjusting the default learning rate.
+   * Mutually exclusive with `learning_rate`.
    * </pre>
    *
    * <code>double learning_rate_multiplier = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -50,6 +51,21 @@ public interface SupervisedHyperParametersOrBuilder
    * @return The learningRateMultiplier.
    */
   double getLearningRateMultiplier();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Learning rate for tuning.
+   * Mutually exclusive with `learning_rate_multiplier`.
+   * This feature is only available for open source models.
+   * </pre>
+   *
+   * <code>double learning_rate = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The learningRate.
+   */
+  double getLearningRate();
 
   /**
    *
@@ -80,4 +96,18 @@ public interface SupervisedHyperParametersOrBuilder
    * @return The adapterSize.
    */
   com.google.cloud.aiplatform.v1beta1.SupervisedHyperParameters.AdapterSize getAdapterSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Batch size for tuning.
+   * This feature is only available for open source models.
+   * </pre>
+   *
+   * <code>int64 batch_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The batchSize.
+   */
+  long getBatchSize();
 }

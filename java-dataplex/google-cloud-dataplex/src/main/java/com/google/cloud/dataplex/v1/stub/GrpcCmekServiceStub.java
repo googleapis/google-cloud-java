@@ -64,6 +64,7 @@ public class GrpcCmekServiceStub extends CmekServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEncryptionConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEncryptionConfigRequest, Operation>
@@ -74,6 +75,7 @@ public class GrpcCmekServiceStub extends CmekServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEncryptionConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEncryptionConfigRequest, Operation>
@@ -84,6 +86,7 @@ public class GrpcCmekServiceStub extends CmekServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEncryptionConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEncryptionConfigsRequest, ListEncryptionConfigsResponse>
@@ -95,6 +98,7 @@ public class GrpcCmekServiceStub extends CmekServiceStub {
                   ProtoUtils.marshaller(ListEncryptionConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEncryptionConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEncryptionConfigRequest, EncryptionConfig>
@@ -105,6 +109,7 @@ public class GrpcCmekServiceStub extends CmekServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEncryptionConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EncryptionConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -116,6 +121,7 @@ public class GrpcCmekServiceStub extends CmekServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -124,6 +130,7 @@ public class GrpcCmekServiceStub extends CmekServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateEncryptionConfigRequest, Operation>

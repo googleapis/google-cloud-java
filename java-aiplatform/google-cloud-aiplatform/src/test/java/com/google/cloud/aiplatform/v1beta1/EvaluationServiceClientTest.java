@@ -208,7 +208,10 @@ public class EvaluationServiceClientTest {
   @Test
   public void evaluateDatasetTest() throws Exception {
     EvaluateDatasetResponse expectedResponse =
-        EvaluateDatasetResponse.newBuilder().setOutputInfo(OutputInfo.newBuilder().build()).build();
+        EvaluateDatasetResponse.newBuilder()
+            .setAggregationOutput(AggregationOutput.newBuilder().build())
+            .setOutputInfo(OutputInfo.newBuilder().build())
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("evaluateDatasetTest")

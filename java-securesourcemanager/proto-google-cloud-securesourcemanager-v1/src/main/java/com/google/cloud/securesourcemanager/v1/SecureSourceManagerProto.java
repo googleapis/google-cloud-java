@@ -41,6 +41,10 @@ public final class SecureSourceManagerProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securesourcemanager_v1_Instance_PrivateConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_Instance_WorkforceIdentityFederationConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_Instance_WorkforceIdentityFederationConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_securesourcemanager_v1_Instance_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securesourcemanager_v1_Instance_LabelsEntry_fieldAccessorTable;
@@ -57,6 +61,14 @@ public final class SecureSourceManagerProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securesourcemanager_v1_Repository_InitialConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_Hook_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_Hook_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_Hook_PushOption_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_Hook_PushOption_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_securesourcemanager_v1_BranchRule_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securesourcemanager_v1_BranchRule_fieldAccessorTable;
@@ -68,6 +80,46 @@ public final class SecureSourceManagerProto {
       internal_static_google_cloud_securesourcemanager_v1_BranchRule_AnnotationsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securesourcemanager_v1_BranchRule_AnnotationsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_PullRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_PullRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_PullRequest_Branch_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_PullRequest_Branch_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_FileDiff_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_FileDiff_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_Issue_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_Issue_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_IssueComment_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_IssueComment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Review_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Review_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Comment_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Comment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Code_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Code_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Position_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Position_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_securesourcemanager_v1_ListInstancesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -109,9 +161,37 @@ public final class SecureSourceManagerProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securesourcemanager_v1_CreateRepositoryRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_UpdateRepositoryRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_UpdateRepositoryRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_securesourcemanager_v1_DeleteRepositoryRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securesourcemanager_v1_DeleteRepositoryRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_ListHooksRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_ListHooksRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_ListHooksResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_ListHooksResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_GetHookRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_GetHookRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_CreateHookRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_CreateHookRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_UpdateHookRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_UpdateHookRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_DeleteHookRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_DeleteHookRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_securesourcemanager_v1_GetBranchRuleRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -136,6 +216,170 @@ public final class SecureSourceManagerProto {
       internal_static_google_cloud_securesourcemanager_v1_ListBranchRulesResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securesourcemanager_v1_ListBranchRulesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_CreatePullRequestRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_CreatePullRequestRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_GetPullRequestRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_GetPullRequestRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_ListPullRequestsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_ListPullRequestsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_ListPullRequestsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_ListPullRequestsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_UpdatePullRequestRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_UpdatePullRequestRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_MergePullRequestRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_MergePullRequestRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_OpenPullRequestRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_OpenPullRequestRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_ClosePullRequestRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_ClosePullRequestRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_ListPullRequestFileDiffsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_ListPullRequestFileDiffsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_ListPullRequestFileDiffsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_ListPullRequestFileDiffsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_CreateIssueRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_CreateIssueRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_GetIssueRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_GetIssueRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_ListIssuesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_ListIssuesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_ListIssuesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_ListIssuesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_UpdateIssueRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_UpdateIssueRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_DeleteIssueRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_DeleteIssueRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_CloseIssueRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_CloseIssueRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_OpenIssueRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_OpenIssueRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_TreeEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_TreeEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_FetchTreeRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_FetchTreeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_FetchTreeResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_FetchTreeResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_FetchBlobRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_FetchBlobRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_FetchBlobResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_FetchBlobResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_ListPullRequestCommentsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_ListPullRequestCommentsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_ListPullRequestCommentsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_ListPullRequestCommentsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_CreatePullRequestCommentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_CreatePullRequestCommentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_BatchCreatePullRequestCommentsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_BatchCreatePullRequestCommentsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_BatchCreatePullRequestCommentsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_BatchCreatePullRequestCommentsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_UpdatePullRequestCommentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_UpdatePullRequestCommentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_DeletePullRequestCommentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_DeletePullRequestCommentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_GetPullRequestCommentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_GetPullRequestCommentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_ResolvePullRequestCommentsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_ResolvePullRequestCommentsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_ResolvePullRequestCommentsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_ResolvePullRequestCommentsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_UnresolvePullRequestCommentsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_UnresolvePullRequestCommentsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_UnresolvePullRequestCommentsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_UnresolvePullRequestCommentsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_CreateIssueCommentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_CreateIssueCommentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_GetIssueCommentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_GetIssueCommentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_ListIssueCommentsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_ListIssueCommentsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_ListIssueCommentsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_ListIssueCommentsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_UpdateIssueCommentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_UpdateIssueCommentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securesourcemanager_v1_DeleteIssueCommentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securesourcemanager_v1_DeleteIssueCommentRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -153,7 +397,7 @@ public final class SecureSourceManagerProto {
           + "pi/resource.proto\032\036google/iam/v1/iam_pol"
           + "icy.proto\032\032google/iam/v1/policy.proto\032#g"
           + "oogle/longrunning/operations.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\325\n\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\230\014\n"
           + "\010Instance\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\001\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
@@ -170,7 +414,9 @@ public final class SecureSourceManagerProto {
           + "\007kms_key\030\013 \001(\tB)\340A\005\372A#\n"
           + "!cloudkms.googleapis.com/CryptoKey\022R\n"
           + "\013host_config\030\t \001(\01328.g"
-          + "oogle.cloud.securesourcemanager.v1.Instance.HostConfigB\003\340A\003\032^\n\n"
+          + "oogle.cloud.securesourcemanager.v1.Instance.HostConfigB\003\340A\003\022\202\001\n"
+          + "$workforce_identity_federation_config\030\016 \001(\0132O.google.clou"
+          + "d.securesourcemanager.v1.Instance.WorkforceIdentityFederationConfigB\003\340A\001\032^\n\n"
           + "HostConfig\022\021\n"
           + "\004html\030\001 \001(\tB\003\340A\003\022\020\n"
           + "\003api\030\002 \001(\tB\003\340A\003\022\025\n"
@@ -178,13 +424,15 @@ public final class SecureSourceManagerProto {
           + "\007git_ssh\030\004 \001(\tB\003\340A\003\032\260\002\n\r"
           + "PrivateConfig\022\032\n\n"
           + "is_private\030\001 \001(\010B\006\340A\005\340A\002\022;\n"
-          + "\007ca_pool\030\002 \001(\tB*\340A\005\340A\002\372A!\n"
+          + "\007ca_pool\030\002 \001(\tB*\340A\005\340A\001\372A!\n"
           + "\037privateca.googleapis.com/CaPool\022Q\n"
           + "\027http_service_attachment\030\003 \001(\tB0\340A\003\372A*\n"
           + "(compute.googleapis.com/ServiceAttachment\022P\n"
           + "\026ssh_service_attachment\030\004 \001(\tB0\340A\003\372A*\n"
           + "(compute.googleapis.com/ServiceAttachment\022!\n"
-          + "\024psc_allowed_projects\030\006 \003(\tB\003\340A\001\032-\n"
+          + "\024psc_allowed_projects\030\006 \003(\tB\003\340A\001\032<\n"
+          + "!WorkforceIdentityFederationConfig\022\027\n"
+          + "\007enabled\030\001 \001(\010B\006\340A\005\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"_\n"
@@ -199,8 +447,8 @@ public final class SecureSourceManagerProto {
           + "\026STATE_NOTE_UNSPECIFIED\020\000\022\033\n"
           + "\027PAUSED_CMEK_UNAVAILABLE\020\001\022\031\n"
           + "\021INSTANCE_RESUMING\020\002\032\002\010\001:q\352An\n"
-          + "+securesourcemanager.googleapis.com/Instance\022<proje"
-          + "cts/{project}/locations/{location}/instances/{instance}R\001\001\"\320\005\n\n"
+          + "+securesourcemanager.googleapis.com/Instance\022<projects/{"
+          + "project}/locations/{location}/instances/{instance}R\001\001\"\320\005\n\n"
           + "Repository\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\001\022\030\n"
           + "\013description\030\002 \001(\tB\003\340A\001\022E\n"
@@ -211,11 +459,11 @@ public final class SecureSourceManagerProto {
           + "\013update_time\030\006"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
           + "\004etag\030\010 \001(\tB\003\340A\001\022G\n"
-          + "\004uris\030\t \001(\01324.google.cl"
-          + "oud.securesourcemanager.v1.Repository.URIsB\003\340A\003\022Z\n"
+          + "\004uris\030\t \001(\01324.google.cloud.s"
+          + "ecuresourcemanager.v1.Repository.URIsB\003\340A\003\022Z\n"
           + "\016initial_config\030\n"
-          + " \001(\0132=.google"
-          + ".cloud.securesourcemanager.v1.Repository.InitialConfigB\003\340A\004\032C\n"
+          + " \001(\0132=.google.clou"
+          + "d.securesourcemanager.v1.Repository.InitialConfigB\003\340A\004\032C\n"
           + "\004URIs\022\021\n"
           + "\004html\030\001 \001(\tB\003\340A\003\022\026\n"
           + "\tgit_https\030\002 \001(\tB\003\340A\003\022\020\n"
@@ -225,15 +473,37 @@ public final class SecureSourceManagerProto {
           + "gitignores\030\002 \003(\t\022\017\n"
           + "\007license\030\003 \001(\t\022\016\n"
           + "\006readme\030\004 \001(\t:u\352Ar\n"
-          + "-securesourcemanager.googleapis.com/Repository\022Aproj"
-          + "ects/{project}/locations/{location}/repositories/{repository}\"\337\006\n\n"
+          + "-securesourcemanager.googleapis.com/Repository\022Aprojects/"
+          + "{project}/locations/{location}/repositories/{repository}\"\360\004\n"
+          + "\004Hook\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\027\n\n"
+          + "target_uri\030\002 \001(\tB\003\340A\002\022\025\n"
+          + "\010disabled\030\003 \001(\010B\003\340A\001\022L\n"
+          + "\006events\030\004 \003(\01627.google.cl"
+          + "oud.securesourcemanager.v1.Hook.HookEventTypeB\003\340A\001\0224\n"
+          + "\013create_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\006"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\020\n"
+          + "\003uid\030\007 \001(\tB\003\340A\003\022N\n"
+          + "\013push_option\030\t \001(\01324."
+          + "google.cloud.securesourcemanager.v1.Hook.PushOptionB\003\340A\001\022#\n"
+          + "\026sensitive_query_string\030\n"
+          + " \001(\tB\003\340A\001\032(\n\n"
+          + "PushOption\022\032\n\r"
+          + "branch_filter\030\001 \001(\tB\003\340A\001\"<\n\r"
+          + "HookEventType\022\017\n"
+          + "\013UNSPECIFIED\020\000\022\010\n"
+          + "\004PUSH\020\001\022\020\n"
+          + "\014PULL_REQUEST\020\002:|\352Ay\n"
+          + "\'securesourcemanager.googleapis.com/Hook\022Nprojects/{project}/locations/{locat"
+          + "ion}/repositories/{repository}/hooks/{hook}\"\337\006\n\n"
           + "BranchRule\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\001\022\020\n"
           + "\003uid\030\002 \001(\tB\003\340A\003\0224\n"
           + "\013create_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022Z\n"
-          + "\013annotations\030\005 \003"
-          + "(\0132@.google.cloud.securesourcemanager.v1.BranchRule.AnnotationsEntryB\003\340A\001\022\021\n"
+          + "\013annotations\030\005 \003(\0132@.google.cloud."
+          + "securesourcemanager.v1.BranchRule.AnnotationsEntryB\003\340A\001\022\021\n"
           + "\004etag\030\006 \001(\tB\003\340A\001\022\034\n"
           + "\017include_pattern\030\007 \001(\tB\003\340A\001\022\025\n"
           + "\010disabled\030\010 \001(\010B\003\340A\001\022!\n"
@@ -245,19 +515,116 @@ public final class SecureSourceManagerProto {
           + "\023allow_stale_reviews\030\017 \001(\010B\003\340A\001\022#\n"
           + "\026require_linear_history\030\r"
           + " \001(\010B\003\340A\001\022Z\n"
-          + "\026required_status_checks\030\016 \003(\01325."
-          + "google.cloud.securesourcemanager.v1.BranchRule.CheckB\003\340A\001\032\035\n"
+          + "\026required_status_checks\030\016 \003(\01325.google.cloud.secur"
+          + "esourcemanager.v1.BranchRule.CheckB\003\340A\001\032\035\n"
           + "\005Check\022\024\n"
           + "\007context\030\001 \001(\tB\003\340A\002\0322\n"
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\220\001\352A\214\001\n"
-          + "-securesourcemanager.googleapis.com/BranchRule\022[proj"
-          + "ects/{project}/locations/{location}/repo"
-          + "sitories/{repository}/branchRules/{branch_rule}\"\244\001\n"
+          + "-securesourcemanager.googleapis.com/BranchRule\022[projects/{project}/loc"
+          + "ations/{location}/repositories/{repository}/branchRules/{branch_rule}\"\322\005\n"
+          + "\013PullRequest\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\003\022\022\n"
+          + "\005title\030\002 \001(\tB\003\340A\002\022\021\n"
+          + "\004body\030\003 \001(\tB\003\340A\001\022J\n"
+          + "\004base\030\004 \001(\01327."
+          + "google.cloud.securesourcemanager.v1.PullRequest.BranchB\003\340A\002\022J\n"
+          + "\004head\030\005 \001(\01327.goog"
+          + "le.cloud.securesourcemanager.v1.PullRequest.BranchB\003\340A\005\022J\n"
+          + "\005state\030\006 \001(\01626.google."
+          + "cloud.securesourcemanager.v1.PullRequest.StateB\003\340A\003\0224\n"
+          + "\013create_time\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\010"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0223\n\n"
+          + "close_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032,\n"
+          + "\006Branch\022\020\n"
+          + "\003ref\030\001 \001(\tB\003\340A\002\022\020\n"
+          + "\003sha\030\002 \001(\tB\003\340A\003\"@\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\010\n"
+          + "\004OPEN\020\001\022\n\n"
+          + "\006CLOSED\020\002\022\n\n"
+          + "\006MERGED\020\003:\223\001\352A\217\001\n"
+          + ".securesourcemanager.googleapis.com/PullRequest\022]projects/{project}/"
+          + "locations/{location}/repositories/{repository}/pullRequests/{pull_request}\"\326\001\n"
+          + "\010FileDiff\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\003\022I\n"
+          + "\006action\030\002 \001"
+          + "(\01624.google.cloud.securesourcemanager.v1.FileDiff.ActionB\003\340A\003\022\020\n"
+          + "\003sha\030\003 \001(\tB\003\340A\003\022\022\n"
+          + "\005patch\030\004 \001(\tB\003\340A\003\"F\n"
+          + "\006Action\022\026\n"
+          + "\022ACTION_UNSPECIFIED\020\000\022\t\n"
+          + "\005ADDED\020\001\022\014\n"
+          + "\010MODIFIED\020\002\022\013\n"
+          + "\007DELETED\020\003\"\362\003\n"
+          + "\005Issue\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\022\n"
+          + "\005title\030\002 \001(\tB\003\340A\002\022\021\n"
+          + "\004body\030\003 \001(\tB\003\340A\001\022D\n"
+          + "\005state\030\004"
+          + " \001(\01620.google.cloud.securesourcemanager.v1.Issue.StateB\003\340A\003\0224\n"
+          + "\013create_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\006"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0223\n\n"
+          + "close_time\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
+          + "\004etag\030\010 \001(\tB\003\340A\001\"4\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\010\n"
+          + "\004OPEN\020\001\022\n\n"
+          + "\006CLOSED\020\002:\177\352A|\n"
+          + "(securesourcemanager.googleapis.com/Issue\022Pprojects"
+          + "/{project}/locations/{location}/repositories/{repository}/issues/{issue}\"\302\002\n"
+          + "\014IssueComment\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\021\n"
+          + "\004body\030\002 \001(\tB\003\340A\002\0224\n"
+          + "\013create_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\004 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003:\237\001\352A\233\001\n"
+          + "/securesourcemanager.googleapis.com/IssueComment\022hprojects/{project}/location"
+          + "s/{location}/repositories/{repository}/issues/{issue}/issueComments/{comment}\"\240"
+          + "\t\n"
+          + "\022PullRequestComment\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
+          + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022U\n"
+          + "\006review\030\004 "
+          + "\001(\0132>.google.cloud.securesourcemanager.v1.PullRequestComment.ReviewB\003\340A\001H\000\022W\n"
+          + "\007comment\030\005 \001(\0132?.google.cloud.securesourcem"
+          + "anager.v1.PullRequestComment.CommentB\003\340A\001H\000\022Q\n"
+          + "\004code\030\006 \001(\0132<.google.cloud.secures"
+          + "ourcemanager.v1.PullRequestComment.CodeB\003\340A\001H\000\032\377\001\n"
+          + "\006Review\022c\n"
+          + "\013action_type\030\001 \001(\0162I.google.cloud.securesourcemanager.v1.Pul"
+          + "lRequestComment.Review.ActionTypeB\003\340A\002\022\021\n"
+          + "\004body\030\002 \001(\tB\003\340A\001\022!\n"
+          + "\024effective_commit_sha\030\004 \001(\tB\003\340A\003\"Z\n\n"
+          + "ActionType\022\033\n"
+          + "\027ACTION_TYPE_UNSPECIFIED\020\000\022\013\n"
+          + "\007COMMENT\020\001\022\024\n"
+          + "\020CHANGE_REQUESTED\020\002\022\014\n"
+          + "\010APPROVED\020\003\032\034\n"
+          + "\007Comment\022\021\n"
+          + "\004body\030\001 \001(\tB\003\340A\002\032\350\001\n"
+          + "\004Code\022\021\n"
+          + "\004body\030\001 \001(\tB\003\340A\002\022\025\n"
+          + "\005reply\030\002 \001(\tB\006\340A\001\340A\004\022W\n"
+          + "\010position\030\003 "
+          + "\001(\0132@.google.cloud.securesourcemanager.v1.PullRequestComment.PositionB\003\340A\001\022#\n"
+          + "\026effective_root_comment\030\004 \001(\tB\003\340A\003\022\025\n"
+          + "\010resolved\030\005 \001(\010B\003\340A\003\022!\n"
+          + "\024effective_commit_sha\030\007 \001(\tB\003\340A\003\0320\n"
+          + "\010Position\022\021\n"
+          + "\004path\030\001 \001(\tB\003\340A\002\022\021\n"
+          + "\004line\030\002 \001(\003B\003\340A\002:\270\001\352A\264\001\n"
+          + "5securesourcemanager.googleapis.com/PullRequestCommen"
+          + "t\022{projects/{project}/locations/{location}/repositories/{repository}/pullRequest"
+          + "s/{pull_request}/pullRequestComments/{comment}B\020\n"
+          + "\016comment_detail\"\244\001\n"
           + "\024ListInstancesRequest\022C\n"
-          + "\006parent\030\001 \001("
-          + "\tB3\340A\002\372A-\022+securesourcemanager.googleapis.com/Instance\022\021\n"
+          + "\006parent\030\001 \001(\tB3\340A\002\372A-\022+secur"
+          + "esourcemanager.googleapis.com/Instance\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\022\016\n"
           + "\006filter\030\004 \001(\t\022\020\n"
@@ -273,8 +640,8 @@ public final class SecureSourceManagerProto {
           + "\006parent\030\001 \001("
           + "\tB3\340A\002\372A-\022+securesourcemanager.googleapis.com/Instance\022\030\n"
           + "\013instance_id\030\002 \001(\tB\003\340A\002\022D\n"
-          + "\010instance\030\003"
-          + " \001(\0132-.google.cloud.securesourcemanager.v1.InstanceB\003\340A\002\022\027\n\n"
+          + "\010instance\030\003 \001(\0132-."
+          + "google.cloud.securesourcemanager.v1.InstanceB\003\340A\002\022\027\n\n"
           + "request_id\030\004 \001(\tB\003\340A\001\"s\n"
           + "\025DeleteInstanceRequest\022A\n"
           + "\004name\030\001 \001(\tB3\340A\002\372A-\n"
@@ -289,30 +656,60 @@ public final class SecureSourceManagerProto {
           + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
           + "\013api_version\030\007 \001(\tB\003\340A\003\"\350\001\n"
           + "\027ListRepositoriesRequest\022E\n"
-          + "\006parent\030\001 \001(\tB5\340"
-          + "A\002\372A/\022-securesourcemanager.googleapis.com/Repository\022\026\n"
+          + "\006parent\030\001 \001("
+          + "\tB5\340A\002\372A/\022-securesourcemanager.googleapis.com/Repository\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\022\n\n"
           + "page_token\030\003 \001(\t\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022E\n"
           + "\010instance\030\005 \001(\tB3\340A\001\372A-\n"
           + "+securesourcemanager.googleapis.com/Instance\"z\n"
           + "\030ListRepositoriesResponse\022E\n"
-          + "\014repositories\030\001 \003(\0132/"
-          + ".google.cloud.securesourcemanager.v1.Repository\022\027\n"
+          + "\014repositories\030\001"
+          + " \003(\0132/.google.cloud.securesourcemanager.v1.Repository\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"[\n"
           + "\024GetRepositoryRequest\022C\n"
           + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
           + "-securesourcemanager.googleapis.com/Repository\"\306\001\n"
           + "\027CreateRepositoryRequest\022E\n"
-          + "\006parent\030\001 \001("
-          + "\tB5\340A\002\372A/\022-securesourcemanager.googleapis.com/Repository\022H\n\n"
+          + "\006parent\030\001 \001(\tB5\340A\002\372A/\022-secu"
+          + "resourcemanager.googleapis.com/Repository\022H\n\n"
           + "repository\030\002"
           + " \001(\0132/.google.cloud.securesourcemanager.v1.RepositoryB\003\340A\002\022\032\n\r"
-          + "repository_id\030\003 \001(\tB\003\340A\002\"z\n"
+          + "repository_id\030\003 \001(\tB\003\340A\002\"\265\001\n"
+          + "\027UpdateRepositoryRequest\0224\n"
+          + "\013update_mask\030\001"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022H\n\n"
+          + "repository\030\002"
+          + " \001(\0132/.google.cloud.securesourcemanager.v1.RepositoryB\003\340A\002\022\032\n\r"
+          + "validate_only\030\003 \001(\010B\003\340A\001\"z\n"
           + "\027DeleteRepositoryRequest\022C\n"
           + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
           + "-securesourcemanager.googleapis.com/Repository\022\032\n\r"
-          + "allow_missing\030\002 \001(\010B\003\340A\001\"[\n"
+          + "allow_missing\030\002 \001(\010B\003\340A\001\"\204\001\n"
+          + "\020ListHooksRequest\022?\n"
+          + "\006parent\030\001 \001("
+          + "\tB/\340A\002\372A)\022\'securesourcemanager.googleapis.com/Hook\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"f\n"
+          + "\021ListHooksResponse\0228\n"
+          + "\005hooks\030\001 \003(\0132).google.cloud.securesourcemanager.v1.Hook\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"O\n"
+          + "\016GetHookRequest\022=\n"
+          + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
+          + "\'securesourcemanager.googleapis.com/Hook\"\256\001\n"
+          + "\021CreateHookRequest\022E\n"
+          + "\006parent\030\001 \001(\tB5\340A\002\372A/\n"
+          + "-securesourcemanager.googleapis.com/Repository\022<\n"
+          + "\004hook\030\002 \001(\0132)"
+          + ".google.cloud.securesourcemanager.v1.HookB\003\340A\002\022\024\n"
+          + "\007hook_id\030\003 \001(\tB\003\340A\002\"\207\001\n"
+          + "\021UpdateHookRequest\0224\n"
+          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022<\n"
+          + "\004hook\030\002 \001(\0132)"
+          + ".google.cloud.securesourcemanager.v1.HookB\003\340A\002\"R\n"
+          + "\021DeleteHookRequest\022=\n"
+          + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
+          + "\'securesourcemanager.googleapis.com/Hook\"[\n"
           + "\024GetBranchRuleRequest\022C\n"
           + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
           + "-securesourcemanager.googleapis.com/BranchRule\"\310\001\n"
@@ -339,88 +736,522 @@ public final class SecureSourceManagerProto {
           + "\027ListBranchRulesResponse\022E\n"
           + "\014branch_rules\030\001"
           + " \003(\0132/.google.cloud.securesourcemanager.v1.BranchRule\022\027\n"
-          + "\017next_page_token\030\002 \001(\t2\372\033\n"
-          + "\023SecureSourceManager\022\306\001\n\r"
-          + "ListInstances\0229.google.cloud.securesourcemanag"
-          + "er.v1.ListInstancesRequest\032:.google.cloud.securesourcemanager.v1.ListInstancesRe"
-          + "sponse\">\332A\006parent\202\323\344\223\002/\022-/v1/{parent=projects/*/locations/*}/instances\022\263\001\n"
-          + "\013GetInstance\0227.google.cloud.securesourcemanage"
-          + "r.v1.GetInstanceRequest\032-.google.cloud.s"
-          + "ecuresourcemanager.v1.Instance\"<\332A\004name\202"
-          + "\323\344\223\002/\022-/v1/{name=projects/*/locations/*/instances/*}\022\352\001\n"
-          + "\016CreateInstance\022:.google.cloud.securesourcemanager.v1.CreateInst"
-          + "anceRequest\032\035.google.longrunning.Operation\"}\312A\035\n"
-          + "\010Instance\022\021OperationMetadata\332A\033p"
-          + "arent,instance,instance_id\202\323\344\223\0029\"-/v1/{p"
-          + "arent=projects/*/locations/*}/instances:\010instance\022\326\001\n"
-          + "\016DeleteInstance\022:.google.cloud.securesourcemanager.v1.DeleteInstanc"
-          + "eRequest\032\035.google.longrunning.Operation\"i\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMe"
-          + "tadata\332A\004name\202\323\344\223\002/*-/v1/{name=projects/*/locations/*/instances/*}\022\322\001\n"
-          + "\020ListRepositories\022<.google.cloud.securesourcemanag"
-          + "er.v1.ListRepositoriesRequest\032=.google.cloud.securesourcemanager.v1.ListReposito"
-          + "riesResponse\"A\332A\006parent\202\323\344\223\0022\0220/v1/{pare"
-          + "nt=projects/*/locations/*}/repositories\022\274\001\n\r"
-          + "GetRepository\0229.google.cloud.securesourcemanager.v1.GetRepositoryRequest\032/.g"
-          + "oogle.cloud.securesourcemanager.v1.Repos"
-          + "itory\"?\332A\004name\202\323\344\223\0022\0220/v1/{name=projects/*/locations/*/repositories/*}\022\372\001\n"
-          + "\020CreateRepository\022<.google.cloud.securesourcem"
-          + "anager.v1.CreateRepositoryRequest\032\035.google.longrunning.Operation\"\210\001\312A\037\n\n"
-          + "Repository\022\021OperationMetadata\332A\037parent,repositor"
-          + "y,repository_id\202\323\344\223\002>\"0/v1/{parent=projects/*/locations/*}/repositories:\n"
-          + "repository\022\335\001\n"
-          + "\020DeleteRepository\022<.google.cloud.securesourcemanager.v1.DeleteRepositoryR"
-          + "equest\032\035.google.longrunning.Operation\"l\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMeta"
-          + "data\332A\004name\202\323\344\223\0022*0/v1/{name=projects/*/locations/*/repositories/*}\022\243\001\n"
-          + "\020GetIamPolicyRepo\022\".google.iam.v1.GetIamPolicyReq"
-          + "uest\032\025.google.iam.v1.Policy\"T\332A\010resource"
-          + "\202\323\344\223\002C\022A/v1/{resource=projects/*/locations/*/repositories/*}:getIamPolicy\022\246\001\n"
-          + "\020SetIamPolicyRepo\022\".google.iam.v1.SetIamPol"
-          + "icyRequest\032\025.google.iam.v1.Policy\"W\332A\010re"
-          + "source\202\323\344\223\002F\"A/v1/{resource=projects/*/l"
-          + "ocations/*/repositories/*}:setIamPolicy:\001*\022\314\001\n"
-          + "\026TestIamPermissionsRepo\022(.google.iam.v1.TestIamPermissionsRequest\032).google"
-          + ".iam.v1.TestIamPermissionsResponse\"]\332A\010r"
-          + "esource\202\323\344\223\002L\"G/v1/{resource=projects/*/"
-          + "locations/*/repositories/*}:testIamPermissions:\001*\022\213\002\n"
-          + "\020CreateBranchRule\022<.google.cloud.securesourcemanager.v1.CreateBranc"
-          + "hRuleRequest\032\035.google.longrunning.Operation\"\231\001\312A\037\n\n"
-          + "BranchRule\022\021OperationMetadata"
-          + "\332A!parent,branch_rule,branch_rule_id\202\323\344\223"
-          + "\002M\">/v1/{parent=projects/*/locations/*/r"
-          + "epositories/*}/branchRules:\013branch_rule\022\335\001\n"
-          + "\017ListBranchRules\022;.google.cloud.securesourcemanager.v1.ListBranchRulesRequest"
-          + "\032<.google.cloud.securesourcemanager.v1.L"
-          + "istBranchRulesResponse\"O\332A\006parent\202\323\344\223\002@\022"
-          + ">/v1/{parent=projects/*/locations/*/repositories/*}/branchRules\022\312\001\n\r"
-          + "GetBranchRule\0229.google.cloud.securesourcemanager.v1."
-          + "GetBranchRuleRequest\032/.google.cloud.secu"
-          + "resourcemanager.v1.BranchRule\"M\332A\004name\202\323"
-          + "\344\223\002@\022>/v1/{name=projects/*/locations/*/repositories/*/branchRules/*}\022\215\002\n"
-          + "\020UpdateBranchRule\022<.google.cloud.securesourceman"
-          + "ager.v1.UpdateBranchRuleRequest\032\035.google.longrunning.Operation\"\233\001\312A\037\n\n"
-          + "BranchRule\022\021OperationMetadata\332A\027branch_rule,update"
-          + "_mask\202\323\344\223\002Y2J/v1/{branch_rule.name=proje"
-          + "cts/*/locations/*/repositories/*/branchRules/*}:\013branch_rule\022\353\001\n"
-          + "\020DeleteBranchRule\022<.google.cloud.securesourcemanager.v1."
-          + "DeleteBranchRuleRequest\032\035.google.longrunning.Operation\"z\312A*\n"
-          + "\025google.protobuf.Emp"
-          + "ty\022\021OperationMetadata\332A\004name\202\323\344\223\002@*>/v1/"
-          + "{name=projects/*/locations/*/repositorie"
-          + "s/*/branchRules/*}\032V\312A\"securesourcemanag"
-          + "er.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\351\004\n"
-          + "\'com.google.cloud.securesourcemanager.v1B\030SecureSo"
-          + "urceManagerProtoP\001ZYcloud.google.com/go/securesourcemanager/apiv1/securesourcema"
-          + "nagerpb;securesourcemanagerpb\252\002#Google.C"
-          + "loud.SecureSourceManager.V1\312\002#Google\\Clo"
-          + "ud\\SecureSourceManager\\V1\352\002&Google::Cloud::SecureSourceManager::V1\352Ax\n"
-          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{proj"
-          + "ect}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}\352A\\\n"
-          + "\037privateca.googleapis.com/CaPool\0229projects/{pro"
-          + "ject}/locations/{location}/caPools/{ca_pool}\352Aw\n"
-          + "(compute.googleapis.com/ServiceAttachment\022Kprojects/{project}/regions/{r"
-          + "egion}/serviceAttachments/{service_attachment}b\006proto3"
+          + "\017next_page_token\030\002 \001(\t\"\256\001\n"
+          + "\030CreatePullRequestRequest\022E\n"
+          + "\006parent\030\001 \001(\tB5\340A\002\372A/\n"
+          + "-securesourcemanager.googleapis.com/Repository\022K\n"
+          + "\014pull_request\030\002"
+          + " \001(\01320.google.cloud.securesourcemanager.v1.PullRequestB\003\340A\002\"]\n"
+          + "\025GetPullRequestRequest\022D\n"
+          + "\004name\030\001 \001(\tB6\340A\002\372A0\n"
+          + ".securesourcemanager.googleapis.com/PullRequest\"\221\001\n"
+          + "\027ListPullRequestsRequest\022E\n"
+          + "\006parent\030\001 \001(\tB5\340A\002\372A/\n"
+          + "-securesourcemanager.googleapis.com/Repository\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"|\n"
+          + "\030ListPullRequestsResponse\022G\n\r"
+          + "pull_requests\030\001 \003(\01320.g"
+          + "oogle.cloud.securesourcemanager.v1.PullRequest\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\235\001\n"
+          + "\030UpdatePullRequestRequest\022K\n"
+          + "\014pull_request\030\001 \001"
+          + "(\01320.google.cloud.securesourcemanager.v1.PullRequestB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"_\n"
+          + "\027MergePullRequestRequest\022D\n"
+          + "\004name\030\001 \001(\tB6\340A\002\372A0\n"
+          + ".securesourcemanager.googleapis.com/PullRequest\"^\n"
+          + "\026OpenPullRequestRequest\022D\n"
+          + "\004name\030\001 \001(\tB6\340A\002\372A0\n"
+          + ".securesourcemanager.googleapis.com/PullRequest\"_\n"
+          + "\027ClosePullRequestRequest\022D\n"
+          + "\004name\030\001 \001(\tB6\340A\002\372A0\n"
+          + ".securesourcemanager.googleapis.com/PullRequest\"\230\001\n"
+          + "\037ListPullRequestFileDiffsRequest\022D\n"
+          + "\004name\030\001 \001(\tB6\340A\002\372A0\n"
+          + ".securesourcemanager.googleapis.com/PullRequest\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"~\n"
+          + " ListPullRequestFileDiffsResponse\022A\n\n"
+          + "file_diffs\030\001 \003(\0132-.google.cloud.securesourcemanager.v1.FileDiff\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\233\001\n"
+          + "\022CreateIssueRequest\022E\n"
+          + "\006parent\030\001 \001(\tB5\340A\002\372A/\n"
+          + "-securesourcemanager.googleapis.com/Repository\022>\n"
+          + "\005issue\030\002 \001(\0132*.goog"
+          + "le.cloud.securesourcemanager.v1.IssueB\003\340A\002\"Q\n"
+          + "\017GetIssueRequest\022>\n"
+          + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
+          + "(securesourcemanager.googleapis.com/Issue\"\233\001\n"
+          + "\021ListIssuesRequest\022@\n"
+          + "\006parent\030\001 \001("
+          + "\tB0\340A\002\372A*\022(securesourcemanager.googleapis.com/Issue\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n"
+          + "\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\"i\n"
+          + "\022ListIssuesResponse\022:\n"
+          + "\006issues\030\001 \003(\0132*.google.cloud.securesourcemanager.v1.Issue\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\212\001\n"
+          + "\022UpdateIssueRequest\022>\n"
+          + "\005issue\030\001"
+          + " \001(\0132*.google.cloud.securesourcemanager.v1.IssueB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"g\n"
+          + "\022DeleteIssueRequest\022>\n"
+          + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
+          + "(securesourcemanager.googleapis.com/Issue\022\021\n"
+          + "\004etag\030\002 \001(\tB\003\340A\001\"f\n"
+          + "\021CloseIssueRequest\022>\n"
+          + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
+          + "(securesourcemanager.googleapis.com/Issue\022\021\n"
+          + "\004etag\030\002 \001(\tB\003\340A\001\"e\n"
+          + "\020OpenIssueRequest\022>\n"
+          + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
+          + "(securesourcemanager.googleapis.com/Issue\022\021\n"
+          + "\004etag\030\002 \001(\tB\003\340A\001\"\357\001\n"
+          + "\tTreeEntry\022L\n"
+          + "\004type\030\001 \001(\01629.google"
+          + ".cloud.securesourcemanager.v1.TreeEntry.ObjectTypeB\003\340A\003\022\020\n"
+          + "\003sha\030\002 \001(\tB\003\340A\003\022\021\n"
+          + "\004path\030\003 \001(\tB\003\340A\003\022\021\n"
+          + "\004mode\030\004 \001(\tB\003\340A\003\022\021\n"
+          + "\004size\030\005 \001(\003B\003\340A\003\"I\n\n"
+          + "ObjectType\022\033\n"
+          + "\027OBJECT_TYPE_UNSPECIFIED\020\000\022\010\n"
+          + "\004TREE\020\001\022\010\n"
+          + "\004BLOB\020\002\022\n\n"
+          + "\006COMMIT\020\003\"\270\001\n"
+          + "\020FetchTreeRequest\022I\n\n"
+          + "repository\030\001 \001(\tB5\340A\002\372A/\n"
+          + "-securesourcemanager.googleapis.com/Repository\022\020\n"
+          + "\003ref\030\002 \001(\tB\003\340A\001\022\026\n"
+          + "\trecursive\030\003 \001(\010B\003\340A\001\022\026\n"
+          + "\tpage_size\030\004 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\005 \001(\tB\003\340A\001\"r\n"
+          + "\021FetchTreeResponse\022D\n"
+          + "\014tree_entries\030\001 \003(\0132..go"
+          + "ogle.cloud.securesourcemanager.v1.TreeEntry\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"o\n"
+          + "\020FetchBlobRequest\022I\n\n"
+          + "repository\030\001 \001(\tB5\340A\002\372A/\n"
+          + "-securesourcemanager.googleapis.com/Repository\022\020\n"
+          + "\003sha\030\002 \001(\tB\003\340A\002\"1\n"
+          + "\021FetchBlobResponse\022\013\n"
+          + "\003sha\030\001 \001(\t\022\017\n"
+          + "\007content\030\002 \001(\t\"\240\001\n"
+          + "\036ListPullRequestCommentsRequest\022M\n"
+          + "\006parent\030\001 \001("
+          + "\tB=\340A\002\372A7\0225securesourcemanager.googleapis.com/PullRequestComment\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"\222\001\n"
+          + "\037ListPullRequestCommentsResponse\022V\n"
+          + "\025pull_request_comments\030\001 \003(\01327.google.cloud.se"
+          + "curesourcemanager.v1.PullRequestComment\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\314\001\n"
+          + "\037CreatePullRequestCommentRequest\022M\n"
+          + "\006parent\030\001 \001(\tB=\340A"
+          + "\002\372A7\0225securesourcemanager.googleapis.com/PullRequestComment\022Z\n"
+          + "\024pull_request_comment\030\002"
+          + " \001(\01327.google.cloud.securesourcemanager.v1.PullRequestCommentB\003\340A\002\"\323\001\n"
+          + "%BatchCreatePullRequestCommentsRequest\022M\n"
+          + "\006parent\030\001 \001("
+          + "\tB=\340A\002\372A7\0225securesourcemanager.googleapis.com/PullRequestComment\022[\n"
+          + "\010requests\030\002 \003(\0132D.google.cloud.securesourcema"
+          + "nager.v1.CreatePullRequestCommentRequestB\003\340A\002\"\200\001\n"
+          + "&BatchCreatePullRequestCommentsResponse\022V\n"
+          + "\025pull_request_comments\030\001 \003(\0132"
+          + "7.google.cloud.securesourcemanager.v1.PullRequestComment\"\263\001\n"
+          + "\037UpdatePullRequestCommentRequest\022Z\n"
+          + "\024pull_request_comment\030\001 \001"
+          + "(\01327.google.cloud.securesourcemanager.v1.PullRequestCommentB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"n\n"
+          + "\037DeletePullRequestCommentRequest\022K\n"
+          + "\004name\030\001 \001(\tB=\340A\002\372A7\n"
+          + "5securesourcemanager.googleapis.com/PullRequestComment\"k\n"
+          + "\034GetPullRequestCommentRequest\022K\n"
+          + "\004name\030\001 \001(\tB=\340A\002\372A7\n"
+          + "5securesourcemanager.googleapis.com/PullRequestComment\"\330\001\n"
+          + "!ResolvePullRequestCommentsRequest\022M\n"
+          + "\006parent\030\001 \001(\tB=\340A\002\372A"
+          + "7\0225securesourcemanager.googleapis.com/PullRequestComment\022L\n"
+          + "\005names\030\002 \003(\tB=\340A\002\372A7\n"
+          + "5securesourcemanager.googleapis.com/PullRequestComment\022\026\n"
+          + "\tauto_fill\030\003 \001(\010B\003\340A\001\"|\n"
+          + "\"ResolvePullRequestCommentsResponse\022V\n"
+          + "\025pull_request_comments\030\001 \003(\01327.google.clo"
+          + "ud.securesourcemanager.v1.PullRequestComment\"\332\001\n"
+          + "#UnresolvePullRequestCommentsRequest\022M\n"
+          + "\006parent\030\001 \001(\tB=\340A\002\372A7\0225securesour"
+          + "cemanager.googleapis.com/PullRequestComment\022L\n"
+          + "\005names\030\002 \003(\tB=\340A\002\372A7\n"
+          + "5securesourcemanager.googleapis.com/PullRequestComment\022\026\n"
+          + "\tauto_fill\030\003 \001(\010B\003\340A\001\"~\n"
+          + "$UnresolvePullRequestCommentsResponse\022V\n"
+          + "\025pull_request_comments\030\001"
+          + " \003(\01327.google.cloud.securesourcemanager.v1.PullRequestComment\"\254\001\n"
+          + "\031CreateIssueCommentRequest\022@\n"
+          + "\006parent\030\001 \001(\tB0\340A\002\372A*\n"
+          + "(securesourcemanager.googleapis.com/Issue\022M\n\r"
+          + "issue_comment\030\002 \001(\01321.googl"
+          + "e.cloud.securesourcemanager.v1.IssueCommentB\003\340A\002\"_\n"
+          + "\026GetIssueCommentRequest\022E\n"
+          + "\004name\030\001 \001(\tB7\340A\002\372A1\n"
+          + "/securesourcemanager.googleapis.com/IssueComment\"\224\001\n"
+          + "\030ListIssueCommentsRequest\022G\n"
+          + "\006parent\030\001 \001(\tB7\340A\002\372A1\022/"
+          + "securesourcemanager.googleapis.com/IssueComment\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_",
+      "token\030\003 \001(\tB\003\340A\001\"\177\n\031ListIssueCommentsRes"
+          + "ponse\022I\n\016issue_comments\030\001 \003(\01321.google.c"
+          + "loud.securesourcemanager.v1.IssueComment"
+          + "\022\027\n\017next_page_token\030\002 \001(\t\"\240\001\n\031UpdateIssu"
+          + "eCommentRequest\022M\n\rissue_comment\030\001 \001(\01321"
+          + ".google.cloud.securesourcemanager.v1.Iss"
+          + "ueCommentB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.go"
+          + "ogle.protobuf.FieldMaskB\003\340A\001\"b\n\031DeleteIs"
+          + "sueCommentRequest\022E\n\004name\030\001 \001(\tB7\340A\002\372A1\n"
+          + "/securesourcemanager.googleapis.com/Issu"
+          + "eComment2\376d\n\023SecureSourceManager\022\306\001\n\rLis"
+          + "tInstances\0229.google.cloud.securesourcema"
+          + "nager.v1.ListInstancesRequest\032:.google.c"
+          + "loud.securesourcemanager.v1.ListInstance"
+          + "sResponse\">\332A\006parent\202\323\344\223\002/\022-/v1/{parent="
+          + "projects/*/locations/*}/instances\022\263\001\n\013Ge"
+          + "tInstance\0227.google.cloud.securesourceman"
+          + "ager.v1.GetInstanceRequest\032-.google.clou"
+          + "d.securesourcemanager.v1.Instance\"<\332A\004na"
+          + "me\202\323\344\223\002/\022-/v1/{name=projects/*/locations"
+          + "/*/instances/*}\022\352\001\n\016CreateInstance\022:.goo"
+          + "gle.cloud.securesourcemanager.v1.CreateI"
+          + "nstanceRequest\032\035.google.longrunning.Oper"
+          + "ation\"}\312A\035\n\010Instance\022\021OperationMetadata\332"
+          + "A\033parent,instance,instance_id\202\323\344\223\0029\"-/v1"
+          + "/{parent=projects/*/locations/*}/instanc"
+          + "es:\010instance\022\326\001\n\016DeleteInstance\022:.google"
+          + ".cloud.securesourcemanager.v1.DeleteInst"
+          + "anceRequest\032\035.google.longrunning.Operati"
+          + "on\"i\312A*\n\025google.protobuf.Empty\022\021Operatio"
+          + "nMetadata\332A\004name\202\323\344\223\002/*-/v1/{name=projec"
+          + "ts/*/locations/*/instances/*}\022\322\001\n\020ListRe"
+          + "positories\022<.google.cloud.securesourcema"
+          + "nager.v1.ListRepositoriesRequest\032=.googl"
+          + "e.cloud.securesourcemanager.v1.ListRepos"
+          + "itoriesResponse\"A\332A\006parent\202\323\344\223\0022\0220/v1/{p"
+          + "arent=projects/*/locations/*}/repositori"
+          + "es\022\274\001\n\rGetRepository\0229.google.cloud.secu"
+          + "resourcemanager.v1.GetRepositoryRequest\032"
+          + "/.google.cloud.securesourcemanager.v1.Re"
+          + "pository\"?\332A\004name\202\323\344\223\0022\0220/v1/{name=proje"
+          + "cts/*/locations/*/repositories/*}\022\372\001\n\020Cr"
+          + "eateRepository\022<.google.cloud.securesour"
+          + "cemanager.v1.CreateRepositoryRequest\032\035.g"
+          + "oogle.longrunning.Operation\"\210\001\312A\037\n\nRepos"
+          + "itory\022\021OperationMetadata\332A\037parent,reposi"
+          + "tory,repository_id\202\323\344\223\002>\"0/v1/{parent=pr"
+          + "ojects/*/locations/*}/repositories:\nrepo"
+          + "sitory\022\374\001\n\020UpdateRepository\022<.google.clo"
+          + "ud.securesourcemanager.v1.UpdateReposito"
+          + "ryRequest\032\035.google.longrunning.Operation"
+          + "\"\212\001\312A\037\n\nRepository\022\021OperationMetadata\332A\026"
+          + "repository,update_mask\202\323\344\223\002I2;/v1/{repos"
+          + "itory.name=projects/*/locations/*/reposi"
+          + "tories/*}:\nrepository\022\335\001\n\020DeleteReposito"
+          + "ry\022<.google.cloud.securesourcemanager.v1"
+          + ".DeleteRepositoryRequest\032\035.google.longru"
+          + "nning.Operation\"l\312A*\n\025google.protobuf.Em"
+          + "pty\022\021OperationMetadata\332A\004name\202\323\344\223\0022*0/v1"
+          + "/{name=projects/*/locations/*/repositori"
+          + "es/*}\022\305\001\n\tListHooks\0225.google.cloud.secur"
+          + "esourcemanager.v1.ListHooksRequest\0326.goo"
+          + "gle.cloud.securesourcemanager.v1.ListHoo"
+          + "ksResponse\"I\332A\006parent\202\323\344\223\002:\0228/v1/{parent"
+          + "=projects/*/locations/*/repositories/*}/"
+          + "hooks\022\262\001\n\007GetHook\0223.google.cloud.secures"
+          + "ourcemanager.v1.GetHookRequest\032).google."
+          + "cloud.securesourcemanager.v1.Hook\"G\332A\004na"
+          + "me\202\323\344\223\002:\0228/v1/{name=projects/*/locations"
+          + "/*/repositories/*/hooks/*}\022\335\001\n\nCreateHoo"
+          + "k\0226.google.cloud.securesourcemanager.v1."
+          + "CreateHookRequest\032\035.google.longrunning.O"
+          + "peration\"x\312A\031\n\004Hook\022\021OperationMetadata\332A"
+          + "\023parent,hook,hook_id\202\323\344\223\002@\"8/v1/{parent="
+          + "projects/*/locations/*/repositories/*}/h"
+          + "ooks:\004hook\022\337\001\n\nUpdateHook\0226.google.cloud"
+          + ".securesourcemanager.v1.UpdateHookReques"
+          + "t\032\035.google.longrunning.Operation\"z\312A\031\n\004H"
+          + "ook\022\021OperationMetadata\332A\020hook,update_mas"
+          + "k\202\323\344\223\002E2=/v1/{hook.name=projects/*/locat"
+          + "ions/*/repositories/*/hooks/*}:\004hook\022\331\001\n"
+          + "\nDeleteHook\0226.google.cloud.securesourcem"
+          + "anager.v1.DeleteHookRequest\032\035.google.lon"
+          + "grunning.Operation\"t\312A*\n\025google.protobuf"
+          + ".Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002:*8"
+          + "/v1/{name=projects/*/locations/*/reposit"
+          + "ories/*/hooks/*}\022\243\001\n\020GetIamPolicyRepo\022\"."
+          + "google.iam.v1.GetIamPolicyRequest\032\025.goog"
+          + "le.iam.v1.Policy\"T\332A\010resource\202\323\344\223\002C\022A/v1"
+          + "/{resource=projects/*/locations/*/reposi"
+          + "tories/*}:getIamPolicy\022\246\001\n\020SetIamPolicyR"
+          + "epo\022\".google.iam.v1.SetIamPolicyRequest\032"
+          + "\025.google.iam.v1.Policy\"W\332A\010resource\202\323\344\223\002"
+          + "F\"A/v1/{resource=projects/*/locations/*/"
+          + "repositories/*}:setIamPolicy:\001*\022\314\001\n\026Test"
+          + "IamPermissionsRepo\022(.google.iam.v1.TestI"
+          + "amPermissionsRequest\032).google.iam.v1.Tes"
+          + "tIamPermissionsResponse\"]\332A\010resource\202\323\344\223"
+          + "\002L\"G/v1/{resource=projects/*/locations/*"
+          + "/repositories/*}:testIamPermissions:\001*\022\213"
+          + "\002\n\020CreateBranchRule\022<.google.cloud.secur"
+          + "esourcemanager.v1.CreateBranchRuleReques"
+          + "t\032\035.google.longrunning.Operation\"\231\001\312A\037\n\n"
+          + "BranchRule\022\021OperationMetadata\332A!parent,b"
+          + "ranch_rule,branch_rule_id\202\323\344\223\002M\">/v1/{pa"
+          + "rent=projects/*/locations/*/repositories"
+          + "/*}/branchRules:\013branch_rule\022\335\001\n\017ListBra"
+          + "nchRules\022;.google.cloud.securesourcemana"
+          + "ger.v1.ListBranchRulesRequest\032<.google.c"
+          + "loud.securesourcemanager.v1.ListBranchRu"
+          + "lesResponse\"O\332A\006parent\202\323\344\223\002@\022>/v1/{paren"
+          + "t=projects/*/locations/*/repositories/*}"
+          + "/branchRules\022\312\001\n\rGetBranchRule\0229.google."
+          + "cloud.securesourcemanager.v1.GetBranchRu"
+          + "leRequest\032/.google.cloud.securesourceman"
+          + "ager.v1.BranchRule\"M\332A\004name\202\323\344\223\002@\022>/v1/{"
+          + "name=projects/*/locations/*/repositories"
+          + "/*/branchRules/*}\022\215\002\n\020UpdateBranchRule\022<"
+          + ".google.cloud.securesourcemanager.v1.Upd"
+          + "ateBranchRuleRequest\032\035.google.longrunnin"
+          + "g.Operation\"\233\001\312A\037\n\nBranchRule\022\021Operation"
+          + "Metadata\332A\027branch_rule,update_mask\202\323\344\223\002Y"
+          + "2J/v1/{branch_rule.name=projects/*/locat"
+          + "ions/*/repositories/*/branchRules/*}:\013br"
+          + "anch_rule\022\353\001\n\020DeleteBranchRule\022<.google."
+          + "cloud.securesourcemanager.v1.DeleteBranc"
+          + "hRuleRequest\032\035.google.longrunning.Operat"
+          + "ion\"z\312A*\n\025google.protobuf.Empty\022\021Operati"
+          + "onMetadata\332A\004name\202\323\344\223\002@*>/v1/{name=proje"
+          + "cts/*/locations/*/repositories/*/branchR"
+          + "ules/*}\022\246\002\n\021CreatePullRequest\022=.google.c"
+          + "loud.securesourcemanager.v1.CreatePullRe"
+          + "questRequest\032\035.google.longrunning.Operat"
+          + "ion\"\262\001\312AD\n/google.cloud.securesourcemana"
+          + "ger.v1.PullRequest\022\021OperationMetadata\332A\023"
+          + "parent,pull_request\202\323\344\223\002O\"?/v1/{parent=p"
+          + "rojects/*/locations/*/repositories/*}/pu"
+          + "llRequests:\014pull_request\022\316\001\n\016GetPullRequ"
+          + "est\022:.google.cloud.securesourcemanager.v"
+          + "1.GetPullRequestRequest\0320.google.cloud.s"
+          + "ecuresourcemanager.v1.PullRequest\"N\332A\004na"
+          + "me\202\323\344\223\002A\022?/v1/{name=projects/*/locations"
+          + "/*/repositories/*/pullRequests/*}\022\341\001\n\020Li"
+          + "stPullRequests\022<.google.cloud.securesour"
+          + "cemanager.v1.ListPullRequestsRequest\032=.g"
+          + "oogle.cloud.securesourcemanager.v1.ListP"
+          + "ullRequestsResponse\"P\332A\006parent\202\323\344\223\002A\022?/v"
+          + "1/{parent=projects/*/locations/*/reposit"
+          + "ories/*}/pullRequests\022\270\002\n\021UpdatePullRequ"
+          + "est\022=.google.cloud.securesourcemanager.v"
+          + "1.UpdatePullRequestRequest\032\035.google.long"
+          + "running.Operation\"\304\001\312AD\n/google.cloud.se"
+          + "curesourcemanager.v1.PullRequest\022\021Operat"
+          + "ionMetadata\332A\030pull_request,update_mask\202\323"
+          + "\344\223\002\\2L/v1/{pull_request.name=projects/*/"
+          + "locations/*/repositories/*/pullRequests/"
+          + "*}:\014pull_request\022\220\002\n\020MergePullRequest\022<."
+          + "google.cloud.securesourcemanager.v1.Merg"
+          + "ePullRequestRequest\032\035.google.longrunning"
+          + ".Operation\"\236\001\312AD\n/google.cloud.securesou"
+          + "rcemanager.v1.PullRequest\022\021OperationMeta"
+          + "data\332A\004name\202\323\344\223\002J\"E/v1/{name=projects/*/"
+          + "locations/*/repositories/*/pullRequests/"
+          + "*}:merge:\001*\022\215\002\n\017OpenPullRequest\022;.google"
+          + ".cloud.securesourcemanager.v1.OpenPullRe"
+          + "questRequest\032\035.google.longrunning.Operat"
+          + "ion\"\235\001\312AD\n/google.cloud.securesourcemana"
+          + "ger.v1.PullRequest\022\021OperationMetadata\332A\004"
+          + "name\202\323\344\223\002I\"D/v1/{name=projects/*/locatio"
+          + "ns/*/repositories/*/pullRequests/*}:open"
+          + ":\001*\022\220\002\n\020ClosePullRequest\022<.google.cloud."
+          + "securesourcemanager.v1.ClosePullRequestR"
+          + "equest\032\035.google.longrunning.Operation\"\236\001"
+          + "\312AD\n/google.cloud.securesourcemanager.v1"
+          + ".PullRequest\022\021OperationMetadata\332A\004name\202\323"
+          + "\344\223\002J\"E/v1/{name=projects/*/locations/*/r"
+          + "epositories/*/pullRequests/*}:close:\001*\022\205"
+          + "\002\n\030ListPullRequestFileDiffs\022D.google.clo"
+          + "ud.securesourcemanager.v1.ListPullReques"
+          + "tFileDiffsRequest\032E.google.cloud.secures"
+          + "ourcemanager.v1.ListPullRequestFileDiffs"
+          + "Response\"\\\332A\004name\202\323\344\223\002O\022M/v1/{name=proje"
+          + "cts/*/locations/*/repositories/*/pullReq"
+          + "uests/*}:listFileDiffs\022\304\001\n\tFetchTree\0225.g"
+          + "oogle.cloud.securesourcemanager.v1.Fetch"
+          + "TreeRequest\0326.google.cloud.securesourcem"
+          + "anager.v1.FetchTreeResponse\"H\202\323\344\223\002B\022@/v1"
+          + "/{repository=projects/*/locations/*/repo"
+          + "sitories/*}:fetchTree\022\304\001\n\tFetchBlob\0225.go"
+          + "ogle.cloud.securesourcemanager.v1.FetchB"
+          + "lobRequest\0326.google.cloud.securesourcema"
+          + "nager.v1.FetchBlobResponse\"H\202\323\344\223\002B\022@/v1/"
+          + "{repository=projects/*/locations/*/repos"
+          + "itories/*}:fetchBlob\022\200\002\n\013CreateIssue\0227.g"
+          + "oogle.cloud.securesourcemanager.v1.Creat"
+          + "eIssueRequest\032\035.google.longrunning.Opera"
+          + "tion\"\230\001\312A>\n)google.cloud.securesourceman"
+          + "ager.v1.Issue\022\021OperationMetadata\332A\014paren"
+          + "t,issue\202\323\344\223\002B\"9/v1/{parent=projects/*/lo"
+          + "cations/*/repositories/*}/issues:\005issue\022"
+          + "\266\001\n\010GetIssue\0224.google.cloud.securesource"
+          + "manager.v1.GetIssueRequest\032*.google.clou"
+          + "d.securesourcemanager.v1.Issue\"H\332A\004name\202"
+          + "\323\344\223\002;\0229/v1/{name=projects/*/locations/*/"
+          + "repositories/*/issues/*}\022\311\001\n\nListIssues\022"
+          + "6.google.cloud.securesourcemanager.v1.Li"
+          + "stIssuesRequest\0327.google.cloud.securesou"
+          + "rcemanager.v1.ListIssuesResponse\"J\332A\006par"
+          + "ent\202\323\344\223\002;\0229/v1/{parent=projects/*/locati"
+          + "ons/*/repositories/*}/issues\022\213\002\n\013UpdateI"
+          + "ssue\0227.google.cloud.securesourcemanager."
+          + "v1.UpdateIssueRequest\032\035.google.longrunni"
+          + "ng.Operation\"\243\001\312A>\n)google.cloud.secures"
+          + "ourcemanager.v1.Issue\022\021OperationMetadata"
+          + "\332A\021issue,update_mask\202\323\344\223\002H2?/v1/{issue.n"
+          + "ame=projects/*/locations/*/repositories/"
+          + "*/issues/*}:\005issue\022\334\001\n\013DeleteIssue\0227.goo"
+          + "gle.cloud.securesourcemanager.v1.DeleteI"
+          + "ssueRequest\032\035.google.longrunning.Operati"
+          + "on\"u\312A*\n\025google.protobuf.Empty\022\021Operatio"
+          + "nMetadata\332A\004name\202\323\344\223\002;*9/v1/{name=projec"
+          + "ts/*/locations/*/repositories/*/issues/*"
+          + "}\022\365\001\n\tOpenIssue\0225.google.cloud.securesou"
+          + "rcemanager.v1.OpenIssueRequest\032\035.google."
+          + "longrunning.Operation\"\221\001\312A>\n)google.clou"
+          + "d.securesourcemanager.v1.Issue\022\021Operatio"
+          + "nMetadata\332A\004name\202\323\344\223\002C\">/v1/{name=projec"
+          + "ts/*/locations/*/repositories/*/issues/*"
+          + "}:open:\001*\022\370\001\n\nCloseIssue\0226.google.cloud."
+          + "securesourcemanager.v1.CloseIssueRequest"
+          + "\032\035.google.longrunning.Operation\"\222\001\312A>\n)g"
+          + "oogle.cloud.securesourcemanager.v1.Issue"
+          + "\022\021OperationMetadata\332A\004name\202\323\344\223\002D\"?/v1/{n"
+          + "ame=projects/*/locations/*/repositories/"
+          + "*/issues/*}:close:\001*\022\371\001\n\025GetPullRequestC"
+          + "omment\022A.google.cloud.securesourcemanage"
+          + "r.v1.GetPullRequestCommentRequest\0327.goog"
+          + "le.cloud.securesourcemanager.v1.PullRequ"
+          + "estComment\"d\332A\004name\202\323\344\223\002W\022U/v1/{name=pro"
+          + "jects/*/locations/*/repositories/*/pullR"
+          + "equests/*/pullRequestComments/*}\022\214\002\n\027Lis"
+          + "tPullRequestComments\022C.google.cloud.secu"
+          + "resourcemanager.v1.ListPullRequestCommen"
+          + "tsRequest\032D.google.cloud.securesourceman"
+          + "ager.v1.ListPullRequestCommentsResponse\""
+          + "f\332A\006parent\202\323\344\223\002W\022U/v1/{parent=projects/*"
+          + "/locations/*/repositories/*/pullRequests"
+          + "/*}/pullRequestComments\022\341\002\n\030CreatePullRe"
+          + "questComment\022D.google.cloud.securesource"
+          + "manager.v1.CreatePullRequestCommentReque"
+          + "st\032\035.google.longrunning.Operation\"\337\001\312AK\n"
+          + "6google.cloud.securesourcemanager.v1.Pul"
+          + "lRequestComment\022\021OperationMetadata\332A\033par"
+          + "ent,pull_request_comment\202\323\344\223\002m\"U/v1/{par"
+          + "ent=projects/*/locations/*/repositories/"
+          + "*/pullRequests/*}/pullRequestComments:\024p"
+          + "ull_request_comment\022\374\002\n\030UpdatePullReques"
+          + "tComment\022D.google.cloud.securesourcemana"
+          + "ger.v1.UpdatePullRequestCommentRequest\032\035"
+          + ".google.longrunning.Operation\"\372\001\312AK\n6goo"
+          + "gle.cloud.securesourcemanager.v1.PullReq"
+          + "uestComment\022\021OperationMetadata\332A pull_re"
+          + "quest_comment,update_mask\202\323\344\223\002\202\0012j/v1/{p"
+          + "ull_request_comment.name=projects/*/loca"
+          + "tions/*/repositories/*/pullRequests/*/pu"
+          + "llRequestComments/*}:\024pull_request_comme"
+          + "nt\022\223\002\n\030DeletePullRequestComment\022D.google"
+          + ".cloud.securesourcemanager.v1.DeletePull"
+          + "RequestCommentRequest\032\035.google.longrunni"
+          + "ng.Operation\"\221\001\312A*\n\025google.protobuf.Empt"
+          + "y\022\021OperationMetadata\332A\004name\202\323\344\223\002W*U/v1/{"
+          + "name=projects/*/locations/*/repositories"
+          + "/*/pullRequests/*/pullRequestComments/*}"
+          + "\022\312\002\n\036BatchCreatePullRequestComments\022J.go"
+          + "ogle.cloud.securesourcemanager.v1.BatchC"
+          + "reatePullRequestCommentsRequest\032\035.google"
+          + ".longrunning.Operation\"\274\001\312A;\n&BatchCreat"
+          + "ePullRequestCommentsResponse\022\021OperationM"
+          + "etadata\332A\017parent,requests\202\323\344\223\002f\"a/v1/{pa"
+          + "rent=projects/*/locations/*/repositories"
+          + "/*/pullRequests/*}/pullRequestComments:b"
+          + "atchCreate:\001*\022\267\002\n\032ResolvePullRequestComm"
+          + "ents\022F.google.cloud.securesourcemanager."
+          + "v1.ResolvePullRequestCommentsRequest\032\035.g"
+          + "oogle.longrunning.Operation\"\261\001\312A7\n\"Resol"
+          + "vePullRequestCommentsResponse\022\021Operation"
+          + "Metadata\332A\014parent,names\202\323\344\223\002b\"]/v1/{pare"
+          + "nt=projects/*/locations/*/repositories/*"
+          + "/pullRequests/*}/pullRequestComments:res"
+          + "olve:\001*\022\277\002\n\034UnresolvePullRequestComments"
+          + "\022H.google.cloud.securesourcemanager.v1.U"
+          + "nresolvePullRequestCommentsRequest\032\035.goo"
+          + "gle.longrunning.Operation\"\265\001\312A9\n$Unresol"
+          + "vePullRequestCommentsResponse\022\021Operation"
+          + "Metadata\332A\014parent,names\202\323\344\223\002d\"_/v1/{pare"
+          + "nt=projects/*/locations/*/repositories/*"
+          + "/pullRequests/*}/pullRequestComments:unr"
+          + "esolve:\001*\022\265\002\n\022CreateIssueComment\022>.googl"
+          + "e.cloud.securesourcemanager.v1.CreateIss"
+          + "ueCommentRequest\032\035.google.longrunning.Op"
+          + "eration\"\277\001\312AE\n0google.cloud.securesource"
+          + "manager.v1.IssueComment\022\021OperationMetada"
+          + "ta\332A\024parent,issue_comment\202\323\344\223\002Z\"I/v1/{pa"
+          + "rent=projects/*/locations/*/repositories"
+          + "/*/issues/*}/issueComments:\rissue_commen"
+          + "t\022\333\001\n\017GetIssueComment\022;.google.cloud.sec"
+          + "uresourcemanager.v1.GetIssueCommentReque"
+          + "st\0321.google.cloud.securesourcemanager.v1"
+          + ".IssueComment\"X\332A\004name\202\323\344\223\002K\022I/v1/{name="
+          + "projects/*/locations/*/repositories/*/is"
+          + "sues/*/issueComments/*}\022\356\001\n\021ListIssueCom"
+          + "ments\022=.google.cloud.securesourcemanager"
+          + ".v1.ListIssueCommentsRequest\032>.google.cl"
+          + "oud.securesourcemanager.v1.ListIssueComm"
+          + "entsResponse\"Z\332A\006parent\202\323\344\223\002K\022I/v1/{pare"
+          + "nt=projects/*/locations/*/repositories/*"
+          + "/issues/*}/issueComments\022\310\002\n\022UpdateIssue"
+          + "Comment\022>.google.cloud.securesourcemanag"
+          + "er.v1.UpdateIssueCommentRequest\032\035.google"
+          + ".longrunning.Operation\"\322\001\312AE\n0google.clo"
+          + "ud.securesourcemanager.v1.IssueComment\022\021"
+          + "OperationMetadata\332A\031issue_comment,update"
+          + "_mask\202\323\344\223\002h2W/v1/{issue_comment.name=pro"
+          + "jects/*/locations/*/repositories/*/issue"
+          + "s/*/issueComments/*}:\rissue_comment\022\373\001\n\022"
+          + "DeleteIssueComment\022>.google.cloud.secure"
+          + "sourcemanager.v1.DeleteIssueCommentReque"
+          + "st\032\035.google.longrunning.Operation\"\205\001\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadat"
+          + "a\332A\004name\202\323\344\223\002K*I/v1/{name=projects/*/loc"
+          + "ations/*/repositories/*/issues/*/issueCo"
+          + "mments/*}\032V\312A\"securesourcemanager.google"
+          + "apis.com\322A.https://www.googleapis.com/au"
+          + "th/cloud-platformB\351\004\n\'com.google.cloud.s"
+          + "ecuresourcemanager.v1B\030SecureSourceManag"
+          + "erProtoP\001ZYcloud.google.com/go/securesou"
+          + "rcemanager/apiv1/securesourcemanagerpb;s"
+          + "ecuresourcemanagerpb\252\002#Google.Cloud.Secu"
+          + "reSourceManager.V1\312\002#Google\\Cloud\\Secure"
+          + "SourceManager\\V1\352\002&Google::Cloud::Secure"
+          + "SourceManager::V1\352Ax\n!cloudkms.googleapi"
+          + "s.com/CryptoKey\022Sprojects/{project}/loca"
+          + "tions/{location}/keyRings/{key_ring}/cry"
+          + "ptoKeys/{crypto_key}\352A\\\n\037privateca.googl"
+          + "eapis.com/CaPool\0229projects/{project}/loc"
+          + "ations/{location}/caPools/{ca_pool}\352Aw\n("
+          + "compute.googleapis.com/ServiceAttachment"
+          + "\022Kprojects/{project}/regions/{region}/se"
+          + "rviceAttachments/{service_attachment}b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -452,6 +1283,7 @@ public final class SecureSourceManagerProto {
               "StateNote",
               "KmsKey",
               "HostConfig",
+              "WorkforceIdentityFederationConfig",
             });
     internal_static_google_cloud_securesourcemanager_v1_Instance_HostConfig_descriptor =
         internal_static_google_cloud_securesourcemanager_v1_Instance_descriptor
@@ -477,10 +1309,20 @@ public final class SecureSourceManagerProto {
               "SshServiceAttachment",
               "PscAllowedProjects",
             });
-    internal_static_google_cloud_securesourcemanager_v1_Instance_LabelsEntry_descriptor =
+    internal_static_google_cloud_securesourcemanager_v1_Instance_WorkforceIdentityFederationConfig_descriptor =
         internal_static_google_cloud_securesourcemanager_v1_Instance_descriptor
             .getNestedTypes()
             .get(2);
+    internal_static_google_cloud_securesourcemanager_v1_Instance_WorkforceIdentityFederationConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_Instance_WorkforceIdentityFederationConfig_descriptor,
+            new java.lang.String[] {
+              "Enabled",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_Instance_LabelsEntry_descriptor =
+        internal_static_google_cloud_securesourcemanager_v1_Instance_descriptor
+            .getNestedTypes()
+            .get(3);
     internal_static_google_cloud_securesourcemanager_v1_Instance_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_Instance_LabelsEntry_descriptor,
@@ -523,8 +1365,32 @@ public final class SecureSourceManagerProto {
             new java.lang.String[] {
               "DefaultBranch", "Gitignores", "License", "Readme",
             });
-    internal_static_google_cloud_securesourcemanager_v1_BranchRule_descriptor =
+    internal_static_google_cloud_securesourcemanager_v1_Hook_descriptor =
         getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_securesourcemanager_v1_Hook_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_Hook_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "TargetUri",
+              "Disabled",
+              "Events",
+              "CreateTime",
+              "UpdateTime",
+              "Uid",
+              "PushOption",
+              "SensitiveQueryString",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_Hook_PushOption_descriptor =
+        internal_static_google_cloud_securesourcemanager_v1_Hook_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_securesourcemanager_v1_Hook_PushOption_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_Hook_PushOption_descriptor,
+            new java.lang.String[] {
+              "BranchFilter",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_BranchRule_descriptor =
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_securesourcemanager_v1_BranchRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_BranchRule_descriptor,
@@ -565,8 +1431,106 @@ public final class SecureSourceManagerProto {
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_securesourcemanager_v1_PullRequest_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_securesourcemanager_v1_PullRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_PullRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "Title",
+              "Body",
+              "Base",
+              "Head",
+              "State",
+              "CreateTime",
+              "UpdateTime",
+              "CloseTime",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_PullRequest_Branch_descriptor =
+        internal_static_google_cloud_securesourcemanager_v1_PullRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_securesourcemanager_v1_PullRequest_Branch_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_PullRequest_Branch_descriptor,
+            new java.lang.String[] {
+              "Ref", "Sha",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_FileDiff_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_securesourcemanager_v1_FileDiff_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_FileDiff_descriptor,
+            new java.lang.String[] {
+              "Name", "Action", "Sha", "Patch",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_Issue_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_securesourcemanager_v1_Issue_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_Issue_descriptor,
+            new java.lang.String[] {
+              "Name", "Title", "Body", "State", "CreateTime", "UpdateTime", "CloseTime", "Etag",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_IssueComment_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_securesourcemanager_v1_IssueComment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_IssueComment_descriptor,
+            new java.lang.String[] {
+              "Name", "Body", "CreateTime", "UpdateTime",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_descriptor,
+            new java.lang.String[] {
+              "Name", "CreateTime", "UpdateTime", "Review", "Comment", "Code", "CommentDetail",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Review_descriptor =
+        internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Review_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Review_descriptor,
+            new java.lang.String[] {
+              "ActionType", "Body", "EffectiveCommitSha",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Comment_descriptor =
+        internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Comment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Comment_descriptor,
+            new java.lang.String[] {
+              "Body",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Code_descriptor =
+        internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Code_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Code_descriptor,
+            new java.lang.String[] {
+              "Body", "Reply", "Position", "EffectiveRootComment", "Resolved", "EffectiveCommitSha",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Position_descriptor =
+        internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Position_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_PullRequestComment_Position_descriptor,
+            new java.lang.String[] {
+              "Path", "Line",
+            });
     internal_static_google_cloud_securesourcemanager_v1_ListInstancesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_securesourcemanager_v1_ListInstancesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_ListInstancesRequest_descriptor,
@@ -574,7 +1538,7 @@ public final class SecureSourceManagerProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_securesourcemanager_v1_ListInstancesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_securesourcemanager_v1_ListInstancesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_ListInstancesResponse_descriptor,
@@ -582,7 +1546,7 @@ public final class SecureSourceManagerProto {
               "Instances", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_securesourcemanager_v1_GetInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_securesourcemanager_v1_GetInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_GetInstanceRequest_descriptor,
@@ -590,7 +1554,7 @@ public final class SecureSourceManagerProto {
               "Name",
             });
     internal_static_google_cloud_securesourcemanager_v1_CreateInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_securesourcemanager_v1_CreateInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_CreateInstanceRequest_descriptor,
@@ -598,7 +1562,7 @@ public final class SecureSourceManagerProto {
               "Parent", "InstanceId", "Instance", "RequestId",
             });
     internal_static_google_cloud_securesourcemanager_v1_DeleteInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_securesourcemanager_v1_DeleteInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_DeleteInstanceRequest_descriptor,
@@ -606,7 +1570,7 @@ public final class SecureSourceManagerProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_securesourcemanager_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_securesourcemanager_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_OperationMetadata_descriptor,
@@ -620,7 +1584,7 @@ public final class SecureSourceManagerProto {
               "ApiVersion",
             });
     internal_static_google_cloud_securesourcemanager_v1_ListRepositoriesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_securesourcemanager_v1_ListRepositoriesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_ListRepositoriesRequest_descriptor,
@@ -628,7 +1592,7 @@ public final class SecureSourceManagerProto {
               "Parent", "PageSize", "PageToken", "Filter", "Instance",
             });
     internal_static_google_cloud_securesourcemanager_v1_ListRepositoriesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_securesourcemanager_v1_ListRepositoriesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_ListRepositoriesResponse_descriptor,
@@ -636,7 +1600,7 @@ public final class SecureSourceManagerProto {
               "Repositories", "NextPageToken",
             });
     internal_static_google_cloud_securesourcemanager_v1_GetRepositoryRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_securesourcemanager_v1_GetRepositoryRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_GetRepositoryRequest_descriptor,
@@ -644,23 +1608,79 @@ public final class SecureSourceManagerProto {
               "Name",
             });
     internal_static_google_cloud_securesourcemanager_v1_CreateRepositoryRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_securesourcemanager_v1_CreateRepositoryRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_CreateRepositoryRequest_descriptor,
             new java.lang.String[] {
               "Parent", "Repository", "RepositoryId",
             });
+    internal_static_google_cloud_securesourcemanager_v1_UpdateRepositoryRequest_descriptor =
+        getDescriptor().getMessageTypes().get(19);
+    internal_static_google_cloud_securesourcemanager_v1_UpdateRepositoryRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_UpdateRepositoryRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "Repository", "ValidateOnly",
+            });
     internal_static_google_cloud_securesourcemanager_v1_DeleteRepositoryRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_securesourcemanager_v1_DeleteRepositoryRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_DeleteRepositoryRequest_descriptor,
             new java.lang.String[] {
               "Name", "AllowMissing",
             });
+    internal_static_google_cloud_securesourcemanager_v1_ListHooksRequest_descriptor =
+        getDescriptor().getMessageTypes().get(21);
+    internal_static_google_cloud_securesourcemanager_v1_ListHooksRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_ListHooksRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_ListHooksResponse_descriptor =
+        getDescriptor().getMessageTypes().get(22);
+    internal_static_google_cloud_securesourcemanager_v1_ListHooksResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_ListHooksResponse_descriptor,
+            new java.lang.String[] {
+              "Hooks", "NextPageToken",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_GetHookRequest_descriptor =
+        getDescriptor().getMessageTypes().get(23);
+    internal_static_google_cloud_securesourcemanager_v1_GetHookRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_GetHookRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_CreateHookRequest_descriptor =
+        getDescriptor().getMessageTypes().get(24);
+    internal_static_google_cloud_securesourcemanager_v1_CreateHookRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_CreateHookRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Hook", "HookId",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_UpdateHookRequest_descriptor =
+        getDescriptor().getMessageTypes().get(25);
+    internal_static_google_cloud_securesourcemanager_v1_UpdateHookRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_UpdateHookRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "Hook",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_DeleteHookRequest_descriptor =
+        getDescriptor().getMessageTypes().get(26);
+    internal_static_google_cloud_securesourcemanager_v1_DeleteHookRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_DeleteHookRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
     internal_static_google_cloud_securesourcemanager_v1_GetBranchRuleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_securesourcemanager_v1_GetBranchRuleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_GetBranchRuleRequest_descriptor,
@@ -668,7 +1688,7 @@ public final class SecureSourceManagerProto {
               "Name",
             });
     internal_static_google_cloud_securesourcemanager_v1_CreateBranchRuleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_securesourcemanager_v1_CreateBranchRuleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_CreateBranchRuleRequest_descriptor,
@@ -676,7 +1696,7 @@ public final class SecureSourceManagerProto {
               "Parent", "BranchRule", "BranchRuleId",
             });
     internal_static_google_cloud_securesourcemanager_v1_ListBranchRulesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_securesourcemanager_v1_ListBranchRulesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_ListBranchRulesRequest_descriptor,
@@ -684,7 +1704,7 @@ public final class SecureSourceManagerProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_securesourcemanager_v1_DeleteBranchRuleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_securesourcemanager_v1_DeleteBranchRuleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_DeleteBranchRuleRequest_descriptor,
@@ -692,7 +1712,7 @@ public final class SecureSourceManagerProto {
               "Name", "AllowMissing",
             });
     internal_static_google_cloud_securesourcemanager_v1_UpdateBranchRuleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_securesourcemanager_v1_UpdateBranchRuleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_UpdateBranchRuleRequest_descriptor,
@@ -700,12 +1720,340 @@ public final class SecureSourceManagerProto {
               "BranchRule", "ValidateOnly", "UpdateMask",
             });
     internal_static_google_cloud_securesourcemanager_v1_ListBranchRulesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_securesourcemanager_v1_ListBranchRulesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securesourcemanager_v1_ListBranchRulesResponse_descriptor,
             new java.lang.String[] {
               "BranchRules", "NextPageToken",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_CreatePullRequestRequest_descriptor =
+        getDescriptor().getMessageTypes().get(33);
+    internal_static_google_cloud_securesourcemanager_v1_CreatePullRequestRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_CreatePullRequestRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PullRequest",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_GetPullRequestRequest_descriptor =
+        getDescriptor().getMessageTypes().get(34);
+    internal_static_google_cloud_securesourcemanager_v1_GetPullRequestRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_GetPullRequestRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_ListPullRequestsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(35);
+    internal_static_google_cloud_securesourcemanager_v1_ListPullRequestsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_ListPullRequestsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_ListPullRequestsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(36);
+    internal_static_google_cloud_securesourcemanager_v1_ListPullRequestsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_ListPullRequestsResponse_descriptor,
+            new java.lang.String[] {
+              "PullRequests", "NextPageToken",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_UpdatePullRequestRequest_descriptor =
+        getDescriptor().getMessageTypes().get(37);
+    internal_static_google_cloud_securesourcemanager_v1_UpdatePullRequestRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_UpdatePullRequestRequest_descriptor,
+            new java.lang.String[] {
+              "PullRequest", "UpdateMask",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_MergePullRequestRequest_descriptor =
+        getDescriptor().getMessageTypes().get(38);
+    internal_static_google_cloud_securesourcemanager_v1_MergePullRequestRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_MergePullRequestRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_OpenPullRequestRequest_descriptor =
+        getDescriptor().getMessageTypes().get(39);
+    internal_static_google_cloud_securesourcemanager_v1_OpenPullRequestRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_OpenPullRequestRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_ClosePullRequestRequest_descriptor =
+        getDescriptor().getMessageTypes().get(40);
+    internal_static_google_cloud_securesourcemanager_v1_ClosePullRequestRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_ClosePullRequestRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_ListPullRequestFileDiffsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(41);
+    internal_static_google_cloud_securesourcemanager_v1_ListPullRequestFileDiffsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_ListPullRequestFileDiffsRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_ListPullRequestFileDiffsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(42);
+    internal_static_google_cloud_securesourcemanager_v1_ListPullRequestFileDiffsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_ListPullRequestFileDiffsResponse_descriptor,
+            new java.lang.String[] {
+              "FileDiffs", "NextPageToken",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_CreateIssueRequest_descriptor =
+        getDescriptor().getMessageTypes().get(43);
+    internal_static_google_cloud_securesourcemanager_v1_CreateIssueRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_CreateIssueRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Issue",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_GetIssueRequest_descriptor =
+        getDescriptor().getMessageTypes().get(44);
+    internal_static_google_cloud_securesourcemanager_v1_GetIssueRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_GetIssueRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_ListIssuesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(45);
+    internal_static_google_cloud_securesourcemanager_v1_ListIssuesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_ListIssuesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_ListIssuesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(46);
+    internal_static_google_cloud_securesourcemanager_v1_ListIssuesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_ListIssuesResponse_descriptor,
+            new java.lang.String[] {
+              "Issues", "NextPageToken",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_UpdateIssueRequest_descriptor =
+        getDescriptor().getMessageTypes().get(47);
+    internal_static_google_cloud_securesourcemanager_v1_UpdateIssueRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_UpdateIssueRequest_descriptor,
+            new java.lang.String[] {
+              "Issue", "UpdateMask",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_DeleteIssueRequest_descriptor =
+        getDescriptor().getMessageTypes().get(48);
+    internal_static_google_cloud_securesourcemanager_v1_DeleteIssueRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_DeleteIssueRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Etag",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_CloseIssueRequest_descriptor =
+        getDescriptor().getMessageTypes().get(49);
+    internal_static_google_cloud_securesourcemanager_v1_CloseIssueRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_CloseIssueRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Etag",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_OpenIssueRequest_descriptor =
+        getDescriptor().getMessageTypes().get(50);
+    internal_static_google_cloud_securesourcemanager_v1_OpenIssueRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_OpenIssueRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Etag",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_TreeEntry_descriptor =
+        getDescriptor().getMessageTypes().get(51);
+    internal_static_google_cloud_securesourcemanager_v1_TreeEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_TreeEntry_descriptor,
+            new java.lang.String[] {
+              "Type", "Sha", "Path", "Mode", "Size",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_FetchTreeRequest_descriptor =
+        getDescriptor().getMessageTypes().get(52);
+    internal_static_google_cloud_securesourcemanager_v1_FetchTreeRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_FetchTreeRequest_descriptor,
+            new java.lang.String[] {
+              "Repository", "Ref", "Recursive", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_FetchTreeResponse_descriptor =
+        getDescriptor().getMessageTypes().get(53);
+    internal_static_google_cloud_securesourcemanager_v1_FetchTreeResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_FetchTreeResponse_descriptor,
+            new java.lang.String[] {
+              "TreeEntries", "NextPageToken",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_FetchBlobRequest_descriptor =
+        getDescriptor().getMessageTypes().get(54);
+    internal_static_google_cloud_securesourcemanager_v1_FetchBlobRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_FetchBlobRequest_descriptor,
+            new java.lang.String[] {
+              "Repository", "Sha",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_FetchBlobResponse_descriptor =
+        getDescriptor().getMessageTypes().get(55);
+    internal_static_google_cloud_securesourcemanager_v1_FetchBlobResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_FetchBlobResponse_descriptor,
+            new java.lang.String[] {
+              "Sha", "Content",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_ListPullRequestCommentsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(56);
+    internal_static_google_cloud_securesourcemanager_v1_ListPullRequestCommentsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_ListPullRequestCommentsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_ListPullRequestCommentsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(57);
+    internal_static_google_cloud_securesourcemanager_v1_ListPullRequestCommentsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_ListPullRequestCommentsResponse_descriptor,
+            new java.lang.String[] {
+              "PullRequestComments", "NextPageToken",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_CreatePullRequestCommentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(58);
+    internal_static_google_cloud_securesourcemanager_v1_CreatePullRequestCommentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_CreatePullRequestCommentRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PullRequestComment",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_BatchCreatePullRequestCommentsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(59);
+    internal_static_google_cloud_securesourcemanager_v1_BatchCreatePullRequestCommentsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_BatchCreatePullRequestCommentsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_BatchCreatePullRequestCommentsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(60);
+    internal_static_google_cloud_securesourcemanager_v1_BatchCreatePullRequestCommentsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_BatchCreatePullRequestCommentsResponse_descriptor,
+            new java.lang.String[] {
+              "PullRequestComments",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_UpdatePullRequestCommentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(61);
+    internal_static_google_cloud_securesourcemanager_v1_UpdatePullRequestCommentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_UpdatePullRequestCommentRequest_descriptor,
+            new java.lang.String[] {
+              "PullRequestComment", "UpdateMask",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_DeletePullRequestCommentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(62);
+    internal_static_google_cloud_securesourcemanager_v1_DeletePullRequestCommentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_DeletePullRequestCommentRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_GetPullRequestCommentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(63);
+    internal_static_google_cloud_securesourcemanager_v1_GetPullRequestCommentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_GetPullRequestCommentRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_ResolvePullRequestCommentsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(64);
+    internal_static_google_cloud_securesourcemanager_v1_ResolvePullRequestCommentsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_ResolvePullRequestCommentsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names", "AutoFill",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_ResolvePullRequestCommentsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(65);
+    internal_static_google_cloud_securesourcemanager_v1_ResolvePullRequestCommentsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_ResolvePullRequestCommentsResponse_descriptor,
+            new java.lang.String[] {
+              "PullRequestComments",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_UnresolvePullRequestCommentsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(66);
+    internal_static_google_cloud_securesourcemanager_v1_UnresolvePullRequestCommentsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_UnresolvePullRequestCommentsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names", "AutoFill",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_UnresolvePullRequestCommentsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(67);
+    internal_static_google_cloud_securesourcemanager_v1_UnresolvePullRequestCommentsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_UnresolvePullRequestCommentsResponse_descriptor,
+            new java.lang.String[] {
+              "PullRequestComments",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_CreateIssueCommentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(68);
+    internal_static_google_cloud_securesourcemanager_v1_CreateIssueCommentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_CreateIssueCommentRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "IssueComment",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_GetIssueCommentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(69);
+    internal_static_google_cloud_securesourcemanager_v1_GetIssueCommentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_GetIssueCommentRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_ListIssueCommentsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(70);
+    internal_static_google_cloud_securesourcemanager_v1_ListIssueCommentsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_ListIssueCommentsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_ListIssueCommentsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(71);
+    internal_static_google_cloud_securesourcemanager_v1_ListIssueCommentsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_ListIssueCommentsResponse_descriptor,
+            new java.lang.String[] {
+              "IssueComments", "NextPageToken",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_UpdateIssueCommentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(72);
+    internal_static_google_cloud_securesourcemanager_v1_UpdateIssueCommentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_UpdateIssueCommentRequest_descriptor,
+            new java.lang.String[] {
+              "IssueComment", "UpdateMask",
+            });
+    internal_static_google_cloud_securesourcemanager_v1_DeleteIssueCommentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(73);
+    internal_static_google_cloud_securesourcemanager_v1_DeleteIssueCommentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securesourcemanager_v1_DeleteIssueCommentRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

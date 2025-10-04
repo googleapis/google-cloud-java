@@ -334,7 +334,18 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Lists the URLs of media files for each segment.
+       * Explicitly lists the URLs of media files for each segment. For example,
+       * if
+       * [SegmentSettings.individual_segments][google.cloud.video.transcoder.v1.SegmentSettings.individual_segments]
+       * is `true`, then the manifest contains fields similar to the following:
+       * ```xml
+       * &lt;Initialization sourceURL="my-hd-stream-init.m4s"/&gt;
+       *   &lt;SegmentList presentationTimeOffset="0" duration="1000"
+       *   timescale="10000"&gt;
+       *     &lt;SegmentURL media="hd-stream0000000000.m4s"/&gt;
+       *     &lt;SegmentURL media="hd-stream0000000001.m4s"/&gt;
+       *     ...
+       * ```
        * </pre>
        *
        * <code>SEGMENT_LIST = 1;</code>
@@ -344,7 +355,17 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Lists each segment from a template with $Number$ variable.
+       * [SegmentSettings.individual_segments][google.cloud.video.transcoder.v1.SegmentSettings.individual_segments]
+       * must be set to `true` to use this segment reference scheme. Uses the
+       * DASH specification
+       * `&lt;SegmentTemplate&gt;` tag to determine the URLs of media files for each
+       * segment. For example:
+       * ```xml
+       * &lt;SegmentTemplate presentationTimeOffset="0" timescale="10000"
+       *       initialization="my-hd-stream-init.m4s"
+       *       media="hd-stream$Number%010d$.m4s" startNumber="0"&gt;
+       *   ...
+       * ```
        * </pre>
        *
        * <code>SEGMENT_TEMPLATE_NUMBER = 2;</code>
@@ -368,7 +389,18 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Lists the URLs of media files for each segment.
+       * Explicitly lists the URLs of media files for each segment. For example,
+       * if
+       * [SegmentSettings.individual_segments][google.cloud.video.transcoder.v1.SegmentSettings.individual_segments]
+       * is `true`, then the manifest contains fields similar to the following:
+       * ```xml
+       * &lt;Initialization sourceURL="my-hd-stream-init.m4s"/&gt;
+       *   &lt;SegmentList presentationTimeOffset="0" duration="1000"
+       *   timescale="10000"&gt;
+       *     &lt;SegmentURL media="hd-stream0000000000.m4s"/&gt;
+       *     &lt;SegmentURL media="hd-stream0000000001.m4s"/&gt;
+       *     ...
+       * ```
        * </pre>
        *
        * <code>SEGMENT_LIST = 1;</code>
@@ -379,7 +411,17 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Lists each segment from a template with $Number$ variable.
+       * [SegmentSettings.individual_segments][google.cloud.video.transcoder.v1.SegmentSettings.individual_segments]
+       * must be set to `true` to use this segment reference scheme. Uses the
+       * DASH specification
+       * `&lt;SegmentTemplate&gt;` tag to determine the URLs of media files for each
+       * segment. For example:
+       * ```xml
+       * &lt;SegmentTemplate presentationTimeOffset="0" timescale="10000"
+       *       initialization="my-hd-stream-init.m4s"
+       *       media="hd-stream$Number%010d$.m4s" startNumber="0"&gt;
+       *   ...
+       * ```
        * </pre>
        *
        * <code>SEGMENT_TEMPLATE_NUMBER = 2;</code>
@@ -1111,7 +1153,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the generated file. The default is `manifest` with the
-   * extension suffix corresponding to the `Manifest.type`.
+   * extension suffix corresponding to the
+   * [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type].
    * </pre>
    *
    * <code>string file_name = 1;</code>
@@ -1136,7 +1179,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the generated file. The default is `manifest` with the
-   * extension suffix corresponding to the `Manifest.type`.
+   * extension suffix corresponding to the
+   * [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type].
    * </pre>
    *
    * <code>string file_name = 1;</code>
@@ -1209,12 +1253,14 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. List of user given `MuxStream.key`s that should appear in this
-   * manifest.
+   * Required. List of user supplied
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] values that
+   * should appear in this manifest.
    *
-   * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
-   * and `.m3u8` extension is generated for each element of the
-   * `Manifest.mux_streams`.
+   * When [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type] is
+   * `HLS`, a media manifest with name
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] and `.m3u8`
+   * extension is generated for each element in this list.
    * </pre>
    *
    * <code>repeated string mux_streams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1229,12 +1275,14 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. List of user given `MuxStream.key`s that should appear in this
-   * manifest.
+   * Required. List of user supplied
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] values that
+   * should appear in this manifest.
    *
-   * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
-   * and `.m3u8` extension is generated for each element of the
-   * `Manifest.mux_streams`.
+   * When [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type] is
+   * `HLS`, a media manifest with name
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] and `.m3u8`
+   * extension is generated for each element in this list.
    * </pre>
    *
    * <code>repeated string mux_streams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1249,12 +1297,14 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. List of user given `MuxStream.key`s that should appear in this
-   * manifest.
+   * Required. List of user supplied
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] values that
+   * should appear in this manifest.
    *
-   * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
-   * and `.m3u8` extension is generated for each element of the
-   * `Manifest.mux_streams`.
+   * When [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type] is
+   * `HLS`, a media manifest with name
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] and `.m3u8`
+   * extension is generated for each element in this list.
    * </pre>
    *
    * <code>repeated string mux_streams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1270,12 +1320,14 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. List of user given `MuxStream.key`s that should appear in this
-   * manifest.
+   * Required. List of user supplied
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] values that
+   * should appear in this manifest.
    *
-   * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
-   * and `.m3u8` extension is generated for each element of the
-   * `Manifest.mux_streams`.
+   * When [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type] is
+   * `HLS`, a media manifest with name
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] and `.m3u8`
+   * extension is generated for each element in this list.
    * </pre>
    *
    * <code>repeated string mux_streams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1824,7 +1876,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the generated file. The default is `manifest` with the
-     * extension suffix corresponding to the `Manifest.type`.
+     * extension suffix corresponding to the
+     * [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type].
      * </pre>
      *
      * <code>string file_name = 1;</code>
@@ -1848,7 +1901,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the generated file. The default is `manifest` with the
-     * extension suffix corresponding to the `Manifest.type`.
+     * extension suffix corresponding to the
+     * [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type].
      * </pre>
      *
      * <code>string file_name = 1;</code>
@@ -1872,7 +1926,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the generated file. The default is `manifest` with the
-     * extension suffix corresponding to the `Manifest.type`.
+     * extension suffix corresponding to the
+     * [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type].
      * </pre>
      *
      * <code>string file_name = 1;</code>
@@ -1895,7 +1950,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the generated file. The default is `manifest` with the
-     * extension suffix corresponding to the `Manifest.type`.
+     * extension suffix corresponding to the
+     * [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type].
      * </pre>
      *
      * <code>string file_name = 1;</code>
@@ -1914,7 +1970,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the generated file. The default is `manifest` with the
-     * extension suffix corresponding to the `Manifest.type`.
+     * extension suffix corresponding to the
+     * [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type].
      * </pre>
      *
      * <code>string file_name = 1;</code>
@@ -2054,12 +2111,14 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this
-     * manifest.
+     * Required. List of user supplied
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] values that
+     * should appear in this manifest.
      *
-     * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
-     * and `.m3u8` extension is generated for each element of the
-     * `Manifest.mux_streams`.
+     * When [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type] is
+     * `HLS`, a media manifest with name
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] and `.m3u8`
+     * extension is generated for each element in this list.
      * </pre>
      *
      * <code>repeated string mux_streams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2075,12 +2134,14 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this
-     * manifest.
+     * Required. List of user supplied
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] values that
+     * should appear in this manifest.
      *
-     * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
-     * and `.m3u8` extension is generated for each element of the
-     * `Manifest.mux_streams`.
+     * When [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type] is
+     * `HLS`, a media manifest with name
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] and `.m3u8`
+     * extension is generated for each element in this list.
      * </pre>
      *
      * <code>repeated string mux_streams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2095,12 +2156,14 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this
-     * manifest.
+     * Required. List of user supplied
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] values that
+     * should appear in this manifest.
      *
-     * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
-     * and `.m3u8` extension is generated for each element of the
-     * `Manifest.mux_streams`.
+     * When [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type] is
+     * `HLS`, a media manifest with name
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] and `.m3u8`
+     * extension is generated for each element in this list.
      * </pre>
      *
      * <code>repeated string mux_streams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2116,12 +2179,14 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this
-     * manifest.
+     * Required. List of user supplied
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] values that
+     * should appear in this manifest.
      *
-     * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
-     * and `.m3u8` extension is generated for each element of the
-     * `Manifest.mux_streams`.
+     * When [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type] is
+     * `HLS`, a media manifest with name
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] and `.m3u8`
+     * extension is generated for each element in this list.
      * </pre>
      *
      * <code>repeated string mux_streams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2137,12 +2202,14 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this
-     * manifest.
+     * Required. List of user supplied
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] values that
+     * should appear in this manifest.
      *
-     * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
-     * and `.m3u8` extension is generated for each element of the
-     * `Manifest.mux_streams`.
+     * When [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type] is
+     * `HLS`, a media manifest with name
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] and `.m3u8`
+     * extension is generated for each element in this list.
      * </pre>
      *
      * <code>repeated string mux_streams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2166,12 +2233,14 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this
-     * manifest.
+     * Required. List of user supplied
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] values that
+     * should appear in this manifest.
      *
-     * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
-     * and `.m3u8` extension is generated for each element of the
-     * `Manifest.mux_streams`.
+     * When [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type] is
+     * `HLS`, a media manifest with name
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] and `.m3u8`
+     * extension is generated for each element in this list.
      * </pre>
      *
      * <code>repeated string mux_streams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2194,12 +2263,14 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this
-     * manifest.
+     * Required. List of user supplied
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] values that
+     * should appear in this manifest.
      *
-     * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
-     * and `.m3u8` extension is generated for each element of the
-     * `Manifest.mux_streams`.
+     * When [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type] is
+     * `HLS`, a media manifest with name
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] and `.m3u8`
+     * extension is generated for each element in this list.
      * </pre>
      *
      * <code>repeated string mux_streams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2219,12 +2290,14 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this
-     * manifest.
+     * Required. List of user supplied
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] values that
+     * should appear in this manifest.
      *
-     * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
-     * and `.m3u8` extension is generated for each element of the
-     * `Manifest.mux_streams`.
+     * When [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type] is
+     * `HLS`, a media manifest with name
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] and `.m3u8`
+     * extension is generated for each element in this list.
      * </pre>
      *
      * <code>repeated string mux_streams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2243,12 +2316,14 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of user given `MuxStream.key`s that should appear in this
-     * manifest.
+     * Required. List of user supplied
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] values that
+     * should appear in this manifest.
      *
-     * When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key`
-     * and `.m3u8` extension is generated for each element of the
-     * `Manifest.mux_streams`.
+     * When [Manifest.type][google.cloud.video.transcoder.v1.Manifest.type] is
+     * `HLS`, a media manifest with name
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] and `.m3u8`
+     * extension is generated for each element in this list.
      * </pre>
      *
      * <code>repeated string mux_streams = 3 [(.google.api.field_behavior) = REQUIRED];</code>

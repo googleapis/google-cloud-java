@@ -105,7 +105,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * This algorithm implements consistent hashing to backends. Maglev can be used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
+     * This algorithm implements consistent hashing to backends. Maglev can be used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see Maglev: A Fast and Reliable Software Network Load Balancer.
      * </pre>
      *
      * <code>MAGLEV = 119180266;</code>
@@ -155,6 +155,16 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
+     * Per-instance weighted Load Balancing via health check reported weights. In internal passthrough network load balancing, it is weighted rendezvous hashing. This option is only supported in internal passthrough network load balancing.
+     * </pre>
+     *
+     * <code>WEIGHTED_GCP_RENDEZVOUS = 82501640;</code>
+     */
+    WEIGHTED_GCP_RENDEZVOUS(82501640),
+    /**
+     *
+     *
+     * <pre>
      * Per-instance weighted Load Balancing via health check reported weights. If set, the Backend Service must configure a non legacy HTTP-based Health Check, and health check replies are expected to contain non-standard HTTP response header field X-Load-Balancing-Endpoint-Weight to specify the per-instance weights. If set, Load Balancing is weighted based on the per-instance weights reported in the last processed health check replies, as long as every instance either reported a valid weight or had UNAVAILABLE_WEIGHT. Otherwise, Load Balancing remains equal-weight. This option is only supported in Network Load Balancing.
      * </pre>
      *
@@ -165,7 +175,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * Per-endpoint weighted round-robin Load Balancing using weights computed from Backend reported Custom Metrics. If set, the Backend Service responses are expected to contain non-standard HTTP response header field X-Endpoint-Load-Metrics. The reported metrics to use for computing the weights are specified via the backends[].customMetrics fields.
+     * Per-endpoint weighted round-robin Load Balancing using weights computed from Backend reported Custom Metrics. If set, the Backend Service responses are expected to contain non-standard HTTP response header field Endpoint-Load-Metrics. The reported metrics to use for computing the weights are specified via the customMetrics fields.
      * </pre>
      *
      * <code>WEIGHTED_ROUND_ROBIN = 5584977;</code>
@@ -203,7 +213,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * This algorithm implements consistent hashing to backends. Maglev can be used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
+     * This algorithm implements consistent hashing to backends. Maglev can be used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see Maglev: A Fast and Reliable Software Network Load Balancer.
      * </pre>
      *
      * <code>MAGLEV = 119180266;</code>
@@ -258,6 +268,17 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
+     * Per-instance weighted Load Balancing via health check reported weights. In internal passthrough network load balancing, it is weighted rendezvous hashing. This option is only supported in internal passthrough network load balancing.
+     * </pre>
+     *
+     * <code>WEIGHTED_GCP_RENDEZVOUS = 82501640;</code>
+     */
+    public static final int WEIGHTED_GCP_RENDEZVOUS_VALUE = 82501640;
+
+    /**
+     *
+     *
+     * <pre>
      * Per-instance weighted Load Balancing via health check reported weights. If set, the Backend Service must configure a non legacy HTTP-based Health Check, and health check replies are expected to contain non-standard HTTP response header field X-Load-Balancing-Endpoint-Weight to specify the per-instance weights. If set, Load Balancing is weighted based on the per-instance weights reported in the last processed health check replies, as long as every instance either reported a valid weight or had UNAVAILABLE_WEIGHT. Otherwise, Load Balancing remains equal-weight. This option is only supported in Network Load Balancing.
      * </pre>
      *
@@ -269,7 +290,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * Per-endpoint weighted round-robin Load Balancing using weights computed from Backend reported Custom Metrics. If set, the Backend Service responses are expected to contain non-standard HTTP response header field X-Endpoint-Load-Metrics. The reported metrics to use for computing the weights are specified via the backends[].customMetrics fields.
+     * Per-endpoint weighted round-robin Load Balancing using weights computed from Backend reported Custom Metrics. If set, the Backend Service responses are expected to contain non-standard HTTP response header field Endpoint-Load-Metrics. The reported metrics to use for computing the weights are specified via the customMetrics fields.
      * </pre>
      *
      * <code>WEIGHTED_ROUND_ROBIN = 5584977;</code>
@@ -316,6 +337,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
           return RING_HASH;
         case 153895801:
           return ROUND_ROBIN;
+        case 82501640:
+          return WEIGHTED_GCP_RENDEZVOUS;
         case 254930962:
           return WEIGHTED_MAGLEV;
         case 5584977:

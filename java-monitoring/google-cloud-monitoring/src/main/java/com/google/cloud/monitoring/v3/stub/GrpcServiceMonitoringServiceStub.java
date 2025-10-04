@@ -64,6 +64,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceRequest, Service> getServiceMethodDescriptor =
@@ -72,6 +73,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
           .setFullMethodName("google.monitoring.v3.ServiceMonitoringService/GetService")
           .setRequestMarshaller(ProtoUtils.marshaller(GetServiceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListServicesRequest, ListServicesResponse>
@@ -82,6 +84,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
               .setRequestMarshaller(ProtoUtils.marshaller(ListServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateServiceRequest, Service>
@@ -92,6 +95,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceRequest, Empty> deleteServiceMethodDescriptor =
@@ -100,6 +104,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
           .setFullMethodName("google.monitoring.v3.ServiceMonitoringService/DeleteService")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteServiceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateServiceLevelObjectiveRequest, ServiceLevelObjective>
@@ -112,6 +117,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
                   ProtoUtils.marshaller(CreateServiceLevelObjectiveRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ServiceLevelObjective.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceLevelObjectiveRequest, ServiceLevelObjective>
@@ -124,6 +130,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
                   ProtoUtils.marshaller(GetServiceLevelObjectiveRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ServiceLevelObjective.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -138,6 +145,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
                   ProtoUtils.marshaller(ListServiceLevelObjectivesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServiceLevelObjectivesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateServiceLevelObjectiveRequest, ServiceLevelObjective>
@@ -150,6 +158,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
                   ProtoUtils.marshaller(UpdateServiceLevelObjectiveRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ServiceLevelObjective.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceLevelObjectiveRequest, Empty>
@@ -161,6 +170,7 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceLevelObjectiveRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateServiceRequest, Service> createServiceCallable;

@@ -242,6 +242,46 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
+       * Feature value. A user provided timestamp may be set in the
+       * `FeatureValue.metadata.generate_time` field.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.FeatureValue value = 3;</code>
+       *
+       * @return Whether the value field is set.
+       */
+      boolean hasValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * Feature value. A user provided timestamp may be set in the
+       * `FeatureValue.metadata.generate_time` field.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.FeatureValue value = 3;</code>
+       *
+       * @return The value.
+       */
+      com.google.cloud.aiplatform.v1beta1.FeatureValue getValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * Feature value. A user provided timestamp may be set in the
+       * `FeatureValue.metadata.generate_time` field.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.FeatureValue value = 3;</code>
+       */
+      com.google.cloud.aiplatform.v1beta1.FeatureValueOrBuilder getValueOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
        * Feature value and timestamp.
        * </pre>
        *
@@ -1564,6 +1604,7 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           implements
               com.google.protobuf.Internal.EnumLite,
               com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        VALUE(3),
         VALUE_AND_TIMESTAMP(2),
         DATAONEOF_NOT_SET(0);
         private final int value;
@@ -1584,6 +1625,8 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
 
         public static DataOneofCase forNumber(int value) {
           switch (value) {
+            case 3:
+              return VALUE;
             case 2:
               return VALUE_AND_TIMESTAMP;
             case 0:
@@ -1600,6 +1643,63 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
 
       public DataOneofCase getDataOneofCase() {
         return DataOneofCase.forNumber(dataOneofCase_);
+      }
+
+      public static final int VALUE_FIELD_NUMBER = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * Feature value. A user provided timestamp may be set in the
+       * `FeatureValue.metadata.generate_time` field.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.FeatureValue value = 3;</code>
+       *
+       * @return Whether the value field is set.
+       */
+      @java.lang.Override
+      public boolean hasValue() {
+        return dataOneofCase_ == 3;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Feature value. A user provided timestamp may be set in the
+       * `FeatureValue.metadata.generate_time` field.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.FeatureValue value = 3;</code>
+       *
+       * @return The value.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureValue getValue() {
+        if (dataOneofCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.FeatureValue) dataOneof_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.FeatureValue.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Feature value. A user provided timestamp may be set in the
+       * `FeatureValue.metadata.generate_time` field.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.FeatureValue value = 3;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureValueOrBuilder getValueOrBuilder() {
+        if (dataOneofCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.FeatureValue) dataOneof_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.FeatureValue.getDefaultInstance();
       }
 
       public static final int VALUE_AND_TIMESTAMP_FIELD_NUMBER = 2;
@@ -1749,6 +1849,9 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
                       .DataKeyAndFeatureValues.Feature.FeatureValueAndTimestamp)
                   dataOneof_);
         }
+        if (dataOneofCase_ == 3) {
+          output.writeMessage(3, (com.google.cloud.aiplatform.v1beta1.FeatureValue) dataOneof_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -1768,6 +1871,11 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
                   (com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest
                           .DataKeyAndFeatureValues.Feature.FeatureValueAndTimestamp)
                       dataOneof_);
+        }
+        if (dataOneofCase_ == 3) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  3, (com.google.cloud.aiplatform.v1beta1.FeatureValue) dataOneof_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -1795,6 +1903,9 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         if (!getName().equals(other.getName())) return false;
         if (!getDataOneofCase().equals(other.getDataOneofCase())) return false;
         switch (dataOneofCase_) {
+          case 3:
+            if (!getValue().equals(other.getValue())) return false;
+            break;
           case 2:
             if (!getValueAndTimestamp().equals(other.getValueAndTimestamp())) return false;
             break;
@@ -1815,6 +1926,10 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         hash = (37 * hash) + NAME_FIELD_NUMBER;
         hash = (53 * hash) + getName().hashCode();
         switch (dataOneofCase_) {
+          case 3:
+            hash = (37 * hash) + VALUE_FIELD_NUMBER;
+            hash = (53 * hash) + getValue().hashCode();
+            break;
           case 2:
             hash = (37 * hash) + VALUE_AND_TIMESTAMP_FIELD_NUMBER;
             hash = (53 * hash) + getValueAndTimestamp().hashCode();
@@ -1992,6 +2107,9 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         public Builder clear() {
           super.clear();
           bitField0_ = 0;
+          if (valueBuilder_ != null) {
+            valueBuilder_.clear();
+          }
           if (valueAndTimestampBuilder_ != null) {
             valueAndTimestampBuilder_.clear();
           }
@@ -2050,7 +2168,7 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
                     .DataKeyAndFeatureValues.Feature
                 result) {
           int from_bitField0_ = bitField0_;
-          if (((from_bitField0_ & 0x00000002) != 0)) {
+          if (((from_bitField0_ & 0x00000004) != 0)) {
             result.name_ = name_;
           }
         }
@@ -2061,6 +2179,9 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
                 result) {
           result.dataOneofCase_ = dataOneofCase_;
           result.dataOneof_ = this.dataOneof_;
+          if (dataOneofCase_ == 3 && valueBuilder_ != null) {
+            result.dataOneof_ = valueBuilder_.build();
+          }
           if (dataOneofCase_ == 2 && valueAndTimestampBuilder_ != null) {
             result.dataOneof_ = valueAndTimestampBuilder_.build();
           }
@@ -2126,10 +2247,15 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
                   .DataKeyAndFeatureValues.Feature.getDefaultInstance()) return this;
           if (!other.getName().isEmpty()) {
             name_ = other.name_;
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000004;
             onChanged();
           }
           switch (other.getDataOneofCase()) {
+            case VALUE:
+              {
+                mergeValue(other.getValue());
+                break;
+              }
             case VALUE_AND_TIMESTAMP:
               {
                 mergeValueAndTimestamp(other.getValueAndTimestamp());
@@ -2169,7 +2295,7 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
                 case 10:
                   {
                     name_ = input.readStringRequireUtf8();
-                    bitField0_ |= 0x00000002;
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 10
                 case 18:
@@ -2179,6 +2305,12 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
                     dataOneofCase_ = 2;
                     break;
                   } // case 18
+                case 26:
+                  {
+                    input.readMessage(getValueFieldBuilder().getBuilder(), extensionRegistry);
+                    dataOneofCase_ = 3;
+                    break;
+                  } // case 26
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2211,6 +2343,234 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         }
 
         private int bitField0_;
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.FeatureValue,
+                com.google.cloud.aiplatform.v1beta1.FeatureValue.Builder,
+                com.google.cloud.aiplatform.v1beta1.FeatureValueOrBuilder>
+            valueBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Feature value. A user provided timestamp may be set in the
+         * `FeatureValue.metadata.generate_time` field.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.FeatureValue value = 3;</code>
+         *
+         * @return Whether the value field is set.
+         */
+        @java.lang.Override
+        public boolean hasValue() {
+          return dataOneofCase_ == 3;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Feature value. A user provided timestamp may be set in the
+         * `FeatureValue.metadata.generate_time` field.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.FeatureValue value = 3;</code>
+         *
+         * @return The value.
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.FeatureValue getValue() {
+          if (valueBuilder_ == null) {
+            if (dataOneofCase_ == 3) {
+              return (com.google.cloud.aiplatform.v1beta1.FeatureValue) dataOneof_;
+            }
+            return com.google.cloud.aiplatform.v1beta1.FeatureValue.getDefaultInstance();
+          } else {
+            if (dataOneofCase_ == 3) {
+              return valueBuilder_.getMessage();
+            }
+            return com.google.cloud.aiplatform.v1beta1.FeatureValue.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Feature value. A user provided timestamp may be set in the
+         * `FeatureValue.metadata.generate_time` field.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.FeatureValue value = 3;</code>
+         */
+        public Builder setValue(com.google.cloud.aiplatform.v1beta1.FeatureValue value) {
+          if (valueBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            dataOneof_ = value;
+            onChanged();
+          } else {
+            valueBuilder_.setMessage(value);
+          }
+          dataOneofCase_ = 3;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Feature value. A user provided timestamp may be set in the
+         * `FeatureValue.metadata.generate_time` field.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.FeatureValue value = 3;</code>
+         */
+        public Builder setValue(
+            com.google.cloud.aiplatform.v1beta1.FeatureValue.Builder builderForValue) {
+          if (valueBuilder_ == null) {
+            dataOneof_ = builderForValue.build();
+            onChanged();
+          } else {
+            valueBuilder_.setMessage(builderForValue.build());
+          }
+          dataOneofCase_ = 3;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Feature value. A user provided timestamp may be set in the
+         * `FeatureValue.metadata.generate_time` field.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.FeatureValue value = 3;</code>
+         */
+        public Builder mergeValue(com.google.cloud.aiplatform.v1beta1.FeatureValue value) {
+          if (valueBuilder_ == null) {
+            if (dataOneofCase_ == 3
+                && dataOneof_
+                    != com.google.cloud.aiplatform.v1beta1.FeatureValue.getDefaultInstance()) {
+              dataOneof_ =
+                  com.google.cloud.aiplatform.v1beta1.FeatureValue.newBuilder(
+                          (com.google.cloud.aiplatform.v1beta1.FeatureValue) dataOneof_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              dataOneof_ = value;
+            }
+            onChanged();
+          } else {
+            if (dataOneofCase_ == 3) {
+              valueBuilder_.mergeFrom(value);
+            } else {
+              valueBuilder_.setMessage(value);
+            }
+          }
+          dataOneofCase_ = 3;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Feature value. A user provided timestamp may be set in the
+         * `FeatureValue.metadata.generate_time` field.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.FeatureValue value = 3;</code>
+         */
+        public Builder clearValue() {
+          if (valueBuilder_ == null) {
+            if (dataOneofCase_ == 3) {
+              dataOneofCase_ = 0;
+              dataOneof_ = null;
+              onChanged();
+            }
+          } else {
+            if (dataOneofCase_ == 3) {
+              dataOneofCase_ = 0;
+              dataOneof_ = null;
+            }
+            valueBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Feature value. A user provided timestamp may be set in the
+         * `FeatureValue.metadata.generate_time` field.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.FeatureValue value = 3;</code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.FeatureValue.Builder getValueBuilder() {
+          return getValueFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Feature value. A user provided timestamp may be set in the
+         * `FeatureValue.metadata.generate_time` field.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.FeatureValue value = 3;</code>
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.FeatureValueOrBuilder getValueOrBuilder() {
+          if ((dataOneofCase_ == 3) && (valueBuilder_ != null)) {
+            return valueBuilder_.getMessageOrBuilder();
+          } else {
+            if (dataOneofCase_ == 3) {
+              return (com.google.cloud.aiplatform.v1beta1.FeatureValue) dataOneof_;
+            }
+            return com.google.cloud.aiplatform.v1beta1.FeatureValue.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Feature value. A user provided timestamp may be set in the
+         * `FeatureValue.metadata.generate_time` field.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.FeatureValue value = 3;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.FeatureValue,
+                com.google.cloud.aiplatform.v1beta1.FeatureValue.Builder,
+                com.google.cloud.aiplatform.v1beta1.FeatureValueOrBuilder>
+            getValueFieldBuilder() {
+          if (valueBuilder_ == null) {
+            if (!(dataOneofCase_ == 3)) {
+              dataOneof_ = com.google.cloud.aiplatform.v1beta1.FeatureValue.getDefaultInstance();
+            }
+            valueBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.aiplatform.v1beta1.FeatureValue,
+                    com.google.cloud.aiplatform.v1beta1.FeatureValue.Builder,
+                    com.google.cloud.aiplatform.v1beta1.FeatureValueOrBuilder>(
+                    (com.google.cloud.aiplatform.v1beta1.FeatureValue) dataOneof_,
+                    getParentForChildren(),
+                    isClean());
+            dataOneof_ = null;
+          }
+          dataOneofCase_ = 3;
+          onChanged();
+          return valueBuilder_;
+        }
 
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest
@@ -2554,7 +2914,7 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
             throw new NullPointerException();
           }
           name_ = value;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2572,7 +2932,7 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
          */
         public Builder clearName() {
           name_ = getDefaultInstance().getName();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
           return this;
         }
@@ -2595,7 +2955,7 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           }
           checkByteStringIsUtf8(value);
           name_ = value;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }

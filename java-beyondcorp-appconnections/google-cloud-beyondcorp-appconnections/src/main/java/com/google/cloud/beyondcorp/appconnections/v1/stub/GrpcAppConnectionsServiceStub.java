@@ -74,6 +74,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
                   ProtoUtils.marshaller(ListAppConnectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAppConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAppConnectionRequest, AppConnection>
@@ -85,6 +86,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAppConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AppConnection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAppConnectionRequest, Operation>
@@ -96,6 +98,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAppConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAppConnectionRequest, Operation>
@@ -107,6 +110,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAppConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAppConnectionRequest, Operation>
@@ -118,6 +122,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAppConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResolveAppConnectionsRequest, ResolveAppConnectionsResponse>
@@ -130,6 +135,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
                   ProtoUtils.marshaller(ResolveAppConnectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ResolveAppConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -141,6 +147,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -149,6 +156,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -157,6 +165,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -165,6 +174,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -176,6 +186,7 @@ public class GrpcAppConnectionsServiceStub extends AppConnectionsServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListAppConnectionsRequest, ListAppConnectionsResponse>

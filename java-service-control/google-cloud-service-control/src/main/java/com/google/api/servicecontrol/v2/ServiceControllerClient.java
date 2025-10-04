@@ -29,8 +29,6 @@ import javax.annotation.Generated;
  * Service Description: [Service Control API
  * v2](https://cloud.google.com/service-infrastructure/docs/service-control/access-control)
  *
- * <p>Private Preview. This feature is only available for approved services.
- *
  * <p>This API provides admission control and telemetry reporting for services that are integrated
  * with [Service Infrastructure](https://cloud.google.com/service-infrastructure).
  *
@@ -69,8 +67,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Check</td>
- *      <td><p> Private Preview. This feature is only available for approved services.
- * <p>  This method provides admission control for services that are integrated with [Service Infrastructure](https://cloud.google.com/service-infrastructure). It checks whether an operation should be allowed based on the service configuration and relevant policies. It must be called before the operation is executed. For more information, see [Admission Control](https://cloud.google.com/service-infrastructure/docs/admission-control).
+ *      <td><p> This method provides admission control for services that are integrated with [Service Infrastructure](https://cloud.google.com/service-infrastructure). It checks whether an operation should be allowed based on the service configuration and relevant policies. It must be called before the operation is executed. For more information, see [Admission Control](https://cloud.google.com/service-infrastructure/docs/admission-control).
  * <p>  NOTE: The admission control has an expected policy propagation delay of 60s. The caller &#42;&#42;must&#42;&#42; not depend on the most recent policy changes.
  * <p>  NOTE: The admission control has a hard limit of 1 referenced resources per call. If an operation refers to more than 1 resources, the caller must call the Check method multiple times.
  * <p>  This method requires the `servicemanagement.services.check` permission on the specified service. For more information, see [Service Control API Access Control](https://cloud.google.com/service-infrastructure/docs/service-control/access-control).</td>
@@ -87,9 +84,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Report</td>
- *      <td><p> Private Preview. This feature is only available for approved services.
- * <p>  This method provides telemetry reporting for services that are integrated with [Service Infrastructure](https://cloud.google.com/service-infrastructure). It reports a list of operations that have occurred on a service. It must be called after the operations have been executed. For more information, see [Telemetry Reporting](https://cloud.google.com/service-infrastructure/docs/telemetry-reporting).
- * <p>  NOTE: The telemetry reporting has a hard limit of 1000 operations and 1MB per Report call. It is recommended to have no more than 100 operations per call.
+ *      <td><p> This method provides telemetry reporting for services that are integrated with [Service Infrastructure](https://cloud.google.com/service-infrastructure). It reports a list of operations that have occurred on a service. It must be called after the operations have been executed. For more information, see [Telemetry Reporting](https://cloud.google.com/service-infrastructure/docs/telemetry-reporting).
+ * <p>  NOTE: The telemetry reporting has a hard limit of 100 operations and 1MB per Report call.
  * <p>  This method requires the `servicemanagement.services.report` permission on the specified service. For more information, see [Service Control API Access Control](https://cloud.google.com/service-infrastructure/docs/service-control/access-control).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -212,9 +208,7 @@ public class ServiceControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Private Preview. This feature is only available for approved services.
-   *
-   * <p>This method provides admission control for services that are integrated with [Service
+   * This method provides admission control for services that are integrated with [Service
    * Infrastructure](https://cloud.google.com/service-infrastructure). It checks whether an
    * operation should be allowed based on the service configuration and relevant policies. It must
    * be called before the operation is executed. For more information, see [Admission
@@ -261,9 +255,7 @@ public class ServiceControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Private Preview. This feature is only available for approved services.
-   *
-   * <p>This method provides admission control for services that are integrated with [Service
+   * This method provides admission control for services that are integrated with [Service
    * Infrastructure](https://cloud.google.com/service-infrastructure). It checks whether an
    * operation should be allowed based on the service configuration and relevant policies. It must
    * be called before the operation is executed. For more information, see [Admission
@@ -309,16 +301,13 @@ public class ServiceControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Private Preview. This feature is only available for approved services.
-   *
-   * <p>This method provides telemetry reporting for services that are integrated with [Service
+   * This method provides telemetry reporting for services that are integrated with [Service
    * Infrastructure](https://cloud.google.com/service-infrastructure). It reports a list of
    * operations that have occurred on a service. It must be called after the operations have been
    * executed. For more information, see [Telemetry
    * Reporting](https://cloud.google.com/service-infrastructure/docs/telemetry-reporting).
    *
-   * <p>NOTE: The telemetry reporting has a hard limit of 1000 operations and 1MB per Report call.
-   * It is recommended to have no more than 100 operations per call.
+   * <p>NOTE: The telemetry reporting has a hard limit of 100 operations and 1MB per Report call.
    *
    * <p>This method requires the `servicemanagement.services.report` permission on the specified
    * service. For more information, see [Service Control API Access
@@ -352,16 +341,13 @@ public class ServiceControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Private Preview. This feature is only available for approved services.
-   *
-   * <p>This method provides telemetry reporting for services that are integrated with [Service
+   * This method provides telemetry reporting for services that are integrated with [Service
    * Infrastructure](https://cloud.google.com/service-infrastructure). It reports a list of
    * operations that have occurred on a service. It must be called after the operations have been
    * executed. For more information, see [Telemetry
    * Reporting](https://cloud.google.com/service-infrastructure/docs/telemetry-reporting).
    *
-   * <p>NOTE: The telemetry reporting has a hard limit of 1000 operations and 1MB per Report call.
-   * It is recommended to have no more than 100 operations per call.
+   * <p>NOTE: The telemetry reporting has a hard limit of 100 operations and 1MB per Report call.
    *
    * <p>This method requires the `servicemanagement.services.report` permission on the specified
    * service. For more information, see [Service Control API Access

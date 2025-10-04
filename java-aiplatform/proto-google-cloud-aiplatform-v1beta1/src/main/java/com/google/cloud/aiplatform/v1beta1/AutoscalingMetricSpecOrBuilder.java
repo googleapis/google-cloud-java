@@ -34,6 +34,7 @@ public interface AutoscalingMetricSpecOrBuilder
    * * For Online Prediction:
    * * `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle`
    * * `aiplatform.googleapis.com/prediction/online/cpu/utilization`
+   * * `aiplatform.googleapis.com/prediction/online/request_count`
    * </pre>
    *
    * <code>string metric_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -52,6 +53,7 @@ public interface AutoscalingMetricSpecOrBuilder
    * * For Online Prediction:
    * * `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle`
    * * `aiplatform.googleapis.com/prediction/online/cpu/utilization`
+   * * `aiplatform.googleapis.com/prediction/online/request_count`
    * </pre>
    *
    * <code>string metric_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -75,4 +77,87 @@ public interface AutoscalingMetricSpecOrBuilder
    * @return The target.
    */
   int getTarget();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Cloud Monitoring monitored resource labels as key value pairs
+   * used for metrics filtering. See Cloud Monitoring Labels
+   * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; monitored_resource_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getMonitoredResourceLabelsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Cloud Monitoring monitored resource labels as key value pairs
+   * used for metrics filtering. See Cloud Monitoring Labels
+   * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; monitored_resource_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsMonitoredResourceLabels(java.lang.String key);
+
+  /** Use {@link #getMonitoredResourceLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getMonitoredResourceLabels();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Cloud Monitoring monitored resource labels as key value pairs
+   * used for metrics filtering. See Cloud Monitoring Labels
+   * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; monitored_resource_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getMonitoredResourceLabelsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Cloud Monitoring monitored resource labels as key value pairs
+   * used for metrics filtering. See Cloud Monitoring Labels
+   * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; monitored_resource_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getMonitoredResourceLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Cloud Monitoring monitored resource labels as key value pairs
+   * used for metrics filtering. See Cloud Monitoring Labels
+   * https://cloud.google.com/monitoring/api/v3/metric-model#generic-label-info
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; monitored_resource_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getMonitoredResourceLabelsOrThrow(java.lang.String key);
 }

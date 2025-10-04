@@ -51,6 +51,7 @@ public class GrpcKeyDashboardServiceStub extends KeyDashboardServiceStub {
                   ProtoUtils.marshaller(ListCryptoKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCryptoKeysResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListCryptoKeysRequest, ListCryptoKeysResponse> listCryptoKeysCallable;

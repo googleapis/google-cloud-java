@@ -19,6 +19,31 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= DataFoundryServiceClient =======================
+ *
+ * <p>Service Description: Service for generating and preparing datasets for Gen AI evaluation.
+ *
+ * <p>Sample for DataFoundryServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DataFoundryServiceClient dataFoundryServiceClient = DataFoundryServiceClient.create()) {
+ *   GenerateSyntheticDataRequest request =
+ *       GenerateSyntheticDataRequest.newBuilder()
+ *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+ *           .setCount(94851343)
+ *           .addAllOutputFieldSpecs(new ArrayList<OutputFieldSpec>())
+ *           .addAllExamples(new ArrayList<SyntheticExample>())
+ *           .build();
+ *   GenerateSyntheticDataResponse response =
+ *       dataFoundryServiceClient.generateSyntheticData(request);
+ * }
+ * }</pre>
+ *
  * <p>======================= DatasetServiceClient =======================
  *
  * <p>Service Description: The service that manages Vertex AI Dataset and its child resources.

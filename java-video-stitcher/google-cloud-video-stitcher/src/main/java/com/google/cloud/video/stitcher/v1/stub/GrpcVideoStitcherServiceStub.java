@@ -103,6 +103,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/CreateCdnKey")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateCdnKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCdnKeysRequest, ListCdnKeysResponse>
@@ -113,6 +114,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListCdnKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCdnKeysResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCdnKeyRequest, CdnKey> getCdnKeyMethodDescriptor =
@@ -121,6 +123,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
           .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/GetCdnKey")
           .setRequestMarshaller(ProtoUtils.marshaller(GetCdnKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(CdnKey.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteCdnKeyRequest, Operation>
@@ -130,6 +133,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/DeleteCdnKey")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteCdnKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCdnKeyRequest, Operation>
@@ -139,6 +143,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/UpdateCdnKey")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateCdnKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateVodSessionRequest, VodSession>
@@ -150,6 +155,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateVodSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(VodSession.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVodSessionRequest, VodSession>
@@ -161,6 +167,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetVodSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(VodSession.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListVodStitchDetailsRequest, ListVodStitchDetailsResponse>
@@ -173,6 +180,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   ProtoUtils.marshaller(ListVodStitchDetailsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVodStitchDetailsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVodStitchDetailRequest, VodStitchDetail>
@@ -184,6 +192,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetVodStitchDetailRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(VodStitchDetail.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListVodAdTagDetailsRequest, ListVodAdTagDetailsResponse>
@@ -196,6 +205,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   ProtoUtils.marshaller(ListVodAdTagDetailsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVodAdTagDetailsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVodAdTagDetailRequest, VodAdTagDetail>
@@ -207,6 +217,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetVodAdTagDetailRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(VodAdTagDetail.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLiveAdTagDetailsRequest, ListLiveAdTagDetailsResponse>
@@ -219,6 +230,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   ProtoUtils.marshaller(ListLiveAdTagDetailsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLiveAdTagDetailsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLiveAdTagDetailRequest, LiveAdTagDetail>
@@ -230,6 +242,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetLiveAdTagDetailRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LiveAdTagDetail.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSlateRequest, Operation> createSlateMethodDescriptor =
@@ -238,6 +251,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
           .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/CreateSlate")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSlateRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListSlatesRequest, ListSlatesResponse>
@@ -247,6 +261,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/ListSlates")
               .setRequestMarshaller(ProtoUtils.marshaller(ListSlatesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListSlatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSlateRequest, Slate> getSlateMethodDescriptor =
@@ -255,6 +270,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
           .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/GetSlate")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSlateRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Slate.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSlateRequest, Operation> updateSlateMethodDescriptor =
@@ -263,6 +279,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
           .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/UpdateSlate")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSlateRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteSlateRequest, Operation> deleteSlateMethodDescriptor =
@@ -271,6 +288,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
           .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/DeleteSlate")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteSlateRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateLiveSessionRequest, LiveSession>
@@ -282,6 +300,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateLiveSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LiveSession.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLiveSessionRequest, LiveSession>
@@ -293,6 +312,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetLiveSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LiveSession.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateLiveConfigRequest, Operation>
@@ -304,6 +324,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateLiveConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLiveConfigsRequest, ListLiveConfigsResponse>
@@ -316,6 +337,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   ProtoUtils.marshaller(ListLiveConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLiveConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLiveConfigRequest, LiveConfig>
@@ -327,6 +349,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetLiveConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LiveConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteLiveConfigRequest, Operation>
@@ -338,6 +361,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteLiveConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateLiveConfigRequest, Operation>
@@ -349,6 +373,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateLiveConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateVodConfigRequest, Operation>
@@ -360,6 +385,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateVodConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListVodConfigsRequest, ListVodConfigsResponse>
@@ -372,6 +398,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
                   ProtoUtils.marshaller(ListVodConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVodConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVodConfigRequest, VodConfig>
@@ -381,6 +408,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setFullMethodName("google.cloud.video.stitcher.v1.VideoStitcherService/GetVodConfig")
               .setRequestMarshaller(ProtoUtils.marshaller(GetVodConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(VodConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteVodConfigRequest, Operation>
@@ -392,6 +420,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteVodConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateVodConfigRequest, Operation>
@@ -403,6 +432,7 @@ public class GrpcVideoStitcherServiceStub extends VideoStitcherServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateVodConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateCdnKeyRequest, Operation> createCdnKeyCallable;

@@ -42,7 +42,9 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private SynthesisInput() {}
+  private SynthesisInput() {
+    prompt_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -414,6 +416,84 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.texttospeech.v1.MultiSpeakerMarkup.getDefaultInstance();
   }
 
+  public static final int PROMPT_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object prompt_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * This system instruction is supported only for controllable/promptable voice
+   * models. If this system instruction is used, we pass the unedited text to
+   * Gemini-TTS. Otherwise, a default system instruction is used. AI Studio
+   * calls this system instruction, Style Instructions.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return Whether the prompt field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrompt() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This system instruction is supported only for controllable/promptable voice
+   * models. If this system instruction is used, we pass the unedited text to
+   * Gemini-TTS. Otherwise, a default system instruction is used. AI Studio
+   * calls this system instruction, Style Instructions.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return The prompt.
+   */
+  @java.lang.Override
+  public java.lang.String getPrompt() {
+    java.lang.Object ref = prompt_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      prompt_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This system instruction is supported only for controllable/promptable voice
+   * models. If this system instruction is used, we pass the unedited text to
+   * Gemini-TTS. Otherwise, a default system instruction is used. AI Studio
+   * calls this system instruction, Style Instructions.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return The bytes for prompt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPromptBytes() {
+    java.lang.Object ref = prompt_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      prompt_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int CUSTOM_PRONUNCIATIONS_FIELD_NUMBER = 3;
   private com.google.cloud.texttospeech.v1.CustomPronunciations customPronunciations_;
 
@@ -441,7 +521,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCustomPronunciations() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -521,7 +601,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     if (inputSourceCase_ == 2) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, inputSource_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(3, getCustomPronunciations());
     }
     if (inputSourceCase_ == 4) {
@@ -529,6 +609,9 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     }
     if (inputSourceCase_ == 5) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, inputSource_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, prompt_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -545,7 +628,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     if (inputSourceCase_ == 2) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, inputSource_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCustomPronunciations());
     }
@@ -556,6 +639,9 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     }
     if (inputSourceCase_ == 5) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, inputSource_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, prompt_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -573,6 +659,10 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.texttospeech.v1.SynthesisInput other =
         (com.google.cloud.texttospeech.v1.SynthesisInput) obj;
 
+    if (hasPrompt() != other.hasPrompt()) return false;
+    if (hasPrompt()) {
+      if (!getPrompt().equals(other.getPrompt())) return false;
+    }
     if (hasCustomPronunciations() != other.hasCustomPronunciations()) return false;
     if (hasCustomPronunciations()) {
       if (!getCustomPronunciations().equals(other.getCustomPronunciations())) return false;
@@ -605,6 +695,10 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasPrompt()) {
+      hash = (37 * hash) + PROMPT_FIELD_NUMBER;
+      hash = (53 * hash) + getPrompt().hashCode();
+    }
     if (hasCustomPronunciations()) {
       hash = (37 * hash) + CUSTOM_PRONUNCIATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getCustomPronunciations().hashCode();
@@ -784,6 +878,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       if (multiSpeakerMarkupBuilder_ != null) {
         multiSpeakerMarkupBuilder_.clear();
       }
+      prompt_ = "";
       customPronunciations_ = null;
       if (customPronunciationsBuilder_ != null) {
         customPronunciationsBuilder_.dispose();
@@ -830,11 +925,15 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.prompt_ = prompt_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.customPronunciations_ =
             customPronunciationsBuilder_ == null
                 ? customPronunciations_
                 : customPronunciationsBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -893,6 +992,11 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.texttospeech.v1.SynthesisInput other) {
       if (other == com.google.cloud.texttospeech.v1.SynthesisInput.getDefaultInstance())
         return this;
+      if (other.hasPrompt()) {
+        prompt_ = other.prompt_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       if (other.hasCustomPronunciations()) {
         mergeCustomPronunciations(other.getCustomPronunciations());
       }
@@ -972,7 +1076,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getCustomPronunciationsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
@@ -989,6 +1093,12 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
                 inputSource_ = s;
                 break;
               } // case 42
+            case 50:
+              {
+                prompt_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1701,6 +1811,150 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       return multiSpeakerMarkupBuilder_;
     }
 
+    private java.lang.Object prompt_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * This system instruction is supported only for controllable/promptable voice
+     * models. If this system instruction is used, we pass the unedited text to
+     * Gemini-TTS. Otherwise, a default system instruction is used. AI Studio
+     * calls this system instruction, Style Instructions.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @return Whether the prompt field is set.
+     */
+    public boolean hasPrompt() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This system instruction is supported only for controllable/promptable voice
+     * models. If this system instruction is used, we pass the unedited text to
+     * Gemini-TTS. Otherwise, a default system instruction is used. AI Studio
+     * calls this system instruction, Style Instructions.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @return The prompt.
+     */
+    public java.lang.String getPrompt() {
+      java.lang.Object ref = prompt_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        prompt_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This system instruction is supported only for controllable/promptable voice
+     * models. If this system instruction is used, we pass the unedited text to
+     * Gemini-TTS. Otherwise, a default system instruction is used. AI Studio
+     * calls this system instruction, Style Instructions.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @return The bytes for prompt.
+     */
+    public com.google.protobuf.ByteString getPromptBytes() {
+      java.lang.Object ref = prompt_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        prompt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This system instruction is supported only for controllable/promptable voice
+     * models. If this system instruction is used, we pass the unedited text to
+     * Gemini-TTS. Otherwise, a default system instruction is used. AI Studio
+     * calls this system instruction, Style Instructions.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @param value The prompt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrompt(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      prompt_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This system instruction is supported only for controllable/promptable voice
+     * models. If this system instruction is used, we pass the unedited text to
+     * Gemini-TTS. Otherwise, a default system instruction is used. AI Studio
+     * calls this system instruction, Style Instructions.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrompt() {
+      prompt_ = getDefaultInstance().getPrompt();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This system instruction is supported only for controllable/promptable voice
+     * models. If this system instruction is used, we pass the unedited text to
+     * Gemini-TTS. Otherwise, a default system instruction is used. AI Studio
+     * calls this system instruction, Style Instructions.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @param value The bytes for prompt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPromptBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      prompt_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.texttospeech.v1.CustomPronunciations customPronunciations_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.texttospeech.v1.CustomPronunciations,
@@ -1731,7 +1985,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the customPronunciations field is set.
      */
     public boolean hasCustomPronunciations() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1796,7 +2050,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       } else {
         customPronunciationsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1828,7 +2082,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       } else {
         customPronunciationsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1856,7 +2110,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCustomPronunciations(
         com.google.cloud.texttospeech.v1.CustomPronunciations value) {
       if (customPronunciationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && customPronunciations_ != null
             && customPronunciations_
                 != com.google.cloud.texttospeech.v1.CustomPronunciations.getDefaultInstance()) {
@@ -1868,7 +2122,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
         customPronunciationsBuilder_.mergeFrom(value);
       }
       if (customPronunciations_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1895,7 +2149,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCustomPronunciations() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       customPronunciations_ = null;
       if (customPronunciationsBuilder_ != null) {
         customPronunciationsBuilder_.dispose();
@@ -1927,7 +2181,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.texttospeech.v1.CustomPronunciations.Builder
         getCustomPronunciationsBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCustomPronunciationsFieldBuilder().getBuilder();
     }

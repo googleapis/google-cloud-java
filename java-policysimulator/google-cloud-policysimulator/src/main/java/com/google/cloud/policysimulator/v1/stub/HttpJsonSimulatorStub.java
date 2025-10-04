@@ -256,6 +256,36 @@ public class HttpJsonSimulatorStub extends SimulatorStub {
                                 .setGet(
                                     "/v1/{name=organizations/*/locations/*/replays/*/operations/**}")
                                 .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/orgPolicyViolationsPreviews/*/operations/**}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=folders/*/locations/*/orgPolicyViolationsPreviews/*/operations/**}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=organizations/*/locations/*/orgPolicyViolationsPreviews/*/operations/**}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/accessPolicySimulations/*/operations/**}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=folders/*/locations/*/accessPolicySimulations/*/operations/**}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=organizations/*/locations/*/accessPolicySimulations/*/operations/**}")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.ListOperations",

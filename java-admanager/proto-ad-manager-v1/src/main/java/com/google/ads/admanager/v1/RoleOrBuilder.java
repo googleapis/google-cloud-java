@@ -59,7 +59,20 @@ public interface RoleOrBuilder
    * Output only. `Role` ID.
    * </pre>
    *
-   * <code>int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the roleId field is set.
+   */
+  boolean hasRoleId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. `Role` ID.
+   * </pre>
+   *
+   * <code>optional int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The roleId.
    */
@@ -72,7 +85,20 @@ public interface RoleOrBuilder
    * Required. The display name of the `Role`.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  boolean hasDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The display name of the `Role`.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -85,7 +111,7 @@ public interface RoleOrBuilder
    * Required. The display name of the `Role`.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -98,7 +124,20 @@ public interface RoleOrBuilder
    * Optional. The description of the `Role`.
    * </pre>
    *
-   * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The description of the `Role`.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -111,7 +150,7 @@ public interface RoleOrBuilder
    * Optional. The description of the `Role`.
    * </pre>
    *
-   * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -124,7 +163,20 @@ public interface RoleOrBuilder
    * Output only. Whether the `Role` is a built-in or custom user role.
    * </pre>
    *
-   * <code>bool built_in = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool built_in = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the builtIn field is set.
+   */
+  boolean hasBuiltIn();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the `Role` is a built-in or custom user role.
+   * </pre>
+   *
+   * <code>optional bool built_in = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The builtIn.
    */
@@ -138,7 +190,22 @@ public interface RoleOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the `Role`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The enum numeric value on the wire for status.
@@ -153,7 +220,7 @@ public interface RoleOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The status.

@@ -43,6 +43,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
     taskName_ = "";
     state_ = 0;
     pipelineTaskStatus_ = java.util.Collections.emptyList();
+    taskUniqueName_ = "";
   }
 
   @java.lang.Override
@@ -3681,6 +3682,73 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
     return map.get(key);
   }
 
+  public static final int TASK_UNIQUE_NAME_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object taskUniqueName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The unique name of a task.
+   * This field is used by rerun pipeline job.
+   * Console UI and Vertex AI SDK will support triggering pipeline job reruns.
+   * The name is constructed by concatenating all the parent tasks name with
+   * the task name. For example, if a task named "child_task" has a parent task
+   * named "parent_task_1" and parent task 1 has a parent task named
+   * "parent_task_2", the task unique name will be
+   * "parent_task_2.parent_task_1.child_task".
+   * </pre>
+   *
+   * <code>string task_unique_name = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The taskUniqueName.
+   */
+  @java.lang.Override
+  public java.lang.String getTaskUniqueName() {
+    java.lang.Object ref = taskUniqueName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskUniqueName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The unique name of a task.
+   * This field is used by rerun pipeline job.
+   * Console UI and Vertex AI SDK will support triggering pipeline job reruns.
+   * The name is constructed by concatenating all the parent tasks name with
+   * the task name. For example, if a task named "child_task" has a parent task
+   * named "parent_task_1" and parent task 1 has a parent task named
+   * "parent_task_2", the task unique name will be
+   * "parent_task_2.parent_task_1.child_task".
+   * </pre>
+   *
+   * <code>string task_unique_name = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for taskUniqueName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTaskUniqueNameBytes() {
+    java.lang.Object ref = taskUniqueName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      taskUniqueName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3732,6 +3800,9 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
     }
     for (int i = 0; i < pipelineTaskStatus_.size(); i++) {
       output.writeMessage(13, pipelineTaskStatus_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskUniqueName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, taskUniqueName_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3803,6 +3874,9 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(13, pipelineTaskStatus_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskUniqueName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, taskUniqueName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3850,6 +3924,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
     if (!getPipelineTaskStatusList().equals(other.getPipelineTaskStatusList())) return false;
     if (!internalGetInputs().equals(other.internalGetInputs())) return false;
     if (!internalGetOutputs().equals(other.internalGetOutputs())) return false;
+    if (!getTaskUniqueName().equals(other.getTaskUniqueName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3905,6 +3980,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + OUTPUTS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetOutputs().hashCode();
     }
+    hash = (37 * hash) + TASK_UNIQUE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskUniqueName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4129,6 +4206,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
       bitField0_ = (bitField0_ & ~0x00000400);
       internalGetMutableInputs().clear();
       internalGetMutableOutputs().clear();
+      taskUniqueName_ = "";
       return this;
     }
 
@@ -4222,6 +4300,9 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.outputs_ = internalGetOutputs().build(OutputsDefaultEntryHolder.defaultEntry);
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.taskUniqueName_ = taskUniqueName_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4335,6 +4416,11 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000800;
       internalGetMutableOutputs().mergeFrom(other.internalGetOutputs());
       bitField0_ |= 0x00001000;
+      if (!other.getTaskUniqueName().isEmpty()) {
+        taskUniqueName_ = other.taskUniqueName_;
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4466,6 +4552,12 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
                 }
                 break;
               } // case 106
+            case 114:
+              {
+                taskUniqueName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7065,6 +7157,152 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
         builderMap.put(key, entry);
       }
       return (com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList.Builder) entry;
+    }
+
+    private java.lang.Object taskUniqueName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unique name of a task.
+     * This field is used by rerun pipeline job.
+     * Console UI and Vertex AI SDK will support triggering pipeline job reruns.
+     * The name is constructed by concatenating all the parent tasks name with
+     * the task name. For example, if a task named "child_task" has a parent task
+     * named "parent_task_1" and parent task 1 has a parent task named
+     * "parent_task_2", the task unique name will be
+     * "parent_task_2.parent_task_1.child_task".
+     * </pre>
+     *
+     * <code>string task_unique_name = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The taskUniqueName.
+     */
+    public java.lang.String getTaskUniqueName() {
+      java.lang.Object ref = taskUniqueName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskUniqueName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unique name of a task.
+     * This field is used by rerun pipeline job.
+     * Console UI and Vertex AI SDK will support triggering pipeline job reruns.
+     * The name is constructed by concatenating all the parent tasks name with
+     * the task name. For example, if a task named "child_task" has a parent task
+     * named "parent_task_1" and parent task 1 has a parent task named
+     * "parent_task_2", the task unique name will be
+     * "parent_task_2.parent_task_1.child_task".
+     * </pre>
+     *
+     * <code>string task_unique_name = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for taskUniqueName.
+     */
+    public com.google.protobuf.ByteString getTaskUniqueNameBytes() {
+      java.lang.Object ref = taskUniqueName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        taskUniqueName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unique name of a task.
+     * This field is used by rerun pipeline job.
+     * Console UI and Vertex AI SDK will support triggering pipeline job reruns.
+     * The name is constructed by concatenating all the parent tasks name with
+     * the task name. For example, if a task named "child_task" has a parent task
+     * named "parent_task_1" and parent task 1 has a parent task named
+     * "parent_task_2", the task unique name will be
+     * "parent_task_2.parent_task_1.child_task".
+     * </pre>
+     *
+     * <code>string task_unique_name = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The taskUniqueName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskUniqueName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      taskUniqueName_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unique name of a task.
+     * This field is used by rerun pipeline job.
+     * Console UI and Vertex AI SDK will support triggering pipeline job reruns.
+     * The name is constructed by concatenating all the parent tasks name with
+     * the task name. For example, if a task named "child_task" has a parent task
+     * named "parent_task_1" and parent task 1 has a parent task named
+     * "parent_task_2", the task unique name will be
+     * "parent_task_2.parent_task_1.child_task".
+     * </pre>
+     *
+     * <code>string task_unique_name = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskUniqueName() {
+      taskUniqueName_ = getDefaultInstance().getTaskUniqueName();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unique name of a task.
+     * This field is used by rerun pipeline job.
+     * Console UI and Vertex AI SDK will support triggering pipeline job reruns.
+     * The name is constructed by concatenating all the parent tasks name with
+     * the task name. For example, if a task named "child_task" has a parent task
+     * named "parent_task_1" and parent task 1 has a parent task named
+     * "parent_task_2", the task unique name will be
+     * "parent_task_2.parent_task_1.child_task".
+     * </pre>
+     *
+     * <code>string task_unique_name = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for taskUniqueName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskUniqueNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      taskUniqueName_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -44,6 +44,7 @@ public class AsyncUpdateBackupVaultLRO {
               .setRequestId("requestId693933066")
               .setValidateOnly(true)
               .setForce(true)
+              .setForceUpdateAccessRestriction(true)
               .build();
       OperationFuture<BackupVault, OperationMetadata> future =
           backupDRClient.updateBackupVaultOperationCallable().futureCall(request);

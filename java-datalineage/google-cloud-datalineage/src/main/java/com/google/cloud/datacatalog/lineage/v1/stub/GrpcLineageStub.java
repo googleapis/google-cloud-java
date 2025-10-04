@@ -86,6 +86,7 @@ public class GrpcLineageStub extends LineageStub {
                   ProtoUtils.marshaller(ProcessOpenLineageRunEventRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ProcessOpenLineageRunEventResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateProcessRequest, Process>
@@ -96,6 +97,7 @@ public class GrpcLineageStub extends LineageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateProcessRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Process.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateProcessRequest, Process>
@@ -106,6 +108,7 @@ public class GrpcLineageStub extends LineageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateProcessRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Process.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProcessRequest, Process> getProcessMethodDescriptor =
@@ -114,6 +117,7 @@ public class GrpcLineageStub extends LineageStub {
           .setFullMethodName("google.cloud.datacatalog.lineage.v1.Lineage/GetProcess")
           .setRequestMarshaller(ProtoUtils.marshaller(GetProcessRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Process.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListProcessesRequest, ListProcessesResponse>
@@ -125,6 +129,7 @@ public class GrpcLineageStub extends LineageStub {
                   ProtoUtils.marshaller(ListProcessesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProcessesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteProcessRequest, Operation>
@@ -135,6 +140,7 @@ public class GrpcLineageStub extends LineageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteProcessRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateRunRequest, Run> createRunMethodDescriptor =
@@ -143,6 +149,7 @@ public class GrpcLineageStub extends LineageStub {
           .setFullMethodName("google.cloud.datacatalog.lineage.v1.Lineage/CreateRun")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Run.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateRunRequest, Run> updateRunMethodDescriptor =
@@ -151,6 +158,7 @@ public class GrpcLineageStub extends LineageStub {
           .setFullMethodName("google.cloud.datacatalog.lineage.v1.Lineage/UpdateRun")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Run.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetRunRequest, Run> getRunMethodDescriptor =
@@ -159,6 +167,7 @@ public class GrpcLineageStub extends LineageStub {
           .setFullMethodName("google.cloud.datacatalog.lineage.v1.Lineage/GetRun")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Run.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListRunsRequest, ListRunsResponse>
@@ -168,6 +177,7 @@ public class GrpcLineageStub extends LineageStub {
               .setFullMethodName("google.cloud.datacatalog.lineage.v1.Lineage/ListRuns")
               .setRequestMarshaller(ProtoUtils.marshaller(ListRunsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListRunsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRunRequest, Operation> deleteRunMethodDescriptor =
@@ -176,6 +186,7 @@ public class GrpcLineageStub extends LineageStub {
           .setFullMethodName("google.cloud.datacatalog.lineage.v1.Lineage/DeleteRun")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateLineageEventRequest, LineageEvent>
@@ -186,6 +197,7 @@ public class GrpcLineageStub extends LineageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateLineageEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LineageEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLineageEventRequest, LineageEvent>
@@ -196,6 +208,7 @@ public class GrpcLineageStub extends LineageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetLineageEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LineageEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLineageEventsRequest, ListLineageEventsResponse>
@@ -207,6 +220,7 @@ public class GrpcLineageStub extends LineageStub {
                   ProtoUtils.marshaller(ListLineageEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLineageEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteLineageEventRequest, Empty>
@@ -217,6 +231,7 @@ public class GrpcLineageStub extends LineageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteLineageEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchLinksRequest, SearchLinksResponse>
@@ -227,6 +242,7 @@ public class GrpcLineageStub extends LineageStub {
               .setRequestMarshaller(ProtoUtils.marshaller(SearchLinksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchLinksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -241,6 +257,7 @@ public class GrpcLineageStub extends LineageStub {
                   ProtoUtils.marshaller(BatchSearchLinkProcessesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchSearchLinkProcessesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>

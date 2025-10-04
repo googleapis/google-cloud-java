@@ -349,6 +349,47 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total number of entry links that were successfully
+     * deleted.
+     * </pre>
+     *
+     * <code>int64 deleted_entry_links = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The deletedEntryLinks.
+     */
+    long getDeletedEntryLinks();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total number of entry links that were successfully
+     * created.
+     * </pre>
+     *
+     * <code>int64 created_entry_links = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The createdEntryLinks.
+     */
+    long getCreatedEntryLinks();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total number of entry links that were left unchanged.
+     * </pre>
+     *
+     * <code>int64 unchanged_entry_links = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The unchangedEntryLinks.
+     */
+    long getUnchangedEntryLinks();
   }
 
   /**
@@ -545,6 +586,65 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
 
+    public static final int DELETED_ENTRY_LINKS_FIELD_NUMBER = 7;
+    private long deletedEntryLinks_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total number of entry links that were successfully
+     * deleted.
+     * </pre>
+     *
+     * <code>int64 deleted_entry_links = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The deletedEntryLinks.
+     */
+    @java.lang.Override
+    public long getDeletedEntryLinks() {
+      return deletedEntryLinks_;
+    }
+
+    public static final int CREATED_ENTRY_LINKS_FIELD_NUMBER = 8;
+    private long createdEntryLinks_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total number of entry links that were successfully
+     * created.
+     * </pre>
+     *
+     * <code>int64 created_entry_links = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The createdEntryLinks.
+     */
+    @java.lang.Override
+    public long getCreatedEntryLinks() {
+      return createdEntryLinks_;
+    }
+
+    public static final int UNCHANGED_ENTRY_LINKS_FIELD_NUMBER = 9;
+    private long unchangedEntryLinks_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total number of entry links that were left unchanged.
+     * </pre>
+     *
+     * <code>int64 unchanged_entry_links = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The unchangedEntryLinks.
+     */
+    @java.lang.Override
+    public long getUnchangedEntryLinks() {
+      return unchangedEntryLinks_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -577,6 +677,15 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       if (recreatedEntries_ != 0L) {
         output.writeInt64(6, recreatedEntries_);
       }
+      if (deletedEntryLinks_ != 0L) {
+        output.writeInt64(7, deletedEntryLinks_);
+      }
+      if (createdEntryLinks_ != 0L) {
+        output.writeInt64(8, createdEntryLinks_);
+      }
+      if (unchangedEntryLinks_ != 0L) {
+        output.writeInt64(9, unchangedEntryLinks_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -604,6 +713,15 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       if (recreatedEntries_ != 0L) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, recreatedEntries_);
       }
+      if (deletedEntryLinks_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(7, deletedEntryLinks_);
+      }
+      if (createdEntryLinks_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(8, createdEntryLinks_);
+      }
+      if (unchangedEntryLinks_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(9, unchangedEntryLinks_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -629,6 +747,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       if (hasUpdateTime()) {
         if (!getUpdateTime().equals(other.getUpdateTime())) return false;
       }
+      if (getDeletedEntryLinks() != other.getDeletedEntryLinks()) return false;
+      if (getCreatedEntryLinks() != other.getCreatedEntryLinks()) return false;
+      if (getUnchangedEntryLinks() != other.getUnchangedEntryLinks()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -654,6 +775,12 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getUpdateTime().hashCode();
       }
+      hash = (37 * hash) + DELETED_ENTRY_LINKS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDeletedEntryLinks());
+      hash = (37 * hash) + CREATED_ENTRY_LINKS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCreatedEntryLinks());
+      hash = (37 * hash) + UNCHANGED_ENTRY_LINKS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getUnchangedEntryLinks());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -816,6 +943,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           updateTimeBuilder_.dispose();
           updateTimeBuilder_ = null;
         }
+        deletedEntryLinks_ = 0L;
+        createdEntryLinks_ = 0L;
+        unchangedEntryLinks_ = 0L;
         return this;
       }
 
@@ -872,6 +1002,15 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           result.updateTime_ =
               updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.deletedEntryLinks_ = deletedEntryLinks_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.createdEntryLinks_ = createdEntryLinks_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.unchangedEntryLinks_ = unchangedEntryLinks_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -942,6 +1081,15 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         if (other.hasUpdateTime()) {
           mergeUpdateTime(other.getUpdateTime());
         }
+        if (other.getDeletedEntryLinks() != 0L) {
+          setDeletedEntryLinks(other.getDeletedEntryLinks());
+        }
+        if (other.getCreatedEntryLinks() != 0L) {
+          setCreatedEntryLinks(other.getCreatedEntryLinks());
+        }
+        if (other.getUnchangedEntryLinks() != 0L) {
+          setUnchangedEntryLinks(other.getUnchangedEntryLinks());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1004,6 +1152,24 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 48
+              case 56:
+                {
+                  deletedEntryLinks_ = input.readInt64();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 56
+              case 64:
+                {
+                  createdEntryLinks_ = input.readInt64();
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 64
+              case 72:
+                {
+                  unchangedEntryLinks_ = input.readInt64();
+                  bitField0_ |= 0x00000100;
+                  break;
+                } // case 72
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1513,6 +1679,180 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           updateTime_ = null;
         }
         return updateTimeBuilder_;
+      }
+
+      private long deletedEntryLinks_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The total number of entry links that were successfully
+       * deleted.
+       * </pre>
+       *
+       * <code>int64 deleted_entry_links = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The deletedEntryLinks.
+       */
+      @java.lang.Override
+      public long getDeletedEntryLinks() {
+        return deletedEntryLinks_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The total number of entry links that were successfully
+       * deleted.
+       * </pre>
+       *
+       * <code>int64 deleted_entry_links = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The deletedEntryLinks to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDeletedEntryLinks(long value) {
+
+        deletedEntryLinks_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The total number of entry links that were successfully
+       * deleted.
+       * </pre>
+       *
+       * <code>int64 deleted_entry_links = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDeletedEntryLinks() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        deletedEntryLinks_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long createdEntryLinks_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The total number of entry links that were successfully
+       * created.
+       * </pre>
+       *
+       * <code>int64 created_entry_links = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The createdEntryLinks.
+       */
+      @java.lang.Override
+      public long getCreatedEntryLinks() {
+        return createdEntryLinks_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The total number of entry links that were successfully
+       * created.
+       * </pre>
+       *
+       * <code>int64 created_entry_links = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The createdEntryLinks to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedEntryLinks(long value) {
+
+        createdEntryLinks_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The total number of entry links that were successfully
+       * created.
+       * </pre>
+       *
+       * <code>int64 created_entry_links = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedEntryLinks() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        createdEntryLinks_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long unchangedEntryLinks_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The total number of entry links that were left unchanged.
+       * </pre>
+       *
+       * <code>int64 unchanged_entry_links = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The unchangedEntryLinks.
+       */
+      @java.lang.Override
+      public long getUnchangedEntryLinks() {
+        return unchangedEntryLinks_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The total number of entry links that were left unchanged.
+       * </pre>
+       *
+       * <code>int64 unchanged_entry_links = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The unchangedEntryLinks to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnchangedEntryLinks(long value) {
+
+        unchangedEntryLinks_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The total number of entry links that were left unchanged.
+       * </pre>
+       *
+       * <code>int64 unchanged_entry_links = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUnchangedEntryLinks() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        unchangedEntryLinks_ = 0L;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
@@ -2695,9 +3035,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * All resources in the job's scope are modified. If a resource exists in
-       * Dataplex but isn't included in the metadata import file, the resource
-       * is deleted when you run the metadata job. Use this mode to perform a
-       * full sync of the set of entries in the job scope.
+       * Dataplex Universal Catalog but isn't included in the metadata import
+       * file, the resource is deleted when you run the metadata job. Use this
+       * mode to perform a full sync of the set of entries in the job scope.
        *
        * This sync mode is supported for entries.
        * </pre>
@@ -2752,9 +3092,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * All resources in the job's scope are modified. If a resource exists in
-       * Dataplex but isn't included in the metadata import file, the resource
-       * is deleted when you run the metadata job. Use this mode to perform a
-       * full sync of the set of entries in the job scope.
+       * Dataplex Universal Catalog but isn't included in the metadata import
+       * file, the resource is deleted when you run the metadata job. Use this
+       * mode to perform a full sync of the set of entries in the job scope.
        *
        * This sync mode is supported for entries.
        * </pre>
@@ -3373,6 +3713,296 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * @return The bytes of the aspectTypes at the given index.
        */
       com.google.protobuf.ByteString getAspectTypesBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The glossaries that are in scope for the import job,
+       * specified as relative resource names in the format
+       * `projects/{project_number_or_id}/locations/{location_id}/glossaries/{glossary_id}`.
+       *
+       * While importing Business Glossary entries, the user must
+       * provide glossaries. While importing entries, the user does not have to
+       * provide glossaries. If the metadata import file attempts to modify
+       * Business Glossary entries whose glossary isn't included in this list,
+       * the import job will skip those entries.
+       *
+       * The location of a glossary must either match the location of the
+       * job, or the glossary must be global.
+       * </pre>
+       *
+       * <code>
+       * repeated string glossaries = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return A list containing the glossaries.
+       */
+      java.util.List<java.lang.String> getGlossariesList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The glossaries that are in scope for the import job,
+       * specified as relative resource names in the format
+       * `projects/{project_number_or_id}/locations/{location_id}/glossaries/{glossary_id}`.
+       *
+       * While importing Business Glossary entries, the user must
+       * provide glossaries. While importing entries, the user does not have to
+       * provide glossaries. If the metadata import file attempts to modify
+       * Business Glossary entries whose glossary isn't included in this list,
+       * the import job will skip those entries.
+       *
+       * The location of a glossary must either match the location of the
+       * job, or the glossary must be global.
+       * </pre>
+       *
+       * <code>
+       * repeated string glossaries = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The count of glossaries.
+       */
+      int getGlossariesCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The glossaries that are in scope for the import job,
+       * specified as relative resource names in the format
+       * `projects/{project_number_or_id}/locations/{location_id}/glossaries/{glossary_id}`.
+       *
+       * While importing Business Glossary entries, the user must
+       * provide glossaries. While importing entries, the user does not have to
+       * provide glossaries. If the metadata import file attempts to modify
+       * Business Glossary entries whose glossary isn't included in this list,
+       * the import job will skip those entries.
+       *
+       * The location of a glossary must either match the location of the
+       * job, or the glossary must be global.
+       * </pre>
+       *
+       * <code>
+       * repeated string glossaries = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The glossaries at the given index.
+       */
+      java.lang.String getGlossaries(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The glossaries that are in scope for the import job,
+       * specified as relative resource names in the format
+       * `projects/{project_number_or_id}/locations/{location_id}/glossaries/{glossary_id}`.
+       *
+       * While importing Business Glossary entries, the user must
+       * provide glossaries. While importing entries, the user does not have to
+       * provide glossaries. If the metadata import file attempts to modify
+       * Business Glossary entries whose glossary isn't included in this list,
+       * the import job will skip those entries.
+       *
+       * The location of a glossary must either match the location of the
+       * job, or the glossary must be global.
+       * </pre>
+       *
+       * <code>
+       * repeated string glossaries = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the glossaries at the given index.
+       */
+      com.google.protobuf.ByteString getGlossariesBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The entry link types that are in scope for the import job,
+       * specified as relative resource names in the format
+       * `projects/{project_number_or_id}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`.
+       * The job modifies only the entryLinks that belong to these entry link
+       * types.
+       *
+       * If the metadata import file attempts to create or delete an entry link
+       * whose entry link type isn't included in this list, the import job will
+       * skip those entry links.
+       * </pre>
+       *
+       * <code>repeated string entry_link_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the entryLinkTypes.
+       */
+      java.util.List<java.lang.String> getEntryLinkTypesList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The entry link types that are in scope for the import job,
+       * specified as relative resource names in the format
+       * `projects/{project_number_or_id}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`.
+       * The job modifies only the entryLinks that belong to these entry link
+       * types.
+       *
+       * If the metadata import file attempts to create or delete an entry link
+       * whose entry link type isn't included in this list, the import job will
+       * skip those entry links.
+       * </pre>
+       *
+       * <code>repeated string entry_link_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of entryLinkTypes.
+       */
+      int getEntryLinkTypesCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The entry link types that are in scope for the import job,
+       * specified as relative resource names in the format
+       * `projects/{project_number_or_id}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`.
+       * The job modifies only the entryLinks that belong to these entry link
+       * types.
+       *
+       * If the metadata import file attempts to create or delete an entry link
+       * whose entry link type isn't included in this list, the import job will
+       * skip those entry links.
+       * </pre>
+       *
+       * <code>repeated string entry_link_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The entryLinkTypes at the given index.
+       */
+      java.lang.String getEntryLinkTypes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The entry link types that are in scope for the import job,
+       * specified as relative resource names in the format
+       * `projects/{project_number_or_id}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`.
+       * The job modifies only the entryLinks that belong to these entry link
+       * types.
+       *
+       * If the metadata import file attempts to create or delete an entry link
+       * whose entry link type isn't included in this list, the import job will
+       * skip those entry links.
+       * </pre>
+       *
+       * <code>repeated string entry_link_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the entryLinkTypes at the given index.
+       */
+      com.google.protobuf.ByteString getEntryLinkTypesBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines the scope of entries that can be referenced in the
+       * entry links.
+       *
+       * Currently, projects are supported as valid scopes.
+       * Format: `projects/{project_number_or_id}`
+       *
+       * If the metadata import file attempts to create an entry link
+       * which references an entry that is not in the scope, the import job will
+       * skip that entry link.
+       * </pre>
+       *
+       * <code>
+       * repeated string referenced_entry_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the referencedEntryScopes.
+       */
+      java.util.List<java.lang.String> getReferencedEntryScopesList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines the scope of entries that can be referenced in the
+       * entry links.
+       *
+       * Currently, projects are supported as valid scopes.
+       * Format: `projects/{project_number_or_id}`
+       *
+       * If the metadata import file attempts to create an entry link
+       * which references an entry that is not in the scope, the import job will
+       * skip that entry link.
+       * </pre>
+       *
+       * <code>
+       * repeated string referenced_entry_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of referencedEntryScopes.
+       */
+      int getReferencedEntryScopesCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines the scope of entries that can be referenced in the
+       * entry links.
+       *
+       * Currently, projects are supported as valid scopes.
+       * Format: `projects/{project_number_or_id}`
+       *
+       * If the metadata import file attempts to create an entry link
+       * which references an entry that is not in the scope, the import job will
+       * skip that entry link.
+       * </pre>
+       *
+       * <code>
+       * repeated string referenced_entry_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The referencedEntryScopes at the given index.
+       */
+      java.lang.String getReferencedEntryScopes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines the scope of entries that can be referenced in the
+       * entry links.
+       *
+       * Currently, projects are supported as valid scopes.
+       * Format: `projects/{project_number_or_id}`
+       *
+       * If the metadata import file attempts to create an entry link
+       * which references an entry that is not in the scope, the import job will
+       * skip that entry link.
+       * </pre>
+       *
+       * <code>
+       * repeated string referenced_entry_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the referencedEntryScopes at the given index.
+       */
+      com.google.protobuf.ByteString getReferencedEntryScopesBytes(int index);
     }
 
     /**
@@ -3399,6 +4029,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         entryGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
         entryTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         aspectTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        glossaries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        entryLinkTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        referencedEntryScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
@@ -3771,6 +4404,338 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         return aspectTypes_.getByteString(index);
       }
 
+      public static final int GLOSSARIES_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList glossaries_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The glossaries that are in scope for the import job,
+       * specified as relative resource names in the format
+       * `projects/{project_number_or_id}/locations/{location_id}/glossaries/{glossary_id}`.
+       *
+       * While importing Business Glossary entries, the user must
+       * provide glossaries. While importing entries, the user does not have to
+       * provide glossaries. If the metadata import file attempts to modify
+       * Business Glossary entries whose glossary isn't included in this list,
+       * the import job will skip those entries.
+       *
+       * The location of a glossary must either match the location of the
+       * job, or the glossary must be global.
+       * </pre>
+       *
+       * <code>
+       * repeated string glossaries = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return A list containing the glossaries.
+       */
+      public com.google.protobuf.ProtocolStringList getGlossariesList() {
+        return glossaries_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The glossaries that are in scope for the import job,
+       * specified as relative resource names in the format
+       * `projects/{project_number_or_id}/locations/{location_id}/glossaries/{glossary_id}`.
+       *
+       * While importing Business Glossary entries, the user must
+       * provide glossaries. While importing entries, the user does not have to
+       * provide glossaries. If the metadata import file attempts to modify
+       * Business Glossary entries whose glossary isn't included in this list,
+       * the import job will skip those entries.
+       *
+       * The location of a glossary must either match the location of the
+       * job, or the glossary must be global.
+       * </pre>
+       *
+       * <code>
+       * repeated string glossaries = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The count of glossaries.
+       */
+      public int getGlossariesCount() {
+        return glossaries_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The glossaries that are in scope for the import job,
+       * specified as relative resource names in the format
+       * `projects/{project_number_or_id}/locations/{location_id}/glossaries/{glossary_id}`.
+       *
+       * While importing Business Glossary entries, the user must
+       * provide glossaries. While importing entries, the user does not have to
+       * provide glossaries. If the metadata import file attempts to modify
+       * Business Glossary entries whose glossary isn't included in this list,
+       * the import job will skip those entries.
+       *
+       * The location of a glossary must either match the location of the
+       * job, or the glossary must be global.
+       * </pre>
+       *
+       * <code>
+       * repeated string glossaries = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The glossaries at the given index.
+       */
+      public java.lang.String getGlossaries(int index) {
+        return glossaries_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The glossaries that are in scope for the import job,
+       * specified as relative resource names in the format
+       * `projects/{project_number_or_id}/locations/{location_id}/glossaries/{glossary_id}`.
+       *
+       * While importing Business Glossary entries, the user must
+       * provide glossaries. While importing entries, the user does not have to
+       * provide glossaries. If the metadata import file attempts to modify
+       * Business Glossary entries whose glossary isn't included in this list,
+       * the import job will skip those entries.
+       *
+       * The location of a glossary must either match the location of the
+       * job, or the glossary must be global.
+       * </pre>
+       *
+       * <code>
+       * repeated string glossaries = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the glossaries at the given index.
+       */
+      public com.google.protobuf.ByteString getGlossariesBytes(int index) {
+        return glossaries_.getByteString(index);
+      }
+
+      public static final int ENTRY_LINK_TYPES_FIELD_NUMBER = 5;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList entryLinkTypes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The entry link types that are in scope for the import job,
+       * specified as relative resource names in the format
+       * `projects/{project_number_or_id}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`.
+       * The job modifies only the entryLinks that belong to these entry link
+       * types.
+       *
+       * If the metadata import file attempts to create or delete an entry link
+       * whose entry link type isn't included in this list, the import job will
+       * skip those entry links.
+       * </pre>
+       *
+       * <code>repeated string entry_link_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the entryLinkTypes.
+       */
+      public com.google.protobuf.ProtocolStringList getEntryLinkTypesList() {
+        return entryLinkTypes_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The entry link types that are in scope for the import job,
+       * specified as relative resource names in the format
+       * `projects/{project_number_or_id}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`.
+       * The job modifies only the entryLinks that belong to these entry link
+       * types.
+       *
+       * If the metadata import file attempts to create or delete an entry link
+       * whose entry link type isn't included in this list, the import job will
+       * skip those entry links.
+       * </pre>
+       *
+       * <code>repeated string entry_link_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of entryLinkTypes.
+       */
+      public int getEntryLinkTypesCount() {
+        return entryLinkTypes_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The entry link types that are in scope for the import job,
+       * specified as relative resource names in the format
+       * `projects/{project_number_or_id}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`.
+       * The job modifies only the entryLinks that belong to these entry link
+       * types.
+       *
+       * If the metadata import file attempts to create or delete an entry link
+       * whose entry link type isn't included in this list, the import job will
+       * skip those entry links.
+       * </pre>
+       *
+       * <code>repeated string entry_link_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The entryLinkTypes at the given index.
+       */
+      public java.lang.String getEntryLinkTypes(int index) {
+        return entryLinkTypes_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The entry link types that are in scope for the import job,
+       * specified as relative resource names in the format
+       * `projects/{project_number_or_id}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`.
+       * The job modifies only the entryLinks that belong to these entry link
+       * types.
+       *
+       * If the metadata import file attempts to create or delete an entry link
+       * whose entry link type isn't included in this list, the import job will
+       * skip those entry links.
+       * </pre>
+       *
+       * <code>repeated string entry_link_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the entryLinkTypes at the given index.
+       */
+      public com.google.protobuf.ByteString getEntryLinkTypesBytes(int index) {
+        return entryLinkTypes_.getByteString(index);
+      }
+
+      public static final int REFERENCED_ENTRY_SCOPES_FIELD_NUMBER = 6;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList referencedEntryScopes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines the scope of entries that can be referenced in the
+       * entry links.
+       *
+       * Currently, projects are supported as valid scopes.
+       * Format: `projects/{project_number_or_id}`
+       *
+       * If the metadata import file attempts to create an entry link
+       * which references an entry that is not in the scope, the import job will
+       * skip that entry link.
+       * </pre>
+       *
+       * <code>
+       * repeated string referenced_entry_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the referencedEntryScopes.
+       */
+      public com.google.protobuf.ProtocolStringList getReferencedEntryScopesList() {
+        return referencedEntryScopes_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines the scope of entries that can be referenced in the
+       * entry links.
+       *
+       * Currently, projects are supported as valid scopes.
+       * Format: `projects/{project_number_or_id}`
+       *
+       * If the metadata import file attempts to create an entry link
+       * which references an entry that is not in the scope, the import job will
+       * skip that entry link.
+       * </pre>
+       *
+       * <code>
+       * repeated string referenced_entry_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of referencedEntryScopes.
+       */
+      public int getReferencedEntryScopesCount() {
+        return referencedEntryScopes_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines the scope of entries that can be referenced in the
+       * entry links.
+       *
+       * Currently, projects are supported as valid scopes.
+       * Format: `projects/{project_number_or_id}`
+       *
+       * If the metadata import file attempts to create an entry link
+       * which references an entry that is not in the scope, the import job will
+       * skip that entry link.
+       * </pre>
+       *
+       * <code>
+       * repeated string referenced_entry_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The referencedEntryScopes at the given index.
+       */
+      public java.lang.String getReferencedEntryScopes(int index) {
+        return referencedEntryScopes_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Defines the scope of entries that can be referenced in the
+       * entry links.
+       *
+       * Currently, projects are supported as valid scopes.
+       * Format: `projects/{project_number_or_id}`
+       *
+       * If the metadata import file attempts to create an entry link
+       * which references an entry that is not in the scope, the import job will
+       * skip that entry link.
+       * </pre>
+       *
+       * <code>
+       * repeated string referenced_entry_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the referencedEntryScopes at the given index.
+       */
+      public com.google.protobuf.ByteString getReferencedEntryScopesBytes(int index) {
+        return referencedEntryScopes_.getByteString(index);
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -3793,6 +4758,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         }
         for (int i = 0; i < aspectTypes_.size(); i++) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 3, aspectTypes_.getRaw(i));
+        }
+        for (int i = 0; i < glossaries_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, glossaries_.getRaw(i));
+        }
+        for (int i = 0; i < entryLinkTypes_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, entryLinkTypes_.getRaw(i));
+        }
+        for (int i = 0; i < referencedEntryScopes_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(
+              output, 6, referencedEntryScopes_.getRaw(i));
         }
         getUnknownFields().writeTo(output);
       }
@@ -3827,6 +4802,30 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           size += dataSize;
           size += 1 * getAspectTypesList().size();
         }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < glossaries_.size(); i++) {
+            dataSize += computeStringSizeNoTag(glossaries_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getGlossariesList().size();
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < entryLinkTypes_.size(); i++) {
+            dataSize += computeStringSizeNoTag(entryLinkTypes_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getEntryLinkTypesList().size();
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < referencedEntryScopes_.size(); i++) {
+            dataSize += computeStringSizeNoTag(referencedEntryScopes_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getReferencedEntryScopesList().size();
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -3847,6 +4846,10 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         if (!getEntryGroupsList().equals(other.getEntryGroupsList())) return false;
         if (!getEntryTypesList().equals(other.getEntryTypesList())) return false;
         if (!getAspectTypesList().equals(other.getAspectTypesList())) return false;
+        if (!getGlossariesList().equals(other.getGlossariesList())) return false;
+        if (!getEntryLinkTypesList().equals(other.getEntryLinkTypesList())) return false;
+        if (!getReferencedEntryScopesList().equals(other.getReferencedEntryScopesList()))
+          return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -3869,6 +4872,18 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         if (getAspectTypesCount() > 0) {
           hash = (37 * hash) + ASPECT_TYPES_FIELD_NUMBER;
           hash = (53 * hash) + getAspectTypesList().hashCode();
+        }
+        if (getGlossariesCount() > 0) {
+          hash = (37 * hash) + GLOSSARIES_FIELD_NUMBER;
+          hash = (53 * hash) + getGlossariesList().hashCode();
+        }
+        if (getEntryLinkTypesCount() > 0) {
+          hash = (37 * hash) + ENTRY_LINK_TYPES_FIELD_NUMBER;
+          hash = (53 * hash) + getEntryLinkTypesList().hashCode();
+        }
+        if (getReferencedEntryScopesCount() > 0) {
+          hash = (37 * hash) + REFERENCED_ENTRY_SCOPES_FIELD_NUMBER;
+          hash = (53 * hash) + getReferencedEntryScopesList().hashCode();
         }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
@@ -4020,6 +5035,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           entryGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
           entryTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
           aspectTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          glossaries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          entryLinkTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          referencedEntryScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
           return this;
         }
 
@@ -4072,6 +5090,18 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           if (((from_bitField0_ & 0x00000004) != 0)) {
             aspectTypes_.makeImmutable();
             result.aspectTypes_ = aspectTypes_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            glossaries_.makeImmutable();
+            result.glossaries_ = glossaries_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            entryLinkTypes_.makeImmutable();
+            result.entryLinkTypes_ = entryLinkTypes_;
+          }
+          if (((from_bitField0_ & 0x00000020) != 0)) {
+            referencedEntryScopes_.makeImmutable();
+            result.referencedEntryScopes_ = referencedEntryScopes_;
           }
         }
 
@@ -4157,6 +5187,36 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             }
             onChanged();
           }
+          if (!other.glossaries_.isEmpty()) {
+            if (glossaries_.isEmpty()) {
+              glossaries_ = other.glossaries_;
+              bitField0_ |= 0x00000008;
+            } else {
+              ensureGlossariesIsMutable();
+              glossaries_.addAll(other.glossaries_);
+            }
+            onChanged();
+          }
+          if (!other.entryLinkTypes_.isEmpty()) {
+            if (entryLinkTypes_.isEmpty()) {
+              entryLinkTypes_ = other.entryLinkTypes_;
+              bitField0_ |= 0x00000010;
+            } else {
+              ensureEntryLinkTypesIsMutable();
+              entryLinkTypes_.addAll(other.entryLinkTypes_);
+            }
+            onChanged();
+          }
+          if (!other.referencedEntryScopes_.isEmpty()) {
+            if (referencedEntryScopes_.isEmpty()) {
+              referencedEntryScopes_ = other.referencedEntryScopes_;
+              bitField0_ |= 0x00000020;
+            } else {
+              ensureReferencedEntryScopesIsMutable();
+              referencedEntryScopes_.addAll(other.referencedEntryScopes_);
+            }
+            onChanged();
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -4204,6 +5264,27 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
                     aspectTypes_.add(s);
                     break;
                   } // case 26
+                case 34:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureGlossariesIsMutable();
+                    glossaries_.add(s);
+                    break;
+                  } // case 34
+                case 42:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureEntryLinkTypesIsMutable();
+                    entryLinkTypes_.add(s);
+                    break;
+                  } // case 42
+                case 50:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureReferencedEntryScopesIsMutable();
+                    referencedEntryScopes_.add(s);
+                    break;
+                  } // case 50
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5092,6 +6173,844 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           ensureAspectTypesIsMutable();
           aspectTypes_.add(value);
           bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList glossaries_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureGlossariesIsMutable() {
+          if (!glossaries_.isModifiable()) {
+            glossaries_ = new com.google.protobuf.LazyStringArrayList(glossaries_);
+          }
+          bitField0_ |= 0x00000008;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The glossaries that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/glossaries/{glossary_id}`.
+         *
+         * While importing Business Glossary entries, the user must
+         * provide glossaries. While importing entries, the user does not have to
+         * provide glossaries. If the metadata import file attempts to modify
+         * Business Glossary entries whose glossary isn't included in this list,
+         * the import job will skip those entries.
+         *
+         * The location of a glossary must either match the location of the
+         * job, or the glossary must be global.
+         * </pre>
+         *
+         * <code>
+         * repeated string glossaries = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return A list containing the glossaries.
+         */
+        public com.google.protobuf.ProtocolStringList getGlossariesList() {
+          glossaries_.makeImmutable();
+          return glossaries_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The glossaries that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/glossaries/{glossary_id}`.
+         *
+         * While importing Business Glossary entries, the user must
+         * provide glossaries. While importing entries, the user does not have to
+         * provide glossaries. If the metadata import file attempts to modify
+         * Business Glossary entries whose glossary isn't included in this list,
+         * the import job will skip those entries.
+         *
+         * The location of a glossary must either match the location of the
+         * job, or the glossary must be global.
+         * </pre>
+         *
+         * <code>
+         * repeated string glossaries = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The count of glossaries.
+         */
+        public int getGlossariesCount() {
+          return glossaries_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The glossaries that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/glossaries/{glossary_id}`.
+         *
+         * While importing Business Glossary entries, the user must
+         * provide glossaries. While importing entries, the user does not have to
+         * provide glossaries. If the metadata import file attempts to modify
+         * Business Glossary entries whose glossary isn't included in this list,
+         * the import job will skip those entries.
+         *
+         * The location of a glossary must either match the location of the
+         * job, or the glossary must be global.
+         * </pre>
+         *
+         * <code>
+         * repeated string glossaries = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The glossaries at the given index.
+         */
+        public java.lang.String getGlossaries(int index) {
+          return glossaries_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The glossaries that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/glossaries/{glossary_id}`.
+         *
+         * While importing Business Glossary entries, the user must
+         * provide glossaries. While importing entries, the user does not have to
+         * provide glossaries. If the metadata import file attempts to modify
+         * Business Glossary entries whose glossary isn't included in this list,
+         * the import job will skip those entries.
+         *
+         * The location of a glossary must either match the location of the
+         * job, or the glossary must be global.
+         * </pre>
+         *
+         * <code>
+         * repeated string glossaries = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the glossaries at the given index.
+         */
+        public com.google.protobuf.ByteString getGlossariesBytes(int index) {
+          return glossaries_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The glossaries that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/glossaries/{glossary_id}`.
+         *
+         * While importing Business Glossary entries, the user must
+         * provide glossaries. While importing entries, the user does not have to
+         * provide glossaries. If the metadata import file attempts to modify
+         * Business Glossary entries whose glossary isn't included in this list,
+         * the import job will skip those entries.
+         *
+         * The location of a glossary must either match the location of the
+         * job, or the glossary must be global.
+         * </pre>
+         *
+         * <code>
+         * repeated string glossaries = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The glossaries to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGlossaries(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGlossariesIsMutable();
+          glossaries_.set(index, value);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The glossaries that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/glossaries/{glossary_id}`.
+         *
+         * While importing Business Glossary entries, the user must
+         * provide glossaries. While importing entries, the user does not have to
+         * provide glossaries. If the metadata import file attempts to modify
+         * Business Glossary entries whose glossary isn't included in this list,
+         * the import job will skip those entries.
+         *
+         * The location of a glossary must either match the location of the
+         * job, or the glossary must be global.
+         * </pre>
+         *
+         * <code>
+         * repeated string glossaries = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The glossaries to add.
+         * @return This builder for chaining.
+         */
+        public Builder addGlossaries(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGlossariesIsMutable();
+          glossaries_.add(value);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The glossaries that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/glossaries/{glossary_id}`.
+         *
+         * While importing Business Glossary entries, the user must
+         * provide glossaries. While importing entries, the user does not have to
+         * provide glossaries. If the metadata import file attempts to modify
+         * Business Glossary entries whose glossary isn't included in this list,
+         * the import job will skip those entries.
+         *
+         * The location of a glossary must either match the location of the
+         * job, or the glossary must be global.
+         * </pre>
+         *
+         * <code>
+         * repeated string glossaries = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param values The glossaries to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllGlossaries(java.lang.Iterable<java.lang.String> values) {
+          ensureGlossariesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, glossaries_);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The glossaries that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/glossaries/{glossary_id}`.
+         *
+         * While importing Business Glossary entries, the user must
+         * provide glossaries. While importing entries, the user does not have to
+         * provide glossaries. If the metadata import file attempts to modify
+         * Business Glossary entries whose glossary isn't included in this list,
+         * the import job will skip those entries.
+         *
+         * The location of a glossary must either match the location of the
+         * job, or the glossary must be global.
+         * </pre>
+         *
+         * <code>
+         * repeated string glossaries = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearGlossaries() {
+          glossaries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The glossaries that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/glossaries/{glossary_id}`.
+         *
+         * While importing Business Glossary entries, the user must
+         * provide glossaries. While importing entries, the user does not have to
+         * provide glossaries. If the metadata import file attempts to modify
+         * Business Glossary entries whose glossary isn't included in this list,
+         * the import job will skip those entries.
+         *
+         * The location of a glossary must either match the location of the
+         * job, or the glossary must be global.
+         * </pre>
+         *
+         * <code>
+         * repeated string glossaries = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The bytes of the glossaries to add.
+         * @return This builder for chaining.
+         */
+        public Builder addGlossariesBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureGlossariesIsMutable();
+          glossaries_.add(value);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList entryLinkTypes_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureEntryLinkTypesIsMutable() {
+          if (!entryLinkTypes_.isModifiable()) {
+            entryLinkTypes_ = new com.google.protobuf.LazyStringArrayList(entryLinkTypes_);
+          }
+          bitField0_ |= 0x00000010;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The entry link types that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`.
+         * The job modifies only the entryLinks that belong to these entry link
+         * types.
+         *
+         * If the metadata import file attempts to create or delete an entry link
+         * whose entry link type isn't included in this list, the import job will
+         * skip those entry links.
+         * </pre>
+         *
+         * <code>repeated string entry_link_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return A list containing the entryLinkTypes.
+         */
+        public com.google.protobuf.ProtocolStringList getEntryLinkTypesList() {
+          entryLinkTypes_.makeImmutable();
+          return entryLinkTypes_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The entry link types that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`.
+         * The job modifies only the entryLinks that belong to these entry link
+         * types.
+         *
+         * If the metadata import file attempts to create or delete an entry link
+         * whose entry link type isn't included in this list, the import job will
+         * skip those entry links.
+         * </pre>
+         *
+         * <code>repeated string entry_link_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The count of entryLinkTypes.
+         */
+        public int getEntryLinkTypesCount() {
+          return entryLinkTypes_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The entry link types that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`.
+         * The job modifies only the entryLinks that belong to these entry link
+         * types.
+         *
+         * If the metadata import file attempts to create or delete an entry link
+         * whose entry link type isn't included in this list, the import job will
+         * skip those entry links.
+         * </pre>
+         *
+         * <code>repeated string entry_link_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The entryLinkTypes at the given index.
+         */
+        public java.lang.String getEntryLinkTypes(int index) {
+          return entryLinkTypes_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The entry link types that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`.
+         * The job modifies only the entryLinks that belong to these entry link
+         * types.
+         *
+         * If the metadata import file attempts to create or delete an entry link
+         * whose entry link type isn't included in this list, the import job will
+         * skip those entry links.
+         * </pre>
+         *
+         * <code>repeated string entry_link_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the entryLinkTypes at the given index.
+         */
+        public com.google.protobuf.ByteString getEntryLinkTypesBytes(int index) {
+          return entryLinkTypes_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The entry link types that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`.
+         * The job modifies only the entryLinks that belong to these entry link
+         * types.
+         *
+         * If the metadata import file attempts to create or delete an entry link
+         * whose entry link type isn't included in this list, the import job will
+         * skip those entry links.
+         * </pre>
+         *
+         * <code>repeated string entry_link_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The entryLinkTypes to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEntryLinkTypes(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEntryLinkTypesIsMutable();
+          entryLinkTypes_.set(index, value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The entry link types that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`.
+         * The job modifies only the entryLinks that belong to these entry link
+         * types.
+         *
+         * If the metadata import file attempts to create or delete an entry link
+         * whose entry link type isn't included in this list, the import job will
+         * skip those entry links.
+         * </pre>
+         *
+         * <code>repeated string entry_link_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The entryLinkTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addEntryLinkTypes(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEntryLinkTypesIsMutable();
+          entryLinkTypes_.add(value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The entry link types that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`.
+         * The job modifies only the entryLinks that belong to these entry link
+         * types.
+         *
+         * If the metadata import file attempts to create or delete an entry link
+         * whose entry link type isn't included in this list, the import job will
+         * skip those entry links.
+         * </pre>
+         *
+         * <code>repeated string entry_link_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param values The entryLinkTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllEntryLinkTypes(java.lang.Iterable<java.lang.String> values) {
+          ensureEntryLinkTypesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, entryLinkTypes_);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The entry link types that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`.
+         * The job modifies only the entryLinks that belong to these entry link
+         * types.
+         *
+         * If the metadata import file attempts to create or delete an entry link
+         * whose entry link type isn't included in this list, the import job will
+         * skip those entry links.
+         * </pre>
+         *
+         * <code>repeated string entry_link_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEntryLinkTypes() {
+          entryLinkTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The entry link types that are in scope for the import job,
+         * specified as relative resource names in the format
+         * `projects/{project_number_or_id}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`.
+         * The job modifies only the entryLinks that belong to these entry link
+         * types.
+         *
+         * If the metadata import file attempts to create or delete an entry link
+         * whose entry link type isn't included in this list, the import job will
+         * skip those entry links.
+         * </pre>
+         *
+         * <code>repeated string entry_link_types = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The bytes of the entryLinkTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addEntryLinkTypesBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureEntryLinkTypesIsMutable();
+          entryLinkTypes_.add(value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList referencedEntryScopes_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureReferencedEntryScopesIsMutable() {
+          if (!referencedEntryScopes_.isModifiable()) {
+            referencedEntryScopes_ =
+                new com.google.protobuf.LazyStringArrayList(referencedEntryScopes_);
+          }
+          bitField0_ |= 0x00000020;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Defines the scope of entries that can be referenced in the
+         * entry links.
+         *
+         * Currently, projects are supported as valid scopes.
+         * Format: `projects/{project_number_or_id}`
+         *
+         * If the metadata import file attempts to create an entry link
+         * which references an entry that is not in the scope, the import job will
+         * skip that entry link.
+         * </pre>
+         *
+         * <code>
+         * repeated string referenced_entry_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return A list containing the referencedEntryScopes.
+         */
+        public com.google.protobuf.ProtocolStringList getReferencedEntryScopesList() {
+          referencedEntryScopes_.makeImmutable();
+          return referencedEntryScopes_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Defines the scope of entries that can be referenced in the
+         * entry links.
+         *
+         * Currently, projects are supported as valid scopes.
+         * Format: `projects/{project_number_or_id}`
+         *
+         * If the metadata import file attempts to create an entry link
+         * which references an entry that is not in the scope, the import job will
+         * skip that entry link.
+         * </pre>
+         *
+         * <code>
+         * repeated string referenced_entry_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The count of referencedEntryScopes.
+         */
+        public int getReferencedEntryScopesCount() {
+          return referencedEntryScopes_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Defines the scope of entries that can be referenced in the
+         * entry links.
+         *
+         * Currently, projects are supported as valid scopes.
+         * Format: `projects/{project_number_or_id}`
+         *
+         * If the metadata import file attempts to create an entry link
+         * which references an entry that is not in the scope, the import job will
+         * skip that entry link.
+         * </pre>
+         *
+         * <code>
+         * repeated string referenced_entry_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The referencedEntryScopes at the given index.
+         */
+        public java.lang.String getReferencedEntryScopes(int index) {
+          return referencedEntryScopes_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Defines the scope of entries that can be referenced in the
+         * entry links.
+         *
+         * Currently, projects are supported as valid scopes.
+         * Format: `projects/{project_number_or_id}`
+         *
+         * If the metadata import file attempts to create an entry link
+         * which references an entry that is not in the scope, the import job will
+         * skip that entry link.
+         * </pre>
+         *
+         * <code>
+         * repeated string referenced_entry_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the referencedEntryScopes at the given index.
+         */
+        public com.google.protobuf.ByteString getReferencedEntryScopesBytes(int index) {
+          return referencedEntryScopes_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Defines the scope of entries that can be referenced in the
+         * entry links.
+         *
+         * Currently, projects are supported as valid scopes.
+         * Format: `projects/{project_number_or_id}`
+         *
+         * If the metadata import file attempts to create an entry link
+         * which references an entry that is not in the scope, the import job will
+         * skip that entry link.
+         * </pre>
+         *
+         * <code>
+         * repeated string referenced_entry_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The referencedEntryScopes to set.
+         * @return This builder for chaining.
+         */
+        public Builder setReferencedEntryScopes(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReferencedEntryScopesIsMutable();
+          referencedEntryScopes_.set(index, value);
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Defines the scope of entries that can be referenced in the
+         * entry links.
+         *
+         * Currently, projects are supported as valid scopes.
+         * Format: `projects/{project_number_or_id}`
+         *
+         * If the metadata import file attempts to create an entry link
+         * which references an entry that is not in the scope, the import job will
+         * skip that entry link.
+         * </pre>
+         *
+         * <code>
+         * repeated string referenced_entry_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The referencedEntryScopes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addReferencedEntryScopes(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReferencedEntryScopesIsMutable();
+          referencedEntryScopes_.add(value);
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Defines the scope of entries that can be referenced in the
+         * entry links.
+         *
+         * Currently, projects are supported as valid scopes.
+         * Format: `projects/{project_number_or_id}`
+         *
+         * If the metadata import file attempts to create an entry link
+         * which references an entry that is not in the scope, the import job will
+         * skip that entry link.
+         * </pre>
+         *
+         * <code>
+         * repeated string referenced_entry_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param values The referencedEntryScopes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllReferencedEntryScopes(java.lang.Iterable<java.lang.String> values) {
+          ensureReferencedEntryScopesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, referencedEntryScopes_);
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Defines the scope of entries that can be referenced in the
+         * entry links.
+         *
+         * Currently, projects are supported as valid scopes.
+         * Format: `projects/{project_number_or_id}`
+         *
+         * If the metadata import file attempts to create an entry link
+         * which references an entry that is not in the scope, the import job will
+         * skip that entry link.
+         * </pre>
+         *
+         * <code>
+         * repeated string referenced_entry_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearReferencedEntryScopes() {
+          referencedEntryScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Defines the scope of entries that can be referenced in the
+         * entry links.
+         *
+         * Currently, projects are supported as valid scopes.
+         * Format: `projects/{project_number_or_id}`
+         *
+         * If the metadata import file attempts to create an entry link
+         * which references an entry that is not in the scope, the import job will
+         * skip that entry link.
+         * </pre>
+         *
+         * <code>
+         * repeated string referenced_entry_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The bytes of the referencedEntryScopes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addReferencedEntryScopesBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureReferencedEntryScopesIsMutable();
+          referencedEntryScopes_.add(value);
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -7175,9 +9094,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
      * custom prefix after the bucket name, in the format
      * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
-     * characters. Dataplex constructs the object path for the exported files by
-     * using the bucket name and prefix that you provide, followed by a
-     * system-generated path.
+     * characters. Dataplex Universal Catalog constructs the object path for the
+     * exported files by using the bucket name and prefix that you provide,
+     * followed by a system-generated path.
      *
      * The bucket must be in the same VPC Service Controls perimeter as the job.
      * </pre>
@@ -7196,9 +9115,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
      * custom prefix after the bucket name, in the format
      * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
-     * characters. Dataplex constructs the object path for the exported files by
-     * using the bucket name and prefix that you provide, followed by a
-     * system-generated path.
+     * characters. Dataplex Universal Catalog constructs the object path for the
+     * exported files by using the bucket name and prefix that you provide,
+     * followed by a system-generated path.
      *
      * The bucket must be in the same VPC Service Controls perimeter as the job.
      * </pre>
@@ -9766,9 +11685,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
      * custom prefix after the bucket name, in the format
      * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
-     * characters. Dataplex constructs the object path for the exported files by
-     * using the bucket name and prefix that you provide, followed by a
-     * system-generated path.
+     * characters. Dataplex Universal Catalog constructs the object path for the
+     * exported files by using the bucket name and prefix that you provide,
+     * followed by a system-generated path.
      *
      * The bucket must be in the same VPC Service Controls perimeter as the job.
      * </pre>
@@ -9798,9 +11717,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
      * custom prefix after the bucket name, in the format
      * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
-     * characters. Dataplex constructs the object path for the exported files by
-     * using the bucket name and prefix that you provide, followed by a
-     * system-generated path.
+     * characters. Dataplex Universal Catalog constructs the object path for the
+     * exported files by using the bucket name and prefix that you provide,
+     * followed by a system-generated path.
      *
      * The bucket must be in the same VPC Service Controls perimeter as the job.
      * </pre>
@@ -10445,9 +12364,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
        * custom prefix after the bucket name, in the format
        * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
-       * characters. Dataplex constructs the object path for the exported files by
-       * using the bucket name and prefix that you provide, followed by a
-       * system-generated path.
+       * characters. Dataplex Universal Catalog constructs the object path for the
+       * exported files by using the bucket name and prefix that you provide,
+       * followed by a system-generated path.
        *
        * The bucket must be in the same VPC Service Controls perimeter as the job.
        * </pre>
@@ -10476,9 +12395,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
        * custom prefix after the bucket name, in the format
        * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
-       * characters. Dataplex constructs the object path for the exported files by
-       * using the bucket name and prefix that you provide, followed by a
-       * system-generated path.
+       * characters. Dataplex Universal Catalog constructs the object path for the
+       * exported files by using the bucket name and prefix that you provide,
+       * followed by a system-generated path.
        *
        * The bucket must be in the same VPC Service Controls perimeter as the job.
        * </pre>
@@ -10507,9 +12426,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
        * custom prefix after the bucket name, in the format
        * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
-       * characters. Dataplex constructs the object path for the exported files by
-       * using the bucket name and prefix that you provide, followed by a
-       * system-generated path.
+       * characters. Dataplex Universal Catalog constructs the object path for the
+       * exported files by using the bucket name and prefix that you provide,
+       * followed by a system-generated path.
        *
        * The bucket must be in the same VPC Service Controls perimeter as the job.
        * </pre>
@@ -10537,9 +12456,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
        * custom prefix after the bucket name, in the format
        * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
-       * characters. Dataplex constructs the object path for the exported files by
-       * using the bucket name and prefix that you provide, followed by a
-       * system-generated path.
+       * characters. Dataplex Universal Catalog constructs the object path for the
+       * exported files by using the bucket name and prefix that you provide,
+       * followed by a system-generated path.
        *
        * The bucket must be in the same VPC Service Controls perimeter as the job.
        * </pre>
@@ -10563,9 +12482,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
        * custom prefix after the bucket name, in the format
        * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
-       * characters. Dataplex constructs the object path for the exported files by
-       * using the bucket name and prefix that you provide, followed by a
-       * system-generated path.
+       * characters. Dataplex Universal Catalog constructs the object path for the
+       * exported files by using the bucket name and prefix that you provide,
+       * followed by a system-generated path.
        *
        * The bucket must be in the same VPC Service Controls perimeter as the job.
        * </pre>

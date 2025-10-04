@@ -54,6 +54,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     encryptionType_ = 0;
     replicaZone_ = "";
     zone_ = "";
+    qosType_ = 0;
   }
 
   @java.lang.Override
@@ -1346,7 +1347,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Custom Performance Total Throughput of the pool (in MiB/s)
+   * Optional. Custom Performance Total Throughput of the pool (in MiBps)
    * </pre>
    *
    * <code>int64 total_throughput_mibps = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1366,7 +1367,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Custom Performance Total IOPS of the pool
-   * If not provided, it will be calculated based on the total_throughput_mibps
+   * if not provided, it will be calculated based on the total_throughput_mibps
    * </pre>
    *
    * <code>int64 total_iops = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1376,6 +1377,170 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public long getTotalIops() {
     return totalIops_;
+  }
+
+  public static final int HOT_TIER_SIZE_GIB_FIELD_NUMBER = 28;
+  private long hotTierSizeGib_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Total hot tier capacity for the Storage Pool. It is applicable
+   * only to Flex service level. It should be less than the minimum storage pool
+   * size and cannot be more than the current storage pool size. It cannot be
+   * decreased once set.
+   * </pre>
+   *
+   * <code>int64 hot_tier_size_gib = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The hotTierSizeGib.
+   */
+  @java.lang.Override
+  public long getHotTierSizeGib() {
+    return hotTierSizeGib_;
+  }
+
+  public static final int ENABLE_HOT_TIER_AUTO_RESIZE_FIELD_NUMBER = 29;
+  private boolean enableHotTierAutoResize_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag indicating that the hot-tier threshold will be
+   * auto-increased by 10% of the hot-tier when it hits 100%. Default is true.
+   * The increment will kick in only if the new size after increment is
+   * still less than or equal to storage pool size.
+   * </pre>
+   *
+   * <code>optional bool enable_hot_tier_auto_resize = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the enableHotTierAutoResize field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableHotTierAutoResize() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag indicating that the hot-tier threshold will be
+   * auto-increased by 10% of the hot-tier when it hits 100%. Default is true.
+   * The increment will kick in only if the new size after increment is
+   * still less than or equal to storage pool size.
+   * </pre>
+   *
+   * <code>optional bool enable_hot_tier_auto_resize = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableHotTierAutoResize.
+   */
+  @java.lang.Override
+  public boolean getEnableHotTierAutoResize() {
+    return enableHotTierAutoResize_;
+  }
+
+  public static final int QOS_TYPE_FIELD_NUMBER = 30;
+  private int qosType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. QoS (Quality of Service) Type of the storage pool
+   * </pre>
+   *
+   * <code>.google.cloud.netapp.v1.QosType qos_type = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for qosType.
+   */
+  @java.lang.Override
+  public int getQosTypeValue() {
+    return qosType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. QoS (Quality of Service) Type of the storage pool
+   * </pre>
+   *
+   * <code>.google.cloud.netapp.v1.QosType qos_type = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The qosType.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.QosType getQosType() {
+    com.google.cloud.netapp.v1.QosType result =
+        com.google.cloud.netapp.v1.QosType.forNumber(qosType_);
+    return result == null ? com.google.cloud.netapp.v1.QosType.UNRECOGNIZED : result;
+  }
+
+  public static final int AVAILABLE_THROUGHPUT_MIBPS_FIELD_NUMBER = 31;
+  private double availableThroughputMibps_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Available throughput of the storage pool (in MiB/s).
+   * </pre>
+   *
+   * <code>double available_throughput_mibps = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The availableThroughputMibps.
+   */
+  @java.lang.Override
+  public double getAvailableThroughputMibps() {
+    return availableThroughputMibps_;
+  }
+
+  public static final int COLD_TIER_SIZE_USED_GIB_FIELD_NUMBER = 33;
+  private long coldTierSizeUsedGib_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total cold tier data rounded down to the nearest GiB used by
+   * the storage pool.
+   * </pre>
+   *
+   * <code>int64 cold_tier_size_used_gib = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The coldTierSizeUsedGib.
+   */
+  @java.lang.Override
+  public long getColdTierSizeUsedGib() {
+    return coldTierSizeUsedGib_;
+  }
+
+  public static final int HOT_TIER_SIZE_USED_GIB_FIELD_NUMBER = 34;
+  private long hotTierSizeUsedGib_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total hot tier data rounded down to the nearest GiB used by
+   * the storage pool.
+   * </pre>
+   *
+   * <code>int64 hot_tier_size_used_gib = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The hotTierSizeUsedGib.
+   */
+  @java.lang.Override
+  public long getHotTierSizeUsedGib() {
+    return hotTierSizeUsedGib_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1467,6 +1632,24 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
     if (totalIops_ != 0L) {
       output.writeInt64(27, totalIops_);
+    }
+    if (hotTierSizeGib_ != 0L) {
+      output.writeInt64(28, hotTierSizeGib_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(29, enableHotTierAutoResize_);
+    }
+    if (qosType_ != com.google.cloud.netapp.v1.QosType.QOS_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(30, qosType_);
+    }
+    if (java.lang.Double.doubleToRawLongBits(availableThroughputMibps_) != 0) {
+      output.writeDouble(31, availableThroughputMibps_);
+    }
+    if (coldTierSizeUsedGib_ != 0L) {
+      output.writeInt64(33, coldTierSizeUsedGib_);
+    }
+    if (hotTierSizeUsedGib_ != 0L) {
+      output.writeInt64(34, hotTierSizeUsedGib_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1561,6 +1744,25 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     if (totalIops_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(27, totalIops_);
     }
+    if (hotTierSizeGib_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(28, hotTierSizeGib_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(29, enableHotTierAutoResize_);
+    }
+    if (qosType_ != com.google.cloud.netapp.v1.QosType.QOS_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(30, qosType_);
+    }
+    if (java.lang.Double.doubleToRawLongBits(availableThroughputMibps_) != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeDoubleSize(31, availableThroughputMibps_);
+    }
+    if (coldTierSizeUsedGib_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(33, coldTierSizeUsedGib_);
+    }
+    if (hotTierSizeUsedGib_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(34, hotTierSizeUsedGib_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1607,6 +1809,16 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     if (getCustomPerformanceEnabled() != other.getCustomPerformanceEnabled()) return false;
     if (getTotalThroughputMibps() != other.getTotalThroughputMibps()) return false;
     if (getTotalIops() != other.getTotalIops()) return false;
+    if (getHotTierSizeGib() != other.getHotTierSizeGib()) return false;
+    if (hasEnableHotTierAutoResize() != other.hasEnableHotTierAutoResize()) return false;
+    if (hasEnableHotTierAutoResize()) {
+      if (getEnableHotTierAutoResize() != other.getEnableHotTierAutoResize()) return false;
+    }
+    if (qosType_ != other.qosType_) return false;
+    if (java.lang.Double.doubleToLongBits(getAvailableThroughputMibps())
+        != java.lang.Double.doubleToLongBits(other.getAvailableThroughputMibps())) return false;
+    if (getColdTierSizeUsedGib() != other.getColdTierSizeUsedGib()) return false;
+    if (getHotTierSizeUsedGib() != other.getHotTierSizeUsedGib()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1674,6 +1886,23 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalThroughputMibps());
     hash = (37 * hash) + TOTAL_IOPS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalIops());
+    hash = (37 * hash) + HOT_TIER_SIZE_GIB_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getHotTierSizeGib());
+    if (hasEnableHotTierAutoResize()) {
+      hash = (37 * hash) + ENABLE_HOT_TIER_AUTO_RESIZE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableHotTierAutoResize());
+    }
+    hash = (37 * hash) + QOS_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + qosType_;
+    hash = (37 * hash) + AVAILABLE_THROUGHPUT_MIBPS_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(
+                java.lang.Double.doubleToLongBits(getAvailableThroughputMibps()));
+    hash = (37 * hash) + COLD_TIER_SIZE_USED_GIB_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getColdTierSizeUsedGib());
+    hash = (37 * hash) + HOT_TIER_SIZE_USED_GIB_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getHotTierSizeUsedGib());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1876,6 +2105,12 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       customPerformanceEnabled_ = false;
       totalThroughputMibps_ = 0L;
       totalIops_ = 0L;
+      hotTierSizeGib_ = 0L;
+      enableHotTierAutoResize_ = false;
+      qosType_ = 0;
+      availableThroughputMibps_ = 0D;
+      coldTierSizeUsedGib_ = 0L;
+      hotTierSizeUsedGib_ = 0L;
       return this;
     }
 
@@ -1990,6 +2225,25 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x01000000) != 0)) {
         result.totalIops_ = totalIops_;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.hotTierSizeGib_ = hotTierSizeGib_;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.enableHotTierAutoResize_ = enableHotTierAutoResize_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.qosType_ = qosType_;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.availableThroughputMibps_ = availableThroughputMibps_;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.coldTierSizeUsedGib_ = coldTierSizeUsedGib_;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.hotTierSizeUsedGib_ = hotTierSizeUsedGib_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2130,6 +2384,24 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getTotalIops() != 0L) {
         setTotalIops(other.getTotalIops());
+      }
+      if (other.getHotTierSizeGib() != 0L) {
+        setHotTierSizeGib(other.getHotTierSizeGib());
+      }
+      if (other.hasEnableHotTierAutoResize()) {
+        setEnableHotTierAutoResize(other.getEnableHotTierAutoResize());
+      }
+      if (other.qosType_ != 0) {
+        setQosTypeValue(other.getQosTypeValue());
+      }
+      if (other.getAvailableThroughputMibps() != 0D) {
+        setAvailableThroughputMibps(other.getAvailableThroughputMibps());
+      }
+      if (other.getColdTierSizeUsedGib() != 0L) {
+        setColdTierSizeUsedGib(other.getColdTierSizeUsedGib());
+      }
+      if (other.getHotTierSizeUsedGib() != 0L) {
+        setHotTierSizeUsedGib(other.getHotTierSizeUsedGib());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2313,6 +2585,42 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x01000000;
                 break;
               } // case 216
+            case 224:
+              {
+                hotTierSizeGib_ = input.readInt64();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 224
+            case 232:
+              {
+                enableHotTierAutoResize_ = input.readBool();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 232
+            case 240:
+              {
+                qosType_ = input.readEnum();
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 240
+            case 249:
+              {
+                availableThroughputMibps_ = input.readDouble();
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 249
+            case 264:
+              {
+                coldTierSizeUsedGib_ = input.readInt64();
+                bitField0_ |= 0x20000000;
+                break;
+              } // case 264
+            case 272:
+              {
+                hotTierSizeUsedGib_ = input.readInt64();
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 272
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4626,7 +4934,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Custom Performance Total Throughput of the pool (in MiB/s)
+     * Optional. Custom Performance Total Throughput of the pool (in MiBps)
      * </pre>
      *
      * <code>int64 total_throughput_mibps = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4642,7 +4950,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Custom Performance Total Throughput of the pool (in MiB/s)
+     * Optional. Custom Performance Total Throughput of the pool (in MiBps)
      * </pre>
      *
      * <code>int64 total_throughput_mibps = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4662,7 +4970,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Custom Performance Total Throughput of the pool (in MiB/s)
+     * Optional. Custom Performance Total Throughput of the pool (in MiBps)
      * </pre>
      *
      * <code>int64 total_throughput_mibps = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4683,7 +4991,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Custom Performance Total IOPS of the pool
-     * If not provided, it will be calculated based on the total_throughput_mibps
+     * if not provided, it will be calculated based on the total_throughput_mibps
      * </pre>
      *
      * <code>int64 total_iops = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4700,7 +5008,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Custom Performance Total IOPS of the pool
-     * If not provided, it will be calculated based on the total_throughput_mibps
+     * if not provided, it will be calculated based on the total_throughput_mibps
      * </pre>
      *
      * <code>int64 total_iops = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4721,7 +5029,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Custom Performance Total IOPS of the pool
-     * If not provided, it will be calculated based on the total_throughput_mibps
+     * if not provided, it will be calculated based on the total_throughput_mibps
      * </pre>
      *
      * <code>int64 total_iops = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4731,6 +5039,445 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTotalIops() {
       bitField0_ = (bitField0_ & ~0x01000000);
       totalIops_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long hotTierSizeGib_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Total hot tier capacity for the Storage Pool. It is applicable
+     * only to Flex service level. It should be less than the minimum storage pool
+     * size and cannot be more than the current storage pool size. It cannot be
+     * decreased once set.
+     * </pre>
+     *
+     * <code>int64 hot_tier_size_gib = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The hotTierSizeGib.
+     */
+    @java.lang.Override
+    public long getHotTierSizeGib() {
+      return hotTierSizeGib_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Total hot tier capacity for the Storage Pool. It is applicable
+     * only to Flex service level. It should be less than the minimum storage pool
+     * size and cannot be more than the current storage pool size. It cannot be
+     * decreased once set.
+     * </pre>
+     *
+     * <code>int64 hot_tier_size_gib = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The hotTierSizeGib to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHotTierSizeGib(long value) {
+
+      hotTierSizeGib_ = value;
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Total hot tier capacity for the Storage Pool. It is applicable
+     * only to Flex service level. It should be less than the minimum storage pool
+     * size and cannot be more than the current storage pool size. It cannot be
+     * decreased once set.
+     * </pre>
+     *
+     * <code>int64 hot_tier_size_gib = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHotTierSizeGib() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      hotTierSizeGib_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableHotTierAutoResize_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag indicating that the hot-tier threshold will be
+     * auto-increased by 10% of the hot-tier when it hits 100%. Default is true.
+     * The increment will kick in only if the new size after increment is
+     * still less than or equal to storage pool size.
+     * </pre>
+     *
+     * <code>
+     * optional bool enable_hot_tier_auto_resize = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the enableHotTierAutoResize field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableHotTierAutoResize() {
+      return ((bitField0_ & 0x04000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag indicating that the hot-tier threshold will be
+     * auto-increased by 10% of the hot-tier when it hits 100%. Default is true.
+     * The increment will kick in only if the new size after increment is
+     * still less than or equal to storage pool size.
+     * </pre>
+     *
+     * <code>
+     * optional bool enable_hot_tier_auto_resize = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableHotTierAutoResize.
+     */
+    @java.lang.Override
+    public boolean getEnableHotTierAutoResize() {
+      return enableHotTierAutoResize_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag indicating that the hot-tier threshold will be
+     * auto-increased by 10% of the hot-tier when it hits 100%. Default is true.
+     * The increment will kick in only if the new size after increment is
+     * still less than or equal to storage pool size.
+     * </pre>
+     *
+     * <code>
+     * optional bool enable_hot_tier_auto_resize = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enableHotTierAutoResize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableHotTierAutoResize(boolean value) {
+
+      enableHotTierAutoResize_ = value;
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag indicating that the hot-tier threshold will be
+     * auto-increased by 10% of the hot-tier when it hits 100%. Default is true.
+     * The increment will kick in only if the new size after increment is
+     * still less than or equal to storage pool size.
+     * </pre>
+     *
+     * <code>
+     * optional bool enable_hot_tier_auto_resize = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableHotTierAutoResize() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      enableHotTierAutoResize_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int qosType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. QoS (Quality of Service) Type of the storage pool
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.QosType qos_type = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for qosType.
+     */
+    @java.lang.Override
+    public int getQosTypeValue() {
+      return qosType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. QoS (Quality of Service) Type of the storage pool
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.QosType qos_type = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for qosType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQosTypeValue(int value) {
+      qosType_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. QoS (Quality of Service) Type of the storage pool
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.QosType qos_type = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The qosType.
+     */
+    @java.lang.Override
+    public com.google.cloud.netapp.v1.QosType getQosType() {
+      com.google.cloud.netapp.v1.QosType result =
+          com.google.cloud.netapp.v1.QosType.forNumber(qosType_);
+      return result == null ? com.google.cloud.netapp.v1.QosType.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. QoS (Quality of Service) Type of the storage pool
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.QosType qos_type = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The qosType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQosType(com.google.cloud.netapp.v1.QosType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x08000000;
+      qosType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. QoS (Quality of Service) Type of the storage pool
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.QosType qos_type = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearQosType() {
+      bitField0_ = (bitField0_ & ~0x08000000);
+      qosType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private double availableThroughputMibps_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Available throughput of the storage pool (in MiB/s).
+     * </pre>
+     *
+     * <code>double available_throughput_mibps = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The availableThroughputMibps.
+     */
+    @java.lang.Override
+    public double getAvailableThroughputMibps() {
+      return availableThroughputMibps_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Available throughput of the storage pool (in MiB/s).
+     * </pre>
+     *
+     * <code>double available_throughput_mibps = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The availableThroughputMibps to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvailableThroughputMibps(double value) {
+
+      availableThroughputMibps_ = value;
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Available throughput of the storage pool (in MiB/s).
+     * </pre>
+     *
+     * <code>double available_throughput_mibps = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAvailableThroughputMibps() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      availableThroughputMibps_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private long coldTierSizeUsedGib_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total cold tier data rounded down to the nearest GiB used by
+     * the storage pool.
+     * </pre>
+     *
+     * <code>int64 cold_tier_size_used_gib = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The coldTierSizeUsedGib.
+     */
+    @java.lang.Override
+    public long getColdTierSizeUsedGib() {
+      return coldTierSizeUsedGib_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total cold tier data rounded down to the nearest GiB used by
+     * the storage pool.
+     * </pre>
+     *
+     * <code>int64 cold_tier_size_used_gib = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The coldTierSizeUsedGib to set.
+     * @return This builder for chaining.
+     */
+    public Builder setColdTierSizeUsedGib(long value) {
+
+      coldTierSizeUsedGib_ = value;
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total cold tier data rounded down to the nearest GiB used by
+     * the storage pool.
+     * </pre>
+     *
+     * <code>int64 cold_tier_size_used_gib = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearColdTierSizeUsedGib() {
+      bitField0_ = (bitField0_ & ~0x20000000);
+      coldTierSizeUsedGib_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long hotTierSizeUsedGib_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total hot tier data rounded down to the nearest GiB used by
+     * the storage pool.
+     * </pre>
+     *
+     * <code>int64 hot_tier_size_used_gib = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The hotTierSizeUsedGib.
+     */
+    @java.lang.Override
+    public long getHotTierSizeUsedGib() {
+      return hotTierSizeUsedGib_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total hot tier data rounded down to the nearest GiB used by
+     * the storage pool.
+     * </pre>
+     *
+     * <code>int64 hot_tier_size_used_gib = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The hotTierSizeUsedGib to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHotTierSizeUsedGib(long value) {
+
+      hotTierSizeUsedGib_ = value;
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total hot tier data rounded down to the nearest GiB used by
+     * the storage pool.
+     * </pre>
+     *
+     * <code>int64 hot_tier_size_used_gib = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHotTierSizeUsedGib() {
+      bitField0_ = (bitField0_ & ~0x40000000);
+      hotTierSizeUsedGib_ = 0L;
       onChanged();
       return this;
     }

@@ -185,11 +185,9 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
    * defined in “days”. The value should be greater than or equal to minimum
    * enforced retention of the backup vault.
    *
-   * Minimum value is 1 and maximum value is 90 for hourly backups.
-   * Minimum value is 1 and maximum value is 90 for daily backups.
-   * Minimum value is 7 and maximum value is 186 for weekly backups.
-   * Minimum value is 30 and maximum value is 732 for monthly backups.
-   * Minimum value is 365 and maximum value is 36159 for yearly backups.
+   * Minimum value is 1 and maximum value is 36159 for custom retention
+   * on-demand backup.
+   * Minimum and maximum values are workload specific for all other rules.
    * </pre>
    *
    * <code>int32 backup_retention_days = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -207,12 +205,12 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Defines a schedule that runs within the confines of a defined
+   * Optional. Defines a schedule that runs within the confines of a defined
    * window of time.
    * </pre>
    *
    * <code>
-   * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the standardSchedule field is set.
@@ -226,12 +224,12 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Defines a schedule that runs within the confines of a defined
+   * Optional. Defines a schedule that runs within the confines of a defined
    * window of time.
    * </pre>
    *
    * <code>
-   * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The standardSchedule.
@@ -248,12 +246,12 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Defines a schedule that runs within the confines of a defined
+   * Optional. Defines a schedule that runs within the confines of a defined
    * window of time.
    * </pre>
    *
    * <code>
-   * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -843,11 +841,9 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
      * defined in “days”. The value should be greater than or equal to minimum
      * enforced retention of the backup vault.
      *
-     * Minimum value is 1 and maximum value is 90 for hourly backups.
-     * Minimum value is 1 and maximum value is 90 for daily backups.
-     * Minimum value is 7 and maximum value is 186 for weekly backups.
-     * Minimum value is 30 and maximum value is 732 for monthly backups.
-     * Minimum value is 365 and maximum value is 36159 for yearly backups.
+     * Minimum value is 1 and maximum value is 36159 for custom retention
+     * on-demand backup.
+     * Minimum and maximum values are workload specific for all other rules.
      * </pre>
      *
      * <code>int32 backup_retention_days = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -867,11 +863,9 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
      * defined in “days”. The value should be greater than or equal to minimum
      * enforced retention of the backup vault.
      *
-     * Minimum value is 1 and maximum value is 90 for hourly backups.
-     * Minimum value is 1 and maximum value is 90 for daily backups.
-     * Minimum value is 7 and maximum value is 186 for weekly backups.
-     * Minimum value is 30 and maximum value is 732 for monthly backups.
-     * Minimum value is 365 and maximum value is 36159 for yearly backups.
+     * Minimum value is 1 and maximum value is 36159 for custom retention
+     * on-demand backup.
+     * Minimum and maximum values are workload specific for all other rules.
      * </pre>
      *
      * <code>int32 backup_retention_days = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -895,11 +889,9 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
      * defined in “days”. The value should be greater than or equal to minimum
      * enforced retention of the backup vault.
      *
-     * Minimum value is 1 and maximum value is 90 for hourly backups.
-     * Minimum value is 1 and maximum value is 90 for daily backups.
-     * Minimum value is 7 and maximum value is 186 for weekly backups.
-     * Minimum value is 30 and maximum value is 732 for monthly backups.
-     * Minimum value is 365 and maximum value is 36159 for yearly backups.
+     * Minimum value is 1 and maximum value is 36159 for custom retention
+     * on-demand backup.
+     * Minimum and maximum values are workload specific for all other rules.
      * </pre>
      *
      * <code>int32 backup_retention_days = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -923,12 +915,12 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Defines a schedule that runs within the confines of a defined
+     * Optional. Defines a schedule that runs within the confines of a defined
      * window of time.
      * </pre>
      *
      * <code>
-     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the standardSchedule field is set.
@@ -942,12 +934,12 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Defines a schedule that runs within the confines of a defined
+     * Optional. Defines a schedule that runs within the confines of a defined
      * window of time.
      * </pre>
      *
      * <code>
-     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The standardSchedule.
@@ -971,12 +963,12 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Defines a schedule that runs within the confines of a defined
+     * Optional. Defines a schedule that runs within the confines of a defined
      * window of time.
      * </pre>
      *
      * <code>
-     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setStandardSchedule(com.google.cloud.backupdr.v1.StandardSchedule value) {
@@ -997,12 +989,12 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Defines a schedule that runs within the confines of a defined
+     * Optional. Defines a schedule that runs within the confines of a defined
      * window of time.
      * </pre>
      *
      * <code>
-     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setStandardSchedule(
@@ -1021,12 +1013,12 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Defines a schedule that runs within the confines of a defined
+     * Optional. Defines a schedule that runs within the confines of a defined
      * window of time.
      * </pre>
      *
      * <code>
-     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeStandardSchedule(com.google.cloud.backupdr.v1.StandardSchedule value) {
@@ -1058,12 +1050,12 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Defines a schedule that runs within the confines of a defined
+     * Optional. Defines a schedule that runs within the confines of a defined
      * window of time.
      * </pre>
      *
      * <code>
-     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearStandardSchedule() {
@@ -1087,12 +1079,12 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Defines a schedule that runs within the confines of a defined
+     * Optional. Defines a schedule that runs within the confines of a defined
      * window of time.
      * </pre>
      *
      * <code>
-     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.backupdr.v1.StandardSchedule.Builder getStandardScheduleBuilder() {
@@ -1103,12 +1095,12 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Defines a schedule that runs within the confines of a defined
+     * Optional. Defines a schedule that runs within the confines of a defined
      * window of time.
      * </pre>
      *
      * <code>
-     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -1127,12 +1119,12 @@ public final class BackupRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Defines a schedule that runs within the confines of a defined
+     * Optional. Defines a schedule that runs within the confines of a defined
      * window of time.
      * </pre>
      *
      * <code>
-     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

@@ -73,9 +73,10 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of the boot disk (default is "pd-ssd").
-   * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
-   * "pd-standard" (Persistent Disk Hard Disk Drive).
+   * Type of the boot disk. For non-A3U machines, the default value is
+   * "pd-ssd", for A3U machines, the default value is "hyperdisk-balanced".
+   * Valid values: "pd-ssd" (Persistent Disk Solid State Drive),
+   * "pd-standard" (Persistent Disk Hard Disk Drive) or "hyperdisk-balanced".
    * </pre>
    *
    * <code>string boot_disk_type = 1;</code>
@@ -99,9 +100,10 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of the boot disk (default is "pd-ssd").
-   * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
-   * "pd-standard" (Persistent Disk Hard Disk Drive).
+   * Type of the boot disk. For non-A3U machines, the default value is
+   * "pd-ssd", for A3U machines, the default value is "hyperdisk-balanced".
+   * Valid values: "pd-ssd" (Persistent Disk Solid State Drive),
+   * "pd-standard" (Persistent Disk Hard Disk Drive) or "hyperdisk-balanced".
    * </pre>
    *
    * <code>string boot_disk_type = 1;</code>
@@ -510,9 +512,10 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the boot disk (default is "pd-ssd").
-     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
-     * "pd-standard" (Persistent Disk Hard Disk Drive).
+     * Type of the boot disk. For non-A3U machines, the default value is
+     * "pd-ssd", for A3U machines, the default value is "hyperdisk-balanced".
+     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive),
+     * "pd-standard" (Persistent Disk Hard Disk Drive) or "hyperdisk-balanced".
      * </pre>
      *
      * <code>string boot_disk_type = 1;</code>
@@ -535,9 +538,10 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the boot disk (default is "pd-ssd").
-     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
-     * "pd-standard" (Persistent Disk Hard Disk Drive).
+     * Type of the boot disk. For non-A3U machines, the default value is
+     * "pd-ssd", for A3U machines, the default value is "hyperdisk-balanced".
+     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive),
+     * "pd-standard" (Persistent Disk Hard Disk Drive) or "hyperdisk-balanced".
      * </pre>
      *
      * <code>string boot_disk_type = 1;</code>
@@ -560,9 +564,10 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the boot disk (default is "pd-ssd").
-     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
-     * "pd-standard" (Persistent Disk Hard Disk Drive).
+     * Type of the boot disk. For non-A3U machines, the default value is
+     * "pd-ssd", for A3U machines, the default value is "hyperdisk-balanced".
+     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive),
+     * "pd-standard" (Persistent Disk Hard Disk Drive) or "hyperdisk-balanced".
      * </pre>
      *
      * <code>string boot_disk_type = 1;</code>
@@ -584,9 +589,10 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the boot disk (default is "pd-ssd").
-     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
-     * "pd-standard" (Persistent Disk Hard Disk Drive).
+     * Type of the boot disk. For non-A3U machines, the default value is
+     * "pd-ssd", for A3U machines, the default value is "hyperdisk-balanced".
+     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive),
+     * "pd-standard" (Persistent Disk Hard Disk Drive) or "hyperdisk-balanced".
      * </pre>
      *
      * <code>string boot_disk_type = 1;</code>
@@ -604,9 +610,10 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the boot disk (default is "pd-ssd").
-     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
-     * "pd-standard" (Persistent Disk Hard Disk Drive).
+     * Type of the boot disk. For non-A3U machines, the default value is
+     * "pd-ssd", for A3U machines, the default value is "hyperdisk-balanced".
+     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive),
+     * "pd-standard" (Persistent Disk Hard Disk Drive) or "hyperdisk-balanced".
      * </pre>
      *
      * <code>string boot_disk_type = 1;</code>

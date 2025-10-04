@@ -1083,7 +1083,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The number of cpus the VM has.
+   * The number of CPU cores the VM has.
    * </pre>
    *
    * <code>int32 cpu_count = 6;</code>
@@ -1668,6 +1668,26 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int VCPU_COUNT_FIELD_NUMBER = 19;
+  private int vcpuCount_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of vCPUs the VM has. It is calculated as the
+   * number of CPU cores * threads per CPU the VM has.
+   * </pre>
+   *
+   * <code>int32 vcpu_count = 19;</code>
+   *
+   * @return The vcpuCount.
+   */
+  @java.lang.Override
+  public int getVcpuCount() {
+    return vcpuCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1743,6 +1763,9 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.vmmigration.v1.AwsVmDetails.VmArchitecture.VM_ARCHITECTURE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(18, architecture_);
+    }
+    if (vcpuCount_ != 0) {
+      output.writeInt32(19, vcpuCount_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1823,6 +1846,9 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(18, architecture_);
     }
+    if (vcpuCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(19, vcpuCount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1857,6 +1883,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
     if (!getZone().equals(other.getZone())) return false;
     if (virtualizationType_ != other.virtualizationType_) return false;
     if (architecture_ != other.architecture_) return false;
+    if (getVcpuCount() != other.getVcpuCount()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1908,6 +1935,8 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + virtualizationType_;
     hash = (37 * hash) + ARCHITECTURE_FIELD_NUMBER;
     hash = (53 * hash) + architecture_;
+    hash = (37 * hash) + VCPU_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getVcpuCount();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2094,6 +2123,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       zone_ = "";
       virtualizationType_ = 0;
       architecture_ = 0;
+      vcpuCount_ = 0;
       return this;
     }
 
@@ -2194,6 +2224,9 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.architecture_ = architecture_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.vcpuCount_ = vcpuCount_;
       }
     }
 
@@ -2334,6 +2367,9 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.architecture_ != 0) {
         setArchitectureValue(other.getArchitectureValue());
+      }
+      if (other.getVcpuCount() != 0) {
+        setVcpuCount(other.getVcpuCount());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2480,6 +2516,12 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00020000;
                 break;
               } // case 144
+            case 152:
+              {
+                vcpuCount_ = input.readInt32();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 152
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3056,7 +3098,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of cpus the VM has.
+     * The number of CPU cores the VM has.
      * </pre>
      *
      * <code>int32 cpu_count = 6;</code>
@@ -3072,7 +3114,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of cpus the VM has.
+     * The number of CPU cores the VM has.
      * </pre>
      *
      * <code>int32 cpu_count = 6;</code>
@@ -3092,7 +3134,7 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of cpus the VM has.
+     * The number of CPU cores the VM has.
      * </pre>
      *
      * <code>int32 cpu_count = 6;</code>
@@ -4569,6 +4611,65 @@ public final class AwsVmDetails extends com.google.protobuf.GeneratedMessageV3
     public Builder clearArchitecture() {
       bitField0_ = (bitField0_ & ~0x00020000);
       architecture_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int vcpuCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of vCPUs the VM has. It is calculated as the
+     * number of CPU cores * threads per CPU the VM has.
+     * </pre>
+     *
+     * <code>int32 vcpu_count = 19;</code>
+     *
+     * @return The vcpuCount.
+     */
+    @java.lang.Override
+    public int getVcpuCount() {
+      return vcpuCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of vCPUs the VM has. It is calculated as the
+     * number of CPU cores * threads per CPU the VM has.
+     * </pre>
+     *
+     * <code>int32 vcpu_count = 19;</code>
+     *
+     * @param value The vcpuCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVcpuCount(int value) {
+
+      vcpuCount_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of vCPUs the VM has. It is calculated as the
+     * number of CPU cores * threads per CPU the VM has.
+     * </pre>
+     *
+     * <code>int32 vcpu_count = 19;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVcpuCount() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      vcpuCount_ = 0;
       onChanged();
       return this;
     }

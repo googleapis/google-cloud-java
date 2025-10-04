@@ -912,7 +912,7 @@ public class HttpJsonDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                         .setGet("/v1/{name=projects/*/locations/*}/operations")
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
-                                .setGet("/v1/{name=organizations/*/locations/*/operations/*}")
+                                .setGet("/v1/{name=organizations/*/locations/*}/operations")
                                 .build())
                         .build())
                 .build());

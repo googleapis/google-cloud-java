@@ -72,6 +72,26 @@ public final class BackupPlanProto {
       internal_static_google_cloud_backupdr_v1_DeleteBackupPlanRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_backupdr_v1_DeleteBackupPlanRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_backupdr_v1_UpdateBackupPlanRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_backupdr_v1_UpdateBackupPlanRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_backupdr_v1_BackupPlanRevision_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_backupdr_v1_BackupPlanRevision_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_backupdr_v1_GetBackupPlanRevisionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_backupdr_v1_GetBackupPlanRevisionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_backupdr_v1_ListBackupPlanRevisionsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_backupdr_v1_ListBackupPlanRevisionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_backupdr_v1_ListBackupPlanRevisionsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_backupdr_v1_ListBackupPlanRevisionsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -84,54 +104,60 @@ public final class BackupPlanProto {
       "\n"
           + ")google/cloud/backupdr/v1/backupplan.pr"
           + "oto\022\030google.cloud.backupdr.v1\032\037google/ap"
-          + "i/field_behavior.proto\032\033google/api/field"
-          + "_info.proto\032\031google/api/resource.proto\032\037"
-          + "google/protobuf/timestamp.proto\032\033google/"
-          + "type/dayofweek.proto\032\027google/type/month.proto\"\231\006\n\n"
+          + "i/field_behavior.proto\032\033google/api/field_info.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google"
+          + "/protobuf/timestamp.proto\032\033google/type/d"
+          + "ayofweek.proto\032\027google/type/month.proto\"\245\007\n\n"
           + "BackupPlan\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\003\340A\010\022\030\n"
           + "\013description\030\002 \001(\tB\003\340A\001\022E\n"
-          + "\006labels\030\003"
-          + " \003(\01320.google.cloud.backupdr.v1.BackupPlan.LabelsEntryB\003\340A\001\0224\n"
+          + "\006labels\030\003 \003(\01320"
+          + ".google.cloud.backupdr.v1.BackupPlan.LabelsEntryB\003\340A\001\0224\n"
           + "\013create_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022?\n"
           + "\014backup_rules\030\006"
           + " \003(\0132$.google.cloud.backupdr.v1.BackupRuleB\003\340A\002\022>\n"
-          + "\005state\030\007"
-          + " \001(\0162*.google.cloud.backupdr.v1.BackupPlan.StateB\003\340A\003\022\032\n\r"
+          + "\005state\030\007 \001("
+          + "\0162*.google.cloud.backupdr.v1.BackupPlan.StateB\003\340A\003\022\032\n\r"
           + "resource_type\030\010 \001(\tB\003\340A\002\022\021\n"
           + "\004etag\030\t \001(\tB\003\340A\001\022A\n"
           + "\014backup_vault\030\n"
           + " \001(\tB+\340A\002\372A%\n"
           + "#backupdr.googleapis.com/BackupVault\022)\n"
-          + "\034backup_vault_service_account\030\013 \001(\tB\003\340A\003\032-\n"
+          + "\034backup_vault_service_account\030\013 \001(\tB\003\340A\003\022\037\n"
+          + "\022log_retention_days\030\014 \001(\003B\003\340A\001\022%\n"
+          + "\030supported_resource_types\030\r"
+          + " \003(\tB\003\340A\003\022\030\n"
+          + "\013revision_id\030\016 \001(\tB\003\340A\003\022\032\n\r"
+          + "revision_name\030\017 \001(\tB\003\340A\003\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"T\n"
+          + "\005value\030\002 \001(\t:\0028\001\"b\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\014\n"
           + "\010CREATING\020\001\022\n\n"
           + "\006ACTIVE\020\002\022\014\n"
           + "\010DELETING\020\003\022\014\n"
-          + "\010INACTIVE\020\004:\204\001\352A\200\001\n"
-          + "\"backupdr.googleapis.com/BackupPlan\022Aprojects/"
-          + "{project}/locations/{location}/backupPlans/{backup_plan}*\013backupPlans2\n"
+          + "\010INACTIVE\020\004\022\014\n"
+          + "\010UPDATING\020\005:\204\001\352A\200\001\n"
+          + "\"backupdr.googleapis.com/BackupPlan\022Aprojects/{project}/locations/{locat"
+          + "ion}/backupPlans/{backup_plan}*\013backupPlans2\n"
           + "backupPlan\"\260\001\n\n"
           + "BackupRule\022\027\n"
           + "\007rule_id\030\001 \001(\tB\006\340A\002\340A\005\022\"\n"
           + "\025backup_retention_days\030\004 \001(\005B\003\340A\002\022L\n"
-          + "\021standard_schedule\030\005"
-          + " \001(\0132*.google.cloud.backupdr.v1.StandardScheduleB\003\340A\002H\000B\027\n"
+          + "\021standard_schedule\030\005 \001(\0132*"
+          + ".google.cloud.backupdr.v1.StandardScheduleB\003\340A\001H\000B\027\n"
           + "\025backup_schedule_oneof\"\227\004\n"
           + "\020StandardSchedule\022W\n"
-          + "\017recurrence_type\030\001 \001(\01629.google.clou"
-          + "d.backupdr.v1.StandardSchedule.RecurrenceTypeB\003\340A\002\022\035\n"
+          + "\017recurrence_type\030\001 \001(\016"
+          + "29.google.cloud.backupdr.v1.StandardSchedule.RecurrenceTypeB\003\340A\002\022\035\n"
           + "\020hourly_frequency\030\002 \001(\005B\003\340A\001\0221\n"
           + "\014days_of_week\030\003"
           + " \003(\0162\026.google.type.DayOfWeekB\003\340A\001\022\032\n\r"
           + "days_of_month\030\004 \003(\005B\003\340A\001\022H\n"
-          + "\021week_day_of_month\030\005"
-          + " \001(\0132(.google.cloud.backupdr.v1.WeekDayOfMonthB\003\340A\001\022\'\n"
+          + "\021week_day_of_month\030\005 \001("
+          + "\0132(.google.cloud.backupdr.v1.WeekDayOfMonthB\003\340A\001\022\'\n"
           + "\006months\030\006 \003(\0162\022.google.type.MonthB\003\340A\001\022B\n\r"
           + "backup_window\030\007"
           + " \001(\0132&.google.cloud.backupdr.v1.BackupWindowB\003\340A\002\022\026\n"
@@ -147,8 +173,8 @@ public final class BackupPlanProto {
           + "\021start_hour_of_day\030\001 \001(\005B\003\340A\002\022\034\n"
           + "\017end_hour_of_day\030\002 \001(\005B\003\340A\002\"\372\001\n"
           + "\016WeekDayOfMonth\022P\n\r"
-          + "week_of_month\030\001 \001(\01624"
-          + ".google.cloud.backupdr.v1.WeekDayOfMonth.WeekOfMonthB\003\340A\002\0220\n"
+          + "week_of_month\030\001"
+          + " \001(\01624.google.cloud.backupdr.v1.WeekDayOfMonth.WeekOfMonthB\003\340A\002\0220\n"
           + "\013day_of_week\030\002 \001(\0162\026.google.type.DayOfWeekB\003\340A\002\"d\n"
           + "\013WeekOfMonth\022\035\n"
           + "\031WEEK_OF_MONTH_UNSPECIFIED\020\000\022\t\n"
@@ -161,12 +187,12 @@ public final class BackupPlanProto {
           + "\006parent\030\001 \001("
           + "\tB*\340A\002\372A$\022\"backupdr.googleapis.com/BackupPlan\022\033\n"
           + "\016backup_plan_id\030\002 \001(\tB\003\340A\002\022>\n"
-          + "\013backup_plan\030\003"
-          + " \001(\0132$.google.cloud.backupdr.v1.BackupPlanB\003\340A\002\022\037\n\n"
+          + "\013backup_plan\030\003 \001("
+          + "\0132$.google.cloud.backupdr.v1.BackupPlanB\003\340A\002\022\037\n\n"
           + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\261\001\n"
           + "\026ListBackupPlansRequest\022:\n"
-          + "\006parent\030\001 \001("
-          + "\tB*\340A\002\372A$\022\"backupdr.googleapis.com/BackupPlan\022\026\n"
+          + "\006parent\030\001 \001(\t"
+          + "B*\340A\002\372A$\022\"backupdr.googleapis.com/BackupPlan\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
@@ -181,11 +207,48 @@ public final class BackupPlanProto {
           + "\027DeleteBackupPlanRequest\0228\n"
           + "\004name\030\001 \001(\tB*\340A\002\372A$\n"
           + "\"backupdr.googleapis.com/BackupPlan\022\037\n\n"
-          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001B\277\001\n"
-          + "\034com.google.cloud.backupdr.v1B\017BackupPlanProtoP\001Z8cloud.goo"
-          + "gle.com/go/backupdr/apiv1/backupdrpb;bac"
-          + "kupdrpb\252\002\030Google.Cloud.BackupDR.V1\312\002\030Goo"
-          + "gle\\Cloud\\BackupDR\\V1\352\002\033Google::Cloud::BackupDR::V1b\006proto3"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\260\001\n"
+          + "\027UpdateBackupPlanRequest\022>\n"
+          + "\013backup_plan\030\001 \001(\013"
+          + "2$.google.cloud.backupdr.v1.BackupPlanB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\220\004\n"
+          + "\022BackupPlanRevision\022\024\n"
+          + "\004name\030\001 \001(\tB\006\340A\003\340A\010\022\030\n"
+          + "\013revision_id\030\002 \001(\tB\003\340A\003\022F\n"
+          + "\005state\030\003"
+          + " \001(\01622.google.cloud.backupdr.v1.BackupPlanRevision.StateB\003\340A\003\022B\n"
+          + "\024backup_plan_snapshot\030\004"
+          + " \001(\0132$.google.cloud.backupdr.v1.BackupPlan\0224\n"
+          + "\013create_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"T\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\014\n"
+          + "\010CREATING\020\001\022\n\n"
+          + "\006ACTIVE\020\002\022\014\n"
+          + "\010DELETING\020\003\022\014\n"
+          + "\010INACTIVE\020\004:\261\001\352A\255\001\n"
+          + "*backupdr.googleapis.com/BackupPlanRevision\022Vprojects/{project}/locatio"
+          + "ns/{location}/backupPlans/{backup_plan}/"
+          + "revisions/{revision}*\023backupPlanRevisions2\022backupPlanRevision\"`\n"
+          + "\034GetBackupPlanRevisionRequest\022@\n"
+          + "\004name\030\001 \001(\tB2\340A\002\372A,\n"
+          + "*backupdr.googleapis.com/BackupPlanRevision\"\225\001\n"
+          + "\036ListBackupPlanRevisionsRequest\022B\n"
+          + "\006parent\030\001 \001("
+          + "\tB2\340A\002\372A,\022*backupdr.googleapis.com/BackupPlanRevision\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"\234\001\n"
+          + "\037ListBackupPlanRevisionsResponse\022K\n"
+          + "\025backup_plan_revisions\030\001"
+          + " \003(\0132,.google.cloud.backupdr.v1.BackupPlanRevision\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\tB\277\001\n"
+          + "\034com.google.cloud.backupdr.v1B\017BackupPlanProto"
+          + "P\001Z8cloud.google.com/go/backupdr/apiv1/b"
+          + "ackupdrpb;backupdrpb\252\002\030Google.Cloud.Back"
+          + "upDR.V1\312\002\030Google\\Cloud\\BackupDR\\V1\352\002\033Goo"
+          + "gle::Cloud::BackupDR::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -194,6 +257,7 @@ public final class BackupPlanProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.DayOfWeekProto.getDescriptor(),
               com.google.type.MonthProto.getDescriptor(),
@@ -215,6 +279,10 @@ public final class BackupPlanProto {
               "Etag",
               "BackupVault",
               "BackupVaultServiceAccount",
+              "LogRetentionDays",
+              "SupportedResourceTypes",
+              "RevisionId",
+              "RevisionName",
             });
     internal_static_google_cloud_backupdr_v1_BackupPlan_LabelsEntry_descriptor =
         internal_static_google_cloud_backupdr_v1_BackupPlan_descriptor.getNestedTypes().get(0);
@@ -303,6 +371,46 @@ public final class BackupPlanProto {
             new java.lang.String[] {
               "Name", "RequestId",
             });
+    internal_static_google_cloud_backupdr_v1_UpdateBackupPlanRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_backupdr_v1_UpdateBackupPlanRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_backupdr_v1_UpdateBackupPlanRequest_descriptor,
+            new java.lang.String[] {
+              "BackupPlan", "UpdateMask", "RequestId",
+            });
+    internal_static_google_cloud_backupdr_v1_BackupPlanRevision_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_backupdr_v1_BackupPlanRevision_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_backupdr_v1_BackupPlanRevision_descriptor,
+            new java.lang.String[] {
+              "Name", "RevisionId", "State", "BackupPlanSnapshot", "CreateTime",
+            });
+    internal_static_google_cloud_backupdr_v1_GetBackupPlanRevisionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_backupdr_v1_GetBackupPlanRevisionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_backupdr_v1_GetBackupPlanRevisionRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_backupdr_v1_ListBackupPlanRevisionsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_backupdr_v1_ListBackupPlanRevisionsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_backupdr_v1_ListBackupPlanRevisionsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_backupdr_v1_ListBackupPlanRevisionsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_backupdr_v1_ListBackupPlanRevisionsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_backupdr_v1_ListBackupPlanRevisionsResponse_descriptor,
+            new java.lang.String[] {
+              "BackupPlanRevisions", "NextPageToken", "Unreachable",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
@@ -314,6 +422,7 @@ public final class BackupPlanProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.DayOfWeekProto.getDescriptor();
     com.google.type.MonthProto.getDescriptor();

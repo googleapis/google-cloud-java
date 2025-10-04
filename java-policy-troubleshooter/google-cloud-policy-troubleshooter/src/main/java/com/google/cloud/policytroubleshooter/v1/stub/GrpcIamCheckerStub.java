@@ -49,6 +49,7 @@ public class GrpcIamCheckerStub extends IamCheckerStub {
                   ProtoUtils.marshaller(TroubleshootIamPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TroubleshootIamPolicyResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<TroubleshootIamPolicyRequest, TroubleshootIamPolicyResponse>

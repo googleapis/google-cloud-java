@@ -4408,6 +4408,1159 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface UpdateEncryptionsTaskOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of
+     * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+     * that updates the existing encryption settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    java.util.List<com.google.cloud.video.livestream.v1.EncryptionUpdate> getEncryptionsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of
+     * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+     * that updates the existing encryption settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.video.livestream.v1.EncryptionUpdate getEncryptions(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of
+     * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+     * that updates the existing encryption settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    int getEncryptionsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of
+     * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+     * that updates the existing encryption settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.video.livestream.v1.EncryptionUpdateOrBuilder>
+        getEncryptionsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of
+     * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+     * that updates the existing encryption settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.video.livestream.v1.EncryptionUpdateOrBuilder getEncryptionsOrBuilder(
+        int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Update encryption settings.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask}
+   */
+  public static final class UpdateEncryptionsTask extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask)
+      UpdateEncryptionsTaskOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use UpdateEncryptionsTask.newBuilder() to construct.
+    private UpdateEncryptionsTask(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private UpdateEncryptionsTask() {
+      encryptions_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new UpdateEncryptionsTask();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.livestream.v1.ResourcesProto
+          .internal_static_google_cloud_video_livestream_v1_Event_UpdateEncryptionsTask_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.livestream.v1.ResourcesProto
+          .internal_static_google_cloud_video_livestream_v1_Event_UpdateEncryptionsTask_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask.class,
+              com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask.Builder.class);
+    }
+
+    public static final int ENCRYPTIONS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.video.livestream.v1.EncryptionUpdate> encryptions_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of
+     * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+     * that updates the existing encryption settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.video.livestream.v1.EncryptionUpdate>
+        getEncryptionsList() {
+      return encryptions_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of
+     * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+     * that updates the existing encryption settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.video.livestream.v1.EncryptionUpdateOrBuilder>
+        getEncryptionsOrBuilderList() {
+      return encryptions_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of
+     * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+     * that updates the existing encryption settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public int getEncryptionsCount() {
+      return encryptions_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of
+     * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+     * that updates the existing encryption settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.EncryptionUpdate getEncryptions(int index) {
+      return encryptions_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of
+     * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+     * that updates the existing encryption settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.EncryptionUpdateOrBuilder getEncryptionsOrBuilder(
+        int index) {
+      return encryptions_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < encryptions_.size(); i++) {
+        output.writeMessage(1, encryptions_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < encryptions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, encryptions_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask other =
+          (com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask) obj;
+
+      if (!getEncryptionsList().equals(other.getEncryptionsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getEncryptionsCount() > 0) {
+        hash = (37 * hash) + ENCRYPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getEncryptionsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update encryption settings.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask)
+        com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTaskOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_UpdateEncryptionsTask_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_UpdateEncryptionsTask_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask.class,
+                com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (encryptionsBuilder_ == null) {
+          encryptions_ = java.util.Collections.emptyList();
+        } else {
+          encryptions_ = null;
+          encryptionsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_UpdateEncryptionsTask_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask
+          getDefaultInstanceForType() {
+        return com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask build() {
+        com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask buildPartial() {
+        com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask result =
+            new com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask result) {
+        if (encryptionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            encryptions_ = java.util.Collections.unmodifiableList(encryptions_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.encryptions_ = encryptions_;
+        } else {
+          result.encryptions_ = encryptionsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask) {
+          return mergeFrom(
+              (com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask other) {
+        if (other
+            == com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask
+                .getDefaultInstance()) return this;
+        if (encryptionsBuilder_ == null) {
+          if (!other.encryptions_.isEmpty()) {
+            if (encryptions_.isEmpty()) {
+              encryptions_ = other.encryptions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureEncryptionsIsMutable();
+              encryptions_.addAll(other.encryptions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.encryptions_.isEmpty()) {
+            if (encryptionsBuilder_.isEmpty()) {
+              encryptionsBuilder_.dispose();
+              encryptionsBuilder_ = null;
+              encryptions_ = other.encryptions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              encryptionsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getEncryptionsFieldBuilder()
+                      : null;
+            } else {
+              encryptionsBuilder_.addAllMessages(other.encryptions_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.video.livestream.v1.EncryptionUpdate m =
+                      input.readMessage(
+                          com.google.cloud.video.livestream.v1.EncryptionUpdate.parser(),
+                          extensionRegistry);
+                  if (encryptionsBuilder_ == null) {
+                    ensureEncryptionsIsMutable();
+                    encryptions_.add(m);
+                  } else {
+                    encryptionsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.cloud.video.livestream.v1.EncryptionUpdate> encryptions_ =
+          java.util.Collections.emptyList();
+
+      private void ensureEncryptionsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          encryptions_ =
+              new java.util.ArrayList<com.google.cloud.video.livestream.v1.EncryptionUpdate>(
+                  encryptions_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.video.livestream.v1.EncryptionUpdate,
+              com.google.cloud.video.livestream.v1.EncryptionUpdate.Builder,
+              com.google.cloud.video.livestream.v1.EncryptionUpdateOrBuilder>
+          encryptionsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.video.livestream.v1.EncryptionUpdate>
+          getEncryptionsList() {
+        if (encryptionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(encryptions_);
+        } else {
+          return encryptionsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public int getEncryptionsCount() {
+        if (encryptionsBuilder_ == null) {
+          return encryptions_.size();
+        } else {
+          return encryptionsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.video.livestream.v1.EncryptionUpdate getEncryptions(int index) {
+        if (encryptionsBuilder_ == null) {
+          return encryptions_.get(index);
+        } else {
+          return encryptionsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setEncryptions(
+          int index, com.google.cloud.video.livestream.v1.EncryptionUpdate value) {
+        if (encryptionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEncryptionsIsMutable();
+          encryptions_.set(index, value);
+          onChanged();
+        } else {
+          encryptionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setEncryptions(
+          int index,
+          com.google.cloud.video.livestream.v1.EncryptionUpdate.Builder builderForValue) {
+        if (encryptionsBuilder_ == null) {
+          ensureEncryptionsIsMutable();
+          encryptions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          encryptionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addEncryptions(com.google.cloud.video.livestream.v1.EncryptionUpdate value) {
+        if (encryptionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEncryptionsIsMutable();
+          encryptions_.add(value);
+          onChanged();
+        } else {
+          encryptionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addEncryptions(
+          int index, com.google.cloud.video.livestream.v1.EncryptionUpdate value) {
+        if (encryptionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEncryptionsIsMutable();
+          encryptions_.add(index, value);
+          onChanged();
+        } else {
+          encryptionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addEncryptions(
+          com.google.cloud.video.livestream.v1.EncryptionUpdate.Builder builderForValue) {
+        if (encryptionsBuilder_ == null) {
+          ensureEncryptionsIsMutable();
+          encryptions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          encryptionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addEncryptions(
+          int index,
+          com.google.cloud.video.livestream.v1.EncryptionUpdate.Builder builderForValue) {
+        if (encryptionsBuilder_ == null) {
+          ensureEncryptionsIsMutable();
+          encryptions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          encryptionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addAllEncryptions(
+          java.lang.Iterable<? extends com.google.cloud.video.livestream.v1.EncryptionUpdate>
+              values) {
+        if (encryptionsBuilder_ == null) {
+          ensureEncryptionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, encryptions_);
+          onChanged();
+        } else {
+          encryptionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearEncryptions() {
+        if (encryptionsBuilder_ == null) {
+          encryptions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          encryptionsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder removeEncryptions(int index) {
+        if (encryptionsBuilder_ == null) {
+          ensureEncryptionsIsMutable();
+          encryptions_.remove(index);
+          onChanged();
+        } else {
+          encryptionsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.video.livestream.v1.EncryptionUpdate.Builder getEncryptionsBuilder(
+          int index) {
+        return getEncryptionsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.video.livestream.v1.EncryptionUpdateOrBuilder getEncryptionsOrBuilder(
+          int index) {
+        if (encryptionsBuilder_ == null) {
+          return encryptions_.get(index);
+        } else {
+          return encryptionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.video.livestream.v1.EncryptionUpdateOrBuilder>
+          getEncryptionsOrBuilderList() {
+        if (encryptionsBuilder_ != null) {
+          return encryptionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(encryptions_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.video.livestream.v1.EncryptionUpdate.Builder addEncryptionsBuilder() {
+        return getEncryptionsFieldBuilder()
+            .addBuilder(com.google.cloud.video.livestream.v1.EncryptionUpdate.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.video.livestream.v1.EncryptionUpdate.Builder addEncryptionsBuilder(
+          int index) {
+        return getEncryptionsFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.video.livestream.v1.EncryptionUpdate.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of
+       * [EncryptionUpdate][google.cloud.video.livestream.v1.EncryptionUpdate]s
+       * that updates the existing encryption settings.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.video.livestream.v1.EncryptionUpdate encryptions = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.video.livestream.v1.EncryptionUpdate.Builder>
+          getEncryptionsBuilderList() {
+        return getEncryptionsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.video.livestream.v1.EncryptionUpdate,
+              com.google.cloud.video.livestream.v1.EncryptionUpdate.Builder,
+              com.google.cloud.video.livestream.v1.EncryptionUpdateOrBuilder>
+          getEncryptionsFieldBuilder() {
+        if (encryptionsBuilder_ == null) {
+          encryptionsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.video.livestream.v1.EncryptionUpdate,
+                  com.google.cloud.video.livestream.v1.EncryptionUpdate.Builder,
+                  com.google.cloud.video.livestream.v1.EncryptionUpdateOrBuilder>(
+                  encryptions_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          encryptions_ = null;
+        }
+        return encryptionsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask)
+    private static final com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask();
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateEncryptionsTask> PARSER =
+        new com.google.protobuf.AbstractParser<UpdateEncryptionsTask>() {
+          @java.lang.Override
+          public UpdateEncryptionsTask parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<UpdateEncryptionsTask> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateEncryptionsTask> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int taskCase_ = 0;
 
@@ -4424,6 +5577,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     SLATE(14),
     MUTE(15),
     UNMUTE(16),
+    UPDATE_ENCRYPTIONS(17),
     TASK_NOT_SET(0);
     private final int value;
 
@@ -4455,6 +5609,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
           return MUTE;
         case 16:
           return UNMUTE;
+        case 17:
+          return UPDATE_ENCRYPTIONS;
         case 0:
           return TASK_NOT_SET;
         default:
@@ -5066,6 +6222,64 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.video.livestream.v1.Event.UnmuteTask.getDefaultInstance();
   }
 
+  public static final int UPDATE_ENCRYPTIONS_FIELD_NUMBER = 17;
+
+  /**
+   *
+   *
+   * <pre>
+   * Updates encryption settings.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask update_encryptions = 17;
+   * </code>
+   *
+   * @return Whether the updateEncryptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateEncryptions() {
+    return taskCase_ == 17;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Updates encryption settings.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask update_encryptions = 17;
+   * </code>
+   *
+   * @return The updateEncryptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask getUpdateEncryptions() {
+    if (taskCase_ == 17) {
+      return (com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask) task_;
+    }
+    return com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Updates encryption settings.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask update_encryptions = 17;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTaskOrBuilder
+      getUpdateEncryptionsOrBuilder() {
+    if (taskCase_ == 17) {
+      return (com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask) task_;
+    }
+    return com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask.getDefaultInstance();
+  }
+
   public static final int EXECUTE_NOW_FIELD_NUMBER = 9;
   private boolean executeNow_ = false;
 
@@ -5309,6 +6523,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (taskCase_ == 16) {
       output.writeMessage(16, (com.google.cloud.video.livestream.v1.Event.UnmuteTask) task_);
     }
+    if (taskCase_ == 17) {
+      output.writeMessage(
+          17, (com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask) task_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -5379,6 +6597,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               16, (com.google.cloud.video.livestream.v1.Event.UnmuteTask) task_);
     }
+    if (taskCase_ == 17) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17, (com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask) task_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5434,6 +6657,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         break;
       case 16:
         if (!getUnmute().equals(other.getUnmute())) return false;
+        break;
+      case 17:
+        if (!getUpdateEncryptions().equals(other.getUpdateEncryptions())) return false;
         break;
       case 0:
       default:
@@ -5499,6 +6725,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       case 16:
         hash = (37 * hash) + UNMUTE_FIELD_NUMBER;
         hash = (53 * hash) + getUnmute().hashCode();
+        break;
+      case 17:
+        hash = (37 * hash) + UPDATE_ENCRYPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdateEncryptions().hashCode();
         break;
       case 0:
       default:
@@ -5708,6 +6938,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (unmuteBuilder_ != null) {
         unmuteBuilder_.clear();
       }
+      if (updateEncryptionsBuilder_ != null) {
+        updateEncryptionsBuilder_.clear();
+      }
       executeNow_ = false;
       executionTime_ = null;
       if (executionTimeBuilder_ != null) {
@@ -5775,18 +7008,18 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.executeNow_ = executeNow_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.executionTime_ =
             executionTimeBuilder_ == null ? executionTime_ : executionTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
@@ -5813,6 +7046,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       if (taskCase_ == 16 && unmuteBuilder_ != null) {
         result.task_ = unmuteBuilder_.build();
+      }
+      if (taskCase_ == 17 && updateEncryptionsBuilder_ != null) {
+        result.task_ = updateEncryptionsBuilder_.build();
       }
     }
 
@@ -5917,6 +7153,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             mergeUnmute(other.getUnmute());
             break;
           }
+        case UPDATE_ENCRYPTIONS:
+          {
+            mergeUpdateEncryptions(other.getUpdateEncryptions());
+            break;
+          }
         case TASK_NOT_SET:
           {
             break;
@@ -5993,25 +7234,25 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             case 72:
               {
                 executeNow_ = input.readBool();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 72
             case 82:
               {
                 input.readMessage(getExecutionTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 82
             case 88:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 88
             case 98:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 98
             case 106:
@@ -6038,6 +7279,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
                 taskCase_ = 16;
                 break;
               } // case 130
+            case 138:
+              {
+                input.readMessage(
+                    getUpdateEncryptionsFieldBuilder().getBuilder(), extensionRegistry);
+                taskCase_ = 17;
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8115,6 +9363,243 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       return unmuteBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask,
+            com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask.Builder,
+            com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTaskOrBuilder>
+        updateEncryptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates encryption settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask update_encryptions = 17;
+     * </code>
+     *
+     * @return Whether the updateEncryptions field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdateEncryptions() {
+      return taskCase_ == 17;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates encryption settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask update_encryptions = 17;
+     * </code>
+     *
+     * @return The updateEncryptions.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask getUpdateEncryptions() {
+      if (updateEncryptionsBuilder_ == null) {
+        if (taskCase_ == 17) {
+          return (com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask) task_;
+        }
+        return com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask
+            .getDefaultInstance();
+      } else {
+        if (taskCase_ == 17) {
+          return updateEncryptionsBuilder_.getMessage();
+        }
+        return com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates encryption settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask update_encryptions = 17;
+     * </code>
+     */
+    public Builder setUpdateEncryptions(
+        com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask value) {
+      if (updateEncryptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        task_ = value;
+        onChanged();
+      } else {
+        updateEncryptionsBuilder_.setMessage(value);
+      }
+      taskCase_ = 17;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates encryption settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask update_encryptions = 17;
+     * </code>
+     */
+    public Builder setUpdateEncryptions(
+        com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask.Builder builderForValue) {
+      if (updateEncryptionsBuilder_ == null) {
+        task_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateEncryptionsBuilder_.setMessage(builderForValue.build());
+      }
+      taskCase_ = 17;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates encryption settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask update_encryptions = 17;
+     * </code>
+     */
+    public Builder mergeUpdateEncryptions(
+        com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask value) {
+      if (updateEncryptionsBuilder_ == null) {
+        if (taskCase_ == 17
+            && task_
+                != com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask
+                    .getDefaultInstance()) {
+          task_ =
+              com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask.newBuilder(
+                      (com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask) task_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          task_ = value;
+        }
+        onChanged();
+      } else {
+        if (taskCase_ == 17) {
+          updateEncryptionsBuilder_.mergeFrom(value);
+        } else {
+          updateEncryptionsBuilder_.setMessage(value);
+        }
+      }
+      taskCase_ = 17;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates encryption settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask update_encryptions = 17;
+     * </code>
+     */
+    public Builder clearUpdateEncryptions() {
+      if (updateEncryptionsBuilder_ == null) {
+        if (taskCase_ == 17) {
+          taskCase_ = 0;
+          task_ = null;
+          onChanged();
+        }
+      } else {
+        if (taskCase_ == 17) {
+          taskCase_ = 0;
+          task_ = null;
+        }
+        updateEncryptionsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates encryption settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask update_encryptions = 17;
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask.Builder
+        getUpdateEncryptionsBuilder() {
+      return getUpdateEncryptionsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates encryption settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask update_encryptions = 17;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTaskOrBuilder
+        getUpdateEncryptionsOrBuilder() {
+      if ((taskCase_ == 17) && (updateEncryptionsBuilder_ != null)) {
+        return updateEncryptionsBuilder_.getMessageOrBuilder();
+      } else {
+        if (taskCase_ == 17) {
+          return (com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask) task_;
+        }
+        return com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates encryption settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask update_encryptions = 17;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask,
+            com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask.Builder,
+            com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTaskOrBuilder>
+        getUpdateEncryptionsFieldBuilder() {
+      if (updateEncryptionsBuilder_ == null) {
+        if (!(taskCase_ == 17)) {
+          task_ =
+              com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask.getDefaultInstance();
+        }
+        updateEncryptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask,
+                com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask.Builder,
+                com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTaskOrBuilder>(
+                (com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask) task_,
+                getParentForChildren(),
+                isClean());
+        task_ = null;
+      }
+      taskCase_ = 17;
+      onChanged();
+      return updateEncryptionsBuilder_;
+    }
+
     private boolean executeNow_;
 
     /**
@@ -8156,7 +9641,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public Builder setExecuteNow(boolean value) {
 
       executeNow_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -8177,7 +9662,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExecuteNow() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       executeNow_ = false;
       onChanged();
       return this;
@@ -8208,7 +9693,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the executionTime field is set.
      */
     public boolean hasExecutionTime() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -8262,7 +9747,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         executionTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -8288,7 +9773,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         executionTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -8310,7 +9795,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExecutionTime(com.google.protobuf.Timestamp value) {
       if (executionTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && executionTime_ != null
             && executionTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getExecutionTimeBuilder().mergeFrom(value);
@@ -8321,7 +9806,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         executionTimeBuilder_.mergeFrom(value);
       }
       if (executionTime_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -8343,7 +9828,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp execution_time = 10;</code>
      */
     public Builder clearExecutionTime() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       executionTime_ = null;
       if (executionTimeBuilder_ != null) {
         executionTimeBuilder_.dispose();
@@ -8369,7 +9854,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp execution_time = 10;</code>
      */
     public com.google.protobuf.Timestamp.Builder getExecutionTimeBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getExecutionTimeFieldBuilder().getBuilder();
     }
@@ -8467,7 +9952,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -8512,7 +9997,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -8532,7 +10017,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       state_ = 0;
       onChanged();
       return this;
@@ -8556,7 +10041,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -8598,7 +10083,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         errorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -8619,7 +10104,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -8636,7 +10121,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && error_ != null
             && error_ != com.google.rpc.Status.getDefaultInstance()) {
           getErrorBuilder().mergeFrom(value);
@@ -8647,7 +10132,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         errorBuilder_.mergeFrom(value);
       }
       if (error_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -8664,7 +10149,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       error_ = null;
       if (errorBuilder_ != null) {
         errorBuilder_.dispose();
@@ -8685,7 +10170,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }

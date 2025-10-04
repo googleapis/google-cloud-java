@@ -984,6 +984,7 @@ public class ChatServiceClientTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -1036,6 +1037,7 @@ public class ChatServiceClientTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -1088,6 +1090,7 @@ public class ChatServiceClientTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -1140,6 +1143,7 @@ public class ChatServiceClientTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -1204,6 +1208,7 @@ public class ChatServiceClientTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();
@@ -1367,6 +1372,7 @@ public class ChatServiceClientTest {
             .setAdminInstalled(true)
             .setMembershipCount(Space.MembershipCount.newBuilder().build())
             .setAccessSettings(Space.AccessSettings.newBuilder().build())
+            .setCustomer("customer606175198")
             .setSpaceUri("spaceUri2047440518")
             .setImportModeExpireTime(Timestamp.newBuilder().build())
             .build();

@@ -18,6 +18,7 @@ package com.google.cloud.networkmanagement.v1beta1.stub;
 
 import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ListVpcFlowLogsConfigsPagedResponse;
+import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.QueryOrgVpcFlowLogsConfigsPagedResponse;
 
 import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
@@ -46,6 +47,8 @@ import com.google.cloud.networkmanagement.v1beta1.GetVpcFlowLogsConfigRequest;
 import com.google.cloud.networkmanagement.v1beta1.ListVpcFlowLogsConfigsRequest;
 import com.google.cloud.networkmanagement.v1beta1.ListVpcFlowLogsConfigsResponse;
 import com.google.cloud.networkmanagement.v1beta1.OperationMetadata;
+import com.google.cloud.networkmanagement.v1beta1.QueryOrgVpcFlowLogsConfigsRequest;
+import com.google.cloud.networkmanagement.v1beta1.QueryOrgVpcFlowLogsConfigsResponse;
 import com.google.cloud.networkmanagement.v1beta1.UpdateVpcFlowLogsConfigRequest;
 import com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig;
 import com.google.common.collect.ImmutableMap;
@@ -285,6 +288,46 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<
+          QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>
+      queryOrgVpcFlowLogsConfigsMethodDescriptor =
+          ApiMethodDescriptor
+              .<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkmanagement.v1beta1.VpcFlowLogsService/QueryOrgVpcFlowLogsConfigs")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<QueryOrgVpcFlowLogsConfigsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{parent=projects/*/locations/*}/vpcFlowLogsConfigs:queryOrgVpcFlowLogsConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryOrgVpcFlowLogsConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryOrgVpcFlowLogsConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryOrgVpcFlowLogsConfigsResponse>newBuilder()
+                      .setDefaultInstance(QueryOrgVpcFlowLogsConfigsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -302,6 +345,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1beta1/{name=organizations/*}/locations")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -336,6 +380,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1beta1/{name=organizations/*/locations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -481,6 +526,11 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
       deleteVpcFlowLogsConfigCallable;
   private final OperationCallable<DeleteVpcFlowLogsConfigRequest, Empty, OperationMetadata>
       deleteVpcFlowLogsConfigOperationCallable;
+  private final UnaryCallable<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>
+      queryOrgVpcFlowLogsConfigsCallable;
+  private final UnaryCallable<
+          QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsPagedResponse>
+      queryOrgVpcFlowLogsConfigsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -544,21 +594,41 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                     "google.longrunning.Operations.CancelOperation",
                     HttpRule.newBuilder()
                         .setPost("/v1beta1/{name=projects/*/locations/global/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1beta1/{name=organizations/*/locations/global/operations/*}:cancel")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.DeleteOperation",
                     HttpRule.newBuilder()
                         .setDelete("/v1beta1/{name=projects/*/locations/global/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete(
+                                    "/v1beta1/{name=organizations/*/locations/global/operations/*}")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet("/v1beta1/{name=projects/*/locations/global/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta1/{name=organizations/*/locations/global/operations/*}")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.ListOperations",
                     HttpRule.newBuilder()
                         .setGet("/v1beta1/{name=projects/*/locations/global}/operations")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta1/{name=organizations/*/locations/global}/operations")
+                                .build())
                         .build())
                 .build());
 
@@ -622,6 +692,19 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>
+        queryOrgVpcFlowLogsConfigsTransportSettings =
+            HttpJsonCallSettings
+                .<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>newBuilder()
+                .setMethodDescriptor(queryOrgVpcFlowLogsConfigsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
                 .build();
@@ -731,6 +814,16 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
             settings.deleteVpcFlowLogsConfigOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.queryOrgVpcFlowLogsConfigsCallable =
+        callableFactory.createUnaryCallable(
+            queryOrgVpcFlowLogsConfigsTransportSettings,
+            settings.queryOrgVpcFlowLogsConfigsSettings(),
+            clientContext);
+    this.queryOrgVpcFlowLogsConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            queryOrgVpcFlowLogsConfigsTransportSettings,
+            settings.queryOrgVpcFlowLogsConfigsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -764,6 +857,7 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
     methodDescriptors.add(createVpcFlowLogsConfigMethodDescriptor);
     methodDescriptors.add(updateVpcFlowLogsConfigMethodDescriptor);
     methodDescriptors.add(deleteVpcFlowLogsConfigMethodDescriptor);
+    methodDescriptors.add(queryOrgVpcFlowLogsConfigsMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -828,6 +922,18 @@ public class HttpJsonVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
   public OperationCallable<DeleteVpcFlowLogsConfigRequest, Empty, OperationMetadata>
       deleteVpcFlowLogsConfigOperationCallable() {
     return deleteVpcFlowLogsConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>
+      queryOrgVpcFlowLogsConfigsCallable() {
+    return queryOrgVpcFlowLogsConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsPagedResponse>
+      queryOrgVpcFlowLogsConfigsPagedCallable() {
+    return queryOrgVpcFlowLogsConfigsPagedCallable;
   }
 
   @Override

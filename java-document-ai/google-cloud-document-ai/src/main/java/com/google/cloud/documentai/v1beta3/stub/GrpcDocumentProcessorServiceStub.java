@@ -116,6 +116,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   "google.cloud.documentai.v1beta3.DocumentProcessorService/ProcessDocument")
               .setRequestMarshaller(ProtoUtils.marshaller(ProcessRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProcessResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchProcessRequest, Operation>
@@ -126,6 +127,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   "google.cloud.documentai.v1beta3.DocumentProcessorService/BatchProcessDocuments")
               .setRequestMarshaller(ProtoUtils.marshaller(BatchProcessRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchProcessorTypesRequest, FetchProcessorTypesResponse>
@@ -138,6 +140,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   ProtoUtils.marshaller(FetchProcessorTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchProcessorTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListProcessorTypesRequest, ListProcessorTypesResponse>
@@ -150,6 +153,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   ProtoUtils.marshaller(ListProcessorTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProcessorTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProcessorTypeRequest, ProcessorType>
@@ -161,6 +165,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetProcessorTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProcessorType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListProcessorsRequest, ListProcessorsResponse>
@@ -173,6 +178,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   ProtoUtils.marshaller(ListProcessorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProcessorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProcessorRequest, Processor>
@@ -183,6 +189,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   "google.cloud.documentai.v1beta3.DocumentProcessorService/GetProcessor")
               .setRequestMarshaller(ProtoUtils.marshaller(GetProcessorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Processor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TrainProcessorVersionRequest, Operation>
@@ -194,6 +201,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(TrainProcessorVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProcessorVersionRequest, ProcessorVersion>
@@ -205,6 +213,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetProcessorVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProcessorVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListProcessorVersionsRequest, ListProcessorVersionsResponse>
@@ -217,6 +226,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   ProtoUtils.marshaller(ListProcessorVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProcessorVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteProcessorVersionRequest, Operation>
@@ -228,6 +238,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteProcessorVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeployProcessorVersionRequest, Operation>
@@ -239,6 +250,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeployProcessorVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeployProcessorVersionRequest, Operation>
@@ -250,6 +262,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeployProcessorVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateProcessorRequest, Processor>
@@ -261,6 +274,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateProcessorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Processor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteProcessorRequest, Operation>
@@ -272,6 +286,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteProcessorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EnableProcessorRequest, Operation>
@@ -283,6 +298,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EnableProcessorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DisableProcessorRequest, Operation>
@@ -294,6 +310,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DisableProcessorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetDefaultProcessorVersionRequest, Operation>
@@ -305,6 +322,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetDefaultProcessorVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReviewDocumentRequest, Operation>
@@ -316,6 +334,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReviewDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EvaluateProcessorVersionRequest, Operation>
@@ -327,6 +346,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EvaluateProcessorVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEvaluationRequest, Evaluation>
@@ -338,6 +358,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEvaluationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Evaluation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEvaluationsRequest, ListEvaluationsResponse>
@@ -350,6 +371,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   ProtoUtils.marshaller(ListEvaluationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEvaluationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportProcessorVersionRequest, Operation>
@@ -361,6 +383,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportProcessorVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -372,6 +395,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -380,6 +404,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ProcessRequest, ProcessResponse> processDocumentCallable;

@@ -25,23 +25,6 @@
  *
  * <p>Access Secure Source Manager instances, resources, and repositories.
  *
- * <p>This API is split across two servers: the Control Plane and the Data Plane.
- *
- * <p>Data Plane endpoints are hosted directly by your Secure Source Manager instance, so you must
- * connect to your instance's API hostname to access them. The API hostname looks like the
- * following:
- *
- * <p>https://[instance-id]-[project-number]-api.[location].sourcemanager.dev
- *
- * <p>For example,
- *
- * <p>https://my-instance-702770452863-api.us-central1.sourcemanager.dev
- *
- * <p>Data Plane endpoints are denoted with &#42;&#42;Host: Data Plane&#42;&#42;.
- *
- * <p>All other endpoints are found in the normal Cloud API location, namely,
- * `securcesourcemanager.googleapis.com`.
- *
  * <p>Sample for SecureSourceManagerClient:
  *
  * <pre>{@code

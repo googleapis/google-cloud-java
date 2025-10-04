@@ -213,7 +213,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
    *
    *
    * <pre>
-   * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+   * Whether this Attachment is active, and if so, whether BGP is up.
    * </pre>
    *
    * Protobuf enum {@code
@@ -617,7 +617,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
    *
    *
    * <pre>
-   * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+   * Whether this Attachment is active, and if so, whether BGP is up.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -634,7 +634,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
    *
    *
    * <pre>
-   * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+   * Whether this Attachment is active, and if so, whether BGP is up.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -659,7 +659,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
    *
    *
    * <pre>
-   * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+   * Whether this Attachment is active, and if so, whether BGP is up.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1505,7 +1505,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+     * Whether this Attachment is active, and if so, whether BGP is up.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1521,7 +1521,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+     * Whether this Attachment is active, and if so, whether BGP is up.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1545,7 +1545,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+     * Whether this Attachment is active, and if so, whether BGP is up.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1569,7 +1569,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+     * Whether this Attachment is active, and if so, whether BGP is up.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1592,7 +1592,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+     * Whether this Attachment is active, and if so, whether BGP is up.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1611,7 +1611,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+     * Whether this Attachment is active, and if so, whether BGP is up.
      * Check the Status enum for the list of possible values.
      * </pre>
      *

@@ -263,7 +263,7 @@ public final class AllocationAffinity extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [json_name = "consumeReservationType", (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the consumeAllocationType field is set.
@@ -282,7 +282,7 @@ public final class AllocationAffinity extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [json_name = "consumeReservationType", (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for consumeAllocationType.
@@ -301,7 +301,7 @@ public final class AllocationAffinity extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [json_name = "consumeReservationType", (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The consumeAllocationType.
@@ -880,7 +880,7 @@ public final class AllocationAffinity extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [json_name = "consumeReservationType", (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the consumeAllocationType field is set.
@@ -899,7 +899,7 @@ public final class AllocationAffinity extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [json_name = "consumeReservationType", (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for consumeAllocationType.
@@ -918,7 +918,7 @@ public final class AllocationAffinity extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [json_name = "consumeReservationType", (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for consumeAllocationType to set.
@@ -940,7 +940,7 @@ public final class AllocationAffinity extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [json_name = "consumeReservationType", (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The consumeAllocationType.
@@ -963,7 +963,7 @@ public final class AllocationAffinity extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [json_name = "consumeReservationType", (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The consumeAllocationType to set.
@@ -989,7 +989,7 @@ public final class AllocationAffinity extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.cloud.backupdr.v1.AllocationAffinity.Type consume_allocation_type = 1 [json_name = "consumeReservationType", (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.

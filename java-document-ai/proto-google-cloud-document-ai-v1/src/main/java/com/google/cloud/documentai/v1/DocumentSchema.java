@@ -1292,6 +1292,34 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.OccurrenceType
           getOccurrenceType();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies how the entity's value is obtained.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method method = 8;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for method.
+       */
+      int getMethodValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies how the entity's value is obtained.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method method = 8;
+       * </code>
+       *
+       * @return The method.
+       */
+      com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method getMethod();
     }
 
     /**
@@ -1319,6 +1347,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         displayName_ = "";
         valueType_ = "";
         occurrenceType_ = 0;
+        method_ = 0;
       }
 
       @java.lang.Override
@@ -1566,6 +1595,172 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(enum_scope:google.cloud.documentai.v1.DocumentSchema.EntityType.Property.OccurrenceType)
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * Specifies how the entity's value is obtained from the document.
+       * </pre>
+       *
+       * Protobuf enum {@code google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method}
+       */
+      public enum Method implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * Unspecified method. It defaults to `EXTRACT`.
+         * </pre>
+         *
+         * <code>METHOD_UNSPECIFIED = 0;</code>
+         */
+        METHOD_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * The entity's value is directly extracted as-is from the document
+         * text.
+         * </pre>
+         *
+         * <code>EXTRACT = 1;</code>
+         */
+        EXTRACT(1),
+        /**
+         *
+         *
+         * <pre>
+         * The entity's value is derived through inference and is not
+         * necessarily an exact text extraction from the document.
+         * </pre>
+         *
+         * <code>DERIVE = 2;</code>
+         */
+        DERIVE(2),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * Unspecified method. It defaults to `EXTRACT`.
+         * </pre>
+         *
+         * <code>METHOD_UNSPECIFIED = 0;</code>
+         */
+        public static final int METHOD_UNSPECIFIED_VALUE = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * The entity's value is directly extracted as-is from the document
+         * text.
+         * </pre>
+         *
+         * <code>EXTRACT = 1;</code>
+         */
+        public static final int EXTRACT_VALUE = 1;
+
+        /**
+         *
+         *
+         * <pre>
+         * The entity's value is derived through inference and is not
+         * necessarily an exact text extraction from the document.
+         * </pre>
+         *
+         * <code>DERIVE = 2;</code>
+         */
+        public static final int DERIVE_VALUE = 2;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static Method valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static Method forNumber(int value) {
+          switch (value) {
+            case 0:
+              return METHOD_UNSPECIFIED;
+            case 1:
+              return EXTRACT;
+            case 2:
+              return DERIVE;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<Method> internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<Method> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Method>() {
+              public Method findValueByNumber(int number) {
+                return Method.forNumber(number);
+              }
+            };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.getDescriptor()
+              .getEnumTypes()
+              .get(1);
+        }
+
+        private static final Method[] VALUES = values();
+
+        public static Method valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private Method(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method)
+      }
+
       public static final int NAME_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
@@ -1777,6 +1972,48 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             : result;
       }
 
+      public static final int METHOD_FIELD_NUMBER = 8;
+      private int method_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies how the entity's value is obtained.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method method = 8;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for method.
+       */
+      @java.lang.Override
+      public int getMethodValue() {
+        return method_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies how the entity's value is obtained.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method method = 8;
+       * </code>
+       *
+       * @return The method.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method getMethod() {
+        com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method result =
+            com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method.forNumber(
+                method_);
+        return result == null
+            ? com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method.UNRECOGNIZED
+            : result;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -1806,6 +2043,12 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 6, displayName_);
         }
+        if (method_
+            != com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method
+                .METHOD_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(8, method_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -1830,6 +2073,12 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, displayName_);
         }
+        if (method_
+            != com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method
+                .METHOD_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, method_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -1850,6 +2099,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         if (!getDisplayName().equals(other.getDisplayName())) return false;
         if (!getValueType().equals(other.getValueType())) return false;
         if (occurrenceType_ != other.occurrenceType_) return false;
+        if (method_ != other.method_) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -1869,6 +2119,8 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getValueType().hashCode();
         hash = (37 * hash) + OCCURRENCE_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + occurrenceType_;
+        hash = (37 * hash) + METHOD_FIELD_NUMBER;
+        hash = (53 * hash) + method_;
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -2019,6 +2271,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           displayName_ = "";
           valueType_ = "";
           occurrenceType_ = 0;
+          method_ = 0;
           return this;
         }
 
@@ -2069,6 +2322,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.occurrenceType_ = occurrenceType_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.method_ = method_;
           }
         }
 
@@ -2141,6 +2397,9 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           if (other.occurrenceType_ != 0) {
             setOccurrenceTypeValue(other.getOccurrenceTypeValue());
           }
+          if (other.method_ != 0) {
+            setMethodValue(other.getMethodValue());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -2191,6 +2450,12 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000002;
                     break;
                   } // case 50
+                case 64:
+                  {
+                    method_ = input.readEnum();
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 64
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2666,6 +2931,112 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         public Builder clearOccurrenceType() {
           bitField0_ = (bitField0_ & ~0x00000008);
           occurrenceType_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int method_ = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies how the entity's value is obtained.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method method = 8;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for method.
+         */
+        @java.lang.Override
+        public int getMethodValue() {
+          return method_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies how the entity's value is obtained.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method method = 8;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for method to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMethodValue(int value) {
+          method_ = value;
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies how the entity's value is obtained.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method method = 8;
+         * </code>
+         *
+         * @return The method.
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method
+            getMethod() {
+          com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method result =
+              com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method.forNumber(
+                  method_);
+          return result == null
+              ? com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method
+                  .UNRECOGNIZED
+              : result;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies how the entity's value is obtained.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method method = 8;
+         * </code>
+         *
+         * @param value The method to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMethod(
+            com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000010;
+          method_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies how the entity's value is obtained.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.Method method = 8;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearMethod() {
+          bitField0_ = (bitField0_ & ~0x00000010);
+          method_ = 0;
           onChanged();
           return this;
         }

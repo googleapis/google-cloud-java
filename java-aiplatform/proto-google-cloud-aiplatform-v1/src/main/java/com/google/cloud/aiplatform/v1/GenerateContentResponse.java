@@ -304,6 +304,16 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
        * <code>PROHIBITED_CONTENT = 4;</code>
        */
       PROHIBITED_CONTENT(4),
+      /**
+       *
+       *
+       * <pre>
+       * The user prompt was blocked by Model Armor.
+       * </pre>
+       *
+       * <code>MODEL_ARMOR = 5;</code>
+       */
+      MODEL_ARMOR(5),
       UNRECOGNIZED(-1),
       ;
 
@@ -363,6 +373,17 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
        */
       public static final int PROHIBITED_CONTENT_VALUE = 4;
 
+      /**
+       *
+       *
+       * <pre>
+       * The user prompt was blocked by Model Armor.
+       * </pre>
+       *
+       * <code>MODEL_ARMOR = 5;</code>
+       */
+      public static final int MODEL_ARMOR_VALUE = 5;
+
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
           throw new java.lang.IllegalArgumentException(
@@ -397,6 +418,8 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
             return BLOCKLIST;
           case 4:
             return PROHIBITED_CONTENT;
+          case 5:
+            return MODEL_ARMOR;
           default:
             return null;
         }

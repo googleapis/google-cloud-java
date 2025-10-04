@@ -190,6 +190,26 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> FetchStorageInventory</td>
+ *      <td><p> List remote source's inventory of storage resources. The remote source is another cloud vendor (e.g. AWS, Azure). The inventory describes the list of existing storage resources in that source. Note that this operation lists the resources on the remote source, as opposed to listing the MigratingVms resources in the vmmigration service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchStorageInventory(FetchStorageInventoryRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchStorageInventory(SourceName source, FetchStorageInventoryRequest.StorageType type)
+ *           <li><p> fetchStorageInventory(String source, FetchStorageInventoryRequest.StorageType type)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchStorageInventoryPagedCallable()
+ *           <li><p> fetchStorageInventoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListUtilizationReports</td>
  *      <td><p> Lists Utilization Reports of the given Source.</td>
  *      <td>
@@ -531,6 +551,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ExtendMigration</td>
+ *      <td><p> Extend the migrating VM time to live.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> extendMigrationAsync(ExtendMigrationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> extendMigrationOperationCallable()
+ *           <li><p> extendMigrationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateCloneJob</td>
  *      <td><p> Initiates a Clone of a specific migrating VM.</td>
  *      <td>
@@ -572,7 +607,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListCloneJobs</td>
- *      <td><p> Lists CloneJobs of a given migrating VM.</td>
+ *      <td><p> Lists the CloneJobs of a migrating VM. Only 25 most recent CloneJobs are listed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -651,7 +686,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListCutoverJobs</td>
- *      <td><p> Lists CutoverJobs of a given migrating VM.</td>
+ *      <td><p> Lists the CutoverJobs of a migrating VM. Only 25 most recent CutoverJobs are listed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -965,6 +1000,277 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getReplicationCycleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListImageImports</td>
+ *      <td><p> Lists ImageImports in a given project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listImageImports(ListImageImportsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listImageImports(LocationName parent)
+ *           <li><p> listImageImports(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listImageImportsPagedCallable()
+ *           <li><p> listImageImportsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetImageImport</td>
+ *      <td><p> Gets details of a single ImageImport.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getImageImport(GetImageImportRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getImageImport(ImageImportName name)
+ *           <li><p> getImageImport(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getImageImportCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateImageImport</td>
+ *      <td><p> Creates a new ImageImport in a given project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createImageImportAsync(CreateImageImportRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createImageImportAsync(LocationName parent, ImageImport imageImport, String imageImportId)
+ *           <li><p> createImageImportAsync(String parent, ImageImport imageImport, String imageImportId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createImageImportOperationCallable()
+ *           <li><p> createImageImportCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteImageImport</td>
+ *      <td><p> Deletes a single ImageImport.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteImageImportAsync(DeleteImageImportRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteImageImportAsync(ImageImportName name)
+ *           <li><p> deleteImageImportAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteImageImportOperationCallable()
+ *           <li><p> deleteImageImportCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListImageImportJobs</td>
+ *      <td><p> Lists ImageImportJobs in a given project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listImageImportJobs(ListImageImportJobsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listImageImportJobs(ImageImportName parent)
+ *           <li><p> listImageImportJobs(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listImageImportJobsPagedCallable()
+ *           <li><p> listImageImportJobsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetImageImportJob</td>
+ *      <td><p> Gets details of a single ImageImportJob.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getImageImportJob(GetImageImportJobRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getImageImportJob(ImageImportJobName name)
+ *           <li><p> getImageImportJob(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getImageImportJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CancelImageImportJob</td>
+ *      <td><p> Initiates the cancellation of a running clone job.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> cancelImageImportJobAsync(CancelImageImportJobRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> cancelImageImportJobAsync(ImageImportJobName name)
+ *           <li><p> cancelImageImportJobAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> cancelImageImportJobOperationCallable()
+ *           <li><p> cancelImageImportJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateDiskMigrationJob</td>
+ *      <td><p> Creates a new disk migration job in a given Source.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createDiskMigrationJobAsync(CreateDiskMigrationJobRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createDiskMigrationJobAsync(SourceName parent, DiskMigrationJob diskMigrationJob, String diskMigrationJobId)
+ *           <li><p> createDiskMigrationJobAsync(String parent, DiskMigrationJob diskMigrationJob, String diskMigrationJobId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createDiskMigrationJobOperationCallable()
+ *           <li><p> createDiskMigrationJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDiskMigrationJobs</td>
+ *      <td><p> Lists DiskMigrationJobs in a given Source.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDiskMigrationJobs(ListDiskMigrationJobsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDiskMigrationJobs(SourceName parent)
+ *           <li><p> listDiskMigrationJobs(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDiskMigrationJobsPagedCallable()
+ *           <li><p> listDiskMigrationJobsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDiskMigrationJob</td>
+ *      <td><p> Gets details of a single DiskMigrationJob.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDiskMigrationJob(GetDiskMigrationJobRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDiskMigrationJob(DiskMigrationJobName name)
+ *           <li><p> getDiskMigrationJob(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDiskMigrationJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateDiskMigrationJob</td>
+ *      <td><p> Updates the parameters of a single DiskMigrationJob.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDiskMigrationJobAsync(UpdateDiskMigrationJobRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateDiskMigrationJobAsync(DiskMigrationJob diskMigrationJob, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDiskMigrationJobOperationCallable()
+ *           <li><p> updateDiskMigrationJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteDiskMigrationJob</td>
+ *      <td><p> Deletes a single DiskMigrationJob.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteDiskMigrationJobAsync(DeleteDiskMigrationJobRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteDiskMigrationJobAsync(DiskMigrationJobName name)
+ *           <li><p> deleteDiskMigrationJobAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteDiskMigrationJobOperationCallable()
+ *           <li><p> deleteDiskMigrationJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RunDiskMigrationJob</td>
+ *      <td><p> Runs the disk migration job.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> runDiskMigrationJobAsync(RunDiskMigrationJobRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> runDiskMigrationJobAsync(DiskMigrationJobName name)
+ *           <li><p> runDiskMigrationJobAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> runDiskMigrationJobOperationCallable()
+ *           <li><p> runDiskMigrationJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CancelDiskMigrationJob</td>
+ *      <td><p> Cancels the disk migration job.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> cancelDiskMigrationJobAsync(CancelDiskMigrationJobRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> cancelDiskMigrationJobOperationCallable()
+ *           <li><p> cancelDiskMigrationJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1955,6 +2261,202 @@ public class VmMigrationClient implements BackgroundResource {
   public final UnaryCallable<FetchInventoryRequest, FetchInventoryResponse>
       fetchInventoryCallable() {
     return stub.fetchInventoryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List remote source's inventory of storage resources. The remote source is another cloud vendor
+   * (e.g. AWS, Azure). The inventory describes the list of existing storage resources in that
+   * source. Note that this operation lists the resources on the remote source, as opposed to
+   * listing the MigratingVms resources in the vmmigration service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   SourceName source = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]");
+   *   FetchStorageInventoryRequest.StorageType type =
+   *       FetchStorageInventoryRequest.StorageType.forNumber(0);
+   *   for (SourceStorageResource element :
+   *       vmMigrationClient.fetchStorageInventory(source, type).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param source Required. The name of the Source.
+   * @param type Required. The type of the storage inventory to fetch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchStorageInventoryPagedResponse fetchStorageInventory(
+      SourceName source, FetchStorageInventoryRequest.StorageType type) {
+    FetchStorageInventoryRequest request =
+        FetchStorageInventoryRequest.newBuilder()
+            .setSource(source == null ? null : source.toString())
+            .setType(type)
+            .build();
+    return fetchStorageInventory(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List remote source's inventory of storage resources. The remote source is another cloud vendor
+   * (e.g. AWS, Azure). The inventory describes the list of existing storage resources in that
+   * source. Note that this operation lists the resources on the remote source, as opposed to
+   * listing the MigratingVms resources in the vmmigration service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   String source = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]").toString();
+   *   FetchStorageInventoryRequest.StorageType type =
+   *       FetchStorageInventoryRequest.StorageType.forNumber(0);
+   *   for (SourceStorageResource element :
+   *       vmMigrationClient.fetchStorageInventory(source, type).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param source Required. The name of the Source.
+   * @param type Required. The type of the storage inventory to fetch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchStorageInventoryPagedResponse fetchStorageInventory(
+      String source, FetchStorageInventoryRequest.StorageType type) {
+    FetchStorageInventoryRequest request =
+        FetchStorageInventoryRequest.newBuilder().setSource(source).setType(type).build();
+    return fetchStorageInventory(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List remote source's inventory of storage resources. The remote source is another cloud vendor
+   * (e.g. AWS, Azure). The inventory describes the list of existing storage resources in that
+   * source. Note that this operation lists the resources on the remote source, as opposed to
+   * listing the MigratingVms resources in the vmmigration service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   FetchStorageInventoryRequest request =
+   *       FetchStorageInventoryRequest.newBuilder()
+   *           .setSource(SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]").toString())
+   *           .setForceRefresh(true)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SourceStorageResource element :
+   *       vmMigrationClient.fetchStorageInventory(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchStorageInventoryPagedResponse fetchStorageInventory(
+      FetchStorageInventoryRequest request) {
+    return fetchStorageInventoryPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List remote source's inventory of storage resources. The remote source is another cloud vendor
+   * (e.g. AWS, Azure). The inventory describes the list of existing storage resources in that
+   * source. Note that this operation lists the resources on the remote source, as opposed to
+   * listing the MigratingVms resources in the vmmigration service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   FetchStorageInventoryRequest request =
+   *       FetchStorageInventoryRequest.newBuilder()
+   *           .setSource(SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]").toString())
+   *           .setForceRefresh(true)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SourceStorageResource> future =
+   *       vmMigrationClient.fetchStorageInventoryPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SourceStorageResource element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchStorageInventoryRequest, FetchStorageInventoryPagedResponse>
+      fetchStorageInventoryPagedCallable() {
+    return stub.fetchStorageInventoryPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List remote source's inventory of storage resources. The remote source is another cloud vendor
+   * (e.g. AWS, Azure). The inventory describes the list of existing storage resources in that
+   * source. Note that this operation lists the resources on the remote source, as opposed to
+   * listing the MigratingVms resources in the vmmigration service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   FetchStorageInventoryRequest request =
+   *       FetchStorageInventoryRequest.newBuilder()
+   *           .setSource(SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]").toString())
+   *           .setForceRefresh(true)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     FetchStorageInventoryResponse response =
+   *         vmMigrationClient.fetchStorageInventoryCallable().call(request);
+   *     for (SourceStorageResource element : response.getResourcesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchStorageInventoryRequest, FetchStorageInventoryResponse>
+      fetchStorageInventoryCallable() {
+    return stub.fetchStorageInventoryCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4594,6 +5096,97 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Extend the migrating VM time to live.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   ExtendMigrationRequest request =
+   *       ExtendMigrationRequest.newBuilder()
+   *           .setMigratingVm(
+   *               MigratingVmName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]")
+   *                   .toString())
+   *           .build();
+   *   ExtendMigrationResponse response = vmMigrationClient.extendMigrationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExtendMigrationResponse, OperationMetadata> extendMigrationAsync(
+      ExtendMigrationRequest request) {
+    return extendMigrationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Extend the migrating VM time to live.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   ExtendMigrationRequest request =
+   *       ExtendMigrationRequest.newBuilder()
+   *           .setMigratingVm(
+   *               MigratingVmName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<ExtendMigrationResponse, OperationMetadata> future =
+   *       vmMigrationClient.extendMigrationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExtendMigrationResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ExtendMigrationRequest, ExtendMigrationResponse, OperationMetadata>
+      extendMigrationOperationCallable() {
+    return stub.extendMigrationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Extend the migrating VM time to live.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   ExtendMigrationRequest request =
+   *       ExtendMigrationRequest.newBuilder()
+   *           .setMigratingVm(
+   *               MigratingVmName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future = vmMigrationClient.extendMigrationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExtendMigrationRequest, Operation> extendMigrationCallable() {
+    return stub.extendMigrationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Initiates a Clone of a specific migrating VM.
    *
    * <p>Sample code:
@@ -4920,7 +5513,7 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CloneJobs of a given migrating VM.
+   * Lists the CloneJobs of a migrating VM. Only 25 most recent CloneJobs are listed.
    *
    * <p>Sample code:
    *
@@ -4952,7 +5545,7 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CloneJobs of a given migrating VM.
+   * Lists the CloneJobs of a migrating VM. Only 25 most recent CloneJobs are listed.
    *
    * <p>Sample code:
    *
@@ -4981,7 +5574,7 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CloneJobs of a given migrating VM.
+   * Lists the CloneJobs of a migrating VM. Only 25 most recent CloneJobs are listed.
    *
    * <p>Sample code:
    *
@@ -5017,7 +5610,7 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CloneJobs of a given migrating VM.
+   * Lists the CloneJobs of a migrating VM. Only 25 most recent CloneJobs are listed.
    *
    * <p>Sample code:
    *
@@ -5054,7 +5647,7 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CloneJobs of a given migrating VM.
+   * Lists the CloneJobs of a migrating VM. Only 25 most recent CloneJobs are listed.
    *
    * <p>Sample code:
    *
@@ -5551,7 +6144,7 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CutoverJobs of a given migrating VM.
+   * Lists the CutoverJobs of a migrating VM. Only 25 most recent CutoverJobs are listed.
    *
    * <p>Sample code:
    *
@@ -5583,7 +6176,7 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CutoverJobs of a given migrating VM.
+   * Lists the CutoverJobs of a migrating VM. Only 25 most recent CutoverJobs are listed.
    *
    * <p>Sample code:
    *
@@ -5612,7 +6205,7 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CutoverJobs of a given migrating VM.
+   * Lists the CutoverJobs of a migrating VM. Only 25 most recent CutoverJobs are listed.
    *
    * <p>Sample code:
    *
@@ -5648,7 +6241,7 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CutoverJobs of a given migrating VM.
+   * Lists the CutoverJobs of a migrating VM. Only 25 most recent CutoverJobs are listed.
    *
    * <p>Sample code:
    *
@@ -5685,7 +6278,7 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CutoverJobs of a given migrating VM.
+   * Lists the CutoverJobs of a migrating VM. Only 25 most recent CutoverJobs are listed.
    *
    * <p>Sample code:
    *
@@ -7977,6 +8570,2063 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists ImageImports in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (ImageImport element : vmMigrationClient.listImageImports(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of targets.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListImageImportsPagedResponse listImageImports(LocationName parent) {
+    ListImageImportsRequest request =
+        ListImageImportsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listImageImports(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ImageImports in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (ImageImport element : vmMigrationClient.listImageImports(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of targets.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListImageImportsPagedResponse listImageImports(String parent) {
+    ListImageImportsRequest request =
+        ListImageImportsRequest.newBuilder().setParent(parent).build();
+    return listImageImports(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ImageImports in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   ListImageImportsRequest request =
+   *       ListImageImportsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (ImageImport element : vmMigrationClient.listImageImports(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListImageImportsPagedResponse listImageImports(ListImageImportsRequest request) {
+    return listImageImportsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ImageImports in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   ListImageImportsRequest request =
+   *       ListImageImportsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<ImageImport> future =
+   *       vmMigrationClient.listImageImportsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ImageImport element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListImageImportsRequest, ListImageImportsPagedResponse>
+      listImageImportsPagedCallable() {
+    return stub.listImageImportsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ImageImports in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   ListImageImportsRequest request =
+   *       ListImageImportsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListImageImportsResponse response =
+   *         vmMigrationClient.listImageImportsCallable().call(request);
+   *     for (ImageImport element : response.getImageImportsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListImageImportsRequest, ListImageImportsResponse>
+      listImageImportsCallable() {
+    return stub.listImageImportsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ImageImport.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   ImageImportName name = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   ImageImport response = vmMigrationClient.getImageImport(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The ImageImport name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImageImport getImageImport(ImageImportName name) {
+    GetImageImportRequest request =
+        GetImageImportRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getImageImport(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ImageImport.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   String name = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString();
+   *   ImageImport response = vmMigrationClient.getImageImport(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The ImageImport name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImageImport getImageImport(String name) {
+    GetImageImportRequest request = GetImageImportRequest.newBuilder().setName(name).build();
+    return getImageImport(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ImageImport.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   GetImageImportRequest request =
+   *       GetImageImportRequest.newBuilder()
+   *           .setName(ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .build();
+   *   ImageImport response = vmMigrationClient.getImageImport(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImageImport getImageImport(GetImageImportRequest request) {
+    return getImageImportCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ImageImport.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   GetImageImportRequest request =
+   *       GetImageImportRequest.newBuilder()
+   *           .setName(ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .build();
+   *   ApiFuture<ImageImport> future =
+   *       vmMigrationClient.getImageImportCallable().futureCall(request);
+   *   // Do something.
+   *   ImageImport response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetImageImportRequest, ImageImport> getImageImportCallable() {
+    return stub.getImageImportCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ImageImport in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ImageImport imageImport = ImageImport.newBuilder().build();
+   *   String imageImportId = "imageImportId943893019";
+   *   ImageImport response =
+   *       vmMigrationClient.createImageImportAsync(parent, imageImport, imageImportId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The ImageImport's parent.
+   * @param imageImport Required. The create request body.
+   * @param imageImportId Required. The image import identifier. This value maximum length is 63
+   *     characters, and valid characters are /[a-z][0-9]-/. It must start with an english letter
+   *     and must not end with a hyphen.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImageImport, OperationMetadata> createImageImportAsync(
+      LocationName parent, ImageImport imageImport, String imageImportId) {
+    CreateImageImportRequest request =
+        CreateImageImportRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setImageImport(imageImport)
+            .setImageImportId(imageImportId)
+            .build();
+    return createImageImportAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ImageImport in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   ImageImport imageImport = ImageImport.newBuilder().build();
+   *   String imageImportId = "imageImportId943893019";
+   *   ImageImport response =
+   *       vmMigrationClient.createImageImportAsync(parent, imageImport, imageImportId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The ImageImport's parent.
+   * @param imageImport Required. The create request body.
+   * @param imageImportId Required. The image import identifier. This value maximum length is 63
+   *     characters, and valid characters are /[a-z][0-9]-/. It must start with an english letter
+   *     and must not end with a hyphen.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImageImport, OperationMetadata> createImageImportAsync(
+      String parent, ImageImport imageImport, String imageImportId) {
+    CreateImageImportRequest request =
+        CreateImageImportRequest.newBuilder()
+            .setParent(parent)
+            .setImageImport(imageImport)
+            .setImageImportId(imageImportId)
+            .build();
+    return createImageImportAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ImageImport in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   CreateImageImportRequest request =
+   *       CreateImageImportRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setImageImportId("imageImportId943893019")
+   *           .setImageImport(ImageImport.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ImageImport response = vmMigrationClient.createImageImportAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImageImport, OperationMetadata> createImageImportAsync(
+      CreateImageImportRequest request) {
+    return createImageImportOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ImageImport in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   CreateImageImportRequest request =
+   *       CreateImageImportRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setImageImportId("imageImportId943893019")
+   *           .setImageImport(ImageImport.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<ImageImport, OperationMetadata> future =
+   *       vmMigrationClient.createImageImportOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ImageImport response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateImageImportRequest, ImageImport, OperationMetadata>
+      createImageImportOperationCallable() {
+    return stub.createImageImportOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ImageImport in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   CreateImageImportRequest request =
+   *       CreateImageImportRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setImageImportId("imageImportId943893019")
+   *           .setImageImport(ImageImport.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmMigrationClient.createImageImportCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateImageImportRequest, Operation> createImageImportCallable() {
+    return stub.createImageImportCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ImageImport.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   ImageImportName name = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   vmMigrationClient.deleteImageImportAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The ImageImport name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteImageImportAsync(
+      ImageImportName name) {
+    DeleteImageImportRequest request =
+        DeleteImageImportRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteImageImportAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ImageImport.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   String name = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString();
+   *   vmMigrationClient.deleteImageImportAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The ImageImport name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteImageImportAsync(String name) {
+    DeleteImageImportRequest request = DeleteImageImportRequest.newBuilder().setName(name).build();
+    return deleteImageImportAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ImageImport.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   DeleteImageImportRequest request =
+   *       DeleteImageImportRequest.newBuilder()
+   *           .setName(ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   vmMigrationClient.deleteImageImportAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteImageImportAsync(
+      DeleteImageImportRequest request) {
+    return deleteImageImportOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ImageImport.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   DeleteImageImportRequest request =
+   *       DeleteImageImportRequest.newBuilder()
+   *           .setName(ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       vmMigrationClient.deleteImageImportOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteImageImportRequest, Empty, OperationMetadata>
+      deleteImageImportOperationCallable() {
+    return stub.deleteImageImportOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ImageImport.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   DeleteImageImportRequest request =
+   *       DeleteImageImportRequest.newBuilder()
+   *           .setName(ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmMigrationClient.deleteImageImportCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteImageImportRequest, Operation> deleteImageImportCallable() {
+    return stub.deleteImageImportCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ImageImportJobs in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   ImageImportName parent = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   for (ImageImportJob element : vmMigrationClient.listImageImportJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of targets.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListImageImportJobsPagedResponse listImageImportJobs(ImageImportName parent) {
+    ListImageImportJobsRequest request =
+        ListImageImportJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listImageImportJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ImageImportJobs in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   String parent = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString();
+   *   for (ImageImportJob element : vmMigrationClient.listImageImportJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of targets.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListImageImportJobsPagedResponse listImageImportJobs(String parent) {
+    ListImageImportJobsRequest request =
+        ListImageImportJobsRequest.newBuilder().setParent(parent).build();
+    return listImageImportJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ImageImportJobs in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   ListImageImportJobsRequest request =
+   *       ListImageImportJobsRequest.newBuilder()
+   *           .setParent(ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (ImageImportJob element : vmMigrationClient.listImageImportJobs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListImageImportJobsPagedResponse listImageImportJobs(
+      ListImageImportJobsRequest request) {
+    return listImageImportJobsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ImageImportJobs in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   ListImageImportJobsRequest request =
+   *       ListImageImportJobsRequest.newBuilder()
+   *           .setParent(ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<ImageImportJob> future =
+   *       vmMigrationClient.listImageImportJobsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ImageImportJob element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListImageImportJobsRequest, ListImageImportJobsPagedResponse>
+      listImageImportJobsPagedCallable() {
+    return stub.listImageImportJobsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ImageImportJobs in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   ListImageImportJobsRequest request =
+   *       ListImageImportJobsRequest.newBuilder()
+   *           .setParent(ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListImageImportJobsResponse response =
+   *         vmMigrationClient.listImageImportJobsCallable().call(request);
+   *     for (ImageImportJob element : response.getImageImportJobsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListImageImportJobsRequest, ListImageImportJobsResponse>
+      listImageImportJobsCallable() {
+    return stub.listImageImportJobsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ImageImportJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   ImageImportJobName name =
+   *       ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]");
+   *   ImageImportJob response = vmMigrationClient.getImageImportJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The ImageImportJob name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImageImportJob getImageImportJob(ImageImportJobName name) {
+    GetImageImportJobRequest request =
+        GetImageImportJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getImageImportJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ImageImportJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   String name =
+   *       ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]").toString();
+   *   ImageImportJob response = vmMigrationClient.getImageImportJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The ImageImportJob name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImageImportJob getImageImportJob(String name) {
+    GetImageImportJobRequest request = GetImageImportJobRequest.newBuilder().setName(name).build();
+    return getImageImportJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ImageImportJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   GetImageImportJobRequest request =
+   *       GetImageImportJobRequest.newBuilder()
+   *           .setName(
+   *               ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]").toString())
+   *           .build();
+   *   ImageImportJob response = vmMigrationClient.getImageImportJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImageImportJob getImageImportJob(GetImageImportJobRequest request) {
+    return getImageImportJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ImageImportJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   GetImageImportJobRequest request =
+   *       GetImageImportJobRequest.newBuilder()
+   *           .setName(
+   *               ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]").toString())
+   *           .build();
+   *   ApiFuture<ImageImportJob> future =
+   *       vmMigrationClient.getImageImportJobCallable().futureCall(request);
+   *   // Do something.
+   *   ImageImportJob response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetImageImportJobRequest, ImageImportJob> getImageImportJobCallable() {
+    return stub.getImageImportJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates the cancellation of a running clone job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   ImageImportJobName name =
+   *       ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]");
+   *   CancelImageImportJobResponse response =
+   *       vmMigrationClient.cancelImageImportJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The image import job id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CancelImageImportJobResponse, OperationMetadata>
+      cancelImageImportJobAsync(ImageImportJobName name) {
+    CancelImageImportJobRequest request =
+        CancelImageImportJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return cancelImageImportJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates the cancellation of a running clone job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   String name =
+   *       ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]").toString();
+   *   CancelImageImportJobResponse response =
+   *       vmMigrationClient.cancelImageImportJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The image import job id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CancelImageImportJobResponse, OperationMetadata>
+      cancelImageImportJobAsync(String name) {
+    CancelImageImportJobRequest request =
+        CancelImageImportJobRequest.newBuilder().setName(name).build();
+    return cancelImageImportJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates the cancellation of a running clone job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   CancelImageImportJobRequest request =
+   *       CancelImageImportJobRequest.newBuilder()
+   *           .setName(
+   *               ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]").toString())
+   *           .build();
+   *   CancelImageImportJobResponse response =
+   *       vmMigrationClient.cancelImageImportJobAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CancelImageImportJobResponse, OperationMetadata>
+      cancelImageImportJobAsync(CancelImageImportJobRequest request) {
+    return cancelImageImportJobOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates the cancellation of a running clone job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   CancelImageImportJobRequest request =
+   *       CancelImageImportJobRequest.newBuilder()
+   *           .setName(
+   *               ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]").toString())
+   *           .build();
+   *   OperationFuture<CancelImageImportJobResponse, OperationMetadata> future =
+   *       vmMigrationClient.cancelImageImportJobOperationCallable().futureCall(request);
+   *   // Do something.
+   *   CancelImageImportJobResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CancelImageImportJobRequest, CancelImageImportJobResponse, OperationMetadata>
+      cancelImageImportJobOperationCallable() {
+    return stub.cancelImageImportJobOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initiates the cancellation of a running clone job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   CancelImageImportJobRequest request =
+   *       CancelImageImportJobRequest.newBuilder()
+   *           .setName(
+   *               ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmMigrationClient.cancelImageImportJobCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CancelImageImportJobRequest, Operation>
+      cancelImageImportJobCallable() {
+    return stub.cancelImageImportJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new disk migration job in a given Source.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   SourceName parent = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]");
+   *   DiskMigrationJob diskMigrationJob = DiskMigrationJob.newBuilder().build();
+   *   String diskMigrationJobId = "diskMigrationJobId-173409913";
+   *   DiskMigrationJob response =
+   *       vmMigrationClient
+   *           .createDiskMigrationJobAsync(parent, diskMigrationJob, diskMigrationJobId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The DiskMigrationJob's parent.
+   * @param diskMigrationJob Required. The create request body.
+   * @param diskMigrationJobId Required. The DiskMigrationJob identifier. The maximum length of this
+   *     value is 63 characters. Valid characters are lower case Latin letters, digits and hyphen.
+   *     It must start with a Latin letter and must not end with a hyphen.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DiskMigrationJob, OperationMetadata> createDiskMigrationJobAsync(
+      SourceName parent, DiskMigrationJob diskMigrationJob, String diskMigrationJobId) {
+    CreateDiskMigrationJobRequest request =
+        CreateDiskMigrationJobRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDiskMigrationJob(diskMigrationJob)
+            .setDiskMigrationJobId(diskMigrationJobId)
+            .build();
+    return createDiskMigrationJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new disk migration job in a given Source.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   String parent = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]").toString();
+   *   DiskMigrationJob diskMigrationJob = DiskMigrationJob.newBuilder().build();
+   *   String diskMigrationJobId = "diskMigrationJobId-173409913";
+   *   DiskMigrationJob response =
+   *       vmMigrationClient
+   *           .createDiskMigrationJobAsync(parent, diskMigrationJob, diskMigrationJobId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The DiskMigrationJob's parent.
+   * @param diskMigrationJob Required. The create request body.
+   * @param diskMigrationJobId Required. The DiskMigrationJob identifier. The maximum length of this
+   *     value is 63 characters. Valid characters are lower case Latin letters, digits and hyphen.
+   *     It must start with a Latin letter and must not end with a hyphen.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DiskMigrationJob, OperationMetadata> createDiskMigrationJobAsync(
+      String parent, DiskMigrationJob diskMigrationJob, String diskMigrationJobId) {
+    CreateDiskMigrationJobRequest request =
+        CreateDiskMigrationJobRequest.newBuilder()
+            .setParent(parent)
+            .setDiskMigrationJob(diskMigrationJob)
+            .setDiskMigrationJobId(diskMigrationJobId)
+            .build();
+    return createDiskMigrationJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new disk migration job in a given Source.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   CreateDiskMigrationJobRequest request =
+   *       CreateDiskMigrationJobRequest.newBuilder()
+   *           .setParent(SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]").toString())
+   *           .setDiskMigrationJobId("diskMigrationJobId-173409913")
+   *           .setDiskMigrationJob(DiskMigrationJob.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   DiskMigrationJob response = vmMigrationClient.createDiskMigrationJobAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DiskMigrationJob, OperationMetadata> createDiskMigrationJobAsync(
+      CreateDiskMigrationJobRequest request) {
+    return createDiskMigrationJobOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new disk migration job in a given Source.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   CreateDiskMigrationJobRequest request =
+   *       CreateDiskMigrationJobRequest.newBuilder()
+   *           .setParent(SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]").toString())
+   *           .setDiskMigrationJobId("diskMigrationJobId-173409913")
+   *           .setDiskMigrationJob(DiskMigrationJob.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<DiskMigrationJob, OperationMetadata> future =
+   *       vmMigrationClient.createDiskMigrationJobOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DiskMigrationJob response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      createDiskMigrationJobOperationCallable() {
+    return stub.createDiskMigrationJobOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new disk migration job in a given Source.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   CreateDiskMigrationJobRequest request =
+   *       CreateDiskMigrationJobRequest.newBuilder()
+   *           .setParent(SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]").toString())
+   *           .setDiskMigrationJobId("diskMigrationJobId-173409913")
+   *           .setDiskMigrationJob(DiskMigrationJob.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmMigrationClient.createDiskMigrationJobCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateDiskMigrationJobRequest, Operation>
+      createDiskMigrationJobCallable() {
+    return stub.createDiskMigrationJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DiskMigrationJobs in a given Source.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   SourceName parent = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]");
+   *   for (DiskMigrationJob element :
+   *       vmMigrationClient.listDiskMigrationJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of DiskMigrationJobs.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDiskMigrationJobsPagedResponse listDiskMigrationJobs(SourceName parent) {
+    ListDiskMigrationJobsRequest request =
+        ListDiskMigrationJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDiskMigrationJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DiskMigrationJobs in a given Source.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   String parent = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]").toString();
+   *   for (DiskMigrationJob element :
+   *       vmMigrationClient.listDiskMigrationJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of DiskMigrationJobs.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDiskMigrationJobsPagedResponse listDiskMigrationJobs(String parent) {
+    ListDiskMigrationJobsRequest request =
+        ListDiskMigrationJobsRequest.newBuilder().setParent(parent).build();
+    return listDiskMigrationJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DiskMigrationJobs in a given Source.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   ListDiskMigrationJobsRequest request =
+   *       ListDiskMigrationJobsRequest.newBuilder()
+   *           .setParent(SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (DiskMigrationJob element :
+   *       vmMigrationClient.listDiskMigrationJobs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDiskMigrationJobsPagedResponse listDiskMigrationJobs(
+      ListDiskMigrationJobsRequest request) {
+    return listDiskMigrationJobsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DiskMigrationJobs in a given Source.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   ListDiskMigrationJobsRequest request =
+   *       ListDiskMigrationJobsRequest.newBuilder()
+   *           .setParent(SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<DiskMigrationJob> future =
+   *       vmMigrationClient.listDiskMigrationJobsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (DiskMigrationJob element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDiskMigrationJobsRequest, ListDiskMigrationJobsPagedResponse>
+      listDiskMigrationJobsPagedCallable() {
+    return stub.listDiskMigrationJobsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DiskMigrationJobs in a given Source.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   ListDiskMigrationJobsRequest request =
+   *       ListDiskMigrationJobsRequest.newBuilder()
+   *           .setParent(SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListDiskMigrationJobsResponse response =
+   *         vmMigrationClient.listDiskMigrationJobsCallable().call(request);
+   *     for (DiskMigrationJob element : response.getDiskMigrationJobsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse>
+      listDiskMigrationJobsCallable() {
+    return stub.listDiskMigrationJobsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single DiskMigrationJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   DiskMigrationJobName name =
+   *       DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]");
+   *   DiskMigrationJob response = vmMigrationClient.getDiskMigrationJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DiskMigrationJob.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DiskMigrationJob getDiskMigrationJob(DiskMigrationJobName name) {
+    GetDiskMigrationJobRequest request =
+        GetDiskMigrationJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getDiskMigrationJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single DiskMigrationJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   String name =
+   *       DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+   *           .toString();
+   *   DiskMigrationJob response = vmMigrationClient.getDiskMigrationJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DiskMigrationJob.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DiskMigrationJob getDiskMigrationJob(String name) {
+    GetDiskMigrationJobRequest request =
+        GetDiskMigrationJobRequest.newBuilder().setName(name).build();
+    return getDiskMigrationJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single DiskMigrationJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   GetDiskMigrationJobRequest request =
+   *       GetDiskMigrationJobRequest.newBuilder()
+   *           .setName(
+   *               DiskMigrationJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+   *                   .toString())
+   *           .build();
+   *   DiskMigrationJob response = vmMigrationClient.getDiskMigrationJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DiskMigrationJob getDiskMigrationJob(GetDiskMigrationJobRequest request) {
+    return getDiskMigrationJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single DiskMigrationJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   GetDiskMigrationJobRequest request =
+   *       GetDiskMigrationJobRequest.newBuilder()
+   *           .setName(
+   *               DiskMigrationJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<DiskMigrationJob> future =
+   *       vmMigrationClient.getDiskMigrationJobCallable().futureCall(request);
+   *   // Do something.
+   *   DiskMigrationJob response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDiskMigrationJobRequest, DiskMigrationJob>
+      getDiskMigrationJobCallable() {
+    return stub.getDiskMigrationJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single DiskMigrationJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   DiskMigrationJob diskMigrationJob = DiskMigrationJob.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DiskMigrationJob response =
+   *       vmMigrationClient.updateDiskMigrationJobAsync(diskMigrationJob, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param diskMigrationJob Required. The update request body.
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     DiskMigrationJob resource by the update. The fields specified in the update_mask are
+   *     relative to the resource, not the full request. A field will be overwritten if it is in the
+   *     mask. If the user does not provide a mask, then a mask equivalent to all fields that are
+   *     populated (have a non-empty value), will be implied.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DiskMigrationJob, OperationMetadata> updateDiskMigrationJobAsync(
+      DiskMigrationJob diskMigrationJob, FieldMask updateMask) {
+    UpdateDiskMigrationJobRequest request =
+        UpdateDiskMigrationJobRequest.newBuilder()
+            .setDiskMigrationJob(diskMigrationJob)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDiskMigrationJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single DiskMigrationJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   UpdateDiskMigrationJobRequest request =
+   *       UpdateDiskMigrationJobRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDiskMigrationJob(DiskMigrationJob.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   DiskMigrationJob response = vmMigrationClient.updateDiskMigrationJobAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DiskMigrationJob, OperationMetadata> updateDiskMigrationJobAsync(
+      UpdateDiskMigrationJobRequest request) {
+    return updateDiskMigrationJobOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single DiskMigrationJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   UpdateDiskMigrationJobRequest request =
+   *       UpdateDiskMigrationJobRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDiskMigrationJob(DiskMigrationJob.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<DiskMigrationJob, OperationMetadata> future =
+   *       vmMigrationClient.updateDiskMigrationJobOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DiskMigrationJob response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      updateDiskMigrationJobOperationCallable() {
+    return stub.updateDiskMigrationJobOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single DiskMigrationJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   UpdateDiskMigrationJobRequest request =
+   *       UpdateDiskMigrationJobRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDiskMigrationJob(DiskMigrationJob.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmMigrationClient.updateDiskMigrationJobCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateDiskMigrationJobRequest, Operation>
+      updateDiskMigrationJobCallable() {
+    return stub.updateDiskMigrationJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DiskMigrationJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   DiskMigrationJobName name =
+   *       DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]");
+   *   vmMigrationClient.deleteDiskMigrationJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DiskMigrationJob.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteDiskMigrationJobAsync(
+      DiskMigrationJobName name) {
+    DeleteDiskMigrationJobRequest request =
+        DeleteDiskMigrationJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteDiskMigrationJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DiskMigrationJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   String name =
+   *       DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+   *           .toString();
+   *   vmMigrationClient.deleteDiskMigrationJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DiskMigrationJob.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteDiskMigrationJobAsync(String name) {
+    DeleteDiskMigrationJobRequest request =
+        DeleteDiskMigrationJobRequest.newBuilder().setName(name).build();
+    return deleteDiskMigrationJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DiskMigrationJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   DeleteDiskMigrationJobRequest request =
+   *       DeleteDiskMigrationJobRequest.newBuilder()
+   *           .setName(
+   *               DiskMigrationJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+   *                   .toString())
+   *           .build();
+   *   vmMigrationClient.deleteDiskMigrationJobAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteDiskMigrationJobAsync(
+      DeleteDiskMigrationJobRequest request) {
+    return deleteDiskMigrationJobOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DiskMigrationJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   DeleteDiskMigrationJobRequest request =
+   *       DeleteDiskMigrationJobRequest.newBuilder()
+   *           .setName(
+   *               DiskMigrationJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       vmMigrationClient.deleteDiskMigrationJobOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteDiskMigrationJobRequest, Empty, OperationMetadata>
+      deleteDiskMigrationJobOperationCallable() {
+    return stub.deleteDiskMigrationJobOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DiskMigrationJob.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   DeleteDiskMigrationJobRequest request =
+   *       DeleteDiskMigrationJobRequest.newBuilder()
+   *           .setName(
+   *               DiskMigrationJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmMigrationClient.deleteDiskMigrationJobCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteDiskMigrationJobRequest, Operation>
+      deleteDiskMigrationJobCallable() {
+    return stub.deleteDiskMigrationJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Runs the disk migration job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   DiskMigrationJobName name =
+   *       DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]");
+   *   RunDiskMigrationJobResponse response = vmMigrationClient.runDiskMigrationJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DiskMigrationJob.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RunDiskMigrationJobResponse, OperationMetadata>
+      runDiskMigrationJobAsync(DiskMigrationJobName name) {
+    RunDiskMigrationJobRequest request =
+        RunDiskMigrationJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return runDiskMigrationJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Runs the disk migration job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   String name =
+   *       DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+   *           .toString();
+   *   RunDiskMigrationJobResponse response = vmMigrationClient.runDiskMigrationJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DiskMigrationJob.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RunDiskMigrationJobResponse, OperationMetadata>
+      runDiskMigrationJobAsync(String name) {
+    RunDiskMigrationJobRequest request =
+        RunDiskMigrationJobRequest.newBuilder().setName(name).build();
+    return runDiskMigrationJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Runs the disk migration job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   RunDiskMigrationJobRequest request =
+   *       RunDiskMigrationJobRequest.newBuilder()
+   *           .setName(
+   *               DiskMigrationJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+   *                   .toString())
+   *           .build();
+   *   RunDiskMigrationJobResponse response =
+   *       vmMigrationClient.runDiskMigrationJobAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RunDiskMigrationJobResponse, OperationMetadata>
+      runDiskMigrationJobAsync(RunDiskMigrationJobRequest request) {
+    return runDiskMigrationJobOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Runs the disk migration job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   RunDiskMigrationJobRequest request =
+   *       RunDiskMigrationJobRequest.newBuilder()
+   *           .setName(
+   *               DiskMigrationJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<RunDiskMigrationJobResponse, OperationMetadata> future =
+   *       vmMigrationClient.runDiskMigrationJobOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RunDiskMigrationJobResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RunDiskMigrationJobRequest, RunDiskMigrationJobResponse, OperationMetadata>
+      runDiskMigrationJobOperationCallable() {
+    return stub.runDiskMigrationJobOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Runs the disk migration job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   RunDiskMigrationJobRequest request =
+   *       RunDiskMigrationJobRequest.newBuilder()
+   *           .setName(
+   *               DiskMigrationJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmMigrationClient.runDiskMigrationJobCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RunDiskMigrationJobRequest, Operation> runDiskMigrationJobCallable() {
+    return stub.runDiskMigrationJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels the disk migration job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   CancelDiskMigrationJobRequest request =
+   *       CancelDiskMigrationJobRequest.newBuilder()
+   *           .setName(
+   *               DiskMigrationJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+   *                   .toString())
+   *           .build();
+   *   CancelDiskMigrationJobResponse response =
+   *       vmMigrationClient.cancelDiskMigrationJobAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CancelDiskMigrationJobResponse, OperationMetadata>
+      cancelDiskMigrationJobAsync(CancelDiskMigrationJobRequest request) {
+    return cancelDiskMigrationJobOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels the disk migration job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   CancelDiskMigrationJobRequest request =
+   *       CancelDiskMigrationJobRequest.newBuilder()
+   *           .setName(
+   *               DiskMigrationJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<CancelDiskMigrationJobResponse, OperationMetadata> future =
+   *       vmMigrationClient.cancelDiskMigrationJobOperationCallable().futureCall(request);
+   *   // Do something.
+   *   CancelDiskMigrationJobResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CancelDiskMigrationJobRequest, CancelDiskMigrationJobResponse, OperationMetadata>
+      cancelDiskMigrationJobOperationCallable() {
+    return stub.cancelDiskMigrationJobOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels the disk migration job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   CancelDiskMigrationJobRequest request =
+   *       CancelDiskMigrationJobRequest.newBuilder()
+   *           .setName(
+   *               DiskMigrationJobName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmMigrationClient.cancelDiskMigrationJobCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CancelDiskMigrationJobRequest, Operation>
+      cancelDiskMigrationJobCallable() {
+    return stub.cancelDiskMigrationJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -8230,6 +10880,94 @@ public class VmMigrationClient implements BackgroundResource {
     protected ListSourcesFixedSizeCollection createCollection(
         List<ListSourcesPage> pages, int collectionSize) {
       return new ListSourcesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class FetchStorageInventoryPagedResponse
+      extends AbstractPagedListResponse<
+          FetchStorageInventoryRequest,
+          FetchStorageInventoryResponse,
+          SourceStorageResource,
+          FetchStorageInventoryPage,
+          FetchStorageInventoryFixedSizeCollection> {
+
+    public static ApiFuture<FetchStorageInventoryPagedResponse> createAsync(
+        PageContext<
+                FetchStorageInventoryRequest, FetchStorageInventoryResponse, SourceStorageResource>
+            context,
+        ApiFuture<FetchStorageInventoryResponse> futureResponse) {
+      ApiFuture<FetchStorageInventoryPage> futurePage =
+          FetchStorageInventoryPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new FetchStorageInventoryPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private FetchStorageInventoryPagedResponse(FetchStorageInventoryPage page) {
+      super(page, FetchStorageInventoryFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class FetchStorageInventoryPage
+      extends AbstractPage<
+          FetchStorageInventoryRequest,
+          FetchStorageInventoryResponse,
+          SourceStorageResource,
+          FetchStorageInventoryPage> {
+
+    private FetchStorageInventoryPage(
+        PageContext<
+                FetchStorageInventoryRequest, FetchStorageInventoryResponse, SourceStorageResource>
+            context,
+        FetchStorageInventoryResponse response) {
+      super(context, response);
+    }
+
+    private static FetchStorageInventoryPage createEmptyPage() {
+      return new FetchStorageInventoryPage(null, null);
+    }
+
+    @Override
+    protected FetchStorageInventoryPage createPage(
+        PageContext<
+                FetchStorageInventoryRequest, FetchStorageInventoryResponse, SourceStorageResource>
+            context,
+        FetchStorageInventoryResponse response) {
+      return new FetchStorageInventoryPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<FetchStorageInventoryPage> createPageAsync(
+        PageContext<
+                FetchStorageInventoryRequest, FetchStorageInventoryResponse, SourceStorageResource>
+            context,
+        ApiFuture<FetchStorageInventoryResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class FetchStorageInventoryFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          FetchStorageInventoryRequest,
+          FetchStorageInventoryResponse,
+          SourceStorageResource,
+          FetchStorageInventoryPage,
+          FetchStorageInventoryFixedSizeCollection> {
+
+    private FetchStorageInventoryFixedSizeCollection(
+        List<FetchStorageInventoryPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static FetchStorageInventoryFixedSizeCollection createEmptyCollection() {
+      return new FetchStorageInventoryFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected FetchStorageInventoryFixedSizeCollection createCollection(
+        List<FetchStorageInventoryPage> pages, int collectionSize) {
+      return new FetchStorageInventoryFixedSizeCollection(pages, collectionSize);
     }
   }
 
@@ -8881,6 +11619,251 @@ public class VmMigrationClient implements BackgroundResource {
     protected ListReplicationCyclesFixedSizeCollection createCollection(
         List<ListReplicationCyclesPage> pages, int collectionSize) {
       return new ListReplicationCyclesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListImageImportsPagedResponse
+      extends AbstractPagedListResponse<
+          ListImageImportsRequest,
+          ListImageImportsResponse,
+          ImageImport,
+          ListImageImportsPage,
+          ListImageImportsFixedSizeCollection> {
+
+    public static ApiFuture<ListImageImportsPagedResponse> createAsync(
+        PageContext<ListImageImportsRequest, ListImageImportsResponse, ImageImport> context,
+        ApiFuture<ListImageImportsResponse> futureResponse) {
+      ApiFuture<ListImageImportsPage> futurePage =
+          ListImageImportsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListImageImportsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListImageImportsPagedResponse(ListImageImportsPage page) {
+      super(page, ListImageImportsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListImageImportsPage
+      extends AbstractPage<
+          ListImageImportsRequest, ListImageImportsResponse, ImageImport, ListImageImportsPage> {
+
+    private ListImageImportsPage(
+        PageContext<ListImageImportsRequest, ListImageImportsResponse, ImageImport> context,
+        ListImageImportsResponse response) {
+      super(context, response);
+    }
+
+    private static ListImageImportsPage createEmptyPage() {
+      return new ListImageImportsPage(null, null);
+    }
+
+    @Override
+    protected ListImageImportsPage createPage(
+        PageContext<ListImageImportsRequest, ListImageImportsResponse, ImageImport> context,
+        ListImageImportsResponse response) {
+      return new ListImageImportsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListImageImportsPage> createPageAsync(
+        PageContext<ListImageImportsRequest, ListImageImportsResponse, ImageImport> context,
+        ApiFuture<ListImageImportsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListImageImportsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListImageImportsRequest,
+          ListImageImportsResponse,
+          ImageImport,
+          ListImageImportsPage,
+          ListImageImportsFixedSizeCollection> {
+
+    private ListImageImportsFixedSizeCollection(
+        List<ListImageImportsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListImageImportsFixedSizeCollection createEmptyCollection() {
+      return new ListImageImportsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListImageImportsFixedSizeCollection createCollection(
+        List<ListImageImportsPage> pages, int collectionSize) {
+      return new ListImageImportsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListImageImportJobsPagedResponse
+      extends AbstractPagedListResponse<
+          ListImageImportJobsRequest,
+          ListImageImportJobsResponse,
+          ImageImportJob,
+          ListImageImportJobsPage,
+          ListImageImportJobsFixedSizeCollection> {
+
+    public static ApiFuture<ListImageImportJobsPagedResponse> createAsync(
+        PageContext<ListImageImportJobsRequest, ListImageImportJobsResponse, ImageImportJob>
+            context,
+        ApiFuture<ListImageImportJobsResponse> futureResponse) {
+      ApiFuture<ListImageImportJobsPage> futurePage =
+          ListImageImportJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListImageImportJobsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListImageImportJobsPagedResponse(ListImageImportJobsPage page) {
+      super(page, ListImageImportJobsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListImageImportJobsPage
+      extends AbstractPage<
+          ListImageImportJobsRequest,
+          ListImageImportJobsResponse,
+          ImageImportJob,
+          ListImageImportJobsPage> {
+
+    private ListImageImportJobsPage(
+        PageContext<ListImageImportJobsRequest, ListImageImportJobsResponse, ImageImportJob>
+            context,
+        ListImageImportJobsResponse response) {
+      super(context, response);
+    }
+
+    private static ListImageImportJobsPage createEmptyPage() {
+      return new ListImageImportJobsPage(null, null);
+    }
+
+    @Override
+    protected ListImageImportJobsPage createPage(
+        PageContext<ListImageImportJobsRequest, ListImageImportJobsResponse, ImageImportJob>
+            context,
+        ListImageImportJobsResponse response) {
+      return new ListImageImportJobsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListImageImportJobsPage> createPageAsync(
+        PageContext<ListImageImportJobsRequest, ListImageImportJobsResponse, ImageImportJob>
+            context,
+        ApiFuture<ListImageImportJobsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListImageImportJobsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListImageImportJobsRequest,
+          ListImageImportJobsResponse,
+          ImageImportJob,
+          ListImageImportJobsPage,
+          ListImageImportJobsFixedSizeCollection> {
+
+    private ListImageImportJobsFixedSizeCollection(
+        List<ListImageImportJobsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListImageImportJobsFixedSizeCollection createEmptyCollection() {
+      return new ListImageImportJobsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListImageImportJobsFixedSizeCollection createCollection(
+        List<ListImageImportJobsPage> pages, int collectionSize) {
+      return new ListImageImportJobsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListDiskMigrationJobsPagedResponse
+      extends AbstractPagedListResponse<
+          ListDiskMigrationJobsRequest,
+          ListDiskMigrationJobsResponse,
+          DiskMigrationJob,
+          ListDiskMigrationJobsPage,
+          ListDiskMigrationJobsFixedSizeCollection> {
+
+    public static ApiFuture<ListDiskMigrationJobsPagedResponse> createAsync(
+        PageContext<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse, DiskMigrationJob>
+            context,
+        ApiFuture<ListDiskMigrationJobsResponse> futureResponse) {
+      ApiFuture<ListDiskMigrationJobsPage> futurePage =
+          ListDiskMigrationJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDiskMigrationJobsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDiskMigrationJobsPagedResponse(ListDiskMigrationJobsPage page) {
+      super(page, ListDiskMigrationJobsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDiskMigrationJobsPage
+      extends AbstractPage<
+          ListDiskMigrationJobsRequest,
+          ListDiskMigrationJobsResponse,
+          DiskMigrationJob,
+          ListDiskMigrationJobsPage> {
+
+    private ListDiskMigrationJobsPage(
+        PageContext<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse, DiskMigrationJob>
+            context,
+        ListDiskMigrationJobsResponse response) {
+      super(context, response);
+    }
+
+    private static ListDiskMigrationJobsPage createEmptyPage() {
+      return new ListDiskMigrationJobsPage(null, null);
+    }
+
+    @Override
+    protected ListDiskMigrationJobsPage createPage(
+        PageContext<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse, DiskMigrationJob>
+            context,
+        ListDiskMigrationJobsResponse response) {
+      return new ListDiskMigrationJobsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDiskMigrationJobsPage> createPageAsync(
+        PageContext<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse, DiskMigrationJob>
+            context,
+        ApiFuture<ListDiskMigrationJobsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDiskMigrationJobsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDiskMigrationJobsRequest,
+          ListDiskMigrationJobsResponse,
+          DiskMigrationJob,
+          ListDiskMigrationJobsPage,
+          ListDiskMigrationJobsFixedSizeCollection> {
+
+    private ListDiskMigrationJobsFixedSizeCollection(
+        List<ListDiskMigrationJobsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDiskMigrationJobsFixedSizeCollection createEmptyCollection() {
+      return new ListDiskMigrationJobsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDiskMigrationJobsFixedSizeCollection createCollection(
+        List<ListDiskMigrationJobsPage> pages, int collectionSize) {
+      return new ListDiskMigrationJobsFixedSizeCollection(pages, collectionSize);
     }
   }
 

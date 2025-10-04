@@ -61,9 +61,14 @@ public final class SessionProto {
           + "-google/cloud/aiplatform/v1beta1/session.proto\022\037google.cloud.aiplatform.v1beta1"
           + "\032\037google/api/field_behavior.proto\032\031googl"
           + "e/api/resource.proto\032-google/cloud/aipla"
-          + "tform/v1beta1/content.proto\032\034google/prot"
-          + "obuf/struct.proto\032\037google/protobuf/timestamp.proto\"\216\003\n"
-          + "\007Session\022\021\n"
+          + "tform/v1beta1/content.proto\032\036google/prot"
+          + "obuf/duration.proto\032\034google/protobuf/str"
+          + "uct.proto\032\037google/protobuf/timestamp.proto\"\206\004\n"
+          + "\007Session\0226\n"
+          + "\013expire_time\030\r"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001H\000\0220\n"
+          + "\003ttl\030\016 "
+          + "\001(\0132\031.google.protobuf.DurationB\006\340A\001\340A\004H\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
           + "\013create_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\004"
@@ -72,14 +77,14 @@ public final class SessionProto {
           + "session_state\030\n"
           + " \001(\0132\027.google.protobuf.StructB\003\340A\001\022\027\n"
           + "\007user_id\030\014 \001(\tB\006\340A\005\340A\002:\232\001\352A\226\001\n"
-          + "!aiplatform.googleapis.com/Session\022^projects/{project}/loc"
-          + "ations/{location}/reasoningEngines/{reas"
-          + "oning_engine}/sessions/{session}*\010sessions2\007session\"\310\004\n"
+          + "!aiplatform.googleapis.com/Session\022^projects/{project}/locations/{location}/reas"
+          + "oningEngines/{reasoning_engine}/sessions/{session}*\010sessions2\007sessionB\014\n\n"
+          + "expiration\"\310\004\n"
           + "\014SessionEvent\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\023\n"
           + "\006author\030\003 \001(\tB\003\340A\002\022>\n"
-          + "\007content\030\004"
-          + " \001(\0132(.google.cloud.aiplatform.v1beta1.ContentB\003\340A\001\022\032\n\r"
+          + "\007content\030\004 \001(\0132(."
+          + "google.cloud.aiplatform.v1beta1.ContentB\003\340A\001\022\032\n\r"
           + "invocation_id\030\005 \001(\tB\003\340A\002\022C\n"
           + "\007actions\030\006"
           + " \001(\0132-.google.cloud.aiplatform.v1beta1.EventActionsB\003\340A\001\0222\n"
@@ -87,25 +92,25 @@ public final class SessionProto {
           + "error_code\030\t \001(\tB\003\340A\001\022\032\n\r"
           + "error_message\030\n"
           + " \001(\tB\003\340A\001\022K\n"
-          + "\016event_metadata\030\013 \001(\0132."
-          + ".google.cloud.aiplatform.v1beta1.EventMetadataB\003\340A\001:\270\001\352A\264\001\n"
-          + "&aiplatform.googleapis.com/SessionEvent\022mprojects/{project}/l"
-          + "ocations/{location}/reasoningEngines/{re"
-          + "asoning_engine}/sessions/{session}/events/{event}*\r"
-          + "sessionEvents2\014sessionEvent\"\351\001\n\r"
+          + "\016event_metadata\030\013 \001(\0132..google."
+          + "cloud.aiplatform.v1beta1.EventMetadataB\003\340A\001:\270\001\352A\264\001\n"
+          + "&aiplatform.googleapis.com/SessionEvent\022mprojects/{project}/locations"
+          + "/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}/events/{event}*\r"
+          + "sessionEvents2\014sessionEvent\"\233\002\n\r"
           + "EventMetadata\022S\n"
-          + "\022grounding_metadata\030\001"
-          + " \001(\01322.google.cloud.aiplatform.v1beta1.GroundingMetadataB\003\340A\001\022\024\n"
+          + "\022grounding_metadata\030\001 \001(\01322.g"
+          + "oogle.cloud.aiplatform.v1beta1.GroundingMetadataB\003\340A\001\022\024\n"
           + "\007partial\030\002 \001(\010B\003\340A\001\022\032\n\r"
           + "turn_complete\030\003 \001(\010B\003\340A\001\022\030\n"
           + "\013interrupted\030\004 \001(\010B\003\340A\001\022\"\n"
           + "\025long_running_tool_ids\030\005 \003(\tB\003\340A\001\022\023\n"
-          + "\006branch\030\006 \001(\tB\003\340A\001\"\210\003\n"
+          + "\006branch\030\006 \001(\tB\003\340A\001\0220\n"
+          + "\017custom_metadata\030\007 \001(\0132\027.google.protobuf.Struct\"\210\003\n"
           + "\014EventActions\022\037\n"
           + "\022skip_summarization\030\001 \001(\010B\003\340A\001\0221\n"
           + "\013state_delta\030\002 \001(\0132\027.google.protobuf.StructB\003\340A\001\022]\n"
-          + "\016artifact_delta\030\003 \003(\0132"
-          + "@.google.cloud.aiplatform.v1beta1.EventActions.ArtifactDeltaEntryB\003\340A\001\022\035\n"
+          + "\016artifact_delta\030\003 \003("
+          + "\0132@.google.cloud.aiplatform.v1beta1.EventActions.ArtifactDeltaEntryB\003\340A\001\022\035\n"
           + "\021transfer_to_agent\030\005 \001(\010B\002\030\001\022\025\n"
           + "\010escalate\030\006 \001(\010B\003\340A\001\022<\n"
           + "\026requested_auth_configs\030\007"
@@ -114,11 +119,11 @@ public final class SessionProto {
           + "\022ArtifactDeltaEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\005:\0028\001B\343\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\014SessionPr"
-          + "otoP\001ZCcloud.google.com/go/aiplatform/ap"
-          + "iv1beta1/aiplatformpb;aiplatformpb\252\002\037Goo"
-          + "gle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cl"
-          + "oud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\014Session"
+          + "ProtoP\001ZCcloud.google.com/go/aiplatform/"
+          + "apiv1beta1/aiplatformpb;aiplatformpb\252\002\037G"
+          + "oogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\"
+          + "Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -127,6 +132,7 @@ public final class SessionProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.ContentProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -136,7 +142,15 @@ public final class SessionProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_Session_descriptor,
             new java.lang.String[] {
-              "Name", "CreateTime", "UpdateTime", "DisplayName", "SessionState", "UserId",
+              "ExpireTime",
+              "Ttl",
+              "Name",
+              "CreateTime",
+              "UpdateTime",
+              "DisplayName",
+              "SessionState",
+              "UserId",
+              "Expiration",
             });
     internal_static_google_cloud_aiplatform_v1beta1_SessionEvent_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -166,6 +180,7 @@ public final class SessionProto {
               "Interrupted",
               "LongRunningToolIds",
               "Branch",
+              "CustomMetadata",
             });
     internal_static_google_cloud_aiplatform_v1beta1_EventActions_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -200,6 +215,7 @@ public final class SessionProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.ContentProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

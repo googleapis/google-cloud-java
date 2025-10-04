@@ -346,4 +346,51 @@ public interface ServiceLbPolicyOrBuilder
    */
   com.google.cloud.networkservices.v1.ServiceLbPolicy.FailoverConfigOrBuilder
       getFailoverConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to provide isolation support for the associated
+   * Backend Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig isolation_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the isolationConfig field is set.
+   */
+  boolean hasIsolationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to provide isolation support for the associated
+   * Backend Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig isolation_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The isolationConfig.
+   */
+  com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig getIsolationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to provide isolation support for the associated
+   * Backend Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig isolation_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfigOrBuilder
+      getIsolationConfigOrBuilder();
 }

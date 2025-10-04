@@ -52,6 +52,7 @@ public class GrpcBusinessIdentityServiceStub extends BusinessIdentityServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBusinessIdentityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BusinessIdentity.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBusinessIdentityRequest, BusinessIdentity>
@@ -63,6 +64,7 @@ public class GrpcBusinessIdentityServiceStub extends BusinessIdentityServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBusinessIdentityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BusinessIdentity.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetBusinessIdentityRequest, BusinessIdentity>

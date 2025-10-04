@@ -106,6 +106,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
               .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/ListHubs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListHubsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListHubsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetHubRequest, Hub> getHubMethodDescriptor =
@@ -114,6 +115,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
           .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/GetHub")
           .setRequestMarshaller(ProtoUtils.marshaller(GetHubRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Hub.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateHubRequest, Operation> createHubMethodDescriptor =
@@ -122,6 +124,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
           .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/CreateHub")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateHubRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateHubRequest, Operation> updateHubMethodDescriptor =
@@ -130,6 +133,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
           .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/UpdateHub")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateHubRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteHubRequest, Operation> deleteHubMethodDescriptor =
@@ -138,6 +142,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
           .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/DeleteHub")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteHubRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListHubSpokesRequest, ListHubSpokesResponse>
@@ -149,6 +154,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   ProtoUtils.marshaller(ListHubSpokesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListHubSpokesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<QueryHubStatusRequest, QueryHubStatusResponse>
@@ -160,6 +166,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   ProtoUtils.marshaller(QueryHubStatusRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryHubStatusResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSpokesRequest, ListSpokesResponse>
@@ -169,6 +176,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
               .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/ListSpokes")
               .setRequestMarshaller(ProtoUtils.marshaller(ListSpokesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListSpokesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSpokeRequest, Spoke> getSpokeMethodDescriptor =
@@ -177,6 +185,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
           .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/GetSpoke")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSpokeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Spoke.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateSpokeRequest, Operation> createSpokeMethodDescriptor =
@@ -185,6 +194,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
           .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/CreateSpoke")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSpokeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSpokeRequest, Operation> updateSpokeMethodDescriptor =
@@ -193,6 +203,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
           .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/UpdateSpoke")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSpokeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RejectHubSpokeRequest, Operation>
@@ -203,6 +214,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RejectHubSpokeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AcceptHubSpokeRequest, Operation>
@@ -213,6 +225,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AcceptHubSpokeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AcceptSpokeUpdateRequest, Operation>
@@ -223,6 +236,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AcceptSpokeUpdateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RejectSpokeUpdateRequest, Operation>
@@ -233,6 +247,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RejectSpokeUpdateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSpokeRequest, Operation> deleteSpokeMethodDescriptor =
@@ -241,6 +256,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
           .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/DeleteSpoke")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteSpokeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetRouteTableRequest, RouteTable>
@@ -251,6 +267,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRouteTableRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RouteTable.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRouteRequest, Route> getRouteMethodDescriptor =
@@ -259,6 +276,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
           .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/GetRoute")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRouteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Route.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListRoutesRequest, ListRoutesResponse>
@@ -268,6 +286,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
               .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/ListRoutes")
               .setRequestMarshaller(ProtoUtils.marshaller(ListRoutesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListRoutesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRouteTablesRequest, ListRouteTablesResponse>
@@ -279,6 +298,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   ProtoUtils.marshaller(ListRouteTablesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRouteTablesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGroupRequest, Group> getGroupMethodDescriptor =
@@ -287,6 +307,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
           .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/GetGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListGroupsRequest, ListGroupsResponse>
@@ -296,6 +317,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
               .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/ListGroups")
               .setRequestMarshaller(ProtoUtils.marshaller(ListGroupsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateGroupRequest, Operation> updateGroupMethodDescriptor =
@@ -304,6 +326,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
           .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/UpdateGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -315,6 +338,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -323,6 +347,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -331,6 +356,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -339,6 +365,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -350,6 +377,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListHubsRequest, ListHubsResponse> listHubsCallable;

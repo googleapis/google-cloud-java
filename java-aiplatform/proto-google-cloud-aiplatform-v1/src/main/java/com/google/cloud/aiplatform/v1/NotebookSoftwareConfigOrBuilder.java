@@ -28,6 +28,49 @@ public interface NotebookSoftwareConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Google-managed NotebookRuntime colab image.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ColabImage colab_image = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the colabImage field is set.
+   */
+  boolean hasColabImage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google-managed NotebookRuntime colab image.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ColabImage colab_image = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The colabImage.
+   */
+  com.google.cloud.aiplatform.v1.ColabImage getColabImage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google-managed NotebookRuntime colab image.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ColabImage colab_image = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ColabImageOrBuilder getColabImageOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Environment variables to be passed to the container.
    * Maximum limit is 100.
    * </pre>
@@ -137,4 +180,6 @@ public interface NotebookSoftwareConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1.PostStartupScriptConfigOrBuilder
       getPostStartupScriptConfigOrBuilder();
+
+  com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.RuntimeImageCase getRuntimeImageCase();
 }

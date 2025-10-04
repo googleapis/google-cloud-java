@@ -611,7 +611,9 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+            .setJob(Job.newBuilder().build())
             .setApplication(Application.newBuilder().build())
+            .setIpRules(IpRules.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
@@ -623,7 +625,12 @@ public class SecurityCenterClientHttpJsonTest {
             .setDisk(Disk.newBuilder().build())
             .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
             .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllNetworks(new ArrayList<Network>())
             .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
+            .setAffectedResources(AffectedResources.newBuilder().build())
+            .setAiModel(AiModel.newBuilder().build())
+            .setChokepoint(Chokepoint.newBuilder().build())
+            .setVertexAi(VertexAi.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -711,7 +718,9 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+            .setJob(Job.newBuilder().build())
             .setApplication(Application.newBuilder().build())
+            .setIpRules(IpRules.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
@@ -723,7 +732,12 @@ public class SecurityCenterClientHttpJsonTest {
             .setDisk(Disk.newBuilder().build())
             .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
             .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllNetworks(new ArrayList<Network>())
             .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
+            .setAffectedResources(AffectedResources.newBuilder().build())
+            .setAiModel(AiModel.newBuilder().build())
+            .setChokepoint(Chokepoint.newBuilder().build())
+            .setVertexAi(VertexAi.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1170,6 +1184,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1225,6 +1240,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1280,6 +1296,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1335,6 +1352,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2350,6 +2368,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2404,6 +2423,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4274,7 +4294,9 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+            .setJob(Job.newBuilder().build())
             .setApplication(Application.newBuilder().build())
+            .setIpRules(IpRules.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
@@ -4286,7 +4308,12 @@ public class SecurityCenterClientHttpJsonTest {
             .setDisk(Disk.newBuilder().build())
             .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
             .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllNetworks(new ArrayList<Network>())
             .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
+            .setAffectedResources(AffectedResources.newBuilder().build())
+            .setAiModel(AiModel.newBuilder().build())
+            .setChokepoint(Chokepoint.newBuilder().build())
+            .setVertexAi(VertexAi.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4374,7 +4401,9 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+            .setJob(Job.newBuilder().build())
             .setApplication(Application.newBuilder().build())
+            .setIpRules(IpRules.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
@@ -4386,7 +4415,12 @@ public class SecurityCenterClientHttpJsonTest {
             .setDisk(Disk.newBuilder().build())
             .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
             .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllNetworks(new ArrayList<Network>())
             .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
+            .setAffectedResources(AffectedResources.newBuilder().build())
+            .setAiModel(AiModel.newBuilder().build())
+            .setChokepoint(Chokepoint.newBuilder().build())
+            .setVertexAi(VertexAi.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4570,7 +4604,9 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+            .setJob(Job.newBuilder().build())
             .setApplication(Application.newBuilder().build())
+            .setIpRules(IpRules.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
@@ -4582,7 +4618,12 @@ public class SecurityCenterClientHttpJsonTest {
             .setDisk(Disk.newBuilder().build())
             .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
             .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllNetworks(new ArrayList<Network>())
             .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
+            .setAffectedResources(AffectedResources.newBuilder().build())
+            .setAiModel(AiModel.newBuilder().build())
+            .setChokepoint(Chokepoint.newBuilder().build())
+            .setVertexAi(VertexAi.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4670,7 +4711,9 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+            .setJob(Job.newBuilder().build())
             .setApplication(Application.newBuilder().build())
+            .setIpRules(IpRules.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
@@ -4682,7 +4725,12 @@ public class SecurityCenterClientHttpJsonTest {
             .setDisk(Disk.newBuilder().build())
             .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
             .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllNetworks(new ArrayList<Network>())
             .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
+            .setAffectedResources(AffectedResources.newBuilder().build())
+            .setAiModel(AiModel.newBuilder().build())
+            .setChokepoint(Chokepoint.newBuilder().build())
+            .setVertexAi(VertexAi.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5022,7 +5070,9 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+            .setJob(Job.newBuilder().build())
             .setApplication(Application.newBuilder().build())
+            .setIpRules(IpRules.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
@@ -5034,7 +5084,12 @@ public class SecurityCenterClientHttpJsonTest {
             .setDisk(Disk.newBuilder().build())
             .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
             .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllNetworks(new ArrayList<Network>())
             .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
+            .setAffectedResources(AffectedResources.newBuilder().build())
+            .setAiModel(AiModel.newBuilder().build())
+            .setChokepoint(Chokepoint.newBuilder().build())
+            .setVertexAi(VertexAi.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5080,7 +5135,9 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+            .setJob(Job.newBuilder().build())
             .setApplication(Application.newBuilder().build())
+            .setIpRules(IpRules.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
             .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
@@ -5092,7 +5149,12 @@ public class SecurityCenterClientHttpJsonTest {
             .setDisk(Disk.newBuilder().build())
             .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
             .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllNetworks(new ArrayList<Network>())
             .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
+            .setAffectedResources(AffectedResources.newBuilder().build())
+            .setAiModel(AiModel.newBuilder().build())
+            .setChokepoint(Chokepoint.newBuilder().build())
+            .setVertexAi(VertexAi.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -5164,7 +5226,9 @@ public class SecurityCenterClientHttpJsonTest {
               .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
               .setKernelRootkit(KernelRootkit.newBuilder().build())
               .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+              .setJob(Job.newBuilder().build())
               .setApplication(Application.newBuilder().build())
+              .setIpRules(IpRules.newBuilder().build())
               .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
               .setSecurityPosture(SecurityPosture.newBuilder().build())
               .addAllLogEntries(new ArrayList<LogEntry>())
@@ -5176,7 +5240,12 @@ public class SecurityCenterClientHttpJsonTest {
               .setDisk(Disk.newBuilder().build())
               .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
               .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+              .addAllNetworks(new ArrayList<Network>())
               .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
+              .setAffectedResources(AffectedResources.newBuilder().build())
+              .setAiModel(AiModel.newBuilder().build())
+              .setChokepoint(Chokepoint.newBuilder().build())
+              .setVertexAi(VertexAi.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateFinding(finding, updateMask);
@@ -5273,6 +5342,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5285,6 +5355,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -5324,6 +5395,7 @@ public class SecurityCenterClientHttpJsonTest {
               .setDescription("description-1724546052")
               .setPubsubTopic("pubsubTopic255880396")
               .setServiceAccount("serviceAccount1079137720")
+              .setUpdateTime(Timestamp.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateNotificationConfig(notificationConfig, updateMask);

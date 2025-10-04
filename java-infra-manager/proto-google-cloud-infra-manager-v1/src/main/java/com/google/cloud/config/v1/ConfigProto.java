@@ -252,6 +252,58 @@ public final class ConfigProto {
       internal_static_google_cloud_config_v1_TerraformVersion_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_config_v1_TerraformVersion_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_ResourceChangeTerraformInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_config_v1_ResourceChangeTerraformInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_ResourceChange_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_config_v1_ResourceChange_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_PropertyChange_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_config_v1_PropertyChange_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_ListResourceChangesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_config_v1_ListResourceChangesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_ListResourceChangesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_config_v1_ListResourceChangesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_GetResourceChangeRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_config_v1_GetResourceChangeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_ResourceDriftTerraformInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_config_v1_ResourceDriftTerraformInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_ResourceDrift_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_config_v1_ResourceDrift_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_PropertyDrift_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_config_v1_PropertyDrift_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_ListResourceDriftsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_config_v1_ListResourceDriftsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_ListResourceDriftsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_config_v1_ListResourceDriftsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_GetResourceDriftRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_config_v1_GetResourceDriftRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_ProviderConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_config_v1_ProviderConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -269,22 +321,23 @@ public final class ConfigProto {
           + "i/field_info.proto\032\031google/api/resource."
           + "proto\032#google/longrunning/operations.proto\032\033google/protobuf/empty.proto\032"
           + " google/protobuf/field_mask.proto\032\034google/protob"
-          + "uf/struct.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\320\017\n\n"
+          + "uf/struct.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\240\020\n\n"
           + "Deployment\022I\n"
           + "\023terraform_blueprint\030\006 \001(\0132*."
-          + "google.cloud.config.v1.TerraformBlueprintH\000\022\014\n"
-          + "\004name\030\001 \001(\t\0224\n"
+          + "google.cloud.config.v1.TerraformBlueprintH\000\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
-          + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022>\n"
-          + "\006labels\030\004 \003(\0132..google.cloud.config.v1.Deployment.LabelsEntry\022<\n"
+          + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022C\n"
+          + "\006labels\030\004 \003(\0132..google.clou"
+          + "d.config.v1.Deployment.LabelsEntryB\003\340A\001\022<\n"
           + "\005state\030\005"
           + " \001(\0162(.google.cloud.config.v1.Deployment.StateB\003\340A\003\022\034\n"
           + "\017latest_revision\030\007 \001(\tB\003\340A\003\022\031\n"
           + "\014state_detail\030\t \001(\tB\003\340A\003\022E\n\n"
           + "error_code\030\n"
           + " \001(\0162,.google.cloud.config.v1.Deployment.ErrorCodeB\003\340A\003\022A\n"
-          + "\016delete_results\030\010 "
-          + "\001(\0132$.google.cloud.config.v1.ApplyResultsB\003\340A\003\022\031\n"
+          + "\016delete_results\030\010"
+          + " \001(\0132$.google.cloud.config.v1.ApplyResultsB\003\340A\003\022\031\n"
           + "\014delete_build\030\013 \001(\tB\003\340A\003\022\030\n"
           + "\013delete_logs\030\014 \001(\tB\003\340A\003\022>\n"
           + "\ttf_errors\030\r"
@@ -296,14 +349,16 @@ public final class ConfigProto {
           + "\031import_existing_resources\030\021 \001(\010H\003\210\001\001\022F\n"
           + "\013worker_pool\030\023 \001(\tB,\340A\001\372A&\n"
           + "$cloudbuild.googleapis.com/WorkerPoolH\004\210\001\001\022E\n\n"
-          + "lock_state\030\024 \001(\0162,.goog"
-          + "le.cloud.config.v1.Deployment.LockStateB\003\340A\003\022\'\n"
+          + "lock_state\030\024 "
+          + "\001(\0162,.google.cloud.config.v1.Deployment.LockStateB\003\340A\003\022\'\n"
           + "\025tf_version_constraint\030\025 \001(\tB\003\340A\001H\005\210\001\001\022\027\n\n"
           + "tf_version\030\026 \001(\tB\003\340A\003\022F\n"
           + "\020quota_validation\030\027"
           + " \001(\0162\'.google.cloud.config.v1.QuotaValidationB\003\340A\001\022M\n"
-          + "\013annotations\030\030 "
-          + "\003(\01323.google.cloud.config.v1.Deployment.AnnotationsEntryB\003\340A\001\032-\n"
+          + "\013annotations\030\030"
+          + " \003(\01323.google.cloud.config.v1.Deployment.AnnotationsEntryB\003\340A\001\022D\n"
+          + "\017provider_config\030\031"
+          + " \001(\0132&.google.cloud.config.v1.ProviderConfigB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\0322\n"
@@ -342,24 +397,24 @@ public final class ConfigProto {
           + "\020_service_accountB\034\n"
           + "\032_import_existing_resourcesB\016\n"
           + "\014_worker_poolB\030\n"
-          + "\026_tf_version_constraint\"\237\002\n"
+          + "\026_tf_version_constraint\"\244\002\n"
           + "\022TerraformBlueprint\022\024\n\n"
           + "gcs_source\030\001 \001(\tH\000\0227\n\n"
-          + "git_source\030\002 \001(\0132!.google.cloud.config.v1.GitSourceH\000\022Q\n"
+          + "git_source\030\002 \001(\0132!.google.cloud.config.v1.GitSourceH\000\022V\n"
           + "\014input_values\030\004 \003(\013"
-          + "2;.google.cloud.config.v1.TerraformBlueprint.InputValuesEntry\032]\n"
+          + "2;.google.cloud.config.v1.TerraformBlueprint.InputValuesEntryB\003\340A\001\032]\n"
           + "\020InputValuesEntry\022\013\n"
           + "\003key\030\001 \001(\t\0228\n"
-          + "\005value\030\002"
-          + " \001(\0132).google.cloud.config.v1.TerraformVariable:\0028\001B\010\n"
-          + "\006source\"@\n"
-          + "\021TerraformVariable\022+\n"
-          + "\013input_value\030\005 \001(\0132\026.google.protobuf.Value\"\317\001\n"
+          + "\005value\030\002 \001(\0132).goo"
+          + "gle.cloud.config.v1.TerraformVariable:\0028\001B\010\n"
+          + "\006source\"E\n"
+          + "\021TerraformVariable\0220\n"
+          + "\013input_value\030\005 \001(\0132\026.google.protobuf.ValueB\003\340A\001\"\317\001\n"
           + "\014ApplyResults\022\017\n"
           + "\007content\030\001 \001(\t\022\021\n"
           + "\tartifacts\030\002 \001(\t\022B\n"
-          + "\007outputs\030\003"
-          + " \003(\01321.google.cloud.config.v1.ApplyResults.OutputsEntry\032W\n"
+          + "\007outputs\030\003 \003(\01321.googl"
+          + "e.cloud.config.v1.ApplyResults.OutputsEntry\032W\n"
           + "\014OutputsEntry\022\013\n"
           + "\003key\030\001 \001(\t\0226\n"
           + "\005value\030\002 \001(\0132\'.google.cloud.config.v1.TerraformOutput:\0028\001\"K\n"
@@ -404,25 +459,25 @@ public final class ConfigProto {
           + "\027UpdateDeploymentRequest\0224\n"
           + "\013update_mask\030\001"
           + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022;\n\n"
-          + "deployment\030\002"
-          + " \001(\0132\".google.cloud.config.v1.DeploymentB\003\340A\002\022\027\n\n"
+          + "deployment\030\002 \001(\0132\""
+          + ".google.cloud.config.v1.DeploymentB\003\340A\002\022\027\n\n"
           + "request_id\030\003 \001(\tB\003\340A\001\"\240\002\n"
           + "\027DeleteDeploymentRequest\0226\n"
           + "\004name\030\001 \001(\tB(\340A\002\372A\"\n"
           + " config.googleapis.com/Deployment\022\027\n\n"
           + "request_id\030\002 \001(\tB\003\340A\001\022\022\n"
           + "\005force\030\003 \001(\010B\003\340A\001\022X\n\r"
-          + "delete_policy\030\004"
-          + " \001(\0162<.google.cloud.config.v1.DeleteDeploymentRequest.DeletePolicyB\003\340A\001\"F\n"
+          + "delete_policy\030\004 \001(\0162<.google.cloud.config.v"
+          + "1.DeleteDeploymentRequest.DeletePolicyB\003\340A\001\"F\n"
           + "\014DeletePolicy\022\035\n"
           + "\031DELETE_POLICY_UNSPECIFIED\020\000\022\n\n"
           + "\006DELETE\020\001\022\013\n"
           + "\007ABANDON\020\002\"\301\003\n"
           + "\021OperationMetadata\022W\n"
-          + "\023deployment_metadata\030\010 \001(\01323.g"
-          + "oogle.cloud.config.v1.DeploymentOperationMetadataB\003\340A\003H\000\022Q\n"
-          + "\020preview_metadata\030\t \001"
-          + "(\01320.google.cloud.config.v1.PreviewOperationMetadataB\003\340A\003H\000\0224\n"
+          + "\023deployment_metadata\030\010"
+          + " \001(\01323.google.cloud.config.v1.DeploymentOperationMetadataB\003\340A\003H\000\022Q\n"
+          + "\020preview_metadata\030\t"
+          + " \001(\01320.google.cloud.config.v1.PreviewOperationMetadataB\003\340A\003H\000\0224\n"
           + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
           + "\006target\030\003 \001(\tB\003\340A\003\022\021\n"
@@ -430,27 +485,28 @@ public final class ConfigProto {
           + "\016status_message\030\005 \001(\tB\003\340A\003\022#\n"
           + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
           + "\013api_version\030\007 \001(\tB\003\340A\003B\023\n"
-          + "\021resource_metadata\"\203\013\n"
+          + "\021resource_metadata\"\311\013\n"
           + "\010Revision\022N\n"
-          + "\023terraform_blueprint\030\006 \001(\0132"
-          + "*.google.cloud.config.v1.TerraformBlueprintB\003\340A\003H\000\022\014\n"
+          + "\023terraform_blueprint\030\006"
+          + " \001(\0132*.google.cloud.config.v1.TerraformBlueprintB\003\340A\003H\000\022\014\n"
           + "\004name\030\001 \001(\t\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022<\n"
-          + "\006action\030\004"
-          + " \001(\0162\'.google.cloud.config.v1.Revision.ActionB\003\340A\003\022:\n"
+          + "\006action\030\004 \001(\0162\'"
+          + ".google.cloud.config.v1.Revision.ActionB\003\340A\003\022:\n"
           + "\005state\030\005"
           + " \001(\0162&.google.cloud.config.v1.Revision.StateB\003\340A\003\022@\n\r"
-          + "apply_results\030\007 \001(\0132$."
-          + "google.cloud.config.v1.ApplyResultsB\003\340A\003\022\031\n"
-          + "\014state_detail\030\010 \001(\tB\003\340A\003\022C\n\n"
+          + "apply_results\030\007"
+          + " \001(\0132$.google.cloud.config.v1.ApplyResultsB\003\340A\003\022\031\n"
+          + "\014state_detail\030\010 \001(\tB\003\340A\003\022C\n"
+          + "\n"
           + "error_code\030\t"
           + " \001(\0162*.google.cloud.config.v1.Revision.ErrorCodeB\003\340A\003\022\022\n"
           + "\005build\030\n"
           + " \001(\tB\003\340A\003\022\021\n"
           + "\004logs\030\013 \001(\tB\003\340A\003\022>\n"
-          + "\ttf_errors\030\014 \003(\0132&.goo"
-          + "gle.cloud.config.v1.TerraformErrorB\003\340A\003\022\027\n\n"
+          + "\ttf_errors\030\014"
+          + " \003(\0132&.google.cloud.config.v1.TerraformErrorB\003\340A\003\022\027\n\n"
           + "error_logs\030\r"
           + " \001(\tB\003\340A\003\022B\n"
           + "\017service_account\030\016 \001(\tB)\340A\003\372A#\n"
@@ -462,7 +518,9 @@ public final class ConfigProto {
           + "tf_version\030\023 \001(\tB\003\340A\003\022%\n"
           + "\030quota_validation_results\030\035 \001(\tB\003\340A\003\022F\n"
           + "\020quota_validation\030\024"
-          + " \001(\0162\'.google.cloud.config.v1.QuotaValidationB\003\340A\001\"D\n"
+          + " \001(\0162\'.google.cloud.config.v1.QuotaValidationB\003\340A\001\022D\n"
+          + "\017provider_config\030\025"
+          + " \001(\0132&.google.cloud.config.v1.ProviderConfigB\003\340A\003\"D\n"
           + "\006Action\022\026\n"
           + "\022ACTION_UNSPECIFIED\020\000\022\n\n"
           + "\006CREATE\020\001\022\n\n"
@@ -481,12 +539,12 @@ public final class ConfigProto {
           + "\027QUOTA_VALIDATION_FAILED\020\007:z\352Aw\n"
           + "\036config.googleapis.com/Revision\022Uprojects/{project}/locations/{location}/deploym"
           + "ents/{deployment}/revisions/{revision}B\013\n"
-          + "\tblueprint\"\204\001\n"
+          + "\tblueprint\"\211\001\n"
           + "\016TerraformError\022\030\n"
           + "\020resource_address\030\001 \001(\t\022\032\n"
           + "\022http_response_code\030\002 \001(\005\022\031\n"
-          + "\021error_description\030\003 \001(\t\022!\n"
-          + "\005error\030\004 \001(\0132\022.google.rpc.Status\"v\n"
+          + "\021error_description\030\003 \001(\t\022&\n"
+          + "\005error\030\004 \001(\0132\022.google.rpc.StatusB\003\340A\003\"v\n"
           + "\tGitSource\022\026\n"
           + "\004repo\030\001 \001(\tB\003\340A\001H\000\210\001\001\022\033\n"
           + "\tdirectory\030\002 \001(\tB\003\340A\001H\001\210\001\001\022\025\n"
@@ -495,8 +553,8 @@ public final class ConfigProto {
           + "_directoryB\006\n"
           + "\004_ref\"\237\004\n"
           + "\033DeploymentOperationMetadata\022P\n"
-          + "\004step\030\001 \001(\0162B.googl"
-          + "e.cloud.config.v1.DeploymentOperationMetadata.DeploymentStep\022;\n\r"
+          + "\004step\030\001 \001(\0162B."
+          + "google.cloud.config.v1.DeploymentOperationMetadata.DeploymentStep\022;\n\r"
           + "apply_results\030\002 \001(\0132$.google.cloud.config.v1.ApplyResults\022\022\n"
           + "\005build\030\003 \001(\tB\003\340A\003\022\021\n"
           + "\004logs\030\004 \001(\tB\003\340A\003\"\311\002\n"
@@ -517,14 +575,14 @@ public final class ConfigProto {
           + "\030RUNNING_QUOTA_VALIDATION\020\014\"\330\005\n"
           + "\010Resource\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022J\n"
-          + "\016terraform_info\030\002 \001(\0132-.google.cl"
-          + "oud.config.v1.ResourceTerraformInfoB\003\340A\003\022H\n\n"
-          + "cai_assets\030\003"
-          + " \003(\0132/.google.cloud.config.v1.Resource.CaiAssetsEntryB\003\340A\003\022<\n"
+          + "\016terraform_info\030\002 \001(\0132-.goog"
+          + "le.cloud.config.v1.ResourceTerraformInfoB\003\340A\003\022H\n\n"
+          + "cai_assets\030\003 \003(\0132/.google.cloud"
+          + ".config.v1.Resource.CaiAssetsEntryB\003\340A\003\022<\n"
           + "\006intent\030\004"
           + " \001(\0162\'.google.cloud.config.v1.Resource.IntentB\003\340A\003\022:\n"
-          + "\005state\030\005"
-          + " \001(\0162&.google.cloud.config.v1.Resource.StateB\003\340A\003\032Y\n"
+          + "\005state\030\005 \001(\0162&.g"
+          + "oogle.cloud.config.v1.Resource.StateB\003\340A\003\032Y\n"
           + "\016CaiAssetsEntry\022\013\n"
           + "\003key\030\001 \001(\t\0226\n"
           + "\005value\030\002 \001(\0132\'.google.cloud.config.v1.ResourceCAIInfo:\0028\001\"a\n"
@@ -541,8 +599,8 @@ public final class ConfigProto {
           + "\013IN_PROGRESS\020\002\022\016\n\n"
           + "RECONCILED\020\003\022\n\n"
           + "\006FAILED\020\004:\220\001\352A\214\001\n"
-          + "\036config.googleapis.com/Resource\022jprojects/{project}/locations/{location}/dep"
-          + "loyments/{deployment}/revisions/{revision}/resources/{resource}\"B\n"
+          + "\036config.googleapis.com/Resource\022jprojects/{project}/locations/{location"
+          + "}/deployments/{deployment}/revisions/{revision}/resources/{resource}\"B\n"
           + "\025ResourceTerraformInfo\022\017\n"
           + "\007address\030\001 \001(\t\022\014\n"
           + "\004type\030\002 \001(\t\022\n\n"
@@ -597,20 +655,20 @@ public final class ConfigProto {
           + "\004info\030\003 \001(\t\022\013\n"
           + "\003who\030\004 \001(\t\022\017\n"
           + "\007version\030\005 \001(\t\022/\n"
-          + "\013create_time\030\006 \001(\0132\032.google.protobuf.Timestamp\"\370\r\n"
+          + "\013create_time\030\006 \001(\0132\032.google.protobuf.Timestamp\"\276\016\n"
           + "\007Preview\022I\n"
           + "\023terraform_blueprint\030\006"
           + " \001(\0132*.google.cloud.config.v1.TerraformBlueprintH\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022@\n"
-          + "\006labels\030\003 \003(\0132+.go"
-          + "ogle.cloud.config.v1.Preview.LabelsEntryB\003\340A\001\0229\n"
+          + "\006labels\030\003 \003(\013"
+          + "2+.google.cloud.config.v1.Preview.LabelsEntryB\003\340A\001\0229\n"
           + "\005state\030\004"
           + " \001(\0162%.google.cloud.config.v1.Preview.StateB\003\340A\003\022<\n\n"
           + "deployment\030\005 \001(\tB(\340A\001\372A\"\n"
           + " config.googleapis.com/Deployment\022F\n"
-          + "\014preview_mode\030\017 \001(\0162+.google.cl"
-          + "oud.config.v1.Preview.PreviewModeB\003\340A\001\022B\n"
+          + "\014preview_mode\030\017 \001(\0162+.goog"
+          + "le.cloud.config.v1.Preview.PreviewModeB\003\340A\001\022B\n"
           + "\017service_account\030\007 \001(\tB)\340A\002\372A#\n"
           + "!iam.googleapis.com/ServiceAccount\022&\n"
           + "\024artifacts_gcs_bucket\030\010 \001(\tB\003\340A\001H\001\210\001\001\022F\n"
@@ -623,13 +681,15 @@ public final class ConfigProto {
           + "\ttf_errors\030\r"
           + " \003(\0132&.google.cloud.config.v1.TerraformErrorB\003\340A\003\022\027\n\n"
           + "error_logs\030\016 \001(\tB\003\340A\003\022H\n"
-          + "\021preview_artifacts\030\020"
-          + " \001(\0132(.google.cloud.config.v1.PreviewArtifactsB\003\340A\003\022\021\n"
+          + "\021preview_artifacts\030\020 \001(\0132(.goo"
+          + "gle.cloud.config.v1.PreviewArtifactsB\003\340A\003\022\021\n"
           + "\004logs\030\021 \001(\tB\003\340A\003\022\027\n\n"
           + "tf_version\030\022 \001(\tB\003\340A\003\022\'\n"
           + "\025tf_version_constraint\030\023 \001(\tB\003\340A\001H\003\210\001\001\022J\n"
-          + "\013annotations\030\024"
-          + " \003(\01320.google.cloud.config.v1.Preview.AnnotationsEntryB\003\340A\001\032-\n"
+          + "\013annotations\030\024 \003(\01320.google.clo"
+          + "ud.config.v1.Preview.AnnotationsEntryB\003\340A\001\022D\n"
+          + "\017provider_config\030\025"
+          + " \001(\0132&.google.cloud.config.v1.ProviderConfigB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\0322\n"
@@ -657,8 +717,8 @@ public final class ConfigProto {
           + "\036DEPLOYMENT_LOCK_ACQUIRE_FAILED\020\004\022\034\n"
           + "\030PREVIEW_BUILD_API_FAILED\020\005\022\034\n"
           + "\030PREVIEW_BUILD_RUN_FAILED\020\006:q\352An\n"
-          + "\035config.googleapis.com/Preview\022:projects/{project}/locations/{l"
-          + "ocation}/previews/{preview}*\010previews2\007previewB\013\n"
+          + "\035config.googleapis.com/Preview\022:projects/{project}/locations/{locati"
+          + "on}/previews/{preview}*\010previews2\007previewB\013\n"
           + "\tblueprintB\027\n"
           + "\025_artifacts_gcs_bucketB\016\n"
           + "\014_worker_poolB\030\n"
@@ -690,8 +750,8 @@ public final class ConfigProto {
           + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
           + "!locations.googleapis.com/Location\022\027\n\n"
           + "preview_id\030\002 \001(\tB\003\340A\001\0225\n"
-          + "\007preview\030\003"
-          + " \001(\0132\037.google.cloud.config.v1.PreviewB\003\340A\002\022\037\n\n"
+          + "\007preview\030\003 \001(\013"
+          + "2\037.google.cloud.config.v1.PreviewB\003\340A\002\022\037\n\n"
           + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"H\n"
           + "\021GetPreviewRequest\0223\n"
           + "\004name\030\001 \001(\tB%\340A\002\372A\037\n"
@@ -742,134 +802,246 @@ public final class ConfigProto {
           + "\014support_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022<\n"
           + "\016deprecate_time\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\000\210\001\001\022;\n\r"
-          + "obsolete_time\030\005"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\001\210\001\001\"H\n"
+          + "obsolete_time\030\005 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003H\001\210\001\001\"H\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\n\n"
           + "\006ACTIVE\020\001\022\016\n\n"
           + "DEPRECATED\020\002\022\014\n"
           + "\010OBSOLETE\020\003:\240\001\352A\234\001\n"
-          + "&config.googleapis.com/TerraformVersion\022Mprojects/{project}/locations/{lo"
-          + "cation}/terraformVersions/{terraform_ver"
-          + "sion}*\021terraformVersions2\020terraformVersionB\021\n"
+          + "&config.googleapis.com/TerraformVersion\022Mprojects/{project}/locations/{locatio"
+          + "n}/terraformVersions/{terraform_version}*\021terraformVersions2\020terraformVersionB\021\n"
           + "\017_deprecate_timeB\020\n"
-          + "\016_obsolete_time*N\n"
-          + "\017QuotaValidation\022 \n"
-          + "\034QUOTA_VALIDATION_UNSPECIFIED\020\000\022\013\n"
-          + "\007ENABLED\020\001\022\014\n"
-          + "\010ENFORCED\020\0022\247#\n"
-          + "\006Config\022\264\001\n"
-          + "\017ListDeployments\022..google.cloud.config.v1.ListDeploymentsRequest\032/"
-          + ".google.cloud.config.v1.ListDeploymentsR"
-          + "esponse\"@\332A\006parent\202\323\344\223\0021\022//v1/{parent=projects/*/locations/*}/deployments\022\241\001\n\r"
-          + "GetDeployment\022,.google.cloud.config.v1.Get"
-          + "DeploymentRequest\032\".google.cloud.config."
-          + "v1.Deployment\">\332A\004name\202\323\344\223\0021\022//v1/{name="
-          + "projects/*/locations/*/deployments/*}\022\354\001\n"
-          + "\020CreateDeployment\022/.google.cloud.config"
-          + ".v1.CreateDeploymentRequest\032\035.google.longrunning.Operation\"\207\001\312A\037\n\n"
-          + "Deployment\022\021OperationMetadata\332A\037parent,deployment,depl"
-          + "oyment_id\202\323\344\223\002=\"//v1/{parent=projects/*/locations/*}/deployments:\n"
-          + "deployment\022\356\001\n"
-          + "\020UpdateDeployment\022/.google.cloud.config."
-          + "v1.UpdateDeploymentRequest\032\035.google.longrunning.Operation\"\211\001\312A\037\n\n"
-          + "Deployment\022\021OperationMetadata\332A\026deployment,update_mask\202"
-          + "\323\344\223\002H2:/v1/{deployment.name=projects/*/locations/*/deployments/*}:\n"
-          + "deployment\022\304\001\n"
-          + "\020DeleteDeployment\022/.google.cloud.config"
-          + ".v1.DeleteDeploymentRequest\032\035.google.longrunning.Operation\"`\312A\037\n\n"
-          + "Deployment\022\021Ope"
-          + "rationMetadata\332A\004name\202\323\344\223\0021*//v1/{name=projects/*/locations/*/deployments/*}\022\272\001\n"
-          + "\r"
-          + "ListRevisions\022,.google.cloud.config.v1.ListRevisionsRequest\032-.google.cloud.conf"
-          + "ig.v1.ListRevisionsResponse\"L\332A\006parent\202\323"
-          + "\344\223\002=\022;/v1/{parent=projects/*/locations/*/deployments/*}/revisions\022\247\001\n"
-          + "\013GetRevision\022*.google.cloud.config.v1.GetRevisionRequest\032"
-          + " .google.cloud.config.v1.Revision\""
-          + "J\332A\004name\202\323\344\223\002=\022;/v1/{name=projects/*/locations/*/deployments/*/revisions/*}\022\263\001\n"
-          + "\013GetResource\022*.google.cloud.config.v1.GetResourceRequest\032"
-          + " .google.cloud.config.v1"
-          + ".Resource\"V\332A\004name\202\323\344\223\002I\022G/v1/{name=proj"
-          + "ects/*/locations/*/deployments/*/revisions/*/resources/*}\022\306\001\n\r"
-          + "ListResources\022,.google.cloud.config.v1.ListResourcesReques"
-          + "t\032-.google.cloud.config.v1.ListResources"
-          + "Response\"X\332A\006parent\202\323\344\223\002I\022G/v1/{parent=p"
-          + "rojects/*/locations/*/deployments/*/revisions/*}/resources\022\302\001\n"
-          + "\031ExportDeploymentStatefile\0228.google.cloud.config.v1.Export"
-          + "DeploymentStatefileRequest\032!.google.clou"
-          + "d.config.v1.Statefile\"H\202\323\344\223\002B\"=/v1/{pare"
-          + "nt=projects/*/locations/*/deployments/*}:exportState:\001*\022\312\001\n"
-          + "\027ExportRevisionStatefile\0226.google.cloud.config.v1.ExportRevis"
-          + "ionStatefileRequest\032!.google.cloud.confi"
-          + "g.v1.Statefile\"T\202\323\344\223\002N\"I/v1/{parent=proj"
-          + "ects/*/locations/*/deployments/*/revisions/*}:exportState:\001*\022\277\001\n"
-          + "\017ImportStatefile\022..google.cloud.config.v1.ImportStatefil"
-          + "eRequest\032!.google.cloud.config.v1.Statef"
-          + "ile\"Y\332A\016parent,lock_id\202\323\344\223\002B\"=/v1/{paren"
-          + "t=projects/*/locations/*/deployments/*}:importState:\001*\022\250\001\n"
-          + "\017DeleteStatefile\022..google.cloud.config.v1.DeleteStatefileReque"
-          + "st\032\026.google.protobuf.Empty\"M\332A\004name\202\323\344\223\002",
-      "@\";/v1/{name=projects/*/locations/*/depl"
-          + "oyments/*}:deleteState:\001*\022\310\001\n\016LockDeploy"
-          + "ment\022-.google.cloud.config.v1.LockDeploy"
-          + "mentRequest\032\035.google.longrunning.Operati"
-          + "on\"h\312A\037\n\nDeployment\022\021OperationMetadata\332A"
-          + "\004name\202\323\344\223\0029\"4/v1/{name=projects/*/locati"
-          + "ons/*/deployments/*}:lock:\001*\022\326\001\n\020UnlockD"
-          + "eployment\022/.google.cloud.config.v1.Unloc"
-          + "kDeploymentRequest\032\035.google.longrunning."
-          + "Operation\"r\312A\037\n\nDeployment\022\021OperationMet"
-          + "adata\332A\014name,lock_id\202\323\344\223\002;\"6/v1/{name=pr"
-          + "ojects/*/locations/*/deployments/*}:unlo"
-          + "ck:\001*\022\254\001\n\016ExportLockInfo\022-.google.cloud."
-          + "config.v1.ExportLockInfoRequest\032 .google"
-          + ".cloud.config.v1.LockInfo\"I\332A\004name\202\323\344\223\002<"
-          + "\022:/v1/{name=projects/*/locations/*/deplo"
-          + "yments/*}:exportLock\022\313\001\n\rCreatePreview\022,"
-          + ".google.cloud.config.v1.CreatePreviewReq"
-          + "uest\032\035.google.longrunning.Operation\"m\312A\034"
-          + "\n\007Preview\022\021OperationMetadata\332A\016parent,pr"
-          + "eview\202\323\344\223\0027\",/v1/{parent=projects/*/loca"
-          + "tions/*}/previews:\007preview\022\225\001\n\nGetPrevie"
-          + "w\022).google.cloud.config.v1.GetPreviewReq"
-          + "uest\032\037.google.cloud.config.v1.Preview\";\332"
-          + "A\004name\202\323\344\223\002.\022,/v1/{name=projects/*/locat"
-          + "ions/*/previews/*}\022\250\001\n\014ListPreviews\022+.go"
-          + "ogle.cloud.config.v1.ListPreviewsRequest"
-          + "\032,.google.cloud.config.v1.ListPreviewsRe"
-          + "sponse\"=\332A\006parent\202\323\344\223\002.\022,/v1/{parent=pro"
-          + "jects/*/locations/*}/previews\022\270\001\n\rDelete"
-          + "Preview\022,.google.cloud.config.v1.DeleteP"
-          + "reviewRequest\032\035.google.longrunning.Opera"
-          + "tion\"Z\312A\034\n\007Preview\022\021OperationMetadata\332A\004"
-          + "name\202\323\344\223\002.*,/v1/{name=projects/*/locatio"
-          + "ns/*/previews/*}\022\300\001\n\023ExportPreviewResult"
-          + "\0222.google.cloud.config.v1.ExportPreviewR"
-          + "esultRequest\0323.google.cloud.config.v1.Ex"
-          + "portPreviewResultResponse\"@\202\323\344\223\002:\"5/v1/{"
-          + "parent=projects/*/locations/*/previews/*"
-          + "}:export:\001*\022\314\001\n\025ListTerraformVersions\0224."
-          + "google.cloud.config.v1.ListTerraformVers"
-          + "ionsRequest\0325.google.cloud.config.v1.Lis"
-          + "tTerraformVersionsResponse\"F\332A\006parent\202\323\344"
-          + "\223\0027\0225/v1/{parent=projects/*/locations/*}"
-          + "/terraformVersions\022\271\001\n\023GetTerraformVersi"
-          + "on\0222.google.cloud.config.v1.GetTerraform"
-          + "VersionRequest\032(.google.cloud.config.v1."
-          + "TerraformVersion\"D\332A\004name\202\323\344\223\0027\0225/v1/{na"
-          + "me=projects/*/locations/*/terraformVersi"
-          + "ons/*}\032I\312A\025config.googleapis.com\322A.https"
-          + "://www.googleapis.com/auth/cloud-platfor"
-          + "mB\374\002\n\032com.google.cloud.config.v1B\013Config"
-          + "ProtoP\001Z2cloud.google.com/go/config/apiv"
-          + "1/configpb;configpb\252\002\026Google.Cloud.Confi"
-          + "g.V1\312\002\026Google\\Cloud\\Config\\V1\352\002 Google::"
-          + "Cloud::ConfigService::V1\352AY\n!iam.googlea"
-          + "pis.com/ServiceAccount\0224projects/{projec"
-          + "t}/serviceAccounts/{service_account}\352Ai\n"
-          + "$cloudbuild.googleapis.com/WorkerPool\022Ap"
-          + "rojects/{project}/locations/{location}/w"
-          + "orkerPools/{worker_pool}b\006proto3"
+          + "\016_obsolete_time\"\217\001\n"
+          + "\033ResourceChangeTerraformInfo\022\024\n"
+          + "\007address\030\001 \001(\tB\003\340A\003\022\021\n"
+          + "\004type\030\002 \001(\tB\003\340A\003\022\032\n\r"
+          + "resource_name\030\003 \001(\tB\003\340A\003\022\025\n"
+          + "\010provider\030\004 \001(\tB\003\340A\003\022\024\n"
+          + "\007actions\030\005 \003(\tB\003\340A\003\"\217\004\n"
+          + "\016ResourceChange\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022P\n"
+          + "\016terraform_info\030\002 \001"
+          + "(\01323.google.cloud.config.v1.ResourceChangeTerraformInfoB\003\340A\003\022B\n"
+          + "\006intent\030\003 \001(\0162-.g"
+          + "oogle.cloud.config.v1.ResourceChange.IntentB\003\340A\003\022E\n"
+          + "\020property_changes\030\004 \003(\0132&.goo"
+          + "gle.cloud.config.v1.PropertyChangeB\003\340A\003\"a\n"
+          + "\006Intent\022\026\n"
+          + "\022INTENT_UNSPECIFIED\020\000\022\n\n"
+          + "\006CREATE\020\001\022\n\n"
+          + "\006UPDATE\020\002\022\n\n"
+          + "\006DELETE\020\003\022\014\n"
+          + "\010RECREATE\020\004\022\r\n"
+          + "\tUNCHANGED\020\005:\251\001\352A\245\001\n"
+          + "$config.googleapis.com/ResourceChange\022\\projects/{proje"
+          + "ct}/locations/{location}/previews/{previ"
+          + "ew}/resourceChanges/{resource_change}*\017resourceChanges2\016resourceChange\"\305\001\n"
+          + "\016PropertyChange\022\021\n"
+          + "\004path\030\001 \001(\tB\003\340A\003\022#\n"
+          + "\026before_sensitive_paths\030\002 \003(\tB\003\340A\003\022+\n"
+          + "\006before\030\003 \001(\0132\026.google.protobuf.ValueB\003\340A\003\022\"\n"
+          + "\025after_sensitive_paths\030\004 \003(\tB\003\340A\003\022*\n"
+          + "\005after\030\005 \001(\0132\026.google.protobuf.ValueB\003\340A\003\"\260\001\n"
+          + "\032ListResourceChangesRequest\0225\n"
+          + "\006parent\030\001 \001(\tB%\340A\002\372A\037\n"
+          + "\035config.googleapis.com/Preview\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\215\001\n"
+          + "\033ListResourceChangesResponse\022@\n"
+          + "\020resource_changes\030\001"
+          + " \003(\0132&.google.cloud.config.v1.ResourceChange\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"V\n"
+          + "\030GetResourceChangeRequest\022:\n"
+          + "\004name\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$config.googleapis.com/ResourceChange\"x\n"
+          + "\032ResourceDriftTerraformInfo\022\024\n"
+          + "\007address\030\001 \001(\tB\003\340A\003\022\021\n"
+          + "\004type\030\002 \001(\tB\003\340A\003\022\032\n\r"
+          + "resource_name\030\003 \001(\tB\003\340A\003\022\025\n"
+          + "\010provider\030\004 \001(\tB\003\340A\003\"\337\002\n\r"
+          + "ResourceDrift\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022O\n"
+          + "\016terraform_info\030\002 \001(\01322.google.cloud."
+          + "config.v1.ResourceDriftTerraformInfoB\003\340A\003\022C\n"
+          + "\017property_drifts\030\003"
+          + " \003(\0132%.google.cloud.config.v1.PropertyDriftB\003\340A\003:\244\001\352A\240\001\n"
+          + "#config.googleapis.com/ResourceDrift\022Zprojects/{project}/locations/{location}/prev"
+          + "iews/{preview}/resourceDrifts/{resource_drift}*\016resourceDrifts2\r"
+          + "resourceDrift\"\304\001\n\r"
+          + "PropertyDrift\022\021\n"
+          + "\004path\030\001 \001(\tB\003\340A\003\022#\n"
+          + "\026before_sensitive_paths\030\002 \003(\tB\003\340A\003\022+\n"
+          + "\006before\030\003 \001(\0132\026.google.protobuf.ValueB\003\340A\003\022\"\n"
+          + "\025after_sensitive_paths\030\004 \003(\tB\003\340A\003\022*\n"
+          + "\005after\030\005 \001(\0132\026.google.protobuf.ValueB\003\340A\003\"\257\001\n"
+          + "\031ListResourceDriftsRequest\0225\n"
+          + "\006parent\030\001 \001(\tB%\340A\002\372A\037\n"
+          + "\035config.googleapis.com/Preview\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\212\001\n"
+          + "\032ListResourceDriftsResponse\022>\n"
+          + "\017resource_drifts\030\001 \003(\0132%.google.cloud.config.v1.ResourceDrift\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"T\n"
+          + "\027GetResourceDriftRequest\0229\n"
+          + "\004name\030\001 \001(\tB+\340A",
+      "\002\372A%\n#config.googleapis.com/ResourceDrif"
+          + "t\"\301\001\n\016ProviderConfig\022T\n\013source_type\030\001 \001("
+          + "\01625.google.cloud.config.v1.ProviderConfi"
+          + "g.ProviderSourceB\003\340A\001H\000\210\001\001\"I\n\016ProviderSo"
+          + "urce\022\037\n\033PROVIDER_SOURCE_UNSPECIFIED\020\000\022\026\n"
+          + "\022SERVICE_MAINTAINED\020\001B\016\n\014_source_type*N\n"
+          + "\017QuotaValidation\022 \n\034QUOTA_VALIDATION_UNS"
+          + "PECIFIED\020\000\022\013\n\007ENABLED\020\001\022\014\n\010ENFORCED\020\0022\301)"
+          + "\n\006Config\022\264\001\n\017ListDeployments\022..google.cl"
+          + "oud.config.v1.ListDeploymentsRequest\032/.g"
+          + "oogle.cloud.config.v1.ListDeploymentsRes"
+          + "ponse\"@\332A\006parent\202\323\344\223\0021\022//v1/{parent=proj"
+          + "ects/*/locations/*}/deployments\022\241\001\n\rGetD"
+          + "eployment\022,.google.cloud.config.v1.GetDe"
+          + "ploymentRequest\032\".google.cloud.config.v1"
+          + ".Deployment\">\332A\004name\202\323\344\223\0021\022//v1/{name=pr"
+          + "ojects/*/locations/*/deployments/*}\022\354\001\n\020"
+          + "CreateDeployment\022/.google.cloud.config.v"
+          + "1.CreateDeploymentRequest\032\035.google.longr"
+          + "unning.Operation\"\207\001\312A\037\n\nDeployment\022\021Oper"
+          + "ationMetadata\332A\037parent,deployment,deploy"
+          + "ment_id\202\323\344\223\002=\"//v1/{parent=projects/*/lo"
+          + "cations/*}/deployments:\ndeployment\022\356\001\n\020U"
+          + "pdateDeployment\022/.google.cloud.config.v1"
+          + ".UpdateDeploymentRequest\032\035.google.longru"
+          + "nning.Operation\"\211\001\312A\037\n\nDeployment\022\021Opera"
+          + "tionMetadata\332A\026deployment,update_mask\202\323\344"
+          + "\223\002H2:/v1/{deployment.name=projects/*/loc"
+          + "ations/*/deployments/*}:\ndeployment\022\304\001\n\020"
+          + "DeleteDeployment\022/.google.cloud.config.v"
+          + "1.DeleteDeploymentRequest\032\035.google.longr"
+          + "unning.Operation\"`\312A\037\n\nDeployment\022\021Opera"
+          + "tionMetadata\332A\004name\202\323\344\223\0021*//v1/{name=pro"
+          + "jects/*/locations/*/deployments/*}\022\272\001\n\rL"
+          + "istRevisions\022,.google.cloud.config.v1.Li"
+          + "stRevisionsRequest\032-.google.cloud.config"
+          + ".v1.ListRevisionsResponse\"L\332A\006parent\202\323\344\223"
+          + "\002=\022;/v1/{parent=projects/*/locations/*/d"
+          + "eployments/*}/revisions\022\247\001\n\013GetRevision\022"
+          + "*.google.cloud.config.v1.GetRevisionRequ"
+          + "est\032 .google.cloud.config.v1.Revision\"J\332"
+          + "A\004name\202\323\344\223\002=\022;/v1/{name=projects/*/locat"
+          + "ions/*/deployments/*/revisions/*}\022\263\001\n\013Ge"
+          + "tResource\022*.google.cloud.config.v1.GetRe"
+          + "sourceRequest\032 .google.cloud.config.v1.R"
+          + "esource\"V\332A\004name\202\323\344\223\002I\022G/v1/{name=projec"
+          + "ts/*/locations/*/deployments/*/revisions"
+          + "/*/resources/*}\022\306\001\n\rListResources\022,.goog"
+          + "le.cloud.config.v1.ListResourcesRequest\032"
+          + "-.google.cloud.config.v1.ListResourcesRe"
+          + "sponse\"X\332A\006parent\202\323\344\223\002I\022G/v1/{parent=pro"
+          + "jects/*/locations/*/deployments/*/revisi"
+          + "ons/*}/resources\022\302\001\n\031ExportDeploymentSta"
+          + "tefile\0228.google.cloud.config.v1.ExportDe"
+          + "ploymentStatefileRequest\032!.google.cloud."
+          + "config.v1.Statefile\"H\202\323\344\223\002B\"=/v1/{parent"
+          + "=projects/*/locations/*/deployments/*}:e"
+          + "xportState:\001*\022\312\001\n\027ExportRevisionStatefil"
+          + "e\0226.google.cloud.config.v1.ExportRevisio"
+          + "nStatefileRequest\032!.google.cloud.config."
+          + "v1.Statefile\"T\202\323\344\223\002N\"I/v1/{parent=projec"
+          + "ts/*/locations/*/deployments/*/revisions"
+          + "/*}:exportState:\001*\022\277\001\n\017ImportStatefile\022."
+          + ".google.cloud.config.v1.ImportStatefileR"
+          + "equest\032!.google.cloud.config.v1.Statefil"
+          + "e\"Y\332A\016parent,lock_id\202\323\344\223\002B\"=/v1/{parent="
+          + "projects/*/locations/*/deployments/*}:im"
+          + "portState:\001*\022\250\001\n\017DeleteStatefile\022..googl"
+          + "e.cloud.config.v1.DeleteStatefileRequest"
+          + "\032\026.google.protobuf.Empty\"M\332A\004name\202\323\344\223\002@\""
+          + ";/v1/{name=projects/*/locations/*/deploy"
+          + "ments/*}:deleteState:\001*\022\310\001\n\016LockDeployme"
+          + "nt\022-.google.cloud.config.v1.LockDeployme"
+          + "ntRequest\032\035.google.longrunning.Operation"
+          + "\"h\312A\037\n\nDeployment\022\021OperationMetadata\332A\004n"
+          + "ame\202\323\344\223\0029\"4/v1/{name=projects/*/location"
+          + "s/*/deployments/*}:lock:\001*\022\326\001\n\020UnlockDep"
+          + "loyment\022/.google.cloud.config.v1.UnlockD"
+          + "eploymentRequest\032\035.google.longrunning.Op"
+          + "eration\"r\312A\037\n\nDeployment\022\021OperationMetad"
+          + "ata\332A\014name,lock_id\202\323\344\223\002;\"6/v1/{name=proj"
+          + "ects/*/locations/*/deployments/*}:unlock"
+          + ":\001*\022\254\001\n\016ExportLockInfo\022-.google.cloud.co"
+          + "nfig.v1.ExportLockInfoRequest\032 .google.c"
+          + "loud.config.v1.LockInfo\"I\332A\004name\202\323\344\223\002<\022:"
+          + "/v1/{name=projects/*/locations/*/deploym"
+          + "ents/*}:exportLock\022\313\001\n\rCreatePreview\022,.g"
+          + "oogle.cloud.config.v1.CreatePreviewReque"
+          + "st\032\035.google.longrunning.Operation\"m\312A\034\n\007"
+          + "Preview\022\021OperationMetadata\332A\016parent,prev"
+          + "iew\202\323\344\223\0027\",/v1/{parent=projects/*/locati"
+          + "ons/*}/previews:\007preview\022\225\001\n\nGetPreview\022"
+          + ").google.cloud.config.v1.GetPreviewReque"
+          + "st\032\037.google.cloud.config.v1.Preview\";\332A\004"
+          + "name\202\323\344\223\002.\022,/v1/{name=projects/*/locatio"
+          + "ns/*/previews/*}\022\250\001\n\014ListPreviews\022+.goog"
+          + "le.cloud.config.v1.ListPreviewsRequest\032,"
+          + ".google.cloud.config.v1.ListPreviewsResp"
+          + "onse\"=\332A\006parent\202\323\344\223\002.\022,/v1/{parent=proje"
+          + "cts/*/locations/*}/previews\022\270\001\n\rDeletePr"
+          + "eview\022,.google.cloud.config.v1.DeletePre"
+          + "viewRequest\032\035.google.longrunning.Operati"
+          + "on\"Z\312A\034\n\007Preview\022\021OperationMetadata\332A\004na"
+          + "me\202\323\344\223\002.*,/v1/{name=projects/*/locations"
+          + "/*/previews/*}\022\300\001\n\023ExportPreviewResult\0222"
+          + ".google.cloud.config.v1.ExportPreviewRes"
+          + "ultRequest\0323.google.cloud.config.v1.Expo"
+          + "rtPreviewResultResponse\"@\202\323\344\223\002:\"5/v1/{pa"
+          + "rent=projects/*/locations/*/previews/*}:"
+          + "export:\001*\022\314\001\n\025ListTerraformVersions\0224.go"
+          + "ogle.cloud.config.v1.ListTerraformVersio"
+          + "nsRequest\0325.google.cloud.config.v1.ListT"
+          + "erraformVersionsResponse\"F\332A\006parent\202\323\344\223\002"
+          + "7\0225/v1/{parent=projects/*/locations/*}/t"
+          + "erraformVersions\022\271\001\n\023GetTerraformVersion"
+          + "\0222.google.cloud.config.v1.GetTerraformVe"
+          + "rsionRequest\032(.google.cloud.config.v1.Te"
+          + "rraformVersion\"D\332A\004name\202\323\344\223\0027\0225/v1/{name"
+          + "=projects/*/locations/*/terraformVersion"
+          + "s/*}\022\317\001\n\023ListResourceChanges\0222.google.cl"
+          + "oud.config.v1.ListResourceChangesRequest"
+          + "\0323.google.cloud.config.v1.ListResourceCh"
+          + "angesResponse\"O\332A\006parent\202\323\344\223\002@\022>/v1/{par"
+          + "ent=projects/*/locations/*/previews/*}/r"
+          + "esourceChanges\022\274\001\n\021GetResourceChange\0220.g"
+          + "oogle.cloud.config.v1.GetResourceChangeR"
+          + "equest\032&.google.cloud.config.v1.Resource"
+          + "Change\"M\332A\004name\202\323\344\223\002@\022>/v1/{name=project"
+          + "s/*/locations/*/previews/*/resourceChang"
+          + "es/*}\022\313\001\n\022ListResourceDrifts\0221.google.cl"
+          + "oud.config.v1.ListResourceDriftsRequest\032"
+          + "2.google.cloud.config.v1.ListResourceDri"
+          + "ftsResponse\"N\332A\006parent\202\323\344\223\002?\022=/v1/{paren"
+          + "t=projects/*/locations/*/previews/*}/res"
+          + "ourceDrifts\022\270\001\n\020GetResourceDrift\022/.googl"
+          + "e.cloud.config.v1.GetResourceDriftReques"
+          + "t\032%.google.cloud.config.v1.ResourceDrift"
+          + "\"L\332A\004name\202\323\344\223\002?\022=/v1/{name=projects/*/lo"
+          + "cations/*/previews/*/resourceDrifts/*}\032I"
+          + "\312A\025config.googleapis.com\322A.https://www.g"
+          + "oogleapis.com/auth/cloud-platformB\374\002\n\032co"
+          + "m.google.cloud.config.v1B\013ConfigProtoP\001Z"
+          + "2cloud.google.com/go/config/apiv1/config"
+          + "pb;configpb\252\002\026Google.Cloud.Config.V1\312\002\026G"
+          + "oogle\\Cloud\\Config\\V1\352\002 Google::Cloud::C"
+          + "onfigService::V1\352AY\n!iam.googleapis.com/"
+          + "ServiceAccount\0224projects/{project}/servi"
+          + "ceAccounts/{service_account}\352Ai\n$cloudbu"
+          + "ild.googleapis.com/WorkerPool\022Aprojects/"
+          + "{project}/locations/{location}/workerPoo"
+          + "ls/{worker_pool}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -916,6 +1088,7 @@ public final class ConfigProto {
               "TfVersion",
               "QuotaValidation",
               "Annotations",
+              "ProviderConfig",
               "Blueprint",
             });
     internal_static_google_cloud_config_v1_Deployment_LabelsEntry_descriptor =
@@ -1099,6 +1272,7 @@ public final class ConfigProto {
               "TfVersion",
               "QuotaValidationResults",
               "QuotaValidation",
+              "ProviderConfig",
               "Blueprint",
             });
     internal_static_google_cloud_config_v1_TerraformError_descriptor =
@@ -1279,6 +1453,7 @@ public final class ConfigProto {
               "TfVersion",
               "TfVersionConstraint",
               "Annotations",
+              "ProviderConfig",
               "Blueprint",
             });
     internal_static_google_cloud_config_v1_Preview_LabelsEntry_descriptor =
@@ -1408,6 +1583,110 @@ public final class ConfigProto {
             internal_static_google_cloud_config_v1_TerraformVersion_descriptor,
             new java.lang.String[] {
               "Name", "State", "SupportTime", "DeprecateTime", "ObsoleteTime",
+            });
+    internal_static_google_cloud_config_v1_ResourceChangeTerraformInfo_descriptor =
+        getDescriptor().getMessageTypes().get(49);
+    internal_static_google_cloud_config_v1_ResourceChangeTerraformInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_ResourceChangeTerraformInfo_descriptor,
+            new java.lang.String[] {
+              "Address", "Type", "ResourceName", "Provider", "Actions",
+            });
+    internal_static_google_cloud_config_v1_ResourceChange_descriptor =
+        getDescriptor().getMessageTypes().get(50);
+    internal_static_google_cloud_config_v1_ResourceChange_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_ResourceChange_descriptor,
+            new java.lang.String[] {
+              "Name", "TerraformInfo", "Intent", "PropertyChanges",
+            });
+    internal_static_google_cloud_config_v1_PropertyChange_descriptor =
+        getDescriptor().getMessageTypes().get(51);
+    internal_static_google_cloud_config_v1_PropertyChange_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_PropertyChange_descriptor,
+            new java.lang.String[] {
+              "Path", "BeforeSensitivePaths", "Before", "AfterSensitivePaths", "After",
+            });
+    internal_static_google_cloud_config_v1_ListResourceChangesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(52);
+    internal_static_google_cloud_config_v1_ListResourceChangesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_ListResourceChangesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_config_v1_ListResourceChangesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(53);
+    internal_static_google_cloud_config_v1_ListResourceChangesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_ListResourceChangesResponse_descriptor,
+            new java.lang.String[] {
+              "ResourceChanges", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_config_v1_GetResourceChangeRequest_descriptor =
+        getDescriptor().getMessageTypes().get(54);
+    internal_static_google_cloud_config_v1_GetResourceChangeRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_GetResourceChangeRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_config_v1_ResourceDriftTerraformInfo_descriptor =
+        getDescriptor().getMessageTypes().get(55);
+    internal_static_google_cloud_config_v1_ResourceDriftTerraformInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_ResourceDriftTerraformInfo_descriptor,
+            new java.lang.String[] {
+              "Address", "Type", "ResourceName", "Provider",
+            });
+    internal_static_google_cloud_config_v1_ResourceDrift_descriptor =
+        getDescriptor().getMessageTypes().get(56);
+    internal_static_google_cloud_config_v1_ResourceDrift_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_ResourceDrift_descriptor,
+            new java.lang.String[] {
+              "Name", "TerraformInfo", "PropertyDrifts",
+            });
+    internal_static_google_cloud_config_v1_PropertyDrift_descriptor =
+        getDescriptor().getMessageTypes().get(57);
+    internal_static_google_cloud_config_v1_PropertyDrift_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_PropertyDrift_descriptor,
+            new java.lang.String[] {
+              "Path", "BeforeSensitivePaths", "Before", "AfterSensitivePaths", "After",
+            });
+    internal_static_google_cloud_config_v1_ListResourceDriftsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(58);
+    internal_static_google_cloud_config_v1_ListResourceDriftsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_ListResourceDriftsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_config_v1_ListResourceDriftsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(59);
+    internal_static_google_cloud_config_v1_ListResourceDriftsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_ListResourceDriftsResponse_descriptor,
+            new java.lang.String[] {
+              "ResourceDrifts", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_config_v1_GetResourceDriftRequest_descriptor =
+        getDescriptor().getMessageTypes().get(60);
+    internal_static_google_cloud_config_v1_GetResourceDriftRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_GetResourceDriftRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_config_v1_ProviderConfig_descriptor =
+        getDescriptor().getMessageTypes().get(61);
+    internal_static_google_cloud_config_v1_ProviderConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_ProviderConfig_descriptor,
+            new java.lang.String[] {
+              "SourceType",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

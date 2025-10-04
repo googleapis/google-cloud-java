@@ -29,7 +29,7 @@ public interface ListSessionsRequestOrBuilder
    *
    * <pre>
    * Required. The data store resource name. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface ListSessionsRequestOrBuilder
    *
    * <pre>
    * Required. The data store resource name. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * </pre>
    *
    * <code>
@@ -102,11 +102,23 @@ public interface ListSessionsRequestOrBuilder
    *
    *
    * <pre>
-   * A filter to apply on the list results. The supported features are:
-   * user_pseudo_id, state.
+   * A comma-separated list of fields to filter by, in EBNF grammar.
+   * The supported fields are:
+   * * `user_pseudo_id`
+   * * `state`
+   * * `display_name`
+   * * `starred`
+   * * `is_pinned`
+   * * `labels`
+   * * `create_time`
+   * * `update_time`
    *
-   * Example:
+   * Examples:
    * "user_pseudo_id = some_id"
+   * "display_name = &#92;"some_name&#92;""
+   * "starred = true"
+   * "is_pinned=true AND (NOT labels:hidden)"
+   * "create_time &gt; &#92;"1970-01-01T12:00:00Z&#92;""
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -119,11 +131,23 @@ public interface ListSessionsRequestOrBuilder
    *
    *
    * <pre>
-   * A filter to apply on the list results. The supported features are:
-   * user_pseudo_id, state.
+   * A comma-separated list of fields to filter by, in EBNF grammar.
+   * The supported fields are:
+   * * `user_pseudo_id`
+   * * `state`
+   * * `display_name`
+   * * `starred`
+   * * `is_pinned`
+   * * `labels`
+   * * `create_time`
+   * * `update_time`
    *
-   * Example:
+   * Examples:
    * "user_pseudo_id = some_id"
+   * "display_name = &#92;"some_name&#92;""
+   * "starred = true"
+   * "is_pinned=true AND (NOT labels:hidden)"
+   * "create_time &gt; &#92;"1970-01-01T12:00:00Z&#92;""
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -139,13 +163,18 @@ public interface ListSessionsRequestOrBuilder
    * A comma-separated list of fields to order by, sorted in ascending order.
    * Use "desc" after a field name for descending.
    * Supported fields:
+   *
    *   * `update_time`
    *   * `create_time`
    *   * `session_name`
+   *   * `is_pinned`
    *
    * Example:
-   * "update_time desc"
-   * "create_time"
+   *
+   * * "update_time desc"
+   * * "create_time"
+   * * "is_pinned desc,update_time desc": list sessions by is_pinned first, then
+   *    by update_time.
    * </pre>
    *
    * <code>string order_by = 5;</code>
@@ -161,13 +190,18 @@ public interface ListSessionsRequestOrBuilder
    * A comma-separated list of fields to order by, sorted in ascending order.
    * Use "desc" after a field name for descending.
    * Supported fields:
+   *
    *   * `update_time`
    *   * `create_time`
    *   * `session_name`
+   *   * `is_pinned`
    *
    * Example:
-   * "update_time desc"
-   * "create_time"
+   *
+   * * "update_time desc"
+   * * "create_time"
+   * * "is_pinned desc,update_time desc": list sessions by is_pinned first, then
+   *    by update_time.
    * </pre>
    *
    * <code>string order_by = 5;</code>

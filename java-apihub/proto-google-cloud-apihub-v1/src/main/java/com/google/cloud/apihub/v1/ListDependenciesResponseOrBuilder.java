@@ -29,7 +29,6 @@ public interface ListDependenciesResponseOrBuilder
    *
    * <pre>
    * The dependency resources present in the API hub.
-   * Only following field will be populated in the response: name.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.Dependency dependencies = 1;</code>
@@ -41,7 +40,6 @@ public interface ListDependenciesResponseOrBuilder
    *
    * <pre>
    * The dependency resources present in the API hub.
-   * Only following field will be populated in the response: name.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.Dependency dependencies = 1;</code>
@@ -53,7 +51,6 @@ public interface ListDependenciesResponseOrBuilder
    *
    * <pre>
    * The dependency resources present in the API hub.
-   * Only following field will be populated in the response: name.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.Dependency dependencies = 1;</code>
@@ -65,7 +62,6 @@ public interface ListDependenciesResponseOrBuilder
    *
    * <pre>
    * The dependency resources present in the API hub.
-   * Only following field will be populated in the response: name.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.Dependency dependencies = 1;</code>
@@ -78,7 +74,6 @@ public interface ListDependenciesResponseOrBuilder
    *
    * <pre>
    * The dependency resources present in the API hub.
-   * Only following field will be populated in the response: name.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.Dependency dependencies = 1;</code>

@@ -60,6 +60,7 @@ public class GrpcDomainMappingsStub extends DomainMappingsStub {
                   ProtoUtils.marshaller(ListDomainMappingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDomainMappingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDomainMappingRequest, DomainMapping>
@@ -70,6 +71,7 @@ public class GrpcDomainMappingsStub extends DomainMappingsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDomainMappingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DomainMapping.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDomainMappingRequest, Operation>
@@ -80,6 +82,7 @@ public class GrpcDomainMappingsStub extends DomainMappingsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDomainMappingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDomainMappingRequest, Operation>
@@ -90,6 +93,7 @@ public class GrpcDomainMappingsStub extends DomainMappingsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDomainMappingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDomainMappingRequest, Operation>
@@ -100,6 +104,7 @@ public class GrpcDomainMappingsStub extends DomainMappingsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDomainMappingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListDomainMappingsRequest, ListDomainMappingsResponse>

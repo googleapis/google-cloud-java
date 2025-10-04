@@ -55,6 +55,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
               .setFullMethodName("google.cloud.run.v2.Executions/GetExecution")
               .setRequestMarshaller(ProtoUtils.marshaller(GetExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Execution.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListExecutionsRequest, ListExecutionsResponse>
@@ -66,6 +67,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
                   ProtoUtils.marshaller(ListExecutionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListExecutionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteExecutionRequest, Operation>
@@ -76,6 +78,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelExecutionRequest, Operation>
@@ -86,6 +89,7 @@ public class GrpcExecutionsStub extends ExecutionsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetExecutionRequest, Execution> getExecutionCallable;

@@ -170,6 +170,200 @@ public class MockNetworkServicesImpl extends NetworkServicesImplBase {
   }
 
   @Override
+  public void listWasmPluginVersions(
+      ListWasmPluginVersionsRequest request,
+      StreamObserver<ListWasmPluginVersionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListWasmPluginVersionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListWasmPluginVersionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListWasmPluginVersions, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListWasmPluginVersionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getWasmPluginVersion(
+      GetWasmPluginVersionRequest request, StreamObserver<WasmPluginVersion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof WasmPluginVersion) {
+      requests.add(request);
+      responseObserver.onNext(((WasmPluginVersion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetWasmPluginVersion, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  WasmPluginVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createWasmPluginVersion(
+      CreateWasmPluginVersionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateWasmPluginVersion, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteWasmPluginVersion(
+      DeleteWasmPluginVersionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteWasmPluginVersion, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listWasmPlugins(
+      ListWasmPluginsRequest request, StreamObserver<ListWasmPluginsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListWasmPluginsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListWasmPluginsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListWasmPlugins, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListWasmPluginsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getWasmPlugin(
+      GetWasmPluginRequest request, StreamObserver<WasmPlugin> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof WasmPlugin) {
+      requests.add(request);
+      responseObserver.onNext(((WasmPlugin) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetWasmPlugin, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  WasmPlugin.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createWasmPlugin(
+      CreateWasmPluginRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateWasmPlugin, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateWasmPlugin(
+      UpdateWasmPluginRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateWasmPlugin, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteWasmPlugin(
+      DeleteWasmPluginRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteWasmPlugin, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listGateways(
       ListGatewaysRequest request, StreamObserver<ListGatewaysResponse> responseObserver) {
     Object response = responses.poll();

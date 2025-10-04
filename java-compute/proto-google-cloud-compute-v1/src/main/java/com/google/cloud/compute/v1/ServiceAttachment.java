@@ -68,6 +68,18 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         .internal_static_google_cloud_compute_v1_ServiceAttachment_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 86866735:
+        return internalGetMetadata();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -389,7 +401,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
    * </pre>
    *
    * <code>
@@ -406,7 +418,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
    * </pre>
    *
    * <code>
@@ -424,7 +436,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
    * </pre>
    *
    * <code>
@@ -440,7 +452,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
    * </pre>
    *
    * <code>
@@ -457,7 +469,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
    * </pre>
    *
    * <code>
@@ -950,6 +962,113 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int METADATA_FIELD_NUMBER = 86866735;
+
+  private static final class MetadataDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.compute.v1.Compute
+                .internal_static_google_cloud_compute_v1_ServiceAttachment_MetadataEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
+    if (metadata_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(MetadataDefaultEntryHolder.defaultEntry);
+    }
+    return metadata_;
+  }
+
+  public int getMetadataCount() {
+    return internalGetMetadata().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata of the service attachment.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 86866735;</code>
+   */
+  @java.lang.Override
+  public boolean containsMetadata(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetMetadata().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getMetadataMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+    return getMetadataMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata of the service attachment.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 86866735;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+    return internalGetMetadata().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata of the service attachment.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 86866735;</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata of the service attachment.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 86866735;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getMetadataOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
@@ -1523,6 +1642,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < connectedEndpoints_.size(); i++) {
       output.writeMessage(72223688, connectedEndpoints_.get(i));
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 86866735);
     if (((bitField0_ & 0x00000800) != 0)) {
       output.writeBool(125493732, reconcileConnections_);
     }
@@ -1601,6 +1722,16 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               72223688, connectedEndpoints_.get(i));
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetMetadata().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
+          MetadataDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(86866735, metadata__);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size +=
@@ -1711,6 +1842,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (hasKind()) {
       if (!getKind().equals(other.getKind())) return false;
     }
+    if (!internalGetMetadata().equals(other.internalGetMetadata())) return false;
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
@@ -1798,6 +1930,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
       hash = (53 * hash) + getKind().hashCode();
+    }
+    if (!internalGetMetadata().getMap().isEmpty()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetMetadata().hashCode();
     }
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -1954,6 +2090,28 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
           .internal_static_google_cloud_compute_v1_ServiceAttachment_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 86866735:
+          return internalGetMetadata();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 86866735:
+          return internalGetMutableMetadata();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -2009,6 +2167,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       fingerprint_ = "";
       id_ = 0L;
       kind_ = "";
+      internalGetMutableMetadata().clear();
       name_ = "";
       natSubnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       producerForwardingRule_ = "";
@@ -2118,41 +2277,45 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.name_ = name_;
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         natSubnets_.makeImmutable();
         result.natSubnets_ = natSubnets_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.producerForwardingRule_ = producerForwardingRule_;
         to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.propagatedConnectionLimit_ = propagatedConnectionLimit_;
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.pscServiceAttachmentId_ =
             pscServiceAttachmentIdBuilder_ == null
                 ? pscServiceAttachmentId_
                 : pscServiceAttachmentIdBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.reconcileConnections_ = reconcileConnections_;
         to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.region_ = region_;
         to_bitField0_ |= 0x00001000;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00002000;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.targetService_ = targetService_;
         to_bitField0_ |= 0x00004000;
       }
@@ -2309,15 +2472,17 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000400;
         onChanged();
       }
+      internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00000800;
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.natSubnets_.isEmpty()) {
         if (natSubnets_.isEmpty()) {
           natSubnets_ = other.natSubnets_;
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00002000;
         } else {
           ensureNatSubnetsIsMutable();
           natSubnets_.addAll(other.natSubnets_);
@@ -2326,7 +2491,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasProducerForwardingRule()) {
         producerForwardingRule_ = other.producerForwardingRule_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasPropagatedConnectionLimit()) {
@@ -2340,17 +2505,17 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.hasTargetService()) {
         targetService_ = other.targetService_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2388,7 +2553,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
             case 10350650:
               {
                 targetService_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 10350650
             case 26336418:
@@ -2400,7 +2565,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 26989658
             case 51601514:
@@ -2430,16 +2595,28 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
                 }
                 break;
               } // case 577789506
+            case 694933882:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
+                    input.readMessage(
+                        MetadataDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableMetadata()
+                    .getMutableMap()
+                    .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 694933882
             case 1003949856:
               {
                 reconcileConnections_ = input.readBool();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 1003949856
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 1111570338
             case 1632265458:
@@ -2458,7 +2635,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
             case 1983423114:
               {
                 producerForwardingRule_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 1983423114
             case -2008422686:
@@ -2470,7 +2647,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
             case -1633213456:
               {
                 propagatedConnectionLimit_ = input.readUInt32();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case -1633213456
             case -1384637400:
@@ -2509,14 +2686,14 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case -645248918
             case -73405582:
               {
                 input.readMessage(
                     getPscServiceAttachmentIdFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -73405582
             default:
@@ -3117,7 +3294,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -3137,7 +3314,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -3156,7 +3333,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -3176,7 +3353,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -3202,7 +3379,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -3226,7 +3403,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -3252,7 +3429,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -3278,7 +3455,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -3301,7 +3478,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -3325,7 +3502,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -3350,7 +3527,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -3372,7 +3549,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -3394,7 +3571,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -3410,7 +3587,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -3430,7 +3607,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -3451,7 +3628,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -3470,7 +3647,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -3490,7 +3667,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks.
+     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
      * </pre>
      *
      * <code>
@@ -4536,6 +4713,179 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
+      if (metadata_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(MetadataDefaultEntryHolder.defaultEntry);
+      }
+      return metadata_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableMetadata() {
+      if (metadata_ == null) {
+        metadata_ =
+            com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
+      }
+      if (!metadata_.isMutable()) {
+        metadata_ = metadata_.copy();
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return metadata_;
+    }
+
+    public int getMetadataCount() {
+      return internalGetMetadata().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata of the service attachment.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 86866735;</code>
+     */
+    @java.lang.Override
+    public boolean containsMetadata(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetMetadata().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getMetadataMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+      return getMetadataMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata of the service attachment.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 86866735;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+      return internalGetMetadata().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata of the service attachment.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 86866735;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata of the service attachment.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 86866735;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getMetadataOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      internalGetMutableMetadata().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata of the service attachment.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 86866735;</code>
+     */
+    public Builder removeMetadata(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableMetadata().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      bitField0_ |= 0x00000800;
+      return internalGetMutableMetadata().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata of the service attachment.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 86866735;</code>
+     */
+    public Builder putMetadata(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000800;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata of the service attachment.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 86866735;</code>
+     */
+    public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000800;
+      return this;
+    }
+
     private java.lang.Object name_ = "";
 
     /**
@@ -4550,7 +4900,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -4616,7 +4966,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4634,7 +4984,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4657,7 +5007,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4669,7 +5019,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (!natSubnets_.isModifiable()) {
         natSubnets_ = new com.google.protobuf.LazyStringArrayList(natSubnets_);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
     }
 
     /**
@@ -4754,7 +5104,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       ensureNatSubnetsIsMutable();
       natSubnets_.set(index, value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4777,7 +5127,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       ensureNatSubnetsIsMutable();
       natSubnets_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4797,7 +5147,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     public Builder addAllNatSubnets(java.lang.Iterable<java.lang.String> values) {
       ensureNatSubnetsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, natSubnets_);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4815,7 +5165,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearNatSubnets() {
       natSubnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       ;
       onChanged();
       return this;
@@ -4840,7 +5190,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureNatSubnetsIsMutable();
       natSubnets_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4859,7 +5209,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the producerForwardingRule field is set.
      */
     public boolean hasProducerForwardingRule() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -4925,7 +5275,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       producerForwardingRule_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4943,7 +5293,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearProducerForwardingRule() {
       producerForwardingRule_ = getDefaultInstance().getProducerForwardingRule();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4966,7 +5316,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       producerForwardingRule_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4986,7 +5336,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasPropagatedConnectionLimit() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -5020,7 +5370,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     public Builder setPropagatedConnectionLimit(int value) {
 
       propagatedConnectionLimit_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5037,7 +5387,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPropagatedConnectionLimit() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       propagatedConnectionLimit_ = 0;
       onChanged();
       return this;
@@ -5062,7 +5412,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the pscServiceAttachmentId field is set.
      */
     public boolean hasPscServiceAttachmentId() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -5104,7 +5454,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       } else {
         pscServiceAttachmentIdBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5125,7 +5475,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       } else {
         pscServiceAttachmentIdBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5141,7 +5491,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergePscServiceAttachmentId(com.google.cloud.compute.v1.Uint128 value) {
       if (pscServiceAttachmentIdBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && pscServiceAttachmentId_ != null
             && pscServiceAttachmentId_
                 != com.google.cloud.compute.v1.Uint128.getDefaultInstance()) {
@@ -5153,7 +5503,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         pscServiceAttachmentIdBuilder_.mergeFrom(value);
       }
       if (pscServiceAttachmentId_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -5169,7 +5519,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
      */
     public Builder clearPscServiceAttachmentId() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       pscServiceAttachmentId_ = null;
       if (pscServiceAttachmentIdBuilder_ != null) {
         pscServiceAttachmentIdBuilder_.dispose();
@@ -5189,7 +5539,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
      */
     public com.google.cloud.compute.v1.Uint128.Builder getPscServiceAttachmentIdBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getPscServiceAttachmentIdFieldBuilder().getBuilder();
     }
@@ -5254,7 +5604,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasReconcileConnections() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -5288,7 +5638,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     public Builder setReconcileConnections(boolean value) {
 
       reconcileConnections_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5305,7 +5655,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearReconcileConnections() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       reconcileConnections_ = false;
       onChanged();
       return this;
@@ -5325,7 +5675,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -5391,7 +5741,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5409,7 +5759,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -5432,7 +5782,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5451,7 +5801,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -5517,7 +5867,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5535,7 +5885,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -5558,7 +5908,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5577,7 +5927,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the targetService field is set.
      */
     public boolean hasTargetService() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -5643,7 +5993,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       targetService_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5661,7 +6011,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearTargetService() {
       targetService_ = getDefaultInstance().getTargetService();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -5684,7 +6034,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       targetService_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }

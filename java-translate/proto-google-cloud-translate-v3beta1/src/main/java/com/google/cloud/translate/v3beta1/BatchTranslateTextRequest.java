@@ -166,7 +166,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Source language code.
+   * Required. Source language code. Supported language codes are listed in
+   * [Language
+   * Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -190,7 +192,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Source language code.
+   * Required. Source language code. Supported language codes are listed in
+   * [Language
+   * Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -220,7 +224,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Specify up to 10 language codes here.
+   * Required. Specify up to 10 language codes here. Supported language codes
+   * are listed in [Language
+   * Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -236,7 +242,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Specify up to 10 language codes here.
+   * Required. Specify up to 10 language codes here. Supported language codes
+   * are listed in [Language
+   * Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -252,7 +260,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Specify up to 10 language codes here.
+   * Required. Specify up to 10 language codes here. Supported language codes
+   * are listed in [Language
+   * Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -269,7 +279,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Specify up to 10 language codes here.
+   * Required. Specify up to 10 language codes here. Supported language codes
+   * are listed in [Language
+   * Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1720,7 +1732,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Source language code.
+     * Required. Source language code. Supported language codes are listed in
+     * [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1743,7 +1757,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Source language code.
+     * Required. Source language code. Supported language codes are listed in
+     * [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1766,7 +1782,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Source language code.
+     * Required. Source language code. Supported language codes are listed in
+     * [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1788,7 +1806,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Source language code.
+     * Required. Source language code. Supported language codes are listed in
+     * [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1806,7 +1826,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Source language code.
+     * Required. Source language code. Supported language codes are listed in
+     * [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1839,7 +1861,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Specify up to 10 language codes here.
+     * Required. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1856,7 +1880,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Specify up to 10 language codes here.
+     * Required. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1872,7 +1898,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Specify up to 10 language codes here.
+     * Required. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1889,7 +1917,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Specify up to 10 language codes here.
+     * Required. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1906,7 +1936,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Specify up to 10 language codes here.
+     * Required. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1931,7 +1963,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Specify up to 10 language codes here.
+     * Required. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1955,7 +1989,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Specify up to 10 language codes here.
+     * Required. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1976,7 +2012,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Specify up to 10 language codes here.
+     * Required. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1996,7 +2034,9 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Specify up to 10 language codes here.
+     * Required. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];

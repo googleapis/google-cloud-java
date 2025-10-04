@@ -42,6 +42,7 @@ public class AsyncDeleteRagFile {
               .setName(
                   RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]")
                       .toString())
+              .setForceDelete(true)
               .build();
       ApiFuture<Operation> future =
           vertexRagDataServiceClient.deleteRagFileCallable().futureCall(request);

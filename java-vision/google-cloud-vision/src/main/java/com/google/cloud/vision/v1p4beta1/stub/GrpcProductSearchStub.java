@@ -84,6 +84,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProductSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListProductSetsRequest, ListProductSetsResponse>
@@ -95,6 +96,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(ListProductSetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProductSetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProductSetRequest, ProductSet>
@@ -105,6 +107,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProductSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateProductSetRequest, ProductSet>
@@ -115,6 +118,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProductSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteProductSetRequest, Empty>
@@ -125,6 +129,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateProductRequest, Product>
@@ -135,6 +140,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateProductRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListProductsRequest, ListProductsResponse>
@@ -145,6 +151,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListProductsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProductsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProductRequest, Product> getProductMethodDescriptor =
@@ -153,6 +160,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
           .setFullMethodName("google.cloud.vision.v1p4beta1.ProductSearch/GetProduct")
           .setRequestMarshaller(ProtoUtils.marshaller(GetProductRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateProductRequest, Product>
@@ -163,6 +171,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateProductRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteProductRequest, Empty> deleteProductMethodDescriptor =
@@ -171,6 +180,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
           .setFullMethodName("google.cloud.vision.v1p4beta1.ProductSearch/DeleteProduct")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteProductRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateReferenceImageRequest, ReferenceImage>
@@ -181,6 +191,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReferenceImageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReferenceImage.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteReferenceImageRequest, Empty>
@@ -191,6 +202,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteReferenceImageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReferenceImagesRequest, ListReferenceImagesResponse>
@@ -202,6 +214,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(ListReferenceImagesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReferenceImagesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReferenceImageRequest, ReferenceImage>
@@ -212,6 +225,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetReferenceImageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReferenceImage.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AddProductToProductSetRequest, Empty>
@@ -223,6 +237,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AddProductToProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveProductFromProductSetRequest, Empty>
@@ -234,6 +249,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RemoveProductFromProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -248,6 +264,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(ListProductsInProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProductsInProductSetResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportProductSetsRequest, Operation>
@@ -258,6 +275,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportProductSetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PurgeProductsRequest, Operation>
@@ -268,6 +286,7 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PurgeProductsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateProductSetRequest, ProductSet> createProductSetCallable;

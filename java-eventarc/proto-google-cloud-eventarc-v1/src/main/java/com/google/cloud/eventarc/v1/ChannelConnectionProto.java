@@ -32,6 +32,10 @@ public final class ChannelConnectionProto {
       internal_static_google_cloud_eventarc_v1_ChannelConnection_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_eventarc_v1_ChannelConnection_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_ChannelConnection_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_ChannelConnection_LabelsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -45,7 +49,7 @@ public final class ChannelConnectionProto {
           + "1google/cloud/eventarc/v1/channel_conne"
           + "ction.proto\022\030google.cloud.eventarc.v1\032\037g"
           + "oogle/api/field_behavior.proto\032\031google/a"
-          + "pi/resource.proto\032\037google/protobuf/timestamp.proto\"\247\003\n"
+          + "pi/resource.proto\032\037google/protobuf/timestamp.proto\"\244\004\n"
           + "\021ChannelConnection\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022\020\n"
           + "\003uid\030\002 \001(\tB\003\340A\003\0228\n"
@@ -54,15 +58,19 @@ public final class ChannelConnectionProto {
           + "\013create_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\007"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\035\n"
-          + "\020activation_token\030\010 \001(\tB\003\340A\004:\247\001\352A\243\001\n"
-          + ")eventarc.googleapis.com/ChannelConnection\022Opr"
-          + "ojects/{project}/locations/{location}/ch"
-          + "annelConnections/{channel_connection}*\022channelConnections2\021channelConnectionB\306\001\n"
-          + "\034com.google.cloud.eventarc.v1B\026ChannelCo"
-          + "nnectionProtoP\001Z8cloud.google.com/go/eve"
-          + "ntarc/apiv1/eventarcpb;eventarcpb\252\002\030Goog"
-          + "le.Cloud.Eventarc.V1\312\002\030Google\\Cloud\\Even"
-          + "tarc\\V1\352\002\033Google::Cloud::Eventarc::V1b\006proto3"
+          + "\020activation_token\030\010 \001(\tB\003\340A\004\022L\n"
+          + "\006labels\030\t \003"
+          + "(\01327.google.cloud.eventarc.v1.ChannelConnection.LabelsEntryB\003\340A\001\032-\n"
+          + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001:\247\001\352A\243\001\n"
+          + ")eventarc.googleapis.com/ChannelConnection\022Oprojects/{project}/locations/{locatio"
+          + "n}/channelConnections/{channel_connectio"
+          + "n}*\022channelConnections2\021channelConnectionB\306\001\n"
+          + "\034com.google.cloud.eventarc.v1B\026ChannelConnectionProtoP\001Z8cloud.google.com/g"
+          + "o/eventarc/apiv1/eventarcpb;eventarcpb\252\002"
+          + "\030Google.Cloud.Eventarc.V1\312\002\030Google\\Cloud"
+          + "\\Eventarc\\V1\352\002\033Google::Cloud::Eventarc::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -78,7 +86,17 @@ public final class ChannelConnectionProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_eventarc_v1_ChannelConnection_descriptor,
             new java.lang.String[] {
-              "Name", "Uid", "Channel", "CreateTime", "UpdateTime", "ActivationToken",
+              "Name", "Uid", "Channel", "CreateTime", "UpdateTime", "ActivationToken", "Labels",
+            });
+    internal_static_google_cloud_eventarc_v1_ChannelConnection_LabelsEntry_descriptor =
+        internal_static_google_cloud_eventarc_v1_ChannelConnection_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_eventarc_v1_ChannelConnection_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_ChannelConnection_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

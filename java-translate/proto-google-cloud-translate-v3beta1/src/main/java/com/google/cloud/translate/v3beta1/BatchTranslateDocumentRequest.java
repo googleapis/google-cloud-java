@@ -226,7 +226,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The BCP-47 language code to use for translation of the input
-   * document. Specify up to 10 language codes here.
+   * document. Specify up to 10 language codes here. Supported language codes
+   * are listed in [Language
+   * Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -243,7 +245,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The BCP-47 language code to use for translation of the input
-   * document. Specify up to 10 language codes here.
+   * document. Specify up to 10 language codes here. Supported language codes
+   * are listed in [Language
+   * Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -260,7 +264,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The BCP-47 language code to use for translation of the input
-   * document. Specify up to 10 language codes here.
+   * document. Specify up to 10 language codes here. Supported language codes
+   * are listed in [Language
+   * Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -278,7 +284,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The BCP-47 language code to use for translation of the input
-   * document. Specify up to 10 language codes here.
+   * document. Specify up to 10 language codes here. Supported language codes
+   * are listed in [Language
+   * Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -2053,7 +2061,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The BCP-47 language code to use for translation of the input
-     * document. Specify up to 10 language codes here.
+     * document. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -2071,7 +2081,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The BCP-47 language code to use for translation of the input
-     * document. Specify up to 10 language codes here.
+     * document. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -2088,7 +2100,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The BCP-47 language code to use for translation of the input
-     * document. Specify up to 10 language codes here.
+     * document. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -2106,7 +2120,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The BCP-47 language code to use for translation of the input
-     * document. Specify up to 10 language codes here.
+     * document. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -2124,7 +2140,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The BCP-47 language code to use for translation of the input
-     * document. Specify up to 10 language codes here.
+     * document. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -2150,7 +2168,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The BCP-47 language code to use for translation of the input
-     * document. Specify up to 10 language codes here.
+     * document. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -2175,7 +2195,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The BCP-47 language code to use for translation of the input
-     * document. Specify up to 10 language codes here.
+     * document. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -2197,7 +2219,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The BCP-47 language code to use for translation of the input
-     * document. Specify up to 10 language codes here.
+     * document. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -2218,7 +2242,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The BCP-47 language code to use for translation of the input
-     * document. Specify up to 10 language codes here.
+     * document. Specify up to 10 language codes here. Supported language codes
+     * are listed in [Language
+     * Support](https://cloud.google.com/translate/docs/languages).
      * </pre>
      *
      * <code>repeated string target_language_codes = 3 [(.google.api.field_behavior) = REQUIRED];

@@ -1331,6 +1331,7 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProject("serviceProject1947145892")
    *           .build();
    *   for (UsableSubnetwork element : subnetworksClient.listUsable(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1366,6 +1367,7 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProject("serviceProject1947145892")
    *           .build();
    *   ApiFuture<UsableSubnetwork> future =
    *       subnetworksClient.listUsablePagedCallable().futureCall(request);
@@ -1402,6 +1404,7 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProject("serviceProject1947145892")
    *           .build();
    *   while (true) {
    *     UsableSubnetworksAggregatedList response =

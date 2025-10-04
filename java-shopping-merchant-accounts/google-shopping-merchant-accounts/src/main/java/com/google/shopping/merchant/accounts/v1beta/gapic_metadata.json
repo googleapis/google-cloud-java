@@ -122,6 +122,27 @@
         }
       }
     },
+    "CheckoutSettingsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CheckoutSettingsServiceClient",
+          "rpcs": {
+            "CreateCheckoutSettings": {
+              "methods": ["createCheckoutSettings", "createCheckoutSettings", "createCheckoutSettings", "createCheckoutSettingsCallable"]
+            },
+            "DeleteCheckoutSettings": {
+              "methods": ["deleteCheckoutSettings", "deleteCheckoutSettings", "deleteCheckoutSettings", "deleteCheckoutSettingsCallable"]
+            },
+            "GetCheckoutSettings": {
+              "methods": ["getCheckoutSettings", "getCheckoutSettings", "getCheckoutSettings", "getCheckoutSettingsCallable"]
+            },
+            "UpdateCheckoutSettings": {
+              "methods": ["updateCheckoutSettings", "updateCheckoutSettings", "updateCheckoutSettingsCallable"]
+            }
+          }
+        }
+      }
+    },
     "EmailPreferencesService": {
       "clients": {
         "grpc": {

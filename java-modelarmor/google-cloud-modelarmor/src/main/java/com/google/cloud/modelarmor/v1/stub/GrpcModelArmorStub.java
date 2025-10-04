@@ -69,6 +69,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
                   ProtoUtils.marshaller(ListTemplatesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTemplatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTemplateRequest, Template> getTemplateMethodDescriptor =
@@ -77,6 +78,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
           .setFullMethodName("google.cloud.modelarmor.v1.ModelArmor/GetTemplate")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTemplateRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Template.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateTemplateRequest, Template>
@@ -87,6 +89,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Template.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTemplateRequest, Template>
@@ -97,6 +100,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Template.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTemplateRequest, Empty>
@@ -107,6 +111,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFloorSettingRequest, FloorSetting>
@@ -117,6 +122,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFloorSettingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FloorSetting.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFloorSettingRequest, FloorSetting>
@@ -127,6 +133,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFloorSettingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FloorSetting.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SanitizeUserPromptRequest, SanitizeUserPromptResponse>
@@ -138,6 +145,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
                   ProtoUtils.marshaller(SanitizeUserPromptRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SanitizeUserPromptResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
@@ -149,6 +157,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
                   ProtoUtils.marshaller(SanitizeModelResponseRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SanitizeModelResponseResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -160,6 +169,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -168,6 +178,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListTemplatesRequest, ListTemplatesResponse> listTemplatesCallable;

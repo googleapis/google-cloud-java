@@ -111,6 +111,7 @@ public class SearchServiceClientTest {
             .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
             .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
             .addAllVariantRollupKeys(new ArrayList<String>())
+            .setExperimentId("experimentId-404563464")
             .addAllPageCategories(new ArrayList<String>())
             .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
@@ -155,6 +156,7 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getRelevanceThreshold(), actualRequest.getRelevanceThreshold());
     Assert.assertEquals(
         request.getVariantRollupKeysList(), actualRequest.getVariantRollupKeysList());
+    Assert.assertEquals(request.getExperimentId(), actualRequest.getExperimentId());
     Assert.assertEquals(request.getPageCategoriesList(), actualRequest.getPageCategoriesList());
     Assert.assertEquals(request.getSearchMode(), actualRequest.getSearchMode());
     Assert.assertEquals(request.getPersonalizationSpec(), actualRequest.getPersonalizationSpec());
@@ -199,6 +201,7 @@ public class SearchServiceClientTest {
               .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
               .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
               .addAllVariantRollupKeys(new ArrayList<String>())
+              .setExperimentId("experimentId-404563464")
               .addAllPageCategories(new ArrayList<String>())
               .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())

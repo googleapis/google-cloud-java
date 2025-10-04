@@ -409,5 +409,48 @@ public interface ClusterOrBuilder
    */
   boolean getSatisfiesPzs();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TLS configuration for the Kafka cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.managedkafka.v1.TlsConfig tls_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the tlsConfig field is set.
+   */
+  boolean hasTlsConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TLS configuration for the Kafka cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.managedkafka.v1.TlsConfig tls_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tlsConfig.
+   */
+  com.google.cloud.managedkafka.v1.TlsConfig getTlsConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TLS configuration for the Kafka cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.managedkafka.v1.TlsConfig tls_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.managedkafka.v1.TlsConfigOrBuilder getTlsConfigOrBuilder();
+
   com.google.cloud.managedkafka.v1.Cluster.PlatformConfigCase getPlatformConfigCase();
 }

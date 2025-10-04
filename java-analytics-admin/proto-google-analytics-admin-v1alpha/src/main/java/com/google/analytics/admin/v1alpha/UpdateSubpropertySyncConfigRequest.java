@@ -71,7 +71,7 @@ public final class UpdateSubpropertySyncConfigRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. The SubpropertySyncConfig to update.
+   * Required. The `SubpropertySyncConfig` to update.
    * </pre>
    *
    * <code>
@@ -89,7 +89,7 @@ public final class UpdateSubpropertySyncConfigRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. The SubpropertySyncConfig to update.
+   * Required. The `SubpropertySyncConfig` to update.
    * </pre>
    *
    * <code>
@@ -109,7 +109,7 @@ public final class UpdateSubpropertySyncConfigRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. The SubpropertySyncConfig to update.
+   * Required. The `SubpropertySyncConfig` to update.
    * </pre>
    *
    * <code>
@@ -605,7 +605,7 @@ public final class UpdateSubpropertySyncConfigRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The SubpropertySyncConfig to update.
+     * Required. The `SubpropertySyncConfig` to update.
      * </pre>
      *
      * <code>
@@ -622,7 +622,7 @@ public final class UpdateSubpropertySyncConfigRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The SubpropertySyncConfig to update.
+     * Required. The `SubpropertySyncConfig` to update.
      * </pre>
      *
      * <code>
@@ -645,7 +645,7 @@ public final class UpdateSubpropertySyncConfigRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The SubpropertySyncConfig to update.
+     * Required. The `SubpropertySyncConfig` to update.
      * </pre>
      *
      * <code>
@@ -671,7 +671,7 @@ public final class UpdateSubpropertySyncConfigRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The SubpropertySyncConfig to update.
+     * Required. The `SubpropertySyncConfig` to update.
      * </pre>
      *
      * <code>
@@ -694,7 +694,7 @@ public final class UpdateSubpropertySyncConfigRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The SubpropertySyncConfig to update.
+     * Required. The `SubpropertySyncConfig` to update.
      * </pre>
      *
      * <code>
@@ -726,7 +726,7 @@ public final class UpdateSubpropertySyncConfigRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The SubpropertySyncConfig to update.
+     * Required. The `SubpropertySyncConfig` to update.
      * </pre>
      *
      * <code>
@@ -748,7 +748,7 @@ public final class UpdateSubpropertySyncConfigRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The SubpropertySyncConfig to update.
+     * Required. The `SubpropertySyncConfig` to update.
      * </pre>
      *
      * <code>
@@ -766,7 +766,7 @@ public final class UpdateSubpropertySyncConfigRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The SubpropertySyncConfig to update.
+     * Required. The `SubpropertySyncConfig` to update.
      * </pre>
      *
      * <code>
@@ -788,7 +788,7 @@ public final class UpdateSubpropertySyncConfigRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The SubpropertySyncConfig to update.
+     * Required. The `SubpropertySyncConfig` to update.
      * </pre>
      *
      * <code>

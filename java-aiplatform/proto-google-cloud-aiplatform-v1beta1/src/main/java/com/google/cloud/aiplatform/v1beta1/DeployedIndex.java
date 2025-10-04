@@ -681,6 +681,35 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     return enableAccessLogging_;
   }
 
+  public static final int ENABLE_DATAPOINT_UPSERT_LOGGING_FIELD_NUMBER = 20;
+  private boolean enableDatapointUpsertLogging_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, logs to Cloud Logging errors relating to datapoint
+   * upserts.
+   *
+   * Under normal operation conditions, these log entries should be very rare.
+   * However, if incompatible datapoint updates are being uploaded to an index,
+   * a high volume of log entries may be generated in a short period of time.
+   *
+   * Note that logs may incur a cost, especially if the deployed index receives
+   * a high volume of datapoint upserts. Estimate your costs before enabling
+   * this option.
+   * </pre>
+   *
+   * <code>bool enable_datapoint_upsert_logging = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableDatapointUpsertLogging.
+   */
+  @java.lang.Override
+  public boolean getEnableDatapointUpsertLogging() {
+    return enableDatapointUpsertLogging_;
+  }
+
   public static final int DEPLOYED_INDEX_AUTH_CONFIG_FIELD_NUMBER = 9;
   private com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig deployedIndexAuthConfig_;
 
@@ -1085,6 +1114,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < pscAutomationConfigs_.size(); i++) {
       output.writeMessage(19, pscAutomationConfigs_.get(i));
     }
+    if (enableDatapointUpsertLogging_ != false) {
+      output.writeBool(20, enableDatapointUpsertLogging_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1141,6 +1173,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               19, pscAutomationConfigs_.get(i));
     }
+    if (enableDatapointUpsertLogging_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(20, enableDatapointUpsertLogging_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1181,6 +1217,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       if (!getDedicatedResources().equals(other.getDedicatedResources())) return false;
     }
     if (getEnableAccessLogging() != other.getEnableAccessLogging()) return false;
+    if (getEnableDatapointUpsertLogging() != other.getEnableDatapointUpsertLogging()) return false;
     if (hasDeployedIndexAuthConfig() != other.hasDeployedIndexAuthConfig()) return false;
     if (hasDeployedIndexAuthConfig()) {
       if (!getDeployedIndexAuthConfig().equals(other.getDeployedIndexAuthConfig())) return false;
@@ -1227,6 +1264,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ENABLE_ACCESS_LOGGING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAccessLogging());
+    hash = (37 * hash) + ENABLE_DATAPOINT_UPSERT_LOGGING_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableDatapointUpsertLogging());
     if (hasDeployedIndexAuthConfig()) {
       hash = (37 * hash) + DEPLOYED_INDEX_AUTH_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDeployedIndexAuthConfig().hashCode();
@@ -1425,6 +1465,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
         dedicatedResourcesBuilder_ = null;
       }
       enableAccessLogging_ = false;
+      enableDatapointUpsertLogging_ = false;
       deployedIndexAuthConfig_ = null;
       if (deployedIndexAuthConfigBuilder_ != null) {
         deployedIndexAuthConfigBuilder_.dispose();
@@ -1438,7 +1479,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
         pscAutomationConfigs_ = null;
         pscAutomationConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
 
@@ -1477,9 +1518,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1beta1.DeployedIndex result) {
       if (pscAutomationConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           pscAutomationConfigs_ = java.util.Collections.unmodifiableList(pscAutomationConfigs_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.pscAutomationConfigs_ = pscAutomationConfigs_;
       } else {
@@ -1531,17 +1572,20 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
         result.enableAccessLogging_ = enableAccessLogging_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.enableDatapointUpsertLogging_ = enableDatapointUpsertLogging_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.deployedIndexAuthConfig_ =
             deployedIndexAuthConfigBuilder_ == null
                 ? deployedIndexAuthConfig_
                 : deployedIndexAuthConfigBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         reservedIpRanges_.makeImmutable();
         result.reservedIpRanges_ = reservedIpRanges_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.deploymentGroup_ = deploymentGroup_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1626,13 +1670,16 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       if (other.getEnableAccessLogging() != false) {
         setEnableAccessLogging(other.getEnableAccessLogging());
       }
+      if (other.getEnableDatapointUpsertLogging() != false) {
+        setEnableDatapointUpsertLogging(other.getEnableDatapointUpsertLogging());
+      }
       if (other.hasDeployedIndexAuthConfig()) {
         mergeDeployedIndexAuthConfig(other.getDeployedIndexAuthConfig());
       }
       if (!other.reservedIpRanges_.isEmpty()) {
         if (reservedIpRanges_.isEmpty()) {
           reservedIpRanges_ = other.reservedIpRanges_;
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
         } else {
           ensureReservedIpRangesIsMutable();
           reservedIpRanges_.addAll(other.reservedIpRanges_);
@@ -1641,14 +1688,14 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDeploymentGroup().isEmpty()) {
         deploymentGroup_ = other.deploymentGroup_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (pscAutomationConfigsBuilder_ == null) {
         if (!other.pscAutomationConfigs_.isEmpty()) {
           if (pscAutomationConfigs_.isEmpty()) {
             pscAutomationConfigs_ = other.pscAutomationConfigs_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensurePscAutomationConfigsIsMutable();
             pscAutomationConfigs_.addAll(other.pscAutomationConfigs_);
@@ -1661,7 +1708,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
             pscAutomationConfigsBuilder_.dispose();
             pscAutomationConfigsBuilder_ = null;
             pscAutomationConfigs_ = other.pscAutomationConfigs_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             pscAutomationConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPscAutomationConfigsFieldBuilder()
@@ -1751,7 +1798,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getDeployedIndexAuthConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 74
             case 82:
@@ -1764,7 +1811,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
             case 90:
               {
                 deploymentGroup_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 90
             case 130:
@@ -1788,6 +1835,12 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 154
+            case 160:
+              {
+                enableDatapointUpsertLogging_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 160
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3693,6 +3746,92 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean enableDatapointUpsertLogging_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, logs to Cloud Logging errors relating to datapoint
+     * upserts.
+     *
+     * Under normal operation conditions, these log entries should be very rare.
+     * However, if incompatible datapoint updates are being uploaded to an index,
+     * a high volume of log entries may be generated in a short period of time.
+     *
+     * Note that logs may incur a cost, especially if the deployed index receives
+     * a high volume of datapoint upserts. Estimate your costs before enabling
+     * this option.
+     * </pre>
+     *
+     * <code>bool enable_datapoint_upsert_logging = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableDatapointUpsertLogging.
+     */
+    @java.lang.Override
+    public boolean getEnableDatapointUpsertLogging() {
+      return enableDatapointUpsertLogging_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, logs to Cloud Logging errors relating to datapoint
+     * upserts.
+     *
+     * Under normal operation conditions, these log entries should be very rare.
+     * However, if incompatible datapoint updates are being uploaded to an index,
+     * a high volume of log entries may be generated in a short period of time.
+     *
+     * Note that logs may incur a cost, especially if the deployed index receives
+     * a high volume of datapoint upserts. Estimate your costs before enabling
+     * this option.
+     * </pre>
+     *
+     * <code>bool enable_datapoint_upsert_logging = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enableDatapointUpsertLogging to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableDatapointUpsertLogging(boolean value) {
+
+      enableDatapointUpsertLogging_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, logs to Cloud Logging errors relating to datapoint
+     * upserts.
+     *
+     * Under normal operation conditions, these log entries should be very rare.
+     * However, if incompatible datapoint updates are being uploaded to an index,
+     * a high volume of log entries may be generated in a short period of time.
+     *
+     * Note that logs may incur a cost, especially if the deployed index receives
+     * a high volume of datapoint upserts. Estimate your costs before enabling
+     * this option.
+     * </pre>
+     *
+     * <code>bool enable_datapoint_upsert_logging = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableDatapointUpsertLogging() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      enableDatapointUpsertLogging_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig deployedIndexAuthConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig,
@@ -3714,7 +3853,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deployedIndexAuthConfig field is set.
      */
     public boolean hasDeployedIndexAuthConfig() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3762,7 +3901,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       } else {
         deployedIndexAuthConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3785,7 +3924,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       } else {
         deployedIndexAuthConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3804,7 +3943,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDeployedIndexAuthConfig(
         com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig value) {
       if (deployedIndexAuthConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && deployedIndexAuthConfig_ != null
             && deployedIndexAuthConfig_
                 != com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig
@@ -3817,7 +3956,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
         deployedIndexAuthConfigBuilder_.mergeFrom(value);
       }
       if (deployedIndexAuthConfig_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -3835,7 +3974,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDeployedIndexAuthConfig() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       deployedIndexAuthConfig_ = null;
       if (deployedIndexAuthConfigBuilder_ != null) {
         deployedIndexAuthConfigBuilder_.dispose();
@@ -3858,7 +3997,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.Builder
         getDeployedIndexAuthConfigBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getDeployedIndexAuthConfigFieldBuilder().getBuilder();
     }
@@ -3920,7 +4059,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       if (!reservedIpRanges_.isModifiable()) {
         reservedIpRanges_ = new com.google.protobuf.LazyStringArrayList(reservedIpRanges_);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
     }
 
     /**
@@ -4070,7 +4209,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       }
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.set(index, value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4106,7 +4245,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       }
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.add(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4139,7 +4278,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllReservedIpRanges(java.lang.Iterable<java.lang.String> values) {
       ensureReservedIpRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, reservedIpRanges_);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4170,7 +4309,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearReservedIpRanges() {
       reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       ;
       onChanged();
       return this;
@@ -4208,7 +4347,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.add(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4311,7 +4450,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       deploymentGroup_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4340,7 +4479,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDeploymentGroup() {
       deploymentGroup_ = getDefaultInstance().getDeploymentGroup();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4374,7 +4513,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       deploymentGroup_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4383,11 +4522,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
         pscAutomationConfigs_ = java.util.Collections.emptyList();
 
     private void ensurePscAutomationConfigsIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         pscAutomationConfigs_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig>(
                 pscAutomationConfigs_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -4665,7 +4804,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPscAutomationConfigs() {
       if (pscAutomationConfigsBuilder_ == null) {
         pscAutomationConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         pscAutomationConfigsBuilder_.clear();
@@ -4829,7 +4968,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1beta1.PSCAutomationConfig.Builder,
                 com.google.cloud.aiplatform.v1beta1.PSCAutomationConfigOrBuilder>(
                 pscAutomationConfigs_,
-                ((bitField0_ & 0x00001000) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         pscAutomationConfigs_ = null;

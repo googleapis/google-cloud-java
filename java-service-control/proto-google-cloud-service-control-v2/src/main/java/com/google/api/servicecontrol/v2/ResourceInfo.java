@@ -241,11 +241,10 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
    * Optional. The identifier of the container of this resource. For Google
    * Cloud APIs, the resource container must be one of the following formats:
    *     - `projects/&lt;project-id or project-number&gt;`
-   *     - `folders/&lt;folder-id&gt;`
-   *     - `organizations/&lt;organization-id&gt;`
-   * For the policy enforcement on the container level (VPCSC and Location
-   * Policy check), this field takes precedence on the container extracted from
-   * name when presents.
+   *     - `folders/&lt;folder-number&gt;`
+   *     - `organizations/&lt;organization-number&gt;`
+   * Required for the policy enforcement on the container level (e.g. VPCSC,
+   * Location Policy check, Org Policy check).
    * </pre>
    *
    * <code>string container = 4;</code>
@@ -272,11 +271,10 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
    * Optional. The identifier of the container of this resource. For Google
    * Cloud APIs, the resource container must be one of the following formats:
    *     - `projects/&lt;project-id or project-number&gt;`
-   *     - `folders/&lt;folder-id&gt;`
-   *     - `organizations/&lt;organization-id&gt;`
-   * For the policy enforcement on the container level (VPCSC and Location
-   * Policy check), this field takes precedence on the container extracted from
-   * name when presents.
+   *     - `folders/&lt;folder-number&gt;`
+   *     - `organizations/&lt;organization-number&gt;`
+   * Required for the policy enforcement on the container level (e.g. VPCSC,
+   * Location Policy check, Org Policy check).
    * </pre>
    *
    * <code>string container = 4;</code>
@@ -305,9 +303,9 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The location of the resource. The value must be a valid zone,
-   * region or multiregion. For example: "europe-west4" or
-   * "northamerica-northeast1-a"
+   * Optional. The location of the resource, it must be a valid zone, region or
+   * multiregion, for example: "europe-west4", "northamerica-northeast1-a".
+   * Required for location policy check.
    * </pre>
    *
    * <code>string location = 5;</code>
@@ -331,9 +329,9 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The location of the resource. The value must be a valid zone,
-   * region or multiregion. For example: "europe-west4" or
-   * "northamerica-northeast1-a"
+   * Optional. The location of the resource, it must be a valid zone, region or
+   * multiregion, for example: "europe-west4", "northamerica-northeast1-a".
+   * Required for location policy check.
    * </pre>
    *
    * <code>string location = 5;</code>
@@ -1138,11 +1136,10 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
      * Optional. The identifier of the container of this resource. For Google
      * Cloud APIs, the resource container must be one of the following formats:
      *     - `projects/&lt;project-id or project-number&gt;`
-     *     - `folders/&lt;folder-id&gt;`
-     *     - `organizations/&lt;organization-id&gt;`
-     * For the policy enforcement on the container level (VPCSC and Location
-     * Policy check), this field takes precedence on the container extracted from
-     * name when presents.
+     *     - `folders/&lt;folder-number&gt;`
+     *     - `organizations/&lt;organization-number&gt;`
+     * Required for the policy enforcement on the container level (e.g. VPCSC,
+     * Location Policy check, Org Policy check).
      * </pre>
      *
      * <code>string container = 4;</code>
@@ -1168,11 +1165,10 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
      * Optional. The identifier of the container of this resource. For Google
      * Cloud APIs, the resource container must be one of the following formats:
      *     - `projects/&lt;project-id or project-number&gt;`
-     *     - `folders/&lt;folder-id&gt;`
-     *     - `organizations/&lt;organization-id&gt;`
-     * For the policy enforcement on the container level (VPCSC and Location
-     * Policy check), this field takes precedence on the container extracted from
-     * name when presents.
+     *     - `folders/&lt;folder-number&gt;`
+     *     - `organizations/&lt;organization-number&gt;`
+     * Required for the policy enforcement on the container level (e.g. VPCSC,
+     * Location Policy check, Org Policy check).
      * </pre>
      *
      * <code>string container = 4;</code>
@@ -1198,11 +1194,10 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
      * Optional. The identifier of the container of this resource. For Google
      * Cloud APIs, the resource container must be one of the following formats:
      *     - `projects/&lt;project-id or project-number&gt;`
-     *     - `folders/&lt;folder-id&gt;`
-     *     - `organizations/&lt;organization-id&gt;`
-     * For the policy enforcement on the container level (VPCSC and Location
-     * Policy check), this field takes precedence on the container extracted from
-     * name when presents.
+     *     - `folders/&lt;folder-number&gt;`
+     *     - `organizations/&lt;organization-number&gt;`
+     * Required for the policy enforcement on the container level (e.g. VPCSC,
+     * Location Policy check, Org Policy check).
      * </pre>
      *
      * <code>string container = 4;</code>
@@ -1227,11 +1222,10 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
      * Optional. The identifier of the container of this resource. For Google
      * Cloud APIs, the resource container must be one of the following formats:
      *     - `projects/&lt;project-id or project-number&gt;`
-     *     - `folders/&lt;folder-id&gt;`
-     *     - `organizations/&lt;organization-id&gt;`
-     * For the policy enforcement on the container level (VPCSC and Location
-     * Policy check), this field takes precedence on the container extracted from
-     * name when presents.
+     *     - `folders/&lt;folder-number&gt;`
+     *     - `organizations/&lt;organization-number&gt;`
+     * Required for the policy enforcement on the container level (e.g. VPCSC,
+     * Location Policy check, Org Policy check).
      * </pre>
      *
      * <code>string container = 4;</code>
@@ -1252,11 +1246,10 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
      * Optional. The identifier of the container of this resource. For Google
      * Cloud APIs, the resource container must be one of the following formats:
      *     - `projects/&lt;project-id or project-number&gt;`
-     *     - `folders/&lt;folder-id&gt;`
-     *     - `organizations/&lt;organization-id&gt;`
-     * For the policy enforcement on the container level (VPCSC and Location
-     * Policy check), this field takes precedence on the container extracted from
-     * name when presents.
+     *     - `folders/&lt;folder-number&gt;`
+     *     - `organizations/&lt;organization-number&gt;`
+     * Required for the policy enforcement on the container level (e.g. VPCSC,
+     * Location Policy check, Org Policy check).
      * </pre>
      *
      * <code>string container = 4;</code>
@@ -1281,9 +1274,9 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The location of the resource. The value must be a valid zone,
-     * region or multiregion. For example: "europe-west4" or
-     * "northamerica-northeast1-a"
+     * Optional. The location of the resource, it must be a valid zone, region or
+     * multiregion, for example: "europe-west4", "northamerica-northeast1-a".
+     * Required for location policy check.
      * </pre>
      *
      * <code>string location = 5;</code>
@@ -1306,9 +1299,9 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The location of the resource. The value must be a valid zone,
-     * region or multiregion. For example: "europe-west4" or
-     * "northamerica-northeast1-a"
+     * Optional. The location of the resource, it must be a valid zone, region or
+     * multiregion, for example: "europe-west4", "northamerica-northeast1-a".
+     * Required for location policy check.
      * </pre>
      *
      * <code>string location = 5;</code>
@@ -1331,9 +1324,9 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The location of the resource. The value must be a valid zone,
-     * region or multiregion. For example: "europe-west4" or
-     * "northamerica-northeast1-a"
+     * Optional. The location of the resource, it must be a valid zone, region or
+     * multiregion, for example: "europe-west4", "northamerica-northeast1-a".
+     * Required for location policy check.
      * </pre>
      *
      * <code>string location = 5;</code>
@@ -1355,9 +1348,9 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The location of the resource. The value must be a valid zone,
-     * region or multiregion. For example: "europe-west4" or
-     * "northamerica-northeast1-a"
+     * Optional. The location of the resource, it must be a valid zone, region or
+     * multiregion, for example: "europe-west4", "northamerica-northeast1-a".
+     * Required for location policy check.
      * </pre>
      *
      * <code>string location = 5;</code>
@@ -1375,9 +1368,9 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The location of the resource. The value must be a valid zone,
-     * region or multiregion. For example: "europe-west4" or
-     * "northamerica-northeast1-a"
+     * Optional. The location of the resource, it must be a valid zone, region or
+     * multiregion, for example: "europe-west4", "northamerica-northeast1-a".
+     * Required for location policy check.
      * </pre>
      *
      * <code>string location = 5;</code>

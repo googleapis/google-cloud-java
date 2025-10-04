@@ -45,6 +45,7 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
     etag_ = "";
     uid_ = "";
     webhookId_ = "";
+    gitProxyUri_ = "";
   }
 
   @java.lang.Override
@@ -652,8 +653,7 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. A system-assigned unique identifier for a the
-   * GitRepositoryLink.
+   * Output only. A system-assigned unique identifier for the GitRepositoryLink.
    * </pre>
    *
    * <code>
@@ -679,8 +679,7 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. A system-assigned unique identifier for a the
-   * GitRepositoryLink.
+   * Output only. A system-assigned unique identifier for the GitRepositoryLink.
    * </pre>
    *
    * <code>
@@ -755,6 +754,63 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int GIT_PROXY_URI_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gitProxyUri_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URI to access the linked repository through the Git Proxy.
+   * This field is only populated if the git proxy is enabled for the
+   * connection.
+   * </pre>
+   *
+   * <code>string git_proxy_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The gitProxyUri.
+   */
+  @java.lang.Override
+  public java.lang.String getGitProxyUri() {
+    java.lang.Object ref = gitProxyUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      gitProxyUri_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. URI to access the linked repository through the Git Proxy.
+   * This field is only populated if the git proxy is enabled for the
+   * connection.
+   * </pre>
+   *
+   * <code>string git_proxy_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for gitProxyUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getGitProxyUriBytes() {
+    java.lang.Object ref = gitProxyUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      gitProxyUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -799,6 +855,9 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(webhookId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, webhookId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gitProxyUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, gitProxyUri_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -856,6 +915,9 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(webhookId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, webhookId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gitProxyUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, gitProxyUri_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -892,6 +954,7 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
     if (!getUid().equals(other.getUid())) return false;
     if (!getWebhookId().equals(other.getWebhookId())) return false;
+    if (!getGitProxyUri().equals(other.getGitProxyUri())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -935,6 +998,8 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getUid().hashCode();
     hash = (37 * hash) + WEBHOOK_ID_FIELD_NUMBER;
     hash = (53 * hash) + getWebhookId().hashCode();
+    hash = (37 * hash) + GIT_PROXY_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getGitProxyUri().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1136,6 +1201,7 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
       internalGetMutableAnnotations().clear();
       uid_ = "";
       webhookId_ = "";
+      gitProxyUri_ = "";
       return this;
     }
 
@@ -1210,6 +1276,9 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.webhookId_ = webhookId_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.gitProxyUri_ = gitProxyUri_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1299,6 +1368,11 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
       if (!other.getWebhookId().isEmpty()) {
         webhookId_ = other.webhookId_;
         bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (!other.getGitProxyUri().isEmpty()) {
+        gitProxyUri_ = other.gitProxyUri_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1405,6 +1479,12 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000400;
                 break;
               } // case 90
+            case 98:
+              {
+                gitProxyUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2827,8 +2907,7 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identifier for a the
-     * GitRepositoryLink.
+     * Output only. A system-assigned unique identifier for the GitRepositoryLink.
      * </pre>
      *
      * <code>
@@ -2853,8 +2932,7 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identifier for a the
-     * GitRepositoryLink.
+     * Output only. A system-assigned unique identifier for the GitRepositoryLink.
      * </pre>
      *
      * <code>
@@ -2879,8 +2957,7 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identifier for a the
-     * GitRepositoryLink.
+     * Output only. A system-assigned unique identifier for the GitRepositoryLink.
      * </pre>
      *
      * <code>
@@ -2904,8 +2981,7 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identifier for a the
-     * GitRepositoryLink.
+     * Output only. A system-assigned unique identifier for the GitRepositoryLink.
      * </pre>
      *
      * <code>
@@ -2925,8 +3001,7 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identifier for a the
-     * GitRepositoryLink.
+     * Output only. A system-assigned unique identifier for the GitRepositoryLink.
      * </pre>
      *
      * <code>
@@ -3054,6 +3129,127 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       webhookId_ = value;
       bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object gitProxyUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. URI to access the linked repository through the Git Proxy.
+     * This field is only populated if the git proxy is enabled for the
+     * connection.
+     * </pre>
+     *
+     * <code>string git_proxy_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The gitProxyUri.
+     */
+    public java.lang.String getGitProxyUri() {
+      java.lang.Object ref = gitProxyUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gitProxyUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. URI to access the linked repository through the Git Proxy.
+     * This field is only populated if the git proxy is enabled for the
+     * connection.
+     * </pre>
+     *
+     * <code>string git_proxy_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for gitProxyUri.
+     */
+    public com.google.protobuf.ByteString getGitProxyUriBytes() {
+      java.lang.Object ref = gitProxyUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        gitProxyUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. URI to access the linked repository through the Git Proxy.
+     * This field is only populated if the git proxy is enabled for the
+     * connection.
+     * </pre>
+     *
+     * <code>string git_proxy_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The gitProxyUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGitProxyUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      gitProxyUri_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. URI to access the linked repository through the Git Proxy.
+     * This field is only populated if the git proxy is enabled for the
+     * connection.
+     * </pre>
+     *
+     * <code>string git_proxy_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGitProxyUri() {
+      gitProxyUri_ = getDefaultInstance().getGitProxyUri();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. URI to access the linked repository through the Git Proxy.
+     * This field is only populated if the git proxy is enabled for the
+     * connection.
+     * </pre>
+     *
+     * <code>string git_proxy_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for gitProxyUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGitProxyUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      gitProxyUri_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

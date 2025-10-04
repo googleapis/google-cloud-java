@@ -48,6 +48,7 @@ public class GrpcServiceControllerStub extends ServiceControllerStub {
           .setFullMethodName("google.api.servicecontrol.v1.ServiceController/Check")
           .setRequestMarshaller(ProtoUtils.marshaller(CheckRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(CheckResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ReportRequest, ReportResponse> reportMethodDescriptor =
@@ -56,6 +57,7 @@ public class GrpcServiceControllerStub extends ServiceControllerStub {
           .setFullMethodName("google.api.servicecontrol.v1.ServiceController/Report")
           .setRequestMarshaller(ProtoUtils.marshaller(ReportRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ReportResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CheckRequest, CheckResponse> checkCallable;

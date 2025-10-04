@@ -23,10 +23,10 @@ package com.google.cloud.networkservices.v1;
  *
  *
  * <pre>
- * Load balancing schemes supported by the `LbTrafficExtension` resource and
- * `LbRouteExtension` resource.
- * For more information, refer to [Choosing a load
- * balancer](https://cloud.google.com/load-balancing/docs/backend-service).
+ * Load balancing schemes supported by the `LbTrafficExtension`,
+ * `LbRouteExtension`, and `LbEdgeExtension` resources.
+ * For more information, refer to [Backend services
+ * overview](https://cloud.google.com/load-balancing/docs/backend-service).
  * </pre>
  *
  * Protobuf enum {@code google.cloud.networkservices.v1.LoadBalancingScheme}

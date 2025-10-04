@@ -70,6 +70,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePlaybookRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Playbook.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePlaybookRequest, Empty>
@@ -80,6 +81,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePlaybookRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPlaybooksRequest, ListPlaybooksResponse>
@@ -91,6 +93,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
                   ProtoUtils.marshaller(ListPlaybooksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPlaybooksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPlaybookRequest, Playbook> getPlaybookMethodDescriptor =
@@ -99,6 +102,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Playbooks/GetPlaybook")
           .setRequestMarshaller(ProtoUtils.marshaller(GetPlaybookRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Playbook.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdatePlaybookRequest, Playbook>
@@ -109,6 +113,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePlaybookRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Playbook.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePlaybookVersionRequest, PlaybookVersion>
@@ -120,6 +125,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePlaybookVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PlaybookVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPlaybookVersionRequest, PlaybookVersion>
@@ -130,6 +136,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPlaybookVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PlaybookVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse>
@@ -142,6 +149,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
                   ProtoUtils.marshaller(ListPlaybookVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPlaybookVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePlaybookVersionRequest, Empty>
@@ -153,6 +161,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePlaybookVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -164,6 +173,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -172,6 +182,7 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreatePlaybookRequest, Playbook> createPlaybookCallable;

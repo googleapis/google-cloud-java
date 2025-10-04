@@ -169,4 +169,27 @@ public class MockVpcFlowLogsServiceImpl extends VpcFlowLogsServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void queryOrgVpcFlowLogsConfigs(
+      QueryOrgVpcFlowLogsConfigsRequest request,
+      StreamObserver<QueryOrgVpcFlowLogsConfigsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QueryOrgVpcFlowLogsConfigsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((QueryOrgVpcFlowLogsConfigsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method QueryOrgVpcFlowLogsConfigs, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QueryOrgVpcFlowLogsConfigsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

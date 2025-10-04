@@ -175,6 +175,43 @@ public interface InfoTypeDescriptionOrBuilder
    *
    *
    * <pre>
+   * Locations at which this feature can be used. May change over time.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.LocationSupport location_support = 6;</code>
+   *
+   * @return Whether the locationSupport field is set.
+   */
+  boolean hasLocationSupport();
+
+  /**
+   *
+   *
+   * <pre>
+   * Locations at which this feature can be used. May change over time.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.LocationSupport location_support = 6;</code>
+   *
+   * @return The locationSupport.
+   */
+  com.google.privacy.dlp.v2.LocationSupport getLocationSupport();
+
+  /**
+   *
+   *
+   * <pre>
+   * Locations at which this feature can be used. May change over time.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.LocationSupport location_support = 6;</code>
+   */
+  com.google.privacy.dlp.v2.LocationSupportOrBuilder getLocationSupportOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * A sample that is a true positive for this infoType.
    * </pre>
    *

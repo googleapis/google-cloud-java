@@ -1060,8 +1060,8 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the DataTaxonomy location, of the form:
-   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a GCP
-   *     region.
+   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a Google
+   *     Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
@@ -1096,8 +1096,8 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the DataTaxonomy location, of the form:
-   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a GCP
-   *     region.
+   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a Google
+   *     Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */

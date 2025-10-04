@@ -244,6 +244,114 @@ public class ConfidentialComputingClientTest {
   }
 
   @Test
+  public void verifyConfidentialSpaceTest() throws Exception {
+    VerifyConfidentialSpaceResponse expectedResponse =
+        VerifyConfidentialSpaceResponse.newBuilder()
+            .setAttestationToken("attestationToken-1730245367")
+            .addAllPartialErrors(new ArrayList<Status>())
+            .build();
+    mockConfidentialComputing.addResponse(expectedResponse);
+
+    VerifyConfidentialSpaceRequest request =
+        VerifyConfidentialSpaceRequest.newBuilder()
+            .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+            .setGcpCredentials(GcpCredentials.newBuilder().build())
+            .addAllSignedEntities(new ArrayList<SignedEntity>())
+            .setGceShieldedIdentity(GceShieldedIdentity.newBuilder().build())
+            .setOptions(
+                VerifyConfidentialSpaceRequest.ConfidentialSpaceOptions.newBuilder().build())
+            .build();
+
+    VerifyConfidentialSpaceResponse actualResponse = client.verifyConfidentialSpace(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfidentialComputing.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    VerifyConfidentialSpaceRequest actualRequest =
+        ((VerifyConfidentialSpaceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getTdCcel(), actualRequest.getTdCcel());
+    Assert.assertEquals(request.getTpmAttestation(), actualRequest.getTpmAttestation());
+    Assert.assertEquals(request.getChallenge(), actualRequest.getChallenge());
+    Assert.assertEquals(request.getGcpCredentials(), actualRequest.getGcpCredentials());
+    Assert.assertEquals(request.getSignedEntitiesList(), actualRequest.getSignedEntitiesList());
+    Assert.assertEquals(request.getGceShieldedIdentity(), actualRequest.getGceShieldedIdentity());
+    Assert.assertEquals(request.getOptions(), actualRequest.getOptions());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void verifyConfidentialSpaceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfidentialComputing.addException(exception);
+
+    try {
+      VerifyConfidentialSpaceRequest request =
+          VerifyConfidentialSpaceRequest.newBuilder()
+              .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+              .setGcpCredentials(GcpCredentials.newBuilder().build())
+              .addAllSignedEntities(new ArrayList<SignedEntity>())
+              .setGceShieldedIdentity(GceShieldedIdentity.newBuilder().build())
+              .setOptions(
+                  VerifyConfidentialSpaceRequest.ConfidentialSpaceOptions.newBuilder().build())
+              .build();
+      client.verifyConfidentialSpace(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void verifyConfidentialGkeTest() throws Exception {
+    VerifyConfidentialGkeResponse expectedResponse =
+        VerifyConfidentialGkeResponse.newBuilder()
+            .setAttestationToken("attestationToken-1730245367")
+            .build();
+    mockConfidentialComputing.addResponse(expectedResponse);
+
+    VerifyConfidentialGkeRequest request =
+        VerifyConfidentialGkeRequest.newBuilder()
+            .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+            .build();
+
+    VerifyConfidentialGkeResponse actualResponse = client.verifyConfidentialGke(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfidentialComputing.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    VerifyConfidentialGkeRequest actualRequest =
+        ((VerifyConfidentialGkeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getTpmAttestation(), actualRequest.getTpmAttestation());
+    Assert.assertEquals(request.getChallenge(), actualRequest.getChallenge());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void verifyConfidentialGkeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfidentialComputing.addException(exception);
+
+    try {
+      VerifyConfidentialGkeRequest request =
+          VerifyConfidentialGkeRequest.newBuilder()
+              .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+              .build();
+      client.verifyConfidentialGke(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

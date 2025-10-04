@@ -672,6 +672,7 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setServiceAttachment("serviceAttachment-398467656")
+   *           .setShowNatIps(true)
    *           .build();
    *   ServiceAttachment response = serviceAttachmentsClient.get(request);
    * }
@@ -702,6 +703,7 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setServiceAttachment("serviceAttachment-398467656")
+   *           .setShowNatIps(true)
    *           .build();
    *   ApiFuture<ServiceAttachment> future =
    *       serviceAttachmentsClient.getCallable().futureCall(request);

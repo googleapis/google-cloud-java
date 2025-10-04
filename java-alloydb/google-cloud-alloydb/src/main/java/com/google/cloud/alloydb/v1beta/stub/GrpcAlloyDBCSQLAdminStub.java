@@ -59,6 +59,7 @@ public class GrpcAlloyDBCSQLAdminStub extends AlloyDBCSQLAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RestoreFromCloudSQLRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -70,6 +71,7 @@ public class GrpcAlloyDBCSQLAdminStub extends AlloyDBCSQLAdminStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -78,6 +80,7 @@ public class GrpcAlloyDBCSQLAdminStub extends AlloyDBCSQLAdminStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<RestoreFromCloudSQLRequest, Operation> restoreFromCloudSQLCallable;

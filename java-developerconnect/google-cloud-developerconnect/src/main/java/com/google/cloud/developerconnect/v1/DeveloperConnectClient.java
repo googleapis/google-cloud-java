@@ -348,6 +348,202 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListAccountConnectors</td>
+ *      <td><p> Lists AccountConnectors in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAccountConnectors(ListAccountConnectorsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAccountConnectors(LocationName parent)
+ *           <li><p> listAccountConnectors(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAccountConnectorsPagedCallable()
+ *           <li><p> listAccountConnectorsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAccountConnector</td>
+ *      <td><p> Gets details of a single AccountConnector.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAccountConnector(GetAccountConnectorRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAccountConnector(AccountConnectorName name)
+ *           <li><p> getAccountConnector(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAccountConnectorCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAccountConnector</td>
+ *      <td><p> Creates a new AccountConnector in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAccountConnectorAsync(CreateAccountConnectorRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createAccountConnectorAsync(LocationName parent, AccountConnector accountConnector, String accountConnectorId)
+ *           <li><p> createAccountConnectorAsync(String parent, AccountConnector accountConnector, String accountConnectorId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAccountConnectorOperationCallable()
+ *           <li><p> createAccountConnectorCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAccountConnector</td>
+ *      <td><p> Updates the parameters of a single AccountConnector.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAccountConnectorAsync(UpdateAccountConnectorRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateAccountConnectorAsync(AccountConnector accountConnector, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAccountConnectorOperationCallable()
+ *           <li><p> updateAccountConnectorCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAccountConnector</td>
+ *      <td><p> Deletes a single AccountConnector.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAccountConnectorAsync(DeleteAccountConnectorRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteAccountConnectorAsync(AccountConnectorName name)
+ *           <li><p> deleteAccountConnectorAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAccountConnectorOperationCallable()
+ *           <li><p> deleteAccountConnectorCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchAccessToken</td>
+ *      <td><p> Fetches OAuth access token based on end user credentials.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchAccessToken(FetchAccessTokenRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchAccessToken(AccountConnectorName accountConnector)
+ *           <li><p> fetchAccessToken(String accountConnector)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchAccessTokenCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListUsers</td>
+ *      <td><p> Lists Users in a given project, location, and account_connector.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listUsers(ListUsersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listUsers(AccountConnectorName parent)
+ *           <li><p> listUsers(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listUsersPagedCallable()
+ *           <li><p> listUsersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteUser</td>
+ *      <td><p> Deletes a single User.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteUserAsync(DeleteUserRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteUserAsync(UserName name)
+ *           <li><p> deleteUserAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteUserOperationCallable()
+ *           <li><p> deleteUserCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchSelf</td>
+ *      <td><p> Fetch the User based on the user credentials.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchSelf(FetchSelfRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchSelf(AccountConnectorName name)
+ *           <li><p> fetchSelf(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchSelfCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteSelf</td>
+ *      <td><p> Delete the User based on the user credentials.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteSelfAsync(DeleteSelfRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteSelfAsync(AccountConnectorName name)
+ *           <li><p> deleteSelfAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteSelfOperationCallable()
+ *           <li><p> deleteSelfCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -2671,6 +2867,1488 @@ public class DeveloperConnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists AccountConnectors in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (AccountConnector element :
+   *       developerConnectClient.listAccountConnectors(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListAccountConnectorsRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAccountConnectorsPagedResponse listAccountConnectors(LocationName parent) {
+    ListAccountConnectorsRequest request =
+        ListAccountConnectorsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAccountConnectors(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AccountConnectors in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (AccountConnector element :
+   *       developerConnectClient.listAccountConnectors(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListAccountConnectorsRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAccountConnectorsPagedResponse listAccountConnectors(String parent) {
+    ListAccountConnectorsRequest request =
+        ListAccountConnectorsRequest.newBuilder().setParent(parent).build();
+    return listAccountConnectors(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AccountConnectors in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   ListAccountConnectorsRequest request =
+   *       ListAccountConnectorsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (AccountConnector element :
+   *       developerConnectClient.listAccountConnectors(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAccountConnectorsPagedResponse listAccountConnectors(
+      ListAccountConnectorsRequest request) {
+    return listAccountConnectorsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AccountConnectors in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   ListAccountConnectorsRequest request =
+   *       ListAccountConnectorsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<AccountConnector> future =
+   *       developerConnectClient.listAccountConnectorsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AccountConnector element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsPagedResponse>
+      listAccountConnectorsPagedCallable() {
+    return stub.listAccountConnectorsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AccountConnectors in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   ListAccountConnectorsRequest request =
+   *       ListAccountConnectorsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListAccountConnectorsResponse response =
+   *         developerConnectClient.listAccountConnectorsCallable().call(request);
+   *     for (AccountConnector element : response.getAccountConnectorsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsResponse>
+      listAccountConnectorsCallable() {
+    return stub.listAccountConnectorsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AccountConnector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   AccountConnectorName name =
+   *       AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+   *   AccountConnector response = developerConnectClient.getAccountConnector(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AccountConnector getAccountConnector(AccountConnectorName name) {
+    GetAccountConnectorRequest request =
+        GetAccountConnectorRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAccountConnector(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AccountConnector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String name =
+   *       AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]").toString();
+   *   AccountConnector response = developerConnectClient.getAccountConnector(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AccountConnector getAccountConnector(String name) {
+    GetAccountConnectorRequest request =
+        GetAccountConnectorRequest.newBuilder().setName(name).build();
+    return getAccountConnector(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AccountConnector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   GetAccountConnectorRequest request =
+   *       GetAccountConnectorRequest.newBuilder()
+   *           .setName(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .build();
+   *   AccountConnector response = developerConnectClient.getAccountConnector(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AccountConnector getAccountConnector(GetAccountConnectorRequest request) {
+    return getAccountConnectorCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AccountConnector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   GetAccountConnectorRequest request =
+   *       GetAccountConnectorRequest.newBuilder()
+   *           .setName(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<AccountConnector> future =
+   *       developerConnectClient.getAccountConnectorCallable().futureCall(request);
+   *   // Do something.
+   *   AccountConnector response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAccountConnectorRequest, AccountConnector>
+      getAccountConnectorCallable() {
+    return stub.getAccountConnectorCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AccountConnector in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   AccountConnector accountConnector = AccountConnector.newBuilder().build();
+   *   String accountConnectorId = "accountConnectorId-605811237";
+   *   AccountConnector response =
+   *       developerConnectClient
+   *           .createAccountConnectorAsync(parent, accountConnector, accountConnectorId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Location resource name as the account_connector’s parent.
+   * @param accountConnector Required. The AccountConnector to create.
+   * @param accountConnectorId Required. The ID to use for the AccountConnector, which will become
+   *     the final component of the AccountConnector's resource name. Its format should adhere to
+   *     https://google.aip.dev/122#resource-id-segments Names must be unique per-project
+   *     per-location.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AccountConnector, OperationMetadata> createAccountConnectorAsync(
+      LocationName parent, AccountConnector accountConnector, String accountConnectorId) {
+    CreateAccountConnectorRequest request =
+        CreateAccountConnectorRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAccountConnector(accountConnector)
+            .setAccountConnectorId(accountConnectorId)
+            .build();
+    return createAccountConnectorAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AccountConnector in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   AccountConnector accountConnector = AccountConnector.newBuilder().build();
+   *   String accountConnectorId = "accountConnectorId-605811237";
+   *   AccountConnector response =
+   *       developerConnectClient
+   *           .createAccountConnectorAsync(parent, accountConnector, accountConnectorId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Location resource name as the account_connector’s parent.
+   * @param accountConnector Required. The AccountConnector to create.
+   * @param accountConnectorId Required. The ID to use for the AccountConnector, which will become
+   *     the final component of the AccountConnector's resource name. Its format should adhere to
+   *     https://google.aip.dev/122#resource-id-segments Names must be unique per-project
+   *     per-location.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AccountConnector, OperationMetadata> createAccountConnectorAsync(
+      String parent, AccountConnector accountConnector, String accountConnectorId) {
+    CreateAccountConnectorRequest request =
+        CreateAccountConnectorRequest.newBuilder()
+            .setParent(parent)
+            .setAccountConnector(accountConnector)
+            .setAccountConnectorId(accountConnectorId)
+            .build();
+    return createAccountConnectorAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AccountConnector in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   CreateAccountConnectorRequest request =
+   *       CreateAccountConnectorRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAccountConnectorId("accountConnectorId-605811237")
+   *           .setAccountConnector(AccountConnector.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   AccountConnector response = developerConnectClient.createAccountConnectorAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AccountConnector, OperationMetadata> createAccountConnectorAsync(
+      CreateAccountConnectorRequest request) {
+    return createAccountConnectorOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AccountConnector in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   CreateAccountConnectorRequest request =
+   *       CreateAccountConnectorRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAccountConnectorId("accountConnectorId-605811237")
+   *           .setAccountConnector(AccountConnector.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<AccountConnector, OperationMetadata> future =
+   *       developerConnectClient.createAccountConnectorOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AccountConnector response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      createAccountConnectorOperationCallable() {
+    return stub.createAccountConnectorOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AccountConnector in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   CreateAccountConnectorRequest request =
+   *       CreateAccountConnectorRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAccountConnectorId("accountConnectorId-605811237")
+   *           .setAccountConnector(AccountConnector.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       developerConnectClient.createAccountConnectorCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAccountConnectorRequest, Operation>
+      createAccountConnectorCallable() {
+    return stub.createAccountConnectorCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single AccountConnector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   AccountConnector accountConnector = AccountConnector.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   AccountConnector response =
+   *       developerConnectClient.updateAccountConnectorAsync(accountConnector, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param accountConnector Required. The AccountConnector to update.
+   * @param updateMask Optional. The list of fields to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AccountConnector, OperationMetadata> updateAccountConnectorAsync(
+      AccountConnector accountConnector, FieldMask updateMask) {
+    UpdateAccountConnectorRequest request =
+        UpdateAccountConnectorRequest.newBuilder()
+            .setAccountConnector(accountConnector)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAccountConnectorAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single AccountConnector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   UpdateAccountConnectorRequest request =
+   *       UpdateAccountConnectorRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAccountConnector(AccountConnector.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   AccountConnector response = developerConnectClient.updateAccountConnectorAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AccountConnector, OperationMetadata> updateAccountConnectorAsync(
+      UpdateAccountConnectorRequest request) {
+    return updateAccountConnectorOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single AccountConnector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   UpdateAccountConnectorRequest request =
+   *       UpdateAccountConnectorRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAccountConnector(AccountConnector.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<AccountConnector, OperationMetadata> future =
+   *       developerConnectClient.updateAccountConnectorOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AccountConnector response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      updateAccountConnectorOperationCallable() {
+    return stub.updateAccountConnectorOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single AccountConnector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   UpdateAccountConnectorRequest request =
+   *       UpdateAccountConnectorRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAccountConnector(AccountConnector.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       developerConnectClient.updateAccountConnectorCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAccountConnectorRequest, Operation>
+      updateAccountConnectorCallable() {
+    return stub.updateAccountConnectorCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AccountConnector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   AccountConnectorName name =
+   *       AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+   *   developerConnectClient.deleteAccountConnectorAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAccountConnectorAsync(
+      AccountConnectorName name) {
+    DeleteAccountConnectorRequest request =
+        DeleteAccountConnectorRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteAccountConnectorAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AccountConnector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String name =
+   *       AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]").toString();
+   *   developerConnectClient.deleteAccountConnectorAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAccountConnectorAsync(String name) {
+    DeleteAccountConnectorRequest request =
+        DeleteAccountConnectorRequest.newBuilder().setName(name).build();
+    return deleteAccountConnectorAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AccountConnector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   DeleteAccountConnectorRequest request =
+   *       DeleteAccountConnectorRequest.newBuilder()
+   *           .setName(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .setForce(true)
+   *           .build();
+   *   developerConnectClient.deleteAccountConnectorAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAccountConnectorAsync(
+      DeleteAccountConnectorRequest request) {
+    return deleteAccountConnectorOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AccountConnector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   DeleteAccountConnectorRequest request =
+   *       DeleteAccountConnectorRequest.newBuilder()
+   *           .setName(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       developerConnectClient.deleteAccountConnectorOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteAccountConnectorRequest, Empty, OperationMetadata>
+      deleteAccountConnectorOperationCallable() {
+    return stub.deleteAccountConnectorOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AccountConnector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   DeleteAccountConnectorRequest request =
+   *       DeleteAccountConnectorRequest.newBuilder()
+   *           .setName(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       developerConnectClient.deleteAccountConnectorCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteAccountConnectorRequest, Operation>
+      deleteAccountConnectorCallable() {
+    return stub.deleteAccountConnectorCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches OAuth access token based on end user credentials.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   AccountConnectorName accountConnector =
+   *       AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+   *   FetchAccessTokenResponse response = developerConnectClient.fetchAccessToken(accountConnector);
+   * }
+   * }</pre>
+   *
+   * @param accountConnector Required. The resource name of the AccountConnector in the format
+   *     `projects/&#42;/locations/&#42;/accountConnectors/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchAccessTokenResponse fetchAccessToken(AccountConnectorName accountConnector) {
+    FetchAccessTokenRequest request =
+        FetchAccessTokenRequest.newBuilder()
+            .setAccountConnector(accountConnector == null ? null : accountConnector.toString())
+            .build();
+    return fetchAccessToken(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches OAuth access token based on end user credentials.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String accountConnector =
+   *       AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]").toString();
+   *   FetchAccessTokenResponse response = developerConnectClient.fetchAccessToken(accountConnector);
+   * }
+   * }</pre>
+   *
+   * @param accountConnector Required. The resource name of the AccountConnector in the format
+   *     `projects/&#42;/locations/&#42;/accountConnectors/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchAccessTokenResponse fetchAccessToken(String accountConnector) {
+    FetchAccessTokenRequest request =
+        FetchAccessTokenRequest.newBuilder().setAccountConnector(accountConnector).build();
+    return fetchAccessToken(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches OAuth access token based on end user credentials.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FetchAccessTokenRequest request =
+   *       FetchAccessTokenRequest.newBuilder()
+   *           .setAccountConnector(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .build();
+   *   FetchAccessTokenResponse response = developerConnectClient.fetchAccessToken(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchAccessTokenResponse fetchAccessToken(FetchAccessTokenRequest request) {
+    return fetchAccessTokenCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches OAuth access token based on end user credentials.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FetchAccessTokenRequest request =
+   *       FetchAccessTokenRequest.newBuilder()
+   *           .setAccountConnector(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<FetchAccessTokenResponse> future =
+   *       developerConnectClient.fetchAccessTokenCallable().futureCall(request);
+   *   // Do something.
+   *   FetchAccessTokenResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchAccessTokenRequest, FetchAccessTokenResponse>
+      fetchAccessTokenCallable() {
+    return stub.fetchAccessTokenCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Users in a given project, location, and account_connector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   AccountConnectorName parent =
+   *       AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+   *   for (User element : developerConnectClient.listUsers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListUsersRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListUsersPagedResponse listUsers(AccountConnectorName parent) {
+    ListUsersRequest request =
+        ListUsersRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listUsers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Users in a given project, location, and account_connector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String parent =
+   *       AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]").toString();
+   *   for (User element : developerConnectClient.listUsers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListUsersRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListUsersPagedResponse listUsers(String parent) {
+    ListUsersRequest request = ListUsersRequest.newBuilder().setParent(parent).build();
+    return listUsers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Users in a given project, location, and account_connector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   ListUsersRequest request =
+   *       ListUsersRequest.newBuilder()
+   *           .setParent(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (User element : developerConnectClient.listUsers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListUsersPagedResponse listUsers(ListUsersRequest request) {
+    return listUsersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Users in a given project, location, and account_connector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   ListUsersRequest request =
+   *       ListUsersRequest.newBuilder()
+   *           .setParent(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<User> future = developerConnectClient.listUsersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (User element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable() {
+    return stub.listUsersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Users in a given project, location, and account_connector.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   ListUsersRequest request =
+   *       ListUsersRequest.newBuilder()
+   *           .setParent(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListUsersResponse response = developerConnectClient.listUsersCallable().call(request);
+   *     for (User element : response.getUsersList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable() {
+    return stub.listUsersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single User.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   UserName name = UserName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]", "[USER]");
+   *   developerConnectClient.deleteUserAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteUserAsync(UserName name) {
+    DeleteUserRequest request =
+        DeleteUserRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteUserAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single User.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String name =
+   *       UserName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]", "[USER]").toString();
+   *   developerConnectClient.deleteUserAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteUserAsync(String name) {
+    DeleteUserRequest request = DeleteUserRequest.newBuilder().setName(name).build();
+    return deleteUserAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single User.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   DeleteUserRequest request =
+   *       DeleteUserRequest.newBuilder()
+   *           .setName(
+   *               UserName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]", "[USER]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   developerConnectClient.deleteUserAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteUserAsync(
+      DeleteUserRequest request) {
+    return deleteUserOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single User.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   DeleteUserRequest request =
+   *       DeleteUserRequest.newBuilder()
+   *           .setName(
+   *               UserName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]", "[USER]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       developerConnectClient.deleteUserOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteUserRequest, Empty, OperationMetadata>
+      deleteUserOperationCallable() {
+    return stub.deleteUserOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single User.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   DeleteUserRequest request =
+   *       DeleteUserRequest.newBuilder()
+   *           .setName(
+   *               UserName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]", "[USER]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future = developerConnectClient.deleteUserCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteUserRequest, Operation> deleteUserCallable() {
+    return stub.deleteUserCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch the User based on the user credentials.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   AccountConnectorName name =
+   *       AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+   *   User response = developerConnectClient.fetchSelf(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the AccountConnector resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final User fetchSelf(AccountConnectorName name) {
+    FetchSelfRequest request =
+        FetchSelfRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return fetchSelf(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch the User based on the user credentials.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String name =
+   *       AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]").toString();
+   *   User response = developerConnectClient.fetchSelf(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the AccountConnector resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final User fetchSelf(String name) {
+    FetchSelfRequest request = FetchSelfRequest.newBuilder().setName(name).build();
+    return fetchSelf(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch the User based on the user credentials.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FetchSelfRequest request =
+   *       FetchSelfRequest.newBuilder()
+   *           .setName(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .build();
+   *   User response = developerConnectClient.fetchSelf(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final User fetchSelf(FetchSelfRequest request) {
+    return fetchSelfCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch the User based on the user credentials.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FetchSelfRequest request =
+   *       FetchSelfRequest.newBuilder()
+   *           .setName(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<User> future = developerConnectClient.fetchSelfCallable().futureCall(request);
+   *   // Do something.
+   *   User response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchSelfRequest, User> fetchSelfCallable() {
+    return stub.fetchSelfCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete the User based on the user credentials.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   AccountConnectorName name =
+   *       AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]");
+   *   developerConnectClient.deleteSelfAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the AccountConnector resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSelfAsync(
+      AccountConnectorName name) {
+    DeleteSelfRequest request =
+        DeleteSelfRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteSelfAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete the User based on the user credentials.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String name =
+   *       AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]").toString();
+   *   developerConnectClient.deleteSelfAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the AccountConnector resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSelfAsync(String name) {
+    DeleteSelfRequest request = DeleteSelfRequest.newBuilder().setName(name).build();
+    return deleteSelfAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete the User based on the user credentials.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   DeleteSelfRequest request =
+   *       DeleteSelfRequest.newBuilder()
+   *           .setName(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .build();
+   *   developerConnectClient.deleteSelfAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSelfAsync(
+      DeleteSelfRequest request) {
+    return deleteSelfOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete the User based on the user credentials.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   DeleteSelfRequest request =
+   *       DeleteSelfRequest.newBuilder()
+   *           .setName(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       developerConnectClient.deleteSelfOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteSelfRequest, Empty, OperationMetadata>
+      deleteSelfOperationCallable() {
+    return stub.deleteSelfOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete the User based on the user credentials.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   DeleteSelfRequest request =
+   *       DeleteSelfRequest.newBuilder()
+   *           .setName(
+   *               AccountConnectorName.of("[PROJECT]", "[LOCATION]", "[ACCOUNT_CONNECTOR]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future = developerConnectClient.deleteSelfCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSelfRequest, Operation> deleteSelfCallable() {
+    return stub.deleteSelfCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -3189,6 +4867,155 @@ public class DeveloperConnectClient implements BackgroundResource {
     protected FetchGitRefsFixedSizeCollection createCollection(
         List<FetchGitRefsPage> pages, int collectionSize) {
       return new FetchGitRefsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAccountConnectorsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAccountConnectorsRequest,
+          ListAccountConnectorsResponse,
+          AccountConnector,
+          ListAccountConnectorsPage,
+          ListAccountConnectorsFixedSizeCollection> {
+
+    public static ApiFuture<ListAccountConnectorsPagedResponse> createAsync(
+        PageContext<ListAccountConnectorsRequest, ListAccountConnectorsResponse, AccountConnector>
+            context,
+        ApiFuture<ListAccountConnectorsResponse> futureResponse) {
+      ApiFuture<ListAccountConnectorsPage> futurePage =
+          ListAccountConnectorsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAccountConnectorsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAccountConnectorsPagedResponse(ListAccountConnectorsPage page) {
+      super(page, ListAccountConnectorsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAccountConnectorsPage
+      extends AbstractPage<
+          ListAccountConnectorsRequest,
+          ListAccountConnectorsResponse,
+          AccountConnector,
+          ListAccountConnectorsPage> {
+
+    private ListAccountConnectorsPage(
+        PageContext<ListAccountConnectorsRequest, ListAccountConnectorsResponse, AccountConnector>
+            context,
+        ListAccountConnectorsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAccountConnectorsPage createEmptyPage() {
+      return new ListAccountConnectorsPage(null, null);
+    }
+
+    @Override
+    protected ListAccountConnectorsPage createPage(
+        PageContext<ListAccountConnectorsRequest, ListAccountConnectorsResponse, AccountConnector>
+            context,
+        ListAccountConnectorsResponse response) {
+      return new ListAccountConnectorsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAccountConnectorsPage> createPageAsync(
+        PageContext<ListAccountConnectorsRequest, ListAccountConnectorsResponse, AccountConnector>
+            context,
+        ApiFuture<ListAccountConnectorsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAccountConnectorsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAccountConnectorsRequest,
+          ListAccountConnectorsResponse,
+          AccountConnector,
+          ListAccountConnectorsPage,
+          ListAccountConnectorsFixedSizeCollection> {
+
+    private ListAccountConnectorsFixedSizeCollection(
+        List<ListAccountConnectorsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAccountConnectorsFixedSizeCollection createEmptyCollection() {
+      return new ListAccountConnectorsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAccountConnectorsFixedSizeCollection createCollection(
+        List<ListAccountConnectorsPage> pages, int collectionSize) {
+      return new ListAccountConnectorsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListUsersPagedResponse
+      extends AbstractPagedListResponse<
+          ListUsersRequest, ListUsersResponse, User, ListUsersPage, ListUsersFixedSizeCollection> {
+
+    public static ApiFuture<ListUsersPagedResponse> createAsync(
+        PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        ApiFuture<ListUsersResponse> futureResponse) {
+      ApiFuture<ListUsersPage> futurePage =
+          ListUsersPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListUsersPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListUsersPagedResponse(ListUsersPage page) {
+      super(page, ListUsersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListUsersPage
+      extends AbstractPage<ListUsersRequest, ListUsersResponse, User, ListUsersPage> {
+
+    private ListUsersPage(
+        PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        ListUsersResponse response) {
+      super(context, response);
+    }
+
+    private static ListUsersPage createEmptyPage() {
+      return new ListUsersPage(null, null);
+    }
+
+    @Override
+    protected ListUsersPage createPage(
+        PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        ListUsersResponse response) {
+      return new ListUsersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListUsersPage> createPageAsync(
+        PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        ApiFuture<ListUsersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListUsersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListUsersRequest, ListUsersResponse, User, ListUsersPage, ListUsersFixedSizeCollection> {
+
+    private ListUsersFixedSizeCollection(List<ListUsersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListUsersFixedSizeCollection createEmptyCollection() {
+      return new ListUsersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListUsersFixedSizeCollection createCollection(
+        List<ListUsersPage> pages, int collectionSize) {
+      return new ListUsersFixedSizeCollection(pages, collectionSize);
     }
   }
 

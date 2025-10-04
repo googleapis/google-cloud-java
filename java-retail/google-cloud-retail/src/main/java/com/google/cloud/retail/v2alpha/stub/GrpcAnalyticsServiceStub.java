@@ -54,6 +54,7 @@ public class GrpcAnalyticsServiceStub extends AnalyticsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportAnalyticsMetricsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ExportAnalyticsMetricsRequest, Operation>

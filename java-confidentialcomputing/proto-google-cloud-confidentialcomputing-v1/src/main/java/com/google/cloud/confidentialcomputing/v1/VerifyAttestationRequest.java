@@ -23,8 +23,8 @@ package com.google.cloud.confidentialcomputing.v1;
  *
  *
  * <pre>
- * A request for an OIDC token, providing all the necessary information needed
- * for this service to verify the platform state of the requestor.
+ * A request for an attestation token, providing all the necessary information
+ * needed for this service to verify the platform state of the requestor.
  * </pre>
  *
  * Protobuf type {@code google.cloud.confidentialcomputing.v1.VerifyAttestationRequest}
@@ -878,8 +878,8 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A request for an OIDC token, providing all the necessary information needed
-   * for this service to verify the platform state of the requestor.
+   * A request for an attestation token, providing all the necessary information
+   * needed for this service to verify the platform state of the requestor.
    * </pre>
    *
    * Protobuf type {@code google.cloud.confidentialcomputing.v1.VerifyAttestationRequest}

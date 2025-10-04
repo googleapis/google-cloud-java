@@ -63,6 +63,7 @@ public class GrpcMerchantCenterAccountLinkServiceStub extends MerchantCenterAcco
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListMerchantCenterAccountLinksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMerchantCenterAccountLinkRequest, Operation>
@@ -75,6 +76,7 @@ public class GrpcMerchantCenterAccountLinkServiceStub extends MerchantCenterAcco
                   ProtoUtils.marshaller(
                       CreateMerchantCenterAccountLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMerchantCenterAccountLinkRequest, Empty>
@@ -87,6 +89,7 @@ public class GrpcMerchantCenterAccountLinkServiceStub extends MerchantCenterAcco
                   ProtoUtils.marshaller(
                       DeleteMerchantCenterAccountLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<

@@ -89,6 +89,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EnableServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DisableServiceRequest, Operation>
@@ -99,6 +100,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DisableServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceRequest, Service> getServiceMethodDescriptor =
@@ -107,6 +109,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
           .setFullMethodName("google.api.serviceusage.v1beta1.ServiceUsage/GetService")
           .setRequestMarshaller(ProtoUtils.marshaller(GetServiceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListServicesRequest, ListServicesResponse>
@@ -117,6 +120,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchEnableServicesRequest, Operation>
@@ -127,6 +131,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchEnableServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -141,6 +146,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
                   ProtoUtils.marshaller(ListConsumerQuotaMetricsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConsumerQuotaMetricsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConsumerQuotaMetricRequest, ConsumerQuotaMetric>
@@ -153,6 +159,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
                   ProtoUtils.marshaller(GetConsumerQuotaMetricRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ConsumerQuotaMetric.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConsumerQuotaLimitRequest, ConsumerQuotaLimit>
@@ -164,6 +171,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConsumerQuotaLimitRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConsumerQuotaLimit.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAdminOverrideRequest, Operation>
@@ -174,6 +182,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAdminOverrideRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAdminOverrideRequest, Operation>
@@ -184,6 +193,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAdminOverrideRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAdminOverrideRequest, Operation>
@@ -194,6 +204,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAdminOverrideRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAdminOverridesRequest, ListAdminOverridesResponse>
@@ -205,6 +216,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
                   ProtoUtils.marshaller(ListAdminOverridesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAdminOverridesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportAdminOverridesRequest, Operation>
@@ -216,6 +228,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportAdminOverridesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateConsumerOverrideRequest, Operation>
@@ -227,6 +240,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConsumerOverrideRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConsumerOverrideRequest, Operation>
@@ -238,6 +252,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConsumerOverrideRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConsumerOverrideRequest, Operation>
@@ -249,6 +264,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConsumerOverrideRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListConsumerOverridesRequest, ListConsumerOverridesResponse>
@@ -261,6 +277,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
                   ProtoUtils.marshaller(ListConsumerOverridesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConsumerOverridesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportConsumerOverridesRequest, Operation>
@@ -272,6 +289,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportConsumerOverridesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GenerateServiceIdentityRequest, Operation>
@@ -283,6 +301,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GenerateServiceIdentityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<EnableServiceRequest, Operation> enableServiceCallable;

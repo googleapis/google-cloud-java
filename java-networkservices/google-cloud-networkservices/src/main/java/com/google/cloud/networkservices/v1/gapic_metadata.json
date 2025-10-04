@@ -10,17 +10,26 @@
         "grpc": {
           "libraryClient": "DepServiceClient",
           "rpcs": {
+            "CreateAuthzExtension": {
+              "methods": ["createAuthzExtensionAsync", "createAuthzExtensionAsync", "createAuthzExtensionAsync", "createAuthzExtensionOperationCallable", "createAuthzExtensionCallable"]
+            },
             "CreateLbRouteExtension": {
               "methods": ["createLbRouteExtensionAsync", "createLbRouteExtensionAsync", "createLbRouteExtensionAsync", "createLbRouteExtensionOperationCallable", "createLbRouteExtensionCallable"]
             },
             "CreateLbTrafficExtension": {
               "methods": ["createLbTrafficExtensionAsync", "createLbTrafficExtensionAsync", "createLbTrafficExtensionAsync", "createLbTrafficExtensionOperationCallable", "createLbTrafficExtensionCallable"]
             },
+            "DeleteAuthzExtension": {
+              "methods": ["deleteAuthzExtensionAsync", "deleteAuthzExtensionAsync", "deleteAuthzExtensionAsync", "deleteAuthzExtensionOperationCallable", "deleteAuthzExtensionCallable"]
+            },
             "DeleteLbRouteExtension": {
               "methods": ["deleteLbRouteExtensionAsync", "deleteLbRouteExtensionAsync", "deleteLbRouteExtensionAsync", "deleteLbRouteExtensionOperationCallable", "deleteLbRouteExtensionCallable"]
             },
             "DeleteLbTrafficExtension": {
               "methods": ["deleteLbTrafficExtensionAsync", "deleteLbTrafficExtensionAsync", "deleteLbTrafficExtensionAsync", "deleteLbTrafficExtensionOperationCallable", "deleteLbTrafficExtensionCallable"]
+            },
+            "GetAuthzExtension": {
+              "methods": ["getAuthzExtension", "getAuthzExtension", "getAuthzExtension", "getAuthzExtensionCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -33,6 +42,9 @@
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListAuthzExtensions": {
+              "methods": ["listAuthzExtensions", "listAuthzExtensions", "listAuthzExtensions", "listAuthzExtensionsPagedCallable", "listAuthzExtensionsCallable"]
             },
             "ListLbRouteExtensions": {
               "methods": ["listLbRouteExtensions", "listLbRouteExtensions", "listLbRouteExtensions", "listLbRouteExtensionsPagedCallable", "listLbRouteExtensionsCallable"]
@@ -48,6 +60,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateAuthzExtension": {
+              "methods": ["updateAuthzExtensionAsync", "updateAuthzExtensionAsync", "updateAuthzExtensionOperationCallable", "updateAuthzExtensionCallable"]
             },
             "UpdateLbRouteExtension": {
               "methods": ["updateLbRouteExtensionAsync", "updateLbRouteExtensionAsync", "updateLbRouteExtensionOperationCallable", "updateLbRouteExtensionCallable"]
@@ -91,6 +106,12 @@
             "CreateTlsRoute": {
               "methods": ["createTlsRouteAsync", "createTlsRouteAsync", "createTlsRouteAsync", "createTlsRouteOperationCallable", "createTlsRouteCallable"]
             },
+            "CreateWasmPlugin": {
+              "methods": ["createWasmPluginAsync", "createWasmPluginAsync", "createWasmPluginAsync", "createWasmPluginOperationCallable", "createWasmPluginCallable"]
+            },
+            "CreateWasmPluginVersion": {
+              "methods": ["createWasmPluginVersionAsync", "createWasmPluginVersionAsync", "createWasmPluginVersionAsync", "createWasmPluginVersionOperationCallable", "createWasmPluginVersionCallable"]
+            },
             "DeleteEndpointPolicy": {
               "methods": ["deleteEndpointPolicyAsync", "deleteEndpointPolicyAsync", "deleteEndpointPolicyAsync", "deleteEndpointPolicyOperationCallable", "deleteEndpointPolicyCallable"]
             },
@@ -117,6 +138,12 @@
             },
             "DeleteTlsRoute": {
               "methods": ["deleteTlsRouteAsync", "deleteTlsRouteAsync", "deleteTlsRouteAsync", "deleteTlsRouteOperationCallable", "deleteTlsRouteCallable"]
+            },
+            "DeleteWasmPlugin": {
+              "methods": ["deleteWasmPluginAsync", "deleteWasmPluginAsync", "deleteWasmPluginAsync", "deleteWasmPluginOperationCallable", "deleteWasmPluginCallable"]
+            },
+            "DeleteWasmPluginVersion": {
+              "methods": ["deleteWasmPluginVersionAsync", "deleteWasmPluginVersionAsync", "deleteWasmPluginVersionAsync", "deleteWasmPluginVersionOperationCallable", "deleteWasmPluginVersionCallable"]
             },
             "GetEndpointPolicy": {
               "methods": ["getEndpointPolicy", "getEndpointPolicy", "getEndpointPolicy", "getEndpointPolicyCallable"]
@@ -157,6 +184,12 @@
             "GetTlsRoute": {
               "methods": ["getTlsRoute", "getTlsRoute", "getTlsRoute", "getTlsRouteCallable"]
             },
+            "GetWasmPlugin": {
+              "methods": ["getWasmPlugin", "getWasmPlugin", "getWasmPlugin", "getWasmPluginCallable"]
+            },
+            "GetWasmPluginVersion": {
+              "methods": ["getWasmPluginVersion", "getWasmPluginVersion", "getWasmPluginVersion", "getWasmPluginVersionCallable"]
+            },
             "ListEndpointPolicies": {
               "methods": ["listEndpointPolicies", "listEndpointPolicies", "listEndpointPolicies", "listEndpointPoliciesPagedCallable", "listEndpointPoliciesCallable"]
             },
@@ -193,6 +226,12 @@
             "ListTlsRoutes": {
               "methods": ["listTlsRoutes", "listTlsRoutes", "listTlsRoutes", "listTlsRoutesPagedCallable", "listTlsRoutesCallable"]
             },
+            "ListWasmPluginVersions": {
+              "methods": ["listWasmPluginVersions", "listWasmPluginVersions", "listWasmPluginVersions", "listWasmPluginVersionsPagedCallable", "listWasmPluginVersionsCallable"]
+            },
+            "ListWasmPlugins": {
+              "methods": ["listWasmPlugins", "listWasmPlugins", "listWasmPlugins", "listWasmPluginsPagedCallable", "listWasmPluginsCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
@@ -225,6 +264,9 @@
             },
             "UpdateTlsRoute": {
               "methods": ["updateTlsRouteAsync", "updateTlsRouteAsync", "updateTlsRouteOperationCallable", "updateTlsRouteCallable"]
+            },
+            "UpdateWasmPlugin": {
+              "methods": ["updateWasmPluginAsync", "updateWasmPluginAsync", "updateWasmPluginOperationCallable", "updateWasmPluginCallable"]
             }
           }
         }

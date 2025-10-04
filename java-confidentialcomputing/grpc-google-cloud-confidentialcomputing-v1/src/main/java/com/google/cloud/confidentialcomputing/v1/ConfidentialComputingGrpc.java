@@ -133,6 +133,112 @@ public final class ConfidentialComputingGrpc {
     return getVerifyAttestationMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest,
+          com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse>
+      getVerifyConfidentialSpaceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "VerifyConfidentialSpace",
+      requestType = com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest.class,
+      responseType =
+          com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest,
+          com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse>
+      getVerifyConfidentialSpaceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest,
+            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse>
+        getVerifyConfidentialSpaceMethod;
+    if ((getVerifyConfidentialSpaceMethod =
+            ConfidentialComputingGrpc.getVerifyConfidentialSpaceMethod)
+        == null) {
+      synchronized (ConfidentialComputingGrpc.class) {
+        if ((getVerifyConfidentialSpaceMethod =
+                ConfidentialComputingGrpc.getVerifyConfidentialSpaceMethod)
+            == null) {
+          ConfidentialComputingGrpc.getVerifyConfidentialSpaceMethod =
+              getVerifyConfidentialSpaceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest,
+                          com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "VerifyConfidentialSpace"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.confidentialcomputing.v1
+                                  .VerifyConfidentialSpaceRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.confidentialcomputing.v1
+                                  .VerifyConfidentialSpaceResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfidentialComputingMethodDescriptorSupplier(
+                              "VerifyConfidentialSpace"))
+                      .build();
+        }
+      }
+    }
+    return getVerifyConfidentialSpaceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest,
+          com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeResponse>
+      getVerifyConfidentialGkeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "VerifyConfidentialGke",
+      requestType = com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest.class,
+      responseType = com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest,
+          com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeResponse>
+      getVerifyConfidentialGkeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest,
+            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeResponse>
+        getVerifyConfidentialGkeMethod;
+    if ((getVerifyConfidentialGkeMethod = ConfidentialComputingGrpc.getVerifyConfidentialGkeMethod)
+        == null) {
+      synchronized (ConfidentialComputingGrpc.class) {
+        if ((getVerifyConfidentialGkeMethod =
+                ConfidentialComputingGrpc.getVerifyConfidentialGkeMethod)
+            == null) {
+          ConfidentialComputingGrpc.getVerifyConfidentialGkeMethod =
+              getVerifyConfidentialGkeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest,
+                          com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "VerifyConfidentialGke"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.confidentialcomputing.v1
+                                  .VerifyConfidentialGkeResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfidentialComputingMethodDescriptorSupplier(
+                              "VerifyConfidentialGke"))
+                      .build();
+        }
+      }
+    }
+    return getVerifyConfidentialGkeMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ConfidentialComputingStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ConfidentialComputingStub> factory =
@@ -215,7 +321,8 @@ public final class ConfidentialComputingGrpc {
      *
      *
      * <pre>
-     * Verifies the provided attestation info, returning a signed OIDC token.
+     * Verifies the provided attestation info, returning a signed attestation
+     * token.
      * </pre>
      */
     default void verifyAttestation(
@@ -225,6 +332,40 @@ public final class ConfidentialComputingGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getVerifyAttestationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies whether the provided attestation info is valid, returning a signed
+     * attestation token if so.
+     * </pre>
+     */
+    default void verifyConfidentialSpace(
+        com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getVerifyConfidentialSpaceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies the provided Confidential GKE attestation info, returning a signed
+     * OIDC token.
+     * </pre>
+     */
+    default void verifyConfidentialGke(
+        com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getVerifyConfidentialGkeMethod(), responseObserver);
     }
   }
 
@@ -284,7 +425,8 @@ public final class ConfidentialComputingGrpc {
      *
      *
      * <pre>
-     * Verifies the provided attestation info, returning a signed OIDC token.
+     * Verifies the provided attestation info, returning a signed attestation
+     * token.
      * </pre>
      */
     public void verifyAttestation(
@@ -294,6 +436,44 @@ public final class ConfidentialComputingGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getVerifyAttestationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies whether the provided attestation info is valid, returning a signed
+     * attestation token if so.
+     * </pre>
+     */
+    public void verifyConfidentialSpace(
+        com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getVerifyConfidentialSpaceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies the provided Confidential GKE attestation info, returning a signed
+     * OIDC token.
+     * </pre>
+     */
+    public void verifyConfidentialGke(
+        com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getVerifyConfidentialGkeMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -336,13 +516,44 @@ public final class ConfidentialComputingGrpc {
      *
      *
      * <pre>
-     * Verifies the provided attestation info, returning a signed OIDC token.
+     * Verifies the provided attestation info, returning a signed attestation
+     * token.
      * </pre>
      */
     public com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse verifyAttestation(
         com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getVerifyAttestationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies whether the provided attestation info is valid, returning a signed
+     * attestation token if so.
+     * </pre>
+     */
+    public com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse
+        verifyConfidentialSpace(
+            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVerifyConfidentialSpaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies the provided Confidential GKE attestation info, returning a signed
+     * OIDC token.
+     * </pre>
+     */
+    public com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeResponse
+        verifyConfidentialGke(
+            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVerifyConfidentialGkeMethod(), getCallOptions(), request);
     }
   }
 
@@ -383,13 +594,44 @@ public final class ConfidentialComputingGrpc {
      *
      *
      * <pre>
-     * Verifies the provided attestation info, returning a signed OIDC token.
+     * Verifies the provided attestation info, returning a signed attestation
+     * token.
      * </pre>
      */
     public com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse verifyAttestation(
         com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getVerifyAttestationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies whether the provided attestation info is valid, returning a signed
+     * attestation token if so.
+     * </pre>
+     */
+    public com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse
+        verifyConfidentialSpace(
+            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVerifyConfidentialSpaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies the provided Confidential GKE attestation info, returning a signed
+     * OIDC token.
+     * </pre>
+     */
+    public com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeResponse
+        verifyConfidentialGke(
+            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVerifyConfidentialGkeMethod(), getCallOptions(), request);
     }
   }
 
@@ -432,7 +674,8 @@ public final class ConfidentialComputingGrpc {
      *
      *
      * <pre>
-     * Verifies the provided attestation info, returning a signed OIDC token.
+     * Verifies the provided attestation info, returning a signed attestation
+     * token.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -442,10 +685,44 @@ public final class ConfidentialComputingGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getVerifyAttestationMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies whether the provided attestation info is valid, returning a signed
+     * attestation token if so.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse>
+        verifyConfidentialSpace(
+            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getVerifyConfidentialSpaceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies the provided Confidential GKE attestation info, returning a signed
+     * OIDC token.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeResponse>
+        verifyConfidentialGke(
+            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getVerifyConfidentialGkeMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_CHALLENGE = 0;
   private static final int METHODID_VERIFY_ATTESTATION = 1;
+  private static final int METHODID_VERIFY_CONFIDENTIAL_SPACE = 2;
+  private static final int METHODID_VERIFY_CONFIDENTIAL_GKE = 3;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -475,6 +752,20 @@ public final class ConfidentialComputingGrpc {
               (com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse>)
+                  responseObserver);
+          break;
+        case METHODID_VERIFY_CONFIDENTIAL_SPACE:
+          serviceImpl.verifyConfidentialSpace(
+              (com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse>)
+                  responseObserver);
+          break;
+        case METHODID_VERIFY_CONFIDENTIAL_GKE:
+          serviceImpl.verifyConfidentialGke(
+              (com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeResponse>)
                   responseObserver);
           break;
         default:
@@ -509,6 +800,20 @@ public final class ConfidentialComputingGrpc {
                     com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest,
                     com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse>(
                     service, METHODID_VERIFY_ATTESTATION)))
+        .addMethod(
+            getVerifyConfidentialSpaceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest,
+                    com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse>(
+                    service, METHODID_VERIFY_CONFIDENTIAL_SPACE)))
+        .addMethod(
+            getVerifyConfidentialGkeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest,
+                    com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeResponse>(
+                    service, METHODID_VERIFY_CONFIDENTIAL_GKE)))
         .build();
   }
 
@@ -562,6 +867,8 @@ public final class ConfidentialComputingGrpc {
                       .setSchemaDescriptor(new ConfidentialComputingFileDescriptorSupplier())
                       .addMethod(getCreateChallengeMethod())
                       .addMethod(getVerifyAttestationMethod())
+                      .addMethod(getVerifyConfidentialSpaceMethod())
+                      .addMethod(getVerifyConfidentialGkeMethod())
                       .build();
         }
       }

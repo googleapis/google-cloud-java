@@ -71,7 +71,7 @@ public interface InfoTypeSummaryOrBuilder
    * <code>int32 estimated_prevalence = 2 [deprecated = true];</code>
    *
    * @deprecated google.privacy.dlp.v2.InfoTypeSummary.estimated_prevalence is deprecated. See
-   *     google/privacy/dlp/v2/dlp.proto;l=7722
+   *     google/privacy/dlp/v2/dlp.proto;l=7756
    * @return The estimatedPrevalence.
    */
   @java.lang.Deprecated

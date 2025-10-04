@@ -192,6 +192,18 @@ public class NetworksSettings extends ClientSettings<NetworksSettings> {
     return ((NetworksStubSettings) getStubSettings()).removePeeringOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to requestRemovePeering. */
+  public UnaryCallSettings<RequestRemovePeeringNetworkRequest, Operation>
+      requestRemovePeeringSettings() {
+    return ((NetworksStubSettings) getStubSettings()).requestRemovePeeringSettings();
+  }
+
+  /** Returns the object with the settings used for calls to requestRemovePeering. */
+  public OperationCallSettings<RequestRemovePeeringNetworkRequest, Operation, Operation>
+      requestRemovePeeringOperationSettings() {
+    return ((NetworksStubSettings) getStubSettings()).requestRemovePeeringOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to switchToCustomMode. */
   public UnaryCallSettings<SwitchToCustomModeNetworkRequest, Operation>
       switchToCustomModeSettings() {
@@ -392,6 +404,18 @@ public class NetworksSettings extends ClientSettings<NetworksSettings> {
     public OperationCallSettings.Builder<RemovePeeringNetworkRequest, Operation, Operation>
         removePeeringOperationSettings() {
       return getStubSettingsBuilder().removePeeringOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to requestRemovePeering. */
+    public UnaryCallSettings.Builder<RequestRemovePeeringNetworkRequest, Operation>
+        requestRemovePeeringSettings() {
+      return getStubSettingsBuilder().requestRemovePeeringSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to requestRemovePeering. */
+    public OperationCallSettings.Builder<RequestRemovePeeringNetworkRequest, Operation, Operation>
+        requestRemovePeeringOperationSettings() {
+      return getStubSettingsBuilder().requestRemovePeeringOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to switchToCustomMode. */

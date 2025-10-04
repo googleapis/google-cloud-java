@@ -55,6 +55,7 @@ public class GrpcFulfillmentsStub extends FulfillmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFulfillmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Fulfillment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFulfillmentRequest, Fulfillment>
@@ -65,6 +66,7 @@ public class GrpcFulfillmentsStub extends FulfillmentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFulfillmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Fulfillment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -76,6 +78,7 @@ public class GrpcFulfillmentsStub extends FulfillmentsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -84,6 +87,7 @@ public class GrpcFulfillmentsStub extends FulfillmentsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<GetFulfillmentRequest, Fulfillment> getFulfillmentCallable;

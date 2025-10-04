@@ -69,6 +69,7 @@ public class GrpcGenAiCacheServiceStub extends GenAiCacheServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCachedContentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CachedContent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCachedContentRequest, CachedContent>
@@ -80,6 +81,7 @@ public class GrpcGenAiCacheServiceStub extends GenAiCacheServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCachedContentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CachedContent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCachedContentRequest, CachedContent>
@@ -91,6 +93,7 @@ public class GrpcGenAiCacheServiceStub extends GenAiCacheServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCachedContentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CachedContent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCachedContentRequest, Empty>
@@ -102,6 +105,7 @@ public class GrpcGenAiCacheServiceStub extends GenAiCacheServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCachedContentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCachedContentsRequest, ListCachedContentsResponse>
@@ -114,6 +118,7 @@ public class GrpcGenAiCacheServiceStub extends GenAiCacheServiceStub {
                   ProtoUtils.marshaller(ListCachedContentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCachedContentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -125,6 +130,7 @@ public class GrpcGenAiCacheServiceStub extends GenAiCacheServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -133,6 +139,7 @@ public class GrpcGenAiCacheServiceStub extends GenAiCacheServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -141,6 +148,7 @@ public class GrpcGenAiCacheServiceStub extends GenAiCacheServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -149,6 +157,7 @@ public class GrpcGenAiCacheServiceStub extends GenAiCacheServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -160,6 +169,7 @@ public class GrpcGenAiCacheServiceStub extends GenAiCacheServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateCachedContentRequest, CachedContent>

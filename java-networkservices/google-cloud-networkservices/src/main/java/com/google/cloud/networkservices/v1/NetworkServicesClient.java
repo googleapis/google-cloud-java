@@ -178,6 +178,183 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListWasmPluginVersions</td>
+ *      <td><p> Lists `WasmPluginVersion` resources in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listWasmPluginVersions(ListWasmPluginVersionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listWasmPluginVersions(WasmPluginName parent)
+ *           <li><p> listWasmPluginVersions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listWasmPluginVersionsPagedCallable()
+ *           <li><p> listWasmPluginVersionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetWasmPluginVersion</td>
+ *      <td><p> Gets details of the specified `WasmPluginVersion` resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getWasmPluginVersion(GetWasmPluginVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getWasmPluginVersion(WasmPluginVersionName name)
+ *           <li><p> getWasmPluginVersion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getWasmPluginVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateWasmPluginVersion</td>
+ *      <td><p> Creates a new `WasmPluginVersion` resource in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createWasmPluginVersionAsync(CreateWasmPluginVersionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createWasmPluginVersionAsync(WasmPluginName parent, WasmPluginVersion wasmPluginVersion, String wasmPluginVersionId)
+ *           <li><p> createWasmPluginVersionAsync(String parent, WasmPluginVersion wasmPluginVersion, String wasmPluginVersionId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createWasmPluginVersionOperationCallable()
+ *           <li><p> createWasmPluginVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteWasmPluginVersion</td>
+ *      <td><p> Deletes the specified `WasmPluginVersion` resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteWasmPluginVersionAsync(DeleteWasmPluginVersionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteWasmPluginVersionAsync(WasmPluginVersionName name)
+ *           <li><p> deleteWasmPluginVersionAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteWasmPluginVersionOperationCallable()
+ *           <li><p> deleteWasmPluginVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListWasmPlugins</td>
+ *      <td><p> Lists `WasmPlugin` resources in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listWasmPlugins(ListWasmPluginsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listWasmPlugins(LocationName parent)
+ *           <li><p> listWasmPlugins(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listWasmPluginsPagedCallable()
+ *           <li><p> listWasmPluginsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetWasmPlugin</td>
+ *      <td><p> Gets details of the specified `WasmPlugin` resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getWasmPlugin(GetWasmPluginRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getWasmPlugin(WasmPluginName name)
+ *           <li><p> getWasmPlugin(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getWasmPluginCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateWasmPlugin</td>
+ *      <td><p> Creates a new `WasmPlugin` resource in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createWasmPluginAsync(CreateWasmPluginRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createWasmPluginAsync(LocationName parent, WasmPlugin wasmPlugin, String wasmPluginId)
+ *           <li><p> createWasmPluginAsync(String parent, WasmPlugin wasmPlugin, String wasmPluginId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createWasmPluginOperationCallable()
+ *           <li><p> createWasmPluginCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateWasmPlugin</td>
+ *      <td><p> Updates the parameters of the specified `WasmPlugin` resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateWasmPluginAsync(UpdateWasmPluginRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateWasmPluginAsync(WasmPlugin wasmPlugin, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateWasmPluginOperationCallable()
+ *           <li><p> updateWasmPluginCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteWasmPlugin</td>
+ *      <td><p> Deletes the specified `WasmPlugin` resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteWasmPluginAsync(DeleteWasmPluginRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteWasmPluginAsync(WasmPluginName name)
+ *           <li><p> deleteWasmPluginAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteWasmPluginOperationCallable()
+ *           <li><p> deleteWasmPluginCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListGateways</td>
  *      <td><p> Lists Gateways in a given project and location.</td>
  *      <td>
@@ -1987,6 +2164,1362 @@ public class NetworkServicesClient implements BackgroundResource {
   public final UnaryCallable<DeleteEndpointPolicyRequest, Operation>
       deleteEndpointPolicyCallable() {
     return stub.deleteEndpointPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `WasmPluginVersion` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   WasmPluginName parent = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+   *   for (WasmPluginVersion element :
+   *       networkServicesClient.listWasmPluginVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The `WasmPlugin` resource whose `WasmPluginVersion`s are listed,
+   *     specified in the following format:
+   *     `projects/{project}/locations/global/wasmPlugins/{wasm_plugin}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListWasmPluginVersionsPagedResponse listWasmPluginVersions(WasmPluginName parent) {
+    ListWasmPluginVersionsRequest request =
+        ListWasmPluginVersionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listWasmPluginVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `WasmPluginVersion` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String parent = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString();
+   *   for (WasmPluginVersion element :
+   *       networkServicesClient.listWasmPluginVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The `WasmPlugin` resource whose `WasmPluginVersion`s are listed,
+   *     specified in the following format:
+   *     `projects/{project}/locations/global/wasmPlugins/{wasm_plugin}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListWasmPluginVersionsPagedResponse listWasmPluginVersions(String parent) {
+    ListWasmPluginVersionsRequest request =
+        ListWasmPluginVersionsRequest.newBuilder().setParent(parent).build();
+    return listWasmPluginVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `WasmPluginVersion` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListWasmPluginVersionsRequest request =
+   *       ListWasmPluginVersionsRequest.newBuilder()
+   *           .setParent(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (WasmPluginVersion element :
+   *       networkServicesClient.listWasmPluginVersions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListWasmPluginVersionsPagedResponse listWasmPluginVersions(
+      ListWasmPluginVersionsRequest request) {
+    return listWasmPluginVersionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `WasmPluginVersion` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListWasmPluginVersionsRequest request =
+   *       ListWasmPluginVersionsRequest.newBuilder()
+   *           .setParent(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<WasmPluginVersion> future =
+   *       networkServicesClient.listWasmPluginVersionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (WasmPluginVersion element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListWasmPluginVersionsRequest, ListWasmPluginVersionsPagedResponse>
+      listWasmPluginVersionsPagedCallable() {
+    return stub.listWasmPluginVersionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `WasmPluginVersion` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListWasmPluginVersionsRequest request =
+   *       ListWasmPluginVersionsRequest.newBuilder()
+   *           .setParent(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListWasmPluginVersionsResponse response =
+   *         networkServicesClient.listWasmPluginVersionsCallable().call(request);
+   *     for (WasmPluginVersion element : response.getWasmPluginVersionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>
+      listWasmPluginVersionsCallable() {
+    return stub.listWasmPluginVersionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the specified `WasmPluginVersion` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   WasmPluginVersionName name =
+   *       WasmPluginVersionName.of(
+   *           "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]");
+   *   WasmPluginVersion response = networkServicesClient.getWasmPluginVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the `WasmPluginVersion` resource to get. Must be in the format
+   *     `projects/{project}/locations/global/wasmPlugins/{wasm_plugin}/versions/{wasm_plugin_version}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WasmPluginVersion getWasmPluginVersion(WasmPluginVersionName name) {
+    GetWasmPluginVersionRequest request =
+        GetWasmPluginVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getWasmPluginVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the specified `WasmPluginVersion` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String name =
+   *       WasmPluginVersionName.of(
+   *               "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]")
+   *           .toString();
+   *   WasmPluginVersion response = networkServicesClient.getWasmPluginVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the `WasmPluginVersion` resource to get. Must be in the format
+   *     `projects/{project}/locations/global/wasmPlugins/{wasm_plugin}/versions/{wasm_plugin_version}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WasmPluginVersion getWasmPluginVersion(String name) {
+    GetWasmPluginVersionRequest request =
+        GetWasmPluginVersionRequest.newBuilder().setName(name).build();
+    return getWasmPluginVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the specified `WasmPluginVersion` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   GetWasmPluginVersionRequest request =
+   *       GetWasmPluginVersionRequest.newBuilder()
+   *           .setName(
+   *               WasmPluginVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   WasmPluginVersion response = networkServicesClient.getWasmPluginVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WasmPluginVersion getWasmPluginVersion(GetWasmPluginVersionRequest request) {
+    return getWasmPluginVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the specified `WasmPluginVersion` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   GetWasmPluginVersionRequest request =
+   *       GetWasmPluginVersionRequest.newBuilder()
+   *           .setName(
+   *               WasmPluginVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<WasmPluginVersion> future =
+   *       networkServicesClient.getWasmPluginVersionCallable().futureCall(request);
+   *   // Do something.
+   *   WasmPluginVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetWasmPluginVersionRequest, WasmPluginVersion>
+      getWasmPluginVersionCallable() {
+    return stub.getWasmPluginVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `WasmPluginVersion` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   WasmPluginName parent = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+   *   WasmPluginVersion wasmPluginVersion = WasmPluginVersion.newBuilder().build();
+   *   String wasmPluginVersionId = "wasmPluginVersionId38892252";
+   *   WasmPluginVersion response =
+   *       networkServicesClient
+   *           .createWasmPluginVersionAsync(parent, wasmPluginVersion, wasmPluginVersionId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the `WasmPluginVersion` resource. Must be in the
+   *     format `projects/{project}/locations/global/wasmPlugins/{wasm_plugin}`.
+   * @param wasmPluginVersion Required. `WasmPluginVersion` resource to be created.
+   * @param wasmPluginVersionId Required. User-provided ID of the `WasmPluginVersion` resource to be
+   *     created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<WasmPluginVersion, OperationMetadata> createWasmPluginVersionAsync(
+      WasmPluginName parent, WasmPluginVersion wasmPluginVersion, String wasmPluginVersionId) {
+    CreateWasmPluginVersionRequest request =
+        CreateWasmPluginVersionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setWasmPluginVersion(wasmPluginVersion)
+            .setWasmPluginVersionId(wasmPluginVersionId)
+            .build();
+    return createWasmPluginVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `WasmPluginVersion` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String parent = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString();
+   *   WasmPluginVersion wasmPluginVersion = WasmPluginVersion.newBuilder().build();
+   *   String wasmPluginVersionId = "wasmPluginVersionId38892252";
+   *   WasmPluginVersion response =
+   *       networkServicesClient
+   *           .createWasmPluginVersionAsync(parent, wasmPluginVersion, wasmPluginVersionId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the `WasmPluginVersion` resource. Must be in the
+   *     format `projects/{project}/locations/global/wasmPlugins/{wasm_plugin}`.
+   * @param wasmPluginVersion Required. `WasmPluginVersion` resource to be created.
+   * @param wasmPluginVersionId Required. User-provided ID of the `WasmPluginVersion` resource to be
+   *     created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<WasmPluginVersion, OperationMetadata> createWasmPluginVersionAsync(
+      String parent, WasmPluginVersion wasmPluginVersion, String wasmPluginVersionId) {
+    CreateWasmPluginVersionRequest request =
+        CreateWasmPluginVersionRequest.newBuilder()
+            .setParent(parent)
+            .setWasmPluginVersion(wasmPluginVersion)
+            .setWasmPluginVersionId(wasmPluginVersionId)
+            .build();
+    return createWasmPluginVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `WasmPluginVersion` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   CreateWasmPluginVersionRequest request =
+   *       CreateWasmPluginVersionRequest.newBuilder()
+   *           .setParent(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+   *           .setWasmPluginVersionId("wasmPluginVersionId38892252")
+   *           .setWasmPluginVersion(WasmPluginVersion.newBuilder().build())
+   *           .build();
+   *   WasmPluginVersion response =
+   *       networkServicesClient.createWasmPluginVersionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<WasmPluginVersion, OperationMetadata> createWasmPluginVersionAsync(
+      CreateWasmPluginVersionRequest request) {
+    return createWasmPluginVersionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `WasmPluginVersion` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   CreateWasmPluginVersionRequest request =
+   *       CreateWasmPluginVersionRequest.newBuilder()
+   *           .setParent(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+   *           .setWasmPluginVersionId("wasmPluginVersionId38892252")
+   *           .setWasmPluginVersion(WasmPluginVersion.newBuilder().build())
+   *           .build();
+   *   OperationFuture<WasmPluginVersion, OperationMetadata> future =
+   *       networkServicesClient.createWasmPluginVersionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   WasmPluginVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateWasmPluginVersionRequest, WasmPluginVersion, OperationMetadata>
+      createWasmPluginVersionOperationCallable() {
+    return stub.createWasmPluginVersionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `WasmPluginVersion` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   CreateWasmPluginVersionRequest request =
+   *       CreateWasmPluginVersionRequest.newBuilder()
+   *           .setParent(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+   *           .setWasmPluginVersionId("wasmPluginVersionId38892252")
+   *           .setWasmPluginVersion(WasmPluginVersion.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkServicesClient.createWasmPluginVersionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateWasmPluginVersionRequest, Operation>
+      createWasmPluginVersionCallable() {
+    return stub.createWasmPluginVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `WasmPluginVersion` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   WasmPluginVersionName name =
+   *       WasmPluginVersionName.of(
+   *           "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]");
+   *   networkServicesClient.deleteWasmPluginVersionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the `WasmPluginVersion` resource to delete. Must be in the
+   *     format
+   *     `projects/{project}/locations/global/wasmPlugins/{wasm_plugin}/versions/{wasm_plugin_version}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteWasmPluginVersionAsync(
+      WasmPluginVersionName name) {
+    DeleteWasmPluginVersionRequest request =
+        DeleteWasmPluginVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteWasmPluginVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `WasmPluginVersion` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String name =
+   *       WasmPluginVersionName.of(
+   *               "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]")
+   *           .toString();
+   *   networkServicesClient.deleteWasmPluginVersionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the `WasmPluginVersion` resource to delete. Must be in the
+   *     format
+   *     `projects/{project}/locations/global/wasmPlugins/{wasm_plugin}/versions/{wasm_plugin_version}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteWasmPluginVersionAsync(String name) {
+    DeleteWasmPluginVersionRequest request =
+        DeleteWasmPluginVersionRequest.newBuilder().setName(name).build();
+    return deleteWasmPluginVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `WasmPluginVersion` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   DeleteWasmPluginVersionRequest request =
+   *       DeleteWasmPluginVersionRequest.newBuilder()
+   *           .setName(
+   *               WasmPluginVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   networkServicesClient.deleteWasmPluginVersionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteWasmPluginVersionAsync(
+      DeleteWasmPluginVersionRequest request) {
+    return deleteWasmPluginVersionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `WasmPluginVersion` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   DeleteWasmPluginVersionRequest request =
+   *       DeleteWasmPluginVersionRequest.newBuilder()
+   *           .setName(
+   *               WasmPluginVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       networkServicesClient.deleteWasmPluginVersionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteWasmPluginVersionRequest, Empty, OperationMetadata>
+      deleteWasmPluginVersionOperationCallable() {
+    return stub.deleteWasmPluginVersionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `WasmPluginVersion` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   DeleteWasmPluginVersionRequest request =
+   *       DeleteWasmPluginVersionRequest.newBuilder()
+   *           .setName(
+   *               WasmPluginVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]", "[WASM_PLUGIN_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkServicesClient.deleteWasmPluginVersionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteWasmPluginVersionRequest, Operation>
+      deleteWasmPluginVersionCallable() {
+    return stub.deleteWasmPluginVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `WasmPlugin` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (WasmPlugin element : networkServicesClient.listWasmPlugins(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location from which the `WasmPlugin` resources are
+   *     listed, specified in the following format: `projects/{project}/locations/global`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListWasmPluginsPagedResponse listWasmPlugins(LocationName parent) {
+    ListWasmPluginsRequest request =
+        ListWasmPluginsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listWasmPlugins(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `WasmPlugin` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (WasmPlugin element : networkServicesClient.listWasmPlugins(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location from which the `WasmPlugin` resources are
+   *     listed, specified in the following format: `projects/{project}/locations/global`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListWasmPluginsPagedResponse listWasmPlugins(String parent) {
+    ListWasmPluginsRequest request = ListWasmPluginsRequest.newBuilder().setParent(parent).build();
+    return listWasmPlugins(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `WasmPlugin` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListWasmPluginsRequest request =
+   *       ListWasmPluginsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (WasmPlugin element : networkServicesClient.listWasmPlugins(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListWasmPluginsPagedResponse listWasmPlugins(ListWasmPluginsRequest request) {
+    return listWasmPluginsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `WasmPlugin` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListWasmPluginsRequest request =
+   *       ListWasmPluginsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<WasmPlugin> future =
+   *       networkServicesClient.listWasmPluginsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (WasmPlugin element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListWasmPluginsRequest, ListWasmPluginsPagedResponse>
+      listWasmPluginsPagedCallable() {
+    return stub.listWasmPluginsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `WasmPlugin` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListWasmPluginsRequest request =
+   *       ListWasmPluginsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListWasmPluginsResponse response =
+   *         networkServicesClient.listWasmPluginsCallable().call(request);
+   *     for (WasmPlugin element : response.getWasmPluginsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListWasmPluginsRequest, ListWasmPluginsResponse>
+      listWasmPluginsCallable() {
+    return stub.listWasmPluginsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the specified `WasmPlugin` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   WasmPluginName name = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+   *   WasmPlugin response = networkServicesClient.getWasmPlugin(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the `WasmPlugin` resource to get. Must be in the format
+   *     `projects/{project}/locations/global/wasmPlugins/{wasm_plugin}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WasmPlugin getWasmPlugin(WasmPluginName name) {
+    GetWasmPluginRequest request =
+        GetWasmPluginRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getWasmPlugin(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the specified `WasmPlugin` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String name = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString();
+   *   WasmPlugin response = networkServicesClient.getWasmPlugin(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the `WasmPlugin` resource to get. Must be in the format
+   *     `projects/{project}/locations/global/wasmPlugins/{wasm_plugin}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WasmPlugin getWasmPlugin(String name) {
+    GetWasmPluginRequest request = GetWasmPluginRequest.newBuilder().setName(name).build();
+    return getWasmPlugin(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the specified `WasmPlugin` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   GetWasmPluginRequest request =
+   *       GetWasmPluginRequest.newBuilder()
+   *           .setName(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+   *           .setView(WasmPluginView.forNumber(0))
+   *           .build();
+   *   WasmPlugin response = networkServicesClient.getWasmPlugin(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WasmPlugin getWasmPlugin(GetWasmPluginRequest request) {
+    return getWasmPluginCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the specified `WasmPlugin` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   GetWasmPluginRequest request =
+   *       GetWasmPluginRequest.newBuilder()
+   *           .setName(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+   *           .setView(WasmPluginView.forNumber(0))
+   *           .build();
+   *   ApiFuture<WasmPlugin> future =
+   *       networkServicesClient.getWasmPluginCallable().futureCall(request);
+   *   // Do something.
+   *   WasmPlugin response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetWasmPluginRequest, WasmPlugin> getWasmPluginCallable() {
+    return stub.getWasmPluginCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `WasmPlugin` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   WasmPlugin wasmPlugin = WasmPlugin.newBuilder().build();
+   *   String wasmPluginId = "wasmPluginId1902086770";
+   *   WasmPlugin response =
+   *       networkServicesClient.createWasmPluginAsync(parent, wasmPlugin, wasmPluginId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the `WasmPlugin` resource. Must be in the format
+   *     `projects/{project}/locations/global`.
+   * @param wasmPlugin Required. `WasmPlugin` resource to be created.
+   * @param wasmPluginId Required. User-provided ID of the `WasmPlugin` resource to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<WasmPlugin, OperationMetadata> createWasmPluginAsync(
+      LocationName parent, WasmPlugin wasmPlugin, String wasmPluginId) {
+    CreateWasmPluginRequest request =
+        CreateWasmPluginRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setWasmPlugin(wasmPlugin)
+            .setWasmPluginId(wasmPluginId)
+            .build();
+    return createWasmPluginAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `WasmPlugin` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   WasmPlugin wasmPlugin = WasmPlugin.newBuilder().build();
+   *   String wasmPluginId = "wasmPluginId1902086770";
+   *   WasmPlugin response =
+   *       networkServicesClient.createWasmPluginAsync(parent, wasmPlugin, wasmPluginId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the `WasmPlugin` resource. Must be in the format
+   *     `projects/{project}/locations/global`.
+   * @param wasmPlugin Required. `WasmPlugin` resource to be created.
+   * @param wasmPluginId Required. User-provided ID of the `WasmPlugin` resource to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<WasmPlugin, OperationMetadata> createWasmPluginAsync(
+      String parent, WasmPlugin wasmPlugin, String wasmPluginId) {
+    CreateWasmPluginRequest request =
+        CreateWasmPluginRequest.newBuilder()
+            .setParent(parent)
+            .setWasmPlugin(wasmPlugin)
+            .setWasmPluginId(wasmPluginId)
+            .build();
+    return createWasmPluginAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `WasmPlugin` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   CreateWasmPluginRequest request =
+   *       CreateWasmPluginRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setWasmPluginId("wasmPluginId1902086770")
+   *           .setWasmPlugin(WasmPlugin.newBuilder().build())
+   *           .build();
+   *   WasmPlugin response = networkServicesClient.createWasmPluginAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<WasmPlugin, OperationMetadata> createWasmPluginAsync(
+      CreateWasmPluginRequest request) {
+    return createWasmPluginOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `WasmPlugin` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   CreateWasmPluginRequest request =
+   *       CreateWasmPluginRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setWasmPluginId("wasmPluginId1902086770")
+   *           .setWasmPlugin(WasmPlugin.newBuilder().build())
+   *           .build();
+   *   OperationFuture<WasmPlugin, OperationMetadata> future =
+   *       networkServicesClient.createWasmPluginOperationCallable().futureCall(request);
+   *   // Do something.
+   *   WasmPlugin response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      createWasmPluginOperationCallable() {
+    return stub.createWasmPluginOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `WasmPlugin` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   CreateWasmPluginRequest request =
+   *       CreateWasmPluginRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setWasmPluginId("wasmPluginId1902086770")
+   *           .setWasmPlugin(WasmPlugin.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkServicesClient.createWasmPluginCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateWasmPluginRequest, Operation> createWasmPluginCallable() {
+    return stub.createWasmPluginCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of the specified `WasmPlugin` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   WasmPlugin wasmPlugin = WasmPlugin.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   WasmPlugin response =
+   *       networkServicesClient.updateWasmPluginAsync(wasmPlugin, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param wasmPlugin Required. Updated `WasmPlugin` resource.
+   * @param updateMask Optional. Used to specify the fields to be overwritten in the `WasmPlugin`
+   *     resource by the update. The fields specified in the `update_mask` field are relative to the
+   *     resource, not the full request. An omitted `update_mask` field is treated as an implied
+   *     `update_mask` field equivalent to all fields that are populated (that have a non-empty
+   *     value). The `update_mask` field supports a special value `&#42;`, which means that each
+   *     field in the given `WasmPlugin` resource (including the empty ones) replaces the current
+   *     value.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<WasmPlugin, OperationMetadata> updateWasmPluginAsync(
+      WasmPlugin wasmPlugin, FieldMask updateMask) {
+    UpdateWasmPluginRequest request =
+        UpdateWasmPluginRequest.newBuilder()
+            .setWasmPlugin(wasmPlugin)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateWasmPluginAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of the specified `WasmPlugin` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   UpdateWasmPluginRequest request =
+   *       UpdateWasmPluginRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setWasmPlugin(WasmPlugin.newBuilder().build())
+   *           .build();
+   *   WasmPlugin response = networkServicesClient.updateWasmPluginAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<WasmPlugin, OperationMetadata> updateWasmPluginAsync(
+      UpdateWasmPluginRequest request) {
+    return updateWasmPluginOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of the specified `WasmPlugin` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   UpdateWasmPluginRequest request =
+   *       UpdateWasmPluginRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setWasmPlugin(WasmPlugin.newBuilder().build())
+   *           .build();
+   *   OperationFuture<WasmPlugin, OperationMetadata> future =
+   *       networkServicesClient.updateWasmPluginOperationCallable().futureCall(request);
+   *   // Do something.
+   *   WasmPlugin response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      updateWasmPluginOperationCallable() {
+    return stub.updateWasmPluginOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of the specified `WasmPlugin` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   UpdateWasmPluginRequest request =
+   *       UpdateWasmPluginRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setWasmPlugin(WasmPlugin.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkServicesClient.updateWasmPluginCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateWasmPluginRequest, Operation> updateWasmPluginCallable() {
+    return stub.updateWasmPluginCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `WasmPlugin` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   WasmPluginName name = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]");
+   *   networkServicesClient.deleteWasmPluginAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the `WasmPlugin` resource to delete. Must be in the format
+   *     `projects/{project}/locations/global/wasmPlugins/{wasm_plugin}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteWasmPluginAsync(
+      WasmPluginName name) {
+    DeleteWasmPluginRequest request =
+        DeleteWasmPluginRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteWasmPluginAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `WasmPlugin` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String name = WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString();
+   *   networkServicesClient.deleteWasmPluginAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the `WasmPlugin` resource to delete. Must be in the format
+   *     `projects/{project}/locations/global/wasmPlugins/{wasm_plugin}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteWasmPluginAsync(String name) {
+    DeleteWasmPluginRequest request = DeleteWasmPluginRequest.newBuilder().setName(name).build();
+    return deleteWasmPluginAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `WasmPlugin` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   DeleteWasmPluginRequest request =
+   *       DeleteWasmPluginRequest.newBuilder()
+   *           .setName(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+   *           .build();
+   *   networkServicesClient.deleteWasmPluginAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteWasmPluginAsync(
+      DeleteWasmPluginRequest request) {
+    return deleteWasmPluginOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `WasmPlugin` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   DeleteWasmPluginRequest request =
+   *       DeleteWasmPluginRequest.newBuilder()
+   *           .setName(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       networkServicesClient.deleteWasmPluginOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteWasmPluginRequest, Empty, OperationMetadata>
+      deleteWasmPluginOperationCallable() {
+    return stub.deleteWasmPluginOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `WasmPlugin` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   DeleteWasmPluginRequest request =
+   *       DeleteWasmPluginRequest.newBuilder()
+   *           .setName(WasmPluginName.of("[PROJECT]", "[LOCATION]", "[WASM_PLUGIN]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkServicesClient.deleteWasmPluginCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteWasmPluginRequest, Operation> deleteWasmPluginCallable() {
+    return stub.deleteWasmPluginCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -8764,6 +10297,171 @@ public class NetworkServicesClient implements BackgroundResource {
     protected ListEndpointPoliciesFixedSizeCollection createCollection(
         List<ListEndpointPoliciesPage> pages, int collectionSize) {
       return new ListEndpointPoliciesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListWasmPluginVersionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListWasmPluginVersionsRequest,
+          ListWasmPluginVersionsResponse,
+          WasmPluginVersion,
+          ListWasmPluginVersionsPage,
+          ListWasmPluginVersionsFixedSizeCollection> {
+
+    public static ApiFuture<ListWasmPluginVersionsPagedResponse> createAsync(
+        PageContext<
+                ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse, WasmPluginVersion>
+            context,
+        ApiFuture<ListWasmPluginVersionsResponse> futureResponse) {
+      ApiFuture<ListWasmPluginVersionsPage> futurePage =
+          ListWasmPluginVersionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListWasmPluginVersionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListWasmPluginVersionsPagedResponse(ListWasmPluginVersionsPage page) {
+      super(page, ListWasmPluginVersionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListWasmPluginVersionsPage
+      extends AbstractPage<
+          ListWasmPluginVersionsRequest,
+          ListWasmPluginVersionsResponse,
+          WasmPluginVersion,
+          ListWasmPluginVersionsPage> {
+
+    private ListWasmPluginVersionsPage(
+        PageContext<
+                ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse, WasmPluginVersion>
+            context,
+        ListWasmPluginVersionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListWasmPluginVersionsPage createEmptyPage() {
+      return new ListWasmPluginVersionsPage(null, null);
+    }
+
+    @Override
+    protected ListWasmPluginVersionsPage createPage(
+        PageContext<
+                ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse, WasmPluginVersion>
+            context,
+        ListWasmPluginVersionsResponse response) {
+      return new ListWasmPluginVersionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListWasmPluginVersionsPage> createPageAsync(
+        PageContext<
+                ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse, WasmPluginVersion>
+            context,
+        ApiFuture<ListWasmPluginVersionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListWasmPluginVersionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListWasmPluginVersionsRequest,
+          ListWasmPluginVersionsResponse,
+          WasmPluginVersion,
+          ListWasmPluginVersionsPage,
+          ListWasmPluginVersionsFixedSizeCollection> {
+
+    private ListWasmPluginVersionsFixedSizeCollection(
+        List<ListWasmPluginVersionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListWasmPluginVersionsFixedSizeCollection createEmptyCollection() {
+      return new ListWasmPluginVersionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListWasmPluginVersionsFixedSizeCollection createCollection(
+        List<ListWasmPluginVersionsPage> pages, int collectionSize) {
+      return new ListWasmPluginVersionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListWasmPluginsPagedResponse
+      extends AbstractPagedListResponse<
+          ListWasmPluginsRequest,
+          ListWasmPluginsResponse,
+          WasmPlugin,
+          ListWasmPluginsPage,
+          ListWasmPluginsFixedSizeCollection> {
+
+    public static ApiFuture<ListWasmPluginsPagedResponse> createAsync(
+        PageContext<ListWasmPluginsRequest, ListWasmPluginsResponse, WasmPlugin> context,
+        ApiFuture<ListWasmPluginsResponse> futureResponse) {
+      ApiFuture<ListWasmPluginsPage> futurePage =
+          ListWasmPluginsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListWasmPluginsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListWasmPluginsPagedResponse(ListWasmPluginsPage page) {
+      super(page, ListWasmPluginsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListWasmPluginsPage
+      extends AbstractPage<
+          ListWasmPluginsRequest, ListWasmPluginsResponse, WasmPlugin, ListWasmPluginsPage> {
+
+    private ListWasmPluginsPage(
+        PageContext<ListWasmPluginsRequest, ListWasmPluginsResponse, WasmPlugin> context,
+        ListWasmPluginsResponse response) {
+      super(context, response);
+    }
+
+    private static ListWasmPluginsPage createEmptyPage() {
+      return new ListWasmPluginsPage(null, null);
+    }
+
+    @Override
+    protected ListWasmPluginsPage createPage(
+        PageContext<ListWasmPluginsRequest, ListWasmPluginsResponse, WasmPlugin> context,
+        ListWasmPluginsResponse response) {
+      return new ListWasmPluginsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListWasmPluginsPage> createPageAsync(
+        PageContext<ListWasmPluginsRequest, ListWasmPluginsResponse, WasmPlugin> context,
+        ApiFuture<ListWasmPluginsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListWasmPluginsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListWasmPluginsRequest,
+          ListWasmPluginsResponse,
+          WasmPlugin,
+          ListWasmPluginsPage,
+          ListWasmPluginsFixedSizeCollection> {
+
+    private ListWasmPluginsFixedSizeCollection(
+        List<ListWasmPluginsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListWasmPluginsFixedSizeCollection createEmptyCollection() {
+      return new ListWasmPluginsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListWasmPluginsFixedSizeCollection createCollection(
+        List<ListWasmPluginsPage> pages, int collectionSize) {
+      return new ListWasmPluginsFixedSizeCollection(pages, collectionSize);
     }
   }
 

@@ -75,6 +75,8 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     COMPUTE_INSTANCE_TARGET_ENVIRONMENT(3),
+    DISK_TARGET_ENVIRONMENT(5),
+    REGION_DISK_TARGET_ENVIRONMENT(6),
     TARGETENVIRONMENT_NOT_SET(0);
     private final int value;
 
@@ -96,6 +98,10 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
       switch (value) {
         case 3:
           return COMPUTE_INSTANCE_TARGET_ENVIRONMENT;
+        case 5:
+          return DISK_TARGET_ENVIRONMENT;
+        case 6:
+          return REGION_DISK_TARGET_ENVIRONMENT;
         case 0:
           return TARGETENVIRONMENT_NOT_SET;
         default:
@@ -122,6 +128,7 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     COMPUTE_INSTANCE_RESTORE_PROPERTIES(4),
+    DISK_RESTORE_PROPERTIES(7),
     INSTANCEPROPERTIES_NOT_SET(0);
     private final int value;
 
@@ -143,6 +150,8 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
       switch (value) {
         case 4:
           return COMPUTE_INSTANCE_RESTORE_PROPERTIES;
+        case 7:
+          return DISK_RESTORE_PROPERTIES;
         case 0:
           return INSTANCEPROPERTIES_NOT_SET;
         default:
@@ -361,6 +370,119 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
     return com.google.cloud.backupdr.v1.ComputeInstanceTargetEnvironment.getDefaultInstance();
   }
 
+  public static final int DISK_TARGET_ENVIRONMENT_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * Disk target environment to be used during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskTargetEnvironment disk_target_environment = 5;</code>
+   *
+   * @return Whether the diskTargetEnvironment field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiskTargetEnvironment() {
+    return targetEnvironmentCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Disk target environment to be used during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskTargetEnvironment disk_target_environment = 5;</code>
+   *
+   * @return The diskTargetEnvironment.
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.DiskTargetEnvironment getDiskTargetEnvironment() {
+    if (targetEnvironmentCase_ == 5) {
+      return (com.google.cloud.backupdr.v1.DiskTargetEnvironment) targetEnvironment_;
+    }
+    return com.google.cloud.backupdr.v1.DiskTargetEnvironment.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Disk target environment to be used during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskTargetEnvironment disk_target_environment = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.DiskTargetEnvironmentOrBuilder
+      getDiskTargetEnvironmentOrBuilder() {
+    if (targetEnvironmentCase_ == 5) {
+      return (com.google.cloud.backupdr.v1.DiskTargetEnvironment) targetEnvironment_;
+    }
+    return com.google.cloud.backupdr.v1.DiskTargetEnvironment.getDefaultInstance();
+  }
+
+  public static final int REGION_DISK_TARGET_ENVIRONMENT_FIELD_NUMBER = 6;
+
+  /**
+   *
+   *
+   * <pre>
+   * Region disk target environment to be used during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.RegionDiskTargetEnvironment region_disk_target_environment = 6;
+   * </code>
+   *
+   * @return Whether the regionDiskTargetEnvironment field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegionDiskTargetEnvironment() {
+    return targetEnvironmentCase_ == 6;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Region disk target environment to be used during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.RegionDiskTargetEnvironment region_disk_target_environment = 6;
+   * </code>
+   *
+   * @return The regionDiskTargetEnvironment.
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment getRegionDiskTargetEnvironment() {
+    if (targetEnvironmentCase_ == 6) {
+      return (com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment) targetEnvironment_;
+    }
+    return com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Region disk target environment to be used during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.RegionDiskTargetEnvironment region_disk_target_environment = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.RegionDiskTargetEnvironmentOrBuilder
+      getRegionDiskTargetEnvironmentOrBuilder() {
+    if (targetEnvironmentCase_ == 6) {
+      return (com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment) targetEnvironment_;
+    }
+    return com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment.getDefaultInstance();
+  }
+
   public static final int COMPUTE_INSTANCE_RESTORE_PROPERTIES_FIELD_NUMBER = 4;
 
   /**
@@ -423,6 +545,61 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
     return com.google.cloud.backupdr.v1.ComputeInstanceRestoreProperties.getDefaultInstance();
   }
 
+  public static final int DISK_RESTORE_PROPERTIES_FIELD_NUMBER = 7;
+
+  /**
+   *
+   *
+   * <pre>
+   * Disk properties to be overridden during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskRestoreProperties disk_restore_properties = 7;</code>
+   *
+   * @return Whether the diskRestoreProperties field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiskRestoreProperties() {
+    return instancePropertiesCase_ == 7;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Disk properties to be overridden during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskRestoreProperties disk_restore_properties = 7;</code>
+   *
+   * @return The diskRestoreProperties.
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.DiskRestoreProperties getDiskRestoreProperties() {
+    if (instancePropertiesCase_ == 7) {
+      return (com.google.cloud.backupdr.v1.DiskRestoreProperties) instanceProperties_;
+    }
+    return com.google.cloud.backupdr.v1.DiskRestoreProperties.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Disk properties to be overridden during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskRestoreProperties disk_restore_properties = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.DiskRestorePropertiesOrBuilder
+      getDiskRestorePropertiesOrBuilder() {
+    if (instancePropertiesCase_ == 7) {
+      return (com.google.cloud.backupdr.v1.DiskRestoreProperties) instanceProperties_;
+    }
+    return com.google.cloud.backupdr.v1.DiskRestoreProperties.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -451,6 +628,18 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
       output.writeMessage(
           4, (com.google.cloud.backupdr.v1.ComputeInstanceRestoreProperties) instanceProperties_);
     }
+    if (targetEnvironmentCase_ == 5) {
+      output.writeMessage(
+          5, (com.google.cloud.backupdr.v1.DiskTargetEnvironment) targetEnvironment_);
+    }
+    if (targetEnvironmentCase_ == 6) {
+      output.writeMessage(
+          6, (com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment) targetEnvironment_);
+    }
+    if (instancePropertiesCase_ == 7) {
+      output.writeMessage(
+          7, (com.google.cloud.backupdr.v1.DiskRestoreProperties) instanceProperties_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -478,6 +667,21 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
               4,
               (com.google.cloud.backupdr.v1.ComputeInstanceRestoreProperties) instanceProperties_);
     }
+    if (targetEnvironmentCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.backupdr.v1.DiskTargetEnvironment) targetEnvironment_);
+    }
+    if (targetEnvironmentCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment) targetEnvironment_);
+    }
+    if (instancePropertiesCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.backupdr.v1.DiskRestoreProperties) instanceProperties_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -502,6 +706,13 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
         if (!getComputeInstanceTargetEnvironment()
             .equals(other.getComputeInstanceTargetEnvironment())) return false;
         break;
+      case 5:
+        if (!getDiskTargetEnvironment().equals(other.getDiskTargetEnvironment())) return false;
+        break;
+      case 6:
+        if (!getRegionDiskTargetEnvironment().equals(other.getRegionDiskTargetEnvironment()))
+          return false;
+        break;
       case 0:
       default:
     }
@@ -510,6 +721,9 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
       case 4:
         if (!getComputeInstanceRestoreProperties()
             .equals(other.getComputeInstanceRestoreProperties())) return false;
+        break;
+      case 7:
+        if (!getDiskRestoreProperties().equals(other.getDiskRestoreProperties())) return false;
         break;
       case 0:
       default:
@@ -534,6 +748,14 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
         hash = (37 * hash) + COMPUTE_INSTANCE_TARGET_ENVIRONMENT_FIELD_NUMBER;
         hash = (53 * hash) + getComputeInstanceTargetEnvironment().hashCode();
         break;
+      case 5:
+        hash = (37 * hash) + DISK_TARGET_ENVIRONMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getDiskTargetEnvironment().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + REGION_DISK_TARGET_ENVIRONMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getRegionDiskTargetEnvironment().hashCode();
+        break;
       case 0:
       default:
     }
@@ -541,6 +763,10 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
       case 4:
         hash = (37 * hash) + COMPUTE_INSTANCE_RESTORE_PROPERTIES_FIELD_NUMBER;
         hash = (53 * hash) + getComputeInstanceRestoreProperties().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + DISK_RESTORE_PROPERTIES_FIELD_NUMBER;
+        hash = (53 * hash) + getDiskRestoreProperties().hashCode();
         break;
       case 0:
       default:
@@ -690,8 +916,17 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
       if (computeInstanceTargetEnvironmentBuilder_ != null) {
         computeInstanceTargetEnvironmentBuilder_.clear();
       }
+      if (diskTargetEnvironmentBuilder_ != null) {
+        diskTargetEnvironmentBuilder_.clear();
+      }
+      if (regionDiskTargetEnvironmentBuilder_ != null) {
+        regionDiskTargetEnvironmentBuilder_.clear();
+      }
       if (computeInstanceRestorePropertiesBuilder_ != null) {
         computeInstanceRestorePropertiesBuilder_.clear();
+      }
+      if (diskRestorePropertiesBuilder_ != null) {
+        diskRestorePropertiesBuilder_.clear();
       }
       targetEnvironmentCase_ = 0;
       targetEnvironment_ = null;
@@ -748,10 +983,19 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
       if (targetEnvironmentCase_ == 3 && computeInstanceTargetEnvironmentBuilder_ != null) {
         result.targetEnvironment_ = computeInstanceTargetEnvironmentBuilder_.build();
       }
+      if (targetEnvironmentCase_ == 5 && diskTargetEnvironmentBuilder_ != null) {
+        result.targetEnvironment_ = diskTargetEnvironmentBuilder_.build();
+      }
+      if (targetEnvironmentCase_ == 6 && regionDiskTargetEnvironmentBuilder_ != null) {
+        result.targetEnvironment_ = regionDiskTargetEnvironmentBuilder_.build();
+      }
       result.instancePropertiesCase_ = instancePropertiesCase_;
       result.instanceProperties_ = this.instanceProperties_;
       if (instancePropertiesCase_ == 4 && computeInstanceRestorePropertiesBuilder_ != null) {
         result.instanceProperties_ = computeInstanceRestorePropertiesBuilder_.build();
+      }
+      if (instancePropertiesCase_ == 7 && diskRestorePropertiesBuilder_ != null) {
+        result.instanceProperties_ = diskRestorePropertiesBuilder_.build();
       }
     }
 
@@ -817,6 +1061,16 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
             mergeComputeInstanceTargetEnvironment(other.getComputeInstanceTargetEnvironment());
             break;
           }
+        case DISK_TARGET_ENVIRONMENT:
+          {
+            mergeDiskTargetEnvironment(other.getDiskTargetEnvironment());
+            break;
+          }
+        case REGION_DISK_TARGET_ENVIRONMENT:
+          {
+            mergeRegionDiskTargetEnvironment(other.getRegionDiskTargetEnvironment());
+            break;
+          }
         case TARGETENVIRONMENT_NOT_SET:
           {
             break;
@@ -826,6 +1080,11 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
         case COMPUTE_INSTANCE_RESTORE_PROPERTIES:
           {
             mergeComputeInstanceRestoreProperties(other.getComputeInstanceRestoreProperties());
+            break;
+          }
+        case DISK_RESTORE_PROPERTIES:
+          {
+            mergeDiskRestoreProperties(other.getDiskRestoreProperties());
             break;
           }
         case INSTANCEPROPERTIES_NOT_SET:
@@ -887,6 +1146,27 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
                 instancePropertiesCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getDiskTargetEnvironmentFieldBuilder().getBuilder(), extensionRegistry);
+                targetEnvironmentCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getRegionDiskTargetEnvironmentFieldBuilder().getBuilder(), extensionRegistry);
+                targetEnvironmentCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getDiskRestorePropertiesFieldBuilder().getBuilder(), extensionRegistry);
+                instancePropertiesCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1487,6 +1767,473 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.DiskTargetEnvironment,
+            com.google.cloud.backupdr.v1.DiskTargetEnvironment.Builder,
+            com.google.cloud.backupdr.v1.DiskTargetEnvironmentOrBuilder>
+        diskTargetEnvironmentBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskTargetEnvironment disk_target_environment = 5;</code>
+     *
+     * @return Whether the diskTargetEnvironment field is set.
+     */
+    @java.lang.Override
+    public boolean hasDiskTargetEnvironment() {
+      return targetEnvironmentCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskTargetEnvironment disk_target_environment = 5;</code>
+     *
+     * @return The diskTargetEnvironment.
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.DiskTargetEnvironment getDiskTargetEnvironment() {
+      if (diskTargetEnvironmentBuilder_ == null) {
+        if (targetEnvironmentCase_ == 5) {
+          return (com.google.cloud.backupdr.v1.DiskTargetEnvironment) targetEnvironment_;
+        }
+        return com.google.cloud.backupdr.v1.DiskTargetEnvironment.getDefaultInstance();
+      } else {
+        if (targetEnvironmentCase_ == 5) {
+          return diskTargetEnvironmentBuilder_.getMessage();
+        }
+        return com.google.cloud.backupdr.v1.DiskTargetEnvironment.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskTargetEnvironment disk_target_environment = 5;</code>
+     */
+    public Builder setDiskTargetEnvironment(
+        com.google.cloud.backupdr.v1.DiskTargetEnvironment value) {
+      if (diskTargetEnvironmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        targetEnvironment_ = value;
+        onChanged();
+      } else {
+        diskTargetEnvironmentBuilder_.setMessage(value);
+      }
+      targetEnvironmentCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskTargetEnvironment disk_target_environment = 5;</code>
+     */
+    public Builder setDiskTargetEnvironment(
+        com.google.cloud.backupdr.v1.DiskTargetEnvironment.Builder builderForValue) {
+      if (diskTargetEnvironmentBuilder_ == null) {
+        targetEnvironment_ = builderForValue.build();
+        onChanged();
+      } else {
+        diskTargetEnvironmentBuilder_.setMessage(builderForValue.build());
+      }
+      targetEnvironmentCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskTargetEnvironment disk_target_environment = 5;</code>
+     */
+    public Builder mergeDiskTargetEnvironment(
+        com.google.cloud.backupdr.v1.DiskTargetEnvironment value) {
+      if (diskTargetEnvironmentBuilder_ == null) {
+        if (targetEnvironmentCase_ == 5
+            && targetEnvironment_
+                != com.google.cloud.backupdr.v1.DiskTargetEnvironment.getDefaultInstance()) {
+          targetEnvironment_ =
+              com.google.cloud.backupdr.v1.DiskTargetEnvironment.newBuilder(
+                      (com.google.cloud.backupdr.v1.DiskTargetEnvironment) targetEnvironment_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          targetEnvironment_ = value;
+        }
+        onChanged();
+      } else {
+        if (targetEnvironmentCase_ == 5) {
+          diskTargetEnvironmentBuilder_.mergeFrom(value);
+        } else {
+          diskTargetEnvironmentBuilder_.setMessage(value);
+        }
+      }
+      targetEnvironmentCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskTargetEnvironment disk_target_environment = 5;</code>
+     */
+    public Builder clearDiskTargetEnvironment() {
+      if (diskTargetEnvironmentBuilder_ == null) {
+        if (targetEnvironmentCase_ == 5) {
+          targetEnvironmentCase_ = 0;
+          targetEnvironment_ = null;
+          onChanged();
+        }
+      } else {
+        if (targetEnvironmentCase_ == 5) {
+          targetEnvironmentCase_ = 0;
+          targetEnvironment_ = null;
+        }
+        diskTargetEnvironmentBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskTargetEnvironment disk_target_environment = 5;</code>
+     */
+    public com.google.cloud.backupdr.v1.DiskTargetEnvironment.Builder
+        getDiskTargetEnvironmentBuilder() {
+      return getDiskTargetEnvironmentFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskTargetEnvironment disk_target_environment = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.DiskTargetEnvironmentOrBuilder
+        getDiskTargetEnvironmentOrBuilder() {
+      if ((targetEnvironmentCase_ == 5) && (diskTargetEnvironmentBuilder_ != null)) {
+        return diskTargetEnvironmentBuilder_.getMessageOrBuilder();
+      } else {
+        if (targetEnvironmentCase_ == 5) {
+          return (com.google.cloud.backupdr.v1.DiskTargetEnvironment) targetEnvironment_;
+        }
+        return com.google.cloud.backupdr.v1.DiskTargetEnvironment.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskTargetEnvironment disk_target_environment = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.DiskTargetEnvironment,
+            com.google.cloud.backupdr.v1.DiskTargetEnvironment.Builder,
+            com.google.cloud.backupdr.v1.DiskTargetEnvironmentOrBuilder>
+        getDiskTargetEnvironmentFieldBuilder() {
+      if (diskTargetEnvironmentBuilder_ == null) {
+        if (!(targetEnvironmentCase_ == 5)) {
+          targetEnvironment_ =
+              com.google.cloud.backupdr.v1.DiskTargetEnvironment.getDefaultInstance();
+        }
+        diskTargetEnvironmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.backupdr.v1.DiskTargetEnvironment,
+                com.google.cloud.backupdr.v1.DiskTargetEnvironment.Builder,
+                com.google.cloud.backupdr.v1.DiskTargetEnvironmentOrBuilder>(
+                (com.google.cloud.backupdr.v1.DiskTargetEnvironment) targetEnvironment_,
+                getParentForChildren(),
+                isClean());
+        targetEnvironment_ = null;
+      }
+      targetEnvironmentCase_ = 5;
+      onChanged();
+      return diskTargetEnvironmentBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment,
+            com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment.Builder,
+            com.google.cloud.backupdr.v1.RegionDiskTargetEnvironmentOrBuilder>
+        regionDiskTargetEnvironmentBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Region disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.RegionDiskTargetEnvironment region_disk_target_environment = 6;
+     * </code>
+     *
+     * @return Whether the regionDiskTargetEnvironment field is set.
+     */
+    @java.lang.Override
+    public boolean hasRegionDiskTargetEnvironment() {
+      return targetEnvironmentCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Region disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.RegionDiskTargetEnvironment region_disk_target_environment = 6;
+     * </code>
+     *
+     * @return The regionDiskTargetEnvironment.
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment
+        getRegionDiskTargetEnvironment() {
+      if (regionDiskTargetEnvironmentBuilder_ == null) {
+        if (targetEnvironmentCase_ == 6) {
+          return (com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment) targetEnvironment_;
+        }
+        return com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment.getDefaultInstance();
+      } else {
+        if (targetEnvironmentCase_ == 6) {
+          return regionDiskTargetEnvironmentBuilder_.getMessage();
+        }
+        return com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Region disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.RegionDiskTargetEnvironment region_disk_target_environment = 6;
+     * </code>
+     */
+    public Builder setRegionDiskTargetEnvironment(
+        com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment value) {
+      if (regionDiskTargetEnvironmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        targetEnvironment_ = value;
+        onChanged();
+      } else {
+        regionDiskTargetEnvironmentBuilder_.setMessage(value);
+      }
+      targetEnvironmentCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Region disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.RegionDiskTargetEnvironment region_disk_target_environment = 6;
+     * </code>
+     */
+    public Builder setRegionDiskTargetEnvironment(
+        com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment.Builder builderForValue) {
+      if (regionDiskTargetEnvironmentBuilder_ == null) {
+        targetEnvironment_ = builderForValue.build();
+        onChanged();
+      } else {
+        regionDiskTargetEnvironmentBuilder_.setMessage(builderForValue.build());
+      }
+      targetEnvironmentCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Region disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.RegionDiskTargetEnvironment region_disk_target_environment = 6;
+     * </code>
+     */
+    public Builder mergeRegionDiskTargetEnvironment(
+        com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment value) {
+      if (regionDiskTargetEnvironmentBuilder_ == null) {
+        if (targetEnvironmentCase_ == 6
+            && targetEnvironment_
+                != com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment.getDefaultInstance()) {
+          targetEnvironment_ =
+              com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment.newBuilder(
+                      (com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment) targetEnvironment_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          targetEnvironment_ = value;
+        }
+        onChanged();
+      } else {
+        if (targetEnvironmentCase_ == 6) {
+          regionDiskTargetEnvironmentBuilder_.mergeFrom(value);
+        } else {
+          regionDiskTargetEnvironmentBuilder_.setMessage(value);
+        }
+      }
+      targetEnvironmentCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Region disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.RegionDiskTargetEnvironment region_disk_target_environment = 6;
+     * </code>
+     */
+    public Builder clearRegionDiskTargetEnvironment() {
+      if (regionDiskTargetEnvironmentBuilder_ == null) {
+        if (targetEnvironmentCase_ == 6) {
+          targetEnvironmentCase_ = 0;
+          targetEnvironment_ = null;
+          onChanged();
+        }
+      } else {
+        if (targetEnvironmentCase_ == 6) {
+          targetEnvironmentCase_ = 0;
+          targetEnvironment_ = null;
+        }
+        regionDiskTargetEnvironmentBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Region disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.RegionDiskTargetEnvironment region_disk_target_environment = 6;
+     * </code>
+     */
+    public com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment.Builder
+        getRegionDiskTargetEnvironmentBuilder() {
+      return getRegionDiskTargetEnvironmentFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Region disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.RegionDiskTargetEnvironment region_disk_target_environment = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.RegionDiskTargetEnvironmentOrBuilder
+        getRegionDiskTargetEnvironmentOrBuilder() {
+      if ((targetEnvironmentCase_ == 6) && (regionDiskTargetEnvironmentBuilder_ != null)) {
+        return regionDiskTargetEnvironmentBuilder_.getMessageOrBuilder();
+      } else {
+        if (targetEnvironmentCase_ == 6) {
+          return (com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment) targetEnvironment_;
+        }
+        return com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Region disk target environment to be used during restore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.RegionDiskTargetEnvironment region_disk_target_environment = 6;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment,
+            com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment.Builder,
+            com.google.cloud.backupdr.v1.RegionDiskTargetEnvironmentOrBuilder>
+        getRegionDiskTargetEnvironmentFieldBuilder() {
+      if (regionDiskTargetEnvironmentBuilder_ == null) {
+        if (!(targetEnvironmentCase_ == 6)) {
+          targetEnvironment_ =
+              com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment.getDefaultInstance();
+        }
+        regionDiskTargetEnvironmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment,
+                com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment.Builder,
+                com.google.cloud.backupdr.v1.RegionDiskTargetEnvironmentOrBuilder>(
+                (com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment) targetEnvironment_,
+                getParentForChildren(),
+                isClean());
+        targetEnvironment_ = null;
+      }
+      targetEnvironmentCase_ = 6;
+      onChanged();
+      return regionDiskTargetEnvironmentBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.backupdr.v1.ComputeInstanceRestoreProperties,
             com.google.cloud.backupdr.v1.ComputeInstanceRestoreProperties.Builder,
             com.google.cloud.backupdr.v1.ComputeInstanceRestorePropertiesOrBuilder>
@@ -1731,6 +2478,230 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
       instancePropertiesCase_ = 4;
       onChanged();
       return computeInstanceRestorePropertiesBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.DiskRestoreProperties,
+            com.google.cloud.backupdr.v1.DiskRestoreProperties.Builder,
+            com.google.cloud.backupdr.v1.DiskRestorePropertiesOrBuilder>
+        diskRestorePropertiesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk properties to be overridden during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskRestoreProperties disk_restore_properties = 7;</code>
+     *
+     * @return Whether the diskRestoreProperties field is set.
+     */
+    @java.lang.Override
+    public boolean hasDiskRestoreProperties() {
+      return instancePropertiesCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk properties to be overridden during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskRestoreProperties disk_restore_properties = 7;</code>
+     *
+     * @return The diskRestoreProperties.
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.DiskRestoreProperties getDiskRestoreProperties() {
+      if (diskRestorePropertiesBuilder_ == null) {
+        if (instancePropertiesCase_ == 7) {
+          return (com.google.cloud.backupdr.v1.DiskRestoreProperties) instanceProperties_;
+        }
+        return com.google.cloud.backupdr.v1.DiskRestoreProperties.getDefaultInstance();
+      } else {
+        if (instancePropertiesCase_ == 7) {
+          return diskRestorePropertiesBuilder_.getMessage();
+        }
+        return com.google.cloud.backupdr.v1.DiskRestoreProperties.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk properties to be overridden during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskRestoreProperties disk_restore_properties = 7;</code>
+     */
+    public Builder setDiskRestoreProperties(
+        com.google.cloud.backupdr.v1.DiskRestoreProperties value) {
+      if (diskRestorePropertiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        instanceProperties_ = value;
+        onChanged();
+      } else {
+        diskRestorePropertiesBuilder_.setMessage(value);
+      }
+      instancePropertiesCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk properties to be overridden during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskRestoreProperties disk_restore_properties = 7;</code>
+     */
+    public Builder setDiskRestoreProperties(
+        com.google.cloud.backupdr.v1.DiskRestoreProperties.Builder builderForValue) {
+      if (diskRestorePropertiesBuilder_ == null) {
+        instanceProperties_ = builderForValue.build();
+        onChanged();
+      } else {
+        diskRestorePropertiesBuilder_.setMessage(builderForValue.build());
+      }
+      instancePropertiesCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk properties to be overridden during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskRestoreProperties disk_restore_properties = 7;</code>
+     */
+    public Builder mergeDiskRestoreProperties(
+        com.google.cloud.backupdr.v1.DiskRestoreProperties value) {
+      if (diskRestorePropertiesBuilder_ == null) {
+        if (instancePropertiesCase_ == 7
+            && instanceProperties_
+                != com.google.cloud.backupdr.v1.DiskRestoreProperties.getDefaultInstance()) {
+          instanceProperties_ =
+              com.google.cloud.backupdr.v1.DiskRestoreProperties.newBuilder(
+                      (com.google.cloud.backupdr.v1.DiskRestoreProperties) instanceProperties_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          instanceProperties_ = value;
+        }
+        onChanged();
+      } else {
+        if (instancePropertiesCase_ == 7) {
+          diskRestorePropertiesBuilder_.mergeFrom(value);
+        } else {
+          diskRestorePropertiesBuilder_.setMessage(value);
+        }
+      }
+      instancePropertiesCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk properties to be overridden during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskRestoreProperties disk_restore_properties = 7;</code>
+     */
+    public Builder clearDiskRestoreProperties() {
+      if (diskRestorePropertiesBuilder_ == null) {
+        if (instancePropertiesCase_ == 7) {
+          instancePropertiesCase_ = 0;
+          instanceProperties_ = null;
+          onChanged();
+        }
+      } else {
+        if (instancePropertiesCase_ == 7) {
+          instancePropertiesCase_ = 0;
+          instanceProperties_ = null;
+        }
+        diskRestorePropertiesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk properties to be overridden during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskRestoreProperties disk_restore_properties = 7;</code>
+     */
+    public com.google.cloud.backupdr.v1.DiskRestoreProperties.Builder
+        getDiskRestorePropertiesBuilder() {
+      return getDiskRestorePropertiesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk properties to be overridden during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskRestoreProperties disk_restore_properties = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.DiskRestorePropertiesOrBuilder
+        getDiskRestorePropertiesOrBuilder() {
+      if ((instancePropertiesCase_ == 7) && (diskRestorePropertiesBuilder_ != null)) {
+        return diskRestorePropertiesBuilder_.getMessageOrBuilder();
+      } else {
+        if (instancePropertiesCase_ == 7) {
+          return (com.google.cloud.backupdr.v1.DiskRestoreProperties) instanceProperties_;
+        }
+        return com.google.cloud.backupdr.v1.DiskRestoreProperties.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disk properties to be overridden during restore.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskRestoreProperties disk_restore_properties = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.DiskRestoreProperties,
+            com.google.cloud.backupdr.v1.DiskRestoreProperties.Builder,
+            com.google.cloud.backupdr.v1.DiskRestorePropertiesOrBuilder>
+        getDiskRestorePropertiesFieldBuilder() {
+      if (diskRestorePropertiesBuilder_ == null) {
+        if (!(instancePropertiesCase_ == 7)) {
+          instanceProperties_ =
+              com.google.cloud.backupdr.v1.DiskRestoreProperties.getDefaultInstance();
+        }
+        diskRestorePropertiesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.backupdr.v1.DiskRestoreProperties,
+                com.google.cloud.backupdr.v1.DiskRestoreProperties.Builder,
+                com.google.cloud.backupdr.v1.DiskRestorePropertiesOrBuilder>(
+                (com.google.cloud.backupdr.v1.DiskRestoreProperties) instanceProperties_,
+                getParentForChildren(),
+                isClean());
+        instanceProperties_ = null;
+      }
+      instancePropertiesCase_ = 7;
+      onChanged();
+      return diskRestorePropertiesBuilder_;
     }
 
     @java.lang.Override

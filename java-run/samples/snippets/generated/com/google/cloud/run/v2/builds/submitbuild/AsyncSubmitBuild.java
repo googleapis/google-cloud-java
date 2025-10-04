@@ -18,10 +18,10 @@ package com.google.cloud.run.v2.samples;
 
 // [START run_v2_generated_Builds_SubmitBuild_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.run.v2.BuildWorkerPoolName;
 import com.google.cloud.run.v2.BuildsClient;
 import com.google.cloud.run.v2.SubmitBuildRequest;
 import com.google.cloud.run.v2.SubmitBuildResponse;
-import com.google.cloud.run.v2.WorkerPoolName;
 import java.util.ArrayList;
 
 public class AsyncSubmitBuild {
@@ -43,7 +43,7 @@ public class AsyncSubmitBuild {
               .setImageUri("imageUri-859610607")
               .setServiceAccount("serviceAccount1079137720")
               .setWorkerPool(
-                  WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
+                  BuildWorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
               .addAllTags(new ArrayList<String>())
               .build();
       ApiFuture<SubmitBuildResponse> future =

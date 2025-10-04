@@ -96,7 +96,7 @@ public final class IndexEndpointProto {
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:u\352Ar\n"
           + "\'aiplatform.googleapis.com/IndexEndpoint\022Gproject"
-          + "s/{project}/locations/{location}/indexEndpoints/{index_endpoint}\"\355\005\n\r"
+          + "s/{project}/locations/{location}/indexEndpoints/{index_endpoint}\"\233\006\n\r"
           + "DeployedIndex\022\017\n"
           + "\002id\030\001 \001(\tB\003\340A\002\0226\n"
           + "\005index\030\002 \001(\tB\'\340A\002\372A!\n"
@@ -111,30 +111,31 @@ public final class IndexEndpointProto {
           + "\0132..google.cloud.aiplatform.v1.AutomaticResourcesB\003\340A\001\022P\n"
           + "\023dedicated_resources\030\020 "
           + "\001(\0132..google.cloud.aiplatform.v1.DedicatedResourcesB\003\340A\001\022\"\n"
-          + "\025enable_access_logging\030\010 \001(\010B\003\340A\001\022\\\n"
+          + "\025enable_access_logging\030\010 \001(\010B\003\340A\001\022,\n"
+          + "\037enable_datapoint_upsert_logging\030\024 \001(\010B\003\340A\001\022\\\n"
           + "\032deployed_index_auth_config\030\t"
           + " \001(\01323.google.cloud.aiplatform.v1.DeployedIndexAuthConfigB\003\340A\001\022\037\n"
           + "\022reserved_ip_ranges\030\n"
           + " \003(\tB\003\340A\001\022\035\n"
           + "\020deployment_group\030\013 \001(\tB\003\340A\001\022T\n"
-          + "\026psc_automation_configs\030\023 \003"
-          + "(\0132/.google.cloud.aiplatform.v1.PSCAutomationConfigB\003\340A\001\"\256\001\n"
+          + "\026psc_automation_configs\030\023"
+          + " \003(\0132/.google.cloud.aiplatform.v1.PSCAutomationConfigB\003\340A\001\"\256\001\n"
           + "\027DeployedIndexAuthConfig\022W\n\r"
-          + "auth_provider\030\001 \001(\0132@.google.clo"
-          + "ud.aiplatform.v1.DeployedIndexAuthConfig.AuthProvider\032:\n"
+          + "auth_provider\030\001 \001(\0132@.goog"
+          + "le.cloud.aiplatform.v1.DeployedIndexAuthConfig.AuthProvider\032:\n"
           + "\014AuthProvider\022\021\n"
           + "\taudiences\030\001 \003(\t\022\027\n"
           + "\017allowed_issuers\030\002 \003(\t\"\262\001\n"
           + "\025IndexPrivateEndpoints\022\037\n"
           + "\022match_grpc_address\030\001 \001(\tB\003\340A\003\022\037\n"
           + "\022service_attachment\030\002 \001(\tB\003\340A\003\022W\n"
-          + "\027psc_automated_endpoints\030\003 \003(\01321"
-          + ".google.cloud.aiplatform.v1.PscAutomatedEndpointsB\003\340A\003B\320\001\n"
-          + "\036com.google.cloud.aiplatform.v1B\022IndexEndpointProtoP\001Z>cloud.g"
-          + "oogle.com/go/aiplatform/apiv1/aiplatform"
-          + "pb;aiplatformpb\252\002\032Google.Cloud.AIPlatfor"
-          + "m.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goog"
-          + "le::Cloud::AIPlatform::V1b\006proto3"
+          + "\027psc_automated_endpoints\030\003"
+          + " \003(\01321.google.cloud.aiplatform.v1.PscAutomatedEndpointsB\003\340A\003B\320\001\n"
+          + "\036com.google.cloud.aiplatform.v1B\022IndexEndpointProtoP\001Z>c"
+          + "loud.google.com/go/aiplatform/apiv1/aipl"
+          + "atformpb;aiplatformpb\252\002\032Google.Cloud.AIP"
+          + "latform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352"
+          + "\002\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -193,6 +194,7 @@ public final class IndexEndpointProto {
               "AutomaticResources",
               "DedicatedResources",
               "EnableAccessLogging",
+              "EnableDatapointUpsertLogging",
               "DeployedIndexAuthConfig",
               "ReservedIpRanges",
               "DeploymentGroup",

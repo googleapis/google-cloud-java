@@ -56,6 +56,7 @@ public class GrpcKeyTrackingServiceStub extends KeyTrackingServiceStub {
                   ProtoUtils.marshaller(GetProtectedResourcesSummaryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ProtectedResourcesSummary.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -70,6 +71,7 @@ public class GrpcKeyTrackingServiceStub extends KeyTrackingServiceStub {
                   ProtoUtils.marshaller(SearchProtectedResourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchProtectedResourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetProtectedResourcesSummaryRequest, ProtectedResourcesSummary>

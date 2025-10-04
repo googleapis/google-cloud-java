@@ -329,7 +329,7 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param operation Name of the Operations resource to return, or its unique numeric identifier.
+   * @param operation Name of the Operations resource to return. Parent is derived from this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation get(String operation) {

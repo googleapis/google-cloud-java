@@ -16,8 +16,11 @@
 
 package com.google.cloud.backupdr.v1;
 
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupPlanAssociationsForResourceTypePagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchDataSourceReferencesForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchUsableBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanAssociationsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanRevisionsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupsPagedResponse;
@@ -302,6 +305,17 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
     return ((BackupDRStubSettings) getStubSettings()).createBackupPlanOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateBackupPlan. */
+  public UnaryCallSettings<UpdateBackupPlanRequest, Operation> updateBackupPlanSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).updateBackupPlanSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupPlan. */
+  public OperationCallSettings<UpdateBackupPlanRequest, BackupPlan, OperationMetadata>
+      updateBackupPlanOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).updateBackupPlanOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to getBackupPlan. */
   public UnaryCallSettings<GetBackupPlanRequest, BackupPlan> getBackupPlanSettings() {
     return ((BackupDRStubSettings) getStubSettings()).getBackupPlanSettings();
@@ -325,6 +339,21 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
     return ((BackupDRStubSettings) getStubSettings()).deleteBackupPlanOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to getBackupPlanRevision. */
+  public UnaryCallSettings<GetBackupPlanRevisionRequest, BackupPlanRevision>
+      getBackupPlanRevisionSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).getBackupPlanRevisionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBackupPlanRevisions. */
+  public PagedCallSettings<
+          ListBackupPlanRevisionsRequest,
+          ListBackupPlanRevisionsResponse,
+          ListBackupPlanRevisionsPagedResponse>
+      listBackupPlanRevisionsSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).listBackupPlanRevisionsSettings();
+  }
+
   /** Returns the object with the settings used for calls to createBackupPlanAssociation. */
   public UnaryCallSettings<CreateBackupPlanAssociationRequest, Operation>
       createBackupPlanAssociationSettings() {
@@ -337,6 +366,20 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
       createBackupPlanAssociationOperationSettings() {
     return ((BackupDRStubSettings) getStubSettings())
         .createBackupPlanAssociationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupPlanAssociation. */
+  public UnaryCallSettings<UpdateBackupPlanAssociationRequest, Operation>
+      updateBackupPlanAssociationSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).updateBackupPlanAssociationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupPlanAssociation. */
+  public OperationCallSettings<
+          UpdateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
+      updateBackupPlanAssociationOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings())
+        .updateBackupPlanAssociationOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getBackupPlanAssociation. */
@@ -352,6 +395,19 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
           ListBackupPlanAssociationsPagedResponse>
       listBackupPlanAssociationsSettings() {
     return ((BackupDRStubSettings) getStubSettings()).listBackupPlanAssociationsSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * fetchBackupPlanAssociationsForResourceType.
+   */
+  public PagedCallSettings<
+          FetchBackupPlanAssociationsForResourceTypeRequest,
+          FetchBackupPlanAssociationsForResourceTypeResponse,
+          FetchBackupPlanAssociationsForResourceTypePagedResponse>
+      fetchBackupPlanAssociationsForResourceTypeSettings() {
+    return ((BackupDRStubSettings) getStubSettings())
+        .fetchBackupPlanAssociationsForResourceTypeSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteBackupPlanAssociation. */
@@ -376,6 +432,25 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
   public OperationCallSettings<TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
       triggerBackupOperationSettings() {
     return ((BackupDRStubSettings) getStubSettings()).triggerBackupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDataSourceReference. */
+  public UnaryCallSettings<GetDataSourceReferenceRequest, DataSourceReference>
+      getDataSourceReferenceSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).getDataSourceReferenceSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * fetchDataSourceReferencesForResourceType.
+   */
+  public PagedCallSettings<
+          FetchDataSourceReferencesForResourceTypeRequest,
+          FetchDataSourceReferencesForResourceTypeResponse,
+          FetchDataSourceReferencesForResourceTypePagedResponse>
+      fetchDataSourceReferencesForResourceTypeSettings() {
+    return ((BackupDRStubSettings) getStubSettings())
+        .fetchDataSourceReferencesForResourceTypeSettings();
   }
 
   /** Returns the object with the settings used for calls to initializeService. */
@@ -707,6 +782,18 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
       return getStubSettingsBuilder().createBackupPlanOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateBackupPlan. */
+    public UnaryCallSettings.Builder<UpdateBackupPlanRequest, Operation>
+        updateBackupPlanSettings() {
+      return getStubSettingsBuilder().updateBackupPlanSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupPlan. */
+    public OperationCallSettings.Builder<UpdateBackupPlanRequest, BackupPlan, OperationMetadata>
+        updateBackupPlanOperationSettings() {
+      return getStubSettingsBuilder().updateBackupPlanOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getBackupPlan. */
     public UnaryCallSettings.Builder<GetBackupPlanRequest, BackupPlan> getBackupPlanSettings() {
       return getStubSettingsBuilder().getBackupPlanSettings();
@@ -731,6 +818,21 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
       return getStubSettingsBuilder().deleteBackupPlanOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getBackupPlanRevision. */
+    public UnaryCallSettings.Builder<GetBackupPlanRevisionRequest, BackupPlanRevision>
+        getBackupPlanRevisionSettings() {
+      return getStubSettingsBuilder().getBackupPlanRevisionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupPlanRevisions. */
+    public PagedCallSettings.Builder<
+            ListBackupPlanRevisionsRequest,
+            ListBackupPlanRevisionsResponse,
+            ListBackupPlanRevisionsPagedResponse>
+        listBackupPlanRevisionsSettings() {
+      return getStubSettingsBuilder().listBackupPlanRevisionsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createBackupPlanAssociation. */
     public UnaryCallSettings.Builder<CreateBackupPlanAssociationRequest, Operation>
         createBackupPlanAssociationSettings() {
@@ -742,6 +844,19 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
             CreateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
         createBackupPlanAssociationOperationSettings() {
       return getStubSettingsBuilder().createBackupPlanAssociationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupPlanAssociation. */
+    public UnaryCallSettings.Builder<UpdateBackupPlanAssociationRequest, Operation>
+        updateBackupPlanAssociationSettings() {
+      return getStubSettingsBuilder().updateBackupPlanAssociationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupPlanAssociation. */
+    public OperationCallSettings.Builder<
+            UpdateBackupPlanAssociationRequest, BackupPlanAssociation, OperationMetadata>
+        updateBackupPlanAssociationOperationSettings() {
+      return getStubSettingsBuilder().updateBackupPlanAssociationOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getBackupPlanAssociation. */
@@ -757,6 +872,18 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
             ListBackupPlanAssociationsPagedResponse>
         listBackupPlanAssociationsSettings() {
       return getStubSettingsBuilder().listBackupPlanAssociationsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * fetchBackupPlanAssociationsForResourceType.
+     */
+    public PagedCallSettings.Builder<
+            FetchBackupPlanAssociationsForResourceTypeRequest,
+            FetchBackupPlanAssociationsForResourceTypeResponse,
+            FetchBackupPlanAssociationsForResourceTypePagedResponse>
+        fetchBackupPlanAssociationsForResourceTypeSettings() {
+      return getStubSettingsBuilder().fetchBackupPlanAssociationsForResourceTypeSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteBackupPlanAssociation. */
@@ -782,6 +909,24 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
             TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
         triggerBackupOperationSettings() {
       return getStubSettingsBuilder().triggerBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDataSourceReference. */
+    public UnaryCallSettings.Builder<GetDataSourceReferenceRequest, DataSourceReference>
+        getDataSourceReferenceSettings() {
+      return getStubSettingsBuilder().getDataSourceReferenceSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * fetchDataSourceReferencesForResourceType.
+     */
+    public PagedCallSettings.Builder<
+            FetchDataSourceReferencesForResourceTypeRequest,
+            FetchDataSourceReferencesForResourceTypeResponse,
+            FetchDataSourceReferencesForResourceTypePagedResponse>
+        fetchDataSourceReferencesForResourceTypeSettings() {
+      return getStubSettingsBuilder().fetchDataSourceReferencesForResourceTypeSettings();
     }
 
     /** Returns the builder for the settings used for calls to initializeService. */

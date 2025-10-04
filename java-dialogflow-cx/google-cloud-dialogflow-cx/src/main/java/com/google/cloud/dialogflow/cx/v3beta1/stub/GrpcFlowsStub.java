@@ -72,6 +72,7 @@ public class GrpcFlowsStub extends FlowsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Flows/CreateFlow")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateFlowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Flow.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteFlowRequest, Empty> deleteFlowMethodDescriptor =
@@ -80,6 +81,7 @@ public class GrpcFlowsStub extends FlowsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Flows/DeleteFlow")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteFlowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListFlowsRequest, ListFlowsResponse>
@@ -89,6 +91,7 @@ public class GrpcFlowsStub extends FlowsStub {
               .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Flows/ListFlows")
               .setRequestMarshaller(ProtoUtils.marshaller(ListFlowsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListFlowsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFlowRequest, Flow> getFlowMethodDescriptor =
@@ -97,6 +100,7 @@ public class GrpcFlowsStub extends FlowsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Flows/GetFlow")
           .setRequestMarshaller(ProtoUtils.marshaller(GetFlowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Flow.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateFlowRequest, Flow> updateFlowMethodDescriptor =
@@ -105,6 +109,7 @@ public class GrpcFlowsStub extends FlowsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Flows/UpdateFlow")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateFlowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Flow.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TrainFlowRequest, Operation> trainFlowMethodDescriptor =
@@ -113,6 +118,7 @@ public class GrpcFlowsStub extends FlowsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Flows/TrainFlow")
           .setRequestMarshaller(ProtoUtils.marshaller(TrainFlowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ValidateFlowRequest, FlowValidationResult>
@@ -123,6 +129,7 @@ public class GrpcFlowsStub extends FlowsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ValidateFlowRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FlowValidationResult.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFlowValidationResultRequest, FlowValidationResult>
@@ -134,6 +141,7 @@ public class GrpcFlowsStub extends FlowsStub {
                   ProtoUtils.marshaller(GetFlowValidationResultRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FlowValidationResult.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportFlowRequest, Operation> importFlowMethodDescriptor =
@@ -142,6 +150,7 @@ public class GrpcFlowsStub extends FlowsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Flows/ImportFlow")
           .setRequestMarshaller(ProtoUtils.marshaller(ImportFlowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ExportFlowRequest, Operation> exportFlowMethodDescriptor =
@@ -150,6 +159,7 @@ public class GrpcFlowsStub extends FlowsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Flows/ExportFlow")
           .setRequestMarshaller(ProtoUtils.marshaller(ExportFlowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -161,6 +171,7 @@ public class GrpcFlowsStub extends FlowsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -169,6 +180,7 @@ public class GrpcFlowsStub extends FlowsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateFlowRequest, Flow> createFlowCallable;

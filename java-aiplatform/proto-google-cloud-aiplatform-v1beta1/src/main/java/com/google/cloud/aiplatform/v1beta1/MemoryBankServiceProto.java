@@ -81,6 +81,14 @@ public final class MemoryBankServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectContentsSource_Event_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_DirectMemory_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_DirectMemory_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_ScopeEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_ScopeEntry_fieldAccessorTable;
@@ -170,17 +178,19 @@ public final class MemoryBankServiceProto {
           + " aiplatform.googleapis.com/Memory\"t\n"
           + "\035DeleteMemoryOperationMetadata\022S\n"
           + "\020generic_metadata\030\001 \001(\01329.google.cloud.aipla"
-          + "tform.v1beta1.GenericOperationMetadata\"\371\006\n"
+          + "tform.v1beta1.GenericOperationMetadata\"\240\t\n"
           + "\027GenerateMemoriesRequest\022m\n"
           + "\025vertex_session_source\030\002 \001(\0132L.google.cloud.aiplatf"
           + "orm.v1beta1.GenerateMemoriesRequest.VertexSessionSourceH\000\022o\n"
           + "\026direct_contents_source\030\003 \001(\0132M.google.cloud.aiplatform.v1be"
-          + "ta1.GenerateMemoriesRequest.DirectContentsSourceH\000\022A\n"
+          + "ta1.GenerateMemoriesRequest.DirectContentsSourceH\000\022o\n"
+          + "\026direct_memories_source\030\t \001(\0132M.google.cloud.aiplatform.v1beta1.Gen"
+          + "erateMemoriesRequest.DirectMemoriesSourceH\000\022A\n"
           + "\006parent\030\001 \001(\tB1\340A\002\372A+\n"
           + ")aiplatform.googleapis.com/ReasoningEngine\022\"\n"
           + "\025disable_consolidation\030\004 \001(\010B\003\340A\001\022W\n"
-          + "\005scope\030\010 \003(\0132C.google.cloud.aiplatform.v1bet"
-          + "a1.GenerateMemoriesRequest.ScopeEntryB\003\340A\001\032\271\001\n"
+          + "\005scope\030\010 \003("
+          + "\0132C.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.ScopeEntryB\003\340A\001\032\271\001\n"
           + "\023VertexSessionSource\022:\n"
           + "\007session\030\001 \001(\tB)\340A\002\372A#\n"
           + "!aiplatform.googleapis.com/Session\0223\n\n"
@@ -188,39 +198,44 @@ public final class MemoryBankServiceProto {
           + "\010end_time\030\003"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001\032\311\001\n"
           + "\024DirectContentsSource\022h\n"
-          + "\006events\030\001 \003(\0132S.google.cloud.aiplatform.v1beta1.GenerateMemori"
-          + "esRequest.DirectContentsSource.EventB\003\340A\002\032G\n"
+          + "\006events\030\001 \003(\0132S.google.cloud."
+          + "aiplatform.v1beta1.GenerateMemoriesRequest.DirectContentsSource.EventB\003\340A\002\032G\n"
           + "\005Event\022>\n"
           + "\007content\030\001"
-          + " \001(\0132(.google.cloud.aiplatform.v1beta1.ContentB\003\340A\002\032,\n\n"
+          + " \001(\0132(.google.cloud.aiplatform.v1beta1.ContentB\003\340A\002\032\263\001\n"
+          + "\024DirectMemoriesSource\022x\n"
+          + "\017direct_memories\030\001 \003(\0132Z.google.cloud.aiplatform.v1beta1.Generate"
+          + "MemoriesRequest.DirectMemoriesSource.DirectMemoryB\003\340A\002\032!\n"
+          + "\014DirectMemory\022\021\n"
+          + "\004fact\030\001 \001(\tB\003\340A\002\032,\n\n"
           + "ScopeEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001B\010\n"
           + "\006source\"\371\002\n"
           + "\030GenerateMemoriesResponse\022e\n"
-          + "\022generated_memories\030\001 \003(\0132I.google.clo"
-          + "ud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory\032\365\001\n"
+          + "\022generated_memories\030\001 \003(\0132I.google.cloud.aiplatform.v1beta1.Gen"
+          + "erateMemoriesResponse.GeneratedMemory\032\365\001\n"
           + "\017GeneratedMemory\0227\n"
           + "\006memory\030\001 \001(\0132\'.google.cloud.aiplatform.v1beta1.Memory\022`\n"
-          + "\006action\030\002 \001(\0162P.go"
-          + "ogle.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action\"G\n"
+          + "\006action\030\002 \001(\0162P.google.cloud.aiplatform.v1b"
+          + "eta1.GenerateMemoriesResponse.GeneratedMemory.Action\"G\n"
           + "\006Action\022\026\n"
           + "\022ACTION_UNSPECIFIED\020\000\022\013\n"
           + "\007CREATED\020\001\022\013\n"
           + "\007UPDATED\020\002\022\013\n"
           + "\007DELETED\020\003\"x\n"
           + "!GenerateMemoriesOperationMetadata\022S\n"
-          + "\020generic_metadata\030\001"
-          + " \001(\01329.google.cloud.aiplatform.v1beta1.GenericOperationMetadata\"\362\004\n"
+          + "\020generic_metadata\030\001 \001(\01329.google.cl"
+          + "oud.aiplatform.v1beta1.GenericOperationMetadata\"\362\004\n"
           + "\027RetrieveMemoriesRequest\022s\n"
-          + "\030similarity_search_params\030\006 \001(\0132O.google.cloud.aiplatform"
-          + ".v1beta1.RetrieveMemoriesRequest.SimilaritySearchParamsH\000\022q\n"
-          + "\027simple_retrieval_params\030\007 \001(\0132N.google.cloud.aiplatform.v1b"
-          + "eta1.RetrieveMemoriesRequest.SimpleRetrievalParamsH\000\022A\n"
+          + "\030similarity_search_params\030\006 \001(\0132O.google.c"
+          + "loud.aiplatform.v1beta1.RetrieveMemoriesRequest.SimilaritySearchParamsH\000\022q\n"
+          + "\027simple_retrieval_params\030\007 \001(\0132N.google.cloud"
+          + ".aiplatform.v1beta1.RetrieveMemoriesRequest.SimpleRetrievalParamsH\000\022A\n"
           + "\006parent\030\001 \001(\tB1\340A\002\372A+\n"
           + ")aiplatform.googleapis.com/ReasoningEngine\022W\n"
-          + "\005scope\030\010 \003(\0132C.google.cloud.aiplatform"
-          + ".v1beta1.RetrieveMemoriesRequest.ScopeEntryB\003\340A\002\032G\n"
+          + "\005scope\030\010 \003(\0132C.google.c"
+          + "loud.aiplatform.v1beta1.RetrieveMemoriesRequest.ScopeEntryB\003\340A\002\032G\n"
           + "\026SimilaritySearchParams\022\031\n"
           + "\014search_query\030\001 \001(\tB\003\340A\002\022\022\n"
           + "\005top_k\030\002 \001(\005B\003\340A\001\032H\n"
@@ -232,60 +247,58 @@ public final class MemoryBankServiceProto {
           + "\005value\030\002 \001(\t:\0028\001B\022\n"
           + "\020retrieval_params\"\370\001\n"
           + "\030RetrieveMemoriesResponse\022e\n"
-          + "\022retrieved_memories\030\001 \003(\0132I"
-          + ".google.cloud.aiplatform.v1beta1.RetrieveMemoriesResponse.RetrievedMemory\022\027\n"
+          + "\022retrieved_memories\030\001 \003(\0132I.google.cloud.aiplatform."
+          + "v1beta1.RetrieveMemoriesResponse.RetrievedMemory\022\027\n"
           + "\017next_page_token\030\002 \001(\t\032\\\n"
           + "\017RetrievedMemory\0227\n"
           + "\006memory\030\001 \001(\0132\'.google.cloud.aiplatform.v1beta1.Memory\022\020\n"
           + "\010distance\030\002 \001(\0012\341\020\n"
           + "\021MemoryBankService\022\236\002\n"
-          + "\014CreateMemory\0224.google.cloud.aiplatform.v1beta1.CreateMemoryRe"
-          + "quest\032\035.google.longrunning.Operation\"\270\001\312A\'\n"
-          + "\006Memory\022\035CreateMemoryOperationMetadat"
-          + "a\202\323\344\223\002\207\001\"D/v1beta1/{parent=projects/*/lo"
-          + "cations/*/reasoningEngines/*}/memories:\006"
-          + "memoryZ7\"-/v1beta1/{parent=reasoningEngines/*}/memories:\006memory\022\356\001\n"
-          + "\tGetMemory\0221.google.cloud.aiplatform.v1beta1.GetMemor"
-          + "yRequest\032\'.google.cloud.aiplatform.v1bet"
-          + "a1.Memory\"\204\001\332A\004name\202\323\344\223\002w\022D/v1beta1/{nam"
-          + "e=projects/*/locations/*/reasoningEngine"
-          + "s/*/memories/*}Z/\022-/v1beta1/{name=reasoningEngines/*/memories/*}\022\301\002\n"
-          + "\014UpdateMemory\0224.google.cloud.aiplatform.v1beta1.Upda"
-          + "teMemoryRequest\032\035.google.longrunning.Operation\"\333\001\312A\'\n"
-          + "\006Memory\022\035UpdateMemoryOperat"
-          + "ionMetadata\332A\022memory,update_mask\202\323\344\223\002\225\0012"
-          + "K/v1beta1/{memory.name=projects/*/locations/*/reasoningEngines/*/memories/*}:\006me"
-          + "moryZ>24/v1beta1/{memory.name=reasoningEngines/*/memories/*}:\006memory\022\204\002\n"
-          + "\014ListMemories\0224.google.cloud.aiplatform.v1beta1."
-          + "ListMemoriesRequest\0325.google.cloud.aipla"
-          + "tform.v1beta1.ListMemoriesResponse\"\206\001\332A\006"
-          + "parent\202\323\344\223\002w\022D/v1beta1/{parent=projects/"
-          + "*/locations/*/reasoningEngines/*}/memori"
-          + "esZ/\022-/v1beta1/{parent=reasoningEngines/*}/memories\022\243\002\n"
-          + "\014DeleteMemory\0224.google.cl"
-          + "oud.aiplatform.v1beta1.DeleteMemoryRequest\032\035.google.longrunning.Operation\"\275\001\312A6\n"
-          + "\025google.protobuf.Empty\022\035DeleteMemoryOper"
-          + "ationMetadata\332A\004name\202\323\344\223\002w*D/v1beta1/{na"
-          + "me=projects/*/locations/*/reasoningEngin"
-          + "es/*/memories/*}Z/*-/v1beta1/{name=reasoningEngines/*/memories/*}\022\315\002\n"
-          + "\020GenerateMemories\0228.google.cloud.aiplatform.v1beta1"
-          + ".GenerateMemoriesRequest\032\035.google.longrunning.Operation\"\337\001\312A=\n"
-          + "\030GenerateMemoriesResponse\022!GenerateMemoriesOperationMetada"
-          + "ta\332A\006parent\202\323\344\223\002\217\001\"M/v1beta1/{parent=pro"
-          + "jects/*/locations/*/reasoningEngines/*}/memories:generate:\001*Z;\"6/v1beta1/{parent"
-          + "=reasoningEngines/*}/memories:generate:\001*\022\251\002\n"
-          + "\020RetrieveMemories\0228.google.cloud.aiplatform.v1beta1.RetrieveMemoriesRequest"
-          + "\0329.google.cloud.aiplatform.v1beta1.Retri"
-          + "eveMemoriesResponse\"\237\001\332A\006parent\202\323\344\223\002\217\001\"M"
-          + "/v1beta1/{parent=projects/*/locations/*/reasoningEngines/*}/memories:retrieve:\001*"
-          + "Z;\"6/v1beta1/{parent=reasoningEngines/*}"
-          + "/memories:retrieve:\001*\032M\312A\031aiplatform.goo"
-          + "gleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\355\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\026MemoryBankServiceP"
-          + "rotoP\001ZCcloud.google.com/go/aiplatform/a"
-          + "piv1beta1/aiplatformpb;aiplatformpb\252\002\037Go"
-          + "ogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\C"
-          + "loud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "\014CreateMemory\0224.google.cloud.aiplatform.v1beta1"
+          + ".CreateMemoryRequest\032\035.google.longrunning.Operation\"\270\001\312A\'\n"
+          + "\006Memory\022\035CreateMemoryO"
+          + "perationMetadata\202\323\344\223\002\207\001\"D/v1beta1/{paren"
+          + "t=projects/*/locations/*/reasoningEngines/*}/memories:\006memoryZ7\"-/v1beta1/{paren"
+          + "t=reasoningEngines/*}/memories:\006memory\022\356\001\n"
+          + "\tGetMemory\0221.google.cloud.aiplatform.v1beta1.GetMemoryRequest\032\'.google.cloud.a"
+          + "iplatform.v1beta1.Memory\"\204\001\332A\004name\202\323\344\223\002w"
+          + "\022D/v1beta1/{name=projects/*/locations/*/reasoningEngines/*/memories/*}Z/\022-/v1bet"
+          + "a1/{name=reasoningEngines/*/memories/*}\022\301\002\n"
+          + "\014UpdateMemory\0224.google.cloud.aiplatfo"
+          + "rm.v1beta1.UpdateMemoryRequest\032\035.google.longrunning.Operation\"\333\001\312A\'\n"
+          + "\006Memory\022\035UpdateMemoryOperationMetadata\332A\022memory,upda"
+          + "te_mask\202\323\344\223\002\225\0012K/v1beta1/{memory.name=pr"
+          + "ojects/*/locations/*/reasoningEngines/*/memories/*}:\006memoryZ>24/v1beta1/{memory."
+          + "name=reasoningEngines/*/memories/*}:\006memory\022\204\002\n"
+          + "\014ListMemories\0224.google.cloud.aiplatform.v1beta1.ListMemoriesRequest\0325.goo"
+          + "gle.cloud.aiplatform.v1beta1.ListMemorie"
+          + "sResponse\"\206\001\332A\006parent\202\323\344\223\002w\022D/v1beta1/{p"
+          + "arent=projects/*/locations/*/reasoningEn"
+          + "gines/*}/memoriesZ/\022-/v1beta1/{parent=reasoningEngines/*}/memories\022\243\002\n"
+          + "\014DeleteMemory\0224.google.cloud.aiplatform.v1beta1.De"
+          + "leteMemoryRequest\032\035.google.longrunning.Operation\"\275\001\312A6\n"
+          + "\025google.protobuf.Empty\022\035D"
+          + "eleteMemoryOperationMetadata\332A\004name\202\323\344\223\002"
+          + "w*D/v1beta1/{name=projects/*/locations/*/reasoningEngines/*/memories/*}Z/*-/v1be"
+          + "ta1/{name=reasoningEngines/*/memories/*}\022\315\002\n"
+          + "\020GenerateMemories\0228.google.cloud.aip"
+          + "latform.v1beta1.GenerateMemoriesRequest\032\035.google.longrunning.Operation\"\337\001\312A=\n"
+          + "\030GenerateMemoriesResponse\022!GenerateMemories"
+          + "OperationMetadata\332A\006parent\202\323\344\223\002\217\001\"M/v1be"
+          + "ta1/{parent=projects/*/locations/*/reasoningEngines/*}/memories:generate:\001*Z;\"6/"
+          + "v1beta1/{parent=reasoningEngines/*}/memories:generate:\001*\022\251\002\n"
+          + "\020RetrieveMemories\0228.google.cloud.aiplatform.v1beta1.Retrieve"
+          + "MemoriesRequest\0329.google.cloud.aiplatfor"
+          + "m.v1beta1.RetrieveMemoriesResponse\"\237\001\332A\006"
+          + "parent\202\323\344\223\002\217\001\"M/v1beta1/{parent=projects"
+          + "/*/locations/*/reasoningEngines/*}/memories:retrieve:\001*Z;\"6/v1beta1/{parent=reas"
+          + "oningEngines/*}/memories:retrieve:\001*\032M\312A"
+          + "\031aiplatform.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\355\001\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\026Mem"
+          + "oryBankServiceProtoP\001ZCcloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;ai"
+          + "platformpb\252\002\037Google.Cloud.AIPlatform.V1B"
+          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
+          + "\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -383,6 +396,7 @@ public final class MemoryBankServiceProto {
             new java.lang.String[] {
               "VertexSessionSource",
               "DirectContentsSource",
+              "DirectMemoriesSource",
               "Parent",
               "DisableConsolidation",
               "Scope",
@@ -418,10 +432,30 @@ public final class MemoryBankServiceProto {
             new java.lang.String[] {
               "Content",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_ScopeEntry_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_descriptor
             .getNestedTypes()
             .get(2);
+    internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_descriptor,
+            new java.lang.String[] {
+              "DirectMemories",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_DirectMemory_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_DirectMemory_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_DirectMemory_descriptor,
+            new java.lang.String[] {
+              "Fact",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_ScopeEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_descriptor
+            .getNestedTypes()
+            .get(3);
     internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_ScopeEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_ScopeEntry_descriptor,

@@ -36,6 +36,7 @@ import com.google.cloud.compute.v1.NetworksGetEffectiveFirewallsResponse;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchNetworkRequest;
 import com.google.cloud.compute.v1.RemovePeeringNetworkRequest;
+import com.google.cloud.compute.v1.RequestRemovePeeringNetworkRequest;
 import com.google.cloud.compute.v1.SwitchToCustomModeNetworkRequest;
 import com.google.cloud.compute.v1.UpdatePeeringNetworkRequest;
 import javax.annotation.Generated;
@@ -116,6 +117,17 @@ public abstract class NetworksStub implements BackgroundResource {
 
   public UnaryCallable<RemovePeeringNetworkRequest, Operation> removePeeringCallable() {
     throw new UnsupportedOperationException("Not implemented: removePeeringCallable()");
+  }
+
+  public OperationCallable<RequestRemovePeeringNetworkRequest, Operation, Operation>
+      requestRemovePeeringOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: requestRemovePeeringOperationCallable()");
+  }
+
+  public UnaryCallable<RequestRemovePeeringNetworkRequest, Operation>
+      requestRemovePeeringCallable() {
+    throw new UnsupportedOperationException("Not implemented: requestRemovePeeringCallable()");
   }
 
   public OperationCallable<SwitchToCustomModeNetworkRequest, Operation, Operation>

@@ -126,6 +126,8 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
    * This may be unset if the container was unable to exit cleanly with a code
    * due to some other failure.
    * See status field for possible failure details.
+   *
+   * At most one of exit_code or term_signal will be set.
    * </pre>
    *
    * <code>int32 exit_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -135,6 +137,28 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public int getExitCode() {
     return exitCode_;
+  }
+
+  public static final int TERM_SIGNAL_FIELD_NUMBER = 3;
+  private int termSignal_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Termination signal of the container. This is set to non-zero
+   * if the container is terminated by the system.
+   *
+   * At most one of exit_code or term_signal will be set.
+   * </pre>
+   *
+   * <code>int32 term_signal = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The termSignal.
+   */
+  @java.lang.Override
+  public int getTermSignal() {
+    return termSignal_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -157,6 +181,9 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
     if (exitCode_ != 0) {
       output.writeInt32(2, exitCode_);
     }
+    if (termSignal_ != 0) {
+      output.writeInt32(3, termSignal_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -171,6 +198,9 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
     }
     if (exitCode_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, exitCode_);
+    }
+    if (termSignal_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, termSignal_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -193,6 +223,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
       if (!getStatus().equals(other.getStatus())) return false;
     }
     if (getExitCode() != other.getExitCode()) return false;
+    if (getTermSignal() != other.getTermSignal()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -210,6 +241,8 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
     }
     hash = (37 * hash) + EXIT_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getExitCode();
+    hash = (37 * hash) + TERM_SIGNAL_FIELD_NUMBER;
+    hash = (53 * hash) + getTermSignal();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -365,6 +398,7 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
         statusBuilder_ = null;
       }
       exitCode_ = 0;
+      termSignal_ = 0;
       return this;
     }
 
@@ -408,6 +442,9 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.exitCode_ = exitCode_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.termSignal_ = termSignal_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -463,6 +500,9 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
       if (other.getExitCode() != 0) {
         setExitCode(other.getExitCode());
       }
+      if (other.getTermSignal() != 0) {
+        setTermSignal(other.getTermSignal());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -501,6 +541,12 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 24:
+              {
+                termSignal_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -724,6 +770,8 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
      * This may be unset if the container was unable to exit cleanly with a code
      * due to some other failure.
      * See status field for possible failure details.
+     *
+     * At most one of exit_code or term_signal will be set.
      * </pre>
      *
      * <code>int32 exit_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -743,6 +791,8 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
      * This may be unset if the container was unable to exit cleanly with a code
      * due to some other failure.
      * See status field for possible failure details.
+     *
+     * At most one of exit_code or term_signal will be set.
      * </pre>
      *
      * <code>int32 exit_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -766,6 +816,8 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
      * This may be unset if the container was unable to exit cleanly with a code
      * due to some other failure.
      * See status field for possible failure details.
+     *
+     * At most one of exit_code or term_signal will be set.
      * </pre>
      *
      * <code>int32 exit_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -775,6 +827,71 @@ public final class TaskAttemptResult extends com.google.protobuf.GeneratedMessag
     public Builder clearExitCode() {
       bitField0_ = (bitField0_ & ~0x00000002);
       exitCode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int termSignal_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Termination signal of the container. This is set to non-zero
+     * if the container is terminated by the system.
+     *
+     * At most one of exit_code or term_signal will be set.
+     * </pre>
+     *
+     * <code>int32 term_signal = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The termSignal.
+     */
+    @java.lang.Override
+    public int getTermSignal() {
+      return termSignal_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Termination signal of the container. This is set to non-zero
+     * if the container is terminated by the system.
+     *
+     * At most one of exit_code or term_signal will be set.
+     * </pre>
+     *
+     * <code>int32 term_signal = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The termSignal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTermSignal(int value) {
+
+      termSignal_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Termination signal of the container. This is set to non-zero
+     * if the container is terminated by the system.
+     *
+     * At most one of exit_code or term_signal will be set.
+     * </pre>
+     *
+     * <code>int32 term_signal = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTermSignal() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      termSignal_ = 0;
       onChanged();
       return this;
     }

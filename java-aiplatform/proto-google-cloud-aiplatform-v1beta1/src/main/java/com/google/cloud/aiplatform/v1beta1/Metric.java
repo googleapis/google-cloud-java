@@ -88,7 +88,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Average aggregation metric.
+     * Average aggregation metric. Not supported for Pairwise metric.
      * </pre>
      *
      * <code>AVERAGE = 1;</code>
@@ -108,7 +108,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Standard deviation aggregation metric.
+     * Standard deviation aggregation metric. Not supported for pairwise metric.
      * </pre>
      *
      * <code>STANDARD_DEVIATION = 3;</code>
@@ -118,7 +118,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Variance aggregation metric.
+     * Variance aggregation metric. Not supported for pairwise metric.
      * </pre>
      *
      * <code>VARIANCE = 4;</code>
@@ -128,7 +128,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Minimum aggregation metric.
+     * Minimum aggregation metric. Not supported for pairwise metric.
      * </pre>
      *
      * <code>MINIMUM = 5;</code>
@@ -138,7 +138,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum aggregation metric.
+     * Maximum aggregation metric. Not supported for pairwise metric.
      * </pre>
      *
      * <code>MAXIMUM = 6;</code>
@@ -148,7 +148,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Median aggregation metric.
+     * Median aggregation metric. Not supported for pairwise metric.
      * </pre>
      *
      * <code>MEDIAN = 7;</code>
@@ -158,7 +158,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * 90th percentile aggregation metric.
+     * 90th percentile aggregation metric. Not supported for pairwise metric.
      * </pre>
      *
      * <code>PERCENTILE_P90 = 8;</code>
@@ -168,7 +168,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * 95th percentile aggregation metric.
+     * 95th percentile aggregation metric. Not supported for pairwise metric.
      * </pre>
      *
      * <code>PERCENTILE_P95 = 9;</code>
@@ -178,7 +178,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * 99th percentile aggregation metric.
+     * 99th percentile aggregation metric. Not supported for pairwise metric.
      * </pre>
      *
      * <code>PERCENTILE_P99 = 10;</code>
@@ -202,7 +202,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Average aggregation metric.
+     * Average aggregation metric. Not supported for Pairwise metric.
      * </pre>
      *
      * <code>AVERAGE = 1;</code>
@@ -224,7 +224,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Standard deviation aggregation metric.
+     * Standard deviation aggregation metric. Not supported for pairwise metric.
      * </pre>
      *
      * <code>STANDARD_DEVIATION = 3;</code>
@@ -235,7 +235,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Variance aggregation metric.
+     * Variance aggregation metric. Not supported for pairwise metric.
      * </pre>
      *
      * <code>VARIANCE = 4;</code>
@@ -246,7 +246,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Minimum aggregation metric.
+     * Minimum aggregation metric. Not supported for pairwise metric.
      * </pre>
      *
      * <code>MINIMUM = 5;</code>
@@ -257,7 +257,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum aggregation metric.
+     * Maximum aggregation metric. Not supported for pairwise metric.
      * </pre>
      *
      * <code>MAXIMUM = 6;</code>
@@ -268,7 +268,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Median aggregation metric.
+     * Median aggregation metric. Not supported for pairwise metric.
      * </pre>
      *
      * <code>MEDIAN = 7;</code>
@@ -279,7 +279,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * 90th percentile aggregation metric.
+     * 90th percentile aggregation metric. Not supported for pairwise metric.
      * </pre>
      *
      * <code>PERCENTILE_P90 = 8;</code>
@@ -290,7 +290,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * 95th percentile aggregation metric.
+     * 95th percentile aggregation metric. Not supported for pairwise metric.
      * </pre>
      *
      * <code>PERCENTILE_P95 = 9;</code>
@@ -301,7 +301,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * 99th percentile aggregation metric.
+     * 99th percentile aggregation metric. Not supported for pairwise metric.
      * </pre>
      *
      * <code>PERCENTILE_P99 = 10;</code>

@@ -52,6 +52,7 @@ public class GrpcGroundedGenerationServiceStub extends GroundedGenerationService
                   ProtoUtils.marshaller(CheckGroundingRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CheckGroundingResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CheckGroundingRequest, CheckGroundingResponse> checkGroundingCallable;

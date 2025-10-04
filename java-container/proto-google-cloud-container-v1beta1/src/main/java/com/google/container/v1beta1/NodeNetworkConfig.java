@@ -44,6 +44,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     podIpv4CidrBlock_ = "";
     additionalNodeNetworkConfigs_ = java.util.Collections.emptyList();
     additionalPodNetworkConfigs_ = java.util.Collections.emptyList();
+    subnetwork_ = "";
   }
 
   @java.lang.Override
@@ -1802,6 +1803,67 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     return podIpv4RangeUtilization_;
   }
 
+  public static final int SUBNETWORK_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetwork_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The subnetwork path for the node pool.
+   * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
+   * If the cluster is associated with multiple subnetworks, the subnetwork for
+   * the node pool is picked based on the IP utilization during node pool
+   * creation and is immutable.
+   * </pre>
+   *
+   * <code>string subnetwork = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The subnetwork.
+   */
+  @java.lang.Override
+  public java.lang.String getSubnetwork() {
+    java.lang.Object ref = subnetwork_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      subnetwork_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The subnetwork path for the node pool.
+   * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
+   * If the cluster is associated with multiple subnetworks, the subnetwork for
+   * the node pool is picked based on the IP utilization during node pool
+   * creation and is immutable.
+   * </pre>
+   *
+   * <code>string subnetwork = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for subnetwork.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSubnetworkBytes() {
+    java.lang.Object ref = subnetwork_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      subnetwork_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1842,6 +1904,9 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     }
     if (java.lang.Double.doubleToRawLongBits(podIpv4RangeUtilization_) != 0) {
       output.writeDouble(16, podIpv4RangeUtilization_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, subnetwork_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1887,6 +1952,9 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     if (java.lang.Double.doubleToRawLongBits(podIpv4RangeUtilization_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(16, podIpv4RangeUtilization_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, subnetwork_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1925,6 +1993,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       return false;
     if (java.lang.Double.doubleToLongBits(getPodIpv4RangeUtilization())
         != java.lang.Double.doubleToLongBits(other.getPodIpv4RangeUtilization())) return false;
+    if (!getSubnetwork().equals(other.getSubnetwork())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1967,6 +2036,8 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
         (53 * hash)
             + com.google.protobuf.Internal.hashLong(
                 java.lang.Double.doubleToLongBits(getPodIpv4RangeUtilization()));
+    hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
+    hash = (53 * hash) + getSubnetwork().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2148,6 +2219,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ = (bitField0_ & ~0x00000080);
       podIpv4RangeUtilization_ = 0D;
+      subnetwork_ = "";
       return this;
     }
 
@@ -2238,6 +2310,9 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.podIpv4RangeUtilization_ = podIpv4RangeUtilization_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.subnetwork_ = subnetwork_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2367,6 +2442,11 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       if (other.getPodIpv4RangeUtilization() != 0D) {
         setPodIpv4RangeUtilization(other.getPodIpv4RangeUtilization());
       }
+      if (!other.getSubnetwork().isEmpty()) {
+        subnetwork_ = other.subnetwork_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2465,6 +2545,12 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000100;
                 break;
               } // case 129
+            case 154:
+              {
+                subnetwork_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4467,6 +4553,137 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearPodIpv4RangeUtilization() {
       bitField0_ = (bitField0_ & ~0x00000100);
       podIpv4RangeUtilization_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object subnetwork_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The subnetwork path for the node pool.
+     * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
+     * If the cluster is associated with multiple subnetworks, the subnetwork for
+     * the node pool is picked based on the IP utilization during node pool
+     * creation and is immutable.
+     * </pre>
+     *
+     * <code>string subnetwork = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The subnetwork.
+     */
+    public java.lang.String getSubnetwork() {
+      java.lang.Object ref = subnetwork_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subnetwork_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The subnetwork path for the node pool.
+     * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
+     * If the cluster is associated with multiple subnetworks, the subnetwork for
+     * the node pool is picked based on the IP utilization during node pool
+     * creation and is immutable.
+     * </pre>
+     *
+     * <code>string subnetwork = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for subnetwork.
+     */
+    public com.google.protobuf.ByteString getSubnetworkBytes() {
+      java.lang.Object ref = subnetwork_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        subnetwork_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The subnetwork path for the node pool.
+     * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
+     * If the cluster is associated with multiple subnetworks, the subnetwork for
+     * the node pool is picked based on the IP utilization during node pool
+     * creation and is immutable.
+     * </pre>
+     *
+     * <code>string subnetwork = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The subnetwork to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubnetwork(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      subnetwork_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The subnetwork path for the node pool.
+     * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
+     * If the cluster is associated with multiple subnetworks, the subnetwork for
+     * the node pool is picked based on the IP utilization during node pool
+     * creation and is immutable.
+     * </pre>
+     *
+     * <code>string subnetwork = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSubnetwork() {
+      subnetwork_ = getDefaultInstance().getSubnetwork();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The subnetwork path for the node pool.
+     * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
+     * If the cluster is associated with multiple subnetworks, the subnetwork for
+     * the node pool is picked based on the IP utilization during node pool
+     * creation and is immutable.
+     * </pre>
+     *
+     * <code>string subnetwork = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for subnetwork to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubnetworkBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      subnetwork_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

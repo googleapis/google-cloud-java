@@ -47,12 +47,14 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAccessConfigInstanceRequest;
+import com.google.cloud.compute.v1.AddNetworkInterfaceInstanceRequest;
 import com.google.cloud.compute.v1.AddResourcePoliciesInstanceRequest;
 import com.google.cloud.compute.v1.AggregatedListInstancesRequest;
 import com.google.cloud.compute.v1.AttachDiskInstanceRequest;
 import com.google.cloud.compute.v1.BulkInsertInstanceRequest;
 import com.google.cloud.compute.v1.DeleteAccessConfigInstanceRequest;
 import com.google.cloud.compute.v1.DeleteInstanceRequest;
+import com.google.cloud.compute.v1.DeleteNetworkInterfaceInstanceRequest;
 import com.google.cloud.compute.v1.DetachDiskInstanceRequest;
 import com.google.cloud.compute.v1.GetEffectiveFirewallsInstanceRequest;
 import com.google.cloud.compute.v1.GetGuestAttributesInstanceRequest;
@@ -207,6 +209,10 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       addAccessConfigSettings;
   private final OperationCallSettings<AddAccessConfigInstanceRequest, Operation, Operation>
       addAccessConfigOperationSettings;
+  private final UnaryCallSettings<AddNetworkInterfaceInstanceRequest, Operation>
+      addNetworkInterfaceSettings;
+  private final OperationCallSettings<AddNetworkInterfaceInstanceRequest, Operation, Operation>
+      addNetworkInterfaceOperationSettings;
   private final UnaryCallSettings<AddResourcePoliciesInstanceRequest, Operation>
       addResourcePoliciesSettings;
   private final OperationCallSettings<AddResourcePoliciesInstanceRequest, Operation, Operation>
@@ -227,6 +233,10 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       deleteAccessConfigSettings;
   private final OperationCallSettings<DeleteAccessConfigInstanceRequest, Operation, Operation>
       deleteAccessConfigOperationSettings;
+  private final UnaryCallSettings<DeleteNetworkInterfaceInstanceRequest, Operation>
+      deleteNetworkInterfaceSettings;
+  private final OperationCallSettings<DeleteNetworkInterfaceInstanceRequest, Operation, Operation>
+      deleteNetworkInterfaceOperationSettings;
   private final UnaryCallSettings<DetachDiskInstanceRequest, Operation> detachDiskSettings;
   private final OperationCallSettings<DetachDiskInstanceRequest, Operation, Operation>
       detachDiskOperationSettings;
@@ -547,6 +557,18 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return addAccessConfigOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to addNetworkInterface. */
+  public UnaryCallSettings<AddNetworkInterfaceInstanceRequest, Operation>
+      addNetworkInterfaceSettings() {
+    return addNetworkInterfaceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addNetworkInterface. */
+  public OperationCallSettings<AddNetworkInterfaceInstanceRequest, Operation, Operation>
+      addNetworkInterfaceOperationSettings() {
+    return addNetworkInterfaceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to addResourcePolicies. */
   public UnaryCallSettings<AddResourcePoliciesInstanceRequest, Operation>
       addResourcePoliciesSettings() {
@@ -609,6 +631,18 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
   public OperationCallSettings<DeleteAccessConfigInstanceRequest, Operation, Operation>
       deleteAccessConfigOperationSettings() {
     return deleteAccessConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteNetworkInterface. */
+  public UnaryCallSettings<DeleteNetworkInterfaceInstanceRequest, Operation>
+      deleteNetworkInterfaceSettings() {
+    return deleteNetworkInterfaceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteNetworkInterface. */
+  public OperationCallSettings<DeleteNetworkInterfaceInstanceRequest, Operation, Operation>
+      deleteNetworkInterfaceOperationSettings() {
+    return deleteNetworkInterfaceOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to detachDisk. */
@@ -1110,6 +1144,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
     addAccessConfigSettings = settingsBuilder.addAccessConfigSettings().build();
     addAccessConfigOperationSettings = settingsBuilder.addAccessConfigOperationSettings().build();
+    addNetworkInterfaceSettings = settingsBuilder.addNetworkInterfaceSettings().build();
+    addNetworkInterfaceOperationSettings =
+        settingsBuilder.addNetworkInterfaceOperationSettings().build();
     addResourcePoliciesSettings = settingsBuilder.addResourcePoliciesSettings().build();
     addResourcePoliciesOperationSettings =
         settingsBuilder.addResourcePoliciesOperationSettings().build();
@@ -1123,6 +1160,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     deleteAccessConfigSettings = settingsBuilder.deleteAccessConfigSettings().build();
     deleteAccessConfigOperationSettings =
         settingsBuilder.deleteAccessConfigOperationSettings().build();
+    deleteNetworkInterfaceSettings = settingsBuilder.deleteNetworkInterfaceSettings().build();
+    deleteNetworkInterfaceOperationSettings =
+        settingsBuilder.deleteNetworkInterfaceOperationSettings().build();
     detachDiskSettings = settingsBuilder.detachDiskSettings().build();
     detachDiskOperationSettings = settingsBuilder.detachDiskOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
@@ -1224,6 +1264,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     private final OperationCallSettings.Builder<
             AddAccessConfigInstanceRequest, Operation, Operation>
         addAccessConfigOperationSettings;
+    private final UnaryCallSettings.Builder<AddNetworkInterfaceInstanceRequest, Operation>
+        addNetworkInterfaceSettings;
+    private final OperationCallSettings.Builder<
+            AddNetworkInterfaceInstanceRequest, Operation, Operation>
+        addNetworkInterfaceOperationSettings;
     private final UnaryCallSettings.Builder<AddResourcePoliciesInstanceRequest, Operation>
         addResourcePoliciesSettings;
     private final OperationCallSettings.Builder<
@@ -1248,6 +1293,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     private final OperationCallSettings.Builder<
             DeleteAccessConfigInstanceRequest, Operation, Operation>
         deleteAccessConfigOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteNetworkInterfaceInstanceRequest, Operation>
+        deleteNetworkInterfaceSettings;
+    private final OperationCallSettings.Builder<
+            DeleteNetworkInterfaceInstanceRequest, Operation, Operation>
+        deleteNetworkInterfaceOperationSettings;
     private final UnaryCallSettings.Builder<DetachDiskInstanceRequest, Operation>
         detachDiskSettings;
     private final OperationCallSettings.Builder<DetachDiskInstanceRequest, Operation, Operation>
@@ -1455,6 +1505,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
       addAccessConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       addAccessConfigOperationSettings = OperationCallSettings.newBuilder();
+      addNetworkInterfaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addNetworkInterfaceOperationSettings = OperationCallSettings.newBuilder();
       addResourcePoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       addResourcePoliciesOperationSettings = OperationCallSettings.newBuilder();
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
@@ -1466,6 +1518,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       deleteOperationSettings = OperationCallSettings.newBuilder();
       deleteAccessConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteAccessConfigOperationSettings = OperationCallSettings.newBuilder();
+      deleteNetworkInterfaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteNetworkInterfaceOperationSettings = OperationCallSettings.newBuilder();
       detachDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       detachDiskOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1542,12 +1596,14 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addAccessConfigSettings,
+              addNetworkInterfaceSettings,
               addResourcePoliciesSettings,
               aggregatedListSettings,
               attachDiskSettings,
               bulkInsertSettings,
               deleteSettings,
               deleteAccessConfigSettings,
+              deleteNetworkInterfaceSettings,
               detachDiskSettings,
               getSettings,
               getEffectiveFirewallsSettings,
@@ -1598,6 +1654,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
       addAccessConfigSettings = settings.addAccessConfigSettings.toBuilder();
       addAccessConfigOperationSettings = settings.addAccessConfigOperationSettings.toBuilder();
+      addNetworkInterfaceSettings = settings.addNetworkInterfaceSettings.toBuilder();
+      addNetworkInterfaceOperationSettings =
+          settings.addNetworkInterfaceOperationSettings.toBuilder();
       addResourcePoliciesSettings = settings.addResourcePoliciesSettings.toBuilder();
       addResourcePoliciesOperationSettings =
           settings.addResourcePoliciesOperationSettings.toBuilder();
@@ -1611,6 +1670,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       deleteAccessConfigSettings = settings.deleteAccessConfigSettings.toBuilder();
       deleteAccessConfigOperationSettings =
           settings.deleteAccessConfigOperationSettings.toBuilder();
+      deleteNetworkInterfaceSettings = settings.deleteNetworkInterfaceSettings.toBuilder();
+      deleteNetworkInterfaceOperationSettings =
+          settings.deleteNetworkInterfaceOperationSettings.toBuilder();
       detachDiskSettings = settings.detachDiskSettings.toBuilder();
       detachDiskOperationSettings = settings.detachDiskOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
@@ -1702,12 +1764,14 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addAccessConfigSettings,
+              addNetworkInterfaceSettings,
               addResourcePoliciesSettings,
               aggregatedListSettings,
               attachDiskSettings,
               bulkInsertSettings,
               deleteSettings,
               deleteAccessConfigSettings,
+              deleteNetworkInterfaceSettings,
               detachDiskSettings,
               getSettings,
               getEffectiveFirewallsSettings,
@@ -1771,6 +1835,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .addNetworkInterfaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .addResourcePoliciesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -1797,6 +1866,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
       builder
           .deleteAccessConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteNetworkInterfaceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -2035,6 +2109,31 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
                       .build()));
 
       builder
+          .addNetworkInterfaceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AddNetworkInterfaceInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
           .addResourcePoliciesOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -2136,6 +2235,31 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteAccessConfigInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .deleteNetworkInterfaceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteNetworkInterfaceInstanceRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
@@ -2922,6 +3046,18 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return addAccessConfigOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to addNetworkInterface. */
+    public UnaryCallSettings.Builder<AddNetworkInterfaceInstanceRequest, Operation>
+        addNetworkInterfaceSettings() {
+      return addNetworkInterfaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addNetworkInterface. */
+    public OperationCallSettings.Builder<AddNetworkInterfaceInstanceRequest, Operation, Operation>
+        addNetworkInterfaceOperationSettings() {
+      return addNetworkInterfaceOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to addResourcePolicies. */
     public UnaryCallSettings.Builder<AddResourcePoliciesInstanceRequest, Operation>
         addResourcePoliciesSettings() {
@@ -2984,6 +3120,19 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     public OperationCallSettings.Builder<DeleteAccessConfigInstanceRequest, Operation, Operation>
         deleteAccessConfigOperationSettings() {
       return deleteAccessConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNetworkInterface. */
+    public UnaryCallSettings.Builder<DeleteNetworkInterfaceInstanceRequest, Operation>
+        deleteNetworkInterfaceSettings() {
+      return deleteNetworkInterfaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNetworkInterface. */
+    public OperationCallSettings.Builder<
+            DeleteNetworkInterfaceInstanceRequest, Operation, Operation>
+        deleteNetworkInterfaceOperationSettings() {
+      return deleteNetworkInterfaceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to detachDisk. */

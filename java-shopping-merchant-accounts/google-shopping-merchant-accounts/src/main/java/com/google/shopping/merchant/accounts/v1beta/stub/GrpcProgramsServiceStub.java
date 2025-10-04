@@ -54,6 +54,7 @@ public class GrpcProgramsServiceStub extends ProgramsServiceStub {
           .setFullMethodName("google.shopping.merchant.accounts.v1beta.ProgramsService/GetProgram")
           .setRequestMarshaller(ProtoUtils.marshaller(GetProgramRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Program.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListProgramsRequest, ListProgramsResponse>
@@ -65,6 +66,7 @@ public class GrpcProgramsServiceStub extends ProgramsServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListProgramsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProgramsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EnableProgramRequest, Program>
@@ -76,6 +78,7 @@ public class GrpcProgramsServiceStub extends ProgramsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EnableProgramRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Program.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DisableProgramRequest, Program>
@@ -87,6 +90,7 @@ public class GrpcProgramsServiceStub extends ProgramsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DisableProgramRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Program.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetProgramRequest, Program> getProgramCallable;

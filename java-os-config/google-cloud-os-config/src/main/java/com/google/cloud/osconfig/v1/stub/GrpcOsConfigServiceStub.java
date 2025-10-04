@@ -53,6 +53,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PatchJobs.ExecutePatchJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PatchJobs.PatchJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>
@@ -63,6 +64,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PatchJobs.GetPatchJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PatchJobs.PatchJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
@@ -73,6 +75,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PatchJobs.CancelPatchJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PatchJobs.PatchJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -86,6 +89,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                   ProtoUtils.marshaller(PatchJobs.ListPatchJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PatchJobs.ListPatchJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -105,6 +109,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       PatchJobs.ListPatchJobInstanceDetailsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -120,6 +125,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       PatchDeployments.CreatePatchDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PatchDeployments.PatchDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -135,6 +141,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       PatchDeployments.GetPatchDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PatchDeployments.PatchDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -153,6 +160,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       PatchDeployments.ListPatchDeploymentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PatchDeployments.DeletePatchDeploymentRequest, Empty>
@@ -164,6 +172,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                   ProtoUtils.marshaller(
                       PatchDeployments.DeletePatchDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -179,6 +188,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       PatchDeployments.UpdatePatchDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PatchDeployments.PatchDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -194,6 +204,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       PatchDeployments.PausePatchDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PatchDeployments.PatchDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -209,6 +220,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       PatchDeployments.ResumePatchDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PatchDeployments.PatchDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>

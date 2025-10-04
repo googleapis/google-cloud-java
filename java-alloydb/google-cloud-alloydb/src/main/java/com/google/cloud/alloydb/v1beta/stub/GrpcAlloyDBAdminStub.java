@@ -118,6 +118,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetClusterRequest, Cluster> getClusterMethodDescriptor =
@@ -126,6 +127,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
           .setFullMethodName("google.cloud.alloydb.v1beta.AlloyDBAdmin/GetCluster")
           .setRequestMarshaller(ProtoUtils.marshaller(GetClusterRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Cluster.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateClusterRequest, Operation>
@@ -136,6 +138,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateClusterRequest, Operation>
@@ -146,6 +149,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportClusterRequest, Operation>
@@ -156,6 +160,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportClusterRequest, Operation>
@@ -166,6 +171,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpgradeClusterRequest, Operation>
@@ -176,6 +182,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpgradeClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteClusterRequest, Operation>
@@ -186,6 +193,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PromoteClusterRequest, Operation>
@@ -196,6 +204,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PromoteClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SwitchoverClusterRequest, Operation>
@@ -206,6 +215,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SwitchoverClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RestoreClusterRequest, Operation>
@@ -216,6 +226,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RestoreClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSecondaryClusterRequest, Operation>
@@ -226,6 +237,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSecondaryClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListInstancesRequest, ListInstancesResponse>
@@ -237,6 +249,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   ProtoUtils.marshaller(ListInstancesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstancesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInstanceRequest, Instance> getInstanceMethodDescriptor =
@@ -245,6 +258,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
           .setFullMethodName("google.cloud.alloydb.v1beta.AlloyDBAdmin/GetInstance")
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateInstanceRequest, Operation>
@@ -255,6 +269,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSecondaryInstanceRequest, Operation>
@@ -265,6 +280,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSecondaryInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchCreateInstancesRequest, Operation>
@@ -275,6 +291,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchCreateInstancesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateInstanceRequest, Operation>
@@ -285,6 +302,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteInstanceRequest, Operation>
@@ -295,6 +313,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FailoverInstanceRequest, Operation>
@@ -305,6 +324,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(FailoverInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InjectFaultRequest, Operation> injectFaultMethodDescriptor =
@@ -313,6 +333,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
           .setFullMethodName("google.cloud.alloydb.v1beta.AlloyDBAdmin/InjectFault")
           .setRequestMarshaller(ProtoUtils.marshaller(InjectFaultRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RestartInstanceRequest, Operation>
@@ -323,6 +344,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RestartInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExecuteSqlRequest, ExecuteSqlResponse>
@@ -332,6 +354,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setFullMethodName("google.cloud.alloydb.v1beta.AlloyDBAdmin/ExecuteSql")
               .setRequestMarshaller(ProtoUtils.marshaller(ExecuteSqlRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ExecuteSqlResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBackupsRequest, ListBackupsResponse>
@@ -342,6 +365,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListBackupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
@@ -350,6 +374,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
           .setFullMethodName("google.cloud.alloydb.v1beta.AlloyDBAdmin/GetBackup")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBackupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateBackupRequest, Operation>
@@ -359,6 +384,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setFullMethodName("google.cloud.alloydb.v1beta.AlloyDBAdmin/CreateBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBackupRequest, Operation>
@@ -368,6 +394,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setFullMethodName("google.cloud.alloydb.v1beta.AlloyDBAdmin/UpdateBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupRequest, Operation>
@@ -377,6 +404,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setFullMethodName("google.cloud.alloydb.v1beta.AlloyDBAdmin/DeleteBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -391,6 +419,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   ProtoUtils.marshaller(ListSupportedDatabaseFlagsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSupportedDatabaseFlagsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -405,6 +434,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   ProtoUtils.marshaller(GenerateClientCertificateRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateClientCertificateResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConnectionInfoRequest, ConnectionInfo>
@@ -415,6 +445,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConnectionInfoRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConnectionInfo.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListUsersRequest, ListUsersResponse>
@@ -424,6 +455,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setFullMethodName("google.cloud.alloydb.v1beta.AlloyDBAdmin/ListUsers")
               .setRequestMarshaller(ProtoUtils.marshaller(ListUsersRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListUsersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetUserRequest, User> getUserMethodDescriptor =
@@ -432,6 +464,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
           .setFullMethodName("google.cloud.alloydb.v1beta.AlloyDBAdmin/GetUser")
           .setRequestMarshaller(ProtoUtils.marshaller(GetUserRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(User.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateUserRequest, User> createUserMethodDescriptor =
@@ -440,6 +473,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
           .setFullMethodName("google.cloud.alloydb.v1beta.AlloyDBAdmin/CreateUser")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateUserRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(User.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateUserRequest, User> updateUserMethodDescriptor =
@@ -448,6 +482,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
           .setFullMethodName("google.cloud.alloydb.v1beta.AlloyDBAdmin/UpdateUser")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateUserRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(User.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteUserRequest, Empty> deleteUserMethodDescriptor =
@@ -456,6 +491,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
           .setFullMethodName("google.cloud.alloydb.v1beta.AlloyDBAdmin/DeleteUser")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteUserRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListDatabasesRequest, ListDatabasesResponse>
@@ -467,6 +503,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   ProtoUtils.marshaller(ListDatabasesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatabasesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -478,6 +515,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -486,6 +524,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;

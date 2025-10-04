@@ -64,6 +64,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   ProtoUtils.marshaller(CreateDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CreateDocumentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDocumentRequest, Document> getDocumentMethodDescriptor =
@@ -72,6 +73,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
           .setFullMethodName("google.cloud.contentwarehouse.v1.DocumentService/GetDocument")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDocumentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Document.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateDocumentRequest, UpdateDocumentResponse>
@@ -83,6 +85,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   ProtoUtils.marshaller(UpdateDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UpdateDocumentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDocumentRequest, Empty>
@@ -93,6 +96,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchDocumentsRequest, SearchDocumentsResponse>
@@ -104,6 +108,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   ProtoUtils.marshaller(SearchDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchDocumentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<LockDocumentRequest, Document>
@@ -113,6 +118,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setFullMethodName("google.cloud.contentwarehouse.v1.DocumentService/LockDocument")
               .setRequestMarshaller(ProtoUtils.marshaller(LockDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Document.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchAclRequest, FetchAclResponse>
@@ -122,6 +128,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setFullMethodName("google.cloud.contentwarehouse.v1.DocumentService/FetchAcl")
               .setRequestMarshaller(ProtoUtils.marshaller(FetchAclRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FetchAclResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetAclRequest, SetAclResponse> setAclMethodDescriptor =
@@ -130,6 +137,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
           .setFullMethodName("google.cloud.contentwarehouse.v1.DocumentService/SetAcl")
           .setRequestMarshaller(ProtoUtils.marshaller(SetAclRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(SetAclResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateDocumentRequest, CreateDocumentResponse> createDocumentCallable;

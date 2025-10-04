@@ -68,11 +68,9 @@ public interface BackupRuleOrBuilder
    * defined in “days”. The value should be greater than or equal to minimum
    * enforced retention of the backup vault.
    *
-   * Minimum value is 1 and maximum value is 90 for hourly backups.
-   * Minimum value is 1 and maximum value is 90 for daily backups.
-   * Minimum value is 7 and maximum value is 186 for weekly backups.
-   * Minimum value is 30 and maximum value is 732 for monthly backups.
-   * Minimum value is 365 and maximum value is 36159 for yearly backups.
+   * Minimum value is 1 and maximum value is 36159 for custom retention
+   * on-demand backup.
+   * Minimum and maximum values are workload specific for all other rules.
    * </pre>
    *
    * <code>int32 backup_retention_days = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -85,12 +83,12 @@ public interface BackupRuleOrBuilder
    *
    *
    * <pre>
-   * Required. Defines a schedule that runs within the confines of a defined
+   * Optional. Defines a schedule that runs within the confines of a defined
    * window of time.
    * </pre>
    *
    * <code>
-   * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the standardSchedule field is set.
@@ -101,12 +99,12 @@ public interface BackupRuleOrBuilder
    *
    *
    * <pre>
-   * Required. Defines a schedule that runs within the confines of a defined
+   * Optional. Defines a schedule that runs within the confines of a defined
    * window of time.
    * </pre>
    *
    * <code>
-   * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The standardSchedule.
@@ -117,12 +115,12 @@ public interface BackupRuleOrBuilder
    *
    *
    * <pre>
-   * Required. Defines a schedule that runs within the confines of a defined
+   * Optional. Defines a schedule that runs within the confines of a defined
    * window of time.
    * </pre>
    *
    * <code>
-   * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.backupdr.v1.StandardSchedule standard_schedule = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.backupdr.v1.StandardScheduleOrBuilder getStandardScheduleOrBuilder();

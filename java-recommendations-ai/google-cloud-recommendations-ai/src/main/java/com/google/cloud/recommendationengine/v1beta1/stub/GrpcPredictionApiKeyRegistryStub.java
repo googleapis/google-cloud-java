@@ -61,6 +61,7 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                       CreatePredictionApiKeyRegistrationRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PredictionApiKeyRegistration.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -78,6 +79,7 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListPredictionApiKeyRegistrationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePredictionApiKeyRegistrationRequest, Empty>
@@ -90,6 +92,7 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                   ProtoUtils.marshaller(
                       DeletePredictionApiKeyRegistrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<

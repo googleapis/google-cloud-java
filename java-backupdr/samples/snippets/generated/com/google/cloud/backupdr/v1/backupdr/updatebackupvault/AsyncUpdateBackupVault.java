@@ -44,6 +44,7 @@ public class AsyncUpdateBackupVault {
               .setRequestId("requestId693933066")
               .setValidateOnly(true)
               .setForce(true)
+              .setForceUpdateAccessRestriction(true)
               .build();
       ApiFuture<Operation> future = backupDRClient.updateBackupVaultCallable().futureCall(request);
       // Do something.

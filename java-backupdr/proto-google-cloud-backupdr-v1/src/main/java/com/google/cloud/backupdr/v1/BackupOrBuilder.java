@@ -645,6 +645,51 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
+   * Output only. Cloud SQL specific backup properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties cloud_sql_instance_backup_properties = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cloudSqlInstanceBackupProperties field is set.
+   */
+  boolean hasCloudSqlInstanceBackupProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud SQL specific backup properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties cloud_sql_instance_backup_properties = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cloudSqlInstanceBackupProperties.
+   */
+  com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties
+      getCloudSqlInstanceBackupProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud SQL specific backup properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties cloud_sql_instance_backup_properties = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPropertiesOrBuilder
+      getCloudSqlInstanceBackupPropertiesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Backup Appliance specific backup properties.
    * </pre>
    *
@@ -684,6 +729,49 @@ public interface BackupOrBuilder
    */
   com.google.cloud.backupdr.v1.BackupApplianceBackupPropertiesOrBuilder
       getBackupApplianceBackupPropertiesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Disk specific backup properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.DiskBackupProperties disk_backup_properties = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the diskBackupProperties field is set.
+   */
+  boolean hasDiskBackupProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Disk specific backup properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.DiskBackupProperties disk_backup_properties = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The diskBackupProperties.
+   */
+  com.google.cloud.backupdr.v1.DiskBackupProperties getDiskBackupProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Disk specific backup properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.DiskBackupProperties disk_backup_properties = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.backupdr.v1.DiskBackupPropertiesOrBuilder getDiskBackupPropertiesOrBuilder();
 
   /**
    *
@@ -770,6 +858,66 @@ public interface BackupOrBuilder
    * @return The resourceSizeBytes.
    */
   long getResourceSizeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzs = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzs = 24 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzi = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzi = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
 
   com.google.cloud.backupdr.v1.Backup.BackupPropertiesCase getBackupPropertiesCase();
 

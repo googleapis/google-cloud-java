@@ -129,6 +129,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The infoType is typically used in Austria.
+     * </pre>
+     *
+     * <code>AUSTRIA = 53;</code>
+     */
+    AUSTRIA(53),
+    /**
+     *
+     *
+     * <pre>
      * The infoType is typically used in Azerbaijan.
      * </pre>
      *
@@ -653,6 +663,17 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>AUSTRALIA = 3;</code>
      */
     public static final int AUSTRALIA_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * The infoType is typically used in Austria.
+     * </pre>
+     *
+     * <code>AUSTRIA = 53;</code>
+     */
+    public static final int AUSTRIA_VALUE = 53;
 
     /**
      *
@@ -1205,6 +1226,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
           return ARMENIA;
         case 3:
           return AUSTRALIA;
+        case 53:
+          return AUSTRIA;
         case 48:
           return AZERBAIJAN;
         case 50:

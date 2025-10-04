@@ -154,6 +154,95 @@ public interface DataSourceGcpResourceOrBuilder
   com.google.cloud.backupdr.v1.ComputeInstanceDataSourcePropertiesOrBuilder
       getComputeInstanceDatasourcePropertiesOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CloudSqlInstanceDataSourceProperties has a subset of Cloud
+   * SQL Instance properties that are useful at the Datasource level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties cloud_sql_instance_datasource_properties = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cloudSqlInstanceDatasourceProperties field is set.
+   */
+  boolean hasCloudSqlInstanceDatasourceProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CloudSqlInstanceDataSourceProperties has a subset of Cloud
+   * SQL Instance properties that are useful at the Datasource level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties cloud_sql_instance_datasource_properties = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cloudSqlInstanceDatasourceProperties.
+   */
+  com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties
+      getCloudSqlInstanceDatasourceProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CloudSqlInstanceDataSourceProperties has a subset of Cloud
+   * SQL Instance properties that are useful at the Datasource level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties cloud_sql_instance_datasource_properties = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourcePropertiesOrBuilder
+      getCloudSqlInstanceDatasourcePropertiesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * DiskDataSourceProperties has a subset of Disk properties that are useful
+   * at the Datasource level.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskDataSourceProperties disk_datasource_properties = 7;</code>
+   *
+   * @return Whether the diskDatasourceProperties field is set.
+   */
+  boolean hasDiskDatasourceProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * DiskDataSourceProperties has a subset of Disk properties that are useful
+   * at the Datasource level.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskDataSourceProperties disk_datasource_properties = 7;</code>
+   *
+   * @return The diskDatasourceProperties.
+   */
+  com.google.cloud.backupdr.v1.DiskDataSourceProperties getDiskDatasourceProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * DiskDataSourceProperties has a subset of Disk properties that are useful
+   * at the Datasource level.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskDataSourceProperties disk_datasource_properties = 7;</code>
+   */
+  com.google.cloud.backupdr.v1.DiskDataSourcePropertiesOrBuilder
+      getDiskDatasourcePropertiesOrBuilder();
+
   com.google.cloud.backupdr.v1.DataSourceGcpResource.GcpResourcePropertiesCase
       getGcpResourcePropertiesCase();
 }

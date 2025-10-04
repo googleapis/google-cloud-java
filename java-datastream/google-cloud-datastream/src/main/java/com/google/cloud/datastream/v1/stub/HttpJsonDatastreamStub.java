@@ -844,6 +844,8 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             serializer.putQueryParam(
                                 fields, "privateConnectionId", request.getPrivateConnectionId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

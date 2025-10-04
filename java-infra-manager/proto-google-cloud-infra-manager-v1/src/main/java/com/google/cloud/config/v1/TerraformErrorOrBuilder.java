@@ -97,10 +97,11 @@ public interface TerraformErrorOrBuilder
    *
    *
    * <pre>
-   * Original error response from underlying Google API, if available.
+   * Output only. Original error response from underlying Google API, if
+   * available.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 4;</code>
+   * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the error field is set.
    */
@@ -110,10 +111,11 @@ public interface TerraformErrorOrBuilder
    *
    *
    * <pre>
-   * Original error response from underlying Google API, if available.
+   * Output only. Original error response from underlying Google API, if
+   * available.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 4;</code>
+   * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The error.
    */
@@ -123,10 +125,11 @@ public interface TerraformErrorOrBuilder
    *
    *
    * <pre>
-   * Original error response from underlying Google API, if available.
+   * Output only. Original error response from underlying Google API, if
+   * available.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 4;</code>
+   * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.rpc.StatusOrBuilder getErrorOrBuilder();
 }

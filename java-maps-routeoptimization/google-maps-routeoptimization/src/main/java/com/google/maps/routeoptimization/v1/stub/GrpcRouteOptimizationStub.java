@@ -54,6 +54,7 @@ public class GrpcRouteOptimizationStub extends RouteOptimizationStub {
                   ProtoUtils.marshaller(OptimizeToursRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OptimizeToursResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchOptimizeToursRequest, Operation>
@@ -65,6 +66,7 @@ public class GrpcRouteOptimizationStub extends RouteOptimizationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchOptimizeToursRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<OptimizeToursRequest, OptimizeToursResponse> optimizeToursCallable;

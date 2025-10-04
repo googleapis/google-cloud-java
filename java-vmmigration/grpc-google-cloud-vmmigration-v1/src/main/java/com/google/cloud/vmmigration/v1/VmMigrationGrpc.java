@@ -298,6 +298,55 @@ public final class VmMigrationGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest,
+          com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse>
+      getFetchStorageInventoryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchStorageInventory",
+      requestType = com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest.class,
+      responseType = com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest,
+          com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse>
+      getFetchStorageInventoryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest,
+            com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse>
+        getFetchStorageInventoryMethod;
+    if ((getFetchStorageInventoryMethod = VmMigrationGrpc.getFetchStorageInventoryMethod) == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getFetchStorageInventoryMethod = VmMigrationGrpc.getFetchStorageInventoryMethod)
+            == null) {
+          VmMigrationGrpc.getFetchStorageInventoryMethod =
+              getFetchStorageInventoryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest,
+                          com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FetchStorageInventory"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("FetchStorageInventory"))
+                      .build();
+        }
+      }
+    }
+    return getFetchStorageInventoryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vmmigration.v1.ListUtilizationReportsRequest,
           com.google.cloud.vmmigration.v1.ListUtilizationReportsResponse>
       getListUtilizationReportsMethod;
@@ -1143,6 +1192,50 @@ public final class VmMigrationGrpc {
       }
     }
     return getFinalizeMigrationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.ExtendMigrationRequest, com.google.longrunning.Operation>
+      getExtendMigrationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExtendMigration",
+      requestType = com.google.cloud.vmmigration.v1.ExtendMigrationRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.ExtendMigrationRequest, com.google.longrunning.Operation>
+      getExtendMigrationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.ExtendMigrationRequest,
+            com.google.longrunning.Operation>
+        getExtendMigrationMethod;
+    if ((getExtendMigrationMethod = VmMigrationGrpc.getExtendMigrationMethod) == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getExtendMigrationMethod = VmMigrationGrpc.getExtendMigrationMethod) == null) {
+          VmMigrationGrpc.getExtendMigrationMethod =
+              getExtendMigrationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.ExtendMigrationRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExtendMigration"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.ExtendMigrationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("ExtendMigration"))
+                      .build();
+        }
+      }
+    }
+    return getExtendMigrationMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -2140,6 +2233,673 @@ public final class VmMigrationGrpc {
     return getGetReplicationCycleMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.ListImageImportsRequest,
+          com.google.cloud.vmmigration.v1.ListImageImportsResponse>
+      getListImageImportsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListImageImports",
+      requestType = com.google.cloud.vmmigration.v1.ListImageImportsRequest.class,
+      responseType = com.google.cloud.vmmigration.v1.ListImageImportsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.ListImageImportsRequest,
+          com.google.cloud.vmmigration.v1.ListImageImportsResponse>
+      getListImageImportsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.ListImageImportsRequest,
+            com.google.cloud.vmmigration.v1.ListImageImportsResponse>
+        getListImageImportsMethod;
+    if ((getListImageImportsMethod = VmMigrationGrpc.getListImageImportsMethod) == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getListImageImportsMethod = VmMigrationGrpc.getListImageImportsMethod) == null) {
+          VmMigrationGrpc.getListImageImportsMethod =
+              getListImageImportsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.ListImageImportsRequest,
+                          com.google.cloud.vmmigration.v1.ListImageImportsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListImageImports"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.ListImageImportsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.ListImageImportsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("ListImageImports"))
+                      .build();
+        }
+      }
+    }
+    return getListImageImportsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.GetImageImportRequest,
+          com.google.cloud.vmmigration.v1.ImageImport>
+      getGetImageImportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetImageImport",
+      requestType = com.google.cloud.vmmigration.v1.GetImageImportRequest.class,
+      responseType = com.google.cloud.vmmigration.v1.ImageImport.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.GetImageImportRequest,
+          com.google.cloud.vmmigration.v1.ImageImport>
+      getGetImageImportMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.GetImageImportRequest,
+            com.google.cloud.vmmigration.v1.ImageImport>
+        getGetImageImportMethod;
+    if ((getGetImageImportMethod = VmMigrationGrpc.getGetImageImportMethod) == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getGetImageImportMethod = VmMigrationGrpc.getGetImageImportMethod) == null) {
+          VmMigrationGrpc.getGetImageImportMethod =
+              getGetImageImportMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.GetImageImportRequest,
+                          com.google.cloud.vmmigration.v1.ImageImport>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetImageImport"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.GetImageImportRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.ImageImport.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("GetImageImport"))
+                      .build();
+        }
+      }
+    }
+    return getGetImageImportMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.CreateImageImportRequest,
+          com.google.longrunning.Operation>
+      getCreateImageImportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateImageImport",
+      requestType = com.google.cloud.vmmigration.v1.CreateImageImportRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.CreateImageImportRequest,
+          com.google.longrunning.Operation>
+      getCreateImageImportMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.CreateImageImportRequest,
+            com.google.longrunning.Operation>
+        getCreateImageImportMethod;
+    if ((getCreateImageImportMethod = VmMigrationGrpc.getCreateImageImportMethod) == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getCreateImageImportMethod = VmMigrationGrpc.getCreateImageImportMethod) == null) {
+          VmMigrationGrpc.getCreateImageImportMethod =
+              getCreateImageImportMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.CreateImageImportRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateImageImport"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.CreateImageImportRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("CreateImageImport"))
+                      .build();
+        }
+      }
+    }
+    return getCreateImageImportMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.DeleteImageImportRequest,
+          com.google.longrunning.Operation>
+      getDeleteImageImportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteImageImport",
+      requestType = com.google.cloud.vmmigration.v1.DeleteImageImportRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.DeleteImageImportRequest,
+          com.google.longrunning.Operation>
+      getDeleteImageImportMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.DeleteImageImportRequest,
+            com.google.longrunning.Operation>
+        getDeleteImageImportMethod;
+    if ((getDeleteImageImportMethod = VmMigrationGrpc.getDeleteImageImportMethod) == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getDeleteImageImportMethod = VmMigrationGrpc.getDeleteImageImportMethod) == null) {
+          VmMigrationGrpc.getDeleteImageImportMethod =
+              getDeleteImageImportMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.DeleteImageImportRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteImageImport"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.DeleteImageImportRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("DeleteImageImport"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteImageImportMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.ListImageImportJobsRequest,
+          com.google.cloud.vmmigration.v1.ListImageImportJobsResponse>
+      getListImageImportJobsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListImageImportJobs",
+      requestType = com.google.cloud.vmmigration.v1.ListImageImportJobsRequest.class,
+      responseType = com.google.cloud.vmmigration.v1.ListImageImportJobsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.ListImageImportJobsRequest,
+          com.google.cloud.vmmigration.v1.ListImageImportJobsResponse>
+      getListImageImportJobsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.ListImageImportJobsRequest,
+            com.google.cloud.vmmigration.v1.ListImageImportJobsResponse>
+        getListImageImportJobsMethod;
+    if ((getListImageImportJobsMethod = VmMigrationGrpc.getListImageImportJobsMethod) == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getListImageImportJobsMethod = VmMigrationGrpc.getListImageImportJobsMethod) == null) {
+          VmMigrationGrpc.getListImageImportJobsMethod =
+              getListImageImportJobsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.ListImageImportJobsRequest,
+                          com.google.cloud.vmmigration.v1.ListImageImportJobsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListImageImportJobs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.ListImageImportJobsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.ListImageImportJobsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("ListImageImportJobs"))
+                      .build();
+        }
+      }
+    }
+    return getListImageImportJobsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.GetImageImportJobRequest,
+          com.google.cloud.vmmigration.v1.ImageImportJob>
+      getGetImageImportJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetImageImportJob",
+      requestType = com.google.cloud.vmmigration.v1.GetImageImportJobRequest.class,
+      responseType = com.google.cloud.vmmigration.v1.ImageImportJob.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.GetImageImportJobRequest,
+          com.google.cloud.vmmigration.v1.ImageImportJob>
+      getGetImageImportJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.GetImageImportJobRequest,
+            com.google.cloud.vmmigration.v1.ImageImportJob>
+        getGetImageImportJobMethod;
+    if ((getGetImageImportJobMethod = VmMigrationGrpc.getGetImageImportJobMethod) == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getGetImageImportJobMethod = VmMigrationGrpc.getGetImageImportJobMethod) == null) {
+          VmMigrationGrpc.getGetImageImportJobMethod =
+              getGetImageImportJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.GetImageImportJobRequest,
+                          com.google.cloud.vmmigration.v1.ImageImportJob>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetImageImportJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.GetImageImportJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.ImageImportJob.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("GetImageImportJob"))
+                      .build();
+        }
+      }
+    }
+    return getGetImageImportJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.CancelImageImportJobRequest,
+          com.google.longrunning.Operation>
+      getCancelImageImportJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelImageImportJob",
+      requestType = com.google.cloud.vmmigration.v1.CancelImageImportJobRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.CancelImageImportJobRequest,
+          com.google.longrunning.Operation>
+      getCancelImageImportJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.CancelImageImportJobRequest,
+            com.google.longrunning.Operation>
+        getCancelImageImportJobMethod;
+    if ((getCancelImageImportJobMethod = VmMigrationGrpc.getCancelImageImportJobMethod) == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getCancelImageImportJobMethod = VmMigrationGrpc.getCancelImageImportJobMethod)
+            == null) {
+          VmMigrationGrpc.getCancelImageImportJobMethod =
+              getCancelImageImportJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.CancelImageImportJobRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CancelImageImportJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.CancelImageImportJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("CancelImageImportJob"))
+                      .build();
+        }
+      }
+    }
+    return getCancelImageImportJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest,
+          com.google.longrunning.Operation>
+      getCreateDiskMigrationJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDiskMigrationJob",
+      requestType = com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest,
+          com.google.longrunning.Operation>
+      getCreateDiskMigrationJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest,
+            com.google.longrunning.Operation>
+        getCreateDiskMigrationJobMethod;
+    if ((getCreateDiskMigrationJobMethod = VmMigrationGrpc.getCreateDiskMigrationJobMethod)
+        == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getCreateDiskMigrationJobMethod = VmMigrationGrpc.getCreateDiskMigrationJobMethod)
+            == null) {
+          VmMigrationGrpc.getCreateDiskMigrationJobMethod =
+              getCreateDiskMigrationJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateDiskMigrationJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("CreateDiskMigrationJob"))
+                      .build();
+        }
+      }
+    }
+    return getCreateDiskMigrationJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest,
+          com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse>
+      getListDiskMigrationJobsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDiskMigrationJobs",
+      requestType = com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest.class,
+      responseType = com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest,
+          com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse>
+      getListDiskMigrationJobsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest,
+            com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse>
+        getListDiskMigrationJobsMethod;
+    if ((getListDiskMigrationJobsMethod = VmMigrationGrpc.getListDiskMigrationJobsMethod) == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getListDiskMigrationJobsMethod = VmMigrationGrpc.getListDiskMigrationJobsMethod)
+            == null) {
+          VmMigrationGrpc.getListDiskMigrationJobsMethod =
+              getListDiskMigrationJobsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest,
+                          com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListDiskMigrationJobs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("ListDiskMigrationJobs"))
+                      .build();
+        }
+      }
+    }
+    return getListDiskMigrationJobsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest,
+          com.google.cloud.vmmigration.v1.DiskMigrationJob>
+      getGetDiskMigrationJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDiskMigrationJob",
+      requestType = com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest.class,
+      responseType = com.google.cloud.vmmigration.v1.DiskMigrationJob.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest,
+          com.google.cloud.vmmigration.v1.DiskMigrationJob>
+      getGetDiskMigrationJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest,
+            com.google.cloud.vmmigration.v1.DiskMigrationJob>
+        getGetDiskMigrationJobMethod;
+    if ((getGetDiskMigrationJobMethod = VmMigrationGrpc.getGetDiskMigrationJobMethod) == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getGetDiskMigrationJobMethod = VmMigrationGrpc.getGetDiskMigrationJobMethod) == null) {
+          VmMigrationGrpc.getGetDiskMigrationJobMethod =
+              getGetDiskMigrationJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest,
+                          com.google.cloud.vmmigration.v1.DiskMigrationJob>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetDiskMigrationJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.DiskMigrationJob
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("GetDiskMigrationJob"))
+                      .build();
+        }
+      }
+    }
+    return getGetDiskMigrationJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest,
+          com.google.longrunning.Operation>
+      getUpdateDiskMigrationJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDiskMigrationJob",
+      requestType = com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest,
+          com.google.longrunning.Operation>
+      getUpdateDiskMigrationJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest,
+            com.google.longrunning.Operation>
+        getUpdateDiskMigrationJobMethod;
+    if ((getUpdateDiskMigrationJobMethod = VmMigrationGrpc.getUpdateDiskMigrationJobMethod)
+        == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getUpdateDiskMigrationJobMethod = VmMigrationGrpc.getUpdateDiskMigrationJobMethod)
+            == null) {
+          VmMigrationGrpc.getUpdateDiskMigrationJobMethod =
+              getUpdateDiskMigrationJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateDiskMigrationJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("UpdateDiskMigrationJob"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDiskMigrationJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest,
+          com.google.longrunning.Operation>
+      getDeleteDiskMigrationJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDiskMigrationJob",
+      requestType = com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest,
+          com.google.longrunning.Operation>
+      getDeleteDiskMigrationJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest,
+            com.google.longrunning.Operation>
+        getDeleteDiskMigrationJobMethod;
+    if ((getDeleteDiskMigrationJobMethod = VmMigrationGrpc.getDeleteDiskMigrationJobMethod)
+        == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getDeleteDiskMigrationJobMethod = VmMigrationGrpc.getDeleteDiskMigrationJobMethod)
+            == null) {
+          VmMigrationGrpc.getDeleteDiskMigrationJobMethod =
+              getDeleteDiskMigrationJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteDiskMigrationJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("DeleteDiskMigrationJob"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteDiskMigrationJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest,
+          com.google.longrunning.Operation>
+      getRunDiskMigrationJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RunDiskMigrationJob",
+      requestType = com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest,
+          com.google.longrunning.Operation>
+      getRunDiskMigrationJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest,
+            com.google.longrunning.Operation>
+        getRunDiskMigrationJobMethod;
+    if ((getRunDiskMigrationJobMethod = VmMigrationGrpc.getRunDiskMigrationJobMethod) == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getRunDiskMigrationJobMethod = VmMigrationGrpc.getRunDiskMigrationJobMethod) == null) {
+          VmMigrationGrpc.getRunDiskMigrationJobMethod =
+              getRunDiskMigrationJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RunDiskMigrationJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("RunDiskMigrationJob"))
+                      .build();
+        }
+      }
+    }
+    return getRunDiskMigrationJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest,
+          com.google.longrunning.Operation>
+      getCancelDiskMigrationJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelDiskMigrationJob",
+      requestType = com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest,
+          com.google.longrunning.Operation>
+      getCancelDiskMigrationJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest,
+            com.google.longrunning.Operation>
+        getCancelDiskMigrationJobMethod;
+    if ((getCancelDiskMigrationJobMethod = VmMigrationGrpc.getCancelDiskMigrationJobMethod)
+        == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getCancelDiskMigrationJobMethod = VmMigrationGrpc.getCancelDiskMigrationJobMethod)
+            == null) {
+          VmMigrationGrpc.getCancelDiskMigrationJobMethod =
+              getCancelDiskMigrationJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CancelDiskMigrationJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("CancelDiskMigrationJob"))
+                      .build();
+        }
+      }
+    }
+    return getCancelDiskMigrationJobMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static VmMigrationStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<VmMigrationStub> factory =
@@ -2289,6 +3049,26 @@ public final class VmMigrationGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getFetchInventoryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List remote source's inventory of storage resources.
+     * The remote source is another cloud vendor (e.g. AWS, Azure).
+     * The inventory describes the list of existing storage resources in that
+     * source. Note that this operation lists the resources on the remote source,
+     * as opposed to listing the MigratingVms resources in the vmmigration
+     * service.
+     * </pre>
+     */
+    default void fetchStorageInventory(
+        com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchStorageInventoryMethod(), responseObserver);
     }
 
     /**
@@ -2561,6 +3341,20 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
+     * Extend the migrating VM time to live.
+     * </pre>
+     */
+    default void extendMigration(
+        com.google.cloud.vmmigration.v1.ExtendMigrationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExtendMigrationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Initiates a Clone of a specific migrating VM.
      * </pre>
      */
@@ -2589,7 +3383,8 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
-     * Lists CloneJobs of a given migrating VM.
+     * Lists the CloneJobs of a migrating VM. Only 25 most recent CloneJobs are
+     * listed.
      * </pre>
      */
     default void listCloneJobs(
@@ -2648,7 +3443,8 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
-     * Lists CutoverJobs of a given migrating VM.
+     * Lists the CutoverJobs of a migrating VM. Only 25 most recent CutoverJobs
+     * are listed.
      * </pre>
      */
     default void listCutoverJobs(
@@ -2881,6 +3677,207 @@ public final class VmMigrationGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetReplicationCycleMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ImageImports in a given project.
+     * </pre>
+     */
+    default void listImageImports(
+        com.google.cloud.vmmigration.v1.ListImageImportsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ListImageImportsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListImageImportsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ImageImport.
+     * </pre>
+     */
+    default void getImageImport(
+        com.google.cloud.vmmigration.v1.GetImageImportRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ImageImport> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetImageImportMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ImageImport in a given project.
+     * </pre>
+     */
+    default void createImageImport(
+        com.google.cloud.vmmigration.v1.CreateImageImportRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateImageImportMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ImageImport.
+     * </pre>
+     */
+    default void deleteImageImport(
+        com.google.cloud.vmmigration.v1.DeleteImageImportRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteImageImportMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ImageImportJobs in a given project.
+     * </pre>
+     */
+    default void listImageImportJobs(
+        com.google.cloud.vmmigration.v1.ListImageImportJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ListImageImportJobsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListImageImportJobsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ImageImportJob.
+     * </pre>
+     */
+    default void getImageImportJob(
+        com.google.cloud.vmmigration.v1.GetImageImportJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ImageImportJob>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetImageImportJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the cancellation of a running clone job.
+     * </pre>
+     */
+    default void cancelImageImportJob(
+        com.google.cloud.vmmigration.v1.CancelImageImportJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCancelImageImportJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new disk migration job in a given Source.
+     * </pre>
+     */
+    default void createDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateDiskMigrationJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DiskMigrationJobs in a given Source.
+     * </pre>
+     */
+    default void listDiskMigrationJobs(
+        com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDiskMigrationJobsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DiskMigrationJob.
+     * </pre>
+     */
+    default void getDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.DiskMigrationJob>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDiskMigrationJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DiskMigrationJob.
+     * </pre>
+     */
+    default void updateDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDiskMigrationJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DiskMigrationJob.
+     * </pre>
+     */
+    default void deleteDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteDiskMigrationJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs the disk migration job.
+     * </pre>
+     */
+    default void runDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRunDiskMigrationJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels the disk migration job.
+     * </pre>
+     */
+    default void cancelDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCancelDiskMigrationJobMethod(), responseObserver);
+    }
   }
 
   /**
@@ -3013,6 +4010,28 @@ public final class VmMigrationGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFetchInventoryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List remote source's inventory of storage resources.
+     * The remote source is another cloud vendor (e.g. AWS, Azure).
+     * The inventory describes the list of existing storage resources in that
+     * source. Note that this operation lists the resources on the remote source,
+     * as opposed to listing the MigratingVms resources in the vmmigration
+     * service.
+     * </pre>
+     */
+    public void fetchStorageInventory(
+        com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchStorageInventoryMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3323,6 +4342,22 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
+     * Extend the migrating VM time to live.
+     * </pre>
+     */
+    public void extendMigration(
+        com.google.cloud.vmmigration.v1.ExtendMigrationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExtendMigrationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Initiates a Clone of a specific migrating VM.
      * </pre>
      */
@@ -3355,7 +4390,8 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
-     * Lists CloneJobs of a given migrating VM.
+     * Lists the CloneJobs of a migrating VM. Only 25 most recent CloneJobs are
+     * listed.
      * </pre>
      */
     public void listCloneJobs(
@@ -3422,7 +4458,8 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
-     * Lists CutoverJobs of a given migrating VM.
+     * Lists the CutoverJobs of a migrating VM. Only 25 most recent CutoverJobs
+     * are listed.
      * </pre>
      */
     public void listCutoverJobs(
@@ -3685,6 +4722,235 @@ public final class VmMigrationGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ImageImports in a given project.
+     * </pre>
+     */
+    public void listImageImports(
+        com.google.cloud.vmmigration.v1.ListImageImportsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ListImageImportsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListImageImportsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ImageImport.
+     * </pre>
+     */
+    public void getImageImport(
+        com.google.cloud.vmmigration.v1.GetImageImportRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ImageImport> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetImageImportMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ImageImport in a given project.
+     * </pre>
+     */
+    public void createImageImport(
+        com.google.cloud.vmmigration.v1.CreateImageImportRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateImageImportMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ImageImport.
+     * </pre>
+     */
+    public void deleteImageImport(
+        com.google.cloud.vmmigration.v1.DeleteImageImportRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteImageImportMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ImageImportJobs in a given project.
+     * </pre>
+     */
+    public void listImageImportJobs(
+        com.google.cloud.vmmigration.v1.ListImageImportJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ListImageImportJobsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListImageImportJobsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ImageImportJob.
+     * </pre>
+     */
+    public void getImageImportJob(
+        com.google.cloud.vmmigration.v1.GetImageImportJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ImageImportJob>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetImageImportJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the cancellation of a running clone job.
+     * </pre>
+     */
+    public void cancelImageImportJob(
+        com.google.cloud.vmmigration.v1.CancelImageImportJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCancelImageImportJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new disk migration job in a given Source.
+     * </pre>
+     */
+    public void createDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateDiskMigrationJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DiskMigrationJobs in a given Source.
+     * </pre>
+     */
+    public void listDiskMigrationJobs(
+        com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDiskMigrationJobsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DiskMigrationJob.
+     * </pre>
+     */
+    public void getDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.DiskMigrationJob>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDiskMigrationJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DiskMigrationJob.
+     * </pre>
+     */
+    public void updateDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDiskMigrationJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DiskMigrationJob.
+     * </pre>
+     */
+    public void deleteDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteDiskMigrationJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs the disk migration job.
+     * </pre>
+     */
+    public void runDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRunDiskMigrationJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels the disk migration job.
+     * </pre>
+     */
+    public void cancelDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCancelDiskMigrationJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -3786,6 +5052,24 @@ public final class VmMigrationGrpc {
         com.google.cloud.vmmigration.v1.FetchInventoryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFetchInventoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List remote source's inventory of storage resources.
+     * The remote source is another cloud vendor (e.g. AWS, Azure).
+     * The inventory describes the list of existing storage resources in that
+     * source. Note that this operation lists the resources on the remote source,
+     * as opposed to listing the MigratingVms resources in the vmmigration
+     * service.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse fetchStorageInventory(
+        com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchStorageInventoryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -4035,6 +5319,19 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
+     * Extend the migrating VM time to live.
+     * </pre>
+     */
+    public com.google.longrunning.Operation extendMigration(
+        com.google.cloud.vmmigration.v1.ExtendMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExtendMigrationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Initiates a Clone of a specific migrating VM.
      * </pre>
      */
@@ -4061,7 +5358,8 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
-     * Lists CloneJobs of a given migrating VM.
+     * Lists the CloneJobs of a migrating VM. Only 25 most recent CloneJobs are
+     * listed.
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ListCloneJobsResponse listCloneJobs(
@@ -4115,7 +5413,8 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
-     * Lists CutoverJobs of a given migrating VM.
+     * Lists the CutoverJobs of a migrating VM. Only 25 most recent CutoverJobs
+     * are listed.
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ListCutoverJobsResponse listCutoverJobs(
@@ -4327,6 +5626,188 @@ public final class VmMigrationGrpc {
         com.google.cloud.vmmigration.v1.GetReplicationCycleRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetReplicationCycleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ImageImports in a given project.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ListImageImportsResponse listImageImports(
+        com.google.cloud.vmmigration.v1.ListImageImportsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListImageImportsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ImageImport.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ImageImport getImageImport(
+        com.google.cloud.vmmigration.v1.GetImageImportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetImageImportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ImageImport in a given project.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createImageImport(
+        com.google.cloud.vmmigration.v1.CreateImageImportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateImageImportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ImageImport.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteImageImport(
+        com.google.cloud.vmmigration.v1.DeleteImageImportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteImageImportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ImageImportJobs in a given project.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ListImageImportJobsResponse listImageImportJobs(
+        com.google.cloud.vmmigration.v1.ListImageImportJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListImageImportJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ImageImportJob.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ImageImportJob getImageImportJob(
+        com.google.cloud.vmmigration.v1.GetImageImportJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetImageImportJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the cancellation of a running clone job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation cancelImageImportJob(
+        com.google.cloud.vmmigration.v1.CancelImageImportJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelImageImportJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new disk migration job in a given Source.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDiskMigrationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DiskMigrationJobs in a given Source.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse listDiskMigrationJobs(
+        com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDiskMigrationJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DiskMigrationJob.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.DiskMigrationJob getDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDiskMigrationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DiskMigrationJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDiskMigrationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DiskMigrationJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDiskMigrationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs the disk migration job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation runDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunDiskMigrationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels the disk migration job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation cancelDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelDiskMigrationJobMethod(), getCallOptions(), request);
     }
   }
 
@@ -4435,6 +5916,24 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
+     * List remote source's inventory of storage resources.
+     * The remote source is another cloud vendor (e.g. AWS, Azure).
+     * The inventory describes the list of existing storage resources in that
+     * source. Note that this operation lists the resources on the remote source,
+     * as opposed to listing the MigratingVms resources in the vmmigration
+     * service.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse fetchStorageInventory(
+        com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchStorageInventoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Utilization Reports of the given Source.
      * </pre>
      */
@@ -4678,6 +6177,19 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
+     * Extend the migrating VM time to live.
+     * </pre>
+     */
+    public com.google.longrunning.Operation extendMigration(
+        com.google.cloud.vmmigration.v1.ExtendMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExtendMigrationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Initiates a Clone of a specific migrating VM.
      * </pre>
      */
@@ -4704,7 +6216,8 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
-     * Lists CloneJobs of a given migrating VM.
+     * Lists the CloneJobs of a migrating VM. Only 25 most recent CloneJobs are
+     * listed.
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ListCloneJobsResponse listCloneJobs(
@@ -4758,7 +6271,8 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
-     * Lists CutoverJobs of a given migrating VM.
+     * Lists the CutoverJobs of a migrating VM. Only 25 most recent CutoverJobs
+     * are listed.
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ListCutoverJobsResponse listCutoverJobs(
@@ -4971,6 +6485,188 @@ public final class VmMigrationGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetReplicationCycleMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ImageImports in a given project.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ListImageImportsResponse listImageImports(
+        com.google.cloud.vmmigration.v1.ListImageImportsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListImageImportsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ImageImport.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ImageImport getImageImport(
+        com.google.cloud.vmmigration.v1.GetImageImportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetImageImportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ImageImport in a given project.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createImageImport(
+        com.google.cloud.vmmigration.v1.CreateImageImportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateImageImportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ImageImport.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteImageImport(
+        com.google.cloud.vmmigration.v1.DeleteImageImportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteImageImportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ImageImportJobs in a given project.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ListImageImportJobsResponse listImageImportJobs(
+        com.google.cloud.vmmigration.v1.ListImageImportJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListImageImportJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ImageImportJob.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ImageImportJob getImageImportJob(
+        com.google.cloud.vmmigration.v1.GetImageImportJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetImageImportJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the cancellation of a running clone job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation cancelImageImportJob(
+        com.google.cloud.vmmigration.v1.CancelImageImportJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelImageImportJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new disk migration job in a given Source.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDiskMigrationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DiskMigrationJobs in a given Source.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse listDiskMigrationJobs(
+        com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDiskMigrationJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DiskMigrationJob.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.DiskMigrationJob getDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDiskMigrationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DiskMigrationJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDiskMigrationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DiskMigrationJob.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDiskMigrationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs the disk migration job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation runDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunDiskMigrationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels the disk migration job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation cancelDiskMigrationJob(
+        com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelDiskMigrationJobMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -5075,6 +6771,26 @@ public final class VmMigrationGrpc {
         fetchInventory(com.google.cloud.vmmigration.v1.FetchInventoryRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFetchInventoryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List remote source's inventory of storage resources.
+     * The remote source is another cloud vendor (e.g. AWS, Azure).
+     * The inventory describes the list of existing storage resources in that
+     * source. Note that this operation lists the resources on the remote source,
+     * as opposed to listing the MigratingVms resources in the vmmigration
+     * service.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse>
+        fetchStorageInventory(
+            com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchStorageInventoryMethod(), getCallOptions()), request);
     }
 
     /**
@@ -5336,6 +7052,19 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
+     * Extend the migrating VM time to live.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        extendMigration(com.google.cloud.vmmigration.v1.ExtendMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExtendMigrationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Initiates a Clone of a specific migrating VM.
      * </pre>
      */
@@ -5362,7 +7091,8 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
-     * Lists CloneJobs of a given migrating VM.
+     * Lists the CloneJobs of a migrating VM. Only 25 most recent CloneJobs are
+     * listed.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -5418,7 +7148,8 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
-     * Lists CutoverJobs of a given migrating VM.
+     * Lists the CutoverJobs of a migrating VM. Only 25 most recent CutoverJobs
+     * are listed.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -5639,6 +7370,199 @@ public final class VmMigrationGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetReplicationCycleMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ImageImports in a given project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmmigration.v1.ListImageImportsResponse>
+        listImageImports(com.google.cloud.vmmigration.v1.ListImageImportsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListImageImportsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ImageImport.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmmigration.v1.ImageImport>
+        getImageImport(com.google.cloud.vmmigration.v1.GetImageImportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetImageImportMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ImageImport in a given project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createImageImport(com.google.cloud.vmmigration.v1.CreateImageImportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateImageImportMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ImageImport.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteImageImport(com.google.cloud.vmmigration.v1.DeleteImageImportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteImageImportMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ImageImportJobs in a given project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmmigration.v1.ListImageImportJobsResponse>
+        listImageImportJobs(com.google.cloud.vmmigration.v1.ListImageImportJobsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListImageImportJobsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ImageImportJob.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmmigration.v1.ImageImportJob>
+        getImageImportJob(com.google.cloud.vmmigration.v1.GetImageImportJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetImageImportJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the cancellation of a running clone job.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        cancelImageImportJob(com.google.cloud.vmmigration.v1.CancelImageImportJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelImageImportJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new disk migration job in a given Source.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createDiskMigrationJob(
+            com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateDiskMigrationJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DiskMigrationJobs in a given Source.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse>
+        listDiskMigrationJobs(
+            com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDiskMigrationJobsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DiskMigrationJob.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmmigration.v1.DiskMigrationJob>
+        getDiskMigrationJob(com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDiskMigrationJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DiskMigrationJob.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateDiskMigrationJob(
+            com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDiskMigrationJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DiskMigrationJob.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteDiskMigrationJob(
+            com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteDiskMigrationJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs the disk migration job.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        runDiskMigrationJob(com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRunDiskMigrationJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels the disk migration job.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        cancelDiskMigrationJob(
+            com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelDiskMigrationJobMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_SOURCES = 0;
@@ -5647,46 +7571,62 @@ public final class VmMigrationGrpc {
   private static final int METHODID_UPDATE_SOURCE = 3;
   private static final int METHODID_DELETE_SOURCE = 4;
   private static final int METHODID_FETCH_INVENTORY = 5;
-  private static final int METHODID_LIST_UTILIZATION_REPORTS = 6;
-  private static final int METHODID_GET_UTILIZATION_REPORT = 7;
-  private static final int METHODID_CREATE_UTILIZATION_REPORT = 8;
-  private static final int METHODID_DELETE_UTILIZATION_REPORT = 9;
-  private static final int METHODID_LIST_DATACENTER_CONNECTORS = 10;
-  private static final int METHODID_GET_DATACENTER_CONNECTOR = 11;
-  private static final int METHODID_CREATE_DATACENTER_CONNECTOR = 12;
-  private static final int METHODID_DELETE_DATACENTER_CONNECTOR = 13;
-  private static final int METHODID_UPGRADE_APPLIANCE = 14;
-  private static final int METHODID_CREATE_MIGRATING_VM = 15;
-  private static final int METHODID_LIST_MIGRATING_VMS = 16;
-  private static final int METHODID_GET_MIGRATING_VM = 17;
-  private static final int METHODID_UPDATE_MIGRATING_VM = 18;
-  private static final int METHODID_DELETE_MIGRATING_VM = 19;
-  private static final int METHODID_START_MIGRATION = 20;
-  private static final int METHODID_RESUME_MIGRATION = 21;
-  private static final int METHODID_PAUSE_MIGRATION = 22;
-  private static final int METHODID_FINALIZE_MIGRATION = 23;
-  private static final int METHODID_CREATE_CLONE_JOB = 24;
-  private static final int METHODID_CANCEL_CLONE_JOB = 25;
-  private static final int METHODID_LIST_CLONE_JOBS = 26;
-  private static final int METHODID_GET_CLONE_JOB = 27;
-  private static final int METHODID_CREATE_CUTOVER_JOB = 28;
-  private static final int METHODID_CANCEL_CUTOVER_JOB = 29;
-  private static final int METHODID_LIST_CUTOVER_JOBS = 30;
-  private static final int METHODID_GET_CUTOVER_JOB = 31;
-  private static final int METHODID_LIST_GROUPS = 32;
-  private static final int METHODID_GET_GROUP = 33;
-  private static final int METHODID_CREATE_GROUP = 34;
-  private static final int METHODID_UPDATE_GROUP = 35;
-  private static final int METHODID_DELETE_GROUP = 36;
-  private static final int METHODID_ADD_GROUP_MIGRATION = 37;
-  private static final int METHODID_REMOVE_GROUP_MIGRATION = 38;
-  private static final int METHODID_LIST_TARGET_PROJECTS = 39;
-  private static final int METHODID_GET_TARGET_PROJECT = 40;
-  private static final int METHODID_CREATE_TARGET_PROJECT = 41;
-  private static final int METHODID_UPDATE_TARGET_PROJECT = 42;
-  private static final int METHODID_DELETE_TARGET_PROJECT = 43;
-  private static final int METHODID_LIST_REPLICATION_CYCLES = 44;
-  private static final int METHODID_GET_REPLICATION_CYCLE = 45;
+  private static final int METHODID_FETCH_STORAGE_INVENTORY = 6;
+  private static final int METHODID_LIST_UTILIZATION_REPORTS = 7;
+  private static final int METHODID_GET_UTILIZATION_REPORT = 8;
+  private static final int METHODID_CREATE_UTILIZATION_REPORT = 9;
+  private static final int METHODID_DELETE_UTILIZATION_REPORT = 10;
+  private static final int METHODID_LIST_DATACENTER_CONNECTORS = 11;
+  private static final int METHODID_GET_DATACENTER_CONNECTOR = 12;
+  private static final int METHODID_CREATE_DATACENTER_CONNECTOR = 13;
+  private static final int METHODID_DELETE_DATACENTER_CONNECTOR = 14;
+  private static final int METHODID_UPGRADE_APPLIANCE = 15;
+  private static final int METHODID_CREATE_MIGRATING_VM = 16;
+  private static final int METHODID_LIST_MIGRATING_VMS = 17;
+  private static final int METHODID_GET_MIGRATING_VM = 18;
+  private static final int METHODID_UPDATE_MIGRATING_VM = 19;
+  private static final int METHODID_DELETE_MIGRATING_VM = 20;
+  private static final int METHODID_START_MIGRATION = 21;
+  private static final int METHODID_RESUME_MIGRATION = 22;
+  private static final int METHODID_PAUSE_MIGRATION = 23;
+  private static final int METHODID_FINALIZE_MIGRATION = 24;
+  private static final int METHODID_EXTEND_MIGRATION = 25;
+  private static final int METHODID_CREATE_CLONE_JOB = 26;
+  private static final int METHODID_CANCEL_CLONE_JOB = 27;
+  private static final int METHODID_LIST_CLONE_JOBS = 28;
+  private static final int METHODID_GET_CLONE_JOB = 29;
+  private static final int METHODID_CREATE_CUTOVER_JOB = 30;
+  private static final int METHODID_CANCEL_CUTOVER_JOB = 31;
+  private static final int METHODID_LIST_CUTOVER_JOBS = 32;
+  private static final int METHODID_GET_CUTOVER_JOB = 33;
+  private static final int METHODID_LIST_GROUPS = 34;
+  private static final int METHODID_GET_GROUP = 35;
+  private static final int METHODID_CREATE_GROUP = 36;
+  private static final int METHODID_UPDATE_GROUP = 37;
+  private static final int METHODID_DELETE_GROUP = 38;
+  private static final int METHODID_ADD_GROUP_MIGRATION = 39;
+  private static final int METHODID_REMOVE_GROUP_MIGRATION = 40;
+  private static final int METHODID_LIST_TARGET_PROJECTS = 41;
+  private static final int METHODID_GET_TARGET_PROJECT = 42;
+  private static final int METHODID_CREATE_TARGET_PROJECT = 43;
+  private static final int METHODID_UPDATE_TARGET_PROJECT = 44;
+  private static final int METHODID_DELETE_TARGET_PROJECT = 45;
+  private static final int METHODID_LIST_REPLICATION_CYCLES = 46;
+  private static final int METHODID_GET_REPLICATION_CYCLE = 47;
+  private static final int METHODID_LIST_IMAGE_IMPORTS = 48;
+  private static final int METHODID_GET_IMAGE_IMPORT = 49;
+  private static final int METHODID_CREATE_IMAGE_IMPORT = 50;
+  private static final int METHODID_DELETE_IMAGE_IMPORT = 51;
+  private static final int METHODID_LIST_IMAGE_IMPORT_JOBS = 52;
+  private static final int METHODID_GET_IMAGE_IMPORT_JOB = 53;
+  private static final int METHODID_CANCEL_IMAGE_IMPORT_JOB = 54;
+  private static final int METHODID_CREATE_DISK_MIGRATION_JOB = 55;
+  private static final int METHODID_LIST_DISK_MIGRATION_JOBS = 56;
+  private static final int METHODID_GET_DISK_MIGRATION_JOB = 57;
+  private static final int METHODID_UPDATE_DISK_MIGRATION_JOB = 58;
+  private static final int METHODID_DELETE_DISK_MIGRATION_JOB = 59;
+  private static final int METHODID_RUN_DISK_MIGRATION_JOB = 60;
+  private static final int METHODID_CANCEL_DISK_MIGRATION_JOB = 61;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5736,6 +7676,13 @@ public final class VmMigrationGrpc {
           serviceImpl.fetchInventory(
               (com.google.cloud.vmmigration.v1.FetchInventoryRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.FetchInventoryResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_STORAGE_INVENTORY:
+          serviceImpl.fetchStorageInventory(
+              (com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse>)
                   responseObserver);
           break;
         case METHODID_LIST_UTILIZATION_REPORTS:
@@ -5835,6 +7782,11 @@ public final class VmMigrationGrpc {
         case METHODID_FINALIZE_MIGRATION:
           serviceImpl.finalizeMigration(
               (com.google.cloud.vmmigration.v1.FinalizeMigrationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXTEND_MIGRATION:
+          serviceImpl.extendMigration(
+              (com.google.cloud.vmmigration.v1.ExtendMigrationRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_CREATE_CLONE_JOB:
@@ -5959,6 +7911,85 @@ public final class VmMigrationGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ReplicationCycle>)
                   responseObserver);
           break;
+        case METHODID_LIST_IMAGE_IMPORTS:
+          serviceImpl.listImageImports(
+              (com.google.cloud.vmmigration.v1.ListImageImportsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.vmmigration.v1.ListImageImportsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_IMAGE_IMPORT:
+          serviceImpl.getImageImport(
+              (com.google.cloud.vmmigration.v1.GetImageImportRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ImageImport>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_IMAGE_IMPORT:
+          serviceImpl.createImageImport(
+              (com.google.cloud.vmmigration.v1.CreateImageImportRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_IMAGE_IMPORT:
+          serviceImpl.deleteImageImport(
+              (com.google.cloud.vmmigration.v1.DeleteImageImportRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_IMAGE_IMPORT_JOBS:
+          serviceImpl.listImageImportJobs(
+              (com.google.cloud.vmmigration.v1.ListImageImportJobsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.vmmigration.v1.ListImageImportJobsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_IMAGE_IMPORT_JOB:
+          serviceImpl.getImageImportJob(
+              (com.google.cloud.vmmigration.v1.GetImageImportJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ImageImportJob>)
+                  responseObserver);
+          break;
+        case METHODID_CANCEL_IMAGE_IMPORT_JOB:
+          serviceImpl.cancelImageImportJob(
+              (com.google.cloud.vmmigration.v1.CancelImageImportJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_DISK_MIGRATION_JOB:
+          serviceImpl.createDiskMigrationJob(
+              (com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_DISK_MIGRATION_JOBS:
+          serviceImpl.listDiskMigrationJobs(
+              (com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_DISK_MIGRATION_JOB:
+          serviceImpl.getDiskMigrationJob(
+              (com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.DiskMigrationJob>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_DISK_MIGRATION_JOB:
+          serviceImpl.updateDiskMigrationJob(
+              (com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_DISK_MIGRATION_JOB:
+          serviceImpl.deleteDiskMigrationJob(
+              (com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RUN_DISK_MIGRATION_JOB:
+          serviceImpl.runDiskMigrationJob(
+              (com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CANCEL_DISK_MIGRATION_JOB:
+          serviceImpl.cancelDiskMigrationJob(
+              (com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -6015,6 +8046,13 @@ public final class VmMigrationGrpc {
                     com.google.cloud.vmmigration.v1.FetchInventoryRequest,
                     com.google.cloud.vmmigration.v1.FetchInventoryResponse>(
                     service, METHODID_FETCH_INVENTORY)))
+        .addMethod(
+            getFetchStorageInventoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest,
+                    com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse>(
+                    service, METHODID_FETCH_STORAGE_INVENTORY)))
         .addMethod(
             getListUtilizationReportsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -6131,6 +8169,12 @@ public final class VmMigrationGrpc {
                 new MethodHandlers<
                     com.google.cloud.vmmigration.v1.FinalizeMigrationRequest,
                     com.google.longrunning.Operation>(service, METHODID_FINALIZE_MIGRATION)))
+        .addMethod(
+            getExtendMigrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.ExtendMigrationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXTEND_MIGRATION)))
         .addMethod(
             getCreateCloneJobMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -6270,6 +8314,96 @@ public final class VmMigrationGrpc {
                     com.google.cloud.vmmigration.v1.GetReplicationCycleRequest,
                     com.google.cloud.vmmigration.v1.ReplicationCycle>(
                     service, METHODID_GET_REPLICATION_CYCLE)))
+        .addMethod(
+            getListImageImportsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.ListImageImportsRequest,
+                    com.google.cloud.vmmigration.v1.ListImageImportsResponse>(
+                    service, METHODID_LIST_IMAGE_IMPORTS)))
+        .addMethod(
+            getGetImageImportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.GetImageImportRequest,
+                    com.google.cloud.vmmigration.v1.ImageImport>(
+                    service, METHODID_GET_IMAGE_IMPORT)))
+        .addMethod(
+            getCreateImageImportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.CreateImageImportRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_IMAGE_IMPORT)))
+        .addMethod(
+            getDeleteImageImportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.DeleteImageImportRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_IMAGE_IMPORT)))
+        .addMethod(
+            getListImageImportJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.ListImageImportJobsRequest,
+                    com.google.cloud.vmmigration.v1.ListImageImportJobsResponse>(
+                    service, METHODID_LIST_IMAGE_IMPORT_JOBS)))
+        .addMethod(
+            getGetImageImportJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.GetImageImportJobRequest,
+                    com.google.cloud.vmmigration.v1.ImageImportJob>(
+                    service, METHODID_GET_IMAGE_IMPORT_JOB)))
+        .addMethod(
+            getCancelImageImportJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.CancelImageImportJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CANCEL_IMAGE_IMPORT_JOB)))
+        .addMethod(
+            getCreateDiskMigrationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_DISK_MIGRATION_JOB)))
+        .addMethod(
+            getListDiskMigrationJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest,
+                    com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse>(
+                    service, METHODID_LIST_DISK_MIGRATION_JOBS)))
+        .addMethod(
+            getGetDiskMigrationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest,
+                    com.google.cloud.vmmigration.v1.DiskMigrationJob>(
+                    service, METHODID_GET_DISK_MIGRATION_JOB)))
+        .addMethod(
+            getUpdateDiskMigrationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_DISK_MIGRATION_JOB)))
+        .addMethod(
+            getDeleteDiskMigrationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_DISK_MIGRATION_JOB)))
+        .addMethod(
+            getRunDiskMigrationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RUN_DISK_MIGRATION_JOB)))
+        .addMethod(
+            getCancelDiskMigrationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CANCEL_DISK_MIGRATION_JOB)))
         .build();
   }
 
@@ -6327,6 +8461,7 @@ public final class VmMigrationGrpc {
                       .addMethod(getUpdateSourceMethod())
                       .addMethod(getDeleteSourceMethod())
                       .addMethod(getFetchInventoryMethod())
+                      .addMethod(getFetchStorageInventoryMethod())
                       .addMethod(getListUtilizationReportsMethod())
                       .addMethod(getGetUtilizationReportMethod())
                       .addMethod(getCreateUtilizationReportMethod())
@@ -6345,6 +8480,7 @@ public final class VmMigrationGrpc {
                       .addMethod(getResumeMigrationMethod())
                       .addMethod(getPauseMigrationMethod())
                       .addMethod(getFinalizeMigrationMethod())
+                      .addMethod(getExtendMigrationMethod())
                       .addMethod(getCreateCloneJobMethod())
                       .addMethod(getCancelCloneJobMethod())
                       .addMethod(getListCloneJobsMethod())
@@ -6367,6 +8503,20 @@ public final class VmMigrationGrpc {
                       .addMethod(getDeleteTargetProjectMethod())
                       .addMethod(getListReplicationCyclesMethod())
                       .addMethod(getGetReplicationCycleMethod())
+                      .addMethod(getListImageImportsMethod())
+                      .addMethod(getGetImageImportMethod())
+                      .addMethod(getCreateImageImportMethod())
+                      .addMethod(getDeleteImageImportMethod())
+                      .addMethod(getListImageImportJobsMethod())
+                      .addMethod(getGetImageImportJobMethod())
+                      .addMethod(getCancelImageImportJobMethod())
+                      .addMethod(getCreateDiskMigrationJobMethod())
+                      .addMethod(getListDiskMigrationJobsMethod())
+                      .addMethod(getGetDiskMigrationJobMethod())
+                      .addMethod(getUpdateDiskMigrationJobMethod())
+                      .addMethod(getDeleteDiskMigrationJobMethod())
+                      .addMethod(getRunDiskMigrationJobMethod())
+                      .addMethod(getCancelDiskMigrationJobMethod())
                       .build();
         }
       }

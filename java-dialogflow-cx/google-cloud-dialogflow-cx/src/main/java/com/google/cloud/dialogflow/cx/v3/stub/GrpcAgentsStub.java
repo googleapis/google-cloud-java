@@ -72,6 +72,7 @@ public class GrpcAgentsStub extends AgentsStub {
               .setFullMethodName("google.cloud.dialogflow.cx.v3.Agents/ListAgents")
               .setRequestMarshaller(ProtoUtils.marshaller(ListAgentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListAgentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAgentRequest, Agent> getAgentMethodDescriptor =
@@ -80,6 +81,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3.Agents/GetAgent")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Agent.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateAgentRequest, Agent> createAgentMethodDescriptor =
@@ -88,6 +90,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3.Agents/CreateAgent")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Agent.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateAgentRequest, Agent> updateAgentMethodDescriptor =
@@ -96,6 +99,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3.Agents/UpdateAgent")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Agent.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteAgentRequest, Empty> deleteAgentMethodDescriptor =
@@ -104,6 +108,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3.Agents/DeleteAgent")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ExportAgentRequest, Operation> exportAgentMethodDescriptor =
@@ -112,6 +117,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3.Agents/ExportAgent")
           .setRequestMarshaller(ProtoUtils.marshaller(ExportAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RestoreAgentRequest, Operation>
@@ -121,6 +127,7 @@ public class GrpcAgentsStub extends AgentsStub {
               .setFullMethodName("google.cloud.dialogflow.cx.v3.Agents/RestoreAgent")
               .setRequestMarshaller(ProtoUtils.marshaller(RestoreAgentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ValidateAgentRequest, AgentValidationResult>
@@ -132,6 +139,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   ProtoUtils.marshaller(ValidateAgentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AgentValidationResult.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAgentValidationResultRequest, AgentValidationResult>
@@ -143,6 +151,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   ProtoUtils.marshaller(GetAgentValidationResultRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AgentValidationResult.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGenerativeSettingsRequest, GenerativeSettings>
@@ -153,6 +162,7 @@ public class GrpcAgentsStub extends AgentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetGenerativeSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GenerativeSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateGenerativeSettingsRequest, GenerativeSettings>
@@ -163,6 +173,7 @@ public class GrpcAgentsStub extends AgentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateGenerativeSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GenerativeSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -174,6 +185,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -182,6 +194,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListAgentsRequest, ListAgentsResponse> listAgentsCallable;

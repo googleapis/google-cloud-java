@@ -187,6 +187,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   ProtoUtils.marshaller(ListPrivateCloudsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPrivateCloudsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPrivateCloudRequest, PrivateCloud>
@@ -197,6 +198,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPrivateCloudRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PrivateCloud.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePrivateCloudRequest, Operation>
@@ -207,6 +209,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePrivateCloudRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePrivateCloudRequest, Operation>
@@ -217,6 +220,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePrivateCloudRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePrivateCloudRequest, Operation>
@@ -227,6 +231,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePrivateCloudRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeletePrivateCloudRequest, Operation>
@@ -237,6 +242,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeletePrivateCloudRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListClustersRequest, ListClustersResponse>
@@ -247,6 +253,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetClusterRequest, Cluster> getClusterMethodDescriptor =
@@ -255,6 +262,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
           .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/GetCluster")
           .setRequestMarshaller(ProtoUtils.marshaller(GetClusterRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Cluster.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateClusterRequest, Operation>
@@ -265,6 +273,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateClusterRequest, Operation>
@@ -275,6 +284,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteClusterRequest, Operation>
@@ -285,6 +295,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListNodesRequest, ListNodesResponse>
@@ -294,6 +305,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/ListNodes")
               .setRequestMarshaller(ProtoUtils.marshaller(ListNodesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListNodesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNodeRequest, Node> getNodeMethodDescriptor =
@@ -302,6 +314,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
           .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/GetNode")
           .setRequestMarshaller(ProtoUtils.marshaller(GetNodeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Node.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListExternalAddressesRequest, ListExternalAddressesResponse>
@@ -313,6 +326,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   ProtoUtils.marshaller(ListExternalAddressesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListExternalAddressesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -331,6 +345,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       FetchNetworkPolicyExternalAddressesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetExternalAddressRequest, ExternalAddress>
@@ -341,6 +356,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetExternalAddressRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ExternalAddress.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateExternalAddressRequest, Operation>
@@ -351,6 +367,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateExternalAddressRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateExternalAddressRequest, Operation>
@@ -361,6 +378,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateExternalAddressRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteExternalAddressRequest, Operation>
@@ -371,6 +389,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteExternalAddressRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSubnetsRequest, ListSubnetsResponse>
@@ -381,6 +400,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSubnetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSubnetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSubnetRequest, Subnet> getSubnetMethodDescriptor =
@@ -389,6 +409,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
           .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/GetSubnet")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSubnetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Subnet.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSubnetRequest, Operation>
@@ -398,6 +419,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/UpdateSubnet")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateSubnetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -412,6 +434,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   ProtoUtils.marshaller(ListExternalAccessRulesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListExternalAccessRulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetExternalAccessRuleRequest, ExternalAccessRule>
@@ -422,6 +445,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetExternalAccessRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ExternalAccessRule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateExternalAccessRuleRequest, Operation>
@@ -433,6 +457,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateExternalAccessRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateExternalAccessRuleRequest, Operation>
@@ -444,6 +469,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateExternalAccessRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteExternalAccessRuleRequest, Operation>
@@ -455,6 +481,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteExternalAccessRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLoggingServersRequest, ListLoggingServersResponse>
@@ -466,6 +493,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   ProtoUtils.marshaller(ListLoggingServersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLoggingServersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLoggingServerRequest, LoggingServer>
@@ -476,6 +504,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetLoggingServerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LoggingServer.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateLoggingServerRequest, Operation>
@@ -486,6 +515,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateLoggingServerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateLoggingServerRequest, Operation>
@@ -496,6 +526,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateLoggingServerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteLoggingServerRequest, Operation>
@@ -506,6 +537,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteLoggingServerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListNodeTypesRequest, ListNodeTypesResponse>
@@ -517,6 +549,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   ProtoUtils.marshaller(ListNodeTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNodeTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNodeTypeRequest, NodeType> getNodeTypeMethodDescriptor =
@@ -525,6 +558,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
           .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/GetNodeType")
           .setRequestMarshaller(ProtoUtils.marshaller(GetNodeTypeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(NodeType.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ShowNsxCredentialsRequest, Credentials>
@@ -535,6 +569,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ShowNsxCredentialsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Credentials.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ShowVcenterCredentialsRequest, Credentials>
@@ -545,6 +580,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ShowVcenterCredentialsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Credentials.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResetNsxCredentialsRequest, Operation>
@@ -555,6 +591,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResetNsxCredentialsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResetVcenterCredentialsRequest, Operation>
@@ -566,6 +603,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResetVcenterCredentialsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDnsForwardingRequest, DnsForwarding>
@@ -576,6 +614,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDnsForwardingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DnsForwarding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDnsForwardingRequest, Operation>
@@ -586,6 +625,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDnsForwardingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNetworkPeeringRequest, NetworkPeering>
@@ -596,6 +636,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetNetworkPeeringRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NetworkPeering.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse>
@@ -607,6 +648,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   ProtoUtils.marshaller(ListNetworkPeeringsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNetworkPeeringsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateNetworkPeeringRequest, Operation>
@@ -617,6 +659,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNetworkPeeringRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNetworkPeeringRequest, Operation>
@@ -627,6 +670,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNetworkPeeringRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateNetworkPeeringRequest, Operation>
@@ -637,6 +681,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateNetworkPeeringRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPeeringRoutesRequest, ListPeeringRoutesResponse>
@@ -648,6 +693,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   ProtoUtils.marshaller(ListPeeringRoutesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPeeringRoutesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateHcxActivationKeyRequest, Operation>
@@ -658,6 +704,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateHcxActivationKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListHcxActivationKeysRequest, ListHcxActivationKeysResponse>
@@ -669,6 +716,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   ProtoUtils.marshaller(ListHcxActivationKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListHcxActivationKeysResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetHcxActivationKeyRequest, HcxActivationKey>
@@ -679,6 +727,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetHcxActivationKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HcxActivationKey.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNetworkPolicyRequest, NetworkPolicy>
@@ -689,6 +738,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetNetworkPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NetworkPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListNetworkPoliciesRequest, ListNetworkPoliciesResponse>
@@ -700,6 +750,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   ProtoUtils.marshaller(ListNetworkPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNetworkPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateNetworkPolicyRequest, Operation>
@@ -710,6 +761,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNetworkPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateNetworkPolicyRequest, Operation>
@@ -720,6 +772,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateNetworkPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNetworkPolicyRequest, Operation>
@@ -730,6 +783,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNetworkPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -745,6 +799,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   ProtoUtils.marshaller(ListManagementDnsZoneBindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListManagementDnsZoneBindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -759,6 +814,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   ProtoUtils.marshaller(GetManagementDnsZoneBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ManagementDnsZoneBinding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateManagementDnsZoneBindingRequest, Operation>
@@ -770,6 +826,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateManagementDnsZoneBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateManagementDnsZoneBindingRequest, Operation>
@@ -781,6 +838,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateManagementDnsZoneBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteManagementDnsZoneBindingRequest, Operation>
@@ -792,6 +850,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteManagementDnsZoneBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RepairManagementDnsZoneBindingRequest, Operation>
@@ -803,6 +862,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RepairManagementDnsZoneBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateVmwareEngineNetworkRequest, Operation>
@@ -814,6 +874,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateVmwareEngineNetworkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateVmwareEngineNetworkRequest, Operation>
@@ -825,6 +886,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateVmwareEngineNetworkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteVmwareEngineNetworkRequest, Operation>
@@ -836,6 +898,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteVmwareEngineNetworkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVmwareEngineNetworkRequest, VmwareEngineNetwork>
@@ -847,6 +910,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   ProtoUtils.marshaller(GetVmwareEngineNetworkRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(VmwareEngineNetwork.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -861,6 +925,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   ProtoUtils.marshaller(ListVmwareEngineNetworksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVmwareEngineNetworksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePrivateConnectionRequest, Operation>
@@ -872,6 +937,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePrivateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPrivateConnectionRequest, PrivateConnection>
@@ -882,6 +948,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPrivateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PrivateConnection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -895,6 +962,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   ProtoUtils.marshaller(ListPrivateConnectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPrivateConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePrivateConnectionRequest, Operation>
@@ -906,6 +974,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePrivateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePrivateConnectionRequest, Operation>
@@ -917,6 +986,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePrivateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -935,6 +1005,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListPrivateConnectionPeeringRoutesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GrantDnsBindPermissionRequest, Operation>
@@ -945,6 +1016,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GrantDnsBindPermissionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDnsBindPermissionRequest, DnsBindPermission>
@@ -955,6 +1027,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDnsBindPermissionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DnsBindPermission.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RevokeDnsBindPermissionRequest, Operation>
@@ -966,6 +1039,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RevokeDnsBindPermissionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -977,6 +1051,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -985,6 +1060,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -993,6 +1069,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -1001,6 +1078,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -1012,6 +1090,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListPrivateCloudsRequest, ListPrivateCloudsResponse>

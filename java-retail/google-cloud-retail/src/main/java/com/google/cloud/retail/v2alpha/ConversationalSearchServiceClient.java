@@ -56,6 +56,8 @@ import javax.annotation.Generated;
  *           .setUserInfo(UserInfo.newBuilder().build())
  *           .setConversationalFilteringSpec(
  *               ConversationalSearchRequest.ConversationalFilteringSpec.newBuilder().build())
+ *           .putAllUserLabels(new HashMap<String, String>())
+ *           .addAllSafetySettings(new ArrayList<SafetySetting>())
  *           .build();
  *   ServerStream<ConversationalSearchResponse> stream =
  *       conversationalSearchServiceClient.conversationalSearchCallable().call(request);
@@ -228,6 +230,8 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *           .setUserInfo(UserInfo.newBuilder().build())
    *           .setConversationalFilteringSpec(
    *               ConversationalSearchRequest.ConversationalFilteringSpec.newBuilder().build())
+   *           .putAllUserLabels(new HashMap<String, String>())
+   *           .addAllSafetySettings(new ArrayList<SafetySetting>())
    *           .build();
    *   ServerStream<ConversationalSearchResponse> stream =
    *       conversationalSearchServiceClient.conversationalSearchCallable().call(request);

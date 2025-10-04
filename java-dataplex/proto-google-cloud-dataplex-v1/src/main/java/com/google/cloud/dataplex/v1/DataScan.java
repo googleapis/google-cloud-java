@@ -2958,7 +2958,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    * Output only. Identifier. The relative resource name of the scan, of the
    * form: `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
    * where `project` refers to a *project_id* or *project_number* and
-   * `location_id` refers to a GCP region.
+   * `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -2987,7 +2987,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
    * Output only. Identifier. The relative resource name of the scan, of the
    * form: `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
    * where `project` refers to a *project_id* or *project_number* and
-   * `location_id` refers to a GCP region.
+   * `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -4974,7 +4974,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * Output only. Identifier. The relative resource name of the scan, of the
      * form: `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
      * where `project` refers to a *project_id* or *project_number* and
-     * `location_id` refers to a GCP region.
+     * `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -5002,7 +5002,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * Output only. Identifier. The relative resource name of the scan, of the
      * form: `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
      * where `project` refers to a *project_id* or *project_number* and
-     * `location_id` refers to a GCP region.
+     * `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -5030,7 +5030,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * Output only. Identifier. The relative resource name of the scan, of the
      * form: `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
      * where `project` refers to a *project_id* or *project_number* and
-     * `location_id` refers to a GCP region.
+     * `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -5057,7 +5057,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * Output only. Identifier. The relative resource name of the scan, of the
      * form: `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
      * where `project` refers to a *project_id* or *project_number* and
-     * `location_id` refers to a GCP region.
+     * `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -5080,7 +5080,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessageV3
      * Output only. Identifier. The relative resource name of the scan, of the
      * form: `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
      * where `project` refers to a *project_id* or *project_number* and
-     * `location_id` refers to a GCP region.
+     * `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>

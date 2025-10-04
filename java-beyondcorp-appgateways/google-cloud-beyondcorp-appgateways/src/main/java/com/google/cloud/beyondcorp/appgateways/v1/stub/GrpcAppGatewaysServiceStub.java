@@ -70,6 +70,7 @@ public class GrpcAppGatewaysServiceStub extends AppGatewaysServiceStub {
                   ProtoUtils.marshaller(ListAppGatewaysRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAppGatewaysResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAppGatewayRequest, AppGateway>
@@ -81,6 +82,7 @@ public class GrpcAppGatewaysServiceStub extends AppGatewaysServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAppGatewayRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AppGateway.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAppGatewayRequest, Operation>
@@ -92,6 +94,7 @@ public class GrpcAppGatewaysServiceStub extends AppGatewaysServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAppGatewayRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAppGatewayRequest, Operation>
@@ -103,6 +106,7 @@ public class GrpcAppGatewaysServiceStub extends AppGatewaysServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAppGatewayRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -114,6 +118,7 @@ public class GrpcAppGatewaysServiceStub extends AppGatewaysServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -122,6 +127,7 @@ public class GrpcAppGatewaysServiceStub extends AppGatewaysServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -130,6 +136,7 @@ public class GrpcAppGatewaysServiceStub extends AppGatewaysServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -138,6 +145,7 @@ public class GrpcAppGatewaysServiceStub extends AppGatewaysServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -149,6 +157,7 @@ public class GrpcAppGatewaysServiceStub extends AppGatewaysServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListAppGatewaysRequest, ListAppGatewaysResponse>

@@ -150,5 +150,79 @@ public interface RichLinkMetadataOrBuilder
    */
   com.google.chat.v1.ChatSpaceLinkDataOrBuilder getChatSpaceLinkDataOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Data for a Meet space link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.MeetSpaceLinkData meet_space_link_data = 5;</code>
+   *
+   * @return Whether the meetSpaceLinkData field is set.
+   */
+  boolean hasMeetSpaceLinkData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for a Meet space link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.MeetSpaceLinkData meet_space_link_data = 5;</code>
+   *
+   * @return The meetSpaceLinkData.
+   */
+  com.google.chat.v1.MeetSpaceLinkData getMeetSpaceLinkData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for a Meet space link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.MeetSpaceLinkData meet_space_link_data = 5;</code>
+   */
+  com.google.chat.v1.MeetSpaceLinkDataOrBuilder getMeetSpaceLinkDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for a Calendar event link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.CalendarEventLinkData calendar_event_link_data = 6;</code>
+   *
+   * @return Whether the calendarEventLinkData field is set.
+   */
+  boolean hasCalendarEventLinkData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for a Calendar event link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.CalendarEventLinkData calendar_event_link_data = 6;</code>
+   *
+   * @return The calendarEventLinkData.
+   */
+  com.google.chat.v1.CalendarEventLinkData getCalendarEventLinkData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for a Calendar event link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.CalendarEventLinkData calendar_event_link_data = 6;</code>
+   */
+  com.google.chat.v1.CalendarEventLinkDataOrBuilder getCalendarEventLinkDataOrBuilder();
+
   com.google.chat.v1.RichLinkMetadata.DataCase getDataCase();
 }

@@ -91,6 +91,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetClusterRequest, Cluster> getClusterMethodDescriptor =
@@ -99,6 +100,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
           .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/GetCluster")
           .setRequestMarshaller(ProtoUtils.marshaller(GetClusterRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Cluster.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateClusterRequest, Operation>
@@ -109,6 +111,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateClusterRequest, Operation>
@@ -119,6 +122,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteClusterRequest, Operation>
@@ -129,6 +133,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTopicsRequest, ListTopicsResponse>
@@ -138,6 +143,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
               .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/ListTopics")
               .setRequestMarshaller(ProtoUtils.marshaller(ListTopicsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTopicsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTopicRequest, Topic> getTopicMethodDescriptor =
@@ -146,6 +152,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
           .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/GetTopic")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTopicRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Topic.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateTopicRequest, Topic> createTopicMethodDescriptor =
@@ -154,6 +161,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
           .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/CreateTopic")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTopicRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Topic.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateTopicRequest, Topic> updateTopicMethodDescriptor =
@@ -162,6 +170,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
           .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/UpdateTopic")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateTopicRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Topic.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteTopicRequest, Empty> deleteTopicMethodDescriptor =
@@ -170,6 +179,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
           .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/DeleteTopic")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTopicRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListConsumerGroupsRequest, ListConsumerGroupsResponse>
@@ -181,6 +191,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   ProtoUtils.marshaller(ListConsumerGroupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConsumerGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConsumerGroupRequest, ConsumerGroup>
@@ -191,6 +202,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConsumerGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConsumerGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConsumerGroupRequest, ConsumerGroup>
@@ -201,6 +213,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConsumerGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConsumerGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConsumerGroupRequest, Empty>
@@ -211,6 +224,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConsumerGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAclsRequest, ListAclsResponse>
@@ -220,6 +234,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
               .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/ListAcls")
               .setRequestMarshaller(ProtoUtils.marshaller(ListAclsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListAclsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAclRequest, Acl> getAclMethodDescriptor =
@@ -228,6 +243,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
           .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/GetAcl")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAclRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Acl.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateAclRequest, Acl> createAclMethodDescriptor =
@@ -236,6 +252,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
           .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/CreateAcl")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateAclRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Acl.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateAclRequest, Acl> updateAclMethodDescriptor =
@@ -244,6 +261,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
           .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/UpdateAcl")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateAclRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Acl.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteAclRequest, Empty> deleteAclMethodDescriptor =
@@ -252,6 +270,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
           .setFullMethodName("google.cloud.managedkafka.v1.ManagedKafka/DeleteAcl")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteAclRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<AddAclEntryRequest, AddAclEntryResponse>
@@ -262,6 +281,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
               .setRequestMarshaller(ProtoUtils.marshaller(AddAclEntryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AddAclEntryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveAclEntryRequest, RemoveAclEntryResponse>
@@ -273,6 +293,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   ProtoUtils.marshaller(RemoveAclEntryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RemoveAclEntryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -284,6 +305,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -292,6 +314,7 @@ public class GrpcManagedKafkaStub extends ManagedKafkaStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;

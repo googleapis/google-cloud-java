@@ -84,8 +84,12 @@ import com.google.cloud.video.livestream.v1.ListInputsRequest;
 import com.google.cloud.video.livestream.v1.ListInputsResponse;
 import com.google.cloud.video.livestream.v1.OperationMetadata;
 import com.google.cloud.video.livestream.v1.Pool;
+import com.google.cloud.video.livestream.v1.PreviewInputRequest;
+import com.google.cloud.video.livestream.v1.PreviewInputResponse;
 import com.google.cloud.video.livestream.v1.StartChannelRequest;
+import com.google.cloud.video.livestream.v1.StartDistributionRequest;
 import com.google.cloud.video.livestream.v1.StopChannelRequest;
+import com.google.cloud.video.livestream.v1.StopDistributionRequest;
 import com.google.cloud.video.livestream.v1.UpdateChannelRequest;
 import com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.UpdateInputRequest;
@@ -398,6 +402,88 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<StartDistributionRequest, Operation>
+      startDistributionMethodDescriptor =
+          ApiMethodDescriptor.<StartDistributionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.video.livestream.v1.LivestreamService/StartDistribution")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<StartDistributionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/channels/*}:startdistribution",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StartDistributionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StartDistributionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (StartDistributionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<StopDistributionRequest, Operation>
+      stopDistributionMethodDescriptor =
+          ApiMethodDescriptor.<StopDistributionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.video.livestream.v1.LivestreamService/StopDistribution")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<StopDistributionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/channels/*}:stopdistribution",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StopDistributionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StopDistributionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (StopDistributionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<CreateInputRequest, Operation>
       createInputMethodDescriptor =
           ApiMethodDescriptor.<CreateInputRequest, Operation>newBuilder()
@@ -590,6 +676,43 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
               .setOperationSnapshotFactory(
                   (UpdateInputRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<PreviewInputRequest, PreviewInputResponse>
+      previewInputMethodDescriptor =
+          ApiMethodDescriptor.<PreviewInputRequest, PreviewInputResponse>newBuilder()
+              .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/PreviewInput")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PreviewInputRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/inputs/*}:preview",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PreviewInputRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PreviewInputRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<PreviewInputResponse>newBuilder()
+                      .setDefaultInstance(PreviewInputResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<CreateEventRequest, Event> createEventMethodDescriptor =
@@ -1397,6 +1520,14 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
   private final UnaryCallable<StopChannelRequest, Operation> stopChannelCallable;
   private final OperationCallable<StopChannelRequest, ChannelOperationResponse, OperationMetadata>
       stopChannelOperationCallable;
+  private final UnaryCallable<StartDistributionRequest, Operation> startDistributionCallable;
+  private final OperationCallable<
+          StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      startDistributionOperationCallable;
+  private final UnaryCallable<StopDistributionRequest, Operation> stopDistributionCallable;
+  private final OperationCallable<
+          StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      stopDistributionOperationCallable;
   private final UnaryCallable<CreateInputRequest, Operation> createInputCallable;
   private final OperationCallable<CreateInputRequest, Input, OperationMetadata>
       createInputOperationCallable;
@@ -1409,6 +1540,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
   private final UnaryCallable<UpdateInputRequest, Operation> updateInputCallable;
   private final OperationCallable<UpdateInputRequest, Input, OperationMetadata>
       updateInputOperationCallable;
+  private final UnaryCallable<PreviewInputRequest, PreviewInputResponse> previewInputCallable;
   private final UnaryCallable<CreateEventRequest, Event> createEventCallable;
   private final UnaryCallable<ListEventsRequest, ListEventsResponse> listEventsCallable;
   private final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable;
@@ -1602,6 +1734,28 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<StartDistributionRequest, Operation> startDistributionTransportSettings =
+        HttpJsonCallSettings.<StartDistributionRequest, Operation>newBuilder()
+            .setMethodDescriptor(startDistributionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<StopDistributionRequest, Operation> stopDistributionTransportSettings =
+        HttpJsonCallSettings.<StopDistributionRequest, Operation>newBuilder()
+            .setMethodDescriptor(stopDistributionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<CreateInputRequest, Operation> createInputTransportSettings =
         HttpJsonCallSettings.<CreateInputRequest, Operation>newBuilder()
             .setMethodDescriptor(createInputMethodDescriptor)
@@ -1654,6 +1808,17 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("input.name", String.valueOf(request.getInput().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<PreviewInputRequest, PreviewInputResponse> previewInputTransportSettings =
+        HttpJsonCallSettings.<PreviewInputRequest, PreviewInputResponse>newBuilder()
+            .setMethodDescriptor(previewInputMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
             .build();
@@ -1946,6 +2111,26 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
             settings.stopChannelOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.startDistributionCallable =
+        callableFactory.createUnaryCallable(
+            startDistributionTransportSettings,
+            settings.startDistributionSettings(),
+            clientContext);
+    this.startDistributionOperationCallable =
+        callableFactory.createOperationCallable(
+            startDistributionTransportSettings,
+            settings.startDistributionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.stopDistributionCallable =
+        callableFactory.createUnaryCallable(
+            stopDistributionTransportSettings, settings.stopDistributionSettings(), clientContext);
+    this.stopDistributionOperationCallable =
+        callableFactory.createOperationCallable(
+            stopDistributionTransportSettings,
+            settings.stopDistributionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.createInputCallable =
         callableFactory.createUnaryCallable(
             createInputTransportSettings, settings.createInputSettings(), clientContext);
@@ -1982,6 +2167,9 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
             settings.updateInputOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.previewInputCallable =
+        callableFactory.createUnaryCallable(
+            previewInputTransportSettings, settings.previewInputSettings(), clientContext);
     this.createEventCallable =
         callableFactory.createUnaryCallable(
             createEventTransportSettings, settings.createEventSettings(), clientContext);
@@ -2123,11 +2311,14 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
     methodDescriptors.add(updateChannelMethodDescriptor);
     methodDescriptors.add(startChannelMethodDescriptor);
     methodDescriptors.add(stopChannelMethodDescriptor);
+    methodDescriptors.add(startDistributionMethodDescriptor);
+    methodDescriptors.add(stopDistributionMethodDescriptor);
     methodDescriptors.add(createInputMethodDescriptor);
     methodDescriptors.add(listInputsMethodDescriptor);
     methodDescriptors.add(getInputMethodDescriptor);
     methodDescriptors.add(deleteInputMethodDescriptor);
     methodDescriptors.add(updateInputMethodDescriptor);
+    methodDescriptors.add(previewInputMethodDescriptor);
     methodDescriptors.add(createEventMethodDescriptor);
     methodDescriptors.add(listEventsMethodDescriptor);
     methodDescriptors.add(getEventMethodDescriptor);
@@ -2227,6 +2418,28 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
   }
 
   @Override
+  public UnaryCallable<StartDistributionRequest, Operation> startDistributionCallable() {
+    return startDistributionCallable;
+  }
+
+  @Override
+  public OperationCallable<StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      startDistributionOperationCallable() {
+    return startDistributionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StopDistributionRequest, Operation> stopDistributionCallable() {
+    return stopDistributionCallable;
+  }
+
+  @Override
+  public OperationCallable<StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      stopDistributionOperationCallable() {
+    return stopDistributionOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateInputRequest, Operation> createInputCallable() {
     return createInputCallable;
   }
@@ -2272,6 +2485,11 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
   public OperationCallable<UpdateInputRequest, Input, OperationMetadata>
       updateInputOperationCallable() {
     return updateInputOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PreviewInputRequest, PreviewInputResponse> previewInputCallable() {
+    return previewInputCallable;
   }
 
   @Override

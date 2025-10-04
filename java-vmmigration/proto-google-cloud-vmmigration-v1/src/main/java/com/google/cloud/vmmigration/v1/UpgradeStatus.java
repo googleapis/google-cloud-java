@@ -348,10 +348,11 @@ public final class UpgradeStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides details on the state of the upgrade operation in case of an error.
+   * Output only. Provides details on the state of the upgrade operation in case
+   * of an error.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 3;</code>
+   * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the error field is set.
    */
@@ -364,10 +365,11 @@ public final class UpgradeStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides details on the state of the upgrade operation in case of an error.
+   * Output only. Provides details on the state of the upgrade operation in case
+   * of an error.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 3;</code>
+   * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The error.
    */
@@ -380,10 +382,11 @@ public final class UpgradeStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides details on the state of the upgrade operation in case of an error.
+   * Output only. Provides details on the state of the upgrade operation in case
+   * of an error.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 3;</code>
+   * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
@@ -1175,10 +1178,11 @@ public final class UpgradeStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides details on the state of the upgrade operation in case of an error.
+     * Output only. Provides details on the state of the upgrade operation in case
+     * of an error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 3;</code>
+     * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return Whether the error field is set.
      */
@@ -1190,10 +1194,11 @@ public final class UpgradeStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides details on the state of the upgrade operation in case of an error.
+     * Output only. Provides details on the state of the upgrade operation in case
+     * of an error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 3;</code>
+     * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The error.
      */
@@ -1209,10 +1214,11 @@ public final class UpgradeStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides details on the state of the upgrade operation in case of an error.
+     * Output only. Provides details on the state of the upgrade operation in case
+     * of an error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 3;</code>
+     * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
@@ -1232,10 +1238,11 @@ public final class UpgradeStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides details on the state of the upgrade operation in case of an error.
+     * Output only. Provides details on the state of the upgrade operation in case
+     * of an error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 3;</code>
+     * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
@@ -1252,10 +1259,11 @@ public final class UpgradeStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides details on the state of the upgrade operation in case of an error.
+     * Output only. Provides details on the state of the upgrade operation in case
+     * of an error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 3;</code>
+     * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
@@ -1280,10 +1288,11 @@ public final class UpgradeStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides details on the state of the upgrade operation in case of an error.
+     * Output only. Provides details on the state of the upgrade operation in case
+     * of an error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 3;</code>
+     * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1300,10 +1309,11 @@ public final class UpgradeStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides details on the state of the upgrade operation in case of an error.
+     * Output only. Provides details on the state of the upgrade operation in case
+     * of an error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 3;</code>
+     * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
       bitField0_ |= 0x00000004;
@@ -1315,10 +1325,11 @@ public final class UpgradeStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides details on the state of the upgrade operation in case of an error.
+     * Output only. Provides details on the state of the upgrade operation in case
+     * of an error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 3;</code>
+     * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
       if (errorBuilder_ != null) {
@@ -1332,10 +1343,11 @@ public final class UpgradeStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provides details on the state of the upgrade operation in case of an error.
+     * Output only. Provides details on the state of the upgrade operation in case
+     * of an error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 3;</code>
+     * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>

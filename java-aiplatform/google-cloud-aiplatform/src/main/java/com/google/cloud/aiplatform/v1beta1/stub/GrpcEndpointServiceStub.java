@@ -87,6 +87,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEndpointRequest, Endpoint> getEndpointMethodDescriptor =
@@ -95,6 +96,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.EndpointService/GetEndpoint")
           .setRequestMarshaller(ProtoUtils.marshaller(GetEndpointRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListEndpointsRequest, ListEndpointsResponse>
@@ -106,6 +108,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   ProtoUtils.marshaller(ListEndpointsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEndpointsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEndpointRequest, Endpoint>
@@ -116,6 +119,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEndpointLongRunningRequest, Operation>
@@ -127,6 +131,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEndpointLongRunningRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEndpointRequest, Operation>
@@ -137,6 +142,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeployModelRequest, Operation> deployModelMethodDescriptor =
@@ -145,6 +151,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.EndpointService/DeployModel")
           .setRequestMarshaller(ProtoUtils.marshaller(DeployModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UndeployModelRequest, Operation>
@@ -155,6 +162,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeployModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MutateDeployedModelRequest, Operation>
@@ -166,6 +174,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MutateDeployedModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetPublisherModelConfigRequest, Operation>
@@ -177,6 +186,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetPublisherModelConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchPublisherModelConfigRequest, PublisherModelConfig>
@@ -189,6 +199,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   ProtoUtils.marshaller(FetchPublisherModelConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PublisherModelConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -200,6 +211,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -208,6 +220,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -216,6 +229,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -224,6 +238,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -235,6 +250,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateEndpointRequest, Operation> createEndpointCallable;

@@ -42,6 +42,7 @@ public class SyncUpdateBackupVault {
               .setRequestId("requestId693933066")
               .setValidateOnly(true)
               .setForce(true)
+              .setForceUpdateAccessRestriction(true)
               .build();
       BackupVault response = backupDRClient.updateBackupVaultAsync(request).get();
     }

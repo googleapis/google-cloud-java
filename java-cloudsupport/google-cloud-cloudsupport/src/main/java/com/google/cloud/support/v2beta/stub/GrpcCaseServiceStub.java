@@ -62,6 +62,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
           .setFullMethodName("google.cloud.support.v2beta.CaseService/GetCase")
           .setRequestMarshaller(ProtoUtils.marshaller(GetCaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Case.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListCasesRequest, ListCasesResponse>
@@ -71,6 +72,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
               .setFullMethodName("google.cloud.support.v2beta.CaseService/ListCases")
               .setRequestMarshaller(ProtoUtils.marshaller(ListCasesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListCasesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchCasesRequest, SearchCasesResponse>
@@ -81,6 +83,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(SearchCasesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchCasesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCaseRequest, Case> createCaseMethodDescriptor =
@@ -89,6 +92,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
           .setFullMethodName("google.cloud.support.v2beta.CaseService/CreateCase")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateCaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Case.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateCaseRequest, Case> updateCaseMethodDescriptor =
@@ -97,6 +101,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
           .setFullMethodName("google.cloud.support.v2beta.CaseService/UpdateCase")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateCaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Case.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<EscalateCaseRequest, Case> escalateCaseMethodDescriptor =
@@ -105,6 +110,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
           .setFullMethodName("google.cloud.support.v2beta.CaseService/EscalateCase")
           .setRequestMarshaller(ProtoUtils.marshaller(EscalateCaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Case.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CloseCaseRequest, Case> closeCaseMethodDescriptor =
@@ -113,6 +119,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
           .setFullMethodName("google.cloud.support.v2beta.CaseService/CloseCase")
           .setRequestMarshaller(ProtoUtils.marshaller(CloseCaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Case.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<
@@ -127,6 +134,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
                   ProtoUtils.marshaller(SearchCaseClassificationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchCaseClassificationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetCaseRequest, Case> getCaseCallable;

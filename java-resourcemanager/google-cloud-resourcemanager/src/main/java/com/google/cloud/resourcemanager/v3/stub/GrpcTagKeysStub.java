@@ -66,6 +66,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListTagKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTagKeysResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTagKeyRequest, TagKey> getTagKeyMethodDescriptor =
@@ -74,6 +75,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.TagKeys/GetTagKey")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTagKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(TagKey.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetNamespacedTagKeyRequest, TagKey>
@@ -84,6 +86,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetNamespacedTagKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagKey.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTagKeyRequest, Operation>
@@ -93,6 +96,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
               .setFullMethodName("google.cloud.resourcemanager.v3.TagKeys/CreateTagKey")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateTagKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTagKeyRequest, Operation>
@@ -102,6 +106,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
               .setFullMethodName("google.cloud.resourcemanager.v3.TagKeys/UpdateTagKey")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateTagKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTagKeyRequest, Operation>
@@ -111,6 +116,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
               .setFullMethodName("google.cloud.resourcemanager.v3.TagKeys/DeleteTagKey")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteTagKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -119,6 +125,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.TagKeys/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -127,6 +134,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.TagKeys/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -138,6 +146,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListTagKeysRequest, ListTagKeysResponse> listTagKeysCallable;

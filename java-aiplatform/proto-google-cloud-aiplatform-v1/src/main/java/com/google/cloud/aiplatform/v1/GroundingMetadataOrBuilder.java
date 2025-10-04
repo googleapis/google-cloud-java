@@ -285,4 +285,55 @@ public interface GroundingMetadataOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.RetrievalMetadataOrBuilder getRetrievalMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Resource name of the Google Maps widget context
+   * token to be used with the PlacesContextElement widget to render contextual
+   * data. This is populated only for Google Maps grounding.
+   * </pre>
+   *
+   * <code>
+   * optional string google_maps_widget_context_token = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the googleMapsWidgetContextToken field is set.
+   */
+  boolean hasGoogleMapsWidgetContextToken();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Resource name of the Google Maps widget context
+   * token to be used with the PlacesContextElement widget to render contextual
+   * data. This is populated only for Google Maps grounding.
+   * </pre>
+   *
+   * <code>
+   * optional string google_maps_widget_context_token = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The googleMapsWidgetContextToken.
+   */
+  java.lang.String getGoogleMapsWidgetContextToken();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Resource name of the Google Maps widget context
+   * token to be used with the PlacesContextElement widget to render contextual
+   * data. This is populated only for Google Maps grounding.
+   * </pre>
+   *
+   * <code>
+   * optional string google_maps_widget_context_token = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for googleMapsWidgetContextToken.
+   */
+  com.google.protobuf.ByteString getGoogleMapsWidgetContextTokenBytes();
 }

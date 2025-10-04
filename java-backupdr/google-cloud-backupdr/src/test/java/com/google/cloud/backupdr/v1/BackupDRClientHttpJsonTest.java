@@ -16,8 +16,11 @@
 
 package com.google.cloud.backupdr.v1;
 
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupPlanAssociationsForResourceTypePagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchDataSourceReferencesForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchUsableBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanAssociationsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanRevisionsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupsPagedResponse;
@@ -1311,6 +1314,7 @@ public class BackupDRClientHttpJsonTest {
             .setTotalStoredBytes(1181597162)
             .setConfigState(BackupConfigState.forNumber(0))
             .setBackupConfigInfo(BackupConfigInfo.newBuilder().build())
+            .setBackupBlockedByVaultAccessRestriction(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1367,6 +1371,7 @@ public class BackupDRClientHttpJsonTest {
             .setTotalStoredBytes(1181597162)
             .setConfigState(BackupConfigState.forNumber(0))
             .setBackupConfigInfo(BackupConfigInfo.newBuilder().build())
+            .setBackupBlockedByVaultAccessRestriction(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1423,6 +1428,7 @@ public class BackupDRClientHttpJsonTest {
             .setTotalStoredBytes(1181597162)
             .setConfigState(BackupConfigState.forNumber(0))
             .setBackupConfigInfo(BackupConfigInfo.newBuilder().build())
+            .setBackupBlockedByVaultAccessRestriction(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1445,6 +1451,7 @@ public class BackupDRClientHttpJsonTest {
             .setTotalStoredBytes(1181597162)
             .setConfigState(BackupConfigState.forNumber(0))
             .setBackupConfigInfo(BackupConfigInfo.newBuilder().build())
+            .setBackupBlockedByVaultAccessRestriction(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1487,6 +1494,7 @@ public class BackupDRClientHttpJsonTest {
               .setTotalStoredBytes(1181597162)
               .setConfigState(BackupConfigState.forNumber(0))
               .setBackupConfigInfo(BackupConfigInfo.newBuilder().build())
+              .setBackupBlockedByVaultAccessRestriction(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataSourceAsync(dataSource, updateMask).get();
@@ -1618,6 +1626,8 @@ public class BackupDRClientHttpJsonTest {
             .addAllServiceLocks(new ArrayList<BackupLock>())
             .addAllBackupApplianceLocks(new ArrayList<BackupLock>())
             .setResourceSizeBytes(-275424386)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1678,6 +1688,8 @@ public class BackupDRClientHttpJsonTest {
             .addAllServiceLocks(new ArrayList<BackupLock>())
             .addAllBackupApplianceLocks(new ArrayList<BackupLock>())
             .setResourceSizeBytes(-275424386)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1738,6 +1750,8 @@ public class BackupDRClientHttpJsonTest {
             .addAllServiceLocks(new ArrayList<BackupLock>())
             .addAllBackupApplianceLocks(new ArrayList<BackupLock>())
             .setResourceSizeBytes(-275424386)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1764,6 +1778,8 @@ public class BackupDRClientHttpJsonTest {
             .addAllServiceLocks(new ArrayList<BackupLock>())
             .addAllBackupApplianceLocks(new ArrayList<BackupLock>())
             .setResourceSizeBytes(-275424386)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1810,6 +1826,8 @@ public class BackupDRClientHttpJsonTest {
               .addAllServiceLocks(new ArrayList<BackupLock>())
               .addAllBackupApplianceLocks(new ArrayList<BackupLock>())
               .setResourceSizeBytes(-275424386)
+              .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupAsync(backup, updateMask).get();
@@ -1837,6 +1855,8 @@ public class BackupDRClientHttpJsonTest {
             .addAllServiceLocks(new ArrayList<BackupLock>())
             .addAllBackupApplianceLocks(new ArrayList<BackupLock>())
             .setResourceSizeBytes(-275424386)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1902,6 +1922,8 @@ public class BackupDRClientHttpJsonTest {
             .addAllServiceLocks(new ArrayList<BackupLock>())
             .addAllBackupApplianceLocks(new ArrayList<BackupLock>())
             .setResourceSizeBytes(-275424386)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2065,6 +2087,10 @@ public class BackupDRClientHttpJsonTest {
             .setBackupVault(
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]").toString())
             .setBackupVaultServiceAccount("backupVaultServiceAccount1888664424")
+            .setLogRetentionDays(1566369587)
+            .addAllSupportedResourceTypes(new ArrayList<String>())
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionName("revisionName-1250672378")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2129,6 +2155,10 @@ public class BackupDRClientHttpJsonTest {
             .setBackupVault(
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]").toString())
             .setBackupVaultServiceAccount("backupVaultServiceAccount1888664424")
+            .setLogRetentionDays(1566369587)
+            .addAllSupportedResourceTypes(new ArrayList<String>())
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionName("revisionName-1250672378")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2179,6 +2209,105 @@ public class BackupDRClientHttpJsonTest {
   }
 
   @Test
+  public void updateBackupPlanTest() throws Exception {
+    BackupPlan expectedResponse =
+        BackupPlan.newBuilder()
+            .setName(BackupPlanName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]").toString())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllBackupRules(new ArrayList<BackupRule>())
+            .setResourceType("resourceType-384364440")
+            .setEtag("etag3123477")
+            .setBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]").toString())
+            .setBackupVaultServiceAccount("backupVaultServiceAccount1888664424")
+            .setLogRetentionDays(1566369587)
+            .addAllSupportedResourceTypes(new ArrayList<String>())
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionName("revisionName-1250672378")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateBackupPlanTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    BackupPlan backupPlan =
+        BackupPlan.newBuilder()
+            .setName(BackupPlanName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]").toString())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllBackupRules(new ArrayList<BackupRule>())
+            .setResourceType("resourceType-384364440")
+            .setEtag("etag3123477")
+            .setBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]").toString())
+            .setBackupVaultServiceAccount("backupVaultServiceAccount1888664424")
+            .setLogRetentionDays(1566369587)
+            .addAllSupportedResourceTypes(new ArrayList<String>())
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionName("revisionName-1250672378")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    BackupPlan actualResponse = client.updateBackupPlanAsync(backupPlan, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateBackupPlanExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BackupPlan backupPlan =
+          BackupPlan.newBuilder()
+              .setName(BackupPlanName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]").toString())
+              .setDescription("description-1724546052")
+              .putAllLabels(new HashMap<String, String>())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .addAllBackupRules(new ArrayList<BackupRule>())
+              .setResourceType("resourceType-384364440")
+              .setEtag("etag3123477")
+              .setBackupVault(
+                  BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]").toString())
+              .setBackupVaultServiceAccount("backupVaultServiceAccount1888664424")
+              .setLogRetentionDays(1566369587)
+              .addAllSupportedResourceTypes(new ArrayList<String>())
+              .setRevisionId("revisionId-1507445162")
+              .setRevisionName("revisionName-1250672378")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateBackupPlanAsync(backupPlan, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void getBackupPlanTest() throws Exception {
     BackupPlan expectedResponse =
         BackupPlan.newBuilder()
@@ -2193,6 +2322,10 @@ public class BackupDRClientHttpJsonTest {
             .setBackupVault(
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]").toString())
             .setBackupVaultServiceAccount("backupVaultServiceAccount1888664424")
+            .setLogRetentionDays(1566369587)
+            .addAllSupportedResourceTypes(new ArrayList<String>())
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionName("revisionName-1250672378")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2247,6 +2380,10 @@ public class BackupDRClientHttpJsonTest {
             .setBackupVault(
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]").toString())
             .setBackupVaultServiceAccount("backupVaultServiceAccount1888664424")
+            .setLogRetentionDays(1566369587)
+            .addAllSupportedResourceTypes(new ArrayList<String>())
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionName("revisionName-1250672378")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2477,6 +2614,208 @@ public class BackupDRClientHttpJsonTest {
   }
 
   @Test
+  public void getBackupPlanRevisionTest() throws Exception {
+    BackupPlanRevision expectedResponse =
+        BackupPlanRevision.newBuilder()
+            .setName(
+                BackupPlanRevisionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[REVISION]")
+                    .toString())
+            .setRevisionId("revisionId-1507445162")
+            .setBackupPlanSnapshot(BackupPlan.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    BackupPlanRevisionName name =
+        BackupPlanRevisionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[REVISION]");
+
+    BackupPlanRevision actualResponse = client.getBackupPlanRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBackupPlanRevisionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BackupPlanRevisionName name =
+          BackupPlanRevisionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[REVISION]");
+      client.getBackupPlanRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupPlanRevisionTest2() throws Exception {
+    BackupPlanRevision expectedResponse =
+        BackupPlanRevision.newBuilder()
+            .setName(
+                BackupPlanRevisionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[REVISION]")
+                    .toString())
+            .setRevisionId("revisionId-1507445162")
+            .setBackupPlanSnapshot(BackupPlan.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9582/locations/location-9582/backupPlans/backupPlan-9582/revisions/revision-9582";
+
+    BackupPlanRevision actualResponse = client.getBackupPlanRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBackupPlanRevisionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9582/locations/location-9582/backupPlans/backupPlan-9582/revisions/revision-9582";
+      client.getBackupPlanRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBackupPlanRevisionsTest() throws Exception {
+    BackupPlanRevision responsesElement = BackupPlanRevision.newBuilder().build();
+    ListBackupPlanRevisionsResponse expectedResponse =
+        ListBackupPlanRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackupPlanRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    BackupPlanName parent = BackupPlanName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]");
+
+    ListBackupPlanRevisionsPagedResponse pagedListResponse = client.listBackupPlanRevisions(parent);
+
+    List<BackupPlanRevision> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupPlanRevisionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBackupPlanRevisionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BackupPlanName parent = BackupPlanName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]");
+      client.listBackupPlanRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBackupPlanRevisionsTest2() throws Exception {
+    BackupPlanRevision responsesElement = BackupPlanRevision.newBuilder().build();
+    ListBackupPlanRevisionsResponse expectedResponse =
+        ListBackupPlanRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackupPlanRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-4819/locations/location-4819/backupPlans/backupPlan-4819";
+
+    ListBackupPlanRevisionsPagedResponse pagedListResponse = client.listBackupPlanRevisions(parent);
+
+    List<BackupPlanRevision> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupPlanRevisionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBackupPlanRevisionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-4819/locations/location-4819/backupPlans/backupPlan-4819";
+      client.listBackupPlanRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createBackupPlanAssociationTest() throws Exception {
     BackupPlanAssociation expectedResponse =
         BackupPlanAssociation.newBuilder()
@@ -2490,6 +2829,8 @@ public class BackupDRClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllRulesConfigInfo(new ArrayList<RuleConfigInfo>())
             .setDataSource("dataSource1272470629")
+            .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
+            .setBackupPlanRevisionName("backupPlanRevisionName648847537")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2558,6 +2899,8 @@ public class BackupDRClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllRulesConfigInfo(new ArrayList<RuleConfigInfo>())
             .setDataSource("dataSource1272470629")
+            .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
+            .setBackupPlanRevisionName("backupPlanRevisionName648847537")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2613,6 +2956,99 @@ public class BackupDRClientHttpJsonTest {
   }
 
   @Test
+  public void updateBackupPlanAssociationTest() throws Exception {
+    BackupPlanAssociation expectedResponse =
+        BackupPlanAssociation.newBuilder()
+            .setName(
+                BackupPlanAssociationName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN_ASSOCIATION]")
+                    .toString())
+            .setResourceType("resourceType-384364440")
+            .setResource("resource-341064690")
+            .setBackupPlan(BackupPlanName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllRulesConfigInfo(new ArrayList<RuleConfigInfo>())
+            .setDataSource("dataSource1272470629")
+            .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
+            .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateBackupPlanAssociationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    BackupPlanAssociation backupPlanAssociation =
+        BackupPlanAssociation.newBuilder()
+            .setName(
+                BackupPlanAssociationName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN_ASSOCIATION]")
+                    .toString())
+            .setResourceType("resourceType-384364440")
+            .setResource("resource-341064690")
+            .setBackupPlan(BackupPlanName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllRulesConfigInfo(new ArrayList<RuleConfigInfo>())
+            .setDataSource("dataSource1272470629")
+            .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
+            .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    BackupPlanAssociation actualResponse =
+        client.updateBackupPlanAssociationAsync(backupPlanAssociation, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateBackupPlanAssociationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BackupPlanAssociation backupPlanAssociation =
+          BackupPlanAssociation.newBuilder()
+              .setName(
+                  BackupPlanAssociationName.of(
+                          "[PROJECT]", "[LOCATION]", "[BACKUP_PLAN_ASSOCIATION]")
+                      .toString())
+              .setResourceType("resourceType-384364440")
+              .setResource("resource-341064690")
+              .setBackupPlan(
+                  BackupPlanName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]").toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .addAllRulesConfigInfo(new ArrayList<RuleConfigInfo>())
+              .setDataSource("dataSource1272470629")
+              .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
+              .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateBackupPlanAssociationAsync(backupPlanAssociation, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void getBackupPlanAssociationTest() throws Exception {
     BackupPlanAssociation expectedResponse =
         BackupPlanAssociation.newBuilder()
@@ -2626,6 +3062,8 @@ public class BackupDRClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllRulesConfigInfo(new ArrayList<RuleConfigInfo>())
             .setDataSource("dataSource1272470629")
+            .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
+            .setBackupPlanRevisionName("backupPlanRevisionName648847537")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2681,6 +3119,8 @@ public class BackupDRClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllRulesConfigInfo(new ArrayList<RuleConfigInfo>())
             .setDataSource("dataSource1272470629")
+            .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
+            .setBackupPlanRevisionName("backupPlanRevisionName648847537")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2825,6 +3265,112 @@ public class BackupDRClientHttpJsonTest {
   }
 
   @Test
+  public void fetchBackupPlanAssociationsForResourceTypeTest() throws Exception {
+    BackupPlanAssociation responsesElement = BackupPlanAssociation.newBuilder().build();
+    FetchBackupPlanAssociationsForResourceTypeResponse expectedResponse =
+        FetchBackupPlanAssociationsForResourceTypeResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackupPlanAssociations(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String resourceType = "resourceType-384364440";
+
+    FetchBackupPlanAssociationsForResourceTypePagedResponse pagedListResponse =
+        client.fetchBackupPlanAssociationsForResourceType(parent, resourceType);
+
+    List<BackupPlanAssociation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupPlanAssociationsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchBackupPlanAssociationsForResourceTypeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String resourceType = "resourceType-384364440";
+      client.fetchBackupPlanAssociationsForResourceType(parent, resourceType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchBackupPlanAssociationsForResourceTypeTest2() throws Exception {
+    BackupPlanAssociation responsesElement = BackupPlanAssociation.newBuilder().build();
+    FetchBackupPlanAssociationsForResourceTypeResponse expectedResponse =
+        FetchBackupPlanAssociationsForResourceTypeResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackupPlanAssociations(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    String resourceType = "resourceType-384364440";
+
+    FetchBackupPlanAssociationsForResourceTypePagedResponse pagedListResponse =
+        client.fetchBackupPlanAssociationsForResourceType(parent, resourceType);
+
+    List<BackupPlanAssociation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupPlanAssociationsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchBackupPlanAssociationsForResourceTypeExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      String resourceType = "resourceType-384364440";
+      client.fetchBackupPlanAssociationsForResourceType(parent, resourceType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void deleteBackupPlanAssociationTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
@@ -2932,6 +3478,8 @@ public class BackupDRClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllRulesConfigInfo(new ArrayList<RuleConfigInfo>())
             .setDataSource("dataSource1272470629")
+            .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
+            .setBackupPlanRevisionName("backupPlanRevisionName648847537")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2994,6 +3542,8 @@ public class BackupDRClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllRulesConfigInfo(new ArrayList<RuleConfigInfo>())
             .setDataSource("dataSource1272470629")
+            .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
+            .setBackupPlanRevisionName("backupPlanRevisionName648847537")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3039,6 +3589,224 @@ public class BackupDRClientHttpJsonTest {
       client.triggerBackupAsync(name, ruleId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getDataSourceReferenceTest() throws Exception {
+    DataSourceReference expectedResponse =
+        DataSourceReference.newBuilder()
+            .setName(
+                DataSourceReferenceName.of("[PROJECT]", "[LOCATION]", "[DATA_SOURCE_REFERENCE]")
+                    .toString())
+            .setDataSource(
+                DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDataSourceBackupConfigState(BackupConfigState.forNumber(0))
+            .setDataSourceBackupCount(-1620010527)
+            .setDataSourceBackupConfigInfo(DataSourceBackupConfigInfo.newBuilder().build())
+            .setDataSourceGcpResourceInfo(DataSourceGcpResourceInfo.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DataSourceReferenceName name =
+        DataSourceReferenceName.of("[PROJECT]", "[LOCATION]", "[DATA_SOURCE_REFERENCE]");
+
+    DataSourceReference actualResponse = client.getDataSourceReference(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDataSourceReferenceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataSourceReferenceName name =
+          DataSourceReferenceName.of("[PROJECT]", "[LOCATION]", "[DATA_SOURCE_REFERENCE]");
+      client.getDataSourceReference(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDataSourceReferenceTest2() throws Exception {
+    DataSourceReference expectedResponse =
+        DataSourceReference.newBuilder()
+            .setName(
+                DataSourceReferenceName.of("[PROJECT]", "[LOCATION]", "[DATA_SOURCE_REFERENCE]")
+                    .toString())
+            .setDataSource(
+                DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDataSourceBackupConfigState(BackupConfigState.forNumber(0))
+            .setDataSourceBackupCount(-1620010527)
+            .setDataSourceBackupConfigInfo(DataSourceBackupConfigInfo.newBuilder().build())
+            .setDataSourceGcpResourceInfo(DataSourceGcpResourceInfo.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-4429/locations/location-4429/dataSourceReferences/dataSourceReference-4429";
+
+    DataSourceReference actualResponse = client.getDataSourceReference(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDataSourceReferenceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4429/locations/location-4429/dataSourceReferences/dataSourceReference-4429";
+      client.getDataSourceReference(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchDataSourceReferencesForResourceTypeTest() throws Exception {
+    DataSourceReference responsesElement = DataSourceReference.newBuilder().build();
+    FetchDataSourceReferencesForResourceTypeResponse expectedResponse =
+        FetchDataSourceReferencesForResourceTypeResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDataSourceReferences(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String resourceType = "resourceType-384364440";
+
+    FetchDataSourceReferencesForResourceTypePagedResponse pagedListResponse =
+        client.fetchDataSourceReferencesForResourceType(parent, resourceType);
+
+    List<DataSourceReference> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDataSourceReferencesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchDataSourceReferencesForResourceTypeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String resourceType = "resourceType-384364440";
+      client.fetchDataSourceReferencesForResourceType(parent, resourceType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchDataSourceReferencesForResourceTypeTest2() throws Exception {
+    DataSourceReference responsesElement = DataSourceReference.newBuilder().build();
+    FetchDataSourceReferencesForResourceTypeResponse expectedResponse =
+        FetchDataSourceReferencesForResourceTypeResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDataSourceReferences(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    String resourceType = "resourceType-384364440";
+
+    FetchDataSourceReferencesForResourceTypePagedResponse pagedListResponse =
+        client.fetchDataSourceReferencesForResourceType(parent, resourceType);
+
+    List<DataSourceReference> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDataSourceReferencesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchDataSourceReferencesForResourceTypeExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      String resourceType = "resourceType-384364440";
+      client.fetchDataSourceReferencesForResourceType(parent, resourceType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

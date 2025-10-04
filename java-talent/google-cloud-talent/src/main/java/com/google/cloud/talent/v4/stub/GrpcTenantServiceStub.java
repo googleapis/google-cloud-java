@@ -54,6 +54,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
           .setFullMethodName("google.cloud.talent.v4.TenantService/CreateTenant")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTenantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tenant.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetTenantRequest, Tenant> getTenantMethodDescriptor =
@@ -62,6 +63,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
           .setFullMethodName("google.cloud.talent.v4.TenantService/GetTenant")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTenantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tenant.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateTenantRequest, Tenant> updateTenantMethodDescriptor =
@@ -70,6 +72,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
           .setFullMethodName("google.cloud.talent.v4.TenantService/UpdateTenant")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateTenantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tenant.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteTenantRequest, Empty> deleteTenantMethodDescriptor =
@@ -78,6 +81,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
           .setFullMethodName("google.cloud.talent.v4.TenantService/DeleteTenant")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTenantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListTenantsRequest, ListTenantsResponse>
@@ -88,6 +92,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListTenantsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTenantsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateTenantRequest, Tenant> createTenantCallable;

@@ -104,12 +104,12 @@ public final class ServiceControllerProto {
           + "ntrol.v2.ReportResponse\"-\202\323\344\223\002\'\"\"/v2/ser"
           + "vices/{service_name}:report:\001*\032\200\001\312A\035serv"
           + "icecontrol.googleapis.com\322A]https://www.googleapis.com/auth/cloud-platform,https"
-          + "://www.googleapis.com/auth/servicecontrolB\370\001\n"
+          + "://www.googleapis.com/auth/servicecontrolB\356\001\n"
           + " com.google.api.servicecontrol.v2B\026ServiceControllerProtoP\001ZJgoogle.golang."
           + "org/genproto/googleapis/api/servicecontr"
-          + "ol/v2;servicecontrol\370\001\001\242\002\004GASC\252\002\036Google."
-          + "Cloud.ServiceControl.V2\312\002\036Google\\Cloud\\S"
-          + "erviceControl\\V2\352\002!Google::Cloud::ServiceControl::V2b\006proto3"
+          + "ol/v2;servicecontrol\252\002\036Google.Cloud.Serv"
+          + "iceControl.V2\312\002\036Google\\Cloud\\ServiceCont"
+          + "rol\\V2\352\002!Google::Cloud::ServiceControl::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

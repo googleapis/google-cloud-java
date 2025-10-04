@@ -829,13 +829,13 @@ public final class TranslationServiceProto {
           + "s/*/models/*}\032~\312A\030translate.googleapis.c"
           + "om\322A`https://www.googleapis.com/auth/clo"
           + "ud-platform,https://www.googleapis.com/a"
-          + "uth/cloud-translationB\331\001\n\035com.google.clo"
+          + "uth/cloud-translationB\326\001\n\035com.google.clo"
           + "ud.translate.v3B\027TranslationServiceProto"
           + "P\001Z;cloud.google.com/go/translate/apiv3/"
-          + "translatepb;translatepb\370\001\001\242\002\005CTRL3\252\002\031Goo"
-          + "gle.Cloud.Translate.V3\312\002\031Google\\Cloud\\Tr"
-          + "anslate\\V3\352\002\034Google::Cloud::Translate::V"
-          + "3P\000P\001P\002b\006proto3"
+          + "translatepb;translatepb\242\002\005CTRL3\252\002\031Google"
+          + ".Cloud.Translate.V3\312\002\031Google\\Cloud\\Trans"
+          + "late\\V3\352\002\034Google::Cloud::Translate::V3P\000"
+          + "P\001P\002b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

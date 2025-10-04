@@ -61,6 +61,24 @@ public enum SubjectRequestMode implements com.google.protobuf.ProtocolMessageEnu
    *
    *
    * <pre>
+   * A mode used to get an accurate representation of the Subject
+   * field's distinguished name. Indicates that the certificate's
+   * [Subject][google.cloud.security.privateca.v1.Subject] and/or
+   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] are
+   * specified in the certificate request. When parsing a PEM CSR this mode will
+   * maintain the sequence of RDNs found in the CSR's subject field in the
+   * issued [Certificate][google.cloud.security.privateca.v1.Certificate]. This
+   * mode requires the caller to have the `privateca.certificates.create`
+   * permission.
+   * </pre>
+   *
+   * <code>RDN_SEQUENCE = 3;</code>
+   */
+  RDN_SEQUENCE(3),
+  /**
+   *
+   *
+   * <pre>
    * A mode reserved for special cases. Indicates that the certificate should
    * have one SPIFFE
    * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] set
@@ -103,6 +121,25 @@ public enum SubjectRequestMode implements com.google.protobuf.ProtocolMessageEnu
    * <code>DEFAULT = 1;</code>
    */
   public static final int DEFAULT_VALUE = 1;
+
+  /**
+   *
+   *
+   * <pre>
+   * A mode used to get an accurate representation of the Subject
+   * field's distinguished name. Indicates that the certificate's
+   * [Subject][google.cloud.security.privateca.v1.Subject] and/or
+   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] are
+   * specified in the certificate request. When parsing a PEM CSR this mode will
+   * maintain the sequence of RDNs found in the CSR's subject field in the
+   * issued [Certificate][google.cloud.security.privateca.v1.Certificate]. This
+   * mode requires the caller to have the `privateca.certificates.create`
+   * permission.
+   * </pre>
+   *
+   * <code>RDN_SEQUENCE = 3;</code>
+   */
+  public static final int RDN_SEQUENCE_VALUE = 3;
 
   /**
    *
@@ -151,6 +188,8 @@ public enum SubjectRequestMode implements com.google.protobuf.ProtocolMessageEnu
         return SUBJECT_REQUEST_MODE_UNSPECIFIED;
       case 1:
         return DEFAULT;
+      case 3:
+        return RDN_SEQUENCE;
       case 2:
         return REFLECTED_SPIFFE;
       default:
@@ -185,7 +224,7 @@ public enum SubjectRequestMode implements com.google.protobuf.ProtocolMessageEnu
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto.getDescriptor()
         .getEnumTypes()
-        .get(1);
+        .get(2);
   }
 
   private static final SubjectRequestMode[] VALUES = values();

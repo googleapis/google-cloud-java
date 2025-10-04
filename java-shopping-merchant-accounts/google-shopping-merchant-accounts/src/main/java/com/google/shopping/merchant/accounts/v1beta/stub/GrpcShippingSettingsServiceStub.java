@@ -52,6 +52,7 @@ public class GrpcShippingSettingsServiceStub extends ShippingSettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetShippingSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ShippingSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InsertShippingSettingsRequest, ShippingSettings>
@@ -63,6 +64,7 @@ public class GrpcShippingSettingsServiceStub extends ShippingSettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InsertShippingSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ShippingSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetShippingSettingsRequest, ShippingSettings>

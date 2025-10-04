@@ -70,6 +70,7 @@ public class GrpcDocumentsStub extends DocumentsStub {
                   ProtoUtils.marshaller(ListDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDocumentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDocumentRequest, Document> getDocumentMethodDescriptor =
@@ -78,6 +79,7 @@ public class GrpcDocumentsStub extends DocumentsStub {
           .setFullMethodName("google.cloud.dialogflow.v2beta1.Documents/GetDocument")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDocumentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Document.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateDocumentRequest, Operation>
@@ -88,6 +90,7 @@ public class GrpcDocumentsStub extends DocumentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportDocumentsRequest, Operation>
@@ -98,6 +101,7 @@ public class GrpcDocumentsStub extends DocumentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDocumentRequest, Operation>
@@ -108,6 +112,7 @@ public class GrpcDocumentsStub extends DocumentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDocumentRequest, Operation>
@@ -118,6 +123,7 @@ public class GrpcDocumentsStub extends DocumentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReloadDocumentRequest, Operation>
@@ -128,6 +134,7 @@ public class GrpcDocumentsStub extends DocumentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReloadDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -139,6 +146,7 @@ public class GrpcDocumentsStub extends DocumentsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -147,6 +155,7 @@ public class GrpcDocumentsStub extends DocumentsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable;

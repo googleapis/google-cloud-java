@@ -65,4 +65,42 @@ public interface OracleSslConfigOrBuilder
    * @return The caCertificateSet.
    */
   boolean getCaCertificateSet();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The distinguished name (DN) mentioned in the server
+   * certificate. This corresponds to SSL_SERVER_CERT_DN sqlnet parameter.
+   * Refer
+   * https://docs.oracle.com/en/database/oracle/oracle-database/19/netrf/local-naming-parameters-in-tns-ora-file.html#GUID-70AB0695-A9AA-4A94-B141-4C605236EEB7
+   * If this field is not provided, the DN matching is not enforced.
+   * </pre>
+   *
+   * <code>
+   * string server_certificate_distinguished_name = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The serverCertificateDistinguishedName.
+   */
+  java.lang.String getServerCertificateDistinguishedName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The distinguished name (DN) mentioned in the server
+   * certificate. This corresponds to SSL_SERVER_CERT_DN sqlnet parameter.
+   * Refer
+   * https://docs.oracle.com/en/database/oracle/oracle-database/19/netrf/local-naming-parameters-in-tns-ora-file.html#GUID-70AB0695-A9AA-4A94-B141-4C605236EEB7
+   * If this field is not provided, the DN matching is not enforced.
+   * </pre>
+   *
+   * <code>
+   * string server_certificate_distinguished_name = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for serverCertificateDistinguishedName.
+   */
+  com.google.protobuf.ByteString getServerCertificateDistinguishedNameBytes();
 }

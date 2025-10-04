@@ -106,6 +106,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportAptArtifactsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportYumArtifactsRequest, Operation>
@@ -117,6 +118,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportYumArtifactsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRepositoriesRequest, ListRepositoriesResponse>
@@ -129,6 +131,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                   ProtoUtils.marshaller(ListRepositoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRepositoriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRepositoryRequest, Repository>
@@ -140,6 +143,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Repository.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateRepositoryRequest, Operation>
@@ -151,6 +155,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRepositoryRequest, Repository>
@@ -162,6 +167,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Repository.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRepositoryRequest, Operation>
@@ -173,6 +179,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPackagesRequest, ListPackagesResponse>
@@ -184,6 +191,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListPackagesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPackagesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPackageRequest, Package> getPackageMethodDescriptor =
@@ -192,6 +200,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
           .setFullMethodName("google.devtools.artifactregistry.v1beta2.ArtifactRegistry/GetPackage")
           .setRequestMarshaller(ProtoUtils.marshaller(GetPackageRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Package.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeletePackageRequest, Operation>
@@ -203,6 +212,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePackageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListVersionsRequest, ListVersionsResponse>
@@ -214,6 +224,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVersionRequest, Version> getVersionMethodDescriptor =
@@ -222,6 +233,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
           .setFullMethodName("google.devtools.artifactregistry.v1beta2.ArtifactRegistry/GetVersion")
           .setRequestMarshaller(ProtoUtils.marshaller(GetVersionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Version.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteVersionRequest, Operation>
@@ -233,6 +245,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFilesRequest, ListFilesResponse>
@@ -243,6 +256,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                   "google.devtools.artifactregistry.v1beta2.ArtifactRegistry/ListFiles")
               .setRequestMarshaller(ProtoUtils.marshaller(ListFilesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListFilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFileRequest, File> getFileMethodDescriptor =
@@ -251,6 +265,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
           .setFullMethodName("google.devtools.artifactregistry.v1beta2.ArtifactRegistry/GetFile")
           .setRequestMarshaller(ProtoUtils.marshaller(GetFileRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(File.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListTagsRequest, ListTagsResponse>
@@ -261,6 +276,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                   "google.devtools.artifactregistry.v1beta2.ArtifactRegistry/ListTags")
               .setRequestMarshaller(ProtoUtils.marshaller(ListTagsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTagsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTagRequest, Tag> getTagMethodDescriptor =
@@ -269,6 +285,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
           .setFullMethodName("google.devtools.artifactregistry.v1beta2.ArtifactRegistry/GetTag")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTagRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tag.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateTagRequest, Tag> createTagMethodDescriptor =
@@ -277,6 +294,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
           .setFullMethodName("google.devtools.artifactregistry.v1beta2.ArtifactRegistry/CreateTag")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTagRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tag.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateTagRequest, Tag> updateTagMethodDescriptor =
@@ -285,6 +303,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
           .setFullMethodName("google.devtools.artifactregistry.v1beta2.ArtifactRegistry/UpdateTag")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateTagRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tag.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteTagRequest, Empty> deleteTagMethodDescriptor =
@@ -293,6 +312,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
           .setFullMethodName("google.devtools.artifactregistry.v1beta2.ArtifactRegistry/DeleteTag")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTagRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -302,6 +322,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               "google.devtools.artifactregistry.v1beta2.ArtifactRegistry/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -311,6 +332,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               "google.devtools.artifactregistry.v1beta2.ArtifactRegistry/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -323,6 +345,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProjectSettingsRequest, ProjectSettings>
@@ -334,6 +357,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetProjectSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProjectSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateProjectSettingsRequest, ProjectSettings>
@@ -345,6 +369,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateProjectSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProjectSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -356,6 +381,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -364,6 +390,7 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ImportAptArtifactsRequest, Operation> importAptArtifactsCallable;

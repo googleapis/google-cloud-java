@@ -58,6 +58,7 @@ public class GrpcDocumentLinkServiceStub extends DocumentLinkServiceStub {
                   ProtoUtils.marshaller(ListLinkedTargetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLinkedTargetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLinkedSourcesRequest, ListLinkedSourcesResponse>
@@ -70,6 +71,7 @@ public class GrpcDocumentLinkServiceStub extends DocumentLinkServiceStub {
                   ProtoUtils.marshaller(ListLinkedSourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLinkedSourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDocumentLinkRequest, DocumentLink>
@@ -81,6 +83,7 @@ public class GrpcDocumentLinkServiceStub extends DocumentLinkServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDocumentLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DocumentLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDocumentLinkRequest, Empty>
@@ -92,6 +95,7 @@ public class GrpcDocumentLinkServiceStub extends DocumentLinkServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDocumentLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListLinkedTargetsRequest, ListLinkedTargetsResponse>

@@ -157,7 +157,7 @@ public interface EventActionsOrBuilder
    * <code>bool transfer_to_agent = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.EventActions.transfer_to_agent is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/session.proto;l=157
+   *     google/cloud/aiplatform/v1beta1/session.proto;l=176
    * @return The transferToAgent.
    */
   @java.lang.Deprecated

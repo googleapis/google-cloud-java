@@ -43,6 +43,7 @@ public class AsyncDeleteRagFileLRO {
               .setName(
                   RagFileName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]", "[RAG_FILE]")
                       .toString())
+              .setForceDelete(true)
               .build();
       OperationFuture<Empty, DeleteOperationMetadata> future =
           vertexRagDataServiceClient.deleteRagFileOperationCallable().futureCall(request);

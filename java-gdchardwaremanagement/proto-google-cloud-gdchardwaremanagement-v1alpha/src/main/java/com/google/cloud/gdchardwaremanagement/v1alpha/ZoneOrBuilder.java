@@ -524,4 +524,50 @@ public interface ZoneOrBuilder
    * @return The provisioningState.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState getProvisioningState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to skip the cluster provisioning step during factory
+   * turnup. If true, indicates that the Kubernetes cluster will be created
+   * after the zone's hardware is installed at the customer site.
+   * </pre>
+   *
+   * <code>bool skip_cluster_provisioning = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The skipClusterProvisioning.
+   */
+  boolean getSkipClusterProvisioning();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether a valid cluster intent must be provided by
+   * the customer before accepting the order. If true, the order cannot be
+   * accepted until cluster intent is present. This is used to enforce early
+   * validation and prevent delays caused by missing configuration.
+   * </pre>
+   *
+   * <code>bool cluster_intent_required = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clusterIntentRequired.
+   */
+  boolean getClusterIntentRequired();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether the provided cluster intent has been
+   * successfully verified. This flag ensures cluster intent exists before order
+   * can be accepted.
+   * </pre>
+   *
+   * <code>bool cluster_intent_verified = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clusterIntentVerified.
+   */
+  boolean getClusterIntentVerified();
 }

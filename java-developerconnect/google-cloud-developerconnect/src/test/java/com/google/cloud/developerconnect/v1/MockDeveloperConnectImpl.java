@@ -362,4 +362,216 @@ public class MockDeveloperConnectImpl extends DeveloperConnectImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listAccountConnectors(
+      ListAccountConnectorsRequest request,
+      StreamObserver<ListAccountConnectorsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAccountConnectorsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAccountConnectorsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAccountConnectors, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAccountConnectorsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAccountConnector(
+      GetAccountConnectorRequest request, StreamObserver<AccountConnector> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AccountConnector) {
+      requests.add(request);
+      responseObserver.onNext(((AccountConnector) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAccountConnector, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AccountConnector.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createAccountConnector(
+      CreateAccountConnectorRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAccountConnector, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAccountConnector(
+      UpdateAccountConnectorRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAccountConnector, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteAccountConnector(
+      DeleteAccountConnectorRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAccountConnector, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchAccessToken(
+      FetchAccessTokenRequest request, StreamObserver<FetchAccessTokenResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchAccessTokenResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchAccessTokenResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchAccessToken, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchAccessTokenResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listUsers(
+      ListUsersRequest request, StreamObserver<ListUsersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListUsersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListUsersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListUsers, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListUsersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteUser(DeleteUserRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteUser, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchSelf(FetchSelfRequest request, StreamObserver<User> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof User) {
+      requests.add(request);
+      responseObserver.onNext(((User) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchSelf, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  User.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteSelf(DeleteSelfRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSelf, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

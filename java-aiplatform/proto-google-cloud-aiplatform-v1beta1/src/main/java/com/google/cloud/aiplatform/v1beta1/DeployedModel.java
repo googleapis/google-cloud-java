@@ -1524,9 +1524,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the Model that this is the deployment of.
-   * Note that the Model may be in a different location than the DeployedModel's
-   * Endpoint.
+   * The resource name of the Model that this is the deployment of. Note that
+   * the Model may be in a different location than the DeployedModel's Endpoint.
    *
    * The resource name may contain version id or version alias to specify the
    * version.
@@ -1536,9 +1535,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    * if no version is specified, the default version will be deployed.
    * </pre>
    *
-   * <code>
-   * string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The model.
    */
@@ -1559,9 +1556,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the Model that this is the deployment of.
-   * Note that the Model may be in a different location than the DeployedModel's
-   * Endpoint.
+   * The resource name of the Model that this is the deployment of. Note that
+   * the Model may be in a different location than the DeployedModel's Endpoint.
    *
    * The resource name may contain version id or version alias to specify the
    * version.
@@ -1571,9 +1567,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    * if no version is specified, the default version will be deployed.
    * </pre>
    *
-   * <code>
-   * string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for model.
    */
@@ -1960,6 +1954,31 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getEnableContainerLogging() {
     return enableContainerLogging_;
+  }
+
+  public static final int DISABLE_CONTAINER_LOGGING_FIELD_NUMBER = 15;
+  private boolean disableContainerLogging_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * For custom-trained Models and AutoML Tabular Models, the container of the
+   * DeployedModel instances will send `stderr` and `stdout` streams to
+   * Cloud Logging by default. Please note that the logs incur cost,
+   * which are subject to [Cloud Logging
+   * pricing](https://cloud.google.com/logging/pricing).
+   *
+   * User can disable container logging by setting this flag to true.
+   * </pre>
+   *
+   * <code>bool disable_container_logging = 15;</code>
+   *
+   * @return The disableContainerLogging.
+   */
+  @java.lang.Override
+  public boolean getDisableContainerLogging() {
+    return disableContainerLogging_;
   }
 
   public static final int ENABLE_ACCESS_LOGGING_FIELD_NUMBER = 13;
@@ -2392,6 +2411,66 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SPECULATIVE_DECODING_SPEC_FIELD_NUMBER = 30;
+  private com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculativeDecodingSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speculativeDecodingSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpeculativeDecodingSpec() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speculativeDecodingSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec getSpeculativeDecodingSpec() {
+    return speculativeDecodingSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.getDefaultInstance()
+        : speculativeDecodingSpec_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpecOrBuilder
+      getSpeculativeDecodingSpecOrBuilder() {
+    return speculativeDecodingSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.getDefaultInstance()
+        : speculativeDecodingSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2441,6 +2520,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(14, getPrivateEndpoints());
     }
+    if (disableContainerLogging_ != false) {
+      output.writeBool(15, disableContainerLogging_);
+    }
     if (predictionResourcesCase_ == 17) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, predictionResources_);
     }
@@ -2463,6 +2545,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         output, internalGetSystemLabels(), SystemLabelsDefaultEntryHolder.defaultEntry, 28);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkpointId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 29, checkpointId_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(30, getSpeculativeDecodingSpec());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2510,6 +2595,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getPrivateEndpoints());
     }
+    if (disableContainerLogging_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, disableContainerLogging_);
+    }
     if (predictionResourcesCase_ == 17) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, predictionResources_);
     }
@@ -2542,6 +2630,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkpointId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, checkpointId_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              30, getSpeculativeDecodingSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2573,6 +2666,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (getDisableExplanations() != other.getDisableExplanations()) return false;
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (getEnableContainerLogging() != other.getEnableContainerLogging()) return false;
+    if (getDisableContainerLogging() != other.getDisableContainerLogging()) return false;
     if (getEnableAccessLogging() != other.getEnableAccessLogging()) return false;
     if (hasPrivateEndpoints() != other.hasPrivateEndpoints()) return false;
     if (hasPrivateEndpoints()) {
@@ -2592,6 +2686,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     }
     if (!internalGetSystemLabels().equals(other.internalGetSystemLabels())) return false;
     if (!getCheckpointId().equals(other.getCheckpointId())) return false;
+    if (hasSpeculativeDecodingSpec() != other.hasSpeculativeDecodingSpec()) return false;
+    if (hasSpeculativeDecodingSpec()) {
+      if (!getSpeculativeDecodingSpec().equals(other.getSpeculativeDecodingSpec())) return false;
+    }
     if (!getPredictionResourcesCase().equals(other.getPredictionResourcesCase())) return false;
     switch (predictionResourcesCase_) {
       case 7:
@@ -2639,6 +2737,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getServiceAccount().hashCode();
     hash = (37 * hash) + ENABLE_CONTAINER_LOGGING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableContainerLogging());
+    hash = (37 * hash) + DISABLE_CONTAINER_LOGGING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableContainerLogging());
     hash = (37 * hash) + ENABLE_ACCESS_LOGGING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAccessLogging());
     if (hasPrivateEndpoints()) {
@@ -2663,6 +2763,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + CHECKPOINT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getCheckpointId().hashCode();
+    if (hasSpeculativeDecodingSpec()) {
+      hash = (37 * hash) + SPECULATIVE_DECODING_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeculativeDecodingSpec().hashCode();
+    }
     switch (predictionResourcesCase_) {
       case 7:
         hash = (37 * hash) + DEDICATED_RESOURCES_FIELD_NUMBER;
@@ -2848,6 +2952,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         getFasterDeploymentConfigFieldBuilder();
         getRolloutOptionsFieldBuilder();
         getStatusFieldBuilder();
+        getSpeculativeDecodingSpecFieldBuilder();
       }
     }
 
@@ -2878,6 +2983,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       disableExplanations_ = false;
       serviceAccount_ = "";
       enableContainerLogging_ = false;
+      disableContainerLogging_ = false;
       enableAccessLogging_ = false;
       privateEndpoints_ = null;
       if (privateEndpointsBuilder_ != null) {
@@ -2901,6 +3007,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableSystemLabels().clear();
       checkpointId_ = "";
+      speculativeDecodingSpec_ = null;
+      if (speculativeDecodingSpecBuilder_ != null) {
+        speculativeDecodingSpecBuilder_.dispose();
+        speculativeDecodingSpecBuilder_ = null;
+      }
       predictionResourcesCase_ = 0;
       predictionResources_ = null;
       return this;
@@ -2972,35 +3083,45 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         result.enableContainerLogging_ = enableContainerLogging_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.enableAccessLogging_ = enableAccessLogging_;
+        result.disableContainerLogging_ = disableContainerLogging_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.enableAccessLogging_ = enableAccessLogging_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.privateEndpoints_ =
             privateEndpointsBuilder_ == null ? privateEndpoints_ : privateEndpointsBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.fasterDeploymentConfig_ =
             fasterDeploymentConfigBuilder_ == null
                 ? fasterDeploymentConfig_
                 : fasterDeploymentConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.rolloutOptions_ =
             rolloutOptionsBuilder_ == null ? rolloutOptions_ : rolloutOptionsBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.systemLabels_ = internalGetSystemLabels();
         result.systemLabels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.checkpointId_ = checkpointId_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.speculativeDecodingSpec_ =
+            speculativeDecodingSpecBuilder_ == null
+                ? speculativeDecodingSpec_
+                : speculativeDecodingSpecBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3099,6 +3220,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       if (other.getEnableContainerLogging() != false) {
         setEnableContainerLogging(other.getEnableContainerLogging());
       }
+      if (other.getDisableContainerLogging() != false) {
+        setDisableContainerLogging(other.getDisableContainerLogging());
+      }
       if (other.getEnableAccessLogging() != false) {
         setEnableAccessLogging(other.getEnableAccessLogging());
       }
@@ -3115,11 +3239,14 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         mergeStatus(other.getStatus());
       }
       internalGetMutableSystemLabels().mergeFrom(other.internalGetSystemLabels());
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       if (!other.getCheckpointId().isEmpty()) {
         checkpointId_ = other.checkpointId_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
+      }
+      if (other.hasSpeculativeDecodingSpec()) {
+        mergeSpeculativeDecodingSpec(other.getSpeculativeDecodingSpec());
       }
       switch (other.getPredictionResourcesCase()) {
         case DEDICATED_RESOURCES:
@@ -3229,16 +3356,22 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
             case 104:
               {
                 enableAccessLogging_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 104
             case 114:
               {
                 input.readMessage(
                     getPrivateEndpointsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 114
+            case 120:
+              {
+                disableContainerLogging_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 120
             case 138:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -3262,19 +3395,19 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getFasterDeploymentConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 186
             case 202:
               {
                 input.readMessage(getRolloutOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 202
             case 210:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 210
             case 226:
@@ -3286,15 +3419,22 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableSystemLabels()
                     .getMutableMap()
                     .put(systemLabels__.getKey(), systemLabels__.getValue());
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 226
             case 234:
               {
                 checkpointId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 234
+            case 242:
+              {
+                input.readMessage(
+                    getSpeculativeDecodingSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 242
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4077,9 +4217,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Model that this is the deployment of.
-     * Note that the Model may be in a different location than the DeployedModel's
-     * Endpoint.
+     * The resource name of the Model that this is the deployment of. Note that
+     * the Model may be in a different location than the DeployedModel's Endpoint.
      *
      * The resource name may contain version id or version alias to specify the
      * version.
@@ -4089,9 +4228,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * if no version is specified, the default version will be deployed.
      * </pre>
      *
-     * <code>
-     * string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The model.
      */
@@ -4111,9 +4248,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Model that this is the deployment of.
-     * Note that the Model may be in a different location than the DeployedModel's
-     * Endpoint.
+     * The resource name of the Model that this is the deployment of. Note that
+     * the Model may be in a different location than the DeployedModel's Endpoint.
      *
      * The resource name may contain version id or version alias to specify the
      * version.
@@ -4123,9 +4259,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * if no version is specified, the default version will be deployed.
      * </pre>
      *
-     * <code>
-     * string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for model.
      */
@@ -4145,9 +4279,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Model that this is the deployment of.
-     * Note that the Model may be in a different location than the DeployedModel's
-     * Endpoint.
+     * The resource name of the Model that this is the deployment of. Note that
+     * the Model may be in a different location than the DeployedModel's Endpoint.
      *
      * The resource name may contain version id or version alias to specify the
      * version.
@@ -4157,9 +4290,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * if no version is specified, the default version will be deployed.
      * </pre>
      *
-     * <code>
-     * string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The model to set.
      * @return This builder for chaining.
@@ -4178,9 +4309,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Model that this is the deployment of.
-     * Note that the Model may be in a different location than the DeployedModel's
-     * Endpoint.
+     * The resource name of the Model that this is the deployment of. Note that
+     * the Model may be in a different location than the DeployedModel's Endpoint.
      *
      * The resource name may contain version id or version alias to specify the
      * version.
@@ -4190,9 +4320,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * if no version is specified, the default version will be deployed.
      * </pre>
      *
-     * <code>
-     * string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -4207,9 +4335,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Model that this is the deployment of.
-     * Note that the Model may be in a different location than the DeployedModel's
-     * Endpoint.
+     * The resource name of the Model that this is the deployment of. Note that
+     * the Model may be in a different location than the DeployedModel's Endpoint.
      *
      * The resource name may contain version id or version alias to specify the
      * version.
@@ -4219,9 +4346,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * if no version is specified, the default version will be deployed.
      * </pre>
      *
-     * <code>
-     * string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for model to set.
      * @return This builder for chaining.
@@ -5291,6 +5416,80 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean disableContainerLogging_;
+
+    /**
+     *
+     *
+     * <pre>
+     * For custom-trained Models and AutoML Tabular Models, the container of the
+     * DeployedModel instances will send `stderr` and `stdout` streams to
+     * Cloud Logging by default. Please note that the logs incur cost,
+     * which are subject to [Cloud Logging
+     * pricing](https://cloud.google.com/logging/pricing).
+     *
+     * User can disable container logging by setting this flag to true.
+     * </pre>
+     *
+     * <code>bool disable_container_logging = 15;</code>
+     *
+     * @return The disableContainerLogging.
+     */
+    @java.lang.Override
+    public boolean getDisableContainerLogging() {
+      return disableContainerLogging_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * For custom-trained Models and AutoML Tabular Models, the container of the
+     * DeployedModel instances will send `stderr` and `stdout` streams to
+     * Cloud Logging by default. Please note that the logs incur cost,
+     * which are subject to [Cloud Logging
+     * pricing](https://cloud.google.com/logging/pricing).
+     *
+     * User can disable container logging by setting this flag to true.
+     * </pre>
+     *
+     * <code>bool disable_container_logging = 15;</code>
+     *
+     * @param value The disableContainerLogging to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableContainerLogging(boolean value) {
+
+      disableContainerLogging_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * For custom-trained Models and AutoML Tabular Models, the container of the
+     * DeployedModel instances will send `stderr` and `stdout` streams to
+     * Cloud Logging by default. Please note that the logs incur cost,
+     * which are subject to [Cloud Logging
+     * pricing](https://cloud.google.com/logging/pricing).
+     *
+     * User can disable container logging by setting this flag to true.
+     * </pre>
+     *
+     * <code>bool disable_container_logging = 15;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableContainerLogging() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      disableContainerLogging_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean enableAccessLogging_;
 
     /**
@@ -5338,7 +5537,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableAccessLogging(boolean value) {
 
       enableAccessLogging_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5362,7 +5561,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableAccessLogging() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       enableAccessLogging_ = false;
       onChanged();
       return this;
@@ -5392,7 +5591,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the privateEndpoints field is set.
      */
     public boolean hasPrivateEndpoints() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -5444,7 +5643,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         privateEndpointsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5470,7 +5669,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         privateEndpointsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5492,7 +5691,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     public Builder mergePrivateEndpoints(
         com.google.cloud.aiplatform.v1beta1.PrivateEndpoints value) {
       if (privateEndpointsBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && privateEndpoints_ != null
             && privateEndpoints_
                 != com.google.cloud.aiplatform.v1beta1.PrivateEndpoints.getDefaultInstance()) {
@@ -5504,7 +5703,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         privateEndpointsBuilder_.mergeFrom(value);
       }
       if (privateEndpoints_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -5525,7 +5724,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPrivateEndpoints() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       privateEndpoints_ = null;
       if (privateEndpointsBuilder_ != null) {
         privateEndpointsBuilder_.dispose();
@@ -5551,7 +5750,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.PrivateEndpoints.Builder
         getPrivateEndpointsBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getPrivateEndpointsFieldBuilder().getBuilder();
     }
@@ -5632,7 +5831,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fasterDeploymentConfig field is set.
      */
     public boolean hasFasterDeploymentConfig() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -5677,7 +5876,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         fasterDeploymentConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5699,7 +5898,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         fasterDeploymentConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5717,7 +5916,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFasterDeploymentConfig(
         com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig value) {
       if (fasterDeploymentConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && fasterDeploymentConfig_ != null
             && fasterDeploymentConfig_
                 != com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig
@@ -5730,7 +5929,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         fasterDeploymentConfigBuilder_.mergeFrom(value);
       }
       if (fasterDeploymentConfig_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -5747,7 +5946,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearFasterDeploymentConfig() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       fasterDeploymentConfig_ = null;
       if (fasterDeploymentConfigBuilder_ != null) {
         fasterDeploymentConfigBuilder_.dispose();
@@ -5769,7 +5968,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig.Builder
         getFasterDeploymentConfigBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getFasterDeploymentConfigFieldBuilder().getBuilder();
     }
@@ -5841,7 +6040,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the rolloutOptions field is set.
      */
     public boolean hasRolloutOptions() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -5883,7 +6082,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         rolloutOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5904,7 +6103,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         rolloutOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5920,7 +6119,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRolloutOptions(com.google.cloud.aiplatform.v1beta1.RolloutOptions value) {
       if (rolloutOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && rolloutOptions_ != null
             && rolloutOptions_
                 != com.google.cloud.aiplatform.v1beta1.RolloutOptions.getDefaultInstance()) {
@@ -5932,7 +6131,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         rolloutOptionsBuilder_.mergeFrom(value);
       }
       if (rolloutOptions_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -5948,7 +6147,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
      */
     public Builder clearRolloutOptions() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       rolloutOptions_ = null;
       if (rolloutOptionsBuilder_ != null) {
         rolloutOptionsBuilder_.dispose();
@@ -5968,7 +6167,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.RolloutOptions.Builder getRolloutOptionsBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getRolloutOptionsFieldBuilder().getBuilder();
     }
@@ -6040,7 +6239,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -6086,7 +6285,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         statusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6109,7 +6308,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6127,7 +6326,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStatus(com.google.cloud.aiplatform.v1beta1.DeployedModel.Status value) {
       if (statusBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && status_ != null
             && status_
                 != com.google.cloud.aiplatform.v1beta1.DeployedModel.Status.getDefaultInstance()) {
@@ -6139,7 +6338,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         statusBuilder_.mergeFrom(value);
       }
       if (status_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -6157,7 +6356,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       status_ = null;
       if (statusBuilder_ != null) {
         statusBuilder_.dispose();
@@ -6179,7 +6378,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.DeployedModel.Status.Builder getStatusBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -6253,7 +6452,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       if (!systemLabels_.isMutable()) {
         systemLabels_ = systemLabels_.copy();
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return systemLabels_;
     }
@@ -6347,7 +6546,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearSystemLabels() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       internalGetMutableSystemLabels().getMutableMap().clear();
       return this;
     }
@@ -6373,7 +6572,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableSystemLabels() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       return internalGetMutableSystemLabels().getMutableMap();
     }
 
@@ -6395,7 +6594,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableSystemLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       return this;
     }
 
@@ -6411,7 +6610,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllSystemLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableSystemLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       return this;
     }
 
@@ -6480,7 +6679,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkpointId_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6498,7 +6697,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCheckpointId() {
       checkpointId_ = getDefaultInstance().getCheckpointId();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -6521,9 +6720,229 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       checkpointId_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculativeDecodingSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec,
+            com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpecOrBuilder>
+        speculativeDecodingSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the speculativeDecodingSpec field is set.
+     */
+    public boolean hasSpeculativeDecodingSpec() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The speculativeDecodingSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec
+        getSpeculativeDecodingSpec() {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        return speculativeDecodingSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.getDefaultInstance()
+            : speculativeDecodingSpec_;
+      } else {
+        return speculativeDecodingSpecBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpeculativeDecodingSpec(
+        com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec value) {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        speculativeDecodingSpec_ = value;
+      } else {
+        speculativeDecodingSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpeculativeDecodingSpec(
+        com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.Builder builderForValue) {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        speculativeDecodingSpec_ = builderForValue.build();
+      } else {
+        speculativeDecodingSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSpeculativeDecodingSpec(
+        com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec value) {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && speculativeDecodingSpec_ != null
+            && speculativeDecodingSpec_
+                != com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec
+                    .getDefaultInstance()) {
+          getSpeculativeDecodingSpecBuilder().mergeFrom(value);
+        } else {
+          speculativeDecodingSpec_ = value;
+        }
+      } else {
+        speculativeDecodingSpecBuilder_.mergeFrom(value);
+      }
+      if (speculativeDecodingSpec_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSpeculativeDecodingSpec() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      speculativeDecodingSpec_ = null;
+      if (speculativeDecodingSpecBuilder_ != null) {
+        speculativeDecodingSpecBuilder_.dispose();
+        speculativeDecodingSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.Builder
+        getSpeculativeDecodingSpecBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return getSpeculativeDecodingSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpecOrBuilder
+        getSpeculativeDecodingSpecOrBuilder() {
+      if (speculativeDecodingSpecBuilder_ != null) {
+        return speculativeDecodingSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return speculativeDecodingSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.getDefaultInstance()
+            : speculativeDecodingSpec_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec,
+            com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpecOrBuilder>
+        getSpeculativeDecodingSpecFieldBuilder() {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        speculativeDecodingSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec,
+                com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpecOrBuilder>(
+                getSpeculativeDecodingSpec(), getParentForChildren(), isClean());
+        speculativeDecodingSpec_ = null;
+      }
+      return speculativeDecodingSpecBuilder_;
     }
 
     @java.lang.Override

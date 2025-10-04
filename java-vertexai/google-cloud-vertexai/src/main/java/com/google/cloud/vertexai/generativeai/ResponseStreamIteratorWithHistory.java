@@ -21,7 +21,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/** Iterator of the ResponseStream that holds the response chunks. */
+/**
+ * Iterator of the ResponseStream that holds the response chunks.
+ *
+ * @deprecated This class and its package are deprecated. See the <a
+ *     href="https://cloud.google.com/vertex-ai/generative-ai/docs/deprecations/genai-vertexai-sdk#java">
+ *     migration guide</a> for more details.
+ */
+@Deprecated
 public class ResponseStreamIteratorWithHistory<GenerateContentResponse>
     implements Iterator<GenerateContentResponse> {
   Iterator serverStreamIterator = null;

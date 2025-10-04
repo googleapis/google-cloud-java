@@ -56,6 +56,7 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
                   ProtoUtils.marshaller(AnalyzeSentimentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnalyzeSentimentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
@@ -67,6 +68,7 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
                   ProtoUtils.marshaller(AnalyzeEntitiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnalyzeEntitiesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ClassifyTextRequest, ClassifyTextResponse>
@@ -77,6 +79,7 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ClassifyTextRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ClassifyTextResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ModerateTextRequest, ModerateTextResponse>
@@ -87,6 +90,7 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ModerateTextRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ModerateTextResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AnnotateTextRequest, AnnotateTextResponse>
@@ -97,6 +101,7 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(AnnotateTextRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnnotateTextResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<AnalyzeSentimentRequest, AnalyzeSentimentResponse>

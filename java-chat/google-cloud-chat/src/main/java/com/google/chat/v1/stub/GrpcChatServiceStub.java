@@ -109,6 +109,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMessageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Message.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMessagesRequest, ListMessagesResponse>
@@ -119,6 +120,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListMessagesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMessagesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMembershipsRequest, ListMembershipsResponse>
@@ -130,6 +132,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   ProtoUtils.marshaller(ListMembershipsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMembershipsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMembershipRequest, Membership>
@@ -140,6 +143,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMembershipRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Membership.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMessageRequest, Message> getMessageMethodDescriptor =
@@ -148,6 +152,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
           .setFullMethodName("google.chat.v1.ChatService/GetMessage")
           .setRequestMarshaller(ProtoUtils.marshaller(GetMessageRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Message.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateMessageRequest, Message>
@@ -158,6 +163,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateMessageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Message.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMessageRequest, Empty> deleteMessageMethodDescriptor =
@@ -166,6 +172,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
           .setFullMethodName("google.chat.v1.ChatService/DeleteMessage")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteMessageRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetAttachmentRequest, Attachment>
@@ -176,6 +183,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAttachmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Attachment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UploadAttachmentRequest, UploadAttachmentResponse>
@@ -187,6 +195,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   ProtoUtils.marshaller(UploadAttachmentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UploadAttachmentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSpacesRequest, ListSpacesResponse>
@@ -196,6 +205,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setFullMethodName("google.chat.v1.ChatService/ListSpaces")
               .setRequestMarshaller(ProtoUtils.marshaller(ListSpacesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListSpacesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchSpacesRequest, SearchSpacesResponse>
@@ -206,6 +216,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(SearchSpacesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchSpacesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSpaceRequest, Space> getSpaceMethodDescriptor =
@@ -214,6 +225,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
           .setFullMethodName("google.chat.v1.ChatService/GetSpace")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSpaceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Space.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateSpaceRequest, Space> createSpaceMethodDescriptor =
@@ -222,6 +234,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
           .setFullMethodName("google.chat.v1.ChatService/CreateSpace")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSpaceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Space.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetUpSpaceRequest, Space> setUpSpaceMethodDescriptor =
@@ -230,6 +243,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
           .setFullMethodName("google.chat.v1.ChatService/SetUpSpace")
           .setRequestMarshaller(ProtoUtils.marshaller(SetUpSpaceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Space.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSpaceRequest, Space> updateSpaceMethodDescriptor =
@@ -238,6 +252,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
           .setFullMethodName("google.chat.v1.ChatService/UpdateSpace")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSpaceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Space.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteSpaceRequest, Empty> deleteSpaceMethodDescriptor =
@@ -246,6 +261,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
           .setFullMethodName("google.chat.v1.ChatService/DeleteSpace")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteSpaceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CompleteImportSpaceRequest, CompleteImportSpaceResponse>
@@ -257,6 +273,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   ProtoUtils.marshaller(CompleteImportSpaceRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CompleteImportSpaceResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FindDirectMessageRequest, Space>
@@ -267,6 +284,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(FindDirectMessageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Space.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMembershipRequest, Membership>
@@ -277,6 +295,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMembershipRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Membership.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateMembershipRequest, Membership>
@@ -287,6 +306,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateMembershipRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Membership.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMembershipRequest, Membership>
@@ -297,6 +317,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteMembershipRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Membership.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateReactionRequest, Reaction>
@@ -307,6 +328,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReactionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Reaction.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReactionsRequest, ListReactionsResponse>
@@ -318,6 +340,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   ProtoUtils.marshaller(ListReactionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReactionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteReactionRequest, Empty>
@@ -328,6 +351,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteReactionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCustomEmojiRequest, CustomEmoji>
@@ -338,6 +362,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCustomEmojiRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomEmoji.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCustomEmojiRequest, CustomEmoji>
@@ -348,6 +373,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCustomEmojiRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomEmoji.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCustomEmojisRequest, ListCustomEmojisResponse>
@@ -359,6 +385,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   ProtoUtils.marshaller(ListCustomEmojisRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomEmojisResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCustomEmojiRequest, Empty>
@@ -369,6 +396,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCustomEmojiRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSpaceReadStateRequest, SpaceReadState>
@@ -379,6 +407,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSpaceReadStateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SpaceReadState.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSpaceReadStateRequest, SpaceReadState>
@@ -389,6 +418,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSpaceReadStateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SpaceReadState.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetThreadReadStateRequest, ThreadReadState>
@@ -399,6 +429,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetThreadReadStateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ThreadReadState.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSpaceEventRequest, SpaceEvent>
@@ -409,6 +440,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSpaceEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SpaceEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSpaceEventsRequest, ListSpaceEventsResponse>
@@ -420,6 +452,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   ProtoUtils.marshaller(ListSpaceEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSpaceEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -433,6 +466,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   ProtoUtils.marshaller(GetSpaceNotificationSettingRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SpaceNotificationSetting.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -446,6 +480,7 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   ProtoUtils.marshaller(UpdateSpaceNotificationSettingRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SpaceNotificationSetting.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateMessageRequest, Message> createMessageCallable;

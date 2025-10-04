@@ -179,8 +179,8 @@ public interface ClusterAutoscalingOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes can be created by NAP.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the NodePool's nodes can be created by NAP.
    * </pre>
    *
    * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -194,8 +194,8 @@ public interface ClusterAutoscalingOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes can be created by NAP.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the NodePool's nodes can be created by NAP.
    * </pre>
    *
    * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -209,8 +209,8 @@ public interface ClusterAutoscalingOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes can be created by NAP.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the NodePool's nodes can be created by NAP.
    * </pre>
    *
    * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -225,8 +225,8 @@ public interface ClusterAutoscalingOrBuilder
    *
    * <pre>
    * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes can be created by NAP.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the NodePool's nodes can be created by NAP.
    * </pre>
    *
    * <code>repeated string autoprovisioning_locations = 5;</code>
@@ -235,4 +235,45 @@ public interface ClusterAutoscalingOrBuilder
    * @return The bytes of the autoprovisioningLocations at the given index.
    */
   com.google.protobuf.ByteString getAutoprovisioningLocationsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Default compute class is a configuration for default compute class.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.DefaultComputeClassConfig default_compute_class_config = 9;
+   * </code>
+   *
+   * @return Whether the defaultComputeClassConfig field is set.
+   */
+  boolean hasDefaultComputeClassConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Default compute class is a configuration for default compute class.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.DefaultComputeClassConfig default_compute_class_config = 9;
+   * </code>
+   *
+   * @return The defaultComputeClassConfig.
+   */
+  com.google.container.v1beta1.DefaultComputeClassConfig getDefaultComputeClassConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Default compute class is a configuration for default compute class.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.DefaultComputeClassConfig default_compute_class_config = 9;
+   * </code>
+   */
+  com.google.container.v1beta1.DefaultComputeClassConfigOrBuilder
+      getDefaultComputeClassConfigOrBuilder();
 }

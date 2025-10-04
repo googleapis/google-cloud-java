@@ -67,6 +67,7 @@ public class GrpcIdentityMappingStoreServiceStub extends IdentityMappingStoreSer
                   ProtoUtils.marshaller(CreateIdentityMappingStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(IdentityMappingStore.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIdentityMappingStoreRequest, IdentityMappingStore>
@@ -79,6 +80,7 @@ public class GrpcIdentityMappingStoreServiceStub extends IdentityMappingStoreSer
                   ProtoUtils.marshaller(GetIdentityMappingStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(IdentityMappingStore.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteIdentityMappingStoreRequest, Operation>
@@ -90,6 +92,7 @@ public class GrpcIdentityMappingStoreServiceStub extends IdentityMappingStoreSer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteIdentityMappingStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportIdentityMappingsRequest, Operation>
@@ -101,6 +104,7 @@ public class GrpcIdentityMappingStoreServiceStub extends IdentityMappingStoreSer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportIdentityMappingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PurgeIdentityMappingsRequest, Operation>
@@ -112,6 +116,7 @@ public class GrpcIdentityMappingStoreServiceStub extends IdentityMappingStoreSer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PurgeIdentityMappingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListIdentityMappingsRequest, ListIdentityMappingsResponse>
@@ -124,6 +129,7 @@ public class GrpcIdentityMappingStoreServiceStub extends IdentityMappingStoreSer
                   ProtoUtils.marshaller(ListIdentityMappingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListIdentityMappingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -138,6 +144,7 @@ public class GrpcIdentityMappingStoreServiceStub extends IdentityMappingStoreSer
                   ProtoUtils.marshaller(ListIdentityMappingStoresRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListIdentityMappingStoresResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateIdentityMappingStoreRequest, IdentityMappingStore>

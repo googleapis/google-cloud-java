@@ -52,6 +52,7 @@ public class GrpcBranchServiceStub extends BranchServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListBranchesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBranchesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBranchRequest, Branch> getBranchMethodDescriptor =
@@ -60,6 +61,7 @@ public class GrpcBranchServiceStub extends BranchServiceStub {
           .setFullMethodName("google.cloud.retail.v2alpha.BranchService/GetBranch")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBranchRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Branch.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListBranchesRequest, ListBranchesResponse> listBranchesCallable;

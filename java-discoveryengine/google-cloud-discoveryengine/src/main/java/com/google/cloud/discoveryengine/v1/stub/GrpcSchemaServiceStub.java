@@ -59,6 +59,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1.SchemaService/GetSchema")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSchemaRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Schema.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListSchemasRequest, ListSchemasResponse>
@@ -69,6 +70,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSchemasRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSchemasResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSchemaRequest, Operation>
@@ -78,6 +80,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
               .setFullMethodName("google.cloud.discoveryengine.v1.SchemaService/CreateSchema")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSchemaRequest, Operation>
@@ -87,6 +90,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
               .setFullMethodName("google.cloud.discoveryengine.v1.SchemaService/UpdateSchema")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSchemaRequest, Operation>
@@ -96,6 +100,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
               .setFullMethodName("google.cloud.discoveryengine.v1.SchemaService/DeleteSchema")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetSchemaRequest, Schema> getSchemaCallable;

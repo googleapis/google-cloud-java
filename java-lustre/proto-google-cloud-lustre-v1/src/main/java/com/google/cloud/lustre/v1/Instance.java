@@ -161,6 +161,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>STOPPED = 6;</code>
      */
     STOPPED(6),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is being updated.
+     * </pre>
+     *
+     * <code>UPDATING = 7;</code>
+     */
+    UPDATING(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -241,6 +251,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int STOPPED_VALUE = 6;
 
+    /**
+     *
+     *
+     * <pre>
+     * The instance is being updated.
+     * </pre>
+     *
+     * <code>UPDATING = 7;</code>
+     */
+    public static final int UPDATING_VALUE = 7;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -279,6 +300,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return REPAIRING;
         case 6:
           return STOPPED;
+        case 7:
+          return UPDATING;
         default:
           return null;
       }
@@ -916,14 +939,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Indicates whether you want to enable support for GKE clients. By
-   * default, GKE clients are not supported.
+   * default, GKE clients are not supported. Deprecated. No longer required for
+   * GKE instance creation.
    * </pre>
    *
-   * <code>bool gke_support_enabled = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * bool gke_support_enabled = 12 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.lustre.v1.Instance.gke_support_enabled is deprecated. See
+   *     google/cloud/lustre/v1/instance.proto;l=118
    * @return The gkeSupportEnabled.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getGkeSupportEnabled() {
     return gkeSupportEnabled_;
   }
@@ -3014,14 +3043,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Indicates whether you want to enable support for GKE clients. By
-     * default, GKE clients are not supported.
+     * default, GKE clients are not supported. Deprecated. No longer required for
+     * GKE instance creation.
      * </pre>
      *
-     * <code>bool gke_support_enabled = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool gke_support_enabled = 12 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.lustre.v1.Instance.gke_support_enabled is deprecated. See
+     *     google/cloud/lustre/v1/instance.proto;l=118
      * @return The gkeSupportEnabled.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getGkeSupportEnabled() {
       return gkeSupportEnabled_;
     }
@@ -3031,14 +3066,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Indicates whether you want to enable support for GKE clients. By
-     * default, GKE clients are not supported.
+     * default, GKE clients are not supported. Deprecated. No longer required for
+     * GKE instance creation.
      * </pre>
      *
-     * <code>bool gke_support_enabled = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool gke_support_enabled = 12 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.lustre.v1.Instance.gke_support_enabled is deprecated. See
+     *     google/cloud/lustre/v1/instance.proto;l=118
      * @param value The gkeSupportEnabled to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setGkeSupportEnabled(boolean value) {
 
       gkeSupportEnabled_ = value;
@@ -3052,13 +3093,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Indicates whether you want to enable support for GKE clients. By
-     * default, GKE clients are not supported.
+     * default, GKE clients are not supported. Deprecated. No longer required for
+     * GKE instance creation.
      * </pre>
      *
-     * <code>bool gke_support_enabled = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool gke_support_enabled = 12 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.lustre.v1.Instance.gke_support_enabled is deprecated. See
+     *     google/cloud/lustre/v1/instance.proto;l=118
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearGkeSupportEnabled() {
       bitField0_ = (bitField0_ & ~0x00000800);
       gkeSupportEnabled_ = false;

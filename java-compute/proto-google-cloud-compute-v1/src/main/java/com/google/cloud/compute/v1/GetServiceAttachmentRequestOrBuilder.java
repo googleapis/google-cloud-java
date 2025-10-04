@@ -101,4 +101,30 @@ public interface GetServiceAttachmentRequestOrBuilder
    * @return The bytes for serviceAttachment.
    */
   com.google.protobuf.ByteString getServiceAttachmentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether NAT IPs should be included in the response.
+   * </pre>
+   *
+   * <code>optional bool show_nat_ips = 485502156;</code>
+   *
+   * @return Whether the showNatIps field is set.
+   */
+  boolean hasShowNatIps();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether NAT IPs should be included in the response.
+   * </pre>
+   *
+   * <code>optional bool show_nat_ips = 485502156;</code>
+   *
+   * @return The showNatIps.
+   */
+  boolean getShowNatIps();
 }

@@ -168,6 +168,12 @@ public class TargetInstancesSettings extends ClientSettings<TargetInstancesSetti
     return ((TargetInstancesStubSettings) getStubSettings()).setSecurityPolicyOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsTargetInstanceRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((TargetInstancesStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
   public static final TargetInstancesSettings create(TargetInstancesStubSettings stub)
       throws IOException {
     return new TargetInstancesSettings.Builder(stub.toBuilder()).build();
@@ -319,6 +325,13 @@ public class TargetInstancesSettings extends ClientSettings<TargetInstancesSetti
             SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
         setSecurityPolicyOperationSettings() {
       return getStubSettingsBuilder().setSecurityPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsTargetInstanceRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

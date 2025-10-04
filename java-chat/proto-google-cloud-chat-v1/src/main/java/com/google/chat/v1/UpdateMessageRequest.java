@@ -136,6 +136,8 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
    *
    * - `accessory_widgets`  (Requires [app
    * authentication](/chat/api/guides/auth/service-accounts).)
+   *
+   * - `quoted_message_metadata` (Only allows removal of the quoted message.)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -169,6 +171,8 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
    *
    * - `accessory_widgets`  (Requires [app
    * authentication](/chat/api/guides/auth/service-accounts).)
+   *
+   * - `quoted_message_metadata` (Only allows removal of the quoted message.)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -202,6 +206,8 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
    *
    * - `accessory_widgets`  (Requires [app
    * authentication](/chat/api/guides/auth/service-accounts).)
+   *
+   * - `quoted_message_metadata` (Only allows removal of the quoted message.)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -867,6 +873,8 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      *
      * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
+     *
+     * - `quoted_message_metadata` (Only allows removal of the quoted message.)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -899,6 +907,8 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      *
      * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
+     *
+     * - `quoted_message_metadata` (Only allows removal of the quoted message.)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -937,6 +947,8 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      *
      * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
+     *
+     * - `quoted_message_metadata` (Only allows removal of the quoted message.)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -977,6 +989,8 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      *
      * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
+     *
+     * - `quoted_message_metadata` (Only allows removal of the quoted message.)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1014,6 +1028,8 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      *
      * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
+     *
+     * - `quoted_message_metadata` (Only allows removal of the quoted message.)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1059,6 +1075,8 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      *
      * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
+     *
+     * - `quoted_message_metadata` (Only allows removal of the quoted message.)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1096,6 +1114,8 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      *
      * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
+     *
+     * - `quoted_message_metadata` (Only allows removal of the quoted message.)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1128,6 +1148,8 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      *
      * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
+     *
+     * - `quoted_message_metadata` (Only allows removal of the quoted message.)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1164,6 +1186,8 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      *
      * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
+     *
+     * - `quoted_message_metadata` (Only allows removal of the quoted message.)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

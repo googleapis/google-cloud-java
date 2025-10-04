@@ -60,6 +60,7 @@ public class GrpcIdentityAwareProxyOAuthServiceStub extends IdentityAwareProxyOA
               .setFullMethodName("google.cloud.iap.v1.IdentityAwareProxyOAuthService/ListBrands")
               .setRequestMarshaller(ProtoUtils.marshaller(ListBrandsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListBrandsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBrandRequest, Brand> createBrandMethodDescriptor =
@@ -68,6 +69,7 @@ public class GrpcIdentityAwareProxyOAuthServiceStub extends IdentityAwareProxyOA
           .setFullMethodName("google.cloud.iap.v1.IdentityAwareProxyOAuthService/CreateBrand")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateBrandRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Brand.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetBrandRequest, Brand> getBrandMethodDescriptor =
@@ -76,6 +78,7 @@ public class GrpcIdentityAwareProxyOAuthServiceStub extends IdentityAwareProxyOA
           .setFullMethodName("google.cloud.iap.v1.IdentityAwareProxyOAuthService/GetBrand")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBrandRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Brand.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<
@@ -90,6 +93,7 @@ public class GrpcIdentityAwareProxyOAuthServiceStub extends IdentityAwareProxyOA
                   ProtoUtils.marshaller(CreateIdentityAwareProxyClientRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(IdentityAwareProxyClient.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -105,6 +109,7 @@ public class GrpcIdentityAwareProxyOAuthServiceStub extends IdentityAwareProxyOA
                   ProtoUtils.marshaller(ListIdentityAwareProxyClientsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListIdentityAwareProxyClientsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -119,6 +124,7 @@ public class GrpcIdentityAwareProxyOAuthServiceStub extends IdentityAwareProxyOA
                   ProtoUtils.marshaller(GetIdentityAwareProxyClientRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(IdentityAwareProxyClient.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -134,6 +140,7 @@ public class GrpcIdentityAwareProxyOAuthServiceStub extends IdentityAwareProxyOA
                       ResetIdentityAwareProxyClientSecretRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(IdentityAwareProxyClient.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteIdentityAwareProxyClientRequest, Empty>
@@ -145,6 +152,7 @@ public class GrpcIdentityAwareProxyOAuthServiceStub extends IdentityAwareProxyOA
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteIdentityAwareProxyClientRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListBrandsRequest, ListBrandsResponse> listBrandsCallable;

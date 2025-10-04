@@ -73,6 +73,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListNotificationChannelDescriptorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -88,6 +89,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                       GetNotificationChannelDescriptorRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(NotificationChannelDescriptor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -102,6 +104,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                   ProtoUtils.marshaller(ListNotificationChannelsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNotificationChannelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNotificationChannelRequest, NotificationChannel>
@@ -114,6 +117,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                   ProtoUtils.marshaller(GetNotificationChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(NotificationChannel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateNotificationChannelRequest, NotificationChannel>
@@ -126,6 +130,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                   ProtoUtils.marshaller(CreateNotificationChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(NotificationChannel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateNotificationChannelRequest, NotificationChannel>
@@ -138,6 +143,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                   ProtoUtils.marshaller(UpdateNotificationChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(NotificationChannel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNotificationChannelRequest, Empty>
@@ -149,6 +155,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNotificationChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SendNotificationChannelVerificationCodeRequest, Empty>
@@ -161,6 +168,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                   ProtoUtils.marshaller(
                       SendNotificationChannelVerificationCodeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -180,6 +188,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       GetNotificationChannelVerificationCodeResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<VerifyNotificationChannelRequest, NotificationChannel>
@@ -192,6 +201,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
                   ProtoUtils.marshaller(VerifyNotificationChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(NotificationChannel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<

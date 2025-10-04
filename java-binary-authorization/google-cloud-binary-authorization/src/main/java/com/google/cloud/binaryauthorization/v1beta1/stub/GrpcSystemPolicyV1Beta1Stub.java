@@ -51,6 +51,7 @@ public class GrpcSystemPolicyV1Beta1Stub extends SystemPolicyV1Beta1Stub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSystemPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetSystemPolicyRequest, Policy> getSystemPolicyCallable;

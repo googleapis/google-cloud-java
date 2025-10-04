@@ -194,6 +194,7 @@ public class RegionBackendServicesClientTest {
             .setName("name3373707")
             .setNetwork("network1843485230")
             .setOutlierDetection(OutlierDetection.newBuilder().build())
+            .setParams(BackendServiceParams.newBuilder().build())
             .setPort(3446913)
             .setPortName("portName728194732")
             .setProtocol("protocol-989163880")
@@ -207,6 +208,7 @@ public class RegionBackendServicesClientTest {
             .setStrongSessionAffinityCookie(BackendServiceHttpCookie.newBuilder().build())
             .setSubsetting(Subsetting.newBuilder().build())
             .setTimeoutSec(-2067488653)
+            .setTlsSettings(BackendServiceTlsSettings.newBuilder().build())
             .addAllUsedBy(new ArrayList<BackendServiceUsedBy>())
             .build();
     mockService.addResponse(expectedResponse);

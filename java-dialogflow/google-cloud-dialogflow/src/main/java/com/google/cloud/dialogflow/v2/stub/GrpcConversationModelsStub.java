@@ -76,6 +76,7 @@ public class GrpcConversationModelsStub extends ConversationModelsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConversationModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConversationModelRequest, ConversationModel>
@@ -87,6 +88,7 @@ public class GrpcConversationModelsStub extends ConversationModelsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConversationModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConversationModel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -101,6 +103,7 @@ public class GrpcConversationModelsStub extends ConversationModelsStub {
                   ProtoUtils.marshaller(ListConversationModelsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConversationModelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConversationModelRequest, Operation>
@@ -112,6 +115,7 @@ public class GrpcConversationModelsStub extends ConversationModelsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConversationModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeployConversationModelRequest, Operation>
@@ -123,6 +127,7 @@ public class GrpcConversationModelsStub extends ConversationModelsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeployConversationModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeployConversationModelRequest, Operation>
@@ -134,6 +139,7 @@ public class GrpcConversationModelsStub extends ConversationModelsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeployConversationModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -148,6 +154,7 @@ public class GrpcConversationModelsStub extends ConversationModelsStub {
                   ProtoUtils.marshaller(GetConversationModelEvaluationRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ConversationModelEvaluation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -165,6 +172,7 @@ public class GrpcConversationModelsStub extends ConversationModelsStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListConversationModelEvaluationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateConversationModelEvaluationRequest, Operation>
@@ -177,6 +185,7 @@ public class GrpcConversationModelsStub extends ConversationModelsStub {
                   ProtoUtils.marshaller(
                       CreateConversationModelEvaluationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -188,6 +197,7 @@ public class GrpcConversationModelsStub extends ConversationModelsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -196,6 +206,7 @@ public class GrpcConversationModelsStub extends ConversationModelsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateConversationModelRequest, Operation>

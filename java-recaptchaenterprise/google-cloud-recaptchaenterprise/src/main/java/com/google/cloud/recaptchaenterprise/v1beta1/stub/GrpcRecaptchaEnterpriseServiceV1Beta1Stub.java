@@ -54,6 +54,7 @@ public class GrpcRecaptchaEnterpriseServiceV1Beta1Stub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAssessmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Assessment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AnnotateAssessmentRequest, AnnotateAssessmentResponse>
@@ -66,6 +67,7 @@ public class GrpcRecaptchaEnterpriseServiceV1Beta1Stub
                   ProtoUtils.marshaller(AnnotateAssessmentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnnotateAssessmentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateAssessmentRequest, Assessment> createAssessmentCallable;

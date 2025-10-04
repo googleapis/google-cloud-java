@@ -77,6 +77,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1beta1.MemoryBankService/CreateMemory")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateMemoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMemoryRequest, Memory> getMemoryMethodDescriptor =
@@ -85,6 +86,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.MemoryBankService/GetMemory")
           .setRequestMarshaller(ProtoUtils.marshaller(GetMemoryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Memory.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateMemoryRequest, Operation>
@@ -94,6 +96,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1beta1.MemoryBankService/UpdateMemory")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateMemoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMemoriesRequest, ListMemoriesResponse>
@@ -104,6 +107,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListMemoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMemoriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMemoryRequest, Operation>
@@ -113,6 +117,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1beta1.MemoryBankService/DeleteMemory")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteMemoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GenerateMemoriesRequest, Operation>
@@ -124,6 +129,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GenerateMemoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RetrieveMemoriesRequest, RetrieveMemoriesResponse>
@@ -136,6 +142,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
                   ProtoUtils.marshaller(RetrieveMemoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RetrieveMemoriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -147,6 +154,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -155,6 +163,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -163,6 +172,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -171,6 +181,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -182,6 +193,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateMemoryRequest, Operation> createMemoryCallable;

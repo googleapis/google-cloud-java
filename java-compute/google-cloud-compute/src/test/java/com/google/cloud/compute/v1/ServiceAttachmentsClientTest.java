@@ -35,6 +35,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -223,6 +224,7 @@ public class ServiceAttachmentsClientTest {
             .setFingerprint("fingerprint-1375934236")
             .setId(3355)
             .setKind("kind3292052")
+            .putAllMetadata(new HashMap<String, String>())
             .setName("name3373707")
             .addAllNatSubnets(new ArrayList<String>())
             .setProducerForwardingRule("producerForwardingRule-1240429621")

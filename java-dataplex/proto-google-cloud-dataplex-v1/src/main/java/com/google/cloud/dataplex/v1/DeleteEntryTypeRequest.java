@@ -23,7 +23,7 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * Delele EntryType Request.
+ * Delete EntryType Request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.DeleteEntryTypeRequest}
@@ -352,7 +352,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Delele EntryType Request.
+   * Delete EntryType Request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.DeleteEntryTypeRequest}

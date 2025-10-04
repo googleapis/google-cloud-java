@@ -56,6 +56,7 @@ public class GrpcAccountTaxServiceStub extends AccountTaxServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAccountTaxRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AccountTax.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAccountTaxRequest, ListAccountTaxResponse>
@@ -68,6 +69,7 @@ public class GrpcAccountTaxServiceStub extends AccountTaxServiceStub {
                   ProtoUtils.marshaller(ListAccountTaxRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAccountTaxResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAccountTaxRequest, AccountTax>
@@ -79,6 +81,7 @@ public class GrpcAccountTaxServiceStub extends AccountTaxServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAccountTaxRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AccountTax.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetAccountTaxRequest, AccountTax> getAccountTaxCallable;

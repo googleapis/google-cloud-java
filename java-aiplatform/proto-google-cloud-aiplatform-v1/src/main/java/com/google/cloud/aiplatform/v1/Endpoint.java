@@ -1194,9 +1194,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. DNS of the dedicated endpoint. Will only be populated if
-   * dedicated_endpoint_enabled is true.
-   * Format:
-   * `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
+   * dedicated_endpoint_enabled is true. Depending on the features enabled, uid
+   * might be a random number or a string. For example, if fast_tryout is
+   * enabled, uid will be fasttryout. Format:
+   * `https://{endpoint_id}.{region}-{uid}.prediction.vertexai.goog`.
    * </pre>
    *
    * <code>string dedicated_endpoint_dns = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1221,9 +1222,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. DNS of the dedicated endpoint. Will only be populated if
-   * dedicated_endpoint_enabled is true.
-   * Format:
-   * `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
+   * dedicated_endpoint_enabled is true. Depending on the features enabled, uid
+   * might be a random number or a string. For example, if fast_tryout is
+   * enabled, uid will be fasttryout. Format:
+   * `https://{endpoint_id}.{region}-{uid}.prediction.vertexai.goog`.
    * </pre>
    *
    * <code>string dedicated_endpoint_dns = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1335,6 +1337,92 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzi_;
   }
 
+  public static final int GEN_AI_ADVANCED_FEATURES_CONFIG_FIELD_NUMBER = 29;
+  private com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig genAiAdvancedFeaturesConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for GenAiAdvancedFeatures. If the endpoint is
+   * serving GenAI models, advanced features like native RAG integration can be
+   * configured. Currently, only Model Garden models are supported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig gen_ai_advanced_features_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the genAiAdvancedFeaturesConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGenAiAdvancedFeaturesConfig() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for GenAiAdvancedFeatures. If the endpoint is
+   * serving GenAI models, advanced features like native RAG integration can be
+   * configured. Currently, only Model Garden models are supported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig gen_ai_advanced_features_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The genAiAdvancedFeaturesConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig
+      getGenAiAdvancedFeaturesConfig() {
+    return genAiAdvancedFeaturesConfig_ == null
+        ? com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig.getDefaultInstance()
+        : genAiAdvancedFeaturesConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for GenAiAdvancedFeatures. If the endpoint is
+   * serving GenAI models, advanced features like native RAG integration can be
+   * configured. Currently, only Model Garden models are supported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig gen_ai_advanced_features_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfigOrBuilder
+      getGenAiAdvancedFeaturesConfigOrBuilder() {
+    return genAiAdvancedFeaturesConfig_ == null
+        ? com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig.getDefaultInstance()
+        : genAiAdvancedFeaturesConfig_;
+  }
+
+  public static final int PRIVATE_MODEL_SERVER_ENABLED_FIELD_NUMBER = 30;
+  private boolean privateModelServerEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, the model server will be isolated from the external internet.
+   * </pre>
+   *
+   * <code>bool private_model_server_enabled = 30;</code>
+   *
+   * @return The privateModelServerEnabled.
+   */
+  @java.lang.Override
+  public boolean getPrivateModelServerEnabled() {
+    return privateModelServerEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1406,6 +1494,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
     if (satisfiesPzi_ != false) {
       output.writeBool(28, satisfiesPzi_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(29, getGenAiAdvancedFeaturesConfig());
+    }
+    if (privateModelServerEnabled_ != false) {
+      output.writeBool(30, privateModelServerEnabled_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1498,6 +1592,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzi_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(28, satisfiesPzi_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              29, getGenAiAdvancedFeaturesConfig());
+    }
+    if (privateModelServerEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, privateModelServerEnabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1555,6 +1657,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
+    if (hasGenAiAdvancedFeaturesConfig() != other.hasGenAiAdvancedFeaturesConfig()) return false;
+    if (hasGenAiAdvancedFeaturesConfig()) {
+      if (!getGenAiAdvancedFeaturesConfig().equals(other.getGenAiAdvancedFeaturesConfig()))
+        return false;
+    }
+    if (getPrivateModelServerEnabled() != other.getPrivateModelServerEnabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1624,6 +1732,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
+    if (hasGenAiAdvancedFeaturesConfig()) {
+      hash = (37 * hash) + GEN_AI_ADVANCED_FEATURES_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGenAiAdvancedFeaturesConfig().hashCode();
+    }
+    hash = (37 * hash) + PRIVATE_MODEL_SERVER_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPrivateModelServerEnabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1799,6 +1913,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         getPrivateServiceConnectConfigFieldBuilder();
         getPredictRequestResponseLoggingConfigFieldBuilder();
         getClientConnectionConfigFieldBuilder();
+        getGenAiAdvancedFeaturesConfigFieldBuilder();
       }
     }
 
@@ -1856,6 +1971,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       satisfiesPzs_ = false;
       satisfiesPzi_ = false;
+      genAiAdvancedFeaturesConfig_ = null;
+      if (genAiAdvancedFeaturesConfigBuilder_ != null) {
+        genAiAdvancedFeaturesConfigBuilder_.dispose();
+        genAiAdvancedFeaturesConfigBuilder_ = null;
+      }
+      privateModelServerEnabled_ = false;
       return this;
     }
 
@@ -1980,6 +2101,16 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
         result.satisfiesPzi_ = satisfiesPzi_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.genAiAdvancedFeaturesConfig_ =
+            genAiAdvancedFeaturesConfigBuilder_ == null
+                ? genAiAdvancedFeaturesConfig_
+                : genAiAdvancedFeaturesConfigBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.privateModelServerEnabled_ = privateModelServerEnabled_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2124,6 +2255,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getSatisfiesPzi() != false) {
         setSatisfiesPzi(other.getSatisfiesPzi());
+      }
+      if (other.hasGenAiAdvancedFeaturesConfig()) {
+        mergeGenAiAdvancedFeaturesConfig(other.getGenAiAdvancedFeaturesConfig());
+      }
+      if (other.getPrivateModelServerEnabled() != false) {
+        setPrivateModelServerEnabled(other.getPrivateModelServerEnabled());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2294,6 +2431,19 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00080000;
                 break;
               } // case 224
+            case 234:
+              {
+                input.readMessage(
+                    getGenAiAdvancedFeaturesConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 234
+            case 240:
+              {
+                privateModelServerEnabled_ = input.readBool();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 240
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5323,9 +5473,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. DNS of the dedicated endpoint. Will only be populated if
-     * dedicated_endpoint_enabled is true.
-     * Format:
-     * `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
+     * dedicated_endpoint_enabled is true. Depending on the features enabled, uid
+     * might be a random number or a string. For example, if fast_tryout is
+     * enabled, uid will be fasttryout. Format:
+     * `https://{endpoint_id}.{region}-{uid}.prediction.vertexai.goog`.
      * </pre>
      *
      * <code>string dedicated_endpoint_dns = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5349,9 +5500,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. DNS of the dedicated endpoint. Will only be populated if
-     * dedicated_endpoint_enabled is true.
-     * Format:
-     * `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
+     * dedicated_endpoint_enabled is true. Depending on the features enabled, uid
+     * might be a random number or a string. For example, if fast_tryout is
+     * enabled, uid will be fasttryout. Format:
+     * `https://{endpoint_id}.{region}-{uid}.prediction.vertexai.goog`.
      * </pre>
      *
      * <code>string dedicated_endpoint_dns = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5375,9 +5527,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. DNS of the dedicated endpoint. Will only be populated if
-     * dedicated_endpoint_enabled is true.
-     * Format:
-     * `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
+     * dedicated_endpoint_enabled is true. Depending on the features enabled, uid
+     * might be a random number or a string. For example, if fast_tryout is
+     * enabled, uid will be fasttryout. Format:
+     * `https://{endpoint_id}.{region}-{uid}.prediction.vertexai.goog`.
      * </pre>
      *
      * <code>string dedicated_endpoint_dns = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5400,9 +5553,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. DNS of the dedicated endpoint. Will only be populated if
-     * dedicated_endpoint_enabled is true.
-     * Format:
-     * `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
+     * dedicated_endpoint_enabled is true. Depending on the features enabled, uid
+     * might be a random number or a string. For example, if fast_tryout is
+     * enabled, uid will be fasttryout. Format:
+     * `https://{endpoint_id}.{region}-{uid}.prediction.vertexai.goog`.
      * </pre>
      *
      * <code>string dedicated_endpoint_dns = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5421,9 +5575,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. DNS of the dedicated endpoint. Will only be populated if
-     * dedicated_endpoint_enabled is true.
-     * Format:
-     * `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
+     * dedicated_endpoint_enabled is true. Depending on the features enabled, uid
+     * might be a random number or a string. For example, if fast_tryout is
+     * enabled, uid will be fasttryout. Format:
+     * `https://{endpoint_id}.{region}-{uid}.prediction.vertexai.goog`.
      * </pre>
      *
      * <code>string dedicated_endpoint_dns = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5759,6 +5914,300 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSatisfiesPzi() {
       bitField0_ = (bitField0_ & ~0x00080000);
       satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig genAiAdvancedFeaturesConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig,
+            com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig.Builder,
+            com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfigOrBuilder>
+        genAiAdvancedFeaturesConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for GenAiAdvancedFeatures. If the endpoint is
+     * serving GenAI models, advanced features like native RAG integration can be
+     * configured. Currently, only Model Garden models are supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig gen_ai_advanced_features_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the genAiAdvancedFeaturesConfig field is set.
+     */
+    public boolean hasGenAiAdvancedFeaturesConfig() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for GenAiAdvancedFeatures. If the endpoint is
+     * serving GenAI models, advanced features like native RAG integration can be
+     * configured. Currently, only Model Garden models are supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig gen_ai_advanced_features_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The genAiAdvancedFeaturesConfig.
+     */
+    public com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig
+        getGenAiAdvancedFeaturesConfig() {
+      if (genAiAdvancedFeaturesConfigBuilder_ == null) {
+        return genAiAdvancedFeaturesConfig_ == null
+            ? com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig.getDefaultInstance()
+            : genAiAdvancedFeaturesConfig_;
+      } else {
+        return genAiAdvancedFeaturesConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for GenAiAdvancedFeatures. If the endpoint is
+     * serving GenAI models, advanced features like native RAG integration can be
+     * configured. Currently, only Model Garden models are supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig gen_ai_advanced_features_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGenAiAdvancedFeaturesConfig(
+        com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig value) {
+      if (genAiAdvancedFeaturesConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        genAiAdvancedFeaturesConfig_ = value;
+      } else {
+        genAiAdvancedFeaturesConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for GenAiAdvancedFeatures. If the endpoint is
+     * serving GenAI models, advanced features like native RAG integration can be
+     * configured. Currently, only Model Garden models are supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig gen_ai_advanced_features_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGenAiAdvancedFeaturesConfig(
+        com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig.Builder builderForValue) {
+      if (genAiAdvancedFeaturesConfigBuilder_ == null) {
+        genAiAdvancedFeaturesConfig_ = builderForValue.build();
+      } else {
+        genAiAdvancedFeaturesConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for GenAiAdvancedFeatures. If the endpoint is
+     * serving GenAI models, advanced features like native RAG integration can be
+     * configured. Currently, only Model Garden models are supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig gen_ai_advanced_features_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGenAiAdvancedFeaturesConfig(
+        com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig value) {
+      if (genAiAdvancedFeaturesConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && genAiAdvancedFeaturesConfig_ != null
+            && genAiAdvancedFeaturesConfig_
+                != com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig
+                    .getDefaultInstance()) {
+          getGenAiAdvancedFeaturesConfigBuilder().mergeFrom(value);
+        } else {
+          genAiAdvancedFeaturesConfig_ = value;
+        }
+      } else {
+        genAiAdvancedFeaturesConfigBuilder_.mergeFrom(value);
+      }
+      if (genAiAdvancedFeaturesConfig_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for GenAiAdvancedFeatures. If the endpoint is
+     * serving GenAI models, advanced features like native RAG integration can be
+     * configured. Currently, only Model Garden models are supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig gen_ai_advanced_features_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGenAiAdvancedFeaturesConfig() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      genAiAdvancedFeaturesConfig_ = null;
+      if (genAiAdvancedFeaturesConfigBuilder_ != null) {
+        genAiAdvancedFeaturesConfigBuilder_.dispose();
+        genAiAdvancedFeaturesConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for GenAiAdvancedFeatures. If the endpoint is
+     * serving GenAI models, advanced features like native RAG integration can be
+     * configured. Currently, only Model Garden models are supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig gen_ai_advanced_features_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig.Builder
+        getGenAiAdvancedFeaturesConfigBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return getGenAiAdvancedFeaturesConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for GenAiAdvancedFeatures. If the endpoint is
+     * serving GenAI models, advanced features like native RAG integration can be
+     * configured. Currently, only Model Garden models are supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig gen_ai_advanced_features_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfigOrBuilder
+        getGenAiAdvancedFeaturesConfigOrBuilder() {
+      if (genAiAdvancedFeaturesConfigBuilder_ != null) {
+        return genAiAdvancedFeaturesConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return genAiAdvancedFeaturesConfig_ == null
+            ? com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig.getDefaultInstance()
+            : genAiAdvancedFeaturesConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for GenAiAdvancedFeatures. If the endpoint is
+     * serving GenAI models, advanced features like native RAG integration can be
+     * configured. Currently, only Model Garden models are supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig gen_ai_advanced_features_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig,
+            com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig.Builder,
+            com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfigOrBuilder>
+        getGenAiAdvancedFeaturesConfigFieldBuilder() {
+      if (genAiAdvancedFeaturesConfigBuilder_ == null) {
+        genAiAdvancedFeaturesConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig,
+                com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfig.Builder,
+                com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfigOrBuilder>(
+                getGenAiAdvancedFeaturesConfig(), getParentForChildren(), isClean());
+        genAiAdvancedFeaturesConfig_ = null;
+      }
+      return genAiAdvancedFeaturesConfigBuilder_;
+    }
+
+    private boolean privateModelServerEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, the model server will be isolated from the external internet.
+     * </pre>
+     *
+     * <code>bool private_model_server_enabled = 30;</code>
+     *
+     * @return The privateModelServerEnabled.
+     */
+    @java.lang.Override
+    public boolean getPrivateModelServerEnabled() {
+      return privateModelServerEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, the model server will be isolated from the external internet.
+     * </pre>
+     *
+     * <code>bool private_model_server_enabled = 30;</code>
+     *
+     * @param value The privateModelServerEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrivateModelServerEnabled(boolean value) {
+
+      privateModelServerEnabled_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, the model server will be isolated from the external internet.
+     * </pre>
+     *
+     * <code>bool private_model_server_enabled = 30;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrivateModelServerEnabled() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      privateModelServerEnabled_ = false;
       onChanged();
       return this;
     }

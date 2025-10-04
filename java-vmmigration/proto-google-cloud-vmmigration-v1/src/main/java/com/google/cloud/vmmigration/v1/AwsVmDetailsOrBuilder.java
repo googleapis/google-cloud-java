@@ -162,7 +162,7 @@ public interface AwsVmDetailsOrBuilder
    *
    *
    * <pre>
-   * The number of cpus the VM has.
+   * The number of CPU cores the VM has.
    * </pre>
    *
    * <code>int32 cpu_count = 6;</code>
@@ -512,4 +512,18 @@ public interface AwsVmDetailsOrBuilder
    * @return The architecture.
    */
   com.google.cloud.vmmigration.v1.AwsVmDetails.VmArchitecture getArchitecture();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of vCPUs the VM has. It is calculated as the
+   * number of CPU cores * threads per CPU the VM has.
+   * </pre>
+   *
+   * <code>int32 vcpu_count = 19;</code>
+   *
+   * @return The vcpuCount.
+   */
+  int getVcpuCount();
 }

@@ -44,6 +44,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     retrievalQueries_ = com.google.protobuf.LazyStringArrayList.emptyList();
     groundingChunks_ = java.util.Collections.emptyList();
     groundingSupports_ = java.util.Collections.emptyList();
+    googleMapsWidgetContextToken_ = "";
   }
 
   @java.lang.Override
@@ -490,6 +491,87 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         : retrievalMetadata_;
   }
 
+  public static final int GOOGLE_MAPS_WIDGET_CONTEXT_TOKEN_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object googleMapsWidgetContextToken_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Resource name of the Google Maps widget context
+   * token to be used with the PlacesContextElement widget to render contextual
+   * data. This is populated only for Google Maps grounding.
+   * </pre>
+   *
+   * <code>
+   * optional string google_maps_widget_context_token = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the googleMapsWidgetContextToken field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleMapsWidgetContextToken() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Resource name of the Google Maps widget context
+   * token to be used with the PlacesContextElement widget to render contextual
+   * data. This is populated only for Google Maps grounding.
+   * </pre>
+   *
+   * <code>
+   * optional string google_maps_widget_context_token = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The googleMapsWidgetContextToken.
+   */
+  @java.lang.Override
+  public java.lang.String getGoogleMapsWidgetContextToken() {
+    java.lang.Object ref = googleMapsWidgetContextToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      googleMapsWidgetContextToken_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Resource name of the Google Maps widget context
+   * token to be used with the PlacesContextElement widget to render contextual
+   * data. This is populated only for Google Maps grounding.
+   * </pre>
+   *
+   * <code>
+   * optional string google_maps_widget_context_token = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for googleMapsWidgetContextToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getGoogleMapsWidgetContextTokenBytes() {
+    java.lang.Object ref = googleMapsWidgetContextToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      googleMapsWidgetContextToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -521,6 +603,9 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(7, getRetrievalMetadata());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, googleMapsWidgetContextToken_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -560,6 +645,11 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getRetrievalMetadata());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              8, googleMapsWidgetContextToken_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -587,6 +677,11 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     if (hasRetrievalMetadata() != other.hasRetrievalMetadata()) return false;
     if (hasRetrievalMetadata()) {
       if (!getRetrievalMetadata().equals(other.getRetrievalMetadata())) return false;
+    }
+    if (hasGoogleMapsWidgetContextToken() != other.hasGoogleMapsWidgetContextToken()) return false;
+    if (hasGoogleMapsWidgetContextToken()) {
+      if (!getGoogleMapsWidgetContextToken().equals(other.getGoogleMapsWidgetContextToken()))
+        return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -622,6 +717,10 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     if (hasRetrievalMetadata()) {
       hash = (37 * hash) + RETRIEVAL_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getRetrievalMetadata().hashCode();
+    }
+    if (hasGoogleMapsWidgetContextToken()) {
+      hash = (37 * hash) + GOOGLE_MAPS_WIDGET_CONTEXT_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getGoogleMapsWidgetContextToken().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -802,6 +901,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         retrievalMetadataBuilder_.dispose();
         retrievalMetadataBuilder_ = null;
       }
+      googleMapsWidgetContextToken_ = "";
       return this;
     }
 
@@ -881,6 +981,10 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
                 ? retrievalMetadata_
                 : retrievalMetadataBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.googleMapsWidgetContextToken_ = googleMapsWidgetContextToken_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1011,6 +1115,11 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       if (other.hasRetrievalMetadata()) {
         mergeRetrievalMetadata(other.getRetrievalMetadata());
       }
+      if (other.hasGoogleMapsWidgetContextToken()) {
+        googleMapsWidgetContextToken_ = other.googleMapsWidgetContextToken_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1093,6 +1202,12 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000020;
                 break;
               } // case 58
+            case 66:
+              {
+                googleMapsWidgetContextToken_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2716,6 +2831,156 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         retrievalMetadata_ = null;
       }
       return retrievalMetadataBuilder_;
+    }
+
+    private java.lang.Object googleMapsWidgetContextToken_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Resource name of the Google Maps widget context
+     * token to be used with the PlacesContextElement widget to render contextual
+     * data. This is populated only for Google Maps grounding.
+     * </pre>
+     *
+     * <code>
+     * optional string google_maps_widget_context_token = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the googleMapsWidgetContextToken field is set.
+     */
+    public boolean hasGoogleMapsWidgetContextToken() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Resource name of the Google Maps widget context
+     * token to be used with the PlacesContextElement widget to render contextual
+     * data. This is populated only for Google Maps grounding.
+     * </pre>
+     *
+     * <code>
+     * optional string google_maps_widget_context_token = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The googleMapsWidgetContextToken.
+     */
+    public java.lang.String getGoogleMapsWidgetContextToken() {
+      java.lang.Object ref = googleMapsWidgetContextToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        googleMapsWidgetContextToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Resource name of the Google Maps widget context
+     * token to be used with the PlacesContextElement widget to render contextual
+     * data. This is populated only for Google Maps grounding.
+     * </pre>
+     *
+     * <code>
+     * optional string google_maps_widget_context_token = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for googleMapsWidgetContextToken.
+     */
+    public com.google.protobuf.ByteString getGoogleMapsWidgetContextTokenBytes() {
+      java.lang.Object ref = googleMapsWidgetContextToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        googleMapsWidgetContextToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Resource name of the Google Maps widget context
+     * token to be used with the PlacesContextElement widget to render contextual
+     * data. This is populated only for Google Maps grounding.
+     * </pre>
+     *
+     * <code>
+     * optional string google_maps_widget_context_token = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The googleMapsWidgetContextToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGoogleMapsWidgetContextToken(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      googleMapsWidgetContextToken_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Resource name of the Google Maps widget context
+     * token to be used with the PlacesContextElement widget to render contextual
+     * data. This is populated only for Google Maps grounding.
+     * </pre>
+     *
+     * <code>
+     * optional string google_maps_widget_context_token = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGoogleMapsWidgetContextToken() {
+      googleMapsWidgetContextToken_ = getDefaultInstance().getGoogleMapsWidgetContextToken();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Resource name of the Google Maps widget context
+     * token to be used with the PlacesContextElement widget to render contextual
+     * data. This is populated only for Google Maps grounding.
+     * </pre>
+     *
+     * <code>
+     * optional string google_maps_widget_context_token = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for googleMapsWidgetContextToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGoogleMapsWidgetContextTokenBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      googleMapsWidgetContextToken_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

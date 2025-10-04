@@ -65,6 +65,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setFullMethodName("google.cloud.talent.v4.JobService/CreateJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<BatchCreateJobsRequest, Operation>
@@ -75,6 +76,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchCreateJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
@@ -83,6 +85,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setFullMethodName("google.cloud.talent.v4.JobService/GetJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateJobRequest, Job> updateJobMethodDescriptor =
@@ -91,6 +94,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setFullMethodName("google.cloud.talent.v4.JobService/UpdateJob")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<BatchUpdateJobsRequest, Operation>
@@ -101,6 +105,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchUpdateJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteJobRequest, Empty> deleteJobMethodDescriptor =
@@ -109,6 +114,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setFullMethodName("google.cloud.talent.v4.JobService/DeleteJob")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<BatchDeleteJobsRequest, Operation>
@@ -119,6 +125,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchDeleteJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
@@ -128,6 +135,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setFullMethodName("google.cloud.talent.v4.JobService/ListJobs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchJobsRequest, SearchJobsResponse>
@@ -137,6 +145,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setFullMethodName("google.cloud.talent.v4.JobService/SearchJobs")
               .setRequestMarshaller(ProtoUtils.marshaller(SearchJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SearchJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchJobsRequest, SearchJobsResponse>
@@ -146,6 +155,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setFullMethodName("google.cloud.talent.v4.JobService/SearchJobsForAlert")
               .setRequestMarshaller(ProtoUtils.marshaller(SearchJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SearchJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateJobRequest, Job> createJobCallable;

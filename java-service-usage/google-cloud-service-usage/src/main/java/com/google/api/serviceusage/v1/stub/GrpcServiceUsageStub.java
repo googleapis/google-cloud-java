@@ -63,6 +63,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EnableServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DisableServiceRequest, Operation>
@@ -73,6 +74,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DisableServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceRequest, Service> getServiceMethodDescriptor =
@@ -81,6 +83,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
           .setFullMethodName("google.api.serviceusage.v1.ServiceUsage/GetService")
           .setRequestMarshaller(ProtoUtils.marshaller(GetServiceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListServicesRequest, ListServicesResponse>
@@ -91,6 +94,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchEnableServicesRequest, Operation>
@@ -101,6 +105,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchEnableServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchGetServicesRequest, BatchGetServicesResponse>
@@ -112,6 +117,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
                   ProtoUtils.marshaller(BatchGetServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchGetServicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<EnableServiceRequest, Operation> enableServiceCallable;

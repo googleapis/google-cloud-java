@@ -53,6 +53,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     facetSpecs_ = java.util.Collections.emptyList();
     relevanceThreshold_ = 0;
     variantRollupKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    experimentId_ = "";
     pageCategories_ = com.google.protobuf.LazyStringArrayList.emptyList();
     searchMode_ = 0;
     entity_ = "";
@@ -10267,9 +10268,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether to pin unexpanded results. If this field is set to true,
-     * unexpanded products are always at the top of the search results, followed
-     * by the expanded results.
+     * Whether to pin unexpanded results. The default value is false. If this
+     * field is set to true, unexpanded products are always at the top of the
+     * search results, followed by the expanded results.
      * </pre>
      *
      * <code>bool pin_unexpanded_results = 2;</code>
@@ -10546,9 +10547,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether to pin unexpanded results. If this field is set to true,
-     * unexpanded products are always at the top of the search results, followed
-     * by the expanded results.
+     * Whether to pin unexpanded results. The default value is false. If this
+     * field is set to true, unexpanded products are always at the top of the
+     * search results, followed by the expanded results.
      * </pre>
      *
      * <code>bool pin_unexpanded_results = 2;</code>
@@ -11065,9 +11066,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether to pin unexpanded results. If this field is set to true,
-       * unexpanded products are always at the top of the search results, followed
-       * by the expanded results.
+       * Whether to pin unexpanded results. The default value is false. If this
+       * field is set to true, unexpanded products are always at the top of the
+       * search results, followed by the expanded results.
        * </pre>
        *
        * <code>bool pin_unexpanded_results = 2;</code>
@@ -11083,9 +11084,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether to pin unexpanded results. If this field is set to true,
-       * unexpanded products are always at the top of the search results, followed
-       * by the expanded results.
+       * Whether to pin unexpanded results. The default value is false. If this
+       * field is set to true, unexpanded products are always at the top of the
+       * search results, followed by the expanded results.
        * </pre>
        *
        * <code>bool pin_unexpanded_results = 2;</code>
@@ -11105,9 +11106,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether to pin unexpanded results. If this field is set to true,
-       * unexpanded products are always at the top of the search results, followed
-       * by the expanded results.
+       * Whether to pin unexpanded results. The default value is false. If this
+       * field is set to true, unexpanded products are always at the top of the
+       * search results, followed by the expanded results.
        * </pre>
        *
        * <code>bool pin_unexpanded_results = 2;</code>
@@ -19738,6 +19739,59 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     return variantRollupKeys_.getByteString(index);
   }
 
+  public static final int EXPERIMENT_ID_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object experimentId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An ID for the experiment group this search belongs to.
+   * </pre>
+   *
+   * <code>string experiment_id = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The experimentId.
+   */
+  @java.lang.Override
+  public java.lang.String getExperimentId() {
+    java.lang.Object ref = experimentId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      experimentId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An ID for the experiment group this search belongs to.
+   * </pre>
+   *
+   * <code>string experiment_id = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for experimentId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getExperimentIdBytes() {
+    java.lang.Object ref = experimentId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      experimentId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGE_CATEGORIES_FIELD_NUMBER = 23;
 
   @SuppressWarnings("serial")
@@ -20625,7 +20679,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * search results.
    * * Populate at most 100 key-value pairs per query.
    * * Only supports string keys and repeated string values.
-   * * Duplcate keys are not allowed within a single query.
+   * * Duplicate keys are not allowed within a single query.
    *
    * Example:
    *    user_attributes: [
@@ -20671,7 +20725,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * search results.
    * * Populate at most 100 key-value pairs per query.
    * * Only supports string keys and repeated string values.
-   * * Duplcate keys are not allowed within a single query.
+   * * Duplicate keys are not allowed within a single query.
    *
    * Example:
    *    user_attributes: [
@@ -20707,7 +20761,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * search results.
    * * Populate at most 100 key-value pairs per query.
    * * Only supports string keys and repeated string values.
-   * * Duplcate keys are not allowed within a single query.
+   * * Duplicate keys are not allowed within a single query.
    *
    * Example:
    *    user_attributes: [
@@ -20750,7 +20804,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * search results.
    * * Populate at most 100 key-value pairs per query.
    * * Only supports string keys and repeated string values.
-   * * Duplcate keys are not allowed within a single query.
+   * * Duplicate keys are not allowed within a single query.
    *
    * Example:
    *    user_attributes: [
@@ -20846,6 +20900,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < variantRollupKeys_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, variantRollupKeys_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(experimentId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, experimentId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(21, getDynamicFacetSpec());
@@ -20950,6 +21007,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       size += dataSize;
       size += 2 * getVariantRollupKeysList().size();
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(experimentId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, experimentId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getDynamicFacetSpec());
@@ -21064,6 +21124,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
     if (relevanceThreshold_ != other.relevanceThreshold_) return false;
     if (!getVariantRollupKeysList().equals(other.getVariantRollupKeysList())) return false;
+    if (!getExperimentId().equals(other.getExperimentId())) return false;
     if (!getPageCategoriesList().equals(other.getPageCategoriesList())) return false;
     if (searchMode_ != other.searchMode_) return false;
     if (hasPersonalizationSpec() != other.hasPersonalizationSpec()) return false;
@@ -21145,6 +21206,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + VARIANT_ROLLUP_KEYS_FIELD_NUMBER;
       hash = (53 * hash) + getVariantRollupKeysList().hashCode();
     }
+    hash = (37 * hash) + EXPERIMENT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getExperimentId().hashCode();
     if (getPageCategoriesCount() > 0) {
       hash = (37 * hash) + PAGE_CATEGORIES_FIELD_NUMBER;
       hash = (53 * hash) + getPageCategoriesList().hashCode();
@@ -21407,6 +21470,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       relevanceThreshold_ = 0;
       variantRollupKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      experimentId_ = "";
       pageCategories_ = com.google.protobuf.LazyStringArrayList.emptyList();
       searchMode_ = 0;
       personalizationSpec_ = null;
@@ -21543,57 +21607,60 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         result.variantRollupKeys_ = variantRollupKeys_;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.experimentId_ = experimentId_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         pageCategories_.makeImmutable();
         result.pageCategories_ = pageCategories_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.searchMode_ = searchMode_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.personalizationSpec_ =
             personalizationSpecBuilder_ == null
                 ? personalizationSpec_
                 : personalizationSpecBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.spellCorrectionSpec_ =
             spellCorrectionSpecBuilder_ == null
                 ? spellCorrectionSpec_
                 : spellCorrectionSpecBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.entity_ = entity_;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.conversationalSearchSpec_ =
             conversationalSearchSpecBuilder_ == null
                 ? conversationalSearchSpec_
                 : conversationalSearchSpecBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.tileNavigationSpec_ =
             tileNavigationSpecBuilder_ == null
                 ? tileNavigationSpec_
                 : tileNavigationSpecBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.languageCode_ = languageCode_;
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.regionCode_ = regionCode_;
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         result.placeId_ = placeId_;
       }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.userAttributes_ =
             internalGetUserAttributes().build(UserAttributesDefaultEntryHolder.defaultEntry);
       }
@@ -21743,10 +21810,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (!other.getExperimentId().isEmpty()) {
+        experimentId_ = other.experimentId_;
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
       if (!other.pageCategories_.isEmpty()) {
         if (pageCategories_.isEmpty()) {
           pageCategories_ = other.pageCategories_;
-          bitField0_ |= 0x00020000;
+          bitField0_ |= 0x00040000;
         } else {
           ensurePageCategoriesIsMutable();
           pageCategories_.addAll(other.pageCategories_);
@@ -21760,13 +21832,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         mergePersonalizationSpec(other.getPersonalizationSpec());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       if (other.hasSpellCorrectionSpec()) {
         mergeSpellCorrectionSpec(other.getSpellCorrectionSpec());
       }
       if (!other.getEntity().isEmpty()) {
         entity_ = other.entity_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (other.hasConversationalSearchSpec()) {
@@ -21777,21 +21849,21 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       if (!other.getRegionCode().isEmpty()) {
         regionCode_ = other.regionCode_;
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       if (!other.getPlaceId().isEmpty()) {
         placeId_ = other.placeId_;
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x10000000;
         onChanged();
       }
       internalGetMutableUserAttributes().mergeFrom(other.internalGetUserAttributes());
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -21918,6 +21990,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 variantRollupKeys_.add(s);
                 break;
               } // case 138
+            case 146:
+              {
+                experimentId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 146
             case 170:
               {
                 input.readMessage(
@@ -21941,14 +22019,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             case 248:
               {
                 searchMode_ = input.readEnum();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 248
             case 258:
               {
                 input.readMessage(
                     getPersonalizationSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 258
             case 274:
@@ -21960,52 +22038,52 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 274
             case 282:
               {
                 input.readMessage(
                     getSpellCorrectionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 282
             case 306:
               {
                 entity_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 306
             case 322:
               {
                 input.readMessage(
                     getConversationalSearchSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 322
             case 330:
               {
                 input.readMessage(
                     getTileNavigationSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 330
             case 346:
               {
                 languageCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 346
             case 354:
               {
                 regionCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 354
             case 370:
               {
                 placeId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 370
             case 378:
@@ -22019,7 +22097,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableUserAttributes()
                     .ensureBuilderMap()
                     .put(userAttributes__.getKey(), userAttributes__.getValue());
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 378
             default:
@@ -25775,6 +25853,117 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object experimentId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An ID for the experiment group this search belongs to.
+     * </pre>
+     *
+     * <code>string experiment_id = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The experimentId.
+     */
+    public java.lang.String getExperimentId() {
+      java.lang.Object ref = experimentId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        experimentId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An ID for the experiment group this search belongs to.
+     * </pre>
+     *
+     * <code>string experiment_id = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for experimentId.
+     */
+    public com.google.protobuf.ByteString getExperimentIdBytes() {
+      java.lang.Object ref = experimentId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        experimentId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An ID for the experiment group this search belongs to.
+     * </pre>
+     *
+     * <code>string experiment_id = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The experimentId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExperimentId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      experimentId_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An ID for the experiment group this search belongs to.
+     * </pre>
+     *
+     * <code>string experiment_id = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExperimentId() {
+      experimentId_ = getDefaultInstance().getExperimentId();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An ID for the experiment group this search belongs to.
+     * </pre>
+     *
+     * <code>string experiment_id = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for experimentId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExperimentIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      experimentId_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList pageCategories_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -25782,7 +25971,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (!pageCategories_.isModifiable()) {
         pageCategories_ = new com.google.protobuf.LazyStringArrayList(pageCategories_);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
     }
 
     /**
@@ -25922,7 +26111,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePageCategoriesIsMutable();
       pageCategories_.set(index, value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -25956,7 +26145,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePageCategoriesIsMutable();
       pageCategories_.add(value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -25987,7 +26176,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllPageCategories(java.lang.Iterable<java.lang.String> values) {
       ensurePageCategoriesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pageCategories_);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -26016,7 +26205,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPageCategories() {
       pageCategories_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       ;
       onChanged();
       return this;
@@ -26052,7 +26241,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensurePageCategoriesIsMutable();
       pageCategories_.add(value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -26091,7 +26280,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setSearchModeValue(int value) {
       searchMode_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -26134,7 +26323,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       searchMode_ = value.getNumber();
       onChanged();
       return this;
@@ -26153,7 +26342,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSearchMode() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       searchMode_ = 0;
       onChanged();
       return this;
@@ -26189,7 +26378,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the personalizationSpec field is set.
      */
     public boolean hasPersonalizationSpec() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -26255,7 +26444,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         personalizationSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -26287,7 +26476,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         personalizationSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -26315,7 +26504,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergePersonalizationSpec(
         com.google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec value) {
       if (personalizationSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && personalizationSpec_ != null
             && personalizationSpec_
                 != com.google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec
@@ -26328,7 +26517,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         personalizationSpecBuilder_.mergeFrom(value);
       }
       if (personalizationSpec_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -26355,7 +26544,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPersonalizationSpec() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       personalizationSpec_ = null;
       if (personalizationSpecBuilder_ != null) {
         personalizationSpecBuilder_.dispose();
@@ -26387,7 +26576,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Builder
         getPersonalizationSpecBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return getPersonalizationSpecFieldBuilder().getBuilder();
     }
@@ -26477,7 +26666,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return labels_;
     }
@@ -26631,7 +26820,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -26672,7 +26861,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -26709,7 +26898,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return this;
     }
 
@@ -26740,7 +26929,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return this;
     }
 
@@ -26766,7 +26955,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the spellCorrectionSpec field is set.
      */
     public boolean hasSpellCorrectionSpec() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
 
     /**
@@ -26816,7 +27005,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         spellCorrectionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -26840,7 +27029,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         spellCorrectionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -26860,7 +27049,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSpellCorrectionSpec(
         com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec value) {
       if (spellCorrectionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && spellCorrectionSpec_ != null
             && spellCorrectionSpec_
                 != com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec
@@ -26873,7 +27062,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         spellCorrectionSpecBuilder_.mergeFrom(value);
       }
       if (spellCorrectionSpec_ != null) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       return this;
@@ -26892,7 +27081,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSpellCorrectionSpec() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       spellCorrectionSpec_ = null;
       if (spellCorrectionSpecBuilder_ != null) {
         spellCorrectionSpecBuilder_.dispose();
@@ -26916,7 +27105,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Builder
         getSpellCorrectionSpecBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return getSpellCorrectionSpecFieldBuilder().getBuilder();
     }
@@ -27053,7 +27242,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       entity_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -27076,7 +27265,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEntity() {
       entity_ = getDefaultInstance().getEntity();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -27104,7 +27293,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       entity_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -27132,7 +27321,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the conversationalSearchSpec field is set.
      */
     public boolean hasConversationalSearchSpec() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
 
     /**
@@ -27183,7 +27372,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         conversationalSearchSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -27208,7 +27397,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         conversationalSearchSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -27228,7 +27417,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeConversationalSearchSpec(
         com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec value) {
       if (conversationalSearchSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00800000) != 0)
+        if (((bitField0_ & 0x01000000) != 0)
             && conversationalSearchSpec_ != null
             && conversationalSearchSpec_
                 != com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec
@@ -27241,7 +27430,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         conversationalSearchSpecBuilder_.mergeFrom(value);
       }
       if (conversationalSearchSpec_ != null) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       return this;
@@ -27260,7 +27449,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearConversationalSearchSpec() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       conversationalSearchSpec_ = null;
       if (conversationalSearchSpecBuilder_ != null) {
         conversationalSearchSpecBuilder_.dispose();
@@ -27284,7 +27473,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.retail.v2alpha.SearchRequest.ConversationalSearchSpec.Builder
         getConversationalSearchSpecBuilder() {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return getConversationalSearchSpecFieldBuilder().getBuilder();
     }
@@ -27363,7 +27552,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tileNavigationSpec field is set.
      */
     public boolean hasTileNavigationSpec() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
 
     /**
@@ -27411,7 +27600,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         tileNavigationSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -27434,7 +27623,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         tileNavigationSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -27453,7 +27642,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeTileNavigationSpec(
         com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec value) {
       if (tileNavigationSpecBuilder_ == null) {
-        if (((bitField0_ & 0x01000000) != 0)
+        if (((bitField0_ & 0x02000000) != 0)
             && tileNavigationSpec_ != null
             && tileNavigationSpec_
                 != com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec
@@ -27466,7 +27655,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         tileNavigationSpecBuilder_.mergeFrom(value);
       }
       if (tileNavigationSpec_ != null) {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       return this;
@@ -27484,7 +27673,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTileNavigationSpec() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       tileNavigationSpec_ = null;
       if (tileNavigationSpecBuilder_ != null) {
         tileNavigationSpecBuilder_.dispose();
@@ -27507,7 +27696,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.retail.v2alpha.SearchRequest.TileNavigationSpec.Builder
         getTileNavigationSpecBuilder() {
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return getTileNavigationSpecFieldBuilder().getBuilder();
     }
@@ -27639,7 +27828,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       languageCode_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -27661,7 +27850,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLanguageCode() {
       languageCode_ = getDefaultInstance().getLanguageCode();
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       onChanged();
       return this;
     }
@@ -27688,7 +27877,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       languageCode_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -27770,7 +27959,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       regionCode_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -27792,7 +27981,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRegionCode() {
       regionCode_ = getDefaultInstance().getRegionCode();
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -27819,7 +28008,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       regionCode_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -27901,7 +28090,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       placeId_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -27923,7 +28112,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPlaceId() {
       placeId_ = getDefaultInstance().getPlaceId();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       onChanged();
       return this;
     }
@@ -27950,7 +28139,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       placeId_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -28009,7 +28198,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (userAttributes_ == null) {
         userAttributes_ = new com.google.protobuf.MapFieldBuilder<>(userAttributesConverter);
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return userAttributes_;
     }
@@ -28026,7 +28215,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * search results.
      * * Populate at most 100 key-value pairs per query.
      * * Only supports string keys and repeated string values.
-     * * Duplcate keys are not allowed within a single query.
+     * * Duplicate keys are not allowed within a single query.
      *
      * Example:
      *    user_attributes: [
@@ -28072,7 +28261,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * search results.
      * * Populate at most 100 key-value pairs per query.
      * * Only supports string keys and repeated string values.
-     * * Duplcate keys are not allowed within a single query.
+     * * Duplicate keys are not allowed within a single query.
      *
      * Example:
      *    user_attributes: [
@@ -28108,7 +28297,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * search results.
      * * Populate at most 100 key-value pairs per query.
      * * Only supports string keys and repeated string values.
-     * * Duplcate keys are not allowed within a single query.
+     * * Duplicate keys are not allowed within a single query.
      *
      * Example:
      *    user_attributes: [
@@ -28151,7 +28340,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * search results.
      * * Populate at most 100 key-value pairs per query.
      * * Only supports string keys and repeated string values.
-     * * Duplcate keys are not allowed within a single query.
+     * * Duplicate keys are not allowed within a single query.
      *
      * Example:
      *    user_attributes: [
@@ -28188,7 +28377,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearUserAttributes() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       internalGetMutableUserAttributes().clear();
       return this;
     }
@@ -28201,7 +28390,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * search results.
      * * Populate at most 100 key-value pairs per query.
      * * Only supports string keys and repeated string values.
-     * * Duplcate keys are not allowed within a single query.
+     * * Duplicate keys are not allowed within a single query.
      *
      * Example:
      *    user_attributes: [
@@ -28235,7 +28424,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.StringList>
         getMutableUserAttributes() {
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       return internalGetMutableUserAttributes().ensureMessageMap();
     }
 
@@ -28247,7 +28436,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * search results.
      * * Populate at most 100 key-value pairs per query.
      * * Only supports string keys and repeated string values.
-     * * Duplcate keys are not allowed within a single query.
+     * * Duplicate keys are not allowed within a single query.
      *
      * Example:
      *    user_attributes: [
@@ -28278,7 +28467,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableUserAttributes().ensureBuilderMap().put(key, value);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       return this;
     }
 
@@ -28290,7 +28479,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * search results.
      * * Populate at most 100 key-value pairs per query.
      * * Only supports string keys and repeated string values.
-     * * Duplcate keys are not allowed within a single query.
+     * * Duplicate keys are not allowed within a single query.
      *
      * Example:
      *    user_attributes: [
@@ -28321,7 +28510,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableUserAttributes().ensureBuilderMap().putAll(values);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       return this;
     }
 
@@ -28333,7 +28522,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * search results.
      * * Populate at most 100 key-value pairs per query.
      * * Only supports string keys and repeated string values.
-     * * Duplcate keys are not allowed within a single query.
+     * * Duplicate keys are not allowed within a single query.
      *
      * Example:
      *    user_attributes: [

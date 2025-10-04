@@ -95,6 +95,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                   ProtoUtils.marshaller(ListServiceConnectionMapsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServiceConnectionMapsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceConnectionMapRequest, ServiceConnectionMap>
@@ -107,6 +108,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                   ProtoUtils.marshaller(GetServiceConnectionMapRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ServiceConnectionMap.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateServiceConnectionMapRequest, Operation>
@@ -118,6 +120,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceConnectionMapRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateServiceConnectionMapRequest, Operation>
@@ -129,6 +132,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServiceConnectionMapRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceConnectionMapRequest, Operation>
@@ -140,6 +144,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceConnectionMapRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -155,6 +160,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                   ProtoUtils.marshaller(ListServiceConnectionPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServiceConnectionPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceConnectionPolicyRequest, ServiceConnectionPolicy>
@@ -167,6 +173,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                   ProtoUtils.marshaller(GetServiceConnectionPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ServiceConnectionPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateServiceConnectionPolicyRequest, Operation>
@@ -178,6 +185,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceConnectionPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateServiceConnectionPolicyRequest, Operation>
@@ -189,6 +197,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServiceConnectionPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceConnectionPolicyRequest, Operation>
@@ -200,6 +209,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceConnectionPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListServiceClassesRequest, ListServiceClassesResponse>
@@ -212,6 +222,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                   ProtoUtils.marshaller(ListServiceClassesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServiceClassesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceClassRequest, ServiceClass>
@@ -223,6 +234,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServiceClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServiceClass.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateServiceClassRequest, Operation>
@@ -234,6 +246,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServiceClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceClassRequest, Operation>
@@ -245,6 +258,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceConnectionTokenRequest, ServiceConnectionToken>
@@ -257,6 +271,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                   ProtoUtils.marshaller(GetServiceConnectionTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ServiceConnectionToken.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -271,6 +286,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                   ProtoUtils.marshaller(ListServiceConnectionTokensRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServiceConnectionTokensResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateServiceConnectionTokenRequest, Operation>
@@ -282,6 +298,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceConnectionTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceConnectionTokenRequest, Operation>
@@ -293,6 +310,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceConnectionTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -304,6 +322,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -312,6 +331,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -320,6 +340,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -328,6 +349,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -339,6 +361,7 @@ public class GrpcCrossNetworkAutomationServiceStub extends CrossNetworkAutomatio
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListServiceConnectionMapsRequest, ListServiceConnectionMapsResponse>

@@ -67,6 +67,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAttachedClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAttachedClusterRequest, Operation>
@@ -78,6 +79,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAttachedClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportAttachedClusterRequest, Operation>
@@ -89,6 +91,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportAttachedClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAttachedClusterRequest, AttachedCluster>
@@ -100,6 +103,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAttachedClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AttachedCluster.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAttachedClustersRequest, ListAttachedClustersResponse>
@@ -112,6 +116,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                   ProtoUtils.marshaller(ListAttachedClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAttachedClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAttachedClusterRequest, Operation>
@@ -123,6 +128,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAttachedClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAttachedServerConfigRequest, AttachedServerConfig>
@@ -135,6 +141,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                   ProtoUtils.marshaller(GetAttachedServerConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AttachedServerConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -154,6 +161,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       GenerateAttachedClusterInstallManifestResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -171,6 +179,7 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       GenerateAttachedClusterAgentTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateAttachedClusterRequest, Operation>

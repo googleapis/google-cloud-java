@@ -3574,6 +3574,1948 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
     }
   }
 
+  public interface DirectMemoriesSourceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The direct memories to upload to Memory Bank. At most 5 direct
+     * memories are allowed per request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    java.util.List<
+            com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                .DirectMemory>
+        getDirectMemoriesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The direct memories to upload to Memory Bank. At most 5 direct
+     * memories are allowed per request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory
+        getDirectMemories(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The direct memories to upload to Memory Bank. At most 5 direct
+     * memories are allowed per request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    int getDirectMemoriesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The direct memories to upload to Memory Bank. At most 5 direct
+     * memories are allowed per request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                    .DirectMemoryOrBuilder>
+        getDirectMemoriesOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The direct memories to upload to Memory Bank. At most 5 direct
+     * memories are allowed per request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+            .DirectMemoryOrBuilder
+        getDirectMemoriesOrBuilder(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a direct source of memories that should be uploaded to Memory Bank
+   * with consolidation.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource}
+   */
+  public static final class DirectMemoriesSource extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource)
+      DirectMemoriesSourceOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use DirectMemoriesSource.newBuilder() to construct.
+    private DirectMemoriesSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DirectMemoriesSource() {
+      directMemories_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DirectMemoriesSource();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.MemoryBankServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.MemoryBankServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .class,
+              com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .Builder.class);
+    }
+
+    public interface DirectMemoryOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The fact to consolidate with existing memories.
+       * </pre>
+       *
+       * <code>string fact = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The fact.
+       */
+      java.lang.String getFact();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The fact to consolidate with existing memories.
+       * </pre>
+       *
+       * <code>string fact = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for fact.
+       */
+      com.google.protobuf.ByteString getFactBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A direct memory to upload to Memory Bank.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory}
+     */
+    public static final class DirectMemory extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory)
+        DirectMemoryOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use DirectMemory.newBuilder() to construct.
+      private DirectMemory(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private DirectMemory() {
+        fact_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new DirectMemory();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.MemoryBankServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_DirectMemory_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.MemoryBankServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_DirectMemory_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                    .DirectMemory.class,
+                com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                    .DirectMemory.Builder.class);
+      }
+
+      public static final int FACT_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object fact_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The fact to consolidate with existing memories.
+       * </pre>
+       *
+       * <code>string fact = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The fact.
+       */
+      @java.lang.Override
+      public java.lang.String getFact() {
+        java.lang.Object ref = fact_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fact_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The fact to consolidate with existing memories.
+       * </pre>
+       *
+       * <code>string fact = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for fact.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getFactBytes() {
+        java.lang.Object ref = fact_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          fact_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fact_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fact_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fact_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fact_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                .DirectMemory)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                .DirectMemory
+            other =
+                (com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                        .DirectMemory)
+                    obj;
+
+        if (!getFact().equals(other.getFact())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + FACT_FIELD_NUMBER;
+        hash = (53 * hash) + getFact().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A direct memory to upload to Memory Bank.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory)
+          com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemoryOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.MemoryBankServiceProto
+              .internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_DirectMemory_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.MemoryBankServiceProto
+              .internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_DirectMemory_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                      .DirectMemory.class,
+                  com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                      .DirectMemory.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          fact_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.MemoryBankServiceProto
+              .internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_DirectMemory_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                .DirectMemory
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                .DirectMemory
+            build() {
+          com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                .DirectMemory
+            buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory
+              result =
+                  new com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest
+                      .DirectMemoriesSource.DirectMemory(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                    .DirectMemory
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.fact_ = fact_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                        .DirectMemory)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                    .DirectMemory
+                other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory.getDefaultInstance()) return this;
+          if (!other.getFact().isEmpty()) {
+            fact_ = other.fact_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    fact_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object fact_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The fact to consolidate with existing memories.
+         * </pre>
+         *
+         * <code>string fact = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The fact.
+         */
+        public java.lang.String getFact() {
+          java.lang.Object ref = fact_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            fact_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The fact to consolidate with existing memories.
+         * </pre>
+         *
+         * <code>string fact = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for fact.
+         */
+        public com.google.protobuf.ByteString getFactBytes() {
+          java.lang.Object ref = fact_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            fact_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The fact to consolidate with existing memories.
+         * </pre>
+         *
+         * <code>string fact = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The fact to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFact(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          fact_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The fact to consolidate with existing memories.
+         * </pre>
+         *
+         * <code>string fact = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearFact() {
+          fact_ = getDefaultInstance().getFact();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The fact to consolidate with existing memories.
+         * </pre>
+         *
+         * <code>string fact = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for fact to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFactBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          fact_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory)
+      private static final com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest
+              .DirectMemoriesSource.DirectMemory
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                .DirectMemory();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<DirectMemory> PARSER =
+          new com.google.protobuf.AbstractParser<DirectMemory>() {
+            @java.lang.Override
+            public DirectMemory parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<DirectMemory> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DirectMemory> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int DIRECT_MEMORIES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                .DirectMemory>
+        directMemories_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The direct memories to upload to Memory Bank. At most 5 direct
+     * memories are allowed per request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                .DirectMemory>
+        getDirectMemoriesList() {
+      return directMemories_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The direct memories to upload to Memory Bank. At most 5 direct
+     * memories are allowed per request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                    .DirectMemoryOrBuilder>
+        getDirectMemoriesOrBuilderList() {
+      return directMemories_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The direct memories to upload to Memory Bank. At most 5 direct
+     * memories are allowed per request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public int getDirectMemoriesCount() {
+      return directMemories_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The direct memories to upload to Memory Bank. At most 5 direct
+     * memories are allowed per request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+            .DirectMemory
+        getDirectMemories(int index) {
+      return directMemories_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The direct memories to upload to Memory Bank. At most 5 direct
+     * memories are allowed per request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+            .DirectMemoryOrBuilder
+        getDirectMemoriesOrBuilder(int index) {
+      return directMemories_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < directMemories_.size(); i++) {
+        output.writeMessage(1, directMemories_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < directMemories_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, directMemories_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource other =
+          (com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource) obj;
+
+      if (!getDirectMemoriesList().equals(other.getDirectMemoriesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getDirectMemoriesCount() > 0) {
+        hash = (37 * hash) + DIRECT_MEMORIES_FIELD_NUMBER;
+        hash = (53 * hash) + getDirectMemoriesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a direct source of memories that should be uploaded to Memory Bank
+     * with consolidation.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource)
+        com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.MemoryBankServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.MemoryBankServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                    .class,
+                com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (directMemoriesBuilder_ == null) {
+          directMemories_ = java.util.Collections.emptyList();
+        } else {
+          directMemories_ = null;
+          directMemoriesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.MemoryBankServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GenerateMemoriesRequest_DirectMemoriesSource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+          build() {
+        com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource result =
+            new com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource(
+                this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource result) {
+        if (directMemoriesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            directMemories_ = java.util.Collections.unmodifiableList(directMemories_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.directMemories_ = directMemories_;
+        } else {
+          result.directMemories_ = directMemoriesBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                .getDefaultInstance()) return this;
+        if (directMemoriesBuilder_ == null) {
+          if (!other.directMemories_.isEmpty()) {
+            if (directMemories_.isEmpty()) {
+              directMemories_ = other.directMemories_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureDirectMemoriesIsMutable();
+              directMemories_.addAll(other.directMemories_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.directMemories_.isEmpty()) {
+            if (directMemoriesBuilder_.isEmpty()) {
+              directMemoriesBuilder_.dispose();
+              directMemoriesBuilder_ = null;
+              directMemories_ = other.directMemories_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              directMemoriesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getDirectMemoriesFieldBuilder()
+                      : null;
+            } else {
+              directMemoriesBuilder_.addAllMessages(other.directMemories_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                          .DirectMemory
+                      m =
+                          input.readMessage(
+                              com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest
+                                  .DirectMemoriesSource.DirectMemory.parser(),
+                              extensionRegistry);
+                  if (directMemoriesBuilder_ == null) {
+                    ensureDirectMemoriesIsMutable();
+                    directMemories_.add(m);
+                  } else {
+                    directMemoriesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<
+              com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory>
+          directMemories_ = java.util.Collections.emptyList();
+
+      private void ensureDirectMemoriesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          directMemories_ =
+              new java.util.ArrayList<
+                  com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                      .DirectMemory>(directMemories_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory,
+              com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory.Builder,
+              com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemoryOrBuilder>
+          directMemoriesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory>
+          getDirectMemoriesList() {
+        if (directMemoriesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(directMemories_);
+        } else {
+          return directMemoriesBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public int getDirectMemoriesCount() {
+        if (directMemoriesBuilder_ == null) {
+          return directMemories_.size();
+        } else {
+          return directMemoriesBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory
+          getDirectMemories(int index) {
+        if (directMemoriesBuilder_ == null) {
+          return directMemories_.get(index);
+        } else {
+          return directMemoriesBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setDirectMemories(
+          int index,
+          com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory
+              value) {
+        if (directMemoriesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDirectMemoriesIsMutable();
+          directMemories_.set(index, value);
+          onChanged();
+        } else {
+          directMemoriesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setDirectMemories(
+          int index,
+          com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory.Builder
+              builderForValue) {
+        if (directMemoriesBuilder_ == null) {
+          ensureDirectMemoriesIsMutable();
+          directMemories_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          directMemoriesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addDirectMemories(
+          com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory
+              value) {
+        if (directMemoriesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDirectMemoriesIsMutable();
+          directMemories_.add(value);
+          onChanged();
+        } else {
+          directMemoriesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addDirectMemories(
+          int index,
+          com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory
+              value) {
+        if (directMemoriesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDirectMemoriesIsMutable();
+          directMemories_.add(index, value);
+          onChanged();
+        } else {
+          directMemoriesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addDirectMemories(
+          com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory.Builder
+              builderForValue) {
+        if (directMemoriesBuilder_ == null) {
+          ensureDirectMemoriesIsMutable();
+          directMemories_.add(builderForValue.build());
+          onChanged();
+        } else {
+          directMemoriesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addDirectMemories(
+          int index,
+          com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory.Builder
+              builderForValue) {
+        if (directMemoriesBuilder_ == null) {
+          ensureDirectMemoriesIsMutable();
+          directMemories_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          directMemoriesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addAllDirectMemories(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest
+                          .DirectMemoriesSource.DirectMemory>
+              values) {
+        if (directMemoriesBuilder_ == null) {
+          ensureDirectMemoriesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, directMemories_);
+          onChanged();
+        } else {
+          directMemoriesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearDirectMemories() {
+        if (directMemoriesBuilder_ == null) {
+          directMemories_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          directMemoriesBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder removeDirectMemories(int index) {
+        if (directMemoriesBuilder_ == null) {
+          ensureDirectMemoriesIsMutable();
+          directMemories_.remove(index);
+          onChanged();
+        } else {
+          directMemoriesBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory.Builder
+          getDirectMemoriesBuilder(int index) {
+        return getDirectMemoriesFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemoryOrBuilder
+          getDirectMemoriesOrBuilder(int index) {
+        if (directMemoriesBuilder_ == null) {
+          return directMemories_.get(index);
+        } else {
+          return directMemoriesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                      .DirectMemoryOrBuilder>
+          getDirectMemoriesOrBuilderList() {
+        if (directMemoriesBuilder_ != null) {
+          return directMemoriesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(directMemories_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory.Builder
+          addDirectMemoriesBuilder() {
+        return getDirectMemoriesFieldBuilder()
+            .addBuilder(
+                com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                    .DirectMemory.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+              .DirectMemory.Builder
+          addDirectMemoriesBuilder(int index) {
+        return getDirectMemoriesFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                    .DirectMemory.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The direct memories to upload to Memory Bank. At most 5 direct
+       * memories are allowed per request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.DirectMemory direct_memories = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory.Builder>
+          getDirectMemoriesBuilderList() {
+        return getDirectMemoriesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory,
+              com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemory.Builder,
+              com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .DirectMemoryOrBuilder>
+          getDirectMemoriesFieldBuilder() {
+        if (directMemoriesBuilder_ == null) {
+          directMemoriesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                      .DirectMemory,
+                  com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                      .DirectMemory.Builder,
+                  com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                      .DirectMemoryOrBuilder>(
+                  directMemories_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          directMemories_ = null;
+        }
+        return directMemoriesBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource)
+    private static final com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest
+            .DirectMemoriesSource
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DirectMemoriesSource> PARSER =
+        new com.google.protobuf.AbstractParser<DirectMemoriesSource>() {
+          @java.lang.Override
+          public DirectMemoriesSource parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DirectMemoriesSource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DirectMemoriesSource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int sourceCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -3585,6 +5527,7 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     VERTEX_SESSION_SOURCE(2),
     DIRECT_CONTENTS_SOURCE(3),
+    DIRECT_MEMORIES_SOURCE(9),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -3608,6 +5551,8 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
           return VERTEX_SESSION_SOURCE;
         case 3:
           return DIRECT_CONTENTS_SOURCE;
+        case 9:
+          return DIRECT_MEMORIES_SOURCE;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -3759,6 +5704,78 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
           source_;
     }
     return com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectContentsSource
+        .getDefaultInstance();
+  }
+
+  public static final int DIRECT_MEMORIES_SOURCE_FIELD_NUMBER = 9;
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a direct source of memories that should be uploaded to Memory
+   * Bank. This is similar to `CreateMemory`, but it allows for consolidation
+   * between these new memories and existing memories for the same scope.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource direct_memories_source = 9;
+   * </code>
+   *
+   * @return Whether the directMemoriesSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasDirectMemoriesSource() {
+    return sourceCase_ == 9;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a direct source of memories that should be uploaded to Memory
+   * Bank. This is similar to `CreateMemory`, but it allows for consolidation
+   * between these new memories and existing memories for the same scope.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource direct_memories_source = 9;
+   * </code>
+   *
+   * @return The directMemoriesSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+      getDirectMemoriesSource() {
+    if (sourceCase_ == 9) {
+      return (com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource)
+          source_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a direct source of memories that should be uploaded to Memory
+   * Bank. This is similar to `CreateMemory`, but it allows for consolidation
+   * between these new memories and existing memories for the same scope.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource direct_memories_source = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSourceOrBuilder
+      getDirectMemoriesSourceOrBuilder() {
+    if (sourceCase_ == 9) {
+      return (com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource)
+          source_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
         .getDefaultInstance();
   }
 
@@ -4002,6 +6019,12 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetScope(), ScopeDefaultEntryHolder.defaultEntry, 8);
+    if (sourceCase_ == 9) {
+      output.writeMessage(
+          9,
+          (com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource)
+              source_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4041,6 +6064,13 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, scope__);
     }
+    if (sourceCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9,
+              (com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource)
+                  source_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4067,6 +6097,9 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
         break;
       case 3:
         if (!getDirectContentsSource().equals(other.getDirectContentsSource())) return false;
+        break;
+      case 9:
+        if (!getDirectMemoriesSource().equals(other.getDirectMemoriesSource())) return false;
         break;
       case 0:
       default:
@@ -4098,6 +6131,10 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
       case 3:
         hash = (37 * hash) + DIRECT_CONTENTS_SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getDirectContentsSource().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + DIRECT_MEMORIES_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getDirectMemoriesSource().hashCode();
         break;
       case 0:
       default:
@@ -4272,6 +6309,9 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
       if (directContentsSourceBuilder_ != null) {
         directContentsSourceBuilder_.clear();
       }
+      if (directMemoriesSourceBuilder_ != null) {
+        directMemoriesSourceBuilder_.clear();
+      }
       parent_ = "";
       disableConsolidation_ = false;
       internalGetMutableScope().clear();
@@ -4314,13 +6354,13 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.parent_ = parent_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.disableConsolidation_ = disableConsolidation_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.scope_ = internalGetScope();
         result.scope_.makeImmutable();
       }
@@ -4335,6 +6375,9 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
       }
       if (sourceCase_ == 3 && directContentsSourceBuilder_ != null) {
         result.source_ = directContentsSourceBuilder_.build();
+      }
+      if (sourceCase_ == 9 && directMemoriesSourceBuilder_ != null) {
+        result.source_ = directMemoriesSourceBuilder_.build();
       }
     }
 
@@ -4386,14 +6429,14 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getDisableConsolidation() != false) {
         setDisableConsolidation(other.getDisableConsolidation());
       }
       internalGetMutableScope().mergeFrom(other.internalGetScope());
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       switch (other.getSourceCase()) {
         case VERTEX_SESSION_SOURCE:
           {
@@ -4403,6 +6446,11 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
         case DIRECT_CONTENTS_SOURCE:
           {
             mergeDirectContentsSource(other.getDirectContentsSource());
+            break;
+          }
+        case DIRECT_MEMORIES_SOURCE:
+          {
+            mergeDirectMemoriesSource(other.getDirectMemoriesSource());
             break;
           }
         case SOURCE_NOT_SET:
@@ -4439,7 +6487,7 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
@@ -4459,7 +6507,7 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
             case 32:
               {
                 disableConsolidation_ = input.readBool();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 66:
@@ -4468,9 +6516,16 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
                     input.readMessage(
                         ScopeDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableScope().getMutableMap().put(scope__.getKey(), scope__.getValue());
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getDirectMemoriesSourceFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 9;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5042,6 +7097,285 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
       return directContentsSourceBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource,
+            com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                .Builder,
+            com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest
+                .DirectMemoriesSourceOrBuilder>
+        directMemoriesSourceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a direct source of memories that should be uploaded to Memory
+     * Bank. This is similar to `CreateMemory`, but it allows for consolidation
+     * between these new memories and existing memories for the same scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource direct_memories_source = 9;
+     * </code>
+     *
+     * @return Whether the directMemoriesSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasDirectMemoriesSource() {
+      return sourceCase_ == 9;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a direct source of memories that should be uploaded to Memory
+     * Bank. This is similar to `CreateMemory`, but it allows for consolidation
+     * between these new memories and existing memories for the same scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource direct_memories_source = 9;
+     * </code>
+     *
+     * @return The directMemoriesSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+        getDirectMemoriesSource() {
+      if (directMemoriesSourceBuilder_ == null) {
+        if (sourceCase_ == 9) {
+          return (com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource)
+              source_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+            .getDefaultInstance();
+      } else {
+        if (sourceCase_ == 9) {
+          return directMemoriesSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a direct source of memories that should be uploaded to Memory
+     * Bank. This is similar to `CreateMemory`, but it allows for consolidation
+     * between these new memories and existing memories for the same scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource direct_memories_source = 9;
+     * </code>
+     */
+    public Builder setDirectMemoriesSource(
+        com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource value) {
+      if (directMemoriesSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        directMemoriesSourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a direct source of memories that should be uploaded to Memory
+     * Bank. This is similar to `CreateMemory`, but it allows for consolidation
+     * between these new memories and existing memories for the same scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource direct_memories_source = 9;
+     * </code>
+     */
+    public Builder setDirectMemoriesSource(
+        com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.Builder
+            builderForValue) {
+      if (directMemoriesSourceBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        directMemoriesSourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a direct source of memories that should be uploaded to Memory
+     * Bank. This is similar to `CreateMemory`, but it allows for consolidation
+     * between these new memories and existing memories for the same scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource direct_memories_source = 9;
+     * </code>
+     */
+    public Builder mergeDirectMemoriesSource(
+        com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource value) {
+      if (directMemoriesSourceBuilder_ == null) {
+        if (sourceCase_ == 9
+            && source_
+                != com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                    .getDefaultInstance()) {
+          source_ =
+              com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest
+                              .DirectMemoriesSource)
+                          source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 9) {
+          directMemoriesSourceBuilder_.mergeFrom(value);
+        } else {
+          directMemoriesSourceBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a direct source of memories that should be uploaded to Memory
+     * Bank. This is similar to `CreateMemory`, but it allows for consolidation
+     * between these new memories and existing memories for the same scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource direct_memories_source = 9;
+     * </code>
+     */
+    public Builder clearDirectMemoriesSource() {
+      if (directMemoriesSourceBuilder_ == null) {
+        if (sourceCase_ == 9) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 9) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        directMemoriesSourceBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a direct source of memories that should be uploaded to Memory
+     * Bank. This is similar to `CreateMemory`, but it allows for consolidation
+     * between these new memories and existing memories for the same scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource direct_memories_source = 9;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource.Builder
+        getDirectMemoriesSourceBuilder() {
+      return getDirectMemoriesSourceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a direct source of memories that should be uploaded to Memory
+     * Bank. This is similar to `CreateMemory`, but it allows for consolidation
+     * between these new memories and existing memories for the same scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource direct_memories_source = 9;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSourceOrBuilder
+        getDirectMemoriesSourceOrBuilder() {
+      if ((sourceCase_ == 9) && (directMemoriesSourceBuilder_ != null)) {
+        return directMemoriesSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 9) {
+          return (com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource)
+              source_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a direct source of memories that should be uploaded to Memory
+     * Bank. This is similar to `CreateMemory`, but it allows for consolidation
+     * between these new memories and existing memories for the same scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource direct_memories_source = 9;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource,
+            com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                .Builder,
+            com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest
+                .DirectMemoriesSourceOrBuilder>
+        getDirectMemoriesSourceFieldBuilder() {
+      if (directMemoriesSourceBuilder_ == null) {
+        if (!(sourceCase_ == 9)) {
+          source_ =
+              com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                  .getDefaultInstance();
+        }
+        directMemoriesSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource,
+                com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource
+                    .Builder,
+                com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest
+                    .DirectMemoriesSourceOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest.DirectMemoriesSource)
+                    source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 9;
+      onChanged();
+      return directMemoriesSourceBuilder_;
+    }
+
     private java.lang.Object parent_ = "";
 
     /**
@@ -5119,7 +7453,7 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       parent_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5141,7 +7475,7 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
      */
     public Builder clearParent() {
       parent_ = getDefaultInstance().getParent();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -5168,7 +7502,7 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
       }
       checkByteStringIsUtf8(value);
       parent_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5212,7 +7546,7 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
     public Builder setDisableConsolidation(boolean value) {
 
       disableConsolidation_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5232,7 +7566,7 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearDisableConsolidation() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       disableConsolidation_ = false;
       onChanged();
       return this;
@@ -5255,7 +7589,7 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
       if (!scope_.isMutable()) {
         scope_ = scope_.copy();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return scope_;
     }
@@ -5361,7 +7695,7 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
     }
 
     public Builder clearScope() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableScope().getMutableMap().clear();
       return this;
     }
@@ -5390,7 +7724,7 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableScope() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return internalGetMutableScope().getMutableMap();
     }
 
@@ -5415,7 +7749,7 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
         throw new NullPointerException("map value");
       }
       internalGetMutableScope().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -5434,7 +7768,7 @@ public final class GenerateMemoriesRequest extends com.google.protobuf.Generated
      */
     public Builder putAllScope(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableScope().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return this;
     }
 

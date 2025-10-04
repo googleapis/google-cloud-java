@@ -58,6 +58,7 @@ public class GrpcStreamingServiceStub extends StreamingServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(SendPacketsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SendPacketsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReceivePacketsRequest, ReceivePacketsResponse>
@@ -69,6 +70,7 @@ public class GrpcStreamingServiceStub extends StreamingServiceStub {
                   ProtoUtils.marshaller(ReceivePacketsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReceivePacketsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReceiveEventsRequest, ReceiveEventsResponse>
@@ -80,6 +82,7 @@ public class GrpcStreamingServiceStub extends StreamingServiceStub {
                   ProtoUtils.marshaller(ReceiveEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReceiveEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AcquireLeaseRequest, Lease> acquireLeaseMethodDescriptor =
@@ -88,6 +91,7 @@ public class GrpcStreamingServiceStub extends StreamingServiceStub {
           .setFullMethodName("google.cloud.visionai.v1.StreamingService/AcquireLease")
           .setRequestMarshaller(ProtoUtils.marshaller(AcquireLeaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Lease.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RenewLeaseRequest, Lease> renewLeaseMethodDescriptor =
@@ -96,6 +100,7 @@ public class GrpcStreamingServiceStub extends StreamingServiceStub {
           .setFullMethodName("google.cloud.visionai.v1.StreamingService/RenewLease")
           .setRequestMarshaller(ProtoUtils.marshaller(RenewLeaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Lease.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ReleaseLeaseRequest, ReleaseLeaseResponse>
@@ -106,6 +111,7 @@ public class GrpcStreamingServiceStub extends StreamingServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ReleaseLeaseRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReleaseLeaseResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final BidiStreamingCallable<SendPacketsRequest, SendPacketsResponse> sendPacketsCallable;

@@ -23,15 +23,20 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ListReservationSubBlocksRequest;
+import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.PerformMaintenanceReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ReservationSubBlocksGetResponse;
 import com.google.cloud.compute.v1.ReservationSubBlocksListResponse;
 import com.google.protobuf.TypeRegistry;
@@ -51,7 +56,8 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
-  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
 
   private static final ApiMethodDescriptor<
           GetReservationSubBlockRequest, ReservationSubBlocksGetResponse>
@@ -148,13 +154,73 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<PerformMaintenanceReservationSubBlockRequest, Operation>
+      performMaintenanceMethodDescriptor =
+          ApiMethodDescriptor.<PerformMaintenanceReservationSubBlockRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.ReservationSubBlocks/PerformMaintenance")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<PerformMaintenanceReservationSubBlockRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/{parentName}/reservationSubBlocks/{reservationSubBlock}/performMaintenance",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PerformMaintenanceReservationSubBlockRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parentName", request.getParentName());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "reservationSubBlock", request.getReservationSubBlock());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PerformMaintenanceReservationSubBlockRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PerformMaintenanceReservationSubBlockRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<GetReservationSubBlockRequest, ReservationSubBlocksGetResponse>
       getCallable;
   private final UnaryCallable<ListReservationSubBlocksRequest, ReservationSubBlocksListResponse>
       listCallable;
   private final UnaryCallable<ListReservationSubBlocksRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<PerformMaintenanceReservationSubBlockRequest, Operation>
+      performMaintenanceCallable;
+  private final OperationCallable<
+          PerformMaintenanceReservationSubBlockRequest, Operation, Operation>
+      performMaintenanceOperationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonReservationSubBlocksStub create(
@@ -195,6 +261,7 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub = HttpJsonZoneOperationsStub.create(clientContext, callableFactory);
 
     HttpJsonCallSettings<GetReservationSubBlockRequest, ReservationSubBlocksGetResponse>
         getTransportSettings =
@@ -229,6 +296,24 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<PerformMaintenanceReservationSubBlockRequest, Operation>
+        performMaintenanceTransportSettings =
+            HttpJsonCallSettings
+                .<PerformMaintenanceReservationSubBlockRequest, Operation>newBuilder()
+                .setMethodDescriptor(performMaintenanceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent_name", String.valueOf(request.getParentName()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add(
+                          "reservation_sub_block",
+                          String.valueOf(request.getReservationSubBlock()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getCallable =
         callableFactory.createUnaryCallable(
@@ -239,6 +324,17 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.performMaintenanceCallable =
+        callableFactory.createUnaryCallable(
+            performMaintenanceTransportSettings,
+            settings.performMaintenanceSettings(),
+            clientContext);
+    this.performMaintenanceOperationCallable =
+        callableFactory.createOperationCallable(
+            performMaintenanceTransportSettings,
+            settings.performMaintenanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -249,6 +345,7 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(performMaintenanceMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -267,6 +364,18 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
   @Override
   public UnaryCallable<ListReservationSubBlocksRequest, ListPagedResponse> listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<PerformMaintenanceReservationSubBlockRequest, Operation>
+      performMaintenanceCallable() {
+    return performMaintenanceCallable;
+  }
+
+  @Override
+  public OperationCallable<PerformMaintenanceReservationSubBlockRequest, Operation, Operation>
+      performMaintenanceOperationCallable() {
+    return performMaintenanceOperationCallable;
   }
 
   @Override

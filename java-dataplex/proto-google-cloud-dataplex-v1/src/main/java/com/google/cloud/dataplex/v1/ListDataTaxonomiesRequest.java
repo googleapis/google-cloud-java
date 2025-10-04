@@ -78,7 +78,7 @@ public final class ListDataTaxonomiesRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The resource name of the DataTaxonomy location, of the form:
    * projects/{project_number}/locations/{location_id}
-   * where `location_id` refers to a GCP region.
+   * where `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -106,7 +106,7 @@ public final class ListDataTaxonomiesRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The resource name of the DataTaxonomy location, of the form:
    * projects/{project_number}/locations/{location_id}
-   * where `location_id` refers to a GCP region.
+   * where `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -761,7 +761,7 @@ public final class ListDataTaxonomiesRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the DataTaxonomy location, of the form:
      * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -788,7 +788,7 @@ public final class ListDataTaxonomiesRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the DataTaxonomy location, of the form:
      * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -815,7 +815,7 @@ public final class ListDataTaxonomiesRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the DataTaxonomy location, of the form:
      * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -841,7 +841,7 @@ public final class ListDataTaxonomiesRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the DataTaxonomy location, of the form:
      * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -863,7 +863,7 @@ public final class ListDataTaxonomiesRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the DataTaxonomy location, of the form:
      * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>

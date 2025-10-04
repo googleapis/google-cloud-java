@@ -52,6 +52,7 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     route_ = java.util.Collections.emptyList();
     currentRouteSegment_ = "";
     view_ = 0;
+    attributes_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -2140,6 +2141,82 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.maps.fleetengine.v1.TripView.UNRECOGNIZED : result;
   }
 
+  public static final int ATTRIBUTES_FIELD_NUMBER = 35;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.maps.fleetengine.v1.TripAttribute> attributes_;
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of custom Trip attributes. Each attribute must have a unique key.
+   * </pre>
+   *
+   * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.maps.fleetengine.v1.TripAttribute> getAttributesList() {
+    return attributes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of custom Trip attributes. Each attribute must have a unique key.
+   * </pre>
+   *
+   * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.maps.fleetengine.v1.TripAttributeOrBuilder>
+      getAttributesOrBuilderList() {
+    return attributes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of custom Trip attributes. Each attribute must have a unique key.
+   * </pre>
+   *
+   * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+   */
+  @java.lang.Override
+  public int getAttributesCount() {
+    return attributes_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of custom Trip attributes. Each attribute must have a unique key.
+   * </pre>
+   *
+   * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.fleetengine.v1.TripAttribute getAttributes(int index) {
+    return attributes_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of custom Trip attributes. Each attribute must have a unique key.
+   * </pre>
+   *
+   * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.fleetengine.v1.TripAttributeOrBuilder getAttributesOrBuilder(int index) {
+    return attributes_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2252,6 +2329,9 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < actualIntermediateDestinations_.size(); i++) {
       output.writeMessage(34, actualIntermediateDestinations_.get(i));
+    }
+    for (int i = 0; i < attributes_.size(); i++) {
+      output.writeMessage(35, attributes_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -2390,6 +2470,9 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               34, actualIntermediateDestinations_.get(i));
     }
+    for (int i = 0; i < attributes_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(35, attributes_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2506,6 +2589,7 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     }
     if (getLastLocationSnappable() != other.getLastLocationSnappable()) return false;
     if (view_ != other.view_) return false;
+    if (!getAttributesList().equals(other.getAttributesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2631,6 +2715,10 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLastLocationSnappable());
     hash = (37 * hash) + VIEW_FIELD_NUMBER;
     hash = (53 * hash) + view_;
+    if (getAttributesCount() > 0) {
+      hash = (37 * hash) + ATTRIBUTES_FIELD_NUMBER;
+      hash = (53 * hash) + getAttributesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2795,6 +2883,7 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         getRemainingWaypointsVersionFieldBuilder();
         getRemainingWaypointsRouteVersionFieldBuilder();
         getLastLocationFieldBuilder();
+        getAttributesFieldBuilder();
       }
     }
 
@@ -2944,6 +3033,13 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       lastLocationSnappable_ = false;
       view_ = 0;
+      if (attributesBuilder_ == null) {
+        attributes_ = java.util.Collections.emptyList();
+      } else {
+        attributes_ = null;
+        attributesBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00000002);
       return this;
     }
 
@@ -3040,6 +3136,15 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         result.route_ = route_;
       } else {
         result.route_ = routeBuilder_.build();
+      }
+      if (attributesBuilder_ == null) {
+        if (((bitField1_ & 0x00000002) != 0)) {
+          attributes_ = java.util.Collections.unmodifiableList(attributes_);
+          bitField1_ = (bitField1_ & ~0x00000002);
+        }
+        result.attributes_ = attributes_;
+      } else {
+        result.attributes_ = attributesBuilder_.build();
       }
     }
 
@@ -3494,6 +3599,33 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       if (other.view_ != 0) {
         setViewValue(other.getViewValue());
       }
+      if (attributesBuilder_ == null) {
+        if (!other.attributes_.isEmpty()) {
+          if (attributes_.isEmpty()) {
+            attributes_ = other.attributes_;
+            bitField1_ = (bitField1_ & ~0x00000002);
+          } else {
+            ensureAttributesIsMutable();
+            attributes_.addAll(other.attributes_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.attributes_.isEmpty()) {
+          if (attributesBuilder_.isEmpty()) {
+            attributesBuilder_.dispose();
+            attributesBuilder_ = null;
+            attributes_ = other.attributes_;
+            bitField1_ = (bitField1_ & ~0x00000002);
+            attributesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAttributesFieldBuilder()
+                    : null;
+          } else {
+            attributesBuilder_.addAllMessages(other.attributes_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3776,6 +3908,19 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 274
+            case 282:
+              {
+                com.google.maps.fleetengine.v1.TripAttribute m =
+                    input.readMessage(
+                        com.google.maps.fleetengine.v1.TripAttribute.parser(), extensionRegistry);
+                if (attributesBuilder_ == null) {
+                  ensureAttributesIsMutable();
+                  attributes_.add(m);
+                } else {
+                  attributesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 282
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11412,6 +11557,374 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       view_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.maps.fleetengine.v1.TripAttribute> attributes_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAttributesIsMutable() {
+      if (!((bitField1_ & 0x00000002) != 0)) {
+        attributes_ =
+            new java.util.ArrayList<com.google.maps.fleetengine.v1.TripAttribute>(attributes_);
+        bitField1_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.maps.fleetengine.v1.TripAttribute,
+            com.google.maps.fleetengine.v1.TripAttribute.Builder,
+            com.google.maps.fleetengine.v1.TripAttributeOrBuilder>
+        attributesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public java.util.List<com.google.maps.fleetengine.v1.TripAttribute> getAttributesList() {
+      if (attributesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(attributes_);
+      } else {
+        return attributesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public int getAttributesCount() {
+      if (attributesBuilder_ == null) {
+        return attributes_.size();
+      } else {
+        return attributesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public com.google.maps.fleetengine.v1.TripAttribute getAttributes(int index) {
+      if (attributesBuilder_ == null) {
+        return attributes_.get(index);
+      } else {
+        return attributesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public Builder setAttributes(int index, com.google.maps.fleetengine.v1.TripAttribute value) {
+      if (attributesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAttributesIsMutable();
+        attributes_.set(index, value);
+        onChanged();
+      } else {
+        attributesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public Builder setAttributes(
+        int index, com.google.maps.fleetengine.v1.TripAttribute.Builder builderForValue) {
+      if (attributesBuilder_ == null) {
+        ensureAttributesIsMutable();
+        attributes_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        attributesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public Builder addAttributes(com.google.maps.fleetengine.v1.TripAttribute value) {
+      if (attributesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAttributesIsMutable();
+        attributes_.add(value);
+        onChanged();
+      } else {
+        attributesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public Builder addAttributes(int index, com.google.maps.fleetengine.v1.TripAttribute value) {
+      if (attributesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAttributesIsMutable();
+        attributes_.add(index, value);
+        onChanged();
+      } else {
+        attributesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public Builder addAttributes(
+        com.google.maps.fleetengine.v1.TripAttribute.Builder builderForValue) {
+      if (attributesBuilder_ == null) {
+        ensureAttributesIsMutable();
+        attributes_.add(builderForValue.build());
+        onChanged();
+      } else {
+        attributesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public Builder addAttributes(
+        int index, com.google.maps.fleetengine.v1.TripAttribute.Builder builderForValue) {
+      if (attributesBuilder_ == null) {
+        ensureAttributesIsMutable();
+        attributes_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        attributesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public Builder addAllAttributes(
+        java.lang.Iterable<? extends com.google.maps.fleetengine.v1.TripAttribute> values) {
+      if (attributesBuilder_ == null) {
+        ensureAttributesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, attributes_);
+        onChanged();
+      } else {
+        attributesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public Builder clearAttributes() {
+      if (attributesBuilder_ == null) {
+        attributes_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000002);
+        onChanged();
+      } else {
+        attributesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public Builder removeAttributes(int index) {
+      if (attributesBuilder_ == null) {
+        ensureAttributesIsMutable();
+        attributes_.remove(index);
+        onChanged();
+      } else {
+        attributesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public com.google.maps.fleetengine.v1.TripAttribute.Builder getAttributesBuilder(int index) {
+      return getAttributesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public com.google.maps.fleetengine.v1.TripAttributeOrBuilder getAttributesOrBuilder(int index) {
+      if (attributesBuilder_ == null) {
+        return attributes_.get(index);
+      } else {
+        return attributesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public java.util.List<? extends com.google.maps.fleetengine.v1.TripAttributeOrBuilder>
+        getAttributesOrBuilderList() {
+      if (attributesBuilder_ != null) {
+        return attributesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(attributes_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public com.google.maps.fleetengine.v1.TripAttribute.Builder addAttributesBuilder() {
+      return getAttributesFieldBuilder()
+          .addBuilder(com.google.maps.fleetengine.v1.TripAttribute.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public com.google.maps.fleetengine.v1.TripAttribute.Builder addAttributesBuilder(int index) {
+      return getAttributesFieldBuilder()
+          .addBuilder(index, com.google.maps.fleetengine.v1.TripAttribute.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of custom Trip attributes. Each attribute must have a unique key.
+     * </pre>
+     *
+     * <code>repeated .maps.fleetengine.v1.TripAttribute attributes = 35;</code>
+     */
+    public java.util.List<com.google.maps.fleetengine.v1.TripAttribute.Builder>
+        getAttributesBuilderList() {
+      return getAttributesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.maps.fleetengine.v1.TripAttribute,
+            com.google.maps.fleetengine.v1.TripAttribute.Builder,
+            com.google.maps.fleetengine.v1.TripAttributeOrBuilder>
+        getAttributesFieldBuilder() {
+      if (attributesBuilder_ == null) {
+        attributesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.maps.fleetengine.v1.TripAttribute,
+                com.google.maps.fleetengine.v1.TripAttribute.Builder,
+                com.google.maps.fleetengine.v1.TripAttributeOrBuilder>(
+                attributes_, ((bitField1_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        attributes_ = null;
+      }
+      return attributesBuilder_;
     }
 
     @java.lang.Override

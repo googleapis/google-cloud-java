@@ -52,6 +52,7 @@ public class GrpcPhishingProtectionServiceV1Beta1Stub extends PhishingProtection
                   ProtoUtils.marshaller(ReportPhishingRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReportPhishingResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ReportPhishingRequest, ReportPhishingResponse> reportPhishingCallable;

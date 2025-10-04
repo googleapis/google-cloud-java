@@ -68,6 +68,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                   ProtoUtils.marshaller(ListWorkflowsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkflowsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWorkflowRequest, Workflow> getWorkflowMethodDescriptor =
@@ -76,6 +77,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
           .setFullMethodName("google.cloud.workflows.v1.Workflows/GetWorkflow")
           .setRequestMarshaller(ProtoUtils.marshaller(GetWorkflowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Workflow.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateWorkflowRequest, Operation>
@@ -86,6 +88,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkflowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWorkflowRequest, Operation>
@@ -96,6 +99,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWorkflowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateWorkflowRequest, Operation>
@@ -106,6 +110,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWorkflowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse>
@@ -117,6 +122,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                   ProtoUtils.marshaller(ListWorkflowRevisionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkflowRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -128,6 +134,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -136,6 +143,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflowsCallable;

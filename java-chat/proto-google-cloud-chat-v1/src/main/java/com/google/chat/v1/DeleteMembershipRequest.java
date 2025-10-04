@@ -77,9 +77,13 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
    * human users' or their own memberships. Chat apps can't delete other apps'
    * memberships.
    *
-   * When deleting a human membership, requires the `chat.memberships` scope and
-   * `spaces/{space}/members/{member}` format. You can use the email as an
-   * alias for `{member}`. For example,
+   * When deleting a human membership, requires the `chat.memberships` scope
+   * with [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * or the `chat.memberships.app` scope with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and the `spaces/{space}/members/{member}` format.
+   * You can use the email as an alias for `{member}`. For example,
    * `spaces/{space}/members/example&#64;gmail.com` where `example&#64;gmail.com` is the
    * email of the Google Chat user.
    *
@@ -116,9 +120,13 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
    * human users' or their own memberships. Chat apps can't delete other apps'
    * memberships.
    *
-   * When deleting a human membership, requires the `chat.memberships` scope and
-   * `spaces/{space}/members/{member}` format. You can use the email as an
-   * alias for `{member}`. For example,
+   * When deleting a human membership, requires the `chat.memberships` scope
+   * with [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * or the `chat.memberships.app` scope with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and the `spaces/{space}/members/{member}` format.
+   * You can use the email as an alias for `{member}`. For example,
    * `spaces/{space}/members/example&#64;gmail.com` where `example&#64;gmail.com` is the
    * email of the Google Chat user.
    *
@@ -550,9 +558,13 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
      * human users' or their own memberships. Chat apps can't delete other apps'
      * memberships.
      *
-     * When deleting a human membership, requires the `chat.memberships` scope and
-     * `spaces/{space}/members/{member}` format. You can use the email as an
-     * alias for `{member}`. For example,
+     * When deleting a human membership, requires the `chat.memberships` scope
+     * with [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * or the `chat.memberships.app` scope with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * and the `spaces/{space}/members/{member}` format.
+     * You can use the email as an alias for `{member}`. For example,
      * `spaces/{space}/members/example&#64;gmail.com` where `example&#64;gmail.com` is the
      * email of the Google Chat user.
      *
@@ -588,9 +600,13 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
      * human users' or their own memberships. Chat apps can't delete other apps'
      * memberships.
      *
-     * When deleting a human membership, requires the `chat.memberships` scope and
-     * `spaces/{space}/members/{member}` format. You can use the email as an
-     * alias for `{member}`. For example,
+     * When deleting a human membership, requires the `chat.memberships` scope
+     * with [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * or the `chat.memberships.app` scope with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * and the `spaces/{space}/members/{member}` format.
+     * You can use the email as an alias for `{member}`. For example,
      * `spaces/{space}/members/example&#64;gmail.com` where `example&#64;gmail.com` is the
      * email of the Google Chat user.
      *
@@ -626,9 +642,13 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
      * human users' or their own memberships. Chat apps can't delete other apps'
      * memberships.
      *
-     * When deleting a human membership, requires the `chat.memberships` scope and
-     * `spaces/{space}/members/{member}` format. You can use the email as an
-     * alias for `{member}`. For example,
+     * When deleting a human membership, requires the `chat.memberships` scope
+     * with [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * or the `chat.memberships.app` scope with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * and the `spaces/{space}/members/{member}` format.
+     * You can use the email as an alias for `{member}`. For example,
      * `spaces/{space}/members/example&#64;gmail.com` where `example&#64;gmail.com` is the
      * email of the Google Chat user.
      *
@@ -663,9 +683,13 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
      * human users' or their own memberships. Chat apps can't delete other apps'
      * memberships.
      *
-     * When deleting a human membership, requires the `chat.memberships` scope and
-     * `spaces/{space}/members/{member}` format. You can use the email as an
-     * alias for `{member}`. For example,
+     * When deleting a human membership, requires the `chat.memberships` scope
+     * with [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * or the `chat.memberships.app` scope with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * and the `spaces/{space}/members/{member}` format.
+     * You can use the email as an alias for `{member}`. For example,
      * `spaces/{space}/members/example&#64;gmail.com` where `example&#64;gmail.com` is the
      * email of the Google Chat user.
      *
@@ -696,9 +720,13 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
      * human users' or their own memberships. Chat apps can't delete other apps'
      * memberships.
      *
-     * When deleting a human membership, requires the `chat.memberships` scope and
-     * `spaces/{space}/members/{member}` format. You can use the email as an
-     * alias for `{member}`. For example,
+     * When deleting a human membership, requires the `chat.memberships` scope
+     * with [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * or the `chat.memberships.app` scope with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * and the `spaces/{space}/members/{member}` format.
+     * You can use the email as an alias for `{member}`. For example,
      * `spaces/{space}/members/example&#64;gmail.com` where `example&#64;gmail.com` is the
      * email of the Google Chat user.
      *

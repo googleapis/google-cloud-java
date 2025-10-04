@@ -88,6 +88,26 @@ public final class FeatureOnlineStoreServiceProto {
       internal_static_google_cloud_aiplatform_v1_SearchNearestEntitiesResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_SearchNearestEntitiesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteRequest_DataKeyAndFeatureValues_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteRequest_DataKeyAndFeatureValues_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteRequest_DataKeyAndFeatureValues_Feature_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteRequest_DataKeyAndFeatureValues_Feature_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteResponse_WriteResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteResponse_WriteResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -103,31 +123,31 @@ public final class FeatureOnlineStoreServiceProto {
           + "o\032\027google/api/client.proto\032\037google/api/f"
           + "ield_behavior.proto\032\031google/api/resource"
           + ".proto\032<google/cloud/aiplatform/v1/featu"
-          + "restore_online_service.proto\032\034google/protobuf/struct.proto\"\245\001\n"
+          + "restore_online_service.proto\032\034google/pro"
+          + "tobuf/struct.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\245\001\n"
           + "\022FeatureViewDataKey\022\r\n"
           + "\003key\030\001 \001(\tH\000\022T\n\r"
-          + "composite_key\030\002 \001(\0132"
-          + ";.google.cloud.aiplatform.v1.FeatureViewDataKey.CompositeKeyH\000\032\035\n"
-          + "\014CompositeKey\022\r"
-          + "\n"
+          + "composite_key\030\002 \001(\0132;.google.cloud.aiplatf"
+          + "orm.v1.FeatureViewDataKey.CompositeKeyH\000\032\035\n"
+          + "\014CompositeKey\022\r\n"
           + "\005parts\030\001 \003(\tB\013\n"
           + "\tkey_oneof\"\364\001\n"
           + "\031FetchFeatureValuesRequest\022C\n"
           + "\014feature_view\030\001 \001(\tB-\340A\002\372A\'\n"
           + "%aiplatform.googleapis.com/FeatureView\022E\n"
-          + "\010data_key\030\006"
-          + " \001(\0132..google.cloud.aiplatform.v1.FeatureViewDataKeyB\003\340A\001\022K\n"
-          + "\013data_format\030\007"
-          + " \001(\01621.google.cloud.aiplatform.v1.FeatureViewDataFormatB\003\340A\001\"\376\003\n"
+          + "\010data_key\030\006 \001("
+          + "\0132..google.cloud.aiplatform.v1.FeatureViewDataKeyB\003\340A\001\022K\n"
+          + "\013data_format\030\007 \001(\01621.go"
+          + "ogle.cloud.aiplatform.v1.FeatureViewDataFormatB\003\340A\001\"\376\003\n"
           + "\032FetchFeatureValuesResponse\022e\n\n"
-          + "key_values\030\003 \001(\0132O.google.cloud.aiplatform.v1.FetchF"
-          + "eatureValuesResponse.FeatureNameValuePairListH\000\022/\n"
+          + "key_values\030\003 \001(\0132O.google.cloud.ai"
+          + "platform.v1.FetchFeatureValuesResponse.FeatureNameValuePairListH\000\022/\n"
           + "\014proto_struct\030\002 \001(\0132\027.google.protobuf.StructH\000\022@\n"
-          + "\010data_key\030\004 \001(\0132..goo"
-          + "gle.cloud.aiplatform.v1.FeatureViewDataKey\032\373\001\n"
+          + "\010data_key\030\004"
+          + " \001(\0132..google.cloud.aiplatform.v1.FeatureViewDataKey\032\373\001\n"
           + "\030FeatureNameValuePairList\022v\n"
-          + "\010features\030\001 \003(\0132d.google.cloud.aiplatform.v1.F"
-          + "etchFeatureValuesResponse.FeatureNameValuePairList.FeatureNameValuePair\032g\n"
+          + "\010features\030\001 \003(\0132d.google.cloud.aiplatform.v1.FetchFeatureValuesRespo"
+          + "nse.FeatureNameValuePairList.FeatureNameValuePair\032g\n"
           + "\024FeatureNameValuePair\0229\n"
           + "\005value\030\002 \001(\0132(.google.cloud.aiplatform.v1.FeatureValueH\000\022\014\n"
           + "\004name\030\001 \001(\tB\006\n"
@@ -135,16 +155,16 @@ public final class FeatureOnlineStoreServiceProto {
           + "\006format\"\243\010\n"
           + "\024NearestNeighborQuery\022\030\n"
           + "\tentity_id\030\001 \001(\tB\003\340A\001H\000\022T\n"
-          + "\tembedding\030\002 \001(\0132:.google.cloud.aiplatfo"
-          + "rm.v1.NearestNeighborQuery.EmbeddingB\003\340A\001H\000\022\033\n"
+          + "\tembedding\030\002 \001(\0132:.goo"
+          + "gle.cloud.aiplatform.v1.NearestNeighborQuery.EmbeddingB\003\340A\001H\000\022\033\n"
           + "\016neighbor_count\030\003 \001(\005B\003\340A\001\022Z\n"
-          + "\016string_filters\030\004 \003(\0132=.google.cloud.aiplatfo"
-          + "rm.v1.NearestNeighborQuery.StringFilterB\003\340A\001\022\\\n"
-          + "\017numeric_filters\030\010 \003(\0132>.google.c"
-          + "loud.aiplatform.v1.NearestNeighborQuery.NumericFilterB\003\340A\001\0222\n"
+          + "\016string_filters\030\004 \003(\0132=.goo"
+          + "gle.cloud.aiplatform.v1.NearestNeighborQuery.StringFilterB\003\340A\001\022\\\n"
+          + "\017numeric_filters\030\010"
+          + " \003(\0132>.google.cloud.aiplatform.v1.NearestNeighborQuery.NumericFilterB\003\340A\001\0222\n"
           + "%per_crowding_attribute_neighbor_count\030\005 \001(\005B\003\340A\001\022T\n\n"
-          + "parameters\030\007"
-          + " \001(\0132;.google.cloud.aiplatform.v1.NearestNeighborQuery.ParametersB\003\340A\001\032\037\n"
+          + "parameters\030\007 \001(\0132;.google.cl"
+          + "oud.aiplatform.v1.NearestNeighborQuery.ParametersB\003\340A\001\032\037\n"
           + "\tEmbedding\022\022\n"
           + "\005value\030\001 \003(\002B\003\340A\001\032V\n"
           + "\014StringFilter\022\021\n"
@@ -156,8 +176,8 @@ public final class FeatureOnlineStoreServiceProto {
           + "\013value_float\030\003 \001(\002H\000\022\026\n"
           + "\014value_double\030\004 \001(\001H\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022]\n"
-          + "\002op\030\005 \001(\0162G.goo"
-          + "gle.cloud.aiplatform.v1.NearestNeighborQuery.NumericFilter.OperatorB\003\340A\001H\001\210\001\001\"x\n"
+          + "\002op\030\005 \001(\0162G.google.cloud.aiplatform.v"
+          + "1.NearestNeighborQuery.NumericFilter.OperatorB\003\340A\001H\001\210\001\001\"x\n"
           + "\010Operator\022\030\n"
           + "\024OPERATOR_UNSPECIFIED\020\000\022\010\n"
           + "\004LESS\020\001\022\016\n\n"
@@ -175,41 +195,67 @@ public final class FeatureOnlineStoreServiceProto {
           + "\034SearchNearestEntitiesRequest\022C\n"
           + "\014feature_view\030\001 \001(\tB-\340A\002\372A\'\n"
           + "%aiplatform.googleapis.com/FeatureView\022D\n"
-          + "\005query\030\002"
-          + " \001(\01320.google.cloud.aiplatform.v1.NearestNeighborQueryB\003\340A\002\022\037\n"
+          + "\005query\030\002 \001(\01320.google.cloud.a"
+          + "iplatform.v1.NearestNeighborQueryB\003\340A\002\022\037\n"
           + "\022return_full_entity\030\003 \001(\010B\003\340A\001\"\341\001\n"
           + "\020NearestNeighbors\022H\n"
-          + "\tneighbors\030\001"
-          + " \003(\01325.google.cloud.aiplatform.v1.NearestNeighbors.Neighbor\032\202\001\n"
+          + "\tneighbors\030\001 \003(\01325.google"
+          + ".cloud.aiplatform.v1.NearestNeighbors.Neighbor\032\202\001\n"
           + "\010Neighbor\022\021\n"
           + "\tentity_id\030\001 \001(\t\022\020\n"
           + "\010distance\030\002 \001(\001\022Q\n"
-          + "\021entity_key_values\030\003 \001(\01326.google.cloud"
-          + ".aiplatform.v1.FetchFeatureValuesResponse\"h\n"
+          + "\021entity_key_values\030\003 "
+          + "\001(\01326.google.cloud.aiplatform.v1.FetchFeatureValuesResponse\"h\n"
           + "\035SearchNearestEntitiesResponse\022G\n"
-          + "\021nearest_neighbors\030\001"
-          + " \001(\0132,.google.cloud.aiplatform.v1.NearestNeighbors*b\n"
+          + "\021nearest_neighbors\030\001 \001(\0132"
+          + ",.google.cloud.aiplatform.v1.NearestNeighbors\"\213\004\n"
+          + "\035FeatureViewDirectWriteRequest\022@\n"
+          + "\014feature_view\030\001 \001(\tB*\372A\'\n"
+          + "%aiplatform.googleapis.com/FeatureView\022{\n"
+          + "\033data_key_and_feature_values\030\002 \003(\0132Q.google.cloud.ai"
+          + "platform.v1.FeatureViewDirectWriteRequest.DataKeyAndFeatureValuesB\003\340A\002\032\252\002\n"
+          + "\027DataKeyAndFeatureValues\022@\n"
+          + "\010data_key\030\001 \001(\0132..google.cloud.aiplatform.v1.FeatureViewDataKey\022k\n"
+          + "\010features\030\002 \003(\0132Y.google.cloud.ai"
+          + "platform.v1.FeatureViewDirectWriteRequest.DataKeyAndFeatureValues.Feature\032`\n"
+          + "\007Feature\0229\n"
+          + "\005value\030\003 \001(\0132(.google.cloud.aiplatform.v1.FeatureValueH\000\022\014\n"
+          + "\004name\030\001 \001(\tB\014\n"
+          + "\n"
+          + "data_oneof\"\270\002\n"
+          + "\036FeatureViewDirectWriteResponse\022\"\n"
+          + "\006status\030\001 \001(\0132\022.google.rpc.Status\022a\n"
+          + "\017write_responses\030\002 \003(\0132H.google.clo"
+          + "ud.aiplatform.v1.FeatureViewDirectWriteResponse.WriteResponse\032\216\001\n\r"
+          + "WriteResponse\022@\n"
+          + "\010data_key\030\001 \001(\0132..google.cloud.aiplatform.v1.FeatureViewDataKey\022;\n"
+          + "\027online_store_write_time\030\002 \001(\0132\032.google.protobuf.Timestamp*b\n"
           + "\025FeatureViewDataFormat\022(\n"
           + "$FEATURE_VIEW_DATA_FORMAT_UNSPECIFIED\020\000\022\r\n"
           + "\tKEY_VALUE\020\001\022\020\n"
-          + "\014PROTO_STRUCT\020\0022\370\004\n"
+          + "\014PROTO_STRUCT\020\0022\365\006\n"
           + "\031FeatureOnlineStoreService\022\213\002\n"
-          + "\022FetchFeatureValues\0225.google.cloud.aipl"
-          + "atform.v1.FetchFeatureValuesRequest\0326.go"
-          + "ogle.cloud.aiplatform.v1.FetchFeatureValuesResponse\"\205\001\332A\026feature_view,"
-          + " data_key\202\323\344\223\002f\"a/v1/{feature_view=projects/*/loca"
-          + "tions/*/featureOnlineStores/*/featureViews/*}:fetchFeatureValues:\001*\022\375\001\n"
-          + "\025SearchNearestEntities\0228.google.cloud.aiplatform."
-          + "v1.SearchNearestEntitiesRequest\0329.google.cloud.aiplatform.v1.SearchNearestEntiti"
-          + "esResponse\"o\202\323\344\223\002i\"d/v1/{feature_view=pr"
-          + "ojects/*/locations/*/featureOnlineStores/*/featureViews/*}:searchNearestEntities"
-          + ":\001*\032M\312A\031aiplatform.googleapis.com\322A.http"
-          + "s://www.googleapis.com/auth/cloud-platformB\334\001\n"
-          + "\036com.google.cloud.aiplatform.v1B\036FeatureOnlineStoreServiceProtoP\001Z>cloud.g"
-          + "oogle.com/go/aiplatform/apiv1/aiplatform"
-          + "pb;aiplatformpb\252\002\032Google.Cloud.AIPlatfor"
-          + "m.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goog"
-          + "le::Cloud::AIPlatform::V1b\006proto3"
+          + "\022FetchFeatureValues\0225.google.cloud.aiplatform.v1.FetchFeatur"
+          + "eValuesRequest\0326.google.cloud.aiplatform"
+          + ".v1.FetchFeatureValuesResponse\"\205\001\332A\026feature_view,"
+          + " data_key\202\323\344\223\002f\"a/v1/{feature_v"
+          + "iew=projects/*/locations/*/featureOnline"
+          + "Stores/*/featureViews/*}:fetchFeatureValues:\001*\022\375\001\n"
+          + "\025SearchNearestEntities\0228.google.cloud.aiplatform.v1.SearchNearestEntit"
+          + "iesRequest\0329.google.cloud.aiplatform.v1."
+          + "SearchNearestEntitiesResponse\"o\202\323\344\223\002i\"d/"
+          + "v1/{feature_view=projects/*/locations/*/"
+          + "featureOnlineStores/*/featureViews/*}:searchNearestEntities:\001*\022\372\001\n"
+          + "\026FeatureViewDirectWrite\0229.google.cloud.aiplatform.v1.F"
+          + "eatureViewDirectWriteRequest\032:.google.cloud.aiplatform.v1.FeatureViewDirectWrite"
+          + "Response\"e\202\323\344\223\002_\"Z/v1/{feature_view=proj"
+          + "ects/*/locations/*/featureOnlineStores/*"
+          + "/featureViews/*}:directWrite:\001*(\0010\001\032M\312A\031"
+          + "aiplatform.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\334\001\n"
+          + "\036com.google.cloud.aiplatform.v1B\036FeatureOn"
+          + "lineStoreServiceProtoP\001Z>cloud.google.com/go/aiplatform/apiv1/aiplatformpb;aipla"
+          + "tformpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032G"
+          + "oogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -221,6 +267,8 @@ public final class FeatureOnlineStoreServiceProto {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.FeaturestoreOnlineServiceProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_FeatureViewDataKey_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -365,6 +413,52 @@ public final class FeatureOnlineStoreServiceProto {
             new java.lang.String[] {
               "NearestNeighbors",
             });
+    internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteRequest_descriptor,
+            new java.lang.String[] {
+              "FeatureView", "DataKeyAndFeatureValues",
+            });
+    internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteRequest_DataKeyAndFeatureValues_descriptor =
+        internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteRequest_DataKeyAndFeatureValues_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteRequest_DataKeyAndFeatureValues_descriptor,
+            new java.lang.String[] {
+              "DataKey", "Features",
+            });
+    internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteRequest_DataKeyAndFeatureValues_Feature_descriptor =
+        internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteRequest_DataKeyAndFeatureValues_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteRequest_DataKeyAndFeatureValues_Feature_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteRequest_DataKeyAndFeatureValues_Feature_descriptor,
+            new java.lang.String[] {
+              "Value", "Name", "DataOneof",
+            });
+    internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteResponse_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteResponse_descriptor,
+            new java.lang.String[] {
+              "Status", "WriteResponses",
+            });
+    internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteResponse_WriteResponse_descriptor =
+        internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteResponse_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteResponse_WriteResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_FeatureViewDirectWriteResponse_WriteResponse_descriptor,
+            new java.lang.String[] {
+              "DataKey", "OnlineStoreWriteTime",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -381,6 +475,8 @@ public final class FeatureOnlineStoreServiceProto {
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.FeaturestoreOnlineServiceProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.rpc.StatusProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

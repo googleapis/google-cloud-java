@@ -131,6 +131,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBackupPlanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBackupPlansRequest, ListBackupPlansResponse>
@@ -142,6 +143,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   ProtoUtils.marshaller(ListBackupPlansRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupPlansResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupPlanRequest, BackupPlan>
@@ -152,6 +154,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBackupPlanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BackupPlan.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBackupPlanRequest, Operation>
@@ -162,6 +165,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBackupPlanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupPlanRequest, Operation>
@@ -172,6 +176,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBackupPlanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBackupChannelRequest, Operation>
@@ -182,6 +187,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBackupChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBackupChannelsRequest, ListBackupChannelsResponse>
@@ -193,6 +199,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   ProtoUtils.marshaller(ListBackupChannelsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupChannelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupChannelRequest, BackupChannel>
@@ -203,6 +210,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBackupChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BackupChannel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBackupChannelRequest, Operation>
@@ -213,6 +221,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBackupChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupChannelRequest, Operation>
@@ -223,6 +232,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBackupChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -236,6 +246,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   ProtoUtils.marshaller(ListBackupPlanBindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupPlanBindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupPlanBindingRequest, BackupPlanBinding>
@@ -246,6 +257,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBackupPlanBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BackupPlanBinding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBackupRequest, Operation>
@@ -255,6 +267,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/CreateBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBackupsRequest, ListBackupsResponse>
@@ -265,6 +278,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListBackupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
@@ -273,6 +287,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
           .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/GetBackup")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBackupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateBackupRequest, Operation>
@@ -282,6 +297,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/UpdateBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupRequest, Operation>
@@ -291,6 +307,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/DeleteBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListVolumeBackupsRequest, ListVolumeBackupsResponse>
@@ -302,6 +319,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   ProtoUtils.marshaller(ListVolumeBackupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVolumeBackupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVolumeBackupRequest, VolumeBackup>
@@ -312,6 +330,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetVolumeBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(VolumeBackup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateRestorePlanRequest, Operation>
@@ -322,6 +341,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRestorePlanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRestorePlansRequest, ListRestorePlansResponse>
@@ -333,6 +353,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   ProtoUtils.marshaller(ListRestorePlansRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRestorePlansResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRestorePlanRequest, RestorePlan>
@@ -343,6 +364,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRestorePlanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RestorePlan.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRestorePlanRequest, Operation>
@@ -353,6 +375,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRestorePlanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRestorePlanRequest, Operation>
@@ -363,6 +386,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRestorePlanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateRestoreChannelRequest, Operation>
@@ -373,6 +397,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRestoreChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRestoreChannelsRequest, ListRestoreChannelsResponse>
@@ -384,6 +409,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   ProtoUtils.marshaller(ListRestoreChannelsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRestoreChannelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRestoreChannelRequest, RestoreChannel>
@@ -394,6 +420,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRestoreChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RestoreChannel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRestoreChannelRequest, Operation>
@@ -404,6 +431,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRestoreChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRestoreChannelRequest, Operation>
@@ -414,6 +442,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRestoreChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -427,6 +456,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   ProtoUtils.marshaller(ListRestorePlanBindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRestorePlanBindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRestorePlanBindingRequest, RestorePlanBinding>
@@ -437,6 +467,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRestorePlanBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RestorePlanBinding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateRestoreRequest, Operation>
@@ -447,6 +478,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRestoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRestoresRequest, ListRestoresResponse>
@@ -457,6 +489,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListRestoresRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRestoresResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRestoreRequest, Restore> getRestoreMethodDescriptor =
@@ -465,6 +498,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
           .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/GetRestore")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRestoreRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Restore.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateRestoreRequest, Operation>
@@ -475,6 +509,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRestoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRestoreRequest, Operation>
@@ -485,6 +520,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRestoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListVolumeRestoresRequest, ListVolumeRestoresResponse>
@@ -496,6 +532,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   ProtoUtils.marshaller(ListVolumeRestoresRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVolumeRestoresResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVolumeRestoreRequest, VolumeRestore>
@@ -506,6 +543,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetVolumeRestoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(VolumeRestore.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -519,6 +557,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   ProtoUtils.marshaller(GetBackupIndexDownloadUrlRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GetBackupIndexDownloadUrlResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -530,6 +569,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -538,6 +578,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -546,6 +587,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -554,6 +596,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -565,6 +608,7 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateBackupPlanRequest, Operation> createBackupPlanCallable;

@@ -92,6 +92,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRecognizerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRecognizersRequest, ListRecognizersResponse>
@@ -103,6 +104,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   ProtoUtils.marshaller(ListRecognizersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRecognizersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRecognizerRequest, Recognizer>
@@ -113,6 +115,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRecognizerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recognizer.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRecognizerRequest, Operation>
@@ -123,6 +126,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRecognizerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRecognizerRequest, Operation>
@@ -133,6 +137,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRecognizerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeleteRecognizerRequest, Operation>
@@ -143,6 +148,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeleteRecognizerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RecognizeRequest, RecognizeResponse>
@@ -152,6 +158,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setFullMethodName("google.cloud.speech.v2.Speech/Recognize")
               .setRequestMarshaller(ProtoUtils.marshaller(RecognizeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RecognizeResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StreamingRecognizeRequest, StreamingRecognizeResponse>
@@ -163,6 +170,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   ProtoUtils.marshaller(StreamingRecognizeRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamingRecognizeResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchRecognizeRequest, Operation>
@@ -173,6 +181,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchRecognizeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConfigRequest, Config> getConfigMethodDescriptor =
@@ -181,6 +190,7 @@ public class GrpcSpeechStub extends SpeechStub {
           .setFullMethodName("google.cloud.speech.v2.Speech/GetConfig")
           .setRequestMarshaller(ProtoUtils.marshaller(GetConfigRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Config.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateConfigRequest, Config> updateConfigMethodDescriptor =
@@ -189,6 +199,7 @@ public class GrpcSpeechStub extends SpeechStub {
           .setFullMethodName("google.cloud.speech.v2.Speech/UpdateConfig")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateConfigRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Config.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateCustomClassRequest, Operation>
@@ -199,6 +210,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCustomClassesRequest, ListCustomClassesResponse>
@@ -210,6 +222,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   ProtoUtils.marshaller(ListCustomClassesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomClassesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCustomClassRequest, CustomClass>
@@ -220,6 +233,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomClass.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCustomClassRequest, Operation>
@@ -230,6 +244,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCustomClassRequest, Operation>
@@ -240,6 +255,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeleteCustomClassRequest, Operation>
@@ -250,6 +266,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeleteCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePhraseSetRequest, Operation>
@@ -260,6 +277,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPhraseSetsRequest, ListPhraseSetsResponse>
@@ -271,6 +289,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   ProtoUtils.marshaller(ListPhraseSetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPhraseSetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPhraseSetRequest, PhraseSet>
@@ -280,6 +299,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setFullMethodName("google.cloud.speech.v2.Speech/GetPhraseSet")
               .setRequestMarshaller(ProtoUtils.marshaller(GetPhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PhraseSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePhraseSetRequest, Operation>
@@ -290,6 +310,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePhraseSetRequest, Operation>
@@ -300,6 +321,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeletePhraseSetRequest, Operation>
@@ -310,6 +332,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeletePhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -321,6 +344,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -329,6 +353,7 @@ public class GrpcSpeechStub extends SpeechStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateRecognizerRequest, Operation> createRecognizerCallable;

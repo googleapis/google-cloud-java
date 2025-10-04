@@ -504,6 +504,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * For Flex Start provisioning instance is waiting for available capacity from Dynamic Workload Scheduler (DWS).
+     * </pre>
+     *
+     * <code>PENDING = 35394935;</code>
+     */
+    PENDING(35394935),
+    /**
+     *
+     *
+     * <pre>
      * Resources are being allocated for the instance.
      * </pre>
      *
@@ -614,6 +624,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>DEPROVISIONING = 428935662;</code>
      */
     public static final int DEPROVISIONING_VALUE = 428935662;
+
+    /**
+     *
+     *
+     * <pre>
+     * For Flex Start provisioning instance is waiting for available capacity from Dynamic Workload Scheduler (DWS).
+     * </pre>
+     *
+     * <code>PENDING = 35394935;</code>
+     */
+    public static final int PENDING_VALUE = 35394935;
 
     /**
      *
@@ -742,6 +763,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_STATUS;
         case 428935662:
           return DEPROVISIONING;
+        case 35394935:
+          return PENDING;
         case 290896621:
           return PROVISIONING;
         case 413483285:

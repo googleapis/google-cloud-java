@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "CaseAttachmentServiceClient",
           "rpcs": {
+            "GetAttachment": {
+              "methods": ["getAttachment", "getAttachment", "getAttachment", "getAttachmentCallable"]
+            },
             "ListAttachments": {
               "methods": ["listAttachments", "listAttachments", "listAttachments", "listAttachmentsPagedCallable", "listAttachmentsCallable"]
             }
@@ -57,6 +60,9 @@
           "rpcs": {
             "CreateComment": {
               "methods": ["createComment", "createComment", "createComment", "createCommentCallable"]
+            },
+            "GetComment": {
+              "methods": ["getComment", "getComment", "getComment", "getCommentCallable"]
             },
             "ListComments": {
               "methods": ["listComments", "listComments", "listComments", "listCommentsPagedCallable", "listCommentsCallable"]

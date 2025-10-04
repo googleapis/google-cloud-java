@@ -1189,6 +1189,8 @@ public class ModelArmorClient implements BackgroundResource {
    *       SanitizeUserPromptRequest.newBuilder()
    *           .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
    *           .setUserPromptData(DataItem.newBuilder().build())
+   *           .setMultiLanguageDetectionMetadata(
+   *               MultiLanguageDetectionMetadata.newBuilder().build())
    *           .build();
    *   SanitizeUserPromptResponse response = modelArmorClient.sanitizeUserPrompt(request);
    * }
@@ -1218,6 +1220,8 @@ public class ModelArmorClient implements BackgroundResource {
    *       SanitizeUserPromptRequest.newBuilder()
    *           .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
    *           .setUserPromptData(DataItem.newBuilder().build())
+   *           .setMultiLanguageDetectionMetadata(
+   *               MultiLanguageDetectionMetadata.newBuilder().build())
    *           .build();
    *   ApiFuture<SanitizeUserPromptResponse> future =
    *       modelArmorClient.sanitizeUserPromptCallable().futureCall(request);

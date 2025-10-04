@@ -18,9 +18,11 @@ package com.google.cloud.developerconnect.v1.stub;
 
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRefsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchLinkableGitRepositoriesPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListAccountConnectorsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListConnectionsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListGitRepositoryLinksPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListLocationsPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListUsersPagedResponse;
 
 import com.google.api.HttpRule;
 import com.google.api.core.InternalApi;
@@ -38,11 +40,18 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.developerconnect.v1.AccountConnector;
 import com.google.cloud.developerconnect.v1.Connection;
+import com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.CreateConnectionRequest;
 import com.google.cloud.developerconnect.v1.CreateGitRepositoryLinkRequest;
+import com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.DeleteConnectionRequest;
 import com.google.cloud.developerconnect.v1.DeleteGitRepositoryLinkRequest;
+import com.google.cloud.developerconnect.v1.DeleteSelfRequest;
+import com.google.cloud.developerconnect.v1.DeleteUserRequest;
+import com.google.cloud.developerconnect.v1.FetchAccessTokenRequest;
+import com.google.cloud.developerconnect.v1.FetchAccessTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchGitHubInstallationsRequest;
 import com.google.cloud.developerconnect.v1.FetchGitHubInstallationsResponse;
 import com.google.cloud.developerconnect.v1.FetchGitRefsRequest;
@@ -53,15 +62,23 @@ import com.google.cloud.developerconnect.v1.FetchReadTokenRequest;
 import com.google.cloud.developerconnect.v1.FetchReadTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenRequest;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenResponse;
+import com.google.cloud.developerconnect.v1.FetchSelfRequest;
+import com.google.cloud.developerconnect.v1.GetAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.GetConnectionRequest;
 import com.google.cloud.developerconnect.v1.GetGitRepositoryLinkRequest;
 import com.google.cloud.developerconnect.v1.GitRepositoryLink;
+import com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest;
+import com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse;
 import com.google.cloud.developerconnect.v1.ListConnectionsRequest;
 import com.google.cloud.developerconnect.v1.ListConnectionsResponse;
 import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksRequest;
 import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksResponse;
+import com.google.cloud.developerconnect.v1.ListUsersRequest;
+import com.google.cloud.developerconnect.v1.ListUsersResponse;
 import com.google.cloud.developerconnect.v1.OperationMetadata;
+import com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.UpdateConnectionRequest;
+import com.google.cloud.developerconnect.v1.User;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -89,6 +106,7 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
+          .add(AccountConnector.getDescriptor())
           .add(Connection.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(GitRepositoryLink.getDescriptor())
@@ -666,6 +684,412 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          ListAccountConnectorsRequest, ListAccountConnectorsResponse>
+      listAccountConnectorsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListAccountConnectorsRequest, ListAccountConnectorsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/ListAccountConnectors")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAccountConnectorsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/accountConnectors",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAccountConnectorsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAccountConnectorsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAccountConnectorsResponse>newBuilder()
+                      .setDefaultInstance(ListAccountConnectorsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAccountConnectorRequest, AccountConnector>
+      getAccountConnectorMethodDescriptor =
+          ApiMethodDescriptor.<GetAccountConnectorRequest, AccountConnector>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/GetAccountConnector")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAccountConnectorRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/accountConnectors/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAccountConnectorRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAccountConnectorRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AccountConnector>newBuilder()
+                      .setDefaultInstance(AccountConnector.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateAccountConnectorRequest, Operation>
+      createAccountConnectorMethodDescriptor =
+          ApiMethodDescriptor.<CreateAccountConnectorRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/CreateAccountConnector")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAccountConnectorRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/accountConnectors",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAccountConnectorRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAccountConnectorRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "accountConnectorId", request.getAccountConnectorId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("accountConnector", request.getAccountConnector(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateAccountConnectorRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAccountConnectorRequest, Operation>
+      updateAccountConnectorMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAccountConnectorRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/UpdateAccountConnector")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAccountConnectorRequest>newBuilder()
+                      .setPath(
+                          "/v1/{accountConnector.name=projects/*/locations/*/accountConnectors/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAccountConnectorRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "accountConnector.name",
+                                request.getAccountConnector().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAccountConnectorRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("accountConnector", request.getAccountConnector(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateAccountConnectorRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAccountConnectorRequest, Operation>
+      deleteAccountConnectorMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAccountConnectorRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/DeleteAccountConnector")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAccountConnectorRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/accountConnectors/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAccountConnectorRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAccountConnectorRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteAccountConnectorRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<FetchAccessTokenRequest, FetchAccessTokenResponse>
+      fetchAccessTokenMethodDescriptor =
+          ApiMethodDescriptor.<FetchAccessTokenRequest, FetchAccessTokenResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/FetchAccessToken")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchAccessTokenRequest>newBuilder()
+                      .setPath(
+                          "/v1/{accountConnector=projects/*/locations/*/accountConnectors/*}/users:fetchAccessToken",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchAccessTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "accountConnector", request.getAccountConnector());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchAccessTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*",
+                                      request.toBuilder().clearAccountConnector().build(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchAccessTokenResponse>newBuilder()
+                      .setDefaultInstance(FetchAccessTokenResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListUsersRequest, ListUsersResponse>
+      listUsersMethodDescriptor =
+          ApiMethodDescriptor.<ListUsersRequest, ListUsersResponse>newBuilder()
+              .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/ListUsers")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListUsersRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/accountConnectors/*}/users",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListUsersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListUsersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListUsersResponse>newBuilder()
+                      .setDefaultInstance(ListUsersResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteUserRequest, Operation>
+      deleteUserMethodDescriptor =
+          ApiMethodDescriptor.<DeleteUserRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/DeleteUser")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteUserRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/accountConnectors/*/users/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteUserRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<FetchSelfRequest, User> fetchSelfMethodDescriptor =
+      ApiMethodDescriptor.<FetchSelfRequest, User>newBuilder()
+          .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/FetchSelf")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<FetchSelfRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/accountConnectors/*}/users:fetchSelf",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<FetchSelfRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<FetchSelfRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<User>newBuilder()
+                  .setDefaultInstance(User.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<DeleteSelfRequest, Operation>
+      deleteSelfMethodDescriptor =
+          ApiMethodDescriptor.<DeleteSelfRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/DeleteSelf")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteSelfRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/accountConnectors/*}/users:deleteSelf",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSelfRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSelfRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteSelfRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -777,6 +1201,37 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
   private final UnaryCallable<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsCallable;
   private final UnaryCallable<FetchGitRefsRequest, FetchGitRefsPagedResponse>
       fetchGitRefsPagedCallable;
+  private final UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsResponse>
+      listAccountConnectorsCallable;
+  private final UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsPagedResponse>
+      listAccountConnectorsPagedCallable;
+  private final UnaryCallable<GetAccountConnectorRequest, AccountConnector>
+      getAccountConnectorCallable;
+  private final UnaryCallable<CreateAccountConnectorRequest, Operation>
+      createAccountConnectorCallable;
+  private final OperationCallable<
+          CreateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      createAccountConnectorOperationCallable;
+  private final UnaryCallable<UpdateAccountConnectorRequest, Operation>
+      updateAccountConnectorCallable;
+  private final OperationCallable<
+          UpdateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      updateAccountConnectorOperationCallable;
+  private final UnaryCallable<DeleteAccountConnectorRequest, Operation>
+      deleteAccountConnectorCallable;
+  private final OperationCallable<DeleteAccountConnectorRequest, Empty, OperationMetadata>
+      deleteAccountConnectorOperationCallable;
+  private final UnaryCallable<FetchAccessTokenRequest, FetchAccessTokenResponse>
+      fetchAccessTokenCallable;
+  private final UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable;
+  private final UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable;
+  private final UnaryCallable<DeleteUserRequest, Operation> deleteUserCallable;
+  private final OperationCallable<DeleteUserRequest, Empty, OperationMetadata>
+      deleteUserOperationCallable;
+  private final UnaryCallable<FetchSelfRequest, User> fetchSelfCallable;
+  private final UnaryCallable<DeleteSelfRequest, Operation> deleteSelfCallable;
+  private final OperationCallable<DeleteSelfRequest, Empty, OperationMetadata>
+      deleteSelfOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1023,6 +1478,126 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListAccountConnectorsRequest, ListAccountConnectorsResponse>
+        listAccountConnectorsTransportSettings =
+            HttpJsonCallSettings
+                .<ListAccountConnectorsRequest, ListAccountConnectorsResponse>newBuilder()
+                .setMethodDescriptor(listAccountConnectorsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetAccountConnectorRequest, AccountConnector>
+        getAccountConnectorTransportSettings =
+            HttpJsonCallSettings.<GetAccountConnectorRequest, AccountConnector>newBuilder()
+                .setMethodDescriptor(getAccountConnectorMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CreateAccountConnectorRequest, Operation>
+        createAccountConnectorTransportSettings =
+            HttpJsonCallSettings.<CreateAccountConnectorRequest, Operation>newBuilder()
+                .setMethodDescriptor(createAccountConnectorMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateAccountConnectorRequest, Operation>
+        updateAccountConnectorTransportSettings =
+            HttpJsonCallSettings.<UpdateAccountConnectorRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateAccountConnectorMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "account_connector.name",
+                          String.valueOf(request.getAccountConnector().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteAccountConnectorRequest, Operation>
+        deleteAccountConnectorTransportSettings =
+            HttpJsonCallSettings.<DeleteAccountConnectorRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteAccountConnectorMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<FetchAccessTokenRequest, FetchAccessTokenResponse>
+        fetchAccessTokenTransportSettings =
+            HttpJsonCallSettings.<FetchAccessTokenRequest, FetchAccessTokenResponse>newBuilder()
+                .setMethodDescriptor(fetchAccessTokenMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "account_connector", String.valueOf(request.getAccountConnector()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListUsersRequest, ListUsersResponse> listUsersTransportSettings =
+        HttpJsonCallSettings.<ListUsersRequest, ListUsersResponse>newBuilder()
+            .setMethodDescriptor(listUsersMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteUserRequest, Operation> deleteUserTransportSettings =
+        HttpJsonCallSettings.<DeleteUserRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteUserMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<FetchSelfRequest, User> fetchSelfTransportSettings =
+        HttpJsonCallSettings.<FetchSelfRequest, User>newBuilder()
+            .setMethodDescriptor(fetchSelfMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteSelfRequest, Operation> deleteSelfTransportSettings =
+        HttpJsonCallSettings.<DeleteSelfRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteSelfMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1149,6 +1724,84 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
     this.fetchGitRefsPagedCallable =
         callableFactory.createPagedCallable(
             fetchGitRefsTransportSettings, settings.fetchGitRefsSettings(), clientContext);
+    this.listAccountConnectorsCallable =
+        callableFactory.createUnaryCallable(
+            listAccountConnectorsTransportSettings,
+            settings.listAccountConnectorsSettings(),
+            clientContext);
+    this.listAccountConnectorsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAccountConnectorsTransportSettings,
+            settings.listAccountConnectorsSettings(),
+            clientContext);
+    this.getAccountConnectorCallable =
+        callableFactory.createUnaryCallable(
+            getAccountConnectorTransportSettings,
+            settings.getAccountConnectorSettings(),
+            clientContext);
+    this.createAccountConnectorCallable =
+        callableFactory.createUnaryCallable(
+            createAccountConnectorTransportSettings,
+            settings.createAccountConnectorSettings(),
+            clientContext);
+    this.createAccountConnectorOperationCallable =
+        callableFactory.createOperationCallable(
+            createAccountConnectorTransportSettings,
+            settings.createAccountConnectorOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateAccountConnectorCallable =
+        callableFactory.createUnaryCallable(
+            updateAccountConnectorTransportSettings,
+            settings.updateAccountConnectorSettings(),
+            clientContext);
+    this.updateAccountConnectorOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAccountConnectorTransportSettings,
+            settings.updateAccountConnectorOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteAccountConnectorCallable =
+        callableFactory.createUnaryCallable(
+            deleteAccountConnectorTransportSettings,
+            settings.deleteAccountConnectorSettings(),
+            clientContext);
+    this.deleteAccountConnectorOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAccountConnectorTransportSettings,
+            settings.deleteAccountConnectorOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.fetchAccessTokenCallable =
+        callableFactory.createUnaryCallable(
+            fetchAccessTokenTransportSettings, settings.fetchAccessTokenSettings(), clientContext);
+    this.listUsersCallable =
+        callableFactory.createUnaryCallable(
+            listUsersTransportSettings, settings.listUsersSettings(), clientContext);
+    this.listUsersPagedCallable =
+        callableFactory.createPagedCallable(
+            listUsersTransportSettings, settings.listUsersSettings(), clientContext);
+    this.deleteUserCallable =
+        callableFactory.createUnaryCallable(
+            deleteUserTransportSettings, settings.deleteUserSettings(), clientContext);
+    this.deleteUserOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteUserTransportSettings,
+            settings.deleteUserOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.fetchSelfCallable =
+        callableFactory.createUnaryCallable(
+            fetchSelfTransportSettings, settings.fetchSelfSettings(), clientContext);
+    this.deleteSelfCallable =
+        callableFactory.createUnaryCallable(
+            deleteSelfTransportSettings, settings.deleteSelfSettings(), clientContext);
+    this.deleteSelfOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteSelfTransportSettings,
+            settings.deleteSelfOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1180,6 +1833,16 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
     methodDescriptors.add(fetchLinkableGitRepositoriesMethodDescriptor);
     methodDescriptors.add(fetchGitHubInstallationsMethodDescriptor);
     methodDescriptors.add(fetchGitRefsMethodDescriptor);
+    methodDescriptors.add(listAccountConnectorsMethodDescriptor);
+    methodDescriptors.add(getAccountConnectorMethodDescriptor);
+    methodDescriptors.add(createAccountConnectorMethodDescriptor);
+    methodDescriptors.add(updateAccountConnectorMethodDescriptor);
+    methodDescriptors.add(deleteAccountConnectorMethodDescriptor);
+    methodDescriptors.add(fetchAccessTokenMethodDescriptor);
+    methodDescriptors.add(listUsersMethodDescriptor);
+    methodDescriptors.add(deleteUserMethodDescriptor);
+    methodDescriptors.add(fetchSelfMethodDescriptor);
+    methodDescriptors.add(deleteSelfMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -1318,6 +1981,99 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
   @Override
   public UnaryCallable<FetchGitRefsRequest, FetchGitRefsPagedResponse> fetchGitRefsPagedCallable() {
     return fetchGitRefsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsResponse>
+      listAccountConnectorsCallable() {
+    return listAccountConnectorsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsPagedResponse>
+      listAccountConnectorsPagedCallable() {
+    return listAccountConnectorsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAccountConnectorRequest, AccountConnector> getAccountConnectorCallable() {
+    return getAccountConnectorCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAccountConnectorRequest, Operation> createAccountConnectorCallable() {
+    return createAccountConnectorCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      createAccountConnectorOperationCallable() {
+    return createAccountConnectorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAccountConnectorRequest, Operation> updateAccountConnectorCallable() {
+    return updateAccountConnectorCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      updateAccountConnectorOperationCallable() {
+    return updateAccountConnectorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAccountConnectorRequest, Operation> deleteAccountConnectorCallable() {
+    return deleteAccountConnectorCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAccountConnectorRequest, Empty, OperationMetadata>
+      deleteAccountConnectorOperationCallable() {
+    return deleteAccountConnectorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchAccessTokenRequest, FetchAccessTokenResponse>
+      fetchAccessTokenCallable() {
+    return fetchAccessTokenCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable() {
+    return listUsersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable() {
+    return listUsersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteUserRequest, Operation> deleteUserCallable() {
+    return deleteUserCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteUserRequest, Empty, OperationMetadata>
+      deleteUserOperationCallable() {
+    return deleteUserOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchSelfRequest, User> fetchSelfCallable() {
+    return fetchSelfCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSelfRequest, Operation> deleteSelfCallable() {
+    return deleteSelfCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSelfRequest, Empty, OperationMetadata>
+      deleteSelfOperationCallable() {
+    return deleteSelfOperationCallable;
   }
 
   @Override

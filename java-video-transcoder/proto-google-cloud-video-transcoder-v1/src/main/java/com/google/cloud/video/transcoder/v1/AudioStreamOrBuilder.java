@@ -38,6 +38,7 @@ public interface AudioStreamOrBuilder
    * - `mp3`
    * - `ac3`
    * - `eac3`
+   * - `vorbis`
    * </pre>
    *
    * <code>string codec = 1;</code>
@@ -60,6 +61,7 @@ public interface AudioStreamOrBuilder
    * - `mp3`
    * - `ac3`
    * - `eac3`
+   * - `vorbis`
    * </pre>
    *
    * <code>string codec = 1;</code>
@@ -197,7 +199,10 @@ public interface AudioStreamOrBuilder
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with audio
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -208,7 +213,10 @@ public interface AudioStreamOrBuilder
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with audio
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -219,7 +227,10 @@ public interface AudioStreamOrBuilder
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with audio
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -230,7 +241,10 @@ public interface AudioStreamOrBuilder
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with audio
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>
@@ -242,7 +256,10 @@ public interface AudioStreamOrBuilder
    *
    *
    * <pre>
-   * The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+   * The mapping for the
+   * [JobConfig.edit_list][google.cloud.video.transcoder.v1.JobConfig.edit_list]
+   * atoms with audio
+   * [EditAtom.inputs][google.cloud.video.transcoder.v1.EditAtom.inputs].
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.AudioStream.AudioMapping mapping = 5;</code>

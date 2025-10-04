@@ -32,6 +32,8 @@ import com.google.cloud.compute.v1.SetSecurityPolicyTargetInstanceRequest;
 import com.google.cloud.compute.v1.TargetInstance;
 import com.google.cloud.compute.v1.TargetInstanceAggregatedList;
 import com.google.cloud.compute.v1.TargetInstanceList;
+import com.google.cloud.compute.v1.TestIamPermissionsTargetInstanceRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -92,6 +94,11 @@ public abstract class TargetInstancesStub implements BackgroundResource {
   public UnaryCallable<SetSecurityPolicyTargetInstanceRequest, Operation>
       setSecurityPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setSecurityPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsTargetInstanceRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

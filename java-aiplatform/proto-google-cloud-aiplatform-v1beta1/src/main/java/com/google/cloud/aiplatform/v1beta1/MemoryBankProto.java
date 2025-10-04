@@ -48,8 +48,12 @@ public final class MemoryBankProto {
       "\n"
           + "1google/cloud/aiplatform/v1beta1/memory_bank.proto\022\037google.cloud.aiplatform.v1b"
           + "eta1\032\037google/api/field_behavior.proto\032\031g"
-          + "oogle/api/resource.proto\032\037google/protobuf/timestamp.proto\"\337\003\n"
-          + "\006Memory\022\021\n"
+          + "oogle/api/resource.proto\032\036google/protobu"
+          + "f/duration.proto\032\037google/protobuf/timestamp.proto\"\324\004\n"
+          + "\006Memory\0226\n"
+          + "\013expire_time\030\r"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001H\000\022-\n"
+          + "\003ttl\030\016 \001(\0132\031.google.protobuf.DurationB\003\340A\001H\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\001\022\030\n"
           + "\013description\030\003 \001(\tB\003\340A\001\0224\n"
@@ -58,19 +62,19 @@ public final class MemoryBankProto {
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
           + "\004fact\030\n"
           + " \001(\tB\003\340A\002\022F\n"
-          + "\005scope\030\013 \003"
-          + "(\01322.google.cloud.aiplatform.v1beta1.Memory.ScopeEntryB\003\340A\002\032,\n\n"
+          + "\005scope\030\013"
+          + " \003(\01322.google.cloud.aiplatform.v1beta1.Memory.ScopeEntryB\003\340A\002\032,\n\n"
           + "ScopeEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\227\001\352A\223\001\n"
-          + " aiplatform.googleapis.com/Memory\022]projects/{pr"
-          + "oject}/locations/{location}/reasoningEng"
-          + "ines/{reasoning_engine}/memories/{memory}*\010memories2\006memoryB\346\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\017MemoryBankProtoP\001ZC"
-          + "cloud.google.com/go/aiplatform/apiv1beta"
-          + "1/aiplatformpb;aiplatformpb\252\002\037Google.Clo"
-          + "ud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIP"
-          + "latform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + " aiplatform.googleapis.com/Memory\022]projects/{project}/locations/{locatio"
+          + "n}/reasoningEngines/{reasoning_engine}/memories/{memory}*\010memories2\006memoryB\014\n\n"
+          + "expirationB\346\001\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\017MemoryBankProtoP\001ZCcloud.googl"
+          + "e.com/go/aiplatform/apiv1beta1/aiplatfor"
+          + "mpb;aiplatformpb\252\002\037Google.Cloud.AIPlatfo"
+          + "rm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1b"
+          + "eta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -78,6 +82,7 @@ public final class MemoryBankProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_Memory_descriptor =
@@ -86,7 +91,16 @@ public final class MemoryBankProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_Memory_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "Description", "CreateTime", "UpdateTime", "Fact", "Scope",
+              "ExpireTime",
+              "Ttl",
+              "Name",
+              "DisplayName",
+              "Description",
+              "CreateTime",
+              "UpdateTime",
+              "Fact",
+              "Scope",
+              "Expiration",
             });
     internal_static_google_cloud_aiplatform_v1beta1_Memory_ScopeEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_Memory_descriptor.getNestedTypes().get(0);
@@ -104,6 +118,7 @@ public final class MemoryBankProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

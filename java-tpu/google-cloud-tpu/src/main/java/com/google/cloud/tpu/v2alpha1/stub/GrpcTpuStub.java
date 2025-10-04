@@ -95,6 +95,7 @@ public class GrpcTpuStub extends TpuStub {
               .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/ListNodes")
               .setRequestMarshaller(ProtoUtils.marshaller(ListNodesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListNodesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNodeRequest, Node> getNodeMethodDescriptor =
@@ -103,6 +104,7 @@ public class GrpcTpuStub extends TpuStub {
           .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/GetNode")
           .setRequestMarshaller(ProtoUtils.marshaller(GetNodeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Node.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateNodeRequest, Operation> createNodeMethodDescriptor =
@@ -111,6 +113,7 @@ public class GrpcTpuStub extends TpuStub {
           .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/CreateNode")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateNodeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteNodeRequest, Operation> deleteNodeMethodDescriptor =
@@ -119,6 +122,7 @@ public class GrpcTpuStub extends TpuStub {
           .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/DeleteNode")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteNodeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<StopNodeRequest, Operation> stopNodeMethodDescriptor =
@@ -127,6 +131,7 @@ public class GrpcTpuStub extends TpuStub {
           .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/StopNode")
           .setRequestMarshaller(ProtoUtils.marshaller(StopNodeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<StartNodeRequest, Operation> startNodeMethodDescriptor =
@@ -135,6 +140,7 @@ public class GrpcTpuStub extends TpuStub {
           .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/StartNode")
           .setRequestMarshaller(ProtoUtils.marshaller(StartNodeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateNodeRequest, Operation> updateNodeMethodDescriptor =
@@ -143,6 +149,7 @@ public class GrpcTpuStub extends TpuStub {
           .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/UpdateNode")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateNodeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<PerformMaintenanceRequest, Operation>
@@ -153,6 +160,7 @@ public class GrpcTpuStub extends TpuStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PerformMaintenanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListQueuedResourcesRequest, ListQueuedResourcesResponse>
@@ -164,6 +172,7 @@ public class GrpcTpuStub extends TpuStub {
                   ProtoUtils.marshaller(ListQueuedResourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListQueuedResourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetQueuedResourceRequest, QueuedResource>
@@ -174,6 +183,7 @@ public class GrpcTpuStub extends TpuStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetQueuedResourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(QueuedResource.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateQueuedResourceRequest, Operation>
@@ -184,6 +194,7 @@ public class GrpcTpuStub extends TpuStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateQueuedResourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteQueuedResourceRequest, Operation>
@@ -194,6 +205,7 @@ public class GrpcTpuStub extends TpuStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteQueuedResourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResetQueuedResourceRequest, Operation>
@@ -204,6 +216,7 @@ public class GrpcTpuStub extends TpuStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResetQueuedResourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PerformMaintenanceQueuedResourceRequest, Operation>
@@ -215,6 +228,7 @@ public class GrpcTpuStub extends TpuStub {
                   ProtoUtils.marshaller(
                       PerformMaintenanceQueuedResourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -228,6 +242,7 @@ public class GrpcTpuStub extends TpuStub {
                   ProtoUtils.marshaller(GenerateServiceIdentityRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateServiceIdentityResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse>
@@ -239,6 +254,7 @@ public class GrpcTpuStub extends TpuStub {
                   ProtoUtils.marshaller(ListAcceleratorTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAcceleratorTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAcceleratorTypeRequest, AcceleratorType>
@@ -249,6 +265,7 @@ public class GrpcTpuStub extends TpuStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAcceleratorTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AcceleratorType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRuntimeVersionsRequest, ListRuntimeVersionsResponse>
@@ -260,6 +277,7 @@ public class GrpcTpuStub extends TpuStub {
                   ProtoUtils.marshaller(ListRuntimeVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRuntimeVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRuntimeVersionRequest, RuntimeVersion>
@@ -270,6 +288,7 @@ public class GrpcTpuStub extends TpuStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRuntimeVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RuntimeVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGuestAttributesRequest, GetGuestAttributesResponse>
@@ -281,6 +300,7 @@ public class GrpcTpuStub extends TpuStub {
                   ProtoUtils.marshaller(GetGuestAttributesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GetGuestAttributesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReservationsRequest, ListReservationsResponse>
@@ -292,6 +312,7 @@ public class GrpcTpuStub extends TpuStub {
                   ProtoUtils.marshaller(ListReservationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReservationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SimulateMaintenanceEventRequest, Operation>
@@ -302,6 +323,7 @@ public class GrpcTpuStub extends TpuStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SimulateMaintenanceEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -313,6 +335,7 @@ public class GrpcTpuStub extends TpuStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -321,6 +344,7 @@ public class GrpcTpuStub extends TpuStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListNodesRequest, ListNodesResponse> listNodesCallable;

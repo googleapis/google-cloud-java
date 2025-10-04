@@ -159,6 +159,84 @@ public interface RestoreBackupRequestOrBuilder
    *
    *
    * <pre>
+   * Disk target environment to be used during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskTargetEnvironment disk_target_environment = 5;</code>
+   *
+   * @return Whether the diskTargetEnvironment field is set.
+   */
+  boolean hasDiskTargetEnvironment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Disk target environment to be used during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskTargetEnvironment disk_target_environment = 5;</code>
+   *
+   * @return The diskTargetEnvironment.
+   */
+  com.google.cloud.backupdr.v1.DiskTargetEnvironment getDiskTargetEnvironment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Disk target environment to be used during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskTargetEnvironment disk_target_environment = 5;</code>
+   */
+  com.google.cloud.backupdr.v1.DiskTargetEnvironmentOrBuilder getDiskTargetEnvironmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Region disk target environment to be used during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.RegionDiskTargetEnvironment region_disk_target_environment = 6;
+   * </code>
+   *
+   * @return Whether the regionDiskTargetEnvironment field is set.
+   */
+  boolean hasRegionDiskTargetEnvironment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Region disk target environment to be used during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.RegionDiskTargetEnvironment region_disk_target_environment = 6;
+   * </code>
+   *
+   * @return The regionDiskTargetEnvironment.
+   */
+  com.google.cloud.backupdr.v1.RegionDiskTargetEnvironment getRegionDiskTargetEnvironment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Region disk target environment to be used during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.RegionDiskTargetEnvironment region_disk_target_environment = 6;
+   * </code>
+   */
+  com.google.cloud.backupdr.v1.RegionDiskTargetEnvironmentOrBuilder
+      getRegionDiskTargetEnvironmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Compute Engine instance properties to be overridden during restore.
    * </pre>
    *
@@ -199,6 +277,43 @@ public interface RestoreBackupRequestOrBuilder
    */
   com.google.cloud.backupdr.v1.ComputeInstanceRestorePropertiesOrBuilder
       getComputeInstanceRestorePropertiesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Disk properties to be overridden during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskRestoreProperties disk_restore_properties = 7;</code>
+   *
+   * @return Whether the diskRestoreProperties field is set.
+   */
+  boolean hasDiskRestoreProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Disk properties to be overridden during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskRestoreProperties disk_restore_properties = 7;</code>
+   *
+   * @return The diskRestoreProperties.
+   */
+  com.google.cloud.backupdr.v1.DiskRestoreProperties getDiskRestoreProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Disk properties to be overridden during restore.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskRestoreProperties disk_restore_properties = 7;</code>
+   */
+  com.google.cloud.backupdr.v1.DiskRestorePropertiesOrBuilder getDiskRestorePropertiesOrBuilder();
 
   com.google.cloud.backupdr.v1.RestoreBackupRequest.TargetEnvironmentCase
       getTargetEnvironmentCase();

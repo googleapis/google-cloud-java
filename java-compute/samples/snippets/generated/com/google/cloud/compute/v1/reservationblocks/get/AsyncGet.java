@@ -40,6 +40,7 @@ public class AsyncGet {
               .setProject("project-309310695")
               .setReservation("reservation-1563081780")
               .setReservationBlock("reservationBlock-1897000927")
+              .setView("view3619493")
               .setZone("zone3744684")
               .build();
       ApiFuture<ReservationBlocksGetResponse> future =

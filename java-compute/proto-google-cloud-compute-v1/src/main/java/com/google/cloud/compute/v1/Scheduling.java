@@ -440,6 +440,16 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Instance is provisioned using the Flex Start provisioning model and has a limited runtime.
+     * </pre>
+     *
+     * <code>FLEX_START = 101746812;</code>
+     */
+    FLEX_START(101746812),
+    /**
+     *
+     *
+     * <pre>
      * Bound to the lifecycle of the reservation in which it is provisioned.
      * </pre>
      *
@@ -479,6 +489,17 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PROVISIONING_MODEL = 0;</code>
      */
     public static final int UNDEFINED_PROVISIONING_MODEL_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Instance is provisioned using the Flex Start provisioning model and has a limited runtime.
+     * </pre>
+     *
+     * <code>FLEX_START = 101746812;</code>
+     */
+    public static final int FLEX_START_VALUE = 101746812;
 
     /**
      *
@@ -539,6 +560,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_PROVISIONING_MODEL;
+        case 101746812:
+          return FLEX_START;
         case 293538571:
           return RESERVATION_BOUND;
         case 2552066:
@@ -1293,6 +1316,41 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SKIP_GUEST_OS_SHUTDOWN_FIELD_NUMBER = 201662378;
+  private boolean skipGuestOsShutdown_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Default is false and there will be 120 seconds between GCE ACPI G2 Soft Off and ACPI G3 Mechanical Off for Standard VMs and 30 seconds for Spot VMs.
+   * </pre>
+   *
+   * <code>optional bool skip_guest_os_shutdown = 201662378;</code>
+   *
+   * @return Whether the skipGuestOsShutdown field is set.
+   */
+  @java.lang.Override
+  public boolean hasSkipGuestOsShutdown() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Default is false and there will be 120 seconds between GCE ACPI G2 Soft Off and ACPI G3 Mechanical Off for Standard VMs and 30 seconds for Spot VMs.
+   * </pre>
+   *
+   * <code>optional bool skip_guest_os_shutdown = 201662378;</code>
+   *
+   * @return The skipGuestOsShutdown.
+   */
+  @java.lang.Override
+  public boolean getSkipGuestOsShutdown() {
+    return skipGuestOsShutdown_;
+  }
+
   public static final int TERMINATION_TIME_FIELD_NUMBER = 428082984;
 
   @SuppressWarnings("serial")
@@ -1311,7 +1369,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTerminationTime() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -1386,6 +1444,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 107380667, instanceTerminationAction_);
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeBool(201662378, skipGuestOsShutdown_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(252514344, availabilityDomain_);
     }
@@ -1407,7 +1468,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeInt32(408317459, hostErrorTimeoutSeconds_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 428082984, terminationTime_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1440,6 +1501,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               107380667, instanceTerminationAction_);
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(201662378, skipGuestOsShutdown_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(252514344, availabilityDomain_);
@@ -1466,7 +1531,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               408317459, hostErrorTimeoutSeconds_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(428082984, terminationTime_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1548,6 +1613,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (hasProvisioningModel()) {
       if (!getProvisioningModel().equals(other.getProvisioningModel())) return false;
     }
+    if (hasSkipGuestOsShutdown() != other.hasSkipGuestOsShutdown()) return false;
+    if (hasSkipGuestOsShutdown()) {
+      if (getSkipGuestOsShutdown() != other.getSkipGuestOsShutdown()) return false;
+    }
     if (hasTerminationTime() != other.hasTerminationTime()) return false;
     if (hasTerminationTime()) {
       if (!getTerminationTime().equals(other.getTerminationTime())) return false;
@@ -1614,6 +1683,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (hasProvisioningModel()) {
       hash = (37 * hash) + PROVISIONING_MODEL_FIELD_NUMBER;
       hash = (53 * hash) + getProvisioningModel().hashCode();
+    }
+    if (hasSkipGuestOsShutdown()) {
+      hash = (37 * hash) + SKIP_GUEST_OS_SHUTDOWN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipGuestOsShutdown());
     }
     if (hasTerminationTime()) {
       hash = (37 * hash) + TERMINATION_TIME_FIELD_NUMBER;
@@ -1802,6 +1875,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       preemptible_ = false;
       provisioningModel_ = "";
+      skipGuestOsShutdown_ = false;
       terminationTime_ = "";
       return this;
     }
@@ -1909,8 +1983,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.terminationTime_ = terminationTime_;
+        result.skipGuestOsShutdown_ = skipGuestOsShutdown_;
         to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.terminationTime_ = terminationTime_;
+        to_bitField0_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2031,9 +2109,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00001000;
         onChanged();
       }
+      if (other.hasSkipGuestOsShutdown()) {
+        setSkipGuestOsShutdown(other.getSkipGuestOsShutdown());
+      }
       if (other.hasTerminationTime()) {
         terminationTime_ = other.terminationTime_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2080,6 +2161,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 859045338
+            case 1613299024:
+              {
+                skipGuestOsShutdown_ = input.readBool();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 1613299024
             case 2020114752:
               {
                 availabilityDomain_ = input.readInt32();
@@ -2126,7 +2213,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
             case -870303422:
               {
                 terminationTime_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case -870303422
             case -848249318:
@@ -4018,6 +4105,78 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean skipGuestOsShutdown_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default is false and there will be 120 seconds between GCE ACPI G2 Soft Off and ACPI G3 Mechanical Off for Standard VMs and 30 seconds for Spot VMs.
+     * </pre>
+     *
+     * <code>optional bool skip_guest_os_shutdown = 201662378;</code>
+     *
+     * @return Whether the skipGuestOsShutdown field is set.
+     */
+    @java.lang.Override
+    public boolean hasSkipGuestOsShutdown() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default is false and there will be 120 seconds between GCE ACPI G2 Soft Off and ACPI G3 Mechanical Off for Standard VMs and 30 seconds for Spot VMs.
+     * </pre>
+     *
+     * <code>optional bool skip_guest_os_shutdown = 201662378;</code>
+     *
+     * @return The skipGuestOsShutdown.
+     */
+    @java.lang.Override
+    public boolean getSkipGuestOsShutdown() {
+      return skipGuestOsShutdown_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default is false and there will be 120 seconds between GCE ACPI G2 Soft Off and ACPI G3 Mechanical Off for Standard VMs and 30 seconds for Spot VMs.
+     * </pre>
+     *
+     * <code>optional bool skip_guest_os_shutdown = 201662378;</code>
+     *
+     * @param value The skipGuestOsShutdown to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkipGuestOsShutdown(boolean value) {
+
+      skipGuestOsShutdown_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default is false and there will be 120 seconds between GCE ACPI G2 Soft Off and ACPI G3 Mechanical Off for Standard VMs and 30 seconds for Spot VMs.
+     * </pre>
+     *
+     * <code>optional bool skip_guest_os_shutdown = 201662378;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkipGuestOsShutdown() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      skipGuestOsShutdown_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object terminationTime_ = "";
 
     /**
@@ -4032,7 +4191,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the terminationTime field is set.
      */
     public boolean hasTerminationTime() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -4098,7 +4257,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       terminationTime_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4116,7 +4275,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTerminationTime() {
       terminationTime_ = getDefaultInstance().getTerminationTime();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4139,7 +4298,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       terminationTime_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

@@ -97,6 +97,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceRequest, Service> getServiceMethodDescriptor =
@@ -105,6 +106,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
           .setFullMethodName("google.cloud.metastore.v1alpha.DataprocMetastore/GetService")
           .setRequestMarshaller(ProtoUtils.marshaller(GetServiceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateServiceRequest, Operation>
@@ -115,6 +117,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateServiceRequest, Operation>
@@ -125,6 +128,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceRequest, Operation>
@@ -135,6 +139,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMetadataImportsRequest, ListMetadataImportsResponse>
@@ -147,6 +152,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   ProtoUtils.marshaller(ListMetadataImportsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMetadataImportsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMetadataImportRequest, MetadataImport>
@@ -158,6 +164,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMetadataImportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MetadataImport.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMetadataImportRequest, Operation>
@@ -169,6 +176,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMetadataImportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateMetadataImportRequest, Operation>
@@ -180,6 +188,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateMetadataImportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportMetadataRequest, Operation>
@@ -190,6 +199,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportMetadataRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RestoreServiceRequest, Operation>
@@ -200,6 +210,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RestoreServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBackupsRequest, ListBackupsResponse>
@@ -210,6 +221,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListBackupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
@@ -218,6 +230,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
           .setFullMethodName("google.cloud.metastore.v1alpha.DataprocMetastore/GetBackup")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBackupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateBackupRequest, Operation>
@@ -227,6 +240,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setFullMethodName("google.cloud.metastore.v1alpha.DataprocMetastore/CreateBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupRequest, Operation>
@@ -236,6 +250,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setFullMethodName("google.cloud.metastore.v1alpha.DataprocMetastore/DeleteBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveIamPolicyRequest, RemoveIamPolicyResponse>
@@ -247,6 +262,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   ProtoUtils.marshaller(RemoveIamPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RemoveIamPolicyResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<QueryMetadataRequest, Operation>
@@ -257,6 +273,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(QueryMetadataRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MoveTableToDatabaseRequest, Operation>
@@ -268,6 +285,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MoveTableToDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AlterMetadataResourceLocationRequest, Operation>
@@ -279,6 +297,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AlterMetadataResourceLocationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -290,6 +309,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -298,6 +318,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -306,6 +327,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -314,6 +336,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -325,6 +348,7 @@ public class GrpcDataprocMetastoreStub extends DataprocMetastoreStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable;

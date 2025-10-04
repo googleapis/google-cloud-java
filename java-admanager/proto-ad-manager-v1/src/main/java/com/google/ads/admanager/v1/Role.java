@@ -66,6 +66,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
             com.google.ads.admanager.v1.Role.class, com.google.ads.admanager.v1.Role.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -131,7 +132,23 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
    * Output only. `Role` ID.
    * </pre>
    *
-   * <code>int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the roleId field is set.
+   */
+  @java.lang.Override
+  public boolean hasRoleId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. `Role` ID.
+   * </pre>
+   *
+   * <code>optional int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The roleId.
    */
@@ -152,7 +169,23 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
    * Required. The display name of the `Role`.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisplayName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The display name of the `Role`.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -176,7 +209,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
    * Required. The display name of the `Role`.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -205,7 +238,23 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
    * Optional. The description of the `Role`.
    * </pre>
    *
-   * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The description of the `Role`.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -229,7 +278,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
    * Optional. The description of the `Role`.
    * </pre>
    *
-   * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -256,7 +305,23 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
    * Output only. Whether the `Role` is a built-in or custom user role.
    * </pre>
    *
-   * <code>bool built_in = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool built_in = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the builtIn field is set.
+   */
+  @java.lang.Override
+  public boolean hasBuiltIn() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the `Role` is a built-in or custom user role.
+   * </pre>
+   *
+   * <code>optional bool built_in = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The builtIn.
    */
@@ -276,7 +341,25 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the `Role`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The enum numeric value on the wire for status.
@@ -294,7 +377,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The status.
@@ -325,21 +408,19 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (roleId_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt64(2, roleId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, displayName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
     }
-    if (builtIn_ != false) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeBool(5, builtIn_);
     }
-    if (status_
-        != com.google.ads.admanager.v1.RoleStatusEnum.RoleStatus.ROLE_STATUS_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeEnum(6, status_);
     }
     getUnknownFields().writeTo(output);
@@ -354,21 +435,19 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (roleId_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, roleId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, displayName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
     }
-    if (builtIn_ != false) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, builtIn_);
     }
-    if (status_
-        != com.google.ads.admanager.v1.RoleStatusEnum.RoleStatus.ROLE_STATUS_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, status_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -387,11 +466,26 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     com.google.ads.admanager.v1.Role other = (com.google.ads.admanager.v1.Role) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (getRoleId() != other.getRoleId()) return false;
-    if (!getDisplayName().equals(other.getDisplayName())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (getBuiltIn() != other.getBuiltIn()) return false;
-    if (status_ != other.status_) return false;
+    if (hasRoleId() != other.hasRoleId()) return false;
+    if (hasRoleId()) {
+      if (getRoleId() != other.getRoleId()) return false;
+    }
+    if (hasDisplayName() != other.hasDisplayName()) return false;
+    if (hasDisplayName()) {
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasBuiltIn() != other.hasBuiltIn()) return false;
+    if (hasBuiltIn()) {
+      if (getBuiltIn() != other.getBuiltIn()) return false;
+    }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (status_ != other.status_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -405,16 +499,26 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + ROLE_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRoleId());
-    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDisplayName().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + BUILT_IN_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getBuiltIn());
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + status_;
+    if (hasRoleId()) {
+      hash = (37 * hash) + ROLE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRoleId());
+    }
+    if (hasDisplayName()) {
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasBuiltIn()) {
+      hash = (37 * hash) + BUILT_IN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getBuiltIn());
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -598,21 +702,28 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.roleId_ = roleId_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.displayName_ = displayName_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.description_ = description_;
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.builtIn_ = builtIn_;
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.status_ = status_;
+        to_bitField0_ |= 0x00000010;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -665,24 +776,24 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (other.getRoleId() != 0L) {
+      if (other.hasRoleId()) {
         setRoleId(other.getRoleId());
       }
-      if (!other.getDisplayName().isEmpty()) {
+      if (other.hasDisplayName()) {
         displayName_ = other.displayName_;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
+      if (other.hasDescription()) {
         description_ = other.description_;
         bitField0_ |= 0x00000008;
         onChanged();
       }
-      if (other.getBuiltIn() != false) {
+      if (other.hasBuiltIn()) {
         setBuiltIn(other.getBuiltIn());
       }
-      if (other.status_ != 0) {
-        setStatusValue(other.getStatusValue());
+      if (other.hasStatus()) {
+        setStatus(other.getStatus());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -890,7 +1001,23 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * Output only. `Role` ID.
      * </pre>
      *
-     * <code>int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the roleId field is set.
+     */
+    @java.lang.Override
+    public boolean hasRoleId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. `Role` ID.
+     * </pre>
+     *
+     * <code>optional int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The roleId.
      */
@@ -906,7 +1033,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * Output only. `Role` ID.
      * </pre>
      *
-     * <code>int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The roleId to set.
      * @return This builder for chaining.
@@ -926,7 +1053,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * Output only. `Role` ID.
      * </pre>
      *
-     * <code>int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -946,7 +1073,22 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * Required. The display name of the `Role`.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the displayName field is set.
+     */
+    public boolean hasDisplayName() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The display name of the `Role`.
+     * </pre>
+     *
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The displayName.
      */
@@ -969,7 +1111,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * Required. The display name of the `Role`.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for displayName.
      */
@@ -992,7 +1134,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * Required. The display name of the `Role`.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -1014,7 +1156,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * Required. The display name of the `Role`.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1032,7 +1174,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * Required. The display name of the `Role`.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -1057,7 +1199,22 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * Optional. The description of the `Role`.
      * </pre>
      *
-     * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The description of the `Role`.
+     * </pre>
+     *
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -1080,7 +1237,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * Optional. The description of the `Role`.
      * </pre>
      *
-     * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -1103,7 +1260,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * Optional. The description of the `Role`.
      * </pre>
      *
-     * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1125,7 +1282,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * Optional. The description of the `Role`.
      * </pre>
      *
-     * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1143,7 +1300,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * Optional. The description of the `Role`.
      * </pre>
      *
-     * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1168,7 +1325,23 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * Output only. Whether the `Role` is a built-in or custom user role.
      * </pre>
      *
-     * <code>bool built_in = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool built_in = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the builtIn field is set.
+     */
+    @java.lang.Override
+    public boolean hasBuiltIn() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the `Role` is a built-in or custom user role.
+     * </pre>
+     *
+     * <code>optional bool built_in = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The builtIn.
      */
@@ -1184,7 +1357,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * Output only. Whether the `Role` is a built-in or custom user role.
      * </pre>
      *
-     * <code>bool built_in = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool built_in = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The builtIn to set.
      * @return This builder for chaining.
@@ -1204,7 +1377,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * Output only. Whether the `Role` is a built-in or custom user role.
      * </pre>
      *
-     * <code>bool built_in = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool built_in = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1225,7 +1398,25 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the `Role`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The enum numeric value on the wire for status.
@@ -1243,7 +1434,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The enum numeric value on the wire for status to set.
@@ -1264,7 +1455,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The status.
@@ -1286,7 +1477,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The status to set.
@@ -1310,7 +1501,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.RoleStatusEnum.RoleStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.

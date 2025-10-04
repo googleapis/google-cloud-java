@@ -303,6 +303,313 @@ public final class ServiceLbPolicy extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(enum_scope:google.cloud.networkservices.v1.ServiceLbPolicy.LoadBalancingAlgorithm)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The granularity of this isolation restriction.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity}
+   */
+  public enum IsolationGranularity implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * No isolation is configured for the backend service. Traffic can overflow
+     * based on the load balancing algorithm.
+     * </pre>
+     *
+     * <code>ISOLATION_GRANULARITY_UNSPECIFIED = 0;</code>
+     */
+    ISOLATION_GRANULARITY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Traffic for this service will be isolated at the cloud region level.
+     * </pre>
+     *
+     * <code>REGION = 1;</code>
+     */
+    REGION(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * No isolation is configured for the backend service. Traffic can overflow
+     * based on the load balancing algorithm.
+     * </pre>
+     *
+     * <code>ISOLATION_GRANULARITY_UNSPECIFIED = 0;</code>
+     */
+    public static final int ISOLATION_GRANULARITY_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic for this service will be isolated at the cloud region level.
+     * </pre>
+     *
+     * <code>REGION = 1;</code>
+     */
+    public static final int REGION_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static IsolationGranularity valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static IsolationGranularity forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ISOLATION_GRANULARITY_UNSPECIFIED;
+        case 1:
+          return REGION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<IsolationGranularity>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<IsolationGranularity>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<IsolationGranularity>() {
+              public IsolationGranularity findValueByNumber(int number) {
+                return IsolationGranularity.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.networkservices.v1.ServiceLbPolicy.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final IsolationGranularity[] VALUES = values();
+
+    public static IsolationGranularity valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private IsolationGranularity(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The mode of this isolation restriction, defining whether clients in a given
+   * region are allowed to reach out to another region.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode}
+   */
+  public enum IsolationMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * No isolation mode is configured for the backend service.
+     * </pre>
+     *
+     * <code>ISOLATION_MODE_UNSPECIFIED = 0;</code>
+     */
+    ISOLATION_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will be sent to the nearest region.
+     * </pre>
+     *
+     * <code>NEAREST = 1;</code>
+     */
+    NEAREST(1),
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will fail if no serving backends are available in the same region
+     * as the load balancer.
+     * </pre>
+     *
+     * <code>STRICT = 2;</code>
+     */
+    STRICT(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * No isolation mode is configured for the backend service.
+     * </pre>
+     *
+     * <code>ISOLATION_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int ISOLATION_MODE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will be sent to the nearest region.
+     * </pre>
+     *
+     * <code>NEAREST = 1;</code>
+     */
+    public static final int NEAREST_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will fail if no serving backends are available in the same region
+     * as the load balancer.
+     * </pre>
+     *
+     * <code>STRICT = 2;</code>
+     */
+    public static final int STRICT_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static IsolationMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static IsolationMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ISOLATION_MODE_UNSPECIFIED;
+        case 1:
+          return NEAREST;
+        case 2:
+          return STRICT;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<IsolationMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<IsolationMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<IsolationMode>() {
+          public IsolationMode findValueByNumber(int number) {
+            return IsolationMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.networkservices.v1.ServiceLbPolicy.getDescriptor()
+          .getEnumTypes()
+          .get(2);
+    }
+
+    private static final IsolationMode[] VALUES = values();
+
+    public static IsolationMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private IsolationMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode)
+  }
+
   public interface AutoCapacityDrainOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.networkservices.v1.ServiceLbPolicy.AutoCapacityDrain)
@@ -1472,6 +1779,884 @@ public final class ServiceLbPolicy extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public interface IsolationConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The isolation granularity of the load balancer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity isolation_granularity = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for isolationGranularity.
+     */
+    int getIsolationGranularityValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The isolation granularity of the load balancer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity isolation_granularity = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The isolationGranularity.
+     */
+    com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity
+        getIsolationGranularity();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The isolation mode of the load balancer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode isolation_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for isolationMode.
+     */
+    int getIsolationModeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The isolation mode of the load balancer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode isolation_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The isolationMode.
+     */
+    com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode getIsolationMode();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration to provide isolation support for the associated Backend
+   * Service.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig}
+   */
+  public static final class IsolationConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig)
+      IsolationConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use IsolationConfig.newBuilder() to construct.
+    private IsolationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private IsolationConfig() {
+      isolationGranularity_ = 0;
+      isolationMode_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new IsolationConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.networkservices.v1.ServiceLbPolicyProto
+          .internal_static_google_cloud_networkservices_v1_ServiceLbPolicy_IsolationConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.networkservices.v1.ServiceLbPolicyProto
+          .internal_static_google_cloud_networkservices_v1_ServiceLbPolicy_IsolationConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig.class,
+              com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig.Builder.class);
+    }
+
+    public static final int ISOLATION_GRANULARITY_FIELD_NUMBER = 1;
+    private int isolationGranularity_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The isolation granularity of the load balancer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity isolation_granularity = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for isolationGranularity.
+     */
+    @java.lang.Override
+    public int getIsolationGranularityValue() {
+      return isolationGranularity_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The isolation granularity of the load balancer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity isolation_granularity = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The isolationGranularity.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity
+        getIsolationGranularity() {
+      com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity result =
+          com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity.forNumber(
+              isolationGranularity_);
+      return result == null
+          ? com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int ISOLATION_MODE_FIELD_NUMBER = 2;
+    private int isolationMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The isolation mode of the load balancer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode isolation_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for isolationMode.
+     */
+    @java.lang.Override
+    public int getIsolationModeValue() {
+      return isolationMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The isolation mode of the load balancer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode isolation_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The isolationMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode getIsolationMode() {
+      com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode result =
+          com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode.forNumber(
+              isolationMode_);
+      return result == null
+          ? com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (isolationGranularity_
+          != com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity
+              .ISOLATION_GRANULARITY_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, isolationGranularity_);
+      }
+      if (isolationMode_
+          != com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode
+              .ISOLATION_MODE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, isolationMode_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (isolationGranularity_
+          != com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity
+              .ISOLATION_GRANULARITY_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, isolationGranularity_);
+      }
+      if (isolationMode_
+          != com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode
+              .ISOLATION_MODE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, isolationMode_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig other =
+          (com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig) obj;
+
+      if (isolationGranularity_ != other.isolationGranularity_) return false;
+      if (isolationMode_ != other.isolationMode_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ISOLATION_GRANULARITY_FIELD_NUMBER;
+      hash = (53 * hash) + isolationGranularity_;
+      hash = (37 * hash) + ISOLATION_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + isolationMode_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration to provide isolation support for the associated Backend
+     * Service.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig)
+        com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.networkservices.v1.ServiceLbPolicyProto
+            .internal_static_google_cloud_networkservices_v1_ServiceLbPolicy_IsolationConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.networkservices.v1.ServiceLbPolicyProto
+            .internal_static_google_cloud_networkservices_v1_ServiceLbPolicy_IsolationConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig.class,
+                com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        isolationGranularity_ = 0;
+        isolationMode_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.networkservices.v1.ServiceLbPolicyProto
+            .internal_static_google_cloud_networkservices_v1_ServiceLbPolicy_IsolationConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig build() {
+        com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig buildPartial() {
+        com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig result =
+            new com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isolationGranularity_ = isolationGranularity_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isolationMode_ = isolationMode_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig) {
+          return mergeFrom(
+              (com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig other) {
+        if (other
+            == com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig
+                .getDefaultInstance()) return this;
+        if (other.isolationGranularity_ != 0) {
+          setIsolationGranularityValue(other.getIsolationGranularityValue());
+        }
+        if (other.isolationMode_ != 0) {
+          setIsolationModeValue(other.getIsolationModeValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  isolationGranularity_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  isolationMode_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int isolationGranularity_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The isolation granularity of the load balancer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity isolation_granularity = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for isolationGranularity.
+       */
+      @java.lang.Override
+      public int getIsolationGranularityValue() {
+        return isolationGranularity_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The isolation granularity of the load balancer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity isolation_granularity = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for isolationGranularity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsolationGranularityValue(int value) {
+        isolationGranularity_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The isolation granularity of the load balancer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity isolation_granularity = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The isolationGranularity.
+       */
+      @java.lang.Override
+      public com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity
+          getIsolationGranularity() {
+        com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity result =
+            com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity.forNumber(
+                isolationGranularity_);
+        return result == null
+            ? com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The isolation granularity of the load balancer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity isolation_granularity = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The isolationGranularity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsolationGranularity(
+          com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        isolationGranularity_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The isolation granularity of the load balancer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationGranularity isolation_granularity = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIsolationGranularity() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        isolationGranularity_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int isolationMode_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The isolation mode of the load balancer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode isolation_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for isolationMode.
+       */
+      @java.lang.Override
+      public int getIsolationModeValue() {
+        return isolationMode_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The isolation mode of the load balancer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode isolation_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for isolationMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsolationModeValue(int value) {
+        isolationMode_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The isolation mode of the load balancer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode isolation_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The isolationMode.
+       */
+      @java.lang.Override
+      public com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode getIsolationMode() {
+        com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode result =
+            com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode.forNumber(
+                isolationMode_);
+        return result == null
+            ? com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The isolation mode of the load balancer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode isolation_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The isolationMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsolationMode(
+          com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        isolationMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The isolation mode of the load balancer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationMode isolation_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIsolationMode() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        isolationMode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig)
+    private static final com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig();
+    }
+
+    public static com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<IsolationConfig> PARSER =
+        new com.google.protobuf.AbstractParser<IsolationConfig>() {
+          @java.lang.Override
+          public IsolationConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<IsolationConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IsolationConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -1965,6 +3150,69 @@ public final class ServiceLbPolicy extends com.google.protobuf.GeneratedMessageV
         : failoverConfig_;
   }
 
+  public static final int ISOLATION_CONFIG_FIELD_NUMBER = 11;
+  private com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig isolationConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to provide isolation support for the associated
+   * Backend Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig isolation_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the isolationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasIsolationConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to provide isolation support for the associated
+   * Backend Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig isolation_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The isolationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig getIsolationConfig() {
+    return isolationConfig_ == null
+        ? com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig.getDefaultInstance()
+        : isolationConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to provide isolation support for the associated
+   * Backend Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig isolation_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfigOrBuilder
+      getIsolationConfigOrBuilder() {
+    return isolationConfig_ == null
+        ? com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig.getDefaultInstance()
+        : isolationConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2004,6 +3252,9 @@ public final class ServiceLbPolicy extends com.google.protobuf.GeneratedMessageV
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(10, getFailoverConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(11, getIsolationConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2048,6 +3299,9 @@ public final class ServiceLbPolicy extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getFailoverConfig());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getIsolationConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2083,6 +3337,10 @@ public final class ServiceLbPolicy extends com.google.protobuf.GeneratedMessageV
     if (hasFailoverConfig() != other.hasFailoverConfig()) return false;
     if (hasFailoverConfig()) {
       if (!getFailoverConfig().equals(other.getFailoverConfig())) return false;
+    }
+    if (hasIsolationConfig() != other.hasIsolationConfig()) return false;
+    if (hasIsolationConfig()) {
+      if (!getIsolationConfig().equals(other.getIsolationConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2120,6 +3378,10 @@ public final class ServiceLbPolicy extends com.google.protobuf.GeneratedMessageV
     if (hasFailoverConfig()) {
       hash = (37 * hash) + FAILOVER_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getFailoverConfig().hashCode();
+    }
+    if (hasIsolationConfig()) {
+      hash = (37 * hash) + ISOLATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getIsolationConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2289,6 +3551,7 @@ public final class ServiceLbPolicy extends com.google.protobuf.GeneratedMessageV
         getUpdateTimeFieldBuilder();
         getAutoCapacityDrainFieldBuilder();
         getFailoverConfigFieldBuilder();
+        getIsolationConfigFieldBuilder();
       }
     }
 
@@ -2319,6 +3582,11 @@ public final class ServiceLbPolicy extends com.google.protobuf.GeneratedMessageV
       if (failoverConfigBuilder_ != null) {
         failoverConfigBuilder_.dispose();
         failoverConfigBuilder_ = null;
+      }
+      isolationConfig_ = null;
+      if (isolationConfigBuilder_ != null) {
+        isolationConfigBuilder_.dispose();
+        isolationConfigBuilder_ = null;
       }
       return this;
     }
@@ -2389,6 +3657,11 @@ public final class ServiceLbPolicy extends com.google.protobuf.GeneratedMessageV
         result.failoverConfig_ =
             failoverConfigBuilder_ == null ? failoverConfig_ : failoverConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.isolationConfig_ =
+            isolationConfigBuilder_ == null ? isolationConfig_ : isolationConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2465,6 +3738,9 @@ public final class ServiceLbPolicy extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasFailoverConfig()) {
         mergeFailoverConfig(other.getFailoverConfig());
+      }
+      if (other.hasIsolationConfig()) {
+        mergeIsolationConfig(other.getIsolationConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2547,6 +3823,12 @@ public final class ServiceLbPolicy extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000080;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(getIsolationConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3962,6 +5244,238 @@ public final class ServiceLbPolicy extends com.google.protobuf.GeneratedMessageV
         failoverConfig_ = null;
       }
       return failoverConfigBuilder_;
+    }
+
+    private com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig isolationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig,
+            com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig.Builder,
+            com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfigOrBuilder>
+        isolationConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to provide isolation support for the associated
+     * Backend Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig isolation_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the isolationConfig field is set.
+     */
+    public boolean hasIsolationConfig() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to provide isolation support for the associated
+     * Backend Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig isolation_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The isolationConfig.
+     */
+    public com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig
+        getIsolationConfig() {
+      if (isolationConfigBuilder_ == null) {
+        return isolationConfig_ == null
+            ? com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig
+                .getDefaultInstance()
+            : isolationConfig_;
+      } else {
+        return isolationConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to provide isolation support for the associated
+     * Backend Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig isolation_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIsolationConfig(
+        com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig value) {
+      if (isolationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        isolationConfig_ = value;
+      } else {
+        isolationConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to provide isolation support for the associated
+     * Backend Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig isolation_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIsolationConfig(
+        com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig.Builder
+            builderForValue) {
+      if (isolationConfigBuilder_ == null) {
+        isolationConfig_ = builderForValue.build();
+      } else {
+        isolationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to provide isolation support for the associated
+     * Backend Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig isolation_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeIsolationConfig(
+        com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig value) {
+      if (isolationConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && isolationConfig_ != null
+            && isolationConfig_
+                != com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig
+                    .getDefaultInstance()) {
+          getIsolationConfigBuilder().mergeFrom(value);
+        } else {
+          isolationConfig_ = value;
+        }
+      } else {
+        isolationConfigBuilder_.mergeFrom(value);
+      }
+      if (isolationConfig_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to provide isolation support for the associated
+     * Backend Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig isolation_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearIsolationConfig() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      isolationConfig_ = null;
+      if (isolationConfigBuilder_ != null) {
+        isolationConfigBuilder_.dispose();
+        isolationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to provide isolation support for the associated
+     * Backend Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig isolation_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig.Builder
+        getIsolationConfigBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getIsolationConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to provide isolation support for the associated
+     * Backend Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig isolation_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfigOrBuilder
+        getIsolationConfigOrBuilder() {
+      if (isolationConfigBuilder_ != null) {
+        return isolationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return isolationConfig_ == null
+            ? com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig
+                .getDefaultInstance()
+            : isolationConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to provide isolation support for the associated
+     * Backend Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig isolation_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig,
+            com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig.Builder,
+            com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfigOrBuilder>
+        getIsolationConfigFieldBuilder() {
+      if (isolationConfigBuilder_ == null) {
+        isolationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig,
+                com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfig.Builder,
+                com.google.cloud.networkservices.v1.ServiceLbPolicy.IsolationConfigOrBuilder>(
+                getIsolationConfig(), getParentForChildren(), isClean());
+        isolationConfig_ = null;
+      }
+      return isolationConfigBuilder_;
     }
 
     @java.lang.Override

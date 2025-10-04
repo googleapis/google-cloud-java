@@ -210,11 +210,23 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A filter to apply on the list results. The supported features are:
-   * user_pseudo_id, state.
+   * A comma-separated list of fields to filter by, in EBNF grammar.
+   * The supported fields are:
+   * * `user_pseudo_id`
+   * * `state`
+   * * `display_name`
+   * * `starred`
+   * * `is_pinned`
+   * * `labels`
+   * * `create_time`
+   * * `update_time`
    *
-   * Example:
+   * Examples:
    * "user_pseudo_id = some_id"
+   * "display_name = &#92;"some_name&#92;""
+   * "starred = true"
+   * "is_pinned=true AND (NOT labels:hidden)"
+   * "create_time &gt; &#92;"1970-01-01T12:00:00Z&#92;""
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -238,11 +250,23 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A filter to apply on the list results. The supported features are:
-   * user_pseudo_id, state.
+   * A comma-separated list of fields to filter by, in EBNF grammar.
+   * The supported fields are:
+   * * `user_pseudo_id`
+   * * `state`
+   * * `display_name`
+   * * `starred`
+   * * `is_pinned`
+   * * `labels`
+   * * `create_time`
+   * * `update_time`
    *
-   * Example:
+   * Examples:
    * "user_pseudo_id = some_id"
+   * "display_name = &#92;"some_name&#92;""
+   * "starred = true"
+   * "is_pinned=true AND (NOT labels:hidden)"
+   * "create_time &gt; &#92;"1970-01-01T12:00:00Z&#92;""
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -1088,11 +1112,23 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A filter to apply on the list results. The supported features are:
-     * user_pseudo_id, state.
+     * A comma-separated list of fields to filter by, in EBNF grammar.
+     * The supported fields are:
+     * * `user_pseudo_id`
+     * * `state`
+     * * `display_name`
+     * * `starred`
+     * * `is_pinned`
+     * * `labels`
+     * * `create_time`
+     * * `update_time`
      *
-     * Example:
+     * Examples:
      * "user_pseudo_id = some_id"
+     * "display_name = &#92;"some_name&#92;""
+     * "starred = true"
+     * "is_pinned=true AND (NOT labels:hidden)"
+     * "create_time &gt; &#92;"1970-01-01T12:00:00Z&#92;""
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1115,11 +1151,23 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A filter to apply on the list results. The supported features are:
-     * user_pseudo_id, state.
+     * A comma-separated list of fields to filter by, in EBNF grammar.
+     * The supported fields are:
+     * * `user_pseudo_id`
+     * * `state`
+     * * `display_name`
+     * * `starred`
+     * * `is_pinned`
+     * * `labels`
+     * * `create_time`
+     * * `update_time`
      *
-     * Example:
+     * Examples:
      * "user_pseudo_id = some_id"
+     * "display_name = &#92;"some_name&#92;""
+     * "starred = true"
+     * "is_pinned=true AND (NOT labels:hidden)"
+     * "create_time &gt; &#92;"1970-01-01T12:00:00Z&#92;""
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1142,11 +1190,23 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A filter to apply on the list results. The supported features are:
-     * user_pseudo_id, state.
+     * A comma-separated list of fields to filter by, in EBNF grammar.
+     * The supported fields are:
+     * * `user_pseudo_id`
+     * * `state`
+     * * `display_name`
+     * * `starred`
+     * * `is_pinned`
+     * * `labels`
+     * * `create_time`
+     * * `update_time`
      *
-     * Example:
+     * Examples:
      * "user_pseudo_id = some_id"
+     * "display_name = &#92;"some_name&#92;""
+     * "starred = true"
+     * "is_pinned=true AND (NOT labels:hidden)"
+     * "create_time &gt; &#92;"1970-01-01T12:00:00Z&#92;""
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1168,11 +1228,23 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A filter to apply on the list results. The supported features are:
-     * user_pseudo_id, state.
+     * A comma-separated list of fields to filter by, in EBNF grammar.
+     * The supported fields are:
+     * * `user_pseudo_id`
+     * * `state`
+     * * `display_name`
+     * * `starred`
+     * * `is_pinned`
+     * * `labels`
+     * * `create_time`
+     * * `update_time`
      *
-     * Example:
+     * Examples:
      * "user_pseudo_id = some_id"
+     * "display_name = &#92;"some_name&#92;""
+     * "starred = true"
+     * "is_pinned=true AND (NOT labels:hidden)"
+     * "create_time &gt; &#92;"1970-01-01T12:00:00Z&#92;""
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1190,11 +1262,23 @@ public final class ListSessionsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A filter to apply on the list results. The supported features are:
-     * user_pseudo_id, state.
+     * A comma-separated list of fields to filter by, in EBNF grammar.
+     * The supported fields are:
+     * * `user_pseudo_id`
+     * * `state`
+     * * `display_name`
+     * * `starred`
+     * * `is_pinned`
+     * * `labels`
+     * * `create_time`
+     * * `update_time`
      *
-     * Example:
+     * Examples:
      * "user_pseudo_id = some_id"
+     * "display_name = &#92;"some_name&#92;""
+     * "starred = true"
+     * "is_pinned=true AND (NOT labels:hidden)"
+     * "create_time &gt; &#92;"1970-01-01T12:00:00Z&#92;""
      * </pre>
      *
      * <code>string filter = 4;</code>

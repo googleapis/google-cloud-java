@@ -95,7 +95,7 @@ public final class AddressValidationServiceProto {
           + "\007geocode\030\003 \001(\0132).google.maps.addressvalidation.v1.Geocode\022C\n"
           + "\010metadata\030\004"
           + " \001(\01321.google.maps.addressvalidation.v1.AddressMetadata\022=\n"
-          + "\tusps_data\030\005 \001(\0132*.google.maps.addressvalidation.v1.UspsData\"\211\004\n"
+          + "\tusps_data\030\005 \001(\0132*.google.maps.addressvalidation.v1.UspsData\"\261\004\n"
           + "\007Verdict\022P\n"
           + "\021input_granularity\030\001 \001(\01625"
           + ".google.maps.addressvalidation.v1.Verdict.Granularity\022U\n"
@@ -106,7 +106,8 @@ public final class AddressValidationServiceProto {
           + "\020address_complete\030\004 \001(\010\022\"\n"
           + "\032has_unconfirmed_components\030\005 \001(\010\022\037\n"
           + "\027has_inferred_components\030\006 \001(\010\022\037\n"
-          + "\027has_replaced_components\030\007 \001(\010\"\200\001\n"
+          + "\027has_replaced_components\030\007 \001(\010\022&\n"
+          + "\036has_spell_corrected_components\030\t \001(\010\"\200\001\n"
           + "\013Granularity\022\033\n"
           + "\027GRANULARITY_UNSPECIFIED\020\000\022\017\n"
           + "\013SUB_PREMISE\020\001\022\013\n"
@@ -123,12 +124,12 @@ public final class AddressValidationServiceProto {
           + "ddressvalidation.v1.ProvideValidationFeedbackRequest\032C.google.maps.addressvalida"
           + "tion.v1.ProvideValidationFeedbackRespons"
           + "e\"(\202\323\344\223\002\"\"\035/v1:provideValidationFeedback:\001*\032#\312A"
-          + " addressvalidation.googleapis.comB\232\002\n"
+          + " addressvalidation.googleapis.comB\227\002\n"
           + "$com.google.maps.addressvalidation.v1B\035AddressValidationServiceProtoP\001ZXclou"
           + "d.google.com/go/maps/addressvalidation/a"
-          + "piv1/addressvalidationpb;addressvalidationpb\370\001\001\242\002\007GMPAVV1\252\002"
-          + " Google.Maps.AddressValidation.V1\312\002 Google\\Maps\\AddressValida"
-          + "tion\\V1\352\002#Google::Maps::AddressValidation::V1b\006proto3"
+          + "piv1/addressvalidationpb;addressvalidationpb\242\002\007GMPAVV1\252\002"
+          + " Google.Maps.AddressValidation.V1\312\002 Google\\Maps\\AddressValidatio"
+          + "n\\V1\352\002#Google::Maps::AddressValidation::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -194,6 +195,7 @@ public final class AddressValidationServiceProto {
               "HasUnconfirmedComponents",
               "HasInferredComponents",
               "HasReplacedComponents",
+              "HasSpellCorrectedComponents",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

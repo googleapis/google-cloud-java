@@ -1045,7 +1045,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Dataplex Image version.
+       * Required. Dataplex Universal Catalog Image version.
        * </pre>
        *
        * <code>string image_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1058,7 +1058,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Dataplex Image version.
+       * Required. Dataplex Universal Catalog Image version.
        * </pre>
        *
        * <code>string image_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1344,7 +1344,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Dataplex Image version.
+       * Required. Dataplex Universal Catalog Image version.
        * </pre>
        *
        * <code>string image_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1368,7 +1368,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Dataplex Image version.
+       * Required. Dataplex Universal Catalog Image version.
        * </pre>
        *
        * <code>string image_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2176,7 +2176,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Dataplex Image version.
+         * Required. Dataplex Universal Catalog Image version.
          * </pre>
          *
          * <code>string image_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2199,7 +2199,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Dataplex Image version.
+         * Required. Dataplex Universal Catalog Image version.
          * </pre>
          *
          * <code>string image_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2222,7 +2222,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Dataplex Image version.
+         * Required. Dataplex Universal Catalog Image version.
          * </pre>
          *
          * <code>string image_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2244,7 +2244,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Dataplex Image version.
+         * Required. Dataplex Universal Catalog Image version.
          * </pre>
          *
          * <code>string image_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2262,7 +2262,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Dataplex Image version.
+         * Required. Dataplex Universal Catalog Image version.
          * </pre>
          *
          * <code>string image_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>

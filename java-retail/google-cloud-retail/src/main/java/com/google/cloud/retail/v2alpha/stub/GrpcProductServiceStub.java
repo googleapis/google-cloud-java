@@ -84,6 +84,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateProductRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProductRequest, Product> getProductMethodDescriptor =
@@ -92,6 +93,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
           .setFullMethodName("google.cloud.retail.v2alpha.ProductService/GetProduct")
           .setRequestMarshaller(ProtoUtils.marshaller(GetProductRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListProductsRequest, ListProductsResponse>
@@ -102,6 +104,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListProductsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProductsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateProductRequest, Product>
@@ -112,6 +115,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateProductRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteProductRequest, Empty> deleteProductMethodDescriptor =
@@ -120,6 +124,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
           .setFullMethodName("google.cloud.retail.v2alpha.ProductService/DeleteProduct")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteProductRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<PurgeProductsRequest, Operation>
@@ -130,6 +135,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PurgeProductsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportProductsRequest, Operation>
@@ -140,6 +146,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportProductsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportProductsRequest, Operation>
@@ -150,6 +157,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportProductsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetInventoryRequest, Operation>
@@ -159,6 +167,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setFullMethodName("google.cloud.retail.v2alpha.ProductService/SetInventory")
               .setRequestMarshaller(ProtoUtils.marshaller(SetInventoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AddFulfillmentPlacesRequest, Operation>
@@ -169,6 +178,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AddFulfillmentPlacesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveFulfillmentPlacesRequest, Operation>
@@ -180,6 +190,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RemoveFulfillmentPlacesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AddLocalInventoriesRequest, Operation>
@@ -190,6 +201,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AddLocalInventoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveLocalInventoriesRequest, Operation>
@@ -201,6 +213,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RemoveLocalInventoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateProductRequest, Product> createProductCallable;

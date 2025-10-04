@@ -28,6 +28,92 @@ public interface MemoryOrBuilder
    *
    *
    * <pre>
+   * Optional. Timestamp of when this resource is considered expired.
+   * This is *always* provided on output, regardless of what `expiration` was
+   * sent on input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the expireTime field is set.
+   */
+  boolean hasExpireTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Timestamp of when this resource is considered expired.
+   * This is *always* provided on output, regardless of what `expiration` was
+   * sent on input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The expireTime.
+   */
+  com.google.protobuf.Timestamp getExpireTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Timestamp of when this resource is considered expired.
+   * This is *always* provided on output, regardless of what `expiration` was
+   * sent on input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. The TTL for this resource. The expiration time is
+   * computed: now + TTL.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the ttl field is set.
+   */
+  boolean hasTtl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. The TTL for this resource. The expiration time is
+   * computed: now + TTL.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ttl.
+   */
+  com.google.protobuf.Duration getTtl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. The TTL for this resource. The expiration time is
+   * computed: now + TTL.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.protobuf.DurationOrBuilder getTtlOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifier. The resource name of the Memory.
    * Format:
    * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/memories/{memory}`
@@ -284,4 +370,6 @@ public interface MemoryOrBuilder
    * <code>map&lt;string, string&gt; scope = 11 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   java.lang.String getScopeOrThrow(java.lang.String key);
+
+  com.google.cloud.aiplatform.v1beta1.Memory.ExpirationCase getExpirationCase();
 }

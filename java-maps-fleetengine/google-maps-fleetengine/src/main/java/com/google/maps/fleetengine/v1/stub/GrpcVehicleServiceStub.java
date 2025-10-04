@@ -61,6 +61,7 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateVehicleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Vehicle.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVehicleRequest, Vehicle> getVehicleMethodDescriptor =
@@ -69,6 +70,7 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
           .setFullMethodName("maps.fleetengine.v1.VehicleService/GetVehicle")
           .setRequestMarshaller(ProtoUtils.marshaller(GetVehicleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Vehicle.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteVehicleRequest, Empty> deleteVehicleMethodDescriptor =
@@ -77,6 +79,7 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
           .setFullMethodName("maps.fleetengine.v1.VehicleService/DeleteVehicle")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteVehicleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateVehicleRequest, Vehicle>
@@ -87,6 +90,7 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateVehicleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Vehicle.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -100,6 +104,7 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
                   ProtoUtils.marshaller(UpdateVehicleAttributesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UpdateVehicleAttributesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListVehiclesRequest, ListVehiclesResponse>
@@ -110,6 +115,7 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListVehiclesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVehiclesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchVehiclesRequest, SearchVehiclesResponse>
@@ -121,6 +127,7 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
                   ProtoUtils.marshaller(SearchVehiclesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchVehiclesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateVehicleRequest, Vehicle> createVehicleCallable;

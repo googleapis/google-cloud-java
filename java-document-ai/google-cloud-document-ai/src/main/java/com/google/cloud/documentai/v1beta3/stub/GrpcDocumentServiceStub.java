@@ -73,6 +73,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportDocumentsRequest, Operation>
@@ -83,6 +84,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDocumentRequest, GetDocumentResponse>
@@ -93,6 +95,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(GetDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GetDocumentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDocumentsRequest, ListDocumentsResponse>
@@ -104,6 +107,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   ProtoUtils.marshaller(ListDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDocumentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchDeleteDocumentsRequest, Operation>
@@ -115,6 +119,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchDeleteDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDatasetSchemaRequest, DatasetSchema>
@@ -125,6 +130,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDatasetSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DatasetSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDatasetSchemaRequest, DatasetSchema>
@@ -136,6 +142,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDatasetSchemaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DatasetSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -147,6 +154,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -155,6 +163,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<UpdateDatasetRequest, Operation> updateDatasetCallable;

@@ -290,6 +290,11 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
     return ((ModelServiceStubSettings) getStubSettings()).listModelEvaluationSlicesSettings();
   }
 
+  /** Returns the object with the settings used for calls to recommendSpec. */
+  public UnaryCallSettings<RecommendSpecRequest, RecommendSpecResponse> recommendSpecSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).recommendSpecSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -573,6 +578,12 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
             ListModelEvaluationSlicesPagedResponse>
         listModelEvaluationSlicesSettings() {
       return getStubSettingsBuilder().listModelEvaluationSlicesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to recommendSpec. */
+    public UnaryCallSettings.Builder<RecommendSpecRequest, RecommendSpecResponse>
+        recommendSpecSettings() {
+      return getStubSettingsBuilder().recommendSpecSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

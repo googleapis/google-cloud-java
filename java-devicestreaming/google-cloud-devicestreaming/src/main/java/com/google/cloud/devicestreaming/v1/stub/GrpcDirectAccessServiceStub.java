@@ -60,6 +60,7 @@ public class GrpcDirectAccessServiceStub extends DirectAccessServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDeviceSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeviceSession.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDeviceSessionsRequest, ListDeviceSessionsResponse>
@@ -72,6 +73,7 @@ public class GrpcDirectAccessServiceStub extends DirectAccessServiceStub {
                   ProtoUtils.marshaller(ListDeviceSessionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeviceSessionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDeviceSessionRequest, DeviceSession>
@@ -83,6 +85,7 @@ public class GrpcDirectAccessServiceStub extends DirectAccessServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDeviceSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeviceSession.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelDeviceSessionRequest, Empty>
@@ -94,6 +97,7 @@ public class GrpcDirectAccessServiceStub extends DirectAccessServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelDeviceSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDeviceSessionRequest, DeviceSession>
@@ -105,6 +109,7 @@ public class GrpcDirectAccessServiceStub extends DirectAccessServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDeviceSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeviceSession.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AdbMessage, DeviceMessage> adbConnectMethodDescriptor =
@@ -113,6 +118,7 @@ public class GrpcDirectAccessServiceStub extends DirectAccessServiceStub {
           .setFullMethodName("google.cloud.devicestreaming.v1.DirectAccessService/AdbConnect")
           .setRequestMarshaller(ProtoUtils.marshaller(AdbMessage.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(DeviceMessage.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateDeviceSessionRequest, DeviceSession>

@@ -54,6 +54,7 @@ public class GrpcApplicationsStub extends ApplicationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Application.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateApplicationRequest, Operation>
@@ -64,6 +65,7 @@ public class GrpcApplicationsStub extends ApplicationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateApplicationRequest, Operation>
@@ -74,6 +76,7 @@ public class GrpcApplicationsStub extends ApplicationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RepairApplicationRequest, Operation>
@@ -84,6 +87,7 @@ public class GrpcApplicationsStub extends ApplicationsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RepairApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetApplicationRequest, Application> getApplicationCallable;

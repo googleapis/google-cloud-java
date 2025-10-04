@@ -43,6 +43,7 @@ public class AsyncGetSession {
                   SessionName.ofProjectLocationDataStoreSessionName(
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                       .toString())
+              .setIncludeAnswerDetails(true)
               .build();
       ApiFuture<Session> future =
           conversationalSearchServiceClient.getSessionCallable().futureCall(request);

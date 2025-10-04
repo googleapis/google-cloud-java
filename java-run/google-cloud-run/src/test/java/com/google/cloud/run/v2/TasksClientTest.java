@@ -121,6 +121,7 @@ public class TasksClientTest {
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
             .setNodeSelector(NodeSelector.newBuilder().build())
+            .setGpuZonalRedundancyDisabled(true)
             .setEtag("etag3123477")
             .build();
     mockTasks.addResponse(expectedResponse);
@@ -192,6 +193,7 @@ public class TasksClientTest {
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
             .setNodeSelector(NodeSelector.newBuilder().build())
+            .setGpuZonalRedundancyDisabled(true)
             .setEtag("etag3123477")
             .build();
     mockTasks.addResponse(expectedResponse);

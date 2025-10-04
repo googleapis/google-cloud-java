@@ -52,6 +52,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     networkAttachment_ = "";
     networkIP_ = "";
     nicType_ = "";
+    parentNicName_ = "";
     stackType_ = "";
     subnetwork_ = "";
   }
@@ -1575,6 +1576,75 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int PARENT_NIC_NAME_FIELD_NUMBER = 418764375;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parentNicName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the parent network interface of a dynamic network interface.
+   * </pre>
+   *
+   * <code>optional string parent_nic_name = 418764375;</code>
+   *
+   * @return Whether the parentNicName field is set.
+   */
+  @java.lang.Override
+  public boolean hasParentNicName() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the parent network interface of a dynamic network interface.
+   * </pre>
+   *
+   * <code>optional string parent_nic_name = 418764375;</code>
+   *
+   * @return The parentNicName.
+   */
+  @java.lang.Override
+  public java.lang.String getParentNicName() {
+    java.lang.Object ref = parentNicName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parentNicName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the parent network interface of a dynamic network interface.
+   * </pre>
+   *
+   * <code>optional string parent_nic_name = 418764375;</code>
+   *
+   * @return The bytes for parentNicName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getParentNicNameBytes() {
+    java.lang.Object ref = parentNicName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      parentNicName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int QUEUE_COUNT_FIELD_NUMBER = 503708769;
   private int queueCount_ = 0;
 
@@ -1591,7 +1661,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasQueueCount() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1629,7 +1699,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStackType() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -1700,7 +1770,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSubnetwork() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -1751,6 +1821,41 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int VLAN_FIELD_NUMBER = 3622243;
+  private int vlan_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * VLAN tag of a dynamic network interface, must be an integer in the range from 2 to 255 inclusively.
+   * </pre>
+   *
+   * <code>optional int32 vlan = 3622243;</code>
+   *
+   * @return Whether the vlan field is set.
+   */
+  @java.lang.Override
+  public boolean hasVlan() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * VLAN tag of a dynamic network interface, must be an integer in the range from 2 to 255 inclusively.
+   * </pre>
+   *
+   * <code>optional int32 vlan = 3622243;</code>
+   *
+   * @return The vlan.
+   */
+  @java.lang.Override
+  public int getVlan() {
+    return vlan_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1770,6 +1875,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeInt32(3622243, vlan_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 59810577, nicType_);
@@ -1795,19 +1903,22 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 341563804, ipv6Address_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 418764375, parentNicName_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 425908881, stackType_);
     }
     for (int i = 0; i < ipv6AccessConfigs_.size(); i++) {
       output.writeMessage(483472110, ipv6AccessConfigs_.get(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeInt32(503708769, queueCount_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -1827,6 +1938,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3622243, vlan_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(59810577, nicType_);
@@ -1859,13 +1973,16 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(341563804, ipv6Address_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(418764375, parentNicName_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(425908881, stackType_);
     }
     for (int i = 0; i < ipv6AccessConfigs_.size(); i++) {
@@ -1873,7 +1990,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               483472110, ipv6AccessConfigs_.get(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(503708769, queueCount_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -1938,6 +2055,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (hasNicType()) {
       if (!getNicType().equals(other.getNicType())) return false;
     }
+    if (hasParentNicName() != other.hasParentNicName()) return false;
+    if (hasParentNicName()) {
+      if (!getParentNicName().equals(other.getParentNicName())) return false;
+    }
     if (hasQueueCount() != other.hasQueueCount()) return false;
     if (hasQueueCount()) {
       if (getQueueCount() != other.getQueueCount()) return false;
@@ -1949,6 +2070,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (hasSubnetwork() != other.hasSubnetwork()) return false;
     if (hasSubnetwork()) {
       if (!getSubnetwork().equals(other.getSubnetwork())) return false;
+    }
+    if (hasVlan() != other.hasVlan()) return false;
+    if (hasVlan()) {
+      if (getVlan() != other.getVlan()) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2013,6 +2138,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + NIC_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getNicType().hashCode();
     }
+    if (hasParentNicName()) {
+      hash = (37 * hash) + PARENT_NIC_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getParentNicName().hashCode();
+    }
     if (hasQueueCount()) {
       hash = (37 * hash) + QUEUE_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getQueueCount();
@@ -2024,6 +2153,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (hasSubnetwork()) {
       hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
       hash = (53 * hash) + getSubnetwork().hashCode();
+    }
+    if (hasVlan()) {
+      hash = (37 * hash) + VLAN_FIELD_NUMBER;
+      hash = (53 * hash) + getVlan();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2196,9 +2329,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       networkAttachment_ = "";
       networkIP_ = "";
       nicType_ = "";
+      parentNicName_ = "";
       queueCount_ = 0;
       stackType_ = "";
       subnetwork_ = "";
+      vlan_ = 0;
       return this;
     }
 
@@ -2308,16 +2443,24 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.queueCount_ = queueCount_;
+        result.parentNicName_ = parentNicName_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.stackType_ = stackType_;
+        result.queueCount_ = queueCount_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.subnetwork_ = subnetwork_;
+        result.stackType_ = stackType_;
         to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.subnetwork_ = subnetwork_;
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.vlan_ = vlan_;
+        to_bitField0_ |= 0x00004000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2496,18 +2639,26 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00001000;
         onChanged();
       }
+      if (other.hasParentNicName()) {
+        parentNicName_ = other.parentNicName_;
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
       if (other.hasQueueCount()) {
         setQueueCount(other.getQueueCount());
       }
       if (other.hasStackType()) {
         stackType_ = other.stackType_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasSubnetwork()) {
         subnetwork_ = other.subnetwork_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
+      }
+      if (other.hasVlan()) {
+        setVlan(other.getVlan());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2547,6 +2698,12 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 26989658
+            case 28977944:
+              {
+                vlan_ = input.readInt32();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 28977944
             case 478484618:
               {
                 nicType_ = input.readStringRequireUtf8();
@@ -2612,7 +2769,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
             case -1832345742:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -1832345742
             case -1562456862:
@@ -2621,10 +2778,16 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case -1562456862
+            case -944852294:
+              {
+                parentNicName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case -944852294
             case -887696246:
               {
                 stackType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case -887696246
             case -427190414:
@@ -2643,7 +2806,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
             case -265297144:
               {
                 queueCount_ = input.readInt32();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case -265297144
             case -257698070:
@@ -5003,6 +5166,132 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object parentNicName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the parent network interface of a dynamic network interface.
+     * </pre>
+     *
+     * <code>optional string parent_nic_name = 418764375;</code>
+     *
+     * @return Whether the parentNicName field is set.
+     */
+    public boolean hasParentNicName() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the parent network interface of a dynamic network interface.
+     * </pre>
+     *
+     * <code>optional string parent_nic_name = 418764375;</code>
+     *
+     * @return The parentNicName.
+     */
+    public java.lang.String getParentNicName() {
+      java.lang.Object ref = parentNicName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parentNicName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the parent network interface of a dynamic network interface.
+     * </pre>
+     *
+     * <code>optional string parent_nic_name = 418764375;</code>
+     *
+     * @return The bytes for parentNicName.
+     */
+    public com.google.protobuf.ByteString getParentNicNameBytes() {
+      java.lang.Object ref = parentNicName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        parentNicName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the parent network interface of a dynamic network interface.
+     * </pre>
+     *
+     * <code>optional string parent_nic_name = 418764375;</code>
+     *
+     * @param value The parentNicName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentNicName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      parentNicName_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the parent network interface of a dynamic network interface.
+     * </pre>
+     *
+     * <code>optional string parent_nic_name = 418764375;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearParentNicName() {
+      parentNicName_ = getDefaultInstance().getParentNicName();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the parent network interface of a dynamic network interface.
+     * </pre>
+     *
+     * <code>optional string parent_nic_name = 418764375;</code>
+     *
+     * @param value The bytes for parentNicName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentNicNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      parentNicName_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
     private int queueCount_;
 
     /**
@@ -5018,7 +5307,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasQueueCount() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -5052,7 +5341,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public Builder setQueueCount(int value) {
 
       queueCount_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5069,7 +5358,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearQueueCount() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       queueCount_ = 0;
       onChanged();
       return this;
@@ -5090,7 +5379,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the stackType field is set.
      */
     public boolean hasStackType() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -5159,7 +5448,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       stackType_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5178,7 +5467,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearStackType() {
       stackType_ = getDefaultInstance().getStackType();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -5202,7 +5491,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       stackType_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5221,7 +5510,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the subnetwork field is set.
      */
     public boolean hasSubnetwork() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -5287,7 +5576,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       subnetwork_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5305,7 +5594,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSubnetwork() {
       subnetwork_ = getDefaultInstance().getSubnetwork();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -5328,7 +5617,79 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       subnetwork_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    private int vlan_;
+
+    /**
+     *
+     *
+     * <pre>
+     * VLAN tag of a dynamic network interface, must be an integer in the range from 2 to 255 inclusively.
+     * </pre>
+     *
+     * <code>optional int32 vlan = 3622243;</code>
+     *
+     * @return Whether the vlan field is set.
+     */
+    @java.lang.Override
+    public boolean hasVlan() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * VLAN tag of a dynamic network interface, must be an integer in the range from 2 to 255 inclusively.
+     * </pre>
+     *
+     * <code>optional int32 vlan = 3622243;</code>
+     *
+     * @return The vlan.
+     */
+    @java.lang.Override
+    public int getVlan() {
+      return vlan_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * VLAN tag of a dynamic network interface, must be an integer in the range from 2 to 255 inclusively.
+     * </pre>
+     *
+     * <code>optional int32 vlan = 3622243;</code>
+     *
+     * @param value The vlan to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVlan(int value) {
+
+      vlan_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * VLAN tag of a dynamic network interface, must be an integer in the range from 2 to 255 inclusively.
+     * </pre>
+     *
+     * <code>optional int32 vlan = 3622243;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVlan() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      vlan_ = 0;
       onChanged();
       return this;
     }

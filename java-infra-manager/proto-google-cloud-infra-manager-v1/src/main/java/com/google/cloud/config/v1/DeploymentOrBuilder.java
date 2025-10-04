@@ -68,11 +68,11 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * Resource name of the deployment.
+   * Identifier. Resource name of the deployment.
    * Format: `projects/{project}/locations/{location}/deployments/{deployment}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -82,11 +82,11 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * Resource name of the deployment.
+   * Identifier. Resource name of the deployment.
    * Format: `projects/{project}/locations/{location}/deployments/{deployment}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -176,10 +176,10 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * User-defined metadata for the deployment.
+   * Optional. User-defined metadata for the deployment.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
 
@@ -187,10 +187,10 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * User-defined metadata for the deployment.
+   * Optional. User-defined metadata for the deployment.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
 
@@ -202,10 +202,10 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * User-defined metadata for the deployment.
+   * Optional. User-defined metadata for the deployment.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
 
@@ -213,10 +213,10 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * User-defined metadata for the deployment.
+   * Optional. User-defined metadata for the deployment.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -228,10 +228,10 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * User-defined metadata for the deployment.
+   * Optional. User-defined metadata for the deployment.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -985,6 +985,49 @@ public interface DeploymentOrBuilder
    * </code>
    */
   java.lang.String getAnnotationsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies the provider configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProviderConfig provider_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the providerConfig field is set.
+   */
+  boolean hasProviderConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies the provider configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProviderConfig provider_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The providerConfig.
+   */
+  com.google.cloud.config.v1.ProviderConfig getProviderConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies the provider configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProviderConfig provider_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.config.v1.ProviderConfigOrBuilder getProviderConfigOrBuilder();
 
   com.google.cloud.config.v1.Deployment.BlueprintCase getBlueprintCase();
 }

@@ -93,6 +93,46 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Health information for the reservation subBlock.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ReservationSubBlockHealthInfo health_info = 235287729;
+   * </code>
+   *
+   * @return Whether the healthInfo field is set.
+   */
+  boolean hasHealthInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Health information for the reservation subBlock.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ReservationSubBlockHealthInfo health_info = 235287729;
+   * </code>
+   *
+   * @return The healthInfo.
+   */
+  com.google.cloud.compute.v1.ReservationSubBlockHealthInfo getHealthInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Health information for the reservation subBlock.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ReservationSubBlockHealthInfo health_info = 235287729;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ReservationSubBlockHealthInfoOrBuilder getHealthInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
@@ -262,6 +302,50 @@ public interface ReservationSubBlockOrBuilder
    */
   com.google.cloud.compute.v1.ReservationSubBlockPhysicalTopologyOrBuilder
       getPhysicalTopologyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maintenance information for this reservation subBlock.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_sub_block_maintenance = 377005551;
+   * </code>
+   *
+   * @return Whether the reservationSubBlockMaintenance field is set.
+   */
+  boolean hasReservationSubBlockMaintenance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maintenance information for this reservation subBlock.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_sub_block_maintenance = 377005551;
+   * </code>
+   *
+   * @return The reservationSubBlockMaintenance.
+   */
+  com.google.cloud.compute.v1.GroupMaintenanceInfo getReservationSubBlockMaintenance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maintenance information for this reservation subBlock.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.GroupMaintenanceInfo reservation_sub_block_maintenance = 377005551;
+   * </code>
+   */
+  com.google.cloud.compute.v1.GroupMaintenanceInfoOrBuilder
+      getReservationSubBlockMaintenanceOrBuilder();
 
   /**
    *

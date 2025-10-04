@@ -39,7 +39,9 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     super(builder);
   }
 
-  private StreamingSynthesisInput() {}
+  private StreamingSynthesisInput() {
+    prompt_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -62,6 +64,7 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
             com.google.cloud.texttospeech.v1beta1.StreamingSynthesisInput.Builder.class);
   }
 
+  private int bitField0_;
   private int inputSourceCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -72,6 +75,7 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TEXT(1),
+    MARKUP(5),
     INPUTSOURCE_NOT_SET(0);
     private final int value;
 
@@ -93,6 +97,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
       switch (value) {
         case 1:
           return TEXT;
+        case 5:
+          return MARKUP;
         case 0:
           return INPUTSOURCE_NOT_SET;
         default:
@@ -116,9 +122,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
    *
    * <pre>
    * The raw text to be synthesized. It is recommended that each input
-   * contains complete, terminating sentences, as this will likely result in
-   * better prosody in the output audio. That being said, users are free to
-   * input text however they please.
+   * contains complete, terminating sentences, which results in better prosody
+   * in the output audio.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -134,9 +139,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
    *
    * <pre>
    * The raw text to be synthesized. It is recommended that each input
-   * contains complete, terminating sentences, as this will likely result in
-   * better prosody in the output audio. That being said, users are free to
-   * input text however they please.
+   * contains complete, terminating sentences, which results in better prosody
+   * in the output audio.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -165,9 +169,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
    *
    * <pre>
    * The raw text to be synthesized. It is recommended that each input
-   * contains complete, terminating sentences, as this will likely result in
-   * better prosody in the output audio. That being said, users are free to
-   * input text however they please.
+   * contains complete, terminating sentences, which results in better prosody
+   * in the output audio.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -191,6 +194,151 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     }
   }
 
+  public static final int MARKUP_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return Whether the markup field is set.
+   */
+  public boolean hasMarkup() {
+    return inputSourceCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return The markup.
+   */
+  public java.lang.String getMarkup() {
+    java.lang.Object ref = "";
+    if (inputSourceCase_ == 5) {
+      ref = inputSource_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (inputSourceCase_ == 5) {
+        inputSource_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return The bytes for markup.
+   */
+  public com.google.protobuf.ByteString getMarkupBytes() {
+    java.lang.Object ref = "";
+    if (inputSourceCase_ == 5) {
+      ref = inputSource_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (inputSourceCase_ == 5) {
+        inputSource_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PROMPT_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object prompt_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * This is system instruction supported only for controllable voice models.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return Whether the prompt field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrompt() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This is system instruction supported only for controllable voice models.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return The prompt.
+   */
+  @java.lang.Override
+  public java.lang.String getPrompt() {
+    java.lang.Object ref = prompt_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      prompt_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This is system instruction supported only for controllable voice models.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return The bytes for prompt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPromptBytes() {
+    java.lang.Object ref = prompt_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      prompt_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -208,6 +356,12 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     if (inputSourceCase_ == 1) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, inputSource_);
     }
+    if (inputSourceCase_ == 5) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, inputSource_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, prompt_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -219,6 +373,12 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     size = 0;
     if (inputSourceCase_ == 1) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, inputSource_);
+    }
+    if (inputSourceCase_ == 5) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, inputSource_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, prompt_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -236,10 +396,17 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     com.google.cloud.texttospeech.v1beta1.StreamingSynthesisInput other =
         (com.google.cloud.texttospeech.v1beta1.StreamingSynthesisInput) obj;
 
+    if (hasPrompt() != other.hasPrompt()) return false;
+    if (hasPrompt()) {
+      if (!getPrompt().equals(other.getPrompt())) return false;
+    }
     if (!getInputSourceCase().equals(other.getInputSourceCase())) return false;
     switch (inputSourceCase_) {
       case 1:
         if (!getText().equals(other.getText())) return false;
+        break;
+      case 5:
+        if (!getMarkup().equals(other.getMarkup())) return false;
         break;
       case 0:
       default:
@@ -255,10 +422,18 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasPrompt()) {
+      hash = (37 * hash) + PROMPT_FIELD_NUMBER;
+      hash = (53 * hash) + getPrompt().hashCode();
+    }
     switch (inputSourceCase_) {
       case 1:
         hash = (37 * hash) + TEXT_FIELD_NUMBER;
         hash = (53 * hash) + getText().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + MARKUP_FIELD_NUMBER;
+        hash = (53 * hash) + getMarkup().hashCode();
         break;
       case 0:
       default:
@@ -404,6 +579,7 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      prompt_ = "";
       inputSourceCase_ = 0;
       inputSource_ = null;
       return this;
@@ -445,6 +621,12 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     private void buildPartial0(
         com.google.cloud.texttospeech.v1beta1.StreamingSynthesisInput result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.prompt_ = prompt_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(
@@ -500,10 +682,22 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
       if (other
           == com.google.cloud.texttospeech.v1beta1.StreamingSynthesisInput.getDefaultInstance())
         return this;
+      if (other.hasPrompt()) {
+        prompt_ = other.prompt_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       switch (other.getInputSourceCase()) {
         case TEXT:
           {
             inputSourceCase_ = 1;
+            inputSource_ = other.inputSource_;
+            onChanged();
+            break;
+          }
+        case MARKUP:
+          {
+            inputSourceCase_ = 5;
             inputSource_ = other.inputSource_;
             onChanged();
             break;
@@ -546,6 +740,19 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
                 inputSource_ = s;
                 break;
               } // case 10
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                inputSourceCase_ = 5;
+                inputSource_ = s;
+                break;
+              } // case 42
+            case 50:
+              {
+                prompt_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -584,9 +791,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
      *
      * <pre>
      * The raw text to be synthesized. It is recommended that each input
-     * contains complete, terminating sentences, as this will likely result in
-     * better prosody in the output audio. That being said, users are free to
-     * input text however they please.
+     * contains complete, terminating sentences, which results in better prosody
+     * in the output audio.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -603,9 +809,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
      *
      * <pre>
      * The raw text to be synthesized. It is recommended that each input
-     * contains complete, terminating sentences, as this will likely result in
-     * better prosody in the output audio. That being said, users are free to
-     * input text however they please.
+     * contains complete, terminating sentences, which results in better prosody
+     * in the output audio.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -635,9 +840,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
      *
      * <pre>
      * The raw text to be synthesized. It is recommended that each input
-     * contains complete, terminating sentences, as this will likely result in
-     * better prosody in the output audio. That being said, users are free to
-     * input text however they please.
+     * contains complete, terminating sentences, which results in better prosody
+     * in the output audio.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -667,9 +871,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
      *
      * <pre>
      * The raw text to be synthesized. It is recommended that each input
-     * contains complete, terminating sentences, as this will likely result in
-     * better prosody in the output audio. That being said, users are free to
-     * input text however they please.
+     * contains complete, terminating sentences, which results in better prosody
+     * in the output audio.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -692,9 +895,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
      *
      * <pre>
      * The raw text to be synthesized. It is recommended that each input
-     * contains complete, terminating sentences, as this will likely result in
-     * better prosody in the output audio. That being said, users are free to
-     * input text however they please.
+     * contains complete, terminating sentences, which results in better prosody
+     * in the output audio.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -715,9 +917,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
      *
      * <pre>
      * The raw text to be synthesized. It is recommended that each input
-     * contains complete, terminating sentences, as this will likely result in
-     * better prosody in the output audio. That being said, users are free to
-     * input text however they please.
+     * contains complete, terminating sentences, which results in better prosody
+     * in the output audio.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -732,6 +933,277 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       inputSourceCase_ = 1;
       inputSource_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Markup for HD voices specifically. This field may not be used with any
+     * other voices.
+     * </pre>
+     *
+     * <code>string markup = 5;</code>
+     *
+     * @return Whether the markup field is set.
+     */
+    @java.lang.Override
+    public boolean hasMarkup() {
+      return inputSourceCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Markup for HD voices specifically. This field may not be used with any
+     * other voices.
+     * </pre>
+     *
+     * <code>string markup = 5;</code>
+     *
+     * @return The markup.
+     */
+    @java.lang.Override
+    public java.lang.String getMarkup() {
+      java.lang.Object ref = "";
+      if (inputSourceCase_ == 5) {
+        ref = inputSource_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (inputSourceCase_ == 5) {
+          inputSource_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Markup for HD voices specifically. This field may not be used with any
+     * other voices.
+     * </pre>
+     *
+     * <code>string markup = 5;</code>
+     *
+     * @return The bytes for markup.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMarkupBytes() {
+      java.lang.Object ref = "";
+      if (inputSourceCase_ == 5) {
+        ref = inputSource_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (inputSourceCase_ == 5) {
+          inputSource_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Markup for HD voices specifically. This field may not be used with any
+     * other voices.
+     * </pre>
+     *
+     * <code>string markup = 5;</code>
+     *
+     * @param value The markup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMarkup(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      inputSourceCase_ = 5;
+      inputSource_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Markup for HD voices specifically. This field may not be used with any
+     * other voices.
+     * </pre>
+     *
+     * <code>string markup = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMarkup() {
+      if (inputSourceCase_ == 5) {
+        inputSourceCase_ = 0;
+        inputSource_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Markup for HD voices specifically. This field may not be used with any
+     * other voices.
+     * </pre>
+     *
+     * <code>string markup = 5;</code>
+     *
+     * @param value The bytes for markup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMarkupBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      inputSourceCase_ = 5;
+      inputSource_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object prompt_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * This is system instruction supported only for controllable voice models.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @return Whether the prompt field is set.
+     */
+    public boolean hasPrompt() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is system instruction supported only for controllable voice models.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @return The prompt.
+     */
+    public java.lang.String getPrompt() {
+      java.lang.Object ref = prompt_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        prompt_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is system instruction supported only for controllable voice models.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @return The bytes for prompt.
+     */
+    public com.google.protobuf.ByteString getPromptBytes() {
+      java.lang.Object ref = prompt_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        prompt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is system instruction supported only for controllable voice models.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @param value The prompt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrompt(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      prompt_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is system instruction supported only for controllable voice models.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrompt() {
+      prompt_ = getDefaultInstance().getPrompt();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is system instruction supported only for controllable voice models.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @param value The bytes for prompt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPromptBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      prompt_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

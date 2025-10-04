@@ -62,6 +62,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEvaluationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Evaluation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEvaluationsRequest, ListEvaluationsResponse>
@@ -74,6 +75,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                   ProtoUtils.marshaller(ListEvaluationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEvaluationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEvaluationRequest, Operation>
@@ -85,6 +87,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEvaluationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEvaluationResultsRequest, ListEvaluationResultsResponse>
@@ -97,6 +100,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                   ProtoUtils.marshaller(ListEvaluationResultsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEvaluationResultsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetEvaluationRequest, Evaluation> getEvaluationCallable;

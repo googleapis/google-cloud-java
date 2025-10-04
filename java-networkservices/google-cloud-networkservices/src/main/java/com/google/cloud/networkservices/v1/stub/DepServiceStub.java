@@ -16,6 +16,7 @@
 
 package com.google.cloud.networkservices.v1.stub;
 
+import static com.google.cloud.networkservices.v1.DepServiceClient.ListAuthzExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbRouteExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbTrafficExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLocationsPagedResponse;
@@ -27,19 +28,26 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.networkservices.v1.AuthzExtension;
+import com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest;
 import com.google.cloud.networkservices.v1.CreateLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.CreateLbTrafficExtensionRequest;
+import com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest;
 import com.google.cloud.networkservices.v1.DeleteLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.DeleteLbTrafficExtensionRequest;
+import com.google.cloud.networkservices.v1.GetAuthzExtensionRequest;
 import com.google.cloud.networkservices.v1.GetLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.GetLbTrafficExtensionRequest;
 import com.google.cloud.networkservices.v1.LbRouteExtension;
 import com.google.cloud.networkservices.v1.LbTrafficExtension;
+import com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest;
+import com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse;
 import com.google.cloud.networkservices.v1.ListLbRouteExtensionsRequest;
 import com.google.cloud.networkservices.v1.ListLbRouteExtensionsResponse;
 import com.google.cloud.networkservices.v1.ListLbTrafficExtensionsRequest;
 import com.google.cloud.networkservices.v1.ListLbTrafficExtensionsResponse;
 import com.google.cloud.networkservices.v1.OperationMetadata;
+import com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest;
 import com.google.cloud.networkservices.v1.UpdateLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.UpdateLbTrafficExtensionRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -161,6 +169,50 @@ public abstract class DepServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteLbRouteExtensionRequest, Operation> deleteLbRouteExtensionCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteLbRouteExtensionCallable()");
+  }
+
+  public UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsPagedResponse>
+      listAuthzExtensionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAuthzExtensionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
+      listAuthzExtensionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAuthzExtensionsCallable()");
+  }
+
+  public UnaryCallable<GetAuthzExtensionRequest, AuthzExtension> getAuthzExtensionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAuthzExtensionCallable()");
+  }
+
+  public OperationCallable<CreateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      createAuthzExtensionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createAuthzExtensionOperationCallable()");
+  }
+
+  public UnaryCallable<CreateAuthzExtensionRequest, Operation> createAuthzExtensionCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAuthzExtensionCallable()");
+  }
+
+  public OperationCallable<UpdateAuthzExtensionRequest, AuthzExtension, OperationMetadata>
+      updateAuthzExtensionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateAuthzExtensionOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateAuthzExtensionRequest, Operation> updateAuthzExtensionCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAuthzExtensionCallable()");
+  }
+
+  public OperationCallable<DeleteAuthzExtensionRequest, Empty, OperationMetadata>
+      deleteAuthzExtensionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteAuthzExtensionOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteAuthzExtensionRequest, Operation> deleteAuthzExtensionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAuthzExtensionCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -262,10 +262,9 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
    * Optional. The name of the instance in which the repository is hosted,
    * formatted as
    * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.
-   * When listing repositories via
-   * securesourcemanager.googleapis.com (Control Plane API), this field is
-   * required. When listing repositories via *.sourcemanager.dev (Data Plane
-   * API), this field is ignored.
+   * When listing repositories via securesourcemanager.googleapis.com, this
+   * field is required. When listing repositories via *.sourcemanager.dev, this
+   * field is ignored.
    * </pre>
    *
    * <code>
@@ -294,10 +293,9 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
    * Optional. The name of the instance in which the repository is hosted,
    * formatted as
    * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.
-   * When listing repositories via
-   * securesourcemanager.googleapis.com (Control Plane API), this field is
-   * required. When listing repositories via *.sourcemanager.dev (Data Plane
-   * API), this field is ignored.
+   * When listing repositories via securesourcemanager.googleapis.com, this
+   * field is required. When listing repositories via *.sourcemanager.dev, this
+   * field is ignored.
    * </pre>
    *
    * <code>
@@ -1172,10 +1170,9 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
      * Optional. The name of the instance in which the repository is hosted,
      * formatted as
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.
-     * When listing repositories via
-     * securesourcemanager.googleapis.com (Control Plane API), this field is
-     * required. When listing repositories via *.sourcemanager.dev (Data Plane
-     * API), this field is ignored.
+     * When listing repositories via securesourcemanager.googleapis.com, this
+     * field is required. When listing repositories via *.sourcemanager.dev, this
+     * field is ignored.
      * </pre>
      *
      * <code>
@@ -1203,10 +1200,9 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
      * Optional. The name of the instance in which the repository is hosted,
      * formatted as
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.
-     * When listing repositories via
-     * securesourcemanager.googleapis.com (Control Plane API), this field is
-     * required. When listing repositories via *.sourcemanager.dev (Data Plane
-     * API), this field is ignored.
+     * When listing repositories via securesourcemanager.googleapis.com, this
+     * field is required. When listing repositories via *.sourcemanager.dev, this
+     * field is ignored.
      * </pre>
      *
      * <code>
@@ -1234,10 +1230,9 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
      * Optional. The name of the instance in which the repository is hosted,
      * formatted as
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.
-     * When listing repositories via
-     * securesourcemanager.googleapis.com (Control Plane API), this field is
-     * required. When listing repositories via *.sourcemanager.dev (Data Plane
-     * API), this field is ignored.
+     * When listing repositories via securesourcemanager.googleapis.com, this
+     * field is required. When listing repositories via *.sourcemanager.dev, this
+     * field is ignored.
      * </pre>
      *
      * <code>
@@ -1264,10 +1259,9 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
      * Optional. The name of the instance in which the repository is hosted,
      * formatted as
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.
-     * When listing repositories via
-     * securesourcemanager.googleapis.com (Control Plane API), this field is
-     * required. When listing repositories via *.sourcemanager.dev (Data Plane
-     * API), this field is ignored.
+     * When listing repositories via securesourcemanager.googleapis.com, this
+     * field is required. When listing repositories via *.sourcemanager.dev, this
+     * field is ignored.
      * </pre>
      *
      * <code>
@@ -1290,10 +1284,9 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
      * Optional. The name of the instance in which the repository is hosted,
      * formatted as
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.
-     * When listing repositories via
-     * securesourcemanager.googleapis.com (Control Plane API), this field is
-     * required. When listing repositories via *.sourcemanager.dev (Data Plane
-     * API), this field is ignored.
+     * When listing repositories via securesourcemanager.googleapis.com, this
+     * field is required. When listing repositories via *.sourcemanager.dev, this
+     * field is ignored.
      * </pre>
      *
      * <code>

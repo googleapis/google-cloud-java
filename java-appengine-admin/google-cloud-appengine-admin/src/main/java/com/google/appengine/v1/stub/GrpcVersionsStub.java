@@ -60,6 +60,7 @@ public class GrpcVersionsStub extends VersionsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVersionRequest, Version> getVersionMethodDescriptor =
@@ -68,6 +69,7 @@ public class GrpcVersionsStub extends VersionsStub {
           .setFullMethodName("google.appengine.v1.Versions/GetVersion")
           .setRequestMarshaller(ProtoUtils.marshaller(GetVersionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Version.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateVersionRequest, Operation>
@@ -78,6 +80,7 @@ public class GrpcVersionsStub extends VersionsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateVersionRequest, Operation>
@@ -88,6 +91,7 @@ public class GrpcVersionsStub extends VersionsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteVersionRequest, Operation>
@@ -98,6 +102,7 @@ public class GrpcVersionsStub extends VersionsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListVersionsRequest, ListVersionsResponse> listVersionsCallable;

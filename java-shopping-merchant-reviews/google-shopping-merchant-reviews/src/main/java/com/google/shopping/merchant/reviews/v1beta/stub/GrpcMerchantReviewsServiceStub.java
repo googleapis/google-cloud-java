@@ -58,6 +58,7 @@ public class GrpcMerchantReviewsServiceStub extends MerchantReviewsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMerchantReviewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MerchantReview.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMerchantReviewsRequest, ListMerchantReviewsResponse>
@@ -70,6 +71,7 @@ public class GrpcMerchantReviewsServiceStub extends MerchantReviewsServiceStub {
                   ProtoUtils.marshaller(ListMerchantReviewsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMerchantReviewsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InsertMerchantReviewRequest, MerchantReview>
@@ -81,6 +83,7 @@ public class GrpcMerchantReviewsServiceStub extends MerchantReviewsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InsertMerchantReviewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MerchantReview.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMerchantReviewRequest, Empty>
@@ -92,6 +95,7 @@ public class GrpcMerchantReviewsServiceStub extends MerchantReviewsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteMerchantReviewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetMerchantReviewRequest, MerchantReview> getMerchantReviewCallable;

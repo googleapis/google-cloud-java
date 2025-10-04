@@ -70,6 +70,7 @@ public class GrpcProjectsStub extends ProjectsStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.Projects/GetProject")
           .setRequestMarshaller(ProtoUtils.marshaller(GetProjectRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Project.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListProjectsRequest, ListProjectsResponse>
@@ -80,6 +81,7 @@ public class GrpcProjectsStub extends ProjectsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListProjectsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProjectsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchProjectsRequest, SearchProjectsResponse>
@@ -91,6 +93,7 @@ public class GrpcProjectsStub extends ProjectsStub {
                   ProtoUtils.marshaller(SearchProjectsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchProjectsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateProjectRequest, Operation>
@@ -101,6 +104,7 @@ public class GrpcProjectsStub extends ProjectsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateProjectRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateProjectRequest, Operation>
@@ -111,6 +115,7 @@ public class GrpcProjectsStub extends ProjectsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateProjectRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MoveProjectRequest, Operation> moveProjectMethodDescriptor =
@@ -119,6 +124,7 @@ public class GrpcProjectsStub extends ProjectsStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.Projects/MoveProject")
           .setRequestMarshaller(ProtoUtils.marshaller(MoveProjectRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteProjectRequest, Operation>
@@ -129,6 +135,7 @@ public class GrpcProjectsStub extends ProjectsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteProjectRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeleteProjectRequest, Operation>
@@ -139,6 +146,7 @@ public class GrpcProjectsStub extends ProjectsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeleteProjectRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -147,6 +155,7 @@ public class GrpcProjectsStub extends ProjectsStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.Projects/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -155,6 +164,7 @@ public class GrpcProjectsStub extends ProjectsStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.Projects/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -166,6 +176,7 @@ public class GrpcProjectsStub extends ProjectsStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetProjectRequest, Project> getProjectCallable;

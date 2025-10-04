@@ -91,6 +91,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetClusterRequest, Cluster> getClusterMethodDescriptor =
@@ -99,6 +100,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
           .setFullMethodName("google.cloud.edgecontainer.v1.EdgeContainer/GetCluster")
           .setRequestMarshaller(ProtoUtils.marshaller(GetClusterRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Cluster.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateClusterRequest, Operation>
@@ -109,6 +111,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateClusterRequest, Operation>
@@ -119,6 +122,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpgradeClusterRequest, Operation>
@@ -129,6 +133,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpgradeClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteClusterRequest, Operation>
@@ -139,6 +144,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
@@ -150,6 +156,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   ProtoUtils.marshaller(GenerateAccessTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateAccessTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -164,6 +171,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   ProtoUtils.marshaller(GenerateOfflineCredentialRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateOfflineCredentialResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListNodePoolsRequest, ListNodePoolsResponse>
@@ -175,6 +183,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   ProtoUtils.marshaller(ListNodePoolsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNodePoolsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNodePoolRequest, NodePool> getNodePoolMethodDescriptor =
@@ -183,6 +192,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
           .setFullMethodName("google.cloud.edgecontainer.v1.EdgeContainer/GetNodePool")
           .setRequestMarshaller(ProtoUtils.marshaller(GetNodePoolRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(NodePool.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateNodePoolRequest, Operation>
@@ -193,6 +203,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateNodePoolRequest, Operation>
@@ -203,6 +214,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNodePoolRequest, Operation>
@@ -213,6 +225,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMachinesRequest, ListMachinesResponse>
@@ -223,6 +236,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListMachinesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMachinesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMachineRequest, Machine> getMachineMethodDescriptor =
@@ -231,6 +245,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
           .setFullMethodName("google.cloud.edgecontainer.v1.EdgeContainer/GetMachine")
           .setRequestMarshaller(ProtoUtils.marshaller(GetMachineRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Machine.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListVpnConnectionsRequest, ListVpnConnectionsResponse>
@@ -242,6 +257,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   ProtoUtils.marshaller(ListVpnConnectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVpnConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVpnConnectionRequest, VpnConnection>
@@ -252,6 +268,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetVpnConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(VpnConnection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateVpnConnectionRequest, Operation>
@@ -262,6 +279,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateVpnConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteVpnConnectionRequest, Operation>
@@ -272,6 +290,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteVpnConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServerConfigRequest, ServerConfig>
@@ -282,6 +301,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServerConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServerConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -293,6 +313,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -301,6 +322,7 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;

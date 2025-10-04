@@ -176,6 +176,8 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getContentSearchSpec(), actualRequest.getContentSearchSpec());
     Assert.assertEquals(request.getEmbeddingSpec(), actualRequest.getEmbeddingSpec());
     Assert.assertEquals(request.getRankingExpression(), actualRequest.getRankingExpression());
+    Assert.assertEquals(
+        request.getRankingExpressionBackend(), actualRequest.getRankingExpressionBackend());
     Assert.assertEquals(request.getSafeSearch(), actualRequest.getSafeSearch());
     Assert.assertEquals(request.getUserLabelsMap(), actualRequest.getUserLabelsMap());
     Assert.assertEquals(
@@ -340,6 +342,8 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getContentSearchSpec(), actualRequest.getContentSearchSpec());
     Assert.assertEquals(request.getEmbeddingSpec(), actualRequest.getEmbeddingSpec());
     Assert.assertEquals(request.getRankingExpression(), actualRequest.getRankingExpression());
+    Assert.assertEquals(
+        request.getRankingExpressionBackend(), actualRequest.getRankingExpressionBackend());
     Assert.assertEquals(request.getSafeSearch(), actualRequest.getSafeSearch());
     Assert.assertEquals(request.getUserLabelsMap(), actualRequest.getUserLabelsMap());
     Assert.assertEquals(

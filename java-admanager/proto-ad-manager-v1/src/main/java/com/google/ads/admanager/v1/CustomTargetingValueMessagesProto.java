@@ -41,27 +41,32 @@ public final class CustomTargetingValueMessagesProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + "=google/ads/admanager/v1/custom_targeting_value_messages.proto\022\027google.ads.adma"
+      "\n=google/ads/admanager/v1/custom_targeti"
+          + "ng_value_messages.proto\022\027google.ads.adma"
           + "nager.v1\032:google/ads/admanager/v1/custom"
           + "_targeting_value_enums.proto\032\037google/api"
-          + "/field_behavior.proto\032\031google/api/resource.proto\"\223\004\n"
-          + "\024CustomTargetingValue\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\010\022\030\n"
-          + "\013ad_tag_name\030\004 \001(\tB\003\340A\005\022\031\n"
-          + "\014display_name\030\005 \001(\tB\003\340A\001\022t\n\n"
-          + "match_type\030\006 \001(\0162X.google.ads.admanager.v1.CustomTa"
-          + "rgetingValueMatchTypeEnum.CustomTargetingValueMatchTypeB\006\340A\005\340A\002\022g\n"
-          + "\006status\030\007 \001(\0162R.google.ads.admanager.v1.CustomTargetin"
-          + "gValueStatusEnum.CustomTargetingValueStatusB\003\340A\003:\323\001\352A\317\001\n"
-          + "-admanager.googleapis.com/CustomTargetingValue\022qnetworks/{networ"
-          + "k_code}/customTargetingKeys/{custom_targeting_key}/customTargetingValues/{custom"
-          + "_targeting_value}*\025customTargetingValues2\024customTargetingValueB\325\001\n"
-          + "\033com.google.ads.admanager.v1B!CustomTargetingValueMess"
-          + "agesProtoP\001Z@google.golang.org/genproto/"
-          + "googleapis/ads/admanager/v1;admanager\252\002\027"
-          + "Google.Ads.AdManager.V1\312\002\027Google\\Ads\\AdM"
-          + "anager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "/field_behavior.proto\032\031google/api/resour"
+          + "ce.proto\"\276\004\n\024CustomTargetingValue\022\021\n\004nam"
+          + "e\030\001 \001(\tB\003\340A\010\022T\n\024custom_targeting_key\030\010 \001"
+          + "(\tB6\340A\002\340A\005\372A-\n+admanager.googleapis.com/"
+          + "CustomTargetingKey\022\030\n\013ad_tag_name\030\004 \001(\tB"
+          + "\003\340A\005\022\031\n\014display_name\030\005 \001(\tB\003\340A\001\022t\n\nmatch"
+          + "_type\030\006 \001(\0162X.google.ads.admanager.v1.Cu"
+          + "stomTargetingValueMatchTypeEnum.CustomTa"
+          + "rgetingValueMatchTypeB\006\340A\005\340A\002\022g\n\006status\030"
+          + "\007 \001(\0162R.google.ads.admanager.v1.CustomTa"
+          + "rgetingValueStatusEnum.CustomTargetingVa"
+          + "lueStatusB\003\340A\003:\250\001\352A\244\001\n-admanager.googlea"
+          + "pis.com/CustomTargetingValue\022Fnetworks/{"
+          + "network_code}/customTargetingValues/{cus"
+          + "tom_targeting_value}*\025customTargetingVal"
+          + "ues2\024customTargetingValueB\325\001\n\033com.google"
+          + ".ads.admanager.v1B!CustomTargetingValueM"
+          + "essagesProtoP\001Z@google.golang.org/genpro"
+          + "to/googleapis/ads/admanager/v1;admanager"
+          + "\252\002\027Google.Ads.AdManager.V1\312\002\027Google\\Ads\\"
+          + "AdManager\\V1\352\002\032Google::Ads::AdManager::V"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -77,12 +82,13 @@ public final class CustomTargetingValueMessagesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_CustomTargetingValue_descriptor,
             new java.lang.String[] {
-              "Name", "AdTagName", "DisplayName", "MatchType", "Status",
+              "Name", "CustomTargetingKey", "AdTagName", "DisplayName", "MatchType", "Status",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.ads.admanager.v1.CustomTargetingValueEnumsProto.getDescriptor();

@@ -63,6 +63,7 @@ public class GrpcSipTrunksStub extends SipTrunksStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSipTrunkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SipTrunk.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSipTrunkRequest, Empty>
@@ -73,6 +74,7 @@ public class GrpcSipTrunksStub extends SipTrunksStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSipTrunkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSipTrunksRequest, ListSipTrunksResponse>
@@ -84,6 +86,7 @@ public class GrpcSipTrunksStub extends SipTrunksStub {
                   ProtoUtils.marshaller(ListSipTrunksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSipTrunksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSipTrunkRequest, SipTrunk> getSipTrunkMethodDescriptor =
@@ -92,6 +95,7 @@ public class GrpcSipTrunksStub extends SipTrunksStub {
           .setFullMethodName("google.cloud.dialogflow.v2beta1.SipTrunks/GetSipTrunk")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSipTrunkRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(SipTrunk.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSipTrunkRequest, SipTrunk>
@@ -102,6 +106,7 @@ public class GrpcSipTrunksStub extends SipTrunksStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSipTrunkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SipTrunk.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -113,6 +118,7 @@ public class GrpcSipTrunksStub extends SipTrunksStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -121,6 +127,7 @@ public class GrpcSipTrunksStub extends SipTrunksStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateSipTrunkRequest, SipTrunk> createSipTrunkCallable;

@@ -302,4 +302,47 @@ public interface ReasoningEngineOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpecOrBuilder getContextSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+   * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+   * secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+   * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+   * secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+   * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+   * secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 }

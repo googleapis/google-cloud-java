@@ -51,6 +51,7 @@ public class GrpcQuotaServiceStub extends QuotaServiceStub {
                   ProtoUtils.marshaller(ListQuotaGroupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListQuotaGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListQuotaGroupsRequest, ListQuotaGroupsResponse>

@@ -44,17 +44,15 @@ public final class CompanyMessagesProto {
       "\n"
           + ".google/ads/admanager/v1/company_messag"
           + "es.proto\022\027google.ads.admanager.v1\032+googl"
-          + "e/ads/admanager/v1/applied_label.proto\0328google/ads/admanager/v1/company_credit_s"
-          + "tatus_enum.proto\032/google/ads/admanager/v"
-          + "1/company_type_enum.proto\032\037google/api/fi"
-          + "eld_behavior.proto\032\031google/api/resource."
-          + "proto\032\037google/protobuf/timestamp.proto\"\234\006\n"
+          + "e/ads/admanager/v1/applied_label.proto\032+google/ads/admanager/v1/company_enums.pr"
+          + "oto\032\037google/api/field_behavior.proto\032\031go"
+          + "ogle/api/resource.proto\032\037google/protobuf/timestamp.proto\"\234\006\n"
           + "\007Company\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\027\n\n"
           + "company_id\030\002 \001(\003B\003\340A\003\022\031\n"
           + "\014display_name\030\003 \001(\tB\003\340A\002\022G\n"
-          + "\004type\030\004"
-          + " \001(\01624.google.ads.admanager.v1.CompanyTypeEnum.CompanyTypeB\003\340A\002\022\024\n"
+          + "\004type\030\004 \001(\01624.goog"
+          + "le.ads.admanager.v1.CompanyTypeEnum.CompanyTypeB\003\340A\002\022\024\n"
           + "\007address\030\005 \001(\tB\003\340A\001\022\022\n"
           + "\005email\030\006 \001(\tB\003\340A\001\022\020\n"
           + "\003fax\030\007 \001(\tB\003\340A\001\022\022\n"
@@ -62,32 +60,33 @@ public final class CompanyMessagesProto {
           + "\013external_id\030\t \001(\tB\003\340A\001\022\024\n"
           + "\007comment\030\n"
           + " \001(\tB\003\340A\001\022`\n\r"
-          + "credit_status\030\013 \001(\0162D.google.ads.a"
-          + "dmanager.v1.CompanyCreditStatusEnum.CompanyCreditStatusB\003\340A\001\022B\n"
+          + "credit_status\030\013 \001(\0162D.google.ads.admanager.v1.CompanyCre"
+          + "ditStatusEnum.CompanyCreditStatusB\003\340A\001\022B\n"
           + "\016applied_labels\030\014"
           + " \003(\0132%.google.ads.admanager.v1.AppliedLabelB\003\340A\001\022F\n"
           + "\017primary_contact\030\r"
           + " \001(\tB(\340A\001\372A\"\n"
           + " admanager.googleapis.com/ContactH\000\210\001\001\022<\n\r"
           + "applied_teams\030\016 \003(\tB%\340A\001\372A\037\n"
-          + "\035admanager.googleapis.com/Team\0224\n"
-          + "\013update_time\030\017 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022#\n"
-          + "\026third_party_company_id\030\020 \001(\003B\003\340A\001:f\352Ac\n"
+          + "\035admanager.googleapis.com/Team\022#\n"
+          + "\026third_party_company_id\030\020 \001(\003B\003\340A\001\0224\n"
+          + "\013update_time\030\017"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003:f\352Ac\n"
           + " admanager.googleapis.com/Company\022+networks/{network_code}/companies/{company}*"
           + "\tcompanies2\007companyB\022\n"
           + "\020_primary_contactB\310\001\n"
-          + "\033com.google.ads.admanager.v1B\024CompanyMe"
-          + "ssagesProtoP\001Z@google.golang.org/genproto/googleapis/ads/admanager/v1;admanager\252"
-          + "\002\027Google.Ads.AdManager.V1\312\002\027Google\\Ads\\A"
-          + "dManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\033com.google.ads.admanager.v1B\024CompanyMessagesProtoP\001Z@google."
+          + "golang.org/genproto/googleapis/ads/adman"
+          + "ager/v1;admanager\252\002\027Google.Ads.AdManager"
+          + ".V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::"
+          + "Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.ads.admanager.v1.AppliedLabelProto.getDescriptor(),
-              com.google.ads.admanager.v1.CompanyCreditStatusEnumProto.getDescriptor(),
-              com.google.ads.admanager.v1.CompanyTypeEnumProto.getDescriptor(),
+              com.google.ads.admanager.v1.CompanyEnumsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -112,8 +111,8 @@ public final class CompanyMessagesProto {
               "AppliedLabels",
               "PrimaryContact",
               "AppliedTeams",
-              "UpdateTime",
               "ThirdPartyCompanyId",
+              "UpdateTime",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -123,8 +122,7 @@ public final class CompanyMessagesProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.ads.admanager.v1.AppliedLabelProto.getDescriptor();
-    com.google.ads.admanager.v1.CompanyCreditStatusEnumProto.getDescriptor();
-    com.google.ads.admanager.v1.CompanyTypeEnumProto.getDescriptor();
+    com.google.ads.admanager.v1.CompanyEnumsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

@@ -47,6 +47,7 @@ public class GrpcRecommendationServiceStub extends RecommendationServiceStub {
               .setFullMethodName("google.cloud.discoveryengine.v1.RecommendationService/Recommend")
               .setRequestMarshaller(ProtoUtils.marshaller(RecommendRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RecommendResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<RecommendRequest, RecommendResponse> recommendCallable;

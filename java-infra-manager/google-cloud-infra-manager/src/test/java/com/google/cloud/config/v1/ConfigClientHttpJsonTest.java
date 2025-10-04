@@ -19,6 +19,8 @@ package com.google.cloud.config.v1;
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceChangesPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListResourceDriftsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
@@ -224,6 +226,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -286,6 +289,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -348,6 +352,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -420,6 +425,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -492,6 +498,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -522,6 +529,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -572,6 +580,7 @@ public class ConfigClientHttpJsonTest {
               .setTfVersion("tfVersion182968838")
               .setQuotaValidation(QuotaValidation.forNumber(0))
               .putAllAnnotations(new HashMap<String, String>())
+              .setProviderConfig(ProviderConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDeploymentAsync(deployment, updateMask).get();
@@ -603,6 +612,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -670,6 +680,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -835,6 +846,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidationResults("quotaValidationResults-1396407899")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -895,6 +907,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidationResults("quotaValidationResults-1396407899")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1429,6 +1442,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1496,6 +1510,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1563,6 +1578,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1632,6 +1648,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1796,6 +1813,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1862,6 +1880,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1928,6 +1947,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1987,6 +2007,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2146,6 +2167,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2210,6 +2232,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2500,6 +2523,406 @@ public class ConfigClientHttpJsonTest {
       String name =
           "projects/project-7557/locations/location-7557/terraformVersions/terraformVersion-7557";
       client.getTerraformVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listResourceChangesTest() throws Exception {
+    ResourceChange responsesElement = ResourceChange.newBuilder().build();
+    ListResourceChangesResponse expectedResponse =
+        ListResourceChangesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceChanges(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PreviewName parent = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+
+    ListResourceChangesPagedResponse pagedListResponse = client.listResourceChanges(parent);
+
+    List<ResourceChange> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceChangesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listResourceChangesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PreviewName parent = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+      client.listResourceChanges(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listResourceChangesTest2() throws Exception {
+    ResourceChange responsesElement = ResourceChange.newBuilder().build();
+    ListResourceChangesResponse expectedResponse =
+        ListResourceChangesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceChanges(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-3236/locations/location-3236/previews/preview-3236";
+
+    ListResourceChangesPagedResponse pagedListResponse = client.listResourceChanges(parent);
+
+    List<ResourceChange> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceChangesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listResourceChangesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-3236/locations/location-3236/previews/preview-3236";
+      client.listResourceChanges(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getResourceChangeTest() throws Exception {
+    ResourceChange expectedResponse =
+        ResourceChange.newBuilder()
+            .setName(
+                ResourceChangeName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_CHANGE]")
+                    .toString())
+            .setTerraformInfo(ResourceChangeTerraformInfo.newBuilder().build())
+            .addAllPropertyChanges(new ArrayList<PropertyChange>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ResourceChangeName name =
+        ResourceChangeName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_CHANGE]");
+
+    ResourceChange actualResponse = client.getResourceChange(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getResourceChangeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ResourceChangeName name =
+          ResourceChangeName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_CHANGE]");
+      client.getResourceChange(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getResourceChangeTest2() throws Exception {
+    ResourceChange expectedResponse =
+        ResourceChange.newBuilder()
+            .setName(
+                ResourceChangeName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_CHANGE]")
+                    .toString())
+            .setTerraformInfo(ResourceChangeTerraformInfo.newBuilder().build())
+            .addAllPropertyChanges(new ArrayList<PropertyChange>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-4532/locations/location-4532/previews/preview-4532/resourceChanges/resourceChange-4532";
+
+    ResourceChange actualResponse = client.getResourceChange(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getResourceChangeExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4532/locations/location-4532/previews/preview-4532/resourceChanges/resourceChange-4532";
+      client.getResourceChange(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listResourceDriftsTest() throws Exception {
+    ResourceDrift responsesElement = ResourceDrift.newBuilder().build();
+    ListResourceDriftsResponse expectedResponse =
+        ListResourceDriftsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceDrifts(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PreviewName parent = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+
+    ListResourceDriftsPagedResponse pagedListResponse = client.listResourceDrifts(parent);
+
+    List<ResourceDrift> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceDriftsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listResourceDriftsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PreviewName parent = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+      client.listResourceDrifts(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listResourceDriftsTest2() throws Exception {
+    ResourceDrift responsesElement = ResourceDrift.newBuilder().build();
+    ListResourceDriftsResponse expectedResponse =
+        ListResourceDriftsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceDrifts(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-3236/locations/location-3236/previews/preview-3236";
+
+    ListResourceDriftsPagedResponse pagedListResponse = client.listResourceDrifts(parent);
+
+    List<ResourceDrift> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceDriftsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listResourceDriftsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-3236/locations/location-3236/previews/preview-3236";
+      client.listResourceDrifts(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getResourceDriftTest() throws Exception {
+    ResourceDrift expectedResponse =
+        ResourceDrift.newBuilder()
+            .setName(
+                ResourceDriftName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_DRIFT]")
+                    .toString())
+            .setTerraformInfo(ResourceDriftTerraformInfo.newBuilder().build())
+            .addAllPropertyDrifts(new ArrayList<PropertyDrift>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ResourceDriftName name =
+        ResourceDriftName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_DRIFT]");
+
+    ResourceDrift actualResponse = client.getResourceDrift(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getResourceDriftExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ResourceDriftName name =
+          ResourceDriftName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_DRIFT]");
+      client.getResourceDrift(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getResourceDriftTest2() throws Exception {
+    ResourceDrift expectedResponse =
+        ResourceDrift.newBuilder()
+            .setName(
+                ResourceDriftName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]", "[RESOURCE_DRIFT]")
+                    .toString())
+            .setTerraformInfo(ResourceDriftTerraformInfo.newBuilder().build())
+            .addAllPropertyDrifts(new ArrayList<PropertyDrift>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-8585/locations/location-8585/previews/preview-8585/resourceDrifts/resourceDrift-8585";
+
+    ResourceDrift actualResponse = client.getResourceDrift(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getResourceDriftExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8585/locations/location-8585/previews/preview-8585/resourceDrifts/resourceDrift-8585";
+      client.getResourceDrift(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

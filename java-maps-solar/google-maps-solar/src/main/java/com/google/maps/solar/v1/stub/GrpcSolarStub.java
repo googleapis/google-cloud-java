@@ -51,6 +51,7 @@ public class GrpcSolarStub extends SolarStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(FindClosestBuildingInsightsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BuildingInsights.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataLayersRequest, DataLayers>
@@ -61,6 +62,7 @@ public class GrpcSolarStub extends SolarStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataLayersRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataLayers.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGeoTiffRequest, HttpBody> getGeoTiffMethodDescriptor =
@@ -69,6 +71,7 @@ public class GrpcSolarStub extends SolarStub {
           .setFullMethodName("google.maps.solar.v1.Solar/GetGeoTiff")
           .setRequestMarshaller(ProtoUtils.marshaller(GetGeoTiffRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<FindClosestBuildingInsightsRequest, BuildingInsights>

@@ -1032,6 +1032,28 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.backupdr.v1.DataSourceBackupApplianceApplication.getDefaultInstance();
   }
 
+  public static final int BACKUP_BLOCKED_BY_VAULT_ACCESS_RESTRICTION_FIELD_NUMBER = 28;
+  private boolean backupBlockedByVaultAccessRestriction_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is set to true if the backup is blocked by vault
+   * access restriction.
+   * </pre>
+   *
+   * <code>
+   * bool backup_blocked_by_vault_access_restriction = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The backupBlockedByVaultAccessRestriction.
+   */
+  @java.lang.Override
+  public boolean getBackupBlockedByVaultAccessRestriction() {
+    return backupBlockedByVaultAccessRestriction_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1083,6 +1105,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     if (sourceResourceCase_ == 27) {
       output.writeMessage(
           27, (com.google.cloud.backupdr.v1.DataSourceBackupApplianceApplication) sourceResource_);
+    }
+    if (backupBlockedByVaultAccessRestriction_ != false) {
+      output.writeBool(28, backupBlockedByVaultAccessRestriction_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1143,6 +1168,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
               27,
               (com.google.cloud.backupdr.v1.DataSourceBackupApplianceApplication) sourceResource_);
     }
+    if (backupBlockedByVaultAccessRestriction_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              28, backupBlockedByVaultAccessRestriction_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1186,6 +1216,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     if (hasBackupConfigInfo()) {
       if (!getBackupConfigInfo().equals(other.getBackupConfigInfo())) return false;
     }
+    if (getBackupBlockedByVaultAccessRestriction()
+        != other.getBackupBlockedByVaultAccessRestriction()) return false;
     if (!getSourceResourceCase().equals(other.getSourceResourceCase())) return false;
     switch (sourceResourceCase_) {
       case 26:
@@ -1243,6 +1275,10 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + BACKUP_CONFIG_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getBackupConfigInfo().hashCode();
     }
+    hash = (37 * hash) + BACKUP_BLOCKED_BY_VAULT_ACCESS_RESTRICTION_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashBoolean(getBackupBlockedByVaultAccessRestriction());
     switch (sourceResourceCase_) {
       case 26:
         hash = (37 * hash) + DATA_SOURCE_GCP_RESOURCE_FIELD_NUMBER;
@@ -1458,6 +1494,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       if (dataSourceBackupApplianceApplicationBuilder_ != null) {
         dataSourceBackupApplianceApplicationBuilder_.clear();
       }
+      backupBlockedByVaultAccessRestriction_ = false;
       sourceResourceCase_ = 0;
       sourceResource_ = null;
       return this;
@@ -1535,6 +1572,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         result.backupConfigInfo_ =
             backupConfigInfoBuilder_ == null ? backupConfigInfo_ : backupConfigInfoBuilder_.build();
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.backupBlockedByVaultAccessRestriction_ = backupBlockedByVaultAccessRestriction_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1627,6 +1667,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasBackupConfigInfo()) {
         mergeBackupConfigInfo(other.getBackupConfigInfo());
+      }
+      if (other.getBackupBlockedByVaultAccessRestriction() != false) {
+        setBackupBlockedByVaultAccessRestriction(other.getBackupBlockedByVaultAccessRestriction());
       }
       switch (other.getSourceResourceCase()) {
         case DATA_SOURCE_GCP_RESOURCE:
@@ -1753,6 +1796,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
                 sourceResourceCase_ = 27;
                 break;
               } // case 218
+            case 224:
+              {
+                backupBlockedByVaultAccessRestriction_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 224
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3729,6 +3778,71 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       sourceResourceCase_ = 27;
       onChanged();
       return dataSourceBackupApplianceApplicationBuilder_;
+    }
+
+    private boolean backupBlockedByVaultAccessRestriction_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is set to true if the backup is blocked by vault
+     * access restriction.
+     * </pre>
+     *
+     * <code>
+     * bool backup_blocked_by_vault_access_restriction = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The backupBlockedByVaultAccessRestriction.
+     */
+    @java.lang.Override
+    public boolean getBackupBlockedByVaultAccessRestriction() {
+      return backupBlockedByVaultAccessRestriction_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is set to true if the backup is blocked by vault
+     * access restriction.
+     * </pre>
+     *
+     * <code>
+     * bool backup_blocked_by_vault_access_restriction = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The backupBlockedByVaultAccessRestriction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupBlockedByVaultAccessRestriction(boolean value) {
+
+      backupBlockedByVaultAccessRestriction_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is set to true if the backup is blocked by vault
+     * access restriction.
+     * </pre>
+     *
+     * <code>
+     * bool backup_blocked_by_vault_access_restriction = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBackupBlockedByVaultAccessRestriction() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      backupBlockedByVaultAccessRestriction_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

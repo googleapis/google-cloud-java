@@ -286,6 +286,52 @@ public interface ToolOrBuilder
    *
    *
    * <pre>
+   * Optional. GoogleMaps tool type.
+   * Tool to support Google Maps in Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the googleMaps field is set.
+   */
+  boolean hasGoogleMaps();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. GoogleMaps tool type.
+   * Tool to support Google Maps in Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The googleMaps.
+   */
+  com.google.cloud.aiplatform.v1beta1.GoogleMaps getGoogleMaps();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. GoogleMaps tool type.
+   * Tool to support Google Maps in Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.GoogleMapsOrBuilder getGoogleMapsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Tool to support searching public web data, powered by Vertex AI
    * Search and Sec4 compliance.
    * </pre>
@@ -417,4 +463,53 @@ public interface ToolOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.UrlContextOrBuilder getUrlContextOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support the model interacting directly with the computer.
+   * If enabled, it automatically populates computer-use specific Function
+   * Declarations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the computerUse field is set.
+   */
+  boolean hasComputerUse();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support the model interacting directly with the computer.
+   * If enabled, it automatically populates computer-use specific Function
+   * Declarations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The computerUse.
+   */
+  com.google.cloud.aiplatform.v1beta1.Tool.ComputerUse getComputerUse();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support the model interacting directly with the computer.
+   * If enabled, it automatically populates computer-use specific Function
+   * Declarations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Tool.ComputerUseOrBuilder getComputerUseOrBuilder();
 }

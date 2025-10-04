@@ -104,7 +104,7 @@ public interface DataSharingSettingsOrBuilder
    *
    * @deprecated
    *     google.analytics.admin.v1alpha.DataSharingSettings.sharing_with_google_any_sales_enabled is
-   *     deprecated. See google/analytics/admin/v1alpha/resources.proto;l=704
+   *     deprecated. See google/analytics/admin/v1alpha/resources.proto;l=707
    * @return The sharingWithGoogleAnySalesEnabled.
    */
   @java.lang.Deprecated

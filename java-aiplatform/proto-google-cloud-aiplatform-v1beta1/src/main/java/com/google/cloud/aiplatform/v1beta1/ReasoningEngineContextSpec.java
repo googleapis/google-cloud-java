@@ -165,6 +165,61 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
     com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
             .SimilaritySearchConfigOrBuilder
         getSimilaritySearchConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for automatic TTL ("time-to-live") of the
+     * memories in the Memory Bank. If not set, TTL will not be applied
+     * automatically. The TTL can be explicitly set by modifying the
+     * `expire_time` of each Memory resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig ttl_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the ttlConfig field is set.
+     */
+    boolean hasTtlConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for automatic TTL ("time-to-live") of the
+     * memories in the Memory Bank. If not set, TTL will not be applied
+     * automatically. The TTL can be explicitly set by modifying the
+     * `expire_time` of each Memory resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig ttl_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The ttlConfig.
+     */
+    com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig
+        getTtlConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for automatic TTL ("time-to-live") of the
+     * memories in the Memory Bank. If not set, TTL will not be applied
+     * automatically. The TTL can be explicitly set by modifying the
+     * `expire_time` of each Memory resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig ttl_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+            .TtlConfigOrBuilder
+        getTtlConfigOrBuilder();
   }
 
   /**
@@ -212,6 +267,3075 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
                   .Builder.class);
     }
 
+    public interface TtlConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The default TTL duration of the memories in the Memory
+       * Bank. This applies to all operations that create or update a memory.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration default_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the defaultTtl field is set.
+       */
+      boolean hasDefaultTtl();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The default TTL duration of the memories in the Memory
+       * Bank. This applies to all operations that create or update a memory.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration default_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The defaultTtl.
+       */
+      com.google.protobuf.Duration getDefaultTtl();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The default TTL duration of the memories in the Memory
+       * Bank. This applies to all operations that create or update a memory.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration default_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.protobuf.DurationOrBuilder getDefaultTtlOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The granular TTL configuration of the memories in the
+       * Memory Bank.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig granular_ttl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the granularTtlConfig field is set.
+       */
+      boolean hasGranularTtlConfig();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The granular TTL configuration of the memories in the
+       * Memory Bank.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig granular_ttl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The granularTtlConfig.
+       */
+      com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig
+              .GranularTtlConfig
+          getGranularTtlConfig();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The granular TTL configuration of the memories in the
+       * Memory Bank.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig granular_ttl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig
+              .GranularTtlConfigOrBuilder
+          getGranularTtlConfigOrBuilder();
+
+      com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig
+              .TtlCase
+          getTtlCase();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for automatically setting the TTL ("time-to-live") of the
+     * memories in the Memory Bank.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig}
+     */
+    public static final class TtlConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig)
+        TtlConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use TtlConfig.newBuilder() to construct.
+      private TtlConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private TtlConfig() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new TtlConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig.class,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig.Builder.class);
+      }
+
+      public interface GranularTtlConfigOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories uploaded via CreateMemory.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration create_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the createTtl field is set.
+         */
+        boolean hasCreateTtl();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories uploaded via CreateMemory.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration create_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The createTtl.
+         */
+        com.google.protobuf.Duration getCreateTtl();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories uploaded via CreateMemory.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration create_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        com.google.protobuf.DurationOrBuilder getCreateTtlOrBuilder();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories newly generated via
+         * GenerateMemories
+         * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration generate_created_ttl = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the generateCreatedTtl field is set.
+         */
+        boolean hasGenerateCreatedTtl();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories newly generated via
+         * GenerateMemories
+         * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration generate_created_ttl = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The generateCreatedTtl.
+         */
+        com.google.protobuf.Duration getGenerateCreatedTtl();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories newly generated via
+         * GenerateMemories
+         * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration generate_created_ttl = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        com.google.protobuf.DurationOrBuilder getGenerateCreatedTtlOrBuilder();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories updated via GenerateMemories
+         * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+         * In the case of an UPDATE action, the `expire_time` of the existing
+         * memory will be updated to the new value (now + TTL).
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration generate_updated_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the generateUpdatedTtl field is set.
+         */
+        boolean hasGenerateUpdatedTtl();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories updated via GenerateMemories
+         * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+         * In the case of an UPDATE action, the `expire_time` of the existing
+         * memory will be updated to the new value (now + TTL).
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration generate_updated_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The generateUpdatedTtl.
+         */
+        com.google.protobuf.Duration getGenerateUpdatedTtl();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories updated via GenerateMemories
+         * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+         * In the case of an UPDATE action, the `expire_time` of the existing
+         * memory will be updated to the new value (now + TTL).
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration generate_updated_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        com.google.protobuf.DurationOrBuilder getGenerateUpdatedTtlOrBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for TTL of the memories in the Memory Bank based on the
+       * action that created or updated the memory.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig}
+       */
+      public static final class GranularTtlConfig extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig)
+          GranularTtlConfigOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        // Use GranularTtlConfig.newBuilder() to construct.
+        private GranularTtlConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private GranularTtlConfig() {}
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new GranularTtlConfig();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_GranularTtlConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_GranularTtlConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                      .TtlConfig.GranularTtlConfig.class,
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                      .TtlConfig.GranularTtlConfig.Builder.class);
+        }
+
+        private int bitField0_;
+        public static final int CREATE_TTL_FIELD_NUMBER = 1;
+        private com.google.protobuf.Duration createTtl_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories uploaded via CreateMemory.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration create_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the createTtl field is set.
+         */
+        @java.lang.Override
+        public boolean hasCreateTtl() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories uploaded via CreateMemory.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration create_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The createTtl.
+         */
+        @java.lang.Override
+        public com.google.protobuf.Duration getCreateTtl() {
+          return createTtl_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : createTtl_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories uploaded via CreateMemory.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration create_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.protobuf.DurationOrBuilder getCreateTtlOrBuilder() {
+          return createTtl_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : createTtl_;
+        }
+
+        public static final int GENERATE_CREATED_TTL_FIELD_NUMBER = 2;
+        private com.google.protobuf.Duration generateCreatedTtl_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories newly generated via
+         * GenerateMemories
+         * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration generate_created_ttl = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the generateCreatedTtl field is set.
+         */
+        @java.lang.Override
+        public boolean hasGenerateCreatedTtl() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories newly generated via
+         * GenerateMemories
+         * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration generate_created_ttl = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The generateCreatedTtl.
+         */
+        @java.lang.Override
+        public com.google.protobuf.Duration getGenerateCreatedTtl() {
+          return generateCreatedTtl_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : generateCreatedTtl_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories newly generated via
+         * GenerateMemories
+         * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration generate_created_ttl = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.protobuf.DurationOrBuilder getGenerateCreatedTtlOrBuilder() {
+          return generateCreatedTtl_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : generateCreatedTtl_;
+        }
+
+        public static final int GENERATE_UPDATED_TTL_FIELD_NUMBER = 3;
+        private com.google.protobuf.Duration generateUpdatedTtl_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories updated via GenerateMemories
+         * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+         * In the case of an UPDATE action, the `expire_time` of the existing
+         * memory will be updated to the new value (now + TTL).
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration generate_updated_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the generateUpdatedTtl field is set.
+         */
+        @java.lang.Override
+        public boolean hasGenerateUpdatedTtl() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories updated via GenerateMemories
+         * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+         * In the case of an UPDATE action, the `expire_time` of the existing
+         * memory will be updated to the new value (now + TTL).
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration generate_updated_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The generateUpdatedTtl.
+         */
+        @java.lang.Override
+        public com.google.protobuf.Duration getGenerateUpdatedTtl() {
+          return generateUpdatedTtl_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : generateUpdatedTtl_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The TTL duration for memories updated via GenerateMemories
+         * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+         * In the case of an UPDATE action, the `expire_time` of the existing
+         * memory will be updated to the new value (now + TTL).
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration generate_updated_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.protobuf.DurationOrBuilder getGenerateUpdatedTtlOrBuilder() {
+          return generateUpdatedTtl_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : generateUpdatedTtl_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            output.writeMessage(1, getCreateTtl());
+          }
+          if (((bitField0_ & 0x00000002) != 0)) {
+            output.writeMessage(2, getGenerateCreatedTtl());
+          }
+          if (((bitField0_ & 0x00000004) != 0)) {
+            output.writeMessage(3, getGenerateUpdatedTtl());
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (((bitField0_ & 0x00000001) != 0)) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getCreateTtl());
+          }
+          if (((bitField0_ & 0x00000002) != 0)) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeMessageSize(
+                    2, getGenerateCreatedTtl());
+          }
+          if (((bitField0_ & 0x00000004) != 0)) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeMessageSize(
+                    3, getGenerateUpdatedTtl());
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                  .TtlConfig.GranularTtlConfig)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig
+                  .GranularTtlConfig
+              other =
+                  (com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                          .TtlConfig.GranularTtlConfig)
+                      obj;
+
+          if (hasCreateTtl() != other.hasCreateTtl()) return false;
+          if (hasCreateTtl()) {
+            if (!getCreateTtl().equals(other.getCreateTtl())) return false;
+          }
+          if (hasGenerateCreatedTtl() != other.hasGenerateCreatedTtl()) return false;
+          if (hasGenerateCreatedTtl()) {
+            if (!getGenerateCreatedTtl().equals(other.getGenerateCreatedTtl())) return false;
+          }
+          if (hasGenerateUpdatedTtl() != other.hasGenerateUpdatedTtl()) return false;
+          if (hasGenerateUpdatedTtl()) {
+            if (!getGenerateUpdatedTtl().equals(other.getGenerateUpdatedTtl())) return false;
+          }
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (hasCreateTtl()) {
+            hash = (37 * hash) + CREATE_TTL_FIELD_NUMBER;
+            hash = (53 * hash) + getCreateTtl().hashCode();
+          }
+          if (hasGenerateCreatedTtl()) {
+            hash = (37 * hash) + GENERATE_CREATED_TTL_FIELD_NUMBER;
+            hash = (53 * hash) + getGenerateCreatedTtl().hashCode();
+          }
+          if (hasGenerateUpdatedTtl()) {
+            hash = (37 * hash) + GENERATE_UPDATED_TTL_FIELD_NUMBER;
+            hash = (53 * hash) + getGenerateUpdatedTtl().hashCode();
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                .MemoryBankConfig.TtlConfig.GranularTtlConfig
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                .MemoryBankConfig.TtlConfig.GranularTtlConfig
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                .MemoryBankConfig.TtlConfig.GranularTtlConfig
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                .MemoryBankConfig.TtlConfig.GranularTtlConfig
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                .MemoryBankConfig.TtlConfig.GranularTtlConfig
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                .MemoryBankConfig.TtlConfig.GranularTtlConfig
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                .MemoryBankConfig.TtlConfig.GranularTtlConfig
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                .MemoryBankConfig.TtlConfig.GranularTtlConfig
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                .MemoryBankConfig.TtlConfig.GranularTtlConfig
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                .MemoryBankConfig.TtlConfig.GranularTtlConfig
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                .MemoryBankConfig.TtlConfig.GranularTtlConfig
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                .MemoryBankConfig.TtlConfig.GranularTtlConfig
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig.GranularTtlConfig
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Configuration for TTL of the memories in the Memory Bank based on the
+         * action that created or updated the memory.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig)
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                .TtlConfig.GranularTtlConfigOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+                .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_GranularTtlConfig_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+                .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_GranularTtlConfig_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                        .TtlConfig.GranularTtlConfig.class,
+                    com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                        .TtlConfig.GranularTtlConfig.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+              getCreateTtlFieldBuilder();
+              getGenerateCreatedTtlFieldBuilder();
+              getGenerateUpdatedTtlFieldBuilder();
+            }
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            createTtl_ = null;
+            if (createTtlBuilder_ != null) {
+              createTtlBuilder_.dispose();
+              createTtlBuilder_ = null;
+            }
+            generateCreatedTtl_ = null;
+            if (generateCreatedTtlBuilder_ != null) {
+              generateCreatedTtlBuilder_.dispose();
+              generateCreatedTtlBuilder_ = null;
+            }
+            generateUpdatedTtl_ = null;
+            if (generateUpdatedTtlBuilder_ != null) {
+              generateUpdatedTtlBuilder_.dispose();
+              generateUpdatedTtlBuilder_ = null;
+            }
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+                .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_GranularTtlConfig_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                  .TtlConfig.GranularTtlConfig
+              getDefaultInstanceForType() {
+            return com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                .TtlConfig.GranularTtlConfig.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                  .TtlConfig.GranularTtlConfig
+              build() {
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig.GranularTtlConfig
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                  .TtlConfig.GranularTtlConfig
+              buildPartial() {
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig.GranularTtlConfig
+                result =
+                    new com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                        .MemoryBankConfig.TtlConfig.GranularTtlConfig(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                      .TtlConfig.GranularTtlConfig
+                  result) {
+            int from_bitField0_ = bitField0_;
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.createTtl_ =
+                  createTtlBuilder_ == null ? createTtl_ : createTtlBuilder_.build();
+              to_bitField0_ |= 0x00000001;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.generateCreatedTtl_ =
+                  generateCreatedTtlBuilder_ == null
+                      ? generateCreatedTtl_
+                      : generateCreatedTtlBuilder_.build();
+              to_bitField0_ |= 0x00000002;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.generateUpdatedTtl_ =
+                  generateUpdatedTtlBuilder_ == null
+                      ? generateUpdatedTtl_
+                      : generateUpdatedTtlBuilder_.build();
+              to_bitField0_ |= 0x00000004;
+            }
+            result.bitField0_ |= to_bitField0_;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig.GranularTtlConfig) {
+              return mergeFrom(
+                  (com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                          .TtlConfig.GranularTtlConfig)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                      .TtlConfig.GranularTtlConfig
+                  other) {
+            if (other
+                == com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig.GranularTtlConfig.getDefaultInstance()) return this;
+            if (other.hasCreateTtl()) {
+              mergeCreateTtl(other.getCreateTtl());
+            }
+            if (other.hasGenerateCreatedTtl()) {
+              mergeGenerateCreatedTtl(other.getGenerateCreatedTtl());
+            }
+            if (other.hasGenerateUpdatedTtl()) {
+              mergeGenerateUpdatedTtl(other.getGenerateUpdatedTtl());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      input.readMessage(getCreateTtlFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      input.readMessage(
+                          getGenerateCreatedTtlFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 18
+                  case 26:
+                    {
+                      input.readMessage(
+                          getGenerateUpdatedTtlFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00000004;
+                      break;
+                    } // case 26
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private com.google.protobuf.Duration createTtl_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>
+              createTtlBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories uploaded via CreateMemory.
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration create_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return Whether the createTtl field is set.
+           */
+          public boolean hasCreateTtl() {
+            return ((bitField0_ & 0x00000001) != 0);
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories uploaded via CreateMemory.
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration create_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return The createTtl.
+           */
+          public com.google.protobuf.Duration getCreateTtl() {
+            if (createTtlBuilder_ == null) {
+              return createTtl_ == null
+                  ? com.google.protobuf.Duration.getDefaultInstance()
+                  : createTtl_;
+            } else {
+              return createTtlBuilder_.getMessage();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories uploaded via CreateMemory.
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration create_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder setCreateTtl(com.google.protobuf.Duration value) {
+            if (createTtlBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              createTtl_ = value;
+            } else {
+              createTtlBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories uploaded via CreateMemory.
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration create_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder setCreateTtl(com.google.protobuf.Duration.Builder builderForValue) {
+            if (createTtlBuilder_ == null) {
+              createTtl_ = builderForValue.build();
+            } else {
+              createTtlBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories uploaded via CreateMemory.
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration create_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder mergeCreateTtl(com.google.protobuf.Duration value) {
+            if (createTtlBuilder_ == null) {
+              if (((bitField0_ & 0x00000001) != 0)
+                  && createTtl_ != null
+                  && createTtl_ != com.google.protobuf.Duration.getDefaultInstance()) {
+                getCreateTtlBuilder().mergeFrom(value);
+              } else {
+                createTtl_ = value;
+              }
+            } else {
+              createTtlBuilder_.mergeFrom(value);
+            }
+            if (createTtl_ != null) {
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories uploaded via CreateMemory.
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration create_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder clearCreateTtl() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            createTtl_ = null;
+            if (createTtlBuilder_ != null) {
+              createTtlBuilder_.dispose();
+              createTtlBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories uploaded via CreateMemory.
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration create_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.protobuf.Duration.Builder getCreateTtlBuilder() {
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return getCreateTtlFieldBuilder().getBuilder();
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories uploaded via CreateMemory.
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration create_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.protobuf.DurationOrBuilder getCreateTtlOrBuilder() {
+            if (createTtlBuilder_ != null) {
+              return createTtlBuilder_.getMessageOrBuilder();
+            } else {
+              return createTtl_ == null
+                  ? com.google.protobuf.Duration.getDefaultInstance()
+                  : createTtl_;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories uploaded via CreateMemory.
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration create_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>
+              getCreateTtlFieldBuilder() {
+            if (createTtlBuilder_ == null) {
+              createTtlBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.protobuf.Duration,
+                      com.google.protobuf.Duration.Builder,
+                      com.google.protobuf.DurationOrBuilder>(
+                      getCreateTtl(), getParentForChildren(), isClean());
+              createTtl_ = null;
+            }
+            return createTtlBuilder_;
+          }
+
+          private com.google.protobuf.Duration generateCreatedTtl_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>
+              generateCreatedTtlBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories newly generated via
+           * GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_created_ttl = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return Whether the generateCreatedTtl field is set.
+           */
+          public boolean hasGenerateCreatedTtl() {
+            return ((bitField0_ & 0x00000002) != 0);
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories newly generated via
+           * GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_created_ttl = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return The generateCreatedTtl.
+           */
+          public com.google.protobuf.Duration getGenerateCreatedTtl() {
+            if (generateCreatedTtlBuilder_ == null) {
+              return generateCreatedTtl_ == null
+                  ? com.google.protobuf.Duration.getDefaultInstance()
+                  : generateCreatedTtl_;
+            } else {
+              return generateCreatedTtlBuilder_.getMessage();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories newly generated via
+           * GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_created_ttl = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder setGenerateCreatedTtl(com.google.protobuf.Duration value) {
+            if (generateCreatedTtlBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              generateCreatedTtl_ = value;
+            } else {
+              generateCreatedTtlBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories newly generated via
+           * GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_created_ttl = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder setGenerateCreatedTtl(
+              com.google.protobuf.Duration.Builder builderForValue) {
+            if (generateCreatedTtlBuilder_ == null) {
+              generateCreatedTtl_ = builderForValue.build();
+            } else {
+              generateCreatedTtlBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories newly generated via
+           * GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_created_ttl = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder mergeGenerateCreatedTtl(com.google.protobuf.Duration value) {
+            if (generateCreatedTtlBuilder_ == null) {
+              if (((bitField0_ & 0x00000002) != 0)
+                  && generateCreatedTtl_ != null
+                  && generateCreatedTtl_ != com.google.protobuf.Duration.getDefaultInstance()) {
+                getGenerateCreatedTtlBuilder().mergeFrom(value);
+              } else {
+                generateCreatedTtl_ = value;
+              }
+            } else {
+              generateCreatedTtlBuilder_.mergeFrom(value);
+            }
+            if (generateCreatedTtl_ != null) {
+              bitField0_ |= 0x00000002;
+              onChanged();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories newly generated via
+           * GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_created_ttl = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder clearGenerateCreatedTtl() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            generateCreatedTtl_ = null;
+            if (generateCreatedTtlBuilder_ != null) {
+              generateCreatedTtlBuilder_.dispose();
+              generateCreatedTtlBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories newly generated via
+           * GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_created_ttl = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.protobuf.Duration.Builder getGenerateCreatedTtlBuilder() {
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return getGenerateCreatedTtlFieldBuilder().getBuilder();
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories newly generated via
+           * GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_created_ttl = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.protobuf.DurationOrBuilder getGenerateCreatedTtlOrBuilder() {
+            if (generateCreatedTtlBuilder_ != null) {
+              return generateCreatedTtlBuilder_.getMessageOrBuilder();
+            } else {
+              return generateCreatedTtl_ == null
+                  ? com.google.protobuf.Duration.getDefaultInstance()
+                  : generateCreatedTtl_;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories newly generated via
+           * GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_created_ttl = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>
+              getGenerateCreatedTtlFieldBuilder() {
+            if (generateCreatedTtlBuilder_ == null) {
+              generateCreatedTtlBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.protobuf.Duration,
+                      com.google.protobuf.Duration.Builder,
+                      com.google.protobuf.DurationOrBuilder>(
+                      getGenerateCreatedTtl(), getParentForChildren(), isClean());
+              generateCreatedTtl_ = null;
+            }
+            return generateCreatedTtlBuilder_;
+          }
+
+          private com.google.protobuf.Duration generateUpdatedTtl_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>
+              generateUpdatedTtlBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories updated via GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * In the case of an UPDATE action, the `expire_time` of the existing
+           * memory will be updated to the new value (now + TTL).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_updated_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return Whether the generateUpdatedTtl field is set.
+           */
+          public boolean hasGenerateUpdatedTtl() {
+            return ((bitField0_ & 0x00000004) != 0);
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories updated via GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * In the case of an UPDATE action, the `expire_time` of the existing
+           * memory will be updated to the new value (now + TTL).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_updated_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return The generateUpdatedTtl.
+           */
+          public com.google.protobuf.Duration getGenerateUpdatedTtl() {
+            if (generateUpdatedTtlBuilder_ == null) {
+              return generateUpdatedTtl_ == null
+                  ? com.google.protobuf.Duration.getDefaultInstance()
+                  : generateUpdatedTtl_;
+            } else {
+              return generateUpdatedTtlBuilder_.getMessage();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories updated via GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * In the case of an UPDATE action, the `expire_time` of the existing
+           * memory will be updated to the new value (now + TTL).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_updated_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder setGenerateUpdatedTtl(com.google.protobuf.Duration value) {
+            if (generateUpdatedTtlBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              generateUpdatedTtl_ = value;
+            } else {
+              generateUpdatedTtlBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories updated via GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * In the case of an UPDATE action, the `expire_time` of the existing
+           * memory will be updated to the new value (now + TTL).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_updated_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder setGenerateUpdatedTtl(
+              com.google.protobuf.Duration.Builder builderForValue) {
+            if (generateUpdatedTtlBuilder_ == null) {
+              generateUpdatedTtl_ = builderForValue.build();
+            } else {
+              generateUpdatedTtlBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories updated via GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * In the case of an UPDATE action, the `expire_time` of the existing
+           * memory will be updated to the new value (now + TTL).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_updated_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder mergeGenerateUpdatedTtl(com.google.protobuf.Duration value) {
+            if (generateUpdatedTtlBuilder_ == null) {
+              if (((bitField0_ & 0x00000004) != 0)
+                  && generateUpdatedTtl_ != null
+                  && generateUpdatedTtl_ != com.google.protobuf.Duration.getDefaultInstance()) {
+                getGenerateUpdatedTtlBuilder().mergeFrom(value);
+              } else {
+                generateUpdatedTtl_ = value;
+              }
+            } else {
+              generateUpdatedTtlBuilder_.mergeFrom(value);
+            }
+            if (generateUpdatedTtl_ != null) {
+              bitField0_ |= 0x00000004;
+              onChanged();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories updated via GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * In the case of an UPDATE action, the `expire_time` of the existing
+           * memory will be updated to the new value (now + TTL).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_updated_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder clearGenerateUpdatedTtl() {
+            bitField0_ = (bitField0_ & ~0x00000004);
+            generateUpdatedTtl_ = null;
+            if (generateUpdatedTtlBuilder_ != null) {
+              generateUpdatedTtlBuilder_.dispose();
+              generateUpdatedTtlBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories updated via GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * In the case of an UPDATE action, the `expire_time` of the existing
+           * memory will be updated to the new value (now + TTL).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_updated_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.protobuf.Duration.Builder getGenerateUpdatedTtlBuilder() {
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return getGenerateUpdatedTtlFieldBuilder().getBuilder();
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories updated via GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * In the case of an UPDATE action, the `expire_time` of the existing
+           * memory will be updated to the new value (now + TTL).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_updated_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.protobuf.DurationOrBuilder getGenerateUpdatedTtlOrBuilder() {
+            if (generateUpdatedTtlBuilder_ != null) {
+              return generateUpdatedTtlBuilder_.getMessageOrBuilder();
+            } else {
+              return generateUpdatedTtl_ == null
+                  ? com.google.protobuf.Duration.getDefaultInstance()
+                  : generateUpdatedTtl_;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The TTL duration for memories updated via GenerateMemories
+           * ([GenerateMemoriesResponse.GeneratedMemory.Action.CREATED][google.cloud.aiplatform.v1beta1.GenerateMemoriesResponse.GeneratedMemory.Action.CREATED]).
+           * In the case of an UPDATE action, the `expire_time` of the existing
+           * memory will be updated to the new value (now + TTL).
+           * </pre>
+           *
+           * <code>
+           * .google.protobuf.Duration generate_updated_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>
+              getGenerateUpdatedTtlFieldBuilder() {
+            if (generateUpdatedTtlBuilder_ == null) {
+              generateUpdatedTtlBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.protobuf.Duration,
+                      com.google.protobuf.Duration.Builder,
+                      com.google.protobuf.DurationOrBuilder>(
+                      getGenerateUpdatedTtl(), getParentForChildren(), isClean());
+              generateUpdatedTtl_ = null;
+            }
+            return generateUpdatedTtlBuilder_;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig)
+        private static final com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                .MemoryBankConfig.TtlConfig.GranularTtlConfig
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                  .TtlConfig.GranularTtlConfig();
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                .MemoryBankConfig.TtlConfig.GranularTtlConfig
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<GranularTtlConfig> PARSER =
+            new com.google.protobuf.AbstractParser<GranularTtlConfig>() {
+              @java.lang.Override
+              public GranularTtlConfig parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<GranularTtlConfig> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<GranularTtlConfig> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                .TtlConfig.GranularTtlConfig
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int ttlCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object ttl_;
+
+      public enum TtlCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        DEFAULT_TTL(1),
+        GRANULAR_TTL_CONFIG(2),
+        TTL_NOT_SET(0);
+        private final int value;
+
+        private TtlCase(int value) {
+          this.value = value;
+        }
+
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static TtlCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static TtlCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return DEFAULT_TTL;
+            case 2:
+              return GRANULAR_TTL_CONFIG;
+            case 0:
+              return TTL_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public TtlCase getTtlCase() {
+        return TtlCase.forNumber(ttlCase_);
+      }
+
+      public static final int DEFAULT_TTL_FIELD_NUMBER = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The default TTL duration of the memories in the Memory
+       * Bank. This applies to all operations that create or update a memory.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration default_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the defaultTtl field is set.
+       */
+      @java.lang.Override
+      public boolean hasDefaultTtl() {
+        return ttlCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The default TTL duration of the memories in the Memory
+       * Bank. This applies to all operations that create or update a memory.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration default_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The defaultTtl.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Duration getDefaultTtl() {
+        if (ttlCase_ == 1) {
+          return (com.google.protobuf.Duration) ttl_;
+        }
+        return com.google.protobuf.Duration.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The default TTL duration of the memories in the Memory
+       * Bank. This applies to all operations that create or update a memory.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration default_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.DurationOrBuilder getDefaultTtlOrBuilder() {
+        if (ttlCase_ == 1) {
+          return (com.google.protobuf.Duration) ttl_;
+        }
+        return com.google.protobuf.Duration.getDefaultInstance();
+      }
+
+      public static final int GRANULAR_TTL_CONFIG_FIELD_NUMBER = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The granular TTL configuration of the memories in the
+       * Memory Bank.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig granular_ttl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the granularTtlConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasGranularTtlConfig() {
+        return ttlCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The granular TTL configuration of the memories in the
+       * Memory Bank.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig granular_ttl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The granularTtlConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig.GranularTtlConfig
+          getGranularTtlConfig() {
+        if (ttlCase_ == 2) {
+          return (com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                  .TtlConfig.GranularTtlConfig)
+              ttl_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+            .TtlConfig.GranularTtlConfig.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The granular TTL configuration of the memories in the
+       * Memory Bank.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig granular_ttl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig.GranularTtlConfigOrBuilder
+          getGranularTtlConfigOrBuilder() {
+        if (ttlCase_ == 2) {
+          return (com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                  .TtlConfig.GranularTtlConfig)
+              ttl_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+            .TtlConfig.GranularTtlConfig.getDefaultInstance();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (ttlCase_ == 1) {
+          output.writeMessage(1, (com.google.protobuf.Duration) ttl_);
+        }
+        if (ttlCase_ == 2) {
+          output.writeMessage(
+              2,
+              (com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                      .TtlConfig.GranularTtlConfig)
+                  ttl_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (ttlCase_ == 1) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  1, (com.google.protobuf.Duration) ttl_);
+        }
+        if (ttlCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2,
+                  (com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                          .TtlConfig.GranularTtlConfig)
+                      ttl_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                .TtlConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig
+            other =
+                (com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                        .TtlConfig)
+                    obj;
+
+        if (!getTtlCase().equals(other.getTtlCase())) return false;
+        switch (ttlCase_) {
+          case 1:
+            if (!getDefaultTtl().equals(other.getDefaultTtl())) return false;
+            break;
+          case 2:
+            if (!getGranularTtlConfig().equals(other.getGranularTtlConfig())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (ttlCase_) {
+          case 1:
+            hash = (37 * hash) + DEFAULT_TTL_FIELD_NUMBER;
+            hash = (53 * hash) + getDefaultTtl().hashCode();
+            break;
+          case 2:
+            hash = (37 * hash) + GRANULAR_TTL_CONFIG_FIELD_NUMBER;
+            hash = (53 * hash) + getGranularTtlConfig().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for automatically setting the TTL ("time-to-live") of the
+       * memories in the Memory Bank.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig)
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                      .TtlConfig.class,
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                      .TtlConfig.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (defaultTtlBuilder_ != null) {
+            defaultTtlBuilder_.clear();
+          }
+          if (granularTtlConfigBuilder_ != null) {
+            granularTtlConfigBuilder_.clear();
+          }
+          ttlCase_ = 0;
+          ttl_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_MemoryBankConfig_TtlConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                .TtlConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                .TtlConfig
+            build() {
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                .TtlConfig
+            buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig
+              result =
+                  new com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                      .MemoryBankConfig.TtlConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig
+                result) {
+          result.ttlCase_ = ttlCase_;
+          result.ttl_ = this.ttl_;
+          if (ttlCase_ == 1 && defaultTtlBuilder_ != null) {
+            result.ttl_ = defaultTtlBuilder_.build();
+          }
+          if (ttlCase_ == 2 && granularTtlConfigBuilder_ != null) {
+            result.ttl_ = granularTtlConfigBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                  .TtlConfig) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                        .TtlConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig
+                other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                  .TtlConfig.getDefaultInstance()) return this;
+          switch (other.getTtlCase()) {
+            case DEFAULT_TTL:
+              {
+                mergeDefaultTtl(other.getDefaultTtl());
+                break;
+              }
+            case GRANULAR_TTL_CONFIG:
+              {
+                mergeGranularTtlConfig(other.getGranularTtlConfig());
+                break;
+              }
+            case TTL_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getDefaultTtlFieldBuilder().getBuilder(), extensionRegistry);
+                    ttlCase_ = 1;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        getGranularTtlConfigFieldBuilder().getBuilder(), extensionRegistry);
+                    ttlCase_ = 2;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int ttlCase_ = 0;
+        private java.lang.Object ttl_;
+
+        public TtlCase getTtlCase() {
+          return TtlCase.forNumber(ttlCase_);
+        }
+
+        public Builder clearTtl() {
+          ttlCase_ = 0;
+          ttl_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>
+            defaultTtlBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The default TTL duration of the memories in the Memory
+         * Bank. This applies to all operations that create or update a memory.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration default_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the defaultTtl field is set.
+         */
+        @java.lang.Override
+        public boolean hasDefaultTtl() {
+          return ttlCase_ == 1;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The default TTL duration of the memories in the Memory
+         * Bank. This applies to all operations that create or update a memory.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration default_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The defaultTtl.
+         */
+        @java.lang.Override
+        public com.google.protobuf.Duration getDefaultTtl() {
+          if (defaultTtlBuilder_ == null) {
+            if (ttlCase_ == 1) {
+              return (com.google.protobuf.Duration) ttl_;
+            }
+            return com.google.protobuf.Duration.getDefaultInstance();
+          } else {
+            if (ttlCase_ == 1) {
+              return defaultTtlBuilder_.getMessage();
+            }
+            return com.google.protobuf.Duration.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The default TTL duration of the memories in the Memory
+         * Bank. This applies to all operations that create or update a memory.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration default_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setDefaultTtl(com.google.protobuf.Duration value) {
+          if (defaultTtlBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ttl_ = value;
+            onChanged();
+          } else {
+            defaultTtlBuilder_.setMessage(value);
+          }
+          ttlCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The default TTL duration of the memories in the Memory
+         * Bank. This applies to all operations that create or update a memory.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration default_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setDefaultTtl(com.google.protobuf.Duration.Builder builderForValue) {
+          if (defaultTtlBuilder_ == null) {
+            ttl_ = builderForValue.build();
+            onChanged();
+          } else {
+            defaultTtlBuilder_.setMessage(builderForValue.build());
+          }
+          ttlCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The default TTL duration of the memories in the Memory
+         * Bank. This applies to all operations that create or update a memory.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration default_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder mergeDefaultTtl(com.google.protobuf.Duration value) {
+          if (defaultTtlBuilder_ == null) {
+            if (ttlCase_ == 1 && ttl_ != com.google.protobuf.Duration.getDefaultInstance()) {
+              ttl_ =
+                  com.google.protobuf.Duration.newBuilder((com.google.protobuf.Duration) ttl_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              ttl_ = value;
+            }
+            onChanged();
+          } else {
+            if (ttlCase_ == 1) {
+              defaultTtlBuilder_.mergeFrom(value);
+            } else {
+              defaultTtlBuilder_.setMessage(value);
+            }
+          }
+          ttlCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The default TTL duration of the memories in the Memory
+         * Bank. This applies to all operations that create or update a memory.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration default_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearDefaultTtl() {
+          if (defaultTtlBuilder_ == null) {
+            if (ttlCase_ == 1) {
+              ttlCase_ = 0;
+              ttl_ = null;
+              onChanged();
+            }
+          } else {
+            if (ttlCase_ == 1) {
+              ttlCase_ = 0;
+              ttl_ = null;
+            }
+            defaultTtlBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The default TTL duration of the memories in the Memory
+         * Bank. This applies to all operations that create or update a memory.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration default_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.protobuf.Duration.Builder getDefaultTtlBuilder() {
+          return getDefaultTtlFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The default TTL duration of the memories in the Memory
+         * Bank. This applies to all operations that create or update a memory.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration default_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.protobuf.DurationOrBuilder getDefaultTtlOrBuilder() {
+          if ((ttlCase_ == 1) && (defaultTtlBuilder_ != null)) {
+            return defaultTtlBuilder_.getMessageOrBuilder();
+          } else {
+            if (ttlCase_ == 1) {
+              return (com.google.protobuf.Duration) ttl_;
+            }
+            return com.google.protobuf.Duration.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The default TTL duration of the memories in the Memory
+         * Bank. This applies to all operations that create or update a memory.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Duration default_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>
+            getDefaultTtlFieldBuilder() {
+          if (defaultTtlBuilder_ == null) {
+            if (!(ttlCase_ == 1)) {
+              ttl_ = com.google.protobuf.Duration.getDefaultInstance();
+            }
+            defaultTtlBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Duration,
+                    com.google.protobuf.Duration.Builder,
+                    com.google.protobuf.DurationOrBuilder>(
+                    (com.google.protobuf.Duration) ttl_, getParentForChildren(), isClean());
+            ttl_ = null;
+          }
+          ttlCase_ = 1;
+          onChanged();
+          return defaultTtlBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig.GranularTtlConfig,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig.GranularTtlConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig.GranularTtlConfigOrBuilder>
+            granularTtlConfigBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The granular TTL configuration of the memories in the
+         * Memory Bank.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig granular_ttl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the granularTtlConfig field is set.
+         */
+        @java.lang.Override
+        public boolean hasGranularTtlConfig() {
+          return ttlCase_ == 2;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The granular TTL configuration of the memories in the
+         * Memory Bank.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig granular_ttl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The granularTtlConfig.
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                .TtlConfig.GranularTtlConfig
+            getGranularTtlConfig() {
+          if (granularTtlConfigBuilder_ == null) {
+            if (ttlCase_ == 2) {
+              return (com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                      .MemoryBankConfig.TtlConfig.GranularTtlConfig)
+                  ttl_;
+            }
+            return com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                .TtlConfig.GranularTtlConfig.getDefaultInstance();
+          } else {
+            if (ttlCase_ == 2) {
+              return granularTtlConfigBuilder_.getMessage();
+            }
+            return com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                .TtlConfig.GranularTtlConfig.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The granular TTL configuration of the memories in the
+         * Memory Bank.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig granular_ttl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setGranularTtlConfig(
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig.GranularTtlConfig
+                value) {
+          if (granularTtlConfigBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ttl_ = value;
+            onChanged();
+          } else {
+            granularTtlConfigBuilder_.setMessage(value);
+          }
+          ttlCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The granular TTL configuration of the memories in the
+         * Memory Bank.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig granular_ttl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setGranularTtlConfig(
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig.GranularTtlConfig.Builder
+                builderForValue) {
+          if (granularTtlConfigBuilder_ == null) {
+            ttl_ = builderForValue.build();
+            onChanged();
+          } else {
+            granularTtlConfigBuilder_.setMessage(builderForValue.build());
+          }
+          ttlCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The granular TTL configuration of the memories in the
+         * Memory Bank.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig granular_ttl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder mergeGranularTtlConfig(
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig.GranularTtlConfig
+                value) {
+          if (granularTtlConfigBuilder_ == null) {
+            if (ttlCase_ == 2
+                && ttl_
+                    != com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                        .MemoryBankConfig.TtlConfig.GranularTtlConfig.getDefaultInstance()) {
+              ttl_ =
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                      .TtlConfig.GranularTtlConfig.newBuilder(
+                          (com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                                  .MemoryBankConfig.TtlConfig.GranularTtlConfig)
+                              ttl_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              ttl_ = value;
+            }
+            onChanged();
+          } else {
+            if (ttlCase_ == 2) {
+              granularTtlConfigBuilder_.mergeFrom(value);
+            } else {
+              granularTtlConfigBuilder_.setMessage(value);
+            }
+          }
+          ttlCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The granular TTL configuration of the memories in the
+         * Memory Bank.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig granular_ttl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearGranularTtlConfig() {
+          if (granularTtlConfigBuilder_ == null) {
+            if (ttlCase_ == 2) {
+              ttlCase_ = 0;
+              ttl_ = null;
+              onChanged();
+            }
+          } else {
+            if (ttlCase_ == 2) {
+              ttlCase_ = 0;
+              ttl_ = null;
+            }
+            granularTtlConfigBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The granular TTL configuration of the memories in the
+         * Memory Bank.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig granular_ttl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                .TtlConfig.GranularTtlConfig.Builder
+            getGranularTtlConfigBuilder() {
+          return getGranularTtlConfigFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The granular TTL configuration of the memories in the
+         * Memory Bank.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig granular_ttl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                .TtlConfig.GranularTtlConfigOrBuilder
+            getGranularTtlConfigOrBuilder() {
+          if ((ttlCase_ == 2) && (granularTtlConfigBuilder_ != null)) {
+            return granularTtlConfigBuilder_.getMessageOrBuilder();
+          } else {
+            if (ttlCase_ == 2) {
+              return (com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                      .MemoryBankConfig.TtlConfig.GranularTtlConfig)
+                  ttl_;
+            }
+            return com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                .TtlConfig.GranularTtlConfig.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The granular TTL configuration of the memories in the
+         * Memory Bank.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfig granular_ttl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig.GranularTtlConfig,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig.GranularTtlConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                    .TtlConfig.GranularTtlConfigOrBuilder>
+            getGranularTtlConfigFieldBuilder() {
+          if (granularTtlConfigBuilder_ == null) {
+            if (!(ttlCase_ == 2)) {
+              ttl_ =
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                      .TtlConfig.GranularTtlConfig.getDefaultInstance();
+            }
+            granularTtlConfigBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                        .TtlConfig.GranularTtlConfig,
+                    com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                        .TtlConfig.GranularTtlConfig.Builder,
+                    com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                        .TtlConfig.GranularTtlConfigOrBuilder>(
+                    (com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                            .TtlConfig.GranularTtlConfig)
+                        ttl_,
+                    getParentForChildren(),
+                    isClean());
+            ttl_ = null;
+          }
+          ttlCase_ = 2;
+          onChanged();
+          return granularTtlConfigBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig)
+      private static final com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+              .MemoryBankConfig.TtlConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                .TtlConfig();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<TtlConfig> PARSER =
+          new com.google.protobuf.AbstractParser<TtlConfig>() {
+            @java.lang.Override
+            public TtlConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<TtlConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TtlConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     public interface GenerationConfigOrBuilder
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.GenerationConfig)
@@ -223,8 +3347,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
        * <pre>
        * Required. The model used to generate memories.
        * Format:
-       * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-       * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+       * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
        * </pre>
        *
        * <code>
@@ -241,8 +3364,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
        * <pre>
        * Required. The model used to generate memories.
        * Format:
-       * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-       * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+       * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
        * </pre>
        *
        * <code>
@@ -313,8 +3435,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
        * <pre>
        * Required. The model used to generate memories.
        * Format:
-       * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-       * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+       * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
        * </pre>
        *
        * <code>
@@ -342,8 +3463,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
        * <pre>
        * Required. The model used to generate memories.
        * Format:
-       * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-       * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+       * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
        * </pre>
        *
        * <code>
@@ -780,8 +3900,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
          * <pre>
          * Required. The model used to generate memories.
          * Format:
-         * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-         * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+         * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
          * </pre>
          *
          * <code>
@@ -808,8 +3927,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
          * <pre>
          * Required. The model used to generate memories.
          * Format:
-         * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-         * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+         * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
          * </pre>
          *
          * <code>
@@ -836,8 +3954,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
          * <pre>
          * Required. The model used to generate memories.
          * Format:
-         * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-         * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+         * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
          * </pre>
          *
          * <code>
@@ -863,8 +3980,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
          * <pre>
          * Required. The model used to generate memories.
          * Format:
-         * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-         * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+         * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
          * </pre>
          *
          * <code>
@@ -886,8 +4002,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
          * <pre>
          * Required. The model used to generate memories.
          * Format:
-         * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-         * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+         * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
          * </pre>
          *
          * <code>
@@ -991,8 +4106,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
        * <pre>
        * Required. The model used to generate embeddings to lookup similar
        * memories. Format:
-       * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-       * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+       * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
        * </pre>
        *
        * <code>
@@ -1009,8 +4123,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
        * <pre>
        * Required. The model used to generate embeddings to lookup similar
        * memories. Format:
-       * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-       * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+       * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
        * </pre>
        *
        * <code>
@@ -1081,8 +4194,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
        * <pre>
        * Required. The model used to generate embeddings to lookup similar
        * memories. Format:
-       * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-       * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+       * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
        * </pre>
        *
        * <code>
@@ -1110,8 +4222,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
        * <pre>
        * Required. The model used to generate embeddings to lookup similar
        * memories. Format:
-       * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-       * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+       * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
        * </pre>
        *
        * <code>
@@ -1548,8 +4659,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
          * <pre>
          * Required. The model used to generate embeddings to lookup similar
          * memories. Format:
-         * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-         * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+         * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
          * </pre>
          *
          * <code>
@@ -1576,8 +4686,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
          * <pre>
          * Required. The model used to generate embeddings to lookup similar
          * memories. Format:
-         * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-         * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+         * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
          * </pre>
          *
          * <code>
@@ -1604,8 +4713,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
          * <pre>
          * Required. The model used to generate embeddings to lookup similar
          * memories. Format:
-         * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-         * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+         * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
          * </pre>
          *
          * <code>
@@ -1631,8 +4739,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
          * <pre>
          * Required. The model used to generate embeddings to lookup similar
          * memories. Format:
-         * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-         * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+         * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
          * </pre>
          *
          * <code>
@@ -1654,8 +4761,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
          * <pre>
          * Required. The model used to generate embeddings to lookup similar
          * memories. Format:
-         * `projects/{project}/locations/{location}/publishers/google/models/{model}`
-         * or `projects/{project}/locations/{location}/endpoints/{endpoint}`.
+         * `projects/{project}/locations/{location}/publishers/google/models/{model}`.
          * </pre>
          *
          * <code>
@@ -1889,6 +4995,81 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
           : similaritySearchConfig_;
     }
 
+    public static final int TTL_CONFIG_FIELD_NUMBER = 5;
+    private com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+            .TtlConfig
+        ttlConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for automatic TTL ("time-to-live") of the
+     * memories in the Memory Bank. If not set, TTL will not be applied
+     * automatically. The TTL can be explicitly set by modifying the
+     * `expire_time` of each Memory resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig ttl_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the ttlConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasTtlConfig() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for automatic TTL ("time-to-live") of the
+     * memories in the Memory Bank. If not set, TTL will not be applied
+     * automatically. The TTL can be explicitly set by modifying the
+     * `expire_time` of each Memory resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig ttl_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The ttlConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig
+        getTtlConfig() {
+      return ttlConfig_ == null
+          ? com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig.getDefaultInstance()
+          : ttlConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for automatic TTL ("time-to-live") of the
+     * memories in the Memory Bank. If not set, TTL will not be applied
+     * automatically. The TTL can be explicitly set by modifying the
+     * `expire_time` of each Memory resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig ttl_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+            .TtlConfigOrBuilder
+        getTtlConfigOrBuilder() {
+      return ttlConfig_ == null
+          ? com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig.getDefaultInstance()
+          : ttlConfig_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1909,6 +5090,9 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(2, getSimilaritySearchConfig());
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(5, getTtlConfig());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1925,6 +5109,9 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 2, getSimilaritySearchConfig());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getTtlConfig());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1952,6 +5139,10 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
       if (hasSimilaritySearchConfig()) {
         if (!getSimilaritySearchConfig().equals(other.getSimilaritySearchConfig())) return false;
       }
+      if (hasTtlConfig() != other.hasTtlConfig()) return false;
+      if (hasTtlConfig()) {
+        if (!getTtlConfig().equals(other.getTtlConfig())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1970,6 +5161,10 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
       if (hasSimilaritySearchConfig()) {
         hash = (37 * hash) + SIMILARITY_SEARCH_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getSimilaritySearchConfig().hashCode();
+      }
+      if (hasTtlConfig()) {
+        hash = (37 * hash) + TTL_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getTtlConfig().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -2127,6 +5322,7 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getGenerationConfigFieldBuilder();
           getSimilaritySearchConfigFieldBuilder();
+          getTtlConfigFieldBuilder();
         }
       }
 
@@ -2143,6 +5339,11 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
         if (similaritySearchConfigBuilder_ != null) {
           similaritySearchConfigBuilder_.dispose();
           similaritySearchConfigBuilder_ = null;
+        }
+        ttlConfig_ = null;
+        if (ttlConfigBuilder_ != null) {
+          ttlConfigBuilder_.dispose();
+          ttlConfigBuilder_ = null;
         }
         return this;
       }
@@ -2201,6 +5402,10 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
                   ? similaritySearchConfig_
                   : similaritySearchConfigBuilder_.build();
           to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.ttlConfig_ = ttlConfigBuilder_ == null ? ttlConfig_ : ttlConfigBuilder_.build();
+          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2265,6 +5470,9 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
         if (other.hasSimilaritySearchConfig()) {
           mergeSimilaritySearchConfig(other.getSimilaritySearchConfig());
         }
+        if (other.hasTtlConfig()) {
+          mergeTtlConfig(other.getTtlConfig());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2305,6 +5513,12 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 42:
+                {
+                  input.readMessage(getTtlConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2824,6 +6038,272 @@ public final class ReasoningEngineContextSpec extends com.google.protobuf.Genera
           similaritySearchConfig_ = null;
         }
         return similaritySearchConfigBuilder_;
+      }
+
+      private com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig
+          ttlConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                  .TtlConfig,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                  .TtlConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                  .TtlConfigOrBuilder>
+          ttlConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for automatic TTL ("time-to-live") of the
+       * memories in the Memory Bank. If not set, TTL will not be applied
+       * automatically. The TTL can be explicitly set by modifying the
+       * `expire_time` of each Memory resource.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig ttl_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the ttlConfig field is set.
+       */
+      public boolean hasTtlConfig() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for automatic TTL ("time-to-live") of the
+       * memories in the Memory Bank. If not set, TTL will not be applied
+       * automatically. The TTL can be explicitly set by modifying the
+       * `expire_time` of each Memory resource.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig ttl_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The ttlConfig.
+       */
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig
+          getTtlConfig() {
+        if (ttlConfigBuilder_ == null) {
+          return ttlConfig_ == null
+              ? com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                  .TtlConfig.getDefaultInstance()
+              : ttlConfig_;
+        } else {
+          return ttlConfigBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for automatic TTL ("time-to-live") of the
+       * memories in the Memory Bank. If not set, TTL will not be applied
+       * automatically. The TTL can be explicitly set by modifying the
+       * `expire_time` of each Memory resource.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig ttl_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setTtlConfig(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig
+              value) {
+        if (ttlConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ttlConfig_ = value;
+        } else {
+          ttlConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for automatic TTL ("time-to-live") of the
+       * memories in the Memory Bank. If not set, TTL will not be applied
+       * automatically. The TTL can be explicitly set by modifying the
+       * `expire_time` of each Memory resource.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig ttl_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setTtlConfig(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig
+                  .Builder
+              builderForValue) {
+        if (ttlConfigBuilder_ == null) {
+          ttlConfig_ = builderForValue.build();
+        } else {
+          ttlConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for automatic TTL ("time-to-live") of the
+       * memories in the Memory Bank. If not set, TTL will not be applied
+       * automatically. The TTL can be explicitly set by modifying the
+       * `expire_time` of each Memory resource.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig ttl_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeTtlConfig(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig
+              value) {
+        if (ttlConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && ttlConfig_ != null
+              && ttlConfig_
+                  != com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                      .TtlConfig.getDefaultInstance()) {
+            getTtlConfigBuilder().mergeFrom(value);
+          } else {
+            ttlConfig_ = value;
+          }
+        } else {
+          ttlConfigBuilder_.mergeFrom(value);
+        }
+        if (ttlConfig_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for automatic TTL ("time-to-live") of the
+       * memories in the Memory Bank. If not set, TTL will not be applied
+       * automatically. The TTL can be explicitly set by modifying the
+       * `expire_time` of each Memory resource.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig ttl_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearTtlConfig() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        ttlConfig_ = null;
+        if (ttlConfigBuilder_ != null) {
+          ttlConfigBuilder_.dispose();
+          ttlConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for automatic TTL ("time-to-live") of the
+       * memories in the Memory Bank. If not set, TTL will not be applied
+       * automatically. The TTL can be explicitly set by modifying the
+       * `expire_time` of each Memory resource.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig ttl_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfig.Builder
+          getTtlConfigBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getTtlConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for automatic TTL ("time-to-live") of the
+       * memories in the Memory Bank. If not set, TTL will not be applied
+       * automatically. The TTL can be explicitly set by modifying the
+       * `expire_time` of each Memory resource.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig ttl_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+              .TtlConfigOrBuilder
+          getTtlConfigOrBuilder() {
+        if (ttlConfigBuilder_ != null) {
+          return ttlConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return ttlConfig_ == null
+              ? com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                  .TtlConfig.getDefaultInstance()
+              : ttlConfig_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for automatic TTL ("time-to-live") of the
+       * memories in the Memory Bank. If not set, TTL will not be applied
+       * automatically. The TTL can be explicitly set by modifying the
+       * `expire_time` of each Memory resource.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfig ttl_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                  .TtlConfig,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                  .TtlConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                  .TtlConfigOrBuilder>
+          getTtlConfigFieldBuilder() {
+        if (ttlConfigBuilder_ == null) {
+          ttlConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                      .TtlConfig,
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                      .TtlConfig.Builder,
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfig
+                      .TtlConfigOrBuilder>(getTtlConfig(), getParentForChildren(), isClean());
+          ttlConfig_ = null;
+        }
+        return ttlConfigBuilder_;
       }
 
       @java.lang.Override

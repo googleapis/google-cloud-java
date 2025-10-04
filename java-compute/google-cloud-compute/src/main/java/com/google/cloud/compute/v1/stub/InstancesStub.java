@@ -24,12 +24,14 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAccessConfigInstanceRequest;
+import com.google.cloud.compute.v1.AddNetworkInterfaceInstanceRequest;
 import com.google.cloud.compute.v1.AddResourcePoliciesInstanceRequest;
 import com.google.cloud.compute.v1.AggregatedListInstancesRequest;
 import com.google.cloud.compute.v1.AttachDiskInstanceRequest;
 import com.google.cloud.compute.v1.BulkInsertInstanceRequest;
 import com.google.cloud.compute.v1.DeleteAccessConfigInstanceRequest;
 import com.google.cloud.compute.v1.DeleteInstanceRequest;
+import com.google.cloud.compute.v1.DeleteNetworkInterfaceInstanceRequest;
 import com.google.cloud.compute.v1.DetachDiskInstanceRequest;
 import com.google.cloud.compute.v1.GetEffectiveFirewallsInstanceRequest;
 import com.google.cloud.compute.v1.GetGuestAttributesInstanceRequest;
@@ -105,6 +107,17 @@ public abstract class InstancesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: addAccessConfigCallable()");
   }
 
+  public OperationCallable<AddNetworkInterfaceInstanceRequest, Operation, Operation>
+      addNetworkInterfaceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: addNetworkInterfaceOperationCallable()");
+  }
+
+  public UnaryCallable<AddNetworkInterfaceInstanceRequest, Operation>
+      addNetworkInterfaceCallable() {
+    throw new UnsupportedOperationException("Not implemented: addNetworkInterfaceCallable()");
+  }
+
   public OperationCallable<AddResourcePoliciesInstanceRequest, Operation, Operation>
       addResourcePoliciesOperationCallable() {
     throw new UnsupportedOperationException(
@@ -160,6 +173,17 @@ public abstract class InstancesStub implements BackgroundResource {
 
   public UnaryCallable<DeleteAccessConfigInstanceRequest, Operation> deleteAccessConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteAccessConfigCallable()");
+  }
+
+  public OperationCallable<DeleteNetworkInterfaceInstanceRequest, Operation, Operation>
+      deleteNetworkInterfaceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteNetworkInterfaceOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteNetworkInterfaceInstanceRequest, Operation>
+      deleteNetworkInterfaceCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteNetworkInterfaceCallable()");
   }
 
   public OperationCallable<DetachDiskInstanceRequest, Operation, Operation>

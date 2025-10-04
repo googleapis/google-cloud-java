@@ -79,6 +79,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSecretsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSecretsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSecretRequest, Secret> createSecretMethodDescriptor =
@@ -87,6 +88,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setFullMethodName("google.cloud.secrets.v1beta1.SecretManagerService/CreateSecret")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSecretRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Secret.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<AddSecretVersionRequest, SecretVersion>
@@ -98,6 +100,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AddSecretVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecretVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSecretRequest, Secret> getSecretMethodDescriptor =
@@ -106,6 +109,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setFullMethodName("google.cloud.secrets.v1beta1.SecretManagerService/GetSecret")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSecretRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Secret.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSecretRequest, Secret> updateSecretMethodDescriptor =
@@ -114,6 +118,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setFullMethodName("google.cloud.secrets.v1beta1.SecretManagerService/UpdateSecret")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSecretRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Secret.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteSecretRequest, Empty> deleteSecretMethodDescriptor =
@@ -122,6 +127,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setFullMethodName("google.cloud.secrets.v1beta1.SecretManagerService/DeleteSecret")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteSecretRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListSecretVersionsRequest, ListSecretVersionsResponse>
@@ -134,6 +140,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   ProtoUtils.marshaller(ListSecretVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSecretVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSecretVersionRequest, SecretVersion>
@@ -145,6 +152,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSecretVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecretVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AccessSecretVersionRequest, AccessSecretVersionResponse>
@@ -157,6 +165,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   ProtoUtils.marshaller(AccessSecretVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AccessSecretVersionResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DisableSecretVersionRequest, SecretVersion>
@@ -168,6 +177,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DisableSecretVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecretVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EnableSecretVersionRequest, SecretVersion>
@@ -179,6 +189,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EnableSecretVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecretVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DestroySecretVersionRequest, SecretVersion>
@@ -190,6 +201,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DestroySecretVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecretVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -198,6 +210,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setFullMethodName("google.cloud.secrets.v1beta1.SecretManagerService/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -206,6 +219,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setFullMethodName("google.cloud.secrets.v1beta1.SecretManagerService/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -218,6 +232,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -229,6 +244,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -237,6 +253,7 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListSecretsRequest, ListSecretsResponse> listSecretsCallable;

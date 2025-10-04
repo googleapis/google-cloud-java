@@ -24,6 +24,7 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apihub.v1.ApiHubInstance;
 import com.google.cloud.apihub.v1.CreateApiHubInstanceRequest;
+import com.google.cloud.apihub.v1.DeleteApiHubInstanceRequest;
 import com.google.cloud.apihub.v1.GetApiHubInstanceRequest;
 import com.google.cloud.apihub.v1.LookupApiHubInstanceRequest;
 import com.google.cloud.apihub.v1.LookupApiHubInstanceResponse;
@@ -33,6 +34,7 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -56,6 +58,16 @@ public abstract class ProvisioningStub implements BackgroundResource {
 
   public UnaryCallable<CreateApiHubInstanceRequest, Operation> createApiHubInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: createApiHubInstanceCallable()");
+  }
+
+  public OperationCallable<DeleteApiHubInstanceRequest, Empty, OperationMetadata>
+      deleteApiHubInstanceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteApiHubInstanceOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteApiHubInstanceRequest, Operation> deleteApiHubInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteApiHubInstanceCallable()");
   }
 
   public UnaryCallable<GetApiHubInstanceRequest, ApiHubInstance> getApiHubInstanceCallable() {

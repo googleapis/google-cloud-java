@@ -717,6 +717,10 @@ public class CertificateAuthorityServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setUserDefinedAccessUrls(
+                CertificateAuthority.UserDefinedAccessUrls.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -786,6 +790,10 @@ public class CertificateAuthorityServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setUserDefinedAccessUrls(
+                CertificateAuthority.UserDefinedAccessUrls.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -853,6 +861,10 @@ public class CertificateAuthorityServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setUserDefinedAccessUrls(
+                CertificateAuthority.UserDefinedAccessUrls.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -927,6 +939,10 @@ public class CertificateAuthorityServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setUserDefinedAccessUrls(
+                CertificateAuthority.UserDefinedAccessUrls.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1001,6 +1017,10 @@ public class CertificateAuthorityServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setUserDefinedAccessUrls(
+                CertificateAuthority.UserDefinedAccessUrls.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1070,6 +1090,10 @@ public class CertificateAuthorityServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setUserDefinedAccessUrls(
+                CertificateAuthority.UserDefinedAccessUrls.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1137,6 +1161,10 @@ public class CertificateAuthorityServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setUserDefinedAccessUrls(
+                CertificateAuthority.UserDefinedAccessUrls.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1206,6 +1234,10 @@ public class CertificateAuthorityServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setUserDefinedAccessUrls(
+                CertificateAuthority.UserDefinedAccessUrls.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1363,6 +1395,10 @@ public class CertificateAuthorityServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setUserDefinedAccessUrls(
+                CertificateAuthority.UserDefinedAccessUrls.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1427,6 +1463,10 @@ public class CertificateAuthorityServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setUserDefinedAccessUrls(
+                CertificateAuthority.UserDefinedAccessUrls.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1591,6 +1631,10 @@ public class CertificateAuthorityServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setUserDefinedAccessUrls(
+                CertificateAuthority.UserDefinedAccessUrls.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1660,6 +1704,10 @@ public class CertificateAuthorityServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setUserDefinedAccessUrls(
+                CertificateAuthority.UserDefinedAccessUrls.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1727,6 +1775,10 @@ public class CertificateAuthorityServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setUserDefinedAccessUrls(
+                CertificateAuthority.UserDefinedAccessUrls.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1796,6 +1848,10 @@ public class CertificateAuthorityServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setUserDefinedAccessUrls(
+                CertificateAuthority.UserDefinedAccessUrls.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1863,6 +1919,10 @@ public class CertificateAuthorityServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setUserDefinedAccessUrls(
+                CertificateAuthority.UserDefinedAccessUrls.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1891,6 +1951,10 @@ public class CertificateAuthorityServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setExpireTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setUserDefinedAccessUrls(
+                CertificateAuthority.UserDefinedAccessUrls.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1940,6 +2004,10 @@ public class CertificateAuthorityServiceClientHttpJsonTest {
               .setDeleteTime(Timestamp.newBuilder().build())
               .setExpireTime(Timestamp.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
+              .setUserDefinedAccessUrls(
+                  CertificateAuthority.UserDefinedAccessUrls.newBuilder().build())
+              .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateCertificateAuthorityAsync(certificateAuthority, updateMask).get();

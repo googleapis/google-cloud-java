@@ -170,7 +170,7 @@ public interface SetUpSpaceRequestOrBuilder
    * Optional. The Google Chat users or groups to invite to join the space. Omit
    * the calling user, as they are added automatically.
    *
-   * The set currently allows up to 20 memberships (in addition to the caller).
+   * The set currently allows up to 49 memberships (in addition to the caller).
    *
    * For human membership, the `Membership.member` field must contain a `user`
    * with `name` populated (format: `users/{user}`) and `type` set to
@@ -211,7 +211,7 @@ public interface SetUpSpaceRequestOrBuilder
    * Optional. The Google Chat users or groups to invite to join the space. Omit
    * the calling user, as they are added automatically.
    *
-   * The set currently allows up to 20 memberships (in addition to the caller).
+   * The set currently allows up to 49 memberships (in addition to the caller).
    *
    * For human membership, the `Membership.member` field must contain a `user`
    * with `name` populated (format: `users/{user}`) and `type` set to
@@ -252,7 +252,7 @@ public interface SetUpSpaceRequestOrBuilder
    * Optional. The Google Chat users or groups to invite to join the space. Omit
    * the calling user, as they are added automatically.
    *
-   * The set currently allows up to 20 memberships (in addition to the caller).
+   * The set currently allows up to 49 memberships (in addition to the caller).
    *
    * For human membership, the `Membership.member` field must contain a `user`
    * with `name` populated (format: `users/{user}`) and `type` set to
@@ -293,7 +293,7 @@ public interface SetUpSpaceRequestOrBuilder
    * Optional. The Google Chat users or groups to invite to join the space. Omit
    * the calling user, as they are added automatically.
    *
-   * The set currently allows up to 20 memberships (in addition to the caller).
+   * The set currently allows up to 49 memberships (in addition to the caller).
    *
    * For human membership, the `Membership.member` field must contain a `user`
    * with `name` populated (format: `users/{user}`) and `type` set to
@@ -334,7 +334,7 @@ public interface SetUpSpaceRequestOrBuilder
    * Optional. The Google Chat users or groups to invite to join the space. Omit
    * the calling user, as they are added automatically.
    *
-   * The set currently allows up to 20 memberships (in addition to the caller).
+   * The set currently allows up to 49 memberships (in addition to the caller).
    *
    * For human membership, the `Membership.member` field must contain a `user`
    * with `name` populated (format: `users/{user}`) and `type` set to

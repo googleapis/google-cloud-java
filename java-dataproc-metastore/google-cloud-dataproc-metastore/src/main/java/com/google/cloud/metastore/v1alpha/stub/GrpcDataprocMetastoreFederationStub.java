@@ -73,6 +73,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
                   ProtoUtils.marshaller(ListFederationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFederationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFederationRequest, Federation>
@@ -84,6 +85,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFederationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Federation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFederationRequest, Operation>
@@ -95,6 +97,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFederationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFederationRequest, Operation>
@@ -106,6 +109,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFederationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFederationRequest, Operation>
@@ -117,6 +121,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFederationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -128,6 +133,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -136,6 +142,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -144,6 +151,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -152,6 +160,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -163,6 +172,7 @@ public class GrpcDataprocMetastoreFederationStub extends DataprocMetastoreFedera
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListFederationsRequest, ListFederationsResponse>

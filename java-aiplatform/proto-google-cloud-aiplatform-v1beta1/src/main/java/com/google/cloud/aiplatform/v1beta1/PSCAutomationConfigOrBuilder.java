@@ -56,10 +56,8 @@ public interface PSCAutomationConfigOrBuilder
    * <pre>
    * Required. The full name of the Google Compute Engine
    * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
-   * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+   * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/get):
    * `projects/{project}/global/networks/{network}`.
-   * Where {project} is a project number, as in '12345', and {network} is
-   * network name.
    * </pre>
    *
    * <code>string network = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -74,10 +72,8 @@ public interface PSCAutomationConfigOrBuilder
    * <pre>
    * Required. The full name of the Google Compute Engine
    * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
-   * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+   * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/get):
    * `projects/{project}/global/networks/{network}`.
-   * Where {project} is a project number, as in '12345', and {network} is
-   * network name.
    * </pre>
    *
    * <code>string network = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -85,4 +81,112 @@ public interface PSCAutomationConfigOrBuilder
    * @return The bytes for network.
    */
   com.google.protobuf.ByteString getNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. IP address rule created by the PSC service automation.
+   * </pre>
+   *
+   * <code>string ip_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The ipAddress.
+   */
+  java.lang.String getIpAddress();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. IP address rule created by the PSC service automation.
+   * </pre>
+   *
+   * <code>string ip_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for ipAddress.
+   */
+  com.google.protobuf.ByteString getIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Forwarding rule created by the PSC service automation.
+   * </pre>
+   *
+   * <code>string forwarding_rule = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The forwardingRule.
+   */
+  java.lang.String getForwardingRule();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Forwarding rule created by the PSC service automation.
+   * </pre>
+   *
+   * <code>string forwarding_rule = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for forwardingRule.
+   */
+  com.google.protobuf.ByteString getForwardingRuleBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the PSC service automation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PSCAutomationState state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The state of the PSC service automation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PSCAutomationState state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  com.google.cloud.aiplatform.v1beta1.PSCAutomationState getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Error message if the PSC service automation failed.
+   * </pre>
+   *
+   * <code>string error_message = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The errorMessage.
+   */
+  java.lang.String getErrorMessage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Error message if the PSC service automation failed.
+   * </pre>
+   *
+   * <code>string error_message = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for errorMessage.
+   */
+  com.google.protobuf.ByteString getErrorMessageBytes();
 }

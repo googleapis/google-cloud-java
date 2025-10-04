@@ -655,6 +655,45 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         : nodeSelector_;
   }
 
+  public static final int GPU_ZONAL_REDUNDANCY_DISABLED_FIELD_NUMBER = 12;
+  private boolean gpuZonalRedundancyDisabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. True if GPU zonal redundancy is disabled on this task template.
+   * </pre>
+   *
+   * <code>
+   * optional bool gpu_zonal_redundancy_disabled = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gpuZonalRedundancyDisabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasGpuZonalRedundancyDisabled() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. True if GPU zonal redundancy is disabled on this task template.
+   * </pre>
+   *
+   * <code>
+   * optional bool gpu_zonal_redundancy_disabled = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gpuZonalRedundancyDisabled.
+   */
+  @java.lang.Override
+  public boolean getGpuZonalRedundancyDisabled() {
+    return gpuZonalRedundancyDisabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -698,6 +737,9 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(11, getNodeSelector());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeBool(12, gpuZonalRedundancyDisabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -738,6 +780,10 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getNodeSelector());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(12, gpuZonalRedundancyDisabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -769,6 +815,10 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     if (hasNodeSelector() != other.hasNodeSelector()) return false;
     if (hasNodeSelector()) {
       if (!getNodeSelector().equals(other.getNodeSelector())) return false;
+    }
+    if (hasGpuZonalRedundancyDisabled() != other.hasGpuZonalRedundancyDisabled()) return false;
+    if (hasGpuZonalRedundancyDisabled()) {
+      if (getGpuZonalRedundancyDisabled() != other.getGpuZonalRedundancyDisabled()) return false;
     }
     if (!getRetriesCase().equals(other.getRetriesCase())) return false;
     switch (retriesCase_) {
@@ -814,6 +864,11 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
     if (hasNodeSelector()) {
       hash = (37 * hash) + NODE_SELECTOR_FIELD_NUMBER;
       hash = (53 * hash) + getNodeSelector().hashCode();
+    }
+    if (hasGpuZonalRedundancyDisabled()) {
+      hash = (37 * hash) + GPU_ZONAL_REDUNDANCY_DISABLED_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGpuZonalRedundancyDisabled());
     }
     switch (retriesCase_) {
       case 3:
@@ -1008,6 +1063,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         nodeSelectorBuilder_.dispose();
         nodeSelectorBuilder_ = null;
       }
+      gpuZonalRedundancyDisabled_ = false;
       retriesCase_ = 0;
       retries_ = null;
       return this;
@@ -1090,6 +1146,10 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         result.nodeSelector_ =
             nodeSelectorBuilder_ == null ? nodeSelector_ : nodeSelectorBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.gpuZonalRedundancyDisabled_ = gpuZonalRedundancyDisabled_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1220,6 +1280,9 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
       if (other.hasNodeSelector()) {
         mergeNodeSelector(other.getNodeSelector());
       }
+      if (other.hasGpuZonalRedundancyDisabled()) {
+        setGpuZonalRedundancyDisabled(other.getGpuZonalRedundancyDisabled());
+      }
       switch (other.getRetriesCase()) {
         case MAX_RETRIES:
           {
@@ -1324,6 +1387,12 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 90
+            case 96:
+              {
+                gpuZonalRedundancyDisabled_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3225,6 +3294,86 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessageV3
         nodeSelector_ = null;
       }
       return nodeSelectorBuilder_;
+    }
+
+    private boolean gpuZonalRedundancyDisabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if GPU zonal redundancy is disabled on this task template.
+     * </pre>
+     *
+     * <code>
+     * optional bool gpu_zonal_redundancy_disabled = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the gpuZonalRedundancyDisabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasGpuZonalRedundancyDisabled() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if GPU zonal redundancy is disabled on this task template.
+     * </pre>
+     *
+     * <code>
+     * optional bool gpu_zonal_redundancy_disabled = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The gpuZonalRedundancyDisabled.
+     */
+    @java.lang.Override
+    public boolean getGpuZonalRedundancyDisabled() {
+      return gpuZonalRedundancyDisabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if GPU zonal redundancy is disabled on this task template.
+     * </pre>
+     *
+     * <code>
+     * optional bool gpu_zonal_redundancy_disabled = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The gpuZonalRedundancyDisabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGpuZonalRedundancyDisabled(boolean value) {
+
+      gpuZonalRedundancyDisabled_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if GPU zonal redundancy is disabled on this task template.
+     * </pre>
+     *
+     * <code>
+     * optional bool gpu_zonal_redundancy_disabled = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGpuZonalRedundancyDisabled() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      gpuZonalRedundancyDisabled_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

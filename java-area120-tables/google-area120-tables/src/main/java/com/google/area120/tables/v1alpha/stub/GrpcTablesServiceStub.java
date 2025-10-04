@@ -71,6 +71,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
           .setFullMethodName("google.area120.tables.v1alpha1.TablesService/GetTable")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTableRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Table.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListTablesRequest, ListTablesResponse>
@@ -80,6 +81,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
               .setFullMethodName("google.area120.tables.v1alpha1.TablesService/ListTables")
               .setRequestMarshaller(ProtoUtils.marshaller(ListTablesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTablesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWorkspaceRequest, Workspace>
@@ -89,6 +91,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
               .setFullMethodName("google.area120.tables.v1alpha1.TablesService/GetWorkspace")
               .setRequestMarshaller(ProtoUtils.marshaller(GetWorkspaceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Workspace.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListWorkspacesRequest, ListWorkspacesResponse>
@@ -100,6 +103,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
                   ProtoUtils.marshaller(ListWorkspacesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkspacesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRowRequest, Row> getRowMethodDescriptor =
@@ -108,6 +112,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
           .setFullMethodName("google.area120.tables.v1alpha1.TablesService/GetRow")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Row.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListRowsRequest, ListRowsResponse>
@@ -117,6 +122,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
               .setFullMethodName("google.area120.tables.v1alpha1.TablesService/ListRows")
               .setRequestMarshaller(ProtoUtils.marshaller(ListRowsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListRowsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateRowRequest, Row> createRowMethodDescriptor =
@@ -125,6 +131,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
           .setFullMethodName("google.area120.tables.v1alpha1.TablesService/CreateRow")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateRowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Row.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<BatchCreateRowsRequest, BatchCreateRowsResponse>
@@ -136,6 +143,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
                   ProtoUtils.marshaller(BatchCreateRowsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchCreateRowsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRowRequest, Row> updateRowMethodDescriptor =
@@ -144,6 +152,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
           .setFullMethodName("google.area120.tables.v1alpha1.TablesService/UpdateRow")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateRowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Row.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<BatchUpdateRowsRequest, BatchUpdateRowsResponse>
@@ -155,6 +164,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
                   ProtoUtils.marshaller(BatchUpdateRowsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchUpdateRowsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRowRequest, Empty> deleteRowMethodDescriptor =
@@ -163,6 +173,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
           .setFullMethodName("google.area120.tables.v1alpha1.TablesService/DeleteRow")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteRowRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<BatchDeleteRowsRequest, Empty>
@@ -173,6 +184,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchDeleteRowsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetTableRequest, Table> getTableCallable;

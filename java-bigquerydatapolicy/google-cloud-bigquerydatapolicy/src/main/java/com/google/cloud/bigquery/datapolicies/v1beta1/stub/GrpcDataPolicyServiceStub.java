@@ -64,6 +64,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataPolicyRequest, DataPolicy>
@@ -75,6 +76,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataPolicyRequest, Empty>
@@ -86,6 +88,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataPolicyRequest, DataPolicy>
@@ -97,6 +100,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataPoliciesRequest, ListDataPoliciesResponse>
@@ -109,6 +113,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                   ProtoUtils.marshaller(ListDataPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -118,6 +123,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
               "google.cloud.bigquery.datapolicies.v1beta1.DataPolicyService/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -127,6 +133,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
               "google.cloud.bigquery.datapolicies.v1beta1.DataPolicyService/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -139,6 +146,7 @@ public class GrpcDataPolicyServiceStub extends DataPolicyServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateDataPolicyRequest, DataPolicy> createDataPolicyCallable;

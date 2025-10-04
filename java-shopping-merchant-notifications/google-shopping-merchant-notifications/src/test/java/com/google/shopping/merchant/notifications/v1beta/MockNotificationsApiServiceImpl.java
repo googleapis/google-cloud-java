@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,7 +74,8 @@ public class MockNotificationsApiServiceImpl extends NotificationsApiServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetNotificationSubscription, expected %s or %s",
+                  "Unrecognized response type %s for method GetNotificationSubscription, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotificationSubscription.class.getName(),
                   Exception.class.getName())));
@@ -96,7 +97,8 @@ public class MockNotificationsApiServiceImpl extends NotificationsApiServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateNotificationSubscription, expected %s or %s",
+                  "Unrecognized response type %s for method CreateNotificationSubscription,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotificationSubscription.class.getName(),
                   Exception.class.getName())));
@@ -118,7 +120,8 @@ public class MockNotificationsApiServiceImpl extends NotificationsApiServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateNotificationSubscription, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateNotificationSubscription,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotificationSubscription.class.getName(),
                   Exception.class.getName())));
@@ -139,7 +142,8 @@ public class MockNotificationsApiServiceImpl extends NotificationsApiServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteNotificationSubscription, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteNotificationSubscription,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -161,7 +165,8 @@ public class MockNotificationsApiServiceImpl extends NotificationsApiServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListNotificationSubscriptions, expected %s or %s",
+                  "Unrecognized response type %s for method ListNotificationSubscriptions, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListNotificationSubscriptionsResponse.class.getName(),
                   Exception.class.getName())));

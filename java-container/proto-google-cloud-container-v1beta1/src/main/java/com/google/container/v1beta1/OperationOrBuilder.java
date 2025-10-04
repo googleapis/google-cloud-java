@@ -55,14 +55,15 @@ public interface OperationOrBuilder
    *
    * <pre>
    * Output only. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * operation is taking place. This field is deprecated, use location instead.
+   * [zone](https://cloud.google.com/compute/docs/zones#available)
+   * in which the operation is taking place. This field is deprecated, use
+   * location instead.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3521
+   *     google/container/v1beta1/cluster_service.proto;l=3878
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -73,14 +74,15 @@ public interface OperationOrBuilder
    *
    * <pre>
    * Output only. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * operation is taking place. This field is deprecated, use location instead.
+   * [zone](https://cloud.google.com/compute/docs/zones#available)
+   * in which the operation is taking place. This field is deprecated, use
+   * location instead.
    * </pre>
    *
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3521
+   *     google/container/v1beta1/cluster_service.proto;l=3878
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -185,7 +187,7 @@ public interface OperationOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3535
+   *     google/container/v1beta1/cluster_service.proto;l=3892
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -204,7 +206,7 @@ public interface OperationOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3535
+   *     google/container/v1beta1/cluster_service.proto;l=3892
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated

@@ -94,8 +94,13 @@ public interface BackupPlanAssociationOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Resource name of workload on which backupplan is
-   * applied
+   * Required. Immutable. Resource name of workload on which the backup plan is
+   * applied.
+   *
+   * The format can either be the resource name (e.g.,
+   * "projects/my-project/zones/us-central1-a/instances/my-instance") or the
+   * full resource URI (e.g.,
+   * "https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances/my-instance").
    * </pre>
    *
    * <code>
@@ -110,8 +115,13 @@ public interface BackupPlanAssociationOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Resource name of workload on which backupplan is
-   * applied
+   * Required. Immutable. Resource name of workload on which the backup plan is
+   * applied.
+   *
+   * The format can either be the resource name (e.g.,
+   * "projects/my-project/zones/us-central1-a/instances/my-instance") or the
+   * full resource URI (e.g.,
+   * "https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances/my-instance").
    * </pre>
    *
    * <code>
@@ -361,4 +371,116 @@ public interface BackupPlanAssociationOrBuilder
    * @return The bytes for dataSource.
    */
   com.google.protobuf.ByteString getDataSourceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud SQL instance's backup plan association properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties cloud_sql_instance_backup_plan_association_properties = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cloudSqlInstanceBackupPlanAssociationProperties field is set.
+   */
+  boolean hasCloudSqlInstanceBackupPlanAssociationProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud SQL instance's backup plan association properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties cloud_sql_instance_backup_plan_association_properties = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cloudSqlInstanceBackupPlanAssociationProperties.
+   */
+  com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties
+      getCloudSqlInstanceBackupPlanAssociationProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud SQL instance's backup plan association properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties cloud_sql_instance_backup_plan_association_properties = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationPropertiesOrBuilder
+      getCloudSqlInstanceBackupPlanAssociationPropertiesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+   *
+   * Example: v0, v1, v2, etc.
+   * </pre>
+   *
+   * <code>string backup_plan_revision_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The backupPlanRevisionId.
+   */
+  java.lang.String getBackupPlanRevisionId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+   *
+   * Example: v0, v1, v2, etc.
+   * </pre>
+   *
+   * <code>string backup_plan_revision_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for backupPlanRevisionId.
+   */
+  com.google.protobuf.ByteString getBackupPlanRevisionIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource id of the `BackupPlanRevision`.
+   *
+   * Format:
+   * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+   * </pre>
+   *
+   * <code>string backup_plan_revision_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The backupPlanRevisionName.
+   */
+  java.lang.String getBackupPlanRevisionName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource id of the `BackupPlanRevision`.
+   *
+   * Format:
+   * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+   * </pre>
+   *
+   * <code>string backup_plan_revision_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for backupPlanRevisionName.
+   */
+  com.google.protobuf.ByteString getBackupPlanRevisionNameBytes();
+
+  com.google.cloud.backupdr.v1.BackupPlanAssociation.ResourcePropertiesCase
+      getResourcePropertiesCase();
 }

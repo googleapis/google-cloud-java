@@ -58,6 +58,7 @@ public class GrpcProductReviewsServiceStub extends ProductReviewsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetProductReviewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProductReview.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListProductReviewsRequest, ListProductReviewsResponse>
@@ -70,6 +71,7 @@ public class GrpcProductReviewsServiceStub extends ProductReviewsServiceStub {
                   ProtoUtils.marshaller(ListProductReviewsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProductReviewsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InsertProductReviewRequest, ProductReview>
@@ -81,6 +83,7 @@ public class GrpcProductReviewsServiceStub extends ProductReviewsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InsertProductReviewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProductReview.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteProductReviewRequest, Empty>
@@ -92,6 +95,7 @@ public class GrpcProductReviewsServiceStub extends ProductReviewsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteProductReviewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetProductReviewRequest, ProductReview> getProductReviewCallable;

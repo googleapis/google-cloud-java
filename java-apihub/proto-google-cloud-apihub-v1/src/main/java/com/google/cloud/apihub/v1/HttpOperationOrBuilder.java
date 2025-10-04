@@ -28,11 +28,13 @@ public interface HttpOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. The path details for the Operation.
+   * Optional. The path details for the Operation.
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
-   * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the path field is set.
    */
@@ -42,11 +44,13 @@ public interface HttpOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. The path details for the Operation.
+   * Optional. The path details for the Operation.
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
-   * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The path.
    */
@@ -56,11 +60,13 @@ public interface HttpOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. The path details for the Operation.
+   * Optional. The path details for the Operation.
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
-   * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.apihub.v1.Path path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.cloud.apihub.v1.PathOrBuilder getPathOrBuilder();
 
@@ -68,11 +74,14 @@ public interface HttpOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. Operation method
+   * Optional. Operation method
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for method.
@@ -83,11 +92,14 @@ public interface HttpOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. Operation method
+   * Optional. Operation method
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.apihub.v1.HttpOperation.Method method = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The method.

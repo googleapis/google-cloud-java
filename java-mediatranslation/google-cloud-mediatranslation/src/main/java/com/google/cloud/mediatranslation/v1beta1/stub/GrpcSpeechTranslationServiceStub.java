@@ -53,6 +53,7 @@ public class GrpcSpeechTranslationServiceStub extends SpeechTranslationServiceSt
                   ProtoUtils.marshaller(StreamingTranslateSpeechRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamingTranslateSpeechResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final BidiStreamingCallable<

@@ -171,6 +171,7 @@ public class AdapterClientTest {
         AdaptMessageResponse.newBuilder()
             .setPayload(ByteString.EMPTY)
             .putAllStateUpdates(new HashMap<String, String>())
+            .setLast(true)
             .build();
     mockAdapter.addResponse(expectedResponse);
     AdaptMessageRequest request =

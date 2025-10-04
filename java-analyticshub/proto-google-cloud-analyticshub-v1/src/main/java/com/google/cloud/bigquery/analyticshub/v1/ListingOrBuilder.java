@@ -349,7 +349,7 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. Categories of the listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to five categories are allowed.
    * </pre>
    *
    * <code>
@@ -364,7 +364,7 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. Categories of the listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to five categories are allowed.
    * </pre>
    *
    * <code>
@@ -379,7 +379,7 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. Categories of the listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to five categories are allowed.
    * </pre>
    *
    * <code>
@@ -395,7 +395,7 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. Categories of the listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to five categories are allowed.
    * </pre>
    *
    * <code>
@@ -410,7 +410,7 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. Categories of the listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to five categories are allowed.
    * </pre>
    *
    * <code>

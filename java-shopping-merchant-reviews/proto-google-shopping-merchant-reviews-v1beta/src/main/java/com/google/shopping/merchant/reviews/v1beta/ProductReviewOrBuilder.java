@@ -90,12 +90,12 @@ public interface ProductReviewOrBuilder
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes product_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @return Whether the attributes field is set.
+   * @return Whether the productReviewAttributes field is set.
    */
-  boolean hasAttributes();
+  boolean hasProductReviewAttributes();
 
   /**
    *
@@ -105,12 +105,12 @@ public interface ProductReviewOrBuilder
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes product_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @return The attributes.
+   * @return The productReviewAttributes.
    */
-  com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes getAttributes();
+  com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributes getProductReviewAttributes();
 
   /**
    *
@@ -120,11 +120,11 @@ public interface ProductReviewOrBuilder
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.shopping.merchant.reviews.v1beta.ProductReviewAttributes product_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.shopping.merchant.reviews.v1beta.ProductReviewAttributesOrBuilder
-      getAttributesOrBuilder();
+      getProductReviewAttributesOrBuilder();
 
   /**
    *

@@ -66,6 +66,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
                   ProtoUtils.marshaller(ListExperimentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListExperimentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetExperimentRequest, Experiment>
@@ -76,6 +77,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Experiment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateExperimentRequest, Experiment>
@@ -86,6 +88,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Experiment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateExperimentRequest, Experiment>
@@ -96,6 +99,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Experiment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteExperimentRequest, Empty>
@@ -106,6 +110,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StartExperimentRequest, Experiment>
@@ -116,6 +121,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StartExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Experiment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopExperimentRequest, Experiment>
@@ -126,6 +132,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StopExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Experiment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -137,6 +144,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -145,6 +153,7 @@ public class GrpcExperimentsStub extends ExperimentsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListExperimentsRequest, ListExperimentsResponse>

@@ -67,6 +67,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkflowTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WorkflowTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWorkflowTemplateRequest, WorkflowTemplate>
@@ -78,6 +79,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetWorkflowTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WorkflowTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InstantiateWorkflowTemplateRequest, Operation>
@@ -89,6 +91,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InstantiateWorkflowTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InstantiateInlineWorkflowTemplateRequest, Operation>
@@ -101,6 +104,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
                   ProtoUtils.marshaller(
                       InstantiateInlineWorkflowTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateWorkflowTemplateRequest, WorkflowTemplate>
@@ -112,6 +116,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWorkflowTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WorkflowTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse>
@@ -124,6 +129,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
                   ProtoUtils.marshaller(ListWorkflowTemplatesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkflowTemplatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWorkflowTemplateRequest, Empty>
@@ -135,6 +141,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWorkflowTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -143,6 +150,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -151,6 +159,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -162,6 +171,7 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateWorkflowTemplateRequest, WorkflowTemplate>

@@ -49,6 +49,7 @@ public class GrpcSearchServiceStub extends SearchServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1.SearchService/Search")
           .setRequestMarshaller(ProtoUtils.marshaller(SearchRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(SearchResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SearchRequest, SearchResponse> searchLiteMethodDescriptor =
@@ -57,6 +58,7 @@ public class GrpcSearchServiceStub extends SearchServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1.SearchService/SearchLite")
           .setRequestMarshaller(ProtoUtils.marshaller(SearchRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(SearchResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<SearchRequest, SearchResponse> searchCallable;

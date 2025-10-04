@@ -125,6 +125,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ListOrchestrationClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOrchestrationClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetOrchestrationClusterRequest, OrchestrationCluster>
@@ -137,6 +138,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(GetOrchestrationClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OrchestrationCluster.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateOrchestrationClusterRequest, Operation>
@@ -148,6 +150,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateOrchestrationClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteOrchestrationClusterRequest, Operation>
@@ -159,6 +162,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteOrchestrationClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEdgeSlmsRequest, ListEdgeSlmsResponse>
@@ -169,6 +173,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListEdgeSlmsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEdgeSlmsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEdgeSlmRequest, EdgeSlm> getEdgeSlmMethodDescriptor =
@@ -177,6 +182,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
           .setFullMethodName("google.cloud.telcoautomation.v1.TelcoAutomation/GetEdgeSlm")
           .setRequestMarshaller(ProtoUtils.marshaller(GetEdgeSlmRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(EdgeSlm.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateEdgeSlmRequest, Operation>
@@ -187,6 +193,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEdgeSlmRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEdgeSlmRequest, Operation>
@@ -197,6 +204,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEdgeSlmRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBlueprintRequest, Blueprint>
@@ -207,6 +215,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBlueprintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Blueprint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBlueprintRequest, Blueprint>
@@ -217,6 +226,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBlueprintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Blueprint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBlueprintRequest, Blueprint>
@@ -226,6 +236,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setFullMethodName("google.cloud.telcoautomation.v1.TelcoAutomation/GetBlueprint")
               .setRequestMarshaller(ProtoUtils.marshaller(GetBlueprintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Blueprint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBlueprintRequest, Empty>
@@ -236,6 +247,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBlueprintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBlueprintsRequest, ListBlueprintsResponse>
@@ -247,6 +259,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ListBlueprintsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBlueprintsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ApproveBlueprintRequest, Blueprint>
@@ -257,6 +270,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ApproveBlueprintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Blueprint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ProposeBlueprintRequest, Blueprint>
@@ -267,6 +281,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ProposeBlueprintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Blueprint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RejectBlueprintRequest, Blueprint>
@@ -277,6 +292,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RejectBlueprintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Blueprint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -291,6 +307,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ListBlueprintRevisionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBlueprintRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -305,6 +322,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(SearchBlueprintRevisionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchBlueprintRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -319,6 +337,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(SearchDeploymentRevisionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchDeploymentRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -333,6 +352,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(DiscardBlueprintChangesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DiscardBlueprintChangesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPublicBlueprintsRequest, ListPublicBlueprintsResponse>
@@ -345,6 +365,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ListPublicBlueprintsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPublicBlueprintsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPublicBlueprintRequest, PublicBlueprint>
@@ -356,6 +377,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPublicBlueprintRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PublicBlueprint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDeploymentRequest, Deployment>
@@ -366,6 +388,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDeploymentRequest, Deployment>
@@ -376,6 +399,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDeploymentRequest, Deployment>
@@ -386,6 +410,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveDeploymentRequest, Empty>
@@ -396,6 +421,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RemoveDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDeploymentsRequest, ListDeploymentsResponse>
@@ -407,6 +433,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ListDeploymentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeploymentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -421,6 +448,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ListDeploymentRevisionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeploymentRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -435,6 +463,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(DiscardDeploymentChangesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DiscardDeploymentChangesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ApplyDeploymentRequest, Deployment>
@@ -445,6 +474,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ApplyDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -459,6 +489,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ComputeDeploymentStatusRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ComputeDeploymentStatusResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RollbackDeploymentRequest, Deployment>
@@ -470,6 +501,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RollbackDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Deployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetHydratedDeploymentRequest, HydratedDeployment>
@@ -481,6 +513,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetHydratedDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HydratedDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -495,6 +528,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ListHydratedDeploymentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListHydratedDeploymentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateHydratedDeploymentRequest, HydratedDeployment>
@@ -506,6 +540,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateHydratedDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HydratedDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ApplyHydratedDeploymentRequest, HydratedDeployment>
@@ -517,6 +552,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ApplyHydratedDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HydratedDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -528,6 +564,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -536,6 +573,7 @@ public class GrpcTelcoAutomationStub extends TelcoAutomationStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListOrchestrationClustersRequest, ListOrchestrationClustersResponse>

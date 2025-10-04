@@ -213,95 +213,6 @@ public interface AssessDataRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Config for assembling templates with a Gemini API structure to
-   * assess assembled data.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.GeminiTemplateConfig gemini_template_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return Whether the geminiTemplateConfig field is set.
-   */
-  boolean hasGeminiTemplateConfig();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Config for assembling templates with a Gemini API structure to
-   * assess assembled data.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.GeminiTemplateConfig gemini_template_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The geminiTemplateConfig.
-   */
-  com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig getGeminiTemplateConfig();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Config for assembling templates with a Gemini API structure to
-   * assess assembled data.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.GeminiTemplateConfig gemini_template_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfigOrBuilder
-      getGeminiTemplateConfigOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The column name in the underlying table that contains already
-   * fully assembled requests.
-   * </pre>
-   *
-   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return Whether the requestColumnName field is set.
-   */
-  boolean hasRequestColumnName();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The column name in the underlying table that contains already
-   * fully assembled requests.
-   * </pre>
-   *
-   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The requestColumnName.
-   */
-  java.lang.String getRequestColumnName();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The column name in the underlying table that contains already
-   * fully assembled requests.
-   * </pre>
-   *
-   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for requestColumnName.
-   */
-  com.google.protobuf.ByteString getRequestColumnNameBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * Required. The name of the Dataset resource. Used only for MULTIMODAL
    * datasets. Format:
    * `projects/{project}/locations/{location}/datasets/{dataset}`
@@ -378,6 +289,4 @@ public interface AssessDataRequestOrBuilder
 
   com.google.cloud.aiplatform.v1beta1.AssessDataRequest.AssessmentConfigCase
       getAssessmentConfigCase();
-
-  com.google.cloud.aiplatform.v1beta1.AssessDataRequest.ReadConfigCase getReadConfigCase();
 }

@@ -86,6 +86,7 @@ public class NetworkProfilesClientTest {
             .setKind("kind3292052")
             .setLocation(NetworkProfileLocation.newBuilder().build())
             .setName("name3373707")
+            .setProfileType(NetworkProfileProfileType.newBuilder().build())
             .setSelfLink("selfLink1191800166")
             .setSelfLinkWithId("selfLinkWithId-776809081")
             .setZone("zone3744684")

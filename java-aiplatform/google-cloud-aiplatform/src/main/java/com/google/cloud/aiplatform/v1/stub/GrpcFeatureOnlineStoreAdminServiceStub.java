@@ -89,6 +89,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFeatureOnlineStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFeatureOnlineStoreRequest, FeatureOnlineStore>
@@ -100,6 +101,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFeatureOnlineStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FeatureOnlineStore.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -114,6 +116,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   ProtoUtils.marshaller(ListFeatureOnlineStoresRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFeatureOnlineStoresResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFeatureOnlineStoreRequest, Operation>
@@ -125,6 +128,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFeatureOnlineStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFeatureOnlineStoreRequest, Operation>
@@ -136,6 +140,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFeatureOnlineStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFeatureViewRequest, Operation>
@@ -147,6 +152,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFeatureViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFeatureViewRequest, FeatureView>
@@ -158,6 +164,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFeatureViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FeatureView.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFeatureViewsRequest, ListFeatureViewsResponse>
@@ -170,6 +177,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   ProtoUtils.marshaller(ListFeatureViewsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFeatureViewsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFeatureViewRequest, Operation>
@@ -181,6 +189,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFeatureViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFeatureViewRequest, Operation>
@@ -192,6 +201,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFeatureViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SyncFeatureViewRequest, SyncFeatureViewResponse>
@@ -204,6 +214,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   ProtoUtils.marshaller(SyncFeatureViewRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SyncFeatureViewResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFeatureViewSyncRequest, FeatureViewSync>
@@ -215,6 +226,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFeatureViewSyncRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FeatureViewSync.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFeatureViewSyncsRequest, ListFeatureViewSyncsResponse>
@@ -227,6 +239,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   ProtoUtils.marshaller(ListFeatureViewSyncsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFeatureViewSyncsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -238,6 +251,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -246,6 +260,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -254,6 +269,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -262,6 +278,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -273,6 +290,7 @@ public class GrpcFeatureOnlineStoreAdminServiceStub extends FeatureOnlineStoreAd
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateFeatureOnlineStoreRequest, Operation>

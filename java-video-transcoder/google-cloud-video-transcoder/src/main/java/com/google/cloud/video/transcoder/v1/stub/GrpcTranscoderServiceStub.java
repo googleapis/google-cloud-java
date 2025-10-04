@@ -60,6 +60,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
           .setFullMethodName("google.cloud.video.transcoder.v1.TranscoderService/CreateJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
@@ -69,6 +70,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
               .setFullMethodName("google.cloud.video.transcoder.v1.TranscoderService/ListJobs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
@@ -77,6 +79,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
           .setFullMethodName("google.cloud.video.transcoder.v1.TranscoderService/GetJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteJobRequest, Empty> deleteJobMethodDescriptor =
@@ -85,6 +88,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
           .setFullMethodName("google.cloud.video.transcoder.v1.TranscoderService/DeleteJob")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateJobTemplateRequest, JobTemplate>
@@ -96,6 +100,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateJobTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListJobTemplatesRequest, ListJobTemplatesResponse>
@@ -108,6 +113,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
                   ProtoUtils.marshaller(ListJobTemplatesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListJobTemplatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetJobTemplateRequest, JobTemplate>
@@ -119,6 +125,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetJobTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteJobTemplateRequest, Empty>
@@ -130,6 +137,7 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteJobTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateJobRequest, Job> createJobCallable;

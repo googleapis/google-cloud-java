@@ -24,7 +24,7 @@ package com.google.cloud.securesourcemanager.v1;
  *
  * <pre>
  * Metadata of a BranchRule. BranchRule is the protection rule to enforce
- * pre-defined rules on desginated branches within a repository.
+ * pre-defined rules on designated branches within a repository.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securesourcemanager.v1.BranchRule}
@@ -1726,7 +1726,7 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Metadata of a BranchRule. BranchRule is the protection rule to enforce
-   * pre-defined rules on desginated branches within a repository.
+   * pre-defined rules on designated branches within a repository.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securesourcemanager.v1.BranchRule}

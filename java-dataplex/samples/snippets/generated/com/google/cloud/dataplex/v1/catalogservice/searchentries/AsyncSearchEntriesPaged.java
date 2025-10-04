@@ -45,6 +45,7 @@ public class AsyncSearchEntriesPaged {
               .setPageToken("pageToken873572522")
               .setOrderBy("orderBy-1207110587")
               .setScope("scope109264468")
+              .setSemanticSearch(true)
               .build();
       while (true) {
         SearchEntriesResponse response = catalogServiceClient.searchEntriesCallable().call(request);

@@ -28,6 +28,32 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
+   * Enable or disable the application awareness feature on this Cloud Interconnect.
+   * </pre>
+   *
+   * <code>optional bool aai_enabled = 388780363;</code>
+   *
+   * @return Whether the aaiEnabled field is set.
+   */
+  boolean hasAaiEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable the application awareness feature on this Cloud Interconnect.
+   * </pre>
+   *
+   * <code>optional bool aai_enabled = 388780363;</code>
+   *
+   * @return The aaiEnabled.
+   */
+  boolean getAaiEnabled();
+
+  /**
+   *
+   *
+   * <pre>
    * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
    * </pre>
    *
@@ -49,6 +75,51 @@ public interface InterconnectOrBuilder
    * @return The adminEnabled.
    */
   boolean getAdminEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration information for application awareness on this Cloud Interconnect.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectApplicationAwareInterconnect application_aware_interconnect = 429095966;
+   * </code>
+   *
+   * @return Whether the applicationAwareInterconnect field is set.
+   */
+  boolean hasApplicationAwareInterconnect();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration information for application awareness on this Cloud Interconnect.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectApplicationAwareInterconnect application_aware_interconnect = 429095966;
+   * </code>
+   *
+   * @return The applicationAwareInterconnect.
+   */
+  com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnect
+      getApplicationAwareInterconnect();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration information for application awareness on this Cloud Interconnect.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectApplicationAwareInterconnect application_aware_interconnect = 429095966;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InterconnectApplicationAwareInterconnectOrBuilder
+      getApplicationAwareInterconnectOrBuilder();
 
   /**
    *

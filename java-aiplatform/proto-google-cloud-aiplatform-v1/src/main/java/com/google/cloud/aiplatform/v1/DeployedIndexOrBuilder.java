@@ -470,6 +470,29 @@ public interface DeployedIndexOrBuilder
    *
    *
    * <pre>
+   * Optional. If true, logs to Cloud Logging errors relating to datapoint
+   * upserts.
+   *
+   * Under normal operation conditions, these log entries should be very rare.
+   * However, if incompatible datapoint updates are being uploaded to an index,
+   * a high volume of log entries may be generated in a short period of time.
+   *
+   * Note that logs may incur a cost, especially if the deployed index receives
+   * a high volume of datapoint upserts. Estimate your costs before enabling
+   * this option.
+   * </pre>
+   *
+   * <code>bool enable_datapoint_upsert_logging = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableDatapointUpsertLogging.
+   */
+  boolean getEnableDatapointUpsertLogging();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. If set, the authentication is enabled for the private endpoint.
    * </pre>
    *

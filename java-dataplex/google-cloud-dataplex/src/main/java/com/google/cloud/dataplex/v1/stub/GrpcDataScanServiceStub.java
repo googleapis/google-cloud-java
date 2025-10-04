@@ -73,6 +73,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataScanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataScanRequest, Operation>
@@ -83,6 +84,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataScanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataScanRequest, Operation>
@@ -93,6 +95,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataScanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataScanRequest, DataScan> getDataScanMethodDescriptor =
@@ -101,6 +104,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.DataScanService/GetDataScan")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDataScanRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(DataScan.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListDataScansRequest, ListDataScansResponse>
@@ -112,6 +116,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   ProtoUtils.marshaller(ListDataScansRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataScansResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunDataScanRequest, RunDataScanResponse>
@@ -122,6 +127,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(RunDataScanRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RunDataScanResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataScanJobRequest, DataScanJob>
@@ -132,6 +138,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataScanJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataScanJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataScanJobsRequest, ListDataScanJobsResponse>
@@ -143,6 +150,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   ProtoUtils.marshaller(ListDataScanJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataScanJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -157,6 +165,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   ProtoUtils.marshaller(GenerateDataQualityRulesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateDataQualityRulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -168,6 +177,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -176,6 +186,7 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateDataScanRequest, Operation> createDataScanCallable;

@@ -117,6 +117,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTensorboardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTensorboardRequest, Tensorboard>
@@ -127,6 +128,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTensorboardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Tensorboard.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTensorboardRequest, Operation>
@@ -137,6 +139,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTensorboardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTensorboardsRequest, ListTensorboardsResponse>
@@ -148,6 +151,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ListTensorboardsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTensorboardsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTensorboardRequest, Operation>
@@ -158,6 +162,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTensorboardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
@@ -170,6 +175,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ReadTensorboardUsageRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReadTensorboardUsageResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
@@ -182,6 +188,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ReadTensorboardSizeRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReadTensorboardSizeResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTensorboardExperimentRequest, TensorboardExperiment>
@@ -194,6 +201,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(CreateTensorboardExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TensorboardExperiment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTensorboardExperimentRequest, TensorboardExperiment>
@@ -206,6 +214,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(GetTensorboardExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TensorboardExperiment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTensorboardExperimentRequest, TensorboardExperiment>
@@ -218,6 +227,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(UpdateTensorboardExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TensorboardExperiment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -232,6 +242,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ListTensorboardExperimentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTensorboardExperimentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTensorboardExperimentRequest, Operation>
@@ -243,6 +254,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTensorboardExperimentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTensorboardRunRequest, TensorboardRun>
@@ -254,6 +266,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTensorboardRunRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TensorboardRun.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -268,6 +281,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(BatchCreateTensorboardRunsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchCreateTensorboardRunsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTensorboardRunRequest, TensorboardRun>
@@ -278,6 +292,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTensorboardRunRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TensorboardRun.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTensorboardRunRequest, TensorboardRun>
@@ -289,6 +304,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTensorboardRunRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TensorboardRun.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTensorboardRunsRequest, ListTensorboardRunsResponse>
@@ -301,6 +317,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ListTensorboardRunsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTensorboardRunsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTensorboardRunRequest, Operation>
@@ -312,6 +329,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTensorboardRunRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -329,6 +347,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       BatchCreateTensorboardTimeSeriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTensorboardTimeSeriesRequest, TensorboardTimeSeries>
@@ -341,6 +360,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(CreateTensorboardTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TensorboardTimeSeries.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTensorboardTimeSeriesRequest, TensorboardTimeSeries>
@@ -353,6 +373,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(GetTensorboardTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TensorboardTimeSeries.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTensorboardTimeSeriesRequest, TensorboardTimeSeries>
@@ -365,6 +386,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(UpdateTensorboardTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TensorboardTimeSeries.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -379,6 +401,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ListTensorboardTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTensorboardTimeSeriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTensorboardTimeSeriesRequest, Operation>
@@ -390,6 +413,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTensorboardTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -408,6 +432,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       BatchReadTensorboardTimeSeriesDataResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -423,6 +448,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ReadTensorboardTimeSeriesDataRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReadTensorboardTimeSeriesDataResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -437,6 +463,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ReadTensorboardBlobDataRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReadTensorboardBlobDataResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -453,6 +480,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       WriteTensorboardExperimentDataResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -467,6 +495,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(WriteTensorboardRunDataRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(WriteTensorboardRunDataResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -484,6 +513,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ExportTensorboardTimeSeriesDataResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -495,6 +525,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -503,6 +534,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -511,6 +543,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -519,6 +552,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -530,6 +564,7 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateTensorboardRequest, Operation> createTensorboardCallable;

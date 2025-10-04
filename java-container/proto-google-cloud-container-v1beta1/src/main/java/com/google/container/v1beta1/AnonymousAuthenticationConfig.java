@@ -40,7 +40,9 @@ public final class AnonymousAuthenticationConfig extends com.google.protobuf.Gen
     super(builder);
   }
 
-  private AnonymousAuthenticationConfig() {}
+  private AnonymousAuthenticationConfig() {
+    mode_ = 0;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -63,6 +65,207 @@ public final class AnonymousAuthenticationConfig extends com.google.protobuf.Gen
             com.google.container.v1beta1.AnonymousAuthenticationConfig.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Mode defines the mode of anonymous authentication
+   * allowed in the cluster.
+   * </pre>
+   *
+   * Protobuf enum {@code google.container.v1beta1.AnonymousAuthenticationConfig.Mode}
+   */
+  public enum Mode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value not specified.
+     * </pre>
+     *
+     * <code>MODE_UNSPECIFIED = 0;</code>
+     */
+    MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Anonymous authentication is allowed for all endpoints.
+     * </pre>
+     *
+     * <code>ENABLED = 1;</code>
+     */
+    ENABLED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Anonymous authentication is allowed for only health check endpoints.
+     * </pre>
+     *
+     * <code>LIMITED = 2;</code>
+     */
+    LIMITED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value not specified.
+     * </pre>
+     *
+     * <code>MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int MODE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Anonymous authentication is allowed for all endpoints.
+     * </pre>
+     *
+     * <code>ENABLED = 1;</code>
+     */
+    public static final int ENABLED_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Anonymous authentication is allowed for only health check endpoints.
+     * </pre>
+     *
+     * <code>LIMITED = 2;</code>
+     */
+    public static final int LIMITED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Mode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Mode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MODE_UNSPECIFIED;
+        case 1:
+          return ENABLED;
+        case 2:
+          return LIMITED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Mode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Mode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Mode>() {
+          public Mode findValueByNumber(int number) {
+            return Mode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.container.v1beta1.AnonymousAuthenticationConfig.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final Mode[] VALUES = values();
+
+    public static Mode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Mode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.container.v1beta1.AnonymousAuthenticationConfig.Mode)
+  }
+
+  public static final int MODE_FIELD_NUMBER = 1;
+  private int mode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the mode of limiting anonymous access in the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AnonymousAuthenticationConfig.Mode mode = 1;</code>
+   *
+   * @return The enum numeric value on the wire for mode.
+   */
+  @java.lang.Override
+  public int getModeValue() {
+    return mode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the mode of limiting anonymous access in the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AnonymousAuthenticationConfig.Mode mode = 1;</code>
+   *
+   * @return The mode.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AnonymousAuthenticationConfig.Mode getMode() {
+    com.google.container.v1beta1.AnonymousAuthenticationConfig.Mode result =
+        com.google.container.v1beta1.AnonymousAuthenticationConfig.Mode.forNumber(mode_);
+    return result == null
+        ? com.google.container.v1beta1.AnonymousAuthenticationConfig.Mode.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -77,6 +280,11 @@ public final class AnonymousAuthenticationConfig extends com.google.protobuf.Gen
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (mode_
+        != com.google.container.v1beta1.AnonymousAuthenticationConfig.Mode.MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(1, mode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -86,6 +294,11 @@ public final class AnonymousAuthenticationConfig extends com.google.protobuf.Gen
     if (size != -1) return size;
 
     size = 0;
+    if (mode_
+        != com.google.container.v1beta1.AnonymousAuthenticationConfig.Mode.MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, mode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -102,6 +315,7 @@ public final class AnonymousAuthenticationConfig extends com.google.protobuf.Gen
     com.google.container.v1beta1.AnonymousAuthenticationConfig other =
         (com.google.container.v1beta1.AnonymousAuthenticationConfig) obj;
 
+    if (mode_ != other.mode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -113,6 +327,8 @@ public final class AnonymousAuthenticationConfig extends com.google.protobuf.Gen
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + MODE_FIELD_NUMBER;
+    hash = (53 * hash) + mode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -254,6 +470,8 @@ public final class AnonymousAuthenticationConfig extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      mode_ = 0;
       return this;
     }
 
@@ -281,8 +499,18 @@ public final class AnonymousAuthenticationConfig extends com.google.protobuf.Gen
     public com.google.container.v1beta1.AnonymousAuthenticationConfig buildPartial() {
       com.google.container.v1beta1.AnonymousAuthenticationConfig result =
           new com.google.container.v1beta1.AnonymousAuthenticationConfig(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.AnonymousAuthenticationConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.mode_ = mode_;
+      }
     }
 
     @java.lang.Override
@@ -331,6 +559,9 @@ public final class AnonymousAuthenticationConfig extends com.google.protobuf.Gen
     public Builder mergeFrom(com.google.container.v1beta1.AnonymousAuthenticationConfig other) {
       if (other == com.google.container.v1beta1.AnonymousAuthenticationConfig.getDefaultInstance())
         return this;
+      if (other.mode_ != 0) {
+        setModeValue(other.getModeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -357,6 +588,12 @@ public final class AnonymousAuthenticationConfig extends com.google.protobuf.Gen
             case 0:
               done = true;
               break;
+            case 8:
+              {
+                mode_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -371,6 +608,105 @@ public final class AnonymousAuthenticationConfig extends com.google.protobuf.Gen
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int bitField0_;
+
+    private int mode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the mode of limiting anonymous access in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AnonymousAuthenticationConfig.Mode mode = 1;</code>
+     *
+     * @return The enum numeric value on the wire for mode.
+     */
+    @java.lang.Override
+    public int getModeValue() {
+      return mode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the mode of limiting anonymous access in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AnonymousAuthenticationConfig.Mode mode = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for mode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModeValue(int value) {
+      mode_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the mode of limiting anonymous access in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AnonymousAuthenticationConfig.Mode mode = 1;</code>
+     *
+     * @return The mode.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.AnonymousAuthenticationConfig.Mode getMode() {
+      com.google.container.v1beta1.AnonymousAuthenticationConfig.Mode result =
+          com.google.container.v1beta1.AnonymousAuthenticationConfig.Mode.forNumber(mode_);
+      return result == null
+          ? com.google.container.v1beta1.AnonymousAuthenticationConfig.Mode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the mode of limiting anonymous access in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AnonymousAuthenticationConfig.Mode mode = 1;</code>
+     *
+     * @param value The mode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMode(com.google.container.v1beta1.AnonymousAuthenticationConfig.Mode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000001;
+      mode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the mode of limiting anonymous access in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AnonymousAuthenticationConfig.Mode mode = 1;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMode() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      mode_ = 0;
+      onChanged();
       return this;
     }
 

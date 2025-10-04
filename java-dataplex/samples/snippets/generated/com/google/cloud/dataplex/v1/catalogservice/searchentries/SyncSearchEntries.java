@@ -43,6 +43,7 @@ public class SyncSearchEntries {
               .setPageToken("pageToken873572522")
               .setOrderBy("orderBy-1207110587")
               .setScope("scope109264468")
+              .setSemanticSearch(true)
               .build();
       for (SearchEntriesResult element : catalogServiceClient.searchEntries(request).iterateAll()) {
         // doThingsWith(element);

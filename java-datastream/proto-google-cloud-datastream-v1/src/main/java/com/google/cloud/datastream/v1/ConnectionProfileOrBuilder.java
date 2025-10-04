@@ -538,6 +538,43 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
+   * MongoDB Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
+   *
+   * @return Whether the mongodbProfile field is set.
+   */
+  boolean hasMongodbProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
+   *
+   * @return The mongodbProfile.
+   */
+  com.google.cloud.datastream.v1.MongodbProfile getMongodbProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
+   */
+  com.google.cloud.datastream.v1.MongodbProfileOrBuilder getMongodbProfileOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Static Service IP connectivity.
    * </pre>
    *

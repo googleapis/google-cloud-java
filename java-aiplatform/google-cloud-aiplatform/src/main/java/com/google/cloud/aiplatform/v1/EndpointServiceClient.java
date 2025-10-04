@@ -239,7 +239,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> MutateDeployedModel</td>
- *      <td><p> Updates an existing deployed model. Updatable fields include `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and `enable_container_logging` (v1beta1 only).</td>
+ *      <td><p> Updates an existing deployed model. Updatable fields include `min_replica_count`, `max_replica_count`, `required_replica_count`, `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and `enable_container_logging` (v1beta1 only).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1743,8 +1743,8 @@ public class EndpointServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing deployed model. Updatable fields include `min_replica_count`,
-   * `max_replica_count`, `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
-   * `enable_container_logging` (v1beta1 only).
+   * `max_replica_count`, `required_replica_count`, `autoscaling_metric_specs`,
+   * `disable_container_logging` (v1 only), and `enable_container_logging` (v1beta1 only).
    *
    * <p>Sample code:
    *
@@ -1775,6 +1775,8 @@ public class EndpointServiceClient implements BackgroundResource {
    *       <li>`max_replica_count` in either
    *           [DedicatedResources][google.cloud.aiplatform.v1.DedicatedResources] or
    *           [AutomaticResources][google.cloud.aiplatform.v1.AutomaticResources]
+   *       <li>`required_replica_count` in
+   *           [DedicatedResources][google.cloud.aiplatform.v1.DedicatedResources]
    *       <li>[autoscaling_metric_specs][google.cloud.aiplatform.v1.DedicatedResources.autoscaling_metric_specs]
    *       <li>`disable_container_logging` (v1 only)
    *       <li>`enable_container_logging` (v1beta1 only)
@@ -1799,8 +1801,8 @@ public class EndpointServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing deployed model. Updatable fields include `min_replica_count`,
-   * `max_replica_count`, `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
-   * `enable_container_logging` (v1beta1 only).
+   * `max_replica_count`, `required_replica_count`, `autoscaling_metric_specs`,
+   * `disable_container_logging` (v1 only), and `enable_container_logging` (v1beta1 only).
    *
    * <p>Sample code:
    *
@@ -1832,6 +1834,8 @@ public class EndpointServiceClient implements BackgroundResource {
    *       <li>`max_replica_count` in either
    *           [DedicatedResources][google.cloud.aiplatform.v1.DedicatedResources] or
    *           [AutomaticResources][google.cloud.aiplatform.v1.AutomaticResources]
+   *       <li>`required_replica_count` in
+   *           [DedicatedResources][google.cloud.aiplatform.v1.DedicatedResources]
    *       <li>[autoscaling_metric_specs][google.cloud.aiplatform.v1.DedicatedResources.autoscaling_metric_specs]
    *       <li>`disable_container_logging` (v1 only)
    *       <li>`enable_container_logging` (v1beta1 only)
@@ -1855,8 +1859,8 @@ public class EndpointServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing deployed model. Updatable fields include `min_replica_count`,
-   * `max_replica_count`, `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
-   * `enable_container_logging` (v1beta1 only).
+   * `max_replica_count`, `required_replica_count`, `autoscaling_metric_specs`,
+   * `disable_container_logging` (v1 only), and `enable_container_logging` (v1beta1 only).
    *
    * <p>Sample code:
    *
@@ -1892,8 +1896,8 @@ public class EndpointServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing deployed model. Updatable fields include `min_replica_count`,
-   * `max_replica_count`, `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
-   * `enable_container_logging` (v1beta1 only).
+   * `max_replica_count`, `required_replica_count`, `autoscaling_metric_specs`,
+   * `disable_container_logging` (v1 only), and `enable_container_logging` (v1beta1 only).
    *
    * <p>Sample code:
    *
@@ -1931,8 +1935,8 @@ public class EndpointServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing deployed model. Updatable fields include `min_replica_count`,
-   * `max_replica_count`, `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
-   * `enable_container_logging` (v1beta1 only).
+   * `max_replica_count`, `required_replica_count`, `autoscaling_metric_specs`,
+   * `disable_container_logging` (v1 only), and `enable_container_logging` (v1beta1 only).
    *
    * <p>Sample code:
    *

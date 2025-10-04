@@ -90,12 +90,12 @@ public interface MerchantReviewOrBuilder
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes merchant_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @return Whether the attributes field is set.
+   * @return Whether the merchantReviewAttributes field is set.
    */
-  boolean hasAttributes();
+  boolean hasMerchantReviewAttributes();
 
   /**
    *
@@ -105,12 +105,13 @@ public interface MerchantReviewOrBuilder
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes merchant_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @return The attributes.
+   * @return The merchantReviewAttributes.
    */
-  com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes getAttributes();
+  com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes
+      getMerchantReviewAttributes();
 
   /**
    *
@@ -120,17 +121,17 @@ public interface MerchantReviewOrBuilder
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.shopping.merchant.reviews.v1beta.MerchantReviewAttributes merchant_review_attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.shopping.merchant.reviews.v1beta.MerchantReviewAttributesOrBuilder
-      getAttributesOrBuilder();
+      getMerchantReviewAttributesOrBuilder();
 
   /**
    *
    *
    * <pre>
-   * Required. A list of custom (merchant-provided) attributes. It can also be
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
    * used for submitting any attribute of the data specification in its generic
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
@@ -144,7 +145,7 @@ public interface MerchantReviewOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList();
@@ -153,7 +154,7 @@ public interface MerchantReviewOrBuilder
    *
    *
    * <pre>
-   * Required. A list of custom (merchant-provided) attributes. It can also be
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
    * used for submitting any attribute of the data specification in its generic
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
@@ -167,7 +168,7 @@ public interface MerchantReviewOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.shopping.type.CustomAttribute getCustomAttributes(int index);
@@ -176,7 +177,7 @@ public interface MerchantReviewOrBuilder
    *
    *
    * <pre>
-   * Required. A list of custom (merchant-provided) attributes. It can also be
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
    * used for submitting any attribute of the data specification in its generic
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
@@ -190,7 +191,7 @@ public interface MerchantReviewOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getCustomAttributesCount();
@@ -199,7 +200,7 @@ public interface MerchantReviewOrBuilder
    *
    *
    * <pre>
-   * Required. A list of custom (merchant-provided) attributes. It can also be
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
    * used for submitting any attribute of the data specification in its generic
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
@@ -213,7 +214,7 @@ public interface MerchantReviewOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
@@ -223,7 +224,7 @@ public interface MerchantReviewOrBuilder
    *
    *
    * <pre>
-   * Required. A list of custom (merchant-provided) attributes. It can also be
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
    * used for submitting any attribute of the data specification in its generic
    * form (for example,
    * `{ "name": "size type", "value": "regular" }`).
@@ -237,7 +238,7 @@ public interface MerchantReviewOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.shopping.type.CustomAttributeOrBuilder getCustomAttributesOrBuilder(int index);

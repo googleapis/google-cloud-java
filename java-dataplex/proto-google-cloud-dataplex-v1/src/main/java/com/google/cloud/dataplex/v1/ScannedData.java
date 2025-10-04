@@ -71,11 +71,11 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The field that contains values which monotonically increases over time
-     * (e.g. a timestamp column).
+     * Output only. The field that contains values which monotonically increases
+     * over time (e.g. a timestamp column).
      * </pre>
      *
-     * <code>string field = 1;</code>
+     * <code>string field = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The field.
      */
@@ -85,11 +85,11 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The field that contains values which monotonically increases over time
-     * (e.g. a timestamp column).
+     * Output only. The field that contains values which monotonically increases
+     * over time (e.g. a timestamp column).
      * </pre>
      *
-     * <code>string field = 1;</code>
+     * <code>string field = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for field.
      */
@@ -99,10 +99,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Value that marks the start of the range.
+     * Output only. Value that marks the start of the range.
      * </pre>
      *
-     * <code>string start = 2;</code>
+     * <code>string start = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The start.
      */
@@ -112,10 +112,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Value that marks the start of the range.
+     * Output only. Value that marks the start of the range.
      * </pre>
      *
-     * <code>string start = 2;</code>
+     * <code>string start = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for start.
      */
@@ -125,10 +125,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Value that marks the end of the range.
+     * Output only. Value that marks the end of the range.
      * </pre>
      *
-     * <code>string end = 3;</code>
+     * <code>string end = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The end.
      */
@@ -138,10 +138,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Value that marks the end of the range.
+     * Output only. Value that marks the end of the range.
      * </pre>
      *
-     * <code>string end = 3;</code>
+     * <code>string end = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for end.
      */
@@ -204,11 +204,11 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The field that contains values which monotonically increases over time
-     * (e.g. a timestamp column).
+     * Output only. The field that contains values which monotonically increases
+     * over time (e.g. a timestamp column).
      * </pre>
      *
-     * <code>string field = 1;</code>
+     * <code>string field = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The field.
      */
@@ -229,11 +229,11 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The field that contains values which monotonically increases over time
-     * (e.g. a timestamp column).
+     * Output only. The field that contains values which monotonically increases
+     * over time (e.g. a timestamp column).
      * </pre>
      *
-     * <code>string field = 1;</code>
+     * <code>string field = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for field.
      */
@@ -259,10 +259,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Value that marks the start of the range.
+     * Output only. Value that marks the start of the range.
      * </pre>
      *
-     * <code>string start = 2;</code>
+     * <code>string start = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The start.
      */
@@ -283,10 +283,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Value that marks the start of the range.
+     * Output only. Value that marks the start of the range.
      * </pre>
      *
-     * <code>string start = 2;</code>
+     * <code>string start = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for start.
      */
@@ -312,10 +312,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Value that marks the end of the range.
+     * Output only. Value that marks the end of the range.
      * </pre>
      *
-     * <code>string end = 3;</code>
+     * <code>string end = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The end.
      */
@@ -336,10 +336,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Value that marks the end of the range.
+     * Output only. Value that marks the end of the range.
      * </pre>
      *
-     * <code>string end = 3;</code>
+     * <code>string end = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for end.
      */
@@ -758,11 +758,11 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The field that contains values which monotonically increases over time
-       * (e.g. a timestamp column).
+       * Output only. The field that contains values which monotonically increases
+       * over time (e.g. a timestamp column).
        * </pre>
        *
-       * <code>string field = 1;</code>
+       * <code>string field = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The field.
        */
@@ -782,11 +782,11 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The field that contains values which monotonically increases over time
-       * (e.g. a timestamp column).
+       * Output only. The field that contains values which monotonically increases
+       * over time (e.g. a timestamp column).
        * </pre>
        *
-       * <code>string field = 1;</code>
+       * <code>string field = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for field.
        */
@@ -806,11 +806,11 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The field that contains values which monotonically increases over time
-       * (e.g. a timestamp column).
+       * Output only. The field that contains values which monotonically increases
+       * over time (e.g. a timestamp column).
        * </pre>
        *
-       * <code>string field = 1;</code>
+       * <code>string field = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The field to set.
        * @return This builder for chaining.
@@ -829,11 +829,11 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The field that contains values which monotonically increases over time
-       * (e.g. a timestamp column).
+       * Output only. The field that contains values which monotonically increases
+       * over time (e.g. a timestamp column).
        * </pre>
        *
-       * <code>string field = 1;</code>
+       * <code>string field = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -848,11 +848,11 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The field that contains values which monotonically increases over time
-       * (e.g. a timestamp column).
+       * Output only. The field that contains values which monotonically increases
+       * over time (e.g. a timestamp column).
        * </pre>
        *
-       * <code>string field = 1;</code>
+       * <code>string field = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The bytes for field to set.
        * @return This builder for chaining.
@@ -874,10 +874,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Value that marks the start of the range.
+       * Output only. Value that marks the start of the range.
        * </pre>
        *
-       * <code>string start = 2;</code>
+       * <code>string start = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The start.
        */
@@ -897,10 +897,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Value that marks the start of the range.
+       * Output only. Value that marks the start of the range.
        * </pre>
        *
-       * <code>string start = 2;</code>
+       * <code>string start = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for start.
        */
@@ -920,10 +920,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Value that marks the start of the range.
+       * Output only. Value that marks the start of the range.
        * </pre>
        *
-       * <code>string start = 2;</code>
+       * <code>string start = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The start to set.
        * @return This builder for chaining.
@@ -942,10 +942,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Value that marks the start of the range.
+       * Output only. Value that marks the start of the range.
        * </pre>
        *
-       * <code>string start = 2;</code>
+       * <code>string start = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -960,10 +960,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Value that marks the start of the range.
+       * Output only. Value that marks the start of the range.
        * </pre>
        *
-       * <code>string start = 2;</code>
+       * <code>string start = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The bytes for start to set.
        * @return This builder for chaining.
@@ -985,10 +985,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Value that marks the end of the range.
+       * Output only. Value that marks the end of the range.
        * </pre>
        *
-       * <code>string end = 3;</code>
+       * <code>string end = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The end.
        */
@@ -1008,10 +1008,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Value that marks the end of the range.
+       * Output only. Value that marks the end of the range.
        * </pre>
        *
-       * <code>string end = 3;</code>
+       * <code>string end = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for end.
        */
@@ -1031,10 +1031,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Value that marks the end of the range.
+       * Output only. Value that marks the end of the range.
        * </pre>
        *
-       * <code>string end = 3;</code>
+       * <code>string end = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The end to set.
        * @return This builder for chaining.
@@ -1053,10 +1053,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Value that marks the end of the range.
+       * Output only. Value that marks the end of the range.
        * </pre>
        *
-       * <code>string end = 3;</code>
+       * <code>string end = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -1071,10 +1071,10 @@ public final class ScannedData extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Value that marks the end of the range.
+       * Output only. Value that marks the end of the range.
        * </pre>
        *
-       * <code>string end = 3;</code>
+       * <code>string end = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The bytes for end to set.
        * @return This builder for chaining.

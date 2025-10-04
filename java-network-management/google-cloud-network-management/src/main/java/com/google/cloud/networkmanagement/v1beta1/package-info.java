@@ -63,8 +63,32 @@
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
  *   VpcFlowLogsConfigName name =
- *       VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+ *       VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+ *           "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
  *   VpcFlowLogsConfig response = vpcFlowLogsServiceClient.getVpcFlowLogsConfig(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= OrganizationVpcFlowLogsServiceClient =======================
+ *
+ * <p>Service Description: The VPC Flow Logs organization service in the Google Cloud Network
+ * Management API provides organization level configurations that generate Flow Logs. The service
+ * and the configuration resources created using this service are global.
+ *
+ * <p>Sample for OrganizationVpcFlowLogsServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (OrganizationVpcFlowLogsServiceClient organizationVpcFlowLogsServiceClient =
+ *     OrganizationVpcFlowLogsServiceClient.create()) {
+ *   VpcFlowLogsConfigName name =
+ *       VpcFlowLogsConfigName.ofOrganizationLocationVpcFlowLogsConfigName(
+ *           "[ORGANIZATION]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+ *   VpcFlowLogsConfig response = organizationVpcFlowLogsServiceClient.getVpcFlowLogsConfig(name);
  * }
  * }</pre>
  */

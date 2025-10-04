@@ -18,7 +18,6 @@ on:
   schedule:
   - cron: '0 2 * * *'
   workflow_dispatch:
-
 jobs:
   update-generation-config:
     runs-on: ubuntu-24.04
@@ -30,6 +29,9 @@ jobs:
       with:
         fetch-depth: 0
         token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
+    - name: Install Dependencies
+      shell: bash
+      run: sudo apt-get update && sudo apt-get install -y libxml2-utils
     - name: Update params in generation config to latest
       shell: bash
       run: |
@@ -37,7 +39,7 @@ jobs:
         [ -z "$(git config user.email)" ] && git config --global user.email "cloud-java-bot@google.com"
         [ -z "$(git config user.name)" ] && git config --global user.name "cloud-java-bot"
         bash .github/scripts/update_generation_config.sh \
-          --base_branch "${base_branch}"\
+          --base_branch "${base_branch}" \
           --repo ${{ github.repository }}
       env:
         GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}

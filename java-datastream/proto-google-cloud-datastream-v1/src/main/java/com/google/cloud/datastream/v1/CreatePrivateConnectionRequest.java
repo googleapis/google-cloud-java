@@ -333,6 +333,27 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
     return force_;
   }
 
+  public static final int VALIDATE_ONLY_FIELD_NUMBER = 8;
+  private boolean validateOnly_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When supplied with PSC Interface config, will get/create the
+   * tenant project required for the customer to allow list and won't actually
+   * create the private connection.
+   * </pre>
+   *
+   * <code>bool validate_only = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The validateOnly.
+   */
+  @java.lang.Override
+  public boolean getValidateOnly() {
+    return validateOnly_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -362,6 +383,9 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
     if (force_ != false) {
       output.writeBool(6, force_);
     }
+    if (validateOnly_ != false) {
+      output.writeBool(8, validateOnly_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -385,6 +409,9 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
     }
     if (force_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, force_);
+    }
+    if (validateOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, validateOnly_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -410,6 +437,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
     }
     if (!getRequestId().equals(other.getRequestId())) return false;
     if (getForce() != other.getForce()) return false;
+    if (getValidateOnly() != other.getValidateOnly()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -433,6 +461,8 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
     hash = (53 * hash) + getRequestId().hashCode();
     hash = (37 * hash) + FORCE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForce());
+    hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -592,6 +622,7 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       }
       requestId_ = "";
       force_ = false;
+      validateOnly_ = false;
       return this;
     }
 
@@ -649,6 +680,9 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.force_ = force_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.validateOnly_ = validateOnly_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -721,6 +755,9 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
       if (other.getForce() != false) {
         setForce(other.getForce());
       }
+      if (other.getValidateOnly() != false) {
+        setValidateOnly(other.getValidateOnly());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -778,6 +815,12 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
                 bitField0_ |= 0x00000010;
                 break;
               } // case 48
+            case 64:
+              {
+                validateOnly_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1467,6 +1510,68 @@ public final class CreatePrivateConnectionRequest extends com.google.protobuf.Ge
     public Builder clearForce() {
       bitField0_ = (bitField0_ & ~0x00000010);
       force_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean validateOnly_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When supplied with PSC Interface config, will get/create the
+     * tenant project required for the customer to allow list and won't actually
+     * create the private connection.
+     * </pre>
+     *
+     * <code>bool validate_only = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The validateOnly.
+     */
+    @java.lang.Override
+    public boolean getValidateOnly() {
+      return validateOnly_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When supplied with PSC Interface config, will get/create the
+     * tenant project required for the customer to allow list and won't actually
+     * create the private connection.
+     * </pre>
+     *
+     * <code>bool validate_only = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The validateOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setValidateOnly(boolean value) {
+
+      validateOnly_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When supplied with PSC Interface config, will get/create the
+     * tenant project required for the customer to allow list and won't actually
+     * create the private connection.
+     * </pre>
+     *
+     * <code>bool validate_only = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearValidateOnly() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      validateOnly_ = false;
       onChanged();
       return this;
     }

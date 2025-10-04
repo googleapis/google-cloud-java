@@ -164,6 +164,91 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     return maxReplicaCount_;
   }
 
+  public static final int FLEX_START_FIELD_NUMBER = 4;
+  private com.google.cloud.aiplatform.v1beta1.FlexStart flexStart_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. If set, use DWS resource to schedule the deployment
+   * workload. reference:
+   * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the flexStart field is set.
+   */
+  @java.lang.Override
+  public boolean hasFlexStart() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. If set, use DWS resource to schedule the deployment
+   * workload. reference:
+   * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The flexStart.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FlexStart getFlexStart() {
+    return flexStart_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FlexStart.getDefaultInstance()
+        : flexStart_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. If set, use DWS resource to schedule the deployment
+   * workload. reference:
+   * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FlexStartOrBuilder getFlexStartOrBuilder() {
+    return flexStart_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FlexStart.getDefaultInstance()
+        : flexStart_;
+  }
+
+  public static final int SPOT_FIELD_NUMBER = 5;
+  private boolean spot_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, schedule the deployment workload on [spot
+   * VMs](https://cloud.google.com/kubernetes-engine/docs/concepts/spot-vms).
+   * </pre>
+   *
+   * <code>bool spot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The spot.
+   */
+  @java.lang.Override
+  public boolean getSpot() {
+    return spot_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -187,6 +272,12 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     if (maxReplicaCount_ != 0) {
       output.writeInt32(3, maxReplicaCount_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(4, getFlexStart());
+    }
+    if (spot_ != false) {
+      output.writeBool(5, spot_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -204,6 +295,12 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     }
     if (maxReplicaCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, maxReplicaCount_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getFlexStart());
+    }
+    if (spot_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, spot_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -227,6 +324,11 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     }
     if (getStartingReplicaCount() != other.getStartingReplicaCount()) return false;
     if (getMaxReplicaCount() != other.getMaxReplicaCount()) return false;
+    if (hasFlexStart() != other.hasFlexStart()) return false;
+    if (hasFlexStart()) {
+      if (!getFlexStart().equals(other.getFlexStart())) return false;
+    }
+    if (getSpot() != other.getSpot()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -246,6 +348,12 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     hash = (53 * hash) + getStartingReplicaCount();
     hash = (37 * hash) + MAX_REPLICA_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getMaxReplicaCount();
+    if (hasFlexStart()) {
+      hash = (37 * hash) + FLEX_START_FIELD_NUMBER;
+      hash = (53 * hash) + getFlexStart().hashCode();
+    }
+    hash = (37 * hash) + SPOT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSpot());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -390,6 +498,7 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getMachineSpecFieldBuilder();
+        getFlexStartFieldBuilder();
       }
     }
 
@@ -404,6 +513,12 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
       }
       startingReplicaCount_ = 0;
       maxReplicaCount_ = 0;
+      flexStart_ = null;
+      if (flexStartBuilder_ != null) {
+        flexStartBuilder_.dispose();
+        flexStartBuilder_ = null;
+      }
+      spot_ = false;
       return this;
     }
 
@@ -451,6 +566,13 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.maxReplicaCount_ = maxReplicaCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.flexStart_ = flexStartBuilder_ == null ? flexStart_ : flexStartBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.spot_ = spot_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -510,6 +632,12 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
       if (other.getMaxReplicaCount() != 0) {
         setMaxReplicaCount(other.getMaxReplicaCount());
       }
+      if (other.hasFlexStart()) {
+        mergeFlexStart(other.getFlexStart());
+      }
+      if (other.getSpot() != false) {
+        setSpot(other.getSpot());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -554,6 +682,18 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 34:
+              {
+                input.readMessage(getFlexStartFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 40:
+              {
+                spot_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -904,6 +1044,296 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     public Builder clearMaxReplicaCount() {
       bitField0_ = (bitField0_ & ~0x00000004);
       maxReplicaCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.FlexStart flexStart_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FlexStart,
+            com.google.cloud.aiplatform.v1beta1.FlexStart.Builder,
+            com.google.cloud.aiplatform.v1beta1.FlexStartOrBuilder>
+        flexStartBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, use DWS resource to schedule the deployment
+     * workload. reference:
+     * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the flexStart field is set.
+     */
+    public boolean hasFlexStart() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, use DWS resource to schedule the deployment
+     * workload. reference:
+     * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The flexStart.
+     */
+    public com.google.cloud.aiplatform.v1beta1.FlexStart getFlexStart() {
+      if (flexStartBuilder_ == null) {
+        return flexStart_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FlexStart.getDefaultInstance()
+            : flexStart_;
+      } else {
+        return flexStartBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, use DWS resource to schedule the deployment
+     * workload. reference:
+     * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFlexStart(com.google.cloud.aiplatform.v1beta1.FlexStart value) {
+      if (flexStartBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        flexStart_ = value;
+      } else {
+        flexStartBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, use DWS resource to schedule the deployment
+     * workload. reference:
+     * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFlexStart(
+        com.google.cloud.aiplatform.v1beta1.FlexStart.Builder builderForValue) {
+      if (flexStartBuilder_ == null) {
+        flexStart_ = builderForValue.build();
+      } else {
+        flexStartBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, use DWS resource to schedule the deployment
+     * workload. reference:
+     * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeFlexStart(com.google.cloud.aiplatform.v1beta1.FlexStart value) {
+      if (flexStartBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && flexStart_ != null
+            && flexStart_ != com.google.cloud.aiplatform.v1beta1.FlexStart.getDefaultInstance()) {
+          getFlexStartBuilder().mergeFrom(value);
+        } else {
+          flexStart_ = value;
+        }
+      } else {
+        flexStartBuilder_.mergeFrom(value);
+      }
+      if (flexStart_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, use DWS resource to schedule the deployment
+     * workload. reference:
+     * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFlexStart() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      flexStart_ = null;
+      if (flexStartBuilder_ != null) {
+        flexStartBuilder_.dispose();
+        flexStartBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, use DWS resource to schedule the deployment
+     * workload. reference:
+     * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FlexStart.Builder getFlexStartBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getFlexStartFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, use DWS resource to schedule the deployment
+     * workload. reference:
+     * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FlexStartOrBuilder getFlexStartOrBuilder() {
+      if (flexStartBuilder_ != null) {
+        return flexStartBuilder_.getMessageOrBuilder();
+      } else {
+        return flexStart_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FlexStart.getDefaultInstance()
+            : flexStart_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, use DWS resource to schedule the deployment
+     * workload. reference:
+     * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FlexStart,
+            com.google.cloud.aiplatform.v1beta1.FlexStart.Builder,
+            com.google.cloud.aiplatform.v1beta1.FlexStartOrBuilder>
+        getFlexStartFieldBuilder() {
+      if (flexStartBuilder_ == null) {
+        flexStartBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.FlexStart,
+                com.google.cloud.aiplatform.v1beta1.FlexStart.Builder,
+                com.google.cloud.aiplatform.v1beta1.FlexStartOrBuilder>(
+                getFlexStart(), getParentForChildren(), isClean());
+        flexStart_ = null;
+      }
+      return flexStartBuilder_;
+    }
+
+    private boolean spot_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, schedule the deployment workload on [spot
+     * VMs](https://cloud.google.com/kubernetes-engine/docs/concepts/spot-vms).
+     * </pre>
+     *
+     * <code>bool spot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The spot.
+     */
+    @java.lang.Override
+    public boolean getSpot() {
+      return spot_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, schedule the deployment workload on [spot
+     * VMs](https://cloud.google.com/kubernetes-engine/docs/concepts/spot-vms).
+     * </pre>
+     *
+     * <code>bool spot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The spot to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpot(boolean value) {
+
+      spot_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, schedule the deployment workload on [spot
+     * VMs](https://cloud.google.com/kubernetes-engine/docs/concepts/spot-vms).
+     * </pre>
+     *
+     * <code>bool spot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSpot() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      spot_ = false;
       onChanged();
       return this;
     }

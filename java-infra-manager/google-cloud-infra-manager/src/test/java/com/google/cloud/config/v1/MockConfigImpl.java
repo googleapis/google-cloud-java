@@ -544,4 +544,90 @@ public class MockConfigImpl extends ConfigImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listResourceChanges(
+      ListResourceChangesRequest request,
+      StreamObserver<ListResourceChangesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListResourceChangesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListResourceChangesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListResourceChanges, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListResourceChangesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getResourceChange(
+      GetResourceChangeRequest request, StreamObserver<ResourceChange> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ResourceChange) {
+      requests.add(request);
+      responseObserver.onNext(((ResourceChange) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetResourceChange, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ResourceChange.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listResourceDrifts(
+      ListResourceDriftsRequest request,
+      StreamObserver<ListResourceDriftsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListResourceDriftsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListResourceDriftsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListResourceDrifts, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListResourceDriftsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getResourceDrift(
+      GetResourceDriftRequest request, StreamObserver<ResourceDrift> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ResourceDrift) {
+      requests.add(request);
+      responseObserver.onNext(((ResourceDrift) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetResourceDrift, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ResourceDrift.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

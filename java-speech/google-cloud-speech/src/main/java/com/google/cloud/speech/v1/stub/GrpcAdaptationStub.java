@@ -64,6 +64,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PhraseSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPhraseSetRequest, PhraseSet>
@@ -73,6 +74,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
               .setFullMethodName("google.cloud.speech.v1.Adaptation/GetPhraseSet")
               .setRequestMarshaller(ProtoUtils.marshaller(GetPhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PhraseSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPhraseSetRequest, ListPhraseSetResponse>
@@ -84,6 +86,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   ProtoUtils.marshaller(ListPhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPhraseSetResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePhraseSetRequest, PhraseSet>
@@ -94,6 +97,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PhraseSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePhraseSetRequest, Empty>
@@ -104,6 +108,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePhraseSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCustomClassRequest, CustomClass>
@@ -114,6 +119,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomClass.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCustomClassRequest, CustomClass>
@@ -124,6 +130,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomClass.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCustomClassesRequest, ListCustomClassesResponse>
@@ -135,6 +142,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   ProtoUtils.marshaller(ListCustomClassesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomClassesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCustomClassRequest, CustomClass>
@@ -145,6 +153,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomClass.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCustomClassRequest, Empty>
@@ -155,6 +164,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCustomClassRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreatePhraseSetRequest, PhraseSet> createPhraseSetCallable;

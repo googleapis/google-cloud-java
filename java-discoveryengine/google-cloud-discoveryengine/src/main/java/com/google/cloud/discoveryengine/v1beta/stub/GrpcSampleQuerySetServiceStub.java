@@ -59,6 +59,7 @@ public class GrpcSampleQuerySetServiceStub extends SampleQuerySetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSampleQuerySetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SampleQuerySet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSampleQuerySetsRequest, ListSampleQuerySetsResponse>
@@ -71,6 +72,7 @@ public class GrpcSampleQuerySetServiceStub extends SampleQuerySetServiceStub {
                   ProtoUtils.marshaller(ListSampleQuerySetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSampleQuerySetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSampleQuerySetRequest, SampleQuerySet>
@@ -82,6 +84,7 @@ public class GrpcSampleQuerySetServiceStub extends SampleQuerySetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSampleQuerySetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SampleQuerySet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSampleQuerySetRequest, SampleQuerySet>
@@ -93,6 +96,7 @@ public class GrpcSampleQuerySetServiceStub extends SampleQuerySetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSampleQuerySetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SampleQuerySet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSampleQuerySetRequest, Empty>
@@ -104,6 +108,7 @@ public class GrpcSampleQuerySetServiceStub extends SampleQuerySetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSampleQuerySetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetSampleQuerySetRequest, SampleQuerySet> getSampleQuerySetCallable;

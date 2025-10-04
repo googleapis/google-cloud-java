@@ -121,6 +121,65 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
     return entry_ == null ? com.google.cloud.dataplex.v1.Entry.getDefaultInstance() : entry_;
   }
 
+  public static final int ENTRY_LINK_FIELD_NUMBER = 4;
+  private com.google.cloud.dataplex.v1.EntryLink entryLink_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about the entry link. User should provide either one of the
+   * entry or entry_link. While providing entry_link, user should not
+   * provide update_mask and aspect_keys.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.EntryLink entry_link = 4;</code>
+   *
+   * @return Whether the entryLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasEntryLink() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about the entry link. User should provide either one of the
+   * entry or entry_link. While providing entry_link, user should not
+   * provide update_mask and aspect_keys.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.EntryLink entry_link = 4;</code>
+   *
+   * @return The entryLink.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.EntryLink getEntryLink() {
+    return entryLink_ == null
+        ? com.google.cloud.dataplex.v1.EntryLink.getDefaultInstance()
+        : entryLink_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about the entry link. User should provide either one of the
+   * entry or entry_link. While providing entry_link, user should not
+   * provide update_mask and aspect_keys.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.EntryLink entry_link = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.EntryLinkOrBuilder getEntryLinkOrBuilder() {
+    return entryLink_ == null
+        ? com.google.cloud.dataplex.v1.EntryLink.getDefaultInstance()
+        : entryLink_;
+  }
+
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
 
@@ -131,12 +190,12 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
    * The fields to update, in paths that are relative to the `Entry` resource.
    * Separate each field with a comma.
    *
-   * In `FULL` entry sync mode, Dataplex includes the paths of all of the fields
-   * for an entry that can be modified, including aspects. This means that
-   * Dataplex replaces the existing entry with the entry in the metadata import
-   * file. All modifiable fields are updated, regardless of the fields that are
-   * listed in the update mask, and regardless of whether a field is present
-   * in the `entry` object.
+   * In `FULL` entry sync mode, Dataplex Universal Catalog includes the paths of
+   * all of the fields for an entry that can be modified, including aspects.
+   * This means that Dataplex Universal Catalog replaces the existing entry with
+   * the entry in the metadata import file. All modifiable fields are updated,
+   * regardless of the fields that are listed in the update mask, and regardless
+   * of whether a field is present in the `entry` object.
    *
    * The `update_mask` field is ignored when an entry is created or re-created.
    *
@@ -144,10 +203,10 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
    * value to `aspects`.
    *
    *
-   * Dataplex also determines which entries and aspects to modify by comparing
-   * the values and timestamps that you provide in the metadata import file with
-   * the values and timestamps that exist in your project. For more information,
-   * see [Comparison
+   * Dataplex Universal Catalog also determines which entries and aspects to
+   * modify by comparing the values and timestamps that you provide in the
+   * metadata import file with the values and timestamps that exist in your
+   * project. For more information, see [Comparison
    * logic](https://cloud.google.com/dataplex/docs/import-metadata#data-modification-logic).
    * </pre>
    *
@@ -157,7 +216,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasUpdateMask() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -167,12 +226,12 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
    * The fields to update, in paths that are relative to the `Entry` resource.
    * Separate each field with a comma.
    *
-   * In `FULL` entry sync mode, Dataplex includes the paths of all of the fields
-   * for an entry that can be modified, including aspects. This means that
-   * Dataplex replaces the existing entry with the entry in the metadata import
-   * file. All modifiable fields are updated, regardless of the fields that are
-   * listed in the update mask, and regardless of whether a field is present
-   * in the `entry` object.
+   * In `FULL` entry sync mode, Dataplex Universal Catalog includes the paths of
+   * all of the fields for an entry that can be modified, including aspects.
+   * This means that Dataplex Universal Catalog replaces the existing entry with
+   * the entry in the metadata import file. All modifiable fields are updated,
+   * regardless of the fields that are listed in the update mask, and regardless
+   * of whether a field is present in the `entry` object.
    *
    * The `update_mask` field is ignored when an entry is created or re-created.
    *
@@ -180,10 +239,10 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
    * value to `aspects`.
    *
    *
-   * Dataplex also determines which entries and aspects to modify by comparing
-   * the values and timestamps that you provide in the metadata import file with
-   * the values and timestamps that exist in your project. For more information,
-   * see [Comparison
+   * Dataplex Universal Catalog also determines which entries and aspects to
+   * modify by comparing the values and timestamps that you provide in the
+   * metadata import file with the values and timestamps that exist in your
+   * project. For more information, see [Comparison
    * logic](https://cloud.google.com/dataplex/docs/import-metadata#data-modification-logic).
    * </pre>
    *
@@ -203,12 +262,12 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
    * The fields to update, in paths that are relative to the `Entry` resource.
    * Separate each field with a comma.
    *
-   * In `FULL` entry sync mode, Dataplex includes the paths of all of the fields
-   * for an entry that can be modified, including aspects. This means that
-   * Dataplex replaces the existing entry with the entry in the metadata import
-   * file. All modifiable fields are updated, regardless of the fields that are
-   * listed in the update mask, and regardless of whether a field is present
-   * in the `entry` object.
+   * In `FULL` entry sync mode, Dataplex Universal Catalog includes the paths of
+   * all of the fields for an entry that can be modified, including aspects.
+   * This means that Dataplex Universal Catalog replaces the existing entry with
+   * the entry in the metadata import file. All modifiable fields are updated,
+   * regardless of the fields that are listed in the update mask, and regardless
+   * of whether a field is present in the `entry` object.
    *
    * The `update_mask` field is ignored when an entry is created or re-created.
    *
@@ -216,10 +275,10 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
    * value to `aspects`.
    *
    *
-   * Dataplex also determines which entries and aspects to modify by comparing
-   * the values and timestamps that you provide in the metadata import file with
-   * the values and timestamps that exist in your project. For more information,
-   * see [Comparison
+   * Dataplex Universal Catalog also determines which entries and aspects to
+   * modify by comparing the values and timestamps that you provide in the
+   * metadata import file with the values and timestamps that exist in your
+   * project. For more information, see [Comparison
    * logic](https://cloud.google.com/dataplex/docs/import-metadata#data-modification-logic).
    * </pre>
    *
@@ -256,8 +315,8 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
    *
    * In `FULL` entry sync mode, if you leave this field empty, it is treated as
    * specifying exactly those aspects that are present within the specified
-   * entry. Dataplex implicitly adds the keys for all of the required aspects of
-   * an entry.
+   * entry. Dataplex Universal Catalog implicitly adds the keys for all of the
+   * required aspects of an entry.
    * </pre>
    *
    * <code>repeated string aspect_keys = 3;</code>
@@ -288,8 +347,8 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
    *
    * In `FULL` entry sync mode, if you leave this field empty, it is treated as
    * specifying exactly those aspects that are present within the specified
-   * entry. Dataplex implicitly adds the keys for all of the required aspects of
-   * an entry.
+   * entry. Dataplex Universal Catalog implicitly adds the keys for all of the
+   * required aspects of an entry.
    * </pre>
    *
    * <code>repeated string aspect_keys = 3;</code>
@@ -320,8 +379,8 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
    *
    * In `FULL` entry sync mode, if you leave this field empty, it is treated as
    * specifying exactly those aspects that are present within the specified
-   * entry. Dataplex implicitly adds the keys for all of the required aspects of
-   * an entry.
+   * entry. Dataplex Universal Catalog implicitly adds the keys for all of the
+   * required aspects of an entry.
    * </pre>
    *
    * <code>repeated string aspect_keys = 3;</code>
@@ -353,8 +412,8 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
    *
    * In `FULL` entry sync mode, if you leave this field empty, it is treated as
    * specifying exactly those aspects that are present within the specified
-   * entry. Dataplex implicitly adds the keys for all of the required aspects of
-   * an entry.
+   * entry. Dataplex Universal Catalog implicitly adds the keys for all of the
+   * required aspects of an entry.
    * </pre>
    *
    * <code>repeated string aspect_keys = 3;</code>
@@ -383,11 +442,14 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getEntry());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(2, getUpdateMask());
     }
     for (int i = 0; i < aspectKeys_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, aspectKeys_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(4, getEntryLink());
     }
     getUnknownFields().writeTo(output);
   }
@@ -401,7 +463,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getEntry());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
     }
     {
@@ -411,6 +473,9 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       }
       size += dataSize;
       size += 1 * getAspectKeysList().size();
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getEntryLink());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -431,6 +496,10 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
     if (hasEntry()) {
       if (!getEntry().equals(other.getEntry())) return false;
     }
+    if (hasEntryLink() != other.hasEntryLink()) return false;
+    if (hasEntryLink()) {
+      if (!getEntryLink().equals(other.getEntryLink())) return false;
+    }
     if (hasUpdateMask() != other.hasUpdateMask()) return false;
     if (hasUpdateMask()) {
       if (!getUpdateMask().equals(other.getUpdateMask())) return false;
@@ -450,6 +519,10 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
     if (hasEntry()) {
       hash = (37 * hash) + ENTRY_FIELD_NUMBER;
       hash = (53 * hash) + getEntry().hashCode();
+    }
+    if (hasEntryLink()) {
+      hash = (37 * hash) + ENTRY_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getEntryLink().hashCode();
     }
     if (hasUpdateMask()) {
       hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
@@ -608,6 +681,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getEntryFieldBuilder();
+        getEntryLinkFieldBuilder();
         getUpdateMaskFieldBuilder();
       }
     }
@@ -620,6 +694,11 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       if (entryBuilder_ != null) {
         entryBuilder_.dispose();
         entryBuilder_ = null;
+      }
+      entryLink_ = null;
+      if (entryLinkBuilder_ != null) {
+        entryLinkBuilder_.dispose();
+        entryLinkBuilder_ = null;
       }
       updateMask_ = null;
       if (updateMaskBuilder_ != null) {
@@ -669,10 +748,14 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+        result.entryLink_ = entryLinkBuilder_ == null ? entryLink_ : entryLinkBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         aspectKeys_.makeImmutable();
         result.aspectKeys_ = aspectKeys_;
       }
@@ -727,13 +810,16 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEntry()) {
         mergeEntry(other.getEntry());
       }
+      if (other.hasEntryLink()) {
+        mergeEntryLink(other.getEntryLink());
+      }
       if (other.hasUpdateMask()) {
         mergeUpdateMask(other.getUpdateMask());
       }
       if (!other.aspectKeys_.isEmpty()) {
         if (aspectKeys_.isEmpty()) {
           aspectKeys_ = other.aspectKeys_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
         } else {
           ensureAspectKeysIsMutable();
           aspectKeys_.addAll(other.aspectKeys_);
@@ -775,7 +861,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
@@ -785,6 +871,12 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
                 aspectKeys_.add(s);
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getEntryLinkFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -994,6 +1086,218 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       return entryBuilder_;
     }
 
+    private com.google.cloud.dataplex.v1.EntryLink entryLink_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.EntryLink,
+            com.google.cloud.dataplex.v1.EntryLink.Builder,
+            com.google.cloud.dataplex.v1.EntryLinkOrBuilder>
+        entryLinkBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the entry link. User should provide either one of the
+     * entry or entry_link. While providing entry_link, user should not
+     * provide update_mask and aspect_keys.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.EntryLink entry_link = 4;</code>
+     *
+     * @return Whether the entryLink field is set.
+     */
+    public boolean hasEntryLink() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the entry link. User should provide either one of the
+     * entry or entry_link. While providing entry_link, user should not
+     * provide update_mask and aspect_keys.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.EntryLink entry_link = 4;</code>
+     *
+     * @return The entryLink.
+     */
+    public com.google.cloud.dataplex.v1.EntryLink getEntryLink() {
+      if (entryLinkBuilder_ == null) {
+        return entryLink_ == null
+            ? com.google.cloud.dataplex.v1.EntryLink.getDefaultInstance()
+            : entryLink_;
+      } else {
+        return entryLinkBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the entry link. User should provide either one of the
+     * entry or entry_link. While providing entry_link, user should not
+     * provide update_mask and aspect_keys.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.EntryLink entry_link = 4;</code>
+     */
+    public Builder setEntryLink(com.google.cloud.dataplex.v1.EntryLink value) {
+      if (entryLinkBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        entryLink_ = value;
+      } else {
+        entryLinkBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the entry link. User should provide either one of the
+     * entry or entry_link. While providing entry_link, user should not
+     * provide update_mask and aspect_keys.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.EntryLink entry_link = 4;</code>
+     */
+    public Builder setEntryLink(com.google.cloud.dataplex.v1.EntryLink.Builder builderForValue) {
+      if (entryLinkBuilder_ == null) {
+        entryLink_ = builderForValue.build();
+      } else {
+        entryLinkBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the entry link. User should provide either one of the
+     * entry or entry_link. While providing entry_link, user should not
+     * provide update_mask and aspect_keys.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.EntryLink entry_link = 4;</code>
+     */
+    public Builder mergeEntryLink(com.google.cloud.dataplex.v1.EntryLink value) {
+      if (entryLinkBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && entryLink_ != null
+            && entryLink_ != com.google.cloud.dataplex.v1.EntryLink.getDefaultInstance()) {
+          getEntryLinkBuilder().mergeFrom(value);
+        } else {
+          entryLink_ = value;
+        }
+      } else {
+        entryLinkBuilder_.mergeFrom(value);
+      }
+      if (entryLink_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the entry link. User should provide either one of the
+     * entry or entry_link. While providing entry_link, user should not
+     * provide update_mask and aspect_keys.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.EntryLink entry_link = 4;</code>
+     */
+    public Builder clearEntryLink() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      entryLink_ = null;
+      if (entryLinkBuilder_ != null) {
+        entryLinkBuilder_.dispose();
+        entryLinkBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the entry link. User should provide either one of the
+     * entry or entry_link. While providing entry_link, user should not
+     * provide update_mask and aspect_keys.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.EntryLink entry_link = 4;</code>
+     */
+    public com.google.cloud.dataplex.v1.EntryLink.Builder getEntryLinkBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getEntryLinkFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the entry link. User should provide either one of the
+     * entry or entry_link. While providing entry_link, user should not
+     * provide update_mask and aspect_keys.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.EntryLink entry_link = 4;</code>
+     */
+    public com.google.cloud.dataplex.v1.EntryLinkOrBuilder getEntryLinkOrBuilder() {
+      if (entryLinkBuilder_ != null) {
+        return entryLinkBuilder_.getMessageOrBuilder();
+      } else {
+        return entryLink_ == null
+            ? com.google.cloud.dataplex.v1.EntryLink.getDefaultInstance()
+            : entryLink_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the entry link. User should provide either one of the
+     * entry or entry_link. While providing entry_link, user should not
+     * provide update_mask and aspect_keys.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.EntryLink entry_link = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.EntryLink,
+            com.google.cloud.dataplex.v1.EntryLink.Builder,
+            com.google.cloud.dataplex.v1.EntryLinkOrBuilder>
+        getEntryLinkFieldBuilder() {
+      if (entryLinkBuilder_ == null) {
+        entryLinkBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.EntryLink,
+                com.google.cloud.dataplex.v1.EntryLink.Builder,
+                com.google.cloud.dataplex.v1.EntryLinkOrBuilder>(
+                getEntryLink(), getParentForChildren(), isClean());
+        entryLink_ = null;
+      }
+      return entryLinkBuilder_;
+    }
+
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,
@@ -1008,12 +1312,12 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * The fields to update, in paths that are relative to the `Entry` resource.
      * Separate each field with a comma.
      *
-     * In `FULL` entry sync mode, Dataplex includes the paths of all of the fields
-     * for an entry that can be modified, including aspects. This means that
-     * Dataplex replaces the existing entry with the entry in the metadata import
-     * file. All modifiable fields are updated, regardless of the fields that are
-     * listed in the update mask, and regardless of whether a field is present
-     * in the `entry` object.
+     * In `FULL` entry sync mode, Dataplex Universal Catalog includes the paths of
+     * all of the fields for an entry that can be modified, including aspects.
+     * This means that Dataplex Universal Catalog replaces the existing entry with
+     * the entry in the metadata import file. All modifiable fields are updated,
+     * regardless of the fields that are listed in the update mask, and regardless
+     * of whether a field is present in the `entry` object.
      *
      * The `update_mask` field is ignored when an entry is created or re-created.
      *
@@ -1021,10 +1325,10 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * value to `aspects`.
      *
      *
-     * Dataplex also determines which entries and aspects to modify by comparing
-     * the values and timestamps that you provide in the metadata import file with
-     * the values and timestamps that exist in your project. For more information,
-     * see [Comparison
+     * Dataplex Universal Catalog also determines which entries and aspects to
+     * modify by comparing the values and timestamps that you provide in the
+     * metadata import file with the values and timestamps that exist in your
+     * project. For more information, see [Comparison
      * logic](https://cloud.google.com/dataplex/docs/import-metadata#data-modification-logic).
      * </pre>
      *
@@ -1033,7 +1337,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -1043,12 +1347,12 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * The fields to update, in paths that are relative to the `Entry` resource.
      * Separate each field with a comma.
      *
-     * In `FULL` entry sync mode, Dataplex includes the paths of all of the fields
-     * for an entry that can be modified, including aspects. This means that
-     * Dataplex replaces the existing entry with the entry in the metadata import
-     * file. All modifiable fields are updated, regardless of the fields that are
-     * listed in the update mask, and regardless of whether a field is present
-     * in the `entry` object.
+     * In `FULL` entry sync mode, Dataplex Universal Catalog includes the paths of
+     * all of the fields for an entry that can be modified, including aspects.
+     * This means that Dataplex Universal Catalog replaces the existing entry with
+     * the entry in the metadata import file. All modifiable fields are updated,
+     * regardless of the fields that are listed in the update mask, and regardless
+     * of whether a field is present in the `entry` object.
      *
      * The `update_mask` field is ignored when an entry is created or re-created.
      *
@@ -1056,10 +1360,10 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * value to `aspects`.
      *
      *
-     * Dataplex also determines which entries and aspects to modify by comparing
-     * the values and timestamps that you provide in the metadata import file with
-     * the values and timestamps that exist in your project. For more information,
-     * see [Comparison
+     * Dataplex Universal Catalog also determines which entries and aspects to
+     * modify by comparing the values and timestamps that you provide in the
+     * metadata import file with the values and timestamps that exist in your
+     * project. For more information, see [Comparison
      * logic](https://cloud.google.com/dataplex/docs/import-metadata#data-modification-logic).
      * </pre>
      *
@@ -1084,12 +1388,12 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * The fields to update, in paths that are relative to the `Entry` resource.
      * Separate each field with a comma.
      *
-     * In `FULL` entry sync mode, Dataplex includes the paths of all of the fields
-     * for an entry that can be modified, including aspects. This means that
-     * Dataplex replaces the existing entry with the entry in the metadata import
-     * file. All modifiable fields are updated, regardless of the fields that are
-     * listed in the update mask, and regardless of whether a field is present
-     * in the `entry` object.
+     * In `FULL` entry sync mode, Dataplex Universal Catalog includes the paths of
+     * all of the fields for an entry that can be modified, including aspects.
+     * This means that Dataplex Universal Catalog replaces the existing entry with
+     * the entry in the metadata import file. All modifiable fields are updated,
+     * regardless of the fields that are listed in the update mask, and regardless
+     * of whether a field is present in the `entry` object.
      *
      * The `update_mask` field is ignored when an entry is created or re-created.
      *
@@ -1097,10 +1401,10 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * value to `aspects`.
      *
      *
-     * Dataplex also determines which entries and aspects to modify by comparing
-     * the values and timestamps that you provide in the metadata import file with
-     * the values and timestamps that exist in your project. For more information,
-     * see [Comparison
+     * Dataplex Universal Catalog also determines which entries and aspects to
+     * modify by comparing the values and timestamps that you provide in the
+     * metadata import file with the values and timestamps that exist in your
+     * project. For more information, see [Comparison
      * logic](https://cloud.google.com/dataplex/docs/import-metadata#data-modification-logic).
      * </pre>
      *
@@ -1115,7 +1419,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1127,12 +1431,12 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * The fields to update, in paths that are relative to the `Entry` resource.
      * Separate each field with a comma.
      *
-     * In `FULL` entry sync mode, Dataplex includes the paths of all of the fields
-     * for an entry that can be modified, including aspects. This means that
-     * Dataplex replaces the existing entry with the entry in the metadata import
-     * file. All modifiable fields are updated, regardless of the fields that are
-     * listed in the update mask, and regardless of whether a field is present
-     * in the `entry` object.
+     * In `FULL` entry sync mode, Dataplex Universal Catalog includes the paths of
+     * all of the fields for an entry that can be modified, including aspects.
+     * This means that Dataplex Universal Catalog replaces the existing entry with
+     * the entry in the metadata import file. All modifiable fields are updated,
+     * regardless of the fields that are listed in the update mask, and regardless
+     * of whether a field is present in the `entry` object.
      *
      * The `update_mask` field is ignored when an entry is created or re-created.
      *
@@ -1140,10 +1444,10 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * value to `aspects`.
      *
      *
-     * Dataplex also determines which entries and aspects to modify by comparing
-     * the values and timestamps that you provide in the metadata import file with
-     * the values and timestamps that exist in your project. For more information,
-     * see [Comparison
+     * Dataplex Universal Catalog also determines which entries and aspects to
+     * modify by comparing the values and timestamps that you provide in the
+     * metadata import file with the values and timestamps that exist in your
+     * project. For more information, see [Comparison
      * logic](https://cloud.google.com/dataplex/docs/import-metadata#data-modification-logic).
      * </pre>
      *
@@ -1155,7 +1459,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1167,12 +1471,12 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * The fields to update, in paths that are relative to the `Entry` resource.
      * Separate each field with a comma.
      *
-     * In `FULL` entry sync mode, Dataplex includes the paths of all of the fields
-     * for an entry that can be modified, including aspects. This means that
-     * Dataplex replaces the existing entry with the entry in the metadata import
-     * file. All modifiable fields are updated, regardless of the fields that are
-     * listed in the update mask, and regardless of whether a field is present
-     * in the `entry` object.
+     * In `FULL` entry sync mode, Dataplex Universal Catalog includes the paths of
+     * all of the fields for an entry that can be modified, including aspects.
+     * This means that Dataplex Universal Catalog replaces the existing entry with
+     * the entry in the metadata import file. All modifiable fields are updated,
+     * regardless of the fields that are listed in the update mask, and regardless
+     * of whether a field is present in the `entry` object.
      *
      * The `update_mask` field is ignored when an entry is created or re-created.
      *
@@ -1180,10 +1484,10 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * value to `aspects`.
      *
      *
-     * Dataplex also determines which entries and aspects to modify by comparing
-     * the values and timestamps that you provide in the metadata import file with
-     * the values and timestamps that exist in your project. For more information,
-     * see [Comparison
+     * Dataplex Universal Catalog also determines which entries and aspects to
+     * modify by comparing the values and timestamps that you provide in the
+     * metadata import file with the values and timestamps that exist in your
+     * project. For more information, see [Comparison
      * logic](https://cloud.google.com/dataplex/docs/import-metadata#data-modification-logic).
      * </pre>
      *
@@ -1191,7 +1495,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && updateMask_ != null
             && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
           getUpdateMaskBuilder().mergeFrom(value);
@@ -1202,7 +1506,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
         updateMaskBuilder_.mergeFrom(value);
       }
       if (updateMask_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -1215,12 +1519,12 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * The fields to update, in paths that are relative to the `Entry` resource.
      * Separate each field with a comma.
      *
-     * In `FULL` entry sync mode, Dataplex includes the paths of all of the fields
-     * for an entry that can be modified, including aspects. This means that
-     * Dataplex replaces the existing entry with the entry in the metadata import
-     * file. All modifiable fields are updated, regardless of the fields that are
-     * listed in the update mask, and regardless of whether a field is present
-     * in the `entry` object.
+     * In `FULL` entry sync mode, Dataplex Universal Catalog includes the paths of
+     * all of the fields for an entry that can be modified, including aspects.
+     * This means that Dataplex Universal Catalog replaces the existing entry with
+     * the entry in the metadata import file. All modifiable fields are updated,
+     * regardless of the fields that are listed in the update mask, and regardless
+     * of whether a field is present in the `entry` object.
      *
      * The `update_mask` field is ignored when an entry is created or re-created.
      *
@@ -1228,17 +1532,17 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * value to `aspects`.
      *
      *
-     * Dataplex also determines which entries and aspects to modify by comparing
-     * the values and timestamps that you provide in the metadata import file with
-     * the values and timestamps that exist in your project. For more information,
-     * see [Comparison
+     * Dataplex Universal Catalog also determines which entries and aspects to
+     * modify by comparing the values and timestamps that you provide in the
+     * metadata import file with the values and timestamps that exist in your
+     * project. For more information, see [Comparison
      * logic](https://cloud.google.com/dataplex/docs/import-metadata#data-modification-logic).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       updateMask_ = null;
       if (updateMaskBuilder_ != null) {
         updateMaskBuilder_.dispose();
@@ -1255,12 +1559,12 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * The fields to update, in paths that are relative to the `Entry` resource.
      * Separate each field with a comma.
      *
-     * In `FULL` entry sync mode, Dataplex includes the paths of all of the fields
-     * for an entry that can be modified, including aspects. This means that
-     * Dataplex replaces the existing entry with the entry in the metadata import
-     * file. All modifiable fields are updated, regardless of the fields that are
-     * listed in the update mask, and regardless of whether a field is present
-     * in the `entry` object.
+     * In `FULL` entry sync mode, Dataplex Universal Catalog includes the paths of
+     * all of the fields for an entry that can be modified, including aspects.
+     * This means that Dataplex Universal Catalog replaces the existing entry with
+     * the entry in the metadata import file. All modifiable fields are updated,
+     * regardless of the fields that are listed in the update mask, and regardless
+     * of whether a field is present in the `entry` object.
      *
      * The `update_mask` field is ignored when an entry is created or re-created.
      *
@@ -1268,17 +1572,17 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * value to `aspects`.
      *
      *
-     * Dataplex also determines which entries and aspects to modify by comparing
-     * the values and timestamps that you provide in the metadata import file with
-     * the values and timestamps that exist in your project. For more information,
-     * see [Comparison
+     * Dataplex Universal Catalog also determines which entries and aspects to
+     * modify by comparing the values and timestamps that you provide in the
+     * metadata import file with the values and timestamps that exist in your
+     * project. For more information, see [Comparison
      * logic](https://cloud.google.com/dataplex/docs/import-metadata#data-modification-logic).
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1290,12 +1594,12 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * The fields to update, in paths that are relative to the `Entry` resource.
      * Separate each field with a comma.
      *
-     * In `FULL` entry sync mode, Dataplex includes the paths of all of the fields
-     * for an entry that can be modified, including aspects. This means that
-     * Dataplex replaces the existing entry with the entry in the metadata import
-     * file. All modifiable fields are updated, regardless of the fields that are
-     * listed in the update mask, and regardless of whether a field is present
-     * in the `entry` object.
+     * In `FULL` entry sync mode, Dataplex Universal Catalog includes the paths of
+     * all of the fields for an entry that can be modified, including aspects.
+     * This means that Dataplex Universal Catalog replaces the existing entry with
+     * the entry in the metadata import file. All modifiable fields are updated,
+     * regardless of the fields that are listed in the update mask, and regardless
+     * of whether a field is present in the `entry` object.
      *
      * The `update_mask` field is ignored when an entry is created or re-created.
      *
@@ -1303,10 +1607,10 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * value to `aspects`.
      *
      *
-     * Dataplex also determines which entries and aspects to modify by comparing
-     * the values and timestamps that you provide in the metadata import file with
-     * the values and timestamps that exist in your project. For more information,
-     * see [Comparison
+     * Dataplex Universal Catalog also determines which entries and aspects to
+     * modify by comparing the values and timestamps that you provide in the
+     * metadata import file with the values and timestamps that exist in your
+     * project. For more information, see [Comparison
      * logic](https://cloud.google.com/dataplex/docs/import-metadata#data-modification-logic).
      * </pre>
      *
@@ -1329,12 +1633,12 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * The fields to update, in paths that are relative to the `Entry` resource.
      * Separate each field with a comma.
      *
-     * In `FULL` entry sync mode, Dataplex includes the paths of all of the fields
-     * for an entry that can be modified, including aspects. This means that
-     * Dataplex replaces the existing entry with the entry in the metadata import
-     * file. All modifiable fields are updated, regardless of the fields that are
-     * listed in the update mask, and regardless of whether a field is present
-     * in the `entry` object.
+     * In `FULL` entry sync mode, Dataplex Universal Catalog includes the paths of
+     * all of the fields for an entry that can be modified, including aspects.
+     * This means that Dataplex Universal Catalog replaces the existing entry with
+     * the entry in the metadata import file. All modifiable fields are updated,
+     * regardless of the fields that are listed in the update mask, and regardless
+     * of whether a field is present in the `entry` object.
      *
      * The `update_mask` field is ignored when an entry is created or re-created.
      *
@@ -1342,10 +1646,10 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      * value to `aspects`.
      *
      *
-     * Dataplex also determines which entries and aspects to modify by comparing
-     * the values and timestamps that you provide in the metadata import file with
-     * the values and timestamps that exist in your project. For more information,
-     * see [Comparison
+     * Dataplex Universal Catalog also determines which entries and aspects to
+     * modify by comparing the values and timestamps that you provide in the
+     * metadata import file with the values and timestamps that exist in your
+     * project. For more information, see [Comparison
      * logic](https://cloud.google.com/dataplex/docs/import-metadata#data-modification-logic).
      * </pre>
      *
@@ -1375,7 +1679,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       if (!aspectKeys_.isModifiable()) {
         aspectKeys_ = new com.google.protobuf.LazyStringArrayList(aspectKeys_);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
     }
 
     /**
@@ -1398,8 +1702,8 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      *
      * In `FULL` entry sync mode, if you leave this field empty, it is treated as
      * specifying exactly those aspects that are present within the specified
-     * entry. Dataplex implicitly adds the keys for all of the required aspects of
-     * an entry.
+     * entry. Dataplex Universal Catalog implicitly adds the keys for all of the
+     * required aspects of an entry.
      * </pre>
      *
      * <code>repeated string aspect_keys = 3;</code>
@@ -1431,8 +1735,8 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      *
      * In `FULL` entry sync mode, if you leave this field empty, it is treated as
      * specifying exactly those aspects that are present within the specified
-     * entry. Dataplex implicitly adds the keys for all of the required aspects of
-     * an entry.
+     * entry. Dataplex Universal Catalog implicitly adds the keys for all of the
+     * required aspects of an entry.
      * </pre>
      *
      * <code>repeated string aspect_keys = 3;</code>
@@ -1463,8 +1767,8 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      *
      * In `FULL` entry sync mode, if you leave this field empty, it is treated as
      * specifying exactly those aspects that are present within the specified
-     * entry. Dataplex implicitly adds the keys for all of the required aspects of
-     * an entry.
+     * entry. Dataplex Universal Catalog implicitly adds the keys for all of the
+     * required aspects of an entry.
      * </pre>
      *
      * <code>repeated string aspect_keys = 3;</code>
@@ -1496,8 +1800,8 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      *
      * In `FULL` entry sync mode, if you leave this field empty, it is treated as
      * specifying exactly those aspects that are present within the specified
-     * entry. Dataplex implicitly adds the keys for all of the required aspects of
-     * an entry.
+     * entry. Dataplex Universal Catalog implicitly adds the keys for all of the
+     * required aspects of an entry.
      * </pre>
      *
      * <code>repeated string aspect_keys = 3;</code>
@@ -1529,8 +1833,8 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      *
      * In `FULL` entry sync mode, if you leave this field empty, it is treated as
      * specifying exactly those aspects that are present within the specified
-     * entry. Dataplex implicitly adds the keys for all of the required aspects of
-     * an entry.
+     * entry. Dataplex Universal Catalog implicitly adds the keys for all of the
+     * required aspects of an entry.
      * </pre>
      *
      * <code>repeated string aspect_keys = 3;</code>
@@ -1545,7 +1849,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAspectKeysIsMutable();
       aspectKeys_.set(index, value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1570,8 +1874,8 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      *
      * In `FULL` entry sync mode, if you leave this field empty, it is treated as
      * specifying exactly those aspects that are present within the specified
-     * entry. Dataplex implicitly adds the keys for all of the required aspects of
-     * an entry.
+     * entry. Dataplex Universal Catalog implicitly adds the keys for all of the
+     * required aspects of an entry.
      * </pre>
      *
      * <code>repeated string aspect_keys = 3;</code>
@@ -1585,7 +1889,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAspectKeysIsMutable();
       aspectKeys_.add(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1610,8 +1914,8 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      *
      * In `FULL` entry sync mode, if you leave this field empty, it is treated as
      * specifying exactly those aspects that are present within the specified
-     * entry. Dataplex implicitly adds the keys for all of the required aspects of
-     * an entry.
+     * entry. Dataplex Universal Catalog implicitly adds the keys for all of the
+     * required aspects of an entry.
      * </pre>
      *
      * <code>repeated string aspect_keys = 3;</code>
@@ -1622,7 +1926,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAspectKeys(java.lang.Iterable<java.lang.String> values) {
       ensureAspectKeysIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, aspectKeys_);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1647,8 +1951,8 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      *
      * In `FULL` entry sync mode, if you leave this field empty, it is treated as
      * specifying exactly those aspects that are present within the specified
-     * entry. Dataplex implicitly adds the keys for all of the required aspects of
-     * an entry.
+     * entry. Dataplex Universal Catalog implicitly adds the keys for all of the
+     * required aspects of an entry.
      * </pre>
      *
      * <code>repeated string aspect_keys = 3;</code>
@@ -1657,7 +1961,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAspectKeys() {
       aspectKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       ;
       onChanged();
       return this;
@@ -1683,8 +1987,8 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
      *
      * In `FULL` entry sync mode, if you leave this field empty, it is treated as
      * specifying exactly those aspects that are present within the specified
-     * entry. Dataplex implicitly adds the keys for all of the required aspects of
-     * an entry.
+     * entry. Dataplex Universal Catalog implicitly adds the keys for all of the
+     * required aspects of an entry.
      * </pre>
      *
      * <code>repeated string aspect_keys = 3;</code>
@@ -1699,7 +2003,7 @@ public final class ImportItem extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAspectKeysIsMutable();
       aspectKeys_.add(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

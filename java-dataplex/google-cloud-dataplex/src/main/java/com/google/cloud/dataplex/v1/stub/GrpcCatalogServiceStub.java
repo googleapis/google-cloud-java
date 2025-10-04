@@ -36,18 +36,22 @@ import com.google.cloud.dataplex.v1.AspectType;
 import com.google.cloud.dataplex.v1.CancelMetadataJobRequest;
 import com.google.cloud.dataplex.v1.CreateAspectTypeRequest;
 import com.google.cloud.dataplex.v1.CreateEntryGroupRequest;
+import com.google.cloud.dataplex.v1.CreateEntryLinkRequest;
 import com.google.cloud.dataplex.v1.CreateEntryRequest;
 import com.google.cloud.dataplex.v1.CreateEntryTypeRequest;
 import com.google.cloud.dataplex.v1.CreateMetadataJobRequest;
 import com.google.cloud.dataplex.v1.DeleteAspectTypeRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryGroupRequest;
+import com.google.cloud.dataplex.v1.DeleteEntryLinkRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryTypeRequest;
 import com.google.cloud.dataplex.v1.Entry;
 import com.google.cloud.dataplex.v1.EntryGroup;
+import com.google.cloud.dataplex.v1.EntryLink;
 import com.google.cloud.dataplex.v1.EntryType;
 import com.google.cloud.dataplex.v1.GetAspectTypeRequest;
 import com.google.cloud.dataplex.v1.GetEntryGroupRequest;
+import com.google.cloud.dataplex.v1.GetEntryLinkRequest;
 import com.google.cloud.dataplex.v1.GetEntryRequest;
 import com.google.cloud.dataplex.v1.GetEntryTypeRequest;
 import com.google.cloud.dataplex.v1.GetMetadataJobRequest;
@@ -99,6 +103,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEntryTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEntryTypeRequest, Operation>
@@ -109,6 +114,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEntryTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEntryTypeRequest, Operation>
@@ -119,6 +125,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEntryTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEntryTypesRequest, ListEntryTypesResponse>
@@ -130,6 +137,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   ProtoUtils.marshaller(ListEntryTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntryTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEntryTypeRequest, EntryType>
@@ -139,6 +147,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setFullMethodName("google.cloud.dataplex.v1.CatalogService/GetEntryType")
               .setRequestMarshaller(ProtoUtils.marshaller(GetEntryTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntryType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAspectTypeRequest, Operation>
@@ -149,6 +158,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAspectTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAspectTypeRequest, Operation>
@@ -159,6 +169,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAspectTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAspectTypeRequest, Operation>
@@ -169,6 +180,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAspectTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAspectTypesRequest, ListAspectTypesResponse>
@@ -180,6 +192,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   ProtoUtils.marshaller(ListAspectTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAspectTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAspectTypeRequest, AspectType>
@@ -190,6 +203,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAspectTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AspectType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEntryGroupRequest, Operation>
@@ -200,6 +214,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEntryGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEntryGroupRequest, Operation>
@@ -210,6 +225,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEntryGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEntryGroupRequest, Operation>
@@ -220,6 +236,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEntryGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEntryGroupsRequest, ListEntryGroupsResponse>
@@ -231,6 +248,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   ProtoUtils.marshaller(ListEntryGroupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntryGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEntryGroupRequest, EntryGroup>
@@ -241,6 +259,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEntryGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntryGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEntryRequest, Entry> createEntryMethodDescriptor =
@@ -249,6 +268,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.CatalogService/CreateEntry")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateEntryRequest, Entry> updateEntryMethodDescriptor =
@@ -257,6 +277,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.CatalogService/UpdateEntry")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteEntryRequest, Entry> deleteEntryMethodDescriptor =
@@ -265,6 +286,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.CatalogService/DeleteEntry")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListEntriesRequest, ListEntriesResponse>
@@ -275,6 +297,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListEntriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEntryRequest, Entry> getEntryMethodDescriptor =
@@ -283,6 +306,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.CatalogService/GetEntry")
           .setRequestMarshaller(ProtoUtils.marshaller(GetEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<LookupEntryRequest, Entry> lookupEntryMethodDescriptor =
@@ -291,6 +315,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.CatalogService/LookupEntry")
           .setRequestMarshaller(ProtoUtils.marshaller(LookupEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SearchEntriesRequest, SearchEntriesResponse>
@@ -302,6 +327,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   ProtoUtils.marshaller(SearchEntriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchEntriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMetadataJobRequest, Operation>
@@ -312,6 +338,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMetadataJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMetadataJobRequest, MetadataJob>
@@ -322,6 +349,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMetadataJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MetadataJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMetadataJobsRequest, ListMetadataJobsResponse>
@@ -333,6 +361,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   ProtoUtils.marshaller(ListMetadataJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMetadataJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelMetadataJobRequest, Empty>
@@ -343,6 +372,39 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelMetadataJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateEntryLinkRequest, EntryLink>
+      createEntryLinkMethodDescriptor =
+          MethodDescriptor.<CreateEntryLinkRequest, EntryLink>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/CreateEntryLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateEntryLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EntryLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteEntryLinkRequest, EntryLink>
+      deleteEntryLinkMethodDescriptor =
+          MethodDescriptor.<DeleteEntryLinkRequest, EntryLink>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/DeleteEntryLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteEntryLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EntryLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetEntryLinkRequest, EntryLink>
+      getEntryLinkMethodDescriptor =
+          MethodDescriptor.<GetEntryLinkRequest, EntryLink>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/GetEntryLink")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetEntryLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EntryLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -354,6 +416,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -362,6 +425,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateEntryTypeRequest, Operation> createEntryTypeCallable;
@@ -425,6 +489,9 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
   private final UnaryCallable<ListMetadataJobsRequest, ListMetadataJobsPagedResponse>
       listMetadataJobsPagedCallable;
   private final UnaryCallable<CancelMetadataJobRequest, Empty> cancelMetadataJobCallable;
+  private final UnaryCallable<CreateEntryLinkRequest, EntryLink> createEntryLinkCallable;
+  private final UnaryCallable<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkCallable;
+  private final UnaryCallable<GetEntryLinkRequest, EntryLink> getEntryLinkCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -740,6 +807,36 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreateEntryLinkRequest, EntryLink> createEntryLinkTransportSettings =
+        GrpcCallSettings.<CreateEntryLinkRequest, EntryLink>newBuilder()
+            .setMethodDescriptor(createEntryLinkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkTransportSettings =
+        GrpcCallSettings.<DeleteEntryLinkRequest, EntryLink>newBuilder()
+            .setMethodDescriptor(deleteEntryLinkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetEntryLinkRequest, EntryLink> getEntryLinkTransportSettings =
+        GrpcCallSettings.<GetEntryLinkRequest, EntryLink>newBuilder()
+            .setMethodDescriptor(getEntryLinkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -921,6 +1018,15 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
             cancelMetadataJobTransportSettings,
             settings.cancelMetadataJobSettings(),
             clientContext);
+    this.createEntryLinkCallable =
+        callableFactory.createUnaryCallable(
+            createEntryLinkTransportSettings, settings.createEntryLinkSettings(), clientContext);
+    this.deleteEntryLinkCallable =
+        callableFactory.createUnaryCallable(
+            deleteEntryLinkTransportSettings, settings.deleteEntryLinkSettings(), clientContext);
+    this.getEntryLinkCallable =
+        callableFactory.createUnaryCallable(
+            getEntryLinkTransportSettings, settings.getEntryLinkSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1163,6 +1269,21 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
   @Override
   public UnaryCallable<CancelMetadataJobRequest, Empty> cancelMetadataJobCallable() {
     return cancelMetadataJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateEntryLinkRequest, EntryLink> createEntryLinkCallable() {
+    return createEntryLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkCallable() {
+    return deleteEntryLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEntryLinkRequest, EntryLink> getEntryLinkCallable() {
+    return getEntryLinkCallable;
   }
 
   @Override

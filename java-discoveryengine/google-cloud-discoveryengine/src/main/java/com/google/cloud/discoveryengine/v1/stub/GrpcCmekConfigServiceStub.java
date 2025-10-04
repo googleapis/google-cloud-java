@@ -58,6 +58,7 @@ public class GrpcCmekConfigServiceStub extends CmekConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCmekConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCmekConfigRequest, CmekConfig>
@@ -68,6 +69,7 @@ public class GrpcCmekConfigServiceStub extends CmekConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCmekConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CmekConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCmekConfigsRequest, ListCmekConfigsResponse>
@@ -80,6 +82,7 @@ public class GrpcCmekConfigServiceStub extends CmekConfigServiceStub {
                   ProtoUtils.marshaller(ListCmekConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCmekConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCmekConfigRequest, Operation>
@@ -91,6 +94,7 @@ public class GrpcCmekConfigServiceStub extends CmekConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCmekConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<UpdateCmekConfigRequest, Operation> updateCmekConfigCallable;

@@ -54,6 +54,7 @@ public class GrpcSearchTuningServiceStub extends SearchTuningServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(TrainCustomModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCustomModelsRequest, ListCustomModelsResponse>
@@ -66,6 +67,7 @@ public class GrpcSearchTuningServiceStub extends SearchTuningServiceStub {
                   ProtoUtils.marshaller(ListCustomModelsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomModelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<TrainCustomModelRequest, Operation> trainCustomModelCallable;

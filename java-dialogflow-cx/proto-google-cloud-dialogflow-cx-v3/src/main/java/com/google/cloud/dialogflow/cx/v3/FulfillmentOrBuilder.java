@@ -363,4 +363,67 @@ public interface FulfillmentOrBuilder
    * @return The enableGenerativeFallback.
    */
   boolean getEnableGenerativeFallback();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of Generators to be called during this fulfillment.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+   * </code>
+   */
+  java.util.List<com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings>
+      getGeneratorsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of Generators to be called during this fulfillment.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings getGenerators(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of Generators to be called during this fulfillment.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+   * </code>
+   */
+  int getGeneratorsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of Generators to be called during this fulfillment.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettingsOrBuilder>
+      getGeneratorsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of Generators to be called during this fulfillment.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings generators = 13;
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettingsOrBuilder getGeneratorsOrBuilder(
+      int index);
 }

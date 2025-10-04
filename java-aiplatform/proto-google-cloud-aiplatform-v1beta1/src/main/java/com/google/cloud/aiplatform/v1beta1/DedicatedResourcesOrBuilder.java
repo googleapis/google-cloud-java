@@ -28,8 +28,7 @@ public interface DedicatedResourcesOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The specification of a single machine used by the
-   * prediction.
+   * Required. Immutable. The specification of a single machine being used.
    * </pre>
    *
    * <code>
@@ -44,8 +43,7 @@ public interface DedicatedResourcesOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The specification of a single machine used by the
-   * prediction.
+   * Required. Immutable. The specification of a single machine being used.
    * </pre>
    *
    * <code>
@@ -60,8 +58,7 @@ public interface DedicatedResourcesOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The specification of a single machine used by the
-   * prediction.
+   * Required. Immutable. The specification of a single machine being used.
    * </pre>
    *
    * <code>
@@ -74,13 +71,11 @@ public interface DedicatedResourcesOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The minimum number of machine replicas this
-   * DeployedModel will be always deployed on. This value must be greater than
-   * or equal to 1.
+   * Required. Immutable. The minimum number of machine replicas that will be
+   * always deployed on. This value must be greater than or equal to 1.
    *
-   * If traffic against the DeployedModel increases, it may dynamically be
-   * deployed onto more replicas, and as traffic decreases, some of these extra
-   * replicas may be freed.
+   * If traffic increases, it may dynamically be deployed onto more replicas,
+   * and as traffic decreases, some of these extra replicas may be freed.
    * </pre>
    *
    * <code>
@@ -95,13 +90,12 @@ public interface DedicatedResourcesOrBuilder
    *
    *
    * <pre>
-   * Immutable. The maximum number of replicas this DeployedModel may be
-   * deployed on when the traffic against it increases. If the requested value
-   * is too large, the deployment will error, but if deployment succeeds then
-   * the ability to scale the model to that many replicas is guaranteed (barring
-   * service outages). If traffic against the DeployedModel increases beyond
-   * what its replicas at maximum may handle, a portion of the traffic will be
-   * dropped. If this value is not provided, will use
+   * Immutable. The maximum number of replicas that may be deployed on when the
+   * traffic against it increases. If the requested value is too large, the
+   * deployment will error, but if deployment succeeds then the ability to scale
+   * to that many replicas is guaranteed (barring service outages). If traffic
+   * increases beyond what its replicas at maximum may handle, a portion of the
+   * traffic will be dropped. If this value is not provided, will use
    * [min_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.min_replica_count]
    * as the default value.
    *
@@ -122,8 +116,8 @@ public interface DedicatedResourcesOrBuilder
    *
    * <pre>
    * Optional. Number of required available replicas for the deployment to
-   * succeed. This field is only needed when partial model deployment/mutation
-   * is desired. If set, the model deploy/mutate operation will succeed once
+   * succeed. This field is only needed when partial deployment/mutation is
+   * desired. If set, the deploy/mutate operation will succeed once
    * available_replica_count reaches required_replica_count, and the rest of
    * the replicas will be retried. If not set, the default
    * required_replica_count will be min_replica_count.
@@ -326,4 +320,53 @@ public interface DedicatedResourcesOrBuilder
    * @return The spot.
    */
   boolean getSpot();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. If set, use DWS resource to schedule the deployment
+   * workload. reference:
+   * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the flexStart field is set.
+   */
+  boolean hasFlexStart();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. If set, use DWS resource to schedule the deployment
+   * workload. reference:
+   * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The flexStart.
+   */
+  com.google.cloud.aiplatform.v1beta1.FlexStart getFlexStart();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. If set, use DWS resource to schedule the deployment
+   * workload. reference:
+   * (https://cloud.google.com/blog/products/compute/introducing-dynamic-workload-scheduler)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FlexStart flex_start = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.FlexStartOrBuilder getFlexStartOrBuilder();
 }

@@ -90,6 +90,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   ProtoUtils.marshaller(ListInstancesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstancesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInstanceRequest, Instance> getInstanceMethodDescriptor =
@@ -98,6 +99,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
           .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/GetInstance")
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateInstanceRequest, Operation>
@@ -109,6 +111,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateInstanceRequest, Operation>
@@ -120,6 +123,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RestoreInstanceRequest, Operation>
@@ -131,6 +135,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RestoreInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RevertInstanceRequest, Operation>
@@ -142,6 +147,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RevertInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PromoteReplicaRequest, Operation>
@@ -153,6 +159,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PromoteReplicaRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteInstanceRequest, Operation>
@@ -164,6 +171,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSnapshotsRequest, ListSnapshotsResponse>
@@ -176,6 +184,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   ProtoUtils.marshaller(ListSnapshotsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSnapshotsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSnapshotRequest, Snapshot> getSnapshotMethodDescriptor =
@@ -184,6 +193,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
           .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/GetSnapshot")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSnapshotRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Snapshot.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateSnapshotRequest, Operation>
@@ -195,6 +205,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSnapshotRequest, Operation>
@@ -206,6 +217,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSnapshotRequest, Operation>
@@ -217,6 +229,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBackupsRequest, ListBackupsResponse>
@@ -227,6 +240,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListBackupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
@@ -235,6 +249,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
           .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/GetBackup")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBackupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateBackupRequest, Operation>
@@ -245,6 +260,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   "google.cloud.filestore.v1beta1.CloudFilestoreManager/CreateBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupRequest, Operation>
@@ -255,6 +271,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   "google.cloud.filestore.v1beta1.CloudFilestoreManager/DeleteBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBackupRequest, Operation>
@@ -265,6 +282,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   "google.cloud.filestore.v1beta1.CloudFilestoreManager/UpdateBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSharesRequest, ListSharesResponse>
@@ -274,6 +292,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/ListShares")
               .setRequestMarshaller(ProtoUtils.marshaller(ListSharesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListSharesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetShareRequest, Share> getShareMethodDescriptor =
@@ -282,6 +301,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
           .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/GetShare")
           .setRequestMarshaller(ProtoUtils.marshaller(GetShareRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Share.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateShareRequest, Operation> createShareMethodDescriptor =
@@ -290,6 +310,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
           .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/CreateShare")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateShareRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteShareRequest, Operation> deleteShareMethodDescriptor =
@@ -298,6 +319,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
           .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/DeleteShare")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteShareRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateShareRequest, Operation> updateShareMethodDescriptor =
@@ -306,6 +328,7 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
           .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/UpdateShare")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateShareRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;

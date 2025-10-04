@@ -191,6 +191,7 @@ public interface ListFileStoreDataProfilesRequestOrBuilder
    *     - `resource_visibility`: PUBLIC|RESTRICTED
    *     - `status_code` - an RPC status code as defined in
    *     https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
+   *
    * * The operator must be `=` or `!=`.
    *
    * Examples:
@@ -234,6 +235,7 @@ public interface ListFileStoreDataProfilesRequestOrBuilder
    *     - `resource_visibility`: PUBLIC|RESTRICTED
    *     - `status_code` - an RPC status code as defined in
    *     https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
+   *
    * * The operator must be `=` or `!=`.
    *
    * Examples:

@@ -84,6 +84,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
               .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/ListQueues")
               .setRequestMarshaller(ProtoUtils.marshaller(ListQueuesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListQueuesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetQueueRequest, Queue> getQueueMethodDescriptor =
@@ -92,6 +93,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/GetQueue")
           .setRequestMarshaller(ProtoUtils.marshaller(GetQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateQueueRequest, Queue> createQueueMethodDescriptor =
@@ -100,6 +102,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/CreateQueue")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateQueueRequest, Queue> updateQueueMethodDescriptor =
@@ -108,6 +111,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/UpdateQueue")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteQueueRequest, Empty> deleteQueueMethodDescriptor =
@@ -116,6 +120,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/DeleteQueue")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<PurgeQueueRequest, Queue> purgeQueueMethodDescriptor =
@@ -124,6 +129,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/PurgeQueue")
           .setRequestMarshaller(ProtoUtils.marshaller(PurgeQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<PauseQueueRequest, Queue> pauseQueueMethodDescriptor =
@@ -132,6 +138,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/PauseQueue")
           .setRequestMarshaller(ProtoUtils.marshaller(PauseQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ResumeQueueRequest, Queue> resumeQueueMethodDescriptor =
@@ -140,6 +147,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/ResumeQueue")
           .setRequestMarshaller(ProtoUtils.marshaller(ResumeQueueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Queue.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UploadQueueYamlRequest, Empty>
@@ -150,6 +158,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UploadQueueYamlRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -158,6 +167,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -166,6 +176,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -177,6 +188,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTasksRequest, ListTasksResponse>
@@ -186,6 +198,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
               .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/ListTasks")
               .setRequestMarshaller(ProtoUtils.marshaller(ListTasksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTasksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTaskRequest, Task> getTaskMethodDescriptor =
@@ -194,6 +207,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/GetTask")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateTaskRequest, Task> createTaskMethodDescriptor =
@@ -202,6 +216,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/CreateTask")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteTaskRequest, Empty> deleteTaskMethodDescriptor =
@@ -210,6 +225,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/DeleteTask")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<LeaseTasksRequest, LeaseTasksResponse>
@@ -219,6 +235,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
               .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/LeaseTasks")
               .setRequestMarshaller(ProtoUtils.marshaller(LeaseTasksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LeaseTasksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AcknowledgeTaskRequest, Empty>
@@ -229,6 +246,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AcknowledgeTaskRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RenewLeaseRequest, Task> renewLeaseMethodDescriptor =
@@ -237,6 +255,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/RenewLease")
           .setRequestMarshaller(ProtoUtils.marshaller(RenewLeaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CancelLeaseRequest, Task> cancelLeaseMethodDescriptor =
@@ -245,6 +264,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/CancelLease")
           .setRequestMarshaller(ProtoUtils.marshaller(CancelLeaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RunTaskRequest, Task> runTaskMethodDescriptor =
@@ -253,6 +273,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/RunTask")
           .setRequestMarshaller(ProtoUtils.marshaller(RunTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -264,6 +285,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -272,6 +294,7 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListQueuesRequest, ListQueuesResponse> listQueuesCallable;

@@ -68,7 +68,761 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.transcoder.v1.MuxStream.Builder.class);
   }
 
+  public interface Fmp4ConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.transcoder.v1.MuxStream.Fmp4Config)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify the codec tag string that will be used in the media
+     * bitstream. When not specified, the codec appropriate value is used.
+     *
+     * Supported H265 codec tags:
+     *
+     * - `hvc1` (default)
+     * - `hev1`
+     * </pre>
+     *
+     * <code>string codec_tag = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The codecTag.
+     */
+    java.lang.String getCodecTag();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify the codec tag string that will be used in the media
+     * bitstream. When not specified, the codec appropriate value is used.
+     *
+     * Supported H265 codec tags:
+     *
+     * - `hvc1` (default)
+     * - `hev1`
+     * </pre>
+     *
+     * <code>string codec_tag = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for codecTag.
+     */
+    com.google.protobuf.ByteString getCodecTagBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * `fmp4` container configuration.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.transcoder.v1.MuxStream.Fmp4Config}
+   */
+  public static final class Fmp4Config extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.MuxStream.Fmp4Config)
+      Fmp4ConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use Fmp4Config.newBuilder() to construct.
+    private Fmp4Config(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Fmp4Config() {
+      codecTag_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Fmp4Config();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_MuxStream_Fmp4Config_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.transcoder.v1.ResourcesProto
+          .internal_static_google_cloud_video_transcoder_v1_MuxStream_Fmp4Config_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.class,
+              com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.Builder.class);
+    }
+
+    public static final int CODEC_TAG_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object codecTag_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify the codec tag string that will be used in the media
+     * bitstream. When not specified, the codec appropriate value is used.
+     *
+     * Supported H265 codec tags:
+     *
+     * - `hvc1` (default)
+     * - `hev1`
+     * </pre>
+     *
+     * <code>string codec_tag = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The codecTag.
+     */
+    @java.lang.Override
+    public java.lang.String getCodecTag() {
+      java.lang.Object ref = codecTag_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        codecTag_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify the codec tag string that will be used in the media
+     * bitstream. When not specified, the codec appropriate value is used.
+     *
+     * Supported H265 codec tags:
+     *
+     * - `hvc1` (default)
+     * - `hev1`
+     * </pre>
+     *
+     * <code>string codec_tag = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for codecTag.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCodecTagBytes() {
+      java.lang.Object ref = codecTag_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        codecTag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(codecTag_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, codecTag_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(codecTag_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, codecTag_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config other =
+          (com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config) obj;
+
+      if (!getCodecTag().equals(other.getCodecTag())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CODEC_TAG_FIELD_NUMBER;
+      hash = (53 * hash) + getCodecTag().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * `fmp4` container configuration.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.transcoder.v1.MuxStream.Fmp4Config}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.transcoder.v1.MuxStream.Fmp4Config)
+        com.google.cloud.video.transcoder.v1.MuxStream.Fmp4ConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_MuxStream_Fmp4Config_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_MuxStream_Fmp4Config_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.class,
+                com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.Builder.class);
+      }
+
+      // Construct using com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        codecTag_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.transcoder.v1.ResourcesProto
+            .internal_static_google_cloud_video_transcoder_v1_MuxStream_Fmp4Config_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config getDefaultInstanceForType() {
+        return com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config build() {
+        com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config buildPartial() {
+        com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config result =
+            new com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.codecTag_ = codecTag_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config) {
+          return mergeFrom((com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config other) {
+        if (other == com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.getDefaultInstance())
+          return this;
+        if (!other.getCodecTag().isEmpty()) {
+          codecTag_ = other.codecTag_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  codecTag_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object codecTag_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specify the codec tag string that will be used in the media
+       * bitstream. When not specified, the codec appropriate value is used.
+       *
+       * Supported H265 codec tags:
+       *
+       * - `hvc1` (default)
+       * - `hev1`
+       * </pre>
+       *
+       * <code>string codec_tag = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The codecTag.
+       */
+      public java.lang.String getCodecTag() {
+        java.lang.Object ref = codecTag_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          codecTag_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specify the codec tag string that will be used in the media
+       * bitstream. When not specified, the codec appropriate value is used.
+       *
+       * Supported H265 codec tags:
+       *
+       * - `hvc1` (default)
+       * - `hev1`
+       * </pre>
+       *
+       * <code>string codec_tag = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for codecTag.
+       */
+      public com.google.protobuf.ByteString getCodecTagBytes() {
+        java.lang.Object ref = codecTag_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          codecTag_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specify the codec tag string that will be used in the media
+       * bitstream. When not specified, the codec appropriate value is used.
+       *
+       * Supported H265 codec tags:
+       *
+       * - `hvc1` (default)
+       * - `hev1`
+       * </pre>
+       *
+       * <code>string codec_tag = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The codecTag to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCodecTag(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        codecTag_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specify the codec tag string that will be used in the media
+       * bitstream. When not specified, the codec appropriate value is used.
+       *
+       * Supported H265 codec tags:
+       *
+       * - `hvc1` (default)
+       * - `hev1`
+       * </pre>
+       *
+       * <code>string codec_tag = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCodecTag() {
+        codecTag_ = getDefaultInstance().getCodecTag();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specify the codec tag string that will be used in the media
+       * bitstream. When not specified, the codec appropriate value is used.
+       *
+       * Supported H265 codec tags:
+       *
+       * - `hvc1` (default)
+       * - `hev1`
+       * </pre>
+       *
+       * <code>string codec_tag = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for codecTag to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCodecTagBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        codecTag_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.transcoder.v1.MuxStream.Fmp4Config)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.transcoder.v1.MuxStream.Fmp4Config)
+    private static final com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config();
+    }
+
+    public static com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Fmp4Config> PARSER =
+        new com.google.protobuf.AbstractParser<Fmp4Config>() {
+          @java.lang.Override
+          public Fmp4Config parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Fmp4Config> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Fmp4Config> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
+  private int containerConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object containerConfig_;
+
+  public enum ContainerConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    FMP4(8),
+    CONTAINERCONFIG_NOT_SET(0);
+    private final int value;
+
+    private ContainerConfigCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ContainerConfigCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ContainerConfigCase forNumber(int value) {
+      switch (value) {
+        case 8:
+          return FMP4;
+        case 0:
+          return CONTAINERCONFIG_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ContainerConfigCase getContainerConfigCase() {
+    return ContainerConfigCase.forNumber(containerConfigCase_);
+  }
+
   public static final int KEY_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -78,8 +832,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A unique key for this multiplexed stream. HLS media manifests will be
-   * named `MuxStream.key` with the `.m3u8` extension suffix.
+   * A unique key for this multiplexed stream.
    * </pre>
    *
    * <code>string key = 1;</code>
@@ -103,8 +856,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A unique key for this multiplexed stream. HLS media manifests will be
-   * named `MuxStream.key` with the `.m3u8` extension suffix.
+   * A unique key for this multiplexed stream.
    * </pre>
    *
    * <code>string key = 1;</code>
@@ -133,8 +885,10 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the generated file. The default is `MuxStream.key` with the
-   * extension suffix corresponding to the `MuxStream.container`.
+   * The name of the generated file. The default is
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] with the
+   * extension suffix corresponding to the
+   * [MuxStream.container][google.cloud.video.transcoder.v1.MuxStream.container].
    *
    * Individual segments also have an incremental 10-digit zero-padded suffix
    * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
@@ -161,8 +915,10 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the generated file. The default is `MuxStream.key` with the
-   * extension suffix corresponding to the `MuxStream.container`.
+   * The name of the generated file. The default is
+   * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] with the
+   * extension suffix corresponding to the
+   * [MuxStream.container][google.cloud.video.transcoder.v1.MuxStream.container].
    *
    * Individual segments also have an incremental 10-digit zero-padded suffix
    * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
@@ -196,11 +952,16 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The container format. The default is `mp4`
    *
-   * Supported container formats:
+   * Supported streaming formats:
    *
    * - `ts`
    * - `fmp4`- the corresponding file extension is `.m4s`
+   *
+   * Supported standalone file formats:
+   *
    * - `mp4`
+   * - `mp3`
+   * - `ogg`
    * - `vtt`
    *
    * See also:
@@ -231,11 +992,16 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The container format. The default is `mp4`
    *
-   * Supported container formats:
+   * Supported streaming formats:
    *
    * - `ts`
    * - `fmp4`- the corresponding file extension is `.m4s`
+   *
+   * Supported standalone file formats:
+   *
    * - `mp4`
+   * - `mp3`
+   * - `ogg`
    * - `vtt`
    *
    * See also:
@@ -270,7 +1036,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of `ElementaryStream.key`s multiplexed in this stream.
+   * List of
+   * [ElementaryStream.key][google.cloud.video.transcoder.v1.ElementaryStream.key]
+   * values multiplexed in this stream.
    * </pre>
    *
    * <code>repeated string elementary_streams = 4;</code>
@@ -285,7 +1053,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of `ElementaryStream.key`s multiplexed in this stream.
+   * List of
+   * [ElementaryStream.key][google.cloud.video.transcoder.v1.ElementaryStream.key]
+   * values multiplexed in this stream.
    * </pre>
    *
    * <code>repeated string elementary_streams = 4;</code>
@@ -300,7 +1070,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of `ElementaryStream.key`s multiplexed in this stream.
+   * List of
+   * [ElementaryStream.key][google.cloud.video.transcoder.v1.ElementaryStream.key]
+   * values multiplexed in this stream.
    * </pre>
    *
    * <code>repeated string elementary_streams = 4;</code>
@@ -316,7 +1088,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of `ElementaryStream.key`s multiplexed in this stream.
+   * List of
+   * [ElementaryStream.key][google.cloud.video.transcoder.v1.ElementaryStream.key]
+   * values multiplexed in this stream.
    * </pre>
    *
    * <code>repeated string elementary_streams = 4;</code>
@@ -437,6 +1211,66 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int FMP4_FIELD_NUMBER = 8;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. `fmp4` container configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.transcoder.v1.MuxStream.Fmp4Config fmp4 = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the fmp4 field is set.
+   */
+  @java.lang.Override
+  public boolean hasFmp4() {
+    return containerConfigCase_ == 8;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. `fmp4` container configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.transcoder.v1.MuxStream.Fmp4Config fmp4 = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The fmp4.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config getFmp4() {
+    if (containerConfigCase_ == 8) {
+      return (com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config) containerConfig_;
+    }
+    return com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. `fmp4` container configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.transcoder.v1.MuxStream.Fmp4Config fmp4 = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.transcoder.v1.MuxStream.Fmp4ConfigOrBuilder getFmp4OrBuilder() {
+    if (containerConfigCase_ == 8) {
+      return (com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config) containerConfig_;
+    }
+    return com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -468,6 +1302,10 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, encryptionId_);
+    }
+    if (containerConfigCase_ == 8) {
+      output.writeMessage(
+          8, (com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config) containerConfig_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -501,6 +1339,11 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, encryptionId_);
     }
+    if (containerConfigCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config) containerConfig_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -526,6 +1369,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       if (!getSegmentSettings().equals(other.getSegmentSettings())) return false;
     }
     if (!getEncryptionId().equals(other.getEncryptionId())) return false;
+    if (!getContainerConfigCase().equals(other.getContainerConfigCase())) return false;
+    switch (containerConfigCase_) {
+      case 8:
+        if (!getFmp4().equals(other.getFmp4())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -553,6 +1404,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ENCRYPTION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getEncryptionId().hashCode();
+    switch (containerConfigCase_) {
+      case 8:
+        hash = (37 * hash) + FMP4_FIELD_NUMBER;
+        hash = (53 * hash) + getFmp4().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -712,6 +1571,11 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         segmentSettingsBuilder_ = null;
       }
       encryptionId_ = "";
+      if (fmp4Builder_ != null) {
+        fmp4Builder_.clear();
+      }
+      containerConfigCase_ = 0;
+      containerConfig_ = null;
       return this;
     }
 
@@ -742,6 +1606,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -771,6 +1636,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         result.encryptionId_ = encryptionId_;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.video.transcoder.v1.MuxStream result) {
+      result.containerConfigCase_ = containerConfigCase_;
+      result.containerConfig_ = this.containerConfig_;
+      if (containerConfigCase_ == 8 && fmp4Builder_ != null) {
+        result.containerConfig_ = fmp4Builder_.build();
+      }
     }
 
     @java.lang.Override
@@ -851,6 +1724,17 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      switch (other.getContainerConfigCase()) {
+        case FMP4:
+          {
+            mergeFmp4(other.getFmp4());
+            break;
+          }
+        case CONTAINERCONFIG_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -914,6 +1798,12 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(getFmp4FieldBuilder().getBuilder(), extensionRegistry);
+                containerConfigCase_ = 8;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -931,6 +1821,20 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int containerConfigCase_ = 0;
+    private java.lang.Object containerConfig_;
+
+    public ContainerConfigCase getContainerConfigCase() {
+      return ContainerConfigCase.forNumber(containerConfigCase_);
+    }
+
+    public Builder clearContainerConfig() {
+      containerConfigCase_ = 0;
+      containerConfig_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private java.lang.Object key_ = "";
@@ -939,8 +1843,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique key for this multiplexed stream. HLS media manifests will be
-     * named `MuxStream.key` with the `.m3u8` extension suffix.
+     * A unique key for this multiplexed stream.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -963,8 +1866,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique key for this multiplexed stream. HLS media manifests will be
-     * named `MuxStream.key` with the `.m3u8` extension suffix.
+     * A unique key for this multiplexed stream.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -987,8 +1889,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique key for this multiplexed stream. HLS media manifests will be
-     * named `MuxStream.key` with the `.m3u8` extension suffix.
+     * A unique key for this multiplexed stream.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -1010,8 +1911,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique key for this multiplexed stream. HLS media manifests will be
-     * named `MuxStream.key` with the `.m3u8` extension suffix.
+     * A unique key for this multiplexed stream.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -1029,8 +1929,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A unique key for this multiplexed stream. HLS media manifests will be
-     * named `MuxStream.key` with the `.m3u8` extension suffix.
+     * A unique key for this multiplexed stream.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -1055,8 +1954,10 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the generated file. The default is `MuxStream.key` with the
-     * extension suffix corresponding to the `MuxStream.container`.
+     * The name of the generated file. The default is
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] with the
+     * extension suffix corresponding to the
+     * [MuxStream.container][google.cloud.video.transcoder.v1.MuxStream.container].
      *
      * Individual segments also have an incremental 10-digit zero-padded suffix
      * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
@@ -1082,8 +1983,10 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the generated file. The default is `MuxStream.key` with the
-     * extension suffix corresponding to the `MuxStream.container`.
+     * The name of the generated file. The default is
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] with the
+     * extension suffix corresponding to the
+     * [MuxStream.container][google.cloud.video.transcoder.v1.MuxStream.container].
      *
      * Individual segments also have an incremental 10-digit zero-padded suffix
      * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
@@ -1109,8 +2012,10 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the generated file. The default is `MuxStream.key` with the
-     * extension suffix corresponding to the `MuxStream.container`.
+     * The name of the generated file. The default is
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] with the
+     * extension suffix corresponding to the
+     * [MuxStream.container][google.cloud.video.transcoder.v1.MuxStream.container].
      *
      * Individual segments also have an incremental 10-digit zero-padded suffix
      * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
@@ -1135,8 +2040,10 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the generated file. The default is `MuxStream.key` with the
-     * extension suffix corresponding to the `MuxStream.container`.
+     * The name of the generated file. The default is
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] with the
+     * extension suffix corresponding to the
+     * [MuxStream.container][google.cloud.video.transcoder.v1.MuxStream.container].
      *
      * Individual segments also have an incremental 10-digit zero-padded suffix
      * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
@@ -1157,8 +2064,10 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the generated file. The default is `MuxStream.key` with the
-     * extension suffix corresponding to the `MuxStream.container`.
+     * The name of the generated file. The default is
+     * [MuxStream.key][google.cloud.video.transcoder.v1.MuxStream.key] with the
+     * extension suffix corresponding to the
+     * [MuxStream.container][google.cloud.video.transcoder.v1.MuxStream.container].
      *
      * Individual segments also have an incremental 10-digit zero-padded suffix
      * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
@@ -1188,11 +2097,16 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The container format. The default is `mp4`
      *
-     * Supported container formats:
+     * Supported streaming formats:
      *
      * - `ts`
      * - `fmp4`- the corresponding file extension is `.m4s`
+     *
+     * Supported standalone file formats:
+     *
      * - `mp4`
+     * - `mp3`
+     * - `ogg`
      * - `vtt`
      *
      * See also:
@@ -1222,11 +2136,16 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The container format. The default is `mp4`
      *
-     * Supported container formats:
+     * Supported streaming formats:
      *
      * - `ts`
      * - `fmp4`- the corresponding file extension is `.m4s`
+     *
+     * Supported standalone file formats:
+     *
      * - `mp4`
+     * - `mp3`
+     * - `ogg`
      * - `vtt`
      *
      * See also:
@@ -1256,11 +2175,16 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The container format. The default is `mp4`
      *
-     * Supported container formats:
+     * Supported streaming formats:
      *
      * - `ts`
      * - `fmp4`- the corresponding file extension is `.m4s`
+     *
+     * Supported standalone file formats:
+     *
      * - `mp4`
+     * - `mp3`
+     * - `ogg`
      * - `vtt`
      *
      * See also:
@@ -1289,11 +2213,16 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The container format. The default is `mp4`
      *
-     * Supported container formats:
+     * Supported streaming formats:
      *
      * - `ts`
      * - `fmp4`- the corresponding file extension is `.m4s`
+     *
+     * Supported standalone file formats:
+     *
      * - `mp4`
+     * - `mp3`
+     * - `ogg`
      * - `vtt`
      *
      * See also:
@@ -1318,11 +2247,16 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The container format. The default is `mp4`
      *
-     * Supported container formats:
+     * Supported streaming formats:
      *
      * - `ts`
      * - `fmp4`- the corresponding file extension is `.m4s`
+     *
+     * Supported standalone file formats:
+     *
      * - `mp4`
+     * - `mp3`
+     * - `ogg`
      * - `vtt`
      *
      * See also:
@@ -1360,7 +2294,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `ElementaryStream.key`s multiplexed in this stream.
+     * List of
+     * [ElementaryStream.key][google.cloud.video.transcoder.v1.ElementaryStream.key]
+     * values multiplexed in this stream.
      * </pre>
      *
      * <code>repeated string elementary_streams = 4;</code>
@@ -1376,7 +2312,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `ElementaryStream.key`s multiplexed in this stream.
+     * List of
+     * [ElementaryStream.key][google.cloud.video.transcoder.v1.ElementaryStream.key]
+     * values multiplexed in this stream.
      * </pre>
      *
      * <code>repeated string elementary_streams = 4;</code>
@@ -1391,7 +2329,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `ElementaryStream.key`s multiplexed in this stream.
+     * List of
+     * [ElementaryStream.key][google.cloud.video.transcoder.v1.ElementaryStream.key]
+     * values multiplexed in this stream.
      * </pre>
      *
      * <code>repeated string elementary_streams = 4;</code>
@@ -1407,7 +2347,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `ElementaryStream.key`s multiplexed in this stream.
+     * List of
+     * [ElementaryStream.key][google.cloud.video.transcoder.v1.ElementaryStream.key]
+     * values multiplexed in this stream.
      * </pre>
      *
      * <code>repeated string elementary_streams = 4;</code>
@@ -1423,7 +2365,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `ElementaryStream.key`s multiplexed in this stream.
+     * List of
+     * [ElementaryStream.key][google.cloud.video.transcoder.v1.ElementaryStream.key]
+     * values multiplexed in this stream.
      * </pre>
      *
      * <code>repeated string elementary_streams = 4;</code>
@@ -1447,7 +2391,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `ElementaryStream.key`s multiplexed in this stream.
+     * List of
+     * [ElementaryStream.key][google.cloud.video.transcoder.v1.ElementaryStream.key]
+     * values multiplexed in this stream.
      * </pre>
      *
      * <code>repeated string elementary_streams = 4;</code>
@@ -1470,7 +2416,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `ElementaryStream.key`s multiplexed in this stream.
+     * List of
+     * [ElementaryStream.key][google.cloud.video.transcoder.v1.ElementaryStream.key]
+     * values multiplexed in this stream.
      * </pre>
      *
      * <code>repeated string elementary_streams = 4;</code>
@@ -1490,7 +2438,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `ElementaryStream.key`s multiplexed in this stream.
+     * List of
+     * [ElementaryStream.key][google.cloud.video.transcoder.v1.ElementaryStream.key]
+     * values multiplexed in this stream.
      * </pre>
      *
      * <code>repeated string elementary_streams = 4;</code>
@@ -1509,7 +2459,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of `ElementaryStream.key`s multiplexed in this stream.
+     * List of
+     * [ElementaryStream.key][google.cloud.video.transcoder.v1.ElementaryStream.key]
+     * values multiplexed in this stream.
      * </pre>
      *
      * <code>repeated string elementary_streams = 4;</code>
@@ -1842,6 +2794,244 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config,
+            com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.Builder,
+            com.google.cloud.video.transcoder.v1.MuxStream.Fmp4ConfigOrBuilder>
+        fmp4Builder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. `fmp4` container configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.MuxStream.Fmp4Config fmp4 = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the fmp4 field is set.
+     */
+    @java.lang.Override
+    public boolean hasFmp4() {
+      return containerConfigCase_ == 8;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. `fmp4` container configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.MuxStream.Fmp4Config fmp4 = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The fmp4.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config getFmp4() {
+      if (fmp4Builder_ == null) {
+        if (containerConfigCase_ == 8) {
+          return (com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config) containerConfig_;
+        }
+        return com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.getDefaultInstance();
+      } else {
+        if (containerConfigCase_ == 8) {
+          return fmp4Builder_.getMessage();
+        }
+        return com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. `fmp4` container configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.MuxStream.Fmp4Config fmp4 = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFmp4(com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config value) {
+      if (fmp4Builder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        containerConfig_ = value;
+        onChanged();
+      } else {
+        fmp4Builder_.setMessage(value);
+      }
+      containerConfigCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. `fmp4` container configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.MuxStream.Fmp4Config fmp4 = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFmp4(
+        com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.Builder builderForValue) {
+      if (fmp4Builder_ == null) {
+        containerConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        fmp4Builder_.setMessage(builderForValue.build());
+      }
+      containerConfigCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. `fmp4` container configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.MuxStream.Fmp4Config fmp4 = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeFmp4(com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config value) {
+      if (fmp4Builder_ == null) {
+        if (containerConfigCase_ == 8
+            && containerConfig_
+                != com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.getDefaultInstance()) {
+          containerConfig_ =
+              com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.newBuilder(
+                      (com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config) containerConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          containerConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (containerConfigCase_ == 8) {
+          fmp4Builder_.mergeFrom(value);
+        } else {
+          fmp4Builder_.setMessage(value);
+        }
+      }
+      containerConfigCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. `fmp4` container configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.MuxStream.Fmp4Config fmp4 = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFmp4() {
+      if (fmp4Builder_ == null) {
+        if (containerConfigCase_ == 8) {
+          containerConfigCase_ = 0;
+          containerConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (containerConfigCase_ == 8) {
+          containerConfigCase_ = 0;
+          containerConfig_ = null;
+        }
+        fmp4Builder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. `fmp4` container configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.MuxStream.Fmp4Config fmp4 = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.Builder getFmp4Builder() {
+      return getFmp4FieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. `fmp4` container configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.MuxStream.Fmp4Config fmp4 = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.transcoder.v1.MuxStream.Fmp4ConfigOrBuilder getFmp4OrBuilder() {
+      if ((containerConfigCase_ == 8) && (fmp4Builder_ != null)) {
+        return fmp4Builder_.getMessageOrBuilder();
+      } else {
+        if (containerConfigCase_ == 8) {
+          return (com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config) containerConfig_;
+        }
+        return com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. `fmp4` container configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.MuxStream.Fmp4Config fmp4 = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config,
+            com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.Builder,
+            com.google.cloud.video.transcoder.v1.MuxStream.Fmp4ConfigOrBuilder>
+        getFmp4FieldBuilder() {
+      if (fmp4Builder_ == null) {
+        if (!(containerConfigCase_ == 8)) {
+          containerConfig_ =
+              com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.getDefaultInstance();
+        }
+        fmp4Builder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config,
+                com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config.Builder,
+                com.google.cloud.video.transcoder.v1.MuxStream.Fmp4ConfigOrBuilder>(
+                (com.google.cloud.video.transcoder.v1.MuxStream.Fmp4Config) containerConfig_,
+                getParentForChildren(),
+                isClean());
+        containerConfig_ = null;
+      }
+      containerConfigCase_ = 8;
+      onChanged();
+      return fmp4Builder_;
     }
 
     @java.lang.Override

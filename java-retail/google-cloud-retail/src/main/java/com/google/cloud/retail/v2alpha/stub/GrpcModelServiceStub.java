@@ -64,6 +64,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.retail.v2alpha.ModelService/CreateModel")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetModelRequest, Model> getModelMethodDescriptor =
@@ -72,6 +73,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.retail.v2alpha.ModelService/GetModel")
           .setRequestMarshaller(ProtoUtils.marshaller(GetModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<PauseModelRequest, Model> pauseModelMethodDescriptor =
@@ -80,6 +82,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.retail.v2alpha.ModelService/PauseModel")
           .setRequestMarshaller(ProtoUtils.marshaller(PauseModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ResumeModelRequest, Model> resumeModelMethodDescriptor =
@@ -88,6 +91,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.retail.v2alpha.ModelService/ResumeModel")
           .setRequestMarshaller(ProtoUtils.marshaller(ResumeModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteModelRequest, Empty> deleteModelMethodDescriptor =
@@ -96,6 +100,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.retail.v2alpha.ModelService/DeleteModel")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListModelsRequest, ListModelsResponse>
@@ -105,6 +110,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setFullMethodName("google.cloud.retail.v2alpha.ModelService/ListModels")
               .setRequestMarshaller(ProtoUtils.marshaller(ListModelsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListModelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateModelRequest, Model> updateModelMethodDescriptor =
@@ -113,6 +119,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.retail.v2alpha.ModelService/UpdateModel")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TuneModelRequest, Operation> tuneModelMethodDescriptor =
@@ -121,6 +128,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.retail.v2alpha.ModelService/TuneModel")
           .setRequestMarshaller(ProtoUtils.marshaller(TuneModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateModelRequest, Operation> createModelCallable;

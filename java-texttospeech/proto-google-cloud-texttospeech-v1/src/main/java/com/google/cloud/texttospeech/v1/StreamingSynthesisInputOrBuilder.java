@@ -111,5 +111,84 @@ public interface StreamingSynthesisInputOrBuilder
    */
   com.google.protobuf.ByteString getMarkupBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Multi-speaker markup for Gemini TTS. This field may not
+   * be used with any other voices.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1.MultiSpeakerMarkup multi_speaker_markup = 7;</code>
+   *
+   * @return Whether the multiSpeakerMarkup field is set.
+   */
+  boolean hasMultiSpeakerMarkup();
+
+  /**
+   *
+   *
+   * <pre>
+   * Multi-speaker markup for Gemini TTS. This field may not
+   * be used with any other voices.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1.MultiSpeakerMarkup multi_speaker_markup = 7;</code>
+   *
+   * @return The multiSpeakerMarkup.
+   */
+  com.google.cloud.texttospeech.v1.MultiSpeakerMarkup getMultiSpeakerMarkup();
+
+  /**
+   *
+   *
+   * <pre>
+   * Multi-speaker markup for Gemini TTS. This field may not
+   * be used with any other voices.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1.MultiSpeakerMarkup multi_speaker_markup = 7;</code>
+   */
+  com.google.cloud.texttospeech.v1.MultiSpeakerMarkupOrBuilder getMultiSpeakerMarkupOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * This is system instruction supported only for controllable voice models.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return Whether the prompt field is set.
+   */
+  boolean hasPrompt();
+
+  /**
+   *
+   *
+   * <pre>
+   * This is system instruction supported only for controllable voice models.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return The prompt.
+   */
+  java.lang.String getPrompt();
+
+  /**
+   *
+   *
+   * <pre>
+   * This is system instruction supported only for controllable voice models.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return The bytes for prompt.
+   */
+  com.google.protobuf.ByteString getPromptBytes();
+
   com.google.cloud.texttospeech.v1.StreamingSynthesisInput.InputSourceCase getInputSourceCase();
 }

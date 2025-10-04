@@ -32,6 +32,10 @@ public final class GoogleChannelConfigProto {
       internal_static_google_cloud_eventarc_v1_GoogleChannelConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_eventarc_v1_GoogleChannelConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_GoogleChannelConfig_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_GoogleChannelConfig_LabelsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -41,27 +45,29 @@ public final class GoogleChannelConfigProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n4google/cloud/eventarc/v1/google_channe"
-          + "l_config.proto\022\030google.cloud.eventarc.v1"
+      "\n"
+          + "4google/cloud/eventarc/v1/google_channel_config.proto\022\030google.cloud.eventarc.v1"
           + "\032\037google/api/field_behavior.proto\032\031googl"
-          + "e/api/resource.proto\032\037google/protobuf/ti"
-          + "mestamp.proto\"\247\002\n\023GoogleChannelConfig\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\002\0224\n\013update_time\030\006 \001(\0132\032."
-          + "google.protobuf.TimestampB\003\340A\003\022B\n\017crypto"
-          + "_key_name\030\007 \001(\tB)\340A\001\372A#\n!cloudkms.google"
-          + "apis.com/CryptoKey:\202\001\352A\177\n+eventarc.googl"
-          + "eapis.com/GoogleChannelConfig\022;projects/"
-          + "{project}/locations/{location}/googleCha"
-          + "nnelConfig2\023googleChannelConfigB\303\002\n\034com."
-          + "google.cloud.eventarc.v1B\030GoogleChannelC"
-          + "onfigProtoP\001Z8cloud.google.com/go/eventa"
-          + "rc/apiv1/eventarcpb;eventarcpb\252\002\030Google."
-          + "Cloud.Eventarc.V1\312\002\030Google\\Cloud\\Eventar"
-          + "c\\V1\352\002\033Google::Cloud::Eventarc::V1\352Ax\n!c"
-          + "loudkms.googleapis.com/CryptoKey\022Sprojec"
-          + "ts/{project}/locations/{location}/keyRin"
-          + "gs/{key_ring}/cryptoKeys/{crypto_key}b\006p"
-          + "roto3"
+          + "e/api/resource.proto\032\037google/protobuf/timestamp.proto\"\275\003\n"
+          + "\023GoogleChannelConfig\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\0224\n"
+          + "\013update_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022B\n"
+          + "\017crypto_key_name\030\007 \001(\tB)\340A\001\372A#\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022N\n"
+          + "\006labels\030\010 \003(\01329.goo"
+          + "gle.cloud.eventarc.v1.GoogleChannelConfig.LabelsEntryB\003\340A\001\032-\n"
+          + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001:\231\001\352A\225\001\n"
+          + "+eventarc.googleapis.com/GoogleChannelConfig\022;p"
+          + "rojects/{project}/locations/{location}/g"
+          + "oogleChannelConfig*\024googleChannelConfigs2\023googleChannelConfigB\303\002\n"
+          + "\034com.google.cloud.eventarc.v1B\030GoogleChannelConfigProto"
+          + "P\001Z8cloud.google.com/go/eventarc/apiv1/e"
+          + "ventarcpb;eventarcpb\252\002\030Google.Cloud.Even"
+          + "tarc.V1\312\002\030Google\\Cloud\\Eventarc\\V1\352\002\033Google::Cloud::Eventarc::V1\352Ax\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{projec"
+          + "t}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -77,7 +83,17 @@ public final class GoogleChannelConfigProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_eventarc_v1_GoogleChannelConfig_descriptor,
             new java.lang.String[] {
-              "Name", "UpdateTime", "CryptoKeyName",
+              "Name", "UpdateTime", "CryptoKeyName", "Labels",
+            });
+    internal_static_google_cloud_eventarc_v1_GoogleChannelConfig_LabelsEntry_descriptor =
+        internal_static_google_cloud_eventarc_v1_GoogleChannelConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_eventarc_v1_GoogleChannelConfig_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_GoogleChannelConfig_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
