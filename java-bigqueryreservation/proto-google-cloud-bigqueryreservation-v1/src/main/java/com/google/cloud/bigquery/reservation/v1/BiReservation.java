@@ -75,12 +75,12 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the singleton BI reservation.
+   * Identifier. The resource name of the singleton BI reservation.
    * Reservation names have the form
    * `projects/{project_id}/locations/{location_id}/biReservation`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -101,12 +101,12 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the singleton BI reservation.
+   * Identifier. The resource name of the singleton BI reservation.
    * Reservation names have the form
    * `projects/{project_id}/locations/{location_id}/biReservation`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -182,10 +182,10 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Size of a reservation, in bytes.
+   * Optional. Size of a reservation, in bytes.
    * </pre>
    *
-   * <code>int64 size = 4;</code>
+   * <code>int64 size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The size.
    */
@@ -203,10 +203,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Preferred tables to use BI capacity for.
+   * Optional. Preferred tables to use BI capacity for.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * <code>
+   * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -219,10 +220,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Preferred tables to use BI capacity for.
+   * Optional. Preferred tables to use BI capacity for.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * <code>
+   * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -235,10 +237,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Preferred tables to use BI capacity for.
+   * Optional. Preferred tables to use BI capacity for.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * <code>
+   * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -250,10 +253,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Preferred tables to use BI capacity for.
+   * Optional. Preferred tables to use BI capacity for.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * <code>
+   * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -265,10 +269,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Preferred tables to use BI capacity for.
+   * Optional. Preferred tables to use BI capacity for.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * <code>
+   * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -766,12 +771,12 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the singleton BI reservation.
+     * Identifier. The resource name of the singleton BI reservation.
      * Reservation names have the form
      * `projects/{project_id}/locations/{location_id}/biReservation`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -791,12 +796,12 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the singleton BI reservation.
+     * Identifier. The resource name of the singleton BI reservation.
      * Reservation names have the form
      * `projects/{project_id}/locations/{location_id}/biReservation`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -816,12 +821,12 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the singleton BI reservation.
+     * Identifier. The resource name of the singleton BI reservation.
      * Reservation names have the form
      * `projects/{project_id}/locations/{location_id}/biReservation`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -840,12 +845,12 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the singleton BI reservation.
+     * Identifier. The resource name of the singleton BI reservation.
      * Reservation names have the form
      * `projects/{project_id}/locations/{location_id}/biReservation`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -860,12 +865,12 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the singleton BI reservation.
+     * Identifier. The resource name of the singleton BI reservation.
      * Reservation names have the form
      * `projects/{project_id}/locations/{location_id}/biReservation`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1099,10 +1104,10 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size of a reservation, in bytes.
+     * Optional. Size of a reservation, in bytes.
      * </pre>
      *
-     * <code>int64 size = 4;</code>
+     * <code>int64 size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The size.
      */
@@ -1115,10 +1120,10 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size of a reservation, in bytes.
+     * Optional. Size of a reservation, in bytes.
      * </pre>
      *
-     * <code>int64 size = 4;</code>
+     * <code>int64 size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The size to set.
      * @return This builder for chaining.
@@ -1135,10 +1140,10 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size of a reservation, in bytes.
+     * Optional. Size of a reservation, in bytes.
      * </pre>
      *
-     * <code>int64 size = 4;</code>
+     * <code>int64 size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1171,10 +1176,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.bigquery.reservation.v1.TableReference>
@@ -1190,10 +1196,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getPreferredTablesCount() {
@@ -1208,10 +1215,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.bigquery.reservation.v1.TableReference getPreferredTables(int index) {
@@ -1226,10 +1234,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setPreferredTables(
@@ -1251,10 +1260,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setPreferredTables(
@@ -1274,10 +1284,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addPreferredTables(
@@ -1299,10 +1310,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addPreferredTables(
@@ -1324,10 +1336,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addPreferredTables(
@@ -1346,10 +1359,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addPreferredTables(
@@ -1369,10 +1383,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllPreferredTables(
@@ -1392,10 +1407,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearPreferredTables() {
@@ -1413,10 +1429,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removePreferredTables(int index) {
@@ -1434,10 +1451,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.bigquery.reservation.v1.TableReference.Builder
@@ -1449,10 +1467,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.bigquery.reservation.v1.TableReferenceOrBuilder
@@ -1468,10 +1487,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<
@@ -1488,10 +1508,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.bigquery.reservation.v1.TableReference.Builder
@@ -1504,10 +1525,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.bigquery.reservation.v1.TableReference.Builder
@@ -1521,10 +1543,11 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preferred tables to use BI capacity for.
+     * Optional. Preferred tables to use BI capacity for.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * <code>
+     * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.bigquery.reservation.v1.TableReference.Builder>

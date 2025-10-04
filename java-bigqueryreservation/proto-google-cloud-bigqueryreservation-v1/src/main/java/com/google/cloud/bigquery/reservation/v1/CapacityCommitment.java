@@ -702,10 +702,10 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Number of slots in this commitment.
+   * Optional. Number of slots in this commitment.
    * </pre>
    *
-   * <code>int64 slot_count = 2;</code>
+   * <code>int64 slot_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The slotCount.
    */
@@ -721,10 +721,12 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Capacity commitment commitment plan.
+   * Optional. Capacity commitment commitment plan.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for plan.
    */
@@ -737,10 +739,12 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Capacity commitment commitment plan.
+   * Optional. Capacity commitment commitment plan.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The plan.
    */
@@ -873,7 +877,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Output only. The end of the current commitment period. It is applicable
    * only for ACTIVE capacity commitments. Note after renewal,
-   * commitment_end_time is the time the renewed commitment expires. So it would
+   * commitment_end_time is the time the renewed commitment expires. So itwould
    * be at a time after commitment_start_time + committed period, because we
    * don't change commitment_start_time ,
    * </pre>
@@ -895,7 +899,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Output only. The end of the current commitment period. It is applicable
    * only for ACTIVE capacity commitments. Note after renewal,
-   * commitment_end_time is the time the renewed commitment expires. So it would
+   * commitment_end_time is the time the renewed commitment expires. So itwould
    * be at a time after commitment_start_time + committed period, because we
    * don't change commitment_start_time ,
    * </pre>
@@ -919,7 +923,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Output only. The end of the current commitment period. It is applicable
    * only for ACTIVE capacity commitments. Note after renewal,
-   * commitment_end_time is the time the renewed commitment expires. So it would
+   * commitment_end_time is the time the renewed commitment expires. So itwould
    * be at a time after commitment_start_time + committed period, because we
    * don't change commitment_start_time ,
    * </pre>
@@ -994,12 +998,14 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The plan this capacity commitment is converted to after commitment_end_time
-   * passes. Once the plan is changed, committed period is extended according to
-   * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
+   * Optional. The plan this capacity commitment is converted to after
+   * commitment_end_time passes. Once the plan is changed, committed period is
+   * extended according to commitment plan. Only applicable for ANNUAL and TRIAL
+   * commitments.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8;
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for renewalPlan.
@@ -1013,12 +1019,14 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The plan this capacity commitment is converted to after commitment_end_time
-   * passes. Once the plan is changed, committed period is extended according to
-   * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
+   * Optional. The plan this capacity commitment is converted to after
+   * commitment_end_time passes. Once the plan is changed, committed period is
+   * extended according to commitment plan. Only applicable for ANNUAL and TRIAL
+   * commitments.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8;
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The renewalPlan.
@@ -1052,11 +1060,14 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    * set this field.
    * </pre>
    *
-   * <code>bool multi_region_auxiliary = 10;</code>
+   * <code>bool multi_region_auxiliary = 10 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.bigquery.reservation.v1.CapacityCommitment.multi_region_auxiliary is
+   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=971
    * @return The multiRegionAuxiliary.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getMultiRegionAuxiliary() {
     return multiRegionAuxiliary_;
   }
@@ -1068,10 +1079,12 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Edition of the capacity commitment.
+   * Optional. Edition of the capacity commitment.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Edition edition = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for edition.
    */
@@ -1084,10 +1097,12 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Edition of the capacity commitment.
+   * Optional. Edition of the capacity commitment.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Edition edition = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The edition.
    */
@@ -1898,10 +1913,10 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Number of slots in this commitment.
+     * Optional. Number of slots in this commitment.
      * </pre>
      *
-     * <code>int64 slot_count = 2;</code>
+     * <code>int64 slot_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The slotCount.
      */
@@ -1914,10 +1929,10 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Number of slots in this commitment.
+     * Optional. Number of slots in this commitment.
      * </pre>
      *
-     * <code>int64 slot_count = 2;</code>
+     * <code>int64 slot_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The slotCount to set.
      * @return This builder for chaining.
@@ -1934,10 +1949,10 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Number of slots in this commitment.
+     * Optional. Number of slots in this commitment.
      * </pre>
      *
-     * <code>int64 slot_count = 2;</code>
+     * <code>int64 slot_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1954,10 +1969,11 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Capacity commitment commitment plan.
+     * Optional. Capacity commitment commitment plan.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3;
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for plan.
@@ -1971,10 +1987,11 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Capacity commitment commitment plan.
+     * Optional. Capacity commitment commitment plan.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3;
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for plan to set.
@@ -1991,10 +2008,11 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Capacity commitment commitment plan.
+     * Optional. Capacity commitment commitment plan.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3;
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The plan.
@@ -2013,10 +2031,11 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Capacity commitment commitment plan.
+     * Optional. Capacity commitment commitment plan.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3;
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The plan to set.
@@ -2037,10 +2056,11 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Capacity commitment commitment plan.
+     * Optional. Capacity commitment commitment plan.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3;
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -2412,7 +2432,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The end of the current commitment period. It is applicable
      * only for ACTIVE capacity commitments. Note after renewal,
-     * commitment_end_time is the time the renewed commitment expires. So it would
+     * commitment_end_time is the time the renewed commitment expires. So itwould
      * be at a time after commitment_start_time + committed period, because we
      * don't change commitment_start_time ,
      * </pre>
@@ -2433,7 +2453,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The end of the current commitment period. It is applicable
      * only for ACTIVE capacity commitments. Note after renewal,
-     * commitment_end_time is the time the renewed commitment expires. So it would
+     * commitment_end_time is the time the renewed commitment expires. So itwould
      * be at a time after commitment_start_time + committed period, because we
      * don't change commitment_start_time ,
      * </pre>
@@ -2460,7 +2480,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The end of the current commitment period. It is applicable
      * only for ACTIVE capacity commitments. Note after renewal,
-     * commitment_end_time is the time the renewed commitment expires. So it would
+     * commitment_end_time is the time the renewed commitment expires. So itwould
      * be at a time after commitment_start_time + committed period, because we
      * don't change commitment_start_time ,
      * </pre>
@@ -2489,7 +2509,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The end of the current commitment period. It is applicable
      * only for ACTIVE capacity commitments. Note after renewal,
-     * commitment_end_time is the time the renewed commitment expires. So it would
+     * commitment_end_time is the time the renewed commitment expires. So itwould
      * be at a time after commitment_start_time + committed period, because we
      * don't change commitment_start_time ,
      * </pre>
@@ -2515,7 +2535,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The end of the current commitment period. It is applicable
      * only for ACTIVE capacity commitments. Note after renewal,
-     * commitment_end_time is the time the renewed commitment expires. So it would
+     * commitment_end_time is the time the renewed commitment expires. So itwould
      * be at a time after commitment_start_time + committed period, because we
      * don't change commitment_start_time ,
      * </pre>
@@ -2549,7 +2569,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The end of the current commitment period. It is applicable
      * only for ACTIVE capacity commitments. Note after renewal,
-     * commitment_end_time is the time the renewed commitment expires. So it would
+     * commitment_end_time is the time the renewed commitment expires. So itwould
      * be at a time after commitment_start_time + committed period, because we
      * don't change commitment_start_time ,
      * </pre>
@@ -2575,7 +2595,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The end of the current commitment period. It is applicable
      * only for ACTIVE capacity commitments. Note after renewal,
-     * commitment_end_time is the time the renewed commitment expires. So it would
+     * commitment_end_time is the time the renewed commitment expires. So itwould
      * be at a time after commitment_start_time + committed period, because we
      * don't change commitment_start_time ,
      * </pre>
@@ -2596,7 +2616,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The end of the current commitment period. It is applicable
      * only for ACTIVE capacity commitments. Note after renewal,
-     * commitment_end_time is the time the renewed commitment expires. So it would
+     * commitment_end_time is the time the renewed commitment expires. So itwould
      * be at a time after commitment_start_time + committed period, because we
      * don't change commitment_start_time ,
      * </pre>
@@ -2621,7 +2641,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The end of the current commitment period. It is applicable
      * only for ACTIVE capacity commitments. Note after renewal,
-     * commitment_end_time is the time the renewed commitment expires. So it would
+     * commitment_end_time is the time the renewed commitment expires. So itwould
      * be at a time after commitment_start_time + committed period, because we
      * don't change commitment_start_time ,
      * </pre>
@@ -2848,13 +2868,14 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The plan this capacity commitment is converted to after commitment_end_time
-     * passes. Once the plan is changed, committed period is extended according to
-     * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
+     * Optional. The plan this capacity commitment is converted to after
+     * commitment_end_time passes. Once the plan is changed, committed period is
+     * extended according to commitment plan. Only applicable for ANNUAL and TRIAL
+     * commitments.
      * </pre>
      *
      * <code>
-     * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8;
+     * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for renewalPlan.
@@ -2868,13 +2889,14 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The plan this capacity commitment is converted to after commitment_end_time
-     * passes. Once the plan is changed, committed period is extended according to
-     * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
+     * Optional. The plan this capacity commitment is converted to after
+     * commitment_end_time passes. Once the plan is changed, committed period is
+     * extended according to commitment plan. Only applicable for ANNUAL and TRIAL
+     * commitments.
      * </pre>
      *
      * <code>
-     * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8;
+     * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for renewalPlan to set.
@@ -2891,13 +2913,14 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The plan this capacity commitment is converted to after commitment_end_time
-     * passes. Once the plan is changed, committed period is extended according to
-     * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
+     * Optional. The plan this capacity commitment is converted to after
+     * commitment_end_time passes. Once the plan is changed, committed period is
+     * extended according to commitment plan. Only applicable for ANNUAL and TRIAL
+     * commitments.
      * </pre>
      *
      * <code>
-     * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8;
+     * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The renewalPlan.
@@ -2917,13 +2940,14 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The plan this capacity commitment is converted to after commitment_end_time
-     * passes. Once the plan is changed, committed period is extended according to
-     * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
+     * Optional. The plan this capacity commitment is converted to after
+     * commitment_end_time passes. Once the plan is changed, committed period is
+     * extended according to commitment plan. Only applicable for ANNUAL and TRIAL
+     * commitments.
      * </pre>
      *
      * <code>
-     * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8;
+     * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The renewalPlan to set.
@@ -2944,13 +2968,14 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The plan this capacity commitment is converted to after commitment_end_time
-     * passes. Once the plan is changed, committed period is extended according to
-     * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
+     * Optional. The plan this capacity commitment is converted to after
+     * commitment_end_time passes. Once the plan is changed, committed period is
+     * extended according to commitment plan. Only applicable for ANNUAL and TRIAL
+     * commitments.
      * </pre>
      *
      * <code>
-     * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8;
+     * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -2979,11 +3004,14 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * set this field.
      * </pre>
      *
-     * <code>bool multi_region_auxiliary = 10;</code>
+     * <code>bool multi_region_auxiliary = 10 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.bigquery.reservation.v1.CapacityCommitment.multi_region_auxiliary is
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=971
      * @return The multiRegionAuxiliary.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getMultiRegionAuxiliary() {
       return multiRegionAuxiliary_;
     }
@@ -3003,11 +3031,14 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * set this field.
      * </pre>
      *
-     * <code>bool multi_region_auxiliary = 10;</code>
+     * <code>bool multi_region_auxiliary = 10 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.bigquery.reservation.v1.CapacityCommitment.multi_region_auxiliary is
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=971
      * @param value The multiRegionAuxiliary to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setMultiRegionAuxiliary(boolean value) {
 
       multiRegionAuxiliary_ = value;
@@ -3031,10 +3062,13 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * set this field.
      * </pre>
      *
-     * <code>bool multi_region_auxiliary = 10;</code>
+     * <code>bool multi_region_auxiliary = 10 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.bigquery.reservation.v1.CapacityCommitment.multi_region_auxiliary is
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=971
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearMultiRegionAuxiliary() {
       bitField0_ = (bitField0_ & ~0x00000100);
       multiRegionAuxiliary_ = false;
@@ -3048,10 +3082,12 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Edition of the capacity commitment.
+     * Optional. Edition of the capacity commitment.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Edition edition = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for edition.
      */
@@ -3064,10 +3100,12 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Edition of the capacity commitment.
+     * Optional. Edition of the capacity commitment.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Edition edition = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for edition to set.
      * @return This builder for chaining.
@@ -3083,10 +3121,12 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Edition of the capacity commitment.
+     * Optional. Edition of the capacity commitment.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Edition edition = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The edition.
      */
@@ -3103,10 +3143,12 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Edition of the capacity commitment.
+     * Optional. Edition of the capacity commitment.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Edition edition = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The edition to set.
      * @return This builder for chaining.
@@ -3125,10 +3167,12 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Edition of the capacity commitment.
+     * Optional. Edition of the capacity commitment.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Edition edition = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */

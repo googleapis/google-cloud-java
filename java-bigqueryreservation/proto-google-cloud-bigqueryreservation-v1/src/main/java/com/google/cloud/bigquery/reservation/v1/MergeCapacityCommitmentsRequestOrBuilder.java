@@ -121,4 +121,36 @@ public interface MergeCapacityCommitmentsRequestOrBuilder
    * @return The bytes of the capacityCommitmentIds at the given index.
    */
   com.google.protobuf.ByteString getCapacityCommitmentIdsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The optional resulting capacity commitment ID. Capacity
+   * commitment name will be generated automatically if this field is empty.
+   * This field must only contain lower case alphanumeric characters or dashes.
+   * The first and last character cannot be a dash. Max length is 64 characters.
+   * </pre>
+   *
+   * <code>string capacity_commitment_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The capacityCommitmentId.
+   */
+  java.lang.String getCapacityCommitmentId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The optional resulting capacity commitment ID. Capacity
+   * commitment name will be generated automatically if this field is empty.
+   * This field must only contain lower case alphanumeric characters or dashes.
+   * The first and last character cannot be a dash. Max length is 64 characters.
+   * </pre>
+   *
+   * <code>string capacity_commitment_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for capacityCommitmentId.
+   */
+  com.google.protobuf.ByteString getCapacityCommitmentIdBytes();
 }

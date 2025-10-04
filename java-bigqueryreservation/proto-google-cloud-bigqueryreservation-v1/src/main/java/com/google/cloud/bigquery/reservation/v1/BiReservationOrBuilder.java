@@ -28,12 +28,12 @@ public interface BiReservationOrBuilder
    *
    *
    * <pre>
-   * The resource name of the singleton BI reservation.
+   * Identifier. The resource name of the singleton BI reservation.
    * Reservation names have the form
    * `projects/{project_id}/locations/{location_id}/biReservation`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -43,12 +43,12 @@ public interface BiReservationOrBuilder
    *
    *
    * <pre>
-   * The resource name of the singleton BI reservation.
+   * Identifier. The resource name of the singleton BI reservation.
    * Reservation names have the form
    * `projects/{project_id}/locations/{location_id}/biReservation`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -98,10 +98,10 @@ public interface BiReservationOrBuilder
    *
    *
    * <pre>
-   * Size of a reservation, in bytes.
+   * Optional. Size of a reservation, in bytes.
    * </pre>
    *
-   * <code>int64 size = 4;</code>
+   * <code>int64 size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The size.
    */
@@ -111,10 +111,11 @@ public interface BiReservationOrBuilder
    *
    *
    * <pre>
-   * Preferred tables to use BI capacity for.
+   * Optional. Preferred tables to use BI capacity for.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * <code>
+   * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<com.google.cloud.bigquery.reservation.v1.TableReference> getPreferredTablesList();
@@ -123,10 +124,11 @@ public interface BiReservationOrBuilder
    *
    *
    * <pre>
-   * Preferred tables to use BI capacity for.
+   * Optional. Preferred tables to use BI capacity for.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * <code>
+   * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.bigquery.reservation.v1.TableReference getPreferredTables(int index);
@@ -135,10 +137,11 @@ public interface BiReservationOrBuilder
    *
    *
    * <pre>
-   * Preferred tables to use BI capacity for.
+   * Optional. Preferred tables to use BI capacity for.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * <code>
+   * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getPreferredTablesCount();
@@ -147,10 +150,11 @@ public interface BiReservationOrBuilder
    *
    *
    * <pre>
-   * Preferred tables to use BI capacity for.
+   * Optional. Preferred tables to use BI capacity for.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * <code>
+   * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<? extends com.google.cloud.bigquery.reservation.v1.TableReferenceOrBuilder>
@@ -160,10 +164,11 @@ public interface BiReservationOrBuilder
    *
    *
    * <pre>
-   * Preferred tables to use BI capacity for.
+   * Optional. Preferred tables to use BI capacity for.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * <code>
+   * repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.bigquery.reservation.v1.TableReferenceOrBuilder getPreferredTablesOrBuilder(

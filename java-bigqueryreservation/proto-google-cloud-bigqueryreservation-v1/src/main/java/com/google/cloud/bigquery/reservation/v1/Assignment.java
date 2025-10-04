@@ -141,6 +141,44 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * <code>CONTINUOUS = 6;</code>
      */
     CONTINUOUS(6),
+    /**
+     *
+     *
+     * <pre>
+     * Finer granularity background jobs for capturing changes in a source
+     * database and streaming them into BigQuery. Reservations with this job
+     * type take priority over a default BACKGROUND reservation assignment (if
+     * it exists).
+     * </pre>
+     *
+     * <code>BACKGROUND_CHANGE_DATA_CAPTURE = 7;</code>
+     */
+    BACKGROUND_CHANGE_DATA_CAPTURE(7),
+    /**
+     *
+     *
+     * <pre>
+     * Finer granularity background jobs for refreshing cached metadata for
+     * BigQuery tables. Reservations with this job type take priority over a
+     * default BACKGROUND reservation assignment (if it exists).
+     * </pre>
+     *
+     * <code>BACKGROUND_COLUMN_METADATA_INDEX = 8;</code>
+     */
+    BACKGROUND_COLUMN_METADATA_INDEX(8),
+    /**
+     *
+     *
+     * <pre>
+     * Finer granularity background jobs for refreshing search indexes upon
+     * BigQuery table columns. Reservations with this job type
+     * take priority over a default BACKGROUND reservation assignment (if it
+     * exists).
+     * </pre>
+     *
+     * <code>BACKGROUND_SEARCH_INDEX_REFRESH = 9;</code>
+     */
+    BACKGROUND_SEARCH_INDEX_REFRESH(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -213,6 +251,47 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int CONTINUOUS_VALUE = 6;
 
+    /**
+     *
+     *
+     * <pre>
+     * Finer granularity background jobs for capturing changes in a source
+     * database and streaming them into BigQuery. Reservations with this job
+     * type take priority over a default BACKGROUND reservation assignment (if
+     * it exists).
+     * </pre>
+     *
+     * <code>BACKGROUND_CHANGE_DATA_CAPTURE = 7;</code>
+     */
+    public static final int BACKGROUND_CHANGE_DATA_CAPTURE_VALUE = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Finer granularity background jobs for refreshing cached metadata for
+     * BigQuery tables. Reservations with this job type take priority over a
+     * default BACKGROUND reservation assignment (if it exists).
+     * </pre>
+     *
+     * <code>BACKGROUND_COLUMN_METADATA_INDEX = 8;</code>
+     */
+    public static final int BACKGROUND_COLUMN_METADATA_INDEX_VALUE = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * Finer granularity background jobs for refreshing search indexes upon
+     * BigQuery table columns. Reservations with this job type
+     * take priority over a default BACKGROUND reservation assignment (if it
+     * exists).
+     * </pre>
+     *
+     * <code>BACKGROUND_SEARCH_INDEX_REFRESH = 9;</code>
+     */
+    public static final int BACKGROUND_SEARCH_INDEX_REFRESH_VALUE = 9;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -249,6 +328,12 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
           return BACKGROUND;
         case 6:
           return CONTINUOUS;
+        case 7:
+          return BACKGROUND_CHANGE_DATA_CAPTURE;
+        case 8:
+          return BACKGROUND_COLUMN_METADATA_INDEX;
+        case 9:
+          return BACKGROUND_SEARCH_INDEX_REFRESH;
         default:
           return null;
       }
@@ -469,6 +554,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.reservation.v1.Assignment.State)
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -537,11 +623,11 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource which will use the reservation. E.g.
+   * Optional. The resource which will use the reservation. E.g.
    * `projects/myproject`, `folders/123`, or `organizations/456`.
    * </pre>
    *
-   * <code>string assignee = 4;</code>
+   * <code>string assignee = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The assignee.
    */
@@ -562,11 +648,11 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource which will use the reservation. E.g.
+   * Optional. The resource which will use the reservation. E.g.
    * `projects/myproject`, `folders/123`, or `organizations/456`.
    * </pre>
    *
-   * <code>string assignee = 4;</code>
+   * <code>string assignee = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for assignee.
    */
@@ -590,10 +676,12 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Which type of jobs will use the reservation.
+   * Optional. Which type of jobs will use the reservation.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for jobType.
    */
@@ -606,10 +694,12 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Which type of jobs will use the reservation.
+   * Optional. Which type of jobs will use the reservation.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The jobType.
    */
@@ -691,6 +781,81 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
     return enableGeminiInBigquery_;
   }
 
+  public static final int SCHEDULING_POLICY_FIELD_NUMBER = 11;
+  private com.google.cloud.bigquery.reservation.v1.SchedulingPolicy schedulingPolicy_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scheduling policy to use for jobs and queries of this
+   * assignee when running under the associated reservation. The scheduling
+   * policy controls how the reservation's resources are distributed. This
+   * overrides the default scheduling policy specified on the reservation.
+   *
+   * This feature is not yet generally available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the schedulingPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasSchedulingPolicy() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scheduling policy to use for jobs and queries of this
+   * assignee when running under the associated reservation. The scheduling
+   * policy controls how the reservation's resources are distributed. This
+   * overrides the default scheduling policy specified on the reservation.
+   *
+   * This feature is not yet generally available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The schedulingPolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.reservation.v1.SchedulingPolicy getSchedulingPolicy() {
+    return schedulingPolicy_ == null
+        ? com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.getDefaultInstance()
+        : schedulingPolicy_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scheduling policy to use for jobs and queries of this
+   * assignee when running under the associated reservation. The scheduling
+   * policy controls how the reservation's resources are distributed. This
+   * overrides the default scheduling policy specified on the reservation.
+   *
+   * This feature is not yet generally available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.reservation.v1.SchedulingPolicyOrBuilder
+      getSchedulingPolicyOrBuilder() {
+    return schedulingPolicy_ == null
+        ? com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.getDefaultInstance()
+        : schedulingPolicy_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -724,6 +889,9 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
     if (enableGeminiInBigquery_ != false) {
       output.writeBool(10, enableGeminiInBigquery_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(11, getSchedulingPolicy());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -752,6 +920,9 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
     if (enableGeminiInBigquery_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, enableGeminiInBigquery_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getSchedulingPolicy());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -773,6 +944,10 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
     if (jobType_ != other.jobType_) return false;
     if (state_ != other.state_) return false;
     if (getEnableGeminiInBigquery() != other.getEnableGeminiInBigquery()) return false;
+    if (hasSchedulingPolicy() != other.hasSchedulingPolicy()) return false;
+    if (hasSchedulingPolicy()) {
+      if (!getSchedulingPolicy().equals(other.getSchedulingPolicy())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -794,6 +969,10 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + state_;
     hash = (37 * hash) + ENABLE_GEMINI_IN_BIGQUERY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableGeminiInBigquery());
+    if (hasSchedulingPolicy()) {
+      hash = (37 * hash) + SCHEDULING_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getSchedulingPolicy().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -925,10 +1104,19 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.bigquery.reservation.v1.Assignment.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getSchedulingPolicyFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -940,6 +1128,11 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
       jobType_ = 0;
       state_ = 0;
       enableGeminiInBigquery_ = false;
+      schedulingPolicy_ = null;
+      if (schedulingPolicyBuilder_ != null) {
+        schedulingPolicyBuilder_.dispose();
+        schedulingPolicyBuilder_ = null;
+      }
       return this;
     }
 
@@ -991,6 +1184,13 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.enableGeminiInBigquery_ = enableGeminiInBigquery_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.schedulingPolicy_ =
+            schedulingPolicyBuilder_ == null ? schedulingPolicy_ : schedulingPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1058,6 +1258,9 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
       if (other.getEnableGeminiInBigquery() != false) {
         setEnableGeminiInBigquery(other.getEnableGeminiInBigquery());
       }
+      if (other.hasSchedulingPolicy()) {
+        mergeSchedulingPolicy(other.getSchedulingPolicy());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1114,6 +1317,13 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 80
+            case 90:
+              {
+                input.readMessage(
+                    getSchedulingPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1265,11 +1475,11 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource which will use the reservation. E.g.
+     * Optional. The resource which will use the reservation. E.g.
      * `projects/myproject`, `folders/123`, or `organizations/456`.
      * </pre>
      *
-     * <code>string assignee = 4;</code>
+     * <code>string assignee = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The assignee.
      */
@@ -1289,11 +1499,11 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource which will use the reservation. E.g.
+     * Optional. The resource which will use the reservation. E.g.
      * `projects/myproject`, `folders/123`, or `organizations/456`.
      * </pre>
      *
-     * <code>string assignee = 4;</code>
+     * <code>string assignee = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for assignee.
      */
@@ -1313,11 +1523,11 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource which will use the reservation. E.g.
+     * Optional. The resource which will use the reservation. E.g.
      * `projects/myproject`, `folders/123`, or `organizations/456`.
      * </pre>
      *
-     * <code>string assignee = 4;</code>
+     * <code>string assignee = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The assignee to set.
      * @return This builder for chaining.
@@ -1336,11 +1546,11 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource which will use the reservation. E.g.
+     * Optional. The resource which will use the reservation. E.g.
      * `projects/myproject`, `folders/123`, or `organizations/456`.
      * </pre>
      *
-     * <code>string assignee = 4;</code>
+     * <code>string assignee = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1355,11 +1565,11 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource which will use the reservation. E.g.
+     * Optional. The resource which will use the reservation. E.g.
      * `projects/myproject`, `folders/123`, or `organizations/456`.
      * </pre>
      *
-     * <code>string assignee = 4;</code>
+     * <code>string assignee = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for assignee to set.
      * @return This builder for chaining.
@@ -1381,10 +1591,12 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Which type of jobs will use the reservation.
+     * Optional. Which type of jobs will use the reservation.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for jobType.
      */
@@ -1397,10 +1609,12 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Which type of jobs will use the reservation.
+     * Optional. Which type of jobs will use the reservation.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for jobType to set.
      * @return This builder for chaining.
@@ -1416,10 +1630,12 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Which type of jobs will use the reservation.
+     * Optional. Which type of jobs will use the reservation.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The jobType.
      */
@@ -1436,10 +1652,12 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Which type of jobs will use the reservation.
+     * Optional. Which type of jobs will use the reservation.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The jobType to set.
      * @return This builder for chaining.
@@ -1458,10 +1676,12 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Which type of jobs will use the reservation.
+     * Optional. Which type of jobs will use the reservation.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1654,6 +1874,269 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
       enableGeminiInBigquery_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.bigquery.reservation.v1.SchedulingPolicy schedulingPolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.reservation.v1.SchedulingPolicy,
+            com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.Builder,
+            com.google.cloud.bigquery.reservation.v1.SchedulingPolicyOrBuilder>
+        schedulingPolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries of this
+     * assignee when running under the associated reservation. The scheduling
+     * policy controls how the reservation's resources are distributed. This
+     * overrides the default scheduling policy specified on the reservation.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the schedulingPolicy field is set.
+     */
+    public boolean hasSchedulingPolicy() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries of this
+     * assignee when running under the associated reservation. The scheduling
+     * policy controls how the reservation's resources are distributed. This
+     * overrides the default scheduling policy specified on the reservation.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The schedulingPolicy.
+     */
+    public com.google.cloud.bigquery.reservation.v1.SchedulingPolicy getSchedulingPolicy() {
+      if (schedulingPolicyBuilder_ == null) {
+        return schedulingPolicy_ == null
+            ? com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.getDefaultInstance()
+            : schedulingPolicy_;
+      } else {
+        return schedulingPolicyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries of this
+     * assignee when running under the associated reservation. The scheduling
+     * policy controls how the reservation's resources are distributed. This
+     * overrides the default scheduling policy specified on the reservation.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSchedulingPolicy(
+        com.google.cloud.bigquery.reservation.v1.SchedulingPolicy value) {
+      if (schedulingPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        schedulingPolicy_ = value;
+      } else {
+        schedulingPolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries of this
+     * assignee when running under the associated reservation. The scheduling
+     * policy controls how the reservation's resources are distributed. This
+     * overrides the default scheduling policy specified on the reservation.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSchedulingPolicy(
+        com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.Builder builderForValue) {
+      if (schedulingPolicyBuilder_ == null) {
+        schedulingPolicy_ = builderForValue.build();
+      } else {
+        schedulingPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries of this
+     * assignee when running under the associated reservation. The scheduling
+     * policy controls how the reservation's resources are distributed. This
+     * overrides the default scheduling policy specified on the reservation.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSchedulingPolicy(
+        com.google.cloud.bigquery.reservation.v1.SchedulingPolicy value) {
+      if (schedulingPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && schedulingPolicy_ != null
+            && schedulingPolicy_
+                != com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.getDefaultInstance()) {
+          getSchedulingPolicyBuilder().mergeFrom(value);
+        } else {
+          schedulingPolicy_ = value;
+        }
+      } else {
+        schedulingPolicyBuilder_.mergeFrom(value);
+      }
+      if (schedulingPolicy_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries of this
+     * assignee when running under the associated reservation. The scheduling
+     * policy controls how the reservation's resources are distributed. This
+     * overrides the default scheduling policy specified on the reservation.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSchedulingPolicy() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      schedulingPolicy_ = null;
+      if (schedulingPolicyBuilder_ != null) {
+        schedulingPolicyBuilder_.dispose();
+        schedulingPolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries of this
+     * assignee when running under the associated reservation. The scheduling
+     * policy controls how the reservation's resources are distributed. This
+     * overrides the default scheduling policy specified on the reservation.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.Builder
+        getSchedulingPolicyBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getSchedulingPolicyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries of this
+     * assignee when running under the associated reservation. The scheduling
+     * policy controls how the reservation's resources are distributed. This
+     * overrides the default scheduling policy specified on the reservation.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.bigquery.reservation.v1.SchedulingPolicyOrBuilder
+        getSchedulingPolicyOrBuilder() {
+      if (schedulingPolicyBuilder_ != null) {
+        return schedulingPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return schedulingPolicy_ == null
+            ? com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.getDefaultInstance()
+            : schedulingPolicy_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries of this
+     * assignee when running under the associated reservation. The scheduling
+     * policy controls how the reservation's resources are distributed. This
+     * overrides the default scheduling policy specified on the reservation.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.reservation.v1.SchedulingPolicy,
+            com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.Builder,
+            com.google.cloud.bigquery.reservation.v1.SchedulingPolicyOrBuilder>
+        getSchedulingPolicyFieldBuilder() {
+      if (schedulingPolicyBuilder_ == null) {
+        schedulingPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.reservation.v1.SchedulingPolicy,
+                com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.Builder,
+                com.google.cloud.bigquery.reservation.v1.SchedulingPolicyOrBuilder>(
+                getSchedulingPolicy(), getParentForChildren(), isClean());
+        schedulingPolicy_ = null;
+      }
+      return schedulingPolicyBuilder_;
     }
 
     @java.lang.Override
