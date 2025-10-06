@@ -141,7 +141,7 @@ public class StreamWriter implements AutoCloseable {
 
   /** The maximum size of one request. Defined by the API. */
   public static long getApiMaxRequestBytes() {
-    return 10L * 1000L * 1000L; // 10 megabytes (https://en.wikipedia.org/wiki/Megabyte)
+    return ConnectionWorker.getApiMaxRequestBytes();
   }
 
   /**
