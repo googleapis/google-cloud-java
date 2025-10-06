@@ -27,12 +27,11 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Map;
-
+import org.junit.Ignore;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.Ignore;
 
 public class ITPaginationTest extends BaseTest {
   private static ZonesClient zonesClient;
