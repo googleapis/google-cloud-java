@@ -27,7 +27,7 @@
 // Example Usage:
 //
 // export GITHUB_TOKEN="<your GitHub token>"
-// cd scripts
+// cd .github/scripts
 // go run ./release_manager_merge_bot.go <PR URL>
 
 package main
