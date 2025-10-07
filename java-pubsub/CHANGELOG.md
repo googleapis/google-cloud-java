@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.142.0](https://github.com/googleapis/java-pubsub/compare/v1.141.5...v1.142.0) (2025-10-07)
+
+
+### Features
+
+* Support the protocol version in StreamingPullRequest ([af40810](https://github.com/googleapis/java-pubsub/commit/af40810ea0668ce4e8c4d69bdbb4b281073976d0))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.62.3 ([af40810](https://github.com/googleapis/java-pubsub/commit/af40810ea0668ce4e8c4d69bdbb4b281073976d0))
+
+
+### Dependencies
+
+* Update actions/checkout action to v5 ([#2562](https://github.com/googleapis/java-pubsub/issues/2562)) ([b7fa499](https://github.com/googleapis/java-pubsub/commit/b7fa49968e85dfeba8a84ea29f8ddf9d33ef22c5))
+* Update actions/checkout action to v5 ([#2573](https://github.com/googleapis/java-pubsub/issues/2573)) ([4153dba](https://github.com/googleapis/java-pubsub/commit/4153dbacb386b130780c8d1e5596e3502af8e32b))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.55.1 ([#2566](https://github.com/googleapis/java-pubsub/issues/2566)) ([66c9ec4](https://github.com/googleapis/java-pubsub/commit/66c9ec4a26b76ca384dce71a8ab6bce8cd34b8a3))
+* Update dependency com.google.cloud:google-cloud-core to v2.60.2 ([#2557](https://github.com/googleapis/java-pubsub/issues/2557)) ([460bcd9](https://github.com/googleapis/java-pubsub/commit/460bcd9158e7058f710f43200b7b7737eb47839c))
+* Update dependency com.google.cloud:google-cloud-core to v2.60.3 ([#2571](https://github.com/googleapis/java-pubsub/issues/2571)) ([ac2c85a](https://github.com/googleapis/java-pubsub/commit/ac2c85ad62525aee236af54f6b5c9b1eacf4d22a))
+* Update dependency com.google.cloud:google-cloud-storage to v2.58.0 ([#2561](https://github.com/googleapis/java-pubsub/issues/2561)) ([0189388](https://github.com/googleapis/java-pubsub/commit/0189388edb4d618d65f33718922ca1b11f71cb15))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.52.3 ([#2572](https://github.com/googleapis/java-pubsub/issues/2572)) ([0785ee4](https://github.com/googleapis/java-pubsub/commit/0785ee490e858c104c420046e0098d81154ae273))
+* Update dependency org.assertj:assertj-core to v3.27.6 ([#2560](https://github.com/googleapis/java-pubsub/issues/2560)) ([c82766a](https://github.com/googleapis/java-pubsub/commit/c82766a9efb2bb4df01fb7fdcb35259db39e05c7))
+
 ## [1.141.5](https://github.com/googleapis/java-pubsub/compare/v1.141.4...v1.141.5) (2025-09-24)
 
 
