@@ -62,6 +62,7 @@ class MessageDispatcher {
 
   @InternalApi static final double PERCENTILE_FOR_ACK_DEADLINE_UPDATES = 99.9;
   @InternalApi static final Duration PENDING_ACKS_SEND_DELAY = Duration.ofMillis(100);
+  @InternalApi static final long FINAL_NACK_TIMEOUT = Duration.ofSeconds(1).toMillis();
 
   private final Executor executor;
   private final SequentialExecutorService.AutoExecutor sequentialExecutor;
@@ -108,6 +109,8 @@ class MessageDispatcher {
   private final SubscriptionName subscriptionNameObject;
   private final boolean enableOpenTelemetryTracing;
   private OpenTelemetryPubsubTracer tracer = new OpenTelemetryPubsubTracer(null, false);
+  private final SubscriberShutdownSettings subscriberShutdownSettings;
+  private final AtomicBoolean nackImmediatelyShutdownInProgress = new AtomicBoolean(false);
 
   /** Internal representation of a reply to a Pubsub message, to be sent back to the service. */
   public enum AckReply {
@@ -170,12 +173,18 @@ class MessageDispatcher {
     public void onSuccess(AckReply reply) {
       switch (reply) {
         case ACK:
-          pendingAcks.add(this.ackRequestData);
-          // Record the latency rounded to the next closest integer.
-          ackLatencyDistribution.record(
-              Ints.saturatedCast(
-                  (long) Math.ceil((clock.millisTime() - receivedTimeMillis) / 1000D)));
-          tracer.endSubscribeProcessSpan(this.ackRequestData.getMessageWrapper(), "ack");
+          if (nackImmediatelyShutdownInProgress.get() && exactlyOnceDeliveryEnabled.get()) {
+            this.ackRequestData.setResponse(AckResponse.OTHER, true);
+            tracer.endSubscribeProcessSpan(
+                this.ackRequestData.getMessageWrapper(), "ack failed_with_nack_immediately");
+          } else {
+            pendingAcks.add(this.ackRequestData);
+            // Record the latency rounded to the next closest integer.
+            ackLatencyDistribution.record(
+                Ints.saturatedCast(
+                    (long) Math.ceil((clock.millisTime() - receivedTimeMillis) / 1000D)));
+            tracer.endSubscribeProcessSpan(this.ackRequestData.getMessageWrapper(), "ack");
+          }
           break;
         case NACK:
           pendingNacks.add(this.ackRequestData);
@@ -231,6 +240,7 @@ class MessageDispatcher {
     if (builder.tracer != null) {
       tracer = builder.tracer;
     }
+    this.subscriberShutdownSettings = builder.subscriberShutdownSettings;
   }
 
   private boolean shouldSetMessageFuture() {
@@ -294,8 +304,60 @@ class MessageDispatcher {
     }
   }
 
+  private void nackAllOutstandingMessages() {
+    nackImmediatelyShutdownInProgress.set(true);
+    List<AckHandler> handlersToNack = new ArrayList<>(pendingMessages.values());
+    for (AckHandler ackHandler : handlersToNack) {
+      pendingNacks.add(ackHandler.getAckRequestData());
+      ackHandler.forget(); // This removes from pendingMessages, releases flow control, etc.
+    }
+  }
+
   void stop() {
-    messagesWaiter.waitComplete();
+    switch (subscriberShutdownSettings.getMode()) {
+      case WAIT_FOR_PROCESSING:
+        logger.log(
+            Level.FINE,
+            "WAIT_FOR_PROCESSING shutdown mode: Waiting for outstanding messages to complete processing.");
+        java.time.Duration timeout = subscriberShutdownSettings.getTimeout();
+        if (timeout.isNegative()) {
+          // Indefinite wait use existing blocking wait
+          messagesWaiter.waitComplete();
+        } else {
+          // Wait for (timeout - 1 second) for messages to complete
+          long gracePeriodMillis = Math.max(0, timeout.toMillis() - FINAL_NACK_TIMEOUT);
+          boolean completedWait = messagesWaiter.tryWait(gracePeriodMillis, clock);
+          if (!completedWait) {
+            logger.log(
+                Level.WARNING,
+                "Grace period expired for WAIT_FOR_PROCESSING shutdown. Nacking remaining messages.");
+            // Switch to NACK_IMMEDIATELY behavior for remaining messages
+            nackAllOutstandingMessages();
+          }
+        }
+        cancelBackgroundJob();
+        processOutstandingOperations(); // Send any remaining acks/nacks.
+        break;
+
+      case NACK_IMMEDIATELY:
+        logger.log(Level.FINE, "NACK_IMMEDIATELY shutdown mode: Nacking all outstanding messages.");
+        // Stop extending deadlines immediately.
+        cancelBackgroundJob();
+        nackAllOutstandingMessages();
+        processOutstandingOperations(); // Send all pending nacks.
+        break;
+
+      default:
+        logger.log(Level.WARNING, "Unknown shutdown mode: " + subscriberShutdownSettings.getMode());
+        // Default to WAIT_FOR_PROCESSING behavior
+        messagesWaiter.waitComplete();
+        cancelBackgroundJob();
+        processOutstandingOperations();
+        break;
+    }
+  }
+
+  private void cancelBackgroundJob() {
     jobLock.lock();
     try {
       if (backgroundJob != null) {
@@ -309,7 +371,6 @@ class MessageDispatcher {
     } finally {
       jobLock.unlock();
     }
-    processOutstandingOperations();
   }
 
   @InternalApi
@@ -362,6 +423,11 @@ class MessageDispatcher {
   @InternalApi
   void setMessageOrderingEnabled(boolean messageOrderingEnabled) {
     this.messageOrderingEnabled.set(messageOrderingEnabled);
+  }
+
+  @InternalApi
+  boolean getNackImmediatelyShutdownInProgress() {
+    return nackImmediatelyShutdownInProgress.get();
   }
 
   private static class OutstandingMessage {
@@ -661,7 +727,7 @@ class MessageDispatcher {
 
     List<AckRequestData> ackRequestDataReceipts = new ArrayList<AckRequestData>();
     pendingReceipts.drainTo(ackRequestDataReceipts);
-    if (!ackRequestDataReceipts.isEmpty()) {
+    if (!ackRequestDataReceipts.isEmpty() && !getNackImmediatelyShutdownInProgress()) {
       ModackRequestData receiptModack =
           new ModackRequestData(this.getMessageDeadlineSeconds(), ackRequestDataReceipts);
       receiptModack.setIsReceiptModack(true);
@@ -705,6 +771,7 @@ class MessageDispatcher {
     private String subscriptionName;
     private boolean enableOpenTelemetryTracing;
     private OpenTelemetryPubsubTracer tracer;
+    private SubscriberShutdownSettings subscriberShutdownSettings;
 
     protected Builder(MessageReceiver receiver) {
       this.receiver = receiver;
@@ -788,6 +855,12 @@ class MessageDispatcher {
 
     public Builder setTracer(OpenTelemetryPubsubTracer tracer) {
       this.tracer = tracer;
+      return this;
+    }
+
+    public Builder setSubscriberShutdownSettings(
+        SubscriberShutdownSettings subscriberShutdownSettings) {
+      this.subscriberShutdownSettings = subscriberShutdownSettings;
       return this;
     }
 

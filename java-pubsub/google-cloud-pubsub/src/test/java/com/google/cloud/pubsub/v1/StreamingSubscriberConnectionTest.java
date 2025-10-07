@@ -17,6 +17,7 @@
 package com.google.cloud.pubsub.v1;
 
 import static org.junit.Assert.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.Mockito.*;
 
@@ -41,6 +42,8 @@ import io.grpc.protobuf.StatusProto;
 import java.time.Duration;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -104,6 +107,110 @@ public class StreamingSubscriberConnectionTest {
     streamingSubscriberConnection.awaitRunning();
     streamingSubscriberConnection.stopAsync();
     streamingSubscriberConnection.awaitTerminated();
+  }
+
+  @Test
+  public void testRunShutdown_TimeoutMet() throws Exception {
+    SubscriberShutdownSettings shutdownSettings =
+        SubscriberShutdownSettings.newBuilder().setTimeout(Duration.ofSeconds(10)).build();
+    StreamingSubscriberConnection.Builder builder =
+        StreamingSubscriberConnection.newBuilder(mock(MessageReceiverWithAckResponse.class));
+    builder.setSubscriberShutdownSettings(shutdownSettings);
+    StreamingSubscriberConnection streamingSubscriberConnection =
+        getStreamingSubscriberConnectionFromBuilder(builder);
+
+    streamingSubscriberConnection.startAsync().awaitRunning();
+    streamingSubscriberConnection.stopAsync();
+
+    // Should terminate quickly as there are no outstanding messages.
+    streamingSubscriberConnection.awaitTerminated(1, TimeUnit.SECONDS);
+  }
+
+  @Test
+  public void testRunShutdown_TimeoutExceeded() throws Exception {
+    final SettableApiFuture<com.google.protobuf.Empty> ackFuture = SettableApiFuture.create();
+    when(mockSubscriberStub.acknowledgeCallable().futureCall(any(AcknowledgeRequest.class)))
+        .thenReturn(ackFuture);
+
+    SubscriberShutdownSettings shutdownSettings =
+        SubscriberShutdownSettings.newBuilder().setTimeout(Duration.ofSeconds(2)).build();
+    StreamingSubscriberConnection.Builder builder =
+        StreamingSubscriberConnection.newBuilder(mock(MessageReceiverWithAckResponse.class));
+    StreamingSubscriberConnection streamingSubscriberConnection =
+        getStreamingSubscriberConnectionFromBuilder(builder, shutdownSettings);
+    streamingSubscriberConnection.setExactlyOnceDeliveryEnabled(true);
+
+    streamingSubscriberConnection.startAsync().awaitRunning();
+
+    // Send an ACK that will not complete.
+    SettableApiFuture<AckResponse> messageFuture = SettableApiFuture.create();
+    streamingSubscriberConnection.sendAckOperations(
+        Collections.singletonList(
+            AckRequestData.newBuilder("ack1").setMessageFuture(messageFuture).build()));
+
+    Thread t =
+        new Thread(
+            () -> {
+              streamingSubscriberConnection.stopAsync();
+            });
+    t.start();
+
+    Thread t2 =
+        new Thread(
+            () -> {
+              try {
+                streamingSubscriberConnection.awaitTerminated(1, TimeUnit.SECONDS);
+                fail("Should have timed out");
+              } catch (TimeoutException e) {
+                // expected
+              }
+            });
+    t2.start();
+    t2.join();
+
+    // Advance the clock past the shutdown timeout.
+    clock.advance(3, TimeUnit.SECONDS);
+    t.join();
+
+    // Now it should terminate.
+    streamingSubscriberConnection.awaitTerminated();
+    assertFalse(streamingSubscriberConnection.isRunning());
+    assertFalse(messageFuture.isDone());
+  }
+
+  @Test
+  public void testAckDuringNackImmediatelyShutdown() throws Exception {
+    SubscriberShutdownSettings shutdownSettings =
+        SubscriberShutdownSettings.newBuilder()
+            .setMode(SubscriberShutdownSettings.ShutdownMode.NACK_IMMEDIATELY)
+            .build();
+
+    MessageDispatcher mockMessageDispatcher = mock(MessageDispatcher.class);
+    when(mockMessageDispatcher.getNackImmediatelyShutdownInProgress()).thenReturn(true);
+
+    StreamingSubscriberConnection.Builder builder =
+        StreamingSubscriberConnection.newBuilder(mock(MessageReceiverWithAckResponse.class));
+    StreamingSubscriberConnection streamingSubscriberConnection =
+        getStreamingSubscriberConnectionFromBuilder(builder, shutdownSettings);
+
+    // Use reflection to set the mock message dispatcher
+    java.lang.reflect.Field dispatcherField =
+        StreamingSubscriberConnection.class.getDeclaredField("messageDispatcher");
+    dispatcherField.setAccessible(true);
+    dispatcherField.set(streamingSubscriberConnection, mockMessageDispatcher);
+
+    streamingSubscriberConnection.setExactlyOnceDeliveryEnabled(true);
+
+    SettableApiFuture<AckResponse> messageFuture = SettableApiFuture.create();
+    AckRequestData ackRequestData =
+        AckRequestData.newBuilder("ack1").setMessageFuture(messageFuture).build();
+
+    when(mockSubscriberStub.acknowledgeCallable().futureCall(any()))
+        .thenReturn(ApiFutures.immediateFuture(null));
+    streamingSubscriberConnection.sendAckOperations(Collections.singletonList(ackRequestData));
+
+    verify(mockMessageDispatcher, times(1)).notifyAckFailed(ackRequestData);
+    assertEquals(AckResponse.OTHER, messageFuture.get());
   }
 
   @Test
@@ -592,6 +699,28 @@ public class StreamingSubscriberConnectionTest {
         .setMinDurationPerAckExtensionDefaultUsed(true)
         .setMaxDurationPerAckExtension(Subscriber.DEFAULT_MAX_ACK_DEADLINE_EXTENSION)
         .setMaxDurationPerAckExtensionDefaultUsed(true)
+        .setSubscriberShutdownSettings(SubscriberShutdownSettings.newBuilder().build())
+        .build();
+  }
+
+  private StreamingSubscriberConnection getStreamingSubscriberConnectionFromBuilder(
+      StreamingSubscriberConnection.Builder builder, SubscriberShutdownSettings shutdownSettings) {
+    return builder
+        .setSubscription(MOCK_SUBSCRIPTION_NAME)
+        .setAckExpirationPadding(ACK_EXPIRATION_PADDING_DEFAULT_DURATION)
+        .setAckLatencyDistribution(mock(Distribution.class))
+        .setSubscriberStub(mockSubscriberStub)
+        .setChannelAffinity(0)
+        .setFlowControlSettings(mock(FlowControlSettings.class))
+        .setFlowController(mock(FlowController.class))
+        .setExecutor(executor)
+        .setSystemExecutor(systemExecutor)
+        .setClock(clock)
+        .setMinDurationPerAckExtension(Subscriber.DEFAULT_MIN_ACK_DEADLINE_EXTENSION)
+        .setMinDurationPerAckExtensionDefaultUsed(true)
+        .setMaxDurationPerAckExtension(Subscriber.DEFAULT_MAX_ACK_DEADLINE_EXTENSION)
+        .setMaxDurationPerAckExtensionDefaultUsed(true)
+        .setSubscriberShutdownSettings(shutdownSettings)
         .build();
   }
 

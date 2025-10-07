@@ -24,6 +24,7 @@ import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.PublisherGrpc.PublisherImplBase;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
+import com.google.pubsub.v1.ReceivedMessage;
 import com.google.pubsub.v1.StreamingPullRequest;
 import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.SubscriberGrpc.SubscriberImplBase;
@@ -247,8 +248,26 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
     responseObserver.onCompleted();
   }
 
+  public void sendMessages(int numMessages) throws InterruptedException {
+    waitForRegisteredSubscription();
+    synchronized (openedStreams) {
+      waitForOpenedStreams(1);
+      Stream stream = openedStreams.get(getAndAdvanceCurrentStream());
+      StreamingPullResponse.Builder response = StreamingPullResponse.newBuilder();
+      for (int i = 0; i < numMessages; i++) {
+        response.addReceivedMessages(
+            ReceivedMessage.newBuilder()
+                .setAckId("ackid" + i)
+                .setMessage(
+                    com.google.pubsub.v1.PubsubMessage.newBuilder().setMessageId("id" + i).build())
+                .build());
+      }
+      stream.responseObserver.onNext(response.build());
+    }
+  }
+
   public void sendError(Throwable error) throws InterruptedException {
-    waitForRegistedSubscription();
+    waitForRegisteredSubscription();
     synchronized (openedStreams) {
       waitForOpenedStreams(1);
       Stream stream = openedStreams.get(getAndAdvanceCurrentStream());
@@ -257,7 +276,7 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
     }
   }
 
-  public String waitForRegistedSubscription() throws InterruptedException {
+  public String waitForRegisteredSubscription() throws InterruptedException {
     synchronized (subscriptionInitialized) {
       while (!subscriptionInitialized.get()) {
         subscriptionInitialized.wait();

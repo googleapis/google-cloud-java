@@ -18,6 +18,9 @@ package com.google.cloud.pubsub.v1;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.argThat;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
 
 import com.google.api.gax.batching.FlowController;
@@ -713,9 +716,238 @@ public class MessageDispatcherTest {
             .setSubscriptionName(MOCK_SUBSCRIPTION_NAME)
             .setSystemExecutor(systemExecutor)
             .setApiClock(clock)
+            .setSubscriberShutdownSettings(SubscriberShutdownSettings.newBuilder().build())
             .build();
 
     messageDispatcher.setMessageDeadlineSeconds(MIN_ACK_DEADLINE_SECONDS);
     return messageDispatcher;
+  }
+
+  private MessageDispatcher getMessageDispatcherFromBuilder(
+      MessageDispatcher.Builder builder, SubscriberShutdownSettings shutdownSettings) {
+    MessageDispatcher messageDispatcher =
+        builder
+            .setAckProcessor(mockAckProcessor)
+            .setAckExpirationPadding(ACK_EXPIRATION_PADDING_DEFAULT)
+            .setMaxAckExtensionPeriod(MAX_ACK_EXTENSION_PERIOD)
+            .setMinDurationPerAckExtension(Subscriber.DEFAULT_MIN_ACK_DEADLINE_EXTENSION)
+            .setMinDurationPerAckExtensionDefaultUsed(true)
+            .setMaxDurationPerAckExtension(Subscriber.DEFAULT_MAX_ACK_DEADLINE_EXTENSION)
+            .setMaxDurationPerAckExtensionDefaultUsed(true)
+            .setAckLatencyDistribution(mock(Distribution.class))
+            .setFlowController(mock(FlowController.class))
+            .setExecutor(MoreExecutors.newDirectExecutorService())
+            .setSubscriptionName(MOCK_SUBSCRIPTION_NAME)
+            .setSystemExecutor(systemExecutor)
+            .setApiClock(clock)
+            .setSubscriberShutdownSettings(shutdownSettings)
+            .build();
+
+    messageDispatcher.setMessageDeadlineSeconds(MIN_ACK_DEADLINE_SECONDS);
+    return messageDispatcher;
+  }
+
+  @Test
+  public void testStop_waitForProcessing_indefinite() throws Exception {
+    SubscriberShutdownSettings shutdownSettings =
+        SubscriberShutdownSettings.newBuilder()
+            .setMode(SubscriberShutdownSettings.ShutdownMode.WAIT_FOR_PROCESSING)
+            .setTimeout(Duration.ofSeconds(-1))
+            .build();
+    MessageDispatcher dispatcher =
+        getMessageDispatcherFromBuilder(
+            MessageDispatcher.newBuilder(messageReceiver), shutdownSettings);
+
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
+
+    Thread stopThread = new Thread(dispatcher::stop);
+    stopThread.start();
+
+    // Wait for the stop thread to block on the waiter.
+    Thread.sleep(100);
+    assertTrue(stopThread.isAlive());
+
+    // Ack the message, which should allow the stop thread to complete.
+    consumers.take().ack();
+
+    List<AckRequestData> ackRequestDataList = new ArrayList<AckRequestData>();
+    AckRequestData ackRequestData = AckRequestData.newBuilder(TEST_MESSAGE.getAckId()).build();
+    ackRequestDataList.add(ackRequestData);
+
+    stopThread.join();
+    assertFalse(stopThread.isAlive());
+
+    verify(mockAckProcessor, times(1))
+        .sendAckOperations(
+            argThat(new CustomArgumentMatchers.AckRequestDataListMatcher(ackRequestDataList)));
+  }
+
+  @Test
+  public void testStop_waitForProcessing_withTimeout_success() {
+    SubscriberShutdownSettings shutdownSettings =
+        SubscriberShutdownSettings.newBuilder()
+            .setMode(SubscriberShutdownSettings.ShutdownMode.WAIT_FOR_PROCESSING)
+            .setTimeout(Duration.ofSeconds(5))
+            .build();
+    MessageDispatcher dispatcher =
+        getMessageDispatcherFromBuilder(
+            MessageDispatcher.newBuilder(messageReceiver), shutdownSettings);
+
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
+
+    Thread stopThread = new Thread(dispatcher::stop);
+    stopThread.start();
+
+    // Ack the message before the timeout expires.
+    try {
+      consumers.take().ack();
+    } catch (InterruptedException e) {
+      fail("Interrupted while taking consumer");
+    }
+
+    try {
+      stopThread.join(1000);
+    } catch (InterruptedException e) {
+      fail("Interrupted while joining stop thread");
+    }
+
+    List<AckRequestData> ackRequestDataList = new ArrayList<AckRequestData>();
+    AckRequestData ackRequestData = AckRequestData.newBuilder(TEST_MESSAGE.getAckId()).build();
+    ackRequestDataList.add(ackRequestData);
+
+    verify(mockAckProcessor, times(1))
+        .sendAckOperations(
+            argThat(new CustomArgumentMatchers.AckRequestDataListMatcher(ackRequestDataList)));
+    assertFalse(stopThread.isAlive());
+  }
+
+  @Test
+  public void testStop_waitForProcessing_withTimeout_nackWithOneSecondLeft() {
+    SubscriberShutdownSettings shutdownSettings =
+        SubscriberShutdownSettings.newBuilder()
+            .setMode(SubscriberShutdownSettings.ShutdownMode.WAIT_FOR_PROCESSING)
+            .setTimeout(Duration.ofSeconds(2))
+            .build();
+    MessageDispatcher dispatcher =
+        getMessageDispatcherFromBuilder(
+            MessageDispatcher.newBuilder(messageReceiver), shutdownSettings);
+
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
+    Thread stopThread = new Thread(dispatcher::stop);
+    stopThread.start();
+
+    // Wait for the stop thread to block on the waiter.
+    try {
+      Thread.sleep(100);
+    } catch (InterruptedException e) {
+      fail("Interrupted while sleeping");
+    }
+
+    clock.advance(1500, TimeUnit.MILLISECONDS);
+
+    try {
+      stopThread.join();
+    } catch (InterruptedException e) {
+      fail("Interrupted while joining stop thread");
+    }
+    // Assert expected behavior
+    List<ModackRequestData> modackRequestDataList = new ArrayList<ModackRequestData>();
+    modackRequestDataList.add(
+        new ModackRequestData(0, AckRequestData.newBuilder(TEST_MESSAGE.getAckId()).build()));
+
+    verify(mockAckProcessor, times(1))
+        .sendModackOperations(
+            argThat(
+                new CustomArgumentMatchers.ModackRequestDataListMatcher(modackRequestDataList)));
+    verify(mockAckProcessor, times(1))
+        .sendAckOperations(
+            argThat(new CustomArgumentMatchers.AckRequestDataListMatcher(Collections.emptyList())));
+  }
+
+  @Test
+  public void testStop_nackImmediately() {
+    SubscriberShutdownSettings shutdownSettings =
+        SubscriberShutdownSettings.newBuilder()
+            .setMode(SubscriberShutdownSettings.ShutdownMode.NACK_IMMEDIATELY)
+            .build();
+    MessageDispatcher dispatcher =
+        getMessageDispatcherFromBuilder(
+            MessageDispatcher.newBuilder(messageReceiver), shutdownSettings);
+
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
+    dispatcher.stop();
+
+    // Assert expected behavior
+    List<ModackRequestData> modackRequestDataList = new ArrayList<ModackRequestData>();
+    modackRequestDataList.add(
+        new ModackRequestData(0, AckRequestData.newBuilder(TEST_MESSAGE.getAckId()).build()));
+
+    verify(mockAckProcessor, times(1))
+        .sendModackOperations(
+            argThat(
+                new CustomArgumentMatchers.ModackRequestDataListMatcher(modackRequestDataList)));
+    verify(mockAckProcessor, times(1))
+        .sendAckOperations(
+            argThat(new CustomArgumentMatchers.AckRequestDataListMatcher(Collections.emptyList())));
+  }
+
+  @Test
+  public void testAckDuringNackImmediatelyShutdown() throws Exception {
+    SubscriberShutdownSettings shutdownSettings =
+        SubscriberShutdownSettings.newBuilder()
+            .setMode(SubscriberShutdownSettings.ShutdownMode.NACK_IMMEDIATELY)
+            .build();
+    MessageDispatcher dispatcher =
+        getMessageDispatcherFromBuilder(
+            MessageDispatcher.newBuilder(messageReceiverWithAckResponse), shutdownSettings);
+    dispatcher.setExactlyOnceDeliveryEnabled(true);
+
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
+    dispatcher.processOutstandingOperations();
+
+    List<ModackRequestData> receiptModackRequestDataList = new ArrayList<ModackRequestData>();
+    AckRequestData receiptModackRequestData =
+        AckRequestData.newBuilder(TEST_MESSAGE.getAckId()).build();
+    receiptModackRequestDataList.add(
+        new ModackRequestData(MIN_ACK_DEADLINE_SECONDS, receiptModackRequestData));
+    dispatcher.notifyAckSuccess(receiptModackRequestData);
+
+    verify(mockAckProcessor, times(1))
+        .sendModackOperations(
+            argThat(
+                new CustomArgumentMatchers.ModackRequestDataListMatcher(
+                    receiptModackRequestDataList)));
+
+    Thread stopThread =
+        new Thread(
+            () -> {
+              dispatcher.stop();
+            });
+    stopThread.start();
+
+    // Wait for the stop process to start.
+    while (!dispatcher.getNackImmediatelyShutdownInProgress()) {
+      Thread.sleep(1);
+    }
+
+    // Try to ack the message.
+    AckResponse reply = consumersWithResponse.take().ack().get();
+    assertThat(reply.equals(AckResponse.OTHER));
+
+    stopThread.join();
+
+    // Assert expected behavior
+    List<ModackRequestData> modackRequestDataList = new ArrayList<ModackRequestData>();
+    modackRequestDataList.add(
+        new ModackRequestData(0, AckRequestData.newBuilder(TEST_MESSAGE.getAckId()).build()));
+
+    // The message should have been nacked, not acked.
+    verify(mockAckProcessor, times(1))
+        .sendModackOperations(
+            argThat(
+                new CustomArgumentMatchers.ModackRequestDataListMatcher(modackRequestDataList)));
+    verify(mockAckProcessor, times(2))
+        .sendAckOperations(
+            argThat(new CustomArgumentMatchers.AckRequestDataListMatcher(Collections.emptyList())));
   }
 }

@@ -168,6 +168,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
   private final boolean enableOpenTelemetryTracing;
   private final OpenTelemetry openTelemetry;
   private OpenTelemetryPubsubTracer tracer = new OpenTelemetryPubsubTracer(null, false);
+  private final SubscriberShutdownSettings subscriberShutdownSettings;
 
   private Subscriber(Builder builder) {
     receiver = builder.receiver;
@@ -223,6 +224,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
 
     this.enableOpenTelemetryTracing = builder.enableOpenTelemetryTracing;
     this.openTelemetry = builder.openTelemetry;
+    this.subscriberShutdownSettings = builder.subscriberShutdownSettings;
     if (this.openTelemetry != null && this.enableOpenTelemetryTracing) {
       Tracer openTelemetryTracer = builder.openTelemetry.getTracer(OPEN_TELEMETRY_TRACER_NAME);
       if (openTelemetryTracer != null) {
@@ -366,7 +368,6 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
               @Override
               public void run() {
                 try {
-                  // stop connection is no-op if connections haven't been started.
                   runShutdown();
                   notifyStopped();
                 } catch (Exception e) {
@@ -378,7 +379,13 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
   }
 
   private void runShutdown() {
-    stopAllStreamingConnections();
+    java.time.Duration timeout = subscriberShutdownSettings.getTimeout();
+    long deadlineMillis = -1;
+    if (!timeout.isNegative()) {
+      deadlineMillis = clock.millisTime() + timeout.toMillis();
+    }
+
+    stopAllStreamingConnections(deadlineMillis);
     shutdownBackgroundResources();
     subscriberStub.shutdownNow();
   }
@@ -420,6 +427,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
                 .setClock(clock)
                 .setEnableOpenTelemetryTracing(enableOpenTelemetryTracing)
                 .setTracer(tracer)
+                .setSubscriberShutdownSettings(subscriberShutdownSettings)
                 .build();
 
         streamingSubscriberConnections.add(streamingSubscriberConnection);
@@ -445,8 +453,8 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     }
   }
 
-  private void stopAllStreamingConnections() {
-    stopConnections(streamingSubscriberConnections);
+  private void stopAllStreamingConnections(long deadlineMillis) {
+    stopConnections(streamingSubscriberConnections, deadlineMillis);
   }
 
   private void shutdownBackgroundResources() {
@@ -466,7 +474,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     }
   }
 
-  private void stopConnections(List<? extends ApiService> connections) {
+  private void stopConnections(List<? extends ApiService> connections, long deadlineMillis) {
     ArrayList<ApiService> liveConnections;
     synchronized (connections) {
       liveConnections = new ArrayList<ApiService>(connections);
@@ -477,11 +485,19 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     }
     for (ApiService subscriber : liveConnections) {
       try {
-        subscriber.awaitTerminated();
-      } catch (IllegalStateException e) {
-        // If the service fails, awaitTerminated will throw an exception.
-        // However, we could be stopping services because at least one
-        // has already failed, so we just ignore this exception.
+        if (deadlineMillis < 0) {
+          // Wait indefinitely
+          subscriber.awaitTerminated();
+        } else {
+          long remaining = deadlineMillis - clock.millisTime();
+          if (remaining < 0) {
+            remaining = 0;
+          }
+          subscriber.awaitTerminated(remaining, java.util.concurrent.TimeUnit.MILLISECONDS);
+        }
+      } catch (Exception e) {
+        logger.log(Level.FINE, "Exception while waiting for a connection to terminate", e);
+        break; // Stop waiting for other connections.
       }
     }
   }
@@ -531,6 +547,9 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
 
     private boolean enableOpenTelemetryTracing = false;
     private OpenTelemetry openTelemetry = null;
+
+    private SubscriberShutdownSettings subscriberShutdownSettings =
+        SubscriberShutdownSettings.newBuilder().build();
 
     Builder(String subscription, MessageReceiver receiver) {
       this.subscription = subscription;
@@ -769,6 +788,18 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     /** Sets the instance of OpenTelemetry for the Publisher class. */
     public Builder setOpenTelemetry(OpenTelemetry openTelemetry) {
       this.openTelemetry = openTelemetry;
+      return this;
+    }
+
+    /**
+     * Sets the shutdown settings for the subscriber. Defaults to {@link
+     * SubscriberShutdownSettings#newBuilder() default settings}.
+     */
+    @BetaApi(
+        "The surface for SubscriberShutdownSettings is not stable yet and may be changed in the future.")
+    public Builder setSubscriberShutdownSettings(
+        SubscriberShutdownSettings subscriberShutdownSettings) {
+      this.subscriberShutdownSettings = Preconditions.checkNotNull(subscriberShutdownSettings);
       return this;
     }
 

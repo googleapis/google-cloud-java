@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub.v1;
 
+import com.google.api.core.ApiClock;
 import com.google.api.core.InternalApi;
 
 /**
@@ -52,6 +53,32 @@ class Waiter {
         Thread.currentThread().interrupt();
       }
     }
+  }
+
+  public synchronized boolean tryWait(long timeoutMilliseconds, ApiClock clock) {
+    long startTime = clock.millisTime();
+    long remainingMilliseconds = timeoutMilliseconds;
+    boolean interrupted = false;
+    boolean completedWait = true;
+    try {
+      while (pendingCount > 0) {
+        if (remainingMilliseconds <= 0) {
+          completedWait = false;
+          break;
+        }
+        try {
+          wait(remainingMilliseconds);
+        } catch (InterruptedException e) {
+          interrupted = true;
+        }
+        remainingMilliseconds = timeoutMilliseconds - (clock.millisTime() - startTime);
+      }
+    } finally {
+      if (interrupted) {
+        Thread.currentThread().interrupt();
+      }
+    }
+    return completedWait;
   }
 
   @InternalApi

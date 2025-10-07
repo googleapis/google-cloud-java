@@ -320,6 +320,104 @@ public class SubscriberTest {
         Subscriber.Builder.DEFAULT_FLOW_CONTROL_SETTINGS.getMaxOutstandingElementCount());
   }
 
+  @Test
+  public void testShutdown_waitForProcessing_indefinite() throws Exception {
+    final CountDownLatch messageReceived = new CountDownLatch(1);
+    final AckReplyConsumer[] consumer = new AckReplyConsumer[1];
+
+    MessageReceiver receiver =
+        new MessageReceiver() {
+          @Override
+          public void receiveMessage(PubsubMessage message, AckReplyConsumer c) {
+            consumer[0] = c;
+            messageReceived.countDown();
+          }
+        };
+
+    Subscriber subscriber =
+        startSubscriber(
+            getTestSubscriberBuilder(receiver)
+                .setSubscriberShutdownSettings(
+                    SubscriberShutdownSettings.newBuilder()
+                        .setMode(SubscriberShutdownSettings.ShutdownMode.WAIT_FOR_PROCESSING)
+                        .setTimeout(Duration.ofSeconds(-1))
+                        .build()));
+
+    // Send a message and wait for it to be received.
+    fakeSubscriberServiceImpl.sendMessages(1);
+    messageReceived.await(10, TimeUnit.SECONDS);
+
+    subscriber.stopAsync();
+
+    try {
+      subscriber.awaitTerminated(1, TimeUnit.SECONDS);
+      fail("Subscriber should not have terminated yet.");
+    } catch (TimeoutException e) {
+      // Expected
+    }
+
+    // Now, ack the message, which should allow the subscriber to terminate.
+    consumer[0].ack();
+    subscriber.awaitTerminated(10, TimeUnit.SECONDS);
+  }
+
+  @Test
+  public void testShutdown_waitForProcessing_withTimeout_success() throws Exception {
+    Subscriber subscriber =
+        startSubscriber(
+            getTestSubscriberBuilder(testReceiver)
+                .setSubscriberShutdownSettings(
+                    SubscriberShutdownSettings.newBuilder()
+                        .setMode(SubscriberShutdownSettings.ShutdownMode.WAIT_FOR_PROCESSING)
+                        .setTimeout(Duration.ofSeconds(10))
+                        .build()));
+    subscriber.stopAsync();
+    fakeExecutor.advanceTime(Duration.ofSeconds(5));
+    subscriber.awaitTerminated(1, TimeUnit.SECONDS); // Should terminate quickly now
+  }
+
+  @Test
+  public void testShutdown_waitForProcessing_withTimeout_failure() throws Exception {
+    Subscriber subscriber =
+        startSubscriber(
+            getTestSubscriberBuilder(testReceiver)
+                .setSubscriberShutdownSettings(
+                    SubscriberShutdownSettings.newBuilder()
+                        .setMode(SubscriberShutdownSettings.ShutdownMode.WAIT_FOR_PROCESSING)
+                        .setTimeout(Duration.ofSeconds(5))
+                        .build()));
+    subscriber.stopAsync();
+    fakeExecutor.advanceTime(Duration.ofSeconds(6));
+    subscriber.awaitTerminated(1, TimeUnit.SECONDS); // Should have timed out and terminated
+  }
+
+  @Test
+  public void testShutdown_waitForProcessing_zeroTimeout() throws Exception {
+    Subscriber subscriber =
+        startSubscriber(
+            getTestSubscriberBuilder(testReceiver)
+                .setSubscriberShutdownSettings(
+                    SubscriberShutdownSettings.newBuilder()
+                        .setMode(SubscriberShutdownSettings.ShutdownMode.WAIT_FOR_PROCESSING)
+                        .setTimeout(Duration.ZERO)
+                        .build()));
+    subscriber.stopAsync();
+    subscriber.awaitTerminated(1, TimeUnit.SECONDS); // Should terminate almost immediately
+  }
+
+  @Test
+  public void testShutdown_nackImmediately() throws Exception {
+    Subscriber subscriber =
+        startSubscriber(
+            getTestSubscriberBuilder(testReceiver)
+                .setSubscriberShutdownSettings(
+                    SubscriberShutdownSettings.newBuilder()
+                        .setMode(SubscriberShutdownSettings.ShutdownMode.NACK_IMMEDIATELY)
+                        .build()));
+    subscriber.stopAsync();
+    subscriber.awaitTerminated(1, TimeUnit.SECONDS); // Should terminate almost immediately
+  }
+
   private Subscriber startSubscriber(Builder testSubscriberBuilder) {
     Subscriber subscriber = testSubscriberBuilder.build();
     subscriber.startAsync().awaitRunning();

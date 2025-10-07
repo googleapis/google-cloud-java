@@ -98,6 +98,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   private final String subscription;
   private final SubscriptionName subscriptionNameObject;
   private final ScheduledExecutorService systemExecutor;
+  private final ApiClock clock;
   private final MessageDispatcher messageDispatcher;
 
   private final FlowControlSettings flowControlSettings;
@@ -124,11 +125,13 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
   private final boolean enableOpenTelemetryTracing;
   private OpenTelemetryPubsubTracer tracer = new OpenTelemetryPubsubTracer(null, false);
+  private final SubscriberShutdownSettings subscriberShutdownSettings;
 
   private StreamingSubscriberConnection(Builder builder) {
     subscription = builder.subscription;
     subscriptionNameObject = SubscriptionName.parse(builder.subscription);
     systemExecutor = builder.systemExecutor;
+    clock = builder.clock;
 
     // We need to set the default stream ack deadline on the initial request, this will be
     // updated by modack requests in the message dispatcher
@@ -163,6 +166,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     if (builder.tracer != null) {
       tracer = builder.tracer;
     }
+    this.subscriberShutdownSettings = builder.subscriberShutdownSettings;
 
     messageDispatcher =
         messageDispatcherBuilder
@@ -181,6 +185,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             .setSubscriptionName(subscription)
             .setEnableOpenTelemetryTracing(enableOpenTelemetryTracing)
             .setTracer(tracer)
+            .setSubscriberShutdownSettings(subscriberShutdownSettings)
             .build();
 
     flowControlSettings = builder.flowControlSettings;
@@ -218,8 +223,21 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   }
 
   private void runShutdown() {
+    java.time.Duration timeout = subscriberShutdownSettings.getTimeout();
+    if (timeout.isZero()) {
+      return;
+    }
+
     messageDispatcher.stop();
-    ackOperationsWaiter.waitComplete();
+    if (timeout.isNegative()) {
+      ackOperationsWaiter.waitComplete();
+    } else {
+      boolean completedWait = ackOperationsWaiter.tryWait(timeout.toMillis(), clock);
+      if (!completedWait) {
+        logger.log(
+            Level.WARNING, "Timeout exceeded while waiting for ACK/NACK operations to complete.");
+      }
+    }
   }
 
   private class StreamingPullResponseObserver implements ResponseObserver<StreamingPullResponse> {
@@ -554,9 +572,18 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
         tracer.endSubscribeRpcSpan(rpcSpan);
 
         for (AckRequestData ackRequestData : ackRequestDataList) {
-          // This will check if a response is needed, and if it has already been set
-          ackRequestData.setResponse(AckResponse.SUCCESSFUL, setResponseOnSuccess);
-          messageDispatcher.notifyAckSuccess(ackRequestData);
+          // If we are in NACK_IMMEDIATELY shutdown mode, we will set failures on acks/nack so that
+          // an error is surfaced if the user
+          // manually acks or nacks in their callback.
+          if (setResponseOnSuccess
+              && getExactlyOnceDeliveryEnabled()
+              && messageDispatcher.getNackImmediatelyShutdownInProgress()) {
+            ackRequestData.setResponse(AckResponse.OTHER, setResponseOnSuccess);
+            messageDispatcher.notifyAckFailed(ackRequestData);
+          } else {
+            ackRequestData.setResponse(AckResponse.SUCCESSFUL, setResponseOnSuccess);
+            messageDispatcher.notifyAckSuccess(ackRequestData);
+          }
           // Remove from our pending operations
           pendingRequests.remove(ackRequestData);
           tracer.addEndRpcEvent(
@@ -751,6 +778,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
     private boolean enableOpenTelemetryTracing;
     private OpenTelemetryPubsubTracer tracer;
+    private SubscriberShutdownSettings subscriberShutdownSettings;
 
     protected Builder(MessageReceiver receiver) {
       this.receiver = receiver;
@@ -849,6 +877,12 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
     public Builder setTracer(OpenTelemetryPubsubTracer tracer) {
       this.tracer = tracer;
+      return this;
+    }
+
+    public Builder setSubscriberShutdownSettings(
+        SubscriberShutdownSettings subscriberShutdownSettings) {
+      this.subscriberShutdownSettings = subscriberShutdownSettings;
       return this;
     }
 
