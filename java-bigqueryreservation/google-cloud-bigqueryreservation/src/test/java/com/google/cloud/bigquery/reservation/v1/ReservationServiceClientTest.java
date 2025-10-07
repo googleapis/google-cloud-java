@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.reservation.v1;
 
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListCapacityCommitmentsPagedResponse;
+import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationGroupsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAllAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAssignmentsPagedResponse;
@@ -29,8 +30,17 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -39,6 +49,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.Generated;
@@ -104,7 +115,10 @@ public class ReservationServiceClientTest {
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setMaxSlots(-234568806)
+            .putAllLabels(new HashMap<String, String>())
+            .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -161,7 +175,10 @@ public class ReservationServiceClientTest {
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setMaxSlots(-234568806)
+            .putAllLabels(new HashMap<String, String>())
+            .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -306,7 +323,10 @@ public class ReservationServiceClientTest {
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setMaxSlots(-234568806)
+            .putAllLabels(new HashMap<String, String>())
+            .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -357,7 +377,10 @@ public class ReservationServiceClientTest {
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setMaxSlots(-234568806)
+            .putAllLabels(new HashMap<String, String>())
+            .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -476,7 +499,10 @@ public class ReservationServiceClientTest {
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setMaxSlots(-234568806)
+            .putAllLabels(new HashMap<String, String>())
+            .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -530,7 +556,10 @@ public class ReservationServiceClientTest {
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setMaxSlots(-234568806)
+            .putAllLabels(new HashMap<String, String>())
+            .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1190,6 +1219,7 @@ public class ReservationServiceClientTest {
                     .toString())
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1235,6 +1265,7 @@ public class ReservationServiceClientTest {
                     .toString())
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1630,6 +1661,7 @@ public class ReservationServiceClientTest {
                     .toString())
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1678,6 +1710,7 @@ public class ReservationServiceClientTest {
                     .toString())
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1725,6 +1758,7 @@ public class ReservationServiceClientTest {
                     .toString())
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1771,6 +1805,7 @@ public class ReservationServiceClientTest {
                     .toString())
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1816,6 +1851,7 @@ public class ReservationServiceClientTest {
                     .toString())
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1972,6 +2008,526 @@ public class ReservationServiceClientTest {
       BiReservation biReservation = BiReservation.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBiReservation(biReservation, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockReservationService.addResponse(expectedResponse);
+
+    ResourceName resource =
+        AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
+
+    Policy actualResponse = client.getIamPolicy(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIamPolicyRequest actualRequest = ((GetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(resource.toString(), actualRequest.getResource());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      ResourceName resource =
+          AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
+      client.getIamPolicy(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest2() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockReservationService.addResponse(expectedResponse);
+
+    String resource = "resource-341064690";
+
+    Policy actualResponse = client.getIamPolicy(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIamPolicyRequest actualRequest = ((GetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(resource, actualRequest.getResource());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      String resource = "resource-341064690";
+      client.getIamPolicy(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockReservationService.addResponse(expectedResponse);
+
+    ResourceName resource =
+        AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
+    Policy policy = Policy.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicy(resource, policy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetIamPolicyRequest actualRequest = ((SetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(resource.toString(), actualRequest.getResource());
+    Assert.assertEquals(policy, actualRequest.getPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      ResourceName resource =
+          AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
+      Policy policy = Policy.newBuilder().build();
+      client.setIamPolicy(resource, policy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest2() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockReservationService.addResponse(expectedResponse);
+
+    String resource = "resource-341064690";
+    Policy policy = Policy.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicy(resource, policy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetIamPolicyRequest actualRequest = ((SetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(resource, actualRequest.getResource());
+    Assert.assertEquals(policy, actualRequest.getPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      String resource = "resource-341064690";
+      Policy policy = Policy.newBuilder().build();
+      client.setIamPolicy(resource, policy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testIamPermissionsTest() throws Exception {
+    TestIamPermissionsResponse expectedResponse =
+        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
+    mockReservationService.addResponse(expectedResponse);
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(
+                AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
+                    .toString())
+            .addAllPermissions(new ArrayList<String>())
+            .build();
+
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TestIamPermissionsRequest actualRequest = ((TestIamPermissionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getPermissionsList(), actualRequest.getPermissionsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void testIamPermissionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(
+                  AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
+                      .toString())
+              .addAllPermissions(new ArrayList<String>())
+              .build();
+      client.testIamPermissions(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createReservationGroupTest() throws Exception {
+    ReservationGroup expectedResponse =
+        ReservationGroup.newBuilder()
+            .setName(
+                ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]")
+                    .toString())
+            .build();
+    mockReservationService.addResponse(expectedResponse);
+
+    CreateReservationGroupRequest request =
+        CreateReservationGroupRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setReservationGroupId("reservationGroupId-1636887922")
+            .setReservationGroup(ReservationGroup.newBuilder().build())
+            .build();
+
+    ReservationGroup actualResponse = client.createReservationGroup(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateReservationGroupRequest actualRequest =
+        ((CreateReservationGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getReservationGroupId(), actualRequest.getReservationGroupId());
+    Assert.assertEquals(request.getReservationGroup(), actualRequest.getReservationGroup());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createReservationGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      CreateReservationGroupRequest request =
+          CreateReservationGroupRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setReservationGroupId("reservationGroupId-1636887922")
+              .setReservationGroup(ReservationGroup.newBuilder().build())
+              .build();
+      client.createReservationGroup(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReservationGroupTest() throws Exception {
+    ReservationGroup expectedResponse =
+        ReservationGroup.newBuilder()
+            .setName(
+                ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]")
+                    .toString())
+            .build();
+    mockReservationService.addResponse(expectedResponse);
+
+    ReservationGroupName name =
+        ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]");
+
+    ReservationGroup actualResponse = client.getReservationGroup(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetReservationGroupRequest actualRequest = ((GetReservationGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getReservationGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      ReservationGroupName name =
+          ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]");
+      client.getReservationGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReservationGroupTest2() throws Exception {
+    ReservationGroup expectedResponse =
+        ReservationGroup.newBuilder()
+            .setName(
+                ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]")
+                    .toString())
+            .build();
+    mockReservationService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ReservationGroup actualResponse = client.getReservationGroup(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetReservationGroupRequest actualRequest = ((GetReservationGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getReservationGroupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getReservationGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteReservationGroupTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockReservationService.addResponse(expectedResponse);
+
+    ReservationGroupName name =
+        ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]");
+
+    client.deleteReservationGroup(name);
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteReservationGroupRequest actualRequest =
+        ((DeleteReservationGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteReservationGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      ReservationGroupName name =
+          ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]");
+      client.deleteReservationGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteReservationGroupTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockReservationService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteReservationGroup(name);
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteReservationGroupRequest actualRequest =
+        ((DeleteReservationGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteReservationGroupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteReservationGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listReservationGroupsTest() throws Exception {
+    ReservationGroup responsesElement = ReservationGroup.newBuilder().build();
+    ListReservationGroupsResponse expectedResponse =
+        ListReservationGroupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllReservationGroups(Arrays.asList(responsesElement))
+            .build();
+    mockReservationService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListReservationGroupsPagedResponse pagedListResponse = client.listReservationGroups(parent);
+
+    List<ReservationGroup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getReservationGroupsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListReservationGroupsRequest actualRequest =
+        ((ListReservationGroupsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listReservationGroupsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listReservationGroups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listReservationGroupsTest2() throws Exception {
+    ReservationGroup responsesElement = ReservationGroup.newBuilder().build();
+    ListReservationGroupsResponse expectedResponse =
+        ListReservationGroupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllReservationGroups(Arrays.asList(responsesElement))
+            .build();
+    mockReservationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListReservationGroupsPagedResponse pagedListResponse = client.listReservationGroups(parent);
+
+    List<ReservationGroup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getReservationGroupsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListReservationGroupsRequest actualRequest =
+        ((ListReservationGroupsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listReservationGroupsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listReservationGroups(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

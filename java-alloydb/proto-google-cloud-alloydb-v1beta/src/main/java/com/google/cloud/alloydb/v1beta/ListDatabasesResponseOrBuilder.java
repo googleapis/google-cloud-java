@@ -28,7 +28,7 @@ public interface ListDatabasesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of databases
+   * The list of databases.
    * </pre>
    *
    * <code>repeated .google.cloud.alloydb.v1beta.Database databases = 1;</code>
@@ -39,7 +39,7 @@ public interface ListDatabasesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of databases
+   * The list of databases.
    * </pre>
    *
    * <code>repeated .google.cloud.alloydb.v1beta.Database databases = 1;</code>
@@ -50,7 +50,7 @@ public interface ListDatabasesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of databases
+   * The list of databases.
    * </pre>
    *
    * <code>repeated .google.cloud.alloydb.v1beta.Database databases = 1;</code>
@@ -61,7 +61,7 @@ public interface ListDatabasesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of databases
+   * The list of databases.
    * </pre>
    *
    * <code>repeated .google.cloud.alloydb.v1beta.Database databases = 1;</code>
@@ -73,7 +73,7 @@ public interface ListDatabasesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of databases
+   * The list of databases.
    * </pre>
    *
    * <code>repeated .google.cloud.alloydb.v1beta.Database databases = 1;</code>

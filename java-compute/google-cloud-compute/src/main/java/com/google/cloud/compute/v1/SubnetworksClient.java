@@ -868,6 +868,7 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setSubnetwork("subnetwork-1302785042")
+   *           .setViews("views112204398")
    *           .build();
    *   Subnetwork response = subnetworksClient.get(request);
    * }
@@ -898,6 +899,7 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setSubnetwork("subnetwork-1302785042")
+   *           .setViews("views112204398")
    *           .build();
    *   ApiFuture<Subnetwork> future = subnetworksClient.getCallable().futureCall(request);
    *   // Do something.
@@ -1190,6 +1192,7 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setReturnPartialSuccess(true)
+   *           .setViews("views112204398")
    *           .build();
    *   for (Subnetwork element : subnetworksClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1226,6 +1229,7 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setReturnPartialSuccess(true)
+   *           .setViews("views112204398")
    *           .build();
    *   ApiFuture<Subnetwork> future = subnetworksClient.listPagedCallable().futureCall(request);
    *   // Do something.
@@ -1261,6 +1265,7 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setReturnPartialSuccess(true)
+   *           .setViews("views112204398")
    *           .build();
    *   while (true) {
    *     SubnetworkList response = subnetworksClient.listCallable().call(request);

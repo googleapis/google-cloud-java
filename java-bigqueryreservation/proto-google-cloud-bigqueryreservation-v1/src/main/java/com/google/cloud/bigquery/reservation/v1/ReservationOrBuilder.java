@@ -28,14 +28,14 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * The resource name of the reservation, e.g.,
+   * Identifier. The resource name of the reservation, e.g.,
    * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
    * The reservation_id must only contain lower case alphanumeric characters or
    * dashes. It must start with a letter and must not end with a dash. Its
    * maximum length is 64 characters.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -45,14 +45,14 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * The resource name of the reservation, e.g.,
+   * Identifier. The resource name of the reservation, e.g.,
    * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
    * The reservation_id must only contain lower case alphanumeric characters or
    * dashes. It must start with a letter and must not end with a dash. Its
    * maximum length is 64 characters.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -62,7 +62,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Baseline slots available to this reservation. A slot is a unit of
+   * Optional. Baseline slots available to this reservation. A slot is a unit of
    * computational power in BigQuery, and serves as the unit of parallelism.
    *
    * Queries using this reservation might use more slots during runtime if
@@ -78,7 +78,7 @@ public interface ReservationOrBuilder
    * baseline slots every few minutes.
    * </pre>
    *
-   * <code>int64 slot_capacity = 2;</code>
+   * <code>int64 slot_capacity = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The slotCapacity.
    */
@@ -88,13 +88,13 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * If false, any query or pipeline job using this reservation will use idle
-   * slots from other reservations within the same admin project. If true, a
-   * query or pipeline job using this reservation will execute with the slot
-   * capacity specified in the slot_capacity field at most.
+   * Optional. If false, any query or pipeline job using this reservation will
+   * use idle slots from other reservations within the same admin project. If
+   * true, a query or pipeline job using this reservation will execute with the
+   * slot capacity specified in the slot_capacity field at most.
    * </pre>
    *
-   * <code>bool ignore_idle_slots = 4;</code>
+   * <code>bool ignore_idle_slots = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The ignoreIdleSlots.
    */
@@ -104,10 +104,12 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * The configuration parameters for the auto scaling feature.
+   * Optional. The configuration parameters for the auto scaling feature.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the autoscale field is set.
    */
@@ -117,10 +119,12 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * The configuration parameters for the auto scaling feature.
+   * Optional. The configuration parameters for the auto scaling feature.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The autoscale.
    */
@@ -130,10 +134,12 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * The configuration parameters for the auto scaling feature.
+   * Optional. The configuration parameters for the auto scaling feature.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.bigquery.reservation.v1.Reservation.AutoscaleOrBuilder getAutoscaleOrBuilder();
 
@@ -141,17 +147,16 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Job concurrency target which sets a soft upper bound on the number of jobs
-   * that can run concurrently in this reservation. This is a soft target due to
-   * asynchronous nature of the system and various optimizations for small
-   * queries.
-   * Default value is 0 which means that concurrency target will be
-   * automatically computed by the system.
-   * NOTE: this field is exposed as target job concurrency in the Information
-   * Schema, DDL and BigQuery CLI.
+   * Optional. Job concurrency target which sets a soft upper bound on the
+   * number of jobs that can run concurrently in this reservation. This is a
+   * soft target due to asynchronous nature of the system and various
+   * optimizations for small queries. Default value is 0 which means that
+   * concurrency target will be automatically computed by the system. NOTE: this
+   * field is exposed as target job concurrency in the Information Schema, DDL
+   * and BigQuery CLI.
    * </pre>
    *
-   * <code>int64 concurrency = 16;</code>
+   * <code>int64 concurrency = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The concurrency.
    */
@@ -255,20 +260,25 @@ public interface ReservationOrBuilder
    * set this field.
    * </pre>
    *
-   * <code>bool multi_region_auxiliary = 14;</code>
+   * <code>bool multi_region_auxiliary = 14 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.bigquery.reservation.v1.Reservation.multi_region_auxiliary is
+   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=677
    * @return The multiRegionAuxiliary.
    */
+  @java.lang.Deprecated
   boolean getMultiRegionAuxiliary();
 
   /**
    *
    *
    * <pre>
-   * Edition of the reservation.
+   * Optional. Edition of the reservation.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Edition edition = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for edition.
    */
@@ -278,10 +288,12 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Edition of the reservation.
+   * Optional. Edition of the reservation.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Edition edition = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The edition.
    */
@@ -407,10 +419,13 @@ public interface ReservationOrBuilder
    * will never exceed the max_slots - baseline.
    *
    *
-   * This field must be set together with the scaling_mode enum value.
+   * This field must be set together with the scaling_mode enum value,
+   * otherwise the request will be rejected with error code
+   * `google.rpc.Code.INVALID_ARGUMENT`.
    *
    * If the max_slots and scaling_mode are set, the autoscale or
-   * autoscale.max_slots field must be unset. However, the
+   * autoscale.max_slots field must be unset. Otherwise the request will be
+   * rejected with error code `google.rpc.Code.INVALID_ARGUMENT`. However, the
    * autoscale field may still be in the output. The autopscale.max_slots will
    * always show as 0 and the autoscaler.current_slots will represent the
    * current slots from autoscaler excluding idle slots.
@@ -427,12 +442,14 @@ public interface ReservationOrBuilder
    *
    * If the max_slots and scaling_mode are set, then the ignore_idle_slots field
    * must be aligned with the scaling_mode enum value.(See details in
-   * ScalingMode comments).
+   * ScalingMode comments). Otherwise the request will be rejected with
+   * error code `google.rpc.Code.INVALID_ARGUMENT`.
    *
    * Please note,  the max_slots is for user to manage the part of slots greater
    * than the baseline. Therefore, we don't allow users to set max_slots smaller
    * or equal to the baseline as it will not be meaningful. If the field is
-   * present and slot_capacity&gt;=max_slots.
+   * present and slot_capacity&gt;=max_slots, requests will be rejected with error
+   * code `google.rpc.Code.INVALID_ARGUMENT`.
    *
    * Please note that if max_slots is set to 0, we will treat it as unset.
    * Customers can set max_slots to 0 and set scaling_mode to
@@ -459,10 +476,13 @@ public interface ReservationOrBuilder
    * will never exceed the max_slots - baseline.
    *
    *
-   * This field must be set together with the scaling_mode enum value.
+   * This field must be set together with the scaling_mode enum value,
+   * otherwise the request will be rejected with error code
+   * `google.rpc.Code.INVALID_ARGUMENT`.
    *
    * If the max_slots and scaling_mode are set, the autoscale or
-   * autoscale.max_slots field must be unset. However, the
+   * autoscale.max_slots field must be unset. Otherwise the request will be
+   * rejected with error code `google.rpc.Code.INVALID_ARGUMENT`. However, the
    * autoscale field may still be in the output. The autopscale.max_slots will
    * always show as 0 and the autoscaler.current_slots will represent the
    * current slots from autoscaler excluding idle slots.
@@ -479,12 +499,14 @@ public interface ReservationOrBuilder
    *
    * If the max_slots and scaling_mode are set, then the ignore_idle_slots field
    * must be aligned with the scaling_mode enum value.(See details in
-   * ScalingMode comments).
+   * ScalingMode comments). Otherwise the request will be rejected with
+   * error code `google.rpc.Code.INVALID_ARGUMENT`.
    *
    * Please note,  the max_slots is for user to manage the part of slots greater
    * than the baseline. Therefore, we don't allow users to set max_slots smaller
    * or equal to the baseline as it will not be meaningful. If the field is
-   * present and slot_capacity&gt;=max_slots.
+   * present and slot_capacity&gt;=max_slots, requests will be rejected with error
+   * code `google.rpc.Code.INVALID_ARGUMENT`.
    *
    * Please note that if max_slots is set to 0, we will treat it as unset.
    * Customers can set max_slots to 0 and set scaling_mode to
@@ -502,7 +524,8 @@ public interface ReservationOrBuilder
    *
    * <pre>
    * Optional. The scaling mode for the reservation.
-   * If the field is present but max_slots is not present.
+   * If the field is present but max_slots is not present, requests will be
+   * rejected with error code `google.rpc.Code.INVALID_ARGUMENT`.
    * </pre>
    *
    * <code>
@@ -518,7 +541,8 @@ public interface ReservationOrBuilder
    *
    * <pre>
    * Optional. The scaling mode for the reservation.
-   * If the field is present but max_slots is not present.
+   * If the field is present but max_slots is not present, requests will be
+   * rejected with error code `google.rpc.Code.INVALID_ARGUMENT`.
    * </pre>
    *
    * <code>
@@ -528,6 +552,115 @@ public interface ReservationOrBuilder
    * @return The scalingMode.
    */
   com.google.cloud.bigquery.reservation.v1.Reservation.ScalingMode getScalingMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels associated with this reservation. You can use these
+   * to organize and group your reservations.
+   * You can set this property when you create or update a reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  int getLabelsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels associated with this reservation. You can use these
+   * to organize and group your reservations.
+   * You can set this property when you create or update a reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  boolean containsLabels(java.lang.String key);
+
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels associated with this reservation. You can use these
+   * to organize and group your reservations.
+   * You can set this property when you create or update a reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels associated with this reservation. You can use these
+   * to organize and group your reservations.
+   * You can set this property when you create or update a reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels associated with this reservation. You can use these
+   * to organize and group your reservations.
+   * You can set this property when you create or update a reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The reservation group that this reservation belongs to.
+   * You can set this property when you create or update a reservation.
+   * Reservations do not need to belong to a reservation group.
+   * Format:
+   * projects/{project}/locations/{location}/reservationGroups/{reservation_group}
+   * or just {reservation_group}
+   * </pre>
+   *
+   * <code>string reservation_group = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The reservationGroup.
+   */
+  java.lang.String getReservationGroup();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The reservation group that this reservation belongs to.
+   * You can set this property when you create or update a reservation.
+   * Reservations do not need to belong to a reservation group.
+   * Format:
+   * projects/{project}/locations/{location}/reservationGroups/{reservation_group}
+   * or just {reservation_group}
+   * </pre>
+   *
+   * <code>string reservation_group = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for reservationGroup.
+   */
+  com.google.protobuf.ByteString getReservationGroupBytes();
 
   /**
    *
@@ -593,4 +726,59 @@ public interface ReservationOrBuilder
    */
   com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatusOrBuilder
       getReplicationStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scheduling policy to use for jobs and queries running under
+   * this reservation. The scheduling policy controls how the reservation's
+   * resources are distributed.
+   *
+   * This feature is not yet generally available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the schedulingPolicy field is set.
+   */
+  boolean hasSchedulingPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scheduling policy to use for jobs and queries running under
+   * this reservation. The scheduling policy controls how the reservation's
+   * resources are distributed.
+   *
+   * This feature is not yet generally available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The schedulingPolicy.
+   */
+  com.google.cloud.bigquery.reservation.v1.SchedulingPolicy getSchedulingPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scheduling policy to use for jobs and queries running under
+   * this reservation. The scheduling policy controls how the reservation's
+   * resources are distributed.
+   *
+   * This feature is not yet generally available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.bigquery.reservation.v1.SchedulingPolicyOrBuilder getSchedulingPolicyOrBuilder();
 }

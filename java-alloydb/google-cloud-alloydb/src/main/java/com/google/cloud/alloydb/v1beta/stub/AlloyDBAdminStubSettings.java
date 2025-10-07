@@ -61,6 +61,7 @@ import com.google.cloud.alloydb.v1beta.Cluster;
 import com.google.cloud.alloydb.v1beta.ConnectionInfo;
 import com.google.cloud.alloydb.v1beta.CreateBackupRequest;
 import com.google.cloud.alloydb.v1beta.CreateClusterRequest;
+import com.google.cloud.alloydb.v1beta.CreateDatabaseRequest;
 import com.google.cloud.alloydb.v1beta.CreateInstanceRequest;
 import com.google.cloud.alloydb.v1beta.CreateSecondaryClusterRequest;
 import com.google.cloud.alloydb.v1beta.CreateSecondaryInstanceRequest;
@@ -310,6 +311,7 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
   private final PagedCallSettings<
           ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
       listDatabasesSettings;
+  private final UnaryCallSettings<CreateDatabaseRequest, Database> createDatabaseSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -1020,6 +1022,11 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     return listDatabasesSettings;
   }
 
+  /** Returns the object with the settings used for calls to createDatabase. */
+  public UnaryCallSettings<CreateDatabaseRequest, Database> createDatabaseSettings() {
+    return createDatabaseSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1205,6 +1212,7 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     updateUserSettings = settingsBuilder.updateUserSettings().build();
     deleteUserSettings = settingsBuilder.deleteUserSettings().build();
     listDatabasesSettings = settingsBuilder.listDatabasesSettings().build();
+    createDatabaseSettings = settingsBuilder.createDatabaseSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -1329,6 +1337,7 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     private final PagedCallSettings.Builder<
             ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
         listDatabasesSettings;
+    private final UnaryCallSettings.Builder<CreateDatabaseRequest, Database> createDatabaseSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1440,6 +1449,7 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
       updateUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listDatabasesSettings = PagedCallSettings.newBuilder(LIST_DATABASES_PAGE_STR_FACT);
+      createDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1482,6 +1492,7 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
               updateUserSettings,
               deleteUserSettings,
               listDatabasesSettings,
+              createDatabaseSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1551,6 +1562,7 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
       updateUserSettings = settings.updateUserSettings.toBuilder();
       deleteUserSettings = settings.deleteUserSettings.toBuilder();
       listDatabasesSettings = settings.listDatabasesSettings.toBuilder();
+      createDatabaseSettings = settings.createDatabaseSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1593,6 +1605,7 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
               updateUserSettings,
               deleteUserSettings,
               listDatabasesSettings,
+              createDatabaseSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1804,6 +1817,11 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
 
       builder
           .listDatabasesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createDatabaseSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2674,6 +2692,11 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
             ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
         listDatabasesSettings() {
       return listDatabasesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDatabase. */
+    public UnaryCallSettings.Builder<CreateDatabaseRequest, Database> createDatabaseSettings() {
+      return createDatabaseSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

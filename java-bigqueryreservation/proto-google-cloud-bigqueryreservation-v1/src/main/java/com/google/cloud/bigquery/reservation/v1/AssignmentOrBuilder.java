@@ -60,11 +60,11 @@ public interface AssignmentOrBuilder
    *
    *
    * <pre>
-   * The resource which will use the reservation. E.g.
+   * Optional. The resource which will use the reservation. E.g.
    * `projects/myproject`, `folders/123`, or `organizations/456`.
    * </pre>
    *
-   * <code>string assignee = 4;</code>
+   * <code>string assignee = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The assignee.
    */
@@ -74,11 +74,11 @@ public interface AssignmentOrBuilder
    *
    *
    * <pre>
-   * The resource which will use the reservation. E.g.
+   * Optional. The resource which will use the reservation. E.g.
    * `projects/myproject`, `folders/123`, or `organizations/456`.
    * </pre>
    *
-   * <code>string assignee = 4;</code>
+   * <code>string assignee = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for assignee.
    */
@@ -88,10 +88,12 @@ public interface AssignmentOrBuilder
    *
    *
    * <pre>
-   * Which type of jobs will use the reservation.
+   * Optional. Which type of jobs will use the reservation.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for jobType.
    */
@@ -101,10 +103,12 @@ public interface AssignmentOrBuilder
    *
    *
    * <pre>
-   * Which type of jobs will use the reservation.
+   * Optional. Which type of jobs will use the reservation.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Assignment.JobType job_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The jobType.
    */
@@ -159,4 +163,62 @@ public interface AssignmentOrBuilder
    * @return The enableGeminiInBigquery.
    */
   boolean getEnableGeminiInBigquery();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scheduling policy to use for jobs and queries of this
+   * assignee when running under the associated reservation. The scheduling
+   * policy controls how the reservation's resources are distributed. This
+   * overrides the default scheduling policy specified on the reservation.
+   *
+   * This feature is not yet generally available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the schedulingPolicy field is set.
+   */
+  boolean hasSchedulingPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scheduling policy to use for jobs and queries of this
+   * assignee when running under the associated reservation. The scheduling
+   * policy controls how the reservation's resources are distributed. This
+   * overrides the default scheduling policy specified on the reservation.
+   *
+   * This feature is not yet generally available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The schedulingPolicy.
+   */
+  com.google.cloud.bigquery.reservation.v1.SchedulingPolicy getSchedulingPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scheduling policy to use for jobs and queries of this
+   * assignee when running under the associated reservation. The scheduling
+   * policy controls how the reservation's resources are distributed. This
+   * overrides the default scheduling policy specified on the reservation.
+   *
+   * This feature is not yet generally available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.bigquery.reservation.v1.SchedulingPolicyOrBuilder getSchedulingPolicyOrBuilder();
 }

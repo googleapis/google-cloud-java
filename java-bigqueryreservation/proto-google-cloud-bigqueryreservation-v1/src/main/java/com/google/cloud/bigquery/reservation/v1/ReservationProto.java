@@ -41,6 +41,18 @@ public final class ReservationProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_reservation_v1_Reservation_ReplicationStatus_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_reservation_v1_Reservation_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_reservation_v1_Reservation_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_reservation_v1_SchedulingPolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_reservation_v1_SchedulingPolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_reservation_v1_ReservationGroup_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_reservation_v1_ReservationGroup_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_bigquery_reservation_v1_CapacityCommitment_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_reservation_v1_CapacityCommitment_fieldAccessorTable;
@@ -72,6 +84,26 @@ public final class ReservationProto {
       internal_static_google_cloud_bigquery_reservation_v1_FailoverReservationRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_reservation_v1_FailoverReservationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_reservation_v1_CreateReservationGroupRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_reservation_v1_CreateReservationGroupRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_reservation_v1_GetReservationGroupRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_reservation_v1_GetReservationGroupRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_reservation_v1_ListReservationGroupsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_reservation_v1_ListReservationGroupsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_reservation_v1_ListReservationGroupsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_reservation_v1_ListReservationGroupsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_reservation_v1_DeleteReservationGroupRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_reservation_v1_DeleteReservationGroupRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_bigquery_reservation_v1_CreateCapacityCommitmentRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -181,20 +213,23 @@ public final class ReservationProto {
           + "6google/cloud/bigquery/reservation/v1/reservation.proto\022$google.cloud.bigquery."
           + "reservation.v1\032\034google/api/annotations.p"
           + "roto\032\027google/api/client.proto\032\037google/ap"
-          + "i/field_behavior.proto\032\031google/api/resource.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google"
-          + "/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\332\n\n"
-          + "\013Reservation\022\014\n"
-          + "\004name\030\001 \001(\t\022\025\n\r"
-          + "slot_capacity\030\002 \001(\003\022\031\n"
-          + "\021ignore_idle_slots\030\004 \001(\010\022N\n"
-          + "\tautoscale\030\007 \001(\0132;.google.c"
-          + "loud.bigquery.reservation.v1.Reservation.Autoscale\022\023\n"
-          + "\013concurrency\030\020 \001(\003\0226\n\r"
+          + "i/field_behavior.proto\032\031google/api/resou"
+          + "rce.proto\032\036google/iam/v1/iam_policy.prot"
+          + "o\032\032google/iam/v1/policy.proto\032\033google/protobuf/empty.proto\032"
+          + " google/protobuf/fiel"
+          + "d_mask.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\374\014\n"
+          + "\013Reservation\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\032\n\r"
+          + "slot_capacity\030\002 \001(\003B\003\340A\001\022\036\n"
+          + "\021ignore_idle_slots\030\004 \001(\010B\003\340A\001\022S\n"
+          + "\tautoscale\030\007 \001(\0132;.google.cloud."
+          + "bigquery.reservation.v1.Reservation.AutoscaleB\003\340A\001\022\030\n"
+          + "\013concurrency\030\020 \001(\003B\003\340A\001\0226\n\r"
           + "creation_time\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
-          + "\013update_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\036\n"
-          + "\026multi_region_auxiliary\030\016 \001(\010\022>\n"
-          + "\007edition\030\021 \001(\0162-.google.cloud.bigquery.reservation.v1.Edition\022C\n"
+          + "\013update_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\"\n"
+          + "\026multi_region_auxiliary\030\016 \001(\010B\002\030\001\022C\n"
+          + "\007edition\030\021 \001(\0162"
+          + "-.google.cloud.bigquery.reservation.v1.EditionB\003\340A\001\022C\n"
           + "\020primary_location\030\022 \001(\tB)\340A\003\372A#\n"
           + "!locations.googleapis.com/Location\022E\n"
           + "\022secondary_location\030\023 \001(\tB)\340A\001\372A#\n"
@@ -202,13 +237,18 @@ public final class ReservationProto {
           + "\031original_primary_location\030\024 \001(\tB)\340A\003\372A#\n"
           + "!locations.googleapis.com/Location\022\033\n"
           + "\tmax_slots\030\025 \001(\003B\003\340A\001H\000\210\001\001\022X\n"
-          + "\014scaling_mode\030\026 \001(\0162=.google.clou"
-          + "d.bigquery.reservation.v1.Reservation.ScalingModeB\003\340A\001\022d\n"
-          + "\022replication_status\030\030 \001"
-          + "(\0132C.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatusB\003\340A\003\032:\n"
+          + "\014scaling_mode\030\026 \001(\016"
+          + "2=.google.cloud.bigquery.reservation.v1.Reservation.ScalingModeB\003\340A\001\022R\n"
+          + "\006labels\030\027"
+          + " \003(\0132=.google.cloud.bigquery.reservation.v1.Reservation.LabelsEntryB\003\340A\001\022\036\n"
+          + "\021reservation_group\030\031 \001(\tB\003\340A\001\022d\n"
+          + "\022replication_status\030\030 \001(\0132C.google.cloud.bigquery.res"
+          + "ervation.v1.Reservation.ReplicationStatusB\003\340A\003\022V\n"
+          + "\021scheduling_policy\030\033 \001(\01326.goog"
+          + "le.cloud.bigquery.reservation.v1.SchedulingPolicyB\003\340A\001\032?\n"
           + "\tAutoscale\022\032\n\r"
-          + "current_slots\030\001 \001(\003B\003\340A\003\022\021\n"
-          + "\tmax_slots\030\002 \001(\003\032\370\001\n"
+          + "current_slots\030\001 \001(\003B\003\340A\003\022\026\n"
+          + "\tmax_slots\030\002 \001(\003B\003\340A\001\032\370\001\n"
           + "\021ReplicationStatus\022&\n"
           + "\005error\030\001 \001(\0132\022.google.rpc.StatusB\003\340A\003\0228\n"
           + "\017last_error_time\030\002"
@@ -216,32 +256,47 @@ public final class ReservationProto {
           + "\025last_replication_time\030\003"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022A\n"
           + "\030soft_failover_start_time\030\004"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"c\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032-\n"
+          + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r"
+          + "\n"
+          + "\005value\030\002 \001(\t:\0028\001\"c\n"
           + "\013ScalingMode\022\034\n"
           + "\030SCALING_MODE_UNSPECIFIED\020\000\022\022\n"
           + "\016AUTOSCALE_ONLY\020\001\022\023\n"
           + "\017IDLE_SLOTS_ONLY\020\002\022\r\n"
           + "\tALL_SLOTS\020\003:w\352At\n"
-          + ".bigqueryreservation.googleapis.com/Reservation\022Bprojects/{project"
-          + "}/locations/{location}/reservations/{reservation}B\014\n\n"
-          + "_max_slots\"\222\010\n"
+          + ".bigqueryreservation.googleapis.com/Reservation\022Bprojects/{project}/location"
+          + "s/{location}/reservations/{reservation}B\014\n\n"
+          + "_max_slots\"l\n"
+          + "\020SchedulingPolicy\022\035\n"
+          + "\013concurrency\030\001 \001(\003B\003\340A\001H\000\210\001\001\022\033\n"
+          + "\tmax_slots\030\002 \001(\003B\003\340A\001H\001\210\001\001B\016\n"
+          + "\014_concurrencyB\014\n\n"
+          + "_max_slots\"\325\001\n"
+          + "\020ReservationGroup\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010:\255\001\352A\251\001\n"
+          + "3bigqueryreservation.googleapis.com/ReservationGroup\022Mprojects/{proje"
+          + "ct}/locations/{location}/reservationGrou"
+          + "ps/{reservation_group}*\021reservationGroups2\020reservationGroup\"\252\010\n"
           + "\022CapacityCommitment\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\003\022\022\n\n"
-          + "slot_count\030\002 \001(\003\022U\n"
-          + "\004plan\030\003 \001(\0162G.google.cloud.bigqu"
-          + "ery.reservation.v1.CapacityCommitment.CommitmentPlan\022R\n"
-          + "\005state\030\004 \001(\0162>.google.clo"
-          + "ud.bigquery.reservation.v1.CapacityCommitment.StateB\003\340A\003\022>\n"
+          + "\004name\030\001 \001(\tB\003\340A\003\022\027\n\n"
+          + "slot_count\030\002 \001(\003B\003\340A\001\022Z\n"
+          + "\004plan\030\003 \001(\0162G.google.cloud.bigq"
+          + "uery.reservation.v1.CapacityCommitment.CommitmentPlanB\003\340A\001\022R\n"
+          + "\005state\030\004 \001(\0162>.goog"
+          + "le.cloud.bigquery.reservation.v1.CapacityCommitment.StateB\003\340A\003\022>\n"
           + "\025commitment_start_time\030\t"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022<\n"
           + "\023commitment_end_time\030\005"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022/\n"
-          + "\016failure_status\030\007 \001(\0132\022.google.rpc.StatusB\003\340A\003\022]\n"
-          + "\014renewal_plan\030\010 \001(\0162G.google.cloud.bigquery.re"
-          + "servation.v1.CapacityCommitment.CommitmentPlan\022\036\n"
+          + "\016failure_status\030\007 \001(\0132\022.google.rpc.StatusB\003\340A\003\022b\n"
+          + "\014renewal_plan\030\010 \001(\0162G.google.cloud.bigqu"
+          + "ery.reservation.v1.CapacityCommitment.CommitmentPlanB\003\340A\001\022\"\n"
           + "\026multi_region_auxiliary\030\n"
-          + " \001(\010\022>\n"
-          + "\007edition\030\014 \001(\0162-.google.cloud.bigquery.reservation.v1.Edition\022\031\n"
+          + " \001(\010B\002\030\001\022C\n"
+          + "\007edition\030\014 \001(\0162-.google."
+          + "cloud.bigquery.reservation.v1.EditionB\003\340A\001\022\031\n"
           + "\014is_flat_rate\030\016 \001(\010B\003\340A\003\"\312\001\n"
           + "\016CommitmentPlan\022\037\n"
           + "\033COMMITMENT_PLAN_UNSPECIFIED\020\000\022\010\n"
@@ -260,22 +315,23 @@ public final class ReservationProto {
           + "\007PENDING\020\001\022\n\n"
           + "\006ACTIVE\020\002\022\n\n"
           + "\006FAILED\020\003:\216\001\352A\212\001\n"
-          + "5bigqueryreservation.googleapis.com/CapacityCommitment\022Qprojects/{pro"
-          + "ject}/locations/{location}/capacityCommitments/{capacity_commitment}\"\302\001\n"
+          + "5bigqueryreservation.googleapis.com/CapacityCommi"
+          + "tment\022Qprojects/{project}/locations/{loc"
+          + "ation}/capacityCommitments/{capacity_commitment}\"\302\001\n"
           + "\030CreateReservationRequest\022F\n"
-          + "\006parent\030\001 \001(\tB6\340A\002\372A"
-          + "0\022.bigqueryreservation.googleapis.com/Reservation\022\026\n"
+          + "\006parent\030\001 \001("
+          + "\tB6\340A\002\372A0\022.bigqueryreservation.googleapis.com/Reservation\022\026\n"
           + "\016reservation_id\030\002 \001(\t\022F\n"
-          + "\013reservation\030\003"
-          + " \001(\01321.google.cloud.bigquery.reservation.v1.Reservation\"\210\001\n"
+          + "\013reservation\030\003 \001(\01321.goo"
+          + "gle.cloud.bigquery.reservation.v1.Reservation\"\210\001\n"
           + "\027ListReservationsRequest\022F\n"
-          + "\006parent\030\001 \001(\tB6\340A\002\372A0\022.b"
-          + "igqueryreservation.googleapis.com/Reservation\022\021\n"
+          + "\006parent\030\001 \001("
+          + "\tB6\340A\002\372A0\022.bigqueryreservation.googleapis.com/Reservation\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\"|\n"
           + "\030ListReservationsResponse\022G\n"
-          + "\014reservations\030\001"
-          + " \003(\01321.google.cloud.bigquery.reservation.v1.Reservation\022\027\n"
+          + "\014reservations\030\001 \003(\01321.goo"
+          + "gle.cloud.bigquery.reservation.v1.Reservation\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"]\n"
           + "\025GetReservationRequest\022D\n"
           + "\004name\030\001 \001(\tB6\340A\002\372A0\n"
@@ -284,29 +340,50 @@ public final class ReservationProto {
           + "\004name\030\001 \001(\tB6\340A\002\372A0\n"
           + ".bigqueryreservation.googleapis.com/Reservation\"\223\001\n"
           + "\030UpdateReservationRequest\022F\n"
-          + "\013reservation\030\001"
-          + " \001(\01321.google.cloud.bigquery.reservation.v1.Reservation\022/\n"
+          + "\013reservation\030\001 \001(\01321.goog"
+          + "le.cloud.bigquery.reservation.v1.Reservation\022/\n"
           + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMask\"\262\001\n"
           + "\032FailoverReservationRequest\022D\n"
           + "\004name\030\001 \001(\tB6\340A\002\372A0\n"
           + ".bigqueryreservation.googleapis.com/Reservation\022N\n\r"
-          + "failover_mode\030\002 \001(\01622."
-          + "google.cloud.bigquery.reservation.v1.FailoverModeB\003\340A\001\"\225\002\n"
+          + "failover_mode\030\002"
+          + " \001(\01622.google.cloud.bigquery.reservation.v1.FailoverModeB\003\340A\001\"\347\001\n"
+          + "\035CreateReservationGroupRequest\022K\n"
+          + "\006parent\030\001 \001("
+          + "\tB;\340A\002\372A5\0223bigqueryreservation.googleapis.com/ReservationGroup\022!\n"
+          + "\024reservation_group_id\030\002 \001(\tB\003\340A\002\022V\n"
+          + "\021reservation_group\030\003"
+          + " \001(\01326.google.cloud.bigquery.reservation.v1.ReservationGroupB\003\340A\002\"g\n"
+          + "\032GetReservationGroupRequest\022I\n"
+          + "\004name\030\001 \001(\tB;\340A\002\372A5\n"
+          + "3bigqueryreservation.googleapis.com/ReservationGroup\"\222\001\n"
+          + "\034ListReservationGroupsRequest\022K\n"
+          + "\006parent\030\001 \001(\tB;\340A\002\372A5\0223bigquery"
+          + "reservation.googleapis.com/ReservationGroup\022\021\n"
+          + "\tpage_size\030\002 \001(\005\022\022\n\n"
+          + "page_token\030\003 \001(\t\"\214\001\n"
+          + "\035ListReservationGroupsResponse\022R\n"
+          + "\022reservation_groups\030\001 \003(\01326.google.cloud."
+          + "bigquery.reservation.v1.ReservationGroup\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"j\n"
+          + "\035DeleteReservationGroupRequest\022I\n"
+          + "\004name\030\001 \001(\tB;\340A\002\372A5\n"
+          + "3bigqueryreservation.googleapis.com/ReservationGroup\"\225\002\n"
           + "\037CreateCapacityCommitmentRequest\022M\n"
-          + "\006parent\030\001 \001(\tB=\340A\002\372A7\0225bigq"
-          + "ueryreservation.googleapis.com/CapacityCommitment\022U\n"
-          + "\023capacity_commitment\030\002 \001(\01328"
-          + ".google.cloud.bigquery.reservation.v1.CapacityCommitment\022,\n"
+          + "\006parent\030\001 \001(\tB=\340A\002\372A7\0225bigqu"
+          + "eryreservation.googleapis.com/CapacityCommitment\022U\n"
+          + "\023capacity_commitment\030\002 \001(\01328."
+          + "google.cloud.bigquery.reservation.v1.CapacityCommitment\022,\n"
           + "$enforce_single_admin_project_per_org\030\004 \001(\010\022\036\n"
           + "\026capacity_commitment_id\030\005 \001(\t\"\226\001\n"
           + "\036ListCapacityCommitmentsRequest\022M\n"
-          + "\006parent\030\001 \001(\tB=\340A\002\372A7\0225bigqu"
-          + "eryreservation.googleapis.com/CapacityCommitment\022\021\n"
+          + "\006parent\030\001 \001(\tB=\340A\002\372A7\0225bigque"
+          + "ryreservation.googleapis.com/CapacityCommitment\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\"\222\001\n"
           + "\037ListCapacityCommitmentsResponse\022V\n"
-          + "\024capacity_commitments\030\001 \003(\01328.goog"
-          + "le.cloud.bigquery.reservation.v1.CapacityCommitment\022\027\n"
+          + "\024capacity_commitments\030\001 \003(\01328.googl"
+          + "e.cloud.bigquery.reservation.v1.CapacityCommitment\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"k\n"
           + "\034GetCapacityCommitmentRequest\022K\n"
           + "\004name\030\001 \001(\tB=\340A\002\372A7\n"
@@ -324,36 +401,43 @@ public final class ReservationProto {
           + "5bigqueryreservation.googleapis.com/CapacityCommitment\022\022\n\n"
           + "slot_count\030\002 \001(\003\"\264\001\n"
           + "\037SplitCapacityCommitmentResponse\022G\n"
-          + "\005first\030\001 \001(\01328.google.clo"
-          + "ud.bigquery.reservation.v1.CapacityCommitment\022H\n"
-          + "\006second\030\002 \001(\01328.google.cloud.big"
-          + "query.reservation.v1.CapacityCommitment\"\216\001\n"
+          + "\005first\030\001 \001(\01328.google.clou"
+          + "d.bigquery.reservation.v1.CapacityCommitment\022H\n"
+          + "\006second\030\002 \001(\01328.google.cloud.bigq"
+          + "uery.reservation.v1.CapacityCommitment\"\263\001\n"
           + "\037MergeCapacityCommitmentsRequest\022J\n"
           + "\006parent\030\001 \001("
           + "\tB:\372A7\0225bigqueryreservation.googleapis.com/CapacityCommitment\022\037\n"
-          + "\027capacity_commitment_ids\030\002 \003(\t\"\305\004\n\n"
+          + "\027capacity_commitment_ids\030\002 \003(\t\022#\n"
+          + "\026capacity_commitment_id\030\003 \001(\tB\003\340A\001\"\227\006\n\n"
           + "Assignment\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\003\022\020\n"
-          + "\010assignee\030\004 \001(\t\022J\n"
-          + "\010job_type\030\003"
-          + " \001(\01628.google.cloud.bigquery.reservation.v1.Assignment.JobType\022J\n"
+          + "\004name\030\001 \001(\tB\003\340A\003\022\025\n"
+          + "\010assignee\030\004 \001(\tB\003\340A\001\022O\n"
+          + "\010job_type\030\003 \001(\01628.google.cloud.bigquery."
+          + "reservation.v1.Assignment.JobTypeB\003\340A\001\022J\n"
           + "\005state\030\006"
           + " \001(\01626.google.cloud.bigquery.reservation.v1.Assignment.StateB\003\340A\003\022&\n"
           + "\031enable_gemini_in_bigquery\030\n"
-          + " \001(\010B\003\340A\001\"m\n"
+          + " \001(\010B\003\340A\001\022V\n"
+          + "\021scheduling_policy\030\013 \001(\01326.google.cloud.big"
+          + "query.reservation.v1.SchedulingPolicyB\003\340A\001\"\334\001\n"
           + "\007JobType\022\030\n"
           + "\024JOB_TYPE_UNSPECIFIED\020\000\022\014\n"
           + "\010PIPELINE\020\001\022\t\n"
           + "\005QUERY\020\002\022\017\n"
           + "\013ML_EXTERNAL\020\003\022\016\n\n"
           + "BACKGROUND\020\004\022\016\n\n"
-          + "CONTINUOUS\020\006\"7\n"
+          + "CONTINUOUS\020\006\022\"\n"
+          + "\036BACKGROUND_CHANGE_DATA_CAPTURE\020\007\022$\n"
+          + " BACKGROUND_COLUMN_METADATA_INDEX\020\010\022#\n"
+          + "\037BACKGROUND_SEARCH_INDEX_REFRESH\020\t\"7\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\013\n"
           + "\007PENDING\020\001\022\n\n"
           + "\006ACTIVE\020\002:\251\001\352A\245\001\n"
-          + "-bigqueryreservation.googleapis.com/Assignment\022[projects/{project}/locations"
-          + "/{location}/reservations/{reservation}/assignments/{assignment}*\013assignments2\n"
+          + "-bigqueryreservation.googleapis.com/Assignment\022[projects/{project}/loc"
+          + "ations/{location}/reservations/{reservat"
+          + "ion}/assignments/{assignment}*\013assignments2\n"
           + "assignment\"\275\001\n"
           + "\027CreateAssignmentRequest\022E\n"
           + "\006parent\030\001 \001("
@@ -364,12 +448,11 @@ public final class ReservationProto {
           + "\026ListAssignmentsRequest\022E\n"
           + "\006parent\030\001 \001("
           + "\tB5\340A\002\372A/\022-bigqueryreservation.googleapis.com/Assignment\022\021\n"
-          + "\tpage_size\030\002 \001(\005\022\022\n"
-          + "\n"
+          + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\"y\n"
           + "\027ListAssignmentsResponse\022E\n"
-          + "\013assignments\030\001"
-          + " \003(\01320.google.cloud.bigquery.reservation.v1.Assignment\022\027\n"
+          + "\013assignments\030\001 \003(\01320.google"
+          + ".cloud.bigquery.reservation.v1.Assignment\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"^\n"
           + "\027DeleteAssignmentRequest\022C\n"
           + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
@@ -402,26 +485,26 @@ public final class ReservationProto {
           + "assignment_id\030\005 \001(\t\"\220\001\n"
           + "\027UpdateAssignmentRequest\022D\n\n"
           + "assignment\030\001 \001(\01320.google.cloud.bigquery.reservation.v1.Assignment\022/\n"
-          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMask\"J\n"
-          + "\016TableReference\022\022\n\n"
-          + "project_id\030\001 \001(\t\022\022\n\n"
-          + "dataset_id\030\002 \001(\t\022\020\n"
-          + "\010table_id\030\003 \001(\t\"\237\002\n\r"
-          + "BiReservation\022\014\n"
-          + "\004name\030\001 \001(\t\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMask\"Y\n"
+          + "\016TableReference\022\027\n\n"
+          + "project_id\030\001 \001(\tB\003\340A\001\022\027\n\n"
+          + "dataset_id\030\002 \001(\tB\003\340A\001\022\025\n"
+          + "\010table_id\030\003 \001(\tB\003\340A\001\"\256\002\n\r"
+          + "BiReservation\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
           + "\013update_time\030\003"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\014\n"
-          + "\004size\030\004 \001(\003\022N\n"
-          + "\020preferred_tables\030\005 \003(\0132"
-          + "4.google.cloud.bigquery.reservation.v1.TableReference:l\352Ai\n"
-          + "0bigqueryreservation.googleapis.com/BiReservation\0225projects/{"
-          + "project}/locations/{location}/biReservation\"a\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
+          + "\004size\030\004 \001(\003B\003\340A\001\022S\n"
+          + "\020preferred_tables\030\005 \003(\01324.google."
+          + "cloud.bigquery.reservation.v1.TableReferenceB\003\340A\001:l\352Ai\n"
+          + "0bigqueryreservation.googleapis.com/BiReservation\0225projects/{proj"
+          + "ect}/locations/{location}/biReservation\"a\n"
           + "\027GetBiReservationRequest\022F\n"
           + "\004name\030\001 \001(\tB8\340A\002\372A2\n"
           + "0bigqueryreservation.googleapis.com/BiReservation\"\232\001\n"
           + "\032UpdateBiReservationRequest\022K\n"
-          + "\016bi_reservation\030\001 \001(\01323."
-          + "google.cloud.bigquery.reservation.v1.BiReservation\022/\n"
+          + "\016bi_reservation\030\001 \001(\01323.goog"
+          + "le.cloud.bigquery.reservation.v1.BiReservation\022/\n"
           + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMask*U\n"
           + "\007Edition\022\027\n"
           + "\023EDITION_UNSPECIFIED\020\000\022\014\n"
@@ -431,110 +514,144 @@ public final class ReservationProto {
           + "\014FailoverMode\022\035\n"
           + "\031FAILOVER_MODE_UNSPECIFIED\020\000\022\010\n"
           + "\004SOFT\020\001\022\010\n"
-          + "\004HARD\020\0022\237)\n"
+          + "\004HARD\020\0022\2436\n"
           + "\022ReservationService\022\361\001\n"
-          + "\021CreateReservation\022>.google.cloud.bigquery.reservation.v1.CreateReservationReque"
-          + "st\0321.google.cloud.bigquery.reservation.v"
-          + "1.Reservation\"i\332A!parent,reservation,res"
-          + "ervation_id\202\323\344\223\002?\"0/v1/{parent=projects/"
-          + "*/locations/*}/reservations:\013reservation\022\324\001\n"
-          + "\020ListReservations\022=.google.cloud.bigquery.reservation.v1.ListReservationsReq"
-          + "uest\032>.google.cloud.bigquery.reservation"
-          + ".v1.ListReservationsResponse\"A\332A\006parent\202"
-          + "\323\344\223\0022\0220/v1/{parent=projects/*/locations/*}/reservations\022\301\001\n"
-          + "\016GetReservation\022;.google.cloud.bigquery.reservation.v1.GetRes"
-          + "ervationRequest\0321.google.cloud.bigquery."
-          + "reservation.v1.Reservation\"?\332A\004name\202\323\344\223\002"
-          + "2\0220/v1/{name=projects/*/locations/*/reservations/*}\022\254\001\n"
-          + "\021DeleteReservation\022>.google.cloud.bigquery.reservation.v1.DeleteR"
-          + "eservationRequest\032\026.google.protobuf.Empt"
-          + "y\"?\332A\004name\202\323\344\223\0022*0/v1/{name=projects/*/locations/*/reservations/*}\022\363\001\n"
-          + "\021UpdateReservation\022>.google.cloud.bigquery.reserva"
-          + "tion.v1.UpdateReservationRequest\0321.google.cloud.bigquery.reservation.v1.Reservat"
-          + "ion\"k\332A\027reservation,update_mask\202\323\344\223\002K2</"
-          + "v1/{reservation.name=projects/*/locations/*/reservations/*}:\013reservation\022\333\001\n"
-          + "\023FailoverReservation\022@.google.cloud.bigquery"
-          + ".reservation.v1.FailoverReservationRequest\0321.google.cloud.bigquery.reservation.v"
-          + "1.Reservation\"O\202\323\344\223\002I\"D/v1/{name=project"
-          + "s/*/locations/*/reservations/*}:failoverReservation:\001*\022\216\002\n"
-          + "\030CreateCapacityCommitment\022E.google.cloud.bigquery.reservation."
-          + "v1.CreateCapacityCommitmentRequest\0328.google.cloud.bigquery.reservation.v1.Capaci"
-          + "tyCommitment\"q\332A\032parent,capacity_commitm"
-          + "ent\202\323\344\223\002N\"7/v1/{parent=projects/*/locati"
-          + "ons/*}/capacityCommitments:\023capacity_commitment\022\360\001\n"
-          + "\027ListCapacityCommitments\022D.google.cloud.bigquery.reservation.v1.ListC"
-          + "apacityCommitmentsRequest\032E.google.cloud.bigquery.reservation.v1.ListCapacityCom"
-          + "mitmentsResponse\"H\332A\006parent\202\323\344\223\0029\0227/v1/{"
-          + "parent=projects/*/locations/*}/capacityCommitments\022\335\001\n"
-          + "\025GetCapacityCommitment\022B.google.cloud.bigquery.reservation.v1.GetC"
-          + "apacityCommitmentRequest\0328.google.cloud.bigquery.reservation.v1.CapacityCommitme"
-          + "nt\"F\332A\004name\202\323\344\223\0029\0227/v1/{name=projects/*/locations/*/capacityCommitments/*}\022\301\001\n"
-          + "\030DeleteCapacityCommitment\022E.google.cloud.b"
-          + "igquery.reservation.v1.DeleteCapacityCom"
-          + "mitmentRequest\032\026.google.protobuf.Empty\"F"
-          + "\332A\004name\202\323\344\223\0029*7/v1/{name=projects/*/locations/*/capacityCommitments/*}\022\250\002\n"
-          + "\030UpdateCapacityCommitment\022E.google.cloud.bigqu"
-          + "ery.reservation.v1.UpdateCapacityCommitmentRequest\0328.google.cloud.bigquery.reser"
-          + "vation.v1.CapacityCommitment\"\212\001\332A\037capaci"
-          + "ty_commitment,update_mask\202\323\344\223\002b2K/v1/{ca"
-          + "pacity_commitment.name=projects/*/locati"
-          + "ons/*/capacityCommitments/*}:\023capacity_commitment\022\202\002\n"
-          + "\027SplitCapacityCommitment\022D.google.cloud.bigquery.reservation.v1.Spl"
-          + "itCapacityCommitmentRequest\032E.google.cloud.bigquery.reservation.v1.SplitCapacity"
-          + "CommitmentResponse\"Z\332A\017name,slot_count\202\323"
-          + "\344\223\002B\"=/v1/{name=projects/*/locations/*/capacityCommitments/*}:split:\001*\022\206\002\n"
-          + "\030MergeCapacityCommitments\022E.google.cloud.bigqu"
-          + "ery.reservation.v1.MergeCapacityCommitmentsRequest\0328.google.cloud.bigquery.reser"
-          + "vation.v1.CapacityCommitment\"i\332A\036parent,"
-          + "capacity_commitment_ids\202\323\344\223\002B\"=/v1/{pare"
-          + "nt=projects/*/locations/*}/capacityCommitments:merge:\001*\022\353\001\n"
-          + "\020CreateAssignment\022=.google.cloud.bigquery.reservation.v1.Crea"
-          + "teAssignmentRequest\0320.google.cloud.bigqu"
-          + "ery.reservation.v1.Assignment\"f\332A\021parent"
-          + ",assignment\202\323\344\223\002L\">/v1/{parent=projects/"
-          + "*/locations/*/reservations/*}/assignments:\n"
-          + "assignment\022\337\001\n"
-          + "\017ListAssignments\022<.google.cloud.bigquery.reservation.v1.ListAss"
-          + "ignmentsRequest\032=.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse\"O"
-          + "\332A\006parent\202\323\344\223\002@\022>/v1/{parent=projects/*/"
-          + "locations/*/reservations/*}/assignments\022\270\001\n"
-          + "\020DeleteAssignment\022=.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequ"
-          + "est\032\026.google.protobuf.Empty\"M\332A\004name\202\323\344\223"
-          + "\002@*>/v1/{name=projects/*/locations/*/reservations/*/assignments/*}\022\345\001\n"
-          + "\021SearchAssignments\022>.google.cloud.bigquery.reserva"
-          + "tion.v1.SearchAssignmentsRequest\032?.google.cloud.bigquery.reservation.v1.SearchAs"
-          + "signmentsResponse\"O\210\002\001\332A\014parent,query\202\323\344"
-          + "\223\0027\0225/v1/{parent=projects/*/locations/*}:searchAssignments\022\356\001\n"
-          + "\024SearchAllAssignments\022A.google.cloud.bigquery.reservation."
-          + "v1.SearchAllAssignmentsRequest\032B.google.cloud.bigquery.reservation.v1.SearchAllA"
-          + "ssignmentsResponse\"O\332A\014parent,query\202\323\344\223\002"
-          + ":\0228/v1/{parent=projects/*/locations/*}:searchAllAssignments\022\345\001\n"
-          + "\016MoveAssignment\022;.google.cloud.bigquery.reservation.v1.Mo"
-          + "veAssignmentRequest\0320.google.cloud.bigqu"
-          + "ery.reservation.v1.Assignment\"d\332A\023name,d"
-          + "estination_id\202\323\344\223\002H\"C/v1/{name=projects/"
-          + "*/locations/*/reservations/*/assignments/*}:move:\001*\022\373\001\n"
-          + "\020UpdateAssignment\022=.google.cloud.bigquery.reservation.v1.UpdateAs"
+          + "\021CreateReservation\022>.google.cloud.bigquery.r"
+          + "eservation.v1.CreateReservationRequest\0321.google.cloud.bigquery.reservation.v1.Re"
+          + "servation\"i\332A!parent,reservation,reserva"
+          + "tion_id\202\323\344\223\002?\"0/v1/{parent=projects/*/locations/*}/reservations:\013reservation\022\324\001\n"
+          + "\020ListReservations\022=.google.cloud.bigquery.reservation.v1.ListReservationsRequest"
+          + "\032>.google.cloud.bigquery.reservation.v1."
+          + "ListReservationsResponse\"A\332A\006parent\202\323\344\223\002"
+          + "2\0220/v1/{parent=projects/*/locations/*}/reservations\022\301\001\n"
+          + "\016GetReservation\022;.google.cloud.bigquery.reservation.v1.GetReserva"
+          + "tionRequest\0321.google.cloud.bigquery.rese"
+          + "rvation.v1.Reservation\"?\332A\004name\202\323\344\223\0022\0220/"
+          + "v1/{name=projects/*/locations/*/reservations/*}\022\254\001\n"
+          + "\021DeleteReservation\022>.google.cloud.bigquery.reservation.v1.DeleteReser"
+          + "vationRequest\032\026.google.protobuf.Empty\"?\332"
+          + "A\004name\202\323\344\223\0022*0/v1/{name=projects/*/locations/*/reservations/*}\022\363\001\n"
+          + "\021UpdateReservation\022>.google.cloud.bigquery.reservation"
+          + ".v1.UpdateReservationRequest\0321.google.cloud.bigquery.reservation.v1.Reservation\""
+          + "k\332A\027reservation,update_mask\202\323\344\223\002K2</v1/{"
+          + "reservation.name=projects/*/locations/*/reservations/*}:\013reservation\022\333\001\n"
+          + "\023FailoverReservation\022@.google.cloud.bigquery.res"
+          + "ervation.v1.FailoverReservationRequest\0321.google.cloud.bigquery.reservation.v1.Re"
+          + "servation\"O\202\323\344\223\002I\"D/v1/{name=projects/*/"
+          + "locations/*/reservations/*}:failoverReservation:\001*\022\216\002\n"
+          + "\030CreateCapacityCommitment\022E.google.cloud.bigquery.reservation.v1.C"
+          + "reateCapacityCommitmentRequest\0328.google.cloud.bigquery.reservation.v1.CapacityCo"
+          + "mmitment\"q\332A\032parent,capacity_commitment\202"
+          + "\323\344\223\002N\"7/v1/{parent=projects/*/locations/"
+          + "*}/capacityCommitments:\023capacity_commitment\022\360\001\n"
+          + "\027ListCapacityCommitments\022D.google.cloud.bigquery.reservation.v1.ListCapac"
+          + "ityCommitmentsRequest\032E.google.cloud.bigquery.reservation.v1.ListCapacityCommitm"
+          + "entsResponse\"H\332A\006parent\202\323\344\223\0029\0227/v1/{pare"
+          + "nt=projects/*/locations/*}/capacityCommitments\022\335\001\n"
+          + "\025GetCapacityCommitment\022B.google.cloud.bigquery.reservation.v1.GetCapac"
+          + "ityCommitmentRequest\0328.google.cloud.bigquery.reservation.v1.CapacityCommitment\"F"
+          + "\332A\004name\202\323\344\223\0029\0227/v1/{name=projects/*/locations/*/capacityCommitments/*}\022\301\001\n"
+          + "\030DeleteCapacityCommitment\022E.google.cloud.bigqu"
+          + "ery.reservation.v1.DeleteCapacityCommitm"
+          + "entRequest\032\026.google.protobuf.Empty\"F\332A\004n"
+          + "ame\202\323\344\223\0029*7/v1/{name=projects/*/locations/*/capacityCommitments/*}\022\250\002\n"
+          + "\030UpdateCapacityCommitment\022E.google.cloud.bigquery."
+          + "reservation.v1.UpdateCapacityCommitmentRequest\0328.google.cloud.bigquery.reservati"
+          + "on.v1.CapacityCommitment\"\212\001\332A\037capacity_c"
+          + "ommitment,update_mask\202\323\344\223\002b2K/v1/{capaci"
+          + "ty_commitment.name=projects/*/locations/"
+          + "*/capacityCommitments/*}:\023capacity_commitment\022\202\002\n"
+          + "\027SplitCapacityCommitment\022D.google.cloud.bigquery.reservation.v1.SplitCa"
+          + "pacityCommitmentRequest\032E.google.cloud.bigquery.reservation.v1.SplitCapacityComm"
+          + "itmentResponse\"Z\332A\017name,slot_count\202\323\344\223\002B"
+          + "\"=/v1/{name=projects/*/locations/*/capacityCommitments/*}:split:\001*\022\206\002\n"
+          + "\030MergeCapacityCommitments\022E.google.cloud.bigquery."
+          + "reservation.v1.MergeCapacityCommitmentsRequest\0328.google.cloud.bigquery.reservati"
+          + "on.v1.CapacityCommitment\"i\332A\036parent,capa"
+          + "city_commitment_ids\202\323\344\223\002B\"=/v1/{parent=p"
+          + "rojects/*/locations/*}/capacityCommitments:merge:\001*\022\353\001\n"
+          + "\020CreateAssignment\022=.google.cloud.bigquery.reservation.v1.CreateAs"
           + "signmentRequest\0320.google.cloud.bigquery."
-          + "reservation.v1.Assignment\"v\332A\026assignment"
-          + ",update_mask\202\323\344\223\002W2I/v1/{assignment.name"
-          + "=projects/*/locations/*/reservations/*/assignments/*}:\n"
+          + "reservation.v1.Assignment\"f\332A\021parent,ass"
+          + "ignment\202\323\344\223\002L\">/v1/{parent=projects/*/locations/*/reservations/*}/assignments:\n"
+          + "assignment\022\337\001\n"
+          + "\017ListAssignments\022<.google.cloud.bigquery.reservation.v1.ListAssignm"
+          + "entsRequest\032=.google.cloud.bigquery.rese"
+          + "rvation.v1.ListAssignmentsResponse\"O\332A\006p"
+          + "arent\202\323\344\223\002@\022>/v1/{parent=projects/*/locations/*/reservations/*}/assignments\022\270\001\n"
+          + "\020DeleteAssignment\022=.google.cloud.bigquery"
+          + ".reservation.v1.DeleteAssignmentRequest\032"
+          + "\026.google.protobuf.Empty\"M\332A\004name\202\323\344\223\002@*>"
+          + "/v1/{name=projects/*/locations/*/reservations/*/assignments/*}\022\345\001\n"
+          + "\021SearchAssignments\022>.google.cloud.bigquery.reservation"
+          + ".v1.SearchAssignmentsRequest\032?.google.cloud.bigquery.reservation.v1.SearchAssign"
+          + "mentsResponse\"O\210\002\001\332A\014parent,query\202\323\344\223\0027\022"
+          + "5/v1/{parent=projects/*/locations/*}:searchAssignments\022\356\001\n"
+          + "\024SearchAllAssignments\022A.google.cloud.bigquery.reservation.v1.S"
+          + "earchAllAssignmentsRequest\032B.google.cloud.bigquery.reservation.v1.SearchAllAssig"
+          + "nmentsResponse\"O\332A\014parent,query\202\323\344\223\002:\0228/"
+          + "v1/{parent=projects/*/locations/*}:searchAllAssignments\022\345\001\n"
+          + "\016MoveAssignment\022;.google.cloud.bigquery.reservation.v1.MoveAs"
+          + "signmentRequest\0320.google.cloud.bigquery."
+          + "reservation.v1.Assignment\"d\332A\023name,desti"
+          + "nation_id\202\323\344\223\002H\"C/v1/{name=projects/*/lo"
+          + "cations/*/reservations/*/assignments/*}:move:\001*\022\373\001\n"
+          + "\020UpdateAssignment\022=.google.cloud.bigquery.reservation.v1.UpdateAssign"
+          + "mentRequest\0320.google.cloud.bigquery.rese"
+          + "rvation.v1.Assignment\"v\332A\026assignment,upd"
+          + "ate_mask\202\323\344\223\002W2I/v1/{assignment.name=pro"
+          + "jects/*/locations/*/reservations/*/assignments/*}:\n"
           + "assignment\022\306\001\n"
-          + "\020GetBiReservation\022=.google.cloud.bigquery.reservati"
-          + "on.v1.GetBiReservationRequest\0323.google.cloud.bigquery.reservation.v1.BiReservati"
-          + "on\">\332A\004name\202\323\344\223\0021\022//v1/{name=projects/*/locations/*/biReservation}\022\201\002\n"
-          + "\023UpdateBiReservation\022@.google.cloud.bigquery.reser"
-          + "vation.v1.UpdateBiReservationRequest\0323.google.cloud.bigquery.reservation.v1.BiRe"
-          + "servation\"s\332A\032bi_reservation,update_mask"
-          + "\202\323\344\223\002P2>/v1/{bi_reservation.name=project"
-          + "s/*/locations/*/biReservation}:\016bi_reser"
-          + "vation\032\177\312A\"bigqueryreservation.googleapi"
-          + "s.com\322AWhttps://www.googleapis.com/auth/"
-          + "bigquery,https://www.googleapis.com/auth/cloud-platformB\330\001\n"
-          + "(com.google.cloud.bigquery.reservation.v1B\020ReservationProtoP\001"
-          + "ZJcloud.google.com/go/bigquery/reservation/apiv1/reservationpb;reservationpb\252\002$G"
-          + "oogle.Cloud.BigQuery.Reservation.V1\312\002$Go"
-          + "ogle\\Cloud\\BigQuery\\Reservation\\V1b\006proto3"
+          + "\020GetBiReservation\022=.google.cloud.bigquery.reservation.v"
+          + "1.GetBiReservationRequest\0323.google.cloud.bigquery.reservation.v1.BiReservation\">"
+          + "\332A\004name\202\323\344\223\0021\022//v1/{name=projects/*/locations/*/biReservation}\022\201\002\n"
+          + "\023UpdateBiReservation\022@.google.cloud.bigquery.reservati"
+          + "on.v1.UpdateBiReservationRequest\0323.google.cloud.bigquery.reservation.v1.BiReserv"
+          + "ation\"s\332A\032bi_reservation,update_mask\202\323\344\223"
+          + "\002P2>/v1/{bi_reservation.name=projects/*/"
+          + "locations/*/biReservation}:\016bi_reservation\022\364\001\n"
+          + "\014GetIamPolicy\022\".google.iam.v1.GetI"
+          + "amPolicyRequest\032\025.google.iam.v1.Policy\"\250"
+          + "\001\332A\010resource\202\323\344\223\002\226\001\022A/v1/{resource=proje"
+          + "cts/*/locations/*/reservations/*}:getIamPolicyZQ\022O/v1/{resource=projects/*/locat"
+          + "ions/*/reservations/*/assignments/*}:getIamPolicy\022\201\002\n"
+          + "\014SetIamPolicy\022\".google.iam.v1.SetIamPolicyRequest\032\025.google.iam.v1.P"
+          + "olicy\"\265\001\332A\017resource,policy\202\323\344\223\002\234\001\"A/v1/{"
+          + "resource=projects/*/locations/*/reservations/*}:setIamPolicy:\001*ZT\"O/v1/{resource"
+          + "=projects/*/locations/*/reservations/*/assignments/*}:setIamPolicy:\001*\022\233\002\n"
+          + "\022TestIamPermissions\022(.google.iam.v1.TestIamPerm"
+          + "issionsRequest\032).google.iam.v1.TestIamPe"
+          + "rmissionsResponse\"\257\001\202\323\344\223\002\250\001\"G/v1/{resour"
+          + "ce=projects/*/locations/*/reservations/*}:testIamPermissions:\001*ZZ\"U/v1/{resource"
+          + "=projects/*/locations/*/reservations/*/assignments/*}:testIamPermissions:\001*\022\347\001\n"
+          + "\026CreateReservationGroup\022C.google.cloud.bi"
+          + "gquery.reservation.v1.CreateReservationGroupRequest\0326.google.cloud.bigquery.rese"
+          + "rvation.v1.ReservationGroup\"P\202\323\344\223\002J\"5/v1"
+          + "/{parent=projects/*/locations/*}/reservationGroups:\021reservation_group\022\325\001\n"
+          + "\023GetReservationGroup\022@.google.cloud.bigquery.re"
+          + "servation.v1.GetReservationGroupRequest\0326.google.cloud.bigquery.reservation.v1.R",
+      "eservationGroup\"D\332A\004name\202\323\344\223\0027\0225/v1/{nam"
+          + "e=projects/*/locations/*/reservationGrou"
+          + "ps/*}\022\273\001\n\026DeleteReservationGroup\022C.googl"
+          + "e.cloud.bigquery.reservation.v1.DeleteRe"
+          + "servationGroupRequest\032\026.google.protobuf."
+          + "Empty\"D\332A\004name\202\323\344\223\0027*5/v1/{name=projects"
+          + "/*/locations/*/reservationGroups/*}\022\350\001\n\025"
+          + "ListReservationGroups\022B.google.cloud.big"
+          + "query.reservation.v1.ListReservationGrou"
+          + "psRequest\032C.google.cloud.bigquery.reserv"
+          + "ation.v1.ListReservationGroupsResponse\"F"
+          + "\332A\006parent\202\323\344\223\0027\0225/v1/{parent=projects/*/"
+          + "locations/*}/reservationGroups\032\177\312A\"bigqu"
+          + "eryreservation.googleapis.com\322AWhttps://"
+          + "www.googleapis.com/auth/bigquery,https:/"
+          + "/www.googleapis.com/auth/cloud-platformB"
+          + "\330\001\n(com.google.cloud.bigquery.reservatio"
+          + "n.v1B\020ReservationProtoP\001ZJcloud.google.c"
+          + "om/go/bigquery/reservation/apiv1/reserva"
+          + "tionpb;reservationpb\252\002$Google.Cloud.BigQ"
+          + "uery.Reservation.V1\312\002$Google\\Cloud\\BigQu"
+          + "ery\\Reservation\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -544,6 +661,8 @@ public final class ReservationProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.iam.v1.IamPolicyProto.getDescriptor(),
+              com.google.iam.v1.PolicyProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -569,7 +688,10 @@ public final class ReservationProto {
               "OriginalPrimaryLocation",
               "MaxSlots",
               "ScalingMode",
+              "Labels",
+              "ReservationGroup",
               "ReplicationStatus",
+              "SchedulingPolicy",
             });
     internal_static_google_cloud_bigquery_reservation_v1_Reservation_Autoscale_descriptor =
         internal_static_google_cloud_bigquery_reservation_v1_Reservation_descriptor
@@ -591,8 +713,34 @@ public final class ReservationProto {
             new java.lang.String[] {
               "Error", "LastErrorTime", "LastReplicationTime", "SoftFailoverStartTime",
             });
-    internal_static_google_cloud_bigquery_reservation_v1_CapacityCommitment_descriptor =
+    internal_static_google_cloud_bigquery_reservation_v1_Reservation_LabelsEntry_descriptor =
+        internal_static_google_cloud_bigquery_reservation_v1_Reservation_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_bigquery_reservation_v1_Reservation_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_reservation_v1_Reservation_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_bigquery_reservation_v1_SchedulingPolicy_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_bigquery_reservation_v1_SchedulingPolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_reservation_v1_SchedulingPolicy_descriptor,
+            new java.lang.String[] {
+              "Concurrency", "MaxSlots",
+            });
+    internal_static_google_cloud_bigquery_reservation_v1_ReservationGroup_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_bigquery_reservation_v1_ReservationGroup_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_reservation_v1_ReservationGroup_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_bigquery_reservation_v1_CapacityCommitment_descriptor =
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_bigquery_reservation_v1_CapacityCommitment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_CapacityCommitment_descriptor,
@@ -610,7 +758,7 @@ public final class ReservationProto {
               "IsFlatRate",
             });
     internal_static_google_cloud_bigquery_reservation_v1_CreateReservationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_bigquery_reservation_v1_CreateReservationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_CreateReservationRequest_descriptor,
@@ -618,7 +766,7 @@ public final class ReservationProto {
               "Parent", "ReservationId", "Reservation",
             });
     internal_static_google_cloud_bigquery_reservation_v1_ListReservationsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_bigquery_reservation_v1_ListReservationsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_ListReservationsRequest_descriptor,
@@ -626,7 +774,7 @@ public final class ReservationProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_bigquery_reservation_v1_ListReservationsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_bigquery_reservation_v1_ListReservationsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_ListReservationsResponse_descriptor,
@@ -634,7 +782,7 @@ public final class ReservationProto {
               "Reservations", "NextPageToken",
             });
     internal_static_google_cloud_bigquery_reservation_v1_GetReservationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_bigquery_reservation_v1_GetReservationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_GetReservationRequest_descriptor,
@@ -642,7 +790,7 @@ public final class ReservationProto {
               "Name",
             });
     internal_static_google_cloud_bigquery_reservation_v1_DeleteReservationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_bigquery_reservation_v1_DeleteReservationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_DeleteReservationRequest_descriptor,
@@ -650,7 +798,7 @@ public final class ReservationProto {
               "Name",
             });
     internal_static_google_cloud_bigquery_reservation_v1_UpdateReservationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_bigquery_reservation_v1_UpdateReservationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_UpdateReservationRequest_descriptor,
@@ -658,15 +806,55 @@ public final class ReservationProto {
               "Reservation", "UpdateMask",
             });
     internal_static_google_cloud_bigquery_reservation_v1_FailoverReservationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_bigquery_reservation_v1_FailoverReservationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_FailoverReservationRequest_descriptor,
             new java.lang.String[] {
               "Name", "FailoverMode",
             });
+    internal_static_google_cloud_bigquery_reservation_v1_CreateReservationGroupRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_bigquery_reservation_v1_CreateReservationGroupRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_reservation_v1_CreateReservationGroupRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ReservationGroupId", "ReservationGroup",
+            });
+    internal_static_google_cloud_bigquery_reservation_v1_GetReservationGroupRequest_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_bigquery_reservation_v1_GetReservationGroupRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_reservation_v1_GetReservationGroupRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_bigquery_reservation_v1_ListReservationGroupsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_bigquery_reservation_v1_ListReservationGroupsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_reservation_v1_ListReservationGroupsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_bigquery_reservation_v1_ListReservationGroupsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_bigquery_reservation_v1_ListReservationGroupsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_reservation_v1_ListReservationGroupsResponse_descriptor,
+            new java.lang.String[] {
+              "ReservationGroups", "NextPageToken",
+            });
+    internal_static_google_cloud_bigquery_reservation_v1_DeleteReservationGroupRequest_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_bigquery_reservation_v1_DeleteReservationGroupRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_reservation_v1_DeleteReservationGroupRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
     internal_static_google_cloud_bigquery_reservation_v1_CreateCapacityCommitmentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_bigquery_reservation_v1_CreateCapacityCommitmentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_CreateCapacityCommitmentRequest_descriptor,
@@ -677,7 +865,7 @@ public final class ReservationProto {
               "CapacityCommitmentId",
             });
     internal_static_google_cloud_bigquery_reservation_v1_ListCapacityCommitmentsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_bigquery_reservation_v1_ListCapacityCommitmentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_ListCapacityCommitmentsRequest_descriptor,
@@ -685,7 +873,7 @@ public final class ReservationProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_bigquery_reservation_v1_ListCapacityCommitmentsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_bigquery_reservation_v1_ListCapacityCommitmentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_ListCapacityCommitmentsResponse_descriptor,
@@ -693,7 +881,7 @@ public final class ReservationProto {
               "CapacityCommitments", "NextPageToken",
             });
     internal_static_google_cloud_bigquery_reservation_v1_GetCapacityCommitmentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_bigquery_reservation_v1_GetCapacityCommitmentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_GetCapacityCommitmentRequest_descriptor,
@@ -701,7 +889,7 @@ public final class ReservationProto {
               "Name",
             });
     internal_static_google_cloud_bigquery_reservation_v1_DeleteCapacityCommitmentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_bigquery_reservation_v1_DeleteCapacityCommitmentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_DeleteCapacityCommitmentRequest_descriptor,
@@ -709,7 +897,7 @@ public final class ReservationProto {
               "Name", "Force",
             });
     internal_static_google_cloud_bigquery_reservation_v1_UpdateCapacityCommitmentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_bigquery_reservation_v1_UpdateCapacityCommitmentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_UpdateCapacityCommitmentRequest_descriptor,
@@ -717,7 +905,7 @@ public final class ReservationProto {
               "CapacityCommitment", "UpdateMask",
             });
     internal_static_google_cloud_bigquery_reservation_v1_SplitCapacityCommitmentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_bigquery_reservation_v1_SplitCapacityCommitmentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_SplitCapacityCommitmentRequest_descriptor,
@@ -725,7 +913,7 @@ public final class ReservationProto {
               "Name", "SlotCount",
             });
     internal_static_google_cloud_bigquery_reservation_v1_SplitCapacityCommitmentResponse_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_bigquery_reservation_v1_SplitCapacityCommitmentResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_SplitCapacityCommitmentResponse_descriptor,
@@ -733,23 +921,23 @@ public final class ReservationProto {
               "First", "Second",
             });
     internal_static_google_cloud_bigquery_reservation_v1_MergeCapacityCommitmentsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_bigquery_reservation_v1_MergeCapacityCommitmentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_MergeCapacityCommitmentsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "CapacityCommitmentIds",
+              "Parent", "CapacityCommitmentIds", "CapacityCommitmentId",
             });
     internal_static_google_cloud_bigquery_reservation_v1_Assignment_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_bigquery_reservation_v1_Assignment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_Assignment_descriptor,
             new java.lang.String[] {
-              "Name", "Assignee", "JobType", "State", "EnableGeminiInBigquery",
+              "Name", "Assignee", "JobType", "State", "EnableGeminiInBigquery", "SchedulingPolicy",
             });
     internal_static_google_cloud_bigquery_reservation_v1_CreateAssignmentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_bigquery_reservation_v1_CreateAssignmentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_CreateAssignmentRequest_descriptor,
@@ -757,7 +945,7 @@ public final class ReservationProto {
               "Parent", "Assignment", "AssignmentId",
             });
     internal_static_google_cloud_bigquery_reservation_v1_ListAssignmentsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_bigquery_reservation_v1_ListAssignmentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_ListAssignmentsRequest_descriptor,
@@ -765,7 +953,7 @@ public final class ReservationProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_bigquery_reservation_v1_ListAssignmentsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_bigquery_reservation_v1_ListAssignmentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_ListAssignmentsResponse_descriptor,
@@ -773,7 +961,7 @@ public final class ReservationProto {
               "Assignments", "NextPageToken",
             });
     internal_static_google_cloud_bigquery_reservation_v1_DeleteAssignmentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_bigquery_reservation_v1_DeleteAssignmentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_DeleteAssignmentRequest_descriptor,
@@ -781,7 +969,7 @@ public final class ReservationProto {
               "Name",
             });
     internal_static_google_cloud_bigquery_reservation_v1_SearchAssignmentsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_bigquery_reservation_v1_SearchAssignmentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_SearchAssignmentsRequest_descriptor,
@@ -789,7 +977,7 @@ public final class ReservationProto {
               "Parent", "Query", "PageSize", "PageToken",
             });
     internal_static_google_cloud_bigquery_reservation_v1_SearchAllAssignmentsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_bigquery_reservation_v1_SearchAllAssignmentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_SearchAllAssignmentsRequest_descriptor,
@@ -797,7 +985,7 @@ public final class ReservationProto {
               "Parent", "Query", "PageSize", "PageToken",
             });
     internal_static_google_cloud_bigquery_reservation_v1_SearchAssignmentsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_bigquery_reservation_v1_SearchAssignmentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_SearchAssignmentsResponse_descriptor,
@@ -805,7 +993,7 @@ public final class ReservationProto {
               "Assignments", "NextPageToken",
             });
     internal_static_google_cloud_bigquery_reservation_v1_SearchAllAssignmentsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_bigquery_reservation_v1_SearchAllAssignmentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_SearchAllAssignmentsResponse_descriptor,
@@ -813,7 +1001,7 @@ public final class ReservationProto {
               "Assignments", "NextPageToken",
             });
     internal_static_google_cloud_bigquery_reservation_v1_MoveAssignmentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_bigquery_reservation_v1_MoveAssignmentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_MoveAssignmentRequest_descriptor,
@@ -821,7 +1009,7 @@ public final class ReservationProto {
               "Name", "DestinationId", "AssignmentId",
             });
     internal_static_google_cloud_bigquery_reservation_v1_UpdateAssignmentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_bigquery_reservation_v1_UpdateAssignmentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_UpdateAssignmentRequest_descriptor,
@@ -829,7 +1017,7 @@ public final class ReservationProto {
               "Assignment", "UpdateMask",
             });
     internal_static_google_cloud_bigquery_reservation_v1_TableReference_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_bigquery_reservation_v1_TableReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_TableReference_descriptor,
@@ -837,7 +1025,7 @@ public final class ReservationProto {
               "ProjectId", "DatasetId", "TableId",
             });
     internal_static_google_cloud_bigquery_reservation_v1_BiReservation_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_bigquery_reservation_v1_BiReservation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_BiReservation_descriptor,
@@ -845,7 +1033,7 @@ public final class ReservationProto {
               "Name", "UpdateTime", "Size", "PreferredTables",
             });
     internal_static_google_cloud_bigquery_reservation_v1_GetBiReservationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_bigquery_reservation_v1_GetBiReservationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_GetBiReservationRequest_descriptor,
@@ -853,7 +1041,7 @@ public final class ReservationProto {
               "Name",
             });
     internal_static_google_cloud_bigquery_reservation_v1_UpdateBiReservationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_bigquery_reservation_v1_UpdateBiReservationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_reservation_v1_UpdateBiReservationRequest_descriptor,
@@ -875,6 +1063,8 @@ public final class ReservationProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.iam.v1.IamPolicyProto.getDescriptor();
+    com.google.iam.v1.PolicyProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

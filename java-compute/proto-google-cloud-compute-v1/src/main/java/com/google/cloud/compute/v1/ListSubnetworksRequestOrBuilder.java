@@ -244,4 +244,46 @@ public interface ListSubnetworksRequestOrBuilder
    * @return The returnPartialSuccess.
    */
   boolean getReturnPartialSuccess();
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+   * Check the Views enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string views = 112204398;</code>
+   *
+   * @return Whether the views field is set.
+   */
+  boolean hasViews();
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+   * Check the Views enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string views = 112204398;</code>
+   *
+   * @return The views.
+   */
+  java.lang.String getViews();
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+   * Check the Views enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string views = 112204398;</code>
+   *
+   * @return The bytes for views.
+   */
+  com.google.protobuf.ByteString getViewsBytes();
 }

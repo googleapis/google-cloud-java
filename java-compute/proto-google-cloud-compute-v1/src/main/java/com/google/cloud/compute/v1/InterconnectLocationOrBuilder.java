@@ -708,6 +708,60 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
+   * [Output Only] URLs of the other locations that can pair up with this location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+   * </pre>
+   *
+   * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+   *
+   * @return A list containing the singleRegionProductionCriticalPeerLocations.
+   */
+  java.util.List<java.lang.String> getSingleRegionProductionCriticalPeerLocationsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URLs of the other locations that can pair up with this location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+   * </pre>
+   *
+   * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+   *
+   * @return The count of singleRegionProductionCriticalPeerLocations.
+   */
+  int getSingleRegionProductionCriticalPeerLocationsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URLs of the other locations that can pair up with this location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+   * </pre>
+   *
+   * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The singleRegionProductionCriticalPeerLocations at the given index.
+   */
+  java.lang.String getSingleRegionProductionCriticalPeerLocations(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URLs of the other locations that can pair up with this location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+   * </pre>
+   *
+   * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the singleRegionProductionCriticalPeerLocations at the given index.
+   */
+  com.google.protobuf.ByteString getSingleRegionProductionCriticalPeerLocationsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
    * Check the Status enum for the list of possible values.
    * </pre>

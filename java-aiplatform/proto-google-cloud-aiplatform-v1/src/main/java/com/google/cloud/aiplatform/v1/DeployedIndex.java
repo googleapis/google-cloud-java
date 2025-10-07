@@ -45,6 +45,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     deploymentGroup_ = "";
+    deploymentTier_ = 0;
     pscAutomationConfigs_ = java.util.Collections.emptyList();
   }
 
@@ -67,6 +68,142 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.aiplatform.v1.DeployedIndex.class,
             com.google.cloud.aiplatform.v1.DeployedIndex.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Tiers encapsulate serving time attributes like latency and throughput.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier}
+   */
+  public enum DeploymentTier implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default deployment tier.
+     * </pre>
+     *
+     * <code>DEPLOYMENT_TIER_UNSPECIFIED = 0;</code>
+     */
+    DEPLOYMENT_TIER_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Optimized for costs.
+     * </pre>
+     *
+     * <code>STORAGE = 2;</code>
+     */
+    STORAGE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default deployment tier.
+     * </pre>
+     *
+     * <code>DEPLOYMENT_TIER_UNSPECIFIED = 0;</code>
+     */
+    public static final int DEPLOYMENT_TIER_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optimized for costs.
+     * </pre>
+     *
+     * <code>STORAGE = 2;</code>
+     */
+    public static final int STORAGE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DeploymentTier valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DeploymentTier forNumber(int value) {
+      switch (value) {
+        case 0:
+          return DEPLOYMENT_TIER_UNSPECIFIED;
+        case 2:
+          return STORAGE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DeploymentTier> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<DeploymentTier> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<DeploymentTier>() {
+          public DeploymentTier findValueByNumber(int number) {
+            return DeploymentTier.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.DeployedIndex.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final DeploymentTier[] VALUES = values();
+
+    public static DeploymentTier valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DeploymentTier(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier)
   }
 
   private int bitField0_;
@@ -958,6 +1095,51 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DEPLOYMENT_TIER_FIELD_NUMBER = 18;
+  private int deploymentTier_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployment tier that the index is deployed to.
+   * DEPLOYMENT_TIER_UNSPECIFIED will use a system-chosen default tier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier deployment_tier = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for deploymentTier.
+   */
+  @java.lang.Override
+  public int getDeploymentTierValue() {
+    return deploymentTier_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployment tier that the index is deployed to.
+   * DEPLOYMENT_TIER_UNSPECIFIED will use a system-chosen default tier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier deployment_tier = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The deploymentTier.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier getDeploymentTier() {
+    com.google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier result =
+        com.google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier.forNumber(deploymentTier_);
+    return result == null
+        ? com.google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier.UNRECOGNIZED
+        : result;
+  }
+
   public static final int PSC_AUTOMATION_CONFIGS_FIELD_NUMBER = 19;
 
   @SuppressWarnings("serial")
@@ -1106,6 +1288,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(16, getDedicatedResources());
     }
+    if (deploymentTier_
+        != com.google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier.DEPLOYMENT_TIER_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(18, deploymentTier_);
+    }
     for (int i = 0; i < pscAutomationConfigs_.size(); i++) {
       output.writeMessage(19, pscAutomationConfigs_.get(i));
     }
@@ -1163,6 +1350,11 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getDedicatedResources());
     }
+    if (deploymentTier_
+        != com.google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier.DEPLOYMENT_TIER_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(18, deploymentTier_);
+    }
     for (int i = 0; i < pscAutomationConfigs_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1219,6 +1411,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getReservedIpRangesList().equals(other.getReservedIpRangesList())) return false;
     if (!getDeploymentGroup().equals(other.getDeploymentGroup())) return false;
+    if (deploymentTier_ != other.deploymentTier_) return false;
     if (!getPscAutomationConfigsList().equals(other.getPscAutomationConfigsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1272,6 +1465,8 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + DEPLOYMENT_GROUP_FIELD_NUMBER;
     hash = (53 * hash) + getDeploymentGroup().hashCode();
+    hash = (37 * hash) + DEPLOYMENT_TIER_FIELD_NUMBER;
+    hash = (53 * hash) + deploymentTier_;
     if (getPscAutomationConfigsCount() > 0) {
       hash = (37 * hash) + PSC_AUTOMATION_CONFIGS_FIELD_NUMBER;
       hash = (53 * hash) + getPscAutomationConfigsList().hashCode();
@@ -1468,13 +1663,14 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       }
       reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       deploymentGroup_ = "";
+      deploymentTier_ = 0;
       if (pscAutomationConfigsBuilder_ == null) {
         pscAutomationConfigs_ = java.util.Collections.emptyList();
       } else {
         pscAutomationConfigs_ = null;
         pscAutomationConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       return this;
     }
 
@@ -1512,9 +1708,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1.DeployedIndex result) {
       if (pscAutomationConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           pscAutomationConfigs_ = java.util.Collections.unmodifiableList(pscAutomationConfigs_);
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.pscAutomationConfigs_ = pscAutomationConfigs_;
       } else {
@@ -1581,6 +1777,9 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.deploymentGroup_ = deploymentGroup_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.deploymentTier_ = deploymentTier_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1684,11 +1883,14 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00001000;
         onChanged();
       }
+      if (other.deploymentTier_ != 0) {
+        setDeploymentTierValue(other.getDeploymentTierValue());
+      }
       if (pscAutomationConfigsBuilder_ == null) {
         if (!other.pscAutomationConfigs_.isEmpty()) {
           if (pscAutomationConfigs_.isEmpty()) {
             pscAutomationConfigs_ = other.pscAutomationConfigs_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensurePscAutomationConfigsIsMutable();
             pscAutomationConfigs_.addAll(other.pscAutomationConfigs_);
@@ -1701,7 +1903,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
             pscAutomationConfigsBuilder_.dispose();
             pscAutomationConfigsBuilder_ = null;
             pscAutomationConfigs_ = other.pscAutomationConfigs_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
             pscAutomationConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPscAutomationConfigsFieldBuilder()
@@ -1814,6 +2016,12 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 130
+            case 144:
+              {
+                deploymentTier_ = input.readEnum();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 144
             case 154:
               {
                 com.google.cloud.aiplatform.v1.PSCAutomationConfig m =
@@ -4497,15 +4705,128 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int deploymentTier_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployment tier that the index is deployed to.
+     * DEPLOYMENT_TIER_UNSPECIFIED will use a system-chosen default tier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier deployment_tier = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for deploymentTier.
+     */
+    @java.lang.Override
+    public int getDeploymentTierValue() {
+      return deploymentTier_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployment tier that the index is deployed to.
+     * DEPLOYMENT_TIER_UNSPECIFIED will use a system-chosen default tier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier deployment_tier = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for deploymentTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeploymentTierValue(int value) {
+      deploymentTier_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployment tier that the index is deployed to.
+     * DEPLOYMENT_TIER_UNSPECIFIED will use a system-chosen default tier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier deployment_tier = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The deploymentTier.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier getDeploymentTier() {
+      com.google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier result =
+          com.google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier.forNumber(deploymentTier_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployment tier that the index is deployed to.
+     * DEPLOYMENT_TIER_UNSPECIFIED will use a system-chosen default tier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier deployment_tier = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The deploymentTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeploymentTier(
+        com.google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00002000;
+      deploymentTier_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployment tier that the index is deployed to.
+     * DEPLOYMENT_TIER_UNSPECIFIED will use a system-chosen default tier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier deployment_tier = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeploymentTier() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      deploymentTier_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.aiplatform.v1.PSCAutomationConfig>
         pscAutomationConfigs_ = java.util.Collections.emptyList();
 
     private void ensurePscAutomationConfigsIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         pscAutomationConfigs_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1.PSCAutomationConfig>(
                 pscAutomationConfigs_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
       }
     }
 
@@ -4779,7 +5100,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPscAutomationConfigs() {
       if (pscAutomationConfigsBuilder_ == null) {
         pscAutomationConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
       } else {
         pscAutomationConfigsBuilder_.clear();
@@ -4942,7 +5263,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1.PSCAutomationConfig.Builder,
                 com.google.cloud.aiplatform.v1.PSCAutomationConfigOrBuilder>(
                 pscAutomationConfigs_,
-                ((bitField0_ & 0x00002000) != 0),
+                ((bitField0_ & 0x00004000) != 0),
                 getParentForChildren(),
                 isClean());
         pscAutomationConfigs_ = null;
