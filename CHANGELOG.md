@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.55.2](https://github.com/googleapis/java-bigquery/compare/v2.55.1...v2.55.2) (2025-10-08)
+
+
+### Dependencies
+
+* Fix update dependency com.google.cloud:google-cloud-bigquerystorage-bom to v3.17.2 ([b25095d](https://github.com/googleapis/java-bigquery/commit/b25095d23279dab178975c33f4de84612612e175))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.52.3 ([#3971](https://github.com/googleapis/java-bigquery/issues/3971)) ([f8cf508](https://github.com/googleapis/java-bigquery/commit/f8cf50833772412c4f15922bffcdf5100792948d))
+
 ## [2.55.1](https://github.com/googleapis/java-bigquery/compare/v2.55.0...v2.55.1) (2025-09-26)
 
 
