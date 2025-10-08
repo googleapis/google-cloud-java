@@ -1652,6 +1652,7 @@ public class AlloyDBAdminClientTest {
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
 
@@ -1715,6 +1716,7 @@ public class AlloyDBAdminClientTest {
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
 
@@ -1778,6 +1780,7 @@ public class AlloyDBAdminClientTest {
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1855,6 +1858,7 @@ public class AlloyDBAdminClientTest {
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1932,6 +1936,7 @@ public class AlloyDBAdminClientTest {
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2011,6 +2016,7 @@ public class AlloyDBAdminClientTest {
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2149,6 +2155,7 @@ public class AlloyDBAdminClientTest {
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2307,6 +2314,7 @@ public class AlloyDBAdminClientTest {
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2378,6 +2386,7 @@ public class AlloyDBAdminClientTest {
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2449,6 +2458,7 @@ public class AlloyDBAdminClientTest {
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2523,6 +2533,7 @@ public class AlloyDBAdminClientTest {
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2597,6 +2608,7 @@ public class AlloyDBAdminClientTest {
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2668,6 +2680,7 @@ public class AlloyDBAdminClientTest {
             .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
             .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .addAllOutboundPublicIpAddresses(new ArrayList<String>())
+            .setConnectionPoolConfig(Instance.ConnectionPoolConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

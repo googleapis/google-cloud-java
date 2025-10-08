@@ -687,6 +687,38 @@ public interface DeployedIndexOrBuilder
    *
    *
    * <pre>
+   * Optional. The deployment tier that the index is deployed to.
+   * DEPLOYMENT_TIER_UNSPECIFIED will use a system-chosen default tier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier deployment_tier = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for deploymentTier.
+   */
+  int getDeploymentTierValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployment tier that the index is deployed to.
+   * DEPLOYMENT_TIER_UNSPECIFIED will use a system-chosen default tier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier deployment_tier = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The deploymentTier.
+   */
+  com.google.cloud.aiplatform.v1.DeployedIndex.DeploymentTier getDeploymentTier();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. If set for PSC deployed index, PSC connection will be
    * automatically created after deployment is done and the endpoint information
    * is populated in private_endpoints.psc_automated_endpoints.

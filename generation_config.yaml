@@ -1,6 +1,6 @@
-gapic_generator_version: 2.62.2
-googleapis_commitish: 3acfdb6166a7101691cdf812bf8f8a67a2084fde
-libraries_bom_version: 26.68.0
+gapic_generator_version: 2.62.3
+googleapis_commitish: 6e79e73204aed17b11e724beebb9cf11f36ea57d
+libraries_bom_version: 26.69.0
 
 # the libraries are ordered with respect to library name, which is
 # java-{library.library_name} or java-{library.api-shortname} when
@@ -1370,6 +1370,24 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/lifesciences/v2beta
 
+- api_shortname: locationfinder
+  name_pretty: Cloud Location Finder API
+  product_documentation: https://cloud.google.com/location-finder/docs/overview
+  api_description: Cloud Location Finder is a public API that offers a repository
+    of all Google Cloud and Google Distributed Cloud locations, as well as cloud locations
+    for other cloud providers.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-locationfinder/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-locationfinder
+  api_id: locationfinder.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/locationfinder/v1
+  requires_billing: true
+  rpc_documentation: https://cloud.google.com/locationfinder/docs/reference/rest
 - api_shortname: lustre
   name_pretty: Google Cloud Managed Lustre API
   product_documentation: https://cloud.google.com/managed-lustre/docs

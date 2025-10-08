@@ -24,6 +24,7 @@ import com.google.cloud.aiplatform.v1.PredictResponse;
 import com.google.cloud.aiplatform.v1.PredictionServiceClient;
 import com.google.protobuf.Value;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AsyncPredict {
 
@@ -46,6 +47,7 @@ public class AsyncPredict {
                       .toString())
               .addAllInstances(new ArrayList<Value>())
               .setParameters(Value.newBuilder().setBoolValue(true).build())
+              .putAllLabels(new HashMap<String, String>())
               .build();
       ApiFuture<PredictResponse> future =
           predictionServiceClient.predictCallable().futureCall(request);

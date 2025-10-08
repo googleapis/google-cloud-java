@@ -1279,4 +1279,48 @@ public interface InstanceOrBuilder
    * @return The activationPolicy.
    */
   com.google.cloud.alloydb.v1.Instance.ActivationPolicy getActivationPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Managed Connection Pool (MCP).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the connectionPoolConfig field is set.
+   */
+  boolean hasConnectionPoolConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Managed Connection Pool (MCP).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The connectionPoolConfig.
+   */
+  com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig getConnectionPoolConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Managed Connection Pool (MCP).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfigOrBuilder
+      getConnectionPoolConfigOrBuilder();
 }

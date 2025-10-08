@@ -835,4 +835,25 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void createDatabase(
+      CreateDatabaseRequest request, StreamObserver<Database> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Database) {
+      requests.add(request);
+      responseObserver.onNext(((Database) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDatabase, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Database.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

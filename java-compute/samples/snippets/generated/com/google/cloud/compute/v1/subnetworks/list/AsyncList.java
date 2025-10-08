@@ -44,6 +44,7 @@ public class AsyncList {
               .setProject("project-309310695")
               .setRegion("region-934795532")
               .setReturnPartialSuccess(true)
+              .setViews("views112204398")
               .build();
       ApiFuture<Subnetwork> future = subnetworksClient.listPagedCallable().futureCall(request);
       // Do something.

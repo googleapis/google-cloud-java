@@ -36,7 +36,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetNetworkPolicyRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=5319
+   *     google/container/v1/cluster_service.proto;l=5317
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetNetworkPolicyRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=5319
+   *     google/container/v1/cluster_service.proto;l=5317
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetNetworkPolicyRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=5325
+   *     google/container/v1/cluster_service.proto;l=5323
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -92,7 +92,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetNetworkPolicyRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=5325
+   *     google/container/v1/cluster_service.proto;l=5323
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetNetworkPolicyRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=5329
+   *     google/container/v1/cluster_service.proto;l=5327
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetNetworkPolicyRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=5329
+   *     google/container/v1/cluster_service.proto;l=5327
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

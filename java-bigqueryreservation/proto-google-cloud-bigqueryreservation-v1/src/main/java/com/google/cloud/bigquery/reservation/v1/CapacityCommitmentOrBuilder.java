@@ -62,10 +62,10 @@ public interface CapacityCommitmentOrBuilder
    *
    *
    * <pre>
-   * Number of slots in this commitment.
+   * Optional. Number of slots in this commitment.
    * </pre>
    *
-   * <code>int64 slot_count = 2;</code>
+   * <code>int64 slot_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The slotCount.
    */
@@ -75,10 +75,12 @@ public interface CapacityCommitmentOrBuilder
    *
    *
    * <pre>
-   * Capacity commitment commitment plan.
+   * Optional. Capacity commitment commitment plan.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for plan.
    */
@@ -88,10 +90,12 @@ public interface CapacityCommitmentOrBuilder
    *
    *
    * <pre>
-   * Capacity commitment commitment plan.
+   * Optional. Capacity commitment commitment plan.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan plan = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The plan.
    */
@@ -185,7 +189,7 @@ public interface CapacityCommitmentOrBuilder
    * <pre>
    * Output only. The end of the current commitment period. It is applicable
    * only for ACTIVE capacity commitments. Note after renewal,
-   * commitment_end_time is the time the renewed commitment expires. So it would
+   * commitment_end_time is the time the renewed commitment expires. So itwould
    * be at a time after commitment_start_time + committed period, because we
    * don't change commitment_start_time ,
    * </pre>
@@ -204,7 +208,7 @@ public interface CapacityCommitmentOrBuilder
    * <pre>
    * Output only. The end of the current commitment period. It is applicable
    * only for ACTIVE capacity commitments. Note after renewal,
-   * commitment_end_time is the time the renewed commitment expires. So it would
+   * commitment_end_time is the time the renewed commitment expires. So itwould
    * be at a time after commitment_start_time + committed period, because we
    * don't change commitment_start_time ,
    * </pre>
@@ -223,7 +227,7 @@ public interface CapacityCommitmentOrBuilder
    * <pre>
    * Output only. The end of the current commitment period. It is applicable
    * only for ACTIVE capacity commitments. Note after renewal,
-   * commitment_end_time is the time the renewed commitment expires. So it would
+   * commitment_end_time is the time the renewed commitment expires. So itwould
    * be at a time after commitment_start_time + committed period, because we
    * don't change commitment_start_time ,
    * </pre>
@@ -278,12 +282,14 @@ public interface CapacityCommitmentOrBuilder
    *
    *
    * <pre>
-   * The plan this capacity commitment is converted to after commitment_end_time
-   * passes. Once the plan is changed, committed period is extended according to
-   * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
+   * Optional. The plan this capacity commitment is converted to after
+   * commitment_end_time passes. Once the plan is changed, committed period is
+   * extended according to commitment plan. Only applicable for ANNUAL and TRIAL
+   * commitments.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8;
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for renewalPlan.
@@ -294,12 +300,14 @@ public interface CapacityCommitmentOrBuilder
    *
    *
    * <pre>
-   * The plan this capacity commitment is converted to after commitment_end_time
-   * passes. Once the plan is changed, committed period is extended according to
-   * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
+   * Optional. The plan this capacity commitment is converted to after
+   * commitment_end_time passes. Once the plan is changed, committed period is
+   * extended according to commitment plan. Only applicable for ANNUAL and TRIAL
+   * commitments.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8;
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The renewalPlan.
@@ -321,20 +329,25 @@ public interface CapacityCommitmentOrBuilder
    * set this field.
    * </pre>
    *
-   * <code>bool multi_region_auxiliary = 10;</code>
+   * <code>bool multi_region_auxiliary = 10 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.bigquery.reservation.v1.CapacityCommitment.multi_region_auxiliary is
+   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=971
    * @return The multiRegionAuxiliary.
    */
+  @java.lang.Deprecated
   boolean getMultiRegionAuxiliary();
 
   /**
    *
    *
    * <pre>
-   * Edition of the capacity commitment.
+   * Optional. Edition of the capacity commitment.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Edition edition = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for edition.
    */
@@ -344,10 +357,12 @@ public interface CapacityCommitmentOrBuilder
    *
    *
    * <pre>
-   * Edition of the capacity commitment.
+   * Optional. Edition of the capacity commitment.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Edition edition = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The edition.
    */

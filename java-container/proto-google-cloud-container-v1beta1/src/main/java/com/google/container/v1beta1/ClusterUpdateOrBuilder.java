@@ -358,7 +358,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3381
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3379
    * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Deprecated
@@ -380,7 +380,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3381
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3379
    * @return The desiredMasterAuthorizedNetworksConfig.
    */
   @java.lang.Deprecated
@@ -677,7 +677,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_private_cluster_config is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3422
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3420
    * @return Whether the desiredPrivateClusterConfig field is set.
    */
   @java.lang.Deprecated
@@ -704,7 +704,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_private_cluster_config is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3422
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3420
    * @return The desiredPrivateClusterConfig.
    */
   @java.lang.Deprecated
@@ -903,7 +903,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3439
+   *     google/container/v1beta1/cluster_service.proto;l=3437
    * @return Whether the privateClusterConfig field is set.
    */
   @java.lang.Deprecated
@@ -923,7 +923,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3439
+   *     google/container/v1beta1/cluster_service.proto;l=3437
    * @return The privateClusterConfig.
    */
   @java.lang.Deprecated
@@ -957,7 +957,7 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1beta1.TpuConfig desired_tpu_config = 38 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_tpu_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3444
+   *     google/container/v1beta1/cluster_service.proto;l=3442
    * @return Whether the desiredTpuConfig field is set.
    */
   @java.lang.Deprecated
@@ -975,7 +975,7 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1beta1.TpuConfig desired_tpu_config = 38 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_tpu_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3444
+   *     google/container/v1beta1/cluster_service.proto;l=3442
    * @return The desiredTpuConfig.
    */
   @java.lang.Deprecated
@@ -1784,7 +1784,7 @@ public interface ClusterUpdateOrBuilder
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3526
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3524
    * @return Whether the desiredEnablePrivateEndpoint field is set.
    */
   @java.lang.Deprecated
@@ -1805,7 +1805,7 @@ public interface ClusterUpdateOrBuilder
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3526
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3524
    * @return The desiredEnablePrivateEndpoint.
    */
   @java.lang.Deprecated
@@ -1948,7 +1948,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3544
+   *     google/container/v1beta1/cluster_service.proto;l=3542
    * @return Whether the desiredProtectConfig field is set.
    */
   @java.lang.Deprecated
@@ -1967,7 +1967,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3544
+   *     google/container/v1beta1/cluster_service.proto;l=3542
    * @return The desiredProtectConfig.
    */
   @java.lang.Deprecated
@@ -2942,7 +2942,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3636
+   *     google/container/v1beta1/cluster_service.proto;l=3634
    * @return Whether the userManagedKeysConfig field is set.
    */
   @java.lang.Deprecated
@@ -2965,7 +2965,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3636
+   *     google/container/v1beta1/cluster_service.proto;l=3634
    * @return The userManagedKeysConfig.
    */
   @java.lang.Deprecated

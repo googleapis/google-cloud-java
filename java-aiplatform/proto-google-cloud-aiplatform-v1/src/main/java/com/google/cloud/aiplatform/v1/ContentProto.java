@@ -129,6 +129,14 @@ public final class ContentProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_ReviewSnippet_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_ReviewSnippet_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_GroundingSupport_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_GroundingSupport_fieldAccessorTable;
@@ -136,6 +144,10 @@ public final class ContentProto {
       internal_static_google_cloud_aiplatform_v1_GroundingMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_GroundingMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_GroundingMetadata_SourceFlaggingUri_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_GroundingMetadata_SourceFlaggingUri_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_SearchEntryPoint_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -378,7 +390,7 @@ public final class ContentProto {
           + "part_index\030\001 \001(\005B\003\340A\003\022\030\n"
           + "\013start_index\030\002 \001(\005B\003\340A\003\022\026\n"
           + "\tend_index\030\003 \001(\005B\003\340A\003\022\021\n"
-          + "\004text\030\004 \001(\tB\003\340A\003\"\241\005\n"
+          + "\004text\030\004 \001(\tB\003\340A\003\"\322\007\n"
           + "\016GroundingChunk\022=\n"
           + "\003web\030\001 \001(\0132..google.cloud.aiplatform.v1.GroundingChunk.WebH\000\022X\n"
           + "\021retrieved_context\030\002 \001(\0132;.google.cloud.aiplatf"
@@ -400,12 +412,21 @@ public final class ContentProto {
           + "\004_uriB\010\n"
           + "\006_titleB\007\n"
           + "\005_textB\020\n"
-          + "\016_document_name\032~\n"
+          + "\016_document_name\032\256\003\n"
           + "\004Maps\022\020\n"
           + "\003uri\030\001 \001(\tH\000\210\001\001\022\022\n"
           + "\005title\030\002 \001(\tH\001\210\001\001\022\021\n"
           + "\004text\030\003 \001(\tH\002\210\001\001\022\025\n"
-          + "\010place_id\030\004 \001(\tH\003\210\001\001B\006\n"
+          + "\010place_id\030\004 \001(\tH\003\210\001\001\022`\n"
+          + "\024place_answer_sources\030\005 \001("
+          + "\0132B.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources\032\313\001\n"
+          + "\022PlaceAnswerSources\022i\n"
+          + "\017review_snippets\030\001 \003(\0132P.google.cloud.aiplatform.v1.GroundingChun"
+          + "k.Maps.PlaceAnswerSources.ReviewSnippet\032J\n\r"
+          + "ReviewSnippet\022\021\n"
+          + "\treview_id\030\001 \001(\t\022\027\n"
+          + "\017google_maps_uri\030\002 \001(\t\022\r\n"
+          + "\005title\030\003 \001(\tB\006\n"
           + "\004_uriB\010\n"
           + "\006_titleB\007\n"
           + "\005_textB\013\n"
@@ -416,19 +437,24 @@ public final class ContentProto {
           + " \001(\0132#.google.cloud.aiplatform.v1.SegmentH\000\210\001\001\022\037\n"
           + "\027grounding_chunk_indices\030\002 \003(\005\022\031\n"
           + "\021confidence_scores\030\003 \003(\002B\n\n"
-          + "\010_segment\"\377\003\n"
+          + "\010_segment\"\240\005\n"
           + "\021GroundingMetadata\022\037\n"
           + "\022web_search_queries\030\001 \003(\tB\003\340A\001\022R\n"
           + "\022search_entry_point\030\004"
           + " \001(\0132,.google.cloud.aiplatform.v1.SearchEntryPointB\003\340A\001H\000\210\001\001\022D\n"
           + "\020grounding_chunks\030\005"
           + " \003(\0132*.google.cloud.aiplatform.v1.GroundingChunk\022M\n"
-          + "\022grounding_supports\030\006"
-          + " \003(\0132,.google.cloud.aiplatform.v1.GroundingSupportB\003\340A\001\022V\n"
-          + "\022retrieval_metadata\030\007"
-          + " \001(\0132-.google.cloud.aiplatform.v1.RetrievalMetadataB\006\340A\001\340A\003H\001\210\001\001\0225\n"
+          + "\022grounding_supports\030\006 \003(\0132,"
+          + ".google.cloud.aiplatform.v1.GroundingSupportB\003\340A\001\022V\n"
+          + "\022retrieval_metadata\030\007 \001(\0132-."
+          + "google.cloud.aiplatform.v1.RetrievalMetadataB\006\340A\001\340A\003H\001\210\001\001\0225\n"
           + " google_maps_widget_context_token\030\010 \001("
-          + "\tB\006\340A\001\340A\003H\002\210\001\001B\025\n"
+          + "\tB\006\340A\001\340A\003H\002\210\001\001\022]\n"
+          + "\024source_flagging_uris\030\t \003(\0132?.google.cloud.ai"
+          + "platform.v1.GroundingMetadata.SourceFlaggingUri\032@\n"
+          + "\021SourceFlaggingUri\022\021\n"
+          + "\tsource_id\030\001 \001(\t\022\030\n"
+          + "\020flag_content_uri\030\002 \001(\tB\025\n"
           + "\023_search_entry_pointB\025\n"
           + "\023_retrieval_metadataB#\n"
           + "!_google_maps_widget_context_token\"H\n"
@@ -459,12 +485,12 @@ public final class ContentProto {
           + "\005VIDEO\020\003\022\t\n"
           + "\005AUDIO\020\004\022\014\n"
           + "\010DOCUMENT\020\005B\257\002\n"
-          + "\036com.google.cloud.aiplatform.v1B\014ContentProtoP\001Z>clo"
-          + "ud.google.com/go/aiplatform/apiv1/aiplat"
-          + "formpb;aiplatformpb\252\002\032Google.Cloud.AIPla"
-          + "tform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1\352Ab\n"
-          + "\"modelarmor.googleapis.com/Template\022<projects/{"
-          + "project}/locations/{location}/templates/{template}b\006proto3"
+          + "\036com.google.cloud.aiplatform.v1B\014ContentProtoP\001Z>cloud.google.com/"
+          + "go/aiplatform/apiv1/aiplatformpb;aiplatf"
+          + "ormpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Goo"
+          + "gle\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1\352Ab\n"
+          + "\"modelarmor.googleapis.com/Template\022<projects/{project}/locat"
+          + "ions/{location}/templates/{template}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -731,7 +757,27 @@ public final class ContentProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_descriptor,
             new java.lang.String[] {
-              "Uri", "Title", "Text", "PlaceId",
+              "Uri", "Title", "Text", "PlaceId", "PlaceAnswerSources",
+            });
+    internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_descriptor =
+        internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_descriptor,
+            new java.lang.String[] {
+              "ReviewSnippets",
+            });
+    internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_ReviewSnippet_descriptor =
+        internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_ReviewSnippet_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_ReviewSnippet_descriptor,
+            new java.lang.String[] {
+              "ReviewId", "GoogleMapsUri", "Title",
             });
     internal_static_google_cloud_aiplatform_v1_GroundingSupport_descriptor =
         getDescriptor().getMessageTypes().get(16);
@@ -753,6 +799,17 @@ public final class ContentProto {
               "GroundingSupports",
               "RetrievalMetadata",
               "GoogleMapsWidgetContextToken",
+              "SourceFlaggingUris",
+            });
+    internal_static_google_cloud_aiplatform_v1_GroundingMetadata_SourceFlaggingUri_descriptor =
+        internal_static_google_cloud_aiplatform_v1_GroundingMetadata_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1_GroundingMetadata_SourceFlaggingUri_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_GroundingMetadata_SourceFlaggingUri_descriptor,
+            new java.lang.String[] {
+              "SourceId", "FlagContentUri",
             });
     internal_static_google_cloud_aiplatform_v1_SearchEntryPoint_descriptor =
         getDescriptor().getMessageTypes().get(18);

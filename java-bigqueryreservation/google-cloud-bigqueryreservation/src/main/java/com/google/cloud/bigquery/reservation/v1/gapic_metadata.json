@@ -19,6 +19,9 @@
             "CreateReservation": {
               "methods": ["createReservation", "createReservation", "createReservation", "createReservationCallable"]
             },
+            "CreateReservationGroup": {
+              "methods": ["createReservationGroup", "createReservationGroupCallable"]
+            },
             "DeleteAssignment": {
               "methods": ["deleteAssignment", "deleteAssignment", "deleteAssignment", "deleteAssignmentCallable"]
             },
@@ -27,6 +30,9 @@
             },
             "DeleteReservation": {
               "methods": ["deleteReservation", "deleteReservation", "deleteReservation", "deleteReservationCallable"]
+            },
+            "DeleteReservationGroup": {
+              "methods": ["deleteReservationGroup", "deleteReservationGroup", "deleteReservationGroup", "deleteReservationGroupCallable"]
             },
             "FailoverReservation": {
               "methods": ["failoverReservation", "failoverReservationCallable"]
@@ -37,14 +43,23 @@
             "GetCapacityCommitment": {
               "methods": ["getCapacityCommitment", "getCapacityCommitment", "getCapacityCommitment", "getCapacityCommitmentCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
             "GetReservation": {
               "methods": ["getReservation", "getReservation", "getReservation", "getReservationCallable"]
+            },
+            "GetReservationGroup": {
+              "methods": ["getReservationGroup", "getReservationGroup", "getReservationGroup", "getReservationGroupCallable"]
             },
             "ListAssignments": {
               "methods": ["listAssignments", "listAssignments", "listAssignments", "listAssignmentsPagedCallable", "listAssignmentsCallable"]
             },
             "ListCapacityCommitments": {
               "methods": ["listCapacityCommitments", "listCapacityCommitments", "listCapacityCommitments", "listCapacityCommitmentsPagedCallable", "listCapacityCommitmentsCallable"]
+            },
+            "ListReservationGroups": {
+              "methods": ["listReservationGroups", "listReservationGroups", "listReservationGroups", "listReservationGroupsPagedCallable", "listReservationGroupsCallable"]
             },
             "ListReservations": {
               "methods": ["listReservations", "listReservations", "listReservations", "listReservationsPagedCallable", "listReservationsCallable"]
@@ -61,8 +76,14 @@
             "SearchAssignments": {
               "methods": ["searchAssignments", "searchAssignments", "searchAssignments", "searchAssignmentsPagedCallable", "searchAssignmentsCallable"]
             },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
             "SplitCapacityCommitment": {
               "methods": ["splitCapacityCommitment", "splitCapacityCommitment", "splitCapacityCommitment", "splitCapacityCommitmentCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateAssignment": {
               "methods": ["updateAssignment", "updateAssignment", "updateAssignmentCallable"]

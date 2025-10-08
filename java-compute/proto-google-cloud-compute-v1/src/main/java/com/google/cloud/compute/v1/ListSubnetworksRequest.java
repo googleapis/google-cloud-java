@@ -45,6 +45,7 @@ public final class ListSubnetworksRequest extends com.google.protobuf.GeneratedM
     pageToken_ = "";
     project_ = "";
     region_ = "";
+    views_ = "";
   }
 
   @java.lang.Override
@@ -66,6 +67,151 @@ public final class ListSubnetworksRequest extends com.google.protobuf.GeneratedM
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.ListSubnetworksRequest.class,
             com.google.cloud.compute.v1.ListSubnetworksRequest.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.ListSubnetworksRequest.Views}
+   */
+  public enum Views implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_VIEWS = 0;</code>
+     */
+    UNDEFINED_VIEWS(0),
+    /** <code>DEFAULT = 115302945;</code> */
+    DEFAULT(115302945),
+    /**
+     *
+     *
+     * <pre>
+     * Utilization data is included in the response.
+     * </pre>
+     *
+     * <code>WITH_UTILIZATION = 504090633;</code>
+     */
+    WITH_UTILIZATION(504090633),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_VIEWS = 0;</code>
+     */
+    public static final int UNDEFINED_VIEWS_VALUE = 0;
+
+    /** <code>DEFAULT = 115302945;</code> */
+    public static final int DEFAULT_VALUE = 115302945;
+
+    /**
+     *
+     *
+     * <pre>
+     * Utilization data is included in the response.
+     * </pre>
+     *
+     * <code>WITH_UTILIZATION = 504090633;</code>
+     */
+    public static final int WITH_UTILIZATION_VALUE = 504090633;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Views valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Views forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_VIEWS;
+        case 115302945:
+          return DEFAULT;
+        case 504090633:
+          return WITH_UTILIZATION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Views> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Views> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Views>() {
+          public Views findValueByNumber(int number) {
+            return Views.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.ListSubnetworksRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final Views[] VALUES = values();
+
+    public static Views valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Views(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ListSubnetworksRequest.Views)
   }
 
   private int bitField0_;
@@ -452,6 +598,78 @@ public final class ListSubnetworksRequest extends com.google.protobuf.GeneratedM
     return returnPartialSuccess_;
   }
 
+  public static final int VIEWS_FIELD_NUMBER = 112204398;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object views_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+   * Check the Views enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string views = 112204398;</code>
+   *
+   * @return Whether the views field is set.
+   */
+  @java.lang.Override
+  public boolean hasViews() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+   * Check the Views enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string views = 112204398;</code>
+   *
+   * @return The views.
+   */
+  @java.lang.Override
+  public java.lang.String getViews() {
+    java.lang.Object ref = views_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      views_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+   * Check the Views enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string views = 112204398;</code>
+   *
+   * @return The bytes for views.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getViewsBytes() {
+    java.lang.Object ref = views_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      views_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -471,6 +689,9 @@ public final class ListSubnetworksRequest extends com.google.protobuf.GeneratedM
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeUInt32(54715419, maxResults_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 112204398, views_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
@@ -501,6 +722,9 @@ public final class ListSubnetworksRequest extends com.google.protobuf.GeneratedM
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(54715419, maxResults_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(112204398, views_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
@@ -556,6 +780,10 @@ public final class ListSubnetworksRequest extends com.google.protobuf.GeneratedM
     if (hasReturnPartialSuccess()) {
       if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
     }
+    if (hasViews() != other.hasViews()) return false;
+    if (hasViews()) {
+      if (!getViews().equals(other.getViews())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -590,6 +818,10 @@ public final class ListSubnetworksRequest extends com.google.protobuf.GeneratedM
     if (hasReturnPartialSuccess()) {
       hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
+    }
+    if (hasViews()) {
+      hash = (37 * hash) + VIEWS_FIELD_NUMBER;
+      hash = (53 * hash) + getViews().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -738,6 +970,7 @@ public final class ListSubnetworksRequest extends com.google.protobuf.GeneratedM
       project_ = "";
       region_ = "";
       returnPartialSuccess_ = false;
+      views_ = "";
       return this;
     }
 
@@ -800,6 +1033,10 @@ public final class ListSubnetworksRequest extends com.google.protobuf.GeneratedM
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.returnPartialSuccess_ = returnPartialSuccess_;
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.views_ = views_;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -881,6 +1118,11 @@ public final class ListSubnetworksRequest extends com.google.protobuf.GeneratedM
       if (other.hasReturnPartialSuccess()) {
         setReturnPartialSuccess(other.getReturnPartialSuccess());
       }
+      if (other.hasViews()) {
+        views_ = other.views_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -919,6 +1161,12 @@ public final class ListSubnetworksRequest extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000002;
                 break;
               } // case 437723352
+            case 897635186:
+              {
+                views_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 897635186
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
@@ -1708,6 +1956,138 @@ public final class ListSubnetworksRequest extends com.google.protobuf.GeneratedM
     public Builder clearReturnPartialSuccess() {
       bitField0_ = (bitField0_ & ~0x00000040);
       returnPartialSuccess_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object views_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+     * Check the Views enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string views = 112204398;</code>
+     *
+     * @return Whether the views field is set.
+     */
+    public boolean hasViews() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+     * Check the Views enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string views = 112204398;</code>
+     *
+     * @return The views.
+     */
+    public java.lang.String getViews() {
+      java.lang.Object ref = views_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        views_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+     * Check the Views enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string views = 112204398;</code>
+     *
+     * @return The bytes for views.
+     */
+    public com.google.protobuf.ByteString getViewsBytes() {
+      java.lang.Object ref = views_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        views_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+     * Check the Views enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string views = 112204398;</code>
+     *
+     * @param value The views to set.
+     * @return This builder for chaining.
+     */
+    public Builder setViews(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      views_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+     * Check the Views enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string views = 112204398;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearViews() {
+      views_ = getDefaultInstance().getViews();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+     * Check the Views enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string views = 112204398;</code>
+     *
+     * @param value The bytes for views to set.
+     * @return This builder for chaining.
+     */
+    public Builder setViewsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      views_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

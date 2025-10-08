@@ -11068,7 +11068,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
      * </pre>
      *
-     * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The serviceAttachmentLink.
      */
@@ -11084,7 +11086,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
      * </pre>
      *
-     * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for serviceAttachmentLink.
      */
@@ -11403,7 +11407,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
      * </pre>
      *
-     * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The serviceAttachmentLink.
      */
@@ -11430,7 +11436,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
      * </pre>
      *
-     * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for serviceAttachmentLink.
      */
@@ -12352,7 +12360,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
        * </pre>
        *
-       * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>
+       * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return The serviceAttachmentLink.
@@ -12379,7 +12388,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
        * </pre>
        *
-       * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>
+       * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return The bytes for serviceAttachmentLink.
@@ -12406,7 +12416,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
        * </pre>
        *
-       * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>
+       * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param value The serviceAttachmentLink to set.
@@ -12432,7 +12443,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
        * </pre>
        *
-       * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>
+       * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return This builder for chaining.
@@ -12454,7 +12466,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
        * </pre>
        *
-       * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>
+       * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param value The bytes for serviceAttachmentLink to set.
@@ -16416,6 +16429,82 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return The enabled.
      */
     boolean getEnabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    int getFlagsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    boolean containsFlags(java.lang.String key);
+
+    /** Use {@link #getFlagsMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String> getFlags();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String> getFlagsMap();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    /* nullable */
+    java.lang.String getFlagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    java.lang.String getFlagsOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of running poolers per instance.
+     * </pre>
+     *
+     * <code>int32 pooler_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The poolerCount.
+     */
+    int getPoolerCount();
   }
 
   /**
@@ -16451,6 +16540,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_alloydb_v1alpha_Instance_ConnectionPoolConfig_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 13:
+          return internalGetFlags();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -16459,167 +16560,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.cloud.alloydb.v1alpha.Instance.ConnectionPoolConfig.class,
               com.google.cloud.alloydb.v1alpha.Instance.ConnectionPoolConfig.Builder.class);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The pool mode. Defaults to `POOL_MODE_TRANSACTION`.
-     * </pre>
-     *
-     * Protobuf enum {@code google.cloud.alloydb.v1alpha.Instance.ConnectionPoolConfig.PoolMode}
-     */
-    public enum PoolMode implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       *
-       *
-       * <pre>
-       * The pool mode is not specified. Defaults to `POOL_MODE_TRANSACTION`.
-       * </pre>
-       *
-       * <code>POOL_MODE_UNSPECIFIED = 0;</code>
-       */
-      POOL_MODE_UNSPECIFIED(0),
-      /**
-       *
-       *
-       * <pre>
-       * Server is released back to pool after a client disconnects.
-       * </pre>
-       *
-       * <code>POOL_MODE_SESSION = 1;</code>
-       */
-      POOL_MODE_SESSION(1),
-      /**
-       *
-       *
-       * <pre>
-       * Server is released back to pool after a transaction finishes.
-       * </pre>
-       *
-       * <code>POOL_MODE_TRANSACTION = 2;</code>
-       */
-      POOL_MODE_TRANSACTION(2),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       *
-       *
-       * <pre>
-       * The pool mode is not specified. Defaults to `POOL_MODE_TRANSACTION`.
-       * </pre>
-       *
-       * <code>POOL_MODE_UNSPECIFIED = 0;</code>
-       */
-      public static final int POOL_MODE_UNSPECIFIED_VALUE = 0;
-
-      /**
-       *
-       *
-       * <pre>
-       * Server is released back to pool after a client disconnects.
-       * </pre>
-       *
-       * <code>POOL_MODE_SESSION = 1;</code>
-       */
-      public static final int POOL_MODE_SESSION_VALUE = 1;
-
-      /**
-       *
-       *
-       * <pre>
-       * Server is released back to pool after a transaction finishes.
-       * </pre>
-       *
-       * <code>POOL_MODE_TRANSACTION = 2;</code>
-       */
-      public static final int POOL_MODE_TRANSACTION_VALUE = 2;
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static PoolMode valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static PoolMode forNumber(int value) {
-        switch (value) {
-          case 0:
-            return POOL_MODE_UNSPECIFIED;
-          case 1:
-            return POOL_MODE_SESSION;
-          case 2:
-            return POOL_MODE_TRANSACTION;
-          default:
-            return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<PoolMode> internalGetValueMap() {
-        return internalValueMap;
-      }
-
-      private static final com.google.protobuf.Internal.EnumLiteMap<PoolMode> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<PoolMode>() {
-            public PoolMode findValueByNumber(int number) {
-              return PoolMode.forNumber(number);
-            }
-          };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-
-      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
-        return getDescriptor();
-      }
-
-      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-        return com.google.cloud.alloydb.v1alpha.Instance.ConnectionPoolConfig.getDescriptor()
-            .getEnumTypes()
-            .get(0);
-      }
-
-      private static final PoolMode[] VALUES = values();
-
-      public static PoolMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private PoolMode(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:google.cloud.alloydb.v1alpha.Instance.ConnectionPoolConfig.PoolMode)
     }
 
     public static final int ENABLED_FIELD_NUMBER = 12;
@@ -16641,6 +16581,132 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return enabled_;
     }
 
+    public static final int FLAGS_FIELD_NUMBER = 13;
+
+    private static final class FlagsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              com.google.cloud.alloydb.v1alpha.ResourcesProto
+                  .internal_static_google_cloud_alloydb_v1alpha_Instance_ConnectionPoolConfig_FlagsEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> flags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetFlags() {
+      if (flags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(FlagsDefaultEntryHolder.defaultEntry);
+      }
+      return flags_;
+    }
+
+    public int getFlagsCount() {
+      return internalGetFlags().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public boolean containsFlags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetFlags().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getFlagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getFlags() {
+      return getFlagsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getFlagsMap() {
+      return internalGetFlags().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getFlagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetFlags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.lang.String getFlagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetFlags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int POOLER_COUNT_FIELD_NUMBER = 14;
+    private int poolerCount_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of running poolers per instance.
+     * </pre>
+     *
+     * <code>int32 pooler_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The poolerCount.
+     */
+    @java.lang.Override
+    public int getPoolerCount() {
+      return poolerCount_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -16658,6 +16724,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (enabled_ != false) {
         output.writeBool(12, enabled_);
       }
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetFlags(), FlagsDefaultEntryHolder.defaultEntry, 13);
+      if (poolerCount_ != 0) {
+        output.writeInt32(14, poolerCount_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -16669,6 +16740,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (enabled_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, enabled_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetFlags().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> flags__ =
+            FlagsDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, flags__);
+      }
+      if (poolerCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(14, poolerCount_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -16687,6 +16771,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.alloydb.v1alpha.Instance.ConnectionPoolConfig) obj;
 
       if (getEnabled() != other.getEnabled()) return false;
+      if (!internalGetFlags().equals(other.internalGetFlags())) return false;
+      if (getPoolerCount() != other.getPoolerCount()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -16700,6 +16786,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+      if (!internalGetFlags().getMap().isEmpty()) {
+        hash = (37 * hash) + FLAGS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetFlags().hashCode();
+      }
+      hash = (37 * hash) + POOLER_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getPoolerCount();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -16822,6 +16914,28 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             .internal_static_google_cloud_alloydb_v1alpha_Instance_ConnectionPoolConfig_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 13:
+            return internalGetFlags();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 13:
+            return internalGetMutableFlags();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -16844,6 +16958,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         enabled_ = false;
+        internalGetMutableFlags().clear();
+        poolerCount_ = 0;
         return this;
       }
 
@@ -16884,6 +17000,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.enabled_ = enabled_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.flags_ = internalGetFlags();
+          result.flags_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.poolerCount_ = poolerCount_;
         }
       }
 
@@ -16940,6 +17063,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         if (other.getEnabled() != false) {
           setEnabled(other.getEnabled());
         }
+        internalGetMutableFlags().mergeFrom(other.internalGetFlags());
+        bitField0_ |= 0x00000002;
+        if (other.getPoolerCount() != 0) {
+          setPoolerCount(other.getPoolerCount());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -16972,6 +17100,24 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 96
+              case 106:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String> flags__ =
+                      input.readMessage(
+                          FlagsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+                  internalGetMutableFlags()
+                      .getMutableMap()
+                      .put(flags__.getKey(), flags__.getValue());
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 106
+              case 112:
+                {
+                  poolerCount_ = input.readInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 112
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -17043,6 +17189,241 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       public Builder clearEnabled() {
         bitField0_ = (bitField0_ & ~0x00000001);
         enabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> flags_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetFlags() {
+        if (flags_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(FlagsDefaultEntryHolder.defaultEntry);
+        }
+        return flags_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableFlags() {
+        if (flags_ == null) {
+          flags_ = com.google.protobuf.MapField.newMapField(FlagsDefaultEntryHolder.defaultEntry);
+        }
+        if (!flags_.isMutable()) {
+          flags_ = flags_.copy();
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return flags_;
+      }
+
+      public int getFlagsCount() {
+        return internalGetFlags().getMap().size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public boolean containsFlags(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetFlags().getMap().containsKey(key);
+      }
+
+      /** Use {@link #getFlagsMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getFlags() {
+        return getFlagsMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getFlagsMap() {
+        return internalGetFlags().getMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public /* nullable */ java.lang.String getFlagsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetFlags().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.lang.String getFlagsOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetFlags().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearFlags() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        internalGetMutableFlags().getMutableMap().clear();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeFlags(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableFlags().getMutableMap().remove(key);
+        return this;
+      }
+
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMutableFlags() {
+        bitField0_ |= 0x00000002;
+        return internalGetMutableFlags().getMutableMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putFlags(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableFlags().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putAllFlags(java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableFlags().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+
+      private int poolerCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of running poolers per instance.
+       * </pre>
+       *
+       * <code>int32 pooler_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The poolerCount.
+       */
+      @java.lang.Override
+      public int getPoolerCount() {
+        return poolerCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of running poolers per instance.
+       * </pre>
+       *
+       * <code>int32 pooler_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The poolerCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPoolerCount(int value) {
+
+        poolerCount_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of running poolers per instance.
+       * </pre>
+       *
+       * <code>int32 pooler_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPoolerCount() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        poolerCount_ = 0;
         onChanged();
         return this;
       }
@@ -18920,7 +19301,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Instance.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=1303
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=1317
    * @return Whether the geminiConfig field is set.
    */
   @java.lang.Override
@@ -18942,7 +19323,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Instance.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=1303
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=1317
    * @return The geminiConfig.
    */
   @java.lang.Override
@@ -25757,7 +26138,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Instance.gemini_config is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=1303
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=1317
      * @return Whether the geminiConfig field is set.
      */
     @java.lang.Deprecated
@@ -25778,7 +26159,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Instance.gemini_config is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=1303
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=1317
      * @return The geminiConfig.
      */
     @java.lang.Deprecated

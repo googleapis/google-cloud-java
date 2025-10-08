@@ -23,6 +23,7 @@ import com.google.cloud.aiplatform.v1.PredictResponse;
 import com.google.cloud.aiplatform.v1.PredictionServiceClient;
 import com.google.protobuf.Value;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SyncPredict {
 
@@ -45,6 +46,7 @@ public class SyncPredict {
                       .toString())
               .addAllInstances(new ArrayList<Value>())
               .setParameters(Value.newBuilder().setBoolValue(true).build())
+              .putAllLabels(new HashMap<String, String>())
               .build();
       PredictResponse response = predictionServiceClient.predict(request);
     }

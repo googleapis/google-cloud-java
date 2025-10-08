@@ -25,7 +25,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java: [8, 11, 17, 21, 24]
+        java: [8, 11, 17, 21, 25]
     steps:
     - name: Get current week within the year
       id: date
@@ -127,7 +127,7 @@ jobs:
           gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
           /src/library_generation/cli/entry_point.py validate-generation-config
       env:
-        library_generation_image_tag: 2.62.1
+        library_generation_image_tag: 2.62.3
         workspace_name: /workspace
 
 # TODO: Uncomment the needed Github Actions
