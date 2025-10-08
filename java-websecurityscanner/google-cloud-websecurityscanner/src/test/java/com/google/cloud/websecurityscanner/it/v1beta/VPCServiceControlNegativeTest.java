@@ -22,7 +22,6 @@ import static org.junit.Assume.assumeTrue;
 
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.rpc.PermissionDeniedException;
-import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.websecurityscanner.v1beta.CreateScanConfigRequest;
 import com.google.cloud.websecurityscanner.v1beta.ListScanConfigsRequest;
