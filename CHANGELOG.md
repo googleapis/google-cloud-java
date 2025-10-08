@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.71.0](https://github.com/googleapis/google-cloud-java/compare/v1.70.0...v1.71.0) (2025-10-08)
+
+
+### Bug Fixes
+
+* Migrate away from GoogleCredentials.fromStream() usages ([#11765](https://github.com/googleapis/google-cloud-java/issues/11765)) ([6498808](https://github.com/googleapis/google-cloud-java/commit/6498808675d0ca6719f7eccc095c3509136c53a6))
+
 ## [1.70.0](https://github.com/googleapis/google-cloud-java/compare/v1.69.0...v1.70.0) (2025-10-07)
 
 
