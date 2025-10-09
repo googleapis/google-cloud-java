@@ -108,9 +108,7 @@ case ${JOB_TYPE} in
 #        exit 0
 #    fi
 
-    mvn -B -ntp \
-      -T 1C \
-      com.spotify.fmt:fmt-maven-plugin:check
+    mvn -B -ntp com.spotify.fmt:fmt-maven-plugin:check
     mvn -B -ntp checkstyle:check@checkstyle
     ;;
   *) ;;
