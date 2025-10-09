@@ -20,6 +20,8 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 import static org.mockito.Mockito.when;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.google.cloud.vertexai.api.Candidate;
 import com.google.cloud.vertexai.api.Candidate.FinishReason;
 import com.google.cloud.vertexai.api.Citation;
@@ -31,6 +33,8 @@ import com.google.cloud.vertexai.api.Part;
 import com.google.common.collect.ImmutableList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.Optional;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -83,6 +87,29 @@ public final class ResponseHandlerTest {
           .addCandidates(CANDIDATE_1)
           .addCandidates(CANDIDATE_2)
           .build();
+  private static final class ExampleDto {
+    public String name;
+    public int count;
+
+    // Default constructor for Jackson
+    public ExampleDto() {
+    }
+
+    ExampleDto(String name, int count) {
+      this.name = name;
+      this.count = count;
+    }
+  }
+
+  private static final String DTO_JSON = "{\"name\":\"vertex\",\"count\":42}";
+  private static final GenerateContentResponse DTO_RESPONSE =
+          GenerateContentResponse.newBuilder()
+                  .addCandidates(
+                          Candidate.newBuilder()
+                                  .setContent(
+                                          Content.newBuilder()
+                                                  .addParts(Part.newBuilder().setText(DTO_JSON))))
+                  .build();
 
   @Rule public final MockitoRule mocksRule = MockitoJUnit.rule();
 
@@ -165,5 +192,30 @@ public final class ResponseHandlerTest {
     assertThat(ResponseHandler.getText(response)).isEqualTo(TEXT_1 + TEXT_2 + TEXT_1 + TEXT_2);
     assertThat(response.getCandidates(0).getCitationMetadata().getCitationsList())
         .isEqualTo(Arrays.asList(CITATION_1, CITATION_2));
+  }
+
+  @Test
+  public void testGetStructuredResponseWithCustomMapper() {
+    JsonMapper strictMapper =
+            JsonMapper.builder()
+                    .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
+                    .build();
+
+    ExampleDto dto =
+            ResponseHandler.getStructuredResponse(
+                    DTO_RESPONSE, ExampleDto.class, Optional.of(strictMapper));
+
+    assertThat(dto.name).isEqualTo("vertex");
+    assertThat(dto.count).isEqualTo(42);
+  }
+
+  @Test
+  public void testGetStructuredResponseWithDefaultMapper() {
+    ExampleDto dto =
+            ResponseHandler.getStructuredResponse(
+                    DTO_RESPONSE, ExampleDto.class, Optional.empty());
+
+    assertThat(dto.name).isEqualTo("vertex");
+    assertThat(dto.count).isEqualTo(42);
   }
 }
