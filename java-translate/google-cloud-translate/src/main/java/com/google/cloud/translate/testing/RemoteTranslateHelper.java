@@ -125,6 +125,7 @@ public class RemoteTranslateHelper {
   @Deprecated
   public static RemoteTranslateHelper create(String apiKey) {
     HttpTransportOptions transportOptions = TranslateOptions.getDefaultHttpTransportOptions();
+
     transportOptions =
         transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000).build();
     TranslateOptions translateOptions =
