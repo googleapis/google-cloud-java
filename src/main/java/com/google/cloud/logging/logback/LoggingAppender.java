@@ -23,6 +23,7 @@ import ch.qos.logback.classic.spi.StackTraceElementProxy;
 import ch.qos.logback.core.UnsynchronizedAppenderBase;
 import ch.qos.logback.core.util.Loader;
 import com.google.api.core.InternalApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Instrumentation;
@@ -35,10 +36,12 @@ import com.google.cloud.logging.MonitoredResourceUtil;
 import com.google.cloud.logging.Payload;
 import com.google.cloud.logging.Severity;
 import com.google.cloud.logging.Synchronicity;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -138,6 +141,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private String log;
   private String resourceType;
   private String credentialsFile;
+  private GoogleCredentials credentials;
   private String logDestinationProjectId;
   private boolean autoPopulateMetadata = true;
   private boolean redirectToStdout = false;
@@ -185,15 +189,44 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   /**
-   * Sets the path to the <a
+   * This method is obsolete because of a potential security risk. Use the {@link
+   * #setCredentials(GoogleCredentials)} method instead.
+   *
+   * <p>If you know that you will be loading credential configurations of a specific type, it is
+   * recommended to use a credential-type-specific `fromStream()` method. This will ensure that an
+   * unexpected credential type with potential for malicious intent is not loaded unintentionally.
+   * You might still have to do validation for certain credential types. Please follow the
+   * recommendation for that method.
+   *
+   * <p>If you are loading your credential configuration from an untrusted source and have not
+   * mitigated the risks (e.g. by validating the configuration yourself), make these changes as soon
+   * as possible to prevent security risks to your environment.
+   *
+   * <p>Regardless of the method used, it is always your responsibility to validate configurations
+   * received from external sources.
+   *
+   * <p>Sets the path to the <a
    * href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys">credential
    * file</a>. If not set the appender will use {@link GoogleCredentials#getApplicationDefault()} to
    * authenticate.
    *
    * @param credentialsFile the path to the credentials file.
    */
+  @ObsoleteApi(
+      "This method is obsolete because of a potential security risk. Use the setCredentials() method instead")
   public void setCredentialsFile(String credentialsFile) {
     this.credentialsFile = credentialsFile;
+  }
+
+  /**
+   * Sets the credential to use. If not set the appender will use {@link
+   * GoogleCredentials#getApplicationDefault()} to authenticate.
+   *
+   * @param credentials the GoogleCredentials to set
+   */
+  public void setCredentials(GoogleCredentials credentials) {
+    Preconditions.checkNotNull(credentials, "Credentials cannot be null");
+    this.credentials = credentials;
   }
 
   /**
@@ -445,10 +478,12 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     if (loggingOptions == null) {
       LoggingOptions.Builder builder = LoggingOptions.newBuilder();
       builder.setProjectId(logDestinationProjectId);
-      if (!Strings.isNullOrEmpty(credentialsFile)) {
+      if (credentials != null) {
+        builder.setCredentials(credentials);
+      } else if (!Strings.isNullOrEmpty(credentialsFile)) {
         try {
           builder.setCredentials(
-              GoogleCredentials.fromStream(new FileInputStream(credentialsFile)));
+              GoogleCredentials.fromStream(Files.newInputStream(Paths.get(credentialsFile))));
         } catch (IOException e) {
           throw new RuntimeException(
               String.format(

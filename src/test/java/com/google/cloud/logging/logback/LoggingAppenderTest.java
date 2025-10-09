@@ -23,11 +23,13 @@ import static org.easymock.EasyMock.expectLastCall;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.filter.ThresholdFilter;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.classic.spi.LoggingEvent;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.Timestamp;
 import com.google.cloud.logging.Instrumentation;
@@ -60,7 +62,7 @@ import org.slf4j.MDC;
 public class LoggingAppenderTest {
   private static final String PROJECT_ID = "test-project";
   private static final String CRED_FILE_PROJECT_ID = "project-12345";
-  private static final String OVERRIDED_PROJECT_ID = "some-project-id";
+  private static final String OVERRIDDEN_PROJECT_ID = "some-project-id";
   private static final String DUMMY_CRED_FILE_PATH =
       "src/test/java/com/google/cloud/logging/logback/dummy-credentials.json";
   private static final Payload.JsonPayload JSON_PAYLOAD =
@@ -289,6 +291,22 @@ public class LoggingAppenderTest {
     assertThat(capturedArgument.getValue().iterator().next()).isEqualTo(INFO_ENTRY);
   }
 
+  @Test
+  public void testCreateLoggingOptionsWithValidCredentials() {
+    LoggingAppender appender = new LoggingAppender();
+    appender.setCredentials(GoogleCredentials.newBuilder().build());
+    // ServiceOptions requires a projectId to be set. Normally this is determined by the
+    // GoogleCredentials (Credential set above is a dummy value with no ProjectId).
+    appender.setLogDestinationProjectId(PROJECT_ID);
+    appender.getLoggingOptions();
+  }
+
+  @Test
+  public void testCreateLoggingOptionsWithNullCredentials() {
+    LoggingAppender appender = new LoggingAppender();
+    assertThrows(NullPointerException.class, () -> appender.setCredentials(null));
+  }
+
   @Test(expected = RuntimeException.class)
   public void testCreateLoggingOptionsWithInvalidCredentials() {
     final String nonExistentFile = "/path/to/non/existent/file";
@@ -310,8 +328,8 @@ public class LoggingAppenderTest {
     // Try to build LoggingOptions with file based credentials.
     LoggingAppender appender = new LoggingAppender();
     appender.setCredentialsFile(DUMMY_CRED_FILE_PATH);
-    appender.setLogDestinationProjectId(OVERRIDED_PROJECT_ID);
-    assertThat(appender.getLoggingOptions().getProjectId()).isEqualTo(OVERRIDED_PROJECT_ID);
+    appender.setLogDestinationProjectId(OVERRIDDEN_PROJECT_ID);
+    assertThat(appender.getLoggingOptions().getProjectId()).isEqualTo(OVERRIDDEN_PROJECT_ID);
   }
 
   private LoggingEvent createLoggingEvent(Level level, long timestamp) {

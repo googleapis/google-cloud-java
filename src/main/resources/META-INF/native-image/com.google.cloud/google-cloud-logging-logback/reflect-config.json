@@ -35,6 +35,7 @@
       {"name":"<init>","parameterTypes":[] },
       {"name":"setAutoPopulateMetadata","parameterTypes":["boolean"] },
       {"name":"setCredentialsFile","parameterTypes":["java.lang.String"] },
+      {"name":"setCredentials","parameterTypes":["com.google.auth.oauth2.GoogleCredentials"] },
       {"name":"setFlushLevel","parameterTypes":["ch.qos.logback.classic.Level"] },
       {"name":"setLog","parameterTypes":["java.lang.String"] },
       {"name":"setLogDestinationProjectId","parameterTypes":["java.lang.String"] },
