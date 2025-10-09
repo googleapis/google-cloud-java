@@ -318,7 +318,8 @@ class MessageDispatcher {
       case WAIT_FOR_PROCESSING:
         logger.log(
             Level.FINE,
-            "WAIT_FOR_PROCESSING shutdown mode: Waiting for outstanding messages to complete processing.");
+            "WAIT_FOR_PROCESSING shutdown mode: Waiting for outstanding messages to complete"
+                + " processing.");
         java.time.Duration timeout = subscriberShutdownSettings.getTimeout();
         if (timeout.isNegative()) {
           // Indefinite wait use existing blocking wait
@@ -330,7 +331,8 @@ class MessageDispatcher {
           if (!completedWait) {
             logger.log(
                 Level.WARNING,
-                "Grace period expired for WAIT_FOR_PROCESSING shutdown. Nacking remaining messages.");
+                "Grace period expired for WAIT_FOR_PROCESSING shutdown. Nacking remaining"
+                    + " messages.");
             // Switch to NACK_IMMEDIATELY behavior for remaining messages
             nackAllOutstandingMessages();
           }

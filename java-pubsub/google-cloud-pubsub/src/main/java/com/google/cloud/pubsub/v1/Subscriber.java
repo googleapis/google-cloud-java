@@ -796,7 +796,8 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
      * SubscriberShutdownSettings#newBuilder() default settings}.
      */
     @BetaApi(
-        "The surface for SubscriberShutdownSettings is not stable yet and may be changed in the future.")
+        "The surface for SubscriberShutdownSettings is not stable yet and may be changed in the"
+            + " future.")
     public Builder setSubscriberShutdownSettings(
         SubscriberShutdownSettings subscriberShutdownSettings) {
       this.subscriberShutdownSettings = Preconditions.checkNotNull(subscriberShutdownSettings);

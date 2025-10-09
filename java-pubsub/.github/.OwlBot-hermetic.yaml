@@ -41,6 +41,7 @@ deep-preserve-regex:
 - "/google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/SequentialExecutorServiceTest.java"
 - "/google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/StatusUtilTest.java"
 - "/google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/StreamingSubscriberConnectionTest.java"
+- "/google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/SubscriberShutdownSettingsTest.java"
 - "/google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/SubscriberTest.java"
 - "/google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/TopicAdminSmokeTest.java"
 - "/google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/WaiterTest.java"
@@ -64,6 +65,7 @@ deep-preserve-regex:
 - "/google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/StreamingSubscriberConnection.java"
 - "/google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/Subscriber.java"
 - "/google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriberInterface.java"
+- "/google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriberShutdownSettings.java"
 - "/google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriberStats.java"
 - "/google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/Waiter.java"
 
