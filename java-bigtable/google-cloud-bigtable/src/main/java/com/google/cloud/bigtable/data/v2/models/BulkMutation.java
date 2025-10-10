@@ -101,9 +101,9 @@ public final class BulkMutation implements Serializable, Cloneable {
     long mutationCount = mutation.getMutations().size();
     Preconditions.checkArgument(
         mutationCountSum + mutationCount <= MAX_MUTATION,
-        String.format(
-            "Too many mutations, got %s, limit is %s",
-            mutationCountSum + mutationCount, MAX_MUTATION));
+        "Too many mutations, got %s, limit is %s",
+        mutationCountSum + mutationCount,
+        MAX_MUTATION);
     this.mutationCountSum += mutationCount;
 
     builder.addEntries(

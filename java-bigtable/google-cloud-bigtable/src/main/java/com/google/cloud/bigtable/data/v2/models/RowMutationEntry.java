@@ -204,9 +204,9 @@ public class RowMutationEntry implements MutationApi<RowMutationEntry>, Serializ
   public MutateRowsRequest.Entry toProto() {
     Preconditions.checkArgument(
         mutation.getMutations().size() <= MAX_MUTATION,
-        String.format(
-            "Too many mutations, got %s, limit is %s",
-            mutation.getMutations().size(), MAX_MUTATION));
+        "Too many mutations, got %s, limit is %s",
+        mutation.getMutations().size(),
+        MAX_MUTATION);
     return MutateRowsRequest.Entry.newBuilder()
         .setRowKey(key)
         .addAllMutations(mutation.getMutations())
