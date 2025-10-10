@@ -11321,6 +11321,40 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the API key. If this field is set, the `api_key` field will be ignored.
+       * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The secretVersionForApiKey.
+       */
+      java.lang.String getSecretVersionForApiKey();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the API key. If this field is set, the `api_key` field will be ignored.
+       * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for secretVersionForApiKey.
+       */
+      com.google.protobuf.ByteString getSecretVersionForApiKeyBytes();
+
+      /**
+       *
+       *
+       * <pre>
        * Required. Key location in the request.
        * </pre>
        *
@@ -11372,6 +11406,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       private ApiKeyConfig() {
         keyName_ = "";
         apiKey_ = "";
+        secretVersionForApiKey_ = "";
         requestLocation_ = 0;
       }
 
@@ -11509,6 +11544,67 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public static final int SECRET_VERSION_FOR_API_KEY_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object secretVersionForApiKey_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the API key. If this field is set, the `api_key` field will be ignored.
+       * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The secretVersionForApiKey.
+       */
+      @java.lang.Override
+      public java.lang.String getSecretVersionForApiKey() {
+        java.lang.Object ref = secretVersionForApiKey_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          secretVersionForApiKey_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the API key. If this field is set, the `api_key` field will be ignored.
+       * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for secretVersionForApiKey.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getSecretVersionForApiKeyBytes() {
+        java.lang.Object ref = secretVersionForApiKey_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          secretVersionForApiKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       public static final int REQUEST_LOCATION_FIELD_NUMBER = 3;
       private int requestLocation_ = 0;
 
@@ -11581,6 +11677,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                 .getNumber()) {
           output.writeEnum(3, requestLocation_);
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretVersionForApiKey_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, secretVersionForApiKey_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -11602,6 +11701,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                 .getNumber()) {
           size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, requestLocation_);
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretVersionForApiKey_)) {
+          size +=
+              com.google.protobuf.GeneratedMessageV3.computeStringSize(4, secretVersionForApiKey_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -11621,6 +11724,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
         if (!getKeyName().equals(other.getKeyName())) return false;
         if (!getApiKey().equals(other.getApiKey())) return false;
+        if (!getSecretVersionForApiKey().equals(other.getSecretVersionForApiKey())) return false;
         if (requestLocation_ != other.requestLocation_) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
@@ -11637,6 +11741,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getKeyName().hashCode();
         hash = (37 * hash) + API_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getApiKey().hashCode();
+        hash = (37 * hash) + SECRET_VERSION_FOR_API_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getSecretVersionForApiKey().hashCode();
         hash = (37 * hash) + REQUEST_LOCATION_FIELD_NUMBER;
         hash = (53 * hash) + requestLocation_;
         hash = (29 * hash) + getUnknownFields().hashCode();
@@ -11794,6 +11900,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           bitField0_ = 0;
           keyName_ = "";
           apiKey_ = "";
+          secretVersionForApiKey_ = "";
           requestLocation_ = 0;
           return this;
         }
@@ -11843,6 +11950,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             result.apiKey_ = apiKey_;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.secretVersionForApiKey_ = secretVersionForApiKey_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
             result.requestLocation_ = requestLocation_;
           }
         }
@@ -11909,6 +12019,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             bitField0_ |= 0x00000002;
             onChanged();
           }
+          if (!other.getSecretVersionForApiKey().isEmpty()) {
+            secretVersionForApiKey_ = other.secretVersionForApiKey_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
           if (other.requestLocation_ != 0) {
             setRequestLocationValue(other.getRequestLocationValue());
           }
@@ -11953,9 +12068,15 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                 case 24:
                   {
                     requestLocation_ = input.readEnum();
-                    bitField0_ |= 0x00000004;
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 24
+                case 34:
+                  {
+                    secretVersionForApiKey_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 34
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12212,6 +12333,137 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private java.lang.Object secretVersionForApiKey_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the API key. If this field is set, the `api_key` field will be ignored.
+         * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The secretVersionForApiKey.
+         */
+        public java.lang.String getSecretVersionForApiKey() {
+          java.lang.Object ref = secretVersionForApiKey_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            secretVersionForApiKey_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the API key. If this field is set, the `api_key` field will be ignored.
+         * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The bytes for secretVersionForApiKey.
+         */
+        public com.google.protobuf.ByteString getSecretVersionForApiKeyBytes() {
+          java.lang.Object ref = secretVersionForApiKey_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            secretVersionForApiKey_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the API key. If this field is set, the `api_key` field will be ignored.
+         * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The secretVersionForApiKey to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSecretVersionForApiKey(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          secretVersionForApiKey_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the API key. If this field is set, the `api_key` field will be ignored.
+         * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSecretVersionForApiKey() {
+          secretVersionForApiKey_ = getDefaultInstance().getSecretVersionForApiKey();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the API key. If this field is set, the `api_key` field will be ignored.
+         * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The bytes for secretVersionForApiKey to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSecretVersionForApiKeyBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          secretVersionForApiKey_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
         private int requestLocation_ = 0;
 
         /**
@@ -12248,7 +12500,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder setRequestLocationValue(int value) {
           requestLocation_ = value;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -12297,7 +12549,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           requestLocation_ = value.getNumber();
           onChanged();
           return this;
@@ -12317,7 +12569,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearRequestLocation() {
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           requestLocation_ = 0;
           onChanged();
           return this;
@@ -12487,6 +12739,42 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the client secret. If this field is set, the `client_secret` field will
+       * be ignored. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The secretVersionForClientSecret.
+       */
+      java.lang.String getSecretVersionForClientSecret();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the client secret. If this field is set, the `client_secret` field will
+       * be ignored. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for secretVersionForClientSecret.
+       */
+      com.google.protobuf.ByteString getSecretVersionForClientSecretBytes();
+
+      /**
+       *
+       *
+       * <pre>
        * Required. The token endpoint in the OAuth provider to exchange for an
        * access token.
        * </pre>
@@ -12590,6 +12878,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         oauthGrantType_ = 0;
         clientId_ = "";
         clientSecret_ = "";
+        secretVersionForClientSecret_ = "";
         tokenEndpoint_ = "";
         scopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
@@ -12921,6 +13210,69 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public static final int SECRET_VERSION_FOR_CLIENT_SECRET_FIELD_NUMBER = 6;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object secretVersionForClientSecret_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the client secret. If this field is set, the `client_secret` field will
+       * be ignored. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The secretVersionForClientSecret.
+       */
+      @java.lang.Override
+      public java.lang.String getSecretVersionForClientSecret() {
+        java.lang.Object ref = secretVersionForClientSecret_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          secretVersionForClientSecret_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the client secret. If this field is set, the `client_secret` field will
+       * be ignored. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for secretVersionForClientSecret.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getSecretVersionForClientSecretBytes() {
+        java.lang.Object ref = secretVersionForClientSecret_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          secretVersionForClientSecret_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       public static final int TOKEN_ENDPOINT_FIELD_NUMBER = 4;
 
       @SuppressWarnings("serial")
@@ -13076,6 +13428,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < scopes_.size(); i++) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 5, scopes_.getRaw(i));
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretVersionForClientSecret_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(
+              output, 6, secretVersionForClientSecret_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -13108,6 +13464,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           size += dataSize;
           size += 1 * getScopesList().size();
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretVersionForClientSecret_)) {
+          size +=
+              com.google.protobuf.GeneratedMessageV3.computeStringSize(
+                  6, secretVersionForClientSecret_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -13128,6 +13489,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         if (oauthGrantType_ != other.oauthGrantType_) return false;
         if (!getClientId().equals(other.getClientId())) return false;
         if (!getClientSecret().equals(other.getClientSecret())) return false;
+        if (!getSecretVersionForClientSecret().equals(other.getSecretVersionForClientSecret()))
+          return false;
         if (!getTokenEndpoint().equals(other.getTokenEndpoint())) return false;
         if (!getScopesList().equals(other.getScopesList())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -13147,6 +13510,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getClientId().hashCode();
         hash = (37 * hash) + CLIENT_SECRET_FIELD_NUMBER;
         hash = (53 * hash) + getClientSecret().hashCode();
+        hash = (37 * hash) + SECRET_VERSION_FOR_CLIENT_SECRET_FIELD_NUMBER;
+        hash = (53 * hash) + getSecretVersionForClientSecret().hashCode();
         hash = (37 * hash) + TOKEN_ENDPOINT_FIELD_NUMBER;
         hash = (53 * hash) + getTokenEndpoint().hashCode();
         if (getScopesCount() > 0) {
@@ -13309,6 +13674,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           oauthGrantType_ = 0;
           clientId_ = "";
           clientSecret_ = "";
+          secretVersionForClientSecret_ = "";
           tokenEndpoint_ = "";
           scopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
           return this;
@@ -13362,9 +13728,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             result.clientSecret_ = clientSecret_;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
-            result.tokenEndpoint_ = tokenEndpoint_;
+            result.secretVersionForClientSecret_ = secretVersionForClientSecret_;
           }
           if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.tokenEndpoint_ = tokenEndpoint_;
+          }
+          if (((from_bitField0_ & 0x00000020) != 0)) {
             scopes_.makeImmutable();
             result.scopes_ = scopes_;
           }
@@ -13435,15 +13804,20 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             bitField0_ |= 0x00000004;
             onChanged();
           }
+          if (!other.getSecretVersionForClientSecret().isEmpty()) {
+            secretVersionForClientSecret_ = other.secretVersionForClientSecret_;
+            bitField0_ |= 0x00000008;
+            onChanged();
+          }
           if (!other.getTokenEndpoint().isEmpty()) {
             tokenEndpoint_ = other.tokenEndpoint_;
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000010;
             onChanged();
           }
           if (!other.scopes_.isEmpty()) {
             if (scopes_.isEmpty()) {
               scopes_ = other.scopes_;
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
             } else {
               ensureScopesIsMutable();
               scopes_.addAll(other.scopes_);
@@ -13497,7 +13871,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                 case 34:
                   {
                     tokenEndpoint_ = input.readStringRequireUtf8();
-                    bitField0_ |= 0x00000008;
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 34
                 case 42:
@@ -13507,6 +13881,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                     scopes_.add(s);
                     break;
                   } // case 42
+                case 50:
+                  {
+                    secretVersionForClientSecret_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 50
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13871,6 +14251,142 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private java.lang.Object secretVersionForClientSecret_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the client secret. If this field is set, the `client_secret` field will
+         * be ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The secretVersionForClientSecret.
+         */
+        public java.lang.String getSecretVersionForClientSecret() {
+          java.lang.Object ref = secretVersionForClientSecret_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            secretVersionForClientSecret_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the client secret. If this field is set, the `client_secret` field will
+         * be ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The bytes for secretVersionForClientSecret.
+         */
+        public com.google.protobuf.ByteString getSecretVersionForClientSecretBytes() {
+          java.lang.Object ref = secretVersionForClientSecret_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            secretVersionForClientSecret_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the client secret. If this field is set, the `client_secret` field will
+         * be ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The secretVersionForClientSecret to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSecretVersionForClientSecret(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          secretVersionForClientSecret_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the client secret. If this field is set, the `client_secret` field will
+         * be ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSecretVersionForClientSecret() {
+          secretVersionForClientSecret_ = getDefaultInstance().getSecretVersionForClientSecret();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the client secret. If this field is set, the `client_secret` field will
+         * be ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The bytes for secretVersionForClientSecret to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSecretVersionForClientSecretBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          secretVersionForClientSecret_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
         private java.lang.Object tokenEndpoint_ = "";
 
         /**
@@ -13939,7 +14455,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           tokenEndpoint_ = value;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -13958,7 +14474,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder clearTokenEndpoint() {
           tokenEndpoint_ = getDefaultInstance().getTokenEndpoint();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
           return this;
         }
@@ -13982,7 +14498,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           }
           checkByteStringIsUtf8(value);
           tokenEndpoint_ = value;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -13994,7 +14510,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           if (!scopes_.isModifiable()) {
             scopes_ = new com.google.protobuf.LazyStringArrayList(scopes_);
           }
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
         }
 
         /**
@@ -14079,7 +14595,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           }
           ensureScopesIsMutable();
           scopes_.set(index, value);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -14102,7 +14618,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           }
           ensureScopesIsMutable();
           scopes_.add(value);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -14122,7 +14638,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllScopes(java.lang.Iterable<java.lang.String> values) {
           ensureScopesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, scopes_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -14140,7 +14656,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder clearScopes() {
           scopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           ;
           onChanged();
           return this;
@@ -14165,7 +14681,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensureScopesIsMutable();
           scopes_.add(value);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -15207,6 +15723,42 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        * @return The bytes for token.
        */
       com.google.protobuf.ByteString getTokenBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the Bearer token. If this field is set, the `token` field will be
+       * ignored. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The secretVersionForToken.
+       */
+      java.lang.String getSecretVersionForToken();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the Bearer token. If this field is set, the `token` field will be
+       * ignored. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for secretVersionForToken.
+       */
+      com.google.protobuf.ByteString getSecretVersionForTokenBytes();
     }
 
     /**
@@ -15232,6 +15784,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
       private BearerTokenConfig() {
         token_ = "";
+        secretVersionForToken_ = "";
       }
 
       @java.lang.Override
@@ -15319,6 +15872,69 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public static final int SECRET_VERSION_FOR_TOKEN_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object secretVersionForToken_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the Bearer token. If this field is set, the `token` field will be
+       * ignored. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The secretVersionForToken.
+       */
+      @java.lang.Override
+      public java.lang.String getSecretVersionForToken() {
+        java.lang.Object ref = secretVersionForToken_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          secretVersionForToken_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the Bearer token. If this field is set, the `token` field will be
+       * ignored. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for secretVersionForToken.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getSecretVersionForTokenBytes() {
+        java.lang.Object ref = secretVersionForToken_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          secretVersionForToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -15336,6 +15952,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretVersionForToken_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, secretVersionForToken_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -15347,6 +15966,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         size = 0;
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretVersionForToken_)) {
+          size +=
+              com.google.protobuf.GeneratedMessageV3.computeStringSize(2, secretVersionForToken_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -15367,6 +15990,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig) obj;
 
         if (!getToken().equals(other.getToken())) return false;
+        if (!getSecretVersionForToken().equals(other.getSecretVersionForToken())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -15380,6 +16004,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + TOKEN_FIELD_NUMBER;
         hash = (53 * hash) + getToken().hashCode();
+        hash = (37 * hash) + SECRET_VERSION_FOR_TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getSecretVersionForToken().hashCode();
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -15536,6 +16162,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           super.clear();
           bitField0_ = 0;
           token_ = "";
+          secretVersionForToken_ = "";
           return this;
         }
 
@@ -15581,6 +16208,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           int from_bitField0_ = bitField0_;
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.token_ = token_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.secretVersionForToken_ = secretVersionForToken_;
           }
         }
 
@@ -15643,6 +16273,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             bitField0_ |= 0x00000001;
             onChanged();
           }
+          if (!other.getSecretVersionForToken().isEmpty()) {
+            secretVersionForToken_ = other.secretVersionForToken_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -15675,6 +16310,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000001;
                     break;
                   } // case 10
+                case 18:
+                  {
+                    secretVersionForToken_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -15826,6 +16467,142 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           token_ = value;
           bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object secretVersionForToken_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the Bearer token. If this field is set, the `token` field will be
+         * ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The secretVersionForToken.
+         */
+        public java.lang.String getSecretVersionForToken() {
+          java.lang.Object ref = secretVersionForToken_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            secretVersionForToken_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the Bearer token. If this field is set, the `token` field will be
+         * ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The bytes for secretVersionForToken.
+         */
+        public com.google.protobuf.ByteString getSecretVersionForTokenBytes() {
+          java.lang.Object ref = secretVersionForToken_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            secretVersionForToken_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the Bearer token. If this field is set, the `token` field will be
+         * ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The secretVersionForToken to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSecretVersionForToken(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          secretVersionForToken_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the Bearer token. If this field is set, the `token` field will be
+         * ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSecretVersionForToken() {
+          secretVersionForToken_ = getDefaultInstance().getSecretVersionForToken();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the Bearer token. If this field is set, the `token` field will be
+         * ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The bytes for secretVersionForToken to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSecretVersionForTokenBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          secretVersionForToken_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }

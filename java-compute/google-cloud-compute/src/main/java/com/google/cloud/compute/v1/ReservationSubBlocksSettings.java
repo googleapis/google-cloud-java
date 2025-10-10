@@ -140,6 +140,18 @@ public class ReservationSubBlocksSettings extends ClientSettings<ReservationSubB
         .performMaintenanceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to reportFaulty. */
+  public UnaryCallSettings<ReportFaultyReservationSubBlockRequest, Operation>
+      reportFaultySettings() {
+    return ((ReservationSubBlocksStubSettings) getStubSettings()).reportFaultySettings();
+  }
+
+  /** Returns the object with the settings used for calls to reportFaulty. */
+  public OperationCallSettings<ReportFaultyReservationSubBlockRequest, Operation, Operation>
+      reportFaultyOperationSettings() {
+    return ((ReservationSubBlocksStubSettings) getStubSettings()).reportFaultyOperationSettings();
+  }
+
   public static final ReservationSubBlocksSettings create(ReservationSubBlocksStubSettings stub)
       throws IOException {
     return new ReservationSubBlocksSettings.Builder(stub.toBuilder()).build();
@@ -262,6 +274,19 @@ public class ReservationSubBlocksSettings extends ClientSettings<ReservationSubB
             PerformMaintenanceReservationSubBlockRequest, Operation, Operation>
         performMaintenanceOperationSettings() {
       return getStubSettingsBuilder().performMaintenanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to reportFaulty. */
+    public UnaryCallSettings.Builder<ReportFaultyReservationSubBlockRequest, Operation>
+        reportFaultySettings() {
+      return getStubSettingsBuilder().reportFaultySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to reportFaulty. */
+    public OperationCallSettings.Builder<
+            ReportFaultyReservationSubBlockRequest, Operation, Operation>
+        reportFaultyOperationSettings() {
+      return getStubSettingsBuilder().reportFaultyOperationSettings();
     }
 
     @Override

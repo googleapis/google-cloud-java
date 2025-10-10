@@ -63,6 +63,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     requestedFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
     selfLink_ = "";
     state_ = "";
+    subzone_ = "";
   }
 
   @java.lang.Override
@@ -1019,6 +1020,165 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Interconnect.State)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specific subzone in the InterconnectLocation that represents where this connection is to be provisioned.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Interconnect.Subzone}
+   */
+  public enum Subzone implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_SUBZONE = 0;</code>
+     */
+    UNDEFINED_SUBZONE(0),
+    /**
+     *
+     *
+     * <pre>
+     * Subzone A.
+     * </pre>
+     *
+     * <code>SUBZONE_A = 291575438;</code>
+     */
+    SUBZONE_A(291575438),
+    /**
+     *
+     *
+     * <pre>
+     * Subzone B.
+     * </pre>
+     *
+     * <code>SUBZONE_B = 291575439;</code>
+     */
+    SUBZONE_B(291575439),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_SUBZONE = 0;</code>
+     */
+    public static final int UNDEFINED_SUBZONE_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Subzone A.
+     * </pre>
+     *
+     * <code>SUBZONE_A = 291575438;</code>
+     */
+    public static final int SUBZONE_A_VALUE = 291575438;
+
+    /**
+     *
+     *
+     * <pre>
+     * Subzone B.
+     * </pre>
+     *
+     * <code>SUBZONE_B = 291575439;</code>
+     */
+    public static final int SUBZONE_B_VALUE = 291575439;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Subzone valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Subzone forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_SUBZONE;
+        case 291575438:
+          return SUBZONE_A;
+        case 291575439:
+          return SUBZONE_B;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Subzone> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Subzone> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Subzone>() {
+          public Subzone findValueByNumber(int number) {
+            return Subzone.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Interconnect.getDescriptor().getEnumTypes().get(6);
+    }
+
+    private static final Subzone[] VALUES = values();
+
+    public static Subzone valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Subzone(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Interconnect.Subzone)
   }
 
   private int bitField0_;
@@ -3126,6 +3286,78 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SUBZONE_FIELD_NUMBER = 280084972;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subzone_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Specific subzone in the InterconnectLocation that represents where this connection is to be provisioned.
+   * Check the Subzone enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string subzone = 280084972;</code>
+   *
+   * @return Whether the subzone field is set.
+   */
+  @java.lang.Override
+  public boolean hasSubzone() {
+    return ((bitField0_ & 0x04000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specific subzone in the InterconnectLocation that represents where this connection is to be provisioned.
+   * Check the Subzone enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string subzone = 280084972;</code>
+   *
+   * @return The subzone.
+   */
+  @java.lang.Override
+  public java.lang.String getSubzone() {
+    java.lang.Object ref = subzone_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      subzone_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specific subzone in the InterconnectLocation that represents where this connection is to be provisioned.
+   * Check the Subzone enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string subzone = 280084972;</code>
+   *
+   * @return The bytes for subzone.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSubzoneBytes() {
+    java.lang.Object ref = subzone_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      subzone_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3185,6 +3417,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < expectedOutages_.size(); i++) {
       output.writeMessage(264484123, expectedOutages_.get(i));
+    }
+    if (((bitField0_ & 0x04000000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 280084972, subzone_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 290430901, location_);
@@ -3306,6 +3541,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               264484123, expectedOutages_.get(i));
+    }
+    if (((bitField0_ & 0x04000000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(280084972, subzone_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(290430901, location_);
@@ -3516,6 +3754,10 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     if (hasState()) {
       if (!getState().equals(other.getState())) return false;
     }
+    if (hasSubzone() != other.hasSubzone()) return false;
+    if (hasSubzone()) {
+      if (!getSubzone().equals(other.getSubzone())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3658,6 +3900,10 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     if (hasState()) {
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + getState().hashCode();
+    }
+    if (hasSubzone()) {
+      hash = (37 * hash) + SUBZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getSubzone().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3887,6 +4133,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       satisfiesPzs_ = false;
       selfLink_ = "";
       state_ = "";
+      subzone_ = "";
       return this;
     }
 
@@ -4081,6 +4328,10 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField1_ & 0x00000001) != 0)) {
         result.state_ = state_;
         to_bitField0_ |= 0x02000000;
+      }
+      if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.subzone_ = subzone_;
+        to_bitField0_ |= 0x04000000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4338,6 +4589,11 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         bitField1_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasSubzone()) {
+        subzone_ = other.subzone_;
+        bitField1_ |= 0x00000002;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4471,6 +4727,12 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 2115872986
+            case -2054287518:
+              {
+                subzone_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000002;
+                break;
+              } // case -2054287518
             case -1971520086:
               {
                 location_ = input.readStringRequireUtf8();
@@ -9435,6 +9697,138 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       state_ = value;
       bitField1_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object subzone_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Specific subzone in the InterconnectLocation that represents where this connection is to be provisioned.
+     * Check the Subzone enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string subzone = 280084972;</code>
+     *
+     * @return Whether the subzone field is set.
+     */
+    public boolean hasSubzone() {
+      return ((bitField1_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specific subzone in the InterconnectLocation that represents where this connection is to be provisioned.
+     * Check the Subzone enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string subzone = 280084972;</code>
+     *
+     * @return The subzone.
+     */
+    public java.lang.String getSubzone() {
+      java.lang.Object ref = subzone_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subzone_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specific subzone in the InterconnectLocation that represents where this connection is to be provisioned.
+     * Check the Subzone enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string subzone = 280084972;</code>
+     *
+     * @return The bytes for subzone.
+     */
+    public com.google.protobuf.ByteString getSubzoneBytes() {
+      java.lang.Object ref = subzone_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        subzone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specific subzone in the InterconnectLocation that represents where this connection is to be provisioned.
+     * Check the Subzone enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string subzone = 280084972;</code>
+     *
+     * @param value The subzone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubzone(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      subzone_ = value;
+      bitField1_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specific subzone in the InterconnectLocation that represents where this connection is to be provisioned.
+     * Check the Subzone enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string subzone = 280084972;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSubzone() {
+      subzone_ = getDefaultInstance().getSubzone();
+      bitField1_ = (bitField1_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specific subzone in the InterconnectLocation that represents where this connection is to be provisioned.
+     * Check the Subzone enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string subzone = 280084972;</code>
+     *
+     * @param value The bytes for subzone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubzoneBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      subzone_ = value;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }

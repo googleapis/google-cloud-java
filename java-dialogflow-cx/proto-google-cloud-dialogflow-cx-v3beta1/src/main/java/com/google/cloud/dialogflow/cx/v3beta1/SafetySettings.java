@@ -1107,6 +1107,581 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface PromptSecuritySettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable prompt security checks.
+     * </pre>
+     *
+     * <code>bool enable_prompt_security = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enablePromptSecurity.
+     */
+    boolean getEnablePromptSecurity();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Settings for prompt security checks.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings}
+   */
+  public static final class PromptSecuritySettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings)
+      PromptSecuritySettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use PromptSecuritySettings.newBuilder() to construct.
+    private PromptSecuritySettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PromptSecuritySettings() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PromptSecuritySettings();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.SafetySettingsProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_PromptSecuritySettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.SafetySettingsProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_PromptSecuritySettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings.class,
+              com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings.Builder
+                  .class);
+    }
+
+    public static final int ENABLE_PROMPT_SECURITY_FIELD_NUMBER = 1;
+    private boolean enablePromptSecurity_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable prompt security checks.
+     * </pre>
+     *
+     * <code>bool enable_prompt_security = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enablePromptSecurity.
+     */
+    @java.lang.Override
+    public boolean getEnablePromptSecurity() {
+      return enablePromptSecurity_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enablePromptSecurity_ != false) {
+        output.writeBool(1, enablePromptSecurity_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enablePromptSecurity_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enablePromptSecurity_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings other =
+          (com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings) obj;
+
+      if (getEnablePromptSecurity() != other.getEnablePromptSecurity()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLE_PROMPT_SECURITY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePromptSecurity());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Settings for prompt security checks.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings)
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.SafetySettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_PromptSecuritySettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.SafetySettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_PromptSecuritySettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings.class,
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enablePromptSecurity_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.SafetySettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_PromptSecuritySettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings build() {
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+          buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings result =
+            new com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enablePromptSecurity_ = enablePromptSecurity_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+                .getDefaultInstance()) return this;
+        if (other.getEnablePromptSecurity() != false) {
+          setEnablePromptSecurity(other.getEnablePromptSecurity());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enablePromptSecurity_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enablePromptSecurity_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable prompt security checks.
+       * </pre>
+       *
+       * <code>bool enable_prompt_security = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enablePromptSecurity.
+       */
+      @java.lang.Override
+      public boolean getEnablePromptSecurity() {
+        return enablePromptSecurity_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable prompt security checks.
+       * </pre>
+       *
+       * <code>bool enable_prompt_security = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enablePromptSecurity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnablePromptSecurity(boolean value) {
+
+        enablePromptSecurity_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable prompt security checks.
+       * </pre>
+       *
+       * <code>bool enable_prompt_security = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnablePromptSecurity() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enablePromptSecurity_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.SafetySettings
+            .PromptSecuritySettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PromptSecuritySettings> PARSER =
+        new com.google.protobuf.AbstractParser<PromptSecuritySettings>() {
+          @java.lang.Override
+          public PromptSecuritySettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PromptSecuritySettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PromptSecuritySettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int DEFAULT_BANNED_PHRASE_MATCH_STRATEGY_FIELD_NUMBER = 4;
   private int defaultBannedPhraseMatchStrategy_ = 0;
 
@@ -1237,6 +1812,70 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     return bannedPhrases_.get(index);
   }
 
+  public static final int PROMPT_SECURITY_SETTINGS_FIELD_NUMBER = 8;
+  private com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+      promptSecuritySettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for prompt security checks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings prompt_security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the promptSecuritySettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasPromptSecuritySettings() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for prompt security checks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings prompt_security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The promptSecuritySettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+      getPromptSecuritySettings() {
+    return promptSecuritySettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+            .getDefaultInstance()
+        : promptSecuritySettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for prompt security checks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings prompt_security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettingsOrBuilder
+      getPromptSecuritySettingsOrBuilder() {
+    return promptSecuritySettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+            .getDefaultInstance()
+        : promptSecuritySettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1260,6 +1899,9 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(4, defaultBannedPhraseMatchStrategy_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(8, getPromptSecuritySettings());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1280,6 +1922,10 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeEnumSize(
               4, defaultBannedPhraseMatchStrategy_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(8, getPromptSecuritySettings());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1298,6 +1944,10 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
 
     if (defaultBannedPhraseMatchStrategy_ != other.defaultBannedPhraseMatchStrategy_) return false;
     if (!getBannedPhrasesList().equals(other.getBannedPhrasesList())) return false;
+    if (hasPromptSecuritySettings() != other.hasPromptSecuritySettings()) return false;
+    if (hasPromptSecuritySettings()) {
+      if (!getPromptSecuritySettings().equals(other.getPromptSecuritySettings())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1314,6 +1964,10 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     if (getBannedPhrasesCount() > 0) {
       hash = (37 * hash) + BANNED_PHRASES_FIELD_NUMBER;
       hash = (53 * hash) + getBannedPhrasesList().hashCode();
+    }
+    if (hasPromptSecuritySettings()) {
+      hash = (37 * hash) + PROMPT_SECURITY_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getPromptSecuritySettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1446,10 +2100,20 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getBannedPhrasesFieldBuilder();
+        getPromptSecuritySettingsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1464,6 +2128,11 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
         bannedPhrasesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      promptSecuritySettings_ = null;
+      if (promptSecuritySettingsBuilder_ != null) {
+        promptSecuritySettingsBuilder_.dispose();
+        promptSecuritySettingsBuilder_ = null;
+      }
       return this;
     }
 
@@ -1517,6 +2186,15 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.defaultBannedPhraseMatchStrategy_ = defaultBannedPhraseMatchStrategy_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.promptSecuritySettings_ =
+            promptSecuritySettingsBuilder_ == null
+                ? promptSecuritySettings_
+                : promptSecuritySettingsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1595,6 +2273,9 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasPromptSecuritySettings()) {
+        mergePromptSecuritySettings(other.getPromptSecuritySettings());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1641,6 +2322,13 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 32
+            case 66:
+              {
+                input.readMessage(
+                    getPromptSecuritySettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2174,6 +2862,232 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
         bannedPhrases_ = null;
       }
       return bannedPhrasesBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+        promptSecuritySettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings,
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettingsOrBuilder>
+        promptSecuritySettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt security checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings prompt_security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the promptSecuritySettings field is set.
+     */
+    public boolean hasPromptSecuritySettings() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt security checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings prompt_security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The promptSecuritySettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+        getPromptSecuritySettings() {
+      if (promptSecuritySettingsBuilder_ == null) {
+        return promptSecuritySettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+                .getDefaultInstance()
+            : promptSecuritySettings_;
+      } else {
+        return promptSecuritySettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt security checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings prompt_security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPromptSecuritySettings(
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings value) {
+      if (promptSecuritySettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        promptSecuritySettings_ = value;
+      } else {
+        promptSecuritySettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt security checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings prompt_security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPromptSecuritySettings(
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings.Builder
+            builderForValue) {
+      if (promptSecuritySettingsBuilder_ == null) {
+        promptSecuritySettings_ = builderForValue.build();
+      } else {
+        promptSecuritySettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt security checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings prompt_security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePromptSecuritySettings(
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings value) {
+      if (promptSecuritySettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && promptSecuritySettings_ != null
+            && promptSecuritySettings_
+                != com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+                    .getDefaultInstance()) {
+          getPromptSecuritySettingsBuilder().mergeFrom(value);
+        } else {
+          promptSecuritySettings_ = value;
+        }
+      } else {
+        promptSecuritySettingsBuilder_.mergeFrom(value);
+      }
+      if (promptSecuritySettings_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt security checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings prompt_security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPromptSecuritySettings() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      promptSecuritySettings_ = null;
+      if (promptSecuritySettingsBuilder_ != null) {
+        promptSecuritySettingsBuilder_.dispose();
+        promptSecuritySettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt security checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings prompt_security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings.Builder
+        getPromptSecuritySettingsBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getPromptSecuritySettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt security checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings prompt_security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettingsOrBuilder
+        getPromptSecuritySettingsOrBuilder() {
+      if (promptSecuritySettingsBuilder_ != null) {
+        return promptSecuritySettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return promptSecuritySettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+                .getDefaultInstance()
+            : promptSecuritySettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for prompt security checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings prompt_security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings,
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettingsOrBuilder>
+        getPromptSecuritySettingsFieldBuilder() {
+      if (promptSecuritySettingsBuilder_ == null) {
+        promptSecuritySettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings,
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+                    .Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings
+                    .PromptSecuritySettingsOrBuilder>(
+                getPromptSecuritySettings(), getParentForChildren(), isClean());
+        promptSecuritySettings_ = null;
+      }
+      return promptSecuritySettingsBuilder_;
     }
 
     @java.lang.Override

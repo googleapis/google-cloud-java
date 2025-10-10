@@ -738,4 +738,34 @@ public interface PlaybookOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.HandlerOrBuilder getHandlersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the playbook.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType playbook_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for playbookType.
+   */
+  int getPlaybookTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the playbook.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType playbook_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The playbookType.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType getPlaybookType();
 }

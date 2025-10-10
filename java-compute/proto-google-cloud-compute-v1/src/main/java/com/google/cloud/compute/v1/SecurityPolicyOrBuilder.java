@@ -80,6 +80,68 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
+   * A list of associations that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.SecurityPolicyAssociation> getAssociationsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of associations that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SecurityPolicyAssociation getAssociations(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of associations that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+   * </code>
+   */
+  int getAssociationsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of associations that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.SecurityPolicyAssociationOrBuilder>
+      getAssociationsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of associations that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SecurityPolicyAssociationOrBuilder getAssociationsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
@@ -584,6 +646,45 @@ public interface SecurityPolicyOrBuilder
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>optional string short_name = 492051566;</code>
+   *
+   * @return Whether the shortName field is set.
+   */
+  boolean hasShortName();
+
+  /**
+   *
+   *
+   * <pre>
+   * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>optional string short_name = 492051566;</code>
+   *
+   * @return The shortName.
+   */
+  java.lang.String getShortName();
+
+  /**
+   *
+   *
+   * <pre>
+   * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>optional string short_name = 492051566;</code>
+   *
+   * @return The bytes for shortName.
+   */
+  com.google.protobuf.ByteString getShortNameBytes();
 
   /**
    *

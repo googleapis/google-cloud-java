@@ -82,7 +82,8 @@ public class RemoteTranslateHelper {
    *     {@code keyStream} is not a valid JSON key stream
    */
   @ObsoleteApi(
-      "This method is obsolete because of a potential security risk. Use the create() variant with Credential parameter instead")
+      "This method is obsolete because of a potential security risk. Use the create() variant with"
+          + " Credential parameter instead")
   public static RemoteTranslateHelper create(String projectId, InputStream keyStream)
       throws TranslateHelperException {
     try {

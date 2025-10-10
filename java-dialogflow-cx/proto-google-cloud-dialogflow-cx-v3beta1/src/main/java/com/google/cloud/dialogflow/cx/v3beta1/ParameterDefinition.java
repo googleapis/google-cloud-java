@@ -26,10 +26,6 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  * Defines the properties of a parameter.
  * Used to define parameters used in the agent and the
  * input / output parameters for each fulfillment.
- * (-- Next Id: 4 --)
- * (-- api-linter: core::0123::resource-annotation=disabled
- *     aip.dev/not-precedent: ParameterDefinition is not an exposed resource.
- *     --)
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ParameterDefinition}
@@ -77,7 +73,8 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Parameter types are used for validation.
-   * These types are consistent with [google.protobuf.Value][].
+   * These types are consistent with
+   * [google.protobuf.Value][google.protobuf.Value].
    * </pre>
    *
    * Protobuf enum {@code google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType}
@@ -326,6 +323,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType)
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -335,7 +333,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Name of parameter.
+   * Required. Name of parameter.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -359,7 +357,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Name of parameter.
+   * Required. Name of parameter.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -390,12 +388,15 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.type is deprecated. See
+   *     google/cloud/dialogflow/cx/v3beta1/parameter_definition.proto;l=59
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getTypeValue() {
     return type_;
   }
@@ -408,18 +409,80 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.type is deprecated. See
+   *     google/cloud/dialogflow/cx/v3beta1/parameter_definition.proto;l=59
    * @return The type.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType getType() {
     com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType result =
         com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType.forNumber(type_);
     return result == null
         ? com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType.UNRECOGNIZED
         : result;
+  }
+
+  public static final int TYPE_SCHEMA_FIELD_NUMBER = 4;
+  private com.google.cloud.dialogflow.cx.v3beta1.TypeSchema typeSchema_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type schema of parameter.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.TypeSchema type_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the typeSchema field is set.
+   */
+  @java.lang.Override
+  public boolean hasTypeSchema() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type schema of parameter.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.TypeSchema type_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The typeSchema.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.TypeSchema getTypeSchema() {
+    return typeSchema_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.TypeSchema.getDefaultInstance()
+        : typeSchema_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type schema of parameter.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.TypeSchema type_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.TypeSchemaOrBuilder getTypeSchemaOrBuilder() {
+    return typeSchema_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.TypeSchema.getDefaultInstance()
+        : typeSchema_;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
@@ -501,6 +564,9 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(4, getTypeSchema());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -522,6 +588,9 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTypeSchema());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -540,6 +609,10 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
 
     if (!getName().equals(other.getName())) return false;
     if (type_ != other.type_) return false;
+    if (hasTypeSchema() != other.hasTypeSchema()) return false;
+    if (hasTypeSchema()) {
+      if (!getTypeSchema().equals(other.getTypeSchema())) return false;
+    }
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -556,6 +629,10 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
+    if (hasTypeSchema()) {
+      hash = (37 * hash) + TYPE_SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + getTypeSchema().hashCode();
+    }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -667,10 +744,6 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
    * Defines the properties of a parameter.
    * Used to define parameters used in the agent and the
    * input / output parameters for each fulfillment.
-   * (-- Next Id: 4 --)
-   * (-- api-linter: core::0123::resource-annotation=disabled
-   *     aip.dev/not-precedent: ParameterDefinition is not an exposed resource.
-   *     --)
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ParameterDefinition}
@@ -695,10 +768,19 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getTypeSchemaFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -707,6 +789,11 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
       bitField0_ = 0;
       name_ = "";
       type_ = 0;
+      typeSchema_ = null;
+      if (typeSchemaBuilder_ != null) {
+        typeSchemaBuilder_.dispose();
+        typeSchemaBuilder_ = null;
+      }
       description_ = "";
       return this;
     }
@@ -750,9 +837,15 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.type_ = type_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.typeSchema_ = typeSchemaBuilder_ == null ? typeSchema_ : typeSchemaBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.description_ = description_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -809,9 +902,12 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
+      if (other.hasTypeSchema()) {
+        mergeTypeSchema(other.getTypeSchema());
+      }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -855,9 +951,15 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getTypeSchemaFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -883,7 +985,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of parameter.
+     * Required. Name of parameter.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -906,7 +1008,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of parameter.
+     * Required. Name of parameter.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -929,7 +1031,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of parameter.
+     * Required. Name of parameter.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -951,7 +1053,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of parameter.
+     * Required. Name of parameter.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -969,7 +1071,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Name of parameter.
+     * Required. Name of parameter.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -998,12 +1100,15 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.type is deprecated. See
+     *     google/cloud/dialogflow/cx/v3beta1/parameter_definition.proto;l=59
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getTypeValue() {
       return type_;
     }
@@ -1016,12 +1121,15 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.type is deprecated. See
+     *     google/cloud/dialogflow/cx/v3beta1/parameter_definition.proto;l=59
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setTypeValue(int value) {
       type_ = value;
       bitField0_ |= 0x00000002;
@@ -1037,12 +1145,15 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.type is deprecated. See
+     *     google/cloud/dialogflow/cx/v3beta1/parameter_definition.proto;l=59
      * @return The type.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType getType() {
       com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType result =
           com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType.forNumber(type_);
@@ -1059,12 +1170,15 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.type is deprecated. See
+     *     google/cloud/dialogflow/cx/v3beta1/parameter_definition.proto;l=59
      * @param value The type to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setType(
         com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType value) {
       if (value == null) {
@@ -1084,16 +1198,233 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.type is deprecated. See
+     *     google/cloud/dialogflow/cx/v3beta1/parameter_definition.proto;l=59
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearType() {
       bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.TypeSchema typeSchema_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.TypeSchema,
+            com.google.cloud.dialogflow.cx.v3beta1.TypeSchema.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.TypeSchemaOrBuilder>
+        typeSchemaBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type schema of parameter.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.TypeSchema type_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the typeSchema field is set.
+     */
+    public boolean hasTypeSchema() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type schema of parameter.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.TypeSchema type_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The typeSchema.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.TypeSchema getTypeSchema() {
+      if (typeSchemaBuilder_ == null) {
+        return typeSchema_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.TypeSchema.getDefaultInstance()
+            : typeSchema_;
+      } else {
+        return typeSchemaBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type schema of parameter.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.TypeSchema type_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTypeSchema(com.google.cloud.dialogflow.cx.v3beta1.TypeSchema value) {
+      if (typeSchemaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        typeSchema_ = value;
+      } else {
+        typeSchemaBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type schema of parameter.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.TypeSchema type_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTypeSchema(
+        com.google.cloud.dialogflow.cx.v3beta1.TypeSchema.Builder builderForValue) {
+      if (typeSchemaBuilder_ == null) {
+        typeSchema_ = builderForValue.build();
+      } else {
+        typeSchemaBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type schema of parameter.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.TypeSchema type_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTypeSchema(com.google.cloud.dialogflow.cx.v3beta1.TypeSchema value) {
+      if (typeSchemaBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && typeSchema_ != null
+            && typeSchema_
+                != com.google.cloud.dialogflow.cx.v3beta1.TypeSchema.getDefaultInstance()) {
+          getTypeSchemaBuilder().mergeFrom(value);
+        } else {
+          typeSchema_ = value;
+        }
+      } else {
+        typeSchemaBuilder_.mergeFrom(value);
+      }
+      if (typeSchema_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type schema of parameter.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.TypeSchema type_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTypeSchema() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      typeSchema_ = null;
+      if (typeSchemaBuilder_ != null) {
+        typeSchemaBuilder_.dispose();
+        typeSchemaBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type schema of parameter.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.TypeSchema type_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.TypeSchema.Builder getTypeSchemaBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getTypeSchemaFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type schema of parameter.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.TypeSchema type_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.TypeSchemaOrBuilder getTypeSchemaOrBuilder() {
+      if (typeSchemaBuilder_ != null) {
+        return typeSchemaBuilder_.getMessageOrBuilder();
+      } else {
+        return typeSchema_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.TypeSchema.getDefaultInstance()
+            : typeSchema_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type schema of parameter.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.TypeSchema type_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.TypeSchema,
+            com.google.cloud.dialogflow.cx.v3beta1.TypeSchema.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.TypeSchemaOrBuilder>
+        getTypeSchemaFieldBuilder() {
+      if (typeSchemaBuilder_ == null) {
+        typeSchemaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.TypeSchema,
+                com.google.cloud.dialogflow.cx.v3beta1.TypeSchema.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.TypeSchemaOrBuilder>(
+                getTypeSchema(), getParentForChildren(), isClean());
+        typeSchema_ = null;
+      }
+      return typeSchemaBuilder_;
     }
 
     private java.lang.Object description_ = "";
@@ -1161,7 +1492,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1179,7 +1510,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1202,7 +1533,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

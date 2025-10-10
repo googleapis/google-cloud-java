@@ -25,6 +25,7 @@ import com.google.cloud.compute.v1.GetReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ListReservationSubBlocksRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PerformMaintenanceReservationSubBlockRequest;
+import com.google.cloud.compute.v1.ReportFaultyReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ReservationSubBlocksGetResponse;
 import com.google.cloud.compute.v1.ReservationSubBlocksListResponse;
 import javax.annotation.Generated;
@@ -61,6 +62,15 @@ public abstract class ReservationSubBlocksStub implements BackgroundResource {
   public UnaryCallable<PerformMaintenanceReservationSubBlockRequest, Operation>
       performMaintenanceCallable() {
     throw new UnsupportedOperationException("Not implemented: performMaintenanceCallable()");
+  }
+
+  public OperationCallable<ReportFaultyReservationSubBlockRequest, Operation, Operation>
+      reportFaultyOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: reportFaultyOperationCallable()");
+  }
+
+  public UnaryCallable<ReportFaultyReservationSubBlockRequest, Operation> reportFaultyCallable() {
+    throw new UnsupportedOperationException("Not implemented: reportFaultyCallable()");
   }
 
   @Override
