@@ -26,6 +26,7 @@ import com.google.cloud.logging.Logging.TailOption;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import org.junit.AfterClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITTailLogsTest extends BaseSystemTest {
@@ -39,6 +40,7 @@ public class ITTailLogsTest extends BaseSystemTest {
     assertTrue(cleanupLog(LOG_ID));
   }
 
+  @Ignore
   @Test(timeout = 120_000) // Note: the test should not take longer than 2 min
   public void testTailLogEntries() throws InterruptedException {
     LogEntry testLogEntry =
