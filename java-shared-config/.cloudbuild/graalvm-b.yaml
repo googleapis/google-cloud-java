@@ -17,7 +17,7 @@ commandTests:
   - name: "version"
     command: ["java", "-version"]
     # java -version outputs to stderr...
-    expectedError: ["openjdk version \"24.0.1\"", "GraalVM CE 24.0.1"]
+    expectedError: ["openjdk version \"25\"", "GraalVM CE 25"]
   - name: "maven"
     command: ["mvn", "-version"]
     expectedOutput: ["Apache Maven 3.9.4"]
