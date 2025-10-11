@@ -809,5 +809,164 @@ public interface DocumentOrBuilder
    */
   com.google.cloud.documentai.v1beta3.Document.BlobAssetOrBuilder getBlobAssetsOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * The entity validation output for the document. This is the validation
+   * output for `document.entities` field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.Document.EntityValidationOutput entity_validation_output = 21;
+   * </code>
+   *
+   * @return Whether the entityValidationOutput field is set.
+   */
+  boolean hasEntityValidationOutput();
+
+  /**
+   *
+   *
+   * <pre>
+   * The entity validation output for the document. This is the validation
+   * output for `document.entities` field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.Document.EntityValidationOutput entity_validation_output = 21;
+   * </code>
+   *
+   * @return The entityValidationOutput.
+   */
+  com.google.cloud.documentai.v1beta3.Document.EntityValidationOutput getEntityValidationOutput();
+
+  /**
+   *
+   *
+   * <pre>
+   * The entity validation output for the document. This is the validation
+   * output for `document.entities` field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.Document.EntityValidationOutput entity_validation_output = 21;
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.Document.EntityValidationOutputOrBuilder
+      getEntityValidationOutputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of entity revisions. The entity revisions are appended to the
+   * document in the processing order. This field can be used for comparing the
+   * entity extraction results at different stages of the processing.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1beta3.Document.EntitiesRevision entities_revisions = 22;
+   * </code>
+   */
+  java.util.List<com.google.cloud.documentai.v1beta3.Document.EntitiesRevision>
+      getEntitiesRevisionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of entity revisions. The entity revisions are appended to the
+   * document in the processing order. This field can be used for comparing the
+   * entity extraction results at different stages of the processing.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1beta3.Document.EntitiesRevision entities_revisions = 22;
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.Document.EntitiesRevision getEntitiesRevisions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of entity revisions. The entity revisions are appended to the
+   * document in the processing order. This field can be used for comparing the
+   * entity extraction results at different stages of the processing.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1beta3.Document.EntitiesRevision entities_revisions = 22;
+   * </code>
+   */
+  int getEntitiesRevisionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of entity revisions. The entity revisions are appended to the
+   * document in the processing order. This field can be used for comparing the
+   * entity extraction results at different stages of the processing.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1beta3.Document.EntitiesRevision entities_revisions = 22;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.documentai.v1beta3.Document.EntitiesRevisionOrBuilder>
+      getEntitiesRevisionsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of entity revisions. The entity revisions are appended to the
+   * document in the processing order. This field can be used for comparing the
+   * entity extraction results at different stages of the processing.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1beta3.Document.EntitiesRevision entities_revisions = 22;
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.Document.EntitiesRevisionOrBuilder
+      getEntitiesRevisionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The entity revision id that `document.entities` field is based on.
+   * If this field is set and `entities_revisions` is not empty, the entities in
+   * `document.entities` field are the entities in the entity revision with this
+   * id and `document.entity_validation_output` field is the
+   * `entity_validation_output` field in this entity revision.
+   * </pre>
+   *
+   * <code>string entities_revision_id = 23;</code>
+   *
+   * @return The entitiesRevisionId.
+   */
+  java.lang.String getEntitiesRevisionId();
+
+  /**
+   *
+   *
+   * <pre>
+   * The entity revision id that `document.entities` field is based on.
+   * If this field is set and `entities_revisions` is not empty, the entities in
+   * `document.entities` field are the entities in the entity revision with this
+   * id and `document.entity_validation_output` field is the
+   * `entity_validation_output` field in this entity revision.
+   * </pre>
+   *
+   * <code>string entities_revision_id = 23;</code>
+   *
+   * @return The bytes for entitiesRevisionId.
+   */
+  com.google.protobuf.ByteString getEntitiesRevisionIdBytes();
+
   com.google.cloud.documentai.v1beta3.Document.SourceCase getSourceCase();
 }

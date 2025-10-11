@@ -48,6 +48,10 @@ public final class GenerativeSettingsProto {
       internal_static_google_cloud_dialogflow_cx_v3beta1_LlmModelSettings_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_LlmModelSettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_LlmModelSettings_Parameters_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_LlmModelSettings_Parameters_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -86,14 +90,31 @@ public final class GenerativeSettingsProto {
           + "k\030\010 \001(\010:\201\001\352A~\n1dialogflow.googleapis.com"
           + "/AgentGenerativeSettings\022Iprojects/{proj"
           + "ect}/locations/{location}/agents/{agent}"
-          + "/generativeSettings\"6\n\020LlmModelSettings\022"
-          + "\r\n\005model\030\001 \001(\t\022\023\n\013prompt_text\030\002 \001(\tB\316\001\n&"
-          + "com.google.cloud.dialogflow.cx.v3beta1B\027"
-          + "GenerativeSettingsProtoP\001Z6cloud.google."
-          + "com/go/dialogflow/cx/apiv3beta1/cxpb;cxp"
-          + "b\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Be"
-          + "ta1\352\002&Google::Cloud::Dialogflow::CX::V3b"
-          + "eta1b\006proto3"
+          + "/generativeSettings\"\366\005\n\020LlmModelSettings"
+          + "\022\r\n\005model\030\001 \001(\t\022\023\n\013prompt_text\030\002 \001(\t\022S\n\n"
+          + "parameters\030\004 \001(\0132?.google.cloud.dialogfl"
+          + "ow.cx.v3beta1.LlmModelSettings.Parameter"
+          + "s\032\350\004\n\nParameters\022\030\n\013temperature\030\001 \001(\002H\000\210"
+          + "\001\001\022o\n\021input_token_limit\030\002 \001(\0162O.google.c"
+          + "loud.dialogflow.cx.v3beta1.LlmModelSetti"
+          + "ngs.Parameters.InputTokenLimitH\001\210\001\001\022q\n\022o"
+          + "utput_token_limit\030\003 \001(\0162P.google.cloud.d"
+          + "ialogflow.cx.v3beta1.LlmModelSettings.Pa"
+          + "rameters.OutputTokenLimitH\002\210\001\001\"\213\001\n\017Input"
+          + "TokenLimit\022!\n\035INPUT_TOKEN_LIMIT_UNSPECIF"
+          + "IED\020\000\022\033\n\027INPUT_TOKEN_LIMIT_SHORT\020\001\022\034\n\030IN"
+          + "PUT_TOKEN_LIMIT_MEDIUM\020\002\022\032\n\026INPUT_TOKEN_"
+          + "LIMIT_LONG\020\003\"\220\001\n\020OutputTokenLimit\022\"\n\036OUT"
+          + "PUT_TOKEN_LIMIT_UNSPECIFIED\020\000\022\034\n\030OUTPUT_"
+          + "TOKEN_LIMIT_SHORT\020\001\022\035\n\031OUTPUT_TOKEN_LIMI"
+          + "T_MEDIUM\020\002\022\033\n\027OUTPUT_TOKEN_LIMIT_LONG\020\003B"
+          + "\016\n\014_temperatureB\024\n\022_input_token_limitB\025\n"
+          + "\023_output_token_limitB\316\001\n&com.google.clou"
+          + "d.dialogflow.cx.v3beta1B\027GenerativeSetti"
+          + "ngsProtoP\001Z6cloud.google.com/go/dialogfl"
+          + "ow/cx/apiv3beta1/cxpb;cxpb\242\002\002DF\252\002\"Google"
+          + ".Cloud.Dialogflow.Cx.V3Beta1\352\002&Google::C"
+          + "loud::Dialogflow::CX::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -156,7 +177,17 @@ public final class GenerativeSettingsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_LlmModelSettings_descriptor,
             new java.lang.String[] {
-              "Model", "PromptText",
+              "Model", "PromptText", "Parameters",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_LlmModelSettings_Parameters_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3beta1_LlmModelSettings_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_LlmModelSettings_Parameters_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_LlmModelSettings_Parameters_descriptor,
+            new java.lang.String[] {
+              "Temperature", "InputTokenLimit", "OutputTokenLimit",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

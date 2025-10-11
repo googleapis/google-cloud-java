@@ -253,6 +253,8 @@ public class DlpServiceClientHttpJsonTest {
             .addAllImageRedactionConfigs(new ArrayList<RedactImageRequest.ImageRedactionConfig>())
             .setIncludeFindings(true)
             .setByteItem(ByteContentItem.newBuilder().build())
+            .setInspectTemplate("inspectTemplate-2053620050")
+            .setDeidentifyTemplate("deidentifyTemplate-2141929945")
             .build();
 
     RedactImageResponse actualResponse = client.redactImage(request);
@@ -289,6 +291,8 @@ public class DlpServiceClientHttpJsonTest {
               .addAllImageRedactionConfigs(new ArrayList<RedactImageRequest.ImageRedactionConfig>())
               .setIncludeFindings(true)
               .setByteItem(ByteContentItem.newBuilder().build())
+              .setInspectTemplate("inspectTemplate-2053620050")
+              .setDeidentifyTemplate("deidentifyTemplate-2141929945")
               .build();
       client.redactImage(request);
       Assert.fail("No exception raised");

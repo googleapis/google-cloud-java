@@ -117,4 +117,49 @@ public interface SafetySettingsOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseOrBuilder getBannedPhrasesOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for prompt security checks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings prompt_security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the promptSecuritySettings field is set.
+   */
+  boolean hasPromptSecuritySettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for prompt security checks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings prompt_security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The promptSecuritySettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
+      getPromptSecuritySettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for prompt security checks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings prompt_security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettingsOrBuilder
+      getPromptSecuritySettingsOrBuilder();
 }

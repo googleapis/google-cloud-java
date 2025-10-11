@@ -164,6 +164,14 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
     return ((BackendServicesStubSettings) getStubSettings()).getSettings();
   }
 
+  /** Returns the object with the settings used for calls to getEffectiveSecurityPolicies. */
+  public UnaryCallSettings<
+          GetEffectiveSecurityPoliciesBackendServiceRequest,
+          GetEffectiveSecurityPoliciesBackendServiceResponse>
+      getEffectiveSecurityPoliciesSettings() {
+    return ((BackendServicesStubSettings) getStubSettings()).getEffectiveSecurityPoliciesSettings();
+  }
+
   /** Returns the object with the settings used for calls to getHealth. */
   public UnaryCallSettings<GetHealthBackendServiceRequest, BackendServiceGroupHealth>
       getHealthSettings() {
@@ -402,6 +410,14 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetBackendServiceRequest, BackendService> getSettings() {
       return getStubSettingsBuilder().getSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEffectiveSecurityPolicies. */
+    public UnaryCallSettings.Builder<
+            GetEffectiveSecurityPoliciesBackendServiceRequest,
+            GetEffectiveSecurityPoliciesBackendServiceResponse>
+        getEffectiveSecurityPoliciesSettings() {
+      return getStubSettingsBuilder().getEffectiveSecurityPoliciesSettings();
     }
 
     /** Returns the builder for the settings used for calls to getHealth. */

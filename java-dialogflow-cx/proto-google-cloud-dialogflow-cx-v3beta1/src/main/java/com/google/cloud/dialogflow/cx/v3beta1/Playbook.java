@@ -56,6 +56,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     referencedFlows_ = com.google.protobuf.LazyStringArrayList.emptyList();
     referencedTools_ = com.google.protobuf.LazyStringArrayList.emptyList();
     handlers_ = java.util.Collections.emptyList();
+    playbookType_ = 0;
   }
 
   @java.lang.Override
@@ -77,6 +78,165 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dialogflow.cx.v3beta1.Playbook.class,
             com.google.cloud.dialogflow.cx.v3beta1.Playbook.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of the playbook.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType}
+   */
+  public enum PlaybookType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified type. Default to TASK.
+     * </pre>
+     *
+     * <code>PLAYBOOK_TYPE_UNSPECIFIED = 0;</code>
+     */
+    PLAYBOOK_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Task playbook.
+     * </pre>
+     *
+     * <code>TASK = 1;</code>
+     */
+    TASK(1),
+    /**
+     *
+     *
+     * <pre>
+     * Routine playbook.
+     * </pre>
+     *
+     * <code>ROUTINE = 3;</code>
+     */
+    ROUTINE(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified type. Default to TASK.
+     * </pre>
+     *
+     * <code>PLAYBOOK_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int PLAYBOOK_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Task playbook.
+     * </pre>
+     *
+     * <code>TASK = 1;</code>
+     */
+    public static final int TASK_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Routine playbook.
+     * </pre>
+     *
+     * <code>ROUTINE = 3;</code>
+     */
+    public static final int ROUTINE_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PlaybookType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PlaybookType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PLAYBOOK_TYPE_UNSPECIFIED;
+        case 1:
+          return TASK;
+        case 3:
+          return ROUTINE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PlaybookType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<PlaybookType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<PlaybookType>() {
+          public PlaybookType findValueByNumber(int number) {
+            return PlaybookType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.Playbook.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final PlaybookType[] VALUES = values();
+
+    public static PlaybookType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PlaybookType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType)
   }
 
   public interface StepOrBuilder
@@ -3734,6 +3894,49 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     return handlers_.get(index);
   }
 
+  public static final int PLAYBOOK_TYPE_FIELD_NUMBER = 19;
+  private int playbookType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the playbook.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType playbook_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for playbookType.
+   */
+  @java.lang.Override
+  public int getPlaybookTypeValue() {
+    return playbookType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the playbook.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType playbook_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The playbookType.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType getPlaybookType() {
+    com.google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType result =
+        com.google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType.forNumber(playbookType_);
+    return result == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3790,6 +3993,11 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(17, getInstruction());
+    }
+    if (playbookType_
+        != com.google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType.PLAYBOOK_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(19, playbookType_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(20, getSpeechSettings());
@@ -3864,6 +4072,11 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getInstruction());
     }
+    if (playbookType_
+        != com.google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType.PLAYBOOK_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, playbookType_);
+    }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getSpeechSettings());
     }
@@ -3915,6 +4128,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       if (!getSpeechSettings().equals(other.getSpeechSettings())) return false;
     }
     if (!getHandlersList().equals(other.getHandlersList())) return false;
+    if (playbookType_ != other.playbookType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3978,6 +4192,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + HANDLERS_FIELD_NUMBER;
       hash = (53 * hash) + getHandlersList().hashCode();
     }
+    hash = (37 * hash) + PLAYBOOK_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + playbookType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4194,6 +4410,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         handlersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00004000);
+      playbookType_ = 0;
       return this;
     }
 
@@ -4311,6 +4528,9 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         result.speechSettings_ =
             speechSettingsBuilder_ == null ? speechSettings_ : speechSettingsBuilder_.build();
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.playbookType_ = playbookType_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4505,6 +4725,9 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.playbookType_ != 0) {
+        setPlaybookTypeValue(other.getPlaybookTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4642,6 +4865,12 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 138
+            case 152:
+              {
+                playbookType_ = input.readEnum();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 152
             case 162:
               {
                 input.readMessage(getSpeechSettingsFieldBuilder().getBuilder(), extensionRegistry);
@@ -8052,6 +8281,114 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         handlers_ = null;
       }
       return handlersBuilder_;
+    }
+
+    private int playbookType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the playbook.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType playbook_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for playbookType.
+     */
+    @java.lang.Override
+    public int getPlaybookTypeValue() {
+      return playbookType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the playbook.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType playbook_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for playbookType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlaybookTypeValue(int value) {
+      playbookType_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the playbook.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType playbook_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The playbookType.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType getPlaybookType() {
+      com.google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType result =
+          com.google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType.forNumber(playbookType_);
+      return result == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the playbook.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType playbook_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The playbookType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlaybookType(
+        com.google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00008000;
+      playbookType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the playbook.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType playbook_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPlaybookType() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      playbookType_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -52,6 +52,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     entityRelations_ = java.util.Collections.emptyList();
     textChanges_ = java.util.Collections.emptyList();
     revisions_ = java.util.Collections.emptyList();
+    entitiesRevisions_ = java.util.Collections.emptyList();
+    entitiesRevisionId_ = "";
   }
 
   @java.lang.Override
@@ -87320,6 +87322,4431 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface EntityValidationOutputOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1.Document.EntityValidationOutput)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The result of each validation rule.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+     * </code>
+     */
+    java.util.List<com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult>
+        getValidationResultsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The result of each validation rule.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+     * </code>
+     */
+    com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+        getValidationResults(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The result of each validation rule.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+     * </code>
+     */
+    int getValidationResultsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The result of each validation rule.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.documentai.v1.Document.EntityValidationOutput
+                    .ValidationResultOrBuilder>
+        getValidationResultsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The result of each validation rule.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+     * </code>
+     */
+    com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResultOrBuilder
+        getValidationResultsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The overall result of the validation, true if all applicable rules are
+     * valid.
+     * </pre>
+     *
+     * <code>bool pass_all_rules = 2;</code>
+     *
+     * @return The passAllRules.
+     */
+    boolean getPassAllRules();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The output of the validation given the document and the validation rules.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.documentai.v1.Document.EntityValidationOutput}
+   */
+  public static final class EntityValidationOutput extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.Document.EntityValidationOutput)
+      EntityValidationOutputOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use EntityValidationOutput.newBuilder() to construct.
+    private EntityValidationOutput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private EntityValidationOutput() {
+      validationResults_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new EntityValidationOutput();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.documentai.v1.DocumentProto
+          .internal_static_google_cloud_documentai_v1_Document_EntityValidationOutput_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.documentai.v1.DocumentProto
+          .internal_static_google_cloud_documentai_v1_Document_EntityValidationOutput_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.documentai.v1.Document.EntityValidationOutput.class,
+              com.google.cloud.documentai.v1.Document.EntityValidationOutput.Builder.class);
+    }
+
+    public interface ValidationResultOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The name of the validation rule.
+       * </pre>
+       *
+       * <code>string rule_name = 1;</code>
+       *
+       * @return The ruleName.
+       */
+      java.lang.String getRuleName();
+
+      /**
+       *
+       *
+       * <pre>
+       * The name of the validation rule.
+       * </pre>
+       *
+       * <code>string rule_name = 1;</code>
+       *
+       * @return The bytes for ruleName.
+       */
+      com.google.protobuf.ByteString getRuleNameBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The description of the validation rule.
+       * </pre>
+       *
+       * <code>string rule_description = 2;</code>
+       *
+       * @return The ruleDescription.
+       */
+      java.lang.String getRuleDescription();
+
+      /**
+       *
+       *
+       * <pre>
+       * The description of the validation rule.
+       * </pre>
+       *
+       * <code>string rule_description = 2;</code>
+       *
+       * @return The bytes for ruleDescription.
+       */
+      com.google.protobuf.ByteString getRuleDescriptionBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of the validation rule.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.ValidationResultType validation_result_type = 3;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for validationResultType.
+       */
+      int getValidationResultTypeValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of the validation rule.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.ValidationResultType validation_result_type = 3;
+       * </code>
+       *
+       * @return The validationResultType.
+       */
+      com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+              .ValidationResultType
+          getValidationResultType();
+
+      /**
+       *
+       *
+       * <pre>
+       * The detailed information of the running the validation process using
+       * the entity from the document based on the validation rule.
+       * </pre>
+       *
+       * <code>string validation_details = 4;</code>
+       *
+       * @return The validationDetails.
+       */
+      java.lang.String getValidationDetails();
+
+      /**
+       *
+       *
+       * <pre>
+       * The detailed information of the running the validation process using
+       * the entity from the document based on the validation rule.
+       * </pre>
+       *
+       * <code>string validation_details = 4;</code>
+       *
+       * @return The bytes for validationDetails.
+       */
+      com.google.protobuf.ByteString getValidationDetailsBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Validation result for a single validation rule.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult}
+     */
+    public static final class ValidationResult extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult)
+        ValidationResultOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use ValidationResult.newBuilder() to construct.
+      private ValidationResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ValidationResult() {
+        ruleName_ = "";
+        ruleDescription_ = "";
+        validationResultType_ = 0;
+        validationDetails_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ValidationResult();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1.DocumentProto
+            .internal_static_google_cloud_documentai_v1_Document_EntityValidationOutput_ValidationResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1.DocumentProto
+            .internal_static_google_cloud_documentai_v1_Document_EntityValidationOutput_ValidationResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                    .class,
+                com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                    .Builder.class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of the validation rule.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.ValidationResultType}
+       */
+      public enum ValidationResultType implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * The validation result type is unspecified.
+         * </pre>
+         *
+         * <code>VALIDATION_RESULT_TYPE_UNSPECIFIED = 0;</code>
+         */
+        VALIDATION_RESULT_TYPE_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * The validation is valid.
+         * </pre>
+         *
+         * <code>VALIDATION_RESULT_TYPE_VALID = 1;</code>
+         */
+        VALIDATION_RESULT_TYPE_VALID(1),
+        /**
+         *
+         *
+         * <pre>
+         * The validation is invalid.
+         * </pre>
+         *
+         * <code>VALIDATION_RESULT_TYPE_INVALID = 2;</code>
+         */
+        VALIDATION_RESULT_TYPE_INVALID(2),
+        /**
+         *
+         *
+         * <pre>
+         * The validation is skipped.
+         * </pre>
+         *
+         * <code>VALIDATION_RESULT_TYPE_SKIPPED = 3;</code>
+         */
+        VALIDATION_RESULT_TYPE_SKIPPED(3),
+        /**
+         *
+         *
+         * <pre>
+         * The validation is not applicable.
+         * </pre>
+         *
+         * <code>VALIDATION_RESULT_TYPE_NOT_APPLICABLE = 4;</code>
+         */
+        VALIDATION_RESULT_TYPE_NOT_APPLICABLE(4),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * The validation result type is unspecified.
+         * </pre>
+         *
+         * <code>VALIDATION_RESULT_TYPE_UNSPECIFIED = 0;</code>
+         */
+        public static final int VALIDATION_RESULT_TYPE_UNSPECIFIED_VALUE = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * The validation is valid.
+         * </pre>
+         *
+         * <code>VALIDATION_RESULT_TYPE_VALID = 1;</code>
+         */
+        public static final int VALIDATION_RESULT_TYPE_VALID_VALUE = 1;
+
+        /**
+         *
+         *
+         * <pre>
+         * The validation is invalid.
+         * </pre>
+         *
+         * <code>VALIDATION_RESULT_TYPE_INVALID = 2;</code>
+         */
+        public static final int VALIDATION_RESULT_TYPE_INVALID_VALUE = 2;
+
+        /**
+         *
+         *
+         * <pre>
+         * The validation is skipped.
+         * </pre>
+         *
+         * <code>VALIDATION_RESULT_TYPE_SKIPPED = 3;</code>
+         */
+        public static final int VALIDATION_RESULT_TYPE_SKIPPED_VALUE = 3;
+
+        /**
+         *
+         *
+         * <pre>
+         * The validation is not applicable.
+         * </pre>
+         *
+         * <code>VALIDATION_RESULT_TYPE_NOT_APPLICABLE = 4;</code>
+         */
+        public static final int VALIDATION_RESULT_TYPE_NOT_APPLICABLE_VALUE = 4;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static ValidationResultType valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static ValidationResultType forNumber(int value) {
+          switch (value) {
+            case 0:
+              return VALIDATION_RESULT_TYPE_UNSPECIFIED;
+            case 1:
+              return VALIDATION_RESULT_TYPE_VALID;
+            case 2:
+              return VALIDATION_RESULT_TYPE_INVALID;
+            case 3:
+              return VALIDATION_RESULT_TYPE_SKIPPED;
+            case 4:
+              return VALIDATION_RESULT_TYPE_NOT_APPLICABLE;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<ValidationResultType>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<ValidationResultType>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<ValidationResultType>() {
+                  public ValidationResultType findValueByNumber(int number) {
+                    return ValidationResultType.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+              .getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final ValidationResultType[] VALUES = values();
+
+        public static ValidationResultType valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private ValidationResultType(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.ValidationResultType)
+      }
+
+      public static final int RULE_NAME_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object ruleName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The name of the validation rule.
+       * </pre>
+       *
+       * <code>string rule_name = 1;</code>
+       *
+       * @return The ruleName.
+       */
+      @java.lang.Override
+      public java.lang.String getRuleName() {
+        java.lang.Object ref = ruleName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ruleName_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The name of the validation rule.
+       * </pre>
+       *
+       * <code>string rule_name = 1;</code>
+       *
+       * @return The bytes for ruleName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getRuleNameBytes() {
+        java.lang.Object ref = ruleName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          ruleName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int RULE_DESCRIPTION_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object ruleDescription_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The description of the validation rule.
+       * </pre>
+       *
+       * <code>string rule_description = 2;</code>
+       *
+       * @return The ruleDescription.
+       */
+      @java.lang.Override
+      public java.lang.String getRuleDescription() {
+        java.lang.Object ref = ruleDescription_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ruleDescription_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The description of the validation rule.
+       * </pre>
+       *
+       * <code>string rule_description = 2;</code>
+       *
+       * @return The bytes for ruleDescription.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getRuleDescriptionBytes() {
+        java.lang.Object ref = ruleDescription_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          ruleDescription_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int VALIDATION_RESULT_TYPE_FIELD_NUMBER = 3;
+      private int validationResultType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of the validation rule.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.ValidationResultType validation_result_type = 3;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for validationResultType.
+       */
+      @java.lang.Override
+      public int getValidationResultTypeValue() {
+        return validationResultType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of the validation rule.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.ValidationResultType validation_result_type = 3;
+       * </code>
+       *
+       * @return The validationResultType.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+              .ValidationResultType
+          getValidationResultType() {
+        com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                .ValidationResultType
+            result =
+                com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                    .ValidationResultType.forNumber(validationResultType_);
+        return result == null
+            ? com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                .ValidationResultType.UNRECOGNIZED
+            : result;
+      }
+
+      public static final int VALIDATION_DETAILS_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object validationDetails_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The detailed information of the running the validation process using
+       * the entity from the document based on the validation rule.
+       * </pre>
+       *
+       * <code>string validation_details = 4;</code>
+       *
+       * @return The validationDetails.
+       */
+      @java.lang.Override
+      public java.lang.String getValidationDetails() {
+        java.lang.Object ref = validationDetails_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          validationDetails_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The detailed information of the running the validation process using
+       * the entity from the document based on the validation rule.
+       * </pre>
+       *
+       * <code>string validation_details = 4;</code>
+       *
+       * @return The bytes for validationDetails.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getValidationDetailsBytes() {
+        java.lang.Object ref = validationDetails_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          validationDetails_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ruleName_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ruleName_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ruleDescription_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ruleDescription_);
+        }
+        if (validationResultType_
+            != com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                .ValidationResultType.VALIDATION_RESULT_TYPE_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(3, validationResultType_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validationDetails_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, validationDetails_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ruleName_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ruleName_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ruleDescription_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ruleDescription_);
+        }
+        if (validationResultType_
+            != com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                .ValidationResultType.VALIDATION_RESULT_TYPE_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, validationResultType_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validationDetails_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, validationDetails_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult other =
+            (com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult) obj;
+
+        if (!getRuleName().equals(other.getRuleName())) return false;
+        if (!getRuleDescription().equals(other.getRuleDescription())) return false;
+        if (validationResultType_ != other.validationResultType_) return false;
+        if (!getValidationDetails().equals(other.getValidationDetails())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + RULE_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getRuleName().hashCode();
+        hash = (37 * hash) + RULE_DESCRIPTION_FIELD_NUMBER;
+        hash = (53 * hash) + getRuleDescription().hashCode();
+        hash = (37 * hash) + VALIDATION_RESULT_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + validationResultType_;
+        hash = (37 * hash) + VALIDATION_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getValidationDetails().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Validation result for a single validation rule.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult)
+          com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResultOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1.DocumentProto
+              .internal_static_google_cloud_documentai_v1_Document_EntityValidationOutput_ValidationResult_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1.DocumentProto
+              .internal_static_google_cloud_documentai_v1_Document_EntityValidationOutput_ValidationResult_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                      .class,
+                  com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          ruleName_ = "";
+          ruleDescription_ = "";
+          validationResultType_ = 0;
+          validationDetails_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.documentai.v1.DocumentProto
+              .internal_static_google_cloud_documentai_v1_Document_EntityValidationOutput_ValidationResult_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+            getDefaultInstanceForType() {
+          return com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+            build() {
+          com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+            buildPartial() {
+          com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult result =
+              new com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.ruleName_ = ruleName_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.ruleDescription_ = ruleDescription_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.validationResultType_ = validationResultType_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.validationDetails_ = validationDetails_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult) {
+            return mergeFrom(
+                (com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult other) {
+          if (other
+              == com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                  .getDefaultInstance()) return this;
+          if (!other.getRuleName().isEmpty()) {
+            ruleName_ = other.ruleName_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getRuleDescription().isEmpty()) {
+            ruleDescription_ = other.ruleDescription_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          if (other.validationResultType_ != 0) {
+            setValidationResultTypeValue(other.getValidationResultTypeValue());
+          }
+          if (!other.getValidationDetails().isEmpty()) {
+            validationDetails_ = other.validationDetails_;
+            bitField0_ |= 0x00000008;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    ruleName_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    ruleDescription_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 24:
+                  {
+                    validationResultType_ = input.readEnum();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 24
+                case 34:
+                  {
+                    validationDetails_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 34
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object ruleName_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The name of the validation rule.
+         * </pre>
+         *
+         * <code>string rule_name = 1;</code>
+         *
+         * @return The ruleName.
+         */
+        public java.lang.String getRuleName() {
+          java.lang.Object ref = ruleName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            ruleName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The name of the validation rule.
+         * </pre>
+         *
+         * <code>string rule_name = 1;</code>
+         *
+         * @return The bytes for ruleName.
+         */
+        public com.google.protobuf.ByteString getRuleNameBytes() {
+          java.lang.Object ref = ruleName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            ruleName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The name of the validation rule.
+         * </pre>
+         *
+         * <code>string rule_name = 1;</code>
+         *
+         * @param value The ruleName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRuleName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ruleName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The name of the validation rule.
+         * </pre>
+         *
+         * <code>string rule_name = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearRuleName() {
+          ruleName_ = getDefaultInstance().getRuleName();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The name of the validation rule.
+         * </pre>
+         *
+         * <code>string rule_name = 1;</code>
+         *
+         * @param value The bytes for ruleName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRuleNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ruleName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object ruleDescription_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The description of the validation rule.
+         * </pre>
+         *
+         * <code>string rule_description = 2;</code>
+         *
+         * @return The ruleDescription.
+         */
+        public java.lang.String getRuleDescription() {
+          java.lang.Object ref = ruleDescription_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            ruleDescription_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The description of the validation rule.
+         * </pre>
+         *
+         * <code>string rule_description = 2;</code>
+         *
+         * @return The bytes for ruleDescription.
+         */
+        public com.google.protobuf.ByteString getRuleDescriptionBytes() {
+          java.lang.Object ref = ruleDescription_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            ruleDescription_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The description of the validation rule.
+         * </pre>
+         *
+         * <code>string rule_description = 2;</code>
+         *
+         * @param value The ruleDescription to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRuleDescription(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ruleDescription_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The description of the validation rule.
+         * </pre>
+         *
+         * <code>string rule_description = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearRuleDescription() {
+          ruleDescription_ = getDefaultInstance().getRuleDescription();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The description of the validation rule.
+         * </pre>
+         *
+         * <code>string rule_description = 2;</code>
+         *
+         * @param value The bytes for ruleDescription to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRuleDescriptionBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ruleDescription_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        private int validationResultType_ = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * The result of the validation rule.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.ValidationResultType validation_result_type = 3;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for validationResultType.
+         */
+        @java.lang.Override
+        public int getValidationResultTypeValue() {
+          return validationResultType_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The result of the validation rule.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.ValidationResultType validation_result_type = 3;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for validationResultType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setValidationResultTypeValue(int value) {
+          validationResultType_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The result of the validation rule.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.ValidationResultType validation_result_type = 3;
+         * </code>
+         *
+         * @return The validationResultType.
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                .ValidationResultType
+            getValidationResultType() {
+          com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                  .ValidationResultType
+              result =
+                  com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                      .ValidationResultType.forNumber(validationResultType_);
+          return result == null
+              ? com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                  .ValidationResultType.UNRECOGNIZED
+              : result;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The result of the validation rule.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.ValidationResultType validation_result_type = 3;
+         * </code>
+         *
+         * @param value The validationResultType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setValidationResultType(
+            com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                    .ValidationResultType
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000004;
+          validationResultType_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The result of the validation rule.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.ValidationResultType validation_result_type = 3;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearValidationResultType() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          validationResultType_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object validationDetails_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The detailed information of the running the validation process using
+         * the entity from the document based on the validation rule.
+         * </pre>
+         *
+         * <code>string validation_details = 4;</code>
+         *
+         * @return The validationDetails.
+         */
+        public java.lang.String getValidationDetails() {
+          java.lang.Object ref = validationDetails_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            validationDetails_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The detailed information of the running the validation process using
+         * the entity from the document based on the validation rule.
+         * </pre>
+         *
+         * <code>string validation_details = 4;</code>
+         *
+         * @return The bytes for validationDetails.
+         */
+        public com.google.protobuf.ByteString getValidationDetailsBytes() {
+          java.lang.Object ref = validationDetails_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            validationDetails_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The detailed information of the running the validation process using
+         * the entity from the document based on the validation rule.
+         * </pre>
+         *
+         * <code>string validation_details = 4;</code>
+         *
+         * @param value The validationDetails to set.
+         * @return This builder for chaining.
+         */
+        public Builder setValidationDetails(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          validationDetails_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The detailed information of the running the validation process using
+         * the entity from the document based on the validation rule.
+         * </pre>
+         *
+         * <code>string validation_details = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearValidationDetails() {
+          validationDetails_ = getDefaultInstance().getValidationDetails();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The detailed information of the running the validation process using
+         * the entity from the document based on the validation rule.
+         * </pre>
+         *
+         * <code>string validation_details = 4;</code>
+         *
+         * @param value The bytes for validationDetails to set.
+         * @return This builder for chaining.
+         */
+        public Builder setValidationDetailsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          validationDetails_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult)
+      private static final com.google.cloud.documentai.v1.Document.EntityValidationOutput
+              .ValidationResult
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult();
+      }
+
+      public static com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ValidationResult> PARSER =
+          new com.google.protobuf.AbstractParser<ValidationResult>() {
+            @java.lang.Override
+            public ValidationResult parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ValidationResult> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ValidationResult> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int VALIDATION_RESULTS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult>
+        validationResults_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The result of each validation rule.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult>
+        getValidationResultsList() {
+      return validationResults_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The result of each validation rule.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.documentai.v1.Document.EntityValidationOutput
+                    .ValidationResultOrBuilder>
+        getValidationResultsOrBuilderList() {
+      return validationResults_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The result of each validation rule.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public int getValidationResultsCount() {
+      return validationResults_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The result of each validation rule.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+        getValidationResults(int index) {
+      return validationResults_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The result of each validation rule.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResultOrBuilder
+        getValidationResultsOrBuilder(int index) {
+      return validationResults_.get(index);
+    }
+
+    public static final int PASS_ALL_RULES_FIELD_NUMBER = 2;
+    private boolean passAllRules_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * The overall result of the validation, true if all applicable rules are
+     * valid.
+     * </pre>
+     *
+     * <code>bool pass_all_rules = 2;</code>
+     *
+     * @return The passAllRules.
+     */
+    @java.lang.Override
+    public boolean getPassAllRules() {
+      return passAllRules_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < validationResults_.size(); i++) {
+        output.writeMessage(1, validationResults_.get(i));
+      }
+      if (passAllRules_ != false) {
+        output.writeBool(2, passAllRules_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < validationResults_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, validationResults_.get(i));
+      }
+      if (passAllRules_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, passAllRules_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.documentai.v1.Document.EntityValidationOutput)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.documentai.v1.Document.EntityValidationOutput other =
+          (com.google.cloud.documentai.v1.Document.EntityValidationOutput) obj;
+
+      if (!getValidationResultsList().equals(other.getValidationResultsList())) return false;
+      if (getPassAllRules() != other.getPassAllRules()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getValidationResultsCount() > 0) {
+        hash = (37 * hash) + VALIDATION_RESULTS_FIELD_NUMBER;
+        hash = (53 * hash) + getValidationResultsList().hashCode();
+      }
+      hash = (37 * hash) + PASS_ALL_RULES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPassAllRules());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntityValidationOutput parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntityValidationOutput parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntityValidationOutput parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntityValidationOutput parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntityValidationOutput parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntityValidationOutput parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntityValidationOutput parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntityValidationOutput parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntityValidationOutput parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntityValidationOutput parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntityValidationOutput parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntityValidationOutput parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.documentai.v1.Document.EntityValidationOutput prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The output of the validation given the document and the validation rules.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.documentai.v1.Document.EntityValidationOutput}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1.Document.EntityValidationOutput)
+        com.google.cloud.documentai.v1.Document.EntityValidationOutputOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1.DocumentProto
+            .internal_static_google_cloud_documentai_v1_Document_EntityValidationOutput_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1.DocumentProto
+            .internal_static_google_cloud_documentai_v1_Document_EntityValidationOutput_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1.Document.EntityValidationOutput.class,
+                com.google.cloud.documentai.v1.Document.EntityValidationOutput.Builder.class);
+      }
+
+      // Construct using com.google.cloud.documentai.v1.Document.EntityValidationOutput.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (validationResultsBuilder_ == null) {
+          validationResults_ = java.util.Collections.emptyList();
+        } else {
+          validationResults_ = null;
+          validationResultsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        passAllRules_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.documentai.v1.DocumentProto
+            .internal_static_google_cloud_documentai_v1_Document_EntityValidationOutput_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.EntityValidationOutput
+          getDefaultInstanceForType() {
+        return com.google.cloud.documentai.v1.Document.EntityValidationOutput.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.EntityValidationOutput build() {
+        com.google.cloud.documentai.v1.Document.EntityValidationOutput result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.EntityValidationOutput buildPartial() {
+        com.google.cloud.documentai.v1.Document.EntityValidationOutput result =
+            new com.google.cloud.documentai.v1.Document.EntityValidationOutput(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.documentai.v1.Document.EntityValidationOutput result) {
+        if (validationResultsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            validationResults_ = java.util.Collections.unmodifiableList(validationResults_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.validationResults_ = validationResults_;
+        } else {
+          result.validationResults_ = validationResultsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1.Document.EntityValidationOutput result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.passAllRules_ = passAllRules_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.documentai.v1.Document.EntityValidationOutput) {
+          return mergeFrom((com.google.cloud.documentai.v1.Document.EntityValidationOutput) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.documentai.v1.Document.EntityValidationOutput other) {
+        if (other
+            == com.google.cloud.documentai.v1.Document.EntityValidationOutput.getDefaultInstance())
+          return this;
+        if (validationResultsBuilder_ == null) {
+          if (!other.validationResults_.isEmpty()) {
+            if (validationResults_.isEmpty()) {
+              validationResults_ = other.validationResults_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureValidationResultsIsMutable();
+              validationResults_.addAll(other.validationResults_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.validationResults_.isEmpty()) {
+            if (validationResultsBuilder_.isEmpty()) {
+              validationResultsBuilder_.dispose();
+              validationResultsBuilder_ = null;
+              validationResults_ = other.validationResults_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              validationResultsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getValidationResultsFieldBuilder()
+                      : null;
+            } else {
+              validationResultsBuilder_.addAllMessages(other.validationResults_);
+            }
+          }
+        }
+        if (other.getPassAllRules() != false) {
+          setPassAllRules(other.getPassAllRules());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                      m =
+                          input.readMessage(
+                              com.google.cloud.documentai.v1.Document.EntityValidationOutput
+                                  .ValidationResult.parser(),
+                              extensionRegistry);
+                  if (validationResultsBuilder_ == null) {
+                    ensureValidationResultsIsMutable();
+                    validationResults_.add(m);
+                  } else {
+                    validationResultsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 16:
+                {
+                  passAllRules_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<
+              com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult>
+          validationResults_ = java.util.Collections.emptyList();
+
+      private void ensureValidationResultsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          validationResults_ =
+              new java.util.ArrayList<
+                  com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult>(
+                  validationResults_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult,
+              com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                  .Builder,
+              com.google.cloud.documentai.v1.Document.EntityValidationOutput
+                  .ValidationResultOrBuilder>
+          validationResultsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult>
+          getValidationResultsList() {
+        if (validationResultsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(validationResults_);
+        } else {
+          return validationResultsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public int getValidationResultsCount() {
+        if (validationResultsBuilder_ == null) {
+          return validationResults_.size();
+        } else {
+          return validationResultsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+          getValidationResults(int index) {
+        if (validationResultsBuilder_ == null) {
+          return validationResults_.get(index);
+        } else {
+          return validationResultsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public Builder setValidationResults(
+          int index,
+          com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult value) {
+        if (validationResultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValidationResultsIsMutable();
+          validationResults_.set(index, value);
+          onChanged();
+        } else {
+          validationResultsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public Builder setValidationResults(
+          int index,
+          com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.Builder
+              builderForValue) {
+        if (validationResultsBuilder_ == null) {
+          ensureValidationResultsIsMutable();
+          validationResults_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          validationResultsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public Builder addValidationResults(
+          com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult value) {
+        if (validationResultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValidationResultsIsMutable();
+          validationResults_.add(value);
+          onChanged();
+        } else {
+          validationResultsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public Builder addValidationResults(
+          int index,
+          com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult value) {
+        if (validationResultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValidationResultsIsMutable();
+          validationResults_.add(index, value);
+          onChanged();
+        } else {
+          validationResultsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public Builder addValidationResults(
+          com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.Builder
+              builderForValue) {
+        if (validationResultsBuilder_ == null) {
+          ensureValidationResultsIsMutable();
+          validationResults_.add(builderForValue.build());
+          onChanged();
+        } else {
+          validationResultsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public Builder addValidationResults(
+          int index,
+          com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.Builder
+              builderForValue) {
+        if (validationResultsBuilder_ == null) {
+          ensureValidationResultsIsMutable();
+          validationResults_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          validationResultsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public Builder addAllValidationResults(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.documentai.v1.Document.EntityValidationOutput
+                          .ValidationResult>
+              values) {
+        if (validationResultsBuilder_ == null) {
+          ensureValidationResultsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, validationResults_);
+          onChanged();
+        } else {
+          validationResultsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public Builder clearValidationResults() {
+        if (validationResultsBuilder_ == null) {
+          validationResults_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          validationResultsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public Builder removeValidationResults(int index) {
+        if (validationResultsBuilder_ == null) {
+          ensureValidationResultsIsMutable();
+          validationResults_.remove(index);
+          onChanged();
+        } else {
+          validationResultsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.Builder
+          getValidationResultsBuilder(int index) {
+        return getValidationResultsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1.Document.EntityValidationOutput
+              .ValidationResultOrBuilder
+          getValidationResultsOrBuilder(int index) {
+        if (validationResultsBuilder_ == null) {
+          return validationResults_.get(index);
+        } else {
+          return validationResultsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.documentai.v1.Document.EntityValidationOutput
+                      .ValidationResultOrBuilder>
+          getValidationResultsOrBuilderList() {
+        if (validationResultsBuilder_ != null) {
+          return validationResultsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(validationResults_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.Builder
+          addValidationResultsBuilder() {
+        return getValidationResultsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult.Builder
+          addValidationResultsBuilder(int index) {
+        return getValidationResultsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The result of each validation rule.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult validation_results = 1;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                  .Builder>
+          getValidationResultsBuilderList() {
+        return getValidationResultsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult,
+              com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                  .Builder,
+              com.google.cloud.documentai.v1.Document.EntityValidationOutput
+                  .ValidationResultOrBuilder>
+          getValidationResultsFieldBuilder() {
+        if (validationResultsBuilder_ == null) {
+          validationResultsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult,
+                  com.google.cloud.documentai.v1.Document.EntityValidationOutput.ValidationResult
+                      .Builder,
+                  com.google.cloud.documentai.v1.Document.EntityValidationOutput
+                      .ValidationResultOrBuilder>(
+                  validationResults_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          validationResults_ = null;
+        }
+        return validationResultsBuilder_;
+      }
+
+      private boolean passAllRules_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The overall result of the validation, true if all applicable rules are
+       * valid.
+       * </pre>
+       *
+       * <code>bool pass_all_rules = 2;</code>
+       *
+       * @return The passAllRules.
+       */
+      @java.lang.Override
+      public boolean getPassAllRules() {
+        return passAllRules_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The overall result of the validation, true if all applicable rules are
+       * valid.
+       * </pre>
+       *
+       * <code>bool pass_all_rules = 2;</code>
+       *
+       * @param value The passAllRules to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPassAllRules(boolean value) {
+
+        passAllRules_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The overall result of the validation, true if all applicable rules are
+       * valid.
+       * </pre>
+       *
+       * <code>bool pass_all_rules = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPassAllRules() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        passAllRules_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1.Document.EntityValidationOutput)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1.Document.EntityValidationOutput)
+    private static final com.google.cloud.documentai.v1.Document.EntityValidationOutput
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.documentai.v1.Document.EntityValidationOutput();
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntityValidationOutput
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EntityValidationOutput> PARSER =
+        new com.google.protobuf.AbstractParser<EntityValidationOutput>() {
+          @java.lang.Override
+          public EntityValidationOutput parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<EntityValidationOutput> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EntityValidationOutput> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.Document.EntityValidationOutput
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface EntitiesRevisionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1.Document.EntitiesRevision)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The revision id.
+     * </pre>
+     *
+     * <code>string revision_id = 1;</code>
+     *
+     * @return The revisionId.
+     */
+    java.lang.String getRevisionId();
+
+    /**
+     *
+     *
+     * <pre>
+     * The revision id.
+     * </pre>
+     *
+     * <code>string revision_id = 1;</code>
+     *
+     * @return The bytes for revisionId.
+     */
+    com.google.protobuf.ByteString getRevisionIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The entities in this revision.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+     */
+    java.util.List<com.google.cloud.documentai.v1.Document.Entity> getEntitiesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The entities in this revision.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+     */
+    com.google.cloud.documentai.v1.Document.Entity getEntities(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The entities in this revision.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+     */
+    int getEntitiesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The entities in this revision.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+     */
+    java.util.List<? extends com.google.cloud.documentai.v1.Document.EntityOrBuilder>
+        getEntitiesOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The entities in this revision.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+     */
+    com.google.cloud.documentai.v1.Document.EntityOrBuilder getEntitiesOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity validation output for this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 3;
+     * </code>
+     *
+     * @return Whether the entityValidationOutput field is set.
+     */
+    boolean hasEntityValidationOutput();
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity validation output for this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 3;
+     * </code>
+     *
+     * @return The entityValidationOutput.
+     */
+    com.google.cloud.documentai.v1.Document.EntityValidationOutput getEntityValidationOutput();
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity validation output for this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 3;
+     * </code>
+     */
+    com.google.cloud.documentai.v1.Document.EntityValidationOutputOrBuilder
+        getEntityValidationOutputOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Entity revision.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.documentai.v1.Document.EntitiesRevision}
+   */
+  public static final class EntitiesRevision extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.Document.EntitiesRevision)
+      EntitiesRevisionOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use EntitiesRevision.newBuilder() to construct.
+    private EntitiesRevision(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private EntitiesRevision() {
+      revisionId_ = "";
+      entities_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new EntitiesRevision();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.documentai.v1.DocumentProto
+          .internal_static_google_cloud_documentai_v1_Document_EntitiesRevision_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.documentai.v1.DocumentProto
+          .internal_static_google_cloud_documentai_v1_Document_EntitiesRevision_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.documentai.v1.Document.EntitiesRevision.class,
+              com.google.cloud.documentai.v1.Document.EntitiesRevision.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int REVISION_ID_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object revisionId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The revision id.
+     * </pre>
+     *
+     * <code>string revision_id = 1;</code>
+     *
+     * @return The revisionId.
+     */
+    @java.lang.Override
+    public java.lang.String getRevisionId() {
+      java.lang.Object ref = revisionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        revisionId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The revision id.
+     * </pre>
+     *
+     * <code>string revision_id = 1;</code>
+     *
+     * @return The bytes for revisionId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRevisionIdBytes() {
+      java.lang.Object ref = revisionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        revisionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENTITIES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.documentai.v1.Document.Entity> entities_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The entities in this revision.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.documentai.v1.Document.Entity> getEntitiesList() {
+      return entities_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entities in this revision.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.documentai.v1.Document.EntityOrBuilder>
+        getEntitiesOrBuilderList() {
+      return entities_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entities in this revision.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+     */
+    @java.lang.Override
+    public int getEntitiesCount() {
+      return entities_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entities in this revision.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.Document.Entity getEntities(int index) {
+      return entities_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entities in this revision.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.Document.EntityOrBuilder getEntitiesOrBuilder(int index) {
+      return entities_.get(index);
+    }
+
+    public static final int ENTITY_VALIDATION_OUTPUT_FIELD_NUMBER = 3;
+    private com.google.cloud.documentai.v1.Document.EntityValidationOutput entityValidationOutput_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity validation output for this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 3;
+     * </code>
+     *
+     * @return Whether the entityValidationOutput field is set.
+     */
+    @java.lang.Override
+    public boolean hasEntityValidationOutput() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity validation output for this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 3;
+     * </code>
+     *
+     * @return The entityValidationOutput.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.Document.EntityValidationOutput
+        getEntityValidationOutput() {
+      return entityValidationOutput_ == null
+          ? com.google.cloud.documentai.v1.Document.EntityValidationOutput.getDefaultInstance()
+          : entityValidationOutput_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity validation output for this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.Document.EntityValidationOutputOrBuilder
+        getEntityValidationOutputOrBuilder() {
+      return entityValidationOutput_ == null
+          ? com.google.cloud.documentai.v1.Document.EntityValidationOutput.getDefaultInstance()
+          : entityValidationOutput_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revisionId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, revisionId_);
+      }
+      for (int i = 0; i < entities_.size(); i++) {
+        output.writeMessage(2, entities_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getEntityValidationOutput());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revisionId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, revisionId_);
+      }
+      for (int i = 0; i < entities_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, entities_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, getEntityValidationOutput());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.documentai.v1.Document.EntitiesRevision)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.documentai.v1.Document.EntitiesRevision other =
+          (com.google.cloud.documentai.v1.Document.EntitiesRevision) obj;
+
+      if (!getRevisionId().equals(other.getRevisionId())) return false;
+      if (!getEntitiesList().equals(other.getEntitiesList())) return false;
+      if (hasEntityValidationOutput() != other.hasEntityValidationOutput()) return false;
+      if (hasEntityValidationOutput()) {
+        if (!getEntityValidationOutput().equals(other.getEntityValidationOutput())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REVISION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRevisionId().hashCode();
+      if (getEntitiesCount() > 0) {
+        hash = (37 * hash) + ENTITIES_FIELD_NUMBER;
+        hash = (53 * hash) + getEntitiesList().hashCode();
+      }
+      if (hasEntityValidationOutput()) {
+        hash = (37 * hash) + ENTITY_VALIDATION_OUTPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getEntityValidationOutput().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntitiesRevision parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntitiesRevision parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntitiesRevision parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntitiesRevision parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntitiesRevision parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntitiesRevision parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntitiesRevision parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntitiesRevision parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntitiesRevision parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntitiesRevision parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntitiesRevision parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntitiesRevision parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.documentai.v1.Document.EntitiesRevision prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Entity revision.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.documentai.v1.Document.EntitiesRevision}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1.Document.EntitiesRevision)
+        com.google.cloud.documentai.v1.Document.EntitiesRevisionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1.DocumentProto
+            .internal_static_google_cloud_documentai_v1_Document_EntitiesRevision_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1.DocumentProto
+            .internal_static_google_cloud_documentai_v1_Document_EntitiesRevision_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1.Document.EntitiesRevision.class,
+                com.google.cloud.documentai.v1.Document.EntitiesRevision.Builder.class);
+      }
+
+      // Construct using com.google.cloud.documentai.v1.Document.EntitiesRevision.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getEntitiesFieldBuilder();
+          getEntityValidationOutputFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        revisionId_ = "";
+        if (entitiesBuilder_ == null) {
+          entities_ = java.util.Collections.emptyList();
+        } else {
+          entities_ = null;
+          entitiesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        entityValidationOutput_ = null;
+        if (entityValidationOutputBuilder_ != null) {
+          entityValidationOutputBuilder_.dispose();
+          entityValidationOutputBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.documentai.v1.DocumentProto
+            .internal_static_google_cloud_documentai_v1_Document_EntitiesRevision_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.EntitiesRevision getDefaultInstanceForType() {
+        return com.google.cloud.documentai.v1.Document.EntitiesRevision.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.EntitiesRevision build() {
+        com.google.cloud.documentai.v1.Document.EntitiesRevision result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.EntitiesRevision buildPartial() {
+        com.google.cloud.documentai.v1.Document.EntitiesRevision result =
+            new com.google.cloud.documentai.v1.Document.EntitiesRevision(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.documentai.v1.Document.EntitiesRevision result) {
+        if (entitiesBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            entities_ = java.util.Collections.unmodifiableList(entities_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.entities_ = entities_;
+        } else {
+          result.entities_ = entitiesBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.google.cloud.documentai.v1.Document.EntitiesRevision result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.revisionId_ = revisionId_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.entityValidationOutput_ =
+              entityValidationOutputBuilder_ == null
+                  ? entityValidationOutput_
+                  : entityValidationOutputBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.documentai.v1.Document.EntitiesRevision) {
+          return mergeFrom((com.google.cloud.documentai.v1.Document.EntitiesRevision) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.documentai.v1.Document.EntitiesRevision other) {
+        if (other == com.google.cloud.documentai.v1.Document.EntitiesRevision.getDefaultInstance())
+          return this;
+        if (!other.getRevisionId().isEmpty()) {
+          revisionId_ = other.revisionId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (entitiesBuilder_ == null) {
+          if (!other.entities_.isEmpty()) {
+            if (entities_.isEmpty()) {
+              entities_ = other.entities_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureEntitiesIsMutable();
+              entities_.addAll(other.entities_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.entities_.isEmpty()) {
+            if (entitiesBuilder_.isEmpty()) {
+              entitiesBuilder_.dispose();
+              entitiesBuilder_ = null;
+              entities_ = other.entities_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              entitiesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getEntitiesFieldBuilder()
+                      : null;
+            } else {
+              entitiesBuilder_.addAllMessages(other.entities_);
+            }
+          }
+        }
+        if (other.hasEntityValidationOutput()) {
+          mergeEntityValidationOutput(other.getEntityValidationOutput());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  revisionId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.cloud.documentai.v1.Document.Entity m =
+                      input.readMessage(
+                          com.google.cloud.documentai.v1.Document.Entity.parser(),
+                          extensionRegistry);
+                  if (entitiesBuilder_ == null) {
+                    ensureEntitiesIsMutable();
+                    entities_.add(m);
+                  } else {
+                    entitiesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getEntityValidationOutputFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object revisionId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The revision id.
+       * </pre>
+       *
+       * <code>string revision_id = 1;</code>
+       *
+       * @return The revisionId.
+       */
+      public java.lang.String getRevisionId() {
+        java.lang.Object ref = revisionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          revisionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The revision id.
+       * </pre>
+       *
+       * <code>string revision_id = 1;</code>
+       *
+       * @return The bytes for revisionId.
+       */
+      public com.google.protobuf.ByteString getRevisionIdBytes() {
+        java.lang.Object ref = revisionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          revisionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The revision id.
+       * </pre>
+       *
+       * <code>string revision_id = 1;</code>
+       *
+       * @param value The revisionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRevisionId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        revisionId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The revision id.
+       * </pre>
+       *
+       * <code>string revision_id = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRevisionId() {
+        revisionId_ = getDefaultInstance().getRevisionId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The revision id.
+       * </pre>
+       *
+       * <code>string revision_id = 1;</code>
+       *
+       * @param value The bytes for revisionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRevisionIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        revisionId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.cloud.documentai.v1.Document.Entity> entities_ =
+          java.util.Collections.emptyList();
+
+      private void ensureEntitiesIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          entities_ =
+              new java.util.ArrayList<com.google.cloud.documentai.v1.Document.Entity>(entities_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.documentai.v1.Document.Entity,
+              com.google.cloud.documentai.v1.Document.Entity.Builder,
+              com.google.cloud.documentai.v1.Document.EntityOrBuilder>
+          entitiesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public java.util.List<com.google.cloud.documentai.v1.Document.Entity> getEntitiesList() {
+        if (entitiesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(entities_);
+        } else {
+          return entitiesBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public int getEntitiesCount() {
+        if (entitiesBuilder_ == null) {
+          return entities_.size();
+        } else {
+          return entitiesBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public com.google.cloud.documentai.v1.Document.Entity getEntities(int index) {
+        if (entitiesBuilder_ == null) {
+          return entities_.get(index);
+        } else {
+          return entitiesBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public Builder setEntities(int index, com.google.cloud.documentai.v1.Document.Entity value) {
+        if (entitiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEntitiesIsMutable();
+          entities_.set(index, value);
+          onChanged();
+        } else {
+          entitiesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public Builder setEntities(
+          int index, com.google.cloud.documentai.v1.Document.Entity.Builder builderForValue) {
+        if (entitiesBuilder_ == null) {
+          ensureEntitiesIsMutable();
+          entities_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          entitiesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public Builder addEntities(com.google.cloud.documentai.v1.Document.Entity value) {
+        if (entitiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEntitiesIsMutable();
+          entities_.add(value);
+          onChanged();
+        } else {
+          entitiesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public Builder addEntities(int index, com.google.cloud.documentai.v1.Document.Entity value) {
+        if (entitiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEntitiesIsMutable();
+          entities_.add(index, value);
+          onChanged();
+        } else {
+          entitiesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public Builder addEntities(
+          com.google.cloud.documentai.v1.Document.Entity.Builder builderForValue) {
+        if (entitiesBuilder_ == null) {
+          ensureEntitiesIsMutable();
+          entities_.add(builderForValue.build());
+          onChanged();
+        } else {
+          entitiesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public Builder addEntities(
+          int index, com.google.cloud.documentai.v1.Document.Entity.Builder builderForValue) {
+        if (entitiesBuilder_ == null) {
+          ensureEntitiesIsMutable();
+          entities_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          entitiesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public Builder addAllEntities(
+          java.lang.Iterable<? extends com.google.cloud.documentai.v1.Document.Entity> values) {
+        if (entitiesBuilder_ == null) {
+          ensureEntitiesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, entities_);
+          onChanged();
+        } else {
+          entitiesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public Builder clearEntities() {
+        if (entitiesBuilder_ == null) {
+          entities_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          entitiesBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public Builder removeEntities(int index) {
+        if (entitiesBuilder_ == null) {
+          ensureEntitiesIsMutable();
+          entities_.remove(index);
+          onChanged();
+        } else {
+          entitiesBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public com.google.cloud.documentai.v1.Document.Entity.Builder getEntitiesBuilder(int index) {
+        return getEntitiesFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public com.google.cloud.documentai.v1.Document.EntityOrBuilder getEntitiesOrBuilder(
+          int index) {
+        if (entitiesBuilder_ == null) {
+          return entities_.get(index);
+        } else {
+          return entitiesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public java.util.List<? extends com.google.cloud.documentai.v1.Document.EntityOrBuilder>
+          getEntitiesOrBuilderList() {
+        if (entitiesBuilder_ != null) {
+          return entitiesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(entities_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public com.google.cloud.documentai.v1.Document.Entity.Builder addEntitiesBuilder() {
+        return getEntitiesFieldBuilder()
+            .addBuilder(com.google.cloud.documentai.v1.Document.Entity.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public com.google.cloud.documentai.v1.Document.Entity.Builder addEntitiesBuilder(int index) {
+        return getEntitiesFieldBuilder()
+            .addBuilder(index, com.google.cloud.documentai.v1.Document.Entity.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entities in this revision.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 2;</code>
+       */
+      public java.util.List<com.google.cloud.documentai.v1.Document.Entity.Builder>
+          getEntitiesBuilderList() {
+        return getEntitiesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.documentai.v1.Document.Entity,
+              com.google.cloud.documentai.v1.Document.Entity.Builder,
+              com.google.cloud.documentai.v1.Document.EntityOrBuilder>
+          getEntitiesFieldBuilder() {
+        if (entitiesBuilder_ == null) {
+          entitiesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1.Document.Entity,
+                  com.google.cloud.documentai.v1.Document.Entity.Builder,
+                  com.google.cloud.documentai.v1.Document.EntityOrBuilder>(
+                  entities_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+          entities_ = null;
+        }
+        return entitiesBuilder_;
+      }
+
+      private com.google.cloud.documentai.v1.Document.EntityValidationOutput
+          entityValidationOutput_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.documentai.v1.Document.EntityValidationOutput,
+              com.google.cloud.documentai.v1.Document.EntityValidationOutput.Builder,
+              com.google.cloud.documentai.v1.Document.EntityValidationOutputOrBuilder>
+          entityValidationOutputBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The entity validation output for this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 3;
+       * </code>
+       *
+       * @return Whether the entityValidationOutput field is set.
+       */
+      public boolean hasEntityValidationOutput() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entity validation output for this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 3;
+       * </code>
+       *
+       * @return The entityValidationOutput.
+       */
+      public com.google.cloud.documentai.v1.Document.EntityValidationOutput
+          getEntityValidationOutput() {
+        if (entityValidationOutputBuilder_ == null) {
+          return entityValidationOutput_ == null
+              ? com.google.cloud.documentai.v1.Document.EntityValidationOutput.getDefaultInstance()
+              : entityValidationOutput_;
+        } else {
+          return entityValidationOutputBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entity validation output for this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 3;
+       * </code>
+       */
+      public Builder setEntityValidationOutput(
+          com.google.cloud.documentai.v1.Document.EntityValidationOutput value) {
+        if (entityValidationOutputBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          entityValidationOutput_ = value;
+        } else {
+          entityValidationOutputBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entity validation output for this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 3;
+       * </code>
+       */
+      public Builder setEntityValidationOutput(
+          com.google.cloud.documentai.v1.Document.EntityValidationOutput.Builder builderForValue) {
+        if (entityValidationOutputBuilder_ == null) {
+          entityValidationOutput_ = builderForValue.build();
+        } else {
+          entityValidationOutputBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entity validation output for this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 3;
+       * </code>
+       */
+      public Builder mergeEntityValidationOutput(
+          com.google.cloud.documentai.v1.Document.EntityValidationOutput value) {
+        if (entityValidationOutputBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && entityValidationOutput_ != null
+              && entityValidationOutput_
+                  != com.google.cloud.documentai.v1.Document.EntityValidationOutput
+                      .getDefaultInstance()) {
+            getEntityValidationOutputBuilder().mergeFrom(value);
+          } else {
+            entityValidationOutput_ = value;
+          }
+        } else {
+          entityValidationOutputBuilder_.mergeFrom(value);
+        }
+        if (entityValidationOutput_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entity validation output for this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 3;
+       * </code>
+       */
+      public Builder clearEntityValidationOutput() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        entityValidationOutput_ = null;
+        if (entityValidationOutputBuilder_ != null) {
+          entityValidationOutputBuilder_.dispose();
+          entityValidationOutputBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entity validation output for this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 3;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1.Document.EntityValidationOutput.Builder
+          getEntityValidationOutputBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getEntityValidationOutputFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entity validation output for this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 3;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1.Document.EntityValidationOutputOrBuilder
+          getEntityValidationOutputOrBuilder() {
+        if (entityValidationOutputBuilder_ != null) {
+          return entityValidationOutputBuilder_.getMessageOrBuilder();
+        } else {
+          return entityValidationOutput_ == null
+              ? com.google.cloud.documentai.v1.Document.EntityValidationOutput.getDefaultInstance()
+              : entityValidationOutput_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entity validation output for this revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.documentai.v1.Document.EntityValidationOutput,
+              com.google.cloud.documentai.v1.Document.EntityValidationOutput.Builder,
+              com.google.cloud.documentai.v1.Document.EntityValidationOutputOrBuilder>
+          getEntityValidationOutputFieldBuilder() {
+        if (entityValidationOutputBuilder_ == null) {
+          entityValidationOutputBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.documentai.v1.Document.EntityValidationOutput,
+                  com.google.cloud.documentai.v1.Document.EntityValidationOutput.Builder,
+                  com.google.cloud.documentai.v1.Document.EntityValidationOutputOrBuilder>(
+                  getEntityValidationOutput(), getParentForChildren(), isClean());
+          entityValidationOutput_ = null;
+        }
+        return entityValidationOutputBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1.Document.EntitiesRevision)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1.Document.EntitiesRevision)
+    private static final com.google.cloud.documentai.v1.Document.EntitiesRevision DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.documentai.v1.Document.EntitiesRevision();
+    }
+
+    public static com.google.cloud.documentai.v1.Document.EntitiesRevision getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EntitiesRevision> PARSER =
+        new com.google.protobuf.AbstractParser<EntitiesRevision>() {
+          @java.lang.Override
+          public EntitiesRevision parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<EntitiesRevision> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EntitiesRevision> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.Document.EntitiesRevision getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int sourceCase_ = 0;
 
@@ -88368,6 +92795,225 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         : chunkedDocument_;
   }
 
+  public static final int ENTITY_VALIDATION_OUTPUT_FIELD_NUMBER = 21;
+  private com.google.cloud.documentai.v1.Document.EntityValidationOutput entityValidationOutput_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The entity validation output for the document. This is the validation
+   * output for `document.entities` field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 21;
+   * </code>
+   *
+   * @return Whether the entityValidationOutput field is set.
+   */
+  @java.lang.Override
+  public boolean hasEntityValidationOutput() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The entity validation output for the document. This is the validation
+   * output for `document.entities` field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 21;
+   * </code>
+   *
+   * @return The entityValidationOutput.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1.Document.EntityValidationOutput
+      getEntityValidationOutput() {
+    return entityValidationOutput_ == null
+        ? com.google.cloud.documentai.v1.Document.EntityValidationOutput.getDefaultInstance()
+        : entityValidationOutput_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The entity validation output for the document. This is the validation
+   * output for `document.entities` field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 21;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1.Document.EntityValidationOutputOrBuilder
+      getEntityValidationOutputOrBuilder() {
+    return entityValidationOutput_ == null
+        ? com.google.cloud.documentai.v1.Document.EntityValidationOutput.getDefaultInstance()
+        : entityValidationOutput_;
+  }
+
+  public static final int ENTITIES_REVISIONS_FIELD_NUMBER = 22;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.documentai.v1.Document.EntitiesRevision>
+      entitiesRevisions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of entity revisions. The entity revisions are appended to the
+   * document in the processing order. This field can be used for comparing the
+   * entity extraction results at different stages of the processing.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.documentai.v1.Document.EntitiesRevision>
+      getEntitiesRevisionsList() {
+    return entitiesRevisions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of entity revisions. The entity revisions are appended to the
+   * document in the processing order. This field can be used for comparing the
+   * entity extraction results at different stages of the processing.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.documentai.v1.Document.EntitiesRevisionOrBuilder>
+      getEntitiesRevisionsOrBuilderList() {
+    return entitiesRevisions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of entity revisions. The entity revisions are appended to the
+   * document in the processing order. This field can be used for comparing the
+   * entity extraction results at different stages of the processing.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+   * </code>
+   */
+  @java.lang.Override
+  public int getEntitiesRevisionsCount() {
+    return entitiesRevisions_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of entity revisions. The entity revisions are appended to the
+   * document in the processing order. This field can be used for comparing the
+   * entity extraction results at different stages of the processing.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1.Document.EntitiesRevision getEntitiesRevisions(int index) {
+    return entitiesRevisions_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of entity revisions. The entity revisions are appended to the
+   * document in the processing order. This field can be used for comparing the
+   * entity extraction results at different stages of the processing.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1.Document.EntitiesRevisionOrBuilder
+      getEntitiesRevisionsOrBuilder(int index) {
+    return entitiesRevisions_.get(index);
+  }
+
+  public static final int ENTITIES_REVISION_ID_FIELD_NUMBER = 23;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entitiesRevisionId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The entity revision id that `document.entities` field is based on.
+   * If this field is set and `entities_revisions` is not empty, the entities in
+   * `document.entities` field are the entities in the entity revision with this
+   * id and `document.entity_validation_output` field is the
+   * `entity_validation_output` field in this entity revision.
+   * </pre>
+   *
+   * <code>string entities_revision_id = 23;</code>
+   *
+   * @return The entitiesRevisionId.
+   */
+  @java.lang.Override
+  public java.lang.String getEntitiesRevisionId() {
+    java.lang.Object ref = entitiesRevisionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      entitiesRevisionId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The entity revision id that `document.entities` field is based on.
+   * If this field is set and `entities_revisions` is not empty, the entities in
+   * `document.entities` field are the entities in the entity revision with this
+   * id and `document.entity_validation_output` field is the
+   * `entity_validation_output` field in this entity revision.
+   * </pre>
+   *
+   * <code>string entities_revision_id = 23;</code>
+   *
+   * @return The bytes for entitiesRevisionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEntitiesRevisionIdBytes() {
+    java.lang.Object ref = entitiesRevisionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      entitiesRevisionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -88427,6 +93073,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(18, getChunkedDocument());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(21, getEntityValidationOutput());
+    }
+    for (int i = 0; i < entitiesRevisions_.size(); i++) {
+      output.writeMessage(22, entitiesRevisions_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entitiesRevisionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 23, entitiesRevisionId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -88483,6 +93138,17 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getChunkedDocument());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(21, getEntityValidationOutput());
+    }
+    for (int i = 0; i < entitiesRevisions_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(22, entitiesRevisions_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entitiesRevisionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, entitiesRevisionId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -88523,6 +93189,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (hasChunkedDocument()) {
       if (!getChunkedDocument().equals(other.getChunkedDocument())) return false;
     }
+    if (hasEntityValidationOutput() != other.hasEntityValidationOutput()) return false;
+    if (hasEntityValidationOutput()) {
+      if (!getEntityValidationOutput().equals(other.getEntityValidationOutput())) return false;
+    }
+    if (!getEntitiesRevisionsList().equals(other.getEntitiesRevisionsList())) return false;
+    if (!getEntitiesRevisionId().equals(other.getEntitiesRevisionId())) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 1:
@@ -88591,6 +93263,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CHUNKED_DOCUMENT_FIELD_NUMBER;
       hash = (53 * hash) + getChunkedDocument().hashCode();
     }
+    if (hasEntityValidationOutput()) {
+      hash = (37 * hash) + ENTITY_VALIDATION_OUTPUT_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityValidationOutput().hashCode();
+    }
+    if (getEntitiesRevisionsCount() > 0) {
+      hash = (37 * hash) + ENTITIES_REVISIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getEntitiesRevisionsList().hashCode();
+    }
+    hash = (37 * hash) + ENTITIES_REVISION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getEntitiesRevisionId().hashCode();
     switch (sourceCase_) {
       case 1:
         hash = (37 * hash) + URI_FIELD_NUMBER;
@@ -88757,6 +93439,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         getRevisionsFieldBuilder();
         getDocumentLayoutFieldBuilder();
         getChunkedDocumentFieldBuilder();
+        getEntityValidationOutputFieldBuilder();
+        getEntitiesRevisionsFieldBuilder();
       }
     }
 
@@ -88829,6 +93513,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         chunkedDocumentBuilder_.dispose();
         chunkedDocumentBuilder_ = null;
       }
+      entityValidationOutput_ = null;
+      if (entityValidationOutputBuilder_ != null) {
+        entityValidationOutputBuilder_.dispose();
+        entityValidationOutputBuilder_ = null;
+      }
+      if (entitiesRevisionsBuilder_ == null) {
+        entitiesRevisions_ = java.util.Collections.emptyList();
+      } else {
+        entitiesRevisions_ = null;
+        entitiesRevisionsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00010000);
+      entitiesRevisionId_ = "";
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -88922,6 +93619,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.revisions_ = revisionsBuilder_.build();
       }
+      if (entitiesRevisionsBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)) {
+          entitiesRevisions_ = java.util.Collections.unmodifiableList(entitiesRevisions_);
+          bitField0_ = (bitField0_ & ~0x00010000);
+        }
+        result.entitiesRevisions_ = entitiesRevisions_;
+      } else {
+        result.entitiesRevisions_ = entitiesRevisionsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.documentai.v1.Document result) {
@@ -88953,6 +93659,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         result.chunkedDocument_ =
             chunkedDocumentBuilder_ == null ? chunkedDocument_ : chunkedDocumentBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.entityValidationOutput_ =
+            entityValidationOutputBuilder_ == null
+                ? entityValidationOutput_
+                : entityValidationOutputBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.entitiesRevisionId_ = entitiesRevisionId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -89196,6 +93912,41 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (other.hasChunkedDocument()) {
         mergeChunkedDocument(other.getChunkedDocument());
       }
+      if (other.hasEntityValidationOutput()) {
+        mergeEntityValidationOutput(other.getEntityValidationOutput());
+      }
+      if (entitiesRevisionsBuilder_ == null) {
+        if (!other.entitiesRevisions_.isEmpty()) {
+          if (entitiesRevisions_.isEmpty()) {
+            entitiesRevisions_ = other.entitiesRevisions_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+          } else {
+            ensureEntitiesRevisionsIsMutable();
+            entitiesRevisions_.addAll(other.entitiesRevisions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.entitiesRevisions_.isEmpty()) {
+          if (entitiesRevisionsBuilder_.isEmpty()) {
+            entitiesRevisionsBuilder_.dispose();
+            entitiesRevisionsBuilder_ = null;
+            entitiesRevisions_ = other.entitiesRevisions_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+            entitiesRevisionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getEntitiesRevisionsFieldBuilder()
+                    : null;
+          } else {
+            entitiesRevisionsBuilder_.addAllMessages(other.entitiesRevisions_);
+          }
+        }
+      }
+      if (!other.getEntitiesRevisionId().isEmpty()) {
+        entitiesRevisionId_ = other.entitiesRevisionId_;
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
       switch (other.getSourceCase()) {
         case URI:
           {
@@ -89376,6 +94127,33 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00004000;
                 break;
               } // case 146
+            case 170:
+              {
+                input.readMessage(
+                    getEntityValidationOutputFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 170
+            case 178:
+              {
+                com.google.cloud.documentai.v1.Document.EntitiesRevision m =
+                    input.readMessage(
+                        com.google.cloud.documentai.v1.Document.EntitiesRevision.parser(),
+                        extensionRegistry);
+                if (entitiesRevisionsBuilder_ == null) {
+                  ensureEntitiesRevisionsIsMutable();
+                  entitiesRevisions_.add(m);
+                } else {
+                  entitiesRevisionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 178
+            case 186:
+              {
+                entitiesRevisionId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -93183,6 +97961,807 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         chunkedDocument_ = null;
       }
       return chunkedDocumentBuilder_;
+    }
+
+    private com.google.cloud.documentai.v1.Document.EntityValidationOutput entityValidationOutput_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1.Document.EntityValidationOutput,
+            com.google.cloud.documentai.v1.Document.EntityValidationOutput.Builder,
+            com.google.cloud.documentai.v1.Document.EntityValidationOutputOrBuilder>
+        entityValidationOutputBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity validation output for the document. This is the validation
+     * output for `document.entities` field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 21;
+     * </code>
+     *
+     * @return Whether the entityValidationOutput field is set.
+     */
+    public boolean hasEntityValidationOutput() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity validation output for the document. This is the validation
+     * output for `document.entities` field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 21;
+     * </code>
+     *
+     * @return The entityValidationOutput.
+     */
+    public com.google.cloud.documentai.v1.Document.EntityValidationOutput
+        getEntityValidationOutput() {
+      if (entityValidationOutputBuilder_ == null) {
+        return entityValidationOutput_ == null
+            ? com.google.cloud.documentai.v1.Document.EntityValidationOutput.getDefaultInstance()
+            : entityValidationOutput_;
+      } else {
+        return entityValidationOutputBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity validation output for the document. This is the validation
+     * output for `document.entities` field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 21;
+     * </code>
+     */
+    public Builder setEntityValidationOutput(
+        com.google.cloud.documentai.v1.Document.EntityValidationOutput value) {
+      if (entityValidationOutputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        entityValidationOutput_ = value;
+      } else {
+        entityValidationOutputBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity validation output for the document. This is the validation
+     * output for `document.entities` field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 21;
+     * </code>
+     */
+    public Builder setEntityValidationOutput(
+        com.google.cloud.documentai.v1.Document.EntityValidationOutput.Builder builderForValue) {
+      if (entityValidationOutputBuilder_ == null) {
+        entityValidationOutput_ = builderForValue.build();
+      } else {
+        entityValidationOutputBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity validation output for the document. This is the validation
+     * output for `document.entities` field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 21;
+     * </code>
+     */
+    public Builder mergeEntityValidationOutput(
+        com.google.cloud.documentai.v1.Document.EntityValidationOutput value) {
+      if (entityValidationOutputBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && entityValidationOutput_ != null
+            && entityValidationOutput_
+                != com.google.cloud.documentai.v1.Document.EntityValidationOutput
+                    .getDefaultInstance()) {
+          getEntityValidationOutputBuilder().mergeFrom(value);
+        } else {
+          entityValidationOutput_ = value;
+        }
+      } else {
+        entityValidationOutputBuilder_.mergeFrom(value);
+      }
+      if (entityValidationOutput_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity validation output for the document. This is the validation
+     * output for `document.entities` field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 21;
+     * </code>
+     */
+    public Builder clearEntityValidationOutput() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      entityValidationOutput_ = null;
+      if (entityValidationOutputBuilder_ != null) {
+        entityValidationOutputBuilder_.dispose();
+        entityValidationOutputBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity validation output for the document. This is the validation
+     * output for `document.entities` field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 21;
+     * </code>
+     */
+    public com.google.cloud.documentai.v1.Document.EntityValidationOutput.Builder
+        getEntityValidationOutputBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return getEntityValidationOutputFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity validation output for the document. This is the validation
+     * output for `document.entities` field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 21;
+     * </code>
+     */
+    public com.google.cloud.documentai.v1.Document.EntityValidationOutputOrBuilder
+        getEntityValidationOutputOrBuilder() {
+      if (entityValidationOutputBuilder_ != null) {
+        return entityValidationOutputBuilder_.getMessageOrBuilder();
+      } else {
+        return entityValidationOutput_ == null
+            ? com.google.cloud.documentai.v1.Document.EntityValidationOutput.getDefaultInstance()
+            : entityValidationOutput_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity validation output for the document. This is the validation
+     * output for `document.entities` field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.EntityValidationOutput entity_validation_output = 21;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1.Document.EntityValidationOutput,
+            com.google.cloud.documentai.v1.Document.EntityValidationOutput.Builder,
+            com.google.cloud.documentai.v1.Document.EntityValidationOutputOrBuilder>
+        getEntityValidationOutputFieldBuilder() {
+      if (entityValidationOutputBuilder_ == null) {
+        entityValidationOutputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1.Document.EntityValidationOutput,
+                com.google.cloud.documentai.v1.Document.EntityValidationOutput.Builder,
+                com.google.cloud.documentai.v1.Document.EntityValidationOutputOrBuilder>(
+                getEntityValidationOutput(), getParentForChildren(), isClean());
+        entityValidationOutput_ = null;
+      }
+      return entityValidationOutputBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.documentai.v1.Document.EntitiesRevision>
+        entitiesRevisions_ = java.util.Collections.emptyList();
+
+    private void ensureEntitiesRevisionsIsMutable() {
+      if (!((bitField0_ & 0x00010000) != 0)) {
+        entitiesRevisions_ =
+            new java.util.ArrayList<com.google.cloud.documentai.v1.Document.EntitiesRevision>(
+                entitiesRevisions_);
+        bitField0_ |= 0x00010000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.documentai.v1.Document.EntitiesRevision,
+            com.google.cloud.documentai.v1.Document.EntitiesRevision.Builder,
+            com.google.cloud.documentai.v1.Document.EntitiesRevisionOrBuilder>
+        entitiesRevisionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.documentai.v1.Document.EntitiesRevision>
+        getEntitiesRevisionsList() {
+      if (entitiesRevisionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(entitiesRevisions_);
+      } else {
+        return entitiesRevisionsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public int getEntitiesRevisionsCount() {
+      if (entitiesRevisionsBuilder_ == null) {
+        return entitiesRevisions_.size();
+      } else {
+        return entitiesRevisionsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public com.google.cloud.documentai.v1.Document.EntitiesRevision getEntitiesRevisions(
+        int index) {
+      if (entitiesRevisionsBuilder_ == null) {
+        return entitiesRevisions_.get(index);
+      } else {
+        return entitiesRevisionsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public Builder setEntitiesRevisions(
+        int index, com.google.cloud.documentai.v1.Document.EntitiesRevision value) {
+      if (entitiesRevisionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEntitiesRevisionsIsMutable();
+        entitiesRevisions_.set(index, value);
+        onChanged();
+      } else {
+        entitiesRevisionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public Builder setEntitiesRevisions(
+        int index,
+        com.google.cloud.documentai.v1.Document.EntitiesRevision.Builder builderForValue) {
+      if (entitiesRevisionsBuilder_ == null) {
+        ensureEntitiesRevisionsIsMutable();
+        entitiesRevisions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        entitiesRevisionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public Builder addEntitiesRevisions(
+        com.google.cloud.documentai.v1.Document.EntitiesRevision value) {
+      if (entitiesRevisionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEntitiesRevisionsIsMutable();
+        entitiesRevisions_.add(value);
+        onChanged();
+      } else {
+        entitiesRevisionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public Builder addEntitiesRevisions(
+        int index, com.google.cloud.documentai.v1.Document.EntitiesRevision value) {
+      if (entitiesRevisionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEntitiesRevisionsIsMutable();
+        entitiesRevisions_.add(index, value);
+        onChanged();
+      } else {
+        entitiesRevisionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public Builder addEntitiesRevisions(
+        com.google.cloud.documentai.v1.Document.EntitiesRevision.Builder builderForValue) {
+      if (entitiesRevisionsBuilder_ == null) {
+        ensureEntitiesRevisionsIsMutable();
+        entitiesRevisions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        entitiesRevisionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public Builder addEntitiesRevisions(
+        int index,
+        com.google.cloud.documentai.v1.Document.EntitiesRevision.Builder builderForValue) {
+      if (entitiesRevisionsBuilder_ == null) {
+        ensureEntitiesRevisionsIsMutable();
+        entitiesRevisions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        entitiesRevisionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public Builder addAllEntitiesRevisions(
+        java.lang.Iterable<? extends com.google.cloud.documentai.v1.Document.EntitiesRevision>
+            values) {
+      if (entitiesRevisionsBuilder_ == null) {
+        ensureEntitiesRevisionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, entitiesRevisions_);
+        onChanged();
+      } else {
+        entitiesRevisionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public Builder clearEntitiesRevisions() {
+      if (entitiesRevisionsBuilder_ == null) {
+        entitiesRevisions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00010000);
+        onChanged();
+      } else {
+        entitiesRevisionsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public Builder removeEntitiesRevisions(int index) {
+      if (entitiesRevisionsBuilder_ == null) {
+        ensureEntitiesRevisionsIsMutable();
+        entitiesRevisions_.remove(index);
+        onChanged();
+      } else {
+        entitiesRevisionsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public com.google.cloud.documentai.v1.Document.EntitiesRevision.Builder
+        getEntitiesRevisionsBuilder(int index) {
+      return getEntitiesRevisionsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public com.google.cloud.documentai.v1.Document.EntitiesRevisionOrBuilder
+        getEntitiesRevisionsOrBuilder(int index) {
+      if (entitiesRevisionsBuilder_ == null) {
+        return entitiesRevisions_.get(index);
+      } else {
+        return entitiesRevisionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.documentai.v1.Document.EntitiesRevisionOrBuilder>
+        getEntitiesRevisionsOrBuilderList() {
+      if (entitiesRevisionsBuilder_ != null) {
+        return entitiesRevisionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(entitiesRevisions_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public com.google.cloud.documentai.v1.Document.EntitiesRevision.Builder
+        addEntitiesRevisionsBuilder() {
+      return getEntitiesRevisionsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.documentai.v1.Document.EntitiesRevision.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public com.google.cloud.documentai.v1.Document.EntitiesRevision.Builder
+        addEntitiesRevisionsBuilder(int index) {
+      return getEntitiesRevisionsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.documentai.v1.Document.EntitiesRevision.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of entity revisions. The entity revisions are appended to the
+     * document in the processing order. This field can be used for comparing the
+     * entity extraction results at different stages of the processing.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1.Document.EntitiesRevision entities_revisions = 22;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.documentai.v1.Document.EntitiesRevision.Builder>
+        getEntitiesRevisionsBuilderList() {
+      return getEntitiesRevisionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.documentai.v1.Document.EntitiesRevision,
+            com.google.cloud.documentai.v1.Document.EntitiesRevision.Builder,
+            com.google.cloud.documentai.v1.Document.EntitiesRevisionOrBuilder>
+        getEntitiesRevisionsFieldBuilder() {
+      if (entitiesRevisionsBuilder_ == null) {
+        entitiesRevisionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.documentai.v1.Document.EntitiesRevision,
+                com.google.cloud.documentai.v1.Document.EntitiesRevision.Builder,
+                com.google.cloud.documentai.v1.Document.EntitiesRevisionOrBuilder>(
+                entitiesRevisions_,
+                ((bitField0_ & 0x00010000) != 0),
+                getParentForChildren(),
+                isClean());
+        entitiesRevisions_ = null;
+      }
+      return entitiesRevisionsBuilder_;
+    }
+
+    private java.lang.Object entitiesRevisionId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity revision id that `document.entities` field is based on.
+     * If this field is set and `entities_revisions` is not empty, the entities in
+     * `document.entities` field are the entities in the entity revision with this
+     * id and `document.entity_validation_output` field is the
+     * `entity_validation_output` field in this entity revision.
+     * </pre>
+     *
+     * <code>string entities_revision_id = 23;</code>
+     *
+     * @return The entitiesRevisionId.
+     */
+    public java.lang.String getEntitiesRevisionId() {
+      java.lang.Object ref = entitiesRevisionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        entitiesRevisionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity revision id that `document.entities` field is based on.
+     * If this field is set and `entities_revisions` is not empty, the entities in
+     * `document.entities` field are the entities in the entity revision with this
+     * id and `document.entity_validation_output` field is the
+     * `entity_validation_output` field in this entity revision.
+     * </pre>
+     *
+     * <code>string entities_revision_id = 23;</code>
+     *
+     * @return The bytes for entitiesRevisionId.
+     */
+    public com.google.protobuf.ByteString getEntitiesRevisionIdBytes() {
+      java.lang.Object ref = entitiesRevisionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        entitiesRevisionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity revision id that `document.entities` field is based on.
+     * If this field is set and `entities_revisions` is not empty, the entities in
+     * `document.entities` field are the entities in the entity revision with this
+     * id and `document.entity_validation_output` field is the
+     * `entity_validation_output` field in this entity revision.
+     * </pre>
+     *
+     * <code>string entities_revision_id = 23;</code>
+     *
+     * @param value The entitiesRevisionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEntitiesRevisionId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      entitiesRevisionId_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity revision id that `document.entities` field is based on.
+     * If this field is set and `entities_revisions` is not empty, the entities in
+     * `document.entities` field are the entities in the entity revision with this
+     * id and `document.entity_validation_output` field is the
+     * `entity_validation_output` field in this entity revision.
+     * </pre>
+     *
+     * <code>string entities_revision_id = 23;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEntitiesRevisionId() {
+      entitiesRevisionId_ = getDefaultInstance().getEntitiesRevisionId();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The entity revision id that `document.entities` field is based on.
+     * If this field is set and `entities_revisions` is not empty, the entities in
+     * `document.entities` field are the entities in the entity revision with this
+     * id and `document.entity_validation_output` field is the
+     * `entity_validation_output` field in this entity revision.
+     * </pre>
+     *
+     * <code>string entities_revision_id = 23;</code>
+     *
+     * @param value The bytes for entitiesRevisionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEntitiesRevisionIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      entitiesRevisionId_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

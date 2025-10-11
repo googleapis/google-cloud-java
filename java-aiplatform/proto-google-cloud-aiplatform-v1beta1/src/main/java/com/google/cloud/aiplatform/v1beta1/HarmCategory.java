@@ -91,6 +91,16 @@ public enum HarmCategory implements com.google.protobuf.ProtocolMessageEnum {
    */
   @java.lang.Deprecated
   HARM_CATEGORY_CIVIC_INTEGRITY(5),
+  /**
+   *
+   *
+   * <pre>
+   * The harm category is for jailbreak prompts.
+   * </pre>
+   *
+   * <code>HARM_CATEGORY_JAILBREAK = 6;</code>
+   */
+  HARM_CATEGORY_JAILBREAK(6),
   UNRECOGNIZED(-1),
   ;
 
@@ -161,6 +171,17 @@ public enum HarmCategory implements com.google.protobuf.ProtocolMessageEnum {
    */
   @java.lang.Deprecated public static final int HARM_CATEGORY_CIVIC_INTEGRITY_VALUE = 5;
 
+  /**
+   *
+   *
+   * <pre>
+   * The harm category is for jailbreak prompts.
+   * </pre>
+   *
+   * <code>HARM_CATEGORY_JAILBREAK = 6;</code>
+   */
+  public static final int HARM_CATEGORY_JAILBREAK_VALUE = 6;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -197,6 +218,8 @@ public enum HarmCategory implements com.google.protobuf.ProtocolMessageEnum {
         return HARM_CATEGORY_SEXUALLY_EXPLICIT;
       case 5:
         return HARM_CATEGORY_CIVIC_INTEGRITY;
+      case 6:
+        return HARM_CATEGORY_JAILBREAK;
       default:
         return null;
     }

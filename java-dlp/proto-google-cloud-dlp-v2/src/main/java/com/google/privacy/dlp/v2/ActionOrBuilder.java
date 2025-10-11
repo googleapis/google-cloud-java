@@ -184,6 +184,51 @@ public interface ActionOrBuilder
    *
    *
    * <pre>
+   * Publish findings as an aspect to Dataplex Universal Catalog.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog publish_findings_to_dataplex_catalog = 10;
+   * </code>
+   *
+   * @return Whether the publishFindingsToDataplexCatalog field is set.
+   */
+  boolean hasPublishFindingsToDataplexCatalog();
+
+  /**
+   *
+   *
+   * <pre>
+   * Publish findings as an aspect to Dataplex Universal Catalog.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog publish_findings_to_dataplex_catalog = 10;
+   * </code>
+   *
+   * @return The publishFindingsToDataplexCatalog.
+   */
+  com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog
+      getPublishFindingsToDataplexCatalog();
+
+  /**
+   *
+   *
+   * <pre>
+   * Publish findings as an aspect to Dataplex Universal Catalog.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog publish_findings_to_dataplex_catalog = 10;
+   * </code>
+   */
+  com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalogOrBuilder
+      getPublishFindingsToDataplexCatalogOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Create a de-identified copy of the input data.
    * </pre>
    *

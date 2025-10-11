@@ -65,6 +65,1620 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Builder.class);
   }
 
+  public interface ParametersOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The temperature used for sampling during response generation. Value
+     * ranges from 0 to 1. Temperature controls the degree of randomness in
+     * token selection. Lower temperature means less randomness, while higher
+     * temperature means more randomness.
+     * Valid range: [0.0, 1.0]
+     * </pre>
+     *
+     * <code>optional float temperature = 1;</code>
+     *
+     * @return Whether the temperature field is set.
+     */
+    boolean hasTemperature();
+
+    /**
+     *
+     *
+     * <pre>
+     * The temperature used for sampling during response generation. Value
+     * ranges from 0 to 1. Temperature controls the degree of randomness in
+     * token selection. Lower temperature means less randomness, while higher
+     * temperature means more randomness.
+     * Valid range: [0.0, 1.0]
+     * </pre>
+     *
+     * <code>optional float temperature = 1;</code>
+     *
+     * @return The temperature.
+     */
+    float getTemperature();
+
+    /**
+     *
+     *
+     * <pre>
+     * The input token limit.
+     * This setting is currently only supported by playbooks.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit input_token_limit = 2;
+     * </code>
+     *
+     * @return Whether the inputTokenLimit field is set.
+     */
+    boolean hasInputTokenLimit();
+
+    /**
+     *
+     *
+     * <pre>
+     * The input token limit.
+     * This setting is currently only supported by playbooks.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit input_token_limit = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for inputTokenLimit.
+     */
+    int getInputTokenLimitValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The input token limit.
+     * This setting is currently only supported by playbooks.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit input_token_limit = 2;
+     * </code>
+     *
+     * @return The inputTokenLimit.
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit
+        getInputTokenLimit();
+
+    /**
+     *
+     *
+     * <pre>
+     * The output token limit.
+     * This setting is currently only supported by playbooks.
+     * Only one of output_token_limit and max_output_tokens is allowed to be
+     * set.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit output_token_limit = 3;
+     * </code>
+     *
+     * @return Whether the outputTokenLimit field is set.
+     */
+    boolean hasOutputTokenLimit();
+
+    /**
+     *
+     *
+     * <pre>
+     * The output token limit.
+     * This setting is currently only supported by playbooks.
+     * Only one of output_token_limit and max_output_tokens is allowed to be
+     * set.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit output_token_limit = 3;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for outputTokenLimit.
+     */
+    int getOutputTokenLimitValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The output token limit.
+     * This setting is currently only supported by playbooks.
+     * Only one of output_token_limit and max_output_tokens is allowed to be
+     * set.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit output_token_limit = 3;
+     * </code>
+     *
+     * @return The outputTokenLimit.
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit
+        getOutputTokenLimit();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Generative model parameters to control the model behavior.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters}
+   */
+  public static final class Parameters extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters)
+      ParametersOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use Parameters.newBuilder() to construct.
+    private Parameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Parameters() {
+      inputTokenLimit_ = 0;
+      outputTokenLimit_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Parameters();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettingsProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_LlmModelSettings_Parameters_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettingsProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_LlmModelSettings_Parameters_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.class,
+              com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The input token limits for 1 LLM call. For the limit of each model, see
+     * https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models for
+     * more information.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit}
+     */
+    public enum InputTokenLimit implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Limit not specified. Treated as 'INPUT_TOKEN_LIMIT_SHORT'.
+       * </pre>
+       *
+       * <code>INPUT_TOKEN_LIMIT_UNSPECIFIED = 0;</code>
+       */
+      INPUT_TOKEN_LIMIT_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Input token limit up to 8k.
+       * </pre>
+       *
+       * <code>INPUT_TOKEN_LIMIT_SHORT = 1;</code>
+       */
+      INPUT_TOKEN_LIMIT_SHORT(1),
+      /**
+       *
+       *
+       * <pre>
+       * Input token limit up to 32k.
+       * </pre>
+       *
+       * <code>INPUT_TOKEN_LIMIT_MEDIUM = 2;</code>
+       */
+      INPUT_TOKEN_LIMIT_MEDIUM(2),
+      /**
+       *
+       *
+       * <pre>
+       * Input token limit up to 100k.
+       * </pre>
+       *
+       * <code>INPUT_TOKEN_LIMIT_LONG = 3;</code>
+       */
+      INPUT_TOKEN_LIMIT_LONG(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Limit not specified. Treated as 'INPUT_TOKEN_LIMIT_SHORT'.
+       * </pre>
+       *
+       * <code>INPUT_TOKEN_LIMIT_UNSPECIFIED = 0;</code>
+       */
+      public static final int INPUT_TOKEN_LIMIT_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Input token limit up to 8k.
+       * </pre>
+       *
+       * <code>INPUT_TOKEN_LIMIT_SHORT = 1;</code>
+       */
+      public static final int INPUT_TOKEN_LIMIT_SHORT_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Input token limit up to 32k.
+       * </pre>
+       *
+       * <code>INPUT_TOKEN_LIMIT_MEDIUM = 2;</code>
+       */
+      public static final int INPUT_TOKEN_LIMIT_MEDIUM_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Input token limit up to 100k.
+       * </pre>
+       *
+       * <code>INPUT_TOKEN_LIMIT_LONG = 3;</code>
+       */
+      public static final int INPUT_TOKEN_LIMIT_LONG_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static InputTokenLimit valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static InputTokenLimit forNumber(int value) {
+        switch (value) {
+          case 0:
+            return INPUT_TOKEN_LIMIT_UNSPECIFIED;
+          case 1:
+            return INPUT_TOKEN_LIMIT_SHORT;
+          case 2:
+            return INPUT_TOKEN_LIMIT_MEDIUM;
+          case 3:
+            return INPUT_TOKEN_LIMIT_LONG;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<InputTokenLimit>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<InputTokenLimit>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<InputTokenLimit>() {
+                public InputTokenLimit findValueByNumber(int number) {
+                  return InputTokenLimit.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final InputTokenLimit[] VALUES = values();
+
+      public static InputTokenLimit valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private InputTokenLimit(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The output token limits for 1 LLM call. The limits are subject to change.
+     * For the limit of each model, see
+     * https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models for
+     * more information.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit}
+     */
+    public enum OutputTokenLimit implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Limit not specified.
+       * </pre>
+       *
+       * <code>OUTPUT_TOKEN_LIMIT_UNSPECIFIED = 0;</code>
+       */
+      OUTPUT_TOKEN_LIMIT_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Input token limit up to 512 tokens.
+       * </pre>
+       *
+       * <code>OUTPUT_TOKEN_LIMIT_SHORT = 1;</code>
+       */
+      OUTPUT_TOKEN_LIMIT_SHORT(1),
+      /**
+       *
+       *
+       * <pre>
+       * Input token limit up to 1k.
+       * </pre>
+       *
+       * <code>OUTPUT_TOKEN_LIMIT_MEDIUM = 2;</code>
+       */
+      OUTPUT_TOKEN_LIMIT_MEDIUM(2),
+      /**
+       *
+       *
+       * <pre>
+       * Input token limit up to 2k.
+       * </pre>
+       *
+       * <code>OUTPUT_TOKEN_LIMIT_LONG = 3;</code>
+       */
+      OUTPUT_TOKEN_LIMIT_LONG(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Limit not specified.
+       * </pre>
+       *
+       * <code>OUTPUT_TOKEN_LIMIT_UNSPECIFIED = 0;</code>
+       */
+      public static final int OUTPUT_TOKEN_LIMIT_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Input token limit up to 512 tokens.
+       * </pre>
+       *
+       * <code>OUTPUT_TOKEN_LIMIT_SHORT = 1;</code>
+       */
+      public static final int OUTPUT_TOKEN_LIMIT_SHORT_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Input token limit up to 1k.
+       * </pre>
+       *
+       * <code>OUTPUT_TOKEN_LIMIT_MEDIUM = 2;</code>
+       */
+      public static final int OUTPUT_TOKEN_LIMIT_MEDIUM_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Input token limit up to 2k.
+       * </pre>
+       *
+       * <code>OUTPUT_TOKEN_LIMIT_LONG = 3;</code>
+       */
+      public static final int OUTPUT_TOKEN_LIMIT_LONG_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static OutputTokenLimit valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static OutputTokenLimit forNumber(int value) {
+        switch (value) {
+          case 0:
+            return OUTPUT_TOKEN_LIMIT_UNSPECIFIED;
+          case 1:
+            return OUTPUT_TOKEN_LIMIT_SHORT;
+          case 2:
+            return OUTPUT_TOKEN_LIMIT_MEDIUM;
+          case 3:
+            return OUTPUT_TOKEN_LIMIT_LONG;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<OutputTokenLimit>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<OutputTokenLimit>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<OutputTokenLimit>() {
+                public OutputTokenLimit findValueByNumber(int number) {
+                  return OutputTokenLimit.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final OutputTokenLimit[] VALUES = values();
+
+      public static OutputTokenLimit valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private OutputTokenLimit(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit)
+    }
+
+    private int bitField0_;
+    public static final int TEMPERATURE_FIELD_NUMBER = 1;
+    private float temperature_ = 0F;
+
+    /**
+     *
+     *
+     * <pre>
+     * The temperature used for sampling during response generation. Value
+     * ranges from 0 to 1. Temperature controls the degree of randomness in
+     * token selection. Lower temperature means less randomness, while higher
+     * temperature means more randomness.
+     * Valid range: [0.0, 1.0]
+     * </pre>
+     *
+     * <code>optional float temperature = 1;</code>
+     *
+     * @return Whether the temperature field is set.
+     */
+    @java.lang.Override
+    public boolean hasTemperature() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The temperature used for sampling during response generation. Value
+     * ranges from 0 to 1. Temperature controls the degree of randomness in
+     * token selection. Lower temperature means less randomness, while higher
+     * temperature means more randomness.
+     * Valid range: [0.0, 1.0]
+     * </pre>
+     *
+     * <code>optional float temperature = 1;</code>
+     *
+     * @return The temperature.
+     */
+    @java.lang.Override
+    public float getTemperature() {
+      return temperature_;
+    }
+
+    public static final int INPUT_TOKEN_LIMIT_FIELD_NUMBER = 2;
+    private int inputTokenLimit_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The input token limit.
+     * This setting is currently only supported by playbooks.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit input_token_limit = 2;
+     * </code>
+     *
+     * @return Whether the inputTokenLimit field is set.
+     */
+    @java.lang.Override
+    public boolean hasInputTokenLimit() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The input token limit.
+     * This setting is currently only supported by playbooks.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit input_token_limit = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for inputTokenLimit.
+     */
+    @java.lang.Override
+    public int getInputTokenLimitValue() {
+      return inputTokenLimit_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The input token limit.
+     * This setting is currently only supported by playbooks.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit input_token_limit = 2;
+     * </code>
+     *
+     * @return The inputTokenLimit.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit
+        getInputTokenLimit() {
+      com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit result =
+          com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit
+              .forNumber(inputTokenLimit_);
+      return result == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int OUTPUT_TOKEN_LIMIT_FIELD_NUMBER = 3;
+    private int outputTokenLimit_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The output token limit.
+     * This setting is currently only supported by playbooks.
+     * Only one of output_token_limit and max_output_tokens is allowed to be
+     * set.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit output_token_limit = 3;
+     * </code>
+     *
+     * @return Whether the outputTokenLimit field is set.
+     */
+    @java.lang.Override
+    public boolean hasOutputTokenLimit() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The output token limit.
+     * This setting is currently only supported by playbooks.
+     * Only one of output_token_limit and max_output_tokens is allowed to be
+     * set.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit output_token_limit = 3;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for outputTokenLimit.
+     */
+    @java.lang.Override
+    public int getOutputTokenLimitValue() {
+      return outputTokenLimit_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The output token limit.
+     * This setting is currently only supported by playbooks.
+     * Only one of output_token_limit and max_output_tokens is allowed to be
+     * set.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit output_token_limit = 3;
+     * </code>
+     *
+     * @return The outputTokenLimit.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit
+        getOutputTokenLimit() {
+      com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit result =
+          com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit
+              .forNumber(outputTokenLimit_);
+      return result == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeFloat(1, temperature_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeEnum(2, inputTokenLimit_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeEnum(3, outputTokenLimit_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, temperature_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, inputTokenLimit_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, outputTokenLimit_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters other =
+          (com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters) obj;
+
+      if (hasTemperature() != other.hasTemperature()) return false;
+      if (hasTemperature()) {
+        if (java.lang.Float.floatToIntBits(getTemperature())
+            != java.lang.Float.floatToIntBits(other.getTemperature())) return false;
+      }
+      if (hasInputTokenLimit() != other.hasInputTokenLimit()) return false;
+      if (hasInputTokenLimit()) {
+        if (inputTokenLimit_ != other.inputTokenLimit_) return false;
+      }
+      if (hasOutputTokenLimit() != other.hasOutputTokenLimit()) return false;
+      if (hasOutputTokenLimit()) {
+        if (outputTokenLimit_ != other.outputTokenLimit_) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTemperature()) {
+        hash = (37 * hash) + TEMPERATURE_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getTemperature());
+      }
+      if (hasInputTokenLimit()) {
+        hash = (37 * hash) + INPUT_TOKEN_LIMIT_FIELD_NUMBER;
+        hash = (53 * hash) + inputTokenLimit_;
+      }
+      if (hasOutputTokenLimit()) {
+        hash = (37 * hash) + OUTPUT_TOKEN_LIMIT_FIELD_NUMBER;
+        hash = (53 * hash) + outputTokenLimit_;
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generative model parameters to control the model behavior.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters)
+        com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.ParametersOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_LlmModelSettings_Parameters_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_LlmModelSettings_Parameters_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.class,
+                com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        temperature_ = 0F;
+        inputTokenLimit_ = 0;
+        outputTokenLimit_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_LlmModelSettings_Parameters_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters build() {
+        com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters result =
+            new com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.temperature_ = temperature_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.inputTokenLimit_ = inputTokenLimit_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.outputTokenLimit_ = outputTokenLimit_;
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters
+                .getDefaultInstance()) return this;
+        if (other.hasTemperature()) {
+          setTemperature(other.getTemperature());
+        }
+        if (other.hasInputTokenLimit()) {
+          setInputTokenLimit(other.getInputTokenLimit());
+        }
+        if (other.hasOutputTokenLimit()) {
+          setOutputTokenLimit(other.getOutputTokenLimit());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13:
+                {
+                  temperature_ = input.readFloat();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 13
+              case 16:
+                {
+                  inputTokenLimit_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  outputTokenLimit_ = input.readEnum();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private float temperature_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The temperature used for sampling during response generation. Value
+       * ranges from 0 to 1. Temperature controls the degree of randomness in
+       * token selection. Lower temperature means less randomness, while higher
+       * temperature means more randomness.
+       * Valid range: [0.0, 1.0]
+       * </pre>
+       *
+       * <code>optional float temperature = 1;</code>
+       *
+       * @return Whether the temperature field is set.
+       */
+      @java.lang.Override
+      public boolean hasTemperature() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The temperature used for sampling during response generation. Value
+       * ranges from 0 to 1. Temperature controls the degree of randomness in
+       * token selection. Lower temperature means less randomness, while higher
+       * temperature means more randomness.
+       * Valid range: [0.0, 1.0]
+       * </pre>
+       *
+       * <code>optional float temperature = 1;</code>
+       *
+       * @return The temperature.
+       */
+      @java.lang.Override
+      public float getTemperature() {
+        return temperature_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The temperature used for sampling during response generation. Value
+       * ranges from 0 to 1. Temperature controls the degree of randomness in
+       * token selection. Lower temperature means less randomness, while higher
+       * temperature means more randomness.
+       * Valid range: [0.0, 1.0]
+       * </pre>
+       *
+       * <code>optional float temperature = 1;</code>
+       *
+       * @param value The temperature to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTemperature(float value) {
+
+        temperature_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The temperature used for sampling during response generation. Value
+       * ranges from 0 to 1. Temperature controls the degree of randomness in
+       * token selection. Lower temperature means less randomness, while higher
+       * temperature means more randomness.
+       * Valid range: [0.0, 1.0]
+       * </pre>
+       *
+       * <code>optional float temperature = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTemperature() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        temperature_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private int inputTokenLimit_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The input token limit.
+       * This setting is currently only supported by playbooks.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit input_token_limit = 2;
+       * </code>
+       *
+       * @return Whether the inputTokenLimit field is set.
+       */
+      @java.lang.Override
+      public boolean hasInputTokenLimit() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The input token limit.
+       * This setting is currently only supported by playbooks.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit input_token_limit = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for inputTokenLimit.
+       */
+      @java.lang.Override
+      public int getInputTokenLimitValue() {
+        return inputTokenLimit_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The input token limit.
+       * This setting is currently only supported by playbooks.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit input_token_limit = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for inputTokenLimit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInputTokenLimitValue(int value) {
+        inputTokenLimit_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The input token limit.
+       * This setting is currently only supported by playbooks.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit input_token_limit = 2;
+       * </code>
+       *
+       * @return The inputTokenLimit.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit
+          getInputTokenLimit() {
+        com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit result =
+            com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit
+                .forNumber(inputTokenLimit_);
+        return result == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The input token limit.
+       * This setting is currently only supported by playbooks.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit input_token_limit = 2;
+       * </code>
+       *
+       * @param value The inputTokenLimit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInputTokenLimit(
+          com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        inputTokenLimit_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The input token limit.
+       * This setting is currently only supported by playbooks.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.InputTokenLimit input_token_limit = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearInputTokenLimit() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        inputTokenLimit_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int outputTokenLimit_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The output token limit.
+       * This setting is currently only supported by playbooks.
+       * Only one of output_token_limit and max_output_tokens is allowed to be
+       * set.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit output_token_limit = 3;
+       * </code>
+       *
+       * @return Whether the outputTokenLimit field is set.
+       */
+      @java.lang.Override
+      public boolean hasOutputTokenLimit() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The output token limit.
+       * This setting is currently only supported by playbooks.
+       * Only one of output_token_limit and max_output_tokens is allowed to be
+       * set.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit output_token_limit = 3;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for outputTokenLimit.
+       */
+      @java.lang.Override
+      public int getOutputTokenLimitValue() {
+        return outputTokenLimit_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The output token limit.
+       * This setting is currently only supported by playbooks.
+       * Only one of output_token_limit and max_output_tokens is allowed to be
+       * set.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit output_token_limit = 3;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for outputTokenLimit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOutputTokenLimitValue(int value) {
+        outputTokenLimit_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The output token limit.
+       * This setting is currently only supported by playbooks.
+       * Only one of output_token_limit and max_output_tokens is allowed to be
+       * set.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit output_token_limit = 3;
+       * </code>
+       *
+       * @return The outputTokenLimit.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit
+          getOutputTokenLimit() {
+        com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit result =
+            com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit
+                .forNumber(outputTokenLimit_);
+        return result == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The output token limit.
+       * This setting is currently only supported by playbooks.
+       * Only one of output_token_limit and max_output_tokens is allowed to be
+       * set.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit output_token_limit = 3;
+       * </code>
+       *
+       * @param value The outputTokenLimit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOutputTokenLimit(
+          com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        outputTokenLimit_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The output token limit.
+       * This setting is currently only supported by playbooks.
+       * Only one of output_token_limit and max_output_tokens is allowed to be
+       * set.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.OutputTokenLimit output_token_limit = 3;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOutputTokenLimit() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        outputTokenLimit_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Parameters> PARSER =
+        new com.google.protobuf.AbstractParser<Parameters>() {
+          @java.lang.Override
+          public Parameters parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Parameters> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Parameters> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int MODEL_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -171,6 +1785,60 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int PARAMETERS_FIELD_NUMBER = 4;
+  private com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parameters_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Generative model parameters.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parameters = 4;</code>
+   *
+   * @return Whether the parameters field is set.
+   */
+  @java.lang.Override
+  public boolean hasParameters() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Generative model parameters.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parameters = 4;</code>
+   *
+   * @return The parameters.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters getParameters() {
+    return parameters_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.getDefaultInstance()
+        : parameters_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Generative model parameters.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parameters = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.ParametersOrBuilder
+      getParametersOrBuilder() {
+    return parameters_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.getDefaultInstance()
+        : parameters_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -191,6 +1859,9 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(promptText_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, promptText_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(4, getParameters());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -205,6 +1876,9 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(promptText_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, promptText_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getParameters());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -224,6 +1898,10 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
 
     if (!getModel().equals(other.getModel())) return false;
     if (!getPromptText().equals(other.getPromptText())) return false;
+    if (hasParameters() != other.hasParameters()) return false;
+    if (hasParameters()) {
+      if (!getParameters().equals(other.getParameters())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -239,6 +1917,10 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getModel().hashCode();
     hash = (37 * hash) + PROMPT_TEXT_FIELD_NUMBER;
     hash = (53 * hash) + getPromptText().hashCode();
+    if (hasParameters()) {
+      hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getParameters().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -370,10 +2052,19 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getParametersFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -382,6 +2073,11 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       model_ = "";
       promptText_ = "";
+      parameters_ = null;
+      if (parametersBuilder_ != null) {
+        parametersBuilder_.dispose();
+        parametersBuilder_ = null;
+      }
       return this;
     }
 
@@ -424,6 +2120,12 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.promptText_ = promptText_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.parameters_ = parametersBuilder_ == null ? parameters_ : parametersBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -482,6 +2184,9 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasParameters()) {
+        mergeParameters(other.getParameters());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -520,6 +2225,12 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 34:
+              {
+                input.readMessage(getParametersFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -759,6 +2470,210 @@ public final class LlmModelSettings extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parameters_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters,
+            com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.ParametersOrBuilder>
+        parametersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Generative model parameters.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parameters = 4;</code>
+     *
+     * @return Whether the parameters field is set.
+     */
+    public boolean hasParameters() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generative model parameters.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parameters = 4;</code>
+     *
+     * @return The parameters.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters getParameters() {
+      if (parametersBuilder_ == null) {
+        return parameters_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters
+                .getDefaultInstance()
+            : parameters_;
+      } else {
+        return parametersBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generative model parameters.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parameters = 4;</code>
+     */
+    public Builder setParameters(
+        com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters value) {
+      if (parametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        parameters_ = value;
+      } else {
+        parametersBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generative model parameters.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parameters = 4;</code>
+     */
+    public Builder setParameters(
+        com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.Builder
+            builderForValue) {
+      if (parametersBuilder_ == null) {
+        parameters_ = builderForValue.build();
+      } else {
+        parametersBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generative model parameters.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parameters = 4;</code>
+     */
+    public Builder mergeParameters(
+        com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters value) {
+      if (parametersBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && parameters_ != null
+            && parameters_
+                != com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters
+                    .getDefaultInstance()) {
+          getParametersBuilder().mergeFrom(value);
+        } else {
+          parameters_ = value;
+        }
+      } else {
+        parametersBuilder_.mergeFrom(value);
+      }
+      if (parameters_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generative model parameters.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parameters = 4;</code>
+     */
+    public Builder clearParameters() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      parameters_ = null;
+      if (parametersBuilder_ != null) {
+        parametersBuilder_.dispose();
+        parametersBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generative model parameters.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parameters = 4;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.Builder
+        getParametersBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getParametersFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generative model parameters.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parameters = 4;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.ParametersOrBuilder
+        getParametersOrBuilder() {
+      if (parametersBuilder_ != null) {
+        return parametersBuilder_.getMessageOrBuilder();
+      } else {
+        return parameters_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters
+                .getDefaultInstance()
+            : parameters_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generative model parameters.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parameters = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters,
+            com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.ParametersOrBuilder>
+        getParametersFieldBuilder() {
+      if (parametersBuilder_ == null) {
+        parametersBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters,
+                com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.ParametersOrBuilder>(
+                getParameters(), getParentForChildren(), isClean());
+        parameters_ = null;
+      }
+      return parametersBuilder_;
     }
 
     @java.lang.Override

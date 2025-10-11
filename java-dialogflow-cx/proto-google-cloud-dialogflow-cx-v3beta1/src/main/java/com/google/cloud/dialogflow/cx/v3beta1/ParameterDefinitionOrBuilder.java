@@ -28,7 +28,7 @@ public interface ParameterDefinitionOrBuilder
    *
    *
    * <pre>
-   * Name of parameter.
+   * Required. Name of parameter.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,7 +41,7 @@ public interface ParameterDefinitionOrBuilder
    *
    *
    * <pre>
-   * Name of parameter.
+   * Required. Name of parameter.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -58,11 +58,14 @@ public interface ParameterDefinitionOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.type is deprecated. See
+   *     google/cloud/dialogflow/cx/v3beta1/parameter_definition.proto;l=59
    * @return The enum numeric value on the wire for type.
    */
+  @java.lang.Deprecated
   int getTypeValue();
 
   /**
@@ -73,12 +76,58 @@ public interface ParameterDefinitionOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType type = 2 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.type is deprecated. See
+   *     google/cloud/dialogflow/cx/v3beta1/parameter_definition.proto;l=59
    * @return The type.
    */
+  @java.lang.Deprecated
   com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinition.ParameterType getType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type schema of parameter.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.TypeSchema type_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the typeSchema field is set.
+   */
+  boolean hasTypeSchema();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type schema of parameter.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.TypeSchema type_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The typeSchema.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.TypeSchema getTypeSchema();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type schema of parameter.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.TypeSchema type_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.TypeSchemaOrBuilder getTypeSchemaOrBuilder();
 
   /**
    *

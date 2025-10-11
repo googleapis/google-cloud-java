@@ -104,6 +104,8 @@ public interface ListConnectionsRequestOrBuilder
    *
    * <pre>
    * Optional. Supported field/value: `state` - MISSING|AVAILABLE|ERROR
+   *
+   * The syntax is based on https://google.aip.dev/160.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -117,6 +119,8 @@ public interface ListConnectionsRequestOrBuilder
    *
    * <pre>
    * Optional. Supported field/value: `state` - MISSING|AVAILABLE|ERROR
+   *
+   * The syntax is based on https://google.aip.dev/160.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

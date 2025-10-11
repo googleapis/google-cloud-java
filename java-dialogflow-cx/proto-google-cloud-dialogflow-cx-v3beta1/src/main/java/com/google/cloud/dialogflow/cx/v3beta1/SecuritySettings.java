@@ -686,6 +686,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Filename pattern for exported audio.
+     * {conversation} and {timestamp} are placeholders that will be replaced
+     * with the conversation ID and epoch micros of the conversation.
+     * For example, "{conversation}/recording_{timestamp}.mulaw".
      * </pre>
      *
      * <code>string audio_export_pattern = 2;</code>
@@ -699,6 +702,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Filename pattern for exported audio.
+     * {conversation} and {timestamp} are placeholders that will be replaced
+     * with the conversation ID and epoch micros of the conversation.
+     * For example, "{conversation}/recording_{timestamp}.mulaw".
      * </pre>
      *
      * <code>string audio_export_pattern = 2;</code>
@@ -1076,6 +1082,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Filename pattern for exported audio.
+     * {conversation} and {timestamp} are placeholders that will be replaced
+     * with the conversation ID and epoch micros of the conversation.
+     * For example, "{conversation}/recording_{timestamp}.mulaw".
      * </pre>
      *
      * <code>string audio_export_pattern = 2;</code>
@@ -1100,6 +1109,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Filename pattern for exported audio.
+     * {conversation} and {timestamp} are placeholders that will be replaced
+     * with the conversation ID and epoch micros of the conversation.
+     * For example, "{conversation}/recording_{timestamp}.mulaw".
      * </pre>
      *
      * <code>string audio_export_pattern = 2;</code>
@@ -1810,6 +1822,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Filename pattern for exported audio.
+       * {conversation} and {timestamp} are placeholders that will be replaced
+       * with the conversation ID and epoch micros of the conversation.
+       * For example, "{conversation}/recording_{timestamp}.mulaw".
        * </pre>
        *
        * <code>string audio_export_pattern = 2;</code>
@@ -1833,6 +1848,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Filename pattern for exported audio.
+       * {conversation} and {timestamp} are placeholders that will be replaced
+       * with the conversation ID and epoch micros of the conversation.
+       * For example, "{conversation}/recording_{timestamp}.mulaw".
        * </pre>
        *
        * <code>string audio_export_pattern = 2;</code>
@@ -1856,6 +1874,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Filename pattern for exported audio.
+       * {conversation} and {timestamp} are placeholders that will be replaced
+       * with the conversation ID and epoch micros of the conversation.
+       * For example, "{conversation}/recording_{timestamp}.mulaw".
        * </pre>
        *
        * <code>string audio_export_pattern = 2;</code>
@@ -1878,6 +1899,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Filename pattern for exported audio.
+       * {conversation} and {timestamp} are placeholders that will be replaced
+       * with the conversation ID and epoch micros of the conversation.
+       * For example, "{conversation}/recording_{timestamp}.mulaw".
        * </pre>
        *
        * <code>string audio_export_pattern = 2;</code>
@@ -1896,6 +1920,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Filename pattern for exported audio.
+       * {conversation} and {timestamp} are placeholders that will be replaced
+       * with the conversation ID and epoch micros of the conversation.
+       * For example, "{conversation}/recording_{timestamp}.mulaw".
        * </pre>
        *
        * <code>string audio_export_pattern = 2;</code>

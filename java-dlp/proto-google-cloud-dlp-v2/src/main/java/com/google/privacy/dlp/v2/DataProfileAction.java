@@ -4361,11 +4361,12 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether creating a Dataplex Catalog aspect for a profiled resource should
-     * lower the risk of the profile for that resource. This also lowers the
-     * data risk of resources at the lower levels of the resource hierarchy. For
-     * example, reducing the data risk of a table data profile also reduces the
-     * data risk of the constituent column data profiles.
+     * Whether creating a Dataplex Universal Catalog aspect for a profiled
+     * resource should lower the risk of the profile for that resource. This
+     * also lowers the data risk of resources at the lower levels of the
+     * resource hierarchy. For example, reducing the data risk of a table data
+     * profile also reduces the data risk of the constituent column data
+     * profiles.
      * </pre>
      *
      * <code>bool lower_data_risk_to_low = 1;</code>
@@ -4379,9 +4380,9 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Create Dataplex Catalog aspects for profiled resources with the aspect type
-   * Sensitive Data Protection Profile. To learn more about aspects, see
-   * https://cloud.google.com/sensitive-data-protection/docs/add-aspects.
+   * Create Dataplex Universal Catalog aspects for profiled resources with the
+   * aspect type Sensitive Data Protection Profile. To learn more about aspects,
+   * see https://cloud.google.com/sensitive-data-protection/docs/add-aspects.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.DataProfileAction.PublishToDataplexCatalog}
@@ -4427,11 +4428,12 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether creating a Dataplex Catalog aspect for a profiled resource should
-     * lower the risk of the profile for that resource. This also lowers the
-     * data risk of resources at the lower levels of the resource hierarchy. For
-     * example, reducing the data risk of a table data profile also reduces the
-     * data risk of the constituent column data profiles.
+     * Whether creating a Dataplex Universal Catalog aspect for a profiled
+     * resource should lower the risk of the profile for that resource. This
+     * also lowers the data risk of resources at the lower levels of the
+     * resource hierarchy. For example, reducing the data risk of a table data
+     * profile also reduces the data risk of the constituent column data
+     * profiles.
      * </pre>
      *
      * <code>bool lower_data_risk_to_low = 1;</code>
@@ -4610,9 +4612,9 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Create Dataplex Catalog aspects for profiled resources with the aspect type
-     * Sensitive Data Protection Profile. To learn more about aspects, see
-     * https://cloud.google.com/sensitive-data-protection/docs/add-aspects.
+     * Create Dataplex Universal Catalog aspects for profiled resources with the
+     * aspect type Sensitive Data Protection Profile. To learn more about aspects,
+     * see https://cloud.google.com/sensitive-data-protection/docs/add-aspects.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.DataProfileAction.PublishToDataplexCatalog}
@@ -4806,11 +4808,12 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Whether creating a Dataplex Catalog aspect for a profiled resource should
-       * lower the risk of the profile for that resource. This also lowers the
-       * data risk of resources at the lower levels of the resource hierarchy. For
-       * example, reducing the data risk of a table data profile also reduces the
-       * data risk of the constituent column data profiles.
+       * Whether creating a Dataplex Universal Catalog aspect for a profiled
+       * resource should lower the risk of the profile for that resource. This
+       * also lowers the data risk of resources at the lower levels of the
+       * resource hierarchy. For example, reducing the data risk of a table data
+       * profile also reduces the data risk of the constituent column data
+       * profiles.
        * </pre>
        *
        * <code>bool lower_data_risk_to_low = 1;</code>
@@ -4826,11 +4829,12 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Whether creating a Dataplex Catalog aspect for a profiled resource should
-       * lower the risk of the profile for that resource. This also lowers the
-       * data risk of resources at the lower levels of the resource hierarchy. For
-       * example, reducing the data risk of a table data profile also reduces the
-       * data risk of the constituent column data profiles.
+       * Whether creating a Dataplex Universal Catalog aspect for a profiled
+       * resource should lower the risk of the profile for that resource. This
+       * also lowers the data risk of resources at the lower levels of the
+       * resource hierarchy. For example, reducing the data risk of a table data
+       * profile also reduces the data risk of the constituent column data
+       * profiles.
        * </pre>
        *
        * <code>bool lower_data_risk_to_low = 1;</code>
@@ -4850,11 +4854,12 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Whether creating a Dataplex Catalog aspect for a profiled resource should
-       * lower the risk of the profile for that resource. This also lowers the
-       * data risk of resources at the lower levels of the resource hierarchy. For
-       * example, reducing the data risk of a table data profile also reduces the
-       * data risk of the constituent column data profiles.
+       * Whether creating a Dataplex Universal Catalog aspect for a profiled
+       * resource should lower the risk of the profile for that resource. This
+       * also lowers the data risk of resources at the lower levels of the
+       * resource hierarchy. For example, reducing the data risk of a table data
+       * profile also reduces the data risk of the constituent column data
+       * profiles.
        * </pre>
        *
        * <code>bool lower_data_risk_to_low = 1;</code>
@@ -6432,7 +6437,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The namespaced name for the tag value to attach to resources. Must be
        * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
-       * example, "123456/environment/prod".
+       * example, "123456/environment/prod" for an organization parent, or
+       * "my-project/environment/prod" for a project parent.
        * </pre>
        *
        * <code>string namespaced_value = 1;</code>
@@ -6447,7 +6453,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The namespaced name for the tag value to attach to resources. Must be
        * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
-       * example, "123456/environment/prod".
+       * example, "123456/environment/prod" for an organization parent, or
+       * "my-project/environment/prod" for a project parent.
        * </pre>
        *
        * <code>string namespaced_value = 1;</code>
@@ -6462,7 +6469,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The namespaced name for the tag value to attach to resources. Must be
        * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
-       * example, "123456/environment/prod".
+       * example, "123456/environment/prod" for an organization parent, or
+       * "my-project/environment/prod" for a project parent.
        * </pre>
        *
        * <code>string namespaced_value = 1;</code>
@@ -6572,7 +6580,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The namespaced name for the tag value to attach to resources. Must be
        * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
-       * example, "123456/environment/prod".
+       * example, "123456/environment/prod" for an organization parent, or
+       * "my-project/environment/prod" for a project parent.
        * </pre>
        *
        * <code>string namespaced_value = 1;</code>
@@ -6589,7 +6598,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The namespaced name for the tag value to attach to resources. Must be
        * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
-       * example, "123456/environment/prod".
+       * example, "123456/environment/prod" for an organization parent, or
+       * "my-project/environment/prod" for a project parent.
        * </pre>
        *
        * <code>string namespaced_value = 1;</code>
@@ -6619,7 +6629,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The namespaced name for the tag value to attach to resources. Must be
        * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
-       * example, "123456/environment/prod".
+       * example, "123456/environment/prod" for an organization parent, or
+       * "my-project/environment/prod" for a project parent.
        * </pre>
        *
        * <code>string namespaced_value = 1;</code>
@@ -7047,7 +7058,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
          * <pre>
          * The namespaced name for the tag value to attach to resources. Must be
          * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
-         * example, "123456/environment/prod".
+         * example, "123456/environment/prod" for an organization parent, or
+         * "my-project/environment/prod" for a project parent.
          * </pre>
          *
          * <code>string namespaced_value = 1;</code>
@@ -7065,7 +7077,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
          * <pre>
          * The namespaced name for the tag value to attach to resources. Must be
          * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
-         * example, "123456/environment/prod".
+         * example, "123456/environment/prod" for an organization parent, or
+         * "my-project/environment/prod" for a project parent.
          * </pre>
          *
          * <code>string namespaced_value = 1;</code>
@@ -7096,7 +7109,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
          * <pre>
          * The namespaced name for the tag value to attach to resources. Must be
          * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
-         * example, "123456/environment/prod".
+         * example, "123456/environment/prod" for an organization parent, or
+         * "my-project/environment/prod" for a project parent.
          * </pre>
          *
          * <code>string namespaced_value = 1;</code>
@@ -7127,7 +7141,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
          * <pre>
          * The namespaced name for the tag value to attach to resources. Must be
          * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
-         * example, "123456/environment/prod".
+         * example, "123456/environment/prod" for an organization parent, or
+         * "my-project/environment/prod" for a project parent.
          * </pre>
          *
          * <code>string namespaced_value = 1;</code>
@@ -7151,7 +7166,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
          * <pre>
          * The namespaced name for the tag value to attach to resources. Must be
          * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
-         * example, "123456/environment/prod".
+         * example, "123456/environment/prod" for an organization parent, or
+         * "my-project/environment/prod" for a project parent.
          * </pre>
          *
          * <code>string namespaced_value = 1;</code>
@@ -7173,7 +7189,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
          * <pre>
          * The namespaced name for the tag value to attach to resources. Must be
          * in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
-         * example, "123456/environment/prod".
+         * example, "123456/environment/prod" for an organization parent, or
+         * "my-project/environment/prod" for a project parent.
          * </pre>
          *
          * <code>string namespaced_value = 1;</code>
@@ -9252,8 +9269,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Publishes a portion of each profile to Dataplex Catalog with the aspect
-   * type Sensitive Data Protection Profile.
+   * Publishes a portion of each profile to Dataplex Universal Catalog with
+   * the aspect type Sensitive Data Protection Profile.
    * </pre>
    *
    * <code>
@@ -9271,8 +9288,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Publishes a portion of each profile to Dataplex Catalog with the aspect
-   * type Sensitive Data Protection Profile.
+   * Publishes a portion of each profile to Dataplex Universal Catalog with
+   * the aspect type Sensitive Data Protection Profile.
    * </pre>
    *
    * <code>
@@ -9295,8 +9312,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Publishes a portion of each profile to Dataplex Catalog with the aspect
-   * type Sensitive Data Protection Profile.
+   * Publishes a portion of each profile to Dataplex Universal Catalog with
+   * the aspect type Sensitive Data Protection Profile.
    * </pre>
    *
    * <code>
@@ -11068,8 +11085,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes a portion of each profile to Dataplex Catalog with the aspect
-     * type Sensitive Data Protection Profile.
+     * Publishes a portion of each profile to Dataplex Universal Catalog with
+     * the aspect type Sensitive Data Protection Profile.
      * </pre>
      *
      * <code>
@@ -11087,8 +11104,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes a portion of each profile to Dataplex Catalog with the aspect
-     * type Sensitive Data Protection Profile.
+     * Publishes a portion of each profile to Dataplex Universal Catalog with
+     * the aspect type Sensitive Data Protection Profile.
      * </pre>
      *
      * <code>
@@ -11119,8 +11136,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes a portion of each profile to Dataplex Catalog with the aspect
-     * type Sensitive Data Protection Profile.
+     * Publishes a portion of each profile to Dataplex Universal Catalog with
+     * the aspect type Sensitive Data Protection Profile.
      * </pre>
      *
      * <code>
@@ -11146,8 +11163,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes a portion of each profile to Dataplex Catalog with the aspect
-     * type Sensitive Data Protection Profile.
+     * Publishes a portion of each profile to Dataplex Universal Catalog with
+     * the aspect type Sensitive Data Protection Profile.
      * </pre>
      *
      * <code>
@@ -11171,8 +11188,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes a portion of each profile to Dataplex Catalog with the aspect
-     * type Sensitive Data Protection Profile.
+     * Publishes a portion of each profile to Dataplex Universal Catalog with
+     * the aspect type Sensitive Data Protection Profile.
      * </pre>
      *
      * <code>
@@ -11211,8 +11228,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes a portion of each profile to Dataplex Catalog with the aspect
-     * type Sensitive Data Protection Profile.
+     * Publishes a portion of each profile to Dataplex Universal Catalog with
+     * the aspect type Sensitive Data Protection Profile.
      * </pre>
      *
      * <code>
@@ -11240,8 +11257,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes a portion of each profile to Dataplex Catalog with the aspect
-     * type Sensitive Data Protection Profile.
+     * Publishes a portion of each profile to Dataplex Universal Catalog with
+     * the aspect type Sensitive Data Protection Profile.
      * </pre>
      *
      * <code>
@@ -11257,8 +11274,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes a portion of each profile to Dataplex Catalog with the aspect
-     * type Sensitive Data Protection Profile.
+     * Publishes a portion of each profile to Dataplex Universal Catalog with
+     * the aspect type Sensitive Data Protection Profile.
      * </pre>
      *
      * <code>
@@ -11283,8 +11300,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes a portion of each profile to Dataplex Catalog with the aspect
-     * type Sensitive Data Protection Profile.
+     * Publishes a portion of each profile to Dataplex Universal Catalog with
+     * the aspect type Sensitive Data Protection Profile.
      * </pre>
      *
      * <code>

@@ -107,6 +107,8 @@ public class FlowsClientTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .addAllInputParameterDefinitions(new ArrayList<ParameterDefinition>())
+            .addAllOutputParameterDefinitions(new ArrayList<ParameterDefinition>())
             .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
             .setLocked(true)
             .build();
@@ -158,6 +160,8 @@ public class FlowsClientTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .addAllInputParameterDefinitions(new ArrayList<ParameterDefinition>())
+            .addAllOutputParameterDefinitions(new ArrayList<ParameterDefinition>())
             .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
             .setLocked(true)
             .build();
@@ -365,6 +369,8 @@ public class FlowsClientTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .addAllInputParameterDefinitions(new ArrayList<ParameterDefinition>())
+            .addAllOutputParameterDefinitions(new ArrayList<ParameterDefinition>())
             .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
             .setLocked(true)
             .build();
@@ -413,6 +419,8 @@ public class FlowsClientTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .addAllInputParameterDefinitions(new ArrayList<ParameterDefinition>())
+            .addAllOutputParameterDefinitions(new ArrayList<ParameterDefinition>())
             .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
             .setLocked(true)
             .build();
@@ -461,6 +469,8 @@ public class FlowsClientTest {
             .setNluSettings(NluSettings.newBuilder().build())
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
+            .addAllInputParameterDefinitions(new ArrayList<ParameterDefinition>())
+            .addAllOutputParameterDefinitions(new ArrayList<ParameterDefinition>())
             .setMultiLanguageSettings(Flow.MultiLanguageSettings.newBuilder().build())
             .setLocked(true)
             .build();

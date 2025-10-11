@@ -97,16 +97,6 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
      * <code>BLOB = 1;</code>
      */
     BLOB(1),
-    /**
-     *
-     *
-     * <pre>
-     * Tools will be exported in JSON format.
-     * </pre>
-     *
-     * <code>JSON = 2;</code>
-     */
-    JSON(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -131,17 +121,6 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
      * <code>BLOB = 1;</code>
      */
     public static final int BLOB_VALUE = 1;
-
-    /**
-     *
-     *
-     * <pre>
-     * Tools will be exported in JSON format.
-     * </pre>
-     *
-     * <code>JSON = 2;</code>
-     */
-    public static final int JSON_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -171,8 +150,6 @@ public final class ExportToolsRequest extends com.google.protobuf.GeneratedMessa
           return DATA_FORMAT_UNSPECIFIED;
         case 1:
           return BLOB;
-        case 2:
-          return JSON;
         default:
           return null;
       }

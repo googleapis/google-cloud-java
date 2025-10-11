@@ -193,6 +193,59 @@ public final class FeatureOnlineStoreServiceGrpc {
     return getFeatureViewDirectWriteMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenRequest,
+          com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenResponse>
+      getGenerateFetchAccessTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateFetchAccessToken",
+      requestType = com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenRequest,
+          com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenResponse>
+      getGenerateFetchAccessTokenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenRequest,
+            com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenResponse>
+        getGenerateFetchAccessTokenMethod;
+    if ((getGenerateFetchAccessTokenMethod =
+            FeatureOnlineStoreServiceGrpc.getGenerateFetchAccessTokenMethod)
+        == null) {
+      synchronized (FeatureOnlineStoreServiceGrpc.class) {
+        if ((getGenerateFetchAccessTokenMethod =
+                FeatureOnlineStoreServiceGrpc.getGenerateFetchAccessTokenMethod)
+            == null) {
+          FeatureOnlineStoreServiceGrpc.getGenerateFetchAccessTokenMethod =
+              getGenerateFetchAccessTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenRequest,
+                          com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GenerateFetchAccessToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FeatureOnlineStoreServiceMethodDescriptorSupplier(
+                              "GenerateFetchAccessToken"))
+                      .build();
+        }
+      }
+    }
+    return getGenerateFetchAccessTokenMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static FeatureOnlineStoreServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<FeatureOnlineStoreServiceStub> factory =
@@ -306,6 +359,22 @@ public final class FeatureOnlineStoreServiceGrpc {
       return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
           getFeatureViewDirectWriteMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * RPC to generate an access token for the given feature view. FeatureViews
+     * under the same FeatureOnlineStore share the same access token.
+     * </pre>
+     */
+    default void generateFetchAccessToken(
+        com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGenerateFetchAccessTokenMethod(), responseObserver);
+    }
   }
 
   /**
@@ -398,6 +467,24 @@ public final class FeatureOnlineStoreServiceGrpc {
           getChannel().newCall(getFeatureViewDirectWriteMethod(), getCallOptions()),
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * RPC to generate an access token for the given feature view. FeatureViews
+     * under the same FeatureOnlineStore share the same access token.
+     * </pre>
+     */
+    public void generateFetchAccessToken(
+        com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateFetchAccessTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -465,6 +552,20 @@ public final class FeatureOnlineStoreServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
           getChannel(), getFeatureViewDirectWriteMethod(), getCallOptions());
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * RPC to generate an access token for the given feature view. FeatureViews
+     * under the same FeatureOnlineStore share the same access token.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenResponse generateFetchAccessToken(
+        com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateFetchAccessTokenMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -514,6 +615,20 @@ public final class FeatureOnlineStoreServiceGrpc {
         com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchNearestEntitiesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RPC to generate an access token for the given feature view. FeatureViews
+     * under the same FeatureOnlineStore share the same access token.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenResponse generateFetchAccessToken(
+        com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateFetchAccessTokenMethod(), getCallOptions(), request);
     }
   }
 
@@ -567,11 +682,28 @@ public final class FeatureOnlineStoreServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchNearestEntitiesMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * RPC to generate an access token for the given feature view. FeatureViews
+     * under the same FeatureOnlineStore share the same access token.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenResponse>
+        generateFetchAccessToken(
+            com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateFetchAccessTokenMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_FETCH_FEATURE_VALUES = 0;
   private static final int METHODID_SEARCH_NEAREST_ENTITIES = 1;
-  private static final int METHODID_FEATURE_VIEW_DIRECT_WRITE = 2;
+  private static final int METHODID_GENERATE_FETCH_ACCESS_TOKEN = 2;
+  private static final int METHODID_FEATURE_VIEW_DIRECT_WRITE = 3;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -602,6 +734,13 @@ public final class FeatureOnlineStoreServiceGrpc {
               (com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GENERATE_FETCH_ACCESS_TOKEN:
+          serviceImpl.generateFetchAccessToken(
+              (com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenResponse>)
                   responseObserver);
           break;
         default:
@@ -649,6 +788,13 @@ public final class FeatureOnlineStoreServiceGrpc {
                     com.google.cloud.aiplatform.v1.FeatureViewDirectWriteRequest,
                     com.google.cloud.aiplatform.v1.FeatureViewDirectWriteResponse>(
                     service, METHODID_FEATURE_VIEW_DIRECT_WRITE)))
+        .addMethod(
+            getGenerateFetchAccessTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenRequest,
+                    com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenResponse>(
+                    service, METHODID_GENERATE_FETCH_ACCESS_TOKEN)))
         .build();
   }
 
@@ -703,6 +849,7 @@ public final class FeatureOnlineStoreServiceGrpc {
                       .addMethod(getFetchFeatureValuesMethod())
                       .addMethod(getSearchNearestEntitiesMethod())
                       .addMethod(getFeatureViewDirectWriteMethod())
+                      .addMethod(getGenerateFetchAccessTokenMethod())
                       .build();
         }
       }

@@ -46,6 +46,8 @@ public class SyncRedactImage {
               .addAllImageRedactionConfigs(new ArrayList<RedactImageRequest.ImageRedactionConfig>())
               .setIncludeFindings(true)
               .setByteItem(ByteContentItem.newBuilder().build())
+              .setInspectTemplate("inspectTemplate-2053620050")
+              .setDeidentifyTemplate("deidentifyTemplate-2141929945")
               .build();
       RedactImageResponse response = dlpServiceClient.redactImage(request);
     }

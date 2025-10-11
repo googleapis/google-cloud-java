@@ -421,6 +421,9 @@
             "DeletePlaybookVersion": {
               "methods": ["deletePlaybookVersion", "deletePlaybookVersion", "deletePlaybookVersion", "deletePlaybookVersionCallable"]
             },
+            "ExportPlaybook": {
+              "methods": ["exportPlaybookAsync", "exportPlaybookOperationCallable", "exportPlaybookCallable"]
+            },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
@@ -430,6 +433,9 @@
             "GetPlaybookVersion": {
               "methods": ["getPlaybookVersion", "getPlaybookVersion", "getPlaybookVersion", "getPlaybookVersionCallable"]
             },
+            "ImportPlaybook": {
+              "methods": ["importPlaybookAsync", "importPlaybookOperationCallable", "importPlaybookCallable"]
+            },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
@@ -438,6 +444,9 @@
             },
             "ListPlaybooks": {
               "methods": ["listPlaybooks", "listPlaybooks", "listPlaybooks", "listPlaybooksPagedCallable", "listPlaybooksCallable"]
+            },
+            "RestorePlaybookVersion": {
+              "methods": ["restorePlaybookVersion", "restorePlaybookVersion", "restorePlaybookVersion", "restorePlaybookVersionCallable"]
             },
             "UpdatePlaybook": {
               "methods": ["updatePlaybook", "updatePlaybook", "updatePlaybookCallable"]

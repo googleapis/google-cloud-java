@@ -456,7 +456,7 @@ public interface FeatureOnlineStoreOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FeatureOnlineStore.embedding_management is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/feature_online_store.proto;l=175
+   *     deprecated. See google/cloud/aiplatform/v1beta1/feature_online_store.proto;l=196
    * @return Whether the embeddingManagement field is set.
    */
   @java.lang.Deprecated
@@ -475,7 +475,7 @@ public interface FeatureOnlineStoreOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FeatureOnlineStore.embedding_management is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/feature_online_store.proto;l=175
+   *     deprecated. See google/cloud/aiplatform/v1beta1/feature_online_store.proto;l=196
    * @return The embeddingManagement.
    */
   @java.lang.Deprecated

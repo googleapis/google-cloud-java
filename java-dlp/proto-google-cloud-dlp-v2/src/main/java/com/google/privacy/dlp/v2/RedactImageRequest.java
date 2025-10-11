@@ -44,6 +44,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     parent_ = "";
     locationId_ = "";
     imageRedactionConfigs_ = java.util.Collections.emptyList();
+    inspectTemplate_ = "";
+    deidentifyTemplate_ = "";
   }
 
   @java.lang.Override
@@ -1857,6 +1859,138 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         : byteItem_;
   }
 
+  public static final int INSPECT_TEMPLATE_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object inspectTemplate_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The full resource name of the inspection template to use. Settings in the
+   * main `inspect_config` field override the corresponding settings in this
+   * inspection template.
+   *
+   * The merge behavior is as follows:
+   *
+   *   - Singular field: The main field's value replaces the value of the
+   *   corresponding field in the template.
+   *   - Repeated fields: The field values are appended to the list defined in
+   *   the template.
+   *   - Sub-messages and groups: The fields are recursively merged.
+   * </pre>
+   *
+   * <code>string inspect_template = 9;</code>
+   *
+   * @return The inspectTemplate.
+   */
+  @java.lang.Override
+  public java.lang.String getInspectTemplate() {
+    java.lang.Object ref = inspectTemplate_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      inspectTemplate_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The full resource name of the inspection template to use. Settings in the
+   * main `inspect_config` field override the corresponding settings in this
+   * inspection template.
+   *
+   * The merge behavior is as follows:
+   *
+   *   - Singular field: The main field's value replaces the value of the
+   *   corresponding field in the template.
+   *   - Repeated fields: The field values are appended to the list defined in
+   *   the template.
+   *   - Sub-messages and groups: The fields are recursively merged.
+   * </pre>
+   *
+   * <code>string inspect_template = 9;</code>
+   *
+   * @return The bytes for inspectTemplate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getInspectTemplateBytes() {
+    java.lang.Object ref = inspectTemplate_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      inspectTemplate_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DEIDENTIFY_TEMPLATE_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deidentifyTemplate_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The full resource name of the de-identification template to use. Settings
+   * in the main `image_redaction_configs` field override the corresponding
+   * settings in this de-identification template. The request fails if the
+   * type of the template's deidentify_config is not image_transformations.
+   * </pre>
+   *
+   * <code>string deidentify_template = 10;</code>
+   *
+   * @return The deidentifyTemplate.
+   */
+  @java.lang.Override
+  public java.lang.String getDeidentifyTemplate() {
+    java.lang.Object ref = deidentifyTemplate_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      deidentifyTemplate_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The full resource name of the de-identification template to use. Settings
+   * in the main `image_redaction_configs` field override the corresponding
+   * settings in this de-identification template. The request fails if the
+   * type of the template's deidentify_config is not image_transformations.
+   * </pre>
+   *
+   * <code>string deidentify_template = 10;</code>
+   *
+   * @return The bytes for deidentifyTemplate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDeidentifyTemplateBytes() {
+    java.lang.Object ref = deidentifyTemplate_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      deidentifyTemplate_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1889,6 +2023,12 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, locationId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inspectTemplate_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, inspectTemplate_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deidentifyTemplate_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, deidentifyTemplate_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1918,6 +2058,12 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(locationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, locationId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inspectTemplate_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, inspectTemplate_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deidentifyTemplate_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, deidentifyTemplate_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1946,6 +2092,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     if (hasByteItem()) {
       if (!getByteItem().equals(other.getByteItem())) return false;
     }
+    if (!getInspectTemplate().equals(other.getInspectTemplate())) return false;
+    if (!getDeidentifyTemplate().equals(other.getDeidentifyTemplate())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1975,6 +2123,10 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + BYTE_ITEM_FIELD_NUMBER;
       hash = (53 * hash) + getByteItem().hashCode();
     }
+    hash = (37 * hash) + INSPECT_TEMPLATE_FIELD_NUMBER;
+    hash = (53 * hash) + getInspectTemplate().hashCode();
+    hash = (37 * hash) + DEIDENTIFY_TEMPLATE_FIELD_NUMBER;
+    hash = (53 * hash) + getDeidentifyTemplate().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2147,6 +2299,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         byteItemBuilder_.dispose();
         byteItemBuilder_ = null;
       }
+      inspectTemplate_ = "";
+      deidentifyTemplate_ = "";
       return this;
     }
 
@@ -2214,6 +2368,12 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.byteItem_ = byteItemBuilder_ == null ? byteItem_ : byteItemBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.inspectTemplate_ = inspectTemplate_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.deidentifyTemplate_ = deidentifyTemplate_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2309,6 +2469,16 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       if (other.hasByteItem()) {
         mergeByteItem(other.getByteItem());
       }
+      if (!other.getInspectTemplate().isEmpty()) {
+        inspectTemplate_ = other.inspectTemplate_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (!other.getDeidentifyTemplate().isEmpty()) {
+        deidentifyTemplate_ = other.deidentifyTemplate_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2379,6 +2549,18 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 break;
               } // case 66
+            case 74:
+              {
+                inspectTemplate_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 74
+            case 82:
+              {
+                deidentifyTemplate_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3569,6 +3751,293 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         byteItem_ = null;
       }
       return byteItemBuilder_;
+    }
+
+    private java.lang.Object inspectTemplate_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The full resource name of the inspection template to use. Settings in the
+     * main `inspect_config` field override the corresponding settings in this
+     * inspection template.
+     *
+     * The merge behavior is as follows:
+     *
+     *   - Singular field: The main field's value replaces the value of the
+     *   corresponding field in the template.
+     *   - Repeated fields: The field values are appended to the list defined in
+     *   the template.
+     *   - Sub-messages and groups: The fields are recursively merged.
+     * </pre>
+     *
+     * <code>string inspect_template = 9;</code>
+     *
+     * @return The inspectTemplate.
+     */
+    public java.lang.String getInspectTemplate() {
+      java.lang.Object ref = inspectTemplate_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        inspectTemplate_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The full resource name of the inspection template to use. Settings in the
+     * main `inspect_config` field override the corresponding settings in this
+     * inspection template.
+     *
+     * The merge behavior is as follows:
+     *
+     *   - Singular field: The main field's value replaces the value of the
+     *   corresponding field in the template.
+     *   - Repeated fields: The field values are appended to the list defined in
+     *   the template.
+     *   - Sub-messages and groups: The fields are recursively merged.
+     * </pre>
+     *
+     * <code>string inspect_template = 9;</code>
+     *
+     * @return The bytes for inspectTemplate.
+     */
+    public com.google.protobuf.ByteString getInspectTemplateBytes() {
+      java.lang.Object ref = inspectTemplate_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        inspectTemplate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The full resource name of the inspection template to use. Settings in the
+     * main `inspect_config` field override the corresponding settings in this
+     * inspection template.
+     *
+     * The merge behavior is as follows:
+     *
+     *   - Singular field: The main field's value replaces the value of the
+     *   corresponding field in the template.
+     *   - Repeated fields: The field values are appended to the list defined in
+     *   the template.
+     *   - Sub-messages and groups: The fields are recursively merged.
+     * </pre>
+     *
+     * <code>string inspect_template = 9;</code>
+     *
+     * @param value The inspectTemplate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInspectTemplate(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      inspectTemplate_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The full resource name of the inspection template to use. Settings in the
+     * main `inspect_config` field override the corresponding settings in this
+     * inspection template.
+     *
+     * The merge behavior is as follows:
+     *
+     *   - Singular field: The main field's value replaces the value of the
+     *   corresponding field in the template.
+     *   - Repeated fields: The field values are appended to the list defined in
+     *   the template.
+     *   - Sub-messages and groups: The fields are recursively merged.
+     * </pre>
+     *
+     * <code>string inspect_template = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInspectTemplate() {
+      inspectTemplate_ = getDefaultInstance().getInspectTemplate();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The full resource name of the inspection template to use. Settings in the
+     * main `inspect_config` field override the corresponding settings in this
+     * inspection template.
+     *
+     * The merge behavior is as follows:
+     *
+     *   - Singular field: The main field's value replaces the value of the
+     *   corresponding field in the template.
+     *   - Repeated fields: The field values are appended to the list defined in
+     *   the template.
+     *   - Sub-messages and groups: The fields are recursively merged.
+     * </pre>
+     *
+     * <code>string inspect_template = 9;</code>
+     *
+     * @param value The bytes for inspectTemplate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInspectTemplateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      inspectTemplate_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object deidentifyTemplate_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The full resource name of the de-identification template to use. Settings
+     * in the main `image_redaction_configs` field override the corresponding
+     * settings in this de-identification template. The request fails if the
+     * type of the template's deidentify_config is not image_transformations.
+     * </pre>
+     *
+     * <code>string deidentify_template = 10;</code>
+     *
+     * @return The deidentifyTemplate.
+     */
+    public java.lang.String getDeidentifyTemplate() {
+      java.lang.Object ref = deidentifyTemplate_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deidentifyTemplate_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The full resource name of the de-identification template to use. Settings
+     * in the main `image_redaction_configs` field override the corresponding
+     * settings in this de-identification template. The request fails if the
+     * type of the template's deidentify_config is not image_transformations.
+     * </pre>
+     *
+     * <code>string deidentify_template = 10;</code>
+     *
+     * @return The bytes for deidentifyTemplate.
+     */
+    public com.google.protobuf.ByteString getDeidentifyTemplateBytes() {
+      java.lang.Object ref = deidentifyTemplate_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        deidentifyTemplate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The full resource name of the de-identification template to use. Settings
+     * in the main `image_redaction_configs` field override the corresponding
+     * settings in this de-identification template. The request fails if the
+     * type of the template's deidentify_config is not image_transformations.
+     * </pre>
+     *
+     * <code>string deidentify_template = 10;</code>
+     *
+     * @param value The deidentifyTemplate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeidentifyTemplate(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      deidentifyTemplate_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The full resource name of the de-identification template to use. Settings
+     * in the main `image_redaction_configs` field override the corresponding
+     * settings in this de-identification template. The request fails if the
+     * type of the template's deidentify_config is not image_transformations.
+     * </pre>
+     *
+     * <code>string deidentify_template = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeidentifyTemplate() {
+      deidentifyTemplate_ = getDefaultInstance().getDeidentifyTemplate();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The full resource name of the de-identification template to use. Settings
+     * in the main `image_redaction_configs` field override the corresponding
+     * settings in this de-identification template. The request fails if the
+     * type of the template's deidentify_config is not image_transformations.
+     * </pre>
+     *
+     * <code>string deidentify_template = 10;</code>
+     *
+     * @param value The bytes for deidentifyTemplate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeidentifyTemplateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      deidentifyTemplate_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

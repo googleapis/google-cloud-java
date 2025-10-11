@@ -1450,6 +1450,8 @@ public class DlpServiceClient implements BackgroundResource {
    *           .addAllImageRedactionConfigs(new ArrayList<RedactImageRequest.ImageRedactionConfig>())
    *           .setIncludeFindings(true)
    *           .setByteItem(ByteContentItem.newBuilder().build())
+   *           .setInspectTemplate("inspectTemplate-2053620050")
+   *           .setDeidentifyTemplate("deidentifyTemplate-2141929945")
    *           .build();
    *   RedactImageResponse response = dlpServiceClient.redactImage(request);
    * }
@@ -1493,6 +1495,8 @@ public class DlpServiceClient implements BackgroundResource {
    *           .addAllImageRedactionConfigs(new ArrayList<RedactImageRequest.ImageRedactionConfig>())
    *           .setIncludeFindings(true)
    *           .setByteItem(ByteContentItem.newBuilder().build())
+   *           .setInspectTemplate("inspectTemplate-2053620050")
+   *           .setDeidentifyTemplate("deidentifyTemplate-2141929945")
    *           .build();
    *   ApiFuture<RedactImageResponse> future =
    *       dlpServiceClient.redactImageCallable().futureCall(request);

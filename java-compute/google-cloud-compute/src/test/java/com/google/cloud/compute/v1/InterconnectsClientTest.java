@@ -189,6 +189,7 @@ public class InterconnectsClientTest {
             .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")
             .setState("state109757585")
+            .setSubzone("subzone-1867398676")
             .build();
     mockService.addResponse(expectedResponse);
 

@@ -48,6 +48,7 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Uncompressed 16-bit signed little-endian samples (Linear PCM).
+   * LINT: LEGACY_NAMES
    * </pre>
    *
    * <code>AUDIO_ENCODING_LINEAR_16 = 1;</code>
@@ -160,6 +161,7 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Uncompressed 16-bit signed little-endian samples (Linear PCM).
+   * LINT: LEGACY_NAMES
    * </pre>
    *
    * <code>AUDIO_ENCODING_LINEAR_16 = 1;</code>

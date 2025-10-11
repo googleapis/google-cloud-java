@@ -75,4 +75,42 @@ public interface LlmModelSettingsOrBuilder
    * @return The bytes for promptText.
    */
   com.google.protobuf.ByteString getPromptTextBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Generative model parameters.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parameters = 4;</code>
+   *
+   * @return Whether the parameters field is set.
+   */
+  boolean hasParameters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Generative model parameters.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parameters = 4;</code>
+   *
+   * @return The parameters.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters getParameters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Generative model parameters.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Parameters parameters = 4;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.ParametersOrBuilder
+      getParametersOrBuilder();
 }

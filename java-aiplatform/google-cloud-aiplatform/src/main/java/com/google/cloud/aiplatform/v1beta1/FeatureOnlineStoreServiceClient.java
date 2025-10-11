@@ -131,6 +131,20 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GenerateFetchAccessToken</td>
+ *      <td><p> RPC to generate an access token for the given feature view. FeatureViews under the same FeatureOnlineStore share the same access token.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateFetchAccessToken(GenerateFetchAccessTokenRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateFetchAccessTokenCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -593,6 +607,75 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
   public final BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
       featureViewDirectWriteCallable() {
     return stub.featureViewDirectWriteCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * RPC to generate an access token for the given feature view. FeatureViews under the same
+   * FeatureOnlineStore share the same access token.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureOnlineStoreServiceClient featureOnlineStoreServiceClient =
+   *     FeatureOnlineStoreServiceClient.create()) {
+   *   GenerateFetchAccessTokenRequest request =
+   *       GenerateFetchAccessTokenRequest.newBuilder()
+   *           .setFeatureView(
+   *               FeatureViewName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+   *                   .toString())
+   *           .build();
+   *   GenerateFetchAccessTokenResponse response =
+   *       featureOnlineStoreServiceClient.generateFetchAccessToken(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateFetchAccessTokenResponse generateFetchAccessToken(
+      GenerateFetchAccessTokenRequest request) {
+    return generateFetchAccessTokenCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * RPC to generate an access token for the given feature view. FeatureViews under the same
+   * FeatureOnlineStore share the same access token.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureOnlineStoreServiceClient featureOnlineStoreServiceClient =
+   *     FeatureOnlineStoreServiceClient.create()) {
+   *   GenerateFetchAccessTokenRequest request =
+   *       GenerateFetchAccessTokenRequest.newBuilder()
+   *           .setFeatureView(
+   *               FeatureViewName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<GenerateFetchAccessTokenResponse> future =
+   *       featureOnlineStoreServiceClient.generateFetchAccessTokenCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateFetchAccessTokenResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GenerateFetchAccessTokenRequest, GenerateFetchAccessTokenResponse>
+      generateFetchAccessTokenCallable() {
+    return stub.generateFetchAccessTokenCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

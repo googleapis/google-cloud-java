@@ -104,6 +104,73 @@ public interface OutputStorageConfigOrBuilder
    *
    *
    * <pre>
+   * Store findings in an existing Cloud Storage bucket. Files will be
+   * generated with the job ID and file part number as the filename and will
+   * contain findings in textproto format as
+   * [SaveToGcsFindingsOutput][google.privacy.dlp.v2.SaveToGcsFindingsOutput].
+   * The filename will follow the naming convention `&lt;job_id&gt;-&lt;shard_number&gt;`.
+   * Example: `my-job-id-2`.
+   *
+   * Supported for [Inspect jobs][google.privacy.dlp.v2.InspectJobConfig]. The
+   * bucket must not be the same as the bucket being inspected. If storing
+   * findings to Cloud Storage, the output schema field should not be set. If
+   * set, it will be ignored.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CloudStoragePath storage_path = 5;</code>
+   *
+   * @return Whether the storagePath field is set.
+   */
+  boolean hasStoragePath();
+
+  /**
+   *
+   *
+   * <pre>
+   * Store findings in an existing Cloud Storage bucket. Files will be
+   * generated with the job ID and file part number as the filename and will
+   * contain findings in textproto format as
+   * [SaveToGcsFindingsOutput][google.privacy.dlp.v2.SaveToGcsFindingsOutput].
+   * The filename will follow the naming convention `&lt;job_id&gt;-&lt;shard_number&gt;`.
+   * Example: `my-job-id-2`.
+   *
+   * Supported for [Inspect jobs][google.privacy.dlp.v2.InspectJobConfig]. The
+   * bucket must not be the same as the bucket being inspected. If storing
+   * findings to Cloud Storage, the output schema field should not be set. If
+   * set, it will be ignored.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CloudStoragePath storage_path = 5;</code>
+   *
+   * @return The storagePath.
+   */
+  com.google.privacy.dlp.v2.CloudStoragePath getStoragePath();
+
+  /**
+   *
+   *
+   * <pre>
+   * Store findings in an existing Cloud Storage bucket. Files will be
+   * generated with the job ID and file part number as the filename and will
+   * contain findings in textproto format as
+   * [SaveToGcsFindingsOutput][google.privacy.dlp.v2.SaveToGcsFindingsOutput].
+   * The filename will follow the naming convention `&lt;job_id&gt;-&lt;shard_number&gt;`.
+   * Example: `my-job-id-2`.
+   *
+   * Supported for [Inspect jobs][google.privacy.dlp.v2.InspectJobConfig]. The
+   * bucket must not be the same as the bucket being inspected. If storing
+   * findings to Cloud Storage, the output schema field should not be set. If
+   * set, it will be ignored.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CloudStoragePath storage_path = 5;</code>
+   */
+  com.google.privacy.dlp.v2.CloudStoragePathOrBuilder getStoragePathOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Schema used for writing the findings for Inspect jobs. This field is only
    * used for Inspect and must be unspecified for Risk jobs. Columns are derived
    * from the `Finding` object. If appending to an existing table, any columns

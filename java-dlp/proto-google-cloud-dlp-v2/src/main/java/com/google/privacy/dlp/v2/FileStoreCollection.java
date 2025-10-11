@@ -62,6 +62,7 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.FileStoreCollection.Builder.class);
   }
 
+  private int bitField0_;
   private int patternCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -172,6 +173,92 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
     return com.google.privacy.dlp.v2.FileStoreRegexes.getDefaultInstance();
   }
 
+  public static final int INCLUDE_TAGS_FIELD_NUMBER = 2;
+  private com.google.privacy.dlp.v2.TagFilters includeTags_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. To be included in the collection, a resource must meet all of the
+   * following requirements:
+   *
+   *  - If tag filters are provided, match all provided tag filters.
+   *  - If one or more patterns are specified, match at least one pattern.
+   *
+   * For a resource to match the tag filters, the resource must have all of the
+   * provided tags attached. Tags refer to Resource Manager tags bound to the
+   * resource or its ancestors. For more information, see [Manage
+   * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.TagFilters include_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the includeTags field is set.
+   */
+  @java.lang.Override
+  public boolean hasIncludeTags() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. To be included in the collection, a resource must meet all of the
+   * following requirements:
+   *
+   *  - If tag filters are provided, match all provided tag filters.
+   *  - If one or more patterns are specified, match at least one pattern.
+   *
+   * For a resource to match the tag filters, the resource must have all of the
+   * provided tags attached. Tags refer to Resource Manager tags bound to the
+   * resource or its ancestors. For more information, see [Manage
+   * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.TagFilters include_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The includeTags.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.TagFilters getIncludeTags() {
+    return includeTags_ == null
+        ? com.google.privacy.dlp.v2.TagFilters.getDefaultInstance()
+        : includeTags_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. To be included in the collection, a resource must meet all of the
+   * following requirements:
+   *
+   *  - If tag filters are provided, match all provided tag filters.
+   *  - If one or more patterns are specified, match at least one pattern.
+   *
+   * For a resource to match the tag filters, the resource must have all of the
+   * provided tags attached. Tags refer to Resource Manager tags bound to the
+   * resource or its ancestors. For more information, see [Manage
+   * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.TagFilters include_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.TagFiltersOrBuilder getIncludeTagsOrBuilder() {
+    return includeTags_ == null
+        ? com.google.privacy.dlp.v2.TagFilters.getDefaultInstance()
+        : includeTags_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -189,6 +276,9 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
     if (patternCase_ == 1) {
       output.writeMessage(1, (com.google.privacy.dlp.v2.FileStoreRegexes) pattern_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(2, getIncludeTags());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -202,6 +292,9 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, (com.google.privacy.dlp.v2.FileStoreRegexes) pattern_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getIncludeTags());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -219,6 +312,10 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
     com.google.privacy.dlp.v2.FileStoreCollection other =
         (com.google.privacy.dlp.v2.FileStoreCollection) obj;
 
+    if (hasIncludeTags() != other.hasIncludeTags()) return false;
+    if (hasIncludeTags()) {
+      if (!getIncludeTags().equals(other.getIncludeTags())) return false;
+    }
     if (!getPatternCase().equals(other.getPatternCase())) return false;
     switch (patternCase_) {
       case 1:
@@ -238,6 +335,10 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasIncludeTags()) {
+      hash = (37 * hash) + INCLUDE_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getIncludeTags().hashCode();
+    }
     switch (patternCase_) {
       case 1:
         hash = (37 * hash) + INCLUDE_REGEXES_FIELD_NUMBER;
@@ -376,10 +477,19 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.privacy.dlp.v2.FileStoreCollection.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getIncludeTagsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -388,6 +498,11 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
       bitField0_ = 0;
       if (includeRegexesBuilder_ != null) {
         includeRegexesBuilder_.clear();
+      }
+      includeTags_ = null;
+      if (includeTagsBuilder_ != null) {
+        includeTagsBuilder_.dispose();
+        includeTagsBuilder_ = null;
       }
       patternCase_ = 0;
       pattern_ = null;
@@ -428,6 +543,13 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
 
     private void buildPartial0(com.google.privacy.dlp.v2.FileStoreCollection result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.includeTags_ =
+            includeTagsBuilder_ == null ? includeTags_ : includeTagsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.privacy.dlp.v2.FileStoreCollection result) {
@@ -483,6 +605,9 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
 
     public Builder mergeFrom(com.google.privacy.dlp.v2.FileStoreCollection other) {
       if (other == com.google.privacy.dlp.v2.FileStoreCollection.getDefaultInstance()) return this;
+      if (other.hasIncludeTags()) {
+        mergeIncludeTags(other.getIncludeTags());
+      }
       switch (other.getPatternCase()) {
         case INCLUDE_REGEXES:
           {
@@ -526,6 +651,12 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
                 patternCase_ = 1;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(getIncludeTagsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -802,6 +933,299 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
       patternCase_ = 1;
       onChanged();
       return includeRegexesBuilder_;
+    }
+
+    private com.google.privacy.dlp.v2.TagFilters includeTags_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.TagFilters,
+            com.google.privacy.dlp.v2.TagFilters.Builder,
+            com.google.privacy.dlp.v2.TagFiltersOrBuilder>
+        includeTagsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. To be included in the collection, a resource must meet all of the
+     * following requirements:
+     *
+     *  - If tag filters are provided, match all provided tag filters.
+     *  - If one or more patterns are specified, match at least one pattern.
+     *
+     * For a resource to match the tag filters, the resource must have all of the
+     * provided tags attached. Tags refer to Resource Manager tags bound to the
+     * resource or its ancestors. For more information, see [Manage
+     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.TagFilters include_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the includeTags field is set.
+     */
+    public boolean hasIncludeTags() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. To be included in the collection, a resource must meet all of the
+     * following requirements:
+     *
+     *  - If tag filters are provided, match all provided tag filters.
+     *  - If one or more patterns are specified, match at least one pattern.
+     *
+     * For a resource to match the tag filters, the resource must have all of the
+     * provided tags attached. Tags refer to Resource Manager tags bound to the
+     * resource or its ancestors. For more information, see [Manage
+     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.TagFilters include_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The includeTags.
+     */
+    public com.google.privacy.dlp.v2.TagFilters getIncludeTags() {
+      if (includeTagsBuilder_ == null) {
+        return includeTags_ == null
+            ? com.google.privacy.dlp.v2.TagFilters.getDefaultInstance()
+            : includeTags_;
+      } else {
+        return includeTagsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. To be included in the collection, a resource must meet all of the
+     * following requirements:
+     *
+     *  - If tag filters are provided, match all provided tag filters.
+     *  - If one or more patterns are specified, match at least one pattern.
+     *
+     * For a resource to match the tag filters, the resource must have all of the
+     * provided tags attached. Tags refer to Resource Manager tags bound to the
+     * resource or its ancestors. For more information, see [Manage
+     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.TagFilters include_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIncludeTags(com.google.privacy.dlp.v2.TagFilters value) {
+      if (includeTagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        includeTags_ = value;
+      } else {
+        includeTagsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. To be included in the collection, a resource must meet all of the
+     * following requirements:
+     *
+     *  - If tag filters are provided, match all provided tag filters.
+     *  - If one or more patterns are specified, match at least one pattern.
+     *
+     * For a resource to match the tag filters, the resource must have all of the
+     * provided tags attached. Tags refer to Resource Manager tags bound to the
+     * resource or its ancestors. For more information, see [Manage
+     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.TagFilters include_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIncludeTags(com.google.privacy.dlp.v2.TagFilters.Builder builderForValue) {
+      if (includeTagsBuilder_ == null) {
+        includeTags_ = builderForValue.build();
+      } else {
+        includeTagsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. To be included in the collection, a resource must meet all of the
+     * following requirements:
+     *
+     *  - If tag filters are provided, match all provided tag filters.
+     *  - If one or more patterns are specified, match at least one pattern.
+     *
+     * For a resource to match the tag filters, the resource must have all of the
+     * provided tags attached. Tags refer to Resource Manager tags bound to the
+     * resource or its ancestors. For more information, see [Manage
+     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.TagFilters include_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeIncludeTags(com.google.privacy.dlp.v2.TagFilters value) {
+      if (includeTagsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && includeTags_ != null
+            && includeTags_ != com.google.privacy.dlp.v2.TagFilters.getDefaultInstance()) {
+          getIncludeTagsBuilder().mergeFrom(value);
+        } else {
+          includeTags_ = value;
+        }
+      } else {
+        includeTagsBuilder_.mergeFrom(value);
+      }
+      if (includeTags_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. To be included in the collection, a resource must meet all of the
+     * following requirements:
+     *
+     *  - If tag filters are provided, match all provided tag filters.
+     *  - If one or more patterns are specified, match at least one pattern.
+     *
+     * For a resource to match the tag filters, the resource must have all of the
+     * provided tags attached. Tags refer to Resource Manager tags bound to the
+     * resource or its ancestors. For more information, see [Manage
+     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.TagFilters include_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearIncludeTags() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      includeTags_ = null;
+      if (includeTagsBuilder_ != null) {
+        includeTagsBuilder_.dispose();
+        includeTagsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. To be included in the collection, a resource must meet all of the
+     * following requirements:
+     *
+     *  - If tag filters are provided, match all provided tag filters.
+     *  - If one or more patterns are specified, match at least one pattern.
+     *
+     * For a resource to match the tag filters, the resource must have all of the
+     * provided tags attached. Tags refer to Resource Manager tags bound to the
+     * resource or its ancestors. For more information, see [Manage
+     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.TagFilters include_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.TagFilters.Builder getIncludeTagsBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getIncludeTagsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. To be included in the collection, a resource must meet all of the
+     * following requirements:
+     *
+     *  - If tag filters are provided, match all provided tag filters.
+     *  - If one or more patterns are specified, match at least one pattern.
+     *
+     * For a resource to match the tag filters, the resource must have all of the
+     * provided tags attached. Tags refer to Resource Manager tags bound to the
+     * resource or its ancestors. For more information, see [Manage
+     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.TagFilters include_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.TagFiltersOrBuilder getIncludeTagsOrBuilder() {
+      if (includeTagsBuilder_ != null) {
+        return includeTagsBuilder_.getMessageOrBuilder();
+      } else {
+        return includeTags_ == null
+            ? com.google.privacy.dlp.v2.TagFilters.getDefaultInstance()
+            : includeTags_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. To be included in the collection, a resource must meet all of the
+     * following requirements:
+     *
+     *  - If tag filters are provided, match all provided tag filters.
+     *  - If one or more patterns are specified, match at least one pattern.
+     *
+     * For a resource to match the tag filters, the resource must have all of the
+     * provided tags attached. Tags refer to Resource Manager tags bound to the
+     * resource or its ancestors. For more information, see [Manage
+     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.TagFilters include_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.TagFilters,
+            com.google.privacy.dlp.v2.TagFilters.Builder,
+            com.google.privacy.dlp.v2.TagFiltersOrBuilder>
+        getIncludeTagsFieldBuilder() {
+      if (includeTagsBuilder_ == null) {
+        includeTagsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.TagFilters,
+                com.google.privacy.dlp.v2.TagFilters.Builder,
+                com.google.privacy.dlp.v2.TagFiltersOrBuilder>(
+                getIncludeTags(), getParentForChildren(), isClean());
+        includeTags_ = null;
+      }
+      return includeTagsBuilder_;
     }
 
     @java.lang.Override

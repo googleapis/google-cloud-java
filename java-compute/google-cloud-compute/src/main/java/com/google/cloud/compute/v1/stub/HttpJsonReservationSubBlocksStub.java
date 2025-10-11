@@ -37,6 +37,7 @@ import com.google.cloud.compute.v1.ListReservationSubBlocksRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PerformMaintenanceReservationSubBlockRequest;
+import com.google.cloud.compute.v1.ReportFaultyReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ReservationSubBlocksGetResponse;
 import com.google.cloud.compute.v1.ReservationSubBlocksListResponse;
 import com.google.protobuf.TypeRegistry;
@@ -208,6 +209,65 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<ReportFaultyReservationSubBlockRequest, Operation>
+      reportFaultyMethodDescriptor =
+          ApiMethodDescriptor.<ReportFaultyReservationSubBlockRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.ReservationSubBlocks/ReportFaulty")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ReportFaultyReservationSubBlockRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/{parentName}/reservationSubBlocks/{reservationSubBlock}/reportFaulty",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ReportFaultyReservationSubBlockRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parentName", request.getParentName());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "reservationSubBlock", request.getReservationSubBlock());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ReportFaultyReservationSubBlockRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "reservationSubBlocksReportFaultyRequestResource",
+                                      request.getReservationSubBlocksReportFaultyRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ReportFaultyReservationSubBlockRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<GetReservationSubBlockRequest, ReservationSubBlocksGetResponse>
       getCallable;
   private final UnaryCallable<ListReservationSubBlocksRequest, ReservationSubBlocksListResponse>
@@ -218,6 +278,10 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
   private final OperationCallable<
           PerformMaintenanceReservationSubBlockRequest, Operation, Operation>
       performMaintenanceOperationCallable;
+  private final UnaryCallable<ReportFaultyReservationSubBlockRequest, Operation>
+      reportFaultyCallable;
+  private final OperationCallable<ReportFaultyReservationSubBlockRequest, Operation, Operation>
+      reportFaultyOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
@@ -314,6 +378,23 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ReportFaultyReservationSubBlockRequest, Operation>
+        reportFaultyTransportSettings =
+            HttpJsonCallSettings.<ReportFaultyReservationSubBlockRequest, Operation>newBuilder()
+                .setMethodDescriptor(reportFaultyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent_name", String.valueOf(request.getParentName()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add(
+                          "reservation_sub_block",
+                          String.valueOf(request.getReservationSubBlock()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getCallable =
         callableFactory.createUnaryCallable(
@@ -335,6 +416,15 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
             settings.performMaintenanceOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.reportFaultyCallable =
+        callableFactory.createUnaryCallable(
+            reportFaultyTransportSettings, settings.reportFaultySettings(), clientContext);
+    this.reportFaultyOperationCallable =
+        callableFactory.createOperationCallable(
+            reportFaultyTransportSettings,
+            settings.reportFaultyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -346,6 +436,7 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(performMaintenanceMethodDescriptor);
+    methodDescriptors.add(reportFaultyMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -376,6 +467,17 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
   public OperationCallable<PerformMaintenanceReservationSubBlockRequest, Operation, Operation>
       performMaintenanceOperationCallable() {
     return performMaintenanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReportFaultyReservationSubBlockRequest, Operation> reportFaultyCallable() {
+    return reportFaultyCallable;
+  }
+
+  @Override
+  public OperationCallable<ReportFaultyReservationSubBlockRequest, Operation, Operation>
+      reportFaultyOperationCallable() {
+    return reportFaultyOperationCallable;
   }
 
   @Override

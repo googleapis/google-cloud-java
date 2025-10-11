@@ -26,6 +26,8 @@ import com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest;
 import com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse;
 import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse;
+import com.google.cloud.aiplatform.v1beta1.GenerateFetchAccessTokenRequest;
+import com.google.cloud.aiplatform.v1beta1.GenerateFetchAccessTokenResponse;
 import com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest;
 import com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesRequest;
@@ -71,6 +73,11 @@ public abstract class FeatureOnlineStoreServiceStub implements BackgroundResourc
   public BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
       featureViewDirectWriteCallable() {
     throw new UnsupportedOperationException("Not implemented: featureViewDirectWriteCallable()");
+  }
+
+  public UnaryCallable<GenerateFetchAccessTokenRequest, GenerateFetchAccessTokenResponse>
+      generateFetchAccessTokenCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateFetchAccessTokenCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -617,6 +617,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setBigtableMetadata(FeatureView.BigtableMetadata.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -686,6 +687,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setBigtableMetadata(FeatureView.BigtableMetadata.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -753,6 +755,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setBigtableMetadata(FeatureView.BigtableMetadata.newBuilder().build())
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -807,6 +810,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setBigtableMetadata(FeatureView.BigtableMetadata.newBuilder().build())
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -949,6 +953,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setBigtableMetadata(FeatureView.BigtableMetadata.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

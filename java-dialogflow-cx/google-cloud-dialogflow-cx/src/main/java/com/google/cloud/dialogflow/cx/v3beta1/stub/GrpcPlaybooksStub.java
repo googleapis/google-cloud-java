@@ -26,27 +26,36 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.CreatePlaybookRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.CreatePlaybookVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeletePlaybookRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeletePlaybookVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.GetPlaybookRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.GetPlaybookVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.ListPlaybookVersionsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListPlaybookVersionsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.ListPlaybooksRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListPlaybooksResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.Playbook;
 import com.google.cloud.dialogflow.cx.v3beta1.PlaybookVersion;
+import com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdatePlaybookRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Struct;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -105,6 +114,28 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<ExportPlaybookRequest, Operation>
+      exportPlaybookMethodDescriptor =
+          MethodDescriptor.<ExportPlaybookRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Playbooks/ExportPlaybook")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportPlaybookRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ImportPlaybookRequest, Operation>
+      importPlaybookMethodDescriptor =
+          MethodDescriptor.<ImportPlaybookRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Playbooks/ImportPlaybook")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportPlaybookRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<UpdatePlaybookRequest, Playbook>
       updatePlaybookMethodDescriptor =
           MethodDescriptor.<UpdatePlaybookRequest, Playbook>newBuilder()
@@ -136,6 +167,21 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPlaybookVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PlaybookVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>
+      restorePlaybookVersionMethodDescriptor =
+          MethodDescriptor
+              .<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.cx.v3beta1.Playbooks/RestorePlaybookVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RestorePlaybookVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RestorePlaybookVersionResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -191,11 +237,19 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
   private final UnaryCallable<ListPlaybooksRequest, ListPlaybooksPagedResponse>
       listPlaybooksPagedCallable;
   private final UnaryCallable<GetPlaybookRequest, Playbook> getPlaybookCallable;
+  private final UnaryCallable<ExportPlaybookRequest, Operation> exportPlaybookCallable;
+  private final OperationCallable<ExportPlaybookRequest, ExportPlaybookResponse, Struct>
+      exportPlaybookOperationCallable;
+  private final UnaryCallable<ImportPlaybookRequest, Operation> importPlaybookCallable;
+  private final OperationCallable<ImportPlaybookRequest, ImportPlaybookResponse, Struct>
+      importPlaybookOperationCallable;
   private final UnaryCallable<UpdatePlaybookRequest, Playbook> updatePlaybookCallable;
   private final UnaryCallable<CreatePlaybookVersionRequest, PlaybookVersion>
       createPlaybookVersionCallable;
   private final UnaryCallable<GetPlaybookVersionRequest, PlaybookVersion>
       getPlaybookVersionCallable;
+  private final UnaryCallable<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>
+      restorePlaybookVersionCallable;
   private final UnaryCallable<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse>
       listPlaybookVersionsCallable;
   private final UnaryCallable<ListPlaybookVersionsRequest, ListPlaybookVersionsPagedResponse>
@@ -287,6 +341,26 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ExportPlaybookRequest, Operation> exportPlaybookTransportSettings =
+        GrpcCallSettings.<ExportPlaybookRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportPlaybookMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ImportPlaybookRequest, Operation> importPlaybookTransportSettings =
+        GrpcCallSettings.<ImportPlaybookRequest, Operation>newBuilder()
+            .setMethodDescriptor(importPlaybookMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<UpdatePlaybookRequest, Playbook> updatePlaybookTransportSettings =
         GrpcCallSettings.<UpdatePlaybookRequest, Playbook>newBuilder()
             .setMethodDescriptor(updatePlaybookMethodDescriptor)
@@ -312,6 +386,18 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
         getPlaybookVersionTransportSettings =
             GrpcCallSettings.<GetPlaybookVersionRequest, PlaybookVersion>newBuilder()
                 .setMethodDescriptor(getPlaybookVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>
+        restorePlaybookVersionTransportSettings =
+            GrpcCallSettings
+                .<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>newBuilder()
+                .setMethodDescriptor(restorePlaybookVersionMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -376,6 +462,24 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
     this.getPlaybookCallable =
         callableFactory.createUnaryCallable(
             getPlaybookTransportSettings, settings.getPlaybookSettings(), clientContext);
+    this.exportPlaybookCallable =
+        callableFactory.createUnaryCallable(
+            exportPlaybookTransportSettings, settings.exportPlaybookSettings(), clientContext);
+    this.exportPlaybookOperationCallable =
+        callableFactory.createOperationCallable(
+            exportPlaybookTransportSettings,
+            settings.exportPlaybookOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.importPlaybookCallable =
+        callableFactory.createUnaryCallable(
+            importPlaybookTransportSettings, settings.importPlaybookSettings(), clientContext);
+    this.importPlaybookOperationCallable =
+        callableFactory.createOperationCallable(
+            importPlaybookTransportSettings,
+            settings.importPlaybookOperationSettings(),
+            clientContext,
+            operationsStub);
     this.updatePlaybookCallable =
         callableFactory.createUnaryCallable(
             updatePlaybookTransportSettings, settings.updatePlaybookSettings(), clientContext);
@@ -388,6 +492,11 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
         callableFactory.createUnaryCallable(
             getPlaybookVersionTransportSettings,
             settings.getPlaybookVersionSettings(),
+            clientContext);
+    this.restorePlaybookVersionCallable =
+        callableFactory.createUnaryCallable(
+            restorePlaybookVersionTransportSettings,
+            settings.restorePlaybookVersionSettings(),
             clientContext);
     this.listPlaybookVersionsCallable =
         callableFactory.createUnaryCallable(
@@ -449,6 +558,28 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
   }
 
   @Override
+  public UnaryCallable<ExportPlaybookRequest, Operation> exportPlaybookCallable() {
+    return exportPlaybookCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportPlaybookRequest, ExportPlaybookResponse, Struct>
+      exportPlaybookOperationCallable() {
+    return exportPlaybookOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportPlaybookRequest, Operation> importPlaybookCallable() {
+    return importPlaybookCallable;
+  }
+
+  @Override
+  public OperationCallable<ImportPlaybookRequest, ImportPlaybookResponse, Struct>
+      importPlaybookOperationCallable() {
+    return importPlaybookOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdatePlaybookRequest, Playbook> updatePlaybookCallable() {
     return updatePlaybookCallable;
   }
@@ -462,6 +593,12 @@ public class GrpcPlaybooksStub extends PlaybooksStub {
   @Override
   public UnaryCallable<GetPlaybookVersionRequest, PlaybookVersion> getPlaybookVersionCallable() {
     return getPlaybookVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>
+      restorePlaybookVersionCallable() {
+    return restorePlaybookVersionCallable;
   }
 
   @Override

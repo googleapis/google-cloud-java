@@ -211,6 +211,8 @@ public final class SearchConnectionsRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Optional. Supported field/value: - `state` - MISSING|AVAILABLE|ERROR
+   *
+   * The syntax is based on https://google.aip.dev/160.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -235,6 +237,8 @@ public final class SearchConnectionsRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Optional. Supported field/value: - `state` - MISSING|AVAILABLE|ERROR
+   *
+   * The syntax is based on https://google.aip.dev/160.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -977,6 +981,8 @@ public final class SearchConnectionsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. Supported field/value: - `state` - MISSING|AVAILABLE|ERROR
+     *
+     * The syntax is based on https://google.aip.dev/160.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1000,6 +1006,8 @@ public final class SearchConnectionsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. Supported field/value: - `state` - MISSING|AVAILABLE|ERROR
+     *
+     * The syntax is based on https://google.aip.dev/160.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1023,6 +1031,8 @@ public final class SearchConnectionsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. Supported field/value: - `state` - MISSING|AVAILABLE|ERROR
+     *
+     * The syntax is based on https://google.aip.dev/160.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1045,6 +1055,8 @@ public final class SearchConnectionsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. Supported field/value: - `state` - MISSING|AVAILABLE|ERROR
+     *
+     * The syntax is based on https://google.aip.dev/160.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1063,6 +1075,8 @@ public final class SearchConnectionsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. Supported field/value: - `state` - MISSING|AVAILABLE|ERROR
+     *
+     * The syntax is based on https://google.aip.dev/160.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

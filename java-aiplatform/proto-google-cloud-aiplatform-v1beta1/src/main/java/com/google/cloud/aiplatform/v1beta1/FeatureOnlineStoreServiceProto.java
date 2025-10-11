@@ -120,6 +120,14 @@ public final class FeatureOnlineStoreServiceProto {
       internal_static_google_cloud_aiplatform_v1beta1_FeatureViewDirectWriteResponse_WriteResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_FeatureViewDirectWriteResponse_WriteResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_GenerateFetchAccessTokenRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_GenerateFetchAccessTokenRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_GenerateFetchAccessTokenResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_GenerateFetchAccessTokenResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -273,39 +281,50 @@ public final class FeatureOnlineStoreServiceProto {
           + "WriteResponse\022E\n"
           + "\010data_key\030\001 \001(\01323.google."
           + "cloud.aiplatform.v1beta1.FeatureViewDataKey\022;\n"
-          + "\027online_store_write_time\030\002 \001(\0132\032.google.protobuf.Timestamp*b\n"
+          + "\027online_store_write_time\030\002 \001(\0132\032.google.protobuf.Timestamp\"c\n"
+          + "\037GenerateFetchAccessTokenRequest\022@\n"
+          + "\014feature_view\030\001 \001(\tB*\372A\'\n"
+          + "%aiplatform.googleapis.com/FeatureView\"i\n"
+          + " GenerateFetchAccessTokenResponse\022\024\n"
+          + "\014access_token\030\001 \001(\t\022/\n"
+          + "\013expire_time\030\002 \001(\0132\032.google.protobuf.Timestamp*b\n"
           + "\025FeatureViewDataFormat\022(\n"
           + "$FEATURE_VIEW_DATA_FORMAT_UNSPECIFIED\020\000\022\r\n"
           + "\tKEY_VALUE\020\001\022\020\n"
-          + "\014PROTO_STRUCT\020\0022\350\t\n"
+          + "\014PROTO_STRUCT\020\0022\203\014\n"
           + "\031FeatureOnlineStoreService\022\232\002\n"
-          + "\022FetchFeatureValues\022:.google.cloud.aiplatf"
-          + "orm.v1beta1.FetchFeatureValuesRequest\032;."
-          + "google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse\"\212\001\332A\026feature_view,"
-          + " data_key\202\323\344\223\002k\"f/v1beta1/{feature_view=pro"
-          + "jects/*/locations/*/featureOnlineStores/"
-          + "*/featureViews/*}:fetchFeatureValues:\001*\022\303\002\n"
-          + "\033StreamingFetchFeatureValues\022C.google.cloud.aiplatform.v1beta1.StreamingFetch"
-          + "FeatureValuesRequest\032D.google.cloud.aipl"
-          + "atform.v1beta1.StreamingFetchFeatureValuesResponse\"\224\001\332A\027feature_view,"
-          + " data_keys\202\323\344\223\002t\"o/v1beta1/{feature_view=projects/*"
-          + "/locations/*/featureOnlineStores/*/featu"
-          + "reViews/*}:streamingFetchFeatureValues:\001*(\0010\001\022\214\002\n"
-          + "\025SearchNearestEntities\022=.google.cloud.aiplatform.v1beta1.SearchNearestE"
-          + "ntitiesRequest\032>.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesResponse\"t"
-          + "\202\323\344\223\002n\"i/v1beta1/{feature_view=projects/"
-          + "*/locations/*/featureOnlineStores/*/featureViews/*}:searchNearestEntities:\001*\022\211\002\n"
-          + "\026FeatureViewDirectWrite\022>.google.cloud.aiplatform.v1beta1.FeatureViewDirectWrite"
-          + "Request\032?.google.cloud.aiplatform.v1beta"
-          + "1.FeatureViewDirectWriteResponse\"j\202\323\344\223\002d"
-          + "\"_/v1beta1/{feature_view=projects/*/locations/*/featureOnlineStores/*/featureVie"
-          + "ws/*}:directWrite:\001*(\0010\001\032M\312A\031aiplatform."
-          + "googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\365\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\036FeatureOnlineSt"
-          + "oreServiceProtoP\001ZCcloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aiplat"
-          + "formpb\252\002\037Google.Cloud.AIPlatform.V1Beta1"
-          + "\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goo"
-          + "gle::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "\022FetchFeatureValues\022:.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRe"
+          + "quest\032;.google.cloud.aiplatform.v1beta1."
+          + "FetchFeatureValuesResponse\"\212\001\332A\026feature_view,"
+          + " data_key\202\323\344\223\002k\"f/v1beta1/{feature_"
+          + "view=projects/*/locations/*/featureOnlin"
+          + "eStores/*/featureViews/*}:fetchFeatureValues:\001*\022\303\002\n"
+          + "\033StreamingFetchFeatureValues\022C.google.cloud.aiplatform.v1beta1.Stream"
+          + "ingFetchFeatureValuesRequest\032D.google.cl"
+          + "oud.aiplatform.v1beta1.StreamingFetchFeatureValuesResponse\"\224\001\332A\027feature_view,"
+          + " data_keys\202\323\344\223\002t\"o/v1beta1/{feature_view=pr"
+          + "ojects/*/locations/*/featureOnlineStores"
+          + "/*/featureViews/*}:streamingFetchFeatureValues:\001*(\0010\001\022\214\002\n"
+          + "\025SearchNearestEntities\022=.google.cloud.aiplatform.v1beta1.Search"
+          + "NearestEntitiesRequest\032>.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRe"
+          + "sponse\"t\202\323\344\223\002n\"i/v1beta1/{feature_view=p"
+          + "rojects/*/locations/*/featureOnlineStore"
+          + "s/*/featureViews/*}:searchNearestEntities:\001*\022\211\002\n"
+          + "\026FeatureViewDirectWrite\022>.google.cloud.aiplatform.v1beta1.FeatureViewDir"
+          + "ectWriteRequest\032?.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse"
+          + "\"j\202\323\344\223\002d\"_/v1beta1/{feature_view=project"
+          + "s/*/locations/*/featureOnlineStores/*/featureViews/*}:directWrite:\001*(\0010\001\022\230\002\n"
+          + "\030GenerateFetchAccessToken\022@.google.cloud.aip"
+          + "latform.v1beta1.GenerateFetchAccessTokenRequest\032A.google.cloud.aiplatform.v1beta"
+          + "1.GenerateFetchAccessTokenResponse\"w\202\323\344\223"
+          + "\002q\"l/v1beta1/{feature_view=projects/*/locations/*/featureOnlineStores/*/featureV"
+          + "iews/*}:generateFetchAccessToken:\001*\032M\312A\031"
+          + "aiplatform.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\365\001\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\036Feat"
+          + "ureOnlineStoreServiceProtoP\001ZCcloud.google.com/go/aiplatform/apiv1beta1/aiplatfo"
+          + "rmpb;aiplatformpb\252\002\037Google.Cloud.AIPlatf"
+          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
+          + "beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -534,6 +553,22 @@ public final class FeatureOnlineStoreServiceProto {
             internal_static_google_cloud_aiplatform_v1beta1_FeatureViewDirectWriteResponse_WriteResponse_descriptor,
             new java.lang.String[] {
               "DataKey", "OnlineStoreWriteTime",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GenerateFetchAccessTokenRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_aiplatform_v1beta1_GenerateFetchAccessTokenRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_GenerateFetchAccessTokenRequest_descriptor,
+            new java.lang.String[] {
+              "FeatureView",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GenerateFetchAccessTokenResponse_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_aiplatform_v1beta1_GenerateFetchAccessTokenResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_GenerateFetchAccessTokenResponse_descriptor,
+            new java.lang.String[] {
+              "AccessToken", "ExpireTime",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

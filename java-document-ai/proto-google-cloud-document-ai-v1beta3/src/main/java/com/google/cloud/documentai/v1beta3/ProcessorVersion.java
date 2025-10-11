@@ -4904,10 +4904,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The schema of the processor version. Describes the output.
+   * Output only. The schema of the processor version. Describes the output.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+   * <code>
+   * .google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the documentSchema field is set.
    */
@@ -4920,10 +4922,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The schema of the processor version. Describes the output.
+   * Output only. The schema of the processor version. Describes the output.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+   * <code>
+   * .google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The documentSchema.
    */
@@ -4938,10 +4942,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The schema of the processor version. Describes the output.
+   * Output only. The schema of the processor version. Describes the output.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+   * <code>
+   * .google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder getDocumentSchemaOrBuilder() {
@@ -5000,10 +5006,11 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The time the processor version was created.
+   * Output only. The time the processor version was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -5016,10 +5023,11 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The time the processor version was created.
+   * Output only. The time the processor version was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -5032,10 +5040,11 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The time the processor version was created.
+   * Output only. The time the processor version was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -5049,10 +5058,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The most recently invoked evaluation for the processor version.
+   * Output only. The most recently invoked evaluation for the processor
+   * version.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+   * <code>
+   * .google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the latestEvaluation field is set.
    */
@@ -5065,10 +5077,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The most recently invoked evaluation for the processor version.
+   * Output only. The most recently invoked evaluation for the processor
+   * version.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+   * <code>
+   * .google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The latestEvaluation.
    */
@@ -5083,10 +5098,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The most recently invoked evaluation for the processor version.
+   * Output only. The most recently invoked evaluation for the processor
+   * version.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+   * <code>
+   * .google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.EvaluationReferenceOrBuilder
@@ -5105,10 +5123,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The KMS key name used for encryption.
+   * Output only. The KMS key name used for encryption.
    * </pre>
    *
-   * <code>string kms_key_name = 9;</code>
+   * <code>string kms_key_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The kmsKeyName.
    */
@@ -5129,10 +5147,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The KMS key name used for encryption.
+   * Output only. The KMS key name used for encryption.
    * </pre>
    *
-   * <code>string kms_key_name = 9;</code>
+   * <code>string kms_key_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for kmsKeyName.
    */
@@ -5158,10 +5176,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The KMS key version with which data is encrypted.
+   * Output only. The KMS key version with which data is encrypted.
    * </pre>
    *
-   * <code>string kms_key_version_name = 10;</code>
+   * <code>string kms_key_version_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The kmsKeyVersionName.
    */
@@ -5182,10 +5200,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The KMS key version with which data is encrypted.
+   * Output only. The KMS key version with which data is encrypted.
    * </pre>
    *
-   * <code>string kms_key_version_name = 10;</code>
+   * <code>string kms_key_version_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for kmsKeyVersionName.
    */
@@ -5228,10 +5246,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If set, information about the eventual deprecation of this version.
+   * Output only. If set, information about the eventual deprecation of this
+   * version.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13;
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the deprecationInfo field is set.
@@ -5245,10 +5265,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If set, information about the eventual deprecation of this version.
+   * Output only. If set, information about the eventual deprecation of this
+   * version.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13;
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The deprecationInfo.
@@ -5264,10 +5286,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If set, information about the eventual deprecation of this version.
+   * Output only. If set, information about the eventual deprecation of this
+   * version.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13;
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -6381,10 +6405,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The schema of the processor version. Describes the output.
+     * Output only. The schema of the processor version. Describes the output.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the documentSchema field is set.
      */
@@ -6396,10 +6422,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The schema of the processor version. Describes the output.
+     * Output only. The schema of the processor version. Describes the output.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The documentSchema.
      */
@@ -6417,10 +6445,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The schema of the processor version. Describes the output.
+     * Output only. The schema of the processor version. Describes the output.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setDocumentSchema(com.google.cloud.documentai.v1beta3.DocumentSchema value) {
       if (documentSchemaBuilder_ == null) {
@@ -6440,10 +6470,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The schema of the processor version. Describes the output.
+     * Output only. The schema of the processor version. Describes the output.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setDocumentSchema(
         com.google.cloud.documentai.v1beta3.DocumentSchema.Builder builderForValue) {
@@ -6461,10 +6493,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The schema of the processor version. Describes the output.
+     * Output only. The schema of the processor version. Describes the output.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeDocumentSchema(com.google.cloud.documentai.v1beta3.DocumentSchema value) {
       if (documentSchemaBuilder_ == null) {
@@ -6490,10 +6524,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The schema of the processor version. Describes the output.
+     * Output only. The schema of the processor version. Describes the output.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearDocumentSchema() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -6510,10 +6546,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The schema of the processor version. Describes the output.
+     * Output only. The schema of the processor version. Describes the output.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.documentai.v1beta3.DocumentSchema.Builder getDocumentSchemaBuilder() {
       bitField0_ |= 0x00000004;
@@ -6525,10 +6563,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The schema of the processor version. Describes the output.
+     * Output only. The schema of the processor version. Describes the output.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder
         getDocumentSchemaOrBuilder() {
@@ -6545,10 +6585,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The schema of the processor version. Describes the output.
+     * Output only. The schema of the processor version. Describes the output.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.documentai.v1beta3.DocumentSchema,
@@ -6685,10 +6727,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The time the processor version was created.
+     * Output only. The time the processor version was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
@@ -6700,10 +6744,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The time the processor version was created.
+     * Output only. The time the processor version was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -6721,10 +6767,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The time the processor version was created.
+     * Output only. The time the processor version was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -6744,10 +6792,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The time the processor version was created.
+     * Output only. The time the processor version was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -6764,10 +6814,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The time the processor version was created.
+     * Output only. The time the processor version was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -6792,10 +6844,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The time the processor version was created.
+     * Output only. The time the processor version was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -6812,10 +6866,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The time the processor version was created.
+     * Output only. The time the processor version was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       bitField0_ |= 0x00000010;
@@ -6827,10 +6883,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The time the processor version was created.
+     * Output only. The time the processor version was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -6846,10 +6904,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The time the processor version was created.
+     * Output only. The time the processor version was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -6879,10 +6939,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The most recently invoked evaluation for the processor version.
+     * Output only. The most recently invoked evaluation for the processor
+     * version.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the latestEvaluation field is set.
      */
@@ -6894,10 +6957,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The most recently invoked evaluation for the processor version.
+     * Output only. The most recently invoked evaluation for the processor
+     * version.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The latestEvaluation.
      */
@@ -6915,10 +6981,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The most recently invoked evaluation for the processor version.
+     * Output only. The most recently invoked evaluation for the processor
+     * version.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setLatestEvaluation(
         com.google.cloud.documentai.v1beta3.EvaluationReference value) {
@@ -6939,10 +7008,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The most recently invoked evaluation for the processor version.
+     * Output only. The most recently invoked evaluation for the processor
+     * version.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setLatestEvaluation(
         com.google.cloud.documentai.v1beta3.EvaluationReference.Builder builderForValue) {
@@ -6960,10 +7032,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The most recently invoked evaluation for the processor version.
+     * Output only. The most recently invoked evaluation for the processor
+     * version.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeLatestEvaluation(
         com.google.cloud.documentai.v1beta3.EvaluationReference value) {
@@ -6990,10 +7065,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The most recently invoked evaluation for the processor version.
+     * Output only. The most recently invoked evaluation for the processor
+     * version.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearLatestEvaluation() {
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -7010,10 +7088,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The most recently invoked evaluation for the processor version.
+     * Output only. The most recently invoked evaluation for the processor
+     * version.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.documentai.v1beta3.EvaluationReference.Builder
         getLatestEvaluationBuilder() {
@@ -7026,10 +7107,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The most recently invoked evaluation for the processor version.
+     * Output only. The most recently invoked evaluation for the processor
+     * version.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.documentai.v1beta3.EvaluationReferenceOrBuilder
         getLatestEvaluationOrBuilder() {
@@ -7046,10 +7130,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The most recently invoked evaluation for the processor version.
+     * Output only. The most recently invoked evaluation for the processor
+     * version.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.EvaluationReference latest_evaluation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.documentai.v1beta3.EvaluationReference,
@@ -7074,10 +7161,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The KMS key name used for encryption.
+     * Output only. The KMS key name used for encryption.
      * </pre>
      *
-     * <code>string kms_key_name = 9;</code>
+     * <code>string kms_key_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The kmsKeyName.
      */
@@ -7097,10 +7184,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The KMS key name used for encryption.
+     * Output only. The KMS key name used for encryption.
      * </pre>
      *
-     * <code>string kms_key_name = 9;</code>
+     * <code>string kms_key_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for kmsKeyName.
      */
@@ -7120,10 +7207,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The KMS key name used for encryption.
+     * Output only. The KMS key name used for encryption.
      * </pre>
      *
-     * <code>string kms_key_name = 9;</code>
+     * <code>string kms_key_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The kmsKeyName to set.
      * @return This builder for chaining.
@@ -7142,10 +7229,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The KMS key name used for encryption.
+     * Output only. The KMS key name used for encryption.
      * </pre>
      *
-     * <code>string kms_key_name = 9;</code>
+     * <code>string kms_key_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -7160,10 +7247,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The KMS key name used for encryption.
+     * Output only. The KMS key name used for encryption.
      * </pre>
      *
-     * <code>string kms_key_name = 9;</code>
+     * <code>string kms_key_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for kmsKeyName to set.
      * @return This builder for chaining.
@@ -7185,10 +7272,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The KMS key version with which data is encrypted.
+     * Output only. The KMS key version with which data is encrypted.
      * </pre>
      *
-     * <code>string kms_key_version_name = 10;</code>
+     * <code>string kms_key_version_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The kmsKeyVersionName.
      */
@@ -7208,10 +7295,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The KMS key version with which data is encrypted.
+     * Output only. The KMS key version with which data is encrypted.
      * </pre>
      *
-     * <code>string kms_key_version_name = 10;</code>
+     * <code>string kms_key_version_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for kmsKeyVersionName.
      */
@@ -7231,10 +7318,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The KMS key version with which data is encrypted.
+     * Output only. The KMS key version with which data is encrypted.
      * </pre>
      *
-     * <code>string kms_key_version_name = 10;</code>
+     * <code>string kms_key_version_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The kmsKeyVersionName to set.
      * @return This builder for chaining.
@@ -7253,10 +7340,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The KMS key version with which data is encrypted.
+     * Output only. The KMS key version with which data is encrypted.
      * </pre>
      *
-     * <code>string kms_key_version_name = 10;</code>
+     * <code>string kms_key_version_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -7271,10 +7358,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The KMS key version with which data is encrypted.
+     * Output only. The KMS key version with which data is encrypted.
      * </pre>
      *
-     * <code>string kms_key_version_name = 10;</code>
+     * <code>string kms_key_version_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for kmsKeyVersionName to set.
      * @return This builder for chaining.
@@ -7357,11 +7444,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set, information about the eventual deprecation of this version.
+     * Output only. If set, information about the eventual deprecation of this
+     * version.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13;
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the deprecationInfo field is set.
@@ -7374,11 +7462,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set, information about the eventual deprecation of this version.
+     * Output only. If set, information about the eventual deprecation of this
+     * version.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13;
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The deprecationInfo.
@@ -7399,11 +7488,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set, information about the eventual deprecation of this version.
+     * Output only. If set, information about the eventual deprecation of this
+     * version.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13;
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setDeprecationInfo(
@@ -7425,11 +7515,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set, information about the eventual deprecation of this version.
+     * Output only. If set, information about the eventual deprecation of this
+     * version.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13;
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setDeprecationInfo(
@@ -7449,11 +7540,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set, information about the eventual deprecation of this version.
+     * Output only. If set, information about the eventual deprecation of this
+     * version.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13;
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeDeprecationInfo(
@@ -7482,11 +7574,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set, information about the eventual deprecation of this version.
+     * Output only. If set, information about the eventual deprecation of this
+     * version.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13;
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearDeprecationInfo() {
@@ -7504,11 +7597,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set, information about the eventual deprecation of this version.
+     * Output only. If set, information about the eventual deprecation of this
+     * version.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13;
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo.Builder
@@ -7522,11 +7616,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set, information about the eventual deprecation of this version.
+     * Output only. If set, information about the eventual deprecation of this
+     * version.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13;
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfoOrBuilder
@@ -7545,11 +7640,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set, information about the eventual deprecation of this version.
+     * Output only. If set, information about the eventual deprecation of this
+     * version.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13;
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo deprecation_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

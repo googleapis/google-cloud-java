@@ -1197,11 +1197,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Training method to use for CDE training.
+     * Optional. Training method to use for CDE training.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+     * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for trainingMethod.
@@ -1212,11 +1212,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Training method to use for CDE training.
+     * Optional. Training method to use for CDE training.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+     * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The trainingMethod.
@@ -1402,11 +1402,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Training method to use for CDE training.
+     * Optional. Training method to use for CDE training.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+     * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for trainingMethod.
@@ -1420,11 +1420,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Training method to use for CDE training.
+     * Optional. Training method to use for CDE training.
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+     * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The trainingMethod.
@@ -1856,11 +1856,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Training method to use for CDE training.
+       * Optional. Training method to use for CDE training.
        * </pre>
        *
        * <code>
-       * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+       * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The enum numeric value on the wire for trainingMethod.
@@ -1874,11 +1874,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Training method to use for CDE training.
+       * Optional. Training method to use for CDE training.
        * </pre>
        *
        * <code>
-       * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+       * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param value The enum numeric value on the wire for trainingMethod to set.
@@ -1895,11 +1895,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Training method to use for CDE training.
+       * Optional. Training method to use for CDE training.
        * </pre>
        *
        * <code>
-       * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+       * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The trainingMethod.
@@ -1923,11 +1923,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Training method to use for CDE training.
+       * Optional. Training method to use for CDE training.
        * </pre>
        *
        * <code>
-       * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+       * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param value The trainingMethod to set.
@@ -1950,11 +1950,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Training method to use for CDE training.
+       * Optional. Training method to use for CDE training.
        * </pre>
        *
        * <code>
-       * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3;
+       * .google.cloud.documentai.v1.TrainProcessorVersionRequest.CustomDocumentExtractionOptions.TrainingMethod training_method = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return This builder for chaining.
