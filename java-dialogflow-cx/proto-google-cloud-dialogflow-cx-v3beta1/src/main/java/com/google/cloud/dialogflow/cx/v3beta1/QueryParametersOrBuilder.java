@@ -337,6 +337,44 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
+   * Scope for the parameters. If not specified, parameters will be treated as
+   * session parameters. Parameters with custom scope will not be put into
+   * [session
+   * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   *
+   * You can reference the parameters with custom scope in the agent with the
+   * following format: $parameter-scope.params.parameter-id.
+   * </pre>
+   *
+   * <code>string parameter_scope = 12;</code>
+   *
+   * @return The parameterScope.
+   */
+  java.lang.String getParameterScope();
+
+  /**
+   *
+   *
+   * <pre>
+   * Scope for the parameters. If not specified, parameters will be treated as
+   * session parameters. Parameters with custom scope will not be put into
+   * [session
+   * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   *
+   * You can reference the parameters with custom scope in the agent with the
+   * following format: $parameter-scope.params.parameter-id.
+   * </pre>
+   *
+   * <code>string parameter_scope = 12;</code>
+   *
+   * @return The bytes for parameterScope.
+   */
+  com.google.protobuf.ByteString getParameterScopeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The unique identifier of the
    * [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
    * page][QueryResult.current_page] in the session.
@@ -925,7 +963,7 @@ public interface QueryParametersOrBuilder
    *
    * @deprecated
    *     google.cloud.dialogflow.cx.v3beta1.QueryParameters.populate_data_store_connection_signals
-   *     is deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=753
+   *     is deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=762
    * @return The populateDataStoreConnectionSignals.
    */
   @java.lang.Deprecated

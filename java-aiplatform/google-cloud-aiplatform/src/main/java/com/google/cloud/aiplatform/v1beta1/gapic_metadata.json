@@ -415,6 +415,9 @@
             "FetchFeatureValues": {
               "methods": ["fetchFeatureValues", "fetchFeatureValues", "fetchFeatureValues", "fetchFeatureValuesCallable"]
             },
+            "GenerateFetchAccessToken": {
+              "methods": ["generateFetchAccessToken", "generateFetchAccessTokenCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },

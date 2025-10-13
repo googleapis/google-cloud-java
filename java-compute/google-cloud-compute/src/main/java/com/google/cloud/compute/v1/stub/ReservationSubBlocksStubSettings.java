@@ -48,6 +48,7 @@ import com.google.cloud.compute.v1.GetReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ListReservationSubBlocksRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PerformMaintenanceReservationSubBlockRequest;
+import com.google.cloud.compute.v1.ReportFaultyReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ReservationSubBlock;
 import com.google.cloud.compute.v1.ReservationSubBlocksGetResponse;
 import com.google.cloud.compute.v1.ReservationSubBlocksListResponse;
@@ -157,6 +158,10 @@ public class ReservationSubBlocksStubSettings
   private final OperationCallSettings<
           PerformMaintenanceReservationSubBlockRequest, Operation, Operation>
       performMaintenanceOperationSettings;
+  private final UnaryCallSettings<ReportFaultyReservationSubBlockRequest, Operation>
+      reportFaultySettings;
+  private final OperationCallSettings<ReportFaultyReservationSubBlockRequest, Operation, Operation>
+      reportFaultyOperationSettings;
 
   private static final PagedListDescriptor<
           ListReservationSubBlocksRequest, ReservationSubBlocksListResponse, ReservationSubBlock>
@@ -251,6 +256,18 @@ public class ReservationSubBlocksStubSettings
     return performMaintenanceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to reportFaulty. */
+  public UnaryCallSettings<ReportFaultyReservationSubBlockRequest, Operation>
+      reportFaultySettings() {
+    return reportFaultySettings;
+  }
+
+  /** Returns the object with the settings used for calls to reportFaulty. */
+  public OperationCallSettings<ReportFaultyReservationSubBlockRequest, Operation, Operation>
+      reportFaultyOperationSettings() {
+    return reportFaultyOperationSettings;
+  }
+
   public ReservationSubBlocksStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -338,6 +355,8 @@ public class ReservationSubBlocksStubSettings
     performMaintenanceSettings = settingsBuilder.performMaintenanceSettings().build();
     performMaintenanceOperationSettings =
         settingsBuilder.performMaintenanceOperationSettings().build();
+    reportFaultySettings = settingsBuilder.reportFaultySettings().build();
+    reportFaultyOperationSettings = settingsBuilder.reportFaultyOperationSettings().build();
   }
 
   /** Builder for ReservationSubBlocksStubSettings. */
@@ -355,6 +374,11 @@ public class ReservationSubBlocksStubSettings
     private final OperationCallSettings.Builder<
             PerformMaintenanceReservationSubBlockRequest, Operation, Operation>
         performMaintenanceOperationSettings;
+    private final UnaryCallSettings.Builder<ReportFaultyReservationSubBlockRequest, Operation>
+        reportFaultySettings;
+    private final OperationCallSettings.Builder<
+            ReportFaultyReservationSubBlockRequest, Operation, Operation>
+        reportFaultyOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -409,10 +433,12 @@ public class ReservationSubBlocksStubSettings
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       performMaintenanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       performMaintenanceOperationSettings = OperationCallSettings.newBuilder();
+      reportFaultySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      reportFaultyOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getSettings, listSettings, performMaintenanceSettings);
+              getSettings, listSettings, performMaintenanceSettings, reportFaultySettings);
       initDefaults(this);
     }
 
@@ -424,10 +450,12 @@ public class ReservationSubBlocksStubSettings
       performMaintenanceSettings = settings.performMaintenanceSettings.toBuilder();
       performMaintenanceOperationSettings =
           settings.performMaintenanceOperationSettings.toBuilder();
+      reportFaultySettings = settings.reportFaultySettings.toBuilder();
+      reportFaultyOperationSettings = settings.reportFaultyOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getSettings, listSettings, performMaintenanceSettings);
+              getSettings, listSettings, performMaintenanceSettings, reportFaultySettings);
     }
 
     private static Builder createDefault() {
@@ -459,10 +487,40 @@ public class ReservationSubBlocksStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .reportFaultySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .performMaintenanceOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<PerformMaintenanceReservationSubBlockRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .reportFaultyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ReportFaultyReservationSubBlockRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
@@ -525,6 +583,19 @@ public class ReservationSubBlocksStubSettings
             PerformMaintenanceReservationSubBlockRequest, Operation, Operation>
         performMaintenanceOperationSettings() {
       return performMaintenanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to reportFaulty. */
+    public UnaryCallSettings.Builder<ReportFaultyReservationSubBlockRequest, Operation>
+        reportFaultySettings() {
+      return reportFaultySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to reportFaulty. */
+    public OperationCallSettings.Builder<
+            ReportFaultyReservationSubBlockRequest, Operation, Operation>
+        reportFaultyOperationSettings() {
+      return reportFaultyOperationSettings;
     }
 
     @Override

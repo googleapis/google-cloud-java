@@ -161,6 +161,24 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetEffectiveSecurityPolicies</td>
+ *      <td><p> Returns effective security policies applied to this backend service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getEffectiveSecurityPolicies(GetEffectiveSecurityPoliciesBackendServiceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getEffectiveSecurityPolicies(String project, String backendService)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getEffectiveSecurityPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetHealth</td>
  *      <td><p> Gets the most recent health check results for this BackendService. Example request body: { "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }</td>
  *      <td>
@@ -1099,6 +1117,103 @@ public class BackendServicesClient implements BackgroundResource {
    */
   public final UnaryCallable<GetBackendServiceRequest, BackendService> getCallable() {
     return stub.getCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns effective security policies applied to this backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   String project = "project-309310695";
+   *   String backendService = "backendService-1884714623";
+   *   GetEffectiveSecurityPoliciesBackendServiceResponse response =
+   *       backendServicesClient.getEffectiveSecurityPolicies(project, backendService);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param backendService Name of the Backend Service for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetEffectiveSecurityPoliciesBackendServiceResponse getEffectiveSecurityPolicies(
+      String project, String backendService) {
+    GetEffectiveSecurityPoliciesBackendServiceRequest request =
+        GetEffectiveSecurityPoliciesBackendServiceRequest.newBuilder()
+            .setProject(project)
+            .setBackendService(backendService)
+            .build();
+    return getEffectiveSecurityPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns effective security policies applied to this backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   GetEffectiveSecurityPoliciesBackendServiceRequest request =
+   *       GetEffectiveSecurityPoliciesBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   GetEffectiveSecurityPoliciesBackendServiceResponse response =
+   *       backendServicesClient.getEffectiveSecurityPolicies(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetEffectiveSecurityPoliciesBackendServiceResponse getEffectiveSecurityPolicies(
+      GetEffectiveSecurityPoliciesBackendServiceRequest request) {
+    return getEffectiveSecurityPoliciesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns effective security policies applied to this backend service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   GetEffectiveSecurityPoliciesBackendServiceRequest request =
+   *       GetEffectiveSecurityPoliciesBackendServiceRequest.newBuilder()
+   *           .setBackendService("backendService-1884714623")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<GetEffectiveSecurityPoliciesBackendServiceResponse> future =
+   *       backendServicesClient.getEffectiveSecurityPoliciesCallable().futureCall(request);
+   *   // Do something.
+   *   GetEffectiveSecurityPoliciesBackendServiceResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GetEffectiveSecurityPoliciesBackendServiceRequest,
+          GetEffectiveSecurityPoliciesBackendServiceResponse>
+      getEffectiveSecurityPoliciesCallable() {
+    return stub.getEffectiveSecurityPoliciesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

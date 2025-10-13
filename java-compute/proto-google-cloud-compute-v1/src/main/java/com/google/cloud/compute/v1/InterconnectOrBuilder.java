@@ -1378,4 +1378,46 @@ public interface InterconnectOrBuilder
    * @return The bytes for state.
    */
   com.google.protobuf.ByteString getStateBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specific subzone in the InterconnectLocation that represents where this connection is to be provisioned.
+   * Check the Subzone enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string subzone = 280084972;</code>
+   *
+   * @return Whether the subzone field is set.
+   */
+  boolean hasSubzone();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specific subzone in the InterconnectLocation that represents where this connection is to be provisioned.
+   * Check the Subzone enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string subzone = 280084972;</code>
+   *
+   * @return The subzone.
+   */
+  java.lang.String getSubzone();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specific subzone in the InterconnectLocation that represents where this connection is to be provisioned.
+   * Check the Subzone enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string subzone = 280084972;</code>
+   *
+   * @return The bytes for subzone.
+   */
+  com.google.protobuf.ByteString getSubzoneBytes();
 }

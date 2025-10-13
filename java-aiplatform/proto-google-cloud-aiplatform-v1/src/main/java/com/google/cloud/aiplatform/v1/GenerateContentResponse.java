@@ -314,6 +314,16 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
        * <code>MODEL_ARMOR = 5;</code>
        */
       MODEL_ARMOR(5),
+      /**
+       *
+       *
+       * <pre>
+       * The user prompt was blocked due to jailbreak.
+       * </pre>
+       *
+       * <code>JAILBREAK = 6;</code>
+       */
+      JAILBREAK(6),
       UNRECOGNIZED(-1),
       ;
 
@@ -384,6 +394,17 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
        */
       public static final int MODEL_ARMOR_VALUE = 5;
 
+      /**
+       *
+       *
+       * <pre>
+       * The user prompt was blocked due to jailbreak.
+       * </pre>
+       *
+       * <code>JAILBREAK = 6;</code>
+       */
+      public static final int JAILBREAK_VALUE = 6;
+
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
           throw new java.lang.IllegalArgumentException(
@@ -420,6 +441,8 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
             return PROHIBITED_CONTENT;
           case 5:
             return MODEL_ARMOR;
+          case 6:
+            return JAILBREAK;
           default:
             return null;
         }

@@ -125,6 +125,25 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> ReportFaulty</td>
+ *      <td><p> Allows customers to report a faulty subBlock.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> reportFaultyAsync(ReportFaultyReservationSubBlockRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> reportFaultyAsync(String project, String zone, String parentName, String reservationSubBlock, ReservationSubBlocksReportFaultyRequest reservationSubBlocksReportFaultyRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> reportFaultyOperationCallable()
+ *           <li><p> reportFaultyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -634,6 +653,173 @@ public class ReservationSubBlocksClient implements BackgroundResource {
   public final UnaryCallable<PerformMaintenanceReservationSubBlockRequest, Operation>
       performMaintenanceCallable() {
     return stub.performMaintenanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Allows customers to report a faulty subBlock.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String parentName = "parentName-244870571";
+   *   String reservationSubBlock = "reservationSubBlock-1816847847";
+   *   ReservationSubBlocksReportFaultyRequest reservationSubBlocksReportFaultyRequestResource =
+   *       ReservationSubBlocksReportFaultyRequest.newBuilder().build();
+   *   Operation response =
+   *       reservationSubBlocksClient
+   *           .reportFaultyAsync(
+   *               project,
+   *               zone,
+   *               parentName,
+   *               reservationSubBlock,
+   *               reservationSubBlocksReportFaultyRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone Name of the zone for this request. Zone name should conform to RFC1035.
+   * @param parentName The name of the parent reservation and parent block. In the format of
+   *     reservations/{reservation_name}/reservationBlocks/{reservation_block_name}
+   * @param reservationSubBlock The name of the reservation subBlock. Name should conform to RFC1035
+   *     or be a resource ID.
+   * @param reservationSubBlocksReportFaultyRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> reportFaultyAsync(
+      String project,
+      String zone,
+      String parentName,
+      String reservationSubBlock,
+      ReservationSubBlocksReportFaultyRequest reservationSubBlocksReportFaultyRequestResource) {
+    ReportFaultyReservationSubBlockRequest request =
+        ReportFaultyReservationSubBlockRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setParentName(parentName)
+            .setReservationSubBlock(reservationSubBlock)
+            .setReservationSubBlocksReportFaultyRequestResource(
+                reservationSubBlocksReportFaultyRequestResource)
+            .build();
+    return reportFaultyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Allows customers to report a faulty subBlock.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   ReportFaultyReservationSubBlockRequest request =
+   *       ReportFaultyReservationSubBlockRequest.newBuilder()
+   *           .setParentName("parentName-244870571")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservationSubBlock("reservationSubBlock-1816847847")
+   *           .setReservationSubBlocksReportFaultyRequestResource(
+   *               ReservationSubBlocksReportFaultyRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = reservationSubBlocksClient.reportFaultyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> reportFaultyAsync(
+      ReportFaultyReservationSubBlockRequest request) {
+    return reportFaultyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Allows customers to report a faulty subBlock.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   ReportFaultyReservationSubBlockRequest request =
+   *       ReportFaultyReservationSubBlockRequest.newBuilder()
+   *           .setParentName("parentName-244870571")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservationSubBlock("reservationSubBlock-1816847847")
+   *           .setReservationSubBlocksReportFaultyRequestResource(
+   *               ReservationSubBlocksReportFaultyRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       reservationSubBlocksClient.reportFaultyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ReportFaultyReservationSubBlockRequest, Operation, Operation>
+      reportFaultyOperationCallable() {
+    return stub.reportFaultyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Allows customers to report a faulty subBlock.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   ReportFaultyReservationSubBlockRequest request =
+   *       ReportFaultyReservationSubBlockRequest.newBuilder()
+   *           .setParentName("parentName-244870571")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setReservationSubBlock("reservationSubBlock-1816847847")
+   *           .setReservationSubBlocksReportFaultyRequestResource(
+   *               ReservationSubBlocksReportFaultyRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       reservationSubBlocksClient.reportFaultyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ReportFaultyReservationSubBlockRequest, Operation>
+      reportFaultyCallable() {
+    return stub.reportFaultyCallable();
   }
 
   @Override

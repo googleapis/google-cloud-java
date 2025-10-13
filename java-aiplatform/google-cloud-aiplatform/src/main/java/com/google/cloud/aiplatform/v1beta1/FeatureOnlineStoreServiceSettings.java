@@ -128,6 +128,13 @@ public class FeatureOnlineStoreServiceSettings
         .featureViewDirectWriteSettings();
   }
 
+  /** Returns the object with the settings used for calls to generateFetchAccessToken. */
+  public UnaryCallSettings<GenerateFetchAccessTokenRequest, GenerateFetchAccessTokenResponse>
+      generateFetchAccessTokenSettings() {
+    return ((FeatureOnlineStoreServiceStubSettings) getStubSettings())
+        .generateFetchAccessTokenSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -276,6 +283,13 @@ public class FeatureOnlineStoreServiceSettings
             FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
         featureViewDirectWriteSettings() {
       return getStubSettingsBuilder().featureViewDirectWriteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to generateFetchAccessToken. */
+    public UnaryCallSettings.Builder<
+            GenerateFetchAccessTokenRequest, GenerateFetchAccessTokenResponse>
+        generateFetchAccessTokenSettings() {
+      return getStubSettingsBuilder().generateFetchAccessTokenSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

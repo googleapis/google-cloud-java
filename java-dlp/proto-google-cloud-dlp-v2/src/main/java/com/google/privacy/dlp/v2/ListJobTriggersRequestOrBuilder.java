@@ -201,6 +201,8 @@ public interface ListJobTriggersRequestOrBuilder
    *     - 'error_count' - Number of errors that have occurred while running.
    * * The operator must be `=` or `!=` for status and inspected_storage.
    *
+   * The syntax is based on https://google.aip.dev/160.
+   *
    * Examples:
    *
    * * inspected_storage = cloud_storage AND status = HEALTHY
@@ -236,6 +238,8 @@ public interface ListJobTriggersRequestOrBuilder
    *     quotation marks. Nanoseconds are ignored.
    *     - 'error_count' - Number of errors that have occurred while running.
    * * The operator must be `=` or `!=` for status and inspected_storage.
+   *
+   * The syntax is based on https://google.aip.dev/160.
    *
    * Examples:
    *
