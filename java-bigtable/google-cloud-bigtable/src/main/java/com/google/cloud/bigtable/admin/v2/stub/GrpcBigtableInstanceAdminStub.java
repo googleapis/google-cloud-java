@@ -104,6 +104,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInstanceRequest, Instance> getInstanceMethodDescriptor =
@@ -112,6 +113,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
           .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/GetInstance")
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListInstancesRequest, ListInstancesResponse>
@@ -123,6 +125,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   ProtoUtils.marshaller(ListInstancesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstancesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<Instance, Instance> updateInstanceMethodDescriptor =
@@ -131,6 +134,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
           .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/UpdateInstance")
           .setRequestMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<PartialUpdateInstanceRequest, Operation>
@@ -142,6 +146,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PartialUpdateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteInstanceRequest, Empty>
@@ -152,6 +157,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateClusterRequest, Operation>
@@ -162,6 +168,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetClusterRequest, Cluster> getClusterMethodDescriptor =
@@ -170,6 +177,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
           .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/GetCluster")
           .setRequestMarshaller(ProtoUtils.marshaller(GetClusterRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Cluster.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListClustersRequest, ListClustersResponse>
@@ -180,6 +188,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<Cluster, Operation> updateClusterMethodDescriptor =
@@ -188,6 +197,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
           .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/UpdateCluster")
           .setRequestMarshaller(ProtoUtils.marshaller(Cluster.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<PartialUpdateClusterRequest, Operation>
@@ -199,6 +209,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PartialUpdateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteClusterRequest, Empty> deleteClusterMethodDescriptor =
@@ -207,6 +218,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
           .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/DeleteCluster")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteClusterRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateAppProfileRequest, AppProfile>
@@ -217,6 +229,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAppProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AppProfile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAppProfileRequest, AppProfile>
@@ -227,6 +240,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAppProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AppProfile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAppProfilesRequest, ListAppProfilesResponse>
@@ -238,6 +252,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   ProtoUtils.marshaller(ListAppProfilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAppProfilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAppProfileRequest, Operation>
@@ -248,6 +263,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAppProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAppProfileRequest, Empty>
@@ -258,6 +274,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAppProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -266,6 +283,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
           .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -274,6 +292,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
           .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -286,6 +305,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListHotTabletsRequest, ListHotTabletsResponse>
@@ -297,6 +317,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   ProtoUtils.marshaller(ListHotTabletsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListHotTabletsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateLogicalViewRequest, Operation>
@@ -307,6 +328,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateLogicalViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLogicalViewRequest, LogicalView>
@@ -317,6 +339,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetLogicalViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LogicalView.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLogicalViewsRequest, ListLogicalViewsResponse>
@@ -328,6 +351,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   ProtoUtils.marshaller(ListLogicalViewsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLogicalViewsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateLogicalViewRequest, Operation>
@@ -338,6 +362,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateLogicalViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteLogicalViewRequest, Empty>
@@ -348,6 +373,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteLogicalViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMaterializedViewRequest, Operation>
@@ -359,6 +385,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMaterializedViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMaterializedViewRequest, MaterializedView>
@@ -370,6 +397,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMaterializedViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MaterializedView.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMaterializedViewsRequest, ListMaterializedViewsResponse>
@@ -382,6 +410,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   ProtoUtils.marshaller(ListMaterializedViewsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMaterializedViewsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateMaterializedViewRequest, Operation>
@@ -393,6 +422,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateMaterializedViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMaterializedViewRequest, Empty>
@@ -404,6 +434,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteMaterializedViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable;

@@ -28,25 +28,23 @@ package com.google.bigtable.v2;
  * familiarity and consistency across products and features.
  *
  * For compatibility with Bigtable's existing untyped APIs, each `Type` includes
- * an `Encoding` which describes how to convert to/from the underlying data.
+ * an `Encoding` which describes how to convert to or from the underlying data.
  *
- * Each encoding also defines the following properties:
+ * Each encoding can operate in one of two modes:
  *
- *  * Order-preserving: Does the encoded value sort consistently with the
- *    original typed value? Note that Bigtable will always sort data based on
- *    the raw encoded value, *not* the decoded type.
- *     - Example: BYTES values sort in the same order as their raw encodings.
- *     - Counterexample: Encoding INT64 as a fixed-width decimal string does
- *       *not* preserve sort order when dealing with negative numbers.
- *       `INT64(1) &gt; INT64(-1)`, but `STRING("-00001") &gt; STRING("00001)`.
- *  * Self-delimiting: If we concatenate two encoded values, can we always tell
- *    where the first one ends and the second one begins?
- *     - Example: If we encode INT64s to fixed-width STRINGs, the first value
- *       will always contain exactly N digits, possibly preceded by a sign.
- *     - Counterexample: If we concatenate two UTF-8 encoded STRINGs, we have
- *       no way to tell where the first one ends.
- *  * Compatibility: Which other systems have matching encoding schemes? For
- *    example, does this encoding have a GoogleSQL equivalent? HBase? Java?
+ *  - Sorted: In this mode, Bigtable guarantees that `Encode(X) &lt;= Encode(Y)`
+ *    if and only if `X &lt;= Y`. This is useful anywhere sort order is important,
+ *    for example when encoding keys.
+ *  - Distinct: In this mode, Bigtable guarantees that if `X != Y` then
+ *   `Encode(X) != Encode(Y)`. However, the converse is not guaranteed. For
+ *    example, both `{'foo': '1', 'bar': '2'}` and `{'bar': '2', 'foo': '1'}`
+ *    are valid encodings of the same JSON value.
+ *
+ * The API clearly documents which mode is used wherever an encoding can be
+ * configured. Each encoding also documents which values are supported in which
+ * modes. For example, when encoding INT64 as a numeric STRING, negative numbers
+ * cannot be encoded in sorted mode. This is because `INT64(1) &gt; INT64(-1)`, but
+ * `STRING("-00001") &gt; STRING("00001")`.
  * </pre>
  *
  * Protobuf type {@code google.bigtable.v2.Type}
@@ -92,7 +90,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.Bytes.Encoding encoding = 1;</code>
@@ -105,7 +103,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.Bytes.Encoding encoding = 1;</code>
@@ -118,7 +116,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.Bytes.Encoding encoding = 1;</code>
@@ -219,7 +217,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Rules used to convert to/from lower level types.
+     * Rules used to convert to or from lower level types.
      * </pre>
      *
      * Protobuf type {@code google.bigtable.v2.Type.Bytes.Encoding}
@@ -261,16 +259,34 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public interface RawOrBuilder
           extends
           // @@protoc_insertion_point(interface_extends:google.bigtable.v2.Type.Bytes.Encoding.Raw)
-          com.google.protobuf.MessageOrBuilder {}
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * If set, allows NULL values to be encoded as the empty string "".
+         *
+         * The actual empty string, or any value which only contains the
+         * null byte `0x00`, has one more null byte appended.
+         * </pre>
+         *
+         * <code>bool escape_nulls = 1;</code>
+         *
+         * @return The escapeNulls.
+         */
+        boolean getEscapeNulls();
+      }
 
       /**
        *
        *
        * <pre>
-       * Leaves the value "as-is"
-       * * Order-preserving? Yes
-       * * Self-delimiting? No
-       * * Compatibility? N/A
+       * Leaves the value as-is.
+       *
+       * Sorted mode: all values are supported.
+       *
+       * Distinct mode: all values are supported.
        * </pre>
        *
        * Protobuf type {@code google.bigtable.v2.Type.Bytes.Encoding.Raw}
@@ -309,6 +325,28 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                   com.google.bigtable.v2.Type.Bytes.Encoding.Raw.Builder.class);
         }
 
+        public static final int ESCAPE_NULLS_FIELD_NUMBER = 1;
+        private boolean escapeNulls_ = false;
+
+        /**
+         *
+         *
+         * <pre>
+         * If set, allows NULL values to be encoded as the empty string "".
+         *
+         * The actual empty string, or any value which only contains the
+         * null byte `0x00`, has one more null byte appended.
+         * </pre>
+         *
+         * <code>bool escape_nulls = 1;</code>
+         *
+         * @return The escapeNulls.
+         */
+        @java.lang.Override
+        public boolean getEscapeNulls() {
+          return escapeNulls_;
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -324,6 +362,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output)
             throws java.io.IOException {
+          if (escapeNulls_ != false) {
+            output.writeBool(1, escapeNulls_);
+          }
           getUnknownFields().writeTo(output);
         }
 
@@ -333,6 +374,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           if (size != -1) return size;
 
           size = 0;
+          if (escapeNulls_ != false) {
+            size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, escapeNulls_);
+          }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
@@ -349,6 +393,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           com.google.bigtable.v2.Type.Bytes.Encoding.Raw other =
               (com.google.bigtable.v2.Type.Bytes.Encoding.Raw) obj;
 
+          if (getEscapeNulls() != other.getEscapeNulls()) return false;
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
@@ -360,6 +405,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           }
           int hash = 41;
           hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + ESCAPE_NULLS_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEscapeNulls());
           hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -467,10 +514,11 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Leaves the value "as-is"
-         * * Order-preserving? Yes
-         * * Self-delimiting? No
-         * * Compatibility? N/A
+         * Leaves the value as-is.
+         *
+         * Sorted mode: all values are supported.
+         *
+         * Distinct mode: all values are supported.
          * </pre>
          *
          * Protobuf type {@code google.bigtable.v2.Type.Bytes.Encoding.Raw}
@@ -505,6 +553,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
+            escapeNulls_ = false;
             return this;
           }
 
@@ -532,8 +582,18 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           public com.google.bigtable.v2.Type.Bytes.Encoding.Raw buildPartial() {
             com.google.bigtable.v2.Type.Bytes.Encoding.Raw result =
                 new com.google.bigtable.v2.Type.Bytes.Encoding.Raw(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(com.google.bigtable.v2.Type.Bytes.Encoding.Raw result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.escapeNulls_ = escapeNulls_;
+            }
           }
 
           @java.lang.Override
@@ -584,6 +644,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           public Builder mergeFrom(com.google.bigtable.v2.Type.Bytes.Encoding.Raw other) {
             if (other == com.google.bigtable.v2.Type.Bytes.Encoding.Raw.getDefaultInstance())
               return this;
+            if (other.getEscapeNulls() != false) {
+              setEscapeNulls(other.getEscapeNulls());
+            }
             this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
@@ -610,6 +673,12 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                   case 0:
                     done = true;
                     break;
+                  case 8:
+                    {
+                      escapeNulls_ = input.readBool();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 8
                   default:
                     {
                       if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -624,6 +693,73 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             } finally {
               onChanged();
             } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private boolean escapeNulls_;
+
+          /**
+           *
+           *
+           * <pre>
+           * If set, allows NULL values to be encoded as the empty string "".
+           *
+           * The actual empty string, or any value which only contains the
+           * null byte `0x00`, has one more null byte appended.
+           * </pre>
+           *
+           * <code>bool escape_nulls = 1;</code>
+           *
+           * @return The escapeNulls.
+           */
+          @java.lang.Override
+          public boolean getEscapeNulls() {
+            return escapeNulls_;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * If set, allows NULL values to be encoded as the empty string "".
+           *
+           * The actual empty string, or any value which only contains the
+           * null byte `0x00`, has one more null byte appended.
+           * </pre>
+           *
+           * <code>bool escape_nulls = 1;</code>
+           *
+           * @param value The escapeNulls to set.
+           * @return This builder for chaining.
+           */
+          public Builder setEscapeNulls(boolean value) {
+
+            escapeNulls_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * If set, allows NULL values to be encoded as the empty string "".
+           *
+           * The actual empty string, or any value which only contains the
+           * null byte `0x00`, has one more null byte appended.
+           * </pre>
+           *
+           * <code>bool escape_nulls = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearEscapeNulls() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            escapeNulls_ = false;
+            onChanged();
             return this;
           }
 
@@ -972,7 +1108,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Rules used to convert to/from lower level types.
+       * Rules used to convert to or from lower level types.
        * </pre>
        *
        * Protobuf type {@code google.bigtable.v2.Type.Bytes.Encoding}
@@ -1474,7 +1610,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.Bytes.Encoding encoding = 1;</code>
@@ -1490,7 +1626,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.Bytes.Encoding encoding = 1;</code>
@@ -1508,7 +1644,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.Bytes.Encoding encoding = 1;</code>
@@ -1894,7 +2030,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Bytes.Encoding encoding = 1;</code>
@@ -1909,7 +2045,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Bytes.Encoding encoding = 1;</code>
@@ -1930,7 +2066,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Bytes.Encoding encoding = 1;</code>
@@ -1953,7 +2089,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Bytes.Encoding encoding = 1;</code>
@@ -1974,7 +2110,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Bytes.Encoding encoding = 1;</code>
@@ -2002,7 +2138,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Bytes.Encoding encoding = 1;</code>
@@ -2022,7 +2158,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Bytes.Encoding encoding = 1;</code>
@@ -2037,7 +2173,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Bytes.Encoding encoding = 1;</code>
@@ -2056,7 +2192,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Bytes.Encoding encoding = 1;</code>
@@ -2151,7 +2287,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.String.Encoding encoding = 1;</code>
@@ -2164,7 +2300,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.String.Encoding encoding = 1;</code>
@@ -2177,7 +2313,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.String.Encoding encoding = 1;</code>
@@ -2245,7 +2381,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.bigtable.v2.Type.String.Encoding.utf8_raw is deprecated. See
-       *     google/bigtable/v2/types.proto;l=97
+       *     google/bigtable/v2/types.proto;l=121
        * @return Whether the utf8Raw field is set.
        */
       @java.lang.Deprecated
@@ -2262,7 +2398,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.bigtable.v2.Type.String.Encoding.utf8_raw is deprecated. See
-       *     google/bigtable/v2/types.proto;l=97
+       *     google/bigtable/v2/types.proto;l=121
        * @return The utf8Raw.
        */
       @java.lang.Deprecated
@@ -2325,7 +2461,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Rules used to convert to/from lower level types.
+     * Rules used to convert to or from lower level types.
      * </pre>
      *
      * Protobuf type {@code google.bigtable.v2.Type.String.Encoding}
@@ -2797,19 +2933,72 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public interface Utf8BytesOrBuilder
           extends
           // @@protoc_insertion_point(interface_extends:google.bigtable.v2.Type.String.Encoding.Utf8Bytes)
-          com.google.protobuf.MessageOrBuilder {}
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Single-character escape sequence used to support NULL values.
+         *
+         * If set, allows NULL values to be encoded as the empty string "".
+         *
+         * The actual empty string, or any value where every character equals
+         * `null_escape_char`, has one more `null_escape_char` appended.
+         *
+         * If `null_escape_char` is set and does not equal the ASCII null
+         * character `0x00`, then the encoding will not support sorted mode.
+         *
+         * .
+         * </pre>
+         *
+         * <code>string null_escape_char = 1;</code>
+         *
+         * @return The nullEscapeChar.
+         */
+        java.lang.String getNullEscapeChar();
+
+        /**
+         *
+         *
+         * <pre>
+         * Single-character escape sequence used to support NULL values.
+         *
+         * If set, allows NULL values to be encoded as the empty string "".
+         *
+         * The actual empty string, or any value where every character equals
+         * `null_escape_char`, has one more `null_escape_char` appended.
+         *
+         * If `null_escape_char` is set and does not equal the ASCII null
+         * character `0x00`, then the encoding will not support sorted mode.
+         *
+         * .
+         * </pre>
+         *
+         * <code>string null_escape_char = 1;</code>
+         *
+         * @return The bytes for nullEscapeChar.
+         */
+        com.google.protobuf.ByteString getNullEscapeCharBytes();
+      }
 
       /**
        *
        *
        * <pre>
-       * UTF-8 encoding
-       * * Order-preserving? Yes (code point order)
-       * * Self-delimiting? No
-       * * Compatibility?
-       *    - BigQuery Federation `TEXT` encoding
-       *    - HBase `Bytes.toBytes`
-       *    - Java `String#getBytes(StandardCharsets.UTF_8)`
+       * UTF-8 encoding.
+       *
+       * Sorted mode:
+       *  - All values are supported.
+       *  - Code point order is preserved.
+       *
+       * Distinct mode: all values are supported.
+       *
+       * Compatible with:
+       *
+       *  - BigQuery `TEXT` encoding
+       *  - HBase `Bytes.toBytes`
+       *  - Java `String#getBytes(StandardCharsets.UTF_8)`
        * </pre>
        *
        * Protobuf type {@code google.bigtable.v2.Type.String.Encoding.Utf8Bytes}
@@ -2825,7 +3014,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           super(builder);
         }
 
-        private Utf8Bytes() {}
+        private Utf8Bytes() {
+          nullEscapeChar_ = "";
+        }
 
         @java.lang.Override
         @SuppressWarnings({"unused"})
@@ -2848,6 +3039,79 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                   com.google.bigtable.v2.Type.String.Encoding.Utf8Bytes.Builder.class);
         }
 
+        public static final int NULL_ESCAPE_CHAR_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object nullEscapeChar_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Single-character escape sequence used to support NULL values.
+         *
+         * If set, allows NULL values to be encoded as the empty string "".
+         *
+         * The actual empty string, or any value where every character equals
+         * `null_escape_char`, has one more `null_escape_char` appended.
+         *
+         * If `null_escape_char` is set and does not equal the ASCII null
+         * character `0x00`, then the encoding will not support sorted mode.
+         *
+         * .
+         * </pre>
+         *
+         * <code>string null_escape_char = 1;</code>
+         *
+         * @return The nullEscapeChar.
+         */
+        @java.lang.Override
+        public java.lang.String getNullEscapeChar() {
+          java.lang.Object ref = nullEscapeChar_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            nullEscapeChar_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Single-character escape sequence used to support NULL values.
+         *
+         * If set, allows NULL values to be encoded as the empty string "".
+         *
+         * The actual empty string, or any value where every character equals
+         * `null_escape_char`, has one more `null_escape_char` appended.
+         *
+         * If `null_escape_char` is set and does not equal the ASCII null
+         * character `0x00`, then the encoding will not support sorted mode.
+         *
+         * .
+         * </pre>
+         *
+         * <code>string null_escape_char = 1;</code>
+         *
+         * @return The bytes for nullEscapeChar.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getNullEscapeCharBytes() {
+          java.lang.Object ref = nullEscapeChar_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            nullEscapeChar_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -2863,6 +3127,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output)
             throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nullEscapeChar_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nullEscapeChar_);
+          }
           getUnknownFields().writeTo(output);
         }
 
@@ -2872,6 +3139,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           if (size != -1) return size;
 
           size = 0;
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nullEscapeChar_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nullEscapeChar_);
+          }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
@@ -2888,6 +3158,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           com.google.bigtable.v2.Type.String.Encoding.Utf8Bytes other =
               (com.google.bigtable.v2.Type.String.Encoding.Utf8Bytes) obj;
 
+          if (!getNullEscapeChar().equals(other.getNullEscapeChar())) return false;
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
@@ -2899,6 +3170,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           }
           int hash = 41;
           hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + NULL_ESCAPE_CHAR_FIELD_NUMBER;
+          hash = (53 * hash) + getNullEscapeChar().hashCode();
           hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -3007,13 +3280,19 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * UTF-8 encoding
-         * * Order-preserving? Yes (code point order)
-         * * Self-delimiting? No
-         * * Compatibility?
-         *    - BigQuery Federation `TEXT` encoding
-         *    - HBase `Bytes.toBytes`
-         *    - Java `String#getBytes(StandardCharsets.UTF_8)`
+         * UTF-8 encoding.
+         *
+         * Sorted mode:
+         *  - All values are supported.
+         *  - Code point order is preserved.
+         *
+         * Distinct mode: all values are supported.
+         *
+         * Compatible with:
+         *
+         *  - BigQuery `TEXT` encoding
+         *  - HBase `Bytes.toBytes`
+         *  - Java `String#getBytes(StandardCharsets.UTF_8)`
          * </pre>
          *
          * Protobuf type {@code google.bigtable.v2.Type.String.Encoding.Utf8Bytes}
@@ -3048,6 +3327,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
+            nullEscapeChar_ = "";
             return this;
           }
 
@@ -3075,8 +3356,18 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           public com.google.bigtable.v2.Type.String.Encoding.Utf8Bytes buildPartial() {
             com.google.bigtable.v2.Type.String.Encoding.Utf8Bytes result =
                 new com.google.bigtable.v2.Type.String.Encoding.Utf8Bytes(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
             onBuilt();
             return result;
+          }
+
+          private void buildPartial0(com.google.bigtable.v2.Type.String.Encoding.Utf8Bytes result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.nullEscapeChar_ = nullEscapeChar_;
+            }
           }
 
           @java.lang.Override
@@ -3127,6 +3418,11 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           public Builder mergeFrom(com.google.bigtable.v2.Type.String.Encoding.Utf8Bytes other) {
             if (other == com.google.bigtable.v2.Type.String.Encoding.Utf8Bytes.getDefaultInstance())
               return this;
+            if (!other.getNullEscapeChar().isEmpty()) {
+              nullEscapeChar_ = other.nullEscapeChar_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
             this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
@@ -3153,6 +3449,12 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                   case 0:
                     done = true;
                     break;
+                  case 10:
+                    {
+                      nullEscapeChar_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
                   default:
                     {
                       if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3167,6 +3469,169 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             } finally {
               onChanged();
             } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object nullEscapeChar_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Single-character escape sequence used to support NULL values.
+           *
+           * If set, allows NULL values to be encoded as the empty string "".
+           *
+           * The actual empty string, or any value where every character equals
+           * `null_escape_char`, has one more `null_escape_char` appended.
+           *
+           * If `null_escape_char` is set and does not equal the ASCII null
+           * character `0x00`, then the encoding will not support sorted mode.
+           *
+           * .
+           * </pre>
+           *
+           * <code>string null_escape_char = 1;</code>
+           *
+           * @return The nullEscapeChar.
+           */
+          public java.lang.String getNullEscapeChar() {
+            java.lang.Object ref = nullEscapeChar_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              nullEscapeChar_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Single-character escape sequence used to support NULL values.
+           *
+           * If set, allows NULL values to be encoded as the empty string "".
+           *
+           * The actual empty string, or any value where every character equals
+           * `null_escape_char`, has one more `null_escape_char` appended.
+           *
+           * If `null_escape_char` is set and does not equal the ASCII null
+           * character `0x00`, then the encoding will not support sorted mode.
+           *
+           * .
+           * </pre>
+           *
+           * <code>string null_escape_char = 1;</code>
+           *
+           * @return The bytes for nullEscapeChar.
+           */
+          public com.google.protobuf.ByteString getNullEscapeCharBytes() {
+            java.lang.Object ref = nullEscapeChar_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              nullEscapeChar_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Single-character escape sequence used to support NULL values.
+           *
+           * If set, allows NULL values to be encoded as the empty string "".
+           *
+           * The actual empty string, or any value where every character equals
+           * `null_escape_char`, has one more `null_escape_char` appended.
+           *
+           * If `null_escape_char` is set and does not equal the ASCII null
+           * character `0x00`, then the encoding will not support sorted mode.
+           *
+           * .
+           * </pre>
+           *
+           * <code>string null_escape_char = 1;</code>
+           *
+           * @param value The nullEscapeChar to set.
+           * @return This builder for chaining.
+           */
+          public Builder setNullEscapeChar(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            nullEscapeChar_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Single-character escape sequence used to support NULL values.
+           *
+           * If set, allows NULL values to be encoded as the empty string "".
+           *
+           * The actual empty string, or any value where every character equals
+           * `null_escape_char`, has one more `null_escape_char` appended.
+           *
+           * If `null_escape_char` is set and does not equal the ASCII null
+           * character `0x00`, then the encoding will not support sorted mode.
+           *
+           * .
+           * </pre>
+           *
+           * <code>string null_escape_char = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearNullEscapeChar() {
+            nullEscapeChar_ = getDefaultInstance().getNullEscapeChar();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Single-character escape sequence used to support NULL values.
+           *
+           * If set, allows NULL values to be encoded as the empty string "".
+           *
+           * The actual empty string, or any value where every character equals
+           * `null_escape_char`, has one more `null_escape_char` appended.
+           *
+           * If `null_escape_char` is set and does not equal the ASCII null
+           * character `0x00`, then the encoding will not support sorted mode.
+           *
+           * .
+           * </pre>
+           *
+           * <code>string null_escape_char = 1;</code>
+           *
+           * @param value The bytes for nullEscapeChar to set.
+           * @return This builder for chaining.
+           */
+          public Builder setNullEscapeCharBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            nullEscapeChar_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
             return this;
           }
 
@@ -3298,7 +3763,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.bigtable.v2.Type.String.Encoding.utf8_raw is deprecated. See
-       *     google/bigtable/v2/types.proto;l=97
+       *     google/bigtable/v2/types.proto;l=121
        * @return Whether the utf8Raw field is set.
        */
       @java.lang.Override
@@ -3318,7 +3783,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.bigtable.v2.Type.String.Encoding.utf8_raw is deprecated. See
-       *     google/bigtable/v2/types.proto;l=97
+       *     google/bigtable/v2/types.proto;l=121
        * @return The utf8Raw.
        */
       @java.lang.Override
@@ -3599,7 +4064,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Rules used to convert to/from lower level types.
+       * Rules used to convert to or from lower level types.
        * </pre>
        *
        * Protobuf type {@code google.bigtable.v2.Type.String.Encoding}
@@ -3845,7 +4310,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.bigtable.v2.Type.String.Encoding.utf8_raw is deprecated. See
-         *     google/bigtable/v2/types.proto;l=97
+         *     google/bigtable/v2/types.proto;l=121
          * @return Whether the utf8Raw field is set.
          */
         @java.lang.Override
@@ -3865,7 +4330,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.bigtable.v2.Type.String.Encoding.utf8_raw is deprecated. See
-         *     google/bigtable/v2/types.proto;l=97
+         *     google/bigtable/v2/types.proto;l=121
          * @return The utf8Raw.
          */
         @java.lang.Override
@@ -4361,7 +4826,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.String.Encoding encoding = 1;</code>
@@ -4377,7 +4842,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.String.Encoding encoding = 1;</code>
@@ -4395,7 +4860,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.String.Encoding encoding = 1;</code>
@@ -4781,7 +5246,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.String.Encoding encoding = 1;</code>
@@ -4796,7 +5261,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.String.Encoding encoding = 1;</code>
@@ -4817,7 +5282,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.String.Encoding encoding = 1;</code>
@@ -4840,7 +5305,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.String.Encoding encoding = 1;</code>
@@ -4861,7 +5326,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.String.Encoding encoding = 1;</code>
@@ -4889,7 +5354,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.String.Encoding encoding = 1;</code>
@@ -4909,7 +5374,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.String.Encoding encoding = 1;</code>
@@ -4924,7 +5389,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.String.Encoding encoding = 1;</code>
@@ -4943,7 +5408,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.String.Encoding encoding = 1;</code>
@@ -5038,7 +5503,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.Int64.Encoding encoding = 1;</code>
@@ -5051,7 +5516,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.Int64.Encoding encoding = 1;</code>
@@ -5064,7 +5529,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.Int64.Encoding encoding = 1;</code>
@@ -5159,6 +5624,47 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       com.google.bigtable.v2.Type.Int64.Encoding.BigEndianBytesOrBuilder
           getBigEndianBytesOrBuilder();
 
+      /**
+       *
+       *
+       * <pre>
+       * Use `OrderedCodeBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes ordered_code_bytes = 2;
+       * </code>
+       *
+       * @return Whether the orderedCodeBytes field is set.
+       */
+      boolean hasOrderedCodeBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `OrderedCodeBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes ordered_code_bytes = 2;
+       * </code>
+       *
+       * @return The orderedCodeBytes.
+       */
+      com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes getOrderedCodeBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `OrderedCodeBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes ordered_code_bytes = 2;
+       * </code>
+       */
+      com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytesOrBuilder
+          getOrderedCodeBytesOrBuilder();
+
       com.google.bigtable.v2.Type.Int64.Encoding.EncodingCase getEncodingCase();
     }
 
@@ -5166,7 +5672,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Rules used to convert to/from lower level types.
+     * Rules used to convert to or from lower level types.
      * </pre>
      *
      * Protobuf type {@code google.bigtable.v2.Type.Int64.Encoding}
@@ -5217,10 +5723,13 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          * Deprecated: ignored if set.
          * </pre>
          *
-         * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1;</code>
+         * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1 [deprecated = true];</code>
          *
+         * @deprecated google.bigtable.v2.Type.Int64.Encoding.BigEndianBytes.bytes_type is
+         *     deprecated. See google/bigtable/v2/types.proto;l=150
          * @return Whether the bytesType field is set.
          */
+        @java.lang.Deprecated
         boolean hasBytesType();
 
         /**
@@ -5230,10 +5739,13 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          * Deprecated: ignored if set.
          * </pre>
          *
-         * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1;</code>
+         * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1 [deprecated = true];</code>
          *
+         * @deprecated google.bigtable.v2.Type.Int64.Encoding.BigEndianBytes.bytes_type is
+         *     deprecated. See google/bigtable/v2/types.proto;l=150
          * @return The bytesType.
          */
+        @java.lang.Deprecated
         com.google.bigtable.v2.Type.Bytes getBytesType();
 
         /**
@@ -5243,8 +5755,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          * Deprecated: ignored if set.
          * </pre>
          *
-         * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1;</code>
+         * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1 [deprecated = true];</code>
          */
+        @java.lang.Deprecated
         com.google.bigtable.v2.Type.BytesOrBuilder getBytesTypeOrBuilder();
       }
 
@@ -5252,14 +5765,17 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Encodes the value as an 8-byte big endian twos complement `Bytes`
-       * value.
-       * * Order-preserving? No (positive values only)
-       * * Self-delimiting? Yes
-       * * Compatibility?
-       *    - BigQuery Federation `BINARY` encoding
-       *    - HBase `Bytes.toBytes`
-       *    - Java `ByteBuffer.putLong()` with `ByteOrder.BIG_ENDIAN`
+       * Encodes the value as an 8-byte big-endian two's complement value.
+       *
+       * Sorted mode: non-negative values are supported.
+       *
+       * Distinct mode: all values are supported.
+       *
+       * Compatible with:
+       *
+       *  - BigQuery `BINARY` encoding
+       *  - HBase `Bytes.toBytes`
+       *  - Java `ByteBuffer.putLong()` with `ByteOrder.BIG_ENDIAN`
        * </pre>
        *
        * Protobuf type {@code google.bigtable.v2.Type.Int64.Encoding.BigEndianBytes}
@@ -5309,11 +5825,14 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          * Deprecated: ignored if set.
          * </pre>
          *
-         * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1;</code>
+         * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1 [deprecated = true];</code>
          *
+         * @deprecated google.bigtable.v2.Type.Int64.Encoding.BigEndianBytes.bytes_type is
+         *     deprecated. See google/bigtable/v2/types.proto;l=150
          * @return Whether the bytesType field is set.
          */
         @java.lang.Override
+        @java.lang.Deprecated
         public boolean hasBytesType() {
           return ((bitField0_ & 0x00000001) != 0);
         }
@@ -5325,11 +5844,14 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          * Deprecated: ignored if set.
          * </pre>
          *
-         * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1;</code>
+         * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1 [deprecated = true];</code>
          *
+         * @deprecated google.bigtable.v2.Type.Int64.Encoding.BigEndianBytes.bytes_type is
+         *     deprecated. See google/bigtable/v2/types.proto;l=150
          * @return The bytesType.
          */
         @java.lang.Override
+        @java.lang.Deprecated
         public com.google.bigtable.v2.Type.Bytes getBytesType() {
           return bytesType_ == null
               ? com.google.bigtable.v2.Type.Bytes.getDefaultInstance()
@@ -5343,9 +5865,10 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          * Deprecated: ignored if set.
          * </pre>
          *
-         * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1;</code>
+         * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1 [deprecated = true];</code>
          */
         @java.lang.Override
+        @java.lang.Deprecated
         public com.google.bigtable.v2.Type.BytesOrBuilder getBytesTypeOrBuilder() {
           return bytesType_ == null
               ? com.google.bigtable.v2.Type.Bytes.getDefaultInstance()
@@ -5525,14 +6048,17 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Encodes the value as an 8-byte big endian twos complement `Bytes`
-         * value.
-         * * Order-preserving? No (positive values only)
-         * * Self-delimiting? Yes
-         * * Compatibility?
-         *    - BigQuery Federation `BINARY` encoding
-         *    - HBase `Bytes.toBytes`
-         *    - Java `ByteBuffer.putLong()` with `ByteOrder.BIG_ENDIAN`
+         * Encodes the value as an 8-byte big-endian two's complement value.
+         *
+         * Sorted mode: non-negative values are supported.
+         *
+         * Distinct mode: all values are supported.
+         *
+         * Compatible with:
+         *
+         *  - BigQuery `BINARY` encoding
+         *  - HBase `Bytes.toBytes`
+         *  - Java `ByteBuffer.putLong()` with `ByteOrder.BIG_ENDIAN`
          * </pre>
          *
          * Protobuf type {@code google.bigtable.v2.Type.Int64.Encoding.BigEndianBytes}
@@ -5747,10 +6273,13 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            * Deprecated: ignored if set.
            * </pre>
            *
-           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1;</code>
+           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1 [deprecated = true];</code>
            *
+           * @deprecated google.bigtable.v2.Type.Int64.Encoding.BigEndianBytes.bytes_type is
+           *     deprecated. See google/bigtable/v2/types.proto;l=150
            * @return Whether the bytesType field is set.
            */
+          @java.lang.Deprecated
           public boolean hasBytesType() {
             return ((bitField0_ & 0x00000001) != 0);
           }
@@ -5762,10 +6291,13 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            * Deprecated: ignored if set.
            * </pre>
            *
-           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1;</code>
+           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1 [deprecated = true];</code>
            *
+           * @deprecated google.bigtable.v2.Type.Int64.Encoding.BigEndianBytes.bytes_type is
+           *     deprecated. See google/bigtable/v2/types.proto;l=150
            * @return The bytesType.
            */
+          @java.lang.Deprecated
           public com.google.bigtable.v2.Type.Bytes getBytesType() {
             if (bytesTypeBuilder_ == null) {
               return bytesType_ == null
@@ -5783,8 +6315,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            * Deprecated: ignored if set.
            * </pre>
            *
-           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1;</code>
+           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1 [deprecated = true];</code>
            */
+          @java.lang.Deprecated
           public Builder setBytesType(com.google.bigtable.v2.Type.Bytes value) {
             if (bytesTypeBuilder_ == null) {
               if (value == null) {
@@ -5806,8 +6339,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            * Deprecated: ignored if set.
            * </pre>
            *
-           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1;</code>
+           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1 [deprecated = true];</code>
            */
+          @java.lang.Deprecated
           public Builder setBytesType(com.google.bigtable.v2.Type.Bytes.Builder builderForValue) {
             if (bytesTypeBuilder_ == null) {
               bytesType_ = builderForValue.build();
@@ -5826,8 +6360,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            * Deprecated: ignored if set.
            * </pre>
            *
-           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1;</code>
+           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1 [deprecated = true];</code>
            */
+          @java.lang.Deprecated
           public Builder mergeBytesType(com.google.bigtable.v2.Type.Bytes value) {
             if (bytesTypeBuilder_ == null) {
               if (((bitField0_ & 0x00000001) != 0)
@@ -5854,8 +6389,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            * Deprecated: ignored if set.
            * </pre>
            *
-           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1;</code>
+           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1 [deprecated = true];</code>
            */
+          @java.lang.Deprecated
           public Builder clearBytesType() {
             bitField0_ = (bitField0_ & ~0x00000001);
             bytesType_ = null;
@@ -5874,8 +6410,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            * Deprecated: ignored if set.
            * </pre>
            *
-           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1;</code>
+           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1 [deprecated = true];</code>
            */
+          @java.lang.Deprecated
           public com.google.bigtable.v2.Type.Bytes.Builder getBytesTypeBuilder() {
             bitField0_ |= 0x00000001;
             onChanged();
@@ -5889,8 +6426,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            * Deprecated: ignored if set.
            * </pre>
            *
-           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1;</code>
+           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1 [deprecated = true];</code>
            */
+          @java.lang.Deprecated
           public com.google.bigtable.v2.Type.BytesOrBuilder getBytesTypeOrBuilder() {
             if (bytesTypeBuilder_ != null) {
               return bytesTypeBuilder_.getMessageOrBuilder();
@@ -5908,7 +6446,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
            * Deprecated: ignored if set.
            * </pre>
            *
-           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1;</code>
+           * <code>.google.bigtable.v2.Type.Bytes bytes_type = 1 [deprecated = true];</code>
            */
           private com.google.protobuf.SingleFieldBuilderV3<
                   com.google.bigtable.v2.Type.Bytes,
@@ -5994,6 +6532,453 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public interface OrderedCodeBytesOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes)
+          com.google.protobuf.MessageOrBuilder {}
+
+      /**
+       *
+       *
+       * <pre>
+       * Encodes the value in a variable length binary format of up to 10 bytes.
+       * Values that are closer to zero use fewer bytes.
+       *
+       * Sorted mode: all values are supported.
+       *
+       * Distinct mode: all values are supported.
+       * </pre>
+       *
+       * Protobuf type {@code google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes}
+       */
+      public static final class OrderedCodeBytes extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes)
+          OrderedCodeBytesOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        // Use OrderedCodeBytes.newBuilder() to construct.
+        private OrderedCodeBytes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private OrderedCodeBytes() {}
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new OrderedCodeBytes();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.bigtable.v2.TypesProto
+              .internal_static_google_bigtable_v2_Type_Int64_Encoding_OrderedCodeBytes_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.bigtable.v2.TypesProto
+              .internal_static_google_bigtable_v2_Type_Int64_Encoding_OrderedCodeBytes_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.class,
+                  com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.Builder.class);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj instanceof com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes)) {
+            return super.equals(obj);
+          }
+          com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes other =
+              (com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes) obj;
+
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes parseFrom(
+            java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes parseFrom(
+            byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes parseFrom(
+            byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes parseFrom(
+            java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes parseFrom(
+            com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Encodes the value in a variable length binary format of up to 10 bytes.
+         * Values that are closer to zero use fewer bytes.
+         *
+         * Sorted mode: all values are supported.
+         *
+         * Distinct mode: all values are supported.
+         * </pre>
+         *
+         * Protobuf type {@code google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes)
+            com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytesOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.bigtable.v2.TypesProto
+                .internal_static_google_bigtable_v2_Type_Int64_Encoding_OrderedCodeBytes_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.bigtable.v2.TypesProto
+                .internal_static_google_bigtable_v2_Type_Int64_Encoding_OrderedCodeBytes_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.class,
+                    com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.Builder.class);
+          }
+
+          // Construct using
+          // com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.bigtable.v2.TypesProto
+                .internal_static_google_bigtable_v2_Type_Int64_Encoding_OrderedCodeBytes_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes
+              getDefaultInstanceForType() {
+            return com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes build() {
+            com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes buildPartial() {
+            com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes result =
+                new com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes(this);
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes) {
+              return mergeFrom((com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes) other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes other) {
+            if (other
+                == com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.getDefaultInstance())
+              return this;
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes)
+        private static final com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE = new com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes();
+        }
+
+        public static com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<OrderedCodeBytes> PARSER =
+            new com.google.protobuf.AbstractParser<OrderedCodeBytes>() {
+              @java.lang.Override
+              public OrderedCodeBytes parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<OrderedCodeBytes> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<OrderedCodeBytes> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
       private int encodingCase_ = 0;
 
       @SuppressWarnings("serial")
@@ -6004,6 +6989,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Internal.EnumLite,
               com.google.protobuf.AbstractMessage.InternalOneOfEnum {
         BIG_ENDIAN_BYTES(1),
+        ORDERED_CODE_BYTES(2),
         ENCODING_NOT_SET(0);
         private final int value;
 
@@ -6025,6 +7011,8 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           switch (value) {
             case 1:
               return BIG_ENDIAN_BYTES;
+            case 2:
+              return ORDERED_CODE_BYTES;
             case 0:
               return ENCODING_NOT_SET;
             default:
@@ -6096,6 +7084,64 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.v2.Type.Int64.Encoding.BigEndianBytes.getDefaultInstance();
       }
 
+      public static final int ORDERED_CODE_BYTES_FIELD_NUMBER = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `OrderedCodeBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes ordered_code_bytes = 2;
+       * </code>
+       *
+       * @return Whether the orderedCodeBytes field is set.
+       */
+      @java.lang.Override
+      public boolean hasOrderedCodeBytes() {
+        return encodingCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `OrderedCodeBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes ordered_code_bytes = 2;
+       * </code>
+       *
+       * @return The orderedCodeBytes.
+       */
+      @java.lang.Override
+      public com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes getOrderedCodeBytes() {
+        if (encodingCase_ == 2) {
+          return (com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes) encoding_;
+        }
+        return com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `OrderedCodeBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes ordered_code_bytes = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytesOrBuilder
+          getOrderedCodeBytesOrBuilder() {
+        if (encodingCase_ == 2) {
+          return (com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes) encoding_;
+        }
+        return com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.getDefaultInstance();
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -6114,6 +7160,10 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           output.writeMessage(
               1, (com.google.bigtable.v2.Type.Int64.Encoding.BigEndianBytes) encoding_);
         }
+        if (encodingCase_ == 2) {
+          output.writeMessage(
+              2, (com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes) encoding_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -6127,6 +7177,11 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           size +=
               com.google.protobuf.CodedOutputStream.computeMessageSize(
                   1, (com.google.bigtable.v2.Type.Int64.Encoding.BigEndianBytes) encoding_);
+        }
+        if (encodingCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2, (com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes) encoding_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -6149,6 +7204,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           case 1:
             if (!getBigEndianBytes().equals(other.getBigEndianBytes())) return false;
             break;
+          case 2:
+            if (!getOrderedCodeBytes().equals(other.getOrderedCodeBytes())) return false;
+            break;
           case 0:
           default:
         }
@@ -6167,6 +7225,10 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           case 1:
             hash = (37 * hash) + BIG_ENDIAN_BYTES_FIELD_NUMBER;
             hash = (53 * hash) + getBigEndianBytes().hashCode();
+            break;
+          case 2:
+            hash = (37 * hash) + ORDERED_CODE_BYTES_FIELD_NUMBER;
+            hash = (53 * hash) + getOrderedCodeBytes().hashCode();
             break;
           case 0:
           default:
@@ -6277,7 +7339,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Rules used to convert to/from lower level types.
+       * Rules used to convert to or from lower level types.
        * </pre>
        *
        * Protobuf type {@code google.bigtable.v2.Type.Int64.Encoding}
@@ -6315,6 +7377,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           bitField0_ = 0;
           if (bigEndianBytesBuilder_ != null) {
             bigEndianBytesBuilder_.clear();
+          }
+          if (orderedCodeBytesBuilder_ != null) {
+            orderedCodeBytesBuilder_.clear();
           }
           encodingCase_ = 0;
           encoding_ = null;
@@ -6362,6 +7427,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           result.encoding_ = this.encoding_;
           if (encodingCase_ == 1 && bigEndianBytesBuilder_ != null) {
             result.encoding_ = bigEndianBytesBuilder_.build();
+          }
+          if (encodingCase_ == 2 && orderedCodeBytesBuilder_ != null) {
+            result.encoding_ = orderedCodeBytesBuilder_.build();
           }
         }
 
@@ -6418,6 +7486,11 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 mergeBigEndianBytes(other.getBigEndianBytes());
                 break;
               }
+            case ORDERED_CODE_BYTES:
+              {
+                mergeOrderedCodeBytes(other.getOrderedCodeBytes());
+                break;
+              }
             case ENCODING_NOT_SET:
               {
                 break;
@@ -6456,6 +7529,13 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                     encodingCase_ = 1;
                     break;
                   } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        getOrderedCodeBytesFieldBuilder().getBuilder(), extensionRegistry);
+                    encodingCase_ = 2;
+                    break;
+                  } // case 18
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6714,6 +7794,240 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return bigEndianBytesBuilder_;
         }
 
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes,
+                com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.Builder,
+                com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytesOrBuilder>
+            orderedCodeBytesBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes ordered_code_bytes = 2;
+         * </code>
+         *
+         * @return Whether the orderedCodeBytes field is set.
+         */
+        @java.lang.Override
+        public boolean hasOrderedCodeBytes() {
+          return encodingCase_ == 2;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes ordered_code_bytes = 2;
+         * </code>
+         *
+         * @return The orderedCodeBytes.
+         */
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes getOrderedCodeBytes() {
+          if (orderedCodeBytesBuilder_ == null) {
+            if (encodingCase_ == 2) {
+              return (com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes) encoding_;
+            }
+            return com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.getDefaultInstance();
+          } else {
+            if (encodingCase_ == 2) {
+              return orderedCodeBytesBuilder_.getMessage();
+            }
+            return com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes ordered_code_bytes = 2;
+         * </code>
+         */
+        public Builder setOrderedCodeBytes(
+            com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes value) {
+          if (orderedCodeBytesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            encoding_ = value;
+            onChanged();
+          } else {
+            orderedCodeBytesBuilder_.setMessage(value);
+          }
+          encodingCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes ordered_code_bytes = 2;
+         * </code>
+         */
+        public Builder setOrderedCodeBytes(
+            com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.Builder builderForValue) {
+          if (orderedCodeBytesBuilder_ == null) {
+            encoding_ = builderForValue.build();
+            onChanged();
+          } else {
+            orderedCodeBytesBuilder_.setMessage(builderForValue.build());
+          }
+          encodingCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes ordered_code_bytes = 2;
+         * </code>
+         */
+        public Builder mergeOrderedCodeBytes(
+            com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes value) {
+          if (orderedCodeBytesBuilder_ == null) {
+            if (encodingCase_ == 2
+                && encoding_
+                    != com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes
+                        .getDefaultInstance()) {
+              encoding_ =
+                  com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.newBuilder(
+                          (com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes) encoding_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              encoding_ = value;
+            }
+            onChanged();
+          } else {
+            if (encodingCase_ == 2) {
+              orderedCodeBytesBuilder_.mergeFrom(value);
+            } else {
+              orderedCodeBytesBuilder_.setMessage(value);
+            }
+          }
+          encodingCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes ordered_code_bytes = 2;
+         * </code>
+         */
+        public Builder clearOrderedCodeBytes() {
+          if (orderedCodeBytesBuilder_ == null) {
+            if (encodingCase_ == 2) {
+              encodingCase_ = 0;
+              encoding_ = null;
+              onChanged();
+            }
+          } else {
+            if (encodingCase_ == 2) {
+              encodingCase_ = 0;
+              encoding_ = null;
+            }
+            orderedCodeBytesBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes ordered_code_bytes = 2;
+         * </code>
+         */
+        public com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.Builder
+            getOrderedCodeBytesBuilder() {
+          return getOrderedCodeBytesFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes ordered_code_bytes = 2;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytesOrBuilder
+            getOrderedCodeBytesOrBuilder() {
+          if ((encodingCase_ == 2) && (orderedCodeBytesBuilder_ != null)) {
+            return orderedCodeBytesBuilder_.getMessageOrBuilder();
+          } else {
+            if (encodingCase_ == 2) {
+              return (com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes) encoding_;
+            }
+            return com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes ordered_code_bytes = 2;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes,
+                com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.Builder,
+                com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytesOrBuilder>
+            getOrderedCodeBytesFieldBuilder() {
+          if (orderedCodeBytesBuilder_ == null) {
+            if (!(encodingCase_ == 2)) {
+              encoding_ =
+                  com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.getDefaultInstance();
+            }
+            orderedCodeBytesBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes,
+                    com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes.Builder,
+                    com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytesOrBuilder>(
+                    (com.google.bigtable.v2.Type.Int64.Encoding.OrderedCodeBytes) encoding_,
+                    getParentForChildren(),
+                    isClean());
+            encoding_ = null;
+          }
+          encodingCase_ = 2;
+          onChanged();
+          return orderedCodeBytesBuilder_;
+        }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -6786,7 +8100,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.Int64.Encoding encoding = 1;</code>
@@ -6802,7 +8116,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.Int64.Encoding encoding = 1;</code>
@@ -6820,7 +8134,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The encoding to use when converting to/from lower level types.
+     * The encoding to use when converting to or from lower level types.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type.Int64.Encoding encoding = 1;</code>
@@ -7206,7 +8520,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Int64.Encoding encoding = 1;</code>
@@ -7221,7 +8535,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Int64.Encoding encoding = 1;</code>
@@ -7242,7 +8556,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Int64.Encoding encoding = 1;</code>
@@ -7265,7 +8579,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Int64.Encoding encoding = 1;</code>
@@ -7286,7 +8600,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Int64.Encoding encoding = 1;</code>
@@ -7314,7 +8628,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Int64.Encoding encoding = 1;</code>
@@ -7334,7 +8648,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Int64.Encoding encoding = 1;</code>
@@ -7349,7 +8663,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Int64.Encoding encoding = 1;</code>
@@ -7368,7 +8682,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The encoding to use when converting to/from lower level types.
+       * The encoding to use when converting to or from lower level types.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type.Int64.Encoding encoding = 1;</code>
@@ -8726,7 +10040,45 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   public interface TimestampOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.bigtable.v2.Type.Timestamp)
-      com.google.protobuf.MessageOrBuilder {}
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The encoding to use when converting to or from lower level types.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type.Timestamp.Encoding encoding = 1;</code>
+     *
+     * @return Whether the encoding field is set.
+     */
+    boolean hasEncoding();
+
+    /**
+     *
+     *
+     * <pre>
+     * The encoding to use when converting to or from lower level types.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type.Timestamp.Encoding encoding = 1;</code>
+     *
+     * @return The encoding.
+     */
+    com.google.bigtable.v2.Type.Timestamp.Encoding getEncoding();
+
+    /**
+     *
+     *
+     * <pre>
+     * The encoding to use when converting to or from lower level types.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type.Timestamp.Encoding encoding = 1;</code>
+     */
+    com.google.bigtable.v2.Type.Timestamp.EncodingOrBuilder getEncodingOrBuilder();
+  }
 
   /**
    *
@@ -8772,6 +10124,999 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.v2.Type.Timestamp.Builder.class);
     }
 
+    public interface EncodingOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.bigtable.v2.Type.Timestamp.Encoding)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Encodes the number of microseconds since the Unix epoch using the
+       * given `Int64` encoding. Values must be microsecond-aligned.
+       *
+       * Compatible with:
+       *
+       *  - Java `Instant.truncatedTo()` with `ChronoUnit.MICROS`
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Int64.Encoding unix_micros_int64 = 1;</code>
+       *
+       * @return Whether the unixMicrosInt64 field is set.
+       */
+      boolean hasUnixMicrosInt64();
+
+      /**
+       *
+       *
+       * <pre>
+       * Encodes the number of microseconds since the Unix epoch using the
+       * given `Int64` encoding. Values must be microsecond-aligned.
+       *
+       * Compatible with:
+       *
+       *  - Java `Instant.truncatedTo()` with `ChronoUnit.MICROS`
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Int64.Encoding unix_micros_int64 = 1;</code>
+       *
+       * @return The unixMicrosInt64.
+       */
+      com.google.bigtable.v2.Type.Int64.Encoding getUnixMicrosInt64();
+
+      /**
+       *
+       *
+       * <pre>
+       * Encodes the number of microseconds since the Unix epoch using the
+       * given `Int64` encoding. Values must be microsecond-aligned.
+       *
+       * Compatible with:
+       *
+       *  - Java `Instant.truncatedTo()` with `ChronoUnit.MICROS`
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Int64.Encoding unix_micros_int64 = 1;</code>
+       */
+      com.google.bigtable.v2.Type.Int64.EncodingOrBuilder getUnixMicrosInt64OrBuilder();
+
+      com.google.bigtable.v2.Type.Timestamp.Encoding.EncodingCase getEncodingCase();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules used to convert to or from lower level types.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.v2.Type.Timestamp.Encoding}
+     */
+    public static final class Encoding extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.bigtable.v2.Type.Timestamp.Encoding)
+        EncodingOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use Encoding.newBuilder() to construct.
+      private Encoding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Encoding() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Encoding();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.v2.TypesProto
+            .internal_static_google_bigtable_v2_Type_Timestamp_Encoding_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.v2.TypesProto
+            .internal_static_google_bigtable_v2_Type_Timestamp_Encoding_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.v2.Type.Timestamp.Encoding.class,
+                com.google.bigtable.v2.Type.Timestamp.Encoding.Builder.class);
+      }
+
+      private int encodingCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object encoding_;
+
+      public enum EncodingCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        UNIX_MICROS_INT64(1),
+        ENCODING_NOT_SET(0);
+        private final int value;
+
+        private EncodingCase(int value) {
+          this.value = value;
+        }
+
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static EncodingCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static EncodingCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return UNIX_MICROS_INT64;
+            case 0:
+              return ENCODING_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public EncodingCase getEncodingCase() {
+        return EncodingCase.forNumber(encodingCase_);
+      }
+
+      public static final int UNIX_MICROS_INT64_FIELD_NUMBER = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Encodes the number of microseconds since the Unix epoch using the
+       * given `Int64` encoding. Values must be microsecond-aligned.
+       *
+       * Compatible with:
+       *
+       *  - Java `Instant.truncatedTo()` with `ChronoUnit.MICROS`
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Int64.Encoding unix_micros_int64 = 1;</code>
+       *
+       * @return Whether the unixMicrosInt64 field is set.
+       */
+      @java.lang.Override
+      public boolean hasUnixMicrosInt64() {
+        return encodingCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Encodes the number of microseconds since the Unix epoch using the
+       * given `Int64` encoding. Values must be microsecond-aligned.
+       *
+       * Compatible with:
+       *
+       *  - Java `Instant.truncatedTo()` with `ChronoUnit.MICROS`
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Int64.Encoding unix_micros_int64 = 1;</code>
+       *
+       * @return The unixMicrosInt64.
+       */
+      @java.lang.Override
+      public com.google.bigtable.v2.Type.Int64.Encoding getUnixMicrosInt64() {
+        if (encodingCase_ == 1) {
+          return (com.google.bigtable.v2.Type.Int64.Encoding) encoding_;
+        }
+        return com.google.bigtable.v2.Type.Int64.Encoding.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Encodes the number of microseconds since the Unix epoch using the
+       * given `Int64` encoding. Values must be microsecond-aligned.
+       *
+       * Compatible with:
+       *
+       *  - Java `Instant.truncatedTo()` with `ChronoUnit.MICROS`
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Int64.Encoding unix_micros_int64 = 1;</code>
+       */
+      @java.lang.Override
+      public com.google.bigtable.v2.Type.Int64.EncodingOrBuilder getUnixMicrosInt64OrBuilder() {
+        if (encodingCase_ == 1) {
+          return (com.google.bigtable.v2.Type.Int64.Encoding) encoding_;
+        }
+        return com.google.bigtable.v2.Type.Int64.Encoding.getDefaultInstance();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (encodingCase_ == 1) {
+          output.writeMessage(1, (com.google.bigtable.v2.Type.Int64.Encoding) encoding_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (encodingCase_ == 1) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  1, (com.google.bigtable.v2.Type.Int64.Encoding) encoding_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.bigtable.v2.Type.Timestamp.Encoding)) {
+          return super.equals(obj);
+        }
+        com.google.bigtable.v2.Type.Timestamp.Encoding other =
+            (com.google.bigtable.v2.Type.Timestamp.Encoding) obj;
+
+        if (!getEncodingCase().equals(other.getEncodingCase())) return false;
+        switch (encodingCase_) {
+          case 1:
+            if (!getUnixMicrosInt64().equals(other.getUnixMicrosInt64())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (encodingCase_) {
+          case 1:
+            hash = (37 * hash) + UNIX_MICROS_INT64_FIELD_NUMBER;
+            hash = (53 * hash) + getUnixMicrosInt64().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.bigtable.v2.Type.Timestamp.Encoding parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.v2.Type.Timestamp.Encoding parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.v2.Type.Timestamp.Encoding parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.v2.Type.Timestamp.Encoding parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.v2.Type.Timestamp.Encoding parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.v2.Type.Timestamp.Encoding parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.v2.Type.Timestamp.Encoding parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.v2.Type.Timestamp.Encoding parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.bigtable.v2.Type.Timestamp.Encoding parseDelimitedFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.v2.Type.Timestamp.Encoding parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.bigtable.v2.Type.Timestamp.Encoding parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.v2.Type.Timestamp.Encoding parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(com.google.bigtable.v2.Type.Timestamp.Encoding prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Rules used to convert to or from lower level types.
+       * </pre>
+       *
+       * Protobuf type {@code google.bigtable.v2.Type.Timestamp.Encoding}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.bigtable.v2.Type.Timestamp.Encoding)
+          com.google.bigtable.v2.Type.Timestamp.EncodingOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.bigtable.v2.TypesProto
+              .internal_static_google_bigtable_v2_Type_Timestamp_Encoding_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.bigtable.v2.TypesProto
+              .internal_static_google_bigtable_v2_Type_Timestamp_Encoding_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.bigtable.v2.Type.Timestamp.Encoding.class,
+                  com.google.bigtable.v2.Type.Timestamp.Encoding.Builder.class);
+        }
+
+        // Construct using com.google.bigtable.v2.Type.Timestamp.Encoding.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (unixMicrosInt64Builder_ != null) {
+            unixMicrosInt64Builder_.clear();
+          }
+          encodingCase_ = 0;
+          encoding_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.bigtable.v2.TypesProto
+              .internal_static_google_bigtable_v2_Type_Timestamp_Encoding_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Timestamp.Encoding getDefaultInstanceForType() {
+          return com.google.bigtable.v2.Type.Timestamp.Encoding.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Timestamp.Encoding build() {
+          com.google.bigtable.v2.Type.Timestamp.Encoding result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Timestamp.Encoding buildPartial() {
+          com.google.bigtable.v2.Type.Timestamp.Encoding result =
+              new com.google.bigtable.v2.Type.Timestamp.Encoding(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(com.google.bigtable.v2.Type.Timestamp.Encoding result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(com.google.bigtable.v2.Type.Timestamp.Encoding result) {
+          result.encodingCase_ = encodingCase_;
+          result.encoding_ = this.encoding_;
+          if (encodingCase_ == 1 && unixMicrosInt64Builder_ != null) {
+            result.encoding_ = unixMicrosInt64Builder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.bigtable.v2.Type.Timestamp.Encoding) {
+            return mergeFrom((com.google.bigtable.v2.Type.Timestamp.Encoding) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.bigtable.v2.Type.Timestamp.Encoding other) {
+          if (other == com.google.bigtable.v2.Type.Timestamp.Encoding.getDefaultInstance())
+            return this;
+          switch (other.getEncodingCase()) {
+            case UNIX_MICROS_INT64:
+              {
+                mergeUnixMicrosInt64(other.getUnixMicrosInt64());
+                break;
+              }
+            case ENCODING_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(
+                        getUnixMicrosInt64FieldBuilder().getBuilder(), extensionRegistry);
+                    encodingCase_ = 1;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int encodingCase_ = 0;
+        private java.lang.Object encoding_;
+
+        public EncodingCase getEncodingCase() {
+          return EncodingCase.forNumber(encodingCase_);
+        }
+
+        public Builder clearEncoding() {
+          encodingCase_ = 0;
+          encoding_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.v2.Type.Int64.Encoding,
+                com.google.bigtable.v2.Type.Int64.Encoding.Builder,
+                com.google.bigtable.v2.Type.Int64.EncodingOrBuilder>
+            unixMicrosInt64Builder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Encodes the number of microseconds since the Unix epoch using the
+         * given `Int64` encoding. Values must be microsecond-aligned.
+         *
+         * Compatible with:
+         *
+         *  - Java `Instant.truncatedTo()` with `ChronoUnit.MICROS`
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding unix_micros_int64 = 1;</code>
+         *
+         * @return Whether the unixMicrosInt64 field is set.
+         */
+        @java.lang.Override
+        public boolean hasUnixMicrosInt64() {
+          return encodingCase_ == 1;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Encodes the number of microseconds since the Unix epoch using the
+         * given `Int64` encoding. Values must be microsecond-aligned.
+         *
+         * Compatible with:
+         *
+         *  - Java `Instant.truncatedTo()` with `ChronoUnit.MICROS`
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding unix_micros_int64 = 1;</code>
+         *
+         * @return The unixMicrosInt64.
+         */
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Int64.Encoding getUnixMicrosInt64() {
+          if (unixMicrosInt64Builder_ == null) {
+            if (encodingCase_ == 1) {
+              return (com.google.bigtable.v2.Type.Int64.Encoding) encoding_;
+            }
+            return com.google.bigtable.v2.Type.Int64.Encoding.getDefaultInstance();
+          } else {
+            if (encodingCase_ == 1) {
+              return unixMicrosInt64Builder_.getMessage();
+            }
+            return com.google.bigtable.v2.Type.Int64.Encoding.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Encodes the number of microseconds since the Unix epoch using the
+         * given `Int64` encoding. Values must be microsecond-aligned.
+         *
+         * Compatible with:
+         *
+         *  - Java `Instant.truncatedTo()` with `ChronoUnit.MICROS`
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding unix_micros_int64 = 1;</code>
+         */
+        public Builder setUnixMicrosInt64(com.google.bigtable.v2.Type.Int64.Encoding value) {
+          if (unixMicrosInt64Builder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            encoding_ = value;
+            onChanged();
+          } else {
+            unixMicrosInt64Builder_.setMessage(value);
+          }
+          encodingCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Encodes the number of microseconds since the Unix epoch using the
+         * given `Int64` encoding. Values must be microsecond-aligned.
+         *
+         * Compatible with:
+         *
+         *  - Java `Instant.truncatedTo()` with `ChronoUnit.MICROS`
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding unix_micros_int64 = 1;</code>
+         */
+        public Builder setUnixMicrosInt64(
+            com.google.bigtable.v2.Type.Int64.Encoding.Builder builderForValue) {
+          if (unixMicrosInt64Builder_ == null) {
+            encoding_ = builderForValue.build();
+            onChanged();
+          } else {
+            unixMicrosInt64Builder_.setMessage(builderForValue.build());
+          }
+          encodingCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Encodes the number of microseconds since the Unix epoch using the
+         * given `Int64` encoding. Values must be microsecond-aligned.
+         *
+         * Compatible with:
+         *
+         *  - Java `Instant.truncatedTo()` with `ChronoUnit.MICROS`
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding unix_micros_int64 = 1;</code>
+         */
+        public Builder mergeUnixMicrosInt64(com.google.bigtable.v2.Type.Int64.Encoding value) {
+          if (unixMicrosInt64Builder_ == null) {
+            if (encodingCase_ == 1
+                && encoding_ != com.google.bigtable.v2.Type.Int64.Encoding.getDefaultInstance()) {
+              encoding_ =
+                  com.google.bigtable.v2.Type.Int64.Encoding.newBuilder(
+                          (com.google.bigtable.v2.Type.Int64.Encoding) encoding_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              encoding_ = value;
+            }
+            onChanged();
+          } else {
+            if (encodingCase_ == 1) {
+              unixMicrosInt64Builder_.mergeFrom(value);
+            } else {
+              unixMicrosInt64Builder_.setMessage(value);
+            }
+          }
+          encodingCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Encodes the number of microseconds since the Unix epoch using the
+         * given `Int64` encoding. Values must be microsecond-aligned.
+         *
+         * Compatible with:
+         *
+         *  - Java `Instant.truncatedTo()` with `ChronoUnit.MICROS`
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding unix_micros_int64 = 1;</code>
+         */
+        public Builder clearUnixMicrosInt64() {
+          if (unixMicrosInt64Builder_ == null) {
+            if (encodingCase_ == 1) {
+              encodingCase_ = 0;
+              encoding_ = null;
+              onChanged();
+            }
+          } else {
+            if (encodingCase_ == 1) {
+              encodingCase_ = 0;
+              encoding_ = null;
+            }
+            unixMicrosInt64Builder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Encodes the number of microseconds since the Unix epoch using the
+         * given `Int64` encoding. Values must be microsecond-aligned.
+         *
+         * Compatible with:
+         *
+         *  - Java `Instant.truncatedTo()` with `ChronoUnit.MICROS`
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding unix_micros_int64 = 1;</code>
+         */
+        public com.google.bigtable.v2.Type.Int64.Encoding.Builder getUnixMicrosInt64Builder() {
+          return getUnixMicrosInt64FieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Encodes the number of microseconds since the Unix epoch using the
+         * given `Int64` encoding. Values must be microsecond-aligned.
+         *
+         * Compatible with:
+         *
+         *  - Java `Instant.truncatedTo()` with `ChronoUnit.MICROS`
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding unix_micros_int64 = 1;</code>
+         */
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Int64.EncodingOrBuilder getUnixMicrosInt64OrBuilder() {
+          if ((encodingCase_ == 1) && (unixMicrosInt64Builder_ != null)) {
+            return unixMicrosInt64Builder_.getMessageOrBuilder();
+          } else {
+            if (encodingCase_ == 1) {
+              return (com.google.bigtable.v2.Type.Int64.Encoding) encoding_;
+            }
+            return com.google.bigtable.v2.Type.Int64.Encoding.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Encodes the number of microseconds since the Unix epoch using the
+         * given `Int64` encoding. Values must be microsecond-aligned.
+         *
+         * Compatible with:
+         *
+         *  - Java `Instant.truncatedTo()` with `ChronoUnit.MICROS`
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Int64.Encoding unix_micros_int64 = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.v2.Type.Int64.Encoding,
+                com.google.bigtable.v2.Type.Int64.Encoding.Builder,
+                com.google.bigtable.v2.Type.Int64.EncodingOrBuilder>
+            getUnixMicrosInt64FieldBuilder() {
+          if (unixMicrosInt64Builder_ == null) {
+            if (!(encodingCase_ == 1)) {
+              encoding_ = com.google.bigtable.v2.Type.Int64.Encoding.getDefaultInstance();
+            }
+            unixMicrosInt64Builder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.bigtable.v2.Type.Int64.Encoding,
+                    com.google.bigtable.v2.Type.Int64.Encoding.Builder,
+                    com.google.bigtable.v2.Type.Int64.EncodingOrBuilder>(
+                    (com.google.bigtable.v2.Type.Int64.Encoding) encoding_,
+                    getParentForChildren(),
+                    isClean());
+            encoding_ = null;
+          }
+          encodingCase_ = 1;
+          onChanged();
+          return unixMicrosInt64Builder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.bigtable.v2.Type.Timestamp.Encoding)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.bigtable.v2.Type.Timestamp.Encoding)
+      private static final com.google.bigtable.v2.Type.Timestamp.Encoding DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.bigtable.v2.Type.Timestamp.Encoding();
+      }
+
+      public static com.google.bigtable.v2.Type.Timestamp.Encoding getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Encoding> PARSER =
+          new com.google.protobuf.AbstractParser<Encoding>() {
+            @java.lang.Override
+            public Encoding parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Encoding> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Encoding> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.v2.Type.Timestamp.Encoding getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int ENCODING_FIELD_NUMBER = 1;
+    private com.google.bigtable.v2.Type.Timestamp.Encoding encoding_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The encoding to use when converting to or from lower level types.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type.Timestamp.Encoding encoding = 1;</code>
+     *
+     * @return Whether the encoding field is set.
+     */
+    @java.lang.Override
+    public boolean hasEncoding() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The encoding to use when converting to or from lower level types.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type.Timestamp.Encoding encoding = 1;</code>
+     *
+     * @return The encoding.
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.Type.Timestamp.Encoding getEncoding() {
+      return encoding_ == null
+          ? com.google.bigtable.v2.Type.Timestamp.Encoding.getDefaultInstance()
+          : encoding_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The encoding to use when converting to or from lower level types.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type.Timestamp.Encoding encoding = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.Type.Timestamp.EncodingOrBuilder getEncodingOrBuilder() {
+      return encoding_ == null
+          ? com.google.bigtable.v2.Type.Timestamp.Encoding.getDefaultInstance()
+          : encoding_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -8786,6 +11131,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getEncoding());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -8795,6 +11143,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getEncoding());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -8810,6 +11161,10 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.bigtable.v2.Type.Timestamp other = (com.google.bigtable.v2.Type.Timestamp) obj;
 
+      if (hasEncoding() != other.hasEncoding()) return false;
+      if (hasEncoding()) {
+        if (!getEncoding().equals(other.getEncoding())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -8821,6 +11176,10 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasEncoding()) {
+        hash = (37 * hash) + ENCODING_FIELD_NUMBER;
+        hash = (53 * hash) + getEncoding().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8954,15 +11313,30 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.bigtable.v2.Type.Timestamp.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getEncodingFieldBuilder();
+        }
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        encoding_ = null;
+        if (encodingBuilder_ != null) {
+          encodingBuilder_.dispose();
+          encodingBuilder_ = null;
+        }
         return this;
       }
 
@@ -8990,8 +11364,21 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public com.google.bigtable.v2.Type.Timestamp buildPartial() {
         com.google.bigtable.v2.Type.Timestamp result =
             new com.google.bigtable.v2.Type.Timestamp(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.bigtable.v2.Type.Timestamp result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.encoding_ = encodingBuilder_ == null ? encoding_ : encodingBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -9041,6 +11428,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
       public Builder mergeFrom(com.google.bigtable.v2.Type.Timestamp other) {
         if (other == com.google.bigtable.v2.Type.Timestamp.getDefaultInstance()) return this;
+        if (other.hasEncoding()) {
+          mergeEncoding(other.getEncoding());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -9067,6 +11457,12 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               case 0:
                 done = true;
                 break;
+              case 10:
+                {
+                  input.readMessage(getEncodingFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9082,6 +11478,203 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           onChanged();
         } // finally
         return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.bigtable.v2.Type.Timestamp.Encoding encoding_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.v2.Type.Timestamp.Encoding,
+              com.google.bigtable.v2.Type.Timestamp.Encoding.Builder,
+              com.google.bigtable.v2.Type.Timestamp.EncodingOrBuilder>
+          encodingBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Timestamp.Encoding encoding = 1;</code>
+       *
+       * @return Whether the encoding field is set.
+       */
+      public boolean hasEncoding() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Timestamp.Encoding encoding = 1;</code>
+       *
+       * @return The encoding.
+       */
+      public com.google.bigtable.v2.Type.Timestamp.Encoding getEncoding() {
+        if (encodingBuilder_ == null) {
+          return encoding_ == null
+              ? com.google.bigtable.v2.Type.Timestamp.Encoding.getDefaultInstance()
+              : encoding_;
+        } else {
+          return encodingBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Timestamp.Encoding encoding = 1;</code>
+       */
+      public Builder setEncoding(com.google.bigtable.v2.Type.Timestamp.Encoding value) {
+        if (encodingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          encoding_ = value;
+        } else {
+          encodingBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Timestamp.Encoding encoding = 1;</code>
+       */
+      public Builder setEncoding(
+          com.google.bigtable.v2.Type.Timestamp.Encoding.Builder builderForValue) {
+        if (encodingBuilder_ == null) {
+          encoding_ = builderForValue.build();
+        } else {
+          encodingBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Timestamp.Encoding encoding = 1;</code>
+       */
+      public Builder mergeEncoding(com.google.bigtable.v2.Type.Timestamp.Encoding value) {
+        if (encodingBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && encoding_ != null
+              && encoding_ != com.google.bigtable.v2.Type.Timestamp.Encoding.getDefaultInstance()) {
+            getEncodingBuilder().mergeFrom(value);
+          } else {
+            encoding_ = value;
+          }
+        } else {
+          encodingBuilder_.mergeFrom(value);
+        }
+        if (encoding_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Timestamp.Encoding encoding = 1;</code>
+       */
+      public Builder clearEncoding() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        encoding_ = null;
+        if (encodingBuilder_ != null) {
+          encodingBuilder_.dispose();
+          encodingBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Timestamp.Encoding encoding = 1;</code>
+       */
+      public com.google.bigtable.v2.Type.Timestamp.Encoding.Builder getEncodingBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getEncodingFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Timestamp.Encoding encoding = 1;</code>
+       */
+      public com.google.bigtable.v2.Type.Timestamp.EncodingOrBuilder getEncodingOrBuilder() {
+        if (encodingBuilder_ != null) {
+          return encodingBuilder_.getMessageOrBuilder();
+        } else {
+          return encoding_ == null
+              ? com.google.bigtable.v2.Type.Timestamp.Encoding.getDefaultInstance()
+              : encoding_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Timestamp.Encoding encoding = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.v2.Type.Timestamp.Encoding,
+              com.google.bigtable.v2.Type.Timestamp.Encoding.Builder,
+              com.google.bigtable.v2.Type.Timestamp.EncodingOrBuilder>
+          getEncodingFieldBuilder() {
+        if (encodingBuilder_ == null) {
+          encodingBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.bigtable.v2.Type.Timestamp.Encoding,
+                  com.google.bigtable.v2.Type.Timestamp.Encoding.Builder,
+                  com.google.bigtable.v2.Type.Timestamp.EncodingOrBuilder>(
+                  getEncoding(), getParentForChildren(), isClean());
+          encoding_ = null;
+        }
+        return encodingBuilder_;
       }
 
       @java.lang.Override
@@ -9631,6 +12224,43 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.bigtable.v2.Type.Struct.Field fields = 1;</code>
      */
     com.google.bigtable.v2.Type.Struct.FieldOrBuilder getFieldsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The encoding to use when converting to or from lower level types.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type.Struct.Encoding encoding = 2;</code>
+     *
+     * @return Whether the encoding field is set.
+     */
+    boolean hasEncoding();
+
+    /**
+     *
+     *
+     * <pre>
+     * The encoding to use when converting to or from lower level types.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type.Struct.Encoding encoding = 2;</code>
+     *
+     * @return The encoding.
+     */
+    com.google.bigtable.v2.Type.Struct.Encoding getEncoding();
+
+    /**
+     *
+     *
+     * <pre>
+     * The encoding to use when converting to or from lower level types.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type.Struct.Encoding encoding = 2;</code>
+     */
+    com.google.bigtable.v2.Type.Struct.EncodingOrBuilder getEncodingOrBuilder();
   }
 
   /**
@@ -10661,6 +13291,3150 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface EncodingOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.bigtable.v2.Type.Struct.Encoding)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `Singleton` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.Singleton singleton = 1;</code>
+       *
+       * @return Whether the singleton field is set.
+       */
+      boolean hasSingleton();
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `Singleton` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.Singleton singleton = 1;</code>
+       *
+       * @return The singleton.
+       */
+      com.google.bigtable.v2.Type.Struct.Encoding.Singleton getSingleton();
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `Singleton` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.Singleton singleton = 1;</code>
+       */
+      com.google.bigtable.v2.Type.Struct.Encoding.SingletonOrBuilder getSingletonOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `DelimitedBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes delimited_bytes = 2;</code>
+       *
+       * @return Whether the delimitedBytes field is set.
+       */
+      boolean hasDelimitedBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `DelimitedBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes delimited_bytes = 2;</code>
+       *
+       * @return The delimitedBytes.
+       */
+      com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes getDelimitedBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `DelimitedBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes delimited_bytes = 2;</code>
+       */
+      com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytesOrBuilder
+          getDelimitedBytesOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * User `OrderedCodeBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes ordered_code_bytes = 3;
+       * </code>
+       *
+       * @return Whether the orderedCodeBytes field is set.
+       */
+      boolean hasOrderedCodeBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * User `OrderedCodeBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes ordered_code_bytes = 3;
+       * </code>
+       *
+       * @return The orderedCodeBytes.
+       */
+      com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes getOrderedCodeBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * User `OrderedCodeBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes ordered_code_bytes = 3;
+       * </code>
+       */
+      com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytesOrBuilder
+          getOrderedCodeBytesOrBuilder();
+
+      com.google.bigtable.v2.Type.Struct.Encoding.EncodingCase getEncodingCase();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules used to convert to or from lower level types.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.v2.Type.Struct.Encoding}
+     */
+    public static final class Encoding extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.bigtable.v2.Type.Struct.Encoding)
+        EncodingOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use Encoding.newBuilder() to construct.
+      private Encoding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Encoding() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Encoding();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.v2.TypesProto
+            .internal_static_google_bigtable_v2_Type_Struct_Encoding_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.v2.TypesProto
+            .internal_static_google_bigtable_v2_Type_Struct_Encoding_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.v2.Type.Struct.Encoding.class,
+                com.google.bigtable.v2.Type.Struct.Encoding.Builder.class);
+      }
+
+      public interface SingletonOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.bigtable.v2.Type.Struct.Encoding.Singleton)
+          com.google.protobuf.MessageOrBuilder {}
+
+      /**
+       *
+       *
+       * <pre>
+       * Uses the encoding of `fields[0].type` as-is.
+       * Only valid if `fields.size == 1`.
+       * </pre>
+       *
+       * Protobuf type {@code google.bigtable.v2.Type.Struct.Encoding.Singleton}
+       */
+      public static final class Singleton extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.bigtable.v2.Type.Struct.Encoding.Singleton)
+          SingletonOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        // Use Singleton.newBuilder() to construct.
+        private Singleton(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private Singleton() {}
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new Singleton();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.bigtable.v2.TypesProto
+              .internal_static_google_bigtable_v2_Type_Struct_Encoding_Singleton_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.bigtable.v2.TypesProto
+              .internal_static_google_bigtable_v2_Type_Struct_Encoding_Singleton_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.bigtable.v2.Type.Struct.Encoding.Singleton.class,
+                  com.google.bigtable.v2.Type.Struct.Encoding.Singleton.Builder.class);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj instanceof com.google.bigtable.v2.Type.Struct.Encoding.Singleton)) {
+            return super.equals(obj);
+          }
+          com.google.bigtable.v2.Type.Struct.Encoding.Singleton other =
+              (com.google.bigtable.v2.Type.Struct.Encoding.Singleton) obj;
+
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.Singleton parseFrom(
+            java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.Singleton parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.Singleton parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.Singleton parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.Singleton parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.Singleton parseFrom(
+            byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.Singleton parseFrom(
+            java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.Singleton parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.Singleton parseDelimitedFrom(
+            java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.Singleton parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.Singleton parseFrom(
+            com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.Singleton parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.bigtable.v2.Type.Struct.Encoding.Singleton prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Uses the encoding of `fields[0].type` as-is.
+         * Only valid if `fields.size == 1`.
+         * </pre>
+         *
+         * Protobuf type {@code google.bigtable.v2.Type.Struct.Encoding.Singleton}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.bigtable.v2.Type.Struct.Encoding.Singleton)
+            com.google.bigtable.v2.Type.Struct.Encoding.SingletonOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.bigtable.v2.TypesProto
+                .internal_static_google_bigtable_v2_Type_Struct_Encoding_Singleton_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.bigtable.v2.TypesProto
+                .internal_static_google_bigtable_v2_Type_Struct_Encoding_Singleton_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.bigtable.v2.Type.Struct.Encoding.Singleton.class,
+                    com.google.bigtable.v2.Type.Struct.Encoding.Singleton.Builder.class);
+          }
+
+          // Construct using com.google.bigtable.v2.Type.Struct.Encoding.Singleton.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.bigtable.v2.TypesProto
+                .internal_static_google_bigtable_v2_Type_Struct_Encoding_Singleton_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.v2.Type.Struct.Encoding.Singleton getDefaultInstanceForType() {
+            return com.google.bigtable.v2.Type.Struct.Encoding.Singleton.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.v2.Type.Struct.Encoding.Singleton build() {
+            com.google.bigtable.v2.Type.Struct.Encoding.Singleton result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.v2.Type.Struct.Encoding.Singleton buildPartial() {
+            com.google.bigtable.v2.Type.Struct.Encoding.Singleton result =
+                new com.google.bigtable.v2.Type.Struct.Encoding.Singleton(this);
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.google.bigtable.v2.Type.Struct.Encoding.Singleton) {
+              return mergeFrom((com.google.bigtable.v2.Type.Struct.Encoding.Singleton) other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(com.google.bigtable.v2.Type.Struct.Encoding.Singleton other) {
+            if (other == com.google.bigtable.v2.Type.Struct.Encoding.Singleton.getDefaultInstance())
+              return this;
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.bigtable.v2.Type.Struct.Encoding.Singleton)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.bigtable.v2.Type.Struct.Encoding.Singleton)
+        private static final com.google.bigtable.v2.Type.Struct.Encoding.Singleton DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE = new com.google.bigtable.v2.Type.Struct.Encoding.Singleton();
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.Singleton getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<Singleton> PARSER =
+            new com.google.protobuf.AbstractParser<Singleton>() {
+              @java.lang.Override
+              public Singleton parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<Singleton> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Singleton> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Struct.Encoding.Singleton getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface DelimitedBytesOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Byte sequence used to delimit concatenated fields. The delimiter must
+         * contain at least 1 character and at most 50 characters.
+         * </pre>
+         *
+         * <code>bytes delimiter = 1;</code>
+         *
+         * @return The delimiter.
+         */
+        com.google.protobuf.ByteString getDelimiter();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Fields are encoded independently and concatenated with a configurable
+       * `delimiter` in between.
+       *
+       * A struct with no fields defined is encoded as a single `delimiter`.
+       *
+       * Sorted mode:
+       *
+       *  - Fields are encoded in sorted mode.
+       *  - Encoded field values must not contain any bytes &lt;= `delimiter[0]`
+       *  - Element-wise order is preserved: `A &lt; B` if `A[0] &lt; B[0]`, or if
+       *    `A[0] == B[0] &amp;&amp; A[1] &lt; B[1]`, etc. Strict prefixes sort first.
+       *
+       * Distinct mode:
+       *
+       *  - Fields are encoded in distinct mode.
+       *  - Encoded field values must not contain `delimiter[0]`.
+       * </pre>
+       *
+       * Protobuf type {@code google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes}
+       */
+      public static final class DelimitedBytes extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes)
+          DelimitedBytesOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        // Use DelimitedBytes.newBuilder() to construct.
+        private DelimitedBytes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private DelimitedBytes() {
+          delimiter_ = com.google.protobuf.ByteString.EMPTY;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new DelimitedBytes();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.bigtable.v2.TypesProto
+              .internal_static_google_bigtable_v2_Type_Struct_Encoding_DelimitedBytes_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.bigtable.v2.TypesProto
+              .internal_static_google_bigtable_v2_Type_Struct_Encoding_DelimitedBytes_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.class,
+                  com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.Builder.class);
+        }
+
+        public static final int DELIMITER_FIELD_NUMBER = 1;
+        private com.google.protobuf.ByteString delimiter_ = com.google.protobuf.ByteString.EMPTY;
+
+        /**
+         *
+         *
+         * <pre>
+         * Byte sequence used to delimit concatenated fields. The delimiter must
+         * contain at least 1 character and at most 50 characters.
+         * </pre>
+         *
+         * <code>bytes delimiter = 1;</code>
+         *
+         * @return The delimiter.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getDelimiter() {
+          return delimiter_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!delimiter_.isEmpty()) {
+            output.writeBytes(1, delimiter_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!delimiter_.isEmpty()) {
+            size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, delimiter_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj instanceof com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes)) {
+            return super.equals(obj);
+          }
+          com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes other =
+              (com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes) obj;
+
+          if (!getDelimiter().equals(other.getDelimiter())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + DELIMITER_FIELD_NUMBER;
+          hash = (53 * hash) + getDelimiter().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes parseFrom(
+            java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes parseFrom(
+            byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes parseFrom(
+            byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes parseFrom(
+            java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes parseDelimitedFrom(
+            java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes parseFrom(
+            com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Fields are encoded independently and concatenated with a configurable
+         * `delimiter` in between.
+         *
+         * A struct with no fields defined is encoded as a single `delimiter`.
+         *
+         * Sorted mode:
+         *
+         *  - Fields are encoded in sorted mode.
+         *  - Encoded field values must not contain any bytes &lt;= `delimiter[0]`
+         *  - Element-wise order is preserved: `A &lt; B` if `A[0] &lt; B[0]`, or if
+         *    `A[0] == B[0] &amp;&amp; A[1] &lt; B[1]`, etc. Strict prefixes sort first.
+         *
+         * Distinct mode:
+         *
+         *  - Fields are encoded in distinct mode.
+         *  - Encoded field values must not contain `delimiter[0]`.
+         * </pre>
+         *
+         * Protobuf type {@code google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes)
+            com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytesOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.bigtable.v2.TypesProto
+                .internal_static_google_bigtable_v2_Type_Struct_Encoding_DelimitedBytes_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.bigtable.v2.TypesProto
+                .internal_static_google_bigtable_v2_Type_Struct_Encoding_DelimitedBytes_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.class,
+                    com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.Builder.class);
+          }
+
+          // Construct using com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            delimiter_ = com.google.protobuf.ByteString.EMPTY;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.bigtable.v2.TypesProto
+                .internal_static_google_bigtable_v2_Type_Struct_Encoding_DelimitedBytes_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes
+              getDefaultInstanceForType() {
+            return com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes build() {
+            com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes buildPartial() {
+            com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes result =
+                new com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.delimiter_ = delimiter_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes) {
+              return mergeFrom((com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes) other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes other) {
+            if (other
+                == com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.getDefaultInstance())
+              return this;
+            if (other.getDelimiter() != com.google.protobuf.ByteString.EMPTY) {
+              setDelimiter(other.getDelimiter());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      delimiter_ = input.readBytes();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private com.google.protobuf.ByteString delimiter_ = com.google.protobuf.ByteString.EMPTY;
+
+          /**
+           *
+           *
+           * <pre>
+           * Byte sequence used to delimit concatenated fields. The delimiter must
+           * contain at least 1 character and at most 50 characters.
+           * </pre>
+           *
+           * <code>bytes delimiter = 1;</code>
+           *
+           * @return The delimiter.
+           */
+          @java.lang.Override
+          public com.google.protobuf.ByteString getDelimiter() {
+            return delimiter_;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Byte sequence used to delimit concatenated fields. The delimiter must
+           * contain at least 1 character and at most 50 characters.
+           * </pre>
+           *
+           * <code>bytes delimiter = 1;</code>
+           *
+           * @param value The delimiter to set.
+           * @return This builder for chaining.
+           */
+          public Builder setDelimiter(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            delimiter_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Byte sequence used to delimit concatenated fields. The delimiter must
+           * contain at least 1 character and at most 50 characters.
+           * </pre>
+           *
+           * <code>bytes delimiter = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearDelimiter() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            delimiter_ = getDefaultInstance().getDelimiter();
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes)
+        private static final com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE = new com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes();
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<DelimitedBytes> PARSER =
+            new com.google.protobuf.AbstractParser<DelimitedBytes>() {
+              @java.lang.Override
+              public DelimitedBytes parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<DelimitedBytes> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<DelimitedBytes> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface OrderedCodeBytesOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes)
+          com.google.protobuf.MessageOrBuilder {}
+
+      /**
+       *
+       *
+       * <pre>
+       * Fields are encoded independently and concatenated with the fixed byte
+       * pair `{0x00, 0x01}` in between.
+       *
+       * Any null `(0x00)` byte in an encoded field is replaced by the fixed
+       * byte pair `{0x00, 0xFF}`.
+       *
+       * Fields that encode to the empty string "" have special handling:
+       *
+       *  - If *every* field encodes to "", or if the STRUCT has no fields
+       *    defined, then the STRUCT is encoded as the fixed byte pair
+       *    `{0x00, 0x00}`.
+       *  - Otherwise, the STRUCT only encodes until the last non-empty field,
+       *    omitting any trailing empty fields. Any empty fields that aren't
+       *    omitted are replaced with the fixed byte pair `{0x00, 0x00}`.
+       *
+       * Examples:
+       *
+       * ```
+       *  - STRUCT()             -&gt; "&#92;00&#92;00"
+       *  - STRUCT("")           -&gt; "&#92;00&#92;00"
+       *  - STRUCT("", "")       -&gt; "&#92;00&#92;00"
+       *  - STRUCT("", "B")      -&gt; "&#92;00&#92;00" + "&#92;00&#92;01" + "B"
+       *  - STRUCT("A", "")      -&gt; "A"
+       *  - STRUCT("", "B", "")  -&gt; "&#92;00&#92;00" + "&#92;00&#92;01" + "B"
+       *  - STRUCT("A", "", "C") -&gt; "A" + "&#92;00&#92;01" + "&#92;00&#92;00" + "&#92;00&#92;01" + "C"
+       * ```
+       *
+       *
+       * Since null bytes are always escaped, this encoding can cause size
+       * blowup for encodings like `Int64.BigEndianBytes` that are likely to
+       * produce many such bytes.
+       *
+       * Sorted mode:
+       *
+       *  - Fields are encoded in sorted mode.
+       *  - All values supported by the field encodings are allowed
+       *  - Element-wise order is preserved: `A &lt; B` if `A[0] &lt; B[0]`, or if
+       *    `A[0] == B[0] &amp;&amp; A[1] &lt; B[1]`, etc. Strict prefixes sort first.
+       *
+       * Distinct mode:
+       *
+       *  - Fields are encoded in distinct mode.
+       *  - All values supported by the field encodings are allowed.
+       * </pre>
+       *
+       * Protobuf type {@code google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes}
+       */
+      public static final class OrderedCodeBytes extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes)
+          OrderedCodeBytesOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        // Use OrderedCodeBytes.newBuilder() to construct.
+        private OrderedCodeBytes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private OrderedCodeBytes() {}
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new OrderedCodeBytes();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.bigtable.v2.TypesProto
+              .internal_static_google_bigtable_v2_Type_Struct_Encoding_OrderedCodeBytes_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.bigtable.v2.TypesProto
+              .internal_static_google_bigtable_v2_Type_Struct_Encoding_OrderedCodeBytes_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes.class,
+                  com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes.Builder.class);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj instanceof com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes)) {
+            return super.equals(obj);
+          }
+          com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes other =
+              (com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes) obj;
+
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes parseFrom(
+            java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes parseFrom(
+            byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes parseFrom(
+            byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes parseFrom(
+            java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes parseFrom(
+            com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Fields are encoded independently and concatenated with the fixed byte
+         * pair `{0x00, 0x01}` in between.
+         *
+         * Any null `(0x00)` byte in an encoded field is replaced by the fixed
+         * byte pair `{0x00, 0xFF}`.
+         *
+         * Fields that encode to the empty string "" have special handling:
+         *
+         *  - If *every* field encodes to "", or if the STRUCT has no fields
+         *    defined, then the STRUCT is encoded as the fixed byte pair
+         *    `{0x00, 0x00}`.
+         *  - Otherwise, the STRUCT only encodes until the last non-empty field,
+         *    omitting any trailing empty fields. Any empty fields that aren't
+         *    omitted are replaced with the fixed byte pair `{0x00, 0x00}`.
+         *
+         * Examples:
+         *
+         * ```
+         *  - STRUCT()             -&gt; "&#92;00&#92;00"
+         *  - STRUCT("")           -&gt; "&#92;00&#92;00"
+         *  - STRUCT("", "")       -&gt; "&#92;00&#92;00"
+         *  - STRUCT("", "B")      -&gt; "&#92;00&#92;00" + "&#92;00&#92;01" + "B"
+         *  - STRUCT("A", "")      -&gt; "A"
+         *  - STRUCT("", "B", "")  -&gt; "&#92;00&#92;00" + "&#92;00&#92;01" + "B"
+         *  - STRUCT("A", "", "C") -&gt; "A" + "&#92;00&#92;01" + "&#92;00&#92;00" + "&#92;00&#92;01" + "C"
+         * ```
+         *
+         *
+         * Since null bytes are always escaped, this encoding can cause size
+         * blowup for encodings like `Int64.BigEndianBytes` that are likely to
+         * produce many such bytes.
+         *
+         * Sorted mode:
+         *
+         *  - Fields are encoded in sorted mode.
+         *  - All values supported by the field encodings are allowed
+         *  - Element-wise order is preserved: `A &lt; B` if `A[0] &lt; B[0]`, or if
+         *    `A[0] == B[0] &amp;&amp; A[1] &lt; B[1]`, etc. Strict prefixes sort first.
+         *
+         * Distinct mode:
+         *
+         *  - Fields are encoded in distinct mode.
+         *  - All values supported by the field encodings are allowed.
+         * </pre>
+         *
+         * Protobuf type {@code google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes)
+            com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytesOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.bigtable.v2.TypesProto
+                .internal_static_google_bigtable_v2_Type_Struct_Encoding_OrderedCodeBytes_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.bigtable.v2.TypesProto
+                .internal_static_google_bigtable_v2_Type_Struct_Encoding_OrderedCodeBytes_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes.class,
+                    com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes.Builder.class);
+          }
+
+          // Construct using
+          // com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.bigtable.v2.TypesProto
+                .internal_static_google_bigtable_v2_Type_Struct_Encoding_OrderedCodeBytes_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes
+              getDefaultInstanceForType() {
+            return com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes build() {
+            com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes buildPartial() {
+            com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes result =
+                new com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes(this);
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes) {
+              return mergeFrom(
+                  (com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes) other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes other) {
+            if (other
+                == com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes
+                    .getDefaultInstance()) return this;
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes)
+        private static final com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE = new com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes();
+        }
+
+        public static com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<OrderedCodeBytes> PARSER =
+            new com.google.protobuf.AbstractParser<OrderedCodeBytes>() {
+              @java.lang.Override
+              public OrderedCodeBytes parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<OrderedCodeBytes> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<OrderedCodeBytes> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int encodingCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object encoding_;
+
+      public enum EncodingCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        SINGLETON(1),
+        DELIMITED_BYTES(2),
+        ORDERED_CODE_BYTES(3),
+        ENCODING_NOT_SET(0);
+        private final int value;
+
+        private EncodingCase(int value) {
+          this.value = value;
+        }
+
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static EncodingCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static EncodingCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return SINGLETON;
+            case 2:
+              return DELIMITED_BYTES;
+            case 3:
+              return ORDERED_CODE_BYTES;
+            case 0:
+              return ENCODING_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public EncodingCase getEncodingCase() {
+        return EncodingCase.forNumber(encodingCase_);
+      }
+
+      public static final int SINGLETON_FIELD_NUMBER = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `Singleton` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.Singleton singleton = 1;</code>
+       *
+       * @return Whether the singleton field is set.
+       */
+      @java.lang.Override
+      public boolean hasSingleton() {
+        return encodingCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `Singleton` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.Singleton singleton = 1;</code>
+       *
+       * @return The singleton.
+       */
+      @java.lang.Override
+      public com.google.bigtable.v2.Type.Struct.Encoding.Singleton getSingleton() {
+        if (encodingCase_ == 1) {
+          return (com.google.bigtable.v2.Type.Struct.Encoding.Singleton) encoding_;
+        }
+        return com.google.bigtable.v2.Type.Struct.Encoding.Singleton.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `Singleton` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.Singleton singleton = 1;</code>
+       */
+      @java.lang.Override
+      public com.google.bigtable.v2.Type.Struct.Encoding.SingletonOrBuilder
+          getSingletonOrBuilder() {
+        if (encodingCase_ == 1) {
+          return (com.google.bigtable.v2.Type.Struct.Encoding.Singleton) encoding_;
+        }
+        return com.google.bigtable.v2.Type.Struct.Encoding.Singleton.getDefaultInstance();
+      }
+
+      public static final int DELIMITED_BYTES_FIELD_NUMBER = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `DelimitedBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes delimited_bytes = 2;</code>
+       *
+       * @return Whether the delimitedBytes field is set.
+       */
+      @java.lang.Override
+      public boolean hasDelimitedBytes() {
+        return encodingCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `DelimitedBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes delimited_bytes = 2;</code>
+       *
+       * @return The delimitedBytes.
+       */
+      @java.lang.Override
+      public com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes getDelimitedBytes() {
+        if (encodingCase_ == 2) {
+          return (com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes) encoding_;
+        }
+        return com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Use `DelimitedBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes delimited_bytes = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytesOrBuilder
+          getDelimitedBytesOrBuilder() {
+        if (encodingCase_ == 2) {
+          return (com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes) encoding_;
+        }
+        return com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.getDefaultInstance();
+      }
+
+      public static final int ORDERED_CODE_BYTES_FIELD_NUMBER = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * User `OrderedCodeBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes ordered_code_bytes = 3;
+       * </code>
+       *
+       * @return Whether the orderedCodeBytes field is set.
+       */
+      @java.lang.Override
+      public boolean hasOrderedCodeBytes() {
+        return encodingCase_ == 3;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * User `OrderedCodeBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes ordered_code_bytes = 3;
+       * </code>
+       *
+       * @return The orderedCodeBytes.
+       */
+      @java.lang.Override
+      public com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes getOrderedCodeBytes() {
+        if (encodingCase_ == 3) {
+          return (com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes) encoding_;
+        }
+        return com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * User `OrderedCodeBytes` encoding.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes ordered_code_bytes = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytesOrBuilder
+          getOrderedCodeBytesOrBuilder() {
+        if (encodingCase_ == 3) {
+          return (com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes) encoding_;
+        }
+        return com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes.getDefaultInstance();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (encodingCase_ == 1) {
+          output.writeMessage(1, (com.google.bigtable.v2.Type.Struct.Encoding.Singleton) encoding_);
+        }
+        if (encodingCase_ == 2) {
+          output.writeMessage(
+              2, (com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes) encoding_);
+        }
+        if (encodingCase_ == 3) {
+          output.writeMessage(
+              3, (com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes) encoding_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (encodingCase_ == 1) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  1, (com.google.bigtable.v2.Type.Struct.Encoding.Singleton) encoding_);
+        }
+        if (encodingCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2, (com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes) encoding_);
+        }
+        if (encodingCase_ == 3) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  3, (com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes) encoding_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.bigtable.v2.Type.Struct.Encoding)) {
+          return super.equals(obj);
+        }
+        com.google.bigtable.v2.Type.Struct.Encoding other =
+            (com.google.bigtable.v2.Type.Struct.Encoding) obj;
+
+        if (!getEncodingCase().equals(other.getEncodingCase())) return false;
+        switch (encodingCase_) {
+          case 1:
+            if (!getSingleton().equals(other.getSingleton())) return false;
+            break;
+          case 2:
+            if (!getDelimitedBytes().equals(other.getDelimitedBytes())) return false;
+            break;
+          case 3:
+            if (!getOrderedCodeBytes().equals(other.getOrderedCodeBytes())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (encodingCase_) {
+          case 1:
+            hash = (37 * hash) + SINGLETON_FIELD_NUMBER;
+            hash = (53 * hash) + getSingleton().hashCode();
+            break;
+          case 2:
+            hash = (37 * hash) + DELIMITED_BYTES_FIELD_NUMBER;
+            hash = (53 * hash) + getDelimitedBytes().hashCode();
+            break;
+          case 3:
+            hash = (37 * hash) + ORDERED_CODE_BYTES_FIELD_NUMBER;
+            hash = (53 * hash) + getOrderedCodeBytes().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.bigtable.v2.Type.Struct.Encoding parseFrom(java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.v2.Type.Struct.Encoding parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.v2.Type.Struct.Encoding parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.v2.Type.Struct.Encoding parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.v2.Type.Struct.Encoding parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.v2.Type.Struct.Encoding parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.v2.Type.Struct.Encoding parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.v2.Type.Struct.Encoding parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.bigtable.v2.Type.Struct.Encoding parseDelimitedFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.v2.Type.Struct.Encoding parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.bigtable.v2.Type.Struct.Encoding parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.v2.Type.Struct.Encoding parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(com.google.bigtable.v2.Type.Struct.Encoding prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Rules used to convert to or from lower level types.
+       * </pre>
+       *
+       * Protobuf type {@code google.bigtable.v2.Type.Struct.Encoding}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.bigtable.v2.Type.Struct.Encoding)
+          com.google.bigtable.v2.Type.Struct.EncodingOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.bigtable.v2.TypesProto
+              .internal_static_google_bigtable_v2_Type_Struct_Encoding_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.bigtable.v2.TypesProto
+              .internal_static_google_bigtable_v2_Type_Struct_Encoding_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.bigtable.v2.Type.Struct.Encoding.class,
+                  com.google.bigtable.v2.Type.Struct.Encoding.Builder.class);
+        }
+
+        // Construct using com.google.bigtable.v2.Type.Struct.Encoding.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (singletonBuilder_ != null) {
+            singletonBuilder_.clear();
+          }
+          if (delimitedBytesBuilder_ != null) {
+            delimitedBytesBuilder_.clear();
+          }
+          if (orderedCodeBytesBuilder_ != null) {
+            orderedCodeBytesBuilder_.clear();
+          }
+          encodingCase_ = 0;
+          encoding_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.bigtable.v2.TypesProto
+              .internal_static_google_bigtable_v2_Type_Struct_Encoding_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Struct.Encoding getDefaultInstanceForType() {
+          return com.google.bigtable.v2.Type.Struct.Encoding.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Struct.Encoding build() {
+          com.google.bigtable.v2.Type.Struct.Encoding result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Struct.Encoding buildPartial() {
+          com.google.bigtable.v2.Type.Struct.Encoding result =
+              new com.google.bigtable.v2.Type.Struct.Encoding(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(com.google.bigtable.v2.Type.Struct.Encoding result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(com.google.bigtable.v2.Type.Struct.Encoding result) {
+          result.encodingCase_ = encodingCase_;
+          result.encoding_ = this.encoding_;
+          if (encodingCase_ == 1 && singletonBuilder_ != null) {
+            result.encoding_ = singletonBuilder_.build();
+          }
+          if (encodingCase_ == 2 && delimitedBytesBuilder_ != null) {
+            result.encoding_ = delimitedBytesBuilder_.build();
+          }
+          if (encodingCase_ == 3 && orderedCodeBytesBuilder_ != null) {
+            result.encoding_ = orderedCodeBytesBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.bigtable.v2.Type.Struct.Encoding) {
+            return mergeFrom((com.google.bigtable.v2.Type.Struct.Encoding) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.bigtable.v2.Type.Struct.Encoding other) {
+          if (other == com.google.bigtable.v2.Type.Struct.Encoding.getDefaultInstance())
+            return this;
+          switch (other.getEncodingCase()) {
+            case SINGLETON:
+              {
+                mergeSingleton(other.getSingleton());
+                break;
+              }
+            case DELIMITED_BYTES:
+              {
+                mergeDelimitedBytes(other.getDelimitedBytes());
+                break;
+              }
+            case ORDERED_CODE_BYTES:
+              {
+                mergeOrderedCodeBytes(other.getOrderedCodeBytes());
+                break;
+              }
+            case ENCODING_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getSingletonFieldBuilder().getBuilder(), extensionRegistry);
+                    encodingCase_ = 1;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        getDelimitedBytesFieldBuilder().getBuilder(), extensionRegistry);
+                    encodingCase_ = 2;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    input.readMessage(
+                        getOrderedCodeBytesFieldBuilder().getBuilder(), extensionRegistry);
+                    encodingCase_ = 3;
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int encodingCase_ = 0;
+        private java.lang.Object encoding_;
+
+        public EncodingCase getEncodingCase() {
+          return EncodingCase.forNumber(encodingCase_);
+        }
+
+        public Builder clearEncoding() {
+          encodingCase_ = 0;
+          encoding_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.v2.Type.Struct.Encoding.Singleton,
+                com.google.bigtable.v2.Type.Struct.Encoding.Singleton.Builder,
+                com.google.bigtable.v2.Type.Struct.Encoding.SingletonOrBuilder>
+            singletonBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `Singleton` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.Singleton singleton = 1;</code>
+         *
+         * @return Whether the singleton field is set.
+         */
+        @java.lang.Override
+        public boolean hasSingleton() {
+          return encodingCase_ == 1;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `Singleton` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.Singleton singleton = 1;</code>
+         *
+         * @return The singleton.
+         */
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Struct.Encoding.Singleton getSingleton() {
+          if (singletonBuilder_ == null) {
+            if (encodingCase_ == 1) {
+              return (com.google.bigtable.v2.Type.Struct.Encoding.Singleton) encoding_;
+            }
+            return com.google.bigtable.v2.Type.Struct.Encoding.Singleton.getDefaultInstance();
+          } else {
+            if (encodingCase_ == 1) {
+              return singletonBuilder_.getMessage();
+            }
+            return com.google.bigtable.v2.Type.Struct.Encoding.Singleton.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `Singleton` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.Singleton singleton = 1;</code>
+         */
+        public Builder setSingleton(com.google.bigtable.v2.Type.Struct.Encoding.Singleton value) {
+          if (singletonBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            encoding_ = value;
+            onChanged();
+          } else {
+            singletonBuilder_.setMessage(value);
+          }
+          encodingCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `Singleton` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.Singleton singleton = 1;</code>
+         */
+        public Builder setSingleton(
+            com.google.bigtable.v2.Type.Struct.Encoding.Singleton.Builder builderForValue) {
+          if (singletonBuilder_ == null) {
+            encoding_ = builderForValue.build();
+            onChanged();
+          } else {
+            singletonBuilder_.setMessage(builderForValue.build());
+          }
+          encodingCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `Singleton` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.Singleton singleton = 1;</code>
+         */
+        public Builder mergeSingleton(com.google.bigtable.v2.Type.Struct.Encoding.Singleton value) {
+          if (singletonBuilder_ == null) {
+            if (encodingCase_ == 1
+                && encoding_
+                    != com.google.bigtable.v2.Type.Struct.Encoding.Singleton.getDefaultInstance()) {
+              encoding_ =
+                  com.google.bigtable.v2.Type.Struct.Encoding.Singleton.newBuilder(
+                          (com.google.bigtable.v2.Type.Struct.Encoding.Singleton) encoding_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              encoding_ = value;
+            }
+            onChanged();
+          } else {
+            if (encodingCase_ == 1) {
+              singletonBuilder_.mergeFrom(value);
+            } else {
+              singletonBuilder_.setMessage(value);
+            }
+          }
+          encodingCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `Singleton` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.Singleton singleton = 1;</code>
+         */
+        public Builder clearSingleton() {
+          if (singletonBuilder_ == null) {
+            if (encodingCase_ == 1) {
+              encodingCase_ = 0;
+              encoding_ = null;
+              onChanged();
+            }
+          } else {
+            if (encodingCase_ == 1) {
+              encodingCase_ = 0;
+              encoding_ = null;
+            }
+            singletonBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `Singleton` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.Singleton singleton = 1;</code>
+         */
+        public com.google.bigtable.v2.Type.Struct.Encoding.Singleton.Builder getSingletonBuilder() {
+          return getSingletonFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `Singleton` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.Singleton singleton = 1;</code>
+         */
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Struct.Encoding.SingletonOrBuilder
+            getSingletonOrBuilder() {
+          if ((encodingCase_ == 1) && (singletonBuilder_ != null)) {
+            return singletonBuilder_.getMessageOrBuilder();
+          } else {
+            if (encodingCase_ == 1) {
+              return (com.google.bigtable.v2.Type.Struct.Encoding.Singleton) encoding_;
+            }
+            return com.google.bigtable.v2.Type.Struct.Encoding.Singleton.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `Singleton` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.Singleton singleton = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.v2.Type.Struct.Encoding.Singleton,
+                com.google.bigtable.v2.Type.Struct.Encoding.Singleton.Builder,
+                com.google.bigtable.v2.Type.Struct.Encoding.SingletonOrBuilder>
+            getSingletonFieldBuilder() {
+          if (singletonBuilder_ == null) {
+            if (!(encodingCase_ == 1)) {
+              encoding_ =
+                  com.google.bigtable.v2.Type.Struct.Encoding.Singleton.getDefaultInstance();
+            }
+            singletonBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.bigtable.v2.Type.Struct.Encoding.Singleton,
+                    com.google.bigtable.v2.Type.Struct.Encoding.Singleton.Builder,
+                    com.google.bigtable.v2.Type.Struct.Encoding.SingletonOrBuilder>(
+                    (com.google.bigtable.v2.Type.Struct.Encoding.Singleton) encoding_,
+                    getParentForChildren(),
+                    isClean());
+            encoding_ = null;
+          }
+          encodingCase_ = 1;
+          onChanged();
+          return singletonBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes,
+                com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.Builder,
+                com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytesOrBuilder>
+            delimitedBytesBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `DelimitedBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes delimited_bytes = 2;</code>
+         *
+         * @return Whether the delimitedBytes field is set.
+         */
+        @java.lang.Override
+        public boolean hasDelimitedBytes() {
+          return encodingCase_ == 2;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `DelimitedBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes delimited_bytes = 2;</code>
+         *
+         * @return The delimitedBytes.
+         */
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes getDelimitedBytes() {
+          if (delimitedBytesBuilder_ == null) {
+            if (encodingCase_ == 2) {
+              return (com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes) encoding_;
+            }
+            return com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.getDefaultInstance();
+          } else {
+            if (encodingCase_ == 2) {
+              return delimitedBytesBuilder_.getMessage();
+            }
+            return com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `DelimitedBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes delimited_bytes = 2;</code>
+         */
+        public Builder setDelimitedBytes(
+            com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes value) {
+          if (delimitedBytesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            encoding_ = value;
+            onChanged();
+          } else {
+            delimitedBytesBuilder_.setMessage(value);
+          }
+          encodingCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `DelimitedBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes delimited_bytes = 2;</code>
+         */
+        public Builder setDelimitedBytes(
+            com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.Builder builderForValue) {
+          if (delimitedBytesBuilder_ == null) {
+            encoding_ = builderForValue.build();
+            onChanged();
+          } else {
+            delimitedBytesBuilder_.setMessage(builderForValue.build());
+          }
+          encodingCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `DelimitedBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes delimited_bytes = 2;</code>
+         */
+        public Builder mergeDelimitedBytes(
+            com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes value) {
+          if (delimitedBytesBuilder_ == null) {
+            if (encodingCase_ == 2
+                && encoding_
+                    != com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes
+                        .getDefaultInstance()) {
+              encoding_ =
+                  com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.newBuilder(
+                          (com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes) encoding_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              encoding_ = value;
+            }
+            onChanged();
+          } else {
+            if (encodingCase_ == 2) {
+              delimitedBytesBuilder_.mergeFrom(value);
+            } else {
+              delimitedBytesBuilder_.setMessage(value);
+            }
+          }
+          encodingCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `DelimitedBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes delimited_bytes = 2;</code>
+         */
+        public Builder clearDelimitedBytes() {
+          if (delimitedBytesBuilder_ == null) {
+            if (encodingCase_ == 2) {
+              encodingCase_ = 0;
+              encoding_ = null;
+              onChanged();
+            }
+          } else {
+            if (encodingCase_ == 2) {
+              encodingCase_ = 0;
+              encoding_ = null;
+            }
+            delimitedBytesBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `DelimitedBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes delimited_bytes = 2;</code>
+         */
+        public com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.Builder
+            getDelimitedBytesBuilder() {
+          return getDelimitedBytesFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `DelimitedBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes delimited_bytes = 2;</code>
+         */
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytesOrBuilder
+            getDelimitedBytesOrBuilder() {
+          if ((encodingCase_ == 2) && (delimitedBytesBuilder_ != null)) {
+            return delimitedBytesBuilder_.getMessageOrBuilder();
+          } else {
+            if (encodingCase_ == 2) {
+              return (com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes) encoding_;
+            }
+            return com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Use `DelimitedBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes delimited_bytes = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes,
+                com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.Builder,
+                com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytesOrBuilder>
+            getDelimitedBytesFieldBuilder() {
+          if (delimitedBytesBuilder_ == null) {
+            if (!(encodingCase_ == 2)) {
+              encoding_ =
+                  com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.getDefaultInstance();
+            }
+            delimitedBytesBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes,
+                    com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes.Builder,
+                    com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytesOrBuilder>(
+                    (com.google.bigtable.v2.Type.Struct.Encoding.DelimitedBytes) encoding_,
+                    getParentForChildren(),
+                    isClean());
+            encoding_ = null;
+          }
+          encodingCase_ = 2;
+          onChanged();
+          return delimitedBytesBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes,
+                com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes.Builder,
+                com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytesOrBuilder>
+            orderedCodeBytesBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * User `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes ordered_code_bytes = 3;
+         * </code>
+         *
+         * @return Whether the orderedCodeBytes field is set.
+         */
+        @java.lang.Override
+        public boolean hasOrderedCodeBytes() {
+          return encodingCase_ == 3;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * User `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes ordered_code_bytes = 3;
+         * </code>
+         *
+         * @return The orderedCodeBytes.
+         */
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes getOrderedCodeBytes() {
+          if (orderedCodeBytesBuilder_ == null) {
+            if (encodingCase_ == 3) {
+              return (com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes) encoding_;
+            }
+            return com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes
+                .getDefaultInstance();
+          } else {
+            if (encodingCase_ == 3) {
+              return orderedCodeBytesBuilder_.getMessage();
+            }
+            return com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes
+                .getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * User `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes ordered_code_bytes = 3;
+         * </code>
+         */
+        public Builder setOrderedCodeBytes(
+            com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes value) {
+          if (orderedCodeBytesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            encoding_ = value;
+            onChanged();
+          } else {
+            orderedCodeBytesBuilder_.setMessage(value);
+          }
+          encodingCase_ = 3;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * User `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes ordered_code_bytes = 3;
+         * </code>
+         */
+        public Builder setOrderedCodeBytes(
+            com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes.Builder builderForValue) {
+          if (orderedCodeBytesBuilder_ == null) {
+            encoding_ = builderForValue.build();
+            onChanged();
+          } else {
+            orderedCodeBytesBuilder_.setMessage(builderForValue.build());
+          }
+          encodingCase_ = 3;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * User `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes ordered_code_bytes = 3;
+         * </code>
+         */
+        public Builder mergeOrderedCodeBytes(
+            com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes value) {
+          if (orderedCodeBytesBuilder_ == null) {
+            if (encodingCase_ == 3
+                && encoding_
+                    != com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes
+                        .getDefaultInstance()) {
+              encoding_ =
+                  com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes.newBuilder(
+                          (com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes) encoding_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              encoding_ = value;
+            }
+            onChanged();
+          } else {
+            if (encodingCase_ == 3) {
+              orderedCodeBytesBuilder_.mergeFrom(value);
+            } else {
+              orderedCodeBytesBuilder_.setMessage(value);
+            }
+          }
+          encodingCase_ = 3;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * User `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes ordered_code_bytes = 3;
+         * </code>
+         */
+        public Builder clearOrderedCodeBytes() {
+          if (orderedCodeBytesBuilder_ == null) {
+            if (encodingCase_ == 3) {
+              encodingCase_ = 0;
+              encoding_ = null;
+              onChanged();
+            }
+          } else {
+            if (encodingCase_ == 3) {
+              encodingCase_ = 0;
+              encoding_ = null;
+            }
+            orderedCodeBytesBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * User `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes ordered_code_bytes = 3;
+         * </code>
+         */
+        public com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes.Builder
+            getOrderedCodeBytesBuilder() {
+          return getOrderedCodeBytesFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * User `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes ordered_code_bytes = 3;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytesOrBuilder
+            getOrderedCodeBytesOrBuilder() {
+          if ((encodingCase_ == 3) && (orderedCodeBytesBuilder_ != null)) {
+            return orderedCodeBytesBuilder_.getMessageOrBuilder();
+          } else {
+            if (encodingCase_ == 3) {
+              return (com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes) encoding_;
+            }
+            return com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes
+                .getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * User `OrderedCodeBytes` encoding.
+         * </pre>
+         *
+         * <code>.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes ordered_code_bytes = 3;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes,
+                com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes.Builder,
+                com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytesOrBuilder>
+            getOrderedCodeBytesFieldBuilder() {
+          if (orderedCodeBytesBuilder_ == null) {
+            if (!(encodingCase_ == 3)) {
+              encoding_ =
+                  com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes.getDefaultInstance();
+            }
+            orderedCodeBytesBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes,
+                    com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes.Builder,
+                    com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytesOrBuilder>(
+                    (com.google.bigtable.v2.Type.Struct.Encoding.OrderedCodeBytes) encoding_,
+                    getParentForChildren(),
+                    isClean());
+            encoding_ = null;
+          }
+          encodingCase_ = 3;
+          onChanged();
+          return orderedCodeBytesBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.bigtable.v2.Type.Struct.Encoding)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.bigtable.v2.Type.Struct.Encoding)
+      private static final com.google.bigtable.v2.Type.Struct.Encoding DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.bigtable.v2.Type.Struct.Encoding();
+      }
+
+      public static com.google.bigtable.v2.Type.Struct.Encoding getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Encoding> PARSER =
+          new com.google.protobuf.AbstractParser<Encoding>() {
+            @java.lang.Override
+            public Encoding parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Encoding> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Encoding> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.v2.Type.Struct.Encoding getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
     public static final int FIELDS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -10737,6 +16511,59 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       return fields_.get(index);
     }
 
+    public static final int ENCODING_FIELD_NUMBER = 2;
+    private com.google.bigtable.v2.Type.Struct.Encoding encoding_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The encoding to use when converting to or from lower level types.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type.Struct.Encoding encoding = 2;</code>
+     *
+     * @return Whether the encoding field is set.
+     */
+    @java.lang.Override
+    public boolean hasEncoding() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The encoding to use when converting to or from lower level types.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type.Struct.Encoding encoding = 2;</code>
+     *
+     * @return The encoding.
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.Type.Struct.Encoding getEncoding() {
+      return encoding_ == null
+          ? com.google.bigtable.v2.Type.Struct.Encoding.getDefaultInstance()
+          : encoding_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The encoding to use when converting to or from lower level types.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.Type.Struct.Encoding encoding = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.Type.Struct.EncodingOrBuilder getEncodingOrBuilder() {
+      return encoding_ == null
+          ? com.google.bigtable.v2.Type.Struct.Encoding.getDefaultInstance()
+          : encoding_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -10754,6 +16581,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < fields_.size(); i++) {
         output.writeMessage(1, fields_.get(i));
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getEncoding());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -10765,6 +16595,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       for (int i = 0; i < fields_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, fields_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEncoding());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -10782,6 +16615,10 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       com.google.bigtable.v2.Type.Struct other = (com.google.bigtable.v2.Type.Struct) obj;
 
       if (!getFieldsList().equals(other.getFieldsList())) return false;
+      if (hasEncoding() != other.hasEncoding()) return false;
+      if (hasEncoding()) {
+        if (!getEncoding().equals(other.getEncoding())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -10796,6 +16633,10 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       if (getFieldsCount() > 0) {
         hash = (37 * hash) + FIELDS_FIELD_NUMBER;
         hash = (53 * hash) + getFieldsList().hashCode();
+      }
+      if (hasEncoding()) {
+        hash = (37 * hash) + ENCODING_FIELD_NUMBER;
+        hash = (53 * hash) + getEncoding().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -10931,10 +16772,20 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.bigtable.v2.Type.Struct.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getFieldsFieldBuilder();
+          getEncodingFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -10948,6 +16799,11 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           fieldsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
+        encoding_ = null;
+        if (encodingBuilder_ != null) {
+          encodingBuilder_.dispose();
+          encodingBuilder_ = null;
+        }
         return this;
       }
 
@@ -10996,6 +16852,12 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
       private void buildPartial0(com.google.bigtable.v2.Type.Struct result) {
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.encoding_ = encodingBuilder_ == null ? encoding_ : encodingBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -11072,6 +16934,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
+        if (other.hasEncoding()) {
+          mergeEncoding(other.getEncoding());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -11111,6 +16976,12 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                   }
                   break;
                 } // case 10
+              case 18:
+                {
+                  input.readMessage(getEncodingFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11494,6 +17365,201 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           fields_ = null;
         }
         return fieldsBuilder_;
+      }
+
+      private com.google.bigtable.v2.Type.Struct.Encoding encoding_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.v2.Type.Struct.Encoding,
+              com.google.bigtable.v2.Type.Struct.Encoding.Builder,
+              com.google.bigtable.v2.Type.Struct.EncodingOrBuilder>
+          encodingBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding encoding = 2;</code>
+       *
+       * @return Whether the encoding field is set.
+       */
+      public boolean hasEncoding() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding encoding = 2;</code>
+       *
+       * @return The encoding.
+       */
+      public com.google.bigtable.v2.Type.Struct.Encoding getEncoding() {
+        if (encodingBuilder_ == null) {
+          return encoding_ == null
+              ? com.google.bigtable.v2.Type.Struct.Encoding.getDefaultInstance()
+              : encoding_;
+        } else {
+          return encodingBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding encoding = 2;</code>
+       */
+      public Builder setEncoding(com.google.bigtable.v2.Type.Struct.Encoding value) {
+        if (encodingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          encoding_ = value;
+        } else {
+          encodingBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding encoding = 2;</code>
+       */
+      public Builder setEncoding(
+          com.google.bigtable.v2.Type.Struct.Encoding.Builder builderForValue) {
+        if (encodingBuilder_ == null) {
+          encoding_ = builderForValue.build();
+        } else {
+          encodingBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding encoding = 2;</code>
+       */
+      public Builder mergeEncoding(com.google.bigtable.v2.Type.Struct.Encoding value) {
+        if (encodingBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && encoding_ != null
+              && encoding_ != com.google.bigtable.v2.Type.Struct.Encoding.getDefaultInstance()) {
+            getEncodingBuilder().mergeFrom(value);
+          } else {
+            encoding_ = value;
+          }
+        } else {
+          encodingBuilder_.mergeFrom(value);
+        }
+        if (encoding_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding encoding = 2;</code>
+       */
+      public Builder clearEncoding() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        encoding_ = null;
+        if (encodingBuilder_ != null) {
+          encodingBuilder_.dispose();
+          encodingBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding encoding = 2;</code>
+       */
+      public com.google.bigtable.v2.Type.Struct.Encoding.Builder getEncodingBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getEncodingFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding encoding = 2;</code>
+       */
+      public com.google.bigtable.v2.Type.Struct.EncodingOrBuilder getEncodingOrBuilder() {
+        if (encodingBuilder_ != null) {
+          return encodingBuilder_.getMessageOrBuilder();
+        } else {
+          return encoding_ == null
+              ? com.google.bigtable.v2.Type.Struct.Encoding.getDefaultInstance()
+              : encoding_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The encoding to use when converting to or from lower level types.
+       * </pre>
+       *
+       * <code>.google.bigtable.v2.Type.Struct.Encoding encoding = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.bigtable.v2.Type.Struct.Encoding,
+              com.google.bigtable.v2.Type.Struct.Encoding.Builder,
+              com.google.bigtable.v2.Type.Struct.EncodingOrBuilder>
+          getEncodingFieldBuilder() {
+        if (encodingBuilder_ == null) {
+          encodingBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.bigtable.v2.Type.Struct.Encoding,
+                  com.google.bigtable.v2.Type.Struct.Encoding.Builder,
+                  com.google.bigtable.v2.Type.Struct.EncodingOrBuilder>(
+                  getEncoding(), getParentForChildren(), isClean());
+          encoding_ = null;
+        }
+        return encodingBuilder_;
       }
 
       @java.lang.Override
@@ -15163,8 +21229,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the inputs that are accumulated by this `Aggregate`, which must
-     * specify a full encoding.
+     * Type of the inputs that are accumulated by this `Aggregate`.
      * Use `AddInput` mutations to accumulate new inputs.
      * </pre>
      *
@@ -15178,8 +21243,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the inputs that are accumulated by this `Aggregate`, which must
-     * specify a full encoding.
+     * Type of the inputs that are accumulated by this `Aggregate`.
      * Use `AddInput` mutations to accumulate new inputs.
      * </pre>
      *
@@ -15193,8 +21257,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the inputs that are accumulated by this `Aggregate`, which must
-     * specify a full encoding.
+     * Type of the inputs that are accumulated by this `Aggregate`.
      * Use `AddInput` mutations to accumulate new inputs.
      * </pre>
      *
@@ -15208,7 +21271,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Type that holds the internal accumulator state for the
      * `Aggregate`. This is a function of the `input_type` and `aggregator`
-     * chosen, and will always specify a full encoding.
+     * chosen.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type state_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -15224,7 +21287,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Type that holds the internal accumulator state for the
      * `Aggregate`. This is a function of the `input_type` and `aggregator`
-     * chosen, and will always specify a full encoding.
+     * chosen.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type state_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -15240,7 +21303,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Type that holds the internal accumulator state for the
      * `Aggregate`. This is a function of the `input_type` and `aggregator`
-     * chosen, and will always specify a full encoding.
+     * chosen.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type state_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -15412,9 +21475,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A value that combines incremental updates into a summarized value.
    *
-   * Data is never directly written or read using type `Aggregate`. Writes will
-   * provide either the `input_type` or `state_type`, and reads will always
-   * return the `state_type` .
+   * Data is never directly written or read using type `Aggregate`. Writes
+   * provide either the `input_type` or `state_type`, and reads always return
+   * the `state_type` .
    * </pre>
    *
    * Protobuf type {@code google.bigtable.v2.Type.Aggregate}
@@ -17257,8 +23320,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the inputs that are accumulated by this `Aggregate`, which must
-     * specify a full encoding.
+     * Type of the inputs that are accumulated by this `Aggregate`.
      * Use `AddInput` mutations to accumulate new inputs.
      * </pre>
      *
@@ -17275,8 +23337,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the inputs that are accumulated by this `Aggregate`, which must
-     * specify a full encoding.
+     * Type of the inputs that are accumulated by this `Aggregate`.
      * Use `AddInput` mutations to accumulate new inputs.
      * </pre>
      *
@@ -17293,8 +23354,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the inputs that are accumulated by this `Aggregate`, which must
-     * specify a full encoding.
+     * Type of the inputs that are accumulated by this `Aggregate`.
      * Use `AddInput` mutations to accumulate new inputs.
      * </pre>
      *
@@ -17314,7 +23374,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Type that holds the internal accumulator state for the
      * `Aggregate`. This is a function of the `input_type` and `aggregator`
-     * chosen, and will always specify a full encoding.
+     * chosen.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type state_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -17333,7 +23393,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Type that holds the internal accumulator state for the
      * `Aggregate`. This is a function of the `input_type` and `aggregator`
-     * chosen, and will always specify a full encoding.
+     * chosen.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type state_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -17352,7 +23412,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Type that holds the internal accumulator state for the
      * `Aggregate`. This is a function of the `input_type` and `aggregator`
-     * chosen, and will always specify a full encoding.
+     * chosen.
      * </pre>
      *
      * <code>.google.bigtable.v2.Type state_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -17845,9 +23905,9 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A value that combines incremental updates into a summarized value.
      *
-     * Data is never directly written or read using type `Aggregate`. Writes will
-     * provide either the `input_type` or `state_type`, and reads will always
-     * return the `state_type` .
+     * Data is never directly written or read using type `Aggregate`. Writes
+     * provide either the `input_type` or `state_type`, and reads always return
+     * the `state_type` .
      * </pre>
      *
      * Protobuf type {@code google.bigtable.v2.Type.Aggregate}
@@ -18169,8 +24229,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Type of the inputs that are accumulated by this `Aggregate`, which must
-       * specify a full encoding.
+       * Type of the inputs that are accumulated by this `Aggregate`.
        * Use `AddInput` mutations to accumulate new inputs.
        * </pre>
        *
@@ -18186,8 +24245,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Type of the inputs that are accumulated by this `Aggregate`, which must
-       * specify a full encoding.
+       * Type of the inputs that are accumulated by this `Aggregate`.
        * Use `AddInput` mutations to accumulate new inputs.
        * </pre>
        *
@@ -18207,8 +24265,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Type of the inputs that are accumulated by this `Aggregate`, which must
-       * specify a full encoding.
+       * Type of the inputs that are accumulated by this `Aggregate`.
        * Use `AddInput` mutations to accumulate new inputs.
        * </pre>
        *
@@ -18232,8 +24289,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Type of the inputs that are accumulated by this `Aggregate`, which must
-       * specify a full encoding.
+       * Type of the inputs that are accumulated by this `Aggregate`.
        * Use `AddInput` mutations to accumulate new inputs.
        * </pre>
        *
@@ -18254,8 +24310,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Type of the inputs that are accumulated by this `Aggregate`, which must
-       * specify a full encoding.
+       * Type of the inputs that are accumulated by this `Aggregate`.
        * Use `AddInput` mutations to accumulate new inputs.
        * </pre>
        *
@@ -18284,8 +24339,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Type of the inputs that are accumulated by this `Aggregate`, which must
-       * specify a full encoding.
+       * Type of the inputs that are accumulated by this `Aggregate`.
        * Use `AddInput` mutations to accumulate new inputs.
        * </pre>
        *
@@ -18306,8 +24360,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Type of the inputs that are accumulated by this `Aggregate`, which must
-       * specify a full encoding.
+       * Type of the inputs that are accumulated by this `Aggregate`.
        * Use `AddInput` mutations to accumulate new inputs.
        * </pre>
        *
@@ -18323,8 +24376,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Type of the inputs that are accumulated by this `Aggregate`, which must
-       * specify a full encoding.
+       * Type of the inputs that are accumulated by this `Aggregate`.
        * Use `AddInput` mutations to accumulate new inputs.
        * </pre>
        *
@@ -18342,8 +24394,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Type of the inputs that are accumulated by this `Aggregate`, which must
-       * specify a full encoding.
+       * Type of the inputs that are accumulated by this `Aggregate`.
        * Use `AddInput` mutations to accumulate new inputs.
        * </pre>
        *
@@ -18379,7 +24430,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Output only. Type that holds the internal accumulator state for the
        * `Aggregate`. This is a function of the `input_type` and `aggregator`
-       * chosen, and will always specify a full encoding.
+       * chosen.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type state_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -18397,7 +24448,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Output only. Type that holds the internal accumulator state for the
        * `Aggregate`. This is a function of the `input_type` and `aggregator`
-       * chosen, and will always specify a full encoding.
+       * chosen.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type state_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -18419,7 +24470,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Output only. Type that holds the internal accumulator state for the
        * `Aggregate`. This is a function of the `input_type` and `aggregator`
-       * chosen, and will always specify a full encoding.
+       * chosen.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type state_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -18445,7 +24496,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Output only. Type that holds the internal accumulator state for the
        * `Aggregate`. This is a function of the `input_type` and `aggregator`
-       * chosen, and will always specify a full encoding.
+       * chosen.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type state_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -18468,7 +24519,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Output only. Type that holds the internal accumulator state for the
        * `Aggregate`. This is a function of the `input_type` and `aggregator`
-       * chosen, and will always specify a full encoding.
+       * chosen.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type state_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -18499,7 +24550,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Output only. Type that holds the internal accumulator state for the
        * `Aggregate`. This is a function of the `input_type` and `aggregator`
-       * chosen, and will always specify a full encoding.
+       * chosen.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type state_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -18522,7 +24573,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Output only. Type that holds the internal accumulator state for the
        * `Aggregate`. This is a function of the `input_type` and `aggregator`
-       * chosen, and will always specify a full encoding.
+       * chosen.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type state_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -18540,7 +24591,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Output only. Type that holds the internal accumulator state for the
        * `Aggregate`. This is a function of the `input_type` and `aggregator`
-       * chosen, and will always specify a full encoding.
+       * chosen.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type state_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -18560,7 +24611,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Output only. Type that holds the internal accumulator state for the
        * `Aggregate`. This is a function of the `input_type` and `aggregator`
-       * chosen, and will always specify a full encoding.
+       * chosen.
        * </pre>
        *
        * <code>.google.bigtable.v2.Type state_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -20770,25 +26821,23 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
    * familiarity and consistency across products and features.
    *
    * For compatibility with Bigtable's existing untyped APIs, each `Type` includes
-   * an `Encoding` which describes how to convert to/from the underlying data.
+   * an `Encoding` which describes how to convert to or from the underlying data.
    *
-   * Each encoding also defines the following properties:
+   * Each encoding can operate in one of two modes:
    *
-   *  * Order-preserving: Does the encoded value sort consistently with the
-   *    original typed value? Note that Bigtable will always sort data based on
-   *    the raw encoded value, *not* the decoded type.
-   *     - Example: BYTES values sort in the same order as their raw encodings.
-   *     - Counterexample: Encoding INT64 as a fixed-width decimal string does
-   *       *not* preserve sort order when dealing with negative numbers.
-   *       `INT64(1) &gt; INT64(-1)`, but `STRING("-00001") &gt; STRING("00001)`.
-   *  * Self-delimiting: If we concatenate two encoded values, can we always tell
-   *    where the first one ends and the second one begins?
-   *     - Example: If we encode INT64s to fixed-width STRINGs, the first value
-   *       will always contain exactly N digits, possibly preceded by a sign.
-   *     - Counterexample: If we concatenate two UTF-8 encoded STRINGs, we have
-   *       no way to tell where the first one ends.
-   *  * Compatibility: Which other systems have matching encoding schemes? For
-   *    example, does this encoding have a GoogleSQL equivalent? HBase? Java?
+   *  - Sorted: In this mode, Bigtable guarantees that `Encode(X) &lt;= Encode(Y)`
+   *    if and only if `X &lt;= Y`. This is useful anywhere sort order is important,
+   *    for example when encoding keys.
+   *  - Distinct: In this mode, Bigtable guarantees that if `X != Y` then
+   *   `Encode(X) != Encode(Y)`. However, the converse is not guaranteed. For
+   *    example, both `{'foo': '1', 'bar': '2'}` and `{'bar': '2', 'foo': '1'}`
+   *    are valid encodings of the same JSON value.
+   *
+   * The API clearly documents which mode is used wherever an encoding can be
+   * configured. Each encoding also documents which values are supported in which
+   * modes. For example, when encoding INT64 as a numeric STRING, negative numbers
+   * cannot be encoded in sorted mode. This is because `INT64(1) &gt; INT64(-1)`, but
+   * `STRING("-00001") &gt; STRING("00001")`.
    * </pre>
    *
    * Protobuf type {@code google.bigtable.v2.Type}
