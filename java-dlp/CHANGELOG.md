@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.81.0 (2025-10-13)
+
+### Features
+
+* inspect and deid templates in RedactImage ([bf30bf1](https://github.com/googleapis/google-cloud-java/commit/bf30bf12bc74857074eac578080e9b7af2ceb206))
+
+
+
 ## 3.80.0 (2025-10-07)
 
 ### Dependencies

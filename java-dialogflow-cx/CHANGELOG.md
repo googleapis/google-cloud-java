@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.88.0 (2025-10-13)
+
+### Features
+
+* Add parameters to adjust LLM input and output token limit and temperature in v3beta1 API ([bf30bf1](https://github.com/googleapis/google-cloud-java/commit/bf30bf12bc74857074eac578080e9b7af2ceb206))
+
+
+
 ## 0.87.0 (2025-10-07)
 
 ### Dependencies
