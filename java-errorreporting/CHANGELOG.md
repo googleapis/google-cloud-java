@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.198.0-beta (2025-10-13)
+
+* No change
+
+
 ## 0.197.0-beta (2025-10-07)
 
 ### Dependencies

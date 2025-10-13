@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.37.0 (2025-10-13)
+
+* No change
+
+
 ## 1.36.0 (2025-10-07)
 
 ### Dependencies
