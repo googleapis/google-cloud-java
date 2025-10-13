@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.71.0](https://github.com/googleapis/google-cloud-java/compare/v1.70.0...v1.71.0) (2025-10-13)
+
+
+### Features
+
+* [aiplatform] A new message `ScaleToZeroSpec` is added ([bf30bf1](https://github.com/googleapis/google-cloud-java/commit/bf30bf12bc74857074eac578080e9b7af2ceb206))
+* [aiplatform] add additional proto fields and GenerateFetchAccessToken API ([bf30bf1](https://github.com/googleapis/google-cloud-java/commit/bf30bf12bc74857074eac578080e9b7af2ceb206))
+* [aiplatform] Add JAILBREAK as a new Prompt block reason in PredictionService ([bf30bf1](https://github.com/googleapis/google-cloud-java/commit/bf30bf12bc74857074eac578080e9b7af2ceb206))
+* [aiplatform] Add JAILBREAK category to SafetySettings for prediction service ([bf30bf1](https://github.com/googleapis/google-cloud-java/commit/bf30bf12bc74857074eac578080e9b7af2ceb206))
+* [aiplatform] Add JAILBREAK category to SafetySettings for prediction service ([bf30bf1](https://github.com/googleapis/google-cloud-java/commit/bf30bf12bc74857074eac578080e9b7af2ceb206))
+* [compute] Update Compute Engine v1 API to revision 20250916 ([#1107](https://github.com/googleapis/google-cloud-java/issues/1107)) ([bf30bf1](https://github.com/googleapis/google-cloud-java/commit/bf30bf12bc74857074eac578080e9b7af2ceb206))
+* [dialogflow-cx] Add parameters to adjust LLM input and output token limit and temperature in v3beta1 API ([bf30bf1](https://github.com/googleapis/google-cloud-java/commit/bf30bf12bc74857074eac578080e9b7af2ceb206))
+* [dlp] inspect and deid templates in RedactImage ([bf30bf1](https://github.com/googleapis/google-cloud-java/commit/bf30bf12bc74857074eac578080e9b7af2ceb206))
+* [document-ai] A new field `signature_value` is added to message `.google.cloud.documentai.v1beta3.Document` ([bf30bf1](https://github.com/googleapis/google-cloud-java/commit/bf30bf12bc74857074eac578080e9b7af2ceb206))
+* [document-ai] Added new messages `EntityValidationOutput` and `EntitiesRevision` ([bf30bf1](https://github.com/googleapis/google-cloud-java/commit/bf30bf12bc74857074eac578080e9b7af2ceb206))
+
+
+### Bug Fixes
+
+* Migrate away from GoogleCredentials.fromStream() usages ([#11765](https://github.com/googleapis/google-cloud-java/issues/11765)) ([6498808](https://github.com/googleapis/google-cloud-java/commit/6498808675d0ca6719f7eccc095c3509136c53a6))
+
 ## [1.70.0](https://github.com/googleapis/google-cloud-java/compare/v1.69.0...v1.70.0) (2025-10-07)
 
 
