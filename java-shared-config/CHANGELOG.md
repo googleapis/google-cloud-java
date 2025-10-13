@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.17.0](https://github.com/googleapis/java-shared-config/compare/v1.16.1...v1.17.0) (2025-10-10)
+
+
+### Features
+
+* Upgrade GraalVM image B to 25 ([#1037](https://github.com/googleapis/java-shared-config/issues/1037)) ([fde1cf4](https://github.com/googleapis/java-shared-config/commit/fde1cf446b245dafcbeea4ce58e00ec2e0880c58))
+
+
+### Dependencies
+
+* Update dependency org.graalvm.sdk:graal-sdk to v25 ([#1034](https://github.com/googleapis/java-shared-config/issues/1034)) ([e260c95](https://github.com/googleapis/java-shared-config/commit/e260c95a122d9667e54376a3342a2ba83996a48c))
+* Update dependency org.graalvm.sdk:nativeimage to v24.2.2 ([#1029](https://github.com/googleapis/java-shared-config/issues/1029)) ([4a2f59c](https://github.com/googleapis/java-shared-config/commit/4a2f59c491f9731d371c23e9cd2a89b7ec4b3e0b))
+* Update dependency org.graalvm.sdk:nativeimage to v25 ([#1035](https://github.com/googleapis/java-shared-config/issues/1035)) ([1182a88](https://github.com/googleapis/java-shared-config/commit/1182a8879158075aa58dc22cfa5da28d1cdf8858))
+
 ## [1.16.1](https://github.com/googleapis/java-shared-config/compare/v1.16.0...v1.16.1) (2025-06-06)
 
 
