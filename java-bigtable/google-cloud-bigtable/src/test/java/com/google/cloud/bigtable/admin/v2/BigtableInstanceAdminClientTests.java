@@ -75,9 +75,9 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import io.grpc.Status;
 import io.grpc.Status.Code;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Before;
@@ -1215,6 +1215,12 @@ public class BigtableInstanceAdminClientTests {
     // Setup
     Mockito.when(mockStub.createAppProfileCallable()).thenReturn(mockCreateAppProfileCallable);
 
+    // We want to make sure the expected request has the same ordering as the request we build
+    // from CreateAppProfileRequest. Use a TreeSet to for stable ordering.
+    Set<String> clusterIds = new TreeSet<>();
+    clusterIds.add("cluster-id-1");
+    clusterIds.add("cluster-id-2");
+
     com.google.bigtable.admin.v2.CreateAppProfileRequest expectedRequest =
         com.google.bigtable.admin.v2.CreateAppProfileRequest.newBuilder()
             .setParent(NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID))
@@ -1225,8 +1231,7 @@ public class BigtableInstanceAdminClientTests {
                     .setMultiClusterRoutingUseAny(
                         com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
                             .newBuilder()
-                            .addClusterIds("cluster-id-1")
-                            .addClusterIds("cluster-id-2")
+                            .addAllClusterIds(clusterIds)
                             .setRowAffinity(
                                 com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
                                     .RowAffinity.newBuilder()
@@ -1239,8 +1244,7 @@ public class BigtableInstanceAdminClientTests {
             .setDescription("my description")
             .setMultiClusterRoutingUseAny(
                 com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.newBuilder()
-                    .addClusterIds("cluster-id-1")
-                    .addClusterIds("cluster-id-2")
+                    .addAllClusterIds(clusterIds)
                     .setRowAffinity(
                         com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
                             .RowAffinity.newBuilder()
@@ -1251,9 +1255,6 @@ public class BigtableInstanceAdminClientTests {
         .thenReturn(ApiFutures.immediateFuture(expectedResponse));
 
     // Execute
-    Set<String> clusterIds = new HashSet<String>();
-    clusterIds.add("cluster-id-1");
-    clusterIds.add("cluster-id-2");
     AppProfile actualResult =
         adminClient.createAppProfile(
             CreateAppProfileRequest.of(INSTANCE_ID, APP_PROFILE_ID)
