@@ -48,6 +48,11 @@
 
   <!-- compile and run all snippet tests -->
   <build>
+    <resources>
+      <resource>
+        <directory>../snippets/src/main/resources</directory>
+      </resource>
+    </resources>
     <plugins>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
