@@ -572,7 +572,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3379
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3526
    * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Override
@@ -597,7 +597,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3379
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3526
    * @return The desiredMasterAuthorizedNetworksConfig.
    */
   @java.lang.Override
@@ -1016,7 +1016,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_private_cluster_config is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3420
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3567
    * @return Whether the desiredPrivateClusterConfig field is set.
    */
   @java.lang.Override
@@ -1046,7 +1046,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_private_cluster_config is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3420
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3567
    * @return The desiredPrivateClusterConfig.
    */
   @java.lang.Override
@@ -1325,7 +1325,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3437
+   *     google/container/v1beta1/cluster_service.proto;l=3584
    * @return Whether the privateClusterConfig field is set.
    */
   @java.lang.Override
@@ -1348,7 +1348,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3437
+   *     google/container/v1beta1/cluster_service.proto;l=3584
    * @return The privateClusterConfig.
    */
   @java.lang.Override
@@ -1396,7 +1396,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.TpuConfig desired_tpu_config = 38 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_tpu_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3442
+   *     google/container/v1beta1/cluster_service.proto;l=3589
    * @return Whether the desiredTpuConfig field is set.
    */
   @java.lang.Override
@@ -1417,7 +1417,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.TpuConfig desired_tpu_config = 38 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_tpu_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3442
+   *     google/container/v1beta1/cluster_service.proto;l=3589
    * @return The desiredTpuConfig.
    */
   @java.lang.Override
@@ -1997,7 +1997,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration for direct-path (via ALTS) with workload identity.
+   * Configuration for direct-path (via ALTS) with workload identity. This
+   * feature is not officially supported for external customers in Kubernetes
+   * Engine when using Workload Identity.
    * </pre>
    *
    * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
@@ -2013,7 +2015,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration for direct-path (via ALTS) with workload identity.
+   * Configuration for direct-path (via ALTS) with workload identity. This
+   * feature is not officially supported for external customers in Kubernetes
+   * Engine when using Workload Identity.
    * </pre>
    *
    * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
@@ -2031,7 +2035,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration for direct-path (via ALTS) with workload identity.
+   * Configuration for direct-path (via ALTS) with workload identity. This
+   * feature is not officially supported for external customers in Kubernetes
+   * Engine when using Workload Identity.
    * </pre>
    *
    * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
@@ -2570,7 +2576,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3524
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3673
    * @return Whether the desiredEnablePrivateEndpoint field is set.
    */
   @java.lang.Override
@@ -2594,7 +2600,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3524
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3673
    * @return The desiredEnablePrivateEndpoint.
    */
   @java.lang.Override
@@ -2786,7 +2792,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3542
+   *     google/container/v1beta1/cluster_service.proto;l=3691
    * @return Whether the desiredProtectConfig field is set.
    */
   @java.lang.Override
@@ -2808,7 +2814,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3542
+   *     google/container/v1beta1/cluster_service.proto;l=3691
    * @return The desiredProtectConfig.
    */
   @java.lang.Override
@@ -4177,7 +4183,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3634
+   *     google/container/v1beta1/cluster_service.proto;l=3783
    * @return Whether the userManagedKeysConfig field is set.
    */
   @java.lang.Override
@@ -4203,7 +4209,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3634
+   *     google/container/v1beta1/cluster_service.proto;l=3783
    * @return The userManagedKeysConfig.
    */
   @java.lang.Override
@@ -4369,13 +4375,21 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The desired enterprise configuration for the cluster.
+   *
+   * Deprecated: GKE Enterprise features are now available without an Enterprise
+   * tier.
    * </pre>
    *
-   * <code>.google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+   * <code>
+   * .google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1beta1.ClusterUpdate.desired_enterprise_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=3796
    * @return Whether the desiredEnterpriseConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasDesiredEnterpriseConfig() {
     return ((bitField1_ & 0x40000000) != 0);
   }
@@ -4385,13 +4399,21 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The desired enterprise configuration for the cluster.
+   *
+   * Deprecated: GKE Enterprise features are now available without an Enterprise
+   * tier.
    * </pre>
    *
-   * <code>.google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+   * <code>
+   * .google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1beta1.ClusterUpdate.desired_enterprise_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=3796
    * @return The desiredEnterpriseConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1beta1.DesiredEnterpriseConfig getDesiredEnterpriseConfig() {
     return desiredEnterpriseConfig_ == null
         ? com.google.container.v1beta1.DesiredEnterpriseConfig.getDefaultInstance()
@@ -4403,11 +4425,17 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The desired enterprise configuration for the cluster.
+   *
+   * Deprecated: GKE Enterprise features are now available without an Enterprise
+   * tier.
    * </pre>
    *
-   * <code>.google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+   * <code>
+   * .google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1beta1.DesiredEnterpriseConfigOrBuilder
       getDesiredEnterpriseConfigOrBuilder() {
     return desiredEnterpriseConfig_ == null
@@ -4749,6 +4777,60 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         : gkeAutoUpgradeConfig_;
   }
 
+  public static final int DESIRED_NETWORK_TIER_CONFIG_FIELD_NUMBER = 155;
+  private com.google.container.v1beta1.NetworkTierConfig desiredNetworkTierConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tier configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NetworkTierConfig desired_network_tier_config = 155;</code>
+   *
+   * @return Whether the desiredNetworkTierConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredNetworkTierConfig() {
+    return ((bitField2_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tier configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NetworkTierConfig desired_network_tier_config = 155;</code>
+   *
+   * @return The desiredNetworkTierConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NetworkTierConfig getDesiredNetworkTierConfig() {
+    return desiredNetworkTierConfig_ == null
+        ? com.google.container.v1beta1.NetworkTierConfig.getDefaultInstance()
+        : desiredNetworkTierConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tier configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NetworkTierConfig desired_network_tier_config = 155;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NetworkTierConfigOrBuilder
+      getDesiredNetworkTierConfigOrBuilder() {
+    return desiredNetworkTierConfig_ == null
+        ? com.google.container.v1beta1.NetworkTierConfig.getDefaultInstance()
+        : desiredNetworkTierConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5005,6 +5087,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField2_ & 0x00000010) != 0)) {
       output.writeMessage(154, getGkeAutoUpgradeConfig());
+    }
+    if (((bitField2_ & 0x00000020) != 0)) {
+      output.writeMessage(155, getDesiredNetworkTierConfig());
     }
     if (((bitField2_ & 0x00000008) != 0)) {
       output.writeMessage(156, getDesiredAnonymousAuthenticationConfig());
@@ -5378,6 +5463,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (((bitField2_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(154, getGkeAutoUpgradeConfig());
+    }
+    if (((bitField2_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              155, getDesiredNetworkTierConfig());
     }
     if (((bitField2_ & 0x00000008) != 0)) {
       size +=
@@ -5754,6 +5844,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasGkeAutoUpgradeConfig()) {
       if (!getGkeAutoUpgradeConfig().equals(other.getGkeAutoUpgradeConfig())) return false;
     }
+    if (hasDesiredNetworkTierConfig() != other.hasDesiredNetworkTierConfig()) return false;
+    if (hasDesiredNetworkTierConfig()) {
+      if (!getDesiredNetworkTierConfig().equals(other.getDesiredNetworkTierConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -6077,6 +6171,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + GKE_AUTO_UPGRADE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getGkeAutoUpgradeConfig().hashCode();
     }
+    if (hasDesiredNetworkTierConfig()) {
+      hash = (37 * hash) + DESIRED_NETWORK_TIER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredNetworkTierConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -6282,6 +6380,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         getDesiredUserManagedKeysConfigFieldBuilder();
         getDesiredAnonymousAuthenticationConfigFieldBuilder();
         getGkeAutoUpgradeConfigFieldBuilder();
+        getDesiredNetworkTierConfigFieldBuilder();
       }
     }
 
@@ -6618,6 +6717,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (gkeAutoUpgradeConfigBuilder_ != null) {
         gkeAutoUpgradeConfigBuilder_.dispose();
         gkeAutoUpgradeConfigBuilder_ = null;
+      }
+      desiredNetworkTierConfig_ = null;
+      if (desiredNetworkTierConfigBuilder_ != null) {
+        desiredNetworkTierConfigBuilder_.dispose();
+        desiredNetworkTierConfigBuilder_ = null;
       }
       return this;
     }
@@ -7167,6 +7271,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 : gkeAutoUpgradeConfigBuilder_.build();
         to_bitField2_ |= 0x00000010;
       }
+      if (((from_bitField2_ & 0x00010000) != 0)) {
+        result.desiredNetworkTierConfig_ =
+            desiredNetworkTierConfigBuilder_ == null
+                ? desiredNetworkTierConfig_
+                : desiredNetworkTierConfigBuilder_.build();
+        to_bitField2_ |= 0x00000020;
+      }
       result.bitField1_ |= to_bitField1_;
       result.bitField2_ |= to_bitField2_;
     }
@@ -7482,6 +7593,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasGkeAutoUpgradeConfig()) {
         mergeGkeAutoUpgradeConfig(other.getGkeAutoUpgradeConfig());
+      }
+      if (other.hasDesiredNetworkTierConfig()) {
+        mergeDesiredNetworkTierConfig(other.getDesiredNetworkTierConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -8059,6 +8173,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 bitField2_ |= 0x00008000;
                 break;
               } // case 1234
+            case 1242:
+              {
+                input.readMessage(
+                    getDesiredNetworkTierConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00010000;
+                break;
+              } // case 1242
             case 1250:
               {
                 input.readMessage(
@@ -9345,7 +9466,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_master_authorized_networks_config
-     *     is deprecated. See google/container/v1beta1/cluster_service.proto;l=3379
+     *     is deprecated. See google/container/v1beta1/cluster_service.proto;l=3526
      * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
      */
     @java.lang.Deprecated
@@ -9369,7 +9490,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_master_authorized_networks_config
-     *     is deprecated. See google/container/v1beta1/cluster_service.proto;l=3379
+     *     is deprecated. See google/container/v1beta1/cluster_service.proto;l=3526
      * @return The desiredMasterAuthorizedNetworksConfig.
      */
     @java.lang.Deprecated
@@ -10827,7 +10948,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_private_cluster_config is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3420
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3567
      * @return Whether the desiredPrivateClusterConfig field is set.
      */
     @java.lang.Deprecated
@@ -10856,7 +10977,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_private_cluster_config is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3420
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3567
      * @return The desiredPrivateClusterConfig.
      */
     @java.lang.Deprecated
@@ -11947,7 +12068,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3437
+     *     google/container/v1beta1/cluster_service.proto;l=3584
      * @return Whether the privateClusterConfig field is set.
      */
     @java.lang.Deprecated
@@ -11969,7 +12090,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3437
+     *     google/container/v1beta1/cluster_service.proto;l=3584
      * @return The privateClusterConfig.
      */
     @java.lang.Deprecated
@@ -12193,7 +12314,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.TpuConfig desired_tpu_config = 38 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_tpu_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3442
+     *     google/container/v1beta1/cluster_service.proto;l=3589
      * @return Whether the desiredTpuConfig field is set.
      */
     @java.lang.Deprecated
@@ -12213,7 +12334,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.TpuConfig desired_tpu_config = 38 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_tpu_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3442
+     *     google/container/v1beta1/cluster_service.proto;l=3589
      * @return The desiredTpuConfig.
      */
     @java.lang.Deprecated
@@ -14215,7 +14336,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for direct-path (via ALTS) with workload identity.
+     * Configuration for direct-path (via ALTS) with workload identity. This
+     * feature is not officially supported for external customers in Kubernetes
+     * Engine when using Workload Identity.
      * </pre>
      *
      * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
@@ -14230,7 +14353,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for direct-path (via ALTS) with workload identity.
+     * Configuration for direct-path (via ALTS) with workload identity. This
+     * feature is not officially supported for external customers in Kubernetes
+     * Engine when using Workload Identity.
      * </pre>
      *
      * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
@@ -14251,7 +14376,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for direct-path (via ALTS) with workload identity.
+     * Configuration for direct-path (via ALTS) with workload identity. This
+     * feature is not officially supported for external customers in Kubernetes
+     * Engine when using Workload Identity.
      * </pre>
      *
      * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
@@ -14275,7 +14402,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for direct-path (via ALTS) with workload identity.
+     * Configuration for direct-path (via ALTS) with workload identity. This
+     * feature is not officially supported for external customers in Kubernetes
+     * Engine when using Workload Identity.
      * </pre>
      *
      * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
@@ -14296,7 +14425,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for direct-path (via ALTS) with workload identity.
+     * Configuration for direct-path (via ALTS) with workload identity. This
+     * feature is not officially supported for external customers in Kubernetes
+     * Engine when using Workload Identity.
      * </pre>
      *
      * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
@@ -14326,7 +14457,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for direct-path (via ALTS) with workload identity.
+     * Configuration for direct-path (via ALTS) with workload identity. This
+     * feature is not officially supported for external customers in Kubernetes
+     * Engine when using Workload Identity.
      * </pre>
      *
      * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
@@ -14346,7 +14479,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for direct-path (via ALTS) with workload identity.
+     * Configuration for direct-path (via ALTS) with workload identity. This
+     * feature is not officially supported for external customers in Kubernetes
+     * Engine when using Workload Identity.
      * </pre>
      *
      * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
@@ -14362,7 +14497,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for direct-path (via ALTS) with workload identity.
+     * Configuration for direct-path (via ALTS) with workload identity. This
+     * feature is not officially supported for external customers in Kubernetes
+     * Engine when using Workload Identity.
      * </pre>
      *
      * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
@@ -14382,7 +14519,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for direct-path (via ALTS) with workload identity.
+     * Configuration for direct-path (via ALTS) with workload identity. This
+     * feature is not officially supported for external customers in Kubernetes
+     * Engine when using Workload Identity.
      * </pre>
      *
      * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
@@ -16276,7 +16415,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3524
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3673
      * @return Whether the desiredEnablePrivateEndpoint field is set.
      */
     @java.lang.Override
@@ -16300,7 +16439,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3524
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3673
      * @return The desiredEnablePrivateEndpoint.
      */
     @java.lang.Override
@@ -16324,7 +16463,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3524
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3673
      * @param value The desiredEnablePrivateEndpoint to set.
      * @return This builder for chaining.
      */
@@ -16352,7 +16491,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3524
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3673
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -16919,7 +17058,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3542
+     *     google/container/v1beta1/cluster_service.proto;l=3691
      * @return Whether the desiredProtectConfig field is set.
      */
     @java.lang.Deprecated
@@ -16940,7 +17079,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3542
+     *     google/container/v1beta1/cluster_service.proto;l=3691
      * @return The desiredProtectConfig.
      */
     @java.lang.Deprecated
@@ -21547,7 +21686,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.user_managed_keys_config is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=3634
+     *     See google/container/v1beta1/cluster_service.proto;l=3783
      * @return Whether the userManagedKeysConfig field is set.
      */
     @java.lang.Deprecated
@@ -21572,7 +21711,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.user_managed_keys_config is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=3634
+     *     See google/container/v1beta1/cluster_service.proto;l=3783
      * @return The userManagedKeysConfig.
      */
     @java.lang.Deprecated
@@ -22249,13 +22388,20 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired enterprise configuration for the cluster.
+     *
+     * Deprecated: GKE Enterprise features are now available without an Enterprise
+     * tier.
      * </pre>
      *
-     * <code>.google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147;
+     * <code>
+     * .google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147 [deprecated = true];
      * </code>
      *
+     * @deprecated google.container.v1beta1.ClusterUpdate.desired_enterprise_config is deprecated.
+     *     See google/container/v1beta1/cluster_service.proto;l=3796
      * @return Whether the desiredEnterpriseConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasDesiredEnterpriseConfig() {
       return ((bitField2_ & 0x00000200) != 0);
     }
@@ -22265,13 +22411,20 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired enterprise configuration for the cluster.
+     *
+     * Deprecated: GKE Enterprise features are now available without an Enterprise
+     * tier.
      * </pre>
      *
-     * <code>.google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147;
+     * <code>
+     * .google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147 [deprecated = true];
      * </code>
      *
+     * @deprecated google.container.v1beta1.ClusterUpdate.desired_enterprise_config is deprecated.
+     *     See google/container/v1beta1/cluster_service.proto;l=3796
      * @return The desiredEnterpriseConfig.
      */
+    @java.lang.Deprecated
     public com.google.container.v1beta1.DesiredEnterpriseConfig getDesiredEnterpriseConfig() {
       if (desiredEnterpriseConfigBuilder_ == null) {
         return desiredEnterpriseConfig_ == null
@@ -22287,11 +22440,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired enterprise configuration for the cluster.
+     *
+     * Deprecated: GKE Enterprise features are now available without an Enterprise
+     * tier.
      * </pre>
      *
-     * <code>.google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147;
+     * <code>
+     * .google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setDesiredEnterpriseConfig(
         com.google.container.v1beta1.DesiredEnterpriseConfig value) {
       if (desiredEnterpriseConfigBuilder_ == null) {
@@ -22312,11 +22470,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired enterprise configuration for the cluster.
+     *
+     * Deprecated: GKE Enterprise features are now available without an Enterprise
+     * tier.
      * </pre>
      *
-     * <code>.google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147;
+     * <code>
+     * .google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setDesiredEnterpriseConfig(
         com.google.container.v1beta1.DesiredEnterpriseConfig.Builder builderForValue) {
       if (desiredEnterpriseConfigBuilder_ == null) {
@@ -22334,11 +22497,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired enterprise configuration for the cluster.
+     *
+     * Deprecated: GKE Enterprise features are now available without an Enterprise
+     * tier.
      * </pre>
      *
-     * <code>.google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147;
+     * <code>
+     * .google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeDesiredEnterpriseConfig(
         com.google.container.v1beta1.DesiredEnterpriseConfig value) {
       if (desiredEnterpriseConfigBuilder_ == null) {
@@ -22365,11 +22533,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired enterprise configuration for the cluster.
+     *
+     * Deprecated: GKE Enterprise features are now available without an Enterprise
+     * tier.
      * </pre>
      *
-     * <code>.google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147;
+     * <code>
+     * .google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearDesiredEnterpriseConfig() {
       bitField2_ = (bitField2_ & ~0x00000200);
       desiredEnterpriseConfig_ = null;
@@ -22386,11 +22559,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired enterprise configuration for the cluster.
+     *
+     * Deprecated: GKE Enterprise features are now available without an Enterprise
+     * tier.
      * </pre>
      *
-     * <code>.google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147;
+     * <code>
+     * .google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1beta1.DesiredEnterpriseConfig.Builder
         getDesiredEnterpriseConfigBuilder() {
       bitField2_ |= 0x00000200;
@@ -22403,11 +22581,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired enterprise configuration for the cluster.
+     *
+     * Deprecated: GKE Enterprise features are now available without an Enterprise
+     * tier.
      * </pre>
      *
-     * <code>.google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147;
+     * <code>
+     * .google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1beta1.DesiredEnterpriseConfigOrBuilder
         getDesiredEnterpriseConfigOrBuilder() {
       if (desiredEnterpriseConfigBuilder_ != null) {
@@ -22424,9 +22607,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The desired enterprise configuration for the cluster.
+     *
+     * Deprecated: GKE Enterprise features are now available without an Enterprise
+     * tier.
      * </pre>
      *
-     * <code>.google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147;
+     * <code>
+     * .google.container.v1beta1.DesiredEnterpriseConfig desired_enterprise_config = 147 [deprecated = true];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -23598,6 +23785,206 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         gkeAutoUpgradeConfig_ = null;
       }
       return gkeAutoUpgradeConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.NetworkTierConfig desiredNetworkTierConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NetworkTierConfig,
+            com.google.container.v1beta1.NetworkTierConfig.Builder,
+            com.google.container.v1beta1.NetworkTierConfigOrBuilder>
+        desiredNetworkTierConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tier configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTierConfig desired_network_tier_config = 155;</code>
+     *
+     * @return Whether the desiredNetworkTierConfig field is set.
+     */
+    public boolean hasDesiredNetworkTierConfig() {
+      return ((bitField2_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tier configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTierConfig desired_network_tier_config = 155;</code>
+     *
+     * @return The desiredNetworkTierConfig.
+     */
+    public com.google.container.v1beta1.NetworkTierConfig getDesiredNetworkTierConfig() {
+      if (desiredNetworkTierConfigBuilder_ == null) {
+        return desiredNetworkTierConfig_ == null
+            ? com.google.container.v1beta1.NetworkTierConfig.getDefaultInstance()
+            : desiredNetworkTierConfig_;
+      } else {
+        return desiredNetworkTierConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tier configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTierConfig desired_network_tier_config = 155;</code>
+     */
+    public Builder setDesiredNetworkTierConfig(
+        com.google.container.v1beta1.NetworkTierConfig value) {
+      if (desiredNetworkTierConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredNetworkTierConfig_ = value;
+      } else {
+        desiredNetworkTierConfigBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tier configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTierConfig desired_network_tier_config = 155;</code>
+     */
+    public Builder setDesiredNetworkTierConfig(
+        com.google.container.v1beta1.NetworkTierConfig.Builder builderForValue) {
+      if (desiredNetworkTierConfigBuilder_ == null) {
+        desiredNetworkTierConfig_ = builderForValue.build();
+      } else {
+        desiredNetworkTierConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tier configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTierConfig desired_network_tier_config = 155;</code>
+     */
+    public Builder mergeDesiredNetworkTierConfig(
+        com.google.container.v1beta1.NetworkTierConfig value) {
+      if (desiredNetworkTierConfigBuilder_ == null) {
+        if (((bitField2_ & 0x00010000) != 0)
+            && desiredNetworkTierConfig_ != null
+            && desiredNetworkTierConfig_
+                != com.google.container.v1beta1.NetworkTierConfig.getDefaultInstance()) {
+          getDesiredNetworkTierConfigBuilder().mergeFrom(value);
+        } else {
+          desiredNetworkTierConfig_ = value;
+        }
+      } else {
+        desiredNetworkTierConfigBuilder_.mergeFrom(value);
+      }
+      if (desiredNetworkTierConfig_ != null) {
+        bitField2_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tier configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTierConfig desired_network_tier_config = 155;</code>
+     */
+    public Builder clearDesiredNetworkTierConfig() {
+      bitField2_ = (bitField2_ & ~0x00010000);
+      desiredNetworkTierConfig_ = null;
+      if (desiredNetworkTierConfigBuilder_ != null) {
+        desiredNetworkTierConfigBuilder_.dispose();
+        desiredNetworkTierConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tier configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTierConfig desired_network_tier_config = 155;</code>
+     */
+    public com.google.container.v1beta1.NetworkTierConfig.Builder
+        getDesiredNetworkTierConfigBuilder() {
+      bitField2_ |= 0x00010000;
+      onChanged();
+      return getDesiredNetworkTierConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tier configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTierConfig desired_network_tier_config = 155;</code>
+     */
+    public com.google.container.v1beta1.NetworkTierConfigOrBuilder
+        getDesiredNetworkTierConfigOrBuilder() {
+      if (desiredNetworkTierConfigBuilder_ != null) {
+        return desiredNetworkTierConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredNetworkTierConfig_ == null
+            ? com.google.container.v1beta1.NetworkTierConfig.getDefaultInstance()
+            : desiredNetworkTierConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tier configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTierConfig desired_network_tier_config = 155;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NetworkTierConfig,
+            com.google.container.v1beta1.NetworkTierConfig.Builder,
+            com.google.container.v1beta1.NetworkTierConfigOrBuilder>
+        getDesiredNetworkTierConfigFieldBuilder() {
+      if (desiredNetworkTierConfigBuilder_ == null) {
+        desiredNetworkTierConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.NetworkTierConfig,
+                com.google.container.v1beta1.NetworkTierConfig.Builder,
+                com.google.container.v1beta1.NetworkTierConfigOrBuilder>(
+                getDesiredNetworkTierConfig(), getParentForChildren(), isClean());
+        desiredNetworkTierConfig_ = null;
+      }
+      return desiredNetworkTierConfigBuilder_;
     }
 
     @java.lang.Override

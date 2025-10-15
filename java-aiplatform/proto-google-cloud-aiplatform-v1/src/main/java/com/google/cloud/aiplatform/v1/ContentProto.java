@@ -49,6 +49,10 @@ public final class ContentProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_VideoMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_ImageConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_ImageConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_GenerationConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_GenerationConfig_fieldAccessorTable;
@@ -216,7 +220,10 @@ public final class ContentProto {
           + "VideoMetadata\0224\n"
           + "\014start_offset\030\001"
           + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\0222\n\n"
-          + "end_offset\030\002 \001(\0132\031.google.protobuf.DurationB\003\340A\001\"\370\014\n"
+          + "end_offset\030\002 \001(\0132\031.google.protobuf.DurationB\003\340A\001\">\n"
+          + "\013ImageConfig\022\036\n"
+          + "\014aspect_ratio\030\002 \001(\tB\003\340A\001H\000\210\001\001B\017\n\r"
+          + "_aspect_ratio\"\322\r\n"
           + "\020GenerationConfig\022\035\n"
           + "\013temperature\030\001 \001(\002B\003\340A\001H\000\210\001\001\022\027\n"
           + "\005top_p\030\002 \001(\002B\003\340A\001H\001\210\001\001\022\027\n"
@@ -236,19 +243,21 @@ public final class ContentProto {
           + "\210\001\001\022>\n"
           + "\024response_json_schema\030\034"
           + " \001(\0132\026.google.protobuf.ValueB\003\340A\001H\013\210\001\001\022\\\n"
-          + "\016routing_config\030\021 \001(\013"
-          + "2:.google.cloud.aiplatform.v1.GenerationConfig.RoutingConfigB\003\340A\001H\014\210\001\001\022Y\n"
-          + "\017thinking_config\030\031 \001(\0132;.google.cloud.aiplatfor"
-          + "m.v1.GenerationConfig.ThinkingConfigB\003\340A\001\032\302\004\n\r"
+          + "\016routing_config\030\021 \001(\0132:.google.cloud."
+          + "aiplatform.v1.GenerationConfig.RoutingConfigB\003\340A\001H\014\210\001\001\022Y\n"
+          + "\017thinking_config\030\031 \001(\0132"
+          + ";.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfigB\003\340A\001\022G\n"
+          + "\014image_config\030\036"
+          + " \001(\0132\'.google.cloud.aiplatform.v1.ImageConfigB\003\340A\001H\r"
+          + "\210\001\001\032\302\004\n\r"
           + "RoutingConfig\022_\n"
-          + "\tauto_mode\030\001 \001(\0132J"
-          + ".google.cloud.aiplatform.v1.GenerationConfig.RoutingConfig.AutoRoutingModeH\000\022c\n"
-          + "\013manual_mode\030\002 \001(\0132L.google.cloud.aiplatf"
-          + "orm.v1.GenerationConfig.RoutingConfig.ManualRoutingModeH\000\032\233\002\n"
+          + "\tauto_mode\030\001 \001(\0132J.google.cloud.aiplatfor"
+          + "m.v1.GenerationConfig.RoutingConfig.AutoRoutingModeH\000\022c\n"
+          + "\013manual_mode\030\002 \001(\0132L.goo"
+          + "gle.cloud.aiplatform.v1.GenerationConfig.RoutingConfig.ManualRoutingModeH\000\032\233\002\n"
           + "\017AutoRoutingMode\022\210\001\n"
-          + "\030model_routing_preference\030\001 \001(\0162a.googl"
-          + "e.cloud.aiplatform.v1.GenerationConfig.R"
-          + "outingConfig.AutoRoutingMode.ModelRoutingPreferenceH\000\210\001\001\"`\n"
+          + "\030model_routing_preference\030\001 \001(\0162a.google.cloud.aiplatform.v1.G"
+          + "enerationConfig.RoutingConfig.AutoRoutingMode.ModelRoutingPreferenceH\000\210\001\001\"`\n"
           + "\026ModelRoutingPreference\022\013\n"
           + "\007UNKNOWN\020\000\022\026\n"
           + "\022PRIORITIZE_QUALITY\020\001\022\014\n"
@@ -276,14 +285,15 @@ public final class ContentProto {
           + "\005_seedB\022\n"
           + "\020_response_schemaB\027\n"
           + "\025_response_json_schemaB\021\n"
-          + "\017_routing_config\"\353\003\n\r"
+          + "\017_routing_configB\017\n\r"
+          + "_image_config\"\353\003\n\r"
           + "SafetySetting\022?\n"
           + "\010category\030\001"
           + " \001(\0162(.google.cloud.aiplatform.v1.HarmCategoryB\003\340A\002\022T\n"
-          + "\tthreshold\030\002"
-          + " \001(\0162<.google.cloud.aiplatform.v1.SafetySetting.HarmBlockThresholdB\003\340A\002\022N\n"
-          + "\006method\030\004"
-          + " \001(\01629.google.cloud.aiplatform.v1.SafetySetting.HarmBlockMethodB\003\340A\001\"\235\001\n"
+          + "\tthreshold\030\002 \001(\0162<"
+          + ".google.cloud.aiplatform.v1.SafetySetting.HarmBlockThresholdB\003\340A\002\022N\n"
+          + "\006method\030\004 \001("
+          + "\01629.google.cloud.aiplatform.v1.SafetySetting.HarmBlockMethodB\003\340A\001\"\235\001\n"
           + "\022HarmBlockThreshold\022$\n"
           + " HARM_BLOCK_THRESHOLD_UNSPECIFIED\020\000\022\027\n"
           + "\023BLOCK_LOW_AND_ABOVE\020\001\022\032\n"
@@ -296,10 +306,10 @@ public final class ContentProto {
           + "\010SEVERITY\020\001\022\017\n"
           + "\013PROBABILITY\020\002\"\277\004\n"
           + "\014SafetyRating\022?\n"
-          + "\010category\030\001 \001(\0162(.google"
-          + ".cloud.aiplatform.v1.HarmCategoryB\003\340A\003\022R\n"
-          + "\013probability\030\002 \001(\01628.google.cloud.aipla"
-          + "tform.v1.SafetyRating.HarmProbabilityB\003\340A\003\022\036\n"
+          + "\010category\030\001"
+          + " \001(\0162(.google.cloud.aiplatform.v1.HarmCategoryB\003\340A\003\022R\n"
+          + "\013probability\030\002"
+          + " \001(\01628.google.cloud.aiplatform.v1.SafetyRating.HarmProbabilityB\003\340A\003\022\036\n"
           + "\021probability_score\030\005 \001(\002B\003\340A\003\022L\n"
           + "\010severity\030\006"
           + " \001(\01625.google.cloud.aiplatform.v1.SafetyRating.HarmSeverityB\003\340A\003\022\033\n"
@@ -329,14 +339,15 @@ public final class ContentProto {
           + "\020publication_date\030\006 \001(\0132\021.google.type.DateB\003\340A\003\"\340\006\n"
           + "\tCandidate\022\022\n"
           + "\005index\030\001 \001(\005B\003\340A\003\0229\n"
-          + "\007content\030\002 \001(\013"
-          + "2#.google.cloud.aiplatform.v1.ContentB\003\340A\003\022\022\n"
+          + "\007content\030\002"
+          + " \001(\0132#.google.cloud.aiplatform.v1.ContentB\003\340A\003\022\022\n"
           + "\005score\030\010 \001(\001B\003\340A\003\022\031\n"
           + "\014avg_logprobs\030\t \001(\001B\003\340A\003\022H\n"
           + "\017logprobs_result\030\n"
-          + " \001(\0132*.google.cloud.aiplatform.v1.LogprobsResultB\003\340A\003\022N\n\r"
-          + "finish_reason\030\003 \001(\01622.google.clou"
-          + "d.aiplatform.v1.Candidate.FinishReasonB\003\340A\003\022E\n"
+          + " \001(\0132*.google.cloud.aiplatform.v1.LogprobsResultB\003\340A\003\022N\n"
+          + "\r"
+          + "finish_reason\030\003"
+          + " \001(\01622.google.cloud.aiplatform.v1.Candidate.FinishReasonB\003\340A\003\022E\n"
           + "\016safety_ratings\030\004"
           + " \003(\0132(.google.cloud.aiplatform.v1.SafetyRatingB\003\340A\003\022 \n"
           + "\016finish_message\030\005 \001(\tB\003\340A\003H\000\210\001\001\022L\n"
@@ -372,10 +383,10 @@ public final class ContentProto {
           + "\034URL_RETRIEVAL_STATUS_SUCCESS\020\001\022\036\n"
           + "\032URL_RETRIEVAL_STATUS_ERROR\020\002\"\217\003\n"
           + "\016LogprobsResult\022P\n"
-          + "\016top_candidates\030\001"
-          + " \003(\01328.google.cloud.aiplatform.v1.LogprobsResult.TopCandidates\022O\n"
-          + "\021chosen_candidates\030\002"
-          + " \003(\01324.google.cloud.aiplatform.v1.LogprobsResult.Candidate\032\177\n"
+          + "\016top_candidates\030\001 \003(\01328"
+          + ".google.cloud.aiplatform.v1.LogprobsResult.TopCandidates\022O\n"
+          + "\021chosen_candidates\030\002 "
+          + "\003(\01324.google.cloud.aiplatform.v1.LogprobsResult.Candidate\032\177\n"
           + "\tCandidate\022\022\n"
           + "\005token\030\001 \001(\tH\000\210\001\001\022\025\n"
           + "\010token_id\030\003 \001(\005H\001\210\001\001\022\034\n"
@@ -384,8 +395,8 @@ public final class ContentProto {
           + "\t_token_idB\022\n"
           + "\020_log_probability\032Y\n\r"
           + "TopCandidates\022H\n\n"
-          + "candidates\030\001 \003(\01324.google.c"
-          + "loud.aiplatform.v1.LogprobsResult.Candidate\"g\n"
+          + "candidates\030\001"
+          + " \003(\01324.google.cloud.aiplatform.v1.LogprobsResult.Candidate\"g\n"
           + "\007Segment\022\027\n\n"
           + "part_index\030\001 \001(\005B\003\340A\003\022\030\n"
           + "\013start_index\030\002 \001(\005B\003\340A\003\022\026\n"
@@ -393,8 +404,8 @@ public final class ContentProto {
           + "\004text\030\004 \001(\tB\003\340A\003\"\322\007\n"
           + "\016GroundingChunk\022=\n"
           + "\003web\030\001 \001(\0132..google.cloud.aiplatform.v1.GroundingChunk.WebH\000\022X\n"
-          + "\021retrieved_context\030\002 \001(\0132;.google.cloud.aiplatf"
-          + "orm.v1.GroundingChunk.RetrievedContextH\000\022?\n"
+          + "\021retrieved_context\030\002"
+          + " \001(\0132;.google.cloud.aiplatform.v1.GroundingChunk.RetrievedContextH\000\022?\n"
           + "\004maps\030\003"
           + " \001(\0132/.google.cloud.aiplatform.v1.GroundingChunk.MapsH\000\032=\n"
           + "\003Web\022\020\n"
@@ -418,11 +429,11 @@ public final class ContentProto {
           + "\005title\030\002 \001(\tH\001\210\001\001\022\021\n"
           + "\004text\030\003 \001(\tH\002\210\001\001\022\025\n"
           + "\010place_id\030\004 \001(\tH\003\210\001\001\022`\n"
-          + "\024place_answer_sources\030\005 \001("
-          + "\0132B.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources\032\313\001\n"
+          + "\024place_answer_sources\030\005 \001(\0132B.go"
+          + "ogle.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources\032\313\001\n"
           + "\022PlaceAnswerSources\022i\n"
-          + "\017review_snippets\030\001 \003(\0132P.google.cloud.aiplatform.v1.GroundingChun"
-          + "k.Maps.PlaceAnswerSources.ReviewSnippet\032J\n\r"
+          + "\017review_snippets\030\001 \003(\0132P.google"
+          + ".cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet\032J\n\r"
           + "ReviewSnippet\022\021\n"
           + "\treview_id\030\001 \001(\t\022\027\n"
           + "\017google_maps_uri\030\002 \001(\t\022\r\n"
@@ -433,25 +444,25 @@ public final class ContentProto {
           + "\t_place_idB\014\n\n"
           + "chunk_type\"\225\001\n"
           + "\020GroundingSupport\0229\n"
-          + "\007segment\030\001"
-          + " \001(\0132#.google.cloud.aiplatform.v1.SegmentH\000\210\001\001\022\037\n"
+          + "\007segment\030\001 \001("
+          + "\0132#.google.cloud.aiplatform.v1.SegmentH\000\210\001\001\022\037\n"
           + "\027grounding_chunk_indices\030\002 \003(\005\022\031\n"
           + "\021confidence_scores\030\003 \003(\002B\n\n"
           + "\010_segment\"\240\005\n"
           + "\021GroundingMetadata\022\037\n"
           + "\022web_search_queries\030\001 \003(\tB\003\340A\001\022R\n"
-          + "\022search_entry_point\030\004"
-          + " \001(\0132,.google.cloud.aiplatform.v1.SearchEntryPointB\003\340A\001H\000\210\001\001\022D\n"
-          + "\020grounding_chunks\030\005"
-          + " \003(\0132*.google.cloud.aiplatform.v1.GroundingChunk\022M\n"
-          + "\022grounding_supports\030\006 \003(\0132,"
-          + ".google.cloud.aiplatform.v1.GroundingSupportB\003\340A\001\022V\n"
-          + "\022retrieval_metadata\030\007 \001(\0132-."
-          + "google.cloud.aiplatform.v1.RetrievalMetadataB\006\340A\001\340A\003H\001\210\001\001\0225\n"
+          + "\022search_entry_point\030\004 \001(\0132,"
+          + ".google.cloud.aiplatform.v1.SearchEntryPointB\003\340A\001H\000\210\001\001\022D\n"
+          + "\020grounding_chunks\030\005 \003(\013"
+          + "2*.google.cloud.aiplatform.v1.GroundingChunk\022M\n"
+          + "\022grounding_supports\030\006 \003(\0132,.googl"
+          + "e.cloud.aiplatform.v1.GroundingSupportB\003\340A\001\022V\n"
+          + "\022retrieval_metadata\030\007 \001(\0132-.google"
+          + ".cloud.aiplatform.v1.RetrievalMetadataB\006\340A\001\340A\003H\001\210\001\001\0225\n"
           + " google_maps_widget_context_token\030\010 \001("
           + "\tB\006\340A\001\340A\003H\002\210\001\001\022]\n"
-          + "\024source_flagging_uris\030\t \003(\0132?.google.cloud.ai"
-          + "platform.v1.GroundingMetadata.SourceFlaggingUri\032@\n"
+          + "\024source_flagging_uris\030\t \003(\0132?.google.cloud.aiplatfo"
+          + "rm.v1.GroundingMetadata.SourceFlaggingUri\032@\n"
           + "\021SourceFlaggingUri\022\021\n"
           + "\tsource_id\030\001 \001(\t\022\030\n"
           + "\020flag_content_uri\030\002 \001(\tB\025\n"
@@ -486,12 +497,13 @@ public final class ContentProto {
           + "\005VIDEO\020\003\022\t\n"
           + "\005AUDIO\020\004\022\014\n"
           + "\010DOCUMENT\020\005B\257\002\n"
-          + "\036com.google.cloud.aiplatform.v1B\014ContentProtoP\001Z>cloud.google.com/go/aiplatfo"
-          + "rm/apiv1/aiplatformpb;aiplatformpb\252\002\032Goo"
-          + "gle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\A"
-          + "IPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1\352Ab\n"
-          + "\"modelarmor.googleapis.com/Template\022<projects/{project}/locations/{locat"
-          + "ion}/templates/{template}b\006proto3"
+          + "\036com.google.cloud.aiplatform.v1B\014ContentPro"
+          + "toP\001Z>cloud.google.com/go/aiplatform/api"
+          + "v1/aiplatformpb;aiplatformpb\252\002\032Google.Cl"
+          + "oud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatf"
+          + "orm\\V1\352\002\035Google::Cloud::AIPlatform::V1\352Ab\n"
+          + "\"modelarmor.googleapis.com/Template\022<projects/{project}/locations/{location}/t"
+          + "emplates/{template}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -557,8 +569,16 @@ public final class ContentProto {
             new java.lang.String[] {
               "StartOffset", "EndOffset",
             });
-    internal_static_google_cloud_aiplatform_v1_GenerationConfig_descriptor =
+    internal_static_google_cloud_aiplatform_v1_ImageConfig_descriptor =
         getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_aiplatform_v1_ImageConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_ImageConfig_descriptor,
+            new java.lang.String[] {
+              "AspectRatio",
+            });
+    internal_static_google_cloud_aiplatform_v1_GenerationConfig_descriptor =
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_aiplatform_v1_GenerationConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_GenerationConfig_descriptor,
@@ -579,6 +599,7 @@ public final class ContentProto {
               "ResponseJsonSchema",
               "RoutingConfig",
               "ThinkingConfig",
+              "ImageConfig",
             });
     internal_static_google_cloud_aiplatform_v1_GenerationConfig_RoutingConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1_GenerationConfig_descriptor
@@ -621,7 +642,7 @@ public final class ContentProto {
               "IncludeThoughts", "ThinkingBudget",
             });
     internal_static_google_cloud_aiplatform_v1_SafetySetting_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_aiplatform_v1_SafetySetting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_SafetySetting_descriptor,
@@ -629,7 +650,7 @@ public final class ContentProto {
               "Category", "Threshold", "Method",
             });
     internal_static_google_cloud_aiplatform_v1_SafetyRating_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_aiplatform_v1_SafetyRating_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_SafetyRating_descriptor,
@@ -637,7 +658,7 @@ public final class ContentProto {
               "Category", "Probability", "ProbabilityScore", "Severity", "SeverityScore", "Blocked",
             });
     internal_static_google_cloud_aiplatform_v1_CitationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_aiplatform_v1_CitationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_CitationMetadata_descriptor,
@@ -645,7 +666,7 @@ public final class ContentProto {
               "Citations",
             });
     internal_static_google_cloud_aiplatform_v1_Citation_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_aiplatform_v1_Citation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_Citation_descriptor,
@@ -653,7 +674,7 @@ public final class ContentProto {
               "StartIndex", "EndIndex", "Uri", "Title", "License", "PublicationDate",
             });
     internal_static_google_cloud_aiplatform_v1_Candidate_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_aiplatform_v1_Candidate_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_Candidate_descriptor,
@@ -671,7 +692,7 @@ public final class ContentProto {
               "UrlContextMetadata",
             });
     internal_static_google_cloud_aiplatform_v1_UrlContextMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_aiplatform_v1_UrlContextMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_UrlContextMetadata_descriptor,
@@ -679,7 +700,7 @@ public final class ContentProto {
               "UrlMetadata",
             });
     internal_static_google_cloud_aiplatform_v1_UrlMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_aiplatform_v1_UrlMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_UrlMetadata_descriptor,
@@ -687,7 +708,7 @@ public final class ContentProto {
               "RetrievedUrl", "UrlRetrievalStatus",
             });
     internal_static_google_cloud_aiplatform_v1_LogprobsResult_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_aiplatform_v1_LogprobsResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_LogprobsResult_descriptor,
@@ -715,7 +736,7 @@ public final class ContentProto {
               "Candidates",
             });
     internal_static_google_cloud_aiplatform_v1_Segment_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_aiplatform_v1_Segment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_Segment_descriptor,
@@ -723,7 +744,7 @@ public final class ContentProto {
               "PartIndex", "StartIndex", "EndIndex", "Text",
             });
     internal_static_google_cloud_aiplatform_v1_GroundingChunk_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_aiplatform_v1_GroundingChunk_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_GroundingChunk_descriptor,
@@ -781,7 +802,7 @@ public final class ContentProto {
               "ReviewId", "GoogleMapsUri", "Title",
             });
     internal_static_google_cloud_aiplatform_v1_GroundingSupport_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_aiplatform_v1_GroundingSupport_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_GroundingSupport_descriptor,
@@ -789,7 +810,7 @@ public final class ContentProto {
               "Segment", "GroundingChunkIndices", "ConfidenceScores",
             });
     internal_static_google_cloud_aiplatform_v1_GroundingMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_aiplatform_v1_GroundingMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_GroundingMetadata_descriptor,
@@ -813,7 +834,7 @@ public final class ContentProto {
               "SourceId", "FlagContentUri",
             });
     internal_static_google_cloud_aiplatform_v1_SearchEntryPoint_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_aiplatform_v1_SearchEntryPoint_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_SearchEntryPoint_descriptor,
@@ -821,7 +842,7 @@ public final class ContentProto {
               "RenderedContent", "SdkBlob",
             });
     internal_static_google_cloud_aiplatform_v1_RetrievalMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_aiplatform_v1_RetrievalMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_RetrievalMetadata_descriptor,
@@ -829,7 +850,7 @@ public final class ContentProto {
               "GoogleSearchDynamicRetrievalScore",
             });
     internal_static_google_cloud_aiplatform_v1_ModelArmorConfig_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_aiplatform_v1_ModelArmorConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ModelArmorConfig_descriptor,
@@ -837,7 +858,7 @@ public final class ContentProto {
               "PromptTemplateName", "ResponseTemplateName",
             });
     internal_static_google_cloud_aiplatform_v1_ModalityTokenCount_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_aiplatform_v1_ModalityTokenCount_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ModalityTokenCount_descriptor,

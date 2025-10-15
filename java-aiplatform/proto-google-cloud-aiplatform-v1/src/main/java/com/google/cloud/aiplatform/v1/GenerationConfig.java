@@ -4752,6 +4752,65 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         : thinkingConfig_;
   }
 
+  public static final int IMAGE_CONFIG_FIELD_NUMBER = 30;
+  private com.google.cloud.aiplatform.v1.ImageConfig imageConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for image generation features.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the imageConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasImageConfig() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for image generation features.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The imageConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ImageConfig getImageConfig() {
+    return imageConfig_ == null
+        ? com.google.cloud.aiplatform.v1.ImageConfig.getDefaultInstance()
+        : imageConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for image generation features.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ImageConfigOrBuilder getImageConfigOrBuilder() {
+    return imageConfig_ == null
+        ? com.google.cloud.aiplatform.v1.ImageConfig.getDefaultInstance()
+        : imageConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4814,6 +4873,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(28, getResponseJsonSchema());
     }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(30, getImageConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4875,6 +4937,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getResponseJsonSchema());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, getImageConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -4955,6 +5020,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (hasThinkingConfig()) {
       if (!getThinkingConfig().equals(other.getThinkingConfig())) return false;
     }
+    if (hasImageConfig() != other.hasImageConfig()) return false;
+    if (hasImageConfig()) {
+      if (!getImageConfig().equals(other.getImageConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -5027,6 +5096,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (hasThinkingConfig()) {
       hash = (37 * hash) + THINKING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getThinkingConfig().hashCode();
+    }
+    if (hasImageConfig()) {
+      hash = (37 * hash) + IMAGE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getImageConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -5173,6 +5246,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         getResponseJsonSchemaFieldBuilder();
         getRoutingConfigFieldBuilder();
         getThinkingConfigFieldBuilder();
+        getImageConfigFieldBuilder();
       }
     }
 
@@ -5211,6 +5285,11 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       if (thinkingConfigBuilder_ != null) {
         thinkingConfigBuilder_.dispose();
         thinkingConfigBuilder_ = null;
+      }
+      imageConfig_ = null;
+      if (imageConfigBuilder_ != null) {
+        imageConfigBuilder_.dispose();
+        imageConfigBuilder_ = null;
       }
       return this;
     }
@@ -5318,6 +5397,11 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
             thinkingConfigBuilder_ == null ? thinkingConfig_ : thinkingConfigBuilder_.build();
         to_bitField0_ |= 0x00002000;
       }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.imageConfig_ =
+            imageConfigBuilder_ == null ? imageConfig_ : imageConfigBuilder_.build();
+        to_bitField0_ |= 0x00004000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -5423,6 +5507,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasThinkingConfig()) {
         mergeThinkingConfig(other.getThinkingConfig());
+      }
+      if (other.hasImageConfig()) {
+        mergeImageConfig(other.getImageConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5548,6 +5635,12 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00002000;
                 break;
               } // case 226
+            case 242:
+              {
+                input.readMessage(getImageConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 242
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7859,6 +7952,219 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         thinkingConfig_ = null;
       }
       return thinkingConfigBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1.ImageConfig imageConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.ImageConfig,
+            com.google.cloud.aiplatform.v1.ImageConfig.Builder,
+            com.google.cloud.aiplatform.v1.ImageConfigOrBuilder>
+        imageConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for image generation features.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the imageConfig field is set.
+     */
+    public boolean hasImageConfig() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for image generation features.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The imageConfig.
+     */
+    public com.google.cloud.aiplatform.v1.ImageConfig getImageConfig() {
+      if (imageConfigBuilder_ == null) {
+        return imageConfig_ == null
+            ? com.google.cloud.aiplatform.v1.ImageConfig.getDefaultInstance()
+            : imageConfig_;
+      } else {
+        return imageConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for image generation features.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setImageConfig(com.google.cloud.aiplatform.v1.ImageConfig value) {
+      if (imageConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        imageConfig_ = value;
+      } else {
+        imageConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for image generation features.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setImageConfig(
+        com.google.cloud.aiplatform.v1.ImageConfig.Builder builderForValue) {
+      if (imageConfigBuilder_ == null) {
+        imageConfig_ = builderForValue.build();
+      } else {
+        imageConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for image generation features.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeImageConfig(com.google.cloud.aiplatform.v1.ImageConfig value) {
+      if (imageConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && imageConfig_ != null
+            && imageConfig_ != com.google.cloud.aiplatform.v1.ImageConfig.getDefaultInstance()) {
+          getImageConfigBuilder().mergeFrom(value);
+        } else {
+          imageConfig_ = value;
+        }
+      } else {
+        imageConfigBuilder_.mergeFrom(value);
+      }
+      if (imageConfig_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for image generation features.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearImageConfig() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      imageConfig_ = null;
+      if (imageConfigBuilder_ != null) {
+        imageConfigBuilder_.dispose();
+        imageConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for image generation features.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.ImageConfig.Builder getImageConfigBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return getImageConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for image generation features.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.ImageConfigOrBuilder getImageConfigOrBuilder() {
+      if (imageConfigBuilder_ != null) {
+        return imageConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return imageConfig_ == null
+            ? com.google.cloud.aiplatform.v1.ImageConfig.getDefaultInstance()
+            : imageConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for image generation features.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.ImageConfig,
+            com.google.cloud.aiplatform.v1.ImageConfig.Builder,
+            com.google.cloud.aiplatform.v1.ImageConfigOrBuilder>
+        getImageConfigFieldBuilder() {
+      if (imageConfigBuilder_ == null) {
+        imageConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.ImageConfig,
+                com.google.cloud.aiplatform.v1.ImageConfig.Builder,
+                com.google.cloud.aiplatform.v1.ImageConfigOrBuilder>(
+                getImageConfig(), getParentForChildren(), isClean());
+        imageConfig_ = null;
+      }
+      return imageConfigBuilder_;
     }
 
     @java.lang.Override

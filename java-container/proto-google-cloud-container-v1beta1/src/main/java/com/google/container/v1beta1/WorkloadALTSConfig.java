@@ -23,7 +23,9 @@ package com.google.container.v1beta1;
  *
  *
  * <pre>
- * Configuration for direct-path (via ALTS) with workload identity.
+ * Configuration for direct-path (via ALTS) with workload identity. This
+ * feature is not officially supported for external customers in Kubernetes
+ * Engine when using Workload Identity.
  * </pre>
  *
  * Protobuf type {@code google.container.v1beta1.WorkloadALTSConfig}
@@ -296,7 +298,9 @@ public final class WorkloadALTSConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Configuration for direct-path (via ALTS) with workload identity.
+   * Configuration for direct-path (via ALTS) with workload identity. This
+   * feature is not officially supported for external customers in Kubernetes
+   * Engine when using Workload Identity.
    * </pre>
    *
    * Protobuf type {@code google.container.v1beta1.WorkloadALTSConfig}

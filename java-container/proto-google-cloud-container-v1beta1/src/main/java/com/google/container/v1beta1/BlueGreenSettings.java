@@ -1270,14 +1270,64 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
   public interface AutoscaledRolloutPolicyOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicy)
-      com.google.protobuf.MessageOrBuilder {}
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to wait after cordoning the blue pool before draining the
+     * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+     * inclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the waitForDrainDuration field is set.
+     */
+    boolean hasWaitForDrainDuration();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to wait after cordoning the blue pool before draining the
+     * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+     * inclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The waitForDrainDuration.
+     */
+    com.google.protobuf.Duration getWaitForDrainDuration();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to wait after cordoning the blue pool before draining the
+     * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+     * inclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.DurationOrBuilder getWaitForDrainDurationOrBuilder();
+  }
 
   /**
    *
    *
    * <pre>
-   * Autoscaled rollout policy uses cluster autoscaler during
-   * blue-green upgrades to scale both the green and blue pools.
+   * Autoscaled rollout policy utilizes the cluster autoscaler during
+   * blue-green upgrade to scale both the blue and green pools.
    * </pre>
    *
    * Protobuf type {@code google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicy}
@@ -1316,6 +1366,72 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
               com.google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicy.Builder.class);
     }
 
+    private int bitField0_;
+    public static final int WAIT_FOR_DRAIN_DURATION_FIELD_NUMBER = 1;
+    private com.google.protobuf.Duration waitForDrainDuration_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to wait after cordoning the blue pool before draining the
+     * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+     * inclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the waitForDrainDuration field is set.
+     */
+    @java.lang.Override
+    public boolean hasWaitForDrainDuration() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to wait after cordoning the blue pool before draining the
+     * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+     * inclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The waitForDrainDuration.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getWaitForDrainDuration() {
+      return waitForDrainDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : waitForDrainDuration_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to wait after cordoning the blue pool before draining the
+     * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+     * inclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getWaitForDrainDurationOrBuilder() {
+      return waitForDrainDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : waitForDrainDuration_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1330,6 +1446,9 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getWaitForDrainDuration());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1339,6 +1458,10 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       if (size != -1) return size;
 
       size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, getWaitForDrainDuration());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1356,6 +1479,10 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       com.google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicy other =
           (com.google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicy) obj;
 
+      if (hasWaitForDrainDuration() != other.hasWaitForDrainDuration()) return false;
+      if (hasWaitForDrainDuration()) {
+        if (!getWaitForDrainDuration().equals(other.getWaitForDrainDuration())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1367,6 +1494,10 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasWaitForDrainDuration()) {
+        hash = (37 * hash) + WAIT_FOR_DRAIN_DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getWaitForDrainDuration().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1475,8 +1606,8 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Autoscaled rollout policy uses cluster autoscaler during
-     * blue-green upgrades to scale both the green and blue pools.
+     * Autoscaled rollout policy utilizes the cluster autoscaler during
+     * blue-green upgrade to scale both the blue and green pools.
      * </pre>
      *
      * Protobuf type {@code google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicy}
@@ -1504,15 +1635,30 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
 
       // Construct using
       // com.google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicy.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getWaitForDrainDurationFieldBuilder();
+        }
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        waitForDrainDuration_ = null;
+        if (waitForDrainDurationBuilder_ != null) {
+          waitForDrainDurationBuilder_.dispose();
+          waitForDrainDurationBuilder_ = null;
+        }
         return this;
       }
 
@@ -1543,8 +1689,25 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       public com.google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicy buildPartial() {
         com.google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicy result =
             new com.google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicy(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicy result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.waitForDrainDuration_ =
+              waitForDrainDurationBuilder_ == null
+                  ? waitForDrainDuration_
+                  : waitForDrainDurationBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -1599,6 +1762,9 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
         if (other
             == com.google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicy
                 .getDefaultInstance()) return this;
+        if (other.hasWaitForDrainDuration()) {
+          mergeWaitForDrainDuration(other.getWaitForDrainDuration());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1625,6 +1791,13 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
               case 0:
                 done = true;
                 break;
+              case 10:
+                {
+                  input.readMessage(
+                      getWaitForDrainDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1640,6 +1813,238 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
           onChanged();
         } // finally
         return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Duration waitForDrainDuration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          waitForDrainDurationBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the waitForDrainDuration field is set.
+       */
+      public boolean hasWaitForDrainDuration() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The waitForDrainDuration.
+       */
+      public com.google.protobuf.Duration getWaitForDrainDuration() {
+        if (waitForDrainDurationBuilder_ == null) {
+          return waitForDrainDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : waitForDrainDuration_;
+        } else {
+          return waitForDrainDurationBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setWaitForDrainDuration(com.google.protobuf.Duration value) {
+        if (waitForDrainDurationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          waitForDrainDuration_ = value;
+        } else {
+          waitForDrainDurationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setWaitForDrainDuration(com.google.protobuf.Duration.Builder builderForValue) {
+        if (waitForDrainDurationBuilder_ == null) {
+          waitForDrainDuration_ = builderForValue.build();
+        } else {
+          waitForDrainDurationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeWaitForDrainDuration(com.google.protobuf.Duration value) {
+        if (waitForDrainDurationBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && waitForDrainDuration_ != null
+              && waitForDrainDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getWaitForDrainDurationBuilder().mergeFrom(value);
+          } else {
+            waitForDrainDuration_ = value;
+          }
+        } else {
+          waitForDrainDurationBuilder_.mergeFrom(value);
+        }
+        if (waitForDrainDuration_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearWaitForDrainDuration() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        waitForDrainDuration_ = null;
+        if (waitForDrainDurationBuilder_ != null) {
+          waitForDrainDurationBuilder_.dispose();
+          waitForDrainDurationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Duration.Builder getWaitForDrainDurationBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getWaitForDrainDurationFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.DurationOrBuilder getWaitForDrainDurationOrBuilder() {
+        if (waitForDrainDurationBuilder_ != null) {
+          return waitForDrainDurationBuilder_.getMessageOrBuilder();
+        } else {
+          return waitForDrainDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : waitForDrainDuration_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getWaitForDrainDurationFieldBuilder() {
+        if (waitForDrainDurationBuilder_ == null) {
+          waitForDrainDurationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getWaitForDrainDuration(), getParentForChildren(), isClean());
+          waitForDrainDuration_ = null;
+        }
+        return waitForDrainDurationBuilder_;
       }
 
       @java.lang.Override

@@ -678,4 +678,47 @@ public interface GenerationConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfigOrBuilder
       getThinkingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for image generation features.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the imageConfig field is set.
+   */
+  boolean hasImageConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for image generation features.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The imageConfig.
+   */
+  com.google.cloud.aiplatform.v1.ImageConfig getImageConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for image generation features.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ImageConfigOrBuilder getImageConfigOrBuilder();
 }
