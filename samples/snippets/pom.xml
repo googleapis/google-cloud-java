@@ -15,6 +15,7 @@
     <groupId>com.google.cloud.samples</groupId>
     <artifactId>shared-configuration</artifactId>
     <version>1.2.2</version>
+    <relativePath/>
   </parent>
 
   <properties>
@@ -32,7 +33,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>26.65.0</version>
+        <version>26.70.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -42,7 +43,7 @@
         <version>1.52.0</version>
         <type>pom</type>
         <scope>import</scope>
-       </dependency>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -71,6 +72,11 @@
     <dependency>
       <groupId>org.apache.arrow</groupId>
       <artifactId>arrow-memory-netty</artifactId>
+      <version>${arrow.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.arrow</groupId>
+      <artifactId>arrow-memory-core</artifactId>
       <version>${arrow.version}</version>
     </dependency>
     <dependency>

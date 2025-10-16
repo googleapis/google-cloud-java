@@ -15,6 +15,7 @@
     <groupId>com.google.cloud.samples</groupId>
     <artifactId>shared-configuration</artifactId>
     <version>1.2.2</version>
+    <relativePath/>
   </parent>
 
   <properties>
@@ -31,7 +32,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerystorage</artifactId>
-      <version>3.16.1</version>
+      <version>3.17.2</version>
     </dependency>
     <!-- [END bigquerystorage_install_without_bom] -->
 
@@ -53,6 +54,11 @@
     <dependency>
       <groupId>org.apache.arrow</groupId>
       <artifactId>arrow-memory-netty</artifactId>
+      <version>${arrow.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.arrow</groupId>
+      <artifactId>arrow-memory-core</artifactId>
       <version>${arrow.version}</version>
     </dependency>
     <dependency>
