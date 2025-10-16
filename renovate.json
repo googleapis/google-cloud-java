@@ -20,11 +20,11 @@
       ]
     },
     {
-      "matchPackagePatterns": [
-        "^com.google.cloud:google-cloud-storage",
-        "^com.google.apis:google-api-services-storage"
-      ],
-      "groupName": "First-party storage dependencies"
+      "groupName": "First-party storage dependencies",
+      "matchPackageNames": [
+        "/^com.google.cloud:google-cloud-storage/",
+        "/^com.google.apis:google-api-services-storage/"
+      ]
     }
   ],
   "includePaths": [
@@ -46,11 +46,11 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "^.kokoro/nightly/graalvm-native.*.cfg$",
-        "^.kokoro/presubmit/graalvm-native.*.cfg$",
-        "^.kokoro/nightly/graalvm-sub-jobs/native.*/common.cfg$",
-        "^owl-bot-postprocessor/synthtool/gcp/templates/java-library/.kokoro/presubmit/graalvm-native.*.cfg$"
+      "managerFilePatterns": [
+        "/^.kokoro/nightly/graalvm-native.*.cfg$/",
+        "/^.kokoro/presubmit/graalvm-native.*.cfg$/",
+        "/^.kokoro/nightly/graalvm-sub-jobs/native.*/common.cfg$/",
+        "/^owl-bot-postprocessor/synthtool/gcp/templates/java-library/.kokoro/presubmit/graalvm-native.*.cfg$/"
       ],
       "matchStrings": [
         "value: \"gcr.io/cloud-devrel-public-resources/graalvm_sdk_platform.*:(?<currentValue>.*?)\""
@@ -60,11 +60,11 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "java-dns/README.md",
-        "java-notification/README.md",
-        "java-samples/native-image-sample/pom.xml",
-        "java-vertexai/README.md"
+      "managerFilePatterns": [
+        "/java-dns/README.md/",
+        "/java-notification/README.md/",
+        "/java-samples/native-image-sample/pom.xml/",
+        "/java-vertexai/README.md/"
       ],
       "matchStrings": [
         "<artifactId>libraries-bom</artifactId>\\s+<version>(?<currentValue>.*?)</version>"
@@ -74,9 +74,9 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        ".github/workflows/ci.yaml",
-        ".github/workflows/generated_files_sync.yaml"
+      "managerFilePatterns": [
+        "/.github/workflows/ci.yaml/",
+        "/.github/workflows/generated_files_sync.yaml/"
       ],
       "matchStrings": [
         "library_generation_image_tag\\s*:\\s*(?<currentValue>.*?)\\n"
@@ -86,8 +86,8 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "^.github/workflows/unmanaged_dependency_check.yaml$"
+      "managerFilePatterns": [
+        "/^.github/workflows/unmanaged_dependency_check.yaml$/"
       ],
       "matchStrings": [
         "uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v(?<currentValue>.+?)\\n"
