@@ -24,8 +24,12 @@ import com.google.longrunning.stub.OperationsStub;
 import com.google.maps.routeoptimization.v1.BatchOptimizeToursMetadata;
 import com.google.maps.routeoptimization.v1.BatchOptimizeToursRequest;
 import com.google.maps.routeoptimization.v1.BatchOptimizeToursResponse;
+import com.google.maps.routeoptimization.v1.OptimizeToursLongRunningMetadata;
 import com.google.maps.routeoptimization.v1.OptimizeToursRequest;
 import com.google.maps.routeoptimization.v1.OptimizeToursResponse;
+import com.google.maps.routeoptimization.v1.OptimizeToursUriMetadata;
+import com.google.maps.routeoptimization.v1.OptimizeToursUriRequest;
+import com.google.maps.routeoptimization.v1.OptimizeToursUriResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -58,6 +62,27 @@ public abstract class RouteOptimizationStub implements BackgroundResource {
 
   public UnaryCallable<BatchOptimizeToursRequest, Operation> batchOptimizeToursCallable() {
     throw new UnsupportedOperationException("Not implemented: batchOptimizeToursCallable()");
+  }
+
+  public OperationCallable<
+          OptimizeToursRequest, OptimizeToursResponse, OptimizeToursLongRunningMetadata>
+      optimizeToursLongRunningOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: optimizeToursLongRunningOperationCallable()");
+  }
+
+  public UnaryCallable<OptimizeToursRequest, Operation> optimizeToursLongRunningCallable() {
+    throw new UnsupportedOperationException("Not implemented: optimizeToursLongRunningCallable()");
+  }
+
+  public OperationCallable<
+          OptimizeToursUriRequest, OptimizeToursUriResponse, OptimizeToursUriMetadata>
+      optimizeToursUriOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: optimizeToursUriOperationCallable()");
+  }
+
+  public UnaryCallable<OptimizeToursUriRequest, Operation> optimizeToursUriCallable() {
+    throw new UnsupportedOperationException("Not implemented: optimizeToursUriCallable()");
   }
 
   @Override

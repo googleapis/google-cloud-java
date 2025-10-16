@@ -176,7 +176,13 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The POI Place ID associated with the waypoint.
+   * The POI place ID associated with the waypoint.
+   *
+   * When using a place ID to specify arrival or departure location of a
+   * VisitRequest, use a place ID that is specific enough to determine a
+   * LatLng location for navigation to the place.
+   * For example, a place ID representing a building is suitable, but a place
+   * ID representing a road is discouraged.
    * </pre>
    *
    * <code>string place_id = 2;</code>
@@ -191,7 +197,13 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The POI Place ID associated with the waypoint.
+   * The POI place ID associated with the waypoint.
+   *
+   * When using a place ID to specify arrival or departure location of a
+   * VisitRequest, use a place ID that is specific enough to determine a
+   * LatLng location for navigation to the place.
+   * For example, a place ID representing a building is suitable, but a place
+   * ID representing a road is discouraged.
    * </pre>
    *
    * <code>string place_id = 2;</code>
@@ -219,7 +231,13 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The POI Place ID associated with the waypoint.
+   * The POI place ID associated with the waypoint.
+   *
+   * When using a place ID to specify arrival or departure location of a
+   * VisitRequest, use a place ID that is specific enough to determine a
+   * LatLng location for navigation to the place.
+   * For example, a place ID representing a building is suitable, but a place
+   * ID representing a road is discouraged.
    * </pre>
    *
    * <code>string place_id = 2;</code>
@@ -267,6 +285,29 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     return sideOfRoad_;
   }
 
+  public static final int VEHICLE_STOPOVER_FIELD_NUMBER = 4;
+  private boolean vehicleStopover_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates that the waypoint is meant for vehicles to stop at, where the
+   * intention is to either pick up or drop off. This option works only for the
+   * 'DRIVING' travel mode, and when the 'location_type' is 'location'.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>bool vehicle_stopover = 4;</code>
+   *
+   * @return The vehicleStopover.
+   */
+  @java.lang.Override
+  public boolean getVehicleStopover() {
+    return vehicleStopover_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -290,6 +331,9 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     if (sideOfRoad_ != false) {
       output.writeBool(3, sideOfRoad_);
     }
+    if (vehicleStopover_ != false) {
+      output.writeBool(4, vehicleStopover_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -310,6 +354,9 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     if (sideOfRoad_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, sideOfRoad_);
     }
+    if (vehicleStopover_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, vehicleStopover_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -327,6 +374,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
         (com.google.maps.routeoptimization.v1.Waypoint) obj;
 
     if (getSideOfRoad() != other.getSideOfRoad()) return false;
+    if (getVehicleStopover() != other.getVehicleStopover()) return false;
     if (!getLocationTypeCase().equals(other.getLocationTypeCase())) return false;
     switch (locationTypeCase_) {
       case 1:
@@ -351,6 +399,8 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SIDE_OF_ROAD_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSideOfRoad());
+    hash = (37 * hash) + VEHICLE_STOPOVER_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getVehicleStopover());
     switch (locationTypeCase_) {
       case 1:
         hash = (37 * hash) + LOCATION_FIELD_NUMBER;
@@ -508,6 +558,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
         locationBuilder_.clear();
       }
       sideOfRoad_ = false;
+      vehicleStopover_ = false;
       locationTypeCase_ = 0;
       locationType_ = null;
       return this;
@@ -549,6 +600,9 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.sideOfRoad_ = sideOfRoad_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.vehicleStopover_ = vehicleStopover_;
       }
     }
 
@@ -607,6 +661,9 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.maps.routeoptimization.v1.Waypoint.getDefaultInstance()) return this;
       if (other.getSideOfRoad() != false) {
         setSideOfRoad(other.getSideOfRoad());
+      }
+      if (other.getVehicleStopover() != false) {
+        setVehicleStopover(other.getVehicleStopover());
       }
       switch (other.getLocationTypeCase()) {
         case LOCATION:
@@ -671,6 +728,12 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 32:
+              {
+                vehicleStopover_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -936,7 +999,13 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The POI Place ID associated with the waypoint.
+     * The POI place ID associated with the waypoint.
+     *
+     * When using a place ID to specify arrival or departure location of a
+     * VisitRequest, use a place ID that is specific enough to determine a
+     * LatLng location for navigation to the place.
+     * For example, a place ID representing a building is suitable, but a place
+     * ID representing a road is discouraged.
      * </pre>
      *
      * <code>string place_id = 2;</code>
@@ -952,7 +1021,13 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The POI Place ID associated with the waypoint.
+     * The POI place ID associated with the waypoint.
+     *
+     * When using a place ID to specify arrival or departure location of a
+     * VisitRequest, use a place ID that is specific enough to determine a
+     * LatLng location for navigation to the place.
+     * For example, a place ID representing a building is suitable, but a place
+     * ID representing a road is discouraged.
      * </pre>
      *
      * <code>string place_id = 2;</code>
@@ -981,7 +1056,13 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The POI Place ID associated with the waypoint.
+     * The POI place ID associated with the waypoint.
+     *
+     * When using a place ID to specify arrival or departure location of a
+     * VisitRequest, use a place ID that is specific enough to determine a
+     * LatLng location for navigation to the place.
+     * For example, a place ID representing a building is suitable, but a place
+     * ID representing a road is discouraged.
      * </pre>
      *
      * <code>string place_id = 2;</code>
@@ -1010,7 +1091,13 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The POI Place ID associated with the waypoint.
+     * The POI place ID associated with the waypoint.
+     *
+     * When using a place ID to specify arrival or departure location of a
+     * VisitRequest, use a place ID that is specific enough to determine a
+     * LatLng location for navigation to the place.
+     * For example, a place ID representing a building is suitable, but a place
+     * ID representing a road is discouraged.
      * </pre>
      *
      * <code>string place_id = 2;</code>
@@ -1032,7 +1119,13 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The POI Place ID associated with the waypoint.
+     * The POI place ID associated with the waypoint.
+     *
+     * When using a place ID to specify arrival or departure location of a
+     * VisitRequest, use a place ID that is specific enough to determine a
+     * LatLng location for navigation to the place.
+     * For example, a place ID representing a building is suitable, but a place
+     * ID representing a road is discouraged.
      * </pre>
      *
      * <code>string place_id = 2;</code>
@@ -1052,7 +1145,13 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The POI Place ID associated with the waypoint.
+     * The POI place ID associated with the waypoint.
+     *
+     * When using a place ID to specify arrival or departure location of a
+     * VisitRequest, use a place ID that is specific enough to determine a
+     * LatLng location for navigation to the place.
+     * For example, a place ID representing a building is suitable, but a place
+     * ID representing a road is discouraged.
      * </pre>
      *
      * <code>string place_id = 2;</code>
@@ -1138,6 +1237,74 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSideOfRoad() {
       bitField0_ = (bitField0_ & ~0x00000004);
       sideOfRoad_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean vehicleStopover_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the waypoint is meant for vehicles to stop at, where the
+     * intention is to either pick up or drop off. This option works only for the
+     * 'DRIVING' travel mode, and when the 'location_type' is 'location'.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>bool vehicle_stopover = 4;</code>
+     *
+     * @return The vehicleStopover.
+     */
+    @java.lang.Override
+    public boolean getVehicleStopover() {
+      return vehicleStopover_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the waypoint is meant for vehicles to stop at, where the
+     * intention is to either pick up or drop off. This option works only for the
+     * 'DRIVING' travel mode, and when the 'location_type' is 'location'.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>bool vehicle_stopover = 4;</code>
+     *
+     * @param value The vehicleStopover to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVehicleStopover(boolean value) {
+
+      vehicleStopover_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the waypoint is meant for vehicles to stop at, where the
+     * intention is to either pick up or drop off. This option works only for the
+     * 'DRIVING' travel mode, and when the 'location_type' is 'location'.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>bool vehicle_stopover = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVehicleStopover() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      vehicleStopover_ = false;
       onChanged();
       return this;
     }

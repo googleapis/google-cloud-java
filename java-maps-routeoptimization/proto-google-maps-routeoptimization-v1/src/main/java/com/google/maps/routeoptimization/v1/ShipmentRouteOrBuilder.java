@@ -474,6 +474,64 @@ public interface ShipmentRouteOrBuilder
    *
    *
    * <pre>
+   * [VehicleFullness][google.maps.routeoptimization.v1.VehicleFullness] field
+   * for computing how close the capped metrics are to their respective vehicle
+   * limits. Its fields are ratios between a capped metric field (e.g.
+   * [AggregatedMetrics.travel_distance_meters][google.maps.routeoptimization.v1.AggregatedMetrics.travel_distance_meters])
+   * and the related vehicle limit (e.g.
+   * [Vehicle.route_distance_limit][google.maps.routeoptimization.v1.Vehicle.route_distance_limit]).
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>.google.maps.routeoptimization.v1.VehicleFullness vehicle_fullness = 20;</code>
+   *
+   * @return Whether the vehicleFullness field is set.
+   */
+  boolean hasVehicleFullness();
+
+  /**
+   *
+   *
+   * <pre>
+   * [VehicleFullness][google.maps.routeoptimization.v1.VehicleFullness] field
+   * for computing how close the capped metrics are to their respective vehicle
+   * limits. Its fields are ratios between a capped metric field (e.g.
+   * [AggregatedMetrics.travel_distance_meters][google.maps.routeoptimization.v1.AggregatedMetrics.travel_distance_meters])
+   * and the related vehicle limit (e.g.
+   * [Vehicle.route_distance_limit][google.maps.routeoptimization.v1.Vehicle.route_distance_limit]).
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>.google.maps.routeoptimization.v1.VehicleFullness vehicle_fullness = 20;</code>
+   *
+   * @return The vehicleFullness.
+   */
+  com.google.maps.routeoptimization.v1.VehicleFullness getVehicleFullness();
+
+  /**
+   *
+   *
+   * <pre>
+   * [VehicleFullness][google.maps.routeoptimization.v1.VehicleFullness] field
+   * for computing how close the capped metrics are to their respective vehicle
+   * limits. Its fields are ratios between a capped metric field (e.g.
+   * [AggregatedMetrics.travel_distance_meters][google.maps.routeoptimization.v1.AggregatedMetrics.travel_distance_meters])
+   * and the related vehicle limit (e.g.
+   * [Vehicle.route_distance_limit][google.maps.routeoptimization.v1.Vehicle.route_distance_limit]).
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>.google.maps.routeoptimization.v1.VehicleFullness vehicle_fullness = 20;</code>
+   */
+  com.google.maps.routeoptimization.v1.VehicleFullnessOrBuilder getVehicleFullnessOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Cost of the route, broken down by cost-related request fields.
    * The keys are proto paths, relative to the input OptimizeToursRequest, e.g.
    * "model.shipments.pickups.cost", and the values are the total cost

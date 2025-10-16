@@ -131,6 +131,24 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      * <code>DETECT_SOME_INFEASIBLE_SHIPMENTS = 2;</code>
      */
     DETECT_SOME_INFEASIBLE_SHIPMENTS(2),
+    /**
+     *
+     *
+     * <pre>
+     * This mode only works if `ShipmentModel.objectives` is not empty. The
+     * request is not solved. It is only validated and filled with costs
+     * corresponding to the given objectives. Also see the documentation of
+     * `ShipmentModel.objectives`. The resulting request is returned as
+     * `OptimizeToursResponse.processed_request`.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>TRANSFORM_AND_RETURN_REQUEST = 3;</code>
+     */
+    TRANSFORM_AND_RETURN_REQUEST(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -184,6 +202,25 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      */
     public static final int DETECT_SOME_INFEASIBLE_SHIPMENTS_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * This mode only works if `ShipmentModel.objectives` is not empty. The
+     * request is not solved. It is only validated and filled with costs
+     * corresponding to the given objectives. Also see the documentation of
+     * `ShipmentModel.objectives`. The resulting request is returned as
+     * `OptimizeToursResponse.processed_request`.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>TRANSFORM_AND_RETURN_REQUEST = 3;</code>
+     */
+    public static final int TRANSFORM_AND_RETURN_REQUEST_VALUE = 3;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -214,6 +251,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
           return VALIDATE_ONLY;
         case 2:
           return DETECT_SOME_INFEASIBLE_SHIPMENTS;
+        case 3:
+          return TRANSFORM_AND_RETURN_REQUEST;
         default:
           return null;
       }

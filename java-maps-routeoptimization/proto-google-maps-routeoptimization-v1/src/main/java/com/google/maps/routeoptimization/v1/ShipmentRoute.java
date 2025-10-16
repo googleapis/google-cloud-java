@@ -478,6 +478,54 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for visitLabel.
      */
     com.google.protobuf.ByteString getVisitLabelBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * An opaque token representing information about a visit location.
+     *
+     * This field may be populated in the result routes' visits when
+     * [VisitRequest.avoid_u_turns][google.maps.routeoptimization.v1.Shipment.VisitRequest.avoid_u_turns]
+     * was set to true for this visit or if
+     * [ShipmentModel.avoid_u_turns][google.maps.routeoptimization.v1.ShipmentModel.avoid_u_turns]
+     * was set to true in the request
+     * [OptimizeToursRequest][google.maps.routeoptimization.v1.OptimizeToursRequest].
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/u-turn-avoidance/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>optional int32 injected_solution_location_token = 13;</code>
+     *
+     * @return Whether the injectedSolutionLocationToken field is set.
+     */
+    boolean hasInjectedSolutionLocationToken();
+
+    /**
+     *
+     *
+     * <pre>
+     * An opaque token representing information about a visit location.
+     *
+     * This field may be populated in the result routes' visits when
+     * [VisitRequest.avoid_u_turns][google.maps.routeoptimization.v1.Shipment.VisitRequest.avoid_u_turns]
+     * was set to true for this visit or if
+     * [ShipmentModel.avoid_u_turns][google.maps.routeoptimization.v1.ShipmentModel.avoid_u_turns]
+     * was set to true in the request
+     * [OptimizeToursRequest][google.maps.routeoptimization.v1.OptimizeToursRequest].
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/u-turn-avoidance/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>optional int32 injected_solution_location_token = 13;</code>
+     *
+     * @return The injectedSolutionLocationToken.
+     */
+    int getInjectedSolutionLocationToken();
   }
 
   /**
@@ -1000,6 +1048,63 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int INJECTED_SOLUTION_LOCATION_TOKEN_FIELD_NUMBER = 13;
+    private int injectedSolutionLocationToken_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * An opaque token representing information about a visit location.
+     *
+     * This field may be populated in the result routes' visits when
+     * [VisitRequest.avoid_u_turns][google.maps.routeoptimization.v1.Shipment.VisitRequest.avoid_u_turns]
+     * was set to true for this visit or if
+     * [ShipmentModel.avoid_u_turns][google.maps.routeoptimization.v1.ShipmentModel.avoid_u_turns]
+     * was set to true in the request
+     * [OptimizeToursRequest][google.maps.routeoptimization.v1.OptimizeToursRequest].
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/u-turn-avoidance/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>optional int32 injected_solution_location_token = 13;</code>
+     *
+     * @return Whether the injectedSolutionLocationToken field is set.
+     */
+    @java.lang.Override
+    public boolean hasInjectedSolutionLocationToken() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An opaque token representing information about a visit location.
+     *
+     * This field may be populated in the result routes' visits when
+     * [VisitRequest.avoid_u_turns][google.maps.routeoptimization.v1.Shipment.VisitRequest.avoid_u_turns]
+     * was set to true for this visit or if
+     * [ShipmentModel.avoid_u_turns][google.maps.routeoptimization.v1.ShipmentModel.avoid_u_turns]
+     * was set to true in the request
+     * [OptimizeToursRequest][google.maps.routeoptimization.v1.OptimizeToursRequest].
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/u-turn-avoidance/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>optional int32 injected_solution_location_token = 13;</code>
+     *
+     * @return The injectedSolutionLocationToken.
+     */
+    @java.lang.Override
+    public int getInjectedSolutionLocationToken() {
+      return injectedSolutionLocationToken_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1037,6 +1142,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
           output, internalGetLoadDemands(), LoadDemandsDefaultEntryHolder.defaultEntry, 11);
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeInt32(13, injectedSolutionLocationToken_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1079,6 +1187,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
                     .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, loadDemands__);
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt32Size(
+                13, injectedSolutionLocationToken_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1109,6 +1222,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       }
       if (!getShipmentLabel().equals(other.getShipmentLabel())) return false;
       if (!getVisitLabel().equals(other.getVisitLabel())) return false;
+      if (hasInjectedSolutionLocationToken() != other.hasInjectedSolutionLocationToken())
+        return false;
+      if (hasInjectedSolutionLocationToken()) {
+        if (getInjectedSolutionLocationToken() != other.getInjectedSolutionLocationToken())
+          return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1142,6 +1261,10 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getShipmentLabel().hashCode();
       hash = (37 * hash) + VISIT_LABEL_FIELD_NUMBER;
       hash = (53 * hash) + getVisitLabel().hashCode();
+      if (hasInjectedSolutionLocationToken()) {
+        hash = (37 * hash) + INJECTED_SOLUTION_LOCATION_TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getInjectedSolutionLocationToken();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1334,6 +1457,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         }
         shipmentLabel_ = "";
         visitLabel_ = "";
+        injectedSolutionLocationToken_ = 0;
         return this;
       }
 
@@ -1397,6 +1521,10 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
           result.visitLabel_ = visitLabel_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.injectedSolutionLocationToken_ = injectedSolutionLocationToken_;
+          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1475,6 +1603,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
           visitLabel_ = other.visitLabel_;
           bitField0_ |= 0x00000080;
           onChanged();
+        }
+        if (other.hasInjectedSolutionLocationToken()) {
+          setInjectedSolutionLocationToken(other.getInjectedSolutionLocationToken());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1558,6 +1689,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 90
+              case 104:
+                {
+                  injectedSolutionLocationToken_ = input.readInt32();
+                  bitField0_ |= 0x00000100;
+                  break;
+                } // case 104
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2805,6 +2942,122 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         visitLabel_ = value;
         bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      private int injectedSolutionLocationToken_;
+
+      /**
+       *
+       *
+       * <pre>
+       * An opaque token representing information about a visit location.
+       *
+       * This field may be populated in the result routes' visits when
+       * [VisitRequest.avoid_u_turns][google.maps.routeoptimization.v1.Shipment.VisitRequest.avoid_u_turns]
+       * was set to true for this visit or if
+       * [ShipmentModel.avoid_u_turns][google.maps.routeoptimization.v1.ShipmentModel.avoid_u_turns]
+       * was set to true in the request
+       * [OptimizeToursRequest][google.maps.routeoptimization.v1.OptimizeToursRequest].
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/u-turn-avoidance/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>optional int32 injected_solution_location_token = 13;</code>
+       *
+       * @return Whether the injectedSolutionLocationToken field is set.
+       */
+      @java.lang.Override
+      public boolean hasInjectedSolutionLocationToken() {
+        return ((bitField0_ & 0x00000100) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An opaque token representing information about a visit location.
+       *
+       * This field may be populated in the result routes' visits when
+       * [VisitRequest.avoid_u_turns][google.maps.routeoptimization.v1.Shipment.VisitRequest.avoid_u_turns]
+       * was set to true for this visit or if
+       * [ShipmentModel.avoid_u_turns][google.maps.routeoptimization.v1.ShipmentModel.avoid_u_turns]
+       * was set to true in the request
+       * [OptimizeToursRequest][google.maps.routeoptimization.v1.OptimizeToursRequest].
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/u-turn-avoidance/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>optional int32 injected_solution_location_token = 13;</code>
+       *
+       * @return The injectedSolutionLocationToken.
+       */
+      @java.lang.Override
+      public int getInjectedSolutionLocationToken() {
+        return injectedSolutionLocationToken_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An opaque token representing information about a visit location.
+       *
+       * This field may be populated in the result routes' visits when
+       * [VisitRequest.avoid_u_turns][google.maps.routeoptimization.v1.Shipment.VisitRequest.avoid_u_turns]
+       * was set to true for this visit or if
+       * [ShipmentModel.avoid_u_turns][google.maps.routeoptimization.v1.ShipmentModel.avoid_u_turns]
+       * was set to true in the request
+       * [OptimizeToursRequest][google.maps.routeoptimization.v1.OptimizeToursRequest].
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/u-turn-avoidance/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>optional int32 injected_solution_location_token = 13;</code>
+       *
+       * @param value The injectedSolutionLocationToken to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInjectedSolutionLocationToken(int value) {
+
+        injectedSolutionLocationToken_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An opaque token representing information about a visit location.
+       *
+       * This field may be populated in the result routes' visits when
+       * [VisitRequest.avoid_u_turns][google.maps.routeoptimization.v1.Shipment.VisitRequest.avoid_u_turns]
+       * was set to true for this visit or if
+       * [ShipmentModel.avoid_u_turns][google.maps.routeoptimization.v1.ShipmentModel.avoid_u_turns]
+       * was set to true in the request
+       * [OptimizeToursRequest][google.maps.routeoptimization.v1.OptimizeToursRequest].
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/u-turn-avoidance/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>optional int32 injected_solution_location_token = 13;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearInjectedSolutionLocationToken() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        injectedSolutionLocationToken_ = 0;
         onChanged();
         return this;
       }
@@ -10053,6 +10306,81 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         : metrics_;
   }
 
+  public static final int VEHICLE_FULLNESS_FIELD_NUMBER = 20;
+  private com.google.maps.routeoptimization.v1.VehicleFullness vehicleFullness_;
+
+  /**
+   *
+   *
+   * <pre>
+   * [VehicleFullness][google.maps.routeoptimization.v1.VehicleFullness] field
+   * for computing how close the capped metrics are to their respective vehicle
+   * limits. Its fields are ratios between a capped metric field (e.g.
+   * [AggregatedMetrics.travel_distance_meters][google.maps.routeoptimization.v1.AggregatedMetrics.travel_distance_meters])
+   * and the related vehicle limit (e.g.
+   * [Vehicle.route_distance_limit][google.maps.routeoptimization.v1.Vehicle.route_distance_limit]).
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>.google.maps.routeoptimization.v1.VehicleFullness vehicle_fullness = 20;</code>
+   *
+   * @return Whether the vehicleFullness field is set.
+   */
+  @java.lang.Override
+  public boolean hasVehicleFullness() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [VehicleFullness][google.maps.routeoptimization.v1.VehicleFullness] field
+   * for computing how close the capped metrics are to their respective vehicle
+   * limits. Its fields are ratios between a capped metric field (e.g.
+   * [AggregatedMetrics.travel_distance_meters][google.maps.routeoptimization.v1.AggregatedMetrics.travel_distance_meters])
+   * and the related vehicle limit (e.g.
+   * [Vehicle.route_distance_limit][google.maps.routeoptimization.v1.Vehicle.route_distance_limit]).
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>.google.maps.routeoptimization.v1.VehicleFullness vehicle_fullness = 20;</code>
+   *
+   * @return The vehicleFullness.
+   */
+  @java.lang.Override
+  public com.google.maps.routeoptimization.v1.VehicleFullness getVehicleFullness() {
+    return vehicleFullness_ == null
+        ? com.google.maps.routeoptimization.v1.VehicleFullness.getDefaultInstance()
+        : vehicleFullness_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [VehicleFullness][google.maps.routeoptimization.v1.VehicleFullness] field
+   * for computing how close the capped metrics are to their respective vehicle
+   * limits. Its fields are ratios between a capped metric field (e.g.
+   * [AggregatedMetrics.travel_distance_meters][google.maps.routeoptimization.v1.AggregatedMetrics.travel_distance_meters])
+   * and the related vehicle limit (e.g.
+   * [Vehicle.route_distance_limit][google.maps.routeoptimization.v1.Vehicle.route_distance_limit]).
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>.google.maps.routeoptimization.v1.VehicleFullness vehicle_fullness = 20;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.routeoptimization.v1.VehicleFullnessOrBuilder
+      getVehicleFullnessOrBuilder() {
+    return vehicleFullness_ == null
+        ? com.google.maps.routeoptimization.v1.VehicleFullness.getDefaultInstance()
+        : vehicleFullness_;
+  }
+
   public static final int ROUTE_COSTS_FIELD_NUMBER = 17;
 
   private static final class RouteCostsDefaultEntryHolder {
@@ -10253,6 +10581,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
     if (java.lang.Double.doubleToRawLongBits(routeTotalCost_) != 0) {
       output.writeDouble(18, routeTotalCost_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(20, getVehicleFullness());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -10305,6 +10636,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
     if (java.lang.Double.doubleToRawLongBits(routeTotalCost_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(18, routeTotalCost_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getVehicleFullness());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -10342,6 +10676,10 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
     if (hasMetrics() != other.hasMetrics()) return false;
     if (hasMetrics()) {
       if (!getMetrics().equals(other.getMetrics())) return false;
+    }
+    if (hasVehicleFullness() != other.hasVehicleFullness()) return false;
+    if (hasVehicleFullness()) {
+      if (!getVehicleFullness().equals(other.getVehicleFullness())) return false;
     }
     if (!internalGetRouteCosts().equals(other.internalGetRouteCosts())) return false;
     if (java.lang.Double.doubleToLongBits(getRouteTotalCost())
@@ -10390,6 +10728,10 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
     if (hasMetrics()) {
       hash = (37 * hash) + METRICS_FIELD_NUMBER;
       hash = (53 * hash) + getMetrics().hashCode();
+    }
+    if (hasVehicleFullness()) {
+      hash = (37 * hash) + VEHICLE_FULLNESS_FIELD_NUMBER;
+      hash = (53 * hash) + getVehicleFullness().hashCode();
     }
     if (!internalGetRouteCosts().getMap().isEmpty()) {
       hash = (37 * hash) + ROUTE_COSTS_FIELD_NUMBER;
@@ -10653,6 +10995,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         getRoutePolylineFieldBuilder();
         getBreaksFieldBuilder();
         getMetricsFieldBuilder();
+        getVehicleFullnessFieldBuilder();
       }
     }
 
@@ -10703,6 +11046,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       if (metricsBuilder_ != null) {
         metricsBuilder_.dispose();
         metricsBuilder_ = null;
+      }
+      vehicleFullness_ = null;
+      if (vehicleFullnessBuilder_ != null) {
+        vehicleFullnessBuilder_.dispose();
+        vehicleFullnessBuilder_ = null;
       }
       internalGetMutableRouteCosts().clear();
       routeTotalCost_ = 0D;
@@ -10804,10 +11152,15 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.vehicleFullness_ =
+            vehicleFullnessBuilder_ == null ? vehicleFullness_ : vehicleFullnessBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.routeCosts_ = internalGetRouteCosts();
         result.routeCosts_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.routeTotalCost_ = routeTotalCost_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -10963,8 +11316,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       if (other.hasMetrics()) {
         mergeMetrics(other.getMetrics());
       }
+      if (other.hasVehicleFullness()) {
+        mergeVehicleFullness(other.getVehicleFullness());
+      }
       internalGetMutableRouteCosts().mergeFrom(other.internalGetRouteCosts());
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       if (other.getRouteTotalCost() != 0D) {
         setRouteTotalCost(other.getRouteTotalCost());
       }
@@ -11088,15 +11444,21 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableRouteCosts()
                     .getMutableMap()
                     .put(routeCosts__.getKey(), routeCosts__.getValue());
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 138
             case 145:
               {
                 routeTotalCost_ = input.readDouble();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 145
+            case 162:
+              {
+                input.readMessage(getVehicleFullnessFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13512,6 +13874,268 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       return metricsBuilder_;
     }
 
+    private com.google.maps.routeoptimization.v1.VehicleFullness vehicleFullness_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routeoptimization.v1.VehicleFullness,
+            com.google.maps.routeoptimization.v1.VehicleFullness.Builder,
+            com.google.maps.routeoptimization.v1.VehicleFullnessOrBuilder>
+        vehicleFullnessBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * [VehicleFullness][google.maps.routeoptimization.v1.VehicleFullness] field
+     * for computing how close the capped metrics are to their respective vehicle
+     * limits. Its fields are ratios between a capped metric field (e.g.
+     * [AggregatedMetrics.travel_distance_meters][google.maps.routeoptimization.v1.AggregatedMetrics.travel_distance_meters])
+     * and the related vehicle limit (e.g.
+     * [Vehicle.route_distance_limit][google.maps.routeoptimization.v1.Vehicle.route_distance_limit]).
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.VehicleFullness vehicle_fullness = 20;</code>
+     *
+     * @return Whether the vehicleFullness field is set.
+     */
+    public boolean hasVehicleFullness() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [VehicleFullness][google.maps.routeoptimization.v1.VehicleFullness] field
+     * for computing how close the capped metrics are to their respective vehicle
+     * limits. Its fields are ratios between a capped metric field (e.g.
+     * [AggregatedMetrics.travel_distance_meters][google.maps.routeoptimization.v1.AggregatedMetrics.travel_distance_meters])
+     * and the related vehicle limit (e.g.
+     * [Vehicle.route_distance_limit][google.maps.routeoptimization.v1.Vehicle.route_distance_limit]).
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.VehicleFullness vehicle_fullness = 20;</code>
+     *
+     * @return The vehicleFullness.
+     */
+    public com.google.maps.routeoptimization.v1.VehicleFullness getVehicleFullness() {
+      if (vehicleFullnessBuilder_ == null) {
+        return vehicleFullness_ == null
+            ? com.google.maps.routeoptimization.v1.VehicleFullness.getDefaultInstance()
+            : vehicleFullness_;
+      } else {
+        return vehicleFullnessBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [VehicleFullness][google.maps.routeoptimization.v1.VehicleFullness] field
+     * for computing how close the capped metrics are to their respective vehicle
+     * limits. Its fields are ratios between a capped metric field (e.g.
+     * [AggregatedMetrics.travel_distance_meters][google.maps.routeoptimization.v1.AggregatedMetrics.travel_distance_meters])
+     * and the related vehicle limit (e.g.
+     * [Vehicle.route_distance_limit][google.maps.routeoptimization.v1.Vehicle.route_distance_limit]).
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.VehicleFullness vehicle_fullness = 20;</code>
+     */
+    public Builder setVehicleFullness(com.google.maps.routeoptimization.v1.VehicleFullness value) {
+      if (vehicleFullnessBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        vehicleFullness_ = value;
+      } else {
+        vehicleFullnessBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [VehicleFullness][google.maps.routeoptimization.v1.VehicleFullness] field
+     * for computing how close the capped metrics are to their respective vehicle
+     * limits. Its fields are ratios between a capped metric field (e.g.
+     * [AggregatedMetrics.travel_distance_meters][google.maps.routeoptimization.v1.AggregatedMetrics.travel_distance_meters])
+     * and the related vehicle limit (e.g.
+     * [Vehicle.route_distance_limit][google.maps.routeoptimization.v1.Vehicle.route_distance_limit]).
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.VehicleFullness vehicle_fullness = 20;</code>
+     */
+    public Builder setVehicleFullness(
+        com.google.maps.routeoptimization.v1.VehicleFullness.Builder builderForValue) {
+      if (vehicleFullnessBuilder_ == null) {
+        vehicleFullness_ = builderForValue.build();
+      } else {
+        vehicleFullnessBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [VehicleFullness][google.maps.routeoptimization.v1.VehicleFullness] field
+     * for computing how close the capped metrics are to their respective vehicle
+     * limits. Its fields are ratios between a capped metric field (e.g.
+     * [AggregatedMetrics.travel_distance_meters][google.maps.routeoptimization.v1.AggregatedMetrics.travel_distance_meters])
+     * and the related vehicle limit (e.g.
+     * [Vehicle.route_distance_limit][google.maps.routeoptimization.v1.Vehicle.route_distance_limit]).
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.VehicleFullness vehicle_fullness = 20;</code>
+     */
+    public Builder mergeVehicleFullness(
+        com.google.maps.routeoptimization.v1.VehicleFullness value) {
+      if (vehicleFullnessBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && vehicleFullness_ != null
+            && vehicleFullness_
+                != com.google.maps.routeoptimization.v1.VehicleFullness.getDefaultInstance()) {
+          getVehicleFullnessBuilder().mergeFrom(value);
+        } else {
+          vehicleFullness_ = value;
+        }
+      } else {
+        vehicleFullnessBuilder_.mergeFrom(value);
+      }
+      if (vehicleFullness_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [VehicleFullness][google.maps.routeoptimization.v1.VehicleFullness] field
+     * for computing how close the capped metrics are to their respective vehicle
+     * limits. Its fields are ratios between a capped metric field (e.g.
+     * [AggregatedMetrics.travel_distance_meters][google.maps.routeoptimization.v1.AggregatedMetrics.travel_distance_meters])
+     * and the related vehicle limit (e.g.
+     * [Vehicle.route_distance_limit][google.maps.routeoptimization.v1.Vehicle.route_distance_limit]).
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.VehicleFullness vehicle_fullness = 20;</code>
+     */
+    public Builder clearVehicleFullness() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      vehicleFullness_ = null;
+      if (vehicleFullnessBuilder_ != null) {
+        vehicleFullnessBuilder_.dispose();
+        vehicleFullnessBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [VehicleFullness][google.maps.routeoptimization.v1.VehicleFullness] field
+     * for computing how close the capped metrics are to their respective vehicle
+     * limits. Its fields are ratios between a capped metric field (e.g.
+     * [AggregatedMetrics.travel_distance_meters][google.maps.routeoptimization.v1.AggregatedMetrics.travel_distance_meters])
+     * and the related vehicle limit (e.g.
+     * [Vehicle.route_distance_limit][google.maps.routeoptimization.v1.Vehicle.route_distance_limit]).
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.VehicleFullness vehicle_fullness = 20;</code>
+     */
+    public com.google.maps.routeoptimization.v1.VehicleFullness.Builder
+        getVehicleFullnessBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getVehicleFullnessFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [VehicleFullness][google.maps.routeoptimization.v1.VehicleFullness] field
+     * for computing how close the capped metrics are to their respective vehicle
+     * limits. Its fields are ratios between a capped metric field (e.g.
+     * [AggregatedMetrics.travel_distance_meters][google.maps.routeoptimization.v1.AggregatedMetrics.travel_distance_meters])
+     * and the related vehicle limit (e.g.
+     * [Vehicle.route_distance_limit][google.maps.routeoptimization.v1.Vehicle.route_distance_limit]).
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.VehicleFullness vehicle_fullness = 20;</code>
+     */
+    public com.google.maps.routeoptimization.v1.VehicleFullnessOrBuilder
+        getVehicleFullnessOrBuilder() {
+      if (vehicleFullnessBuilder_ != null) {
+        return vehicleFullnessBuilder_.getMessageOrBuilder();
+      } else {
+        return vehicleFullness_ == null
+            ? com.google.maps.routeoptimization.v1.VehicleFullness.getDefaultInstance()
+            : vehicleFullness_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [VehicleFullness][google.maps.routeoptimization.v1.VehicleFullness] field
+     * for computing how close the capped metrics are to their respective vehicle
+     * limits. Its fields are ratios between a capped metric field (e.g.
+     * [AggregatedMetrics.travel_distance_meters][google.maps.routeoptimization.v1.AggregatedMetrics.travel_distance_meters])
+     * and the related vehicle limit (e.g.
+     * [Vehicle.route_distance_limit][google.maps.routeoptimization.v1.Vehicle.route_distance_limit]).
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.VehicleFullness vehicle_fullness = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routeoptimization.v1.VehicleFullness,
+            com.google.maps.routeoptimization.v1.VehicleFullness.Builder,
+            com.google.maps.routeoptimization.v1.VehicleFullnessOrBuilder>
+        getVehicleFullnessFieldBuilder() {
+      if (vehicleFullnessBuilder_ == null) {
+        vehicleFullnessBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.routeoptimization.v1.VehicleFullness,
+                com.google.maps.routeoptimization.v1.VehicleFullness.Builder,
+                com.google.maps.routeoptimization.v1.VehicleFullnessOrBuilder>(
+                getVehicleFullness(), getParentForChildren(), isClean());
+        vehicleFullness_ = null;
+      }
+      return vehicleFullnessBuilder_;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.Double> routeCosts_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
@@ -13532,7 +14156,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       if (!routeCosts_.isMutable()) {
         routeCosts_ = routeCosts_.copy();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return routeCosts_;
     }
@@ -13647,7 +14271,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearRouteCosts() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       internalGetMutableRouteCosts().getMutableMap().clear();
       return this;
     }
@@ -13679,7 +14303,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Double> getMutableRouteCosts() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       return internalGetMutableRouteCosts().getMutableMap();
     }
 
@@ -13705,7 +14329,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       }
 
       internalGetMutableRouteCosts().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       return this;
     }
 
@@ -13727,7 +14351,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllRouteCosts(java.util.Map<java.lang.String, java.lang.Double> values) {
       internalGetMutableRouteCosts().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       return this;
     }
 
@@ -13764,7 +14388,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
     public Builder setRouteTotalCost(double value) {
 
       routeTotalCost_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -13781,7 +14405,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRouteTotalCost() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       routeTotalCost_ = 0D;
       onChanged();
       return this;

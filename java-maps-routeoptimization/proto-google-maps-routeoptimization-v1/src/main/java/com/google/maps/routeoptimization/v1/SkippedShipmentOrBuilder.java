@@ -72,6 +72,74 @@ public interface SkippedShipmentOrBuilder
    *
    *
    * <pre>
+   * This is a copy of the
+   * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost],
+   * included here to make it easier to see the severity of a skipped shipment.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>optional double penalty_cost = 6;</code>
+   *
+   * @return Whether the penaltyCost field is set.
+   */
+  boolean hasPenaltyCost();
+
+  /**
+   *
+   *
+   * <pre>
+   * This is a copy of the
+   * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost],
+   * included here to make it easier to see the severity of a skipped shipment.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>optional double penalty_cost = 6;</code>
+   *
+   * @return The penaltyCost.
+   */
+  double getPenaltyCost();
+
+  /**
+   *
+   *
+   * <pre>
+   * Estimated ratio of vehicles that cannot perform this shipment for at least
+   * one of the reasons below.
+   * Note: this is only filled when reasons involve a vehicle.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>optional double estimated_incompatible_vehicle_ratio = 5;</code>
+   *
+   * @return Whether the estimatedIncompatibleVehicleRatio field is set.
+   */
+  boolean hasEstimatedIncompatibleVehicleRatio();
+
+  /**
+   *
+   *
+   * <pre>
+   * Estimated ratio of vehicles that cannot perform this shipment for at least
+   * one of the reasons below.
+   * Note: this is only filled when reasons involve a vehicle.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>optional double estimated_incompatible_vehicle_ratio = 5;</code>
+   *
+   * @return The estimatedIncompatibleVehicleRatio.
+   */
+  double getEstimatedIncompatibleVehicleRatio();
+
+  /**
+   *
+   *
+   * <pre>
    * A list of reasons that explain why the shipment was skipped. See comment
    * above `Reason`. If we are unable to understand why a shipment was skipped,
    * reasons will not be set.

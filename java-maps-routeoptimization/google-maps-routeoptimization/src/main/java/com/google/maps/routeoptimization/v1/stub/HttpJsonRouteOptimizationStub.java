@@ -37,8 +37,12 @@ import com.google.longrunning.Operation;
 import com.google.maps.routeoptimization.v1.BatchOptimizeToursMetadata;
 import com.google.maps.routeoptimization.v1.BatchOptimizeToursRequest;
 import com.google.maps.routeoptimization.v1.BatchOptimizeToursResponse;
+import com.google.maps.routeoptimization.v1.OptimizeToursLongRunningMetadata;
 import com.google.maps.routeoptimization.v1.OptimizeToursRequest;
 import com.google.maps.routeoptimization.v1.OptimizeToursResponse;
+import com.google.maps.routeoptimization.v1.OptimizeToursUriMetadata;
+import com.google.maps.routeoptimization.v1.OptimizeToursUriRequest;
+import com.google.maps.routeoptimization.v1.OptimizeToursUriResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -59,7 +63,11 @@ public class HttpJsonRouteOptimizationStub extends RouteOptimizationStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(BatchOptimizeToursResponse.getDescriptor())
+          .add(OptimizeToursUriMetadata.getDescriptor())
           .add(BatchOptimizeToursMetadata.getDescriptor())
+          .add(OptimizeToursResponse.getDescriptor())
+          .add(OptimizeToursUriResponse.getDescriptor())
+          .add(OptimizeToursLongRunningMetadata.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<OptimizeToursRequest, OptimizeToursResponse>
@@ -142,11 +150,103 @@ public class HttpJsonRouteOptimizationStub extends RouteOptimizationStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<OptimizeToursRequest, Operation>
+      optimizeToursLongRunningMethodDescriptor =
+          ApiMethodDescriptor.<OptimizeToursRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.maps.routeoptimization.v1.RouteOptimization/OptimizeToursLongRunning")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<OptimizeToursRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}:optimizeToursLongRunning",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<OptimizeToursRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v1/{parent=projects/*}:optimizeToursLongRunning")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<OptimizeToursRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (OptimizeToursRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<OptimizeToursUriRequest, Operation>
+      optimizeToursUriMethodDescriptor =
+          ApiMethodDescriptor.<OptimizeToursUriRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.maps.routeoptimization.v1.RouteOptimization/OptimizeToursUri")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<OptimizeToursUriRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}:OptimizeToursUri",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<OptimizeToursUriRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v1/{parent=projects/*}:OptimizeToursUri")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<OptimizeToursUriRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (OptimizeToursUriRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private final UnaryCallable<OptimizeToursRequest, OptimizeToursResponse> optimizeToursCallable;
   private final UnaryCallable<BatchOptimizeToursRequest, Operation> batchOptimizeToursCallable;
   private final OperationCallable<
           BatchOptimizeToursRequest, BatchOptimizeToursResponse, BatchOptimizeToursMetadata>
       batchOptimizeToursOperationCallable;
+  private final UnaryCallable<OptimizeToursRequest, Operation> optimizeToursLongRunningCallable;
+  private final OperationCallable<
+          OptimizeToursRequest, OptimizeToursResponse, OptimizeToursLongRunningMetadata>
+      optimizeToursLongRunningOperationCallable;
+  private final UnaryCallable<OptimizeToursUriRequest, Operation> optimizeToursUriCallable;
+  private final OperationCallable<
+          OptimizeToursUriRequest, OptimizeToursUriResponse, OptimizeToursUriMetadata>
+      optimizeToursUriOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -226,6 +326,29 @@ public class HttpJsonRouteOptimizationStub extends RouteOptimizationStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<OptimizeToursRequest, Operation>
+        optimizeToursLongRunningTransportSettings =
+            HttpJsonCallSettings.<OptimizeToursRequest, Operation>newBuilder()
+                .setMethodDescriptor(optimizeToursLongRunningMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<OptimizeToursUriRequest, Operation> optimizeToursUriTransportSettings =
+        HttpJsonCallSettings.<OptimizeToursUriRequest, Operation>newBuilder()
+            .setMethodDescriptor(optimizeToursUriMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
 
     this.optimizeToursCallable =
         callableFactory.createUnaryCallable(
@@ -241,6 +364,26 @@ public class HttpJsonRouteOptimizationStub extends RouteOptimizationStub {
             settings.batchOptimizeToursOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.optimizeToursLongRunningCallable =
+        callableFactory.createUnaryCallable(
+            optimizeToursLongRunningTransportSettings,
+            settings.optimizeToursLongRunningSettings(),
+            clientContext);
+    this.optimizeToursLongRunningOperationCallable =
+        callableFactory.createOperationCallable(
+            optimizeToursLongRunningTransportSettings,
+            settings.optimizeToursLongRunningOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.optimizeToursUriCallable =
+        callableFactory.createUnaryCallable(
+            optimizeToursUriTransportSettings, settings.optimizeToursUriSettings(), clientContext);
+    this.optimizeToursUriOperationCallable =
+        callableFactory.createOperationCallable(
+            optimizeToursUriTransportSettings,
+            settings.optimizeToursUriOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -251,6 +394,8 @@ public class HttpJsonRouteOptimizationStub extends RouteOptimizationStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(optimizeToursMethodDescriptor);
     methodDescriptors.add(batchOptimizeToursMethodDescriptor);
+    methodDescriptors.add(optimizeToursLongRunningMethodDescriptor);
+    methodDescriptors.add(optimizeToursUriMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -273,6 +418,30 @@ public class HttpJsonRouteOptimizationStub extends RouteOptimizationStub {
           BatchOptimizeToursRequest, BatchOptimizeToursResponse, BatchOptimizeToursMetadata>
       batchOptimizeToursOperationCallable() {
     return batchOptimizeToursOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<OptimizeToursRequest, Operation> optimizeToursLongRunningCallable() {
+    return optimizeToursLongRunningCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          OptimizeToursRequest, OptimizeToursResponse, OptimizeToursLongRunningMetadata>
+      optimizeToursLongRunningOperationCallable() {
+    return optimizeToursLongRunningOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<OptimizeToursUriRequest, Operation> optimizeToursUriCallable() {
+    return optimizeToursUriCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          OptimizeToursUriRequest, OptimizeToursUriResponse, OptimizeToursUriMetadata>
+      optimizeToursUriOperationCallable() {
+    return optimizeToursUriOperationCallable;
   }
 
   @Override

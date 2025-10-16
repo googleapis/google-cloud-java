@@ -140,6 +140,108 @@ public interface ShipmentModelOrBuilder
    *
    *
    * <pre>
+   * The set of objectives for this model, that we will transform into costs.
+   * If not empty, the input model has to be costless.
+   * To obtain the modified request, please use `solving_mode` =
+   * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+   * be solved in this case. See corresponding documentation.
+   *
+   * Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+   * </code>
+   */
+  java.util.List<com.google.maps.routeoptimization.v1.ShipmentModel.Objective> getObjectivesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The set of objectives for this model, that we will transform into costs.
+   * If not empty, the input model has to be costless.
+   * To obtain the modified request, please use `solving_mode` =
+   * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+   * be solved in this case. See corresponding documentation.
+   *
+   * Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+   * </code>
+   */
+  com.google.maps.routeoptimization.v1.ShipmentModel.Objective getObjectives(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The set of objectives for this model, that we will transform into costs.
+   * If not empty, the input model has to be costless.
+   * To obtain the modified request, please use `solving_mode` =
+   * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+   * be solved in this case. See corresponding documentation.
+   *
+   * Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+   * </code>
+   */
+  int getObjectivesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The set of objectives for this model, that we will transform into costs.
+   * If not empty, the input model has to be costless.
+   * To obtain the modified request, please use `solving_mode` =
+   * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+   * be solved in this case. See corresponding documentation.
+   *
+   * Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+   * </code>
+   */
+  java.util.List<? extends com.google.maps.routeoptimization.v1.ShipmentModel.ObjectiveOrBuilder>
+      getObjectivesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The set of objectives for this model, that we will transform into costs.
+   * If not empty, the input model has to be costless.
+   * To obtain the modified request, please use `solving_mode` =
+   * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+   * be solved in this case. See corresponding documentation.
+   *
+   * Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+   * </code>
+   */
+  com.google.maps.routeoptimization.v1.ShipmentModel.ObjectiveOrBuilder getObjectivesOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Constrains the maximum number of active vehicles. A vehicle is active if
    * its route performs at least one shipment. This can be used to limit the
    * number of routes in the case where there are fewer drivers than
@@ -335,7 +437,6 @@ public interface ShipmentModelOrBuilder
    * }
    * ```
    *
-   *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
    *   matrix "fast".
@@ -434,7 +535,6 @@ public interface ShipmentModelOrBuilder
    *   }
    * }
    * ```
-   *
    *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
@@ -535,7 +635,6 @@ public interface ShipmentModelOrBuilder
    * }
    * ```
    *
-   *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
    *   matrix "fast".
@@ -633,7 +732,6 @@ public interface ShipmentModelOrBuilder
    *   }
    * }
    * ```
-   *
    *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
@@ -735,7 +833,6 @@ public interface ShipmentModelOrBuilder
    *   }
    * }
    * ```
-   *
    *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
@@ -1230,6 +1327,10 @@ public interface ShipmentModelOrBuilder
    *
    * <pre>
    * Set of precedence rules which must be enforced in the model.
+   *
+   * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+   * optimized. Requests using precedence rules that include many shipments may
+   * be rejected.
    * </pre>
    *
    * <code>
@@ -1244,6 +1345,10 @@ public interface ShipmentModelOrBuilder
    *
    * <pre>
    * Set of precedence rules which must be enforced in the model.
+   *
+   * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+   * optimized. Requests using precedence rules that include many shipments may
+   * be rejected.
    * </pre>
    *
    * <code>
@@ -1257,6 +1362,10 @@ public interface ShipmentModelOrBuilder
    *
    * <pre>
    * Set of precedence rules which must be enforced in the model.
+   *
+   * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+   * optimized. Requests using precedence rules that include many shipments may
+   * be rejected.
    * </pre>
    *
    * <code>
@@ -1270,6 +1379,10 @@ public interface ShipmentModelOrBuilder
    *
    * <pre>
    * Set of precedence rules which must be enforced in the model.
+   *
+   * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+   * optimized. Requests using precedence rules that include many shipments may
+   * be rejected.
    * </pre>
    *
    * <code>
@@ -1285,6 +1398,10 @@ public interface ShipmentModelOrBuilder
    *
    * <pre>
    * Set of precedence rules which must be enforced in the model.
+   *
+   * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+   * optimized. Requests using precedence rules that include many shipments may
+   * be rejected.
    * </pre>
    *
    * <code>
