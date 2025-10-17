@@ -102,6 +102,88 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     return performedShipmentCount_;
   }
 
+  public static final int PERFORMED_MANDATORY_SHIPMENT_COUNT_FIELD_NUMBER = 12;
+  private int performedMandatoryShipmentCount_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Number of mandatory shipments performed.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>optional int32 performed_mandatory_shipment_count = 12;</code>
+   *
+   * @return Whether the performedMandatoryShipmentCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasPerformedMandatoryShipmentCount() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Number of mandatory shipments performed.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>optional int32 performed_mandatory_shipment_count = 12;</code>
+   *
+   * @return The performedMandatoryShipmentCount.
+   */
+  @java.lang.Override
+  public int getPerformedMandatoryShipmentCount() {
+    return performedMandatoryShipmentCount_;
+  }
+
+  public static final int PERFORMED_SHIPMENT_PENALTY_COST_SUM_FIELD_NUMBER = 13;
+  private double performedShipmentPenaltyCostSum_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * The sum of the
+   * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+   * of the performed shipments.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>optional double performed_shipment_penalty_cost_sum = 13;</code>
+   *
+   * @return Whether the performedShipmentPenaltyCostSum field is set.
+   */
+  @java.lang.Override
+  public boolean hasPerformedShipmentPenaltyCostSum() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The sum of the
+   * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+   * of the performed shipments.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>optional double performed_shipment_penalty_cost_sum = 13;</code>
+   *
+   * @return The performedShipmentPenaltyCostSum.
+   */
+  @java.lang.Override
+  public double getPerformedShipmentPenaltyCostSum() {
+    return performedShipmentPenaltyCostSum_;
+  }
+
   public static final int TRAVEL_DURATION_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration travelDuration_;
 
@@ -118,7 +200,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasTravelDuration() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -171,7 +253,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasWaitDuration() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -224,7 +306,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasDelayDuration() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -277,7 +359,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasBreakDuration() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -330,7 +412,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasVisitDuration() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -389,7 +471,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasTotalDuration() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -626,22 +708,22 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     if (performedShipmentCount_ != 0) {
       output.writeInt32(1, performedShipmentCount_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(2, getTravelDuration());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(3, getWaitDuration());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(4, getDelayDuration());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(5, getBreakDuration());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(6, getVisitDuration());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(7, getTotalDuration());
     }
     if (java.lang.Double.doubleToRawLongBits(travelDistanceMeters_) != 0) {
@@ -649,6 +731,12 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetMaxLoads(), MaxLoadsDefaultEntryHolder.defaultEntry, 9);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(12, performedMandatoryShipmentCount_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeDouble(13, performedShipmentPenaltyCostSum_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -661,22 +749,22 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     if (performedShipmentCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, performedShipmentCount_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getTravelDuration());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getWaitDuration());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDelayDuration());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getBreakDuration());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getVisitDuration());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getTotalDuration());
     }
     if (java.lang.Double.doubleToRawLongBits(travelDistanceMeters_) != 0) {
@@ -695,6 +783,16 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, maxLoads__);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              12, performedMandatoryShipmentCount_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeDoubleSize(
+              13, performedShipmentPenaltyCostSum_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -712,6 +810,19 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         (com.google.maps.routeoptimization.v1.AggregatedMetrics) obj;
 
     if (getPerformedShipmentCount() != other.getPerformedShipmentCount()) return false;
+    if (hasPerformedMandatoryShipmentCount() != other.hasPerformedMandatoryShipmentCount())
+      return false;
+    if (hasPerformedMandatoryShipmentCount()) {
+      if (getPerformedMandatoryShipmentCount() != other.getPerformedMandatoryShipmentCount())
+        return false;
+    }
+    if (hasPerformedShipmentPenaltyCostSum() != other.hasPerformedShipmentPenaltyCostSum())
+      return false;
+    if (hasPerformedShipmentPenaltyCostSum()) {
+      if (java.lang.Double.doubleToLongBits(getPerformedShipmentPenaltyCostSum())
+          != java.lang.Double.doubleToLongBits(other.getPerformedShipmentPenaltyCostSum()))
+        return false;
+    }
     if (hasTravelDuration() != other.hasTravelDuration()) return false;
     if (hasTravelDuration()) {
       if (!getTravelDuration().equals(other.getTravelDuration())) return false;
@@ -752,6 +863,17 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PERFORMED_SHIPMENT_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getPerformedShipmentCount();
+    if (hasPerformedMandatoryShipmentCount()) {
+      hash = (37 * hash) + PERFORMED_MANDATORY_SHIPMENT_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getPerformedMandatoryShipmentCount();
+    }
+    if (hasPerformedShipmentPenaltyCostSum()) {
+      hash = (37 * hash) + PERFORMED_SHIPMENT_PENALTY_COST_SUM_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getPerformedShipmentPenaltyCostSum()));
+    }
     if (hasTravelDuration()) {
       hash = (37 * hash) + TRAVEL_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getTravelDuration().hashCode();
@@ -970,6 +1092,8 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       super.clear();
       bitField0_ = 0;
       performedShipmentCount_ = 0;
+      performedMandatoryShipmentCount_ = 0;
+      performedShipmentPenaltyCostSum_ = 0D;
       travelDuration_ = null;
       if (travelDurationBuilder_ != null) {
         travelDurationBuilder_.dispose();
@@ -1043,39 +1167,47 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.travelDuration_ =
-            travelDurationBuilder_ == null ? travelDuration_ : travelDurationBuilder_.build();
+        result.performedMandatoryShipmentCount_ = performedMandatoryShipmentCount_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.waitDuration_ =
-            waitDurationBuilder_ == null ? waitDuration_ : waitDurationBuilder_.build();
+        result.performedShipmentPenaltyCostSum_ = performedShipmentPenaltyCostSum_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.delayDuration_ =
-            delayDurationBuilder_ == null ? delayDuration_ : delayDurationBuilder_.build();
+        result.travelDuration_ =
+            travelDurationBuilder_ == null ? travelDuration_ : travelDurationBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.breakDuration_ =
-            breakDurationBuilder_ == null ? breakDuration_ : breakDurationBuilder_.build();
+        result.waitDuration_ =
+            waitDurationBuilder_ == null ? waitDuration_ : waitDurationBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.visitDuration_ =
-            visitDurationBuilder_ == null ? visitDuration_ : visitDurationBuilder_.build();
+        result.delayDuration_ =
+            delayDurationBuilder_ == null ? delayDuration_ : delayDurationBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.totalDuration_ =
-            totalDurationBuilder_ == null ? totalDuration_ : totalDurationBuilder_.build();
+        result.breakDuration_ =
+            breakDurationBuilder_ == null ? breakDuration_ : breakDurationBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.travelDistanceMeters_ = travelDistanceMeters_;
+        result.visitDuration_ =
+            visitDurationBuilder_ == null ? visitDuration_ : visitDurationBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.totalDuration_ =
+            totalDurationBuilder_ == null ? totalDuration_ : totalDurationBuilder_.build();
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.travelDistanceMeters_ = travelDistanceMeters_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.maxLoads_ = internalGetMaxLoads().build(MaxLoadsDefaultEntryHolder.defaultEntry);
       }
       result.bitField0_ |= to_bitField0_;
@@ -1130,6 +1262,12 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       if (other.getPerformedShipmentCount() != 0) {
         setPerformedShipmentCount(other.getPerformedShipmentCount());
       }
+      if (other.hasPerformedMandatoryShipmentCount()) {
+        setPerformedMandatoryShipmentCount(other.getPerformedMandatoryShipmentCount());
+      }
+      if (other.hasPerformedShipmentPenaltyCostSum()) {
+        setPerformedShipmentPenaltyCostSum(other.getPerformedShipmentPenaltyCostSum());
+      }
       if (other.hasTravelDuration()) {
         mergeTravelDuration(other.getTravelDuration());
       }
@@ -1152,7 +1290,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         setTravelDistanceMeters(other.getTravelDistanceMeters());
       }
       internalGetMutableMaxLoads().mergeFrom(other.internalGetMaxLoads());
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1188,43 +1326,43 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
             case 18:
               {
                 input.readMessage(getTravelDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getWaitDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getDelayDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getBreakDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getVisitDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getTotalDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 65:
               {
                 travelDistanceMeters_ = input.readDouble();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 65
             case 74:
@@ -1239,9 +1377,21 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
                 internalGetMutableMaxLoads()
                     .ensureBuilderMap()
                     .put(maxLoads__.getKey(), maxLoads__.getValue());
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 74
+            case 96:
+              {
+                performedMandatoryShipmentCount_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+            case 105:
+              {
+                performedShipmentPenaltyCostSum_ = input.readDouble();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 105
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1320,6 +1470,174 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int performedMandatoryShipmentCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of mandatory shipments performed.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>optional int32 performed_mandatory_shipment_count = 12;</code>
+     *
+     * @return Whether the performedMandatoryShipmentCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasPerformedMandatoryShipmentCount() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of mandatory shipments performed.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>optional int32 performed_mandatory_shipment_count = 12;</code>
+     *
+     * @return The performedMandatoryShipmentCount.
+     */
+    @java.lang.Override
+    public int getPerformedMandatoryShipmentCount() {
+      return performedMandatoryShipmentCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of mandatory shipments performed.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>optional int32 performed_mandatory_shipment_count = 12;</code>
+     *
+     * @param value The performedMandatoryShipmentCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPerformedMandatoryShipmentCount(int value) {
+
+      performedMandatoryShipmentCount_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of mandatory shipments performed.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>optional int32 performed_mandatory_shipment_count = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPerformedMandatoryShipmentCount() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      performedMandatoryShipmentCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private double performedShipmentPenaltyCostSum_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The sum of the
+     * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+     * of the performed shipments.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>optional double performed_shipment_penalty_cost_sum = 13;</code>
+     *
+     * @return Whether the performedShipmentPenaltyCostSum field is set.
+     */
+    @java.lang.Override
+    public boolean hasPerformedShipmentPenaltyCostSum() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The sum of the
+     * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+     * of the performed shipments.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>optional double performed_shipment_penalty_cost_sum = 13;</code>
+     *
+     * @return The performedShipmentPenaltyCostSum.
+     */
+    @java.lang.Override
+    public double getPerformedShipmentPenaltyCostSum() {
+      return performedShipmentPenaltyCostSum_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The sum of the
+     * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+     * of the performed shipments.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>optional double performed_shipment_penalty_cost_sum = 13;</code>
+     *
+     * @param value The performedShipmentPenaltyCostSum to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPerformedShipmentPenaltyCostSum(double value) {
+
+      performedShipmentPenaltyCostSum_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The sum of the
+     * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+     * of the performed shipments.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>optional double performed_shipment_penalty_cost_sum = 13;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPerformedShipmentPenaltyCostSum() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      performedShipmentPenaltyCostSum_ = 0D;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Duration travelDuration_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -1339,7 +1657,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * @return Whether the travelDuration field is set.
      */
     public boolean hasTravelDuration() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1381,7 +1699,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       } else {
         travelDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1401,7 +1719,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       } else {
         travelDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1417,7 +1735,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeTravelDuration(com.google.protobuf.Duration value) {
       if (travelDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && travelDuration_ != null
             && travelDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getTravelDurationBuilder().mergeFrom(value);
@@ -1428,7 +1746,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         travelDurationBuilder_.mergeFrom(value);
       }
       if (travelDuration_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1444,7 +1762,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration travel_duration = 2;</code>
      */
     public Builder clearTravelDuration() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       travelDuration_ = null;
       if (travelDurationBuilder_ != null) {
         travelDurationBuilder_.dispose();
@@ -1464,7 +1782,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration travel_duration = 2;</code>
      */
     public com.google.protobuf.Duration.Builder getTravelDurationBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getTravelDurationFieldBuilder().getBuilder();
     }
@@ -1533,7 +1851,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * @return Whether the waitDuration field is set.
      */
     public boolean hasWaitDuration() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1575,7 +1893,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       } else {
         waitDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1595,7 +1913,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       } else {
         waitDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1611,7 +1929,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeWaitDuration(com.google.protobuf.Duration value) {
       if (waitDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && waitDuration_ != null
             && waitDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getWaitDurationBuilder().mergeFrom(value);
@@ -1622,7 +1940,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         waitDurationBuilder_.mergeFrom(value);
       }
       if (waitDuration_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1638,7 +1956,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration wait_duration = 3;</code>
      */
     public Builder clearWaitDuration() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       waitDuration_ = null;
       if (waitDurationBuilder_ != null) {
         waitDurationBuilder_.dispose();
@@ -1658,7 +1976,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration wait_duration = 3;</code>
      */
     public com.google.protobuf.Duration.Builder getWaitDurationBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getWaitDurationFieldBuilder().getBuilder();
     }
@@ -1727,7 +2045,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * @return Whether the delayDuration field is set.
      */
     public boolean hasDelayDuration() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1769,7 +2087,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       } else {
         delayDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1789,7 +2107,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       } else {
         delayDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1805,7 +2123,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeDelayDuration(com.google.protobuf.Duration value) {
       if (delayDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && delayDuration_ != null
             && delayDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getDelayDurationBuilder().mergeFrom(value);
@@ -1816,7 +2134,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         delayDurationBuilder_.mergeFrom(value);
       }
       if (delayDuration_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1832,7 +2150,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration delay_duration = 4;</code>
      */
     public Builder clearDelayDuration() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       delayDuration_ = null;
       if (delayDurationBuilder_ != null) {
         delayDurationBuilder_.dispose();
@@ -1852,7 +2170,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration delay_duration = 4;</code>
      */
     public com.google.protobuf.Duration.Builder getDelayDurationBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getDelayDurationFieldBuilder().getBuilder();
     }
@@ -1921,7 +2239,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * @return Whether the breakDuration field is set.
      */
     public boolean hasBreakDuration() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1963,7 +2281,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       } else {
         breakDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1983,7 +2301,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       } else {
         breakDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1999,7 +2317,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeBreakDuration(com.google.protobuf.Duration value) {
       if (breakDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && breakDuration_ != null
             && breakDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getBreakDurationBuilder().mergeFrom(value);
@@ -2010,7 +2328,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         breakDurationBuilder_.mergeFrom(value);
       }
       if (breakDuration_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2026,7 +2344,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration break_duration = 5;</code>
      */
     public Builder clearBreakDuration() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       breakDuration_ = null;
       if (breakDurationBuilder_ != null) {
         breakDurationBuilder_.dispose();
@@ -2046,7 +2364,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration break_duration = 5;</code>
      */
     public com.google.protobuf.Duration.Builder getBreakDurationBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getBreakDurationFieldBuilder().getBuilder();
     }
@@ -2115,7 +2433,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * @return Whether the visitDuration field is set.
      */
     public boolean hasVisitDuration() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2157,7 +2475,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       } else {
         visitDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2177,7 +2495,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       } else {
         visitDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2193,7 +2511,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeVisitDuration(com.google.protobuf.Duration value) {
       if (visitDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && visitDuration_ != null
             && visitDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getVisitDurationBuilder().mergeFrom(value);
@@ -2204,7 +2522,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         visitDurationBuilder_.mergeFrom(value);
       }
       if (visitDuration_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2220,7 +2538,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration visit_duration = 6;</code>
      */
     public Builder clearVisitDuration() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       visitDuration_ = null;
       if (visitDurationBuilder_ != null) {
         visitDurationBuilder_.dispose();
@@ -2240,7 +2558,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration visit_duration = 6;</code>
      */
     public com.google.protobuf.Duration.Builder getVisitDurationBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getVisitDurationFieldBuilder().getBuilder();
     }
@@ -2315,7 +2633,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * @return Whether the totalDuration field is set.
      */
     public boolean hasTotalDuration() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2369,7 +2687,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       } else {
         totalDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2395,7 +2713,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       } else {
         totalDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2417,7 +2735,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeTotalDuration(com.google.protobuf.Duration value) {
       if (totalDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && totalDuration_ != null
             && totalDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getTotalDurationBuilder().mergeFrom(value);
@@ -2428,7 +2746,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         totalDurationBuilder_.mergeFrom(value);
       }
       if (totalDuration_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2450,7 +2768,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration total_duration = 7;</code>
      */
     public Builder clearTotalDuration() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       totalDuration_ = null;
       if (totalDurationBuilder_ != null) {
         totalDurationBuilder_.dispose();
@@ -2476,7 +2794,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration total_duration = 7;</code>
      */
     public com.google.protobuf.Duration.Builder getTotalDurationBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getTotalDurationFieldBuilder().getBuilder();
     }
@@ -2571,7 +2889,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     public Builder setTravelDistanceMeters(double value) {
 
       travelDistanceMeters_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2588,7 +2906,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearTravelDistanceMeters() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       travelDistanceMeters_ = 0D;
       onChanged();
       return this;
@@ -2648,7 +2966,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       if (maxLoads_ == null) {
         maxLoads_ = new com.google.protobuf.MapFieldBuilder<>(maxLoadsConverter);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return maxLoads_;
     }
@@ -2778,7 +3096,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     }
 
     public Builder clearMaxLoads() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       internalGetMutableMaxLoads().clear();
       return this;
     }
@@ -2812,7 +3130,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     public java.util.Map<
             java.lang.String, com.google.maps.routeoptimization.v1.ShipmentRoute.VehicleLoad>
         getMutableMaxLoads() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       return internalGetMutableMaxLoads().ensureMessageMap();
     }
 
@@ -2842,7 +3160,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException("map value");
       }
       internalGetMutableMaxLoads().ensureBuilderMap().put(key, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       return this;
     }
 
@@ -2874,7 +3192,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         }
       }
       internalGetMutableMaxLoads().ensureBuilderMap().putAll(values);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       return this;
     }
 

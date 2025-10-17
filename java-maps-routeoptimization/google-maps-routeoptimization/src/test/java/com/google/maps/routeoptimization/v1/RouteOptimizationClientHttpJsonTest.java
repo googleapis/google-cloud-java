@@ -84,6 +84,7 @@ public class RouteOptimizationClientHttpJsonTest {
             .setRequestLabel("requestLabel1285152165")
             .addAllSkippedShipments(new ArrayList<SkippedShipment>())
             .addAllValidationErrors(new ArrayList<OptimizeToursValidationError>())
+            .setProcessedRequest(OptimizeToursRequest.newBuilder().build())
             .setMetrics(OptimizeToursResponse.Metrics.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -207,6 +208,151 @@ public class RouteOptimizationClientHttpJsonTest {
               .addAllModelConfigs(new ArrayList<BatchOptimizeToursRequest.AsyncModelConfig>())
               .build();
       client.batchOptimizeToursAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void optimizeToursLongRunningTest() throws Exception {
+    OptimizeToursResponse expectedResponse =
+        OptimizeToursResponse.newBuilder()
+            .addAllRoutes(new ArrayList<ShipmentRoute>())
+            .setRequestLabel("requestLabel1285152165")
+            .addAllSkippedShipments(new ArrayList<SkippedShipment>())
+            .addAllValidationErrors(new ArrayList<OptimizeToursValidationError>())
+            .setProcessedRequest(OptimizeToursRequest.newBuilder().build())
+            .setMetrics(OptimizeToursResponse.Metrics.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("optimizeToursLongRunningTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    OptimizeToursRequest request =
+        OptimizeToursRequest.newBuilder()
+            .setParent("projects/project-5833/locations/location-5833")
+            .setTimeout(Duration.newBuilder().build())
+            .setModel(ShipmentModel.newBuilder().build())
+            .addAllInjectedFirstSolutionRoutes(new ArrayList<ShipmentRoute>())
+            .setInjectedSolutionConstraint(InjectedSolutionConstraint.newBuilder().build())
+            .addAllRefreshDetailsRoutes(new ArrayList<ShipmentRoute>())
+            .setInterpretInjectedSolutionsUsingLabels(true)
+            .setConsiderRoadTraffic(true)
+            .setPopulatePolylines(true)
+            .setPopulateTransitionPolylines(true)
+            .setAllowLargeDeadlineDespiteInterruptionRisk(true)
+            .setUseGeodesicDistances(true)
+            .setGeodesicMetersPerSecond(-2129658905)
+            .setMaxValidationErrors(-1367418922)
+            .setLabel("label102727412")
+            .build();
+
+    OptimizeToursResponse actualResponse = client.optimizeToursLongRunningAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void optimizeToursLongRunningExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OptimizeToursRequest request =
+          OptimizeToursRequest.newBuilder()
+              .setParent("projects/project-5833/locations/location-5833")
+              .setTimeout(Duration.newBuilder().build())
+              .setModel(ShipmentModel.newBuilder().build())
+              .addAllInjectedFirstSolutionRoutes(new ArrayList<ShipmentRoute>())
+              .setInjectedSolutionConstraint(InjectedSolutionConstraint.newBuilder().build())
+              .addAllRefreshDetailsRoutes(new ArrayList<ShipmentRoute>())
+              .setInterpretInjectedSolutionsUsingLabels(true)
+              .setConsiderRoadTraffic(true)
+              .setPopulatePolylines(true)
+              .setPopulateTransitionPolylines(true)
+              .setAllowLargeDeadlineDespiteInterruptionRisk(true)
+              .setUseGeodesicDistances(true)
+              .setGeodesicMetersPerSecond(-2129658905)
+              .setMaxValidationErrors(-1367418922)
+              .setLabel("label102727412")
+              .build();
+      client.optimizeToursLongRunningAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void optimizeToursUriTest() throws Exception {
+    OptimizeToursUriResponse expectedResponse =
+        OptimizeToursUriResponse.newBuilder().setOutput(Uri.newBuilder().build()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("optimizeToursUriTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    OptimizeToursUriRequest request =
+        OptimizeToursUriRequest.newBuilder()
+            .setParent("projects/project-5833/locations/location-5833")
+            .setInput(Uri.newBuilder().build())
+            .setOutput(Uri.newBuilder().build())
+            .build();
+
+    OptimizeToursUriResponse actualResponse = client.optimizeToursUriAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void optimizeToursUriExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OptimizeToursUriRequest request =
+          OptimizeToursUriRequest.newBuilder()
+              .setParent("projects/project-5833/locations/location-5833")
+              .setInput(Uri.newBuilder().build())
+              .setOutput(Uri.newBuilder().build())
+              .build();
+      client.optimizeToursUriAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

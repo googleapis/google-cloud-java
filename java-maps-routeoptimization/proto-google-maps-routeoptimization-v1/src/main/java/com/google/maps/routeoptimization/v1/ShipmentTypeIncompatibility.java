@@ -104,14 +104,12 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * For two shipments with incompatible types with the
-     * `NOT_IN_SAME_VEHICLE_SIMULTANEOUSLY` incompatibility mode:
-     *
-     * * If both are pickups only (no deliveries) or deliveries only (no
-     *   pickups), they cannot share the same vehicle at all.
-     * * If one of the shipments has a delivery and the other a pickup, the two
-     *   shipments can share the same vehicle iff the former shipment is
-     *   delivered before the latter is picked up.
+     * In this mode, two shipments with incompatible types can never be on the
+     * same vehicle at the same time:
+     * * They can share the same vehicle only if one is delivered before the
+     *   other is picked up.
+     * * When both shipments are pickups-only (no deliveries) or deliveries-only
+     *   (no pickups), they can't share the same vehicle at all.
      * </pre>
      *
      * <code>NOT_IN_SAME_VEHICLE_SIMULTANEOUSLY = 2;</code>
@@ -147,14 +145,12 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * For two shipments with incompatible types with the
-     * `NOT_IN_SAME_VEHICLE_SIMULTANEOUSLY` incompatibility mode:
-     *
-     * * If both are pickups only (no deliveries) or deliveries only (no
-     *   pickups), they cannot share the same vehicle at all.
-     * * If one of the shipments has a delivery and the other a pickup, the two
-     *   shipments can share the same vehicle iff the former shipment is
-     *   delivered before the latter is picked up.
+     * In this mode, two shipments with incompatible types can never be on the
+     * same vehicle at the same time:
+     * * They can share the same vehicle only if one is delivered before the
+     *   other is picked up.
+     * * When both shipments are pickups-only (no deliveries) or deliveries-only
+     *   (no pickups), they can't share the same vehicle at all.
      * </pre>
      *
      * <code>NOT_IN_SAME_VEHICLE_SIMULTANEOUSLY = 2;</code>

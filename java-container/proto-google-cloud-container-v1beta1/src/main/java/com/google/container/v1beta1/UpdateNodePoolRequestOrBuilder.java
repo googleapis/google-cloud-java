@@ -36,7 +36,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4058
+   *     google/container/v1beta1/cluster_service.proto;l=4221
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4058
+   *     google/container/v1beta1/cluster_service.proto;l=4221
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4064
+   *     google/container/v1beta1/cluster_service.proto;l=4227
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -92,7 +92,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4064
+   *     google/container/v1beta1/cluster_service.proto;l=4227
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4068
+   *     google/container/v1beta1/cluster_service.proto;l=4231
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4068
+   *     google/container/v1beta1/cluster_service.proto;l=4231
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -143,7 +143,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4072
+   *     google/container/v1beta1/cluster_service.proto;l=4235
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -160,7 +160,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4072
+   *     google/container/v1beta1/cluster_service.proto;l=4235
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
@@ -251,6 +251,14 @@ public interface UpdateNodePoolRequestOrBuilder
    * in which the node pool's nodes should be located. Changing the locations
    * for a node pool will result in nodes being either created or removed from
    * the node pool, depending on whether locations are being added or removed.
+   *
+   * Warning: It is recommended to update node pool locations in a standalone
+   * API call. Do not combine a location update with changes to other fields
+   * (such as `tags`, `labels`, `taints`, etc.) in the same request.
+   * Otherwise, the API performs a structural modification where changes to
+   * other fields will only apply to newly created nodes and will not be
+   * applied to existing nodes in the node pool. To ensure all nodes are updated
+   * consistently, use a separate API call for location changes.
    * </pre>
    *
    * <code>repeated string locations = 13;</code>
@@ -268,6 +276,14 @@ public interface UpdateNodePoolRequestOrBuilder
    * in which the node pool's nodes should be located. Changing the locations
    * for a node pool will result in nodes being either created or removed from
    * the node pool, depending on whether locations are being added or removed.
+   *
+   * Warning: It is recommended to update node pool locations in a standalone
+   * API call. Do not combine a location update with changes to other fields
+   * (such as `tags`, `labels`, `taints`, etc.) in the same request.
+   * Otherwise, the API performs a structural modification where changes to
+   * other fields will only apply to newly created nodes and will not be
+   * applied to existing nodes in the node pool. To ensure all nodes are updated
+   * consistently, use a separate API call for location changes.
    * </pre>
    *
    * <code>repeated string locations = 13;</code>
@@ -285,6 +301,14 @@ public interface UpdateNodePoolRequestOrBuilder
    * in which the node pool's nodes should be located. Changing the locations
    * for a node pool will result in nodes being either created or removed from
    * the node pool, depending on whether locations are being added or removed.
+   *
+   * Warning: It is recommended to update node pool locations in a standalone
+   * API call. Do not combine a location update with changes to other fields
+   * (such as `tags`, `labels`, `taints`, etc.) in the same request.
+   * Otherwise, the API performs a structural modification where changes to
+   * other fields will only apply to newly created nodes and will not be
+   * applied to existing nodes in the node pool. To ensure all nodes are updated
+   * consistently, use a separate API call for location changes.
    * </pre>
    *
    * <code>repeated string locations = 13;</code>
@@ -303,6 +327,14 @@ public interface UpdateNodePoolRequestOrBuilder
    * in which the node pool's nodes should be located. Changing the locations
    * for a node pool will result in nodes being either created or removed from
    * the node pool, depending on whether locations are being added or removed.
+   *
+   * Warning: It is recommended to update node pool locations in a standalone
+   * API call. Do not combine a location update with changes to other fields
+   * (such as `tags`, `labels`, `taints`, etc.) in the same request.
+   * Otherwise, the API performs a structural modification where changes to
+   * other fields will only apply to newly created nodes and will not be
+   * applied to existing nodes in the node pool. To ensure all nodes are updated
+   * consistently, use a separate API call for location changes.
    * </pre>
    *
    * <code>repeated string locations = 13;</code>

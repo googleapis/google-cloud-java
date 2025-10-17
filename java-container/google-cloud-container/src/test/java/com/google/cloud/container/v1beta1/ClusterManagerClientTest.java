@@ -122,6 +122,7 @@ import com.google.container.v1beta1.ResourceManagerTags;
 import com.google.container.v1beta1.ResourceUsageExportConfig;
 import com.google.container.v1beta1.RollbackNodePoolUpgradeRequest;
 import com.google.container.v1beta1.SecretManagerConfig;
+import com.google.container.v1beta1.SecretSyncConfig;
 import com.google.container.v1beta1.SecurityPostureConfig;
 import com.google.container.v1beta1.ServerConfig;
 import com.google.container.v1beta1.SetAddonsConfigRequest;
@@ -344,6 +345,7 @@ public class ClusterManagerClientTest {
             .setRbacBindingConfig(RBACBindingConfig.newBuilder().build())
             .setGkeAutoUpgradeConfig(GkeAutoUpgradeConfig.newBuilder().build())
             .setAnonymousAuthenticationConfig(AnonymousAuthenticationConfig.newBuilder().build())
+            .setSecretSyncConfig(SecretSyncConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 

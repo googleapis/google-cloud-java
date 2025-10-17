@@ -45,6 +45,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     additionalNodeNetworkConfigs_ = java.util.Collections.emptyList();
     additionalPodNetworkConfigs_ = java.util.Collections.emptyList();
     subnetwork_ = "";
+    acceleratorNetworkProfile_ = "";
   }
 
   @java.lang.Override
@@ -1864,6 +1865,132 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int NETWORK_TIER_CONFIG_FIELD_NUMBER = 20;
+  private com.google.container.v1beta1.NetworkTierConfig networkTierConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The network tier configuration for the node pool inherits from
+   * the cluster-level configuration and remains immutable throughout the node
+   * pool's lifecycle, including during upgrades.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the networkTierConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkTierConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The network tier configuration for the node pool inherits from
+   * the cluster-level configuration and remains immutable throughout the node
+   * pool's lifecycle, including during upgrades.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The networkTierConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NetworkTierConfig getNetworkTierConfig() {
+    return networkTierConfig_ == null
+        ? com.google.container.v1beta1.NetworkTierConfig.getDefaultInstance()
+        : networkTierConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The network tier configuration for the node pool inherits from
+   * the cluster-level configuration and remains immutable throughout the node
+   * pool's lifecycle, including during upgrades.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NetworkTierConfigOrBuilder getNetworkTierConfigOrBuilder() {
+    return networkTierConfig_ == null
+        ? com.google.container.v1beta1.NetworkTierConfig.getDefaultInstance()
+        : networkTierConfig_;
+  }
+
+  public static final int ACCELERATOR_NETWORK_PROFILE_FIELD_NUMBER = 21;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object acceleratorNetworkProfile_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The accelerator network profile for the node pool. For now the
+   * only valid value is "auto". If specified, the network configuration of the
+   * nodes in this node pool will be managed by this profile for the supported
+   * machine types, zone, etc.
+   * </pre>
+   *
+   * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The acceleratorNetworkProfile.
+   */
+  @java.lang.Override
+  public java.lang.String getAcceleratorNetworkProfile() {
+    java.lang.Object ref = acceleratorNetworkProfile_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      acceleratorNetworkProfile_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The accelerator network profile for the node pool. For now the
+   * only valid value is "auto". If specified, the network configuration of the
+   * nodes in this node pool will be managed by this profile for the supported
+   * machine types, zone, etc.
+   * </pre>
+   *
+   * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for acceleratorNetworkProfile.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAcceleratorNetworkProfileBytes() {
+    java.lang.Object ref = acceleratorNetworkProfile_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      acceleratorNetworkProfile_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1907,6 +2034,12 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, subnetwork_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(20, getNetworkTierConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(acceleratorNetworkProfile_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, acceleratorNetworkProfile_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1955,6 +2088,13 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, subnetwork_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getNetworkTierConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(acceleratorNetworkProfile_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(21, acceleratorNetworkProfile_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1994,6 +2134,11 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     if (java.lang.Double.doubleToLongBits(getPodIpv4RangeUtilization())
         != java.lang.Double.doubleToLongBits(other.getPodIpv4RangeUtilization())) return false;
     if (!getSubnetwork().equals(other.getSubnetwork())) return false;
+    if (hasNetworkTierConfig() != other.hasNetworkTierConfig()) return false;
+    if (hasNetworkTierConfig()) {
+      if (!getNetworkTierConfig().equals(other.getNetworkTierConfig())) return false;
+    }
+    if (!getAcceleratorNetworkProfile().equals(other.getAcceleratorNetworkProfile())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2038,6 +2183,12 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
                 java.lang.Double.doubleToLongBits(getPodIpv4RangeUtilization()));
     hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getSubnetwork().hashCode();
+    if (hasNetworkTierConfig()) {
+      hash = (37 * hash) + NETWORK_TIER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkTierConfig().hashCode();
+    }
+    hash = (37 * hash) + ACCELERATOR_NETWORK_PROFILE_FIELD_NUMBER;
+    hash = (53 * hash) + getAcceleratorNetworkProfile().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2183,6 +2334,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
         getPodCidrOverprovisionConfigFieldBuilder();
         getAdditionalNodeNetworkConfigsFieldBuilder();
         getAdditionalPodNetworkConfigsFieldBuilder();
+        getNetworkTierConfigFieldBuilder();
       }
     }
 
@@ -2220,6 +2372,12 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       bitField0_ = (bitField0_ & ~0x00000080);
       podIpv4RangeUtilization_ = 0D;
       subnetwork_ = "";
+      networkTierConfig_ = null;
+      if (networkTierConfigBuilder_ != null) {
+        networkTierConfigBuilder_.dispose();
+        networkTierConfigBuilder_ = null;
+      }
+      acceleratorNetworkProfile_ = "";
       return this;
     }
 
@@ -2313,6 +2471,16 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.subnetwork_ = subnetwork_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.networkTierConfig_ =
+            networkTierConfigBuilder_ == null
+                ? networkTierConfig_
+                : networkTierConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.acceleratorNetworkProfile_ = acceleratorNetworkProfile_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2447,6 +2615,14 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000200;
         onChanged();
       }
+      if (other.hasNetworkTierConfig()) {
+        mergeNetworkTierConfig(other.getNetworkTierConfig());
+      }
+      if (!other.getAcceleratorNetworkProfile().isEmpty()) {
+        acceleratorNetworkProfile_ = other.acceleratorNetworkProfile_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2551,6 +2727,19 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000200;
                 break;
               } // case 154
+            case 162:
+              {
+                input.readMessage(
+                    getNetworkTierConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 162
+            case 170:
+              {
+                acceleratorNetworkProfile_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4684,6 +4873,369 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       subnetwork_ = value;
       bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private com.google.container.v1beta1.NetworkTierConfig networkTierConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NetworkTierConfig,
+            com.google.container.v1beta1.NetworkTierConfig.Builder,
+            com.google.container.v1beta1.NetworkTierConfigOrBuilder>
+        networkTierConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The network tier configuration for the node pool inherits from
+     * the cluster-level configuration and remains immutable throughout the node
+     * pool's lifecycle, including during upgrades.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the networkTierConfig field is set.
+     */
+    public boolean hasNetworkTierConfig() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The network tier configuration for the node pool inherits from
+     * the cluster-level configuration and remains immutable throughout the node
+     * pool's lifecycle, including during upgrades.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The networkTierConfig.
+     */
+    public com.google.container.v1beta1.NetworkTierConfig getNetworkTierConfig() {
+      if (networkTierConfigBuilder_ == null) {
+        return networkTierConfig_ == null
+            ? com.google.container.v1beta1.NetworkTierConfig.getDefaultInstance()
+            : networkTierConfig_;
+      } else {
+        return networkTierConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The network tier configuration for the node pool inherits from
+     * the cluster-level configuration and remains immutable throughout the node
+     * pool's lifecycle, including during upgrades.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setNetworkTierConfig(com.google.container.v1beta1.NetworkTierConfig value) {
+      if (networkTierConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        networkTierConfig_ = value;
+      } else {
+        networkTierConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The network tier configuration for the node pool inherits from
+     * the cluster-level configuration and remains immutable throughout the node
+     * pool's lifecycle, including during upgrades.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setNetworkTierConfig(
+        com.google.container.v1beta1.NetworkTierConfig.Builder builderForValue) {
+      if (networkTierConfigBuilder_ == null) {
+        networkTierConfig_ = builderForValue.build();
+      } else {
+        networkTierConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The network tier configuration for the node pool inherits from
+     * the cluster-level configuration and remains immutable throughout the node
+     * pool's lifecycle, including during upgrades.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeNetworkTierConfig(com.google.container.v1beta1.NetworkTierConfig value) {
+      if (networkTierConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && networkTierConfig_ != null
+            && networkTierConfig_
+                != com.google.container.v1beta1.NetworkTierConfig.getDefaultInstance()) {
+          getNetworkTierConfigBuilder().mergeFrom(value);
+        } else {
+          networkTierConfig_ = value;
+        }
+      } else {
+        networkTierConfigBuilder_.mergeFrom(value);
+      }
+      if (networkTierConfig_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The network tier configuration for the node pool inherits from
+     * the cluster-level configuration and remains immutable throughout the node
+     * pool's lifecycle, including during upgrades.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearNetworkTierConfig() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      networkTierConfig_ = null;
+      if (networkTierConfigBuilder_ != null) {
+        networkTierConfigBuilder_.dispose();
+        networkTierConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The network tier configuration for the node pool inherits from
+     * the cluster-level configuration and remains immutable throughout the node
+     * pool's lifecycle, including during upgrades.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.NetworkTierConfig.Builder getNetworkTierConfigBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getNetworkTierConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The network tier configuration for the node pool inherits from
+     * the cluster-level configuration and remains immutable throughout the node
+     * pool's lifecycle, including during upgrades.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.NetworkTierConfigOrBuilder getNetworkTierConfigOrBuilder() {
+      if (networkTierConfigBuilder_ != null) {
+        return networkTierConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return networkTierConfig_ == null
+            ? com.google.container.v1beta1.NetworkTierConfig.getDefaultInstance()
+            : networkTierConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The network tier configuration for the node pool inherits from
+     * the cluster-level configuration and remains immutable throughout the node
+     * pool's lifecycle, including during upgrades.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NetworkTierConfig,
+            com.google.container.v1beta1.NetworkTierConfig.Builder,
+            com.google.container.v1beta1.NetworkTierConfigOrBuilder>
+        getNetworkTierConfigFieldBuilder() {
+      if (networkTierConfigBuilder_ == null) {
+        networkTierConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.NetworkTierConfig,
+                com.google.container.v1beta1.NetworkTierConfig.Builder,
+                com.google.container.v1beta1.NetworkTierConfigOrBuilder>(
+                getNetworkTierConfig(), getParentForChildren(), isClean());
+        networkTierConfig_ = null;
+      }
+      return networkTierConfigBuilder_;
+    }
+
+    private java.lang.Object acceleratorNetworkProfile_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The accelerator network profile for the node pool. For now the
+     * only valid value is "auto". If specified, the network configuration of the
+     * nodes in this node pool will be managed by this profile for the supported
+     * machine types, zone, etc.
+     * </pre>
+     *
+     * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The acceleratorNetworkProfile.
+     */
+    public java.lang.String getAcceleratorNetworkProfile() {
+      java.lang.Object ref = acceleratorNetworkProfile_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        acceleratorNetworkProfile_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The accelerator network profile for the node pool. For now the
+     * only valid value is "auto". If specified, the network configuration of the
+     * nodes in this node pool will be managed by this profile for the supported
+     * machine types, zone, etc.
+     * </pre>
+     *
+     * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The bytes for acceleratorNetworkProfile.
+     */
+    public com.google.protobuf.ByteString getAcceleratorNetworkProfileBytes() {
+      java.lang.Object ref = acceleratorNetworkProfile_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        acceleratorNetworkProfile_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The accelerator network profile for the node pool. For now the
+     * only valid value is "auto". If specified, the network configuration of the
+     * nodes in this node pool will be managed by this profile for the supported
+     * machine types, zone, etc.
+     * </pre>
+     *
+     * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The acceleratorNetworkProfile to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAcceleratorNetworkProfile(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      acceleratorNetworkProfile_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The accelerator network profile for the node pool. For now the
+     * only valid value is "auto". If specified, the network configuration of the
+     * nodes in this node pool will be managed by this profile for the supported
+     * machine types, zone, etc.
+     * </pre>
+     *
+     * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAcceleratorNetworkProfile() {
+      acceleratorNetworkProfile_ = getDefaultInstance().getAcceleratorNetworkProfile();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The accelerator network profile for the node pool. For now the
+     * only valid value is "auto". If specified, the network configuration of the
+     * nodes in this node pool will be managed by this profile for the supported
+     * machine types, zone, etc.
+     * </pre>
+     *
+     * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The bytes for acceleratorNetworkProfile to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAcceleratorNetworkProfileBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      acceleratorNetworkProfile_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

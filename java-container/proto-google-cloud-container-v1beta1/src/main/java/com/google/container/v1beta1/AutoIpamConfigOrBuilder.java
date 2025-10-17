@@ -22,4 +22,31 @@ package com.google.container.v1beta1;
 public interface AutoIpamConfigOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.container.v1beta1.AutoIpamConfig)
-    com.google.protobuf.MessageOrBuilder {}
+    com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * The flag that enables Auto IPAM on this cluster
+   * </pre>
+   *
+   * <code>optional bool enabled = 1;</code>
+   *
+   * @return Whether the enabled field is set.
+   */
+  boolean hasEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * The flag that enables Auto IPAM on this cluster
+   * </pre>
+   *
+   * <code>optional bool enabled = 1;</code>
+   *
+   * @return The enabled.
+   */
+  boolean getEnabled();
+}

@@ -45,9 +45,25 @@ public final class ReasoningEngineProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_DeploymentSpec_ResourceLimitsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_InlineSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_InlineSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -89,13 +105,15 @@ public final class ReasoningEngineProto {
           + "v_var.proto\0328google/cloud/aiplatform/v1b"
           + "eta1/service_networking.proto\032\036google/pr"
           + "otobuf/duration.proto\032\034google/protobuf/s"
-          + "truct.proto\032\037google/protobuf/timestamp.proto\"\277\010\n"
-          + "\023ReasoningEngineSpec\022!\n"
-          + "\017service_account\030\001 \001(\tB\003\340A\001H\000\210\001\001\022[\n"
-          + "\014package_spec\030\002"
-          + " \001(\0132@.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpecB\003\340A\001\022a\n"
-          + "\017deployment_spec\030\004 \001(\0132C.google.cloud.aip"
-          + "latform.v1beta1.ReasoningEngineSpec.DeploymentSpecB\003\340A\001\0223\n\r"
+          + "truct.proto\032\037google/protobuf/timestamp.proto\"\352\014\n"
+          + "\023ReasoningEngineSpec\022_\n"
+          + "\020source_code_spec\030\013 \001(\0132C.google.cloud.aiplatform"
+          + ".v1beta1.ReasoningEngineSpec.SourceCodeSpecH\000\022!\n"
+          + "\017service_account\030\001 \001(\tB\003\340A\001H\001\210\001\001\022[\n"
+          + "\014package_spec\030\002 \001(\0132@.google.cloud.ai"
+          + "platform.v1beta1.ReasoningEngineSpec.PackageSpecB\003\340A\001\022a\n"
+          + "\017deployment_spec\030\004 \001(\0132C"
+          + ".google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpecB\003\340A\001\0223\n\r"
           + "class_methods\030\003 \003(\0132\027.google.protobuf.StructB\003\340A\001\022\034\n"
           + "\017agent_framework\030\005 \001(\tB\003\340A\001\032\230\001\n"
           + "\013PackageSpec\022\"\n"
@@ -106,36 +124,56 @@ public final class ReasoningEngineProto {
           + "\016DeploymentSpec\0229\n"
           + "\003env\030\001"
           + " \003(\0132\'.google.cloud.aiplatform.v1beta1.EnvVarB\003\340A\001\022F\n\n"
-          + "secret_env\030\002 \003(\0132-.google"
-          + ".cloud.aiplatform.v1beta1.SecretEnvVarB\003\340A\001\022V\n"
-          + "\024psc_interface_config\030\004 \001(\01323.goog"
-          + "le.cloud.aiplatform.v1beta1.PscInterfaceConfigB\003\340A\001\022\037\n\r"
+          + "secret_env\030\002"
+          + " \003(\0132-.google.cloud.aiplatform.v1beta1.SecretEnvVarB\003\340A\001\022V\n"
+          + "\024psc_interface_config\030\004"
+          + " \001(\01323.google.cloud.aiplatform.v1beta1.PscInterfaceConfigB\003\340A\001\022\037\n\r"
           + "min_instances\030\005 \001(\005B\003\340A\001H\000\210\001\001\022\037\n\r"
           + "max_instances\030\006 \001(\005B\003\340A\001H\001\210\001\001\022u\n"
-          + "\017resource_limits\030\007 \003(\0132W.google.cloud.ai"
-          + "platform.v1beta1.ReasoningEngineSpec.DeploymentSpec.ResourceLimitsEntryB\003\340A\001\022\'\n"
+          + "\017resource_limits\030\007 \003(\0132W.google.cloud.aiplatform.v1beta1.Reason"
+          + "ingEngineSpec.DeploymentSpec.ResourceLimitsEntryB\003\340A\001\022\'\n"
           + "\025container_concurrency\030\010 \001(\005B\003\340A\001H\002\210\001\001\0325\n"
           + "\023ResourceLimitsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001B\020\n"
           + "\016_min_instancesB\020\n"
           + "\016_max_instancesB\030\n"
-          + "\026_container_concurrencyB\022\n"
-          + "\020_service_account\"\345\004\n"
+          + "\026_container_concurrency\032\262\003\n"
+          + "\016SourceCodeSpec\022i\n\r"
+          + "inline_source\030\001 \001(\0132P.google.cloud.aiplatform."
+          + "v1beta1.ReasoningEngineSpec.SourceCodeSpec.InlineSourceH\000\022e\n"
+          + "\013python_spec\030\002 \001(\0132N.google.cloud.aiplatform.v1beta1.Reasoni"
+          + "ngEngineSpec.SourceCodeSpec.PythonSpecH\001\032.\n"
+          + "\014InlineSource\022\036\n"
+          + "\016source_archive\030\001 \001(\014B\006\340A\002\340A\004\032\202\001\n\n"
+          + "PythonSpec\022\024\n"
+          + "\007version\030\001 \001(\tB\003\340A\001\022\036\n"
+          + "\021entrypoint_module\030\002 \001(\tB\003\340A\001\022\036\n"
+          + "\021entrypoint_object\030\003 \001(\tB\003\340A\001\022\036\n"
+          + "\021requirements_file\030\004 \001(\tB\003\340A\001B\010\n"
+          + "\006sourceB\017\n\r"
+          + "language_specB\023\n"
+          + "\021deployment_sourceB\022\n"
+          + "\020_service_account\"\342\005\n"
           + "\017ReasoningEngine\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\002\022\030\n"
           + "\013description\030\007 \001(\tB\003\340A\001\022G\n"
-          + "\004spec\030\003 \001(\013"
-          + "24.google.cloud.aiplatform.v1beta1.ReasoningEngineSpecB\003\340A\001\0224\n"
+          + "\004spec\030\003 \001(\01324.go"
+          + "ogle.cloud.aiplatform.v1beta1.ReasoningEngineSpecB\003\340A\001\0224\n"
           + "\013create_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\005"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
           + "\004etag\030\006 \001(\tB\003\340A\001\022V\n"
-          + "\014context_spec\030\t"
-          + " \001(\0132;.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpecB\003\340A\001\022H\n"
+          + "\014context_spec\030\t "
+          + "\001(\0132;.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpecB\003\340A\001\022H\n"
           + "\017encryption_spec\030\013"
-          + " \001(\0132/.google.cloud.aiplatform.v1beta1.EncryptionSpec:\237\001\352A\233\001\n"
+          + " \001(\0132/.google.cloud.aiplatform.v1beta1.EncryptionSpec\022L\n"
+          + "\006labels\030\021 \003(\0132"
+          + "<.google.cloud.aiplatform.v1beta1.ReasoningEngine.LabelsEntry\032-\n"
+          + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001:\237\001\352A\233\001\n"
           + ")aiplatform.googleapis.com/ReasoningEngine\022K"
           + "projects/{project}/locations/{location}/"
           + "reasoningEngines/{reasoning_engine}*\020reasoningEngines2\017reasoningEngine\"\354\010\n"
@@ -195,7 +233,13 @@ public final class ReasoningEngineProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_descriptor,
             new java.lang.String[] {
-              "ServiceAccount", "PackageSpec", "DeploymentSpec", "ClassMethods", "AgentFramework",
+              "SourceCodeSpec",
+              "ServiceAccount",
+              "PackageSpec",
+              "DeploymentSpec",
+              "ClassMethods",
+              "AgentFramework",
+              "DeploymentSource",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_PackageSpec_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_descriptor
@@ -233,6 +277,36 @@ public final class ReasoningEngineProto {
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_descriptor,
+            new java.lang.String[] {
+              "InlineSource", "PythonSpec", "Source", "LanguageSpec",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_InlineSource_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_InlineSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_InlineSource_descriptor,
+            new java.lang.String[] {
+              "SourceArchive",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_descriptor,
+            new java.lang.String[] {
+              "Version", "EntrypointModule", "EntrypointObject", "RequirementsFile",
+            });
     internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_descriptor =
         getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_fieldAccessorTable =
@@ -248,6 +322,17 @@ public final class ReasoningEngineProto {
               "Etag",
               "ContextSpec",
               "EncryptionSpec",
+              "Labels",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_LabelsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineContextSpec_descriptor =
         getDescriptor().getMessageTypes().get(2);

@@ -451,4 +451,100 @@ public interface LinuxNodeConfigOrBuilder
    */
   com.google.container.v1beta1.LinuxNodeConfig.TransparentHugepageDefrag
       getTransparentHugepageDefrag();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables and configures swap space on nodes.
+   * If omitted, swap is disabled.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.LinuxNodeConfig.SwapConfig swap_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the swapConfig field is set.
+   */
+  boolean hasSwapConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables and configures swap space on nodes.
+   * If omitted, swap is disabled.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.LinuxNodeConfig.SwapConfig swap_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The swapConfig.
+   */
+  com.google.container.v1beta1.LinuxNodeConfig.SwapConfig getSwapConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables and configures swap space on nodes.
+   * If omitted, swap is disabled.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.LinuxNodeConfig.SwapConfig swap_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1beta1.LinuxNodeConfig.SwapConfigOrBuilder getSwapConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for kernel module loading on nodes.
+   * When enabled, the node pool will be provisioned with a Container-Optimized
+   * OS image that enforces kernel module signature verification.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nodeKernelModuleLoading field is set.
+   */
+  boolean hasNodeKernelModuleLoading();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for kernel module loading on nodes.
+   * When enabled, the node pool will be provisioned with a Container-Optimized
+   * OS image that enforces kernel module signature verification.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nodeKernelModuleLoading.
+   */
+  com.google.container.v1beta1.LinuxNodeConfig.NodeKernelModuleLoading getNodeKernelModuleLoading();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for kernel module loading on nodes.
+   * When enabled, the node pool will be provisioned with a Container-Optimized
+   * OS image that enforces kernel module signature verification.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1beta1.LinuxNodeConfig.NodeKernelModuleLoadingOrBuilder
+      getNodeKernelModuleLoadingOrBuilder();
 }
