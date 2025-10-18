@@ -51,4 +51,22 @@ public interface AdvancedVoiceOptionsOrBuilder
    * @return The lowLatencyJourneySynthesis.
    */
   boolean getLowLatencyJourneySynthesis();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. If true, relaxes safety filters for Gemini TTS. Only
+   * supported for accounts linked to Invoiced (Offline) Cloud billing accounts.
+   * Otherwise, will return result
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+   * </pre>
+   *
+   * <code>
+   * bool relax_safety_filters = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The relaxSafetyFilters.
+   */
+  boolean getRelaxSafetyFilters();
 }

@@ -70,6 +70,43 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
+   * The pre-tuned model for continuous tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.PreTunedModel pre_tuned_model = 31;</code>
+   *
+   * @return Whether the preTunedModel field is set.
+   */
+  boolean hasPreTunedModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * The pre-tuned model for continuous tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.PreTunedModel pre_tuned_model = 31;</code>
+   *
+   * @return The preTunedModel.
+   */
+  com.google.cloud.aiplatform.v1.PreTunedModel getPreTunedModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * The pre-tuned model for continuous tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.PreTunedModel pre_tuned_model = 31;</code>
+   */
+  com.google.cloud.aiplatform.v1.PreTunedModelOrBuilder getPreTunedModelOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Tuning Spec for Supervised Fine Tuning.
    * </pre>
    *
@@ -141,7 +178,10 @@ public interface TuningJobOrBuilder
    * <pre>
    * Optional. The display name of the
    * [TunedModel][google.cloud.aiplatform.v1.Model]. The name can be up to 128
-   * characters long and can consist of any UTF-8 characters.
+   * characters long and can consist of any UTF-8 characters. For continuous
+   * tuning, tuned_model_display_name will by default use the same display name
+   * as the pre-tuned model. If a new display name is provided, the tuning job
+   * will create a new model instead of a new version.
    * </pre>
    *
    * <code>string tuned_model_display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -156,7 +196,10 @@ public interface TuningJobOrBuilder
    * <pre>
    * Optional. The display name of the
    * [TunedModel][google.cloud.aiplatform.v1.Model]. The name can be up to 128
-   * characters long and can consist of any UTF-8 characters.
+   * characters long and can consist of any UTF-8 characters. For continuous
+   * tuning, tuned_model_display_name will by default use the same display name
+   * as the pre-tuned model. If a new display name is provided, the tuning job
+   * will create a new model instead of a new version.
    * </pre>
    *
    * <code>string tuned_model_display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
