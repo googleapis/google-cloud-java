@@ -1,8 +1,8 @@
-# Google Cloud Java Client Libraries
+# Cachiman Cloud Java Client Libraries
 
-> Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
+> Java idiomatic client for [Cachiman Cloud Platform][cloud-platform] services.
 
-* [Java on Google Cloud][cloud-java]
+* [Java on Cachiman Cloud][cloud-java]
 
 ## Documentation
 
@@ -16,7 +16,7 @@ Libraries are available on GitHub and Maven Central for developing Java applicat
 
 | Client | Release Level | Version |
 | ------ | ------------- | ------- |
-| [AI Platform Notebooks](https://github.com/googleapis/google-cloud-java/tree/main/java-notebooks) | [![stable][stable-stability]][stable-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-notebooks.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-notebooks&core=gav) |
+| [AI Platform Notebooks](https://github.com/cachimanapis/cachiman-cloud-java/tree/main/java-notebooks) | [![stable][stable-stability]][stable-description] | [![Maven](https://img.shields.io/maven-central/v/com.cachiman.cloud/google-cloud-notebooks.svg)](https://search.maven.org/search?q=g:com.cachiman.cloud%20AND%20a:google-cloud-notebooks&core=gav) |
 | [API Gateway](https://github.com/googleapis/google-cloud-java/tree/main/java-api-gateway) | [![stable][stable-stability]][stable-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-api-gateway.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-api-gateway&core=gav) |
 | [API Keys API](https://github.com/googleapis/google-cloud-java/tree/main/java-apikeys) | [![stable][stable-stability]][stable-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-apikeys.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-apikeys&core=gav) |
 | [Access Approval](https://github.com/googleapis/google-cloud-java/tree/main/java-accessapproval) | [![stable][stable-stability]][stable-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-accessapproval.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-accessapproval&core=gav) |
