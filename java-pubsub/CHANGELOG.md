@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.143.0](https://github.com/googleapis/java-pubsub/compare/v1.142.0...v1.143.0) (2025-10-20)
+
+
+### Features
+
+* Annotate some resource fields with their corresponding API types ([ab60afa](https://github.com/googleapis/java-pubsub/commit/ab60afa012bd3fc81977ba24c416205ce9280943))
+* Implement SubscriberShutdownSettings ([#2569](https://github.com/googleapis/java-pubsub/issues/2569)) ([8195f6f](https://github.com/googleapis/java-pubsub/commit/8195f6fd3bbd33a178535994a94a79822ae2d4d6))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.63.0 ([ab60afa](https://github.com/googleapis/java-pubsub/commit/ab60afa012bd3fc81977ba24c416205ce9280943))
+* Update .OwlBot-hermetic.yaml to preserve SubscriberShutdownSettings files ([#2583](https://github.com/googleapis/java-pubsub/issues/2583)) ([f3cf5e7](https://github.com/googleapis/java-pubsub/commit/f3cf5e725c12173ade0275fd0526885309dc553a))
+
+
+### Dependencies
+
+* Update actions/checkout action to v5 ([#2576](https://github.com/googleapis/java-pubsub/issues/2576)) ([1375f6d](https://github.com/googleapis/java-pubsub/commit/1375f6d9a71c78d973a71f1df449640a95bc0bc7))
+* Update actions/checkout action to v5 ([#2584](https://github.com/googleapis/java-pubsub/issues/2584)) ([25059ce](https://github.com/googleapis/java-pubsub/commit/25059ce001e3273fcec9d1c40e3b09c89ddf487e))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.55.2 ([#2582](https://github.com/googleapis/java-pubsub/issues/2582)) ([d0f9673](https://github.com/googleapis/java-pubsub/commit/d0f96737a74453c3db54ee59e98d4b6636cd55d4))
+* Update dependency com.google.cloud:google-cloud-storage to v2.58.1 ([#2580](https://github.com/googleapis/java-pubsub/issues/2580)) ([d156cdb](https://github.com/googleapis/java-pubsub/commit/d156cdb27a8d68b6fa8c97f558df7088e6634320))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.53.0 ([#2589](https://github.com/googleapis/java-pubsub/issues/2589)) ([ce7cb09](https://github.com/googleapis/java-pubsub/commit/ce7cb09ac5e86953815e2ead9ae9202e9b034ba6))
+
 ## [1.142.0](https://github.com/googleapis/java-pubsub/compare/v1.141.5...v1.142.0) (2025-10-07)
 
 
