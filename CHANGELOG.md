@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.17.3](https://github.com/googleapis/java-bigquerystorage/compare/v3.17.2...v3.17.3) (2025-10-20)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.53.0 ([#3112](https://github.com/googleapis/java-bigquerystorage/issues/3112)) ([345b153](https://github.com/googleapis/java-bigquerystorage/commit/345b153070eb2c91298fe5affa5d1d6b4be6f235))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.53.0 ([#3114](https://github.com/googleapis/java-bigquerystorage/issues/3114)) ([1ddfc63](https://github.com/googleapis/java-bigquerystorage/commit/1ddfc63cea149e2a5ff5087a6c780e252e0afa59))
+
 ## [3.17.2](https://github.com/googleapis/java-bigquerystorage/compare/v3.17.1...v3.17.2) (2025-10-07)
 
 
