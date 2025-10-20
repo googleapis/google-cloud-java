@@ -100,6 +100,30 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     return lowLatencyJourneySynthesis_;
   }
 
+  public static final int RELAX_SAFETY_FILTERS_FIELD_NUMBER = 8;
+  private boolean relaxSafetyFilters_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. If true, relaxes safety filters for Gemini TTS. Only
+   * supported for accounts linked to Invoiced (Offline) Cloud billing accounts.
+   * Otherwise, will return result
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+   * </pre>
+   *
+   * <code>
+   * bool relax_safety_filters = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The relaxSafetyFilters.
+   */
+  @java.lang.Override
+  public boolean getRelaxSafetyFilters() {
+    return relaxSafetyFilters_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -117,6 +141,9 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(1, lowLatencyJourneySynthesis_);
     }
+    if (relaxSafetyFilters_ != false) {
+      output.writeBool(8, relaxSafetyFilters_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -128,6 +155,9 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, lowLatencyJourneySynthesis_);
+    }
+    if (relaxSafetyFilters_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, relaxSafetyFilters_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -149,6 +179,7 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     if (hasLowLatencyJourneySynthesis()) {
       if (getLowLatencyJourneySynthesis() != other.getLowLatencyJourneySynthesis()) return false;
     }
+    if (getRelaxSafetyFilters() != other.getRelaxSafetyFilters()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -165,6 +196,8 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
       hash =
           (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLowLatencyJourneySynthesis());
     }
+    hash = (37 * hash) + RELAX_SAFETY_FILTERS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRelaxSafetyFilters());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -307,6 +340,7 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
       super.clear();
       bitField0_ = 0;
       lowLatencyJourneySynthesis_ = false;
+      relaxSafetyFilters_ = false;
       return this;
     }
 
@@ -347,6 +381,9 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.lowLatencyJourneySynthesis_ = lowLatencyJourneySynthesis_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.relaxSafetyFilters_ = relaxSafetyFilters_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -400,6 +437,9 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
       if (other.hasLowLatencyJourneySynthesis()) {
         setLowLatencyJourneySynthesis(other.getLowLatencyJourneySynthesis());
       }
+      if (other.getRelaxSafetyFilters() != false) {
+        setRelaxSafetyFilters(other.getRelaxSafetyFilters());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -432,6 +472,12 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 64:
+              {
+                relaxSafetyFilters_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -523,6 +569,77 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     public Builder clearLowLatencyJourneySynthesis() {
       bitField0_ = (bitField0_ & ~0x00000001);
       lowLatencyJourneySynthesis_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean relaxSafetyFilters_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. If true, relaxes safety filters for Gemini TTS. Only
+     * supported for accounts linked to Invoiced (Offline) Cloud billing accounts.
+     * Otherwise, will return result
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+     * </pre>
+     *
+     * <code>
+     * bool relax_safety_filters = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The relaxSafetyFilters.
+     */
+    @java.lang.Override
+    public boolean getRelaxSafetyFilters() {
+      return relaxSafetyFilters_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. If true, relaxes safety filters for Gemini TTS. Only
+     * supported for accounts linked to Invoiced (Offline) Cloud billing accounts.
+     * Otherwise, will return result
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+     * </pre>
+     *
+     * <code>
+     * bool relax_safety_filters = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The relaxSafetyFilters to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRelaxSafetyFilters(boolean value) {
+
+      relaxSafetyFilters_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. If true, relaxes safety filters for Gemini TTS. Only
+     * supported for accounts linked to Invoiced (Offline) Cloud billing accounts.
+     * Otherwise, will return result
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+     * </pre>
+     *
+     * <code>
+     * bool relax_safety_filters = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRelaxSafetyFilters() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      relaxSafetyFilters_ = false;
       onChanged();
       return this;
     }
