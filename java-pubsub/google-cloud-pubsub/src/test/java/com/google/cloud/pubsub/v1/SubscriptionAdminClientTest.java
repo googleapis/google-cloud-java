@@ -161,6 +161,7 @@ public class SubscriptionAdminClientTest {
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -228,6 +229,7 @@ public class SubscriptionAdminClientTest {
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -295,6 +297,7 @@ public class SubscriptionAdminClientTest {
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -362,6 +365,7 @@ public class SubscriptionAdminClientTest {
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -429,6 +433,7 @@ public class SubscriptionAdminClientTest {
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -486,6 +491,7 @@ public class SubscriptionAdminClientTest {
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -543,6 +549,7 @@ public class SubscriptionAdminClientTest {
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 

@@ -41,6 +41,7 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.pubsub.v1.CryptoKeyName;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.DetachSubscriptionRequest;
 import com.google.pubsub.v1.DetachSubscriptionResponse;
@@ -127,12 +128,15 @@ public class TopicAdminClientTest {
             .setName(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
             .putAllLabels(new HashMap<String, String>())
             .setMessageStoragePolicy(MessageStoragePolicy.newBuilder().build())
-            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .setSchemaSettings(SchemaSettings.newBuilder().build())
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockPublisher.addResponse(expectedResponse);
 
@@ -173,12 +177,15 @@ public class TopicAdminClientTest {
             .setName(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
             .putAllLabels(new HashMap<String, String>())
             .setMessageStoragePolicy(MessageStoragePolicy.newBuilder().build())
-            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .setSchemaSettings(SchemaSettings.newBuilder().build())
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockPublisher.addResponse(expectedResponse);
 
@@ -219,12 +226,15 @@ public class TopicAdminClientTest {
             .setName(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
             .putAllLabels(new HashMap<String, String>())
             .setMessageStoragePolicy(MessageStoragePolicy.newBuilder().build())
-            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .setSchemaSettings(SchemaSettings.newBuilder().build())
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockPublisher.addResponse(expectedResponse);
 
@@ -346,12 +356,15 @@ public class TopicAdminClientTest {
             .setName(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
             .putAllLabels(new HashMap<String, String>())
             .setMessageStoragePolicy(MessageStoragePolicy.newBuilder().build())
-            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .setSchemaSettings(SchemaSettings.newBuilder().build())
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockPublisher.addResponse(expectedResponse);
 
@@ -392,12 +405,15 @@ public class TopicAdminClientTest {
             .setName(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
             .putAllLabels(new HashMap<String, String>())
             .setMessageStoragePolicy(MessageStoragePolicy.newBuilder().build())
-            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .setSchemaSettings(SchemaSettings.newBuilder().build())
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockPublisher.addResponse(expectedResponse);
 

@@ -4214,7 +4214,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages.
    * </pre>
    *
    * <code>
@@ -4230,7 +4230,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages.
    * </pre>
    *
    * <code>
@@ -4247,7 +4247,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages.
    * </pre>
    *
    * <code>
@@ -4263,7 +4263,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages.
    * </pre>
    *
    * <code>
@@ -4279,7 +4279,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages.
    * </pre>
    *
    * <code>
@@ -5023,7 +5023,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>
@@ -5042,7 +5042,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>
@@ -5061,7 +5061,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>
@@ -5080,7 +5080,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>
@@ -5105,7 +5105,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>
@@ -5128,7 +5128,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>
@@ -5153,7 +5153,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>
@@ -5178,7 +5178,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>
@@ -5201,7 +5201,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>
@@ -5224,7 +5224,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>
@@ -5247,7 +5247,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>
@@ -5269,7 +5269,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>
@@ -5291,7 +5291,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>
@@ -5306,7 +5306,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>
@@ -5325,7 +5325,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>
@@ -5345,7 +5345,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>
@@ -5361,7 +5361,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>
@@ -5377,7 +5377,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Received Pub/Sub messages. This will not be empty.
+     * Optional. Received Pub/Sub messages.
      * </pre>
      *
      * <code>

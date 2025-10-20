@@ -881,6 +881,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *           .setAnalyticsHubSubscriptionInfo(
    *               Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
    *           .addAllMessageTransforms(new ArrayList<MessageTransform>())
+   *           .putAllTags(new HashMap<String, String>())
    *           .build();
    *   Subscription response = subscriptionAdminClient.createSubscription(request);
    * }
@@ -1147,6 +1148,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *           .setAnalyticsHubSubscriptionInfo(
    *               Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
    *           .addAllMessageTransforms(new ArrayList<MessageTransform>())
+   *           .putAllTags(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<Subscription> future =
    *       subscriptionAdminClient.createSubscriptionCallable().futureCall(request);
@@ -3181,6 +3183,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *           .setName(SnapshotName.of("[PROJECT]", "[SNAPSHOT]").toString())
    *           .setSubscription(SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString())
    *           .putAllLabels(new HashMap<String, String>())
+   *           .putAllTags(new HashMap<String, String>())
    *           .build();
    *   Snapshot response = subscriptionAdminClient.createSnapshot(request);
    * }
@@ -3373,6 +3376,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *           .setName(SnapshotName.of("[PROJECT]", "[SNAPSHOT]").toString())
    *           .setSubscription(SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString())
    *           .putAllLabels(new HashMap<String, String>())
+   *           .putAllTags(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<Snapshot> future =
    *       subscriptionAdminClient.createSnapshotCallable().futureCall(request);

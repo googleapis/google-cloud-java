@@ -88,7 +88,9 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
    * since messages published to a topic with no subscriptions are lost.
    * </pre>
    *
-   * <code>string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The deadLetterTopic.
    */
@@ -120,7 +122,9 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
    * since messages published to a topic with no subscriptions are lost.
    * </pre>
    *
-   * <code>string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for deadLetterTopic.
    */
@@ -551,7 +555,9 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * since messages published to a topic with no subscriptions are lost.
      * </pre>
      *
-     * <code>string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The deadLetterTopic.
      */
@@ -582,7 +588,9 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * since messages published to a topic with no subscriptions are lost.
      * </pre>
      *
-     * <code>string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for deadLetterTopic.
      */
@@ -613,7 +621,9 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * since messages published to a topic with no subscriptions are lost.
      * </pre>
      *
-     * <code>string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The deadLetterTopic to set.
      * @return This builder for chaining.
@@ -643,7 +653,9 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * since messages published to a topic with no subscriptions are lost.
      * </pre>
      *
-     * <code>string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -669,7 +681,9 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      * since messages published to a topic with no subscriptions are lost.
      * </pre>
      *
-     * <code>string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for deadLetterTopic to set.
      * @return This builder for chaining.

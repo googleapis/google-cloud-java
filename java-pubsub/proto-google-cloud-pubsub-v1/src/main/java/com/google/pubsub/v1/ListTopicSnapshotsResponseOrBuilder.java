@@ -31,7 +31,9 @@ public interface ListTopicSnapshotsResponseOrBuilder
    * Optional. The names of the snapshots that match the request.
    * </pre>
    *
-   * <code>repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return A list containing the snapshots.
    */
@@ -44,7 +46,9 @@ public interface ListTopicSnapshotsResponseOrBuilder
    * Optional. The names of the snapshots that match the request.
    * </pre>
    *
-   * <code>repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The count of snapshots.
    */
@@ -57,7 +61,9 @@ public interface ListTopicSnapshotsResponseOrBuilder
    * Optional. The names of the snapshots that match the request.
    * </pre>
    *
-   * <code>repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The snapshots at the given index.
@@ -71,7 +77,9 @@ public interface ListTopicSnapshotsResponseOrBuilder
    * Optional. The names of the snapshots that match the request.
    * </pre>
    *
-   * <code>repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string snapshots = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the snapshots at the given index.

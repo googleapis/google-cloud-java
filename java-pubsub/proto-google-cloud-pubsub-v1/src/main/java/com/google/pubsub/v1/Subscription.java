@@ -67,6 +67,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     switch (number) {
       case 9:
         return internalGetLabels();
+      case 26:
+        return internalGetTags();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -259,7 +261,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * "projects/{project}/locations/{location}/dataExchanges/{data_exchange}/listings/{listing}"
      * </pre>
      *
-     * <code>string listing = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string listing = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The listing.
      */
@@ -274,7 +278,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * "projects/{project}/locations/{location}/dataExchanges/{data_exchange}/listings/{listing}"
      * </pre>
      *
-     * <code>string listing = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string listing = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for listing.
      */
@@ -374,7 +380,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * "projects/{project}/locations/{location}/dataExchanges/{data_exchange}/listings/{listing}"
      * </pre>
      *
-     * <code>string listing = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string listing = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The listing.
      */
@@ -400,7 +408,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * "projects/{project}/locations/{location}/dataExchanges/{data_exchange}/listings/{listing}"
      * </pre>
      *
-     * <code>string listing = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string listing = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for listing.
      */
@@ -862,7 +872,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
        * "projects/{project}/locations/{location}/dataExchanges/{data_exchange}/listings/{listing}"
        * </pre>
        *
-       * <code>string listing = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string listing = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The listing.
        */
@@ -887,7 +899,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
        * "projects/{project}/locations/{location}/dataExchanges/{data_exchange}/listings/{listing}"
        * </pre>
        *
-       * <code>string listing = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string listing = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The bytes for listing.
        */
@@ -912,7 +926,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
        * "projects/{project}/locations/{location}/dataExchanges/{data_exchange}/listings/{listing}"
        * </pre>
        *
-       * <code>string listing = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string listing = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The listing to set.
        * @return This builder for chaining.
@@ -936,7 +952,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
        * "projects/{project}/locations/{location}/dataExchanges/{data_exchange}/listings/{listing}"
        * </pre>
        *
-       * <code>string listing = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string listing = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -956,7 +974,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
        * "projects/{project}/locations/{location}/dataExchanges/{data_exchange}/listings/{listing}"
        * </pre>
        *
-       * <code>string listing = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string listing = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The bytes for listing to set.
        * @return This builder for chaining.
@@ -2351,6 +2371,133 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     return messageTransforms_.get(index);
   }
 
+  public static final int TAGS_FIELD_NUMBER = 26;
+
+  private static final class TagsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.pubsub.v1.PubsubProto
+                .internal_static_google_pubsub_v1_Subscription_TagsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+    if (tags_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+    }
+    return tags_;
+  }
+
+  public int getTagsCount() {
+    return internalGetTags().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   *   "123/environment": "production",
+   *   "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 26 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsTags(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetTags().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getTags() {
+    return getTagsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   *   "123/environment": "production",
+   *   "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 26 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+    return internalGetTags().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   *   "123/environment": "production",
+   *   "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 26 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   *   "123/environment": "production",
+   *   "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 26 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getTagsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2424,6 +2571,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < messageTransforms_.size(); i++) {
       output.writeMessage(25, messageTransforms_.get(i));
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 26);
     getUnknownFields().writeTo(output);
   }
 
@@ -2507,6 +2656,16 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(25, messageTransforms_.get(i));
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetTags().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+          TagsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(26, tags__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2572,6 +2731,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         return false;
     }
     if (!getMessageTransformsList().equals(other.getMessageTransformsList())) return false;
+    if (!internalGetTags().equals(other.internalGetTags())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2644,6 +2804,10 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     if (getMessageTransformsCount() > 0) {
       hash = (37 * hash) + MESSAGE_TRANSFORMS_FIELD_NUMBER;
       hash = (53 * hash) + getMessageTransformsList().hashCode();
+    }
+    if (!internalGetTags().getMap().isEmpty()) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetTags().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2771,6 +2935,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 9:
           return internalGetLabels();
+        case 26:
+          return internalGetTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2782,6 +2948,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 9:
           return internalGetMutableLabels();
+        case 26:
+          return internalGetMutableTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2888,6 +3056,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         messageTransformsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00080000);
+      internalGetMutableTags().clear();
       return this;
     }
 
@@ -3019,6 +3188,10 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
                 ? analyticsHubSubscriptionInfo_
                 : analyticsHubSubscriptionInfoBuilder_.build();
         to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.tags_ = internalGetTags();
+        result.tags_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3157,6 +3330,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      internalGetMutableTags().mergeFrom(other.internalGetTags());
+      bitField0_ |= 0x00100000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3322,6 +3497,15 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 202
+            case 210:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+                    input.readMessage(
+                        TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 210
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7063,6 +7247,213 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         messageTransforms_ = null;
       }
       return messageTransformsBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+      if (tags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      return tags_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableTags() {
+      if (tags_ == null) {
+        tags_ = com.google.protobuf.MapField.newMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      if (!tags_.isMutable()) {
+        tags_ = tags_.copy();
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return tags_;
+    }
+
+    public int getTagsCount() {
+      return internalGetTags().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     *   "123/environment": "production",
+     *   "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 26 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetTags().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getTagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getTags() {
+      return getTagsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     *   "123/environment": "production",
+     *   "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 26 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+      return internalGetTags().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     *   "123/environment": "production",
+     *   "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 26 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     *   "123/environment": "production",
+     *   "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 26 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getTagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearTags() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      internalGetMutableTags().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     *   "123/environment": "production",
+     *   "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 26 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableTags().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
+      bitField0_ |= 0x00100000;
+      return internalGetMutableTags().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     *   "123/environment": "production",
+     *   "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 26 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putTags(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00100000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     *   "123/environment": "production",
+     *   "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 26 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00100000;
+      return this;
     }
 
     @java.lang.Override

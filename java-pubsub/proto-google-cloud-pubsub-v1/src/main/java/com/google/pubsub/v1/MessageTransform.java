@@ -186,7 +186,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
    * <code>bool enabled = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.pubsub.v1.MessageTransform.enabled is deprecated. See
-   *     google/pubsub/v1/pubsub.proto;l=798
+   *     google/pubsub/v1/pubsub.proto;l=818
    * @return The enabled.
    */
   @java.lang.Override
@@ -899,7 +899,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
      * <code>bool enabled = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.pubsub.v1.MessageTransform.enabled is deprecated. See
-     *     google/pubsub/v1/pubsub.proto;l=798
+     *     google/pubsub/v1/pubsub.proto;l=818
      * @return The enabled.
      */
     @java.lang.Override
@@ -919,7 +919,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
      * <code>bool enabled = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.pubsub.v1.MessageTransform.enabled is deprecated. See
-     *     google/pubsub/v1/pubsub.proto;l=798
+     *     google/pubsub/v1/pubsub.proto;l=818
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
@@ -943,7 +943,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
      * <code>bool enabled = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.pubsub.v1.MessageTransform.enabled is deprecated. See
-     *     google/pubsub/v1/pubsub.proto;l=798
+     *     google/pubsub/v1/pubsub.proto;l=818
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

@@ -39,7 +39,9 @@ public interface DeadLetterPolicyOrBuilder
    * since messages published to a topic with no subscriptions are lost.
    * </pre>
    *
-   * <code>string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The deadLetterTopic.
    */
@@ -60,7 +62,9 @@ public interface DeadLetterPolicyOrBuilder
    * since messages published to a topic with no subscriptions are lost.
    * </pre>
    *
-   * <code>string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string dead_letter_topic = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for deadLetterTopic.
    */

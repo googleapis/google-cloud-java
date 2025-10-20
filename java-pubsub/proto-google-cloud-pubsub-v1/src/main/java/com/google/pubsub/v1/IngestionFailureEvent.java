@@ -11941,6 +11941,56 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReasonOrBuilder
         getMessageTransformationFailureReasonOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The message failed to be published due to an API violation.
+     * This is only set when the size of the data field of the Kinesis record
+     * is zero.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the apiViolationReason field is set.
+     */
+    boolean hasApiViolationReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The message failed to be published due to an API violation.
+     * This is only set when the size of the data field of the Kinesis record
+     * is zero.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The apiViolationReason.
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason getApiViolationReason();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The message failed to be published due to an API violation.
+     * This is only set when the size of the data field of the Kinesis record
+     * is zero.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder
+        getApiViolationReasonOrBuilder();
+
     com.google.pubsub.v1.IngestionFailureEvent.AwsKinesisFailureReason.ReasonCase getReasonCase();
   }
 
@@ -12002,6 +12052,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       SCHEMA_VIOLATION_REASON(4),
       MESSAGE_TRANSFORMATION_FAILURE_REASON(5),
+      API_VIOLATION_REASON(6),
       REASON_NOT_SET(0);
       private final int value;
 
@@ -12025,6 +12076,8 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             return SCHEMA_VIOLATION_REASON;
           case 5:
             return MESSAGE_TRANSFORMATION_FAILURE_REASON;
+          case 6:
+            return API_VIOLATION_REASON;
           case 0:
             return REASON_NOT_SET;
           default:
@@ -12331,6 +12384,73 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           .getDefaultInstance();
     }
 
+    public static final int API_VIOLATION_REASON_FIELD_NUMBER = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The message failed to be published due to an API violation.
+     * This is only set when the size of the data field of the Kinesis record
+     * is zero.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the apiViolationReason field is set.
+     */
+    @java.lang.Override
+    public boolean hasApiViolationReason() {
+      return reasonCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The message failed to be published due to an API violation.
+     * This is only set when the size of the data field of the Kinesis record
+     * is zero.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The apiViolationReason.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason getApiViolationReason() {
+      if (reasonCase_ == 6) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The message failed to be published due to an API violation.
+     * This is only set when the size of the data field of the Kinesis record
+     * is zero.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder
+        getApiViolationReasonOrBuilder() {
+      if (reasonCase_ == 6) {
+        return (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_;
+      }
+      return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -12364,6 +12484,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
                 reason_);
       }
+      if (reasonCase_ == 6) {
+        output.writeMessage(
+            6, (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -12394,6 +12518,11 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
                 (com.google.pubsub.v1.IngestionFailureEvent.MessageTransformationFailureReason)
                     reason_);
       }
+      if (reasonCase_ == 6) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6, (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -12421,6 +12550,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         case 5:
           if (!getMessageTransformationFailureReason()
               .equals(other.getMessageTransformationFailureReason())) return false;
+          break;
+        case 6:
+          if (!getApiViolationReason().equals(other.getApiViolationReason())) return false;
           break;
         case 0:
         default:
@@ -12450,6 +12582,10 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         case 5:
           hash = (37 * hash) + MESSAGE_TRANSFORMATION_FAILURE_REASON_FIELD_NUMBER;
           hash = (53 * hash) + getMessageTransformationFailureReason().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + API_VIOLATION_REASON_FIELD_NUMBER;
+          hash = (53 * hash) + getApiViolationReason().hashCode();
           break;
         case 0:
         default:
@@ -12608,6 +12744,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         if (messageTransformationFailureReasonBuilder_ != null) {
           messageTransformationFailureReasonBuilder_.clear();
         }
+        if (apiViolationReasonBuilder_ != null) {
+          apiViolationReasonBuilder_.clear();
+        }
         reasonCase_ = 0;
         reason_ = null;
         return this;
@@ -12670,6 +12809,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         }
         if (reasonCase_ == 5 && messageTransformationFailureReasonBuilder_ != null) {
           result.reason_ = messageTransformationFailureReasonBuilder_.build();
+        }
+        if (reasonCase_ == 6 && apiViolationReasonBuilder_ != null) {
+          result.reason_ = apiViolationReasonBuilder_.build();
         }
       }
 
@@ -12751,6 +12893,11 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
                   other.getMessageTransformationFailureReason());
               break;
             }
+          case API_VIOLATION_REASON:
+            {
+              mergeApiViolationReason(other.getApiViolationReason());
+              break;
+            }
           case REASON_NOT_SET:
             {
               break;
@@ -12815,6 +12962,13 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
                   reasonCase_ = 5;
                   break;
                 } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      getApiViolationReasonFieldBuilder().getBuilder(), extensionRegistry);
+                  reasonCase_ = 6;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13698,6 +13852,267 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return messageTransformationFailureReasonBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder>
+          apiViolationReasonBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The message failed to be published due to an API violation.
+       * This is only set when the size of the data field of the Kinesis record
+       * is zero.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the apiViolationReason field is set.
+       */
+      @java.lang.Override
+      public boolean hasApiViolationReason() {
+        return reasonCase_ == 6;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The message failed to be published due to an API violation.
+       * This is only set when the size of the data field of the Kinesis record
+       * is zero.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The apiViolationReason.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason getApiViolationReason() {
+        if (apiViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 6) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+        } else {
+          if (reasonCase_ == 6) {
+            return apiViolationReasonBuilder_.getMessage();
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The message failed to be published due to an API violation.
+       * This is only set when the size of the data field of the Kinesis record
+       * is zero.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setApiViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason value) {
+        if (apiViolationReasonBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reason_ = value;
+          onChanged();
+        } else {
+          apiViolationReasonBuilder_.setMessage(value);
+        }
+        reasonCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The message failed to be published due to an API violation.
+       * This is only set when the size of the data field of the Kinesis record
+       * is zero.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setApiViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder builderForValue) {
+        if (apiViolationReasonBuilder_ == null) {
+          reason_ = builderForValue.build();
+          onChanged();
+        } else {
+          apiViolationReasonBuilder_.setMessage(builderForValue.build());
+        }
+        reasonCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The message failed to be published due to an API violation.
+       * This is only set when the size of the data field of the Kinesis record
+       * is zero.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeApiViolationReason(
+          com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason value) {
+        if (apiViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 6
+              && reason_
+                  != com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason
+                      .getDefaultInstance()) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.newBuilder(
+                        (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            reason_ = value;
+          }
+          onChanged();
+        } else {
+          if (reasonCase_ == 6) {
+            apiViolationReasonBuilder_.mergeFrom(value);
+          } else {
+            apiViolationReasonBuilder_.setMessage(value);
+          }
+        }
+        reasonCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The message failed to be published due to an API violation.
+       * This is only set when the size of the data field of the Kinesis record
+       * is zero.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearApiViolationReason() {
+        if (apiViolationReasonBuilder_ == null) {
+          if (reasonCase_ == 6) {
+            reasonCase_ = 0;
+            reason_ = null;
+            onChanged();
+          }
+        } else {
+          if (reasonCase_ == 6) {
+            reasonCase_ = 0;
+            reason_ = null;
+          }
+          apiViolationReasonBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The message failed to be published due to an API violation.
+       * This is only set when the size of the data field of the Kinesis record
+       * is zero.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder
+          getApiViolationReasonBuilder() {
+        return getApiViolationReasonFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The message failed to be published due to an API violation.
+       * This is only set when the size of the data field of the Kinesis record
+       * is zero.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder
+          getApiViolationReasonOrBuilder() {
+        if ((reasonCase_ == 6) && (apiViolationReasonBuilder_ != null)) {
+          return apiViolationReasonBuilder_.getMessageOrBuilder();
+        } else {
+          if (reasonCase_ == 6) {
+            return (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_;
+          }
+          return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The message failed to be published due to an API violation.
+       * This is only set when the size of the data field of the Kinesis record
+       * is zero.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.IngestionFailureEvent.ApiViolationReason api_violation_reason = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason,
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder,
+              com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder>
+          getApiViolationReasonFieldBuilder() {
+        if (apiViolationReasonBuilder_ == null) {
+          if (!(reasonCase_ == 6)) {
+            reason_ =
+                com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
+          }
+          apiViolationReasonBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason,
+                  com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder,
+                  com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder>(
+                  (com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason) reason_,
+                  getParentForChildren(),
+                  isClean());
+          reason_ = null;
+        }
+        reasonCase_ = 6;
+        onChanged();
+        return apiViolationReasonBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -13837,7 +14252,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
    * projects/{project_name}/topics/{topic_name}.
    * </pre>
    *
-   * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The topic.
    */
@@ -13862,7 +14279,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
    * projects/{project_name}/topics/{topic_name}.
    * </pre>
    *
-   * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for topic.
    */
@@ -14826,7 +15245,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * projects/{project_name}/topics/{topic_name}.
      * </pre>
      *
-     * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The topic.
      */
@@ -14850,7 +15271,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * projects/{project_name}/topics/{topic_name}.
      * </pre>
      *
-     * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for topic.
      */
@@ -14874,7 +15297,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * projects/{project_name}/topics/{topic_name}.
      * </pre>
      *
-     * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The topic to set.
      * @return This builder for chaining.
@@ -14897,7 +15322,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * projects/{project_name}/topics/{topic_name}.
      * </pre>
      *
-     * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -14916,7 +15343,9 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * projects/{project_name}/topics/{topic_name}.
      * </pre>
      *
-     * <code>string topic = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for topic to set.
      * @return This builder for chaining.

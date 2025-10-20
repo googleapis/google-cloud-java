@@ -511,12 +511,15 @@ public class TopicAdminClient implements BackgroundResource {
    *           .setName(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
    *           .putAllLabels(new HashMap<String, String>())
    *           .setMessageStoragePolicy(MessageStoragePolicy.newBuilder().build())
-   *           .setKmsKeyName("kmsKeyName412586233")
+   *           .setKmsKeyName(
+   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+   *                   .toString())
    *           .setSchemaSettings(SchemaSettings.newBuilder().build())
    *           .setSatisfiesPzs(true)
    *           .setMessageRetentionDuration(Duration.newBuilder().build())
    *           .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
    *           .addAllMessageTransforms(new ArrayList<MessageTransform>())
+   *           .putAllTags(new HashMap<String, String>())
    *           .build();
    *   Topic response = topicAdminClient.createTopic(request);
    * }
@@ -548,12 +551,15 @@ public class TopicAdminClient implements BackgroundResource {
    *           .setName(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
    *           .putAllLabels(new HashMap<String, String>())
    *           .setMessageStoragePolicy(MessageStoragePolicy.newBuilder().build())
-   *           .setKmsKeyName("kmsKeyName412586233")
+   *           .setKmsKeyName(
+   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+   *                   .toString())
    *           .setSchemaSettings(SchemaSettings.newBuilder().build())
    *           .setSatisfiesPzs(true)
    *           .setMessageRetentionDuration(Duration.newBuilder().build())
    *           .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
    *           .addAllMessageTransforms(new ArrayList<MessageTransform>())
+   *           .putAllTags(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<Topic> future = topicAdminClient.createTopicCallable().futureCall(request);
    *   // Do something.

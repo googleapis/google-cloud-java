@@ -28,7 +28,7 @@ public interface StreamingPullResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface StreamingPullResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages.
    * </pre>
    *
    * <code>
@@ -54,7 +54,7 @@ public interface StreamingPullResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages.
    * </pre>
    *
    * <code>
@@ -67,7 +67,7 @@ public interface StreamingPullResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages.
    * </pre>
    *
    * <code>
@@ -81,7 +81,7 @@ public interface StreamingPullResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. Received Pub/Sub messages. This will not be empty.
+   * Optional. Received Pub/Sub messages.
    * </pre>
    *
    * <code>

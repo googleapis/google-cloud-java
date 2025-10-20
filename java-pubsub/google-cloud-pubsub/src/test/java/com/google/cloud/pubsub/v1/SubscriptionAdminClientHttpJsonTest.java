@@ -135,6 +135,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -205,6 +206,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -275,6 +277,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -345,6 +348,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -415,6 +419,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -478,6 +483,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -541,6 +547,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -566,6 +573,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
             .addAllMessageTransforms(new ArrayList<MessageTransform>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -617,6 +625,7 @@ public class SubscriptionAdminClientHttpJsonTest {
               .setAnalyticsHubSubscriptionInfo(
                   Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
               .addAllMessageTransforms(new ArrayList<MessageTransform>())
+              .putAllTags(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSubscription(subscription, updateMask);
