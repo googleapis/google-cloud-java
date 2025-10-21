@@ -1,6 +1,19 @@
 # Changelog
 
 
+## [0.132.18-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.132.17-alpha...v0.132.18-alpha) (2025-10-21)
+
+
+### Bug Fixes
+
+* Add setCredentials method as alternative for setCredentialsFile in LoggingAppender ([#1530](https://github.com/googleapis/java-logging-logback/issues/1530)) ([419a943](https://github.com/googleapis/java-logging-logback/commit/419a9438193586afb7986ccee59d19e9e364ec98))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-logging to v3.23.7 ([#1535](https://github.com/googleapis/java-logging-logback/issues/1535)) ([0779cae](https://github.com/googleapis/java-logging-logback/commit/0779caec8b3707d97b96070364886b7b1b3fdde3))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.53.0 ([#1533](https://github.com/googleapis/java-logging-logback/issues/1533)) ([dd0f734](https://github.com/googleapis/java-logging-logback/commit/dd0f7344259c94e50fd93a9a83f33b1cb4e55548))
+
 ## [0.132.17-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.132.16-alpha...v0.132.17-alpha) (2025-10-08)
 
 
