@@ -71,7 +71,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquerystorage-bom</artifactId>
-        <version>3.17.2</version>
+        <version>3.17.3</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
