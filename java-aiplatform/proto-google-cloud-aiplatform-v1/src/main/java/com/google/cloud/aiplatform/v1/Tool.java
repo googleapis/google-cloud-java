@@ -1887,6 +1887,88 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * @return The environment.
      */
     com.google.cloud.aiplatform.v1.Tool.ComputerUse.Environment getEnvironment();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, [predefined
+     * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+     * are included in the final model call. Some of them can be explicitly
+     * excluded from being automatically included. This can serve two purposes:
+     * 1. Using a more restricted / different action space.
+     * 2. Improving the definitions / instructions of predefined functions.
+     * </pre>
+     *
+     * <code>
+     * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the excludedPredefinedFunctions.
+     */
+    java.util.List<java.lang.String> getExcludedPredefinedFunctionsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, [predefined
+     * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+     * are included in the final model call. Some of them can be explicitly
+     * excluded from being automatically included. This can serve two purposes:
+     * 1. Using a more restricted / different action space.
+     * 2. Improving the definitions / instructions of predefined functions.
+     * </pre>
+     *
+     * <code>
+     * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of excludedPredefinedFunctions.
+     */
+    int getExcludedPredefinedFunctionsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, [predefined
+     * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+     * are included in the final model call. Some of them can be explicitly
+     * excluded from being automatically included. This can serve two purposes:
+     * 1. Using a more restricted / different action space.
+     * 2. Improving the definitions / instructions of predefined functions.
+     * </pre>
+     *
+     * <code>
+     * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedPredefinedFunctions at the given index.
+     */
+    java.lang.String getExcludedPredefinedFunctions(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, [predefined
+     * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+     * are included in the final model call. Some of them can be explicitly
+     * excluded from being automatically included. This can serve two purposes:
+     * 1. Using a more restricted / different action space.
+     * 2. Improving the definitions / instructions of predefined functions.
+     * </pre>
+     *
+     * <code>
+     * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedPredefinedFunctions at the given index.
+     */
+    com.google.protobuf.ByteString getExcludedPredefinedFunctionsBytes(int index);
   }
 
   /**
@@ -1911,6 +1993,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
     private ComputerUse() {
       environment_ = 0;
+      excludedPredefinedFunctions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
@@ -2115,6 +2198,102 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
 
+    public static final int EXCLUDED_PREDEFINED_FUNCTIONS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList excludedPredefinedFunctions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, [predefined
+     * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+     * are included in the final model call. Some of them can be explicitly
+     * excluded from being automatically included. This can serve two purposes:
+     * 1. Using a more restricted / different action space.
+     * 2. Improving the definitions / instructions of predefined functions.
+     * </pre>
+     *
+     * <code>
+     * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the excludedPredefinedFunctions.
+     */
+    public com.google.protobuf.ProtocolStringList getExcludedPredefinedFunctionsList() {
+      return excludedPredefinedFunctions_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, [predefined
+     * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+     * are included in the final model call. Some of them can be explicitly
+     * excluded from being automatically included. This can serve two purposes:
+     * 1. Using a more restricted / different action space.
+     * 2. Improving the definitions / instructions of predefined functions.
+     * </pre>
+     *
+     * <code>
+     * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of excludedPredefinedFunctions.
+     */
+    public int getExcludedPredefinedFunctionsCount() {
+      return excludedPredefinedFunctions_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, [predefined
+     * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+     * are included in the final model call. Some of them can be explicitly
+     * excluded from being automatically included. This can serve two purposes:
+     * 1. Using a more restricted / different action space.
+     * 2. Improving the definitions / instructions of predefined functions.
+     * </pre>
+     *
+     * <code>
+     * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedPredefinedFunctions at the given index.
+     */
+    public java.lang.String getExcludedPredefinedFunctions(int index) {
+      return excludedPredefinedFunctions_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, [predefined
+     * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+     * are included in the final model call. Some of them can be explicitly
+     * excluded from being automatically included. This can serve two purposes:
+     * 1. Using a more restricted / different action space.
+     * 2. Improving the definitions / instructions of predefined functions.
+     * </pre>
+     *
+     * <code>
+     * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedPredefinedFunctions at the given index.
+     */
+    public com.google.protobuf.ByteString getExcludedPredefinedFunctionsBytes(int index) {
+      return excludedPredefinedFunctions_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2134,6 +2313,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(1, environment_);
       }
+      for (int i = 0; i < excludedPredefinedFunctions_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(
+            output, 2, excludedPredefinedFunctions_.getRaw(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2147,6 +2330,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           != com.google.cloud.aiplatform.v1.Tool.ComputerUse.Environment.ENVIRONMENT_UNSPECIFIED
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, environment_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < excludedPredefinedFunctions_.size(); i++) {
+          dataSize += computeStringSizeNoTag(excludedPredefinedFunctions_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getExcludedPredefinedFunctionsList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2165,6 +2356,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.aiplatform.v1.Tool.ComputerUse) obj;
 
       if (environment_ != other.environment_) return false;
+      if (!getExcludedPredefinedFunctionsList().equals(other.getExcludedPredefinedFunctionsList()))
+        return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2178,6 +2371,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
       hash = (53 * hash) + environment_;
+      if (getExcludedPredefinedFunctionsCount() > 0) {
+        hash = (37 * hash) + EXCLUDED_PREDEFINED_FUNCTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getExcludedPredefinedFunctionsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2321,6 +2518,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         environment_ = 0;
+        excludedPredefinedFunctions_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -2359,6 +2557,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.environment_ = environment_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          excludedPredefinedFunctions_.makeImmutable();
+          result.excludedPredefinedFunctions_ = excludedPredefinedFunctions_;
         }
       }
 
@@ -2413,6 +2615,16 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         if (other.environment_ != 0) {
           setEnvironmentValue(other.getEnvironmentValue());
         }
+        if (!other.excludedPredefinedFunctions_.isEmpty()) {
+          if (excludedPredefinedFunctions_.isEmpty()) {
+            excludedPredefinedFunctions_ = other.excludedPredefinedFunctions_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureExcludedPredefinedFunctionsIsMutable();
+            excludedPredefinedFunctions_.addAll(other.excludedPredefinedFunctions_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2445,6 +2657,13 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 8
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureExcludedPredefinedFunctionsIsMutable();
+                  excludedPredefinedFunctions_.add(s);
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2568,6 +2787,255 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       public Builder clearEnvironment() {
         bitField0_ = (bitField0_ & ~0x00000001);
         environment_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList excludedPredefinedFunctions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureExcludedPredefinedFunctionsIsMutable() {
+        if (!excludedPredefinedFunctions_.isModifiable()) {
+          excludedPredefinedFunctions_ =
+              new com.google.protobuf.LazyStringArrayList(excludedPredefinedFunctions_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the excludedPredefinedFunctions.
+       */
+      public com.google.protobuf.ProtocolStringList getExcludedPredefinedFunctionsList() {
+        excludedPredefinedFunctions_.makeImmutable();
+        return excludedPredefinedFunctions_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of excludedPredefinedFunctions.
+       */
+      public int getExcludedPredefinedFunctionsCount() {
+        return excludedPredefinedFunctions_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludedPredefinedFunctions at the given index.
+       */
+      public java.lang.String getExcludedPredefinedFunctions(int index) {
+        return excludedPredefinedFunctions_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludedPredefinedFunctions at the given index.
+       */
+      public com.google.protobuf.ByteString getExcludedPredefinedFunctionsBytes(int index) {
+        return excludedPredefinedFunctions_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The excludedPredefinedFunctions to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExcludedPredefinedFunctions(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedPredefinedFunctionsIsMutable();
+        excludedPredefinedFunctions_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The excludedPredefinedFunctions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludedPredefinedFunctions(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedPredefinedFunctionsIsMutable();
+        excludedPredefinedFunctions_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param values The excludedPredefinedFunctions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllExcludedPredefinedFunctions(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureExcludedPredefinedFunctionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, excludedPredefinedFunctions_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExcludedPredefinedFunctions() {
+        excludedPredefinedFunctions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes of the excludedPredefinedFunctions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludedPredefinedFunctionsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureExcludedPredefinedFunctionsIsMutable();
+        excludedPredefinedFunctions_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }

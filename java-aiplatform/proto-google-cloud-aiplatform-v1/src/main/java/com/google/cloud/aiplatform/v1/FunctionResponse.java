@@ -44,6 +44,7 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
 
   private FunctionResponse() {
     name_ = "";
+    parts_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -181,6 +182,97 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
     return response_ == null ? com.google.protobuf.Struct.getDefaultInstance() : response_;
   }
 
+  public static final int PARTS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1.FunctionResponsePart> parts_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ordered `Parts` that constitute a function response. Parts may
+   * have different IANA MIME types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1.FunctionResponsePart> getPartsList() {
+    return parts_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ordered `Parts` that constitute a function response. Parts may
+   * have different IANA MIME types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1.FunctionResponsePartOrBuilder>
+      getPartsOrBuilderList() {
+    return parts_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ordered `Parts` that constitute a function response. Parts may
+   * have different IANA MIME types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPartsCount() {
+    return parts_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ordered `Parts` that constitute a function response. Parts may
+   * have different IANA MIME types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.FunctionResponsePart getParts(int index) {
+    return parts_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ordered `Parts` that constitute a function response. Parts may
+   * have different IANA MIME types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.FunctionResponsePartOrBuilder getPartsOrBuilder(int index) {
+    return parts_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -201,6 +293,9 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getResponse());
     }
+    for (int i = 0; i < parts_.size(); i++) {
+      output.writeMessage(4, parts_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -215,6 +310,9 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getResponse());
+    }
+    for (int i = 0; i < parts_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, parts_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -237,6 +335,7 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
     if (hasResponse()) {
       if (!getResponse().equals(other.getResponse())) return false;
     }
+    if (!getPartsList().equals(other.getPartsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -253,6 +352,10 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
     if (hasResponse()) {
       hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
       hash = (53 * hash) + getResponse().hashCode();
+    }
+    if (getPartsCount() > 0) {
+      hash = (37 * hash) + PARTS_FIELD_NUMBER;
+      hash = (53 * hash) + getPartsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -399,6 +502,7 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getResponseFieldBuilder();
+        getPartsFieldBuilder();
       }
     }
 
@@ -412,6 +516,13 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
         responseBuilder_.dispose();
         responseBuilder_ = null;
       }
+      if (partsBuilder_ == null) {
+        parts_ = java.util.Collections.emptyList();
+      } else {
+        parts_ = null;
+        partsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -439,11 +550,25 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.aiplatform.v1.FunctionResponse buildPartial() {
       com.google.cloud.aiplatform.v1.FunctionResponse result =
           new com.google.cloud.aiplatform.v1.FunctionResponse(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1.FunctionResponse result) {
+      if (partsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          parts_ = java.util.Collections.unmodifiableList(parts_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.parts_ = parts_;
+      } else {
+        result.parts_ = partsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1.FunctionResponse result) {
@@ -513,6 +638,33 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
       if (other.hasResponse()) {
         mergeResponse(other.getResponse());
       }
+      if (partsBuilder_ == null) {
+        if (!other.parts_.isEmpty()) {
+          if (parts_.isEmpty()) {
+            parts_ = other.parts_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensurePartsIsMutable();
+            parts_.addAll(other.parts_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.parts_.isEmpty()) {
+          if (partsBuilder_.isEmpty()) {
+            partsBuilder_.dispose();
+            partsBuilder_ = null;
+            parts_ = other.parts_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            partsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPartsFieldBuilder()
+                    : null;
+          } else {
+            partsBuilder_.addAllMessages(other.parts_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -551,6 +703,20 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 34:
+              {
+                com.google.cloud.aiplatform.v1.FunctionResponsePart m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1.FunctionResponsePart.parser(),
+                        extensionRegistry);
+                if (partsBuilder_ == null) {
+                  ensurePartsIsMutable();
+                  parts_.add(m);
+                } else {
+                  partsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -901,6 +1067,430 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
         response_ = null;
       }
       return responseBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1.FunctionResponsePart> parts_ =
+        java.util.Collections.emptyList();
+
+    private void ensurePartsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        parts_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1.FunctionResponsePart>(parts_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.FunctionResponsePart,
+            com.google.cloud.aiplatform.v1.FunctionResponsePart.Builder,
+            com.google.cloud.aiplatform.v1.FunctionResponsePartOrBuilder>
+        partsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.FunctionResponsePart> getPartsList() {
+      if (partsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(parts_);
+      } else {
+        return partsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getPartsCount() {
+      if (partsBuilder_ == null) {
+        return parts_.size();
+      } else {
+        return partsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.FunctionResponsePart getParts(int index) {
+      if (partsBuilder_ == null) {
+        return parts_.get(index);
+      } else {
+        return partsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setParts(int index, com.google.cloud.aiplatform.v1.FunctionResponsePart value) {
+      if (partsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePartsIsMutable();
+        parts_.set(index, value);
+        onChanged();
+      } else {
+        partsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setParts(
+        int index, com.google.cloud.aiplatform.v1.FunctionResponsePart.Builder builderForValue) {
+      if (partsBuilder_ == null) {
+        ensurePartsIsMutable();
+        parts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        partsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addParts(com.google.cloud.aiplatform.v1.FunctionResponsePart value) {
+      if (partsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePartsIsMutable();
+        parts_.add(value);
+        onChanged();
+      } else {
+        partsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addParts(int index, com.google.cloud.aiplatform.v1.FunctionResponsePart value) {
+      if (partsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePartsIsMutable();
+        parts_.add(index, value);
+        onChanged();
+      } else {
+        partsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addParts(
+        com.google.cloud.aiplatform.v1.FunctionResponsePart.Builder builderForValue) {
+      if (partsBuilder_ == null) {
+        ensurePartsIsMutable();
+        parts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        partsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addParts(
+        int index, com.google.cloud.aiplatform.v1.FunctionResponsePart.Builder builderForValue) {
+      if (partsBuilder_ == null) {
+        ensurePartsIsMutable();
+        parts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        partsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllParts(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.FunctionResponsePart> values) {
+      if (partsBuilder_ == null) {
+        ensurePartsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, parts_);
+        onChanged();
+      } else {
+        partsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearParts() {
+      if (partsBuilder_ == null) {
+        parts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        partsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeParts(int index) {
+      if (partsBuilder_ == null) {
+        ensurePartsIsMutable();
+        parts_.remove(index);
+        onChanged();
+      } else {
+        partsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.FunctionResponsePart.Builder getPartsBuilder(int index) {
+      return getPartsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.FunctionResponsePartOrBuilder getPartsOrBuilder(
+        int index) {
+      if (partsBuilder_ == null) {
+        return parts_.get(index);
+      } else {
+        return partsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1.FunctionResponsePartOrBuilder>
+        getPartsOrBuilderList() {
+      if (partsBuilder_ != null) {
+        return partsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(parts_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.FunctionResponsePart.Builder addPartsBuilder() {
+      return getPartsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1.FunctionResponsePart.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.FunctionResponsePart.Builder addPartsBuilder(int index) {
+      return getPartsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.aiplatform.v1.FunctionResponsePart.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Ordered `Parts` that constitute a function response. Parts may
+     * have different IANA MIME types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.FunctionResponsePart.Builder>
+        getPartsBuilderList() {
+      return getPartsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.FunctionResponsePart,
+            com.google.cloud.aiplatform.v1.FunctionResponsePart.Builder,
+            com.google.cloud.aiplatform.v1.FunctionResponsePartOrBuilder>
+        getPartsFieldBuilder() {
+      if (partsBuilder_ == null) {
+        partsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.FunctionResponsePart,
+                com.google.cloud.aiplatform.v1.FunctionResponsePart.Builder,
+                com.google.cloud.aiplatform.v1.FunctionResponsePartOrBuilder>(
+                parts_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+        parts_ = null;
+      }
+      return partsBuilder_;
     }
 
     @java.lang.Override
