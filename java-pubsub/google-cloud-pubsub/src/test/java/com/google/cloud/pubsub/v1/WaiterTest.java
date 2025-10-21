@@ -55,39 +55,61 @@ public class WaiterTest {
   }
 
   @Test
-  public void testTryWait_Completes() {
+  public void testTryWait_Completes() throws Exception {
     final Waiter waiter = new Waiter();
     waiter.incrementPendingCount(1);
     final FakeClock clock = new FakeClock();
 
+    final Thread mainThread = Thread.currentThread();
     Thread t =
         new Thread(
-            () -> {
-              try {
-                Thread.sleep(100);
-              } catch (InterruptedException e) {
+            new Runnable() {
+              @Override
+              public void run() {
+                while (mainThread.getState() == Thread.State.NEW) {
+                  Thread.yield();
+                }
+                waiter.incrementPendingCount(-1);
               }
-              waiter.incrementPendingCount(-1);
             });
     t.start();
 
     assertTrue(waiter.tryWait(500, clock));
+    t.join();
+
+    assertEquals(0, waiter.pendingCount());
   }
 
   @Test
-  public void testTryWait_TimesOut() {
+  public void testTryWait_TimesOut() throws Exception {
     final Waiter waiter = new Waiter();
     waiter.incrementPendingCount(1);
     final FakeClock clock = new FakeClock();
 
+    final Thread mainThread = Thread.currentThread();
     Thread t =
         new Thread(
-            () -> {
-              clock.advance(100, TimeUnit.MILLISECONDS);
+            new Runnable() {
+              @Override
+              public void run() {
+                while (mainThread.getState() == Thread.State.NEW) {
+                  Thread.yield();
+                }
+                try {
+                  // Waits some additional time to ensure that the waiter is actually waiting.
+                  Thread.sleep(100);
+                  clock.advance(200, TimeUnit.MILLISECONDS);
+                } catch (InterruptedException e) {
+                  // Ignored.
+                }
+              }
             });
     t.start();
 
     assertFalse(waiter.tryWait(100, clock));
+    t.join();
+
+    assertEquals(1, waiter.pendingCount());
   }
 
   @Test
