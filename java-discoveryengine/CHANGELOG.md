@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.74.0 (2025-10-21)
+
+### Bug Fixes
+
+* Include AssistAnswer as a part of the Session ([0a730d4](https://github.com/googleapis/google-cloud-java/commit/0a730d43d863bcca90524c789c1056d934597c6c))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.53.0 ([#11776](https://github.com/googleapis/google-cloud-java/issues/11776)) ([e4a2892](https://github.com/googleapis/google-cloud-java/commit/e4a2892c8f7d51e3c3bec551f922b42f70a880d8))
+
+
 ## 0.73.0 (2025-10-13)
 
 * No change
