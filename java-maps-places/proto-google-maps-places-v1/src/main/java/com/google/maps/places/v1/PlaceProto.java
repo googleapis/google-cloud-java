@@ -116,7 +116,7 @@ public final class PlaceProto {
           + "e.proto\032\"google/maps/places/v1/review.pr"
           + "oto\032\037google/protobuf/timestamp.proto\032\026go"
           + "ogle/type/date.proto\032\032google/type/datetime.proto\032\030google/type/latlng.proto\032"
-          + " google/type/localized_text.proto\032 google/type/postal_address.proto\"\3536\n"
+          + " google/type/localized_text.proto\032 google/type/postal_address.proto\"\2557\n"
           + "\005Place\022\014\n"
           + "\004name\030\001 \001(\t\022\n\n"
           + "\002id\030\002 \001(\t\0220\n"
@@ -203,7 +203,9 @@ public final class PlaceProto {
           + "\031ev_charge_amenity_summary\030Y"
           + " \001(\01323.google.maps.places.v1.Place.EvChargeAmenitySummary\022N\n"
           + "\024neighborhood_summary\030["
-          + " \001(\01320.google.maps.places.v1.Place.NeighborhoodSummary\032_\n"
+          + " \001(\01320.google.maps.places.v1.Place.NeighborhoodSummary\022\023\n"
+          + "\013moved_place\030] \001(\t\022\026\n"
+          + "\016moved_place_id\030^ \001(\t\032_\n"
           + "\020AddressComponent\022\021\n"
           + "\tlong_text\030\001 \001(\t\022\022\n\n"
           + "short_text\030\002 \001(\t\022\r\n"
@@ -214,20 +216,20 @@ public final class PlaceProto {
           + "compound_code\030\002 \001(\t\032\375\007\n"
           + "\014OpeningHours\022\025\n"
           + "\010open_now\030\001 \001(\010H\000\210\001\001\022A\n"
-          + "\007periods\030\002 \003(\01320.google."
-          + "maps.places.v1.Place.OpeningHours.Period\022\034\n"
+          + "\007periods\030\002 \003(\01320.go"
+          + "ogle.maps.places.v1.Place.OpeningHours.Period\022\034\n"
           + "\024weekday_descriptions\030\003 \003(\t\022Z\n"
-          + "\024secondary_hours_type\030\004 \001(\0162<.google.maps.place"
-          + "s.v1.Place.OpeningHours.SecondaryHoursType\022J\n"
-          + "\014special_days\030\005 \003(\01324.google.maps.p"
-          + "laces.v1.Place.OpeningHours.SpecialDay\0222\n"
+          + "\024secondary_hours_type\030\004 \001(\0162<.google.maps."
+          + "places.v1.Place.OpeningHours.SecondaryHoursType\022J\n"
+          + "\014special_days\030\005 \003(\01324.google.m"
+          + "aps.places.v1.Place.OpeningHours.SpecialDay\0222\n"
           + "\016next_open_time\030\006 \001(\0132\032.google.protobuf.Timestamp\0223\n"
           + "\017next_close_time\030\007 \001(\0132\032.google.protobuf.Timestamp\032\251\002\n"
           + "\006Period\022D\n"
           + "\004open\030\001"
           + " \001(\01326.google.maps.places.v1.Place.OpeningHours.Period.Point\022E\n"
-          + "\005close\030\002 \001(\0132"
-          + "6.google.maps.places.v1.Place.OpeningHours.Period.Point\032\221\001\n"
+          + "\005close\030\002"
+          + " \001(\01326.google.maps.places.v1.Place.OpeningHours.Period.Point\032\221\001\n"
           + "\005Point\022\020\n"
           + "\003day\030\001 \001(\005H\000\210\001\001\022\021\n"
           + "\004hour\030\002 \001(\005H\001\210\001\001\022\023\n"
@@ -304,11 +306,12 @@ public final class PlaceProto {
           + "\017ContainingPlace\022.\n"
           + "\004name\030\001 \001(\tB \372A\035\n"
           + "\033places.googleapis.com/Place\022\n\n"
-          + "\002id\030\002 \001(\t\032\210\001\n\r"
+          + "\002id\030\002 \001(\t\032\235\001\n\r"
           + "ReviewSummary\022(\n"
           + "\004text\030\001 \001(\0132\032.google.type.LocalizedText\022\030\n"
           + "\020flag_content_uri\030\002 \001(\t\0223\n"
-          + "\017disclosure_text\030\003 \001(\0132\032.google.type.LocalizedText\032\300\002\n"
+          + "\017disclosure_text\030\003 \001(\0132\032.google.type.LocalizedText\022\023\n"
+          + "\013reviews_uri\030\004 \001(\t\032\300\002\n"
           + "\026EvChargeAmenitySummary\0225\n"
           + "\010overview\030\001 \001(\0132#.google.maps.places.v1.ContentBlock\0223\n"
           + "\006coffee\030\002 \001(\0132#.google.maps.places.v1.ContentBlock\0227\n\n"
@@ -362,9 +365,9 @@ public final class PlaceProto {
           + "\025PRICE_LEVEL_EXPENSIVE\020\004\022\036\n"
           + "\032PRICE_LEVEL_VERY_EXPENSIVE\020\005B\233\001\n"
           + "\031com.google.maps.places.v1B\n"
-          + "PlaceProtoP\001Z7cloud.google.com/go/maps/places/apiv1/placespb;pla"
-          + "cespb\242\002\006GMPSV1\252\002\025Google.Maps.Places.V1\312\002"
-          + "\025Google\\Maps\\Places\\V1b\006proto3"
+          + "PlaceProtoP\001Z7cloud.google.com/go/maps"
+          + "/places/apiv1/placespb;placespb\242\002\006GMPSV1"
+          + "\252\002\025Google.Maps.Places.V1\312\002\025Google\\Maps\\Places\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -463,6 +466,8 @@ public final class PlaceProto {
               "ReviewSummary",
               "EvChargeAmenitySummary",
               "NeighborhoodSummary",
+              "MovedPlace",
+              "MovedPlaceId",
             });
     internal_static_google_maps_places_v1_Place_AddressComponent_descriptor =
         internal_static_google_maps_places_v1_Place_descriptor.getNestedTypes().get(0);
@@ -591,7 +596,7 @@ public final class PlaceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_places_v1_Place_ReviewSummary_descriptor,
             new java.lang.String[] {
-              "Text", "FlagContentUri", "DisclosureText",
+              "Text", "FlagContentUri", "DisclosureText", "ReviewsUri",
             });
     internal_static_google_maps_places_v1_Place_EvChargeAmenitySummary_descriptor =
         internal_static_google_maps_places_v1_Place_descriptor.getNestedTypes().get(11);

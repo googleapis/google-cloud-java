@@ -2642,4 +2642,70 @@ public interface PlaceOrBuilder
    * <code>.google.maps.places.v1.Place.NeighborhoodSummary neighborhood_summary = 91;</code>
    */
   com.google.maps.places.v1.Place.NeighborhoodSummaryOrBuilder getNeighborhoodSummaryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * If this Place is permanently closed and has moved to a new Place, this
+   * field contains the new Place's resource name, in `places/{place_id}`
+   * format. If this Place moved multiple times, this field will represent the
+   * first moved place. This field will not be populated if this Place has not
+   * moved.
+   * </pre>
+   *
+   * <code>string moved_place = 93;</code>
+   *
+   * @return The movedPlace.
+   */
+  java.lang.String getMovedPlace();
+
+  /**
+   *
+   *
+   * <pre>
+   * If this Place is permanently closed and has moved to a new Place, this
+   * field contains the new Place's resource name, in `places/{place_id}`
+   * format. If this Place moved multiple times, this field will represent the
+   * first moved place. This field will not be populated if this Place has not
+   * moved.
+   * </pre>
+   *
+   * <code>string moved_place = 93;</code>
+   *
+   * @return The bytes for movedPlace.
+   */
+  com.google.protobuf.ByteString getMovedPlaceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If this Place is permanently closed and has moved to a new Place, this
+   * field contains the new Place's place ID. If this Place moved multiple
+   * times, this field will represent the first moved Place. This field will not
+   * be populated if this Place has not moved.
+   * </pre>
+   *
+   * <code>string moved_place_id = 94;</code>
+   *
+   * @return The movedPlaceId.
+   */
+  java.lang.String getMovedPlaceId();
+
+  /**
+   *
+   *
+   * <pre>
+   * If this Place is permanently closed and has moved to a new Place, this
+   * field contains the new Place's place ID. If this Place moved multiple
+   * times, this field will represent the first moved Place. This field will not
+   * be populated if this Place has not moved.
+   * </pre>
+   *
+   * <code>string moved_place_id = 94;</code>
+   *
+   * @return The bytes for movedPlaceId.
+   */
+  com.google.protobuf.ByteString getMovedPlaceIdBytes();
 }

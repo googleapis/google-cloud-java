@@ -63,6 +63,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     regularSecondaryOpeningHours_ = java.util.Collections.emptyList();
     subDestinations_ = java.util.Collections.emptyList();
     containingPlaces_ = java.util.Collections.emptyList();
+    movedPlace_ = "";
+    movedPlaceId_ = "";
   }
 
   @java.lang.Override
@@ -17783,6 +17785,32 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.LocalizedText disclosure_text = 3;</code>
      */
     com.google.type.LocalizedTextOrBuilder getDisclosureTextOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A link to show reviews of this place on Google Maps.
+     * </pre>
+     *
+     * <code>string reviews_uri = 4;</code>
+     *
+     * @return The reviewsUri.
+     */
+    java.lang.String getReviewsUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * A link to show reviews of this place on Google Maps.
+     * </pre>
+     *
+     * <code>string reviews_uri = 4;</code>
+     *
+     * @return The bytes for reviewsUri.
+     */
+    com.google.protobuf.ByteString getReviewsUriBytes();
   }
 
   /**
@@ -17807,6 +17835,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
 
     private ReviewSummary() {
       flagContentUri_ = "";
+      reviewsUri_ = "";
     }
 
     @java.lang.Override
@@ -17992,6 +18021,59 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
           : disclosureText_;
     }
 
+    public static final int REVIEWS_URI_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object reviewsUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * A link to show reviews of this place on Google Maps.
+     * </pre>
+     *
+     * <code>string reviews_uri = 4;</code>
+     *
+     * @return The reviewsUri.
+     */
+    @java.lang.Override
+    public java.lang.String getReviewsUri() {
+      java.lang.Object ref = reviewsUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reviewsUri_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A link to show reviews of this place on Google Maps.
+     * </pre>
+     *
+     * <code>string reviews_uri = 4;</code>
+     *
+     * @return The bytes for reviewsUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getReviewsUriBytes() {
+      java.lang.Object ref = reviewsUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        reviewsUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -18015,6 +18097,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(3, getDisclosureText());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reviewsUri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, reviewsUri_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -18032,6 +18117,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getDisclosureText());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reviewsUri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, reviewsUri_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -18058,6 +18146,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       if (hasDisclosureText()) {
         if (!getDisclosureText().equals(other.getDisclosureText())) return false;
       }
+      if (!getReviewsUri().equals(other.getReviewsUri())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -18079,6 +18168,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + DISCLOSURE_TEXT_FIELD_NUMBER;
         hash = (53 * hash) + getDisclosureText().hashCode();
       }
+      hash = (37 * hash) + REVIEWS_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getReviewsUri().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -18242,6 +18333,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
           disclosureTextBuilder_.dispose();
           disclosureTextBuilder_ = null;
         }
+        reviewsUri_ = "";
         return this;
       }
 
@@ -18290,6 +18382,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
           result.disclosureText_ =
               disclosureTextBuilder_ == null ? disclosureText_ : disclosureTextBuilder_.build();
           to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.reviewsUri_ = reviewsUri_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -18353,6 +18448,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         if (other.hasDisclosureText()) {
           mergeDisclosureText(other.getDisclosureText());
         }
+        if (!other.getReviewsUri().isEmpty()) {
+          reviewsUri_ = other.reviewsUri_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -18398,6 +18498,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 34:
+                {
+                  reviewsUri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -18930,6 +19036,117 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         return disclosureTextBuilder_;
       }
 
+      private java.lang.Object reviewsUri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * A link to show reviews of this place on Google Maps.
+       * </pre>
+       *
+       * <code>string reviews_uri = 4;</code>
+       *
+       * @return The reviewsUri.
+       */
+      public java.lang.String getReviewsUri() {
+        java.lang.Object ref = reviewsUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reviewsUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link to show reviews of this place on Google Maps.
+       * </pre>
+       *
+       * <code>string reviews_uri = 4;</code>
+       *
+       * @return The bytes for reviewsUri.
+       */
+      public com.google.protobuf.ByteString getReviewsUriBytes() {
+        java.lang.Object ref = reviewsUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          reviewsUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link to show reviews of this place on Google Maps.
+       * </pre>
+       *
+       * <code>string reviews_uri = 4;</code>
+       *
+       * @param value The reviewsUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReviewsUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        reviewsUri_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link to show reviews of this place on Google Maps.
+       * </pre>
+       *
+       * <code>string reviews_uri = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearReviewsUri() {
+        reviewsUri_ = getDefaultInstance().getReviewsUri();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link to show reviews of this place on Google Maps.
+       * </pre>
+       *
+       * <code>string reviews_uri = 4;</code>
+       *
+       * @param value The bytes for reviewsUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReviewsUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        reviewsUri_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -19117,7 +19334,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A summary of the nearby gas stations.
+     * A summary of the nearby stores.
      * </pre>
      *
      * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -19130,7 +19347,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A summary of the nearby gas stations.
+     * A summary of the nearby stores.
      * </pre>
      *
      * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -19143,7 +19360,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A summary of the nearby gas stations.
+     * A summary of the nearby stores.
      * </pre>
      *
      * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -19437,7 +19654,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A summary of the nearby gas stations.
+     * A summary of the nearby stores.
      * </pre>
      *
      * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -19453,7 +19670,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A summary of the nearby gas stations.
+     * A summary of the nearby stores.
      * </pre>
      *
      * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -19469,7 +19686,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A summary of the nearby gas stations.
+     * A summary of the nearby stores.
      * </pre>
      *
      * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20721,7 +20938,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20736,7 +20953,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20757,7 +20974,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20780,7 +20997,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20800,7 +21017,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20828,7 +21045,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20848,7 +21065,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20863,7 +21080,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20882,7 +21099,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -26651,6 +26868,126 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         : neighborhoodSummary_;
   }
 
+  public static final int MOVED_PLACE_FIELD_NUMBER = 93;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object movedPlace_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * If this Place is permanently closed and has moved to a new Place, this
+   * field contains the new Place's resource name, in `places/{place_id}`
+   * format. If this Place moved multiple times, this field will represent the
+   * first moved place. This field will not be populated if this Place has not
+   * moved.
+   * </pre>
+   *
+   * <code>string moved_place = 93;</code>
+   *
+   * @return The movedPlace.
+   */
+  @java.lang.Override
+  public java.lang.String getMovedPlace() {
+    java.lang.Object ref = movedPlace_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      movedPlace_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If this Place is permanently closed and has moved to a new Place, this
+   * field contains the new Place's resource name, in `places/{place_id}`
+   * format. If this Place moved multiple times, this field will represent the
+   * first moved place. This field will not be populated if this Place has not
+   * moved.
+   * </pre>
+   *
+   * <code>string moved_place = 93;</code>
+   *
+   * @return The bytes for movedPlace.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMovedPlaceBytes() {
+    java.lang.Object ref = movedPlace_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      movedPlace_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MOVED_PLACE_ID_FIELD_NUMBER = 94;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object movedPlaceId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * If this Place is permanently closed and has moved to a new Place, this
+   * field contains the new Place's place ID. If this Place moved multiple
+   * times, this field will represent the first moved Place. This field will not
+   * be populated if this Place has not moved.
+   * </pre>
+   *
+   * <code>string moved_place_id = 94;</code>
+   *
+   * @return The movedPlaceId.
+   */
+  @java.lang.Override
+  public java.lang.String getMovedPlaceId() {
+    java.lang.Object ref = movedPlaceId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      movedPlaceId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If this Place is permanently closed and has moved to a new Place, this
+   * field contains the new Place's place ID. If this Place moved multiple
+   * times, this field will represent the first moved Place. This field will not
+   * be populated if this Place has not moved.
+   * </pre>
+   *
+   * <code>string moved_place_id = 94;</code>
+   *
+   * @return The bytes for movedPlaceId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMovedPlaceIdBytes() {
+    java.lang.Object ref = movedPlaceId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      movedPlaceId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -26878,6 +27215,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField1_ & 0x00004000) != 0)) {
       output.writeMessage(91, getNeighborhoodSummary());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(movedPlace_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 93, movedPlace_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(movedPlaceId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 94, movedPlaceId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -27120,6 +27463,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(91, getNeighborhoodSummary());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(movedPlace_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(93, movedPlace_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(movedPlaceId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(94, movedPlaceId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -27350,6 +27699,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     if (hasNeighborhoodSummary()) {
       if (!getNeighborhoodSummary().equals(other.getNeighborhoodSummary())) return false;
     }
+    if (!getMovedPlace().equals(other.getMovedPlace())) return false;
+    if (!getMovedPlaceId().equals(other.getMovedPlaceId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -27617,6 +27968,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + NEIGHBORHOOD_SUMMARY_FIELD_NUMBER;
       hash = (53 * hash) + getNeighborhoodSummary().hashCode();
     }
+    hash = (37 * hash) + MOVED_PLACE_FIELD_NUMBER;
+    hash = (53 * hash) + getMovedPlace().hashCode();
+    hash = (37 * hash) + MOVED_PLACE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getMovedPlaceId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -27997,6 +28352,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         neighborhoodSummaryBuilder_.dispose();
         neighborhoodSummaryBuilder_ = null;
       }
+      movedPlace_ = "";
+      movedPlaceId_ = "";
       return this;
     }
 
@@ -28399,6 +28756,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                 ? neighborhoodSummary_
                 : neighborhoodSummaryBuilder_.build();
         to_bitField1_ |= 0x00004000;
+      }
+      if (((from_bitField2_ & 0x00000080) != 0)) {
+        result.movedPlace_ = movedPlace_;
+      }
+      if (((from_bitField2_ & 0x00000100) != 0)) {
+        result.movedPlaceId_ = movedPlaceId_;
       }
       result.bitField1_ |= to_bitField1_;
     }
@@ -28885,6 +29248,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasNeighborhoodSummary()) {
         mergeNeighborhoodSummary(other.getNeighborhoodSummary());
+      }
+      if (!other.getMovedPlace().isEmpty()) {
+        movedPlace_ = other.movedPlace_;
+        bitField2_ |= 0x00000080;
+        onChanged();
+      }
+      if (!other.getMovedPlaceId().isEmpty()) {
+        movedPlaceId_ = other.movedPlaceId_;
+        bitField2_ |= 0x00000100;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -29404,6 +29777,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                 bitField2_ |= 0x00000040;
                 break;
               } // case 730
+            case 746:
+              {
+                movedPlace_ = input.readStringRequireUtf8();
+                bitField2_ |= 0x00000080;
+                break;
+              } // case 746
+            case 754:
+              {
+                movedPlaceId_ = input.readStringRequireUtf8();
+                bitField2_ |= 0x00000100;
+                break;
+              } // case 754
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -41077,6 +41462,263 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         neighborhoodSummary_ = null;
       }
       return neighborhoodSummaryBuilder_;
+    }
+
+    private java.lang.Object movedPlace_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's resource name, in `places/{place_id}`
+     * format. If this Place moved multiple times, this field will represent the
+     * first moved place. This field will not be populated if this Place has not
+     * moved.
+     * </pre>
+     *
+     * <code>string moved_place = 93;</code>
+     *
+     * @return The movedPlace.
+     */
+    public java.lang.String getMovedPlace() {
+      java.lang.Object ref = movedPlace_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        movedPlace_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's resource name, in `places/{place_id}`
+     * format. If this Place moved multiple times, this field will represent the
+     * first moved place. This field will not be populated if this Place has not
+     * moved.
+     * </pre>
+     *
+     * <code>string moved_place = 93;</code>
+     *
+     * @return The bytes for movedPlace.
+     */
+    public com.google.protobuf.ByteString getMovedPlaceBytes() {
+      java.lang.Object ref = movedPlace_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        movedPlace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's resource name, in `places/{place_id}`
+     * format. If this Place moved multiple times, this field will represent the
+     * first moved place. This field will not be populated if this Place has not
+     * moved.
+     * </pre>
+     *
+     * <code>string moved_place = 93;</code>
+     *
+     * @param value The movedPlace to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMovedPlace(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      movedPlace_ = value;
+      bitField2_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's resource name, in `places/{place_id}`
+     * format. If this Place moved multiple times, this field will represent the
+     * first moved place. This field will not be populated if this Place has not
+     * moved.
+     * </pre>
+     *
+     * <code>string moved_place = 93;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMovedPlace() {
+      movedPlace_ = getDefaultInstance().getMovedPlace();
+      bitField2_ = (bitField2_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's resource name, in `places/{place_id}`
+     * format. If this Place moved multiple times, this field will represent the
+     * first moved place. This field will not be populated if this Place has not
+     * moved.
+     * </pre>
+     *
+     * <code>string moved_place = 93;</code>
+     *
+     * @param value The bytes for movedPlace to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMovedPlaceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      movedPlace_ = value;
+      bitField2_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object movedPlaceId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's place ID. If this Place moved multiple
+     * times, this field will represent the first moved Place. This field will not
+     * be populated if this Place has not moved.
+     * </pre>
+     *
+     * <code>string moved_place_id = 94;</code>
+     *
+     * @return The movedPlaceId.
+     */
+    public java.lang.String getMovedPlaceId() {
+      java.lang.Object ref = movedPlaceId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        movedPlaceId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's place ID. If this Place moved multiple
+     * times, this field will represent the first moved Place. This field will not
+     * be populated if this Place has not moved.
+     * </pre>
+     *
+     * <code>string moved_place_id = 94;</code>
+     *
+     * @return The bytes for movedPlaceId.
+     */
+    public com.google.protobuf.ByteString getMovedPlaceIdBytes() {
+      java.lang.Object ref = movedPlaceId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        movedPlaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's place ID. If this Place moved multiple
+     * times, this field will represent the first moved Place. This field will not
+     * be populated if this Place has not moved.
+     * </pre>
+     *
+     * <code>string moved_place_id = 94;</code>
+     *
+     * @param value The movedPlaceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMovedPlaceId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      movedPlaceId_ = value;
+      bitField2_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's place ID. If this Place moved multiple
+     * times, this field will represent the first moved Place. This field will not
+     * be populated if this Place has not moved.
+     * </pre>
+     *
+     * <code>string moved_place_id = 94;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMovedPlaceId() {
+      movedPlaceId_ = getDefaultInstance().getMovedPlaceId();
+      bitField2_ = (bitField2_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's place ID. If this Place moved multiple
+     * times, this field will represent the first moved Place. This field will not
+     * be populated if this Place has not moved.
+     * </pre>
+     *
+     * <code>string moved_place_id = 94;</code>
+     *
+     * @param value The bytes for movedPlaceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMovedPlaceIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      movedPlaceId_ = value;
+      bitField2_ |= 0x00000100;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
