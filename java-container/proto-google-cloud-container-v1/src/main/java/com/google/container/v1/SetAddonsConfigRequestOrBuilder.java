@@ -36,7 +36,7 @@ public interface SetAddonsConfigRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetAddonsConfigRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3940
+   *     google/container/v1/cluster_service.proto;l=4029
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface SetAddonsConfigRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetAddonsConfigRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3940
+   *     google/container/v1/cluster_service.proto;l=4029
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface SetAddonsConfigRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetAddonsConfigRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3946
+   *     google/container/v1/cluster_service.proto;l=4035
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -92,7 +92,7 @@ public interface SetAddonsConfigRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetAddonsConfigRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3946
+   *     google/container/v1/cluster_service.proto;l=4035
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface SetAddonsConfigRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetAddonsConfigRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3950
+   *     google/container/v1/cluster_service.proto;l=4039
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface SetAddonsConfigRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetAddonsConfigRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3950
+   *     google/container/v1/cluster_service.proto;l=4039
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

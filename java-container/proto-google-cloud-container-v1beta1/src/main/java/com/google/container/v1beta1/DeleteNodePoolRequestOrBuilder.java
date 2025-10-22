@@ -36,7 +36,7 @@ public interface DeleteNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.DeleteNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4881
+   *     google/container/v1beta1/cluster_service.proto;l=4880
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface DeleteNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.DeleteNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4881
+   *     google/container/v1beta1/cluster_service.proto;l=4880
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface DeleteNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.DeleteNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4887
+   *     google/container/v1beta1/cluster_service.proto;l=4886
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -92,7 +92,7 @@ public interface DeleteNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.DeleteNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4887
+   *     google/container/v1beta1/cluster_service.proto;l=4886
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface DeleteNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.DeleteNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4891
+   *     google/container/v1beta1/cluster_service.proto;l=4890
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface DeleteNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.DeleteNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4891
+   *     google/container/v1beta1/cluster_service.proto;l=4890
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -143,7 +143,7 @@ public interface DeleteNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.DeleteNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4895
+   *     google/container/v1beta1/cluster_service.proto;l=4894
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -160,7 +160,7 @@ public interface DeleteNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.DeleteNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4895
+   *     google/container/v1beta1/cluster_service.proto;l=4894
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated

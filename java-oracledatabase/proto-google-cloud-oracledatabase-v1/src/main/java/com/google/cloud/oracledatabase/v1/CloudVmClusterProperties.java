@@ -59,6 +59,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     compartmentId_ = "";
     dnsListenerIp_ = "";
     clusterName_ = "";
+    computeModel_ = 0;
   }
 
   @java.lang.Override
@@ -2035,6 +2036,47 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
   }
 
+  public static final int COMPUTE_MODEL_FIELD_NUMBER = 37;
+  private int computeModel_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The compute model of the VM Cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for computeModel.
+   */
+  @java.lang.Override
+  public int getComputeModelValue() {
+    return computeModel_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The compute model of the VM Cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The computeModel.
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.ComputeModel getComputeModel() {
+    com.google.cloud.oracledatabase.v1.ComputeModel result =
+        com.google.cloud.oracledatabase.v1.ComputeModel.forNumber(computeModel_);
+    return result == null ? com.google.cloud.oracledatabase.v1.ComputeModel.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2152,6 +2194,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 36, clusterName_);
+    }
+    if (computeModel_
+        != com.google.cloud.oracledatabase.v1.ComputeModel.COMPUTE_MODEL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(37, computeModel_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2283,6 +2329,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(36, clusterName_);
     }
+    if (computeModel_
+        != com.google.cloud.oracledatabase.v1.ComputeModel.COMPUTE_MODEL_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(37, computeModel_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2341,6 +2391,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     if (!getCompartmentId().equals(other.getCompartmentId())) return false;
     if (!getDnsListenerIp().equals(other.getDnsListenerIp())) return false;
     if (!getClusterName().equals(other.getClusterName())) return false;
+    if (computeModel_ != other.computeModel_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2429,6 +2480,8 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     hash = (53 * hash) + getDnsListenerIp().hashCode();
     hash = (37 * hash) + CLUSTER_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getClusterName().hashCode();
+    hash = (37 * hash) + COMPUTE_MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + computeModel_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2580,6 +2633,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
       ocid_ = "";
       licenseType_ = 0;
       giVersion_ = "";
@@ -2620,6 +2674,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       compartmentId_ = "";
       dnsListenerIp_ = "";
       clusterName_ = "";
+      computeModel_ = 0;
       return this;
     }
 
@@ -2649,6 +2704,9 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
           new com.google.cloud.oracledatabase.v1.CloudVmClusterProperties(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
+      }
+      if (bitField1_ != 0) {
+        buildPartial1(result);
       }
       onBuilt();
       return result;
@@ -2762,6 +2820,13 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         result.clusterName_ = clusterName_;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartial1(com.google.cloud.oracledatabase.v1.CloudVmClusterProperties result) {
+      int from_bitField1_ = bitField1_;
+      if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.computeModel_ = computeModel_;
+      }
     }
 
     @java.lang.Override
@@ -2952,6 +3017,9 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         clusterName_ = other.clusterName_;
         bitField0_ |= 0x80000000;
         onChanged();
+      }
+      if (other.computeModel_ != 0) {
+        setComputeModelValue(other.getComputeModelValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3176,6 +3244,12 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
                 bitField0_ |= 0x80000000;
                 break;
               } // case 290
+            case 296:
+              {
+                computeModel_ = input.readEnum();
+                bitField1_ |= 0x00000001;
+                break;
+              } // case 296
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3194,6 +3268,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     private int bitField0_;
+    private int bitField1_;
 
     private java.lang.Object ocid_ = "";
 
@@ -6560,6 +6635,111 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       clusterName_ = value;
       bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+
+    private int computeModel_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compute model of the VM Cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for computeModel.
+     */
+    @java.lang.Override
+    public int getComputeModelValue() {
+      return computeModel_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compute model of the VM Cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for computeModel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComputeModelValue(int value) {
+      computeModel_ = value;
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compute model of the VM Cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The computeModel.
+     */
+    @java.lang.Override
+    public com.google.cloud.oracledatabase.v1.ComputeModel getComputeModel() {
+      com.google.cloud.oracledatabase.v1.ComputeModel result =
+          com.google.cloud.oracledatabase.v1.ComputeModel.forNumber(computeModel_);
+      return result == null ? com.google.cloud.oracledatabase.v1.ComputeModel.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compute model of the VM Cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The computeModel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComputeModel(com.google.cloud.oracledatabase.v1.ComputeModel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField1_ |= 0x00000001;
+      computeModel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compute model of the VM Cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearComputeModel() {
+      bitField1_ = (bitField1_ & ~0x00000001);
+      computeModel_ = 0;
       onChanged();
       return this;
     }

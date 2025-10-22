@@ -73,4 +73,45 @@ public interface AutopilotOrBuilder
    * <code>.google.container.v1.WorkloadPolicyConfig workload_policy_config = 2;</code>
    */
   com.google.container.v1.WorkloadPolicyConfigOrBuilder getWorkloadPolicyConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * PrivilegedAdmissionConfig is the configuration related to privileged
+   * admission control.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivilegedAdmissionConfig privileged_admission_config = 4;</code>
+   *
+   * @return Whether the privilegedAdmissionConfig field is set.
+   */
+  boolean hasPrivilegedAdmissionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * PrivilegedAdmissionConfig is the configuration related to privileged
+   * admission control.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivilegedAdmissionConfig privileged_admission_config = 4;</code>
+   *
+   * @return The privilegedAdmissionConfig.
+   */
+  com.google.container.v1.PrivilegedAdmissionConfig getPrivilegedAdmissionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * PrivilegedAdmissionConfig is the configuration related to privileged
+   * admission control.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivilegedAdmissionConfig privileged_admission_config = 4;</code>
+   */
+  com.google.container.v1.PrivilegedAdmissionConfigOrBuilder
+      getPrivilegedAdmissionConfigOrBuilder();
 }

@@ -468,7 +468,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * It means that an application will wake kswapd in the background to
      * reclaim pages and wake kcompactd to compact memory so that THP is
-     * available in the near future. It’s the responsibility of khugepaged to
+     * available in the near future. It's the responsibility of khugepaged to
      * then install the THP pages later.
      * </pre>
      *
@@ -545,7 +545,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * It means that an application will wake kswapd in the background to
      * reclaim pages and wake kcompactd to compact memory so that THP is
-     * available in the near future. It’s the responsibility of khugepaged to
+     * available in the near future. It's the responsibility of khugepaged to
      * then install the THP pages later.
      * </pre>
      *
@@ -1447,6 +1447,836 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public interface NodeKernelModuleLoadingOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Set the node module loading policy for nodes in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy policy = 1;</code>
+     *
+     * @return The enum numeric value on the wire for policy.
+     */
+    int getPolicyValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Set the node module loading policy for nodes in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy policy = 1;</code>
+     *
+     * @return The policy.
+     */
+    com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy getPolicy();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for kernel module loading on nodes.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading}
+   */
+  public static final class NodeKernelModuleLoading extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading)
+      NodeKernelModuleLoadingOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use NodeKernelModuleLoading.newBuilder() to construct.
+    private NodeKernelModuleLoading(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private NodeKernelModuleLoading() {
+      policy_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new NodeKernelModuleLoading();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_LinuxNodeConfig_NodeKernelModuleLoading_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_LinuxNodeConfig_NodeKernelModuleLoading_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.class,
+              com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the kernel module loading policy for nodes in the nodepool.
+     * </pre>
+     *
+     * Protobuf enum {@code google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy}
+     */
+    public enum Policy implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default behavior. GKE selects the image based on node type.
+       * For CPU and TPU nodes, the image will not allow loading external
+       * kernel modules.
+       * For GPU nodes, the image will allow loading any module, whether it
+       * is signed or not.
+       * </pre>
+       *
+       * <code>POLICY_UNSPECIFIED = 0;</code>
+       */
+      POLICY_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Enforced signature verification: Node pools will use a
+       * Container-Optimized OS image configured to allow loading of
+       * *Google-signed* external kernel modules.
+       * Loadpin is enabled but configured to exclude modules, and kernel
+       * module signature checking is enforced.
+       * </pre>
+       *
+       * <code>ENFORCE_SIGNED_MODULES = 1;</code>
+       */
+      ENFORCE_SIGNED_MODULES(1),
+      /**
+       *
+       *
+       * <pre>
+       * Mirrors existing DEFAULT behavior:
+       * For CPU and TPU nodes, the image will not allow loading external
+       * kernel modules.
+       * For GPU nodes, the image will allow loading any module, whether it
+       * is signed or not.
+       * </pre>
+       *
+       * <code>DO_NOT_ENFORCE_SIGNED_MODULES = 2;</code>
+       */
+      DO_NOT_ENFORCE_SIGNED_MODULES(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default behavior. GKE selects the image based on node type.
+       * For CPU and TPU nodes, the image will not allow loading external
+       * kernel modules.
+       * For GPU nodes, the image will allow loading any module, whether it
+       * is signed or not.
+       * </pre>
+       *
+       * <code>POLICY_UNSPECIFIED = 0;</code>
+       */
+      public static final int POLICY_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Enforced signature verification: Node pools will use a
+       * Container-Optimized OS image configured to allow loading of
+       * *Google-signed* external kernel modules.
+       * Loadpin is enabled but configured to exclude modules, and kernel
+       * module signature checking is enforced.
+       * </pre>
+       *
+       * <code>ENFORCE_SIGNED_MODULES = 1;</code>
+       */
+      public static final int ENFORCE_SIGNED_MODULES_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Mirrors existing DEFAULT behavior:
+       * For CPU and TPU nodes, the image will not allow loading external
+       * kernel modules.
+       * For GPU nodes, the image will allow loading any module, whether it
+       * is signed or not.
+       * </pre>
+       *
+       * <code>DO_NOT_ENFORCE_SIGNED_MODULES = 2;</code>
+       */
+      public static final int DO_NOT_ENFORCE_SIGNED_MODULES_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Policy valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Policy forNumber(int value) {
+        switch (value) {
+          case 0:
+            return POLICY_UNSPECIFIED;
+          case 1:
+            return ENFORCE_SIGNED_MODULES;
+          case 2:
+            return DO_NOT_ENFORCE_SIGNED_MODULES;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Policy> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Policy> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Policy>() {
+            public Policy findValueByNumber(int number) {
+              return Policy.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Policy[] VALUES = values();
+
+      public static Policy valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Policy(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy)
+    }
+
+    public static final int POLICY_FIELD_NUMBER = 1;
+    private int policy_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Set the node module loading policy for nodes in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy policy = 1;</code>
+     *
+     * @return The enum numeric value on the wire for policy.
+     */
+    @java.lang.Override
+    public int getPolicyValue() {
+      return policy_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Set the node module loading policy for nodes in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy policy = 1;</code>
+     *
+     * @return The policy.
+     */
+    @java.lang.Override
+    public com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy getPolicy() {
+      com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy result =
+          com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy.forNumber(policy_);
+      return result == null
+          ? com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (policy_
+          != com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy
+              .POLICY_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, policy_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (policy_
+          != com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy
+              .POLICY_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, policy_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading other =
+          (com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading) obj;
+
+      if (policy_ != other.policy_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + policy_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for kernel module loading on nodes.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading)
+        com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoadingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_NodeKernelModuleLoading_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_NodeKernelModuleLoading_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.class,
+                com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Builder.class);
+      }
+
+      // Construct using
+      // com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        policy_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_NodeKernelModuleLoading_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading
+          getDefaultInstanceForType() {
+        return com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading build() {
+        com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading buildPartial() {
+        com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading result =
+            new com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.policy_ = policy_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading) {
+          return mergeFrom((com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading other) {
+        if (other
+            == com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.getDefaultInstance())
+          return this;
+        if (other.policy_ != 0) {
+          setPolicyValue(other.getPolicyValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  policy_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int policy_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Set the node module loading policy for nodes in the node pool.
+       * </pre>
+       *
+       * <code>.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy policy = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for policy.
+       */
+      @java.lang.Override
+      public int getPolicyValue() {
+        return policy_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Set the node module loading policy for nodes in the node pool.
+       * </pre>
+       *
+       * <code>.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy policy = 1;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for policy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPolicyValue(int value) {
+        policy_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Set the node module loading policy for nodes in the node pool.
+       * </pre>
+       *
+       * <code>.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy policy = 1;
+       * </code>
+       *
+       * @return The policy.
+       */
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy getPolicy() {
+        com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy result =
+            com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy.forNumber(
+                policy_);
+        return result == null
+            ? com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Set the node module loading policy for nodes in the node pool.
+       * </pre>
+       *
+       * <code>.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy policy = 1;
+       * </code>
+       *
+       * @param value The policy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPolicy(
+          com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        policy_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Set the node module loading policy for nodes in the node pool.
+       * </pre>
+       *
+       * <code>.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Policy policy = 1;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPolicy() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        policy_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading)
+    private static final com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading();
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NodeKernelModuleLoading> PARSER =
+        new com.google.protobuf.AbstractParser<NodeKernelModuleLoading>() {
+          @java.lang.Override
+          public NodeKernelModuleLoading parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<NodeKernelModuleLoading> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NodeKernelModuleLoading> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int SYSCTLS_FIELD_NUMBER = 1;
 
@@ -1935,6 +2765,73 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
         : result;
   }
 
+  public static final int NODE_KERNEL_MODULE_LOADING_FIELD_NUMBER = 13;
+  private com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading nodeKernelModuleLoading_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for kernel module loading on nodes.
+   * When enabled, the node pool will be provisioned with a Container-Optimized
+   * OS image that enforces kernel module signature verification.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nodeKernelModuleLoading field is set.
+   */
+  @java.lang.Override
+  public boolean hasNodeKernelModuleLoading() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for kernel module loading on nodes.
+   * When enabled, the node pool will be provisioned with a Container-Optimized
+   * OS image that enforces kernel module signature verification.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nodeKernelModuleLoading.
+   */
+  @java.lang.Override
+  public com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading
+      getNodeKernelModuleLoading() {
+    return nodeKernelModuleLoading_ == null
+        ? com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.getDefaultInstance()
+        : nodeKernelModuleLoading_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for kernel module loading on nodes.
+   * When enabled, the node pool will be provisioned with a Container-Optimized
+   * OS image that enforces kernel module signature verification.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoadingOrBuilder
+      getNodeKernelModuleLoadingOrBuilder() {
+    return nodeKernelModuleLoading_ == null
+        ? com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.getDefaultInstance()
+        : nodeKernelModuleLoading_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1969,6 +2866,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
             .TRANSPARENT_HUGEPAGE_DEFRAG_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(5, transparentHugepageDefrag_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(13, getNodeKernelModuleLoading());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2008,6 +2908,11 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, transparentHugepageDefrag_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, getNodeKernelModuleLoading());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2031,6 +2936,10 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     }
     if (transparentHugepageEnabled_ != other.transparentHugepageEnabled_) return false;
     if (transparentHugepageDefrag_ != other.transparentHugepageDefrag_) return false;
+    if (hasNodeKernelModuleLoading() != other.hasNodeKernelModuleLoading()) return false;
+    if (hasNodeKernelModuleLoading()) {
+      if (!getNodeKernelModuleLoading().equals(other.getNodeKernelModuleLoading())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2056,6 +2965,10 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + transparentHugepageEnabled_;
     hash = (37 * hash) + TRANSPARENT_HUGEPAGE_DEFRAG_FIELD_NUMBER;
     hash = (53 * hash) + transparentHugepageDefrag_;
+    if (hasNodeKernelModuleLoading()) {
+      hash = (37 * hash) + NODE_KERNEL_MODULE_LOADING_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeKernelModuleLoading().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2220,6 +3133,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getHugepagesFieldBuilder();
+        getNodeKernelModuleLoadingFieldBuilder();
       }
     }
 
@@ -2236,6 +3150,11 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       transparentHugepageEnabled_ = 0;
       transparentHugepageDefrag_ = 0;
+      nodeKernelModuleLoading_ = null;
+      if (nodeKernelModuleLoadingBuilder_ != null) {
+        nodeKernelModuleLoadingBuilder_.dispose();
+        nodeKernelModuleLoadingBuilder_ = null;
+      }
       return this;
     }
 
@@ -2289,6 +3208,13 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.transparentHugepageDefrag_ = transparentHugepageDefrag_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.nodeKernelModuleLoading_ =
+            nodeKernelModuleLoadingBuilder_ == null
+                ? nodeKernelModuleLoading_
+                : nodeKernelModuleLoadingBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2352,6 +3278,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       if (other.transparentHugepageDefrag_ != 0) {
         setTransparentHugepageDefragValue(other.getTransparentHugepageDefragValue());
       }
+      if (other.hasNodeKernelModuleLoading()) {
+        mergeNodeKernelModuleLoading(other.getNodeKernelModuleLoading());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2414,6 +3343,13 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 106:
+              {
+                input.readMessage(
+                    getNodeKernelModuleLoadingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3489,6 +4425,245 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       transparentHugepageDefrag_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading
+        nodeKernelModuleLoading_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading,
+            com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Builder,
+            com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoadingOrBuilder>
+        nodeKernelModuleLoadingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for kernel module loading on nodes.
+     * When enabled, the node pool will be provisioned with a Container-Optimized
+     * OS image that enforces kernel module signature verification.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the nodeKernelModuleLoading field is set.
+     */
+    public boolean hasNodeKernelModuleLoading() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for kernel module loading on nodes.
+     * When enabled, the node pool will be provisioned with a Container-Optimized
+     * OS image that enforces kernel module signature verification.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The nodeKernelModuleLoading.
+     */
+    public com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading
+        getNodeKernelModuleLoading() {
+      if (nodeKernelModuleLoadingBuilder_ == null) {
+        return nodeKernelModuleLoading_ == null
+            ? com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.getDefaultInstance()
+            : nodeKernelModuleLoading_;
+      } else {
+        return nodeKernelModuleLoadingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for kernel module loading on nodes.
+     * When enabled, the node pool will be provisioned with a Container-Optimized
+     * OS image that enforces kernel module signature verification.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNodeKernelModuleLoading(
+        com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading value) {
+      if (nodeKernelModuleLoadingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nodeKernelModuleLoading_ = value;
+      } else {
+        nodeKernelModuleLoadingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for kernel module loading on nodes.
+     * When enabled, the node pool will be provisioned with a Container-Optimized
+     * OS image that enforces kernel module signature verification.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNodeKernelModuleLoading(
+        com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Builder builderForValue) {
+      if (nodeKernelModuleLoadingBuilder_ == null) {
+        nodeKernelModuleLoading_ = builderForValue.build();
+      } else {
+        nodeKernelModuleLoadingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for kernel module loading on nodes.
+     * When enabled, the node pool will be provisioned with a Container-Optimized
+     * OS image that enforces kernel module signature verification.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeNodeKernelModuleLoading(
+        com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading value) {
+      if (nodeKernelModuleLoadingBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && nodeKernelModuleLoading_ != null
+            && nodeKernelModuleLoading_
+                != com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading
+                    .getDefaultInstance()) {
+          getNodeKernelModuleLoadingBuilder().mergeFrom(value);
+        } else {
+          nodeKernelModuleLoading_ = value;
+        }
+      } else {
+        nodeKernelModuleLoadingBuilder_.mergeFrom(value);
+      }
+      if (nodeKernelModuleLoading_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for kernel module loading on nodes.
+     * When enabled, the node pool will be provisioned with a Container-Optimized
+     * OS image that enforces kernel module signature verification.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNodeKernelModuleLoading() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      nodeKernelModuleLoading_ = null;
+      if (nodeKernelModuleLoadingBuilder_ != null) {
+        nodeKernelModuleLoadingBuilder_.dispose();
+        nodeKernelModuleLoadingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for kernel module loading on nodes.
+     * When enabled, the node pool will be provisioned with a Container-Optimized
+     * OS image that enforces kernel module signature verification.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Builder
+        getNodeKernelModuleLoadingBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getNodeKernelModuleLoadingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for kernel module loading on nodes.
+     * When enabled, the node pool will be provisioned with a Container-Optimized
+     * OS image that enforces kernel module signature verification.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoadingOrBuilder
+        getNodeKernelModuleLoadingOrBuilder() {
+      if (nodeKernelModuleLoadingBuilder_ != null) {
+        return nodeKernelModuleLoadingBuilder_.getMessageOrBuilder();
+      } else {
+        return nodeKernelModuleLoading_ == null
+            ? com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.getDefaultInstance()
+            : nodeKernelModuleLoading_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for kernel module loading on nodes.
+     * When enabled, the node pool will be provisioned with a Container-Optimized
+     * OS image that enforces kernel module signature verification.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading,
+            com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Builder,
+            com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoadingOrBuilder>
+        getNodeKernelModuleLoadingFieldBuilder() {
+      if (nodeKernelModuleLoadingBuilder_ == null) {
+        nodeKernelModuleLoadingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading,
+                com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Builder,
+                com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoadingOrBuilder>(
+                getNodeKernelModuleLoading(), getParentForChildren(), isClean());
+        nodeKernelModuleLoading_ = null;
+      }
+      return nodeKernelModuleLoadingBuilder_;
     }
 
     @java.lang.Override
