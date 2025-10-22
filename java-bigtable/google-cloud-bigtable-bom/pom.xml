@@ -8,7 +8,7 @@
     <parent>
         <groupId>com.google.cloud</groupId>
         <artifactId>sdk-platform-java-config</artifactId>
-        <version>3.52.3</version>
+        <version>3.53.0</version>
         <relativePath/>
     </parent>
 
