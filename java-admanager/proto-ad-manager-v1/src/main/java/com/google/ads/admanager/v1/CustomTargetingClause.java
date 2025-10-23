@@ -41,6 +41,8 @@ public final class CustomTargetingClause extends com.google.protobuf.GeneratedMe
 
   private CustomTargetingClause() {
     customTargetingLiterals_ = java.util.Collections.emptyList();
+    audienceSegmentTargetings_ = java.util.Collections.emptyList();
+    cmsMetadataTargetings_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -153,6 +155,184 @@ public final class CustomTargetingClause extends com.google.protobuf.GeneratedMe
     return customTargetingLiterals_.get(index);
   }
 
+  public static final int AUDIENCE_SEGMENT_TARGETINGS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.ads.admanager.v1.AudienceSegmentTargeting>
+      audienceSegmentTargetings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for audience segments.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.AudienceSegmentTargeting>
+      getAudienceSegmentTargetingsList() {
+    return audienceSegmentTargetings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for audience segments.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.ads.admanager.v1.AudienceSegmentTargetingOrBuilder>
+      getAudienceSegmentTargetingsOrBuilderList() {
+    return audienceSegmentTargetings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for audience segments.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getAudienceSegmentTargetingsCount() {
+    return audienceSegmentTargetings_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for audience segments.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AudienceSegmentTargeting getAudienceSegmentTargetings(
+      int index) {
+    return audienceSegmentTargetings_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for audience segments.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AudienceSegmentTargetingOrBuilder
+      getAudienceSegmentTargetingsOrBuilder(int index) {
+    return audienceSegmentTargetings_.get(index);
+  }
+
+  public static final int CMS_METADATA_TARGETINGS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.ads.admanager.v1.CmsMetadataTargeting> cmsMetadataTargetings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for cms metadata.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.CmsMetadataTargeting>
+      getCmsMetadataTargetingsList() {
+    return cmsMetadataTargetings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for cms metadata.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.ads.admanager.v1.CmsMetadataTargetingOrBuilder>
+      getCmsMetadataTargetingsOrBuilderList() {
+    return cmsMetadataTargetings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for cms metadata.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getCmsMetadataTargetingsCount() {
+    return cmsMetadataTargetings_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for cms metadata.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.CmsMetadataTargeting getCmsMetadataTargetings(int index) {
+    return cmsMetadataTargetings_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for cms metadata.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.CmsMetadataTargetingOrBuilder
+      getCmsMetadataTargetingsOrBuilder(int index) {
+    return cmsMetadataTargetings_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -170,6 +350,12 @@ public final class CustomTargetingClause extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < customTargetingLiterals_.size(); i++) {
       output.writeMessage(1, customTargetingLiterals_.get(i));
     }
+    for (int i = 0; i < audienceSegmentTargetings_.size(); i++) {
+      output.writeMessage(2, audienceSegmentTargetings_.get(i));
+    }
+    for (int i = 0; i < cmsMetadataTargetings_.size(); i++) {
+      output.writeMessage(3, cmsMetadataTargetings_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -183,6 +369,16 @@ public final class CustomTargetingClause extends com.google.protobuf.GeneratedMe
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, customTargetingLiterals_.get(i));
+    }
+    for (int i = 0; i < audienceSegmentTargetings_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, audienceSegmentTargetings_.get(i));
+    }
+    for (int i = 0; i < cmsMetadataTargetings_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, cmsMetadataTargetings_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -202,6 +398,9 @@ public final class CustomTargetingClause extends com.google.protobuf.GeneratedMe
 
     if (!getCustomTargetingLiteralsList().equals(other.getCustomTargetingLiteralsList()))
       return false;
+    if (!getAudienceSegmentTargetingsList().equals(other.getAudienceSegmentTargetingsList()))
+      return false;
+    if (!getCmsMetadataTargetingsList().equals(other.getCmsMetadataTargetingsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -216,6 +415,14 @@ public final class CustomTargetingClause extends com.google.protobuf.GeneratedMe
     if (getCustomTargetingLiteralsCount() > 0) {
       hash = (37 * hash) + CUSTOM_TARGETING_LITERALS_FIELD_NUMBER;
       hash = (53 * hash) + getCustomTargetingLiteralsList().hashCode();
+    }
+    if (getAudienceSegmentTargetingsCount() > 0) {
+      hash = (37 * hash) + AUDIENCE_SEGMENT_TARGETINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getAudienceSegmentTargetingsList().hashCode();
+    }
+    if (getCmsMetadataTargetingsCount() > 0) {
+      hash = (37 * hash) + CMS_METADATA_TARGETINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getCmsMetadataTargetingsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -364,6 +571,20 @@ public final class CustomTargetingClause extends com.google.protobuf.GeneratedMe
         customTargetingLiteralsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (audienceSegmentTargetingsBuilder_ == null) {
+        audienceSegmentTargetings_ = java.util.Collections.emptyList();
+      } else {
+        audienceSegmentTargetings_ = null;
+        audienceSegmentTargetingsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
+      if (cmsMetadataTargetingsBuilder_ == null) {
+        cmsMetadataTargetings_ = java.util.Collections.emptyList();
+      } else {
+        cmsMetadataTargetings_ = null;
+        cmsMetadataTargetingsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -410,6 +631,25 @@ public final class CustomTargetingClause extends com.google.protobuf.GeneratedMe
         result.customTargetingLiterals_ = customTargetingLiterals_;
       } else {
         result.customTargetingLiterals_ = customTargetingLiteralsBuilder_.build();
+      }
+      if (audienceSegmentTargetingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          audienceSegmentTargetings_ =
+              java.util.Collections.unmodifiableList(audienceSegmentTargetings_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.audienceSegmentTargetings_ = audienceSegmentTargetings_;
+      } else {
+        result.audienceSegmentTargetings_ = audienceSegmentTargetingsBuilder_.build();
+      }
+      if (cmsMetadataTargetingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          cmsMetadataTargetings_ = java.util.Collections.unmodifiableList(cmsMetadataTargetings_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.cmsMetadataTargetings_ = cmsMetadataTargetings_;
+      } else {
+        result.cmsMetadataTargetings_ = cmsMetadataTargetingsBuilder_.build();
       }
     }
 
@@ -490,6 +730,60 @@ public final class CustomTargetingClause extends com.google.protobuf.GeneratedMe
           }
         }
       }
+      if (audienceSegmentTargetingsBuilder_ == null) {
+        if (!other.audienceSegmentTargetings_.isEmpty()) {
+          if (audienceSegmentTargetings_.isEmpty()) {
+            audienceSegmentTargetings_ = other.audienceSegmentTargetings_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureAudienceSegmentTargetingsIsMutable();
+            audienceSegmentTargetings_.addAll(other.audienceSegmentTargetings_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.audienceSegmentTargetings_.isEmpty()) {
+          if (audienceSegmentTargetingsBuilder_.isEmpty()) {
+            audienceSegmentTargetingsBuilder_.dispose();
+            audienceSegmentTargetingsBuilder_ = null;
+            audienceSegmentTargetings_ = other.audienceSegmentTargetings_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            audienceSegmentTargetingsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAudienceSegmentTargetingsFieldBuilder()
+                    : null;
+          } else {
+            audienceSegmentTargetingsBuilder_.addAllMessages(other.audienceSegmentTargetings_);
+          }
+        }
+      }
+      if (cmsMetadataTargetingsBuilder_ == null) {
+        if (!other.cmsMetadataTargetings_.isEmpty()) {
+          if (cmsMetadataTargetings_.isEmpty()) {
+            cmsMetadataTargetings_ = other.cmsMetadataTargetings_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureCmsMetadataTargetingsIsMutable();
+            cmsMetadataTargetings_.addAll(other.cmsMetadataTargetings_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.cmsMetadataTargetings_.isEmpty()) {
+          if (cmsMetadataTargetingsBuilder_.isEmpty()) {
+            cmsMetadataTargetingsBuilder_.dispose();
+            cmsMetadataTargetingsBuilder_ = null;
+            cmsMetadataTargetings_ = other.cmsMetadataTargetings_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            cmsMetadataTargetingsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getCmsMetadataTargetingsFieldBuilder()
+                    : null;
+          } else {
+            cmsMetadataTargetingsBuilder_.addAllMessages(other.cmsMetadataTargetings_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -530,6 +824,34 @@ public final class CustomTargetingClause extends com.google.protobuf.GeneratedMe
                 }
                 break;
               } // case 10
+            case 18:
+              {
+                com.google.ads.admanager.v1.AudienceSegmentTargeting m =
+                    input.readMessage(
+                        com.google.ads.admanager.v1.AudienceSegmentTargeting.parser(),
+                        extensionRegistry);
+                if (audienceSegmentTargetingsBuilder_ == null) {
+                  ensureAudienceSegmentTargetingsIsMutable();
+                  audienceSegmentTargetings_.add(m);
+                } else {
+                  audienceSegmentTargetingsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.ads.admanager.v1.CmsMetadataTargeting m =
+                    input.readMessage(
+                        com.google.ads.admanager.v1.CmsMetadataTargeting.parser(),
+                        extensionRegistry);
+                if (cmsMetadataTargetingsBuilder_ == null) {
+                  ensureCmsMetadataTargetingsIsMutable();
+                  cmsMetadataTargetings_.add(m);
+                } else {
+                  cmsMetadataTargetingsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -965,6 +1287,840 @@ public final class CustomTargetingClause extends com.google.protobuf.GeneratedMe
         customTargetingLiterals_ = null;
       }
       return customTargetingLiteralsBuilder_;
+    }
+
+    private java.util.List<com.google.ads.admanager.v1.AudienceSegmentTargeting>
+        audienceSegmentTargetings_ = java.util.Collections.emptyList();
+
+    private void ensureAudienceSegmentTargetingsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        audienceSegmentTargetings_ =
+            new java.util.ArrayList<com.google.ads.admanager.v1.AudienceSegmentTargeting>(
+                audienceSegmentTargetings_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.ads.admanager.v1.AudienceSegmentTargeting,
+            com.google.ads.admanager.v1.AudienceSegmentTargeting.Builder,
+            com.google.ads.admanager.v1.AudienceSegmentTargetingOrBuilder>
+        audienceSegmentTargetingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.AudienceSegmentTargeting>
+        getAudienceSegmentTargetingsList() {
+      if (audienceSegmentTargetingsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(audienceSegmentTargetings_);
+      } else {
+        return audienceSegmentTargetingsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getAudienceSegmentTargetingsCount() {
+      if (audienceSegmentTargetingsBuilder_ == null) {
+        return audienceSegmentTargetings_.size();
+      } else {
+        return audienceSegmentTargetingsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AudienceSegmentTargeting getAudienceSegmentTargetings(
+        int index) {
+      if (audienceSegmentTargetingsBuilder_ == null) {
+        return audienceSegmentTargetings_.get(index);
+      } else {
+        return audienceSegmentTargetingsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAudienceSegmentTargetings(
+        int index, com.google.ads.admanager.v1.AudienceSegmentTargeting value) {
+      if (audienceSegmentTargetingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAudienceSegmentTargetingsIsMutable();
+        audienceSegmentTargetings_.set(index, value);
+        onChanged();
+      } else {
+        audienceSegmentTargetingsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAudienceSegmentTargetings(
+        int index, com.google.ads.admanager.v1.AudienceSegmentTargeting.Builder builderForValue) {
+      if (audienceSegmentTargetingsBuilder_ == null) {
+        ensureAudienceSegmentTargetingsIsMutable();
+        audienceSegmentTargetings_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        audienceSegmentTargetingsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAudienceSegmentTargetings(
+        com.google.ads.admanager.v1.AudienceSegmentTargeting value) {
+      if (audienceSegmentTargetingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAudienceSegmentTargetingsIsMutable();
+        audienceSegmentTargetings_.add(value);
+        onChanged();
+      } else {
+        audienceSegmentTargetingsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAudienceSegmentTargetings(
+        int index, com.google.ads.admanager.v1.AudienceSegmentTargeting value) {
+      if (audienceSegmentTargetingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAudienceSegmentTargetingsIsMutable();
+        audienceSegmentTargetings_.add(index, value);
+        onChanged();
+      } else {
+        audienceSegmentTargetingsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAudienceSegmentTargetings(
+        com.google.ads.admanager.v1.AudienceSegmentTargeting.Builder builderForValue) {
+      if (audienceSegmentTargetingsBuilder_ == null) {
+        ensureAudienceSegmentTargetingsIsMutable();
+        audienceSegmentTargetings_.add(builderForValue.build());
+        onChanged();
+      } else {
+        audienceSegmentTargetingsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAudienceSegmentTargetings(
+        int index, com.google.ads.admanager.v1.AudienceSegmentTargeting.Builder builderForValue) {
+      if (audienceSegmentTargetingsBuilder_ == null) {
+        ensureAudienceSegmentTargetingsIsMutable();
+        audienceSegmentTargetings_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        audienceSegmentTargetingsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllAudienceSegmentTargetings(
+        java.lang.Iterable<? extends com.google.ads.admanager.v1.AudienceSegmentTargeting> values) {
+      if (audienceSegmentTargetingsBuilder_ == null) {
+        ensureAudienceSegmentTargetingsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, audienceSegmentTargetings_);
+        onChanged();
+      } else {
+        audienceSegmentTargetingsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAudienceSegmentTargetings() {
+      if (audienceSegmentTargetingsBuilder_ == null) {
+        audienceSegmentTargetings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        audienceSegmentTargetingsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAudienceSegmentTargetings(int index) {
+      if (audienceSegmentTargetingsBuilder_ == null) {
+        ensureAudienceSegmentTargetingsIsMutable();
+        audienceSegmentTargetings_.remove(index);
+        onChanged();
+      } else {
+        audienceSegmentTargetingsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AudienceSegmentTargeting.Builder
+        getAudienceSegmentTargetingsBuilder(int index) {
+      return getAudienceSegmentTargetingsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AudienceSegmentTargetingOrBuilder
+        getAudienceSegmentTargetingsOrBuilder(int index) {
+      if (audienceSegmentTargetingsBuilder_ == null) {
+        return audienceSegmentTargetings_.get(index);
+      } else {
+        return audienceSegmentTargetingsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.ads.admanager.v1.AudienceSegmentTargetingOrBuilder>
+        getAudienceSegmentTargetingsOrBuilderList() {
+      if (audienceSegmentTargetingsBuilder_ != null) {
+        return audienceSegmentTargetingsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(audienceSegmentTargetings_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AudienceSegmentTargeting.Builder
+        addAudienceSegmentTargetingsBuilder() {
+      return getAudienceSegmentTargetingsFieldBuilder()
+          .addBuilder(com.google.ads.admanager.v1.AudienceSegmentTargeting.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AudienceSegmentTargeting.Builder
+        addAudienceSegmentTargetingsBuilder(int index) {
+      return getAudienceSegmentTargetingsFieldBuilder()
+          .addBuilder(
+              index, com.google.ads.admanager.v1.AudienceSegmentTargeting.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for audience segments.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.AudienceSegmentTargeting.Builder>
+        getAudienceSegmentTargetingsBuilderList() {
+      return getAudienceSegmentTargetingsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.ads.admanager.v1.AudienceSegmentTargeting,
+            com.google.ads.admanager.v1.AudienceSegmentTargeting.Builder,
+            com.google.ads.admanager.v1.AudienceSegmentTargetingOrBuilder>
+        getAudienceSegmentTargetingsFieldBuilder() {
+      if (audienceSegmentTargetingsBuilder_ == null) {
+        audienceSegmentTargetingsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.ads.admanager.v1.AudienceSegmentTargeting,
+                com.google.ads.admanager.v1.AudienceSegmentTargeting.Builder,
+                com.google.ads.admanager.v1.AudienceSegmentTargetingOrBuilder>(
+                audienceSegmentTargetings_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        audienceSegmentTargetings_ = null;
+      }
+      return audienceSegmentTargetingsBuilder_;
+    }
+
+    private java.util.List<com.google.ads.admanager.v1.CmsMetadataTargeting>
+        cmsMetadataTargetings_ = java.util.Collections.emptyList();
+
+    private void ensureCmsMetadataTargetingsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        cmsMetadataTargetings_ =
+            new java.util.ArrayList<com.google.ads.admanager.v1.CmsMetadataTargeting>(
+                cmsMetadataTargetings_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.ads.admanager.v1.CmsMetadataTargeting,
+            com.google.ads.admanager.v1.CmsMetadataTargeting.Builder,
+            com.google.ads.admanager.v1.CmsMetadataTargetingOrBuilder>
+        cmsMetadataTargetingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.CmsMetadataTargeting>
+        getCmsMetadataTargetingsList() {
+      if (cmsMetadataTargetingsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(cmsMetadataTargetings_);
+      } else {
+        return cmsMetadataTargetingsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getCmsMetadataTargetingsCount() {
+      if (cmsMetadataTargetingsBuilder_ == null) {
+        return cmsMetadataTargetings_.size();
+      } else {
+        return cmsMetadataTargetingsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CmsMetadataTargeting getCmsMetadataTargetings(int index) {
+      if (cmsMetadataTargetingsBuilder_ == null) {
+        return cmsMetadataTargetings_.get(index);
+      } else {
+        return cmsMetadataTargetingsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCmsMetadataTargetings(
+        int index, com.google.ads.admanager.v1.CmsMetadataTargeting value) {
+      if (cmsMetadataTargetingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCmsMetadataTargetingsIsMutable();
+        cmsMetadataTargetings_.set(index, value);
+        onChanged();
+      } else {
+        cmsMetadataTargetingsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCmsMetadataTargetings(
+        int index, com.google.ads.admanager.v1.CmsMetadataTargeting.Builder builderForValue) {
+      if (cmsMetadataTargetingsBuilder_ == null) {
+        ensureCmsMetadataTargetingsIsMutable();
+        cmsMetadataTargetings_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        cmsMetadataTargetingsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCmsMetadataTargetings(
+        com.google.ads.admanager.v1.CmsMetadataTargeting value) {
+      if (cmsMetadataTargetingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCmsMetadataTargetingsIsMutable();
+        cmsMetadataTargetings_.add(value);
+        onChanged();
+      } else {
+        cmsMetadataTargetingsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCmsMetadataTargetings(
+        int index, com.google.ads.admanager.v1.CmsMetadataTargeting value) {
+      if (cmsMetadataTargetingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCmsMetadataTargetingsIsMutable();
+        cmsMetadataTargetings_.add(index, value);
+        onChanged();
+      } else {
+        cmsMetadataTargetingsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCmsMetadataTargetings(
+        com.google.ads.admanager.v1.CmsMetadataTargeting.Builder builderForValue) {
+      if (cmsMetadataTargetingsBuilder_ == null) {
+        ensureCmsMetadataTargetingsIsMutable();
+        cmsMetadataTargetings_.add(builderForValue.build());
+        onChanged();
+      } else {
+        cmsMetadataTargetingsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCmsMetadataTargetings(
+        int index, com.google.ads.admanager.v1.CmsMetadataTargeting.Builder builderForValue) {
+      if (cmsMetadataTargetingsBuilder_ == null) {
+        ensureCmsMetadataTargetingsIsMutable();
+        cmsMetadataTargetings_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        cmsMetadataTargetingsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllCmsMetadataTargetings(
+        java.lang.Iterable<? extends com.google.ads.admanager.v1.CmsMetadataTargeting> values) {
+      if (cmsMetadataTargetingsBuilder_ == null) {
+        ensureCmsMetadataTargetingsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cmsMetadataTargetings_);
+        onChanged();
+      } else {
+        cmsMetadataTargetingsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCmsMetadataTargetings() {
+      if (cmsMetadataTargetingsBuilder_ == null) {
+        cmsMetadataTargetings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        cmsMetadataTargetingsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeCmsMetadataTargetings(int index) {
+      if (cmsMetadataTargetingsBuilder_ == null) {
+        ensureCmsMetadataTargetingsIsMutable();
+        cmsMetadataTargetings_.remove(index);
+        onChanged();
+      } else {
+        cmsMetadataTargetingsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CmsMetadataTargeting.Builder getCmsMetadataTargetingsBuilder(
+        int index) {
+      return getCmsMetadataTargetingsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CmsMetadataTargetingOrBuilder
+        getCmsMetadataTargetingsOrBuilder(int index) {
+      if (cmsMetadataTargetingsBuilder_ == null) {
+        return cmsMetadataTargetings_.get(index);
+      } else {
+        return cmsMetadataTargetingsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.ads.admanager.v1.CmsMetadataTargetingOrBuilder>
+        getCmsMetadataTargetingsOrBuilderList() {
+      if (cmsMetadataTargetingsBuilder_ != null) {
+        return cmsMetadataTargetingsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(cmsMetadataTargetings_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CmsMetadataTargeting.Builder
+        addCmsMetadataTargetingsBuilder() {
+      return getCmsMetadataTargetingsFieldBuilder()
+          .addBuilder(com.google.ads.admanager.v1.CmsMetadataTargeting.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CmsMetadataTargeting.Builder addCmsMetadataTargetingsBuilder(
+        int index) {
+      return getCmsMetadataTargetingsFieldBuilder()
+          .addBuilder(index, com.google.ads.admanager.v1.CmsMetadataTargeting.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Leaf targeting expressions for cms metadata.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.CmsMetadataTargeting.Builder>
+        getCmsMetadataTargetingsBuilderList() {
+      return getCmsMetadataTargetingsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.ads.admanager.v1.CmsMetadataTargeting,
+            com.google.ads.admanager.v1.CmsMetadataTargeting.Builder,
+            com.google.ads.admanager.v1.CmsMetadataTargetingOrBuilder>
+        getCmsMetadataTargetingsFieldBuilder() {
+      if (cmsMetadataTargetingsBuilder_ == null) {
+        cmsMetadataTargetingsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.ads.admanager.v1.CmsMetadataTargeting,
+                com.google.ads.admanager.v1.CmsMetadataTargeting.Builder,
+                com.google.ads.admanager.v1.CmsMetadataTargetingOrBuilder>(
+                cmsMetadataTargetings_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        cmsMetadataTargetings_ = null;
+      }
+      return cmsMetadataTargetingsBuilder_;
     }
 
     @java.lang.Override

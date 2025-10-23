@@ -46,7 +46,7 @@ public final class ReviewProto {
           + ".proto\032\'google/maps/places/v1/attributio"
           + "n.proto\032\037google/protobuf/timestamp.proto"
           + "\032\026google/type/date.proto\032 google/type/lo"
-          + "calized_text.proto\"\256\003\n\006Review\022\014\n\004name\030\001 "
+          + "calized_text.proto\"\325\003\n\006Review\022\014\n\004name\030\001 "
           + "\001(\t\022)\n!relative_publish_time_description"
           + "\030\002 \001(\t\022(\n\004text\030\t \001(\0132\032.google.type.Local"
           + "izedText\0221\n\roriginal_text\030\014 \001(\0132\032.google"
@@ -55,13 +55,14 @@ public final class ReviewProto {
           + "aces.v1.AuthorAttribution\0220\n\014publish_tim"
           + "e\030\016 \001(\0132\032.google.protobuf.Timestamp\022\030\n\020f"
           + "lag_content_uri\030\017 \001(\t\022\027\n\017google_maps_uri"
-          + "\030\020 \001(\t:S\352AP\n\034places.googleapis.com/Revie"
-          + "w\022\037places/{place}/reviews/{review}*\007revi"
-          + "ews2\006reviewB\234\001\n\031com.google.maps.places.v"
-          + "1B\013ReviewProtoP\001Z7cloud.google.com/go/ma"
-          + "ps/places/apiv1/placespb;placespb\242\002\006GMPS"
-          + "V1\252\002\025Google.Maps.Places.V1\312\002\025Google\\Maps"
-          + "\\Places\\V1b\006proto3"
+          + "\030\020 \001(\t\022%\n\nvisit_date\030\021 \001(\0132\021.google.type"
+          + ".Date:S\352AP\n\034places.googleapis.com/Review"
+          + "\022\037places/{place}/reviews/{review}*\007revie"
+          + "ws2\006reviewB\234\001\n\031com.google.maps.places.v1"
+          + "B\013ReviewProtoP\001Z7cloud.google.com/go/map"
+          + "s/places/apiv1/placespb;placespb\242\002\006GMPSV"
+          + "1\252\002\025Google.Maps.Places.V1\312\002\025Google\\Maps\\"
+          + "Places\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -88,6 +89,7 @@ public final class ReviewProto {
               "PublishTime",
               "FlagContentUri",
               "GoogleMapsUri",
+              "VisitDate",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

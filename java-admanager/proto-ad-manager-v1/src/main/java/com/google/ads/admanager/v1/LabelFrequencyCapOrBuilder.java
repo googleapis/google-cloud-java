@@ -33,7 +33,23 @@ public interface LabelFrequencyCapOrBuilder
    * </pre>
    *
    * <code>
-   * string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * optional string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the label field is set.
+   */
+  boolean hasLabel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The label to used for frequency capping.
+   * Format: "networks/{network_code}/labels/{label_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The label.
@@ -49,7 +65,7 @@ public interface LabelFrequencyCapOrBuilder
    * </pre>
    *
    * <code>
-   * string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * optional string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for label.
@@ -63,7 +79,7 @@ public interface LabelFrequencyCapOrBuilder
    * The frequency cap.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
+   * <code>optional .google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
    *
    * @return Whether the frequencyCap field is set.
    */
@@ -76,7 +92,7 @@ public interface LabelFrequencyCapOrBuilder
    * The frequency cap.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
+   * <code>optional .google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
    *
    * @return The frequencyCap.
    */
@@ -89,7 +105,7 @@ public interface LabelFrequencyCapOrBuilder
    * The frequency cap.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
+   * <code>optional .google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
    */
   com.google.ads.admanager.v1.FrequencyCapOrBuilder getFrequencyCapOrBuilder();
 }

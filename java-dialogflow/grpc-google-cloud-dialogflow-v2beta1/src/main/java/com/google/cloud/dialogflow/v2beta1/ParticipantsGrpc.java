@@ -320,6 +320,58 @@ public final class ParticipantsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest,
+          com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>
+      getBidiStreamingAnalyzeContentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BidiStreamingAnalyzeContent",
+      requestType = com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest,
+          com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>
+      getBidiStreamingAnalyzeContentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest,
+            com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>
+        getBidiStreamingAnalyzeContentMethod;
+    if ((getBidiStreamingAnalyzeContentMethod =
+            ParticipantsGrpc.getBidiStreamingAnalyzeContentMethod)
+        == null) {
+      synchronized (ParticipantsGrpc.class) {
+        if ((getBidiStreamingAnalyzeContentMethod =
+                ParticipantsGrpc.getBidiStreamingAnalyzeContentMethod)
+            == null) {
+          ParticipantsGrpc.getBidiStreamingAnalyzeContentMethod =
+              getBidiStreamingAnalyzeContentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest,
+                          com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BidiStreamingAnalyzeContent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2beta1
+                                  .BidiStreamingAnalyzeContentResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ParticipantsMethodDescriptorSupplier("BidiStreamingAnalyzeContent"))
+                      .build();
+        }
+      }
+    }
+    return getBidiStreamingAnalyzeContentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest,
           com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse>
       getSuggestArticlesMethod;
@@ -782,6 +834,24 @@ public final class ParticipantsGrpc {
      *
      *
      * <pre>
+     * Bidirectional endless streaming version of
+     * [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent].
+     * </pre>
+     */
+    default io.grpc.stub.StreamObserver<
+            com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest>
+        bidiStreamingAnalyzeContent(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>
+                responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
+          getBidiStreamingAnalyzeContentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets suggested articles for a participant based on specific historical
      * messages.
      * Note that
@@ -1069,6 +1139,25 @@ public final class ParticipantsGrpc {
      *
      *
      * <pre>
+     * Bidirectional endless streaming version of
+     * [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent].
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<
+            com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest>
+        bidiStreamingAnalyzeContent(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>
+                responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getBidiStreamingAnalyzeContentMethod(), getCallOptions()),
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets suggested articles for a participant based on specific historical
      * messages.
      * Note that
@@ -1324,6 +1413,23 @@ public final class ParticipantsGrpc {
         streamingAnalyzeContent() {
       return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
           getChannel(), getStreamingAnalyzeContentMethod(), getCallOptions());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bidirectional endless streaming version of
+     * [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent].
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest,
+            com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>
+        bidiStreamingAnalyzeContent() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getBidiStreamingAnalyzeContentMethod(), getCallOptions());
     }
 
     /**
@@ -1888,6 +1994,7 @@ public final class ParticipantsGrpc {
   private static final int METHODID_LIST_SUGGESTIONS = 9;
   private static final int METHODID_COMPILE_SUGGESTION = 10;
   private static final int METHODID_STREAMING_ANALYZE_CONTENT = 11;
+  private static final int METHODID_BIDI_STREAMING_ANALYZE_CONTENT = 12;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1996,6 +2103,12 @@ public final class ParticipantsGrpc {
                   (io.grpc.stub.StreamObserver<
                           com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse>)
                       responseObserver);
+        case METHODID_BIDI_STREAMING_ANALYZE_CONTENT:
+          return (io.grpc.stub.StreamObserver<Req>)
+              serviceImpl.bidiStreamingAnalyzeContent(
+                  (io.grpc.stub.StreamObserver<
+                          com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>)
+                      responseObserver);
         default:
           throw new AssertionError();
       }
@@ -2046,6 +2159,13 @@ public final class ParticipantsGrpc {
                     com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest,
                     com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse>(
                     service, METHODID_STREAMING_ANALYZE_CONTENT)))
+        .addMethod(
+            getBidiStreamingAnalyzeContentMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest,
+                    com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse>(
+                    service, METHODID_BIDI_STREAMING_ANALYZE_CONTENT)))
         .addMethod(
             getSuggestArticlesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2145,6 +2265,7 @@ public final class ParticipantsGrpc {
                       .addMethod(getUpdateParticipantMethod())
                       .addMethod(getAnalyzeContentMethod())
                       .addMethod(getStreamingAnalyzeContentMethod())
+                      .addMethod(getBidiStreamingAnalyzeContentMethod())
                       .addMethod(getSuggestArticlesMethod())
                       .addMethod(getSuggestFaqAnswersMethod())
                       .addMethod(getSuggestSmartRepliesMethod())

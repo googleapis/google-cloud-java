@@ -40,6 +40,46 @@ public final class CustomFieldServiceProto {
       internal_static_google_ads_admanager_v1_ListCustomFieldsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ListCustomFieldsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_CreateCustomFieldRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_CreateCustomFieldRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateCustomFieldsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateCustomFieldsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateCustomFieldsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateCustomFieldsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_UpdateCustomFieldRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_UpdateCustomFieldRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateCustomFieldsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateCustomFieldsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateCustomFieldsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateCustomFieldsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateCustomFieldsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateCustomFieldsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateCustomFieldsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateCustomFieldsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivateCustomFieldsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivateCustomFieldsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivateCustomFieldsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivateCustomFieldsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -54,7 +94,8 @@ public final class CustomFieldServiceProto {
           + "ervice.proto\022\027google.ads.admanager.v1\0323g"
           + "oogle/ads/admanager/v1/custom_field_messages.proto\032\034google/api/annotations.proto"
           + "\032\027google/api/client.proto\032\037google/api/fi"
-          + "eld_behavior.proto\032\031google/api/resource.proto\"S\n"
+          + "eld_behavior.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\"S\n"
           + "\025GetCustomFieldRequest\022:\n"
           + "\004name\030\001 \001(\tB,\340A\002\372A&\n"
           + "$admanager.googleapis.com/CustomField\"\303\001\n"
@@ -66,19 +107,79 @@ public final class CustomFieldServiceProto {
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\022\021\n"
           + "\004skip\030\006 \001(\005B\003\340A\001\"\204\001\n"
-          + "\030ListCustomFieldsResponse\022;\n"
-          + "\r"
+          + "\030ListCustomFieldsResponse\022;\n\r"
           + "custom_fields\030\001 \003(\0132$.google.ads.admanager.v1.CustomField\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\254\003\n"
+          + "\017next_page_token\030\002 \001(\t\022\022\n"
+          + "\n"
+          + "total_size\030\003 \001(\005\"\225\001\n"
+          + "\030CreateCustomFieldRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022?\n"
+          + "\014custom_field\030\002"
+          + " \001(\0132$.google.ads.admanager.v1.CustomFieldB\003\340A\002\"\244\001\n"
+          + "\036BatchCreateCustomFieldsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022H\n"
+          + "\010requests\030\002 \003(\013"
+          + "21.google.ads.admanager.v1.CreateCustomFieldRequestB\003\340A\002\"^\n"
+          + "\037BatchCreateCustomFieldsResponse\022;\n\r"
+          + "custom_fields\030\001 \003(\0132$.google.ads.admanager.v1.CustomField\"\221\001\n"
+          + "\030UpdateCustomFieldRequest\022?\n"
+          + "\014custom_field\030\001 "
+          + "\001(\0132$.google.ads.admanager.v1.CustomFieldB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"\244\001\n"
+          + "\036BatchUpdateCustomFieldsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022H\n"
+          + "\010requests\030\002"
+          + " \003(\01321.google.ads.admanager.v1.UpdateCustomFieldRequestB\003\340A\002\"^\n"
+          + "\037BatchUpdateCustomFieldsResponse\022;\n\r"
+          + "custom_fields\030\001 \003(\0132$.google.ads.admanager.v1.CustomField\"\231\001\n"
+          + " BatchActivateCustomFieldsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022;\n"
+          + "\005names\030\003 \003(\tB,\340A\002\372A&\n"
+          + "$admanager.googleapis.com/CustomField\"#\n"
+          + "!BatchActivateCustomFieldsResponse\"\233\001\n"
+          + "\"BatchDeactivateCustomFieldsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022;\n"
+          + "\005names\030\003 \003(\tB,\340A\002\372A&\n"
+          + "$admanager.googleapis.com/CustomField\"%\n"
+          + "#BatchDeactivateCustomFieldsResponse2\312\r\n"
           + "\022CustomFieldService\022\233\001\n"
-          + "\016GetCustomField\022..google.ads.admanager.v1.GetCustomFieldRequest\032$.goog"
-          + "le.ads.admanager.v1.CustomField\"3\332A\004name"
-          + "\202\323\344\223\002&\022$/v1/{name=networks/*/customFields/*}\022\256\001\n"
-          + "\020ListCustomFields\0220.google.ads.admanager.v1.ListCustomFieldsRequest\0321.go"
-          + "ogle.ads.admanager.v1.ListCustomFieldsRe"
-          + "sponse\"5\332A\006parent\202\323\344\223\002&\022$/v1/{parent=net"
-          + "works/*}/customFields\032G\312A\030admanager.goog"
+          + "\016GetCustomField\022..google.ads.admanager.v1.GetCustomFieldRequ"
+          + "est\032$.google.ads.admanager.v1.CustomFiel"
+          + "d\"3\332A\004name\202\323\344\223\002&\022$/v1/{name=networks/*/customFields/*}\022\256\001\n"
+          + "\020ListCustomFields\0220.google.ads.admanager.v1.ListCustomFieldsRe"
+          + "quest\0321.google.ads.admanager.v1.ListCust"
+          + "omFieldsResponse\"5\332A\006parent\202\323\344\223\002&\022$/v1/{parent=networks/*}/customFields\022\276\001\n"
+          + "\021CreateCustomField\0221.google.ads.admanager.v1."
+          + "CreateCustomFieldRequest\032$.google.ads.ad"
+          + "manager.v1.CustomField\"P\332A\023parent,custom"
+          + "_field\202\323\344\223\0024\"$/v1/{parent=networks/*}/customFields:\014custom_field\022\333\001\n"
+          + "\027BatchCreateCustomFields\0227.google.ads.admanager.v1.B"
+          + "atchCreateCustomFieldsRequest\0328.google.ads.admanager.v1.BatchCreateCustomFieldsR"
+          + "esponse\"M\332A\017parent,requests\202\323\344\223\0025\"0/v1/{"
+          + "parent=networks/*}/customFields:batchCreate:\001*\022\320\001\n"
+          + "\021UpdateCustomField\0221.google.ads.admanager.v1.UpdateCustomFieldRequest\032"
+          + "$.google.ads.admanager.v1.CustomField\"b\332"
+          + "A\030custom_field,update_mask\202\323\344\223\002A21/v1/{c"
+          + "ustom_field.name=networks/*/customFields/*}:\014custom_field\022\333\001\n"
+          + "\027BatchUpdateCustomFields\0227.google.ads.admanager.v1.BatchUpd"
+          + "ateCustomFieldsRequest\0328.google.ads.admanager.v1.BatchUpdateCustomFieldsResponse"
+          + "\"M\332A\017parent,requests\202\323\344\223\0025\"0/v1/{parent="
+          + "networks/*}/customFields:batchUpdate:\001*\022\340\001\n"
+          + "\031BatchActivateCustomFields\0229.google.ads.admanager.v1.BatchActivateCustomField"
+          + "sRequest\032:.google.ads.admanager.v1.Batch"
+          + "ActivateCustomFieldsResponse\"L\332A\014parent,"
+          + "names\202\323\344\223\0027\"2/v1/{parent=networks/*}/customFields:batchActivate:\001*\022\350\001\n"
+          + "\033BatchDeactivateCustomFields\022;.google.ads.admanage"
+          + "r.v1.BatchDeactivateCustomFieldsRequest\032<.google.ads.admanager.v1.BatchDeactivat"
+          + "eCustomFieldsResponse\"N\332A\014parent,names\202\323"
+          + "\344\223\0029\"4/v1/{parent=networks/*}/customFiel"
+          + "ds:batchDeactivate:\001*\032G\312A\030admanager.goog"
           + "leapis.com\322A)https://www.googleapis.com/auth/admanagerB\313\001\n"
           + "\033com.google.ads.admanager.v1B\027CustomFieldServiceProtoP\001Z@googl"
           + "e.golang.org/genproto/googleapis/ads/adm"
@@ -95,6 +196,7 @@ public final class CustomFieldServiceProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_GetCustomFieldRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -120,6 +222,82 @@ public final class CustomFieldServiceProto {
             new java.lang.String[] {
               "CustomFields", "NextPageToken", "TotalSize",
             });
+    internal_static_google_ads_admanager_v1_CreateCustomFieldRequest_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_ads_admanager_v1_CreateCustomFieldRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_CreateCustomFieldRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "CustomField",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateCustomFieldsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_ads_admanager_v1_BatchCreateCustomFieldsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateCustomFieldsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateCustomFieldsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_ads_admanager_v1_BatchCreateCustomFieldsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateCustomFieldsResponse_descriptor,
+            new java.lang.String[] {
+              "CustomFields",
+            });
+    internal_static_google_ads_admanager_v1_UpdateCustomFieldRequest_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_ads_admanager_v1_UpdateCustomFieldRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_UpdateCustomFieldRequest_descriptor,
+            new java.lang.String[] {
+              "CustomField", "UpdateMask",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateCustomFieldsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_ads_admanager_v1_BatchUpdateCustomFieldsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateCustomFieldsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateCustomFieldsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_ads_admanager_v1_BatchUpdateCustomFieldsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateCustomFieldsResponse_descriptor,
+            new java.lang.String[] {
+              "CustomFields",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivateCustomFieldsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_ads_admanager_v1_BatchActivateCustomFieldsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateCustomFieldsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivateCustomFieldsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_ads_admanager_v1_BatchActivateCustomFieldsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateCustomFieldsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchDeactivateCustomFieldsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_ads_admanager_v1_BatchDeactivateCustomFieldsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivateCustomFieldsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchDeactivateCustomFieldsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_ads_admanager_v1_BatchDeactivateCustomFieldsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivateCustomFieldsResponse_descriptor,
+            new java.lang.String[] {});
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -135,6 +313,7 @@ public final class CustomFieldServiceProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

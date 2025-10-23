@@ -73,15 +73,15 @@ public final class CustomFieldMessagesProto {
           + "\007_statusB\016\n"
           + "\014_entity_typeB\014\n\n"
           + "_data_typeB\r\n"
-          + "\013_visibility\"S\n"
-          + "\021CustomFieldOption\022#\n"
-          + "\026custom_field_option_id\030\001 \001(\003B\003\340A\003\022\031\n"
+          + "\013_visibility\"V\n"
+          + "\021CustomFieldOption\022&\n"
+          + "\026custom_field_option_id\030\001 \001(\003B\006\340A\001\340A\007\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\002B\314\001\n"
-          + "\033com.google.ads.admanager.v1B\030CustomFieldMessagesPro"
-          + "toP\001Z@google.golang.org/genproto/googlea"
-          + "pis/ads/admanager/v1;admanager\252\002\027Google."
-          + "Ads.AdManager.V1\312\002\027Google\\Ads\\AdManager\\"
-          + "V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\033com.google.ads.admanager.v1B\030CustomFieldMessages"
+          + "ProtoP\001Z@google.golang.org/genproto/goog"
+          + "leapis/ads/admanager/v1;admanager\252\002\027Goog"
+          + "le.Ads.AdManager.V1\312\002\027Google\\Ads\\AdManag"
+          + "er\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1115,6 +1115,7 @@ public class ConversationsClientHttpJsonTest {
             .putAllContextReferences(new HashMap<String, Conversation.ContextReference>())
             .setConversationContext(ConversationContext.newBuilder().build())
             .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+            .setSecuritySettings("securitySettings-1062971517")
             .build();
 
     GenerateStatelessSuggestionResponse actualResponse =
@@ -1150,6 +1151,7 @@ public class ConversationsClientHttpJsonTest {
               .putAllContextReferences(new HashMap<String, Conversation.ContextReference>())
               .setConversationContext(ConversationContext.newBuilder().build())
               .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+              .setSecuritySettings("securitySettings-1062971517")
               .build();
       client.generateStatelessSuggestion(request);
       Assert.fail("No exception raised");

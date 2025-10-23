@@ -69,6 +69,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
             com.google.ads.admanager.v1.CustomTargetingValue.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -141,7 +142,27 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * optional string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the customTargetingKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomTargetingKey() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The resource name of the `CustomTargetingKey`.
+   * Format:
+   * `networks/{network_code}/customTargetingKeys/{custom_targeting_key_id}`
+   * </pre>
+   *
+   * <code>
+   * optional string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The customTargetingKey.
@@ -169,7 +190,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * optional string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for customTargetingKey.
@@ -203,7 +224,27 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
    * of using "age&gt;=18 AND &lt;=34", try "18-34"
    * </pre>
    *
-   * <code>string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>optional string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return Whether the adTagName field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdTagName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Name of the `CustomTargetingValue`. Values can contain up to 40
+   * characters each. You can use alphanumeric characters and symbols other than
+   * the following: ", ', =, !, +, #, *, ~, ;, ^, (, ), &lt;, &gt;, [, ]. Values are
+   * not data-specific; all values are treated as strings. For example, instead
+   * of using "age&gt;=18 AND &lt;=34", try "18-34"
+   * </pre>
+   *
+   * <code>optional string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The adTagName.
    */
@@ -231,7 +272,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
    * of using "age&gt;=18 AND &lt;=34", try "18-34"
    * </pre>
    *
-   * <code>string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>optional string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The bytes for adTagName.
    */
@@ -260,7 +301,23 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
    * Optional. Descriptive name for the `CustomTargetingValue`.
    * </pre>
    *
-   * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisplayName() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Descriptive name for the `CustomTargetingValue`.
+   * </pre>
+   *
+   * <code>optional string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The displayName.
    */
@@ -284,7 +341,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
    * Optional. Descriptive name for the `CustomTargetingValue`.
    * </pre>
    *
-   * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for displayName.
    */
@@ -313,7 +370,26 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the matchType field is set.
+   */
+  @java.lang.Override
+  public boolean hasMatchType() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The way in which the CustomTargetingValue.name strings
+   * will be matched.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for matchType.
@@ -332,7 +408,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The matchType.
@@ -361,7 +437,25 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Status of the `CustomTargetingValue`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The enum numeric value on the wire for status.
@@ -379,7 +473,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The status.
@@ -413,25 +507,19 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(adTagName_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, adTagName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, displayName_);
     }
-    if (matchType_
-        != com.google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum
-            .CustomTargetingValueMatchType.CUSTOM_TARGETING_VALUE_MATCH_TYPE_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeEnum(6, matchType_);
     }
-    if (status_
-        != com.google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus
-            .CUSTOM_TARGETING_VALUE_STATUS_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeEnum(7, status_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customTargetingKey_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, customTargetingKey_);
     }
     getUnknownFields().writeTo(output);
@@ -446,25 +534,19 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(adTagName_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, adTagName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, displayName_);
     }
-    if (matchType_
-        != com.google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum
-            .CustomTargetingValueMatchType.CUSTOM_TARGETING_VALUE_MATCH_TYPE_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, matchType_);
     }
-    if (status_
-        != com.google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus
-            .CUSTOM_TARGETING_VALUE_STATUS_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, status_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customTargetingKey_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, customTargetingKey_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -484,11 +566,26 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
         (com.google.ads.admanager.v1.CustomTargetingValue) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (!getCustomTargetingKey().equals(other.getCustomTargetingKey())) return false;
-    if (!getAdTagName().equals(other.getAdTagName())) return false;
-    if (!getDisplayName().equals(other.getDisplayName())) return false;
-    if (matchType_ != other.matchType_) return false;
-    if (status_ != other.status_) return false;
+    if (hasCustomTargetingKey() != other.hasCustomTargetingKey()) return false;
+    if (hasCustomTargetingKey()) {
+      if (!getCustomTargetingKey().equals(other.getCustomTargetingKey())) return false;
+    }
+    if (hasAdTagName() != other.hasAdTagName()) return false;
+    if (hasAdTagName()) {
+      if (!getAdTagName().equals(other.getAdTagName())) return false;
+    }
+    if (hasDisplayName() != other.hasDisplayName()) return false;
+    if (hasDisplayName()) {
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+    }
+    if (hasMatchType() != other.hasMatchType()) return false;
+    if (hasMatchType()) {
+      if (matchType_ != other.matchType_) return false;
+    }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (status_ != other.status_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -502,16 +599,26 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + CUSTOM_TARGETING_KEY_FIELD_NUMBER;
-    hash = (53 * hash) + getCustomTargetingKey().hashCode();
-    hash = (37 * hash) + AD_TAG_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getAdTagName().hashCode();
-    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDisplayName().hashCode();
-    hash = (37 * hash) + MATCH_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + matchType_;
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + status_;
+    if (hasCustomTargetingKey()) {
+      hash = (37 * hash) + CUSTOM_TARGETING_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomTargetingKey().hashCode();
+    }
+    if (hasAdTagName()) {
+      hash = (37 * hash) + AD_TAG_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getAdTagName().hashCode();
+    }
+    if (hasDisplayName()) {
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+    }
+    if (hasMatchType()) {
+      hash = (37 * hash) + MATCH_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + matchType_;
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -697,21 +804,28 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.customTargetingKey_ = customTargetingKey_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.adTagName_ = adTagName_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.displayName_ = displayName_;
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.matchType_ = matchType_;
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.status_ = status_;
+        to_bitField0_ |= 0x00000010;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -765,26 +879,26 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getCustomTargetingKey().isEmpty()) {
+      if (other.hasCustomTargetingKey()) {
         customTargetingKey_ = other.customTargetingKey_;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (!other.getAdTagName().isEmpty()) {
+      if (other.hasAdTagName()) {
         adTagName_ = other.adTagName_;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (!other.getDisplayName().isEmpty()) {
+      if (other.hasDisplayName()) {
         displayName_ = other.displayName_;
         bitField0_ |= 0x00000008;
         onChanged();
       }
-      if (other.matchType_ != 0) {
-        setMatchTypeValue(other.getMatchTypeValue());
+      if (other.hasMatchType()) {
+        setMatchType(other.getMatchType());
       }
-      if (other.status_ != 0) {
-        setStatusValue(other.getStatusValue());
+      if (other.hasStatus()) {
+        setStatus(other.getStatus());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1000,7 +1114,26 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * optional string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the customTargetingKey field is set.
+     */
+    public boolean hasCustomTargetingKey() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. The resource name of the `CustomTargetingKey`.
+     * Format:
+     * `networks/{network_code}/customTargetingKeys/{custom_targeting_key_id}`
+     * </pre>
+     *
+     * <code>
+     * optional string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The customTargetingKey.
@@ -1027,7 +1160,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * optional string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for customTargetingKey.
@@ -1054,7 +1187,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * optional string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The customTargetingKey to set.
@@ -1080,7 +1213,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * optional string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -1102,7 +1235,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * optional string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for customTargetingKey to set.
@@ -1132,7 +1265,26 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * of using "age&gt;=18 AND &lt;=34", try "18-34"
      * </pre>
      *
-     * <code>string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return Whether the adTagName field is set.
+     */
+    public boolean hasAdTagName() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Name of the `CustomTargetingValue`. Values can contain up to 40
+     * characters each. You can use alphanumeric characters and symbols other than
+     * the following: ", ', =, !, +, #, *, ~, ;, ^, (, ), &lt;, &gt;, [, ]. Values are
+     * not data-specific; all values are treated as strings. For example, instead
+     * of using "age&gt;=18 AND &lt;=34", try "18-34"
+     * </pre>
+     *
+     * <code>optional string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The adTagName.
      */
@@ -1159,7 +1311,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * of using "age&gt;=18 AND &lt;=34", try "18-34"
      * </pre>
      *
-     * <code>string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The bytes for adTagName.
      */
@@ -1186,7 +1338,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * of using "age&gt;=18 AND &lt;=34", try "18-34"
      * </pre>
      *
-     * <code>string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @param value The adTagName to set.
      * @return This builder for chaining.
@@ -1212,7 +1364,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * of using "age&gt;=18 AND &lt;=34", try "18-34"
      * </pre>
      *
-     * <code>string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return This builder for chaining.
      */
@@ -1234,7 +1386,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * of using "age&gt;=18 AND &lt;=34", try "18-34"
      * </pre>
      *
-     * <code>string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>optional string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @param value The bytes for adTagName to set.
      * @return This builder for chaining.
@@ -1259,7 +1411,22 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * Optional. Descriptive name for the `CustomTargetingValue`.
      * </pre>
      *
-     * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the displayName field is set.
+     */
+    public boolean hasDisplayName() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Descriptive name for the `CustomTargetingValue`.
+     * </pre>
+     *
+     * <code>optional string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The displayName.
      */
@@ -1282,7 +1449,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * Optional. Descriptive name for the `CustomTargetingValue`.
      * </pre>
      *
-     * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for displayName.
      */
@@ -1305,7 +1472,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * Optional. Descriptive name for the `CustomTargetingValue`.
      * </pre>
      *
-     * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -1327,7 +1494,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * Optional. Descriptive name for the `CustomTargetingValue`.
      * </pre>
      *
-     * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1345,7 +1512,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * Optional. Descriptive name for the `CustomTargetingValue`.
      * </pre>
      *
-     * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -1372,7 +1539,26 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the matchType field is set.
+     */
+    @java.lang.Override
+    public boolean hasMatchType() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. The way in which the CustomTargetingValue.name strings
+     * will be matched.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The enum numeric value on the wire for matchType.
@@ -1391,7 +1577,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The enum numeric value on the wire for matchType to set.
@@ -1413,7 +1599,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The matchType.
@@ -1441,7 +1627,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The matchType to set.
@@ -1468,7 +1654,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -1490,7 +1676,25 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Status of the `CustomTargetingValue`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The enum numeric value on the wire for status.
@@ -1508,7 +1712,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The enum numeric value on the wire for status to set.
@@ -1529,7 +1733,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The status.
@@ -1554,7 +1758,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The status to set.
@@ -1580,7 +1784,7 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.

@@ -41,6 +41,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
 
   private SynthesizeSpeechConfig() {
     effectsProfileId_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    pronunciations_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -269,6 +270,92 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
         : voice_;
   }
 
+  public static final int PRONUNCIATIONS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams>
+      pronunciations_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom pronunciations for the synthesized audio.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams>
+      getPronunciationsList() {
+    return pronunciations_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom pronunciations for the synthesized audio.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.dialogflow.v2beta1.CustomPronunciationParamsOrBuilder>
+      getPronunciationsOrBuilderList() {
+    return pronunciations_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom pronunciations for the synthesized audio.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public int getPronunciationsCount() {
+    return pronunciations_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom pronunciations for the synthesized audio.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams getPronunciations(
+      int index) {
+    return pronunciations_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom pronunciations for the synthesized audio.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.CustomPronunciationParamsOrBuilder
+      getPronunciationsOrBuilder(int index) {
+    return pronunciations_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -297,6 +384,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     }
     for (int i = 0; i < effectsProfileId_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, effectsProfileId_.getRaw(i));
+    }
+    for (int i = 0; i < pronunciations_.size(); i++) {
+      output.writeMessage(6, pronunciations_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -327,6 +417,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       size += dataSize;
       size += 1 * getEffectsProfileIdList().size();
     }
+    for (int i = 0; i < pronunciations_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, pronunciations_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -354,6 +447,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     if (hasVoice()) {
       if (!getVoice().equals(other.getVoice())) return false;
     }
+    if (!getPronunciationsList().equals(other.getPronunciationsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -386,6 +480,10 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     if (hasVoice()) {
       hash = (37 * hash) + VOICE_FIELD_NUMBER;
       hash = (53 * hash) + getVoice().hashCode();
+    }
+    if (getPronunciationsCount() > 0) {
+      hash = (37 * hash) + PRONUNCIATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getPronunciationsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -530,6 +628,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getVoiceFieldBuilder();
+        getPronunciationsFieldBuilder();
       }
     }
 
@@ -546,6 +645,13 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
         voiceBuilder_.dispose();
         voiceBuilder_ = null;
       }
+      if (pronunciationsBuilder_ == null) {
+        pronunciations_ = java.util.Collections.emptyList();
+      } else {
+        pronunciations_ = null;
+        pronunciationsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -573,11 +679,25 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig buildPartial() {
       com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig result =
           new com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig result) {
+      if (pronunciationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          pronunciations_ = java.util.Collections.unmodifiableList(pronunciations_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.pronunciations_ = pronunciations_;
+      } else {
+        result.pronunciations_ = pronunciationsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig result) {
@@ -671,6 +791,33 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       if (other.hasVoice()) {
         mergeVoice(other.getVoice());
       }
+      if (pronunciationsBuilder_ == null) {
+        if (!other.pronunciations_.isEmpty()) {
+          if (pronunciations_.isEmpty()) {
+            pronunciations_ = other.pronunciations_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensurePronunciationsIsMutable();
+            pronunciations_.addAll(other.pronunciations_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.pronunciations_.isEmpty()) {
+          if (pronunciationsBuilder_.isEmpty()) {
+            pronunciationsBuilder_.dispose();
+            pronunciationsBuilder_ = null;
+            pronunciations_ = other.pronunciations_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            pronunciationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPronunciationsFieldBuilder()
+                    : null;
+          } else {
+            pronunciationsBuilder_.addAllMessages(other.pronunciations_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -728,6 +875,20 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
                 effectsProfileId_.add(s);
                 break;
               } // case 42
+            case 50:
+              {
+                com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams.parser(),
+                        extensionRegistry);
+                if (pronunciationsBuilder_ == null) {
+                  ensurePronunciationsIsMutable();
+                  pronunciations_.add(m);
+                } else {
+                  pronunciationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1373,6 +1534,412 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
         voice_ = null;
       }
       return voiceBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams>
+        pronunciations_ = java.util.Collections.emptyList();
+
+    private void ensurePronunciationsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        pronunciations_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams>(
+                pronunciations_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams,
+            com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams.Builder,
+            com.google.cloud.dialogflow.v2beta1.CustomPronunciationParamsOrBuilder>
+        pronunciationsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams>
+        getPronunciationsList() {
+      if (pronunciationsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(pronunciations_);
+      } else {
+        return pronunciationsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public int getPronunciationsCount() {
+      if (pronunciationsBuilder_ == null) {
+        return pronunciations_.size();
+      } else {
+        return pronunciationsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams getPronunciations(
+        int index) {
+      if (pronunciationsBuilder_ == null) {
+        return pronunciations_.get(index);
+      } else {
+        return pronunciationsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public Builder setPronunciations(
+        int index, com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams value) {
+      if (pronunciationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePronunciationsIsMutable();
+        pronunciations_.set(index, value);
+        onChanged();
+      } else {
+        pronunciationsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public Builder setPronunciations(
+        int index,
+        com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams.Builder builderForValue) {
+      if (pronunciationsBuilder_ == null) {
+        ensurePronunciationsIsMutable();
+        pronunciations_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        pronunciationsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public Builder addPronunciations(
+        com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams value) {
+      if (pronunciationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePronunciationsIsMutable();
+        pronunciations_.add(value);
+        onChanged();
+      } else {
+        pronunciationsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public Builder addPronunciations(
+        int index, com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams value) {
+      if (pronunciationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePronunciationsIsMutable();
+        pronunciations_.add(index, value);
+        onChanged();
+      } else {
+        pronunciationsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public Builder addPronunciations(
+        com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams.Builder builderForValue) {
+      if (pronunciationsBuilder_ == null) {
+        ensurePronunciationsIsMutable();
+        pronunciations_.add(builderForValue.build());
+        onChanged();
+      } else {
+        pronunciationsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public Builder addPronunciations(
+        int index,
+        com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams.Builder builderForValue) {
+      if (pronunciationsBuilder_ == null) {
+        ensurePronunciationsIsMutable();
+        pronunciations_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        pronunciationsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public Builder addAllPronunciations(
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams>
+            values) {
+      if (pronunciationsBuilder_ == null) {
+        ensurePronunciationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pronunciations_);
+        onChanged();
+      } else {
+        pronunciationsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public Builder clearPronunciations() {
+      if (pronunciationsBuilder_ == null) {
+        pronunciations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        pronunciationsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public Builder removePronunciations(int index) {
+      if (pronunciationsBuilder_ == null) {
+        ensurePronunciationsIsMutable();
+        pronunciations_.remove(index);
+        onChanged();
+      } else {
+        pronunciationsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams.Builder
+        getPronunciationsBuilder(int index) {
+      return getPronunciationsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.CustomPronunciationParamsOrBuilder
+        getPronunciationsOrBuilder(int index) {
+      if (pronunciationsBuilder_ == null) {
+        return pronunciations_.get(index);
+      } else {
+        return pronunciationsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.dialogflow.v2beta1.CustomPronunciationParamsOrBuilder>
+        getPronunciationsOrBuilderList() {
+      if (pronunciationsBuilder_ != null) {
+        return pronunciationsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(pronunciations_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams.Builder
+        addPronunciationsBuilder() {
+      return getPronunciationsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams.Builder
+        addPronunciationsBuilder(int index) {
+      return getPronunciationsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The custom pronunciations for the synthesized audio.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams.Builder>
+        getPronunciationsBuilderList() {
+      return getPronunciationsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams,
+            com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams.Builder,
+            com.google.cloud.dialogflow.v2beta1.CustomPronunciationParamsOrBuilder>
+        getPronunciationsFieldBuilder() {
+      if (pronunciationsBuilder_ == null) {
+        pronunciationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams,
+                com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams.Builder,
+                com.google.cloud.dialogflow.v2beta1.CustomPronunciationParamsOrBuilder>(
+                pronunciations_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        pronunciations_ = null;
+      }
+      return pronunciationsBuilder_;
     }
 
     @java.lang.Override

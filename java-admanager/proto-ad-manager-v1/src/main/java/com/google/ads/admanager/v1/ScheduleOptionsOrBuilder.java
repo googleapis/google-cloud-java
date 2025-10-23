@@ -31,7 +31,7 @@ public interface ScheduleOptionsOrBuilder
    * Information pertaining to schedule itself.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.Schedule schedule = 1;</code>
+   * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule schedule = 1;</code>
    *
    * @return Whether the schedule field is set.
    */
@@ -44,11 +44,11 @@ public interface ScheduleOptionsOrBuilder
    * Information pertaining to schedule itself.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.Schedule schedule = 1;</code>
+   * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule schedule = 1;</code>
    *
    * @return The schedule.
    */
-  com.google.ads.admanager.v1.Schedule getSchedule();
+  com.google.ads.admanager.v1.ScheduleOptions.Schedule getSchedule();
 
   /**
    *
@@ -57,9 +57,9 @@ public interface ScheduleOptionsOrBuilder
    * Information pertaining to schedule itself.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.Schedule schedule = 1;</code>
+   * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule schedule = 1;</code>
    */
-  com.google.ads.admanager.v1.ScheduleOrBuilder getScheduleOrBuilder();
+  com.google.ads.admanager.v1.ScheduleOptions.ScheduleOrBuilder getScheduleOrBuilder();
 
   /**
    *
@@ -96,10 +96,10 @@ public interface ScheduleOptionsOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  java.util.List<com.google.ads.admanager.v1.Report.Flag> getFlagsList();
+  java.util.List<com.google.ads.admanager.v1.ReportDefinition.Flag> getFlagsList();
 
   /**
    *
@@ -110,10 +110,10 @@ public interface ScheduleOptionsOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  com.google.ads.admanager.v1.Report.Flag getFlags(int index);
+  com.google.ads.admanager.v1.ReportDefinition.Flag getFlags(int index);
 
   /**
    *
@@ -124,7 +124,7 @@ public interface ScheduleOptionsOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getFlagsCount();
@@ -138,10 +138,10 @@ public interface ScheduleOptionsOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  java.util.List<? extends com.google.ads.admanager.v1.Report.FlagOrBuilder>
+  java.util.List<? extends com.google.ads.admanager.v1.ReportDefinition.FlagOrBuilder>
       getFlagsOrBuilderList();
 
   /**
@@ -153,8 +153,8 @@ public interface ScheduleOptionsOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  com.google.ads.admanager.v1.Report.FlagOrBuilder getFlagsOrBuilder(int index);
+  com.google.ads.admanager.v1.ReportDefinition.FlagOrBuilder getFlagsOrBuilder(int index);
 }
