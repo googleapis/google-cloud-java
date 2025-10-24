@@ -16701,10 +16701,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        * store to verify certificates. N.B. Make sure the HTTPS server
        * certificates are signed with "subject alt name". For instance a
        * certificate can be self-signed using the following command,
+       * ```
        *    openssl x509 -req -days 200 -in example.com.csr &#92;
        *      -signkey example.com.key &#92;
        *      -out example.com.crt &#92;
        *      -extfile &lt;(printf "&#92;nsubjectAltName='DNS:www.example.com'")
+       * ```
        * </pre>
        *
        * <code>bytes cert = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -16828,10 +16830,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        * store to verify certificates. N.B. Make sure the HTTPS server
        * certificates are signed with "subject alt name". For instance a
        * certificate can be self-signed using the following command,
+       * ```
        *    openssl x509 -req -days 200 -in example.com.csr &#92;
        *      -signkey example.com.key &#92;
        *      -out example.com.crt &#92;
        *      -extfile &lt;(printf "&#92;nsubjectAltName='DNS:www.example.com'")
+       * ```
        * </pre>
        *
        * <code>bytes cert = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -17344,10 +17348,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          * store to verify certificates. N.B. Make sure the HTTPS server
          * certificates are signed with "subject alt name". For instance a
          * certificate can be self-signed using the following command,
+         * ```
          *    openssl x509 -req -days 200 -in example.com.csr &#92;
          *      -signkey example.com.key &#92;
          *      -out example.com.crt &#92;
          *      -extfile &lt;(printf "&#92;nsubjectAltName='DNS:www.example.com'")
+         * ```
          * </pre>
          *
          * <code>bytes cert = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -17369,10 +17375,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          * store to verify certificates. N.B. Make sure the HTTPS server
          * certificates are signed with "subject alt name". For instance a
          * certificate can be self-signed using the following command,
+         * ```
          *    openssl x509 -req -days 200 -in example.com.csr &#92;
          *      -signkey example.com.key &#92;
          *      -out example.com.crt &#92;
          *      -extfile &lt;(printf "&#92;nsubjectAltName='DNS:www.example.com'")
+         * ```
          * </pre>
          *
          * <code>bytes cert = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -17400,10 +17408,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          * store to verify certificates. N.B. Make sure the HTTPS server
          * certificates are signed with "subject alt name". For instance a
          * certificate can be self-signed using the following command,
+         * ```
          *    openssl x509 -req -days 200 -in example.com.csr &#92;
          *      -signkey example.com.key &#92;
          *      -out example.com.crt &#92;
          *      -extfile &lt;(printf "&#92;nsubjectAltName='DNS:www.example.com'")
+         * ```
          * </pre>
          *
          * <code>bytes cert = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -19746,7 +19756,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.Tool.extension_spec is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/tool.proto;l=561
+   *     google/cloud/dialogflow/v2beta1/tool.proto;l=563
    * @return Whether the extensionSpec field is set.
    */
   @java.lang.Override
@@ -19767,7 +19777,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.Tool.extension_spec is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/tool.proto;l=561
+   *     google/cloud/dialogflow/v2beta1/tool.proto;l=563
    * @return The extensionSpec.
    */
   @java.lang.Override
@@ -21802,7 +21812,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.Tool.extension_spec is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/tool.proto;l=561
+     *     google/cloud/dialogflow/v2beta1/tool.proto;l=563
      * @return Whether the extensionSpec field is set.
      */
     @java.lang.Override
@@ -21823,7 +21833,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.Tool.extension_spec is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/tool.proto;l=561
+     *     google/cloud/dialogflow/v2beta1/tool.proto;l=563
      * @return The extensionSpec.
      */
     @java.lang.Override

@@ -71,16 +71,7 @@ public enum EntryView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CUSTOM = 3;</code>
    */
   CUSTOM(3),
-  /**
-   *
-   *
-   * <pre>
-   * Returns all aspects. If the number of aspects exceeds 100, the first
-   * 100 will be returned.
-   * </pre>
-   *
-   * <code>ALL = 4;</code>
-   */
+  /** <code>ALL = 4;</code> */
   ALL(4),
   UNRECOGNIZED(-1),
   ;
@@ -131,16 +122,7 @@ public enum EntryView implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int CUSTOM_VALUE = 3;
 
-  /**
-   *
-   *
-   * <pre>
-   * Returns all aspects. If the number of aspects exceeds 100, the first
-   * 100 will be returned.
-   * </pre>
-   *
-   * <code>ALL = 4;</code>
-   */
+  /** <code>ALL = 4;</code> */
   public static final int ALL_VALUE = 4;
 
   public final int getNumber() {

@@ -1647,6 +1647,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Lists Entries within an EntryGroup.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     default void listEntries(
@@ -1662,6 +1667,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Gets an Entry.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     default void getEntry(
@@ -1675,6 +1685,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Looks up an entry by name using the permission on the source system.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     default void lookupEntry(
@@ -2142,6 +2157,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Lists Entries within an EntryGroup.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public void listEntries(
@@ -2159,6 +2179,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Gets an Entry.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public void getEntry(
@@ -2173,6 +2198,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Looks up an entry by name using the permission on the source system.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public void lookupEntry(
@@ -2582,6 +2612,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Lists Entries within an EntryGroup.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListEntriesResponse listEntries(
@@ -2595,6 +2630,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Gets an Entry.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry getEntry(
@@ -2608,6 +2648,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Looks up an entry by name using the permission on the source system.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry lookupEntry(
@@ -2988,6 +3033,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Lists Entries within an EntryGroup.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListEntriesResponse listEntries(
@@ -3001,6 +3051,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Gets an Entry.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry getEntry(
@@ -3014,6 +3069,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Looks up an entry by name using the permission on the source system.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry lookupEntry(
@@ -3400,6 +3460,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Lists Entries within an EntryGroup.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3414,6 +3479,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Gets an Entry.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataplex.v1.Entry>
@@ -3427,6 +3497,11 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Looks up an entry by name using the permission on the source system.
+     * Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+     * Metastore metadata that is stored in Dataplex Universal Catalog is
+     * changing. For more information, see [Changes to metadata stored in
+     * Dataplex Universal
+     * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataplex.v1.Entry>

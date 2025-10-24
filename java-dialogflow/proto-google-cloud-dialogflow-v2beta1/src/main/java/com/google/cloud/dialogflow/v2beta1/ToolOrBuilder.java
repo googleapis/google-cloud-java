@@ -310,7 +310,7 @@ public interface ToolOrBuilder
    * </code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.Tool.extension_spec is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/tool.proto;l=561
+   *     google/cloud/dialogflow/v2beta1/tool.proto;l=563
    * @return Whether the extensionSpec field is set.
    */
   @java.lang.Deprecated
@@ -328,7 +328,7 @@ public interface ToolOrBuilder
    * </code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.Tool.extension_spec is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/tool.proto;l=561
+   *     google/cloud/dialogflow/v2beta1/tool.proto;l=563
    * @return The extensionSpec.
    */
   @java.lang.Deprecated

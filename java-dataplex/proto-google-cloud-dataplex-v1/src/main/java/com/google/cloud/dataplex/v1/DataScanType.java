@@ -69,6 +69,16 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DATA_DISCOVERY = 3;</code>
    */
   DATA_DISCOVERY(3),
+  /**
+   *
+   *
+   * <pre>
+   * Data documentation scan.
+   * </pre>
+   *
+   * <code>DATA_DOCUMENTATION = 4;</code>
+   */
+  DATA_DOCUMENTATION(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -116,6 +126,17 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int DATA_DISCOVERY_VALUE = 3;
 
+  /**
+   *
+   *
+   * <pre>
+   * Data documentation scan.
+   * </pre>
+   *
+   * <code>DATA_DOCUMENTATION = 4;</code>
+   */
+  public static final int DATA_DOCUMENTATION_VALUE = 4;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -148,6 +169,8 @@ public enum DataScanType implements com.google.protobuf.ProtocolMessageEnum {
         return DATA_PROFILE;
       case 3:
         return DATA_DISCOVERY;
+      case 4:
+        return DATA_DOCUMENTATION;
       default:
         return null;
     }
