@@ -714,7 +714,7 @@ public interface FeatureViewOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the bigtableMetadata field is set.
@@ -729,7 +729,7 @@ public interface FeatureViewOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The bigtableMetadata.
@@ -744,7 +744,7 @@ public interface FeatureViewOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadataOrBuilder

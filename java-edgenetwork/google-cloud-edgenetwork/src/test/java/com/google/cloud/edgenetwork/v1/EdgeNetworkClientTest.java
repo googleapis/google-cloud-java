@@ -1340,6 +1340,7 @@ public class EdgeNetworkClientTest {
             .setUuid("uuid3601339")
             .setDeviceCloudResourceName("deviceCloudResourceName-1996267816")
             .addAllPhysicalPorts(new ArrayList<String>())
+            .setRemotePeeringNetworkType(RemotePeeringNetworkType.forNumber(0))
             .build();
     mockEdgeNetwork.addResponse(expectedResponse);
 
@@ -1389,6 +1390,7 @@ public class EdgeNetworkClientTest {
             .setUuid("uuid3601339")
             .setDeviceCloudResourceName("deviceCloudResourceName-1996267816")
             .addAllPhysicalPorts(new ArrayList<String>())
+            .setRemotePeeringNetworkType(RemotePeeringNetworkType.forNumber(0))
             .build();
     mockEdgeNetwork.addResponse(expectedResponse);
 
@@ -1615,6 +1617,7 @@ public class EdgeNetworkClientTest {
             .setVlanId(536153463)
             .setMtu(108462)
             .setState(ResourceState.forNumber(0))
+            .setPeeringType(RemotePeeringNetworkType.forNumber(0))
             .build();
     mockEdgeNetwork.addResponse(expectedResponse);
 
@@ -1672,6 +1675,7 @@ public class EdgeNetworkClientTest {
             .setVlanId(536153463)
             .setMtu(108462)
             .setState(ResourceState.forNumber(0))
+            .setPeeringType(RemotePeeringNetworkType.forNumber(0))
             .build();
     mockEdgeNetwork.addResponse(expectedResponse);
 
@@ -1725,6 +1729,7 @@ public class EdgeNetworkClientTest {
             .setVlanId(536153463)
             .setMtu(108462)
             .setState(ResourceState.forNumber(0))
+            .setPeeringType(RemotePeeringNetworkType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1799,6 +1804,7 @@ public class EdgeNetworkClientTest {
             .setVlanId(536153463)
             .setMtu(108462)
             .setState(ResourceState.forNumber(0))
+            .setPeeringType(RemotePeeringNetworkType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
