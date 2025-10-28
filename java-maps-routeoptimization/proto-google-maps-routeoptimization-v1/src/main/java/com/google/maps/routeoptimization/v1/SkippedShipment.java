@@ -130,6 +130,64 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
+     * Same as
+     * [example_vehicle_index][google.maps.routeoptimization.v1.SkippedShipment.Reason.example_vehicle_index]
+     * except that we provide the list of multiple identified vehicles. This
+     * list is not necessarily exhaustive. This is only filled if
+     * [fill_example_vehicle_indices_in_skipped_reasons][] is true.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>repeated int32 example_vehicle_indices = 5;</code>
+     *
+     * @return A list containing the exampleVehicleIndices.
+     */
+    java.util.List<java.lang.Integer> getExampleVehicleIndicesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Same as
+     * [example_vehicle_index][google.maps.routeoptimization.v1.SkippedShipment.Reason.example_vehicle_index]
+     * except that we provide the list of multiple identified vehicles. This
+     * list is not necessarily exhaustive. This is only filled if
+     * [fill_example_vehicle_indices_in_skipped_reasons][] is true.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>repeated int32 example_vehicle_indices = 5;</code>
+     *
+     * @return The count of exampleVehicleIndices.
+     */
+    int getExampleVehicleIndicesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Same as
+     * [example_vehicle_index][google.maps.routeoptimization.v1.SkippedShipment.Reason.example_vehicle_index]
+     * except that we provide the list of multiple identified vehicles. This
+     * list is not necessarily exhaustive. This is only filled if
+     * [fill_example_vehicle_indices_in_skipped_reasons][] is true.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>repeated int32 example_vehicle_indices = 5;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The exampleVehicleIndices at the given index.
+     */
+    int getExampleVehicleIndices(int index);
+
+    /**
+     *
+     *
+     * <pre>
      * If the reason code is `DEMAND_EXCEEDS_VEHICLE_CAPACITY`, documents one
      * capacity type that is exceeded.
      * </pre>
@@ -202,6 +260,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
 
     private Reason() {
       code_ = 0;
+      exampleVehicleIndices_ = emptyIntList();
       exampleExceededCapacityType_ = "";
     }
 
@@ -334,6 +393,69 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        * <code>VEHICLE_NOT_ALLOWED = 7;</code>
        */
       VEHICLE_NOT_ALLOWED(7),
+      /**
+       *
+       *
+       * <pre>
+       * The vehicle's `ignore` field is true.
+       *
+       * Experimental: This field's behavior or existence may change in future.
+       * </pre>
+       *
+       * <code>VEHICLE_IGNORED = 8;</code>
+       */
+      VEHICLE_IGNORED(8),
+      /**
+       *
+       *
+       * <pre>
+       * The shipment's `ignore` field is true.
+       *
+       * Experimental: This field's behavior or existence may change in future.
+       * </pre>
+       *
+       * <code>SHIPMENT_IGNORED = 9;</code>
+       */
+      SHIPMENT_IGNORED(9),
+      /**
+       *
+       *
+       * <pre>
+       * The shipment is skipped in the `injected_solution_constraint`.
+       *
+       * Experimental: This field's behavior or existence may change in future.
+       * </pre>
+       *
+       * <code>SKIPPED_IN_INJECTED_SOLUTION_CONSTRAINT = 10;</code>
+       */
+      SKIPPED_IN_INJECTED_SOLUTION_CONSTRAINT(10),
+      /**
+       *
+       *
+       * <pre>
+       * The vehicle route relaxation specified in the
+       * `injected_solution_constraint` doesn't permit any visit to be inserted.
+       *
+       * Experimental: This field's behavior or existence may change in future.
+       * </pre>
+       *
+       * <code>VEHICLE_ROUTE_IS_FULLY_SEQUENCE_CONSTRAINED = 11;</code>
+       */
+      VEHICLE_ROUTE_IS_FULLY_SEQUENCE_CONSTRAINED(11),
+      /**
+       *
+       *
+       * <pre>
+       * The shipment has a zero penalty cost. While this can be useful as an
+       * advanced modelling choice, it may also explain after the fact why a
+       * shipment was skipped.
+       *
+       * Experimental: This field's behavior or existence may change in future.
+       * </pre>
+       *
+       * <code>ZERO_PENALTY_COST = 13;</code>
+       */
+      ZERO_PENALTY_COST(13),
       UNRECOGNIZED(-1),
       ;
 
@@ -441,6 +563,74 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        */
       public static final int VEHICLE_NOT_ALLOWED_VALUE = 7;
 
+      /**
+       *
+       *
+       * <pre>
+       * The vehicle's `ignore` field is true.
+       *
+       * Experimental: This field's behavior or existence may change in future.
+       * </pre>
+       *
+       * <code>VEHICLE_IGNORED = 8;</code>
+       */
+      public static final int VEHICLE_IGNORED_VALUE = 8;
+
+      /**
+       *
+       *
+       * <pre>
+       * The shipment's `ignore` field is true.
+       *
+       * Experimental: This field's behavior or existence may change in future.
+       * </pre>
+       *
+       * <code>SHIPMENT_IGNORED = 9;</code>
+       */
+      public static final int SHIPMENT_IGNORED_VALUE = 9;
+
+      /**
+       *
+       *
+       * <pre>
+       * The shipment is skipped in the `injected_solution_constraint`.
+       *
+       * Experimental: This field's behavior or existence may change in future.
+       * </pre>
+       *
+       * <code>SKIPPED_IN_INJECTED_SOLUTION_CONSTRAINT = 10;</code>
+       */
+      public static final int SKIPPED_IN_INJECTED_SOLUTION_CONSTRAINT_VALUE = 10;
+
+      /**
+       *
+       *
+       * <pre>
+       * The vehicle route relaxation specified in the
+       * `injected_solution_constraint` doesn't permit any visit to be inserted.
+       *
+       * Experimental: This field's behavior or existence may change in future.
+       * </pre>
+       *
+       * <code>VEHICLE_ROUTE_IS_FULLY_SEQUENCE_CONSTRAINED = 11;</code>
+       */
+      public static final int VEHICLE_ROUTE_IS_FULLY_SEQUENCE_CONSTRAINED_VALUE = 11;
+
+      /**
+       *
+       *
+       * <pre>
+       * The shipment has a zero penalty cost. While this can be useful as an
+       * advanced modelling choice, it may also explain after the fact why a
+       * shipment was skipped.
+       *
+       * Experimental: This field's behavior or existence may change in future.
+       * </pre>
+       *
+       * <code>ZERO_PENALTY_COST = 13;</code>
+       */
+      public static final int ZERO_PENALTY_COST_VALUE = 13;
+
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
           throw new java.lang.IllegalArgumentException(
@@ -481,6 +671,16 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
             return CANNOT_BE_PERFORMED_WITHIN_VEHICLE_TIME_WINDOWS;
           case 7:
             return VEHICLE_NOT_ALLOWED;
+          case 8:
+            return VEHICLE_IGNORED;
+          case 9:
+            return SHIPMENT_IGNORED;
+          case 10:
+            return SKIPPED_IN_INJECTED_SOLUTION_CONSTRAINT;
+          case 11:
+            return VEHICLE_ROUTE_IS_FULLY_SEQUENCE_CONSTRAINED;
+          case 13:
+            return ZERO_PENALTY_COST;
           default:
             return null;
         }
@@ -613,6 +813,78 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       return exampleVehicleIndex_;
     }
 
+    public static final int EXAMPLE_VEHICLE_INDICES_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.Internal.IntList exampleVehicleIndices_ = emptyIntList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Same as
+     * [example_vehicle_index][google.maps.routeoptimization.v1.SkippedShipment.Reason.example_vehicle_index]
+     * except that we provide the list of multiple identified vehicles. This
+     * list is not necessarily exhaustive. This is only filled if
+     * [fill_example_vehicle_indices_in_skipped_reasons][] is true.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>repeated int32 example_vehicle_indices = 5;</code>
+     *
+     * @return A list containing the exampleVehicleIndices.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer> getExampleVehicleIndicesList() {
+      return exampleVehicleIndices_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Same as
+     * [example_vehicle_index][google.maps.routeoptimization.v1.SkippedShipment.Reason.example_vehicle_index]
+     * except that we provide the list of multiple identified vehicles. This
+     * list is not necessarily exhaustive. This is only filled if
+     * [fill_example_vehicle_indices_in_skipped_reasons][] is true.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>repeated int32 example_vehicle_indices = 5;</code>
+     *
+     * @return The count of exampleVehicleIndices.
+     */
+    public int getExampleVehicleIndicesCount() {
+      return exampleVehicleIndices_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Same as
+     * [example_vehicle_index][google.maps.routeoptimization.v1.SkippedShipment.Reason.example_vehicle_index]
+     * except that we provide the list of multiple identified vehicles. This
+     * list is not necessarily exhaustive. This is only filled if
+     * [fill_example_vehicle_indices_in_skipped_reasons][] is true.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>repeated int32 example_vehicle_indices = 5;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The exampleVehicleIndices at the given index.
+     */
+    public int getExampleVehicleIndices(int index) {
+      return exampleVehicleIndices_.getInt(index);
+    }
+
+    private int exampleVehicleIndicesMemoizedSerializedSize = -1;
+
     public static final int EXAMPLE_EXCEEDED_CAPACITY_TYPE_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
@@ -682,6 +954,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
       if (code_
           != com.google.maps.routeoptimization.v1.SkippedShipment.Reason.Code.CODE_UNSPECIFIED
               .getNumber()) {
@@ -692,6 +965,13 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(exampleExceededCapacityType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, exampleExceededCapacityType_);
+      }
+      if (getExampleVehicleIndicesList().size() > 0) {
+        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(exampleVehicleIndicesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < exampleVehicleIndices_.size(); i++) {
+        output.writeInt32NoTag(exampleVehicleIndices_.getInt(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -715,6 +995,20 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.GeneratedMessageV3.computeStringSize(
                 3, exampleExceededCapacityType_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < exampleVehicleIndices_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(
+                  exampleVehicleIndices_.getInt(i));
+        }
+        size += dataSize;
+        if (!getExampleVehicleIndicesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+        }
+        exampleVehicleIndicesMemoizedSerializedSize = dataSize;
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -736,6 +1030,8 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       if (hasExampleVehicleIndex()) {
         if (getExampleVehicleIndex() != other.getExampleVehicleIndex()) return false;
       }
+      if (!getExampleVehicleIndicesList().equals(other.getExampleVehicleIndicesList()))
+        return false;
       if (!getExampleExceededCapacityType().equals(other.getExampleExceededCapacityType()))
         return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -754,6 +1050,10 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       if (hasExampleVehicleIndex()) {
         hash = (37 * hash) + EXAMPLE_VEHICLE_INDEX_FIELD_NUMBER;
         hash = (53 * hash) + getExampleVehicleIndex();
+      }
+      if (getExampleVehicleIndicesCount() > 0) {
+        hash = (37 * hash) + EXAMPLE_VEHICLE_INDICES_FIELD_NUMBER;
+        hash = (53 * hash) + getExampleVehicleIndicesList().hashCode();
       }
       hash = (37 * hash) + EXAMPLE_EXCEEDED_CAPACITY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getExampleExceededCapacityType().hashCode();
@@ -927,6 +1227,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         bitField0_ = 0;
         code_ = 0;
         exampleVehicleIndex_ = 0;
+        exampleVehicleIndices_ = emptyIntList();
         exampleExceededCapacityType_ = "";
         return this;
       }
@@ -975,6 +1276,10 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          exampleVehicleIndices_.makeImmutable();
+          result.exampleVehicleIndices_ = exampleVehicleIndices_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.exampleExceededCapacityType_ = exampleExceededCapacityType_;
         }
         result.bitField0_ |= to_bitField0_;
@@ -1035,9 +1340,20 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         if (other.hasExampleVehicleIndex()) {
           setExampleVehicleIndex(other.getExampleVehicleIndex());
         }
+        if (!other.exampleVehicleIndices_.isEmpty()) {
+          if (exampleVehicleIndices_.isEmpty()) {
+            exampleVehicleIndices_ = other.exampleVehicleIndices_;
+            exampleVehicleIndices_.makeImmutable();
+            bitField0_ |= 0x00000004;
+          } else {
+            ensureExampleVehicleIndicesIsMutable();
+            exampleVehicleIndices_.addAll(other.exampleVehicleIndices_);
+          }
+          onChanged();
+        }
         if (!other.getExampleExceededCapacityType().isEmpty()) {
           exampleExceededCapacityType_ = other.exampleExceededCapacityType_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1081,9 +1397,27 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
               case 26:
                 {
                   exampleExceededCapacityType_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 26
+              case 40:
+                {
+                  int v = input.readInt32();
+                  ensureExampleVehicleIndicesIsMutable();
+                  exampleVehicleIndices_.addInt(v);
+                  break;
+                } // case 40
+              case 42:
+                {
+                  int length = input.readRawVarint32();
+                  int limit = input.pushLimit(length);
+                  ensureExampleVehicleIndicesIsMutable();
+                  while (input.getBytesUntilLimit() > 0) {
+                    exampleVehicleIndices_.addInt(input.readInt32());
+                  }
+                  input.popLimit(limit);
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1277,6 +1611,186 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         return this;
       }
 
+      private com.google.protobuf.Internal.IntList exampleVehicleIndices_ = emptyIntList();
+
+      private void ensureExampleVehicleIndicesIsMutable() {
+        if (!exampleVehicleIndices_.isModifiable()) {
+          exampleVehicleIndices_ = makeMutableCopy(exampleVehicleIndices_);
+        }
+        bitField0_ |= 0x00000004;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as
+       * [example_vehicle_index][google.maps.routeoptimization.v1.SkippedShipment.Reason.example_vehicle_index]
+       * except that we provide the list of multiple identified vehicles. This
+       * list is not necessarily exhaustive. This is only filled if
+       * [fill_example_vehicle_indices_in_skipped_reasons][] is true.
+       *
+       * Experimental: This field's behavior or existence may change in future.
+       * </pre>
+       *
+       * <code>repeated int32 example_vehicle_indices = 5;</code>
+       *
+       * @return A list containing the exampleVehicleIndices.
+       */
+      public java.util.List<java.lang.Integer> getExampleVehicleIndicesList() {
+        exampleVehicleIndices_.makeImmutable();
+        return exampleVehicleIndices_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as
+       * [example_vehicle_index][google.maps.routeoptimization.v1.SkippedShipment.Reason.example_vehicle_index]
+       * except that we provide the list of multiple identified vehicles. This
+       * list is not necessarily exhaustive. This is only filled if
+       * [fill_example_vehicle_indices_in_skipped_reasons][] is true.
+       *
+       * Experimental: This field's behavior or existence may change in future.
+       * </pre>
+       *
+       * <code>repeated int32 example_vehicle_indices = 5;</code>
+       *
+       * @return The count of exampleVehicleIndices.
+       */
+      public int getExampleVehicleIndicesCount() {
+        return exampleVehicleIndices_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as
+       * [example_vehicle_index][google.maps.routeoptimization.v1.SkippedShipment.Reason.example_vehicle_index]
+       * except that we provide the list of multiple identified vehicles. This
+       * list is not necessarily exhaustive. This is only filled if
+       * [fill_example_vehicle_indices_in_skipped_reasons][] is true.
+       *
+       * Experimental: This field's behavior or existence may change in future.
+       * </pre>
+       *
+       * <code>repeated int32 example_vehicle_indices = 5;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The exampleVehicleIndices at the given index.
+       */
+      public int getExampleVehicleIndices(int index) {
+        return exampleVehicleIndices_.getInt(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as
+       * [example_vehicle_index][google.maps.routeoptimization.v1.SkippedShipment.Reason.example_vehicle_index]
+       * except that we provide the list of multiple identified vehicles. This
+       * list is not necessarily exhaustive. This is only filled if
+       * [fill_example_vehicle_indices_in_skipped_reasons][] is true.
+       *
+       * Experimental: This field's behavior or existence may change in future.
+       * </pre>
+       *
+       * <code>repeated int32 example_vehicle_indices = 5;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The exampleVehicleIndices to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExampleVehicleIndices(int index, int value) {
+
+        ensureExampleVehicleIndicesIsMutable();
+        exampleVehicleIndices_.setInt(index, value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as
+       * [example_vehicle_index][google.maps.routeoptimization.v1.SkippedShipment.Reason.example_vehicle_index]
+       * except that we provide the list of multiple identified vehicles. This
+       * list is not necessarily exhaustive. This is only filled if
+       * [fill_example_vehicle_indices_in_skipped_reasons][] is true.
+       *
+       * Experimental: This field's behavior or existence may change in future.
+       * </pre>
+       *
+       * <code>repeated int32 example_vehicle_indices = 5;</code>
+       *
+       * @param value The exampleVehicleIndices to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExampleVehicleIndices(int value) {
+
+        ensureExampleVehicleIndicesIsMutable();
+        exampleVehicleIndices_.addInt(value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as
+       * [example_vehicle_index][google.maps.routeoptimization.v1.SkippedShipment.Reason.example_vehicle_index]
+       * except that we provide the list of multiple identified vehicles. This
+       * list is not necessarily exhaustive. This is only filled if
+       * [fill_example_vehicle_indices_in_skipped_reasons][] is true.
+       *
+       * Experimental: This field's behavior or existence may change in future.
+       * </pre>
+       *
+       * <code>repeated int32 example_vehicle_indices = 5;</code>
+       *
+       * @param values The exampleVehicleIndices to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllExampleVehicleIndices(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureExampleVehicleIndicesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, exampleVehicleIndices_);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as
+       * [example_vehicle_index][google.maps.routeoptimization.v1.SkippedShipment.Reason.example_vehicle_index]
+       * except that we provide the list of multiple identified vehicles. This
+       * list is not necessarily exhaustive. This is only filled if
+       * [fill_example_vehicle_indices_in_skipped_reasons][] is true.
+       *
+       * Experimental: This field's behavior or existence may change in future.
+       * </pre>
+       *
+       * <code>repeated int32 example_vehicle_indices = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExampleVehicleIndices() {
+        exampleVehicleIndices_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object exampleExceededCapacityType_ = "";
 
       /**
@@ -1345,7 +1859,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         exampleExceededCapacityType_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1364,7 +1878,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
        */
       public Builder clearExampleExceededCapacityType() {
         exampleExceededCapacityType_ = getDefaultInstance().getExampleExceededCapacityType();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1388,7 +1902,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         }
         checkByteStringIsUtf8(value);
         exampleExceededCapacityType_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1458,6 +1972,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  private int bitField0_;
   public static final int INDEX_FIELD_NUMBER = 1;
   private int index_ = 0;
 
@@ -1533,6 +2048,92 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int PENALTY_COST_FIELD_NUMBER = 6;
+  private double penaltyCost_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * This is a copy of the
+   * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost],
+   * included here to make it easier to see the severity of a skipped shipment.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>optional double penalty_cost = 6;</code>
+   *
+   * @return Whether the penaltyCost field is set.
+   */
+  @java.lang.Override
+  public boolean hasPenaltyCost() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This is a copy of the
+   * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost],
+   * included here to make it easier to see the severity of a skipped shipment.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>optional double penalty_cost = 6;</code>
+   *
+   * @return The penaltyCost.
+   */
+  @java.lang.Override
+  public double getPenaltyCost() {
+    return penaltyCost_;
+  }
+
+  public static final int ESTIMATED_INCOMPATIBLE_VEHICLE_RATIO_FIELD_NUMBER = 5;
+  private double estimatedIncompatibleVehicleRatio_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * Estimated ratio of vehicles that cannot perform this shipment for at least
+   * one of the reasons below.
+   * Note: this is only filled when reasons involve a vehicle.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>optional double estimated_incompatible_vehicle_ratio = 5;</code>
+   *
+   * @return Whether the estimatedIncompatibleVehicleRatio field is set.
+   */
+  @java.lang.Override
+  public boolean hasEstimatedIncompatibleVehicleRatio() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Estimated ratio of vehicles that cannot perform this shipment for at least
+   * one of the reasons below.
+   * Note: this is only filled when reasons involve a vehicle.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>optional double estimated_incompatible_vehicle_ratio = 5;</code>
+   *
+   * @return The estimatedIncompatibleVehicleRatio.
+   */
+  @java.lang.Override
+  public double getEstimatedIncompatibleVehicleRatio() {
+    return estimatedIncompatibleVehicleRatio_;
   }
 
   public static final int REASONS_FIELD_NUMBER = 3;
@@ -1647,6 +2248,12 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < reasons_.size(); i++) {
       output.writeMessage(3, reasons_.get(i));
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeDouble(5, estimatedIncompatibleVehicleRatio_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeDouble(6, penaltyCost_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1664,6 +2271,14 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     }
     for (int i = 0; i < reasons_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, reasons_.get(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeDoubleSize(
+              5, estimatedIncompatibleVehicleRatio_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(6, penaltyCost_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1683,6 +2298,18 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
 
     if (getIndex() != other.getIndex()) return false;
     if (!getLabel().equals(other.getLabel())) return false;
+    if (hasPenaltyCost() != other.hasPenaltyCost()) return false;
+    if (hasPenaltyCost()) {
+      if (java.lang.Double.doubleToLongBits(getPenaltyCost())
+          != java.lang.Double.doubleToLongBits(other.getPenaltyCost())) return false;
+    }
+    if (hasEstimatedIncompatibleVehicleRatio() != other.hasEstimatedIncompatibleVehicleRatio())
+      return false;
+    if (hasEstimatedIncompatibleVehicleRatio()) {
+      if (java.lang.Double.doubleToLongBits(getEstimatedIncompatibleVehicleRatio())
+          != java.lang.Double.doubleToLongBits(other.getEstimatedIncompatibleVehicleRatio()))
+        return false;
+    }
     if (!getReasonsList().equals(other.getReasonsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1699,6 +2326,20 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getIndex();
     hash = (37 * hash) + LABEL_FIELD_NUMBER;
     hash = (53 * hash) + getLabel().hashCode();
+    if (hasPenaltyCost()) {
+      hash = (37 * hash) + PENALTY_COST_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getPenaltyCost()));
+    }
+    if (hasEstimatedIncompatibleVehicleRatio()) {
+      hash = (37 * hash) + ESTIMATED_INCOMPATIBLE_VEHICLE_RATIO_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getEstimatedIncompatibleVehicleRatio()));
+    }
     if (getReasonsCount() > 0) {
       hash = (37 * hash) + REASONS_FIELD_NUMBER;
       hash = (53 * hash) + getReasonsList().hashCode();
@@ -1847,13 +2488,15 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       bitField0_ = 0;
       index_ = 0;
       label_ = "";
+      penaltyCost_ = 0D;
+      estimatedIncompatibleVehicleRatio_ = 0D;
       if (reasonsBuilder_ == null) {
         reasons_ = java.util.Collections.emptyList();
       } else {
         reasons_ = null;
         reasonsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -1892,9 +2535,9 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     private void buildPartialRepeatedFields(
         com.google.maps.routeoptimization.v1.SkippedShipment result) {
       if (reasonsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           reasons_ = java.util.Collections.unmodifiableList(reasons_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.reasons_ = reasons_;
       } else {
@@ -1910,6 +2553,16 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.label_ = label_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.penaltyCost_ = penaltyCost_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.estimatedIncompatibleVehicleRatio_ = estimatedIncompatibleVehicleRatio_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1966,11 +2619,17 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasPenaltyCost()) {
+        setPenaltyCost(other.getPenaltyCost());
+      }
+      if (other.hasEstimatedIncompatibleVehicleRatio()) {
+        setEstimatedIncompatibleVehicleRatio(other.getEstimatedIncompatibleVehicleRatio());
+      }
       if (reasonsBuilder_ == null) {
         if (!other.reasons_.isEmpty()) {
           if (reasons_.isEmpty()) {
             reasons_ = other.reasons_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureReasonsIsMutable();
             reasons_.addAll(other.reasons_);
@@ -1983,7 +2642,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
             reasonsBuilder_.dispose();
             reasonsBuilder_ = null;
             reasons_ = other.reasons_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
             reasonsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getReasonsFieldBuilder()
@@ -2045,6 +2704,18 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
                 }
                 break;
               } // case 26
+            case 41:
+              {
+                estimatedIncompatibleVehicleRatio_ = input.readDouble();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 41
+            case 49:
+              {
+                penaltyCost_ = input.readDouble();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 49
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2244,15 +2915,191 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private double penaltyCost_;
+
+    /**
+     *
+     *
+     * <pre>
+     * This is a copy of the
+     * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost],
+     * included here to make it easier to see the severity of a skipped shipment.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>optional double penalty_cost = 6;</code>
+     *
+     * @return Whether the penaltyCost field is set.
+     */
+    @java.lang.Override
+    public boolean hasPenaltyCost() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is a copy of the
+     * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost],
+     * included here to make it easier to see the severity of a skipped shipment.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>optional double penalty_cost = 6;</code>
+     *
+     * @return The penaltyCost.
+     */
+    @java.lang.Override
+    public double getPenaltyCost() {
+      return penaltyCost_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is a copy of the
+     * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost],
+     * included here to make it easier to see the severity of a skipped shipment.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>optional double penalty_cost = 6;</code>
+     *
+     * @param value The penaltyCost to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPenaltyCost(double value) {
+
+      penaltyCost_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is a copy of the
+     * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost],
+     * included here to make it easier to see the severity of a skipped shipment.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>optional double penalty_cost = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPenaltyCost() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      penaltyCost_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private double estimatedIncompatibleVehicleRatio_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Estimated ratio of vehicles that cannot perform this shipment for at least
+     * one of the reasons below.
+     * Note: this is only filled when reasons involve a vehicle.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>optional double estimated_incompatible_vehicle_ratio = 5;</code>
+     *
+     * @return Whether the estimatedIncompatibleVehicleRatio field is set.
+     */
+    @java.lang.Override
+    public boolean hasEstimatedIncompatibleVehicleRatio() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Estimated ratio of vehicles that cannot perform this shipment for at least
+     * one of the reasons below.
+     * Note: this is only filled when reasons involve a vehicle.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>optional double estimated_incompatible_vehicle_ratio = 5;</code>
+     *
+     * @return The estimatedIncompatibleVehicleRatio.
+     */
+    @java.lang.Override
+    public double getEstimatedIncompatibleVehicleRatio() {
+      return estimatedIncompatibleVehicleRatio_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Estimated ratio of vehicles that cannot perform this shipment for at least
+     * one of the reasons below.
+     * Note: this is only filled when reasons involve a vehicle.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>optional double estimated_incompatible_vehicle_ratio = 5;</code>
+     *
+     * @param value The estimatedIncompatibleVehicleRatio to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEstimatedIncompatibleVehicleRatio(double value) {
+
+      estimatedIncompatibleVehicleRatio_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Estimated ratio of vehicles that cannot perform this shipment for at least
+     * one of the reasons below.
+     * Note: this is only filled when reasons involve a vehicle.
+     *
+     * Experimental: This field's behavior or existence may change in future.
+     * </pre>
+     *
+     * <code>optional double estimated_incompatible_vehicle_ratio = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEstimatedIncompatibleVehicleRatio() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      estimatedIncompatibleVehicleRatio_ = 0D;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.maps.routeoptimization.v1.SkippedShipment.Reason> reasons_ =
         java.util.Collections.emptyList();
 
     private void ensureReasonsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         reasons_ =
             new java.util.ArrayList<com.google.maps.routeoptimization.v1.SkippedShipment.Reason>(
                 reasons_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2506,7 +3353,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
     public Builder clearReasons() {
       if (reasonsBuilder_ == null) {
         reasons_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         reasonsBuilder_.clear();
@@ -2656,7 +3503,7 @@ public final class SkippedShipment extends com.google.protobuf.GeneratedMessageV
                 com.google.maps.routeoptimization.v1.SkippedShipment.Reason,
                 com.google.maps.routeoptimization.v1.SkippedShipment.Reason.Builder,
                 com.google.maps.routeoptimization.v1.SkippedShipment.ReasonOrBuilder>(
-                reasons_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                reasons_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         reasons_ = null;
       }
       return reasonsBuilder_;

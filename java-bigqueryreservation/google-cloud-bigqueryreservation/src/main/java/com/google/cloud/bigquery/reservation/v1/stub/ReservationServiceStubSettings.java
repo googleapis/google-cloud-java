@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.reservation.v1.stub;
 
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListCapacityCommitmentsPagedResponse;
+import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationGroupsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAllAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAssignmentsPagedResponse;
@@ -53,23 +54,29 @@ import com.google.cloud.bigquery.reservation.v1.BiReservation;
 import com.google.cloud.bigquery.reservation.v1.CapacityCommitment;
 import com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest;
+import com.google.cloud.bigquery.reservation.v1.CreateReservationGroupRequest;
 import com.google.cloud.bigquery.reservation.v1.CreateReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest;
+import com.google.cloud.bigquery.reservation.v1.DeleteReservationGroupRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest;
+import com.google.cloud.bigquery.reservation.v1.GetReservationGroupRequest;
 import com.google.cloud.bigquery.reservation.v1.GetReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.ListAssignmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse;
 import com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsResponse;
+import com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest;
+import com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse;
 import com.google.cloud.bigquery.reservation.v1.ListReservationsRequest;
 import com.google.cloud.bigquery.reservation.v1.ListReservationsResponse;
 import com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.Reservation;
+import com.google.cloud.bigquery.reservation.v1.ReservationGroup;
 import com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse;
 import com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest;
@@ -84,6 +91,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.time.Duration;
@@ -195,6 +207,21 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
   private final UnaryCallSettings<GetBiReservationRequest, BiReservation> getBiReservationSettings;
   private final UnaryCallSettings<UpdateBiReservationRequest, BiReservation>
       updateBiReservationSettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
+  private final UnaryCallSettings<CreateReservationGroupRequest, ReservationGroup>
+      createReservationGroupSettings;
+  private final UnaryCallSettings<GetReservationGroupRequest, ReservationGroup>
+      getReservationGroupSettings;
+  private final UnaryCallSettings<DeleteReservationGroupRequest, Empty>
+      deleteReservationGroupSettings;
+  private final PagedCallSettings<
+          ListReservationGroupsRequest,
+          ListReservationGroupsResponse,
+          ListReservationGroupsPagedResponse>
+      listReservationGroupsSettings;
 
   private static final PagedListDescriptor<
           ListReservationsRequest, ListReservationsResponse, Reservation>
@@ -390,6 +417,45 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
             }
           };
 
+  private static final PagedListDescriptor<
+          ListReservationGroupsRequest, ListReservationGroupsResponse, ReservationGroup>
+      LIST_RESERVATION_GROUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListReservationGroupsRequest, ListReservationGroupsResponse, ReservationGroup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListReservationGroupsRequest injectToken(
+                ListReservationGroupsRequest payload, String token) {
+              return ListReservationGroupsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListReservationGroupsRequest injectPageSize(
+                ListReservationGroupsRequest payload, int pageSize) {
+              return ListReservationGroupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListReservationGroupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListReservationGroupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ReservationGroup> extractResources(
+                ListReservationGroupsResponse payload) {
+              return payload.getReservationGroupsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListReservationsRequest, ListReservationsResponse, ListReservationsPagedResponse>
       LIST_RESERVATIONS_PAGE_STR_FACT =
@@ -494,6 +560,30 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
                       PageContext.create(
                           callable, SEARCH_ALL_ASSIGNMENTS_PAGE_STR_DESC, request, context);
               return SearchAllAssignmentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListReservationGroupsRequest,
+          ListReservationGroupsResponse,
+          ListReservationGroupsPagedResponse>
+      LIST_RESERVATION_GROUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListReservationGroupsRequest,
+              ListReservationGroupsResponse,
+              ListReservationGroupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListReservationGroupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsResponse> callable,
+                ListReservationGroupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListReservationGroupsResponse> futureResponse) {
+              PageContext<
+                      ListReservationGroupsRequest, ListReservationGroupsResponse, ReservationGroup>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_RESERVATION_GROUPS_PAGE_STR_DESC, request, context);
+              return ListReservationGroupsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -633,6 +723,48 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     return updateBiReservationSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createReservationGroup. */
+  public UnaryCallSettings<CreateReservationGroupRequest, ReservationGroup>
+      createReservationGroupSettings() {
+    return createReservationGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getReservationGroup. */
+  public UnaryCallSettings<GetReservationGroupRequest, ReservationGroup>
+      getReservationGroupSettings() {
+    return getReservationGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteReservationGroup. */
+  public UnaryCallSettings<DeleteReservationGroupRequest, Empty> deleteReservationGroupSettings() {
+    return deleteReservationGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listReservationGroups. */
+  public PagedCallSettings<
+          ListReservationGroupsRequest,
+          ListReservationGroupsResponse,
+          ListReservationGroupsPagedResponse>
+      listReservationGroupsSettings() {
+    return listReservationGroupsSettings;
+  }
+
   public ReservationServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -766,6 +898,13 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     updateAssignmentSettings = settingsBuilder.updateAssignmentSettings().build();
     getBiReservationSettings = settingsBuilder.getBiReservationSettings().build();
     updateBiReservationSettings = settingsBuilder.updateBiReservationSettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    createReservationGroupSettings = settingsBuilder.createReservationGroupSettings().build();
+    getReservationGroupSettings = settingsBuilder.getReservationGroupSettings().build();
+    deleteReservationGroupSettings = settingsBuilder.deleteReservationGroupSettings().build();
+    listReservationGroupsSettings = settingsBuilder.listReservationGroupsSettings().build();
   }
 
   /** Builder for ReservationServiceStubSettings. */
@@ -826,6 +965,21 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
         getBiReservationSettings;
     private final UnaryCallSettings.Builder<UpdateBiReservationRequest, BiReservation>
         updateBiReservationSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<CreateReservationGroupRequest, ReservationGroup>
+        createReservationGroupSettings;
+    private final UnaryCallSettings.Builder<GetReservationGroupRequest, ReservationGroup>
+        getReservationGroupSettings;
+    private final UnaryCallSettings.Builder<DeleteReservationGroupRequest, Empty>
+        deleteReservationGroupSettings;
+    private final PagedCallSettings.Builder<
+            ListReservationGroupsRequest,
+            ListReservationGroupsResponse,
+            ListReservationGroupsPagedResponse>
+        listReservationGroupsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -903,6 +1057,14 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
       updateAssignmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getBiReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateBiReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createReservationGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getReservationGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteReservationGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listReservationGroupsSettings =
+          PagedCallSettings.newBuilder(LIST_RESERVATION_GROUPS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -927,7 +1089,14 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
               moveAssignmentSettings,
               updateAssignmentSettings,
               getBiReservationSettings,
-              updateBiReservationSettings);
+              updateBiReservationSettings,
+              getIamPolicySettings,
+              setIamPolicySettings,
+              testIamPermissionsSettings,
+              createReservationGroupSettings,
+              getReservationGroupSettings,
+              deleteReservationGroupSettings,
+              listReservationGroupsSettings);
       initDefaults(this);
     }
 
@@ -956,6 +1125,13 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
       updateAssignmentSettings = settings.updateAssignmentSettings.toBuilder();
       getBiReservationSettings = settings.getBiReservationSettings.toBuilder();
       updateBiReservationSettings = settings.updateBiReservationSettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      createReservationGroupSettings = settings.createReservationGroupSettings.toBuilder();
+      getReservationGroupSettings = settings.getReservationGroupSettings.toBuilder();
+      deleteReservationGroupSettings = settings.deleteReservationGroupSettings.toBuilder();
+      listReservationGroupsSettings = settings.listReservationGroupsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -980,7 +1156,14 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
               moveAssignmentSettings,
               updateAssignmentSettings,
               getBiReservationSettings,
-              updateBiReservationSettings);
+              updateBiReservationSettings,
+              getIamPolicySettings,
+              setIamPolicySettings,
+              testIamPermissionsSettings,
+              createReservationGroupSettings,
+              getReservationGroupSettings,
+              deleteReservationGroupSettings,
+              listReservationGroupsSettings);
     }
 
     private static Builder createDefault() {
@@ -1117,6 +1300,41 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
           .updateBiReservationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createReservationGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getReservationGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteReservationGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listReservationGroupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       return builder;
     }
@@ -1277,6 +1495,49 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     public UnaryCallSettings.Builder<UpdateBiReservationRequest, BiReservation>
         updateBiReservationSettings() {
       return updateBiReservationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createReservationGroup. */
+    public UnaryCallSettings.Builder<CreateReservationGroupRequest, ReservationGroup>
+        createReservationGroupSettings() {
+      return createReservationGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getReservationGroup. */
+    public UnaryCallSettings.Builder<GetReservationGroupRequest, ReservationGroup>
+        getReservationGroupSettings() {
+      return getReservationGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteReservationGroup. */
+    public UnaryCallSettings.Builder<DeleteReservationGroupRequest, Empty>
+        deleteReservationGroupSettings() {
+      return deleteReservationGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listReservationGroups. */
+    public PagedCallSettings.Builder<
+            ListReservationGroupsRequest,
+            ListReservationGroupsResponse,
+            ListReservationGroupsPagedResponse>
+        listReservationGroupsSettings() {
+      return listReservationGroupsSettings;
     }
 
     @Override

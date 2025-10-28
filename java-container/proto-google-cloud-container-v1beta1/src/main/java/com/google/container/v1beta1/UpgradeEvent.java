@@ -45,6 +45,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
     operation_ = "";
     currentVersion_ = "";
     targetVersion_ = "";
+    currentEmulatedVersion_ = "";
+    targetEmulatedVersion_ = "";
     resource_ = "";
   }
 
@@ -319,6 +321,112 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CURRENT_EMULATED_VERSION_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object currentEmulatedVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The current emulated version before the upgrade.
+   * </pre>
+   *
+   * <code>string current_emulated_version = 7;</code>
+   *
+   * @return The currentEmulatedVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getCurrentEmulatedVersion() {
+    java.lang.Object ref = currentEmulatedVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      currentEmulatedVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The current emulated version before the upgrade.
+   * </pre>
+   *
+   * <code>string current_emulated_version = 7;</code>
+   *
+   * @return The bytes for currentEmulatedVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCurrentEmulatedVersionBytes() {
+    java.lang.Object ref = currentEmulatedVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      currentEmulatedVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TARGET_EMULATED_VERSION_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetEmulatedVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The target emulated version for the upgrade.
+   * </pre>
+   *
+   * <code>string target_emulated_version = 8;</code>
+   *
+   * @return The targetEmulatedVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getTargetEmulatedVersion() {
+    java.lang.Object ref = targetEmulatedVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      targetEmulatedVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The target emulated version for the upgrade.
+   * </pre>
+   *
+   * <code>string target_emulated_version = 8;</code>
+   *
+   * @return The bytes for targetEmulatedVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTargetEmulatedVersionBytes() {
+    java.lang.Object ref = targetEmulatedVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      targetEmulatedVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int RESOURCE_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
@@ -408,6 +516,12 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, resource_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currentEmulatedVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, currentEmulatedVersion_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetEmulatedVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, targetEmulatedVersion_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -437,6 +551,12 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, resource_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currentEmulatedVersion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, currentEmulatedVersion_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetEmulatedVersion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, targetEmulatedVersion_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -461,6 +581,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getCurrentVersion().equals(other.getCurrentVersion())) return false;
     if (!getTargetVersion().equals(other.getTargetVersion())) return false;
+    if (!getCurrentEmulatedVersion().equals(other.getCurrentEmulatedVersion())) return false;
+    if (!getTargetEmulatedVersion().equals(other.getTargetEmulatedVersion())) return false;
     if (!getResource().equals(other.getResource())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -485,6 +607,10 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getCurrentVersion().hashCode();
     hash = (37 * hash) + TARGET_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getTargetVersion().hashCode();
+    hash = (37 * hash) + CURRENT_EMULATED_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getCurrentEmulatedVersion().hashCode();
+    hash = (37 * hash) + TARGET_EMULATED_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getTargetEmulatedVersion().hashCode();
     hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getResource().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -646,6 +772,8 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
       }
       currentVersion_ = "";
       targetVersion_ = "";
+      currentEmulatedVersion_ = "";
+      targetEmulatedVersion_ = "";
       resource_ = "";
       return this;
     }
@@ -704,6 +832,12 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
         result.targetVersion_ = targetVersion_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.currentEmulatedVersion_ = currentEmulatedVersion_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.targetEmulatedVersion_ = targetEmulatedVersion_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.resource_ = resource_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -775,9 +909,19 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (!other.getCurrentEmulatedVersion().isEmpty()) {
+        currentEmulatedVersion_ = other.currentEmulatedVersion_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (!other.getTargetEmulatedVersion().isEmpty()) {
+        targetEmulatedVersion_ = other.targetEmulatedVersion_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -840,9 +984,21 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
             case 50:
               {
                 resource_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
+            case 58:
+              {
+                currentEmulatedVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
+            case 66:
+              {
+                targetEmulatedVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1486,6 +1642,228 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object currentEmulatedVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The current emulated version before the upgrade.
+     * </pre>
+     *
+     * <code>string current_emulated_version = 7;</code>
+     *
+     * @return The currentEmulatedVersion.
+     */
+    public java.lang.String getCurrentEmulatedVersion() {
+      java.lang.Object ref = currentEmulatedVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        currentEmulatedVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The current emulated version before the upgrade.
+     * </pre>
+     *
+     * <code>string current_emulated_version = 7;</code>
+     *
+     * @return The bytes for currentEmulatedVersion.
+     */
+    public com.google.protobuf.ByteString getCurrentEmulatedVersionBytes() {
+      java.lang.Object ref = currentEmulatedVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        currentEmulatedVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The current emulated version before the upgrade.
+     * </pre>
+     *
+     * <code>string current_emulated_version = 7;</code>
+     *
+     * @param value The currentEmulatedVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCurrentEmulatedVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      currentEmulatedVersion_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The current emulated version before the upgrade.
+     * </pre>
+     *
+     * <code>string current_emulated_version = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCurrentEmulatedVersion() {
+      currentEmulatedVersion_ = getDefaultInstance().getCurrentEmulatedVersion();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The current emulated version before the upgrade.
+     * </pre>
+     *
+     * <code>string current_emulated_version = 7;</code>
+     *
+     * @param value The bytes for currentEmulatedVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCurrentEmulatedVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      currentEmulatedVersion_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object targetEmulatedVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The target emulated version for the upgrade.
+     * </pre>
+     *
+     * <code>string target_emulated_version = 8;</code>
+     *
+     * @return The targetEmulatedVersion.
+     */
+    public java.lang.String getTargetEmulatedVersion() {
+      java.lang.Object ref = targetEmulatedVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        targetEmulatedVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The target emulated version for the upgrade.
+     * </pre>
+     *
+     * <code>string target_emulated_version = 8;</code>
+     *
+     * @return The bytes for targetEmulatedVersion.
+     */
+    public com.google.protobuf.ByteString getTargetEmulatedVersionBytes() {
+      java.lang.Object ref = targetEmulatedVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        targetEmulatedVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The target emulated version for the upgrade.
+     * </pre>
+     *
+     * <code>string target_emulated_version = 8;</code>
+     *
+     * @param value The targetEmulatedVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetEmulatedVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      targetEmulatedVersion_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The target emulated version for the upgrade.
+     * </pre>
+     *
+     * <code>string target_emulated_version = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTargetEmulatedVersion() {
+      targetEmulatedVersion_ = getDefaultInstance().getTargetEmulatedVersion();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The target emulated version for the upgrade.
+     * </pre>
+     *
+     * <code>string target_emulated_version = 8;</code>
+     *
+     * @param value The bytes for targetEmulatedVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetEmulatedVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      targetEmulatedVersion_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object resource_ = "";
 
     /**
@@ -1554,7 +1932,7 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       resource_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1573,7 +1951,7 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearResource() {
       resource_ = getDefaultInstance().getResource();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -1597,7 +1975,7 @@ public final class UpgradeEvent extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       resource_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

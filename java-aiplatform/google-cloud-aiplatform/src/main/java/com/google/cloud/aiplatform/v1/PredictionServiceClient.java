@@ -544,6 +544,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *                   .toString())
    *           .addAllInstances(new ArrayList<Value>())
    *           .setParameters(Value.newBuilder().setBoolValue(true).build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   PredictResponse response = predictionServiceClient.predict(request);
    * }
@@ -577,6 +578,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *                   .toString())
    *           .addAllInstances(new ArrayList<Value>())
    *           .setParameters(Value.newBuilder().setBoolValue(true).build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<PredictResponse> future =
    *       predictionServiceClient.predictCallable().futureCall(request);

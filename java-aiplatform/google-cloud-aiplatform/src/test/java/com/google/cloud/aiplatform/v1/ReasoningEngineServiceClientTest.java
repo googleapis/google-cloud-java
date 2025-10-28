@@ -120,6 +120,7 @@ public class ReasoningEngineServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -179,6 +180,7 @@ public class ReasoningEngineServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -238,6 +240,7 @@ public class ReasoningEngineServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockReasoningEngineService.addResponse(expectedResponse);
 
@@ -286,6 +289,7 @@ public class ReasoningEngineServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockReasoningEngineService.addResponse(expectedResponse);
 
@@ -422,6 +426,7 @@ public class ReasoningEngineServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

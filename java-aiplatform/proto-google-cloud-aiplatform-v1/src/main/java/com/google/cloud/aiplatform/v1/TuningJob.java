@@ -92,6 +92,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BASE_MODEL(4),
+    PRE_TUNED_MODEL(31),
     SOURCEMODEL_NOT_SET(0);
     private final int value;
 
@@ -113,6 +114,8 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 4:
           return BASE_MODEL;
+        case 31:
+          return PRE_TUNED_MODEL;
         case 0:
           return SOURCEMODEL_NOT_SET;
         default:
@@ -252,6 +255,60 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PRE_TUNED_MODEL_FIELD_NUMBER = 31;
+
+  /**
+   *
+   *
+   * <pre>
+   * The pre-tuned model for continuous tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.PreTunedModel pre_tuned_model = 31;</code>
+   *
+   * @return Whether the preTunedModel field is set.
+   */
+  @java.lang.Override
+  public boolean hasPreTunedModel() {
+    return sourceModelCase_ == 31;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The pre-tuned model for continuous tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.PreTunedModel pre_tuned_model = 31;</code>
+   *
+   * @return The preTunedModel.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.PreTunedModel getPreTunedModel() {
+    if (sourceModelCase_ == 31) {
+      return (com.google.cloud.aiplatform.v1.PreTunedModel) sourceModel_;
+    }
+    return com.google.cloud.aiplatform.v1.PreTunedModel.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The pre-tuned model for continuous tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.PreTunedModel pre_tuned_model = 31;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.PreTunedModelOrBuilder getPreTunedModelOrBuilder() {
+    if (sourceModelCase_ == 31) {
+      return (com.google.cloud.aiplatform.v1.PreTunedModel) sourceModel_;
+    }
+    return com.google.cloud.aiplatform.v1.PreTunedModel.getDefaultInstance();
+  }
+
   public static final int SUPERVISED_TUNING_SPEC_FIELD_NUMBER = 5;
 
   /**
@@ -377,7 +434,10 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The display name of the
    * [TunedModel][google.cloud.aiplatform.v1.Model]. The name can be up to 128
-   * characters long and can consist of any UTF-8 characters.
+   * characters long and can consist of any UTF-8 characters. For continuous
+   * tuning, tuned_model_display_name will by default use the same display name
+   * as the pre-tuned model. If a new display name is provided, the tuning job
+   * will create a new model instead of a new version.
    * </pre>
    *
    * <code>string tuned_model_display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -403,7 +463,10 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The display name of the
    * [TunedModel][google.cloud.aiplatform.v1.Model]. The name can be up to 128
-   * characters long and can consist of any UTF-8 characters.
+   * characters long and can consist of any UTF-8 characters. For continuous
+   * tuning, tuned_model_display_name will by default use the same display name
+   * as the pre-tuned model. If a new display name is provided, the tuning job
+   * will create a new model instead of a new version.
    * </pre>
    *
    * <code>string tuned_model_display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1314,6 +1377,9 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 22, serviceAccount_);
     }
+    if (sourceModelCase_ == 31) {
+      output.writeMessage(31, (com.google.cloud.aiplatform.v1.PreTunedModel) sourceModel_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1383,6 +1449,11 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, serviceAccount_);
     }
+    if (sourceModelCase_ == 31) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              31, (com.google.cloud.aiplatform.v1.PreTunedModel) sourceModel_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1441,6 +1512,9 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     switch (sourceModelCase_) {
       case 4:
         if (!getBaseModel().equals(other.getBaseModel())) return false;
+        break;
+      case 31:
+        if (!getPreTunedModel().equals(other.getPreTunedModel())) return false;
         break;
       case 0:
       default:
@@ -1516,6 +1590,10 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       case 4:
         hash = (37 * hash) + BASE_MODEL_FIELD_NUMBER;
         hash = (53 * hash) + getBaseModel().hashCode();
+        break;
+      case 31:
+        hash = (37 * hash) + PRE_TUNED_MODEL_FIELD_NUMBER;
+        hash = (53 * hash) + getPreTunedModel().hashCode();
         break;
       case 0:
       default:
@@ -1706,6 +1784,9 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (preTunedModelBuilder_ != null) {
+        preTunedModelBuilder_.clear();
+      }
       if (supervisedTuningSpecBuilder_ != null) {
         supervisedTuningSpecBuilder_.clear();
       }
@@ -1797,61 +1878,61 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.aiplatform.v1.TuningJob result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.tunedModelDisplayName_ = tunedModelDisplayName_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.state_ = state_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.experiment_ = experiment_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.tunedModel_ = tunedModelBuilder_ == null ? tunedModel_ : tunedModelBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.tuningDataStats_ =
             tuningDataStatsBuilder_ == null ? tuningDataStats_ : tuningDataStatsBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.encryptionSpec_ =
             encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.serviceAccount_ = serviceAccount_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1860,6 +1941,9 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialOneofs(com.google.cloud.aiplatform.v1.TuningJob result) {
       result.sourceModelCase_ = sourceModelCase_;
       result.sourceModel_ = this.sourceModel_;
+      if (sourceModelCase_ == 31 && preTunedModelBuilder_ != null) {
+        result.sourceModel_ = preTunedModelBuilder_.build();
+      }
       result.tuningSpecCase_ = tuningSpecCase_;
       result.tuningSpec_ = this.tuningSpec_;
       if (tuningSpecCase_ == 5 && supervisedTuningSpecBuilder_ != null) {
@@ -1914,17 +1998,17 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.aiplatform.v1.TuningJob.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getTunedModelDisplayName().isEmpty()) {
         tunedModelDisplayName_ = other.tunedModelDisplayName_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -1946,10 +2030,10 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         mergeError(other.getError());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       if (!other.getExperiment().isEmpty()) {
         experiment_ = other.experiment_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasTunedModel()) {
@@ -1963,7 +2047,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       switch (other.getSourceModelCase()) {
@@ -1972,6 +2056,11 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
             sourceModelCase_ = 4;
             sourceModel_ = other.sourceModel_;
             onChanged();
+            break;
+          }
+        case PRE_TUNED_MODEL:
+          {
+            mergePreTunedModel(other.getPreTunedModel());
             break;
           }
         case SOURCEMODEL_NOT_SET:
@@ -2019,19 +2108,19 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
               {
                 tunedModelDisplayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
@@ -2051,37 +2140,37 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
             case 48:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 48
             case 58:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 98:
@@ -2093,39 +2182,45 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 98
             case 106:
               {
                 experiment_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(getTunedModelFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 114
             case 122:
               {
                 input.readMessage(getTuningDataStatsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 122
             case 130:
               {
                 input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 130
             case 178:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 178
+            case 250:
+              {
+                input.readMessage(getPreTunedModelFieldBuilder().getBuilder(), extensionRegistry);
+                sourceModelCase_ = 31;
+                break;
+              } // case 250
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2316,6 +2411,224 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       sourceModel_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.PreTunedModel,
+            com.google.cloud.aiplatform.v1.PreTunedModel.Builder,
+            com.google.cloud.aiplatform.v1.PreTunedModelOrBuilder>
+        preTunedModelBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The pre-tuned model for continuous tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.PreTunedModel pre_tuned_model = 31;</code>
+     *
+     * @return Whether the preTunedModel field is set.
+     */
+    @java.lang.Override
+    public boolean hasPreTunedModel() {
+      return sourceModelCase_ == 31;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pre-tuned model for continuous tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.PreTunedModel pre_tuned_model = 31;</code>
+     *
+     * @return The preTunedModel.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.PreTunedModel getPreTunedModel() {
+      if (preTunedModelBuilder_ == null) {
+        if (sourceModelCase_ == 31) {
+          return (com.google.cloud.aiplatform.v1.PreTunedModel) sourceModel_;
+        }
+        return com.google.cloud.aiplatform.v1.PreTunedModel.getDefaultInstance();
+      } else {
+        if (sourceModelCase_ == 31) {
+          return preTunedModelBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1.PreTunedModel.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pre-tuned model for continuous tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.PreTunedModel pre_tuned_model = 31;</code>
+     */
+    public Builder setPreTunedModel(com.google.cloud.aiplatform.v1.PreTunedModel value) {
+      if (preTunedModelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceModel_ = value;
+        onChanged();
+      } else {
+        preTunedModelBuilder_.setMessage(value);
+      }
+      sourceModelCase_ = 31;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pre-tuned model for continuous tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.PreTunedModel pre_tuned_model = 31;</code>
+     */
+    public Builder setPreTunedModel(
+        com.google.cloud.aiplatform.v1.PreTunedModel.Builder builderForValue) {
+      if (preTunedModelBuilder_ == null) {
+        sourceModel_ = builderForValue.build();
+        onChanged();
+      } else {
+        preTunedModelBuilder_.setMessage(builderForValue.build());
+      }
+      sourceModelCase_ = 31;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pre-tuned model for continuous tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.PreTunedModel pre_tuned_model = 31;</code>
+     */
+    public Builder mergePreTunedModel(com.google.cloud.aiplatform.v1.PreTunedModel value) {
+      if (preTunedModelBuilder_ == null) {
+        if (sourceModelCase_ == 31
+            && sourceModel_ != com.google.cloud.aiplatform.v1.PreTunedModel.getDefaultInstance()) {
+          sourceModel_ =
+              com.google.cloud.aiplatform.v1.PreTunedModel.newBuilder(
+                      (com.google.cloud.aiplatform.v1.PreTunedModel) sourceModel_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceModel_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceModelCase_ == 31) {
+          preTunedModelBuilder_.mergeFrom(value);
+        } else {
+          preTunedModelBuilder_.setMessage(value);
+        }
+      }
+      sourceModelCase_ = 31;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pre-tuned model for continuous tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.PreTunedModel pre_tuned_model = 31;</code>
+     */
+    public Builder clearPreTunedModel() {
+      if (preTunedModelBuilder_ == null) {
+        if (sourceModelCase_ == 31) {
+          sourceModelCase_ = 0;
+          sourceModel_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceModelCase_ == 31) {
+          sourceModelCase_ = 0;
+          sourceModel_ = null;
+        }
+        preTunedModelBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pre-tuned model for continuous tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.PreTunedModel pre_tuned_model = 31;</code>
+     */
+    public com.google.cloud.aiplatform.v1.PreTunedModel.Builder getPreTunedModelBuilder() {
+      return getPreTunedModelFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pre-tuned model for continuous tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.PreTunedModel pre_tuned_model = 31;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.PreTunedModelOrBuilder getPreTunedModelOrBuilder() {
+      if ((sourceModelCase_ == 31) && (preTunedModelBuilder_ != null)) {
+        return preTunedModelBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceModelCase_ == 31) {
+          return (com.google.cloud.aiplatform.v1.PreTunedModel) sourceModel_;
+        }
+        return com.google.cloud.aiplatform.v1.PreTunedModel.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pre-tuned model for continuous tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.PreTunedModel pre_tuned_model = 31;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.PreTunedModel,
+            com.google.cloud.aiplatform.v1.PreTunedModel.Builder,
+            com.google.cloud.aiplatform.v1.PreTunedModelOrBuilder>
+        getPreTunedModelFieldBuilder() {
+      if (preTunedModelBuilder_ == null) {
+        if (!(sourceModelCase_ == 31)) {
+          sourceModel_ = com.google.cloud.aiplatform.v1.PreTunedModel.getDefaultInstance();
+        }
+        preTunedModelBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.PreTunedModel,
+                com.google.cloud.aiplatform.v1.PreTunedModel.Builder,
+                com.google.cloud.aiplatform.v1.PreTunedModelOrBuilder>(
+                (com.google.cloud.aiplatform.v1.PreTunedModel) sourceModel_,
+                getParentForChildren(),
+                isClean());
+        sourceModel_ = null;
+      }
+      sourceModelCase_ = 31;
+      onChanged();
+      return preTunedModelBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2615,7 +2928,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2636,7 +2949,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2662,7 +2975,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2675,7 +2988,10 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The display name of the
      * [TunedModel][google.cloud.aiplatform.v1.Model]. The name can be up to 128
-     * characters long and can consist of any UTF-8 characters.
+     * characters long and can consist of any UTF-8 characters. For continuous
+     * tuning, tuned_model_display_name will by default use the same display name
+     * as the pre-tuned model. If a new display name is provided, the tuning job
+     * will create a new model instead of a new version.
      * </pre>
      *
      * <code>string tuned_model_display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2700,7 +3016,10 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The display name of the
      * [TunedModel][google.cloud.aiplatform.v1.Model]. The name can be up to 128
-     * characters long and can consist of any UTF-8 characters.
+     * characters long and can consist of any UTF-8 characters. For continuous
+     * tuning, tuned_model_display_name will by default use the same display name
+     * as the pre-tuned model. If a new display name is provided, the tuning job
+     * will create a new model instead of a new version.
      * </pre>
      *
      * <code>string tuned_model_display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2725,7 +3044,10 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The display name of the
      * [TunedModel][google.cloud.aiplatform.v1.Model]. The name can be up to 128
-     * characters long and can consist of any UTF-8 characters.
+     * characters long and can consist of any UTF-8 characters. For continuous
+     * tuning, tuned_model_display_name will by default use the same display name
+     * as the pre-tuned model. If a new display name is provided, the tuning job
+     * will create a new model instead of a new version.
      * </pre>
      *
      * <code>string tuned_model_display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2738,7 +3060,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       tunedModelDisplayName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2749,7 +3071,10 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The display name of the
      * [TunedModel][google.cloud.aiplatform.v1.Model]. The name can be up to 128
-     * characters long and can consist of any UTF-8 characters.
+     * characters long and can consist of any UTF-8 characters. For continuous
+     * tuning, tuned_model_display_name will by default use the same display name
+     * as the pre-tuned model. If a new display name is provided, the tuning job
+     * will create a new model instead of a new version.
      * </pre>
      *
      * <code>string tuned_model_display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2758,7 +3083,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTunedModelDisplayName() {
       tunedModelDisplayName_ = getDefaultInstance().getTunedModelDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2769,7 +3094,10 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The display name of the
      * [TunedModel][google.cloud.aiplatform.v1.Model]. The name can be up to 128
-     * characters long and can consist of any UTF-8 characters.
+     * characters long and can consist of any UTF-8 characters. For continuous
+     * tuning, tuned_model_display_name will by default use the same display name
+     * as the pre-tuned model. If a new display name is provided, the tuning job
+     * will create a new model instead of a new version.
      * </pre>
      *
      * <code>string tuned_model_display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2783,7 +3111,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       tunedModelDisplayName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2856,7 +3184,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2875,7 +3203,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2899,7 +3227,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2940,7 +3268,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2983,7 +3311,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3003,7 +3331,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       state_ = 0;
       onChanged();
       return this;
@@ -3031,7 +3359,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -3079,7 +3407,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3102,7 +3430,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3121,7 +3449,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -3132,7 +3460,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -3151,7 +3479,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -3174,7 +3502,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3252,7 +3580,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -3298,7 +3626,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         startTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3321,7 +3649,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3340,7 +3668,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && startTime_ != null
             && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getStartTimeBuilder().mergeFrom(value);
@@ -3351,7 +3679,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         startTimeBuilder_.mergeFrom(value);
       }
       if (startTime_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -3370,7 +3698,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       startTime_ = null;
       if (startTimeBuilder_ != null) {
         startTimeBuilder_.dispose();
@@ -3393,7 +3721,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -3469,7 +3797,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -3515,7 +3843,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         endTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3538,7 +3866,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3557,7 +3885,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && endTime_ != null
             && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getEndTimeBuilder().mergeFrom(value);
@@ -3568,7 +3896,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         endTimeBuilder_.mergeFrom(value);
       }
       if (endTime_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3587,7 +3915,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEndTime() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       endTime_ = null;
       if (endTimeBuilder_ != null) {
         endTimeBuilder_.dispose();
@@ -3610,7 +3938,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -3687,7 +4015,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3737,7 +4065,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3761,7 +4089,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3781,7 +4109,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -3792,7 +4120,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -3812,7 +4140,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -3836,7 +4164,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3912,7 +4240,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -3954,7 +4282,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         errorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3975,7 +4303,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3992,7 +4320,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && error_ != null
             && error_ != com.google.rpc.Status.getDefaultInstance()) {
           getErrorBuilder().mergeFrom(value);
@@ -4003,7 +4331,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         errorBuilder_.mergeFrom(value);
       }
       if (error_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -4020,7 +4348,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       error_ = null;
       if (errorBuilder_ != null) {
         errorBuilder_.dispose();
@@ -4041,7 +4369,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -4105,7 +4433,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return labels_;
     }
@@ -4231,7 +4559,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -4265,7 +4593,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -4295,7 +4623,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       return this;
     }
 
@@ -4319,7 +4647,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       return this;
     }
 
@@ -4397,7 +4725,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       experiment_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4418,7 +4746,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearExperiment() {
       experiment_ = getDefaultInstance().getExperiment();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4444,7 +4772,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       experiment_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4471,7 +4799,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tunedModel field is set.
      */
     public boolean hasTunedModel() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -4519,7 +4847,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         tunedModelBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4543,7 +4871,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         tunedModelBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4562,7 +4890,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTunedModel(com.google.cloud.aiplatform.v1.TunedModel value) {
       if (tunedModelBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && tunedModel_ != null
             && tunedModel_ != com.google.cloud.aiplatform.v1.TunedModel.getDefaultInstance()) {
           getTunedModelBuilder().mergeFrom(value);
@@ -4573,7 +4901,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         tunedModelBuilder_.mergeFrom(value);
       }
       if (tunedModel_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -4592,7 +4920,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTunedModel() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       tunedModel_ = null;
       if (tunedModelBuilder_ != null) {
         tunedModelBuilder_.dispose();
@@ -4615,7 +4943,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1.TunedModel.Builder getTunedModelBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getTunedModelFieldBuilder().getBuilder();
     }
@@ -4693,7 +5021,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tuningDataStats field is set.
      */
     public boolean hasTuningDataStats() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -4741,7 +5069,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         tuningDataStatsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4765,7 +5093,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         tuningDataStatsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4784,7 +5112,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTuningDataStats(com.google.cloud.aiplatform.v1.TuningDataStats value) {
       if (tuningDataStatsBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && tuningDataStats_ != null
             && tuningDataStats_
                 != com.google.cloud.aiplatform.v1.TuningDataStats.getDefaultInstance()) {
@@ -4796,7 +5124,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         tuningDataStatsBuilder_.mergeFrom(value);
       }
       if (tuningDataStats_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -4815,7 +5143,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTuningDataStats() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       tuningDataStats_ = null;
       if (tuningDataStatsBuilder_ != null) {
         tuningDataStatsBuilder_.dispose();
@@ -4838,7 +5166,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1.TuningDataStats.Builder getTuningDataStatsBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getTuningDataStatsFieldBuilder().getBuilder();
     }
@@ -4915,7 +5243,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encryptionSpec field is set.
      */
     public boolean hasEncryptionSpec() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -4961,7 +5289,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4984,7 +5312,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5002,7 +5330,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
       if (encryptionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && encryptionSpec_ != null
             && encryptionSpec_
                 != com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()) {
@@ -5014,7 +5342,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         encryptionSpecBuilder_.mergeFrom(value);
       }
       if (encryptionSpec_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -5032,7 +5360,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 16;</code>
      */
     public Builder clearEncryptionSpec() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       encryptionSpec_ = null;
       if (encryptionSpecBuilder_ != null) {
         encryptionSpecBuilder_.dispose();
@@ -5054,7 +5382,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 16;</code>
      */
     public com.google.cloud.aiplatform.v1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
@@ -5191,7 +5519,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       serviceAccount_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5215,7 +5543,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServiceAccount() {
       serviceAccount_ = getDefaultInstance().getServiceAccount();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5244,7 +5572,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       serviceAccount_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }

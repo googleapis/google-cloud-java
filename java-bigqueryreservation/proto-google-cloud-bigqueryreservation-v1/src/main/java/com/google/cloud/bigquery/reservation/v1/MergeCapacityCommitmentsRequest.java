@@ -44,6 +44,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
   private MergeCapacityCommitmentsRequest() {
     parent_ = "";
     capacityCommitmentIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    capacityCommitmentId_ = "";
   }
 
   @java.lang.Override
@@ -206,6 +207,65 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
     return capacityCommitmentIds_.getByteString(index);
   }
 
+  public static final int CAPACITY_COMMITMENT_ID_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object capacityCommitmentId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The optional resulting capacity commitment ID. Capacity
+   * commitment name will be generated automatically if this field is empty.
+   * This field must only contain lower case alphanumeric characters or dashes.
+   * The first and last character cannot be a dash. Max length is 64 characters.
+   * </pre>
+   *
+   * <code>string capacity_commitment_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The capacityCommitmentId.
+   */
+  @java.lang.Override
+  public java.lang.String getCapacityCommitmentId() {
+    java.lang.Object ref = capacityCommitmentId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      capacityCommitmentId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The optional resulting capacity commitment ID. Capacity
+   * commitment name will be generated automatically if this field is empty.
+   * This field must only contain lower case alphanumeric characters or dashes.
+   * The first and last character cannot be a dash. Max length is 64 characters.
+   * </pre>
+   *
+   * <code>string capacity_commitment_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for capacityCommitmentId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCapacityCommitmentIdBytes() {
+    java.lang.Object ref = capacityCommitmentId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      capacityCommitmentId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -227,6 +287,9 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 2, capacityCommitmentIds_.getRaw(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(capacityCommitmentId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, capacityCommitmentId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -247,6 +310,9 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       size += dataSize;
       size += 1 * getCapacityCommitmentIdsList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(capacityCommitmentId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, capacityCommitmentId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -266,6 +332,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
 
     if (!getParent().equals(other.getParent())) return false;
     if (!getCapacityCommitmentIdsList().equals(other.getCapacityCommitmentIdsList())) return false;
+    if (!getCapacityCommitmentId().equals(other.getCapacityCommitmentId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -283,6 +350,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       hash = (37 * hash) + CAPACITY_COMMITMENT_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getCapacityCommitmentIdsList().hashCode();
     }
+    hash = (37 * hash) + CAPACITY_COMMITMENT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getCapacityCommitmentId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -430,6 +499,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       bitField0_ = 0;
       parent_ = "";
       capacityCommitmentIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      capacityCommitmentId_ = "";
       return this;
     }
 
@@ -476,6 +546,9 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       if (((from_bitField0_ & 0x00000002) != 0)) {
         capacityCommitmentIds_.makeImmutable();
         result.capacityCommitmentIds_ = capacityCommitmentIds_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.capacityCommitmentId_ = capacityCommitmentId_;
       }
     }
 
@@ -544,6 +617,11 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
         }
         onChanged();
       }
+      if (!other.getCapacityCommitmentId().isEmpty()) {
+        capacityCommitmentId_ = other.capacityCommitmentId_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -583,6 +661,12 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
                 capacityCommitmentIds_.add(s);
                 break;
               } // case 18
+            case 26:
+              {
+                capacityCommitmentId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -934,6 +1018,132 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
       ensureCapacityCommitmentIdsIsMutable();
       capacityCommitmentIds_.add(value);
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object capacityCommitmentId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional resulting capacity commitment ID. Capacity
+     * commitment name will be generated automatically if this field is empty.
+     * This field must only contain lower case alphanumeric characters or dashes.
+     * The first and last character cannot be a dash. Max length is 64 characters.
+     * </pre>
+     *
+     * <code>string capacity_commitment_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The capacityCommitmentId.
+     */
+    public java.lang.String getCapacityCommitmentId() {
+      java.lang.Object ref = capacityCommitmentId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        capacityCommitmentId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional resulting capacity commitment ID. Capacity
+     * commitment name will be generated automatically if this field is empty.
+     * This field must only contain lower case alphanumeric characters or dashes.
+     * The first and last character cannot be a dash. Max length is 64 characters.
+     * </pre>
+     *
+     * <code>string capacity_commitment_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for capacityCommitmentId.
+     */
+    public com.google.protobuf.ByteString getCapacityCommitmentIdBytes() {
+      java.lang.Object ref = capacityCommitmentId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        capacityCommitmentId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional resulting capacity commitment ID. Capacity
+     * commitment name will be generated automatically if this field is empty.
+     * This field must only contain lower case alphanumeric characters or dashes.
+     * The first and last character cannot be a dash. Max length is 64 characters.
+     * </pre>
+     *
+     * <code>string capacity_commitment_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The capacityCommitmentId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCapacityCommitmentId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      capacityCommitmentId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional resulting capacity commitment ID. Capacity
+     * commitment name will be generated automatically if this field is empty.
+     * This field must only contain lower case alphanumeric characters or dashes.
+     * The first and last character cannot be a dash. Max length is 64 characters.
+     * </pre>
+     *
+     * <code>string capacity_commitment_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCapacityCommitmentId() {
+      capacityCommitmentId_ = getDefaultInstance().getCapacityCommitmentId();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional resulting capacity commitment ID. Capacity
+     * commitment name will be generated automatically if this field is empty.
+     * This field must only contain lower case alphanumeric characters or dashes.
+     * The first and last character cannot be a dash. Max length is 64 characters.
+     * </pre>
+     *
+     * <code>string capacity_commitment_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for capacityCommitmentId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCapacityCommitmentIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      capacityCommitmentId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

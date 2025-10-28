@@ -38,7 +38,6 @@ import com.google.cloud.websecurityscanner.v1beta.StopScanRunRequest;
 import com.google.cloud.websecurityscanner.v1beta.WebSecurityScannerClient;
 import com.google.cloud.websecurityscanner.v1beta.WebSecurityScannerSettings;
 import com.google.common.collect.Lists;
-import java.io.FileInputStream;
 import java.io.IOException;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
@@ -64,8 +63,6 @@ public class VPCServiceControlPositiveTest {
   private static final String IN_VPCSC_TEST = System.getenv(IN_VPCSC_GOOGLE_CLOUD_TEST_ENV);
   private static final String IN_VPCSC_PROJECT = System.getenv(IN_VPCSC_PROJECT_ENV);
   private static final String IN_VPCSC_HOSTNAME = System.getenv(IN_VPCSC_HOSTNAME_ENV);
-  private static final String IN_VPCSC_GOOGLE_CREDENTIAL =
-      System.getenv(GOOGLE_CREDENTIAL_DEFAULT_ENV);
 
   private String test0DisplayName;
   private String test1DisplayName;
@@ -97,7 +94,7 @@ public class VPCServiceControlPositiveTest {
         GOOGLE_CREDENTIAL_DEFAULT_ENV
             + " environment variable needs to be set to "
             + "google application credentials that resides inside VPCSC",
-        isNotEmpty(IN_VPCSC_GOOGLE_CREDENTIAL));
+        isNotEmpty(System.getenv(GOOGLE_CREDENTIAL_DEFAULT_ENV)));
   }
 
   @Before
@@ -111,7 +108,7 @@ public class VPCServiceControlPositiveTest {
 
   private WebSecurityScannerSettings getWssSettingWithCredentials() throws IOException {
     GoogleCredentials credentials =
-        GoogleCredentials.fromStream(new FileInputStream(IN_VPCSC_GOOGLE_CREDENTIAL))
+        GoogleCredentials.getApplicationDefault()
             .createScoped(Lists.newArrayList(GOOGLE_API_CLOUD_PLATFORM_LINK));
     return WebSecurityScannerSettings.newBuilder()
         .setCredentialsProvider(FixedCredentialsProvider.create(credentials))

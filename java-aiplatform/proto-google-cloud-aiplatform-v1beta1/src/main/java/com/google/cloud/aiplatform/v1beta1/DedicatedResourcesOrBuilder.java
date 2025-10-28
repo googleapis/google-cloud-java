@@ -133,6 +133,31 @@ public interface DedicatedResourcesOrBuilder
    *
    *
    * <pre>
+   * Immutable. Number of initial replicas being deployed on when scaling the
+   * workload up from zero or when creating the workload in case
+   * [min_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.min_replica_count]
+   * = 0. When
+   * [min_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.min_replica_count]
+   * &gt; 0 (meaning that the scale-to-zero feature is not enabled),
+   * [initial_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.initial_replica_count]
+   * should not be set. When
+   * [min_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.min_replica_count]
+   * = 0 (meaning that the scale-to-zero feature is enabled),
+   * [initial_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.initial_replica_count]
+   * should be larger than zero, but no greater than
+   * [max_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.max_replica_count].
+   * </pre>
+   *
+   * <code>int32 initial_replica_count = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The initialReplicaCount.
+   */
+  int getInitialReplicaCount();
+
+  /**
+   *
+   *
+   * <pre>
    * Immutable. The metric specifications that overrides a resource
    * utilization metric (CPU utilization, accelerator's duty cycle, and so on)
    * target value (default to 60 if not set). At most one entry is allowed per
@@ -369,4 +394,48 @@ public interface DedicatedResourcesOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.FlexStartOrBuilder getFlexStartOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification for scale-to-zero feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec scale_to_zero_spec = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the scaleToZeroSpec field is set.
+   */
+  boolean hasScaleToZeroSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification for scale-to-zero feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec scale_to_zero_spec = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The scaleToZeroSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec getScaleToZeroSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification for scale-to-zero feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec scale_to_zero_spec = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpecOrBuilder
+      getScaleToZeroSpecOrBuilder();
 }

@@ -45,6 +45,7 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
    * <pre>
    * Uncompressed 16-bit signed little-endian samples (Linear PCM).
    * Audio content returned as LINEAR16 also contains a WAV header.
+   * LINT: LEGACY_NAMES
    * </pre>
    *
    * <code>OUTPUT_AUDIO_ENCODING_LINEAR_16 = 1;</code>
@@ -65,6 +66,7 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
    *
    * <pre>
    * MP3 audio at 64kbps.
+   * LINT: LEGACY_NAMES
    * </pre>
    *
    * <code>OUTPUT_AUDIO_ENCODING_MP3_64_KBPS = 4;</code>
@@ -123,6 +125,7 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
    * <pre>
    * Uncompressed 16-bit signed little-endian samples (Linear PCM).
    * Audio content returned as LINEAR16 also contains a WAV header.
+   * LINT: LEGACY_NAMES
    * </pre>
    *
    * <code>OUTPUT_AUDIO_ENCODING_LINEAR_16 = 1;</code>
@@ -145,6 +148,7 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
    *
    * <pre>
    * MP3 audio at 64kbps.
+   * LINT: LEGACY_NAMES
    * </pre>
    *
    * <code>OUTPUT_AUDIO_ENCODING_MP3_64_KBPS = 4;</code>

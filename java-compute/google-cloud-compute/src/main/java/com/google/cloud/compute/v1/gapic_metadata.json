@@ -151,6 +151,9 @@
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
+            "GetEffectiveSecurityPolicies": {
+              "methods": ["getEffectiveSecurityPolicies", "getEffectiveSecurityPolicies", "getEffectiveSecurityPoliciesCallable"]
+            },
             "GetHealth": {
               "methods": ["getHealth", "getHealth", "getHealthCallable"]
             },
@@ -1652,6 +1655,63 @@
         }
       }
     },
+    "OrganizationSecurityPolicies": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OrganizationSecurityPoliciesClient",
+          "rpcs": {
+            "AddAssociation": {
+              "methods": ["addAssociationAsync", "addAssociationAsync", "addAssociationOperationCallable", "addAssociationCallable"]
+            },
+            "AddRule": {
+              "methods": ["addRuleAsync", "addRuleAsync", "addRuleOperationCallable", "addRuleCallable"]
+            },
+            "CopyRules": {
+              "methods": ["copyRulesAsync", "copyRulesAsync", "copyRulesOperationCallable", "copyRulesCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetAssociation": {
+              "methods": ["getAssociation", "getAssociation", "getAssociationCallable"]
+            },
+            "GetRule": {
+              "methods": ["getRule", "getRule", "getRuleCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "ListAssociations": {
+              "methods": ["listAssociations", "listAssociations", "listAssociationsCallable"]
+            },
+            "ListPreconfiguredExpressionSets": {
+              "methods": ["listPreconfiguredExpressionSets", "listPreconfiguredExpressionSets", "listPreconfiguredExpressionSetsCallable"]
+            },
+            "Move": {
+              "methods": ["moveAsync", "moveAsync", "moveOperationCallable", "moveCallable"]
+            },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "PatchRule": {
+              "methods": ["patchRuleAsync", "patchRuleAsync", "patchRuleOperationCallable", "patchRuleCallable"]
+            },
+            "RemoveAssociation": {
+              "methods": ["removeAssociationAsync", "removeAssociationAsync", "removeAssociationOperationCallable", "removeAssociationCallable"]
+            },
+            "RemoveRule": {
+              "methods": ["removeRuleAsync", "removeRuleAsync", "removeRuleOperationCallable", "removeRuleCallable"]
+            }
+          }
+        }
+      }
+    },
     "PacketMirrorings": {
       "clients": {
         "grpc": {
@@ -1677,6 +1737,24 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "PreviewFeatures": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PreviewFeaturesClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Update": {
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }
@@ -2568,6 +2646,9 @@
             },
             "PerformMaintenance": {
               "methods": ["performMaintenanceAsync", "performMaintenanceAsync", "performMaintenanceOperationCallable", "performMaintenanceCallable"]
+            },
+            "ReportFaulty": {
+              "methods": ["reportFaultyAsync", "reportFaultyAsync", "reportFaultyOperationCallable", "reportFaultyCallable"]
             }
           }
         }

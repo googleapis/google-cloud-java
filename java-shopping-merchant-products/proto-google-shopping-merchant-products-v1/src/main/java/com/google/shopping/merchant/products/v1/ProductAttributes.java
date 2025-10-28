@@ -62,6 +62,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     loyaltyPrograms_ = java.util.Collections.emptyList();
     productTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     shipping_ = java.util.Collections.emptyList();
+    carrierShipping_ = java.util.Collections.emptyList();
     freeShippingThreshold_ = java.util.Collections.emptyList();
     shippingLabel_ = "";
     transitTimeLabel_ = "";
@@ -121,6 +122,5807 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         .ensureFieldAccessorsInitialized(
             com.google.shopping.merchant.products.v1.ProductAttributes.class,
             com.google.shopping.merchant.products.v1.ProductAttributes.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Possible carrier where price is coming from.
+   * </pre>
+   *
+   * Protobuf enum {@code google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption}
+   */
+  public enum CarrierPriceOption implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Carrier price option is unspecified.
+     * </pre>
+     *
+     * <code>CARRIER_PRICE_OPTION_UNSPECIFIED = 0;</code>
+     */
+    CARRIER_PRICE_OPTION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Regular shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_REGULAR = 1;</code>
+     */
+    AUSTRALIA_POST_REGULAR(1),
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Express shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_EXPRESS = 2;</code>
+     */
+    AUSTRALIA_POST_EXPRESS(2),
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Regular Small shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_REGULAR_S = 3;</code>
+     */
+    AUSTRALIA_POST_REGULAR_S(3),
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Regular Medium shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_REGULAR_M = 4;</code>
+     */
+    AUSTRALIA_POST_REGULAR_M(4),
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Regular Large shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_REGULAR_L = 5;</code>
+     */
+    AUSTRALIA_POST_REGULAR_L(5),
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Regular XL shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_REGULAR_XL = 6;</code>
+     */
+    AUSTRALIA_POST_REGULAR_XL(6),
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Express Small shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_EXPRESS_S = 7;</code>
+     */
+    AUSTRALIA_POST_EXPRESS_S(7),
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Express Medium shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_EXPRESS_M = 8;</code>
+     */
+    AUSTRALIA_POST_EXPRESS_M(8),
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Express Large shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_EXPRESS_L = 9;</code>
+     */
+    AUSTRALIA_POST_EXPRESS_L(9),
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Express XL shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_EXPRESS_XL = 10;</code>
+     */
+    AUSTRALIA_POST_EXPRESS_XL(10),
+    /**
+     *
+     *
+     * <pre>
+     * TNT Road Express shipping service.
+     * </pre>
+     *
+     * <code>TNT_ROAD_EXPRESS = 11;</code>
+     */
+    TNT_ROAD_EXPRESS(11),
+    /**
+     *
+     *
+     * <pre>
+     * TNT Overnight Express shipping service.
+     * </pre>
+     *
+     * <code>TNT_OVERNIGHT_EXPRESS = 12;</code>
+     */
+    TNT_OVERNIGHT_EXPRESS(12),
+    /**
+     *
+     *
+     * <pre>
+     * Toll Road Delivery shipping service.
+     * </pre>
+     *
+     * <code>TOLL_ROAD_DELIVERY = 13;</code>
+     */
+    TOLL_ROAD_DELIVERY(13),
+    /**
+     *
+     *
+     * <pre>
+     * Toll Overnight Priority shipping service.
+     * </pre>
+     *
+     * <code>TOLL_OVERNIGHT_PRIORITY = 14;</code>
+     */
+    TOLL_OVERNIGHT_PRIORITY(14),
+    /**
+     *
+     *
+     * <pre>
+     * DHL Paket shipping service.
+     * </pre>
+     *
+     * <code>DHL_PAKET = 15;</code>
+     */
+    DHL_PAKET(15),
+    /**
+     *
+     *
+     * <pre>
+     * DHL Packchen shipping service.
+     * </pre>
+     *
+     * <code>DHL_PACKCHEN = 16;</code>
+     */
+    DHL_PACKCHEN(16),
+    /**
+     *
+     *
+     * <pre>
+     * DPD Express 12 shipping service.
+     * </pre>
+     *
+     * <code>DPD_EXPRESS_12 = 17;</code>
+     */
+    DPD_EXPRESS_12(17),
+    /**
+     *
+     *
+     * <pre>
+     * DPD Express shipping service.
+     * </pre>
+     *
+     * <code>DPD_EXPRESS = 18;</code>
+     */
+    DPD_EXPRESS(18),
+    /**
+     *
+     *
+     * <pre>
+     * DPD Classic Parcel shipping service.
+     * </pre>
+     *
+     * <code>DPD_CLASSIC_PARCEL = 19;</code>
+     */
+    DPD_CLASSIC_PARCEL(19),
+    /**
+     *
+     *
+     * <pre>
+     * Hermes Packchen shipping service.
+     * </pre>
+     *
+     * <code>HERMES_PACKCHEN = 20;</code>
+     */
+    HERMES_PACKCHEN(20),
+    /**
+     *
+     *
+     * <pre>
+     * Hermes Paketklasse S shipping service.
+     * </pre>
+     *
+     * <code>HERMES_PAKETKLASSE_S = 21;</code>
+     */
+    HERMES_PAKETKLASSE_S(21),
+    /**
+     *
+     *
+     * <pre>
+     * Hermes Paketklasse M shipping service.
+     * </pre>
+     *
+     * <code>HERMES_PAKETKLASSE_M = 22;</code>
+     */
+    HERMES_PAKETKLASSE_M(22),
+    /**
+     *
+     *
+     * <pre>
+     * Hermes Paketklasse L shipping service.
+     * </pre>
+     *
+     * <code>HERMES_PAKETKLASSE_L = 23;</code>
+     */
+    HERMES_PAKETKLASSE_L(23),
+    /**
+     *
+     *
+     * <pre>
+     * UPS Express shipping service.
+     * </pre>
+     *
+     * <code>UPS_EXPRESS = 24;</code>
+     */
+    UPS_EXPRESS(24),
+    /**
+     *
+     *
+     * <pre>
+     * UPS Express Saver shipping service.
+     * </pre>
+     *
+     * <code>UPS_EXPRESS_SAVER = 25;</code>
+     */
+    UPS_EXPRESS_SAVER(25),
+    /**
+     *
+     *
+     * <pre>
+     * UPS Express Standard shipping service.
+     * </pre>
+     *
+     * <code>UPS_EXPRESS_STANDARD = 26;</code>
+     */
+    UPS_EXPRESS_STANDARD(26),
+    /**
+     *
+     *
+     * <pre>
+     * DHL Express shipping service.
+     * </pre>
+     *
+     * <code>DHL_EXPRESS = 27;</code>
+     */
+    DHL_EXPRESS(27),
+    /**
+     *
+     *
+     * <pre>
+     * DHL Express 12 shipping service.
+     * </pre>
+     *
+     * <code>DHL_EXPRESS_12 = 28;</code>
+     */
+    DHL_EXPRESS_12(28),
+    /**
+     *
+     *
+     * <pre>
+     * DPD Next Day shipping service.
+     * </pre>
+     *
+     * <code>DPD_NEXT_DAY = 29;</code>
+     */
+    DPD_NEXT_DAY(29),
+    /**
+     *
+     *
+     * <pre>
+     * DPD Standard Next Day shipping service.
+     * </pre>
+     *
+     * <code>DPD_STANDARD_NEXT_DAY = 30;</code>
+     */
+    DPD_STANDARD_NEXT_DAY(30),
+    /**
+     *
+     *
+     * <pre>
+     * DPD Standard Two Day shipping service.
+     * </pre>
+     *
+     * <code>DPD_STANDARD_TWO_DAY = 31;</code>
+     */
+    DPD_STANDARD_TWO_DAY(31),
+    /**
+     *
+     *
+     * <pre>
+     * RMG 1st Class Small shipping service.
+     * </pre>
+     *
+     * <code>RMG_1ST_CLASS_SMALL = 32;</code>
+     */
+    RMG_1ST_CLASS_SMALL(32),
+    /**
+     *
+     *
+     * <pre>
+     * RMG 1st Class Medium shipping service.
+     * </pre>
+     *
+     * <code>RMG_1ST_CLASS_MEDIUM = 33;</code>
+     */
+    RMG_1ST_CLASS_MEDIUM(33),
+    /**
+     *
+     *
+     * <pre>
+     * RMG 2nd Class Small shipping service.
+     * </pre>
+     *
+     * <code>RMG_2ND_CLASS_SMALL = 34;</code>
+     */
+    RMG_2ND_CLASS_SMALL(34),
+    /**
+     *
+     *
+     * <pre>
+     * RMG 2nd Class Medium shipping service.
+     * </pre>
+     *
+     * <code>RMG_2ND_CLASS_MEDIUM = 35;</code>
+     */
+    RMG_2ND_CLASS_MEDIUM(35),
+    /**
+     *
+     *
+     * <pre>
+     * TNT Express shipping service.
+     * </pre>
+     *
+     * <code>TNT_EXPRESS = 36;</code>
+     */
+    TNT_EXPRESS(36),
+    /**
+     *
+     *
+     * <pre>
+     * TNT Express 10 shipping service.
+     * </pre>
+     *
+     * <code>TNT_EXPRESS_10 = 37;</code>
+     */
+    TNT_EXPRESS_10(37),
+    /**
+     *
+     *
+     * <pre>
+     * TNT Express 12 shipping service.
+     * </pre>
+     *
+     * <code>TNT_EXPRESS_12 = 38;</code>
+     */
+    TNT_EXPRESS_12(38),
+    /**
+     *
+     *
+     * <pre>
+     * Yodel B2C 48HR shipping service.
+     * </pre>
+     *
+     * <code>YODEL_B2C_48HR = 39;</code>
+     */
+    YODEL_B2C_48HR(39),
+    /**
+     *
+     *
+     * <pre>
+     * Yodel B2C 72HR shipping service.
+     * </pre>
+     *
+     * <code>YODEL_B2C_72HR = 40;</code>
+     */
+    YODEL_B2C_72HR(40),
+    /**
+     *
+     *
+     * <pre>
+     * Yodel B2C Packet shipping service.
+     * </pre>
+     *
+     * <code>YODEL_B2C_PACKET = 41;</code>
+     */
+    YODEL_B2C_PACKET(41),
+    /**
+     *
+     *
+     * <pre>
+     * FedEx Ground shipping service.
+     * </pre>
+     *
+     * <code>FEDEX_GROUND = 42;</code>
+     */
+    FEDEX_GROUND(42),
+    /**
+     *
+     *
+     * <pre>
+     * FedEx Home Delivery shipping service.
+     * </pre>
+     *
+     * <code>FEDEX_HOME_DELIVERY = 43;</code>
+     */
+    FEDEX_HOME_DELIVERY(43),
+    /**
+     *
+     *
+     * <pre>
+     * FedEx Express Saver shipping service.
+     * </pre>
+     *
+     * <code>FEDEX_EXPRESS_SAVER = 44;</code>
+     */
+    FEDEX_EXPRESS_SAVER(44),
+    /**
+     *
+     *
+     * <pre>
+     * FedEx First Overnight shipping service.
+     * </pre>
+     *
+     * <code>FEDEX_FIRST_OVERNIGHT = 45;</code>
+     */
+    FEDEX_FIRST_OVERNIGHT(45),
+    /**
+     *
+     *
+     * <pre>
+     * FedEx Priority Overnight shipping service.
+     * </pre>
+     *
+     * <code>FEDEX_PRIORITY_OVERNIGHT = 46;</code>
+     */
+    FEDEX_PRIORITY_OVERNIGHT(46),
+    /**
+     *
+     *
+     * <pre>
+     * FedEx Standard Overnight shipping service.
+     * </pre>
+     *
+     * <code>FEDEX_STANDARD_OVERNIGHT = 47;</code>
+     */
+    FEDEX_STANDARD_OVERNIGHT(47),
+    /**
+     *
+     *
+     * <pre>
+     * FedEx 2Day shipping service.
+     * </pre>
+     *
+     * <code>FEDEX_2DAY = 48;</code>
+     */
+    FEDEX_2DAY(48),
+    /**
+     *
+     *
+     * <pre>
+     * UPS Standard shipping service.
+     * </pre>
+     *
+     * <code>UPS_STANDARD = 49;</code>
+     */
+    UPS_STANDARD(49),
+    /**
+     *
+     *
+     * <pre>
+     * UPS 2nd Day Air shipping service.
+     * </pre>
+     *
+     * <code>UPS_2ND_DAY_AIR = 50;</code>
+     */
+    UPS_2ND_DAY_AIR(50),
+    /**
+     *
+     *
+     * <pre>
+     * UPS 2nd Day AM shipping service.
+     * </pre>
+     *
+     * <code>UPS_2ND_DAY_AM = 51;</code>
+     */
+    UPS_2ND_DAY_AM(51),
+    /**
+     *
+     *
+     * <pre>
+     * UPS 3 Day Select shipping service.
+     * </pre>
+     *
+     * <code>UPS_3_DAY_SELECT = 52;</code>
+     */
+    UPS_3_DAY_SELECT(52),
+    /**
+     *
+     *
+     * <pre>
+     * UPS Ground shipping service.
+     * </pre>
+     *
+     * <code>UPS_GROUND = 53;</code>
+     */
+    UPS_GROUND(53),
+    /**
+     *
+     *
+     * <pre>
+     * UPS Next Day Air shipping service.
+     * </pre>
+     *
+     * <code>UPS_NEXT_DAY_AIR = 54;</code>
+     */
+    UPS_NEXT_DAY_AIR(54),
+    /**
+     *
+     *
+     * <pre>
+     * UPS Next Day Air Early AM shipping service.
+     * </pre>
+     *
+     * <code>UPS_NEXT_DAY_AIR_EARLY_AM = 55;</code>
+     */
+    UPS_NEXT_DAY_AIR_EARLY_AM(55),
+    /**
+     *
+     *
+     * <pre>
+     * UPS Next Day Air Saver shipping service.
+     * </pre>
+     *
+     * <code>UPS_NEXT_DAY_AIR_SAVER = 56;</code>
+     */
+    UPS_NEXT_DAY_AIR_SAVER(56),
+    /**
+     *
+     *
+     * <pre>
+     * USPS Priority Mail Express shipping service.
+     * </pre>
+     *
+     * <code>USPS_PRIORITY_MAIL_EXPRESS = 57;</code>
+     */
+    USPS_PRIORITY_MAIL_EXPRESS(57),
+    /**
+     *
+     *
+     * <pre>
+     * USPS Media Mail shipping service.
+     * </pre>
+     *
+     * <code>USPS_MEDIA_MAIL = 58;</code>
+     */
+    USPS_MEDIA_MAIL(58),
+    /**
+     *
+     *
+     * <pre>
+     * USPS Ground Advantage Retail shipping service.
+     * </pre>
+     *
+     * <code>USPS_GROUND_ADVANTAGE_RETAIL = 59;</code>
+     */
+    USPS_GROUND_ADVANTAGE_RETAIL(59),
+    /**
+     *
+     *
+     * <pre>
+     * USPS Priority Mail shipping service.
+     * </pre>
+     *
+     * <code>USPS_PRIORITY_MAIL = 60;</code>
+     */
+    USPS_PRIORITY_MAIL(60),
+    /**
+     *
+     *
+     * <pre>
+     * USPS Ground Advantage Commercial shipping service.
+     * </pre>
+     *
+     * <code>USPS_GROUND_ADVANTAGE_COMMERCIAL = 61;</code>
+     */
+    USPS_GROUND_ADVANTAGE_COMMERCIAL(61),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Carrier price option is unspecified.
+     * </pre>
+     *
+     * <code>CARRIER_PRICE_OPTION_UNSPECIFIED = 0;</code>
+     */
+    public static final int CARRIER_PRICE_OPTION_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Regular shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_REGULAR = 1;</code>
+     */
+    public static final int AUSTRALIA_POST_REGULAR_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Express shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_EXPRESS = 2;</code>
+     */
+    public static final int AUSTRALIA_POST_EXPRESS_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Regular Small shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_REGULAR_S = 3;</code>
+     */
+    public static final int AUSTRALIA_POST_REGULAR_S_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Regular Medium shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_REGULAR_M = 4;</code>
+     */
+    public static final int AUSTRALIA_POST_REGULAR_M_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Regular Large shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_REGULAR_L = 5;</code>
+     */
+    public static final int AUSTRALIA_POST_REGULAR_L_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Regular XL shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_REGULAR_XL = 6;</code>
+     */
+    public static final int AUSTRALIA_POST_REGULAR_XL_VALUE = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Express Small shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_EXPRESS_S = 7;</code>
+     */
+    public static final int AUSTRALIA_POST_EXPRESS_S_VALUE = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Express Medium shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_EXPRESS_M = 8;</code>
+     */
+    public static final int AUSTRALIA_POST_EXPRESS_M_VALUE = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Express Large shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_EXPRESS_L = 9;</code>
+     */
+    public static final int AUSTRALIA_POST_EXPRESS_L_VALUE = 9;
+
+    /**
+     *
+     *
+     * <pre>
+     * Australia Post Express XL shipping service.
+     * </pre>
+     *
+     * <code>AUSTRALIA_POST_EXPRESS_XL = 10;</code>
+     */
+    public static final int AUSTRALIA_POST_EXPRESS_XL_VALUE = 10;
+
+    /**
+     *
+     *
+     * <pre>
+     * TNT Road Express shipping service.
+     * </pre>
+     *
+     * <code>TNT_ROAD_EXPRESS = 11;</code>
+     */
+    public static final int TNT_ROAD_EXPRESS_VALUE = 11;
+
+    /**
+     *
+     *
+     * <pre>
+     * TNT Overnight Express shipping service.
+     * </pre>
+     *
+     * <code>TNT_OVERNIGHT_EXPRESS = 12;</code>
+     */
+    public static final int TNT_OVERNIGHT_EXPRESS_VALUE = 12;
+
+    /**
+     *
+     *
+     * <pre>
+     * Toll Road Delivery shipping service.
+     * </pre>
+     *
+     * <code>TOLL_ROAD_DELIVERY = 13;</code>
+     */
+    public static final int TOLL_ROAD_DELIVERY_VALUE = 13;
+
+    /**
+     *
+     *
+     * <pre>
+     * Toll Overnight Priority shipping service.
+     * </pre>
+     *
+     * <code>TOLL_OVERNIGHT_PRIORITY = 14;</code>
+     */
+    public static final int TOLL_OVERNIGHT_PRIORITY_VALUE = 14;
+
+    /**
+     *
+     *
+     * <pre>
+     * DHL Paket shipping service.
+     * </pre>
+     *
+     * <code>DHL_PAKET = 15;</code>
+     */
+    public static final int DHL_PAKET_VALUE = 15;
+
+    /**
+     *
+     *
+     * <pre>
+     * DHL Packchen shipping service.
+     * </pre>
+     *
+     * <code>DHL_PACKCHEN = 16;</code>
+     */
+    public static final int DHL_PACKCHEN_VALUE = 16;
+
+    /**
+     *
+     *
+     * <pre>
+     * DPD Express 12 shipping service.
+     * </pre>
+     *
+     * <code>DPD_EXPRESS_12 = 17;</code>
+     */
+    public static final int DPD_EXPRESS_12_VALUE = 17;
+
+    /**
+     *
+     *
+     * <pre>
+     * DPD Express shipping service.
+     * </pre>
+     *
+     * <code>DPD_EXPRESS = 18;</code>
+     */
+    public static final int DPD_EXPRESS_VALUE = 18;
+
+    /**
+     *
+     *
+     * <pre>
+     * DPD Classic Parcel shipping service.
+     * </pre>
+     *
+     * <code>DPD_CLASSIC_PARCEL = 19;</code>
+     */
+    public static final int DPD_CLASSIC_PARCEL_VALUE = 19;
+
+    /**
+     *
+     *
+     * <pre>
+     * Hermes Packchen shipping service.
+     * </pre>
+     *
+     * <code>HERMES_PACKCHEN = 20;</code>
+     */
+    public static final int HERMES_PACKCHEN_VALUE = 20;
+
+    /**
+     *
+     *
+     * <pre>
+     * Hermes Paketklasse S shipping service.
+     * </pre>
+     *
+     * <code>HERMES_PAKETKLASSE_S = 21;</code>
+     */
+    public static final int HERMES_PAKETKLASSE_S_VALUE = 21;
+
+    /**
+     *
+     *
+     * <pre>
+     * Hermes Paketklasse M shipping service.
+     * </pre>
+     *
+     * <code>HERMES_PAKETKLASSE_M = 22;</code>
+     */
+    public static final int HERMES_PAKETKLASSE_M_VALUE = 22;
+
+    /**
+     *
+     *
+     * <pre>
+     * Hermes Paketklasse L shipping service.
+     * </pre>
+     *
+     * <code>HERMES_PAKETKLASSE_L = 23;</code>
+     */
+    public static final int HERMES_PAKETKLASSE_L_VALUE = 23;
+
+    /**
+     *
+     *
+     * <pre>
+     * UPS Express shipping service.
+     * </pre>
+     *
+     * <code>UPS_EXPRESS = 24;</code>
+     */
+    public static final int UPS_EXPRESS_VALUE = 24;
+
+    /**
+     *
+     *
+     * <pre>
+     * UPS Express Saver shipping service.
+     * </pre>
+     *
+     * <code>UPS_EXPRESS_SAVER = 25;</code>
+     */
+    public static final int UPS_EXPRESS_SAVER_VALUE = 25;
+
+    /**
+     *
+     *
+     * <pre>
+     * UPS Express Standard shipping service.
+     * </pre>
+     *
+     * <code>UPS_EXPRESS_STANDARD = 26;</code>
+     */
+    public static final int UPS_EXPRESS_STANDARD_VALUE = 26;
+
+    /**
+     *
+     *
+     * <pre>
+     * DHL Express shipping service.
+     * </pre>
+     *
+     * <code>DHL_EXPRESS = 27;</code>
+     */
+    public static final int DHL_EXPRESS_VALUE = 27;
+
+    /**
+     *
+     *
+     * <pre>
+     * DHL Express 12 shipping service.
+     * </pre>
+     *
+     * <code>DHL_EXPRESS_12 = 28;</code>
+     */
+    public static final int DHL_EXPRESS_12_VALUE = 28;
+
+    /**
+     *
+     *
+     * <pre>
+     * DPD Next Day shipping service.
+     * </pre>
+     *
+     * <code>DPD_NEXT_DAY = 29;</code>
+     */
+    public static final int DPD_NEXT_DAY_VALUE = 29;
+
+    /**
+     *
+     *
+     * <pre>
+     * DPD Standard Next Day shipping service.
+     * </pre>
+     *
+     * <code>DPD_STANDARD_NEXT_DAY = 30;</code>
+     */
+    public static final int DPD_STANDARD_NEXT_DAY_VALUE = 30;
+
+    /**
+     *
+     *
+     * <pre>
+     * DPD Standard Two Day shipping service.
+     * </pre>
+     *
+     * <code>DPD_STANDARD_TWO_DAY = 31;</code>
+     */
+    public static final int DPD_STANDARD_TWO_DAY_VALUE = 31;
+
+    /**
+     *
+     *
+     * <pre>
+     * RMG 1st Class Small shipping service.
+     * </pre>
+     *
+     * <code>RMG_1ST_CLASS_SMALL = 32;</code>
+     */
+    public static final int RMG_1ST_CLASS_SMALL_VALUE = 32;
+
+    /**
+     *
+     *
+     * <pre>
+     * RMG 1st Class Medium shipping service.
+     * </pre>
+     *
+     * <code>RMG_1ST_CLASS_MEDIUM = 33;</code>
+     */
+    public static final int RMG_1ST_CLASS_MEDIUM_VALUE = 33;
+
+    /**
+     *
+     *
+     * <pre>
+     * RMG 2nd Class Small shipping service.
+     * </pre>
+     *
+     * <code>RMG_2ND_CLASS_SMALL = 34;</code>
+     */
+    public static final int RMG_2ND_CLASS_SMALL_VALUE = 34;
+
+    /**
+     *
+     *
+     * <pre>
+     * RMG 2nd Class Medium shipping service.
+     * </pre>
+     *
+     * <code>RMG_2ND_CLASS_MEDIUM = 35;</code>
+     */
+    public static final int RMG_2ND_CLASS_MEDIUM_VALUE = 35;
+
+    /**
+     *
+     *
+     * <pre>
+     * TNT Express shipping service.
+     * </pre>
+     *
+     * <code>TNT_EXPRESS = 36;</code>
+     */
+    public static final int TNT_EXPRESS_VALUE = 36;
+
+    /**
+     *
+     *
+     * <pre>
+     * TNT Express 10 shipping service.
+     * </pre>
+     *
+     * <code>TNT_EXPRESS_10 = 37;</code>
+     */
+    public static final int TNT_EXPRESS_10_VALUE = 37;
+
+    /**
+     *
+     *
+     * <pre>
+     * TNT Express 12 shipping service.
+     * </pre>
+     *
+     * <code>TNT_EXPRESS_12 = 38;</code>
+     */
+    public static final int TNT_EXPRESS_12_VALUE = 38;
+
+    /**
+     *
+     *
+     * <pre>
+     * Yodel B2C 48HR shipping service.
+     * </pre>
+     *
+     * <code>YODEL_B2C_48HR = 39;</code>
+     */
+    public static final int YODEL_B2C_48HR_VALUE = 39;
+
+    /**
+     *
+     *
+     * <pre>
+     * Yodel B2C 72HR shipping service.
+     * </pre>
+     *
+     * <code>YODEL_B2C_72HR = 40;</code>
+     */
+    public static final int YODEL_B2C_72HR_VALUE = 40;
+
+    /**
+     *
+     *
+     * <pre>
+     * Yodel B2C Packet shipping service.
+     * </pre>
+     *
+     * <code>YODEL_B2C_PACKET = 41;</code>
+     */
+    public static final int YODEL_B2C_PACKET_VALUE = 41;
+
+    /**
+     *
+     *
+     * <pre>
+     * FedEx Ground shipping service.
+     * </pre>
+     *
+     * <code>FEDEX_GROUND = 42;</code>
+     */
+    public static final int FEDEX_GROUND_VALUE = 42;
+
+    /**
+     *
+     *
+     * <pre>
+     * FedEx Home Delivery shipping service.
+     * </pre>
+     *
+     * <code>FEDEX_HOME_DELIVERY = 43;</code>
+     */
+    public static final int FEDEX_HOME_DELIVERY_VALUE = 43;
+
+    /**
+     *
+     *
+     * <pre>
+     * FedEx Express Saver shipping service.
+     * </pre>
+     *
+     * <code>FEDEX_EXPRESS_SAVER = 44;</code>
+     */
+    public static final int FEDEX_EXPRESS_SAVER_VALUE = 44;
+
+    /**
+     *
+     *
+     * <pre>
+     * FedEx First Overnight shipping service.
+     * </pre>
+     *
+     * <code>FEDEX_FIRST_OVERNIGHT = 45;</code>
+     */
+    public static final int FEDEX_FIRST_OVERNIGHT_VALUE = 45;
+
+    /**
+     *
+     *
+     * <pre>
+     * FedEx Priority Overnight shipping service.
+     * </pre>
+     *
+     * <code>FEDEX_PRIORITY_OVERNIGHT = 46;</code>
+     */
+    public static final int FEDEX_PRIORITY_OVERNIGHT_VALUE = 46;
+
+    /**
+     *
+     *
+     * <pre>
+     * FedEx Standard Overnight shipping service.
+     * </pre>
+     *
+     * <code>FEDEX_STANDARD_OVERNIGHT = 47;</code>
+     */
+    public static final int FEDEX_STANDARD_OVERNIGHT_VALUE = 47;
+
+    /**
+     *
+     *
+     * <pre>
+     * FedEx 2Day shipping service.
+     * </pre>
+     *
+     * <code>FEDEX_2DAY = 48;</code>
+     */
+    public static final int FEDEX_2DAY_VALUE = 48;
+
+    /**
+     *
+     *
+     * <pre>
+     * UPS Standard shipping service.
+     * </pre>
+     *
+     * <code>UPS_STANDARD = 49;</code>
+     */
+    public static final int UPS_STANDARD_VALUE = 49;
+
+    /**
+     *
+     *
+     * <pre>
+     * UPS 2nd Day Air shipping service.
+     * </pre>
+     *
+     * <code>UPS_2ND_DAY_AIR = 50;</code>
+     */
+    public static final int UPS_2ND_DAY_AIR_VALUE = 50;
+
+    /**
+     *
+     *
+     * <pre>
+     * UPS 2nd Day AM shipping service.
+     * </pre>
+     *
+     * <code>UPS_2ND_DAY_AM = 51;</code>
+     */
+    public static final int UPS_2ND_DAY_AM_VALUE = 51;
+
+    /**
+     *
+     *
+     * <pre>
+     * UPS 3 Day Select shipping service.
+     * </pre>
+     *
+     * <code>UPS_3_DAY_SELECT = 52;</code>
+     */
+    public static final int UPS_3_DAY_SELECT_VALUE = 52;
+
+    /**
+     *
+     *
+     * <pre>
+     * UPS Ground shipping service.
+     * </pre>
+     *
+     * <code>UPS_GROUND = 53;</code>
+     */
+    public static final int UPS_GROUND_VALUE = 53;
+
+    /**
+     *
+     *
+     * <pre>
+     * UPS Next Day Air shipping service.
+     * </pre>
+     *
+     * <code>UPS_NEXT_DAY_AIR = 54;</code>
+     */
+    public static final int UPS_NEXT_DAY_AIR_VALUE = 54;
+
+    /**
+     *
+     *
+     * <pre>
+     * UPS Next Day Air Early AM shipping service.
+     * </pre>
+     *
+     * <code>UPS_NEXT_DAY_AIR_EARLY_AM = 55;</code>
+     */
+    public static final int UPS_NEXT_DAY_AIR_EARLY_AM_VALUE = 55;
+
+    /**
+     *
+     *
+     * <pre>
+     * UPS Next Day Air Saver shipping service.
+     * </pre>
+     *
+     * <code>UPS_NEXT_DAY_AIR_SAVER = 56;</code>
+     */
+    public static final int UPS_NEXT_DAY_AIR_SAVER_VALUE = 56;
+
+    /**
+     *
+     *
+     * <pre>
+     * USPS Priority Mail Express shipping service.
+     * </pre>
+     *
+     * <code>USPS_PRIORITY_MAIL_EXPRESS = 57;</code>
+     */
+    public static final int USPS_PRIORITY_MAIL_EXPRESS_VALUE = 57;
+
+    /**
+     *
+     *
+     * <pre>
+     * USPS Media Mail shipping service.
+     * </pre>
+     *
+     * <code>USPS_MEDIA_MAIL = 58;</code>
+     */
+    public static final int USPS_MEDIA_MAIL_VALUE = 58;
+
+    /**
+     *
+     *
+     * <pre>
+     * USPS Ground Advantage Retail shipping service.
+     * </pre>
+     *
+     * <code>USPS_GROUND_ADVANTAGE_RETAIL = 59;</code>
+     */
+    public static final int USPS_GROUND_ADVANTAGE_RETAIL_VALUE = 59;
+
+    /**
+     *
+     *
+     * <pre>
+     * USPS Priority Mail shipping service.
+     * </pre>
+     *
+     * <code>USPS_PRIORITY_MAIL = 60;</code>
+     */
+    public static final int USPS_PRIORITY_MAIL_VALUE = 60;
+
+    /**
+     *
+     *
+     * <pre>
+     * USPS Ground Advantage Commercial shipping service.
+     * </pre>
+     *
+     * <code>USPS_GROUND_ADVANTAGE_COMMERCIAL = 61;</code>
+     */
+    public static final int USPS_GROUND_ADVANTAGE_COMMERCIAL_VALUE = 61;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CarrierPriceOption valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static CarrierPriceOption forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CARRIER_PRICE_OPTION_UNSPECIFIED;
+        case 1:
+          return AUSTRALIA_POST_REGULAR;
+        case 2:
+          return AUSTRALIA_POST_EXPRESS;
+        case 3:
+          return AUSTRALIA_POST_REGULAR_S;
+        case 4:
+          return AUSTRALIA_POST_REGULAR_M;
+        case 5:
+          return AUSTRALIA_POST_REGULAR_L;
+        case 6:
+          return AUSTRALIA_POST_REGULAR_XL;
+        case 7:
+          return AUSTRALIA_POST_EXPRESS_S;
+        case 8:
+          return AUSTRALIA_POST_EXPRESS_M;
+        case 9:
+          return AUSTRALIA_POST_EXPRESS_L;
+        case 10:
+          return AUSTRALIA_POST_EXPRESS_XL;
+        case 11:
+          return TNT_ROAD_EXPRESS;
+        case 12:
+          return TNT_OVERNIGHT_EXPRESS;
+        case 13:
+          return TOLL_ROAD_DELIVERY;
+        case 14:
+          return TOLL_OVERNIGHT_PRIORITY;
+        case 15:
+          return DHL_PAKET;
+        case 16:
+          return DHL_PACKCHEN;
+        case 17:
+          return DPD_EXPRESS_12;
+        case 18:
+          return DPD_EXPRESS;
+        case 19:
+          return DPD_CLASSIC_PARCEL;
+        case 20:
+          return HERMES_PACKCHEN;
+        case 21:
+          return HERMES_PAKETKLASSE_S;
+        case 22:
+          return HERMES_PAKETKLASSE_M;
+        case 23:
+          return HERMES_PAKETKLASSE_L;
+        case 24:
+          return UPS_EXPRESS;
+        case 25:
+          return UPS_EXPRESS_SAVER;
+        case 26:
+          return UPS_EXPRESS_STANDARD;
+        case 27:
+          return DHL_EXPRESS;
+        case 28:
+          return DHL_EXPRESS_12;
+        case 29:
+          return DPD_NEXT_DAY;
+        case 30:
+          return DPD_STANDARD_NEXT_DAY;
+        case 31:
+          return DPD_STANDARD_TWO_DAY;
+        case 32:
+          return RMG_1ST_CLASS_SMALL;
+        case 33:
+          return RMG_1ST_CLASS_MEDIUM;
+        case 34:
+          return RMG_2ND_CLASS_SMALL;
+        case 35:
+          return RMG_2ND_CLASS_MEDIUM;
+        case 36:
+          return TNT_EXPRESS;
+        case 37:
+          return TNT_EXPRESS_10;
+        case 38:
+          return TNT_EXPRESS_12;
+        case 39:
+          return YODEL_B2C_48HR;
+        case 40:
+          return YODEL_B2C_72HR;
+        case 41:
+          return YODEL_B2C_PACKET;
+        case 42:
+          return FEDEX_GROUND;
+        case 43:
+          return FEDEX_HOME_DELIVERY;
+        case 44:
+          return FEDEX_EXPRESS_SAVER;
+        case 45:
+          return FEDEX_FIRST_OVERNIGHT;
+        case 46:
+          return FEDEX_PRIORITY_OVERNIGHT;
+        case 47:
+          return FEDEX_STANDARD_OVERNIGHT;
+        case 48:
+          return FEDEX_2DAY;
+        case 49:
+          return UPS_STANDARD;
+        case 50:
+          return UPS_2ND_DAY_AIR;
+        case 51:
+          return UPS_2ND_DAY_AM;
+        case 52:
+          return UPS_3_DAY_SELECT;
+        case 53:
+          return UPS_GROUND;
+        case 54:
+          return UPS_NEXT_DAY_AIR;
+        case 55:
+          return UPS_NEXT_DAY_AIR_EARLY_AM;
+        case 56:
+          return UPS_NEXT_DAY_AIR_SAVER;
+        case 57:
+          return USPS_PRIORITY_MAIL_EXPRESS;
+        case 58:
+          return USPS_MEDIA_MAIL;
+        case 59:
+          return USPS_GROUND_ADVANTAGE_RETAIL;
+        case 60:
+          return USPS_PRIORITY_MAIL;
+        case 61:
+          return USPS_GROUND_ADVANTAGE_COMMERCIAL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CarrierPriceOption>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<CarrierPriceOption>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<CarrierPriceOption>() {
+              public CarrierPriceOption findValueByNumber(int number) {
+                return CarrierPriceOption.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductAttributes.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final CarrierPriceOption[] VALUES = values();
+
+    public static CarrierPriceOption valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CarrierPriceOption(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption)
+  }
+
+  public interface CarrierShippingOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The [CLDR territory
+     * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+     * of the country to which an item will ship.
+     * </pre>
+     *
+     * <code>optional string country = 1;</code>
+     *
+     * @return Whether the country field is set.
+     */
+    boolean hasCountry();
+
+    /**
+     *
+     *
+     * <pre>
+     * The [CLDR territory
+     * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+     * of the country to which an item will ship.
+     * </pre>
+     *
+     * <code>optional string country = 1;</code>
+     *
+     * @return The country.
+     */
+    java.lang.String getCountry();
+
+    /**
+     *
+     *
+     * <pre>
+     * The [CLDR territory
+     * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+     * of the country to which an item will ship.
+     * </pre>
+     *
+     * <code>optional string country = 1;</code>
+     *
+     * @return The bytes for country.
+     */
+    com.google.protobuf.ByteString getCountryBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The geographic region to which a shipping rate applies.
+     * See [region](https://support.google.com/merchants/answer/6324484) for
+     * more information.
+     * </pre>
+     *
+     * <code>optional string region = 2;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    boolean hasRegion();
+
+    /**
+     *
+     *
+     * <pre>
+     * The geographic region to which a shipping rate applies.
+     * See [region](https://support.google.com/merchants/answer/6324484) for
+     * more information.
+     * </pre>
+     *
+     * <code>optional string region = 2;</code>
+     *
+     * @return The region.
+     */
+    java.lang.String getRegion();
+
+    /**
+     *
+     *
+     * <pre>
+     * The geographic region to which a shipping rate applies.
+     * See [region](https://support.google.com/merchants/answer/6324484) for
+     * more information.
+     * </pre>
+     *
+     * <code>optional string region = 2;</code>
+     *
+     * @return The bytes for region.
+     */
+    com.google.protobuf.ByteString getRegionBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The postal code range that the shipping rate applies to, represented by
+     * a postal code (eg. `94043`), a postal code prefix followed by a *
+     * wildcard (eg. `94*`), a range between two postal codes (eg.
+     * `94043-98033`) or two postal code prefixes of equal length (eg.
+     * `94*-98*`).
+     * </pre>
+     *
+     * <code>optional string postal_code = 3;</code>
+     *
+     * @return Whether the postalCode field is set.
+     */
+    boolean hasPostalCode();
+
+    /**
+     *
+     *
+     * <pre>
+     * The postal code range that the shipping rate applies to, represented by
+     * a postal code (eg. `94043`), a postal code prefix followed by a *
+     * wildcard (eg. `94*`), a range between two postal codes (eg.
+     * `94043-98033`) or two postal code prefixes of equal length (eg.
+     * `94*-98*`).
+     * </pre>
+     *
+     * <code>optional string postal_code = 3;</code>
+     *
+     * @return The postalCode.
+     */
+    java.lang.String getPostalCode();
+
+    /**
+     *
+     *
+     * <pre>
+     * The postal code range that the shipping rate applies to, represented by
+     * a postal code (eg. `94043`), a postal code prefix followed by a *
+     * wildcard (eg. `94*`), a range between two postal codes (eg.
+     * `94043-98033`) or two postal code prefixes of equal length (eg.
+     * `94*-98*`).
+     * </pre>
+     *
+     * <code>optional string postal_code = 3;</code>
+     *
+     * @return The bytes for postalCode.
+     */
+    com.google.protobuf.ByteString getPostalCodeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The source location postal code from which this offer ships. Represented
+     * only by a full-length postal code.
+     * </pre>
+     *
+     * <code>optional string origin_postal_code = 4;</code>
+     *
+     * @return Whether the originPostalCode field is set.
+     */
+    boolean hasOriginPostalCode();
+
+    /**
+     *
+     *
+     * <pre>
+     * The source location postal code from which this offer ships. Represented
+     * only by a full-length postal code.
+     * </pre>
+     *
+     * <code>optional string origin_postal_code = 4;</code>
+     *
+     * @return The originPostalCode.
+     */
+    java.lang.String getOriginPostalCode();
+
+    /**
+     *
+     *
+     * <pre>
+     * The source location postal code from which this offer ships. Represented
+     * only by a full-length postal code.
+     * </pre>
+     *
+     * <code>optional string origin_postal_code = 4;</code>
+     *
+     * @return The bytes for originPostalCode.
+     */
+    com.google.protobuf.ByteString getOriginPostalCodeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Fixed shipping price, represented as a number with currency. Cannot be
+     * set together with
+     * [carrierPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price]
+     * or its adjustments
+     * ([carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment],
+     * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment]).
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Price flat_price = 5;</code>
+     *
+     * @return Whether the flatPrice field is set.
+     */
+    boolean hasFlatPrice();
+
+    /**
+     *
+     *
+     * <pre>
+     * Fixed shipping price, represented as a number with currency. Cannot be
+     * set together with
+     * [carrierPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price]
+     * or its adjustments
+     * ([carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment],
+     * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment]).
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Price flat_price = 5;</code>
+     *
+     * @return The flatPrice.
+     */
+    com.google.shopping.type.Price getFlatPrice();
+
+    /**
+     *
+     *
+     * <pre>
+     * Fixed shipping price, represented as a number with currency. Cannot be
+     * set together with
+     * [carrierPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price]
+     * or its adjustments
+     * ([carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment],
+     * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment]).
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Price flat_price = 5;</code>
+     */
+    com.google.shopping.type.PriceOrBuilder getFlatPriceOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Selected carrier to calculate the shipping price from. Select a carrier
+     * from the [available carriers
+     * list](https://support.google.com/merchants/answer/15449142#Supported),
+     * for example `AUSTRALIA_POST_REGULAR`. Price will be calculated by this
+     * selected carrier, the location expressed in
+     * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+     * along with the user location to determine the accurate shipping price.
+     * Carrier is represented by a carrier service name or a carrier service ID.
+     * Cannot be set together with
+     * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price].
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption carrier_price = 6;
+     * </code>
+     *
+     * @return Whether the carrierPrice field is set.
+     */
+    boolean hasCarrierPrice();
+
+    /**
+     *
+     *
+     * <pre>
+     * Selected carrier to calculate the shipping price from. Select a carrier
+     * from the [available carriers
+     * list](https://support.google.com/merchants/answer/15449142#Supported),
+     * for example `AUSTRALIA_POST_REGULAR`. Price will be calculated by this
+     * selected carrier, the location expressed in
+     * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+     * along with the user location to determine the accurate shipping price.
+     * Carrier is represented by a carrier service name or a carrier service ID.
+     * Cannot be set together with
+     * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price].
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption carrier_price = 6;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for carrierPrice.
+     */
+    int getCarrierPriceValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Selected carrier to calculate the shipping price from. Select a carrier
+     * from the [available carriers
+     * list](https://support.google.com/merchants/answer/15449142#Supported),
+     * for example `AUSTRALIA_POST_REGULAR`. Price will be calculated by this
+     * selected carrier, the location expressed in
+     * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+     * along with the user location to determine the accurate shipping price.
+     * Carrier is represented by a carrier service name or a carrier service ID.
+     * Cannot be set together with
+     * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price].
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption carrier_price = 6;
+     * </code>
+     *
+     * @return The carrierPrice.
+     */
+    com.google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption getCarrierPrice();
+
+    /**
+     *
+     *
+     * <pre>
+     * A flat adjustment on the carrier price. Can be either positive or
+     * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+     * be set together with
+     * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+     * and
+     * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment].
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Price carrier_price_flat_adjustment = 7;</code>
+     *
+     * @return Whether the carrierPriceFlatAdjustment field is set.
+     */
+    boolean hasCarrierPriceFlatAdjustment();
+
+    /**
+     *
+     *
+     * <pre>
+     * A flat adjustment on the carrier price. Can be either positive or
+     * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+     * be set together with
+     * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+     * and
+     * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment].
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Price carrier_price_flat_adjustment = 7;</code>
+     *
+     * @return The carrierPriceFlatAdjustment.
+     */
+    com.google.shopping.type.Price getCarrierPriceFlatAdjustment();
+
+    /**
+     *
+     *
+     * <pre>
+     * A flat adjustment on the carrier price. Can be either positive or
+     * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+     * be set together with
+     * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+     * and
+     * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment].
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Price carrier_price_flat_adjustment = 7;</code>
+     */
+    com.google.shopping.type.PriceOrBuilder getCarrierPriceFlatAdjustmentOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A percentual adjustment on the carrier price. Can be either positive or
+     * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+     * be set together with
+     * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+     * and
+     * [carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment].
+     * </pre>
+     *
+     * <code>optional double carrier_price_percentage_adjustment = 8;</code>
+     *
+     * @return Whether the carrierPricePercentageAdjustment field is set.
+     */
+    boolean hasCarrierPricePercentageAdjustment();
+
+    /**
+     *
+     *
+     * <pre>
+     * A percentual adjustment on the carrier price. Can be either positive or
+     * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+     * be set together with
+     * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+     * and
+     * [carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment].
+     * </pre>
+     *
+     * <code>optional double carrier_price_percentage_adjustment = 8;</code>
+     *
+     * @return The carrierPricePercentageAdjustment.
+     */
+    double getCarrierPricePercentageAdjustment();
+
+    /**
+     *
+     *
+     * <pre>
+     * Minimum handling time (inclusive) between when the order is received and
+     * shipped in business days. 0 means that the order is shipped on the same
+     * day as it is received if it happens before the cut-off time.
+     * [minHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.min_handling_time]
+     * can only be set if
+     * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time]
+     * is also set.
+     * </pre>
+     *
+     * <code>optional int64 min_handling_time = 9;</code>
+     *
+     * @return Whether the minHandlingTime field is set.
+     */
+    boolean hasMinHandlingTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Minimum handling time (inclusive) between when the order is received and
+     * shipped in business days. 0 means that the order is shipped on the same
+     * day as it is received if it happens before the cut-off time.
+     * [minHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.min_handling_time]
+     * can only be set if
+     * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time]
+     * is also set.
+     * </pre>
+     *
+     * <code>optional int64 min_handling_time = 9;</code>
+     *
+     * @return The minHandlingTime.
+     */
+    long getMinHandlingTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Maximum handling time (inclusive) between when the order is received and
+     * shipped in business days. 0 means that the order is shipped on the same
+     * day as it is received if it happens before the cut-off time. Both
+     * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time]
+     * and
+     * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+     * or
+     * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+     * are required if providing shipping speeds.
+     * </pre>
+     *
+     * <code>optional int64 max_handling_time = 10;</code>
+     *
+     * @return Whether the maxHandlingTime field is set.
+     */
+    boolean hasMaxHandlingTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Maximum handling time (inclusive) between when the order is received and
+     * shipped in business days. 0 means that the order is shipped on the same
+     * day as it is received if it happens before the cut-off time. Both
+     * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time]
+     * and
+     * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+     * or
+     * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+     * are required if providing shipping speeds.
+     * </pre>
+     *
+     * <code>optional int64 max_handling_time = 10;</code>
+     *
+     * @return The maxHandlingTime.
+     */
+    long getMaxHandlingTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Minimum transit time (inclusive) between when the order has shipped and
+     * when it is delivered in business days. 0 means that the order is
+     * delivered on the same day as it ships.
+     * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time]
+     * can only be set if
+     * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+     * is set. Cannot be set if
+     * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+     * is present.
+     * </pre>
+     *
+     * <code>optional int64 fixed_min_transit_time = 11;</code>
+     *
+     * @return Whether the fixedMinTransitTime field is set.
+     */
+    boolean hasFixedMinTransitTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Minimum transit time (inclusive) between when the order has shipped and
+     * when it is delivered in business days. 0 means that the order is
+     * delivered on the same day as it ships.
+     * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time]
+     * can only be set if
+     * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+     * is set. Cannot be set if
+     * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+     * is present.
+     * </pre>
+     *
+     * <code>optional int64 fixed_min_transit_time = 11;</code>
+     *
+     * @return The fixedMinTransitTime.
+     */
+    long getFixedMinTransitTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Maximum transit time (inclusive) between when the order has shipped and
+     * when it is delivered in business days. 0 means that the order is
+     * delivered on the same day as it ships. Needs to be provided together with
+     * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time].
+     * Cannot be set if
+     * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+     * is present.
+     * </pre>
+     *
+     * <code>optional int64 fixed_max_transit_time = 12;</code>
+     *
+     * @return Whether the fixedMaxTransitTime field is set.
+     */
+    boolean hasFixedMaxTransitTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Maximum transit time (inclusive) between when the order has shipped and
+     * when it is delivered in business days. 0 means that the order is
+     * delivered on the same day as it ships. Needs to be provided together with
+     * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time].
+     * Cannot be set if
+     * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+     * is present.
+     * </pre>
+     *
+     * <code>optional int64 fixed_max_transit_time = 12;</code>
+     *
+     * @return The fixedMaxTransitTime.
+     */
+    long getFixedMaxTransitTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Selected carrier to calculate the shipping speed from. Select a carrier
+     * from the [available carriers
+     * list](https://support.google.com/merchants/answer/15449142#Supported),
+     * for example `AUSTRALIA_POST_REGULAR`. Speed will be calculated by this
+     * selected carrier, the location expressed in
+     * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+     * along with the user location to determine the accurate delivery speed.
+     * Carrier is represented by a carrier service name or a carrier service ID.
+     * Cannot be set together with
+     * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+     * or
+     * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time].
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.CarrierTransitTimeOption carrier_transit_time = 13;
+     * </code>
+     *
+     * @return Whether the carrierTransitTime field is set.
+     */
+    boolean hasCarrierTransitTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Selected carrier to calculate the shipping speed from. Select a carrier
+     * from the [available carriers
+     * list](https://support.google.com/merchants/answer/15449142#Supported),
+     * for example `AUSTRALIA_POST_REGULAR`. Speed will be calculated by this
+     * selected carrier, the location expressed in
+     * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+     * along with the user location to determine the accurate delivery speed.
+     * Carrier is represented by a carrier service name or a carrier service ID.
+     * Cannot be set together with
+     * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+     * or
+     * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time].
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.CarrierTransitTimeOption carrier_transit_time = 13;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for carrierTransitTime.
+     */
+    int getCarrierTransitTimeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Selected carrier to calculate the shipping speed from. Select a carrier
+     * from the [available carriers
+     * list](https://support.google.com/merchants/answer/15449142#Supported),
+     * for example `AUSTRALIA_POST_REGULAR`. Speed will be calculated by this
+     * selected carrier, the location expressed in
+     * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+     * along with the user location to determine the accurate delivery speed.
+     * Carrier is represented by a carrier service name or a carrier service ID.
+     * Cannot be set together with
+     * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+     * or
+     * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time].
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.CarrierTransitTimeOption carrier_transit_time = 13;
+     * </code>
+     *
+     * @return The carrierTransitTime.
+     */
+    com.google.shopping.merchant.products.v1.CarrierTransitTimeOption getCarrierTransitTime();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Carrier-based shipping configuration. Allows for setting shipping speed or
+   * shipping cost based on a carrier's provided info.
+   * </pre>
+   *
+   * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping}
+   */
+  public static final class CarrierShipping extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping)
+      CarrierShippingOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use CarrierShipping.newBuilder() to construct.
+    private CarrierShipping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private CarrierShipping() {
+      country_ = "";
+      region_ = "";
+      postalCode_ = "";
+      originPostalCode_ = "";
+      carrierPrice_ = 0;
+      carrierTransitTime_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CarrierShipping();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_CarrierShipping_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_CarrierShipping_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.class,
+              com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.Builder
+                  .class);
+    }
+
+    private int bitField0_;
+    public static final int COUNTRY_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object country_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The [CLDR territory
+     * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+     * of the country to which an item will ship.
+     * </pre>
+     *
+     * <code>optional string country = 1;</code>
+     *
+     * @return Whether the country field is set.
+     */
+    @java.lang.Override
+    public boolean hasCountry() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [CLDR territory
+     * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+     * of the country to which an item will ship.
+     * </pre>
+     *
+     * <code>optional string country = 1;</code>
+     *
+     * @return The country.
+     */
+    @java.lang.Override
+    public java.lang.String getCountry() {
+      java.lang.Object ref = country_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        country_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [CLDR territory
+     * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+     * of the country to which an item will ship.
+     * </pre>
+     *
+     * <code>optional string country = 1;</code>
+     *
+     * @return The bytes for country.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCountryBytes() {
+      java.lang.Object ref = country_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        country_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REGION_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object region_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The geographic region to which a shipping rate applies.
+     * See [region](https://support.google.com/merchants/answer/6324484) for
+     * more information.
+     * </pre>
+     *
+     * <code>optional string region = 2;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    @java.lang.Override
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The geographic region to which a shipping rate applies.
+     * See [region](https://support.google.com/merchants/answer/6324484) for
+     * more information.
+     * </pre>
+     *
+     * <code>optional string region = 2;</code>
+     *
+     * @return The region.
+     */
+    @java.lang.Override
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        region_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The geographic region to which a shipping rate applies.
+     * See [region](https://support.google.com/merchants/answer/6324484) for
+     * more information.
+     * </pre>
+     *
+     * <code>optional string region = 2;</code>
+     *
+     * @return The bytes for region.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRegionBytes() {
+      java.lang.Object ref = region_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        region_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int POSTAL_CODE_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object postalCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The postal code range that the shipping rate applies to, represented by
+     * a postal code (eg. `94043`), a postal code prefix followed by a *
+     * wildcard (eg. `94*`), a range between two postal codes (eg.
+     * `94043-98033`) or two postal code prefixes of equal length (eg.
+     * `94*-98*`).
+     * </pre>
+     *
+     * <code>optional string postal_code = 3;</code>
+     *
+     * @return Whether the postalCode field is set.
+     */
+    @java.lang.Override
+    public boolean hasPostalCode() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The postal code range that the shipping rate applies to, represented by
+     * a postal code (eg. `94043`), a postal code prefix followed by a *
+     * wildcard (eg. `94*`), a range between two postal codes (eg.
+     * `94043-98033`) or two postal code prefixes of equal length (eg.
+     * `94*-98*`).
+     * </pre>
+     *
+     * <code>optional string postal_code = 3;</code>
+     *
+     * @return The postalCode.
+     */
+    @java.lang.Override
+    public java.lang.String getPostalCode() {
+      java.lang.Object ref = postalCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        postalCode_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The postal code range that the shipping rate applies to, represented by
+     * a postal code (eg. `94043`), a postal code prefix followed by a *
+     * wildcard (eg. `94*`), a range between two postal codes (eg.
+     * `94043-98033`) or two postal code prefixes of equal length (eg.
+     * `94*-98*`).
+     * </pre>
+     *
+     * <code>optional string postal_code = 3;</code>
+     *
+     * @return The bytes for postalCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPostalCodeBytes() {
+      java.lang.Object ref = postalCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        postalCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ORIGIN_POSTAL_CODE_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object originPostalCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The source location postal code from which this offer ships. Represented
+     * only by a full-length postal code.
+     * </pre>
+     *
+     * <code>optional string origin_postal_code = 4;</code>
+     *
+     * @return Whether the originPostalCode field is set.
+     */
+    @java.lang.Override
+    public boolean hasOriginPostalCode() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The source location postal code from which this offer ships. Represented
+     * only by a full-length postal code.
+     * </pre>
+     *
+     * <code>optional string origin_postal_code = 4;</code>
+     *
+     * @return The originPostalCode.
+     */
+    @java.lang.Override
+    public java.lang.String getOriginPostalCode() {
+      java.lang.Object ref = originPostalCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        originPostalCode_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The source location postal code from which this offer ships. Represented
+     * only by a full-length postal code.
+     * </pre>
+     *
+     * <code>optional string origin_postal_code = 4;</code>
+     *
+     * @return The bytes for originPostalCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getOriginPostalCodeBytes() {
+      java.lang.Object ref = originPostalCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        originPostalCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FLAT_PRICE_FIELD_NUMBER = 5;
+    private com.google.shopping.type.Price flatPrice_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Fixed shipping price, represented as a number with currency. Cannot be
+     * set together with
+     * [carrierPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price]
+     * or its adjustments
+     * ([carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment],
+     * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment]).
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Price flat_price = 5;</code>
+     *
+     * @return Whether the flatPrice field is set.
+     */
+    @java.lang.Override
+    public boolean hasFlatPrice() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fixed shipping price, represented as a number with currency. Cannot be
+     * set together with
+     * [carrierPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price]
+     * or its adjustments
+     * ([carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment],
+     * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment]).
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Price flat_price = 5;</code>
+     *
+     * @return The flatPrice.
+     */
+    @java.lang.Override
+    public com.google.shopping.type.Price getFlatPrice() {
+      return flatPrice_ == null ? com.google.shopping.type.Price.getDefaultInstance() : flatPrice_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fixed shipping price, represented as a number with currency. Cannot be
+     * set together with
+     * [carrierPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price]
+     * or its adjustments
+     * ([carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment],
+     * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment]).
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Price flat_price = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.shopping.type.PriceOrBuilder getFlatPriceOrBuilder() {
+      return flatPrice_ == null ? com.google.shopping.type.Price.getDefaultInstance() : flatPrice_;
+    }
+
+    public static final int CARRIER_PRICE_FIELD_NUMBER = 6;
+    private int carrierPrice_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Selected carrier to calculate the shipping price from. Select a carrier
+     * from the [available carriers
+     * list](https://support.google.com/merchants/answer/15449142#Supported),
+     * for example `AUSTRALIA_POST_REGULAR`. Price will be calculated by this
+     * selected carrier, the location expressed in
+     * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+     * along with the user location to determine the accurate shipping price.
+     * Carrier is represented by a carrier service name or a carrier service ID.
+     * Cannot be set together with
+     * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price].
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption carrier_price = 6;
+     * </code>
+     *
+     * @return Whether the carrierPrice field is set.
+     */
+    @java.lang.Override
+    public boolean hasCarrierPrice() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Selected carrier to calculate the shipping price from. Select a carrier
+     * from the [available carriers
+     * list](https://support.google.com/merchants/answer/15449142#Supported),
+     * for example `AUSTRALIA_POST_REGULAR`. Price will be calculated by this
+     * selected carrier, the location expressed in
+     * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+     * along with the user location to determine the accurate shipping price.
+     * Carrier is represented by a carrier service name or a carrier service ID.
+     * Cannot be set together with
+     * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price].
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption carrier_price = 6;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for carrierPrice.
+     */
+    @java.lang.Override
+    public int getCarrierPriceValue() {
+      return carrierPrice_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Selected carrier to calculate the shipping price from. Select a carrier
+     * from the [available carriers
+     * list](https://support.google.com/merchants/answer/15449142#Supported),
+     * for example `AUSTRALIA_POST_REGULAR`. Price will be calculated by this
+     * selected carrier, the location expressed in
+     * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+     * along with the user location to determine the accurate shipping price.
+     * Carrier is represented by a carrier service name or a carrier service ID.
+     * Cannot be set together with
+     * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price].
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption carrier_price = 6;
+     * </code>
+     *
+     * @return The carrierPrice.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption
+        getCarrierPrice() {
+      com.google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption result =
+          com.google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption.forNumber(
+              carrierPrice_);
+      return result == null
+          ? com.google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int CARRIER_PRICE_FLAT_ADJUSTMENT_FIELD_NUMBER = 7;
+    private com.google.shopping.type.Price carrierPriceFlatAdjustment_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A flat adjustment on the carrier price. Can be either positive or
+     * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+     * be set together with
+     * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+     * and
+     * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment].
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Price carrier_price_flat_adjustment = 7;</code>
+     *
+     * @return Whether the carrierPriceFlatAdjustment field is set.
+     */
+    @java.lang.Override
+    public boolean hasCarrierPriceFlatAdjustment() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A flat adjustment on the carrier price. Can be either positive or
+     * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+     * be set together with
+     * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+     * and
+     * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment].
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Price carrier_price_flat_adjustment = 7;</code>
+     *
+     * @return The carrierPriceFlatAdjustment.
+     */
+    @java.lang.Override
+    public com.google.shopping.type.Price getCarrierPriceFlatAdjustment() {
+      return carrierPriceFlatAdjustment_ == null
+          ? com.google.shopping.type.Price.getDefaultInstance()
+          : carrierPriceFlatAdjustment_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A flat adjustment on the carrier price. Can be either positive or
+     * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+     * be set together with
+     * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+     * and
+     * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment].
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Price carrier_price_flat_adjustment = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.shopping.type.PriceOrBuilder getCarrierPriceFlatAdjustmentOrBuilder() {
+      return carrierPriceFlatAdjustment_ == null
+          ? com.google.shopping.type.Price.getDefaultInstance()
+          : carrierPriceFlatAdjustment_;
+    }
+
+    public static final int CARRIER_PRICE_PERCENTAGE_ADJUSTMENT_FIELD_NUMBER = 8;
+    private double carrierPricePercentageAdjustment_ = 0D;
+
+    /**
+     *
+     *
+     * <pre>
+     * A percentual adjustment on the carrier price. Can be either positive or
+     * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+     * be set together with
+     * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+     * and
+     * [carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment].
+     * </pre>
+     *
+     * <code>optional double carrier_price_percentage_adjustment = 8;</code>
+     *
+     * @return Whether the carrierPricePercentageAdjustment field is set.
+     */
+    @java.lang.Override
+    public boolean hasCarrierPricePercentageAdjustment() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A percentual adjustment on the carrier price. Can be either positive or
+     * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+     * be set together with
+     * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+     * and
+     * [carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment].
+     * </pre>
+     *
+     * <code>optional double carrier_price_percentage_adjustment = 8;</code>
+     *
+     * @return The carrierPricePercentageAdjustment.
+     */
+    @java.lang.Override
+    public double getCarrierPricePercentageAdjustment() {
+      return carrierPricePercentageAdjustment_;
+    }
+
+    public static final int MIN_HANDLING_TIME_FIELD_NUMBER = 9;
+    private long minHandlingTime_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * Minimum handling time (inclusive) between when the order is received and
+     * shipped in business days. 0 means that the order is shipped on the same
+     * day as it is received if it happens before the cut-off time.
+     * [minHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.min_handling_time]
+     * can only be set if
+     * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time]
+     * is also set.
+     * </pre>
+     *
+     * <code>optional int64 min_handling_time = 9;</code>
+     *
+     * @return Whether the minHandlingTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasMinHandlingTime() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Minimum handling time (inclusive) between when the order is received and
+     * shipped in business days. 0 means that the order is shipped on the same
+     * day as it is received if it happens before the cut-off time.
+     * [minHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.min_handling_time]
+     * can only be set if
+     * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time]
+     * is also set.
+     * </pre>
+     *
+     * <code>optional int64 min_handling_time = 9;</code>
+     *
+     * @return The minHandlingTime.
+     */
+    @java.lang.Override
+    public long getMinHandlingTime() {
+      return minHandlingTime_;
+    }
+
+    public static final int MAX_HANDLING_TIME_FIELD_NUMBER = 10;
+    private long maxHandlingTime_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maximum handling time (inclusive) between when the order is received and
+     * shipped in business days. 0 means that the order is shipped on the same
+     * day as it is received if it happens before the cut-off time. Both
+     * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time]
+     * and
+     * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+     * or
+     * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+     * are required if providing shipping speeds.
+     * </pre>
+     *
+     * <code>optional int64 max_handling_time = 10;</code>
+     *
+     * @return Whether the maxHandlingTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxHandlingTime() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Maximum handling time (inclusive) between when the order is received and
+     * shipped in business days. 0 means that the order is shipped on the same
+     * day as it is received if it happens before the cut-off time. Both
+     * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time]
+     * and
+     * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+     * or
+     * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+     * are required if providing shipping speeds.
+     * </pre>
+     *
+     * <code>optional int64 max_handling_time = 10;</code>
+     *
+     * @return The maxHandlingTime.
+     */
+    @java.lang.Override
+    public long getMaxHandlingTime() {
+      return maxHandlingTime_;
+    }
+
+    public static final int FIXED_MIN_TRANSIT_TIME_FIELD_NUMBER = 11;
+    private long fixedMinTransitTime_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * Minimum transit time (inclusive) between when the order has shipped and
+     * when it is delivered in business days. 0 means that the order is
+     * delivered on the same day as it ships.
+     * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time]
+     * can only be set if
+     * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+     * is set. Cannot be set if
+     * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+     * is present.
+     * </pre>
+     *
+     * <code>optional int64 fixed_min_transit_time = 11;</code>
+     *
+     * @return Whether the fixedMinTransitTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasFixedMinTransitTime() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Minimum transit time (inclusive) between when the order has shipped and
+     * when it is delivered in business days. 0 means that the order is
+     * delivered on the same day as it ships.
+     * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time]
+     * can only be set if
+     * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+     * is set. Cannot be set if
+     * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+     * is present.
+     * </pre>
+     *
+     * <code>optional int64 fixed_min_transit_time = 11;</code>
+     *
+     * @return The fixedMinTransitTime.
+     */
+    @java.lang.Override
+    public long getFixedMinTransitTime() {
+      return fixedMinTransitTime_;
+    }
+
+    public static final int FIXED_MAX_TRANSIT_TIME_FIELD_NUMBER = 12;
+    private long fixedMaxTransitTime_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maximum transit time (inclusive) between when the order has shipped and
+     * when it is delivered in business days. 0 means that the order is
+     * delivered on the same day as it ships. Needs to be provided together with
+     * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time].
+     * Cannot be set if
+     * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+     * is present.
+     * </pre>
+     *
+     * <code>optional int64 fixed_max_transit_time = 12;</code>
+     *
+     * @return Whether the fixedMaxTransitTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasFixedMaxTransitTime() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Maximum transit time (inclusive) between when the order has shipped and
+     * when it is delivered in business days. 0 means that the order is
+     * delivered on the same day as it ships. Needs to be provided together with
+     * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time].
+     * Cannot be set if
+     * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+     * is present.
+     * </pre>
+     *
+     * <code>optional int64 fixed_max_transit_time = 12;</code>
+     *
+     * @return The fixedMaxTransitTime.
+     */
+    @java.lang.Override
+    public long getFixedMaxTransitTime() {
+      return fixedMaxTransitTime_;
+    }
+
+    public static final int CARRIER_TRANSIT_TIME_FIELD_NUMBER = 13;
+    private int carrierTransitTime_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Selected carrier to calculate the shipping speed from. Select a carrier
+     * from the [available carriers
+     * list](https://support.google.com/merchants/answer/15449142#Supported),
+     * for example `AUSTRALIA_POST_REGULAR`. Speed will be calculated by this
+     * selected carrier, the location expressed in
+     * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+     * along with the user location to determine the accurate delivery speed.
+     * Carrier is represented by a carrier service name or a carrier service ID.
+     * Cannot be set together with
+     * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+     * or
+     * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time].
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.CarrierTransitTimeOption carrier_transit_time = 13;
+     * </code>
+     *
+     * @return Whether the carrierTransitTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasCarrierTransitTime() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Selected carrier to calculate the shipping speed from. Select a carrier
+     * from the [available carriers
+     * list](https://support.google.com/merchants/answer/15449142#Supported),
+     * for example `AUSTRALIA_POST_REGULAR`. Speed will be calculated by this
+     * selected carrier, the location expressed in
+     * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+     * along with the user location to determine the accurate delivery speed.
+     * Carrier is represented by a carrier service name or a carrier service ID.
+     * Cannot be set together with
+     * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+     * or
+     * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time].
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.CarrierTransitTimeOption carrier_transit_time = 13;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for carrierTransitTime.
+     */
+    @java.lang.Override
+    public int getCarrierTransitTimeValue() {
+      return carrierTransitTime_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Selected carrier to calculate the shipping speed from. Select a carrier
+     * from the [available carriers
+     * list](https://support.google.com/merchants/answer/15449142#Supported),
+     * for example `AUSTRALIA_POST_REGULAR`. Speed will be calculated by this
+     * selected carrier, the location expressed in
+     * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+     * along with the user location to determine the accurate delivery speed.
+     * Carrier is represented by a carrier service name or a carrier service ID.
+     * Cannot be set together with
+     * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+     * or
+     * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time].
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.CarrierTransitTimeOption carrier_transit_time = 13;
+     * </code>
+     *
+     * @return The carrierTransitTime.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.CarrierTransitTimeOption
+        getCarrierTransitTime() {
+      com.google.shopping.merchant.products.v1.CarrierTransitTimeOption result =
+          com.google.shopping.merchant.products.v1.CarrierTransitTimeOption.forNumber(
+              carrierTransitTime_);
+      return result == null
+          ? com.google.shopping.merchant.products.v1.CarrierTransitTimeOption.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, country_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, region_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, postalCode_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, originPostalCode_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        output.writeMessage(5, getFlatPrice());
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        output.writeEnum(6, carrierPrice_);
+      }
+      if (((bitField0_ & 0x00000040) != 0)) {
+        output.writeMessage(7, getCarrierPriceFlatAdjustment());
+      }
+      if (((bitField0_ & 0x00000080) != 0)) {
+        output.writeDouble(8, carrierPricePercentageAdjustment_);
+      }
+      if (((bitField0_ & 0x00000100) != 0)) {
+        output.writeInt64(9, minHandlingTime_);
+      }
+      if (((bitField0_ & 0x00000200) != 0)) {
+        output.writeInt64(10, maxHandlingTime_);
+      }
+      if (((bitField0_ & 0x00000400) != 0)) {
+        output.writeInt64(11, fixedMinTransitTime_);
+      }
+      if (((bitField0_ & 0x00000800) != 0)) {
+        output.writeInt64(12, fixedMaxTransitTime_);
+      }
+      if (((bitField0_ & 0x00001000) != 0)) {
+        output.writeEnum(13, carrierTransitTime_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, country_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, region_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, postalCode_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, originPostalCode_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getFlatPrice());
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, carrierPrice_);
+      }
+      if (((bitField0_ & 0x00000040) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                7, getCarrierPriceFlatAdjustment());
+      }
+      if (((bitField0_ & 0x00000080) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeDoubleSize(
+                8, carrierPricePercentageAdjustment_);
+      }
+      if (((bitField0_ & 0x00000100) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(9, minHandlingTime_);
+      }
+      if (((bitField0_ & 0x00000200) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(10, maxHandlingTime_);
+      }
+      if (((bitField0_ & 0x00000400) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(11, fixedMinTransitTime_);
+      }
+      if (((bitField0_ & 0x00000800) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(12, fixedMaxTransitTime_);
+      }
+      if (((bitField0_ & 0x00001000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, carrierTransitTime_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping)) {
+        return super.equals(obj);
+      }
+      com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping other =
+          (com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping) obj;
+
+      if (hasCountry() != other.hasCountry()) return false;
+      if (hasCountry()) {
+        if (!getCountry().equals(other.getCountry())) return false;
+      }
+      if (hasRegion() != other.hasRegion()) return false;
+      if (hasRegion()) {
+        if (!getRegion().equals(other.getRegion())) return false;
+      }
+      if (hasPostalCode() != other.hasPostalCode()) return false;
+      if (hasPostalCode()) {
+        if (!getPostalCode().equals(other.getPostalCode())) return false;
+      }
+      if (hasOriginPostalCode() != other.hasOriginPostalCode()) return false;
+      if (hasOriginPostalCode()) {
+        if (!getOriginPostalCode().equals(other.getOriginPostalCode())) return false;
+      }
+      if (hasFlatPrice() != other.hasFlatPrice()) return false;
+      if (hasFlatPrice()) {
+        if (!getFlatPrice().equals(other.getFlatPrice())) return false;
+      }
+      if (hasCarrierPrice() != other.hasCarrierPrice()) return false;
+      if (hasCarrierPrice()) {
+        if (carrierPrice_ != other.carrierPrice_) return false;
+      }
+      if (hasCarrierPriceFlatAdjustment() != other.hasCarrierPriceFlatAdjustment()) return false;
+      if (hasCarrierPriceFlatAdjustment()) {
+        if (!getCarrierPriceFlatAdjustment().equals(other.getCarrierPriceFlatAdjustment()))
+          return false;
+      }
+      if (hasCarrierPricePercentageAdjustment() != other.hasCarrierPricePercentageAdjustment())
+        return false;
+      if (hasCarrierPricePercentageAdjustment()) {
+        if (java.lang.Double.doubleToLongBits(getCarrierPricePercentageAdjustment())
+            != java.lang.Double.doubleToLongBits(other.getCarrierPricePercentageAdjustment()))
+          return false;
+      }
+      if (hasMinHandlingTime() != other.hasMinHandlingTime()) return false;
+      if (hasMinHandlingTime()) {
+        if (getMinHandlingTime() != other.getMinHandlingTime()) return false;
+      }
+      if (hasMaxHandlingTime() != other.hasMaxHandlingTime()) return false;
+      if (hasMaxHandlingTime()) {
+        if (getMaxHandlingTime() != other.getMaxHandlingTime()) return false;
+      }
+      if (hasFixedMinTransitTime() != other.hasFixedMinTransitTime()) return false;
+      if (hasFixedMinTransitTime()) {
+        if (getFixedMinTransitTime() != other.getFixedMinTransitTime()) return false;
+      }
+      if (hasFixedMaxTransitTime() != other.hasFixedMaxTransitTime()) return false;
+      if (hasFixedMaxTransitTime()) {
+        if (getFixedMaxTransitTime() != other.getFixedMaxTransitTime()) return false;
+      }
+      if (hasCarrierTransitTime() != other.hasCarrierTransitTime()) return false;
+      if (hasCarrierTransitTime()) {
+        if (carrierTransitTime_ != other.carrierTransitTime_) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasCountry()) {
+        hash = (37 * hash) + COUNTRY_FIELD_NUMBER;
+        hash = (53 * hash) + getCountry().hashCode();
+      }
+      if (hasRegion()) {
+        hash = (37 * hash) + REGION_FIELD_NUMBER;
+        hash = (53 * hash) + getRegion().hashCode();
+      }
+      if (hasPostalCode()) {
+        hash = (37 * hash) + POSTAL_CODE_FIELD_NUMBER;
+        hash = (53 * hash) + getPostalCode().hashCode();
+      }
+      if (hasOriginPostalCode()) {
+        hash = (37 * hash) + ORIGIN_POSTAL_CODE_FIELD_NUMBER;
+        hash = (53 * hash) + getOriginPostalCode().hashCode();
+      }
+      if (hasFlatPrice()) {
+        hash = (37 * hash) + FLAT_PRICE_FIELD_NUMBER;
+        hash = (53 * hash) + getFlatPrice().hashCode();
+      }
+      if (hasCarrierPrice()) {
+        hash = (37 * hash) + CARRIER_PRICE_FIELD_NUMBER;
+        hash = (53 * hash) + carrierPrice_;
+      }
+      if (hasCarrierPriceFlatAdjustment()) {
+        hash = (37 * hash) + CARRIER_PRICE_FLAT_ADJUSTMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getCarrierPriceFlatAdjustment().hashCode();
+      }
+      if (hasCarrierPricePercentageAdjustment()) {
+        hash = (37 * hash) + CARRIER_PRICE_PERCENTAGE_ADJUSTMENT_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getCarrierPricePercentageAdjustment()));
+      }
+      if (hasMinHandlingTime()) {
+        hash = (37 * hash) + MIN_HANDLING_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMinHandlingTime());
+      }
+      if (hasMaxHandlingTime()) {
+        hash = (37 * hash) + MAX_HANDLING_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxHandlingTime());
+      }
+      if (hasFixedMinTransitTime()) {
+        hash = (37 * hash) + FIXED_MIN_TRANSIT_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getFixedMinTransitTime());
+      }
+      if (hasFixedMaxTransitTime()) {
+        hash = (37 * hash) + FIXED_MAX_TRANSIT_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getFixedMaxTransitTime());
+      }
+      if (hasCarrierTransitTime()) {
+        hash = (37 * hash) + CARRIER_TRANSIT_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + carrierTransitTime_;
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Carrier-based shipping configuration. Allows for setting shipping speed or
+     * shipping cost based on a carrier's provided info.
+     * </pre>
+     *
+     * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping)
+        com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShippingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_CarrierShipping_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_CarrierShipping_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.class,
+                com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getFlatPriceFieldBuilder();
+          getCarrierPriceFlatAdjustmentFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        country_ = "";
+        region_ = "";
+        postalCode_ = "";
+        originPostalCode_ = "";
+        flatPrice_ = null;
+        if (flatPriceBuilder_ != null) {
+          flatPriceBuilder_.dispose();
+          flatPriceBuilder_ = null;
+        }
+        carrierPrice_ = 0;
+        carrierPriceFlatAdjustment_ = null;
+        if (carrierPriceFlatAdjustmentBuilder_ != null) {
+          carrierPriceFlatAdjustmentBuilder_.dispose();
+          carrierPriceFlatAdjustmentBuilder_ = null;
+        }
+        carrierPricePercentageAdjustment_ = 0D;
+        minHandlingTime_ = 0L;
+        maxHandlingTime_ = 0L;
+        fixedMinTransitTime_ = 0L;
+        fixedMaxTransitTime_ = 0L;
+        carrierTransitTime_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_CarrierShipping_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+          getDefaultInstanceForType() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping build() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+          buildPartial() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping result =
+            new com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.country_ = country_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.region_ = region_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.postalCode_ = postalCode_;
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.originPostalCode_ = originPostalCode_;
+          to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.flatPrice_ = flatPriceBuilder_ == null ? flatPrice_ : flatPriceBuilder_.build();
+          to_bitField0_ |= 0x00000010;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.carrierPrice_ = carrierPrice_;
+          to_bitField0_ |= 0x00000020;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.carrierPriceFlatAdjustment_ =
+              carrierPriceFlatAdjustmentBuilder_ == null
+                  ? carrierPriceFlatAdjustment_
+                  : carrierPriceFlatAdjustmentBuilder_.build();
+          to_bitField0_ |= 0x00000040;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.carrierPricePercentageAdjustment_ = carrierPricePercentageAdjustment_;
+          to_bitField0_ |= 0x00000080;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.minHandlingTime_ = minHandlingTime_;
+          to_bitField0_ |= 0x00000100;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.maxHandlingTime_ = maxHandlingTime_;
+          to_bitField0_ |= 0x00000200;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.fixedMinTransitTime_ = fixedMinTransitTime_;
+          to_bitField0_ |= 0x00000400;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.fixedMaxTransitTime_ = fixedMaxTransitTime_;
+          to_bitField0_ |= 0x00000800;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.carrierTransitTime_ = carrierTransitTime_;
+          to_bitField0_ |= 0x00001000;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping) {
+          return mergeFrom(
+              (com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping other) {
+        if (other
+            == com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+                .getDefaultInstance()) return this;
+        if (other.hasCountry()) {
+          country_ = other.country_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasRegion()) {
+          region_ = other.region_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.hasPostalCode()) {
+          postalCode_ = other.postalCode_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.hasOriginPostalCode()) {
+          originPostalCode_ = other.originPostalCode_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.hasFlatPrice()) {
+          mergeFlatPrice(other.getFlatPrice());
+        }
+        if (other.hasCarrierPrice()) {
+          setCarrierPrice(other.getCarrierPrice());
+        }
+        if (other.hasCarrierPriceFlatAdjustment()) {
+          mergeCarrierPriceFlatAdjustment(other.getCarrierPriceFlatAdjustment());
+        }
+        if (other.hasCarrierPricePercentageAdjustment()) {
+          setCarrierPricePercentageAdjustment(other.getCarrierPricePercentageAdjustment());
+        }
+        if (other.hasMinHandlingTime()) {
+          setMinHandlingTime(other.getMinHandlingTime());
+        }
+        if (other.hasMaxHandlingTime()) {
+          setMaxHandlingTime(other.getMaxHandlingTime());
+        }
+        if (other.hasFixedMinTransitTime()) {
+          setFixedMinTransitTime(other.getFixedMinTransitTime());
+        }
+        if (other.hasFixedMaxTransitTime()) {
+          setFixedMaxTransitTime(other.getFixedMaxTransitTime());
+        }
+        if (other.hasCarrierTransitTime()) {
+          setCarrierTransitTime(other.getCarrierTransitTime());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  country_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  region_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  postalCode_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  originPostalCode_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  input.readMessage(getFlatPriceFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              case 48:
+                {
+                  carrierPrice_ = input.readEnum();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 48
+              case 58:
+                {
+                  input.readMessage(
+                      getCarrierPriceFlatAdjustmentFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 58
+              case 65:
+                {
+                  carrierPricePercentageAdjustment_ = input.readDouble();
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 65
+              case 72:
+                {
+                  minHandlingTime_ = input.readInt64();
+                  bitField0_ |= 0x00000100;
+                  break;
+                } // case 72
+              case 80:
+                {
+                  maxHandlingTime_ = input.readInt64();
+                  bitField0_ |= 0x00000200;
+                  break;
+                } // case 80
+              case 88:
+                {
+                  fixedMinTransitTime_ = input.readInt64();
+                  bitField0_ |= 0x00000400;
+                  break;
+                } // case 88
+              case 96:
+                {
+                  fixedMaxTransitTime_ = input.readInt64();
+                  bitField0_ |= 0x00000800;
+                  break;
+                } // case 96
+              case 104:
+                {
+                  carrierTransitTime_ = input.readEnum();
+                  bitField0_ |= 0x00001000;
+                  break;
+                } // case 104
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object country_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The [CLDR territory
+       * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+       * of the country to which an item will ship.
+       * </pre>
+       *
+       * <code>optional string country = 1;</code>
+       *
+       * @return Whether the country field is set.
+       */
+      public boolean hasCountry() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The [CLDR territory
+       * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+       * of the country to which an item will ship.
+       * </pre>
+       *
+       * <code>optional string country = 1;</code>
+       *
+       * @return The country.
+       */
+      public java.lang.String getCountry() {
+        java.lang.Object ref = country_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          country_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The [CLDR territory
+       * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+       * of the country to which an item will ship.
+       * </pre>
+       *
+       * <code>optional string country = 1;</code>
+       *
+       * @return The bytes for country.
+       */
+      public com.google.protobuf.ByteString getCountryBytes() {
+        java.lang.Object ref = country_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          country_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The [CLDR territory
+       * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+       * of the country to which an item will ship.
+       * </pre>
+       *
+       * <code>optional string country = 1;</code>
+       *
+       * @param value The country to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCountry(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        country_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The [CLDR territory
+       * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+       * of the country to which an item will ship.
+       * </pre>
+       *
+       * <code>optional string country = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCountry() {
+        country_ = getDefaultInstance().getCountry();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The [CLDR territory
+       * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+       * of the country to which an item will ship.
+       * </pre>
+       *
+       * <code>optional string country = 1;</code>
+       *
+       * @param value The bytes for country to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCountryBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        country_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object region_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The geographic region to which a shipping rate applies.
+       * See [region](https://support.google.com/merchants/answer/6324484) for
+       * more information.
+       * </pre>
+       *
+       * <code>optional string region = 2;</code>
+       *
+       * @return Whether the region field is set.
+       */
+      public boolean hasRegion() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The geographic region to which a shipping rate applies.
+       * See [region](https://support.google.com/merchants/answer/6324484) for
+       * more information.
+       * </pre>
+       *
+       * <code>optional string region = 2;</code>
+       *
+       * @return The region.
+       */
+      public java.lang.String getRegion() {
+        java.lang.Object ref = region_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          region_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The geographic region to which a shipping rate applies.
+       * See [region](https://support.google.com/merchants/answer/6324484) for
+       * more information.
+       * </pre>
+       *
+       * <code>optional string region = 2;</code>
+       *
+       * @return The bytes for region.
+       */
+      public com.google.protobuf.ByteString getRegionBytes() {
+        java.lang.Object ref = region_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          region_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The geographic region to which a shipping rate applies.
+       * See [region](https://support.google.com/merchants/answer/6324484) for
+       * more information.
+       * </pre>
+       *
+       * <code>optional string region = 2;</code>
+       *
+       * @param value The region to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegion(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        region_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The geographic region to which a shipping rate applies.
+       * See [region](https://support.google.com/merchants/answer/6324484) for
+       * more information.
+       * </pre>
+       *
+       * <code>optional string region = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRegion() {
+        region_ = getDefaultInstance().getRegion();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The geographic region to which a shipping rate applies.
+       * See [region](https://support.google.com/merchants/answer/6324484) for
+       * more information.
+       * </pre>
+       *
+       * <code>optional string region = 2;</code>
+       *
+       * @param value The bytes for region to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        region_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object postalCode_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The postal code range that the shipping rate applies to, represented by
+       * a postal code (eg. `94043`), a postal code prefix followed by a *
+       * wildcard (eg. `94*`), a range between two postal codes (eg.
+       * `94043-98033`) or two postal code prefixes of equal length (eg.
+       * `94*-98*`).
+       * </pre>
+       *
+       * <code>optional string postal_code = 3;</code>
+       *
+       * @return Whether the postalCode field is set.
+       */
+      public boolean hasPostalCode() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The postal code range that the shipping rate applies to, represented by
+       * a postal code (eg. `94043`), a postal code prefix followed by a *
+       * wildcard (eg. `94*`), a range between two postal codes (eg.
+       * `94043-98033`) or two postal code prefixes of equal length (eg.
+       * `94*-98*`).
+       * </pre>
+       *
+       * <code>optional string postal_code = 3;</code>
+       *
+       * @return The postalCode.
+       */
+      public java.lang.String getPostalCode() {
+        java.lang.Object ref = postalCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          postalCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The postal code range that the shipping rate applies to, represented by
+       * a postal code (eg. `94043`), a postal code prefix followed by a *
+       * wildcard (eg. `94*`), a range between two postal codes (eg.
+       * `94043-98033`) or two postal code prefixes of equal length (eg.
+       * `94*-98*`).
+       * </pre>
+       *
+       * <code>optional string postal_code = 3;</code>
+       *
+       * @return The bytes for postalCode.
+       */
+      public com.google.protobuf.ByteString getPostalCodeBytes() {
+        java.lang.Object ref = postalCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          postalCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The postal code range that the shipping rate applies to, represented by
+       * a postal code (eg. `94043`), a postal code prefix followed by a *
+       * wildcard (eg. `94*`), a range between two postal codes (eg.
+       * `94043-98033`) or two postal code prefixes of equal length (eg.
+       * `94*-98*`).
+       * </pre>
+       *
+       * <code>optional string postal_code = 3;</code>
+       *
+       * @param value The postalCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPostalCode(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        postalCode_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The postal code range that the shipping rate applies to, represented by
+       * a postal code (eg. `94043`), a postal code prefix followed by a *
+       * wildcard (eg. `94*`), a range between two postal codes (eg.
+       * `94043-98033`) or two postal code prefixes of equal length (eg.
+       * `94*-98*`).
+       * </pre>
+       *
+       * <code>optional string postal_code = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPostalCode() {
+        postalCode_ = getDefaultInstance().getPostalCode();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The postal code range that the shipping rate applies to, represented by
+       * a postal code (eg. `94043`), a postal code prefix followed by a *
+       * wildcard (eg. `94*`), a range between two postal codes (eg.
+       * `94043-98033`) or two postal code prefixes of equal length (eg.
+       * `94*-98*`).
+       * </pre>
+       *
+       * <code>optional string postal_code = 3;</code>
+       *
+       * @param value The bytes for postalCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPostalCodeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        postalCode_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object originPostalCode_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The source location postal code from which this offer ships. Represented
+       * only by a full-length postal code.
+       * </pre>
+       *
+       * <code>optional string origin_postal_code = 4;</code>
+       *
+       * @return Whether the originPostalCode field is set.
+       */
+      public boolean hasOriginPostalCode() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The source location postal code from which this offer ships. Represented
+       * only by a full-length postal code.
+       * </pre>
+       *
+       * <code>optional string origin_postal_code = 4;</code>
+       *
+       * @return The originPostalCode.
+       */
+      public java.lang.String getOriginPostalCode() {
+        java.lang.Object ref = originPostalCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          originPostalCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The source location postal code from which this offer ships. Represented
+       * only by a full-length postal code.
+       * </pre>
+       *
+       * <code>optional string origin_postal_code = 4;</code>
+       *
+       * @return The bytes for originPostalCode.
+       */
+      public com.google.protobuf.ByteString getOriginPostalCodeBytes() {
+        java.lang.Object ref = originPostalCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          originPostalCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The source location postal code from which this offer ships. Represented
+       * only by a full-length postal code.
+       * </pre>
+       *
+       * <code>optional string origin_postal_code = 4;</code>
+       *
+       * @param value The originPostalCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOriginPostalCode(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        originPostalCode_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The source location postal code from which this offer ships. Represented
+       * only by a full-length postal code.
+       * </pre>
+       *
+       * <code>optional string origin_postal_code = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOriginPostalCode() {
+        originPostalCode_ = getDefaultInstance().getOriginPostalCode();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The source location postal code from which this offer ships. Represented
+       * only by a full-length postal code.
+       * </pre>
+       *
+       * <code>optional string origin_postal_code = 4;</code>
+       *
+       * @param value The bytes for originPostalCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOriginPostalCodeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        originPostalCode_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private com.google.shopping.type.Price flatPrice_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.shopping.type.Price,
+              com.google.shopping.type.Price.Builder,
+              com.google.shopping.type.PriceOrBuilder>
+          flatPriceBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Fixed shipping price, represented as a number with currency. Cannot be
+       * set together with
+       * [carrierPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price]
+       * or its adjustments
+       * ([carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment],
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment]).
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price flat_price = 5;</code>
+       *
+       * @return Whether the flatPrice field is set.
+       */
+      public boolean hasFlatPrice() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Fixed shipping price, represented as a number with currency. Cannot be
+       * set together with
+       * [carrierPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price]
+       * or its adjustments
+       * ([carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment],
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment]).
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price flat_price = 5;</code>
+       *
+       * @return The flatPrice.
+       */
+      public com.google.shopping.type.Price getFlatPrice() {
+        if (flatPriceBuilder_ == null) {
+          return flatPrice_ == null
+              ? com.google.shopping.type.Price.getDefaultInstance()
+              : flatPrice_;
+        } else {
+          return flatPriceBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Fixed shipping price, represented as a number with currency. Cannot be
+       * set together with
+       * [carrierPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price]
+       * or its adjustments
+       * ([carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment],
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment]).
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price flat_price = 5;</code>
+       */
+      public Builder setFlatPrice(com.google.shopping.type.Price value) {
+        if (flatPriceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          flatPrice_ = value;
+        } else {
+          flatPriceBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Fixed shipping price, represented as a number with currency. Cannot be
+       * set together with
+       * [carrierPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price]
+       * or its adjustments
+       * ([carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment],
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment]).
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price flat_price = 5;</code>
+       */
+      public Builder setFlatPrice(com.google.shopping.type.Price.Builder builderForValue) {
+        if (flatPriceBuilder_ == null) {
+          flatPrice_ = builderForValue.build();
+        } else {
+          flatPriceBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Fixed shipping price, represented as a number with currency. Cannot be
+       * set together with
+       * [carrierPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price]
+       * or its adjustments
+       * ([carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment],
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment]).
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price flat_price = 5;</code>
+       */
+      public Builder mergeFlatPrice(com.google.shopping.type.Price value) {
+        if (flatPriceBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && flatPrice_ != null
+              && flatPrice_ != com.google.shopping.type.Price.getDefaultInstance()) {
+            getFlatPriceBuilder().mergeFrom(value);
+          } else {
+            flatPrice_ = value;
+          }
+        } else {
+          flatPriceBuilder_.mergeFrom(value);
+        }
+        if (flatPrice_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Fixed shipping price, represented as a number with currency. Cannot be
+       * set together with
+       * [carrierPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price]
+       * or its adjustments
+       * ([carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment],
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment]).
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price flat_price = 5;</code>
+       */
+      public Builder clearFlatPrice() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        flatPrice_ = null;
+        if (flatPriceBuilder_ != null) {
+          flatPriceBuilder_.dispose();
+          flatPriceBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Fixed shipping price, represented as a number with currency. Cannot be
+       * set together with
+       * [carrierPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price]
+       * or its adjustments
+       * ([carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment],
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment]).
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price flat_price = 5;</code>
+       */
+      public com.google.shopping.type.Price.Builder getFlatPriceBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getFlatPriceFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Fixed shipping price, represented as a number with currency. Cannot be
+       * set together with
+       * [carrierPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price]
+       * or its adjustments
+       * ([carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment],
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment]).
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price flat_price = 5;</code>
+       */
+      public com.google.shopping.type.PriceOrBuilder getFlatPriceOrBuilder() {
+        if (flatPriceBuilder_ != null) {
+          return flatPriceBuilder_.getMessageOrBuilder();
+        } else {
+          return flatPrice_ == null
+              ? com.google.shopping.type.Price.getDefaultInstance()
+              : flatPrice_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Fixed shipping price, represented as a number with currency. Cannot be
+       * set together with
+       * [carrierPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price]
+       * or its adjustments
+       * ([carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment],
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment]).
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price flat_price = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.shopping.type.Price,
+              com.google.shopping.type.Price.Builder,
+              com.google.shopping.type.PriceOrBuilder>
+          getFlatPriceFieldBuilder() {
+        if (flatPriceBuilder_ == null) {
+          flatPriceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.shopping.type.Price,
+                  com.google.shopping.type.Price.Builder,
+                  com.google.shopping.type.PriceOrBuilder>(
+                  getFlatPrice(), getParentForChildren(), isClean());
+          flatPrice_ = null;
+        }
+        return flatPriceBuilder_;
+      }
+
+      private int carrierPrice_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Selected carrier to calculate the shipping price from. Select a carrier
+       * from the [available carriers
+       * list](https://support.google.com/merchants/answer/15449142#Supported),
+       * for example `AUSTRALIA_POST_REGULAR`. Price will be calculated by this
+       * selected carrier, the location expressed in
+       * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+       * along with the user location to determine the accurate shipping price.
+       * Carrier is represented by a carrier service name or a carrier service ID.
+       * Cannot be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price].
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption carrier_price = 6;
+       * </code>
+       *
+       * @return Whether the carrierPrice field is set.
+       */
+      @java.lang.Override
+      public boolean hasCarrierPrice() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Selected carrier to calculate the shipping price from. Select a carrier
+       * from the [available carriers
+       * list](https://support.google.com/merchants/answer/15449142#Supported),
+       * for example `AUSTRALIA_POST_REGULAR`. Price will be calculated by this
+       * selected carrier, the location expressed in
+       * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+       * along with the user location to determine the accurate shipping price.
+       * Carrier is represented by a carrier service name or a carrier service ID.
+       * Cannot be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price].
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption carrier_price = 6;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for carrierPrice.
+       */
+      @java.lang.Override
+      public int getCarrierPriceValue() {
+        return carrierPrice_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Selected carrier to calculate the shipping price from. Select a carrier
+       * from the [available carriers
+       * list](https://support.google.com/merchants/answer/15449142#Supported),
+       * for example `AUSTRALIA_POST_REGULAR`. Price will be calculated by this
+       * selected carrier, the location expressed in
+       * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+       * along with the user location to determine the accurate shipping price.
+       * Carrier is represented by a carrier service name or a carrier service ID.
+       * Cannot be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price].
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption carrier_price = 6;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for carrierPrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCarrierPriceValue(int value) {
+        carrierPrice_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Selected carrier to calculate the shipping price from. Select a carrier
+       * from the [available carriers
+       * list](https://support.google.com/merchants/answer/15449142#Supported),
+       * for example `AUSTRALIA_POST_REGULAR`. Price will be calculated by this
+       * selected carrier, the location expressed in
+       * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+       * along with the user location to determine the accurate shipping price.
+       * Carrier is represented by a carrier service name or a carrier service ID.
+       * Cannot be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price].
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption carrier_price = 6;
+       * </code>
+       *
+       * @return The carrierPrice.
+       */
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption
+          getCarrierPrice() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption result =
+            com.google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption.forNumber(
+                carrierPrice_);
+        return result == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Selected carrier to calculate the shipping price from. Select a carrier
+       * from the [available carriers
+       * list](https://support.google.com/merchants/answer/15449142#Supported),
+       * for example `AUSTRALIA_POST_REGULAR`. Price will be calculated by this
+       * selected carrier, the location expressed in
+       * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+       * along with the user location to determine the accurate shipping price.
+       * Carrier is represented by a carrier service name or a carrier service ID.
+       * Cannot be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price].
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption carrier_price = 6;
+       * </code>
+       *
+       * @param value The carrierPrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCarrierPrice(
+          com.google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000020;
+        carrierPrice_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Selected carrier to calculate the shipping price from. Select a carrier
+       * from the [available carriers
+       * list](https://support.google.com/merchants/answer/15449142#Supported),
+       * for example `AUSTRALIA_POST_REGULAR`. Price will be calculated by this
+       * selected carrier, the location expressed in
+       * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+       * along with the user location to determine the accurate shipping price.
+       * Carrier is represented by a carrier service name or a carrier service ID.
+       * Cannot be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price].
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption carrier_price = 6;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCarrierPrice() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        carrierPrice_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.shopping.type.Price carrierPriceFlatAdjustment_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.shopping.type.Price,
+              com.google.shopping.type.Price.Builder,
+              com.google.shopping.type.PriceOrBuilder>
+          carrierPriceFlatAdjustmentBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A flat adjustment on the carrier price. Can be either positive or
+       * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+       * be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+       * and
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment].
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price carrier_price_flat_adjustment = 7;</code>
+       *
+       * @return Whether the carrierPriceFlatAdjustment field is set.
+       */
+      public boolean hasCarrierPriceFlatAdjustment() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A flat adjustment on the carrier price. Can be either positive or
+       * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+       * be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+       * and
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment].
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price carrier_price_flat_adjustment = 7;</code>
+       *
+       * @return The carrierPriceFlatAdjustment.
+       */
+      public com.google.shopping.type.Price getCarrierPriceFlatAdjustment() {
+        if (carrierPriceFlatAdjustmentBuilder_ == null) {
+          return carrierPriceFlatAdjustment_ == null
+              ? com.google.shopping.type.Price.getDefaultInstance()
+              : carrierPriceFlatAdjustment_;
+        } else {
+          return carrierPriceFlatAdjustmentBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A flat adjustment on the carrier price. Can be either positive or
+       * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+       * be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+       * and
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment].
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price carrier_price_flat_adjustment = 7;</code>
+       */
+      public Builder setCarrierPriceFlatAdjustment(com.google.shopping.type.Price value) {
+        if (carrierPriceFlatAdjustmentBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          carrierPriceFlatAdjustment_ = value;
+        } else {
+          carrierPriceFlatAdjustmentBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A flat adjustment on the carrier price. Can be either positive or
+       * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+       * be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+       * and
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment].
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price carrier_price_flat_adjustment = 7;</code>
+       */
+      public Builder setCarrierPriceFlatAdjustment(
+          com.google.shopping.type.Price.Builder builderForValue) {
+        if (carrierPriceFlatAdjustmentBuilder_ == null) {
+          carrierPriceFlatAdjustment_ = builderForValue.build();
+        } else {
+          carrierPriceFlatAdjustmentBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A flat adjustment on the carrier price. Can be either positive or
+       * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+       * be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+       * and
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment].
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price carrier_price_flat_adjustment = 7;</code>
+       */
+      public Builder mergeCarrierPriceFlatAdjustment(com.google.shopping.type.Price value) {
+        if (carrierPriceFlatAdjustmentBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0)
+              && carrierPriceFlatAdjustment_ != null
+              && carrierPriceFlatAdjustment_
+                  != com.google.shopping.type.Price.getDefaultInstance()) {
+            getCarrierPriceFlatAdjustmentBuilder().mergeFrom(value);
+          } else {
+            carrierPriceFlatAdjustment_ = value;
+          }
+        } else {
+          carrierPriceFlatAdjustmentBuilder_.mergeFrom(value);
+        }
+        if (carrierPriceFlatAdjustment_ != null) {
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A flat adjustment on the carrier price. Can be either positive or
+       * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+       * be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+       * and
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment].
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price carrier_price_flat_adjustment = 7;</code>
+       */
+      public Builder clearCarrierPriceFlatAdjustment() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        carrierPriceFlatAdjustment_ = null;
+        if (carrierPriceFlatAdjustmentBuilder_ != null) {
+          carrierPriceFlatAdjustmentBuilder_.dispose();
+          carrierPriceFlatAdjustmentBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A flat adjustment on the carrier price. Can be either positive or
+       * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+       * be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+       * and
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment].
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price carrier_price_flat_adjustment = 7;</code>
+       */
+      public com.google.shopping.type.Price.Builder getCarrierPriceFlatAdjustmentBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getCarrierPriceFlatAdjustmentFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A flat adjustment on the carrier price. Can be either positive or
+       * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+       * be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+       * and
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment].
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price carrier_price_flat_adjustment = 7;</code>
+       */
+      public com.google.shopping.type.PriceOrBuilder getCarrierPriceFlatAdjustmentOrBuilder() {
+        if (carrierPriceFlatAdjustmentBuilder_ != null) {
+          return carrierPriceFlatAdjustmentBuilder_.getMessageOrBuilder();
+        } else {
+          return carrierPriceFlatAdjustment_ == null
+              ? com.google.shopping.type.Price.getDefaultInstance()
+              : carrierPriceFlatAdjustment_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A flat adjustment on the carrier price. Can be either positive or
+       * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+       * be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+       * and
+       * [carrierPricePercentageAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_percentage_adjustment].
+       * </pre>
+       *
+       * <code>optional .google.shopping.type.Price carrier_price_flat_adjustment = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.shopping.type.Price,
+              com.google.shopping.type.Price.Builder,
+              com.google.shopping.type.PriceOrBuilder>
+          getCarrierPriceFlatAdjustmentFieldBuilder() {
+        if (carrierPriceFlatAdjustmentBuilder_ == null) {
+          carrierPriceFlatAdjustmentBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.shopping.type.Price,
+                  com.google.shopping.type.Price.Builder,
+                  com.google.shopping.type.PriceOrBuilder>(
+                  getCarrierPriceFlatAdjustment(), getParentForChildren(), isClean());
+          carrierPriceFlatAdjustment_ = null;
+        }
+        return carrierPriceFlatAdjustmentBuilder_;
+      }
+
+      private double carrierPricePercentageAdjustment_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A percentual adjustment on the carrier price. Can be either positive or
+       * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+       * be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+       * and
+       * [carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment].
+       * </pre>
+       *
+       * <code>optional double carrier_price_percentage_adjustment = 8;</code>
+       *
+       * @return Whether the carrierPricePercentageAdjustment field is set.
+       */
+      @java.lang.Override
+      public boolean hasCarrierPricePercentageAdjustment() {
+        return ((bitField0_ & 0x00000080) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A percentual adjustment on the carrier price. Can be either positive or
+       * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+       * be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+       * and
+       * [carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment].
+       * </pre>
+       *
+       * <code>optional double carrier_price_percentage_adjustment = 8;</code>
+       *
+       * @return The carrierPricePercentageAdjustment.
+       */
+      @java.lang.Override
+      public double getCarrierPricePercentageAdjustment() {
+        return carrierPricePercentageAdjustment_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A percentual adjustment on the carrier price. Can be either positive or
+       * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+       * be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+       * and
+       * [carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment].
+       * </pre>
+       *
+       * <code>optional double carrier_price_percentage_adjustment = 8;</code>
+       *
+       * @param value The carrierPricePercentageAdjustment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCarrierPricePercentageAdjustment(double value) {
+
+        carrierPricePercentageAdjustment_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A percentual adjustment on the carrier price. Can be either positive or
+       * negative. Cannot be zero. Requires `carrier_price` to be present. Cannot
+       * be set together with
+       * [flatPrice][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.flat_price]
+       * and
+       * [carrierPriceFlatAdjustment][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_price_flat_adjustment].
+       * </pre>
+       *
+       * <code>optional double carrier_price_percentage_adjustment = 8;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCarrierPricePercentageAdjustment() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        carrierPricePercentageAdjustment_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private long minHandlingTime_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Minimum handling time (inclusive) between when the order is received and
+       * shipped in business days. 0 means that the order is shipped on the same
+       * day as it is received if it happens before the cut-off time.
+       * [minHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.min_handling_time]
+       * can only be set if
+       * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time]
+       * is also set.
+       * </pre>
+       *
+       * <code>optional int64 min_handling_time = 9;</code>
+       *
+       * @return Whether the minHandlingTime field is set.
+       */
+      @java.lang.Override
+      public boolean hasMinHandlingTime() {
+        return ((bitField0_ & 0x00000100) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Minimum handling time (inclusive) between when the order is received and
+       * shipped in business days. 0 means that the order is shipped on the same
+       * day as it is received if it happens before the cut-off time.
+       * [minHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.min_handling_time]
+       * can only be set if
+       * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time]
+       * is also set.
+       * </pre>
+       *
+       * <code>optional int64 min_handling_time = 9;</code>
+       *
+       * @return The minHandlingTime.
+       */
+      @java.lang.Override
+      public long getMinHandlingTime() {
+        return minHandlingTime_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Minimum handling time (inclusive) between when the order is received and
+       * shipped in business days. 0 means that the order is shipped on the same
+       * day as it is received if it happens before the cut-off time.
+       * [minHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.min_handling_time]
+       * can only be set if
+       * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time]
+       * is also set.
+       * </pre>
+       *
+       * <code>optional int64 min_handling_time = 9;</code>
+       *
+       * @param value The minHandlingTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMinHandlingTime(long value) {
+
+        minHandlingTime_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Minimum handling time (inclusive) between when the order is received and
+       * shipped in business days. 0 means that the order is shipped on the same
+       * day as it is received if it happens before the cut-off time.
+       * [minHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.min_handling_time]
+       * can only be set if
+       * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time]
+       * is also set.
+       * </pre>
+       *
+       * <code>optional int64 min_handling_time = 9;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMinHandlingTime() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        minHandlingTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long maxHandlingTime_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Maximum handling time (inclusive) between when the order is received and
+       * shipped in business days. 0 means that the order is shipped on the same
+       * day as it is received if it happens before the cut-off time. Both
+       * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time]
+       * and
+       * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+       * or
+       * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+       * are required if providing shipping speeds.
+       * </pre>
+       *
+       * <code>optional int64 max_handling_time = 10;</code>
+       *
+       * @return Whether the maxHandlingTime field is set.
+       */
+      @java.lang.Override
+      public boolean hasMaxHandlingTime() {
+        return ((bitField0_ & 0x00000200) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Maximum handling time (inclusive) between when the order is received and
+       * shipped in business days. 0 means that the order is shipped on the same
+       * day as it is received if it happens before the cut-off time. Both
+       * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time]
+       * and
+       * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+       * or
+       * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+       * are required if providing shipping speeds.
+       * </pre>
+       *
+       * <code>optional int64 max_handling_time = 10;</code>
+       *
+       * @return The maxHandlingTime.
+       */
+      @java.lang.Override
+      public long getMaxHandlingTime() {
+        return maxHandlingTime_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Maximum handling time (inclusive) between when the order is received and
+       * shipped in business days. 0 means that the order is shipped on the same
+       * day as it is received if it happens before the cut-off time. Both
+       * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time]
+       * and
+       * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+       * or
+       * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+       * are required if providing shipping speeds.
+       * </pre>
+       *
+       * <code>optional int64 max_handling_time = 10;</code>
+       *
+       * @param value The maxHandlingTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxHandlingTime(long value) {
+
+        maxHandlingTime_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Maximum handling time (inclusive) between when the order is received and
+       * shipped in business days. 0 means that the order is shipped on the same
+       * day as it is received if it happens before the cut-off time. Both
+       * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time]
+       * and
+       * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+       * or
+       * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+       * are required if providing shipping speeds.
+       * </pre>
+       *
+       * <code>optional int64 max_handling_time = 10;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxHandlingTime() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        maxHandlingTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long fixedMinTransitTime_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Minimum transit time (inclusive) between when the order has shipped and
+       * when it is delivered in business days. 0 means that the order is
+       * delivered on the same day as it ships.
+       * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time]
+       * can only be set if
+       * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+       * is set. Cannot be set if
+       * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+       * is present.
+       * </pre>
+       *
+       * <code>optional int64 fixed_min_transit_time = 11;</code>
+       *
+       * @return Whether the fixedMinTransitTime field is set.
+       */
+      @java.lang.Override
+      public boolean hasFixedMinTransitTime() {
+        return ((bitField0_ & 0x00000400) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Minimum transit time (inclusive) between when the order has shipped and
+       * when it is delivered in business days. 0 means that the order is
+       * delivered on the same day as it ships.
+       * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time]
+       * can only be set if
+       * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+       * is set. Cannot be set if
+       * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+       * is present.
+       * </pre>
+       *
+       * <code>optional int64 fixed_min_transit_time = 11;</code>
+       *
+       * @return The fixedMinTransitTime.
+       */
+      @java.lang.Override
+      public long getFixedMinTransitTime() {
+        return fixedMinTransitTime_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Minimum transit time (inclusive) between when the order has shipped and
+       * when it is delivered in business days. 0 means that the order is
+       * delivered on the same day as it ships.
+       * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time]
+       * can only be set if
+       * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+       * is set. Cannot be set if
+       * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+       * is present.
+       * </pre>
+       *
+       * <code>optional int64 fixed_min_transit_time = 11;</code>
+       *
+       * @param value The fixedMinTransitTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFixedMinTransitTime(long value) {
+
+        fixedMinTransitTime_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Minimum transit time (inclusive) between when the order has shipped and
+       * when it is delivered in business days. 0 means that the order is
+       * delivered on the same day as it ships.
+       * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time]
+       * can only be set if
+       * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+       * is set. Cannot be set if
+       * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+       * is present.
+       * </pre>
+       *
+       * <code>optional int64 fixed_min_transit_time = 11;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFixedMinTransitTime() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        fixedMinTransitTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long fixedMaxTransitTime_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Maximum transit time (inclusive) between when the order has shipped and
+       * when it is delivered in business days. 0 means that the order is
+       * delivered on the same day as it ships. Needs to be provided together with
+       * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time].
+       * Cannot be set if
+       * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+       * is present.
+       * </pre>
+       *
+       * <code>optional int64 fixed_max_transit_time = 12;</code>
+       *
+       * @return Whether the fixedMaxTransitTime field is set.
+       */
+      @java.lang.Override
+      public boolean hasFixedMaxTransitTime() {
+        return ((bitField0_ & 0x00000800) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Maximum transit time (inclusive) between when the order has shipped and
+       * when it is delivered in business days. 0 means that the order is
+       * delivered on the same day as it ships. Needs to be provided together with
+       * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time].
+       * Cannot be set if
+       * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+       * is present.
+       * </pre>
+       *
+       * <code>optional int64 fixed_max_transit_time = 12;</code>
+       *
+       * @return The fixedMaxTransitTime.
+       */
+      @java.lang.Override
+      public long getFixedMaxTransitTime() {
+        return fixedMaxTransitTime_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Maximum transit time (inclusive) between when the order has shipped and
+       * when it is delivered in business days. 0 means that the order is
+       * delivered on the same day as it ships. Needs to be provided together with
+       * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time].
+       * Cannot be set if
+       * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+       * is present.
+       * </pre>
+       *
+       * <code>optional int64 fixed_max_transit_time = 12;</code>
+       *
+       * @param value The fixedMaxTransitTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFixedMaxTransitTime(long value) {
+
+        fixedMaxTransitTime_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Maximum transit time (inclusive) between when the order has shipped and
+       * when it is delivered in business days. 0 means that the order is
+       * delivered on the same day as it ships. Needs to be provided together with
+       * [maxHandlingTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.max_handling_time].
+       * Cannot be set if
+       * [carrierTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.carrier_transit_time]
+       * is present.
+       * </pre>
+       *
+       * <code>optional int64 fixed_max_transit_time = 12;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFixedMaxTransitTime() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        fixedMaxTransitTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int carrierTransitTime_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Selected carrier to calculate the shipping speed from. Select a carrier
+       * from the [available carriers
+       * list](https://support.google.com/merchants/answer/15449142#Supported),
+       * for example `AUSTRALIA_POST_REGULAR`. Speed will be calculated by this
+       * selected carrier, the location expressed in
+       * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+       * along with the user location to determine the accurate delivery speed.
+       * Carrier is represented by a carrier service name or a carrier service ID.
+       * Cannot be set together with
+       * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+       * or
+       * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time].
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.merchant.products.v1.CarrierTransitTimeOption carrier_transit_time = 13;
+       * </code>
+       *
+       * @return Whether the carrierTransitTime field is set.
+       */
+      @java.lang.Override
+      public boolean hasCarrierTransitTime() {
+        return ((bitField0_ & 0x00001000) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Selected carrier to calculate the shipping speed from. Select a carrier
+       * from the [available carriers
+       * list](https://support.google.com/merchants/answer/15449142#Supported),
+       * for example `AUSTRALIA_POST_REGULAR`. Speed will be calculated by this
+       * selected carrier, the location expressed in
+       * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+       * along with the user location to determine the accurate delivery speed.
+       * Carrier is represented by a carrier service name or a carrier service ID.
+       * Cannot be set together with
+       * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+       * or
+       * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time].
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.merchant.products.v1.CarrierTransitTimeOption carrier_transit_time = 13;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for carrierTransitTime.
+       */
+      @java.lang.Override
+      public int getCarrierTransitTimeValue() {
+        return carrierTransitTime_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Selected carrier to calculate the shipping speed from. Select a carrier
+       * from the [available carriers
+       * list](https://support.google.com/merchants/answer/15449142#Supported),
+       * for example `AUSTRALIA_POST_REGULAR`. Speed will be calculated by this
+       * selected carrier, the location expressed in
+       * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+       * along with the user location to determine the accurate delivery speed.
+       * Carrier is represented by a carrier service name or a carrier service ID.
+       * Cannot be set together with
+       * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+       * or
+       * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time].
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.merchant.products.v1.CarrierTransitTimeOption carrier_transit_time = 13;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for carrierTransitTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCarrierTransitTimeValue(int value) {
+        carrierTransitTime_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Selected carrier to calculate the shipping speed from. Select a carrier
+       * from the [available carriers
+       * list](https://support.google.com/merchants/answer/15449142#Supported),
+       * for example `AUSTRALIA_POST_REGULAR`. Speed will be calculated by this
+       * selected carrier, the location expressed in
+       * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+       * along with the user location to determine the accurate delivery speed.
+       * Carrier is represented by a carrier service name or a carrier service ID.
+       * Cannot be set together with
+       * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+       * or
+       * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time].
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.merchant.products.v1.CarrierTransitTimeOption carrier_transit_time = 13;
+       * </code>
+       *
+       * @return The carrierTransitTime.
+       */
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.CarrierTransitTimeOption
+          getCarrierTransitTime() {
+        com.google.shopping.merchant.products.v1.CarrierTransitTimeOption result =
+            com.google.shopping.merchant.products.v1.CarrierTransitTimeOption.forNumber(
+                carrierTransitTime_);
+        return result == null
+            ? com.google.shopping.merchant.products.v1.CarrierTransitTimeOption.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Selected carrier to calculate the shipping speed from. Select a carrier
+       * from the [available carriers
+       * list](https://support.google.com/merchants/answer/15449142#Supported),
+       * for example `AUSTRALIA_POST_REGULAR`. Speed will be calculated by this
+       * selected carrier, the location expressed in
+       * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+       * along with the user location to determine the accurate delivery speed.
+       * Carrier is represented by a carrier service name or a carrier service ID.
+       * Cannot be set together with
+       * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+       * or
+       * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time].
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.merchant.products.v1.CarrierTransitTimeOption carrier_transit_time = 13;
+       * </code>
+       *
+       * @param value The carrierTransitTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCarrierTransitTime(
+          com.google.shopping.merchant.products.v1.CarrierTransitTimeOption value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00001000;
+        carrierTransitTime_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Selected carrier to calculate the shipping speed from. Select a carrier
+       * from the [available carriers
+       * list](https://support.google.com/merchants/answer/15449142#Supported),
+       * for example `AUSTRALIA_POST_REGULAR`. Speed will be calculated by this
+       * selected carrier, the location expressed in
+       * [originPostalCode][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.origin_postal_code],
+       * along with the user location to determine the accurate delivery speed.
+       * Carrier is represented by a carrier service name or a carrier service ID.
+       * Cannot be set together with
+       * [fixedMaxTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_max_transit_time]
+       * or
+       * [fixedMinTransitTime][google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.fixed_min_transit_time].
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.merchant.products.v1.CarrierTransitTimeOption carrier_transit_time = 13;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCarrierTransitTime() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        carrierTransitTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping)
+    private static final com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping();
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CarrierShipping> PARSER =
+        new com.google.protobuf.AbstractParser<CarrierShipping>() {
+          @java.lang.Override
+          public CarrierShipping parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<CarrierShipping> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CarrierShipping> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   private int bitField0_;
@@ -2611,6 +8413,98 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
   public com.google.shopping.merchant.products.v1.ShippingOrBuilder getShippingOrBuilder(
       int index) {
     return shipping_.get(index);
+  }
+
+  public static final int CARRIER_SHIPPING_FIELD_NUMBER = 142;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping>
+      carrierShipping_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Rules for carrier-based shipping.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping>
+      getCarrierShippingList() {
+    return carrierShipping_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Rules for carrier-based shipping.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShippingOrBuilder>
+      getCarrierShippingOrBuilderList() {
+    return carrierShipping_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Rules for carrier-based shipping.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+   * </code>
+   */
+  @java.lang.Override
+  public int getCarrierShippingCount() {
+    return carrierShipping_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Rules for carrier-based shipping.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+      getCarrierShipping(int index) {
+    return carrierShipping_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Rules for carrier-based shipping.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShippingOrBuilder
+      getCarrierShippingOrBuilder(int index) {
+    return carrierShipping_.get(index);
   }
 
   public static final int FREE_SHIPPING_THRESHOLD_FIELD_NUMBER = 135;
@@ -6642,6 +12536,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < gtins_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 140, gtins_.getRaw(i));
     }
+    for (int i = 0; i < carrierShipping_.size(); i++) {
+      output.writeMessage(142, carrierShipping_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -7015,6 +12912,10 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 2 * getGtinsList().size();
     }
+    for (int i = 0; i < carrierShipping_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(142, carrierShipping_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -7176,6 +13077,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!getProductWeight().equals(other.getProductWeight())) return false;
     }
     if (!getShippingList().equals(other.getShippingList())) return false;
+    if (!getCarrierShippingList().equals(other.getCarrierShippingList())) return false;
     if (!getFreeShippingThresholdList().equals(other.getFreeShippingThresholdList())) return false;
     if (hasShippingWeight() != other.hasShippingWeight()) return false;
     if (hasShippingWeight()) {
@@ -7516,6 +13418,10 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     if (getShippingCount() > 0) {
       hash = (37 * hash) + SHIPPING_FIELD_NUMBER;
       hash = (53 * hash) + getShippingList().hashCode();
+    }
+    if (getCarrierShippingCount() > 0) {
+      hash = (37 * hash) + CARRIER_SHIPPING_FIELD_NUMBER;
+      hash = (53 * hash) + getCarrierShippingList().hashCode();
     }
     if (getFreeShippingThresholdCount() > 0) {
       hash = (37 * hash) + FREE_SHIPPING_THRESHOLD_FIELD_NUMBER;
@@ -7886,6 +13792,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         getProductWidthFieldBuilder();
         getProductWeightFieldBuilder();
         getShippingFieldBuilder();
+        getCarrierShippingFieldBuilder();
         getFreeShippingThresholdFieldBuilder();
         getShippingWeightFieldBuilder();
         getShippingLengthFieldBuilder();
@@ -8018,13 +13925,20 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         shippingBuilder_.clear();
       }
       bitField1_ = (bitField1_ & ~0x00000080);
+      if (carrierShippingBuilder_ == null) {
+        carrierShipping_ = java.util.Collections.emptyList();
+      } else {
+        carrierShipping_ = null;
+        carrierShippingBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00000100);
       if (freeShippingThresholdBuilder_ == null) {
         freeShippingThreshold_ = java.util.Collections.emptyList();
       } else {
         freeShippingThreshold_ = null;
         freeShippingThresholdBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000100);
+      bitField1_ = (bitField1_ & ~0x00000200);
       shippingWeight_ = null;
       if (shippingWeightBuilder_ != null) {
         shippingWeightBuilder_.dispose();
@@ -8052,7 +13966,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       size_ = "";
       sizeSystem_ = 0;
       sizeTypes_ = java.util.Collections.emptyList();
-      bitField1_ = (bitField1_ & ~0x00080000);
+      bitField1_ = (bitField1_ & ~0x00100000);
       energyEfficiencyClass_ = 0;
       minEnergyEfficiencyClass_ = 0;
       maxEnergyEfficiencyClass_ = 0;
@@ -8081,7 +13995,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         productDetails_ = null;
         productDetailsBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x80000000);
       productHighlights_ = com.google.protobuf.LazyStringArrayList.emptyList();
       displayAdsId_ = "";
       displayAdsSimilarIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -8099,9 +14013,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       customLabel3_ = "";
       customLabel4_ = "";
       includedDestinations_ = java.util.Collections.emptyList();
-      bitField2_ = (bitField2_ & ~0x00008000);
-      excludedDestinations_ = java.util.Collections.emptyList();
       bitField2_ = (bitField2_ & ~0x00010000);
+      excludedDestinations_ = java.util.Collections.emptyList();
+      bitField2_ = (bitField2_ & ~0x00020000);
       shoppingAdsExcludedCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
       externalSellerId_ = "";
       pause_ = 0;
@@ -8112,7 +14026,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         cloudExportAdditionalProperties_ = null;
         cloudExportAdditionalPropertiesBuilder_.clear();
       }
-      bitField2_ = (bitField2_ & ~0x00200000);
+      bitField2_ = (bitField2_ & ~0x00400000);
       virtualModelLink_ = "";
       if (certificationsBuilder_ == null) {
         certifications_ = java.util.Collections.emptyList();
@@ -8120,7 +14034,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         certifications_ = null;
         certificationsBuilder_.clear();
       }
-      bitField2_ = (bitField2_ & ~0x00800000);
+      bitField2_ = (bitField2_ & ~0x01000000);
       structuredTitle_ = null;
       if (structuredTitleBuilder_ != null) {
         structuredTitleBuilder_.dispose();
@@ -8142,7 +14056,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         sustainabilityIncentives_ = null;
         sustainabilityIncentivesBuilder_.clear();
       }
-      bitField2_ = (bitField2_ & ~0x08000000);
+      bitField2_ = (bitField2_ & ~0x10000000);
       return this;
     }
 
@@ -8204,63 +14118,72 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         result.shipping_ = shippingBuilder_.build();
       }
-      if (freeShippingThresholdBuilder_ == null) {
+      if (carrierShippingBuilder_ == null) {
         if (((bitField1_ & 0x00000100) != 0)) {
-          freeShippingThreshold_ = java.util.Collections.unmodifiableList(freeShippingThreshold_);
+          carrierShipping_ = java.util.Collections.unmodifiableList(carrierShipping_);
           bitField1_ = (bitField1_ & ~0x00000100);
+        }
+        result.carrierShipping_ = carrierShipping_;
+      } else {
+        result.carrierShipping_ = carrierShippingBuilder_.build();
+      }
+      if (freeShippingThresholdBuilder_ == null) {
+        if (((bitField1_ & 0x00000200) != 0)) {
+          freeShippingThreshold_ = java.util.Collections.unmodifiableList(freeShippingThreshold_);
+          bitField1_ = (bitField1_ & ~0x00000200);
         }
         result.freeShippingThreshold_ = freeShippingThreshold_;
       } else {
         result.freeShippingThreshold_ = freeShippingThresholdBuilder_.build();
       }
-      if (((bitField1_ & 0x00080000) != 0)) {
+      if (((bitField1_ & 0x00100000) != 0)) {
         sizeTypes_ = java.util.Collections.unmodifiableList(sizeTypes_);
-        bitField1_ = (bitField1_ & ~0x00080000);
+        bitField1_ = (bitField1_ & ~0x00100000);
       }
       result.sizeTypes_ = sizeTypes_;
       if (productDetailsBuilder_ == null) {
-        if (((bitField1_ & 0x40000000) != 0)) {
+        if (((bitField1_ & 0x80000000) != 0)) {
           productDetails_ = java.util.Collections.unmodifiableList(productDetails_);
-          bitField1_ = (bitField1_ & ~0x40000000);
+          bitField1_ = (bitField1_ & ~0x80000000);
         }
         result.productDetails_ = productDetails_;
       } else {
         result.productDetails_ = productDetailsBuilder_.build();
       }
-      if (((bitField2_ & 0x00008000) != 0)) {
+      if (((bitField2_ & 0x00010000) != 0)) {
         includedDestinations_ = java.util.Collections.unmodifiableList(includedDestinations_);
-        bitField2_ = (bitField2_ & ~0x00008000);
+        bitField2_ = (bitField2_ & ~0x00010000);
       }
       result.includedDestinations_ = includedDestinations_;
-      if (((bitField2_ & 0x00010000) != 0)) {
+      if (((bitField2_ & 0x00020000) != 0)) {
         excludedDestinations_ = java.util.Collections.unmodifiableList(excludedDestinations_);
-        bitField2_ = (bitField2_ & ~0x00010000);
+        bitField2_ = (bitField2_ & ~0x00020000);
       }
       result.excludedDestinations_ = excludedDestinations_;
       if (cloudExportAdditionalPropertiesBuilder_ == null) {
-        if (((bitField2_ & 0x00200000) != 0)) {
+        if (((bitField2_ & 0x00400000) != 0)) {
           cloudExportAdditionalProperties_ =
               java.util.Collections.unmodifiableList(cloudExportAdditionalProperties_);
-          bitField2_ = (bitField2_ & ~0x00200000);
+          bitField2_ = (bitField2_ & ~0x00400000);
         }
         result.cloudExportAdditionalProperties_ = cloudExportAdditionalProperties_;
       } else {
         result.cloudExportAdditionalProperties_ = cloudExportAdditionalPropertiesBuilder_.build();
       }
       if (certificationsBuilder_ == null) {
-        if (((bitField2_ & 0x00800000) != 0)) {
+        if (((bitField2_ & 0x01000000) != 0)) {
           certifications_ = java.util.Collections.unmodifiableList(certifications_);
-          bitField2_ = (bitField2_ & ~0x00800000);
+          bitField2_ = (bitField2_ & ~0x01000000);
         }
         result.certifications_ = certifications_;
       } else {
         result.certifications_ = certificationsBuilder_.build();
       }
       if (sustainabilityIncentivesBuilder_ == null) {
-        if (((bitField2_ & 0x08000000) != 0)) {
+        if (((bitField2_ & 0x10000000) != 0)) {
           sustainabilityIncentives_ =
               java.util.Collections.unmodifiableList(sustainabilityIncentives_);
-          bitField2_ = (bitField2_ & ~0x08000000);
+          bitField2_ = (bitField2_ & ~0x10000000);
         }
         result.sustainabilityIncentives_ = sustainabilityIncentives_;
       } else {
@@ -8446,100 +14369,96 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             productWeightBuilder_ == null ? productWeight_ : productWeightBuilder_.build();
         to_bitField1_ |= 0x00000004;
       }
-      if (((from_bitField1_ & 0x00000200) != 0)) {
+      if (((from_bitField1_ & 0x00000400) != 0)) {
         result.shippingWeight_ =
             shippingWeightBuilder_ == null ? shippingWeight_ : shippingWeightBuilder_.build();
         to_bitField1_ |= 0x00000008;
       }
-      if (((from_bitField1_ & 0x00000400) != 0)) {
+      if (((from_bitField1_ & 0x00000800) != 0)) {
         result.shippingLength_ =
             shippingLengthBuilder_ == null ? shippingLength_ : shippingLengthBuilder_.build();
         to_bitField1_ |= 0x00000010;
       }
-      if (((from_bitField1_ & 0x00000800) != 0)) {
+      if (((from_bitField1_ & 0x00001000) != 0)) {
         result.shippingWidth_ =
             shippingWidthBuilder_ == null ? shippingWidth_ : shippingWidthBuilder_.build();
         to_bitField1_ |= 0x00000020;
       }
-      if (((from_bitField1_ & 0x00001000) != 0)) {
+      if (((from_bitField1_ & 0x00002000) != 0)) {
         result.shippingHeight_ =
             shippingHeightBuilder_ == null ? shippingHeight_ : shippingHeightBuilder_.build();
         to_bitField1_ |= 0x00000040;
       }
-      if (((from_bitField1_ & 0x00002000) != 0)) {
+      if (((from_bitField1_ & 0x00004000) != 0)) {
         result.maxHandlingTime_ = maxHandlingTime_;
         to_bitField1_ |= 0x00000080;
       }
-      if (((from_bitField1_ & 0x00004000) != 0)) {
+      if (((from_bitField1_ & 0x00008000) != 0)) {
         result.minHandlingTime_ = minHandlingTime_;
         to_bitField1_ |= 0x00000100;
       }
-      if (((from_bitField1_ & 0x00008000) != 0)) {
+      if (((from_bitField1_ & 0x00010000) != 0)) {
         result.shippingLabel_ = shippingLabel_;
         to_bitField1_ |= 0x00000200;
       }
-      if (((from_bitField1_ & 0x00010000) != 0)) {
+      if (((from_bitField1_ & 0x00020000) != 0)) {
         result.transitTimeLabel_ = transitTimeLabel_;
         to_bitField1_ |= 0x00000400;
       }
-      if (((from_bitField1_ & 0x00020000) != 0)) {
+      if (((from_bitField1_ & 0x00040000) != 0)) {
         result.size_ = size_;
         to_bitField1_ |= 0x00000800;
       }
-      if (((from_bitField1_ & 0x00040000) != 0)) {
+      if (((from_bitField1_ & 0x00080000) != 0)) {
         result.sizeSystem_ = sizeSystem_;
         to_bitField1_ |= 0x00001000;
       }
-      if (((from_bitField1_ & 0x00100000) != 0)) {
+      if (((from_bitField1_ & 0x00200000) != 0)) {
         result.energyEfficiencyClass_ = energyEfficiencyClass_;
         to_bitField1_ |= 0x00002000;
       }
-      if (((from_bitField1_ & 0x00200000) != 0)) {
+      if (((from_bitField1_ & 0x00400000) != 0)) {
         result.minEnergyEfficiencyClass_ = minEnergyEfficiencyClass_;
         to_bitField1_ |= 0x00004000;
       }
-      if (((from_bitField1_ & 0x00400000) != 0)) {
+      if (((from_bitField1_ & 0x00800000) != 0)) {
         result.maxEnergyEfficiencyClass_ = maxEnergyEfficiencyClass_;
         to_bitField1_ |= 0x00008000;
       }
-      if (((from_bitField1_ & 0x00800000) != 0)) {
+      if (((from_bitField1_ & 0x01000000) != 0)) {
         result.unitPricingMeasure_ =
             unitPricingMeasureBuilder_ == null
                 ? unitPricingMeasure_
                 : unitPricingMeasureBuilder_.build();
         to_bitField1_ |= 0x00010000;
       }
-      if (((from_bitField1_ & 0x01000000) != 0)) {
+      if (((from_bitField1_ & 0x02000000) != 0)) {
         result.unitPricingBaseMeasure_ =
             unitPricingBaseMeasureBuilder_ == null
                 ? unitPricingBaseMeasure_
                 : unitPricingBaseMeasureBuilder_.build();
         to_bitField1_ |= 0x00020000;
       }
-      if (((from_bitField1_ & 0x02000000) != 0)) {
+      if (((from_bitField1_ & 0x04000000) != 0)) {
         result.multipack_ = multipack_;
         to_bitField1_ |= 0x00040000;
       }
-      if (((from_bitField1_ & 0x04000000) != 0)) {
+      if (((from_bitField1_ & 0x08000000) != 0)) {
         result.adsGrouping_ = adsGrouping_;
         to_bitField1_ |= 0x00080000;
       }
-      if (((from_bitField1_ & 0x08000000) != 0)) {
+      if (((from_bitField1_ & 0x10000000) != 0)) {
         adsLabels_.makeImmutable();
         result.adsLabels_ = adsLabels_;
       }
-      if (((from_bitField1_ & 0x10000000) != 0)) {
+      if (((from_bitField1_ & 0x20000000) != 0)) {
         result.adsRedirect_ = adsRedirect_;
         to_bitField1_ |= 0x00100000;
       }
-      if (((from_bitField1_ & 0x20000000) != 0)) {
+      if (((from_bitField1_ & 0x40000000) != 0)) {
         result.costOfGoodsSold_ =
             costOfGoodsSoldBuilder_ == null ? costOfGoodsSold_ : costOfGoodsSoldBuilder_.build();
         to_bitField1_ |= 0x00200000;
-      }
-      if (((from_bitField1_ & 0x80000000) != 0)) {
-        productHighlights_.makeImmutable();
-        result.productHighlights_ = productHighlights_;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -8547,101 +14466,105 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
 
     private void buildPartial2(com.google.shopping.merchant.products.v1.ProductAttributes result) {
       int from_bitField2_ = bitField2_;
-      int to_bitField1_ = 0;
       if (((from_bitField2_ & 0x00000001) != 0)) {
+        productHighlights_.makeImmutable();
+        result.productHighlights_ = productHighlights_;
+      }
+      int to_bitField1_ = 0;
+      if (((from_bitField2_ & 0x00000002) != 0)) {
         result.displayAdsId_ = displayAdsId_;
         to_bitField1_ |= 0x00400000;
       }
-      if (((from_bitField2_ & 0x00000002) != 0)) {
+      if (((from_bitField2_ & 0x00000004) != 0)) {
         displayAdsSimilarIds_.makeImmutable();
         result.displayAdsSimilarIds_ = displayAdsSimilarIds_;
       }
-      if (((from_bitField2_ & 0x00000004) != 0)) {
+      if (((from_bitField2_ & 0x00000008) != 0)) {
         result.displayAdsTitle_ = displayAdsTitle_;
         to_bitField1_ |= 0x00800000;
       }
-      if (((from_bitField2_ & 0x00000008) != 0)) {
+      if (((from_bitField2_ & 0x00000010) != 0)) {
         result.displayAdsLink_ = displayAdsLink_;
         to_bitField1_ |= 0x01000000;
       }
-      if (((from_bitField2_ & 0x00000010) != 0)) {
+      if (((from_bitField2_ & 0x00000020) != 0)) {
         result.displayAdsValue_ = displayAdsValue_;
         to_bitField1_ |= 0x02000000;
       }
-      if (((from_bitField2_ & 0x00000020) != 0)) {
+      if (((from_bitField2_ & 0x00000040) != 0)) {
         promotionIds_.makeImmutable();
         result.promotionIds_ = promotionIds_;
       }
-      if (((from_bitField2_ & 0x00000040) != 0)) {
+      if (((from_bitField2_ & 0x00000080) != 0)) {
         result.pickupMethod_ = pickupMethod_;
         to_bitField1_ |= 0x04000000;
       }
-      if (((from_bitField2_ & 0x00000080) != 0)) {
+      if (((from_bitField2_ & 0x00000100) != 0)) {
         result.pickupSla_ = pickupSla_;
         to_bitField1_ |= 0x08000000;
       }
-      if (((from_bitField2_ & 0x00000100) != 0)) {
+      if (((from_bitField2_ & 0x00000200) != 0)) {
         result.linkTemplate_ = linkTemplate_;
         to_bitField1_ |= 0x10000000;
       }
-      if (((from_bitField2_ & 0x00000200) != 0)) {
+      if (((from_bitField2_ & 0x00000400) != 0)) {
         result.mobileLinkTemplate_ = mobileLinkTemplate_;
         to_bitField1_ |= 0x20000000;
       }
-      if (((from_bitField2_ & 0x00000400) != 0)) {
+      if (((from_bitField2_ & 0x00000800) != 0)) {
         result.customLabel0_ = customLabel0_;
         to_bitField1_ |= 0x40000000;
       }
-      if (((from_bitField2_ & 0x00000800) != 0)) {
+      if (((from_bitField2_ & 0x00001000) != 0)) {
         result.customLabel1_ = customLabel1_;
         to_bitField1_ |= 0x80000000;
       }
       int to_bitField2_ = 0;
-      if (((from_bitField2_ & 0x00001000) != 0)) {
+      if (((from_bitField2_ & 0x00002000) != 0)) {
         result.customLabel2_ = customLabel2_;
         to_bitField2_ |= 0x00000001;
       }
-      if (((from_bitField2_ & 0x00002000) != 0)) {
+      if (((from_bitField2_ & 0x00004000) != 0)) {
         result.customLabel3_ = customLabel3_;
         to_bitField2_ |= 0x00000002;
       }
-      if (((from_bitField2_ & 0x00004000) != 0)) {
+      if (((from_bitField2_ & 0x00008000) != 0)) {
         result.customLabel4_ = customLabel4_;
         to_bitField2_ |= 0x00000004;
       }
-      if (((from_bitField2_ & 0x00020000) != 0)) {
+      if (((from_bitField2_ & 0x00040000) != 0)) {
         shoppingAdsExcludedCountries_.makeImmutable();
         result.shoppingAdsExcludedCountries_ = shoppingAdsExcludedCountries_;
       }
-      if (((from_bitField2_ & 0x00040000) != 0)) {
+      if (((from_bitField2_ & 0x00080000) != 0)) {
         result.externalSellerId_ = externalSellerId_;
         to_bitField2_ |= 0x00000008;
       }
-      if (((from_bitField2_ & 0x00080000) != 0)) {
+      if (((from_bitField2_ & 0x00100000) != 0)) {
         result.pause_ = pause_;
         to_bitField2_ |= 0x00000010;
       }
-      if (((from_bitField2_ & 0x00100000) != 0)) {
+      if (((from_bitField2_ & 0x00200000) != 0)) {
         lifestyleImageLinks_.makeImmutable();
         result.lifestyleImageLinks_ = lifestyleImageLinks_;
       }
-      if (((from_bitField2_ & 0x00400000) != 0)) {
+      if (((from_bitField2_ & 0x00800000) != 0)) {
         result.virtualModelLink_ = virtualModelLink_;
         to_bitField2_ |= 0x00000020;
       }
-      if (((from_bitField2_ & 0x01000000) != 0)) {
+      if (((from_bitField2_ & 0x02000000) != 0)) {
         result.structuredTitle_ =
             structuredTitleBuilder_ == null ? structuredTitle_ : structuredTitleBuilder_.build();
         to_bitField2_ |= 0x00000040;
       }
-      if (((from_bitField2_ & 0x02000000) != 0)) {
+      if (((from_bitField2_ & 0x04000000) != 0)) {
         result.structuredDescription_ =
             structuredDescriptionBuilder_ == null
                 ? structuredDescription_
                 : structuredDescriptionBuilder_.build();
         to_bitField2_ |= 0x00000080;
       }
-      if (((from_bitField2_ & 0x04000000) != 0)) {
+      if (((from_bitField2_ & 0x08000000) != 0)) {
         result.autoPricingMinPrice_ =
             autoPricingMinPriceBuilder_ == null
                 ? autoPricingMinPrice_
@@ -8913,11 +14836,38 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
           }
         }
       }
+      if (carrierShippingBuilder_ == null) {
+        if (!other.carrierShipping_.isEmpty()) {
+          if (carrierShipping_.isEmpty()) {
+            carrierShipping_ = other.carrierShipping_;
+            bitField1_ = (bitField1_ & ~0x00000100);
+          } else {
+            ensureCarrierShippingIsMutable();
+            carrierShipping_.addAll(other.carrierShipping_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.carrierShipping_.isEmpty()) {
+          if (carrierShippingBuilder_.isEmpty()) {
+            carrierShippingBuilder_.dispose();
+            carrierShippingBuilder_ = null;
+            carrierShipping_ = other.carrierShipping_;
+            bitField1_ = (bitField1_ & ~0x00000100);
+            carrierShippingBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getCarrierShippingFieldBuilder()
+                    : null;
+          } else {
+            carrierShippingBuilder_.addAllMessages(other.carrierShipping_);
+          }
+        }
+      }
       if (freeShippingThresholdBuilder_ == null) {
         if (!other.freeShippingThreshold_.isEmpty()) {
           if (freeShippingThreshold_.isEmpty()) {
             freeShippingThreshold_ = other.freeShippingThreshold_;
-            bitField1_ = (bitField1_ & ~0x00000100);
+            bitField1_ = (bitField1_ & ~0x00000200);
           } else {
             ensureFreeShippingThresholdIsMutable();
             freeShippingThreshold_.addAll(other.freeShippingThreshold_);
@@ -8930,7 +14880,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             freeShippingThresholdBuilder_.dispose();
             freeShippingThresholdBuilder_ = null;
             freeShippingThreshold_ = other.freeShippingThreshold_;
-            bitField1_ = (bitField1_ & ~0x00000100);
+            bitField1_ = (bitField1_ & ~0x00000200);
             freeShippingThresholdBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFreeShippingThresholdFieldBuilder()
@@ -8960,17 +14910,17 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasShippingLabel()) {
         shippingLabel_ = other.shippingLabel_;
-        bitField1_ |= 0x00008000;
+        bitField1_ |= 0x00010000;
         onChanged();
       }
       if (other.hasTransitTimeLabel()) {
         transitTimeLabel_ = other.transitTimeLabel_;
-        bitField1_ |= 0x00010000;
+        bitField1_ |= 0x00020000;
         onChanged();
       }
       if (other.hasSize()) {
         size_ = other.size_;
-        bitField1_ |= 0x00020000;
+        bitField1_ |= 0x00040000;
         onChanged();
       }
       if (other.hasSizeSystem()) {
@@ -8979,7 +14929,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.sizeTypes_.isEmpty()) {
         if (sizeTypes_.isEmpty()) {
           sizeTypes_ = other.sizeTypes_;
-          bitField1_ = (bitField1_ & ~0x00080000);
+          bitField1_ = (bitField1_ & ~0x00100000);
         } else {
           ensureSizeTypesIsMutable();
           sizeTypes_.addAll(other.sizeTypes_);
@@ -9006,13 +14956,13 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasAdsGrouping()) {
         adsGrouping_ = other.adsGrouping_;
-        bitField1_ |= 0x04000000;
+        bitField1_ |= 0x08000000;
         onChanged();
       }
       if (!other.adsLabels_.isEmpty()) {
         if (adsLabels_.isEmpty()) {
           adsLabels_ = other.adsLabels_;
-          bitField1_ |= 0x08000000;
+          bitField1_ |= 0x10000000;
         } else {
           ensureAdsLabelsIsMutable();
           adsLabels_.addAll(other.adsLabels_);
@@ -9021,7 +14971,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasAdsRedirect()) {
         adsRedirect_ = other.adsRedirect_;
-        bitField1_ |= 0x10000000;
+        bitField1_ |= 0x20000000;
         onChanged();
       }
       if (other.hasCostOfGoodsSold()) {
@@ -9031,7 +14981,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         if (!other.productDetails_.isEmpty()) {
           if (productDetails_.isEmpty()) {
             productDetails_ = other.productDetails_;
-            bitField1_ = (bitField1_ & ~0x40000000);
+            bitField1_ = (bitField1_ & ~0x80000000);
           } else {
             ensureProductDetailsIsMutable();
             productDetails_.addAll(other.productDetails_);
@@ -9044,7 +14994,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             productDetailsBuilder_.dispose();
             productDetailsBuilder_ = null;
             productDetails_ = other.productDetails_;
-            bitField1_ = (bitField1_ & ~0x40000000);
+            bitField1_ = (bitField1_ & ~0x80000000);
             productDetailsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getProductDetailsFieldBuilder()
@@ -9057,7 +15007,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.productHighlights_.isEmpty()) {
         if (productHighlights_.isEmpty()) {
           productHighlights_ = other.productHighlights_;
-          bitField1_ |= 0x80000000;
+          bitField2_ |= 0x00000001;
         } else {
           ensureProductHighlightsIsMutable();
           productHighlights_.addAll(other.productHighlights_);
@@ -9066,13 +15016,13 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasDisplayAdsId()) {
         displayAdsId_ = other.displayAdsId_;
-        bitField2_ |= 0x00000001;
+        bitField2_ |= 0x00000002;
         onChanged();
       }
       if (!other.displayAdsSimilarIds_.isEmpty()) {
         if (displayAdsSimilarIds_.isEmpty()) {
           displayAdsSimilarIds_ = other.displayAdsSimilarIds_;
-          bitField2_ |= 0x00000002;
+          bitField2_ |= 0x00000004;
         } else {
           ensureDisplayAdsSimilarIdsIsMutable();
           displayAdsSimilarIds_.addAll(other.displayAdsSimilarIds_);
@@ -9081,12 +15031,12 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasDisplayAdsTitle()) {
         displayAdsTitle_ = other.displayAdsTitle_;
-        bitField2_ |= 0x00000004;
+        bitField2_ |= 0x00000008;
         onChanged();
       }
       if (other.hasDisplayAdsLink()) {
         displayAdsLink_ = other.displayAdsLink_;
-        bitField2_ |= 0x00000008;
+        bitField2_ |= 0x00000010;
         onChanged();
       }
       if (other.hasDisplayAdsValue()) {
@@ -9095,7 +15045,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.promotionIds_.isEmpty()) {
         if (promotionIds_.isEmpty()) {
           promotionIds_ = other.promotionIds_;
-          bitField2_ |= 0x00000020;
+          bitField2_ |= 0x00000040;
         } else {
           ensurePromotionIdsIsMutable();
           promotionIds_.addAll(other.promotionIds_);
@@ -9110,43 +15060,43 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasLinkTemplate()) {
         linkTemplate_ = other.linkTemplate_;
-        bitField2_ |= 0x00000100;
+        bitField2_ |= 0x00000200;
         onChanged();
       }
       if (other.hasMobileLinkTemplate()) {
         mobileLinkTemplate_ = other.mobileLinkTemplate_;
-        bitField2_ |= 0x00000200;
+        bitField2_ |= 0x00000400;
         onChanged();
       }
       if (other.hasCustomLabel0()) {
         customLabel0_ = other.customLabel0_;
-        bitField2_ |= 0x00000400;
+        bitField2_ |= 0x00000800;
         onChanged();
       }
       if (other.hasCustomLabel1()) {
         customLabel1_ = other.customLabel1_;
-        bitField2_ |= 0x00000800;
+        bitField2_ |= 0x00001000;
         onChanged();
       }
       if (other.hasCustomLabel2()) {
         customLabel2_ = other.customLabel2_;
-        bitField2_ |= 0x00001000;
+        bitField2_ |= 0x00002000;
         onChanged();
       }
       if (other.hasCustomLabel3()) {
         customLabel3_ = other.customLabel3_;
-        bitField2_ |= 0x00002000;
+        bitField2_ |= 0x00004000;
         onChanged();
       }
       if (other.hasCustomLabel4()) {
         customLabel4_ = other.customLabel4_;
-        bitField2_ |= 0x00004000;
+        bitField2_ |= 0x00008000;
         onChanged();
       }
       if (!other.includedDestinations_.isEmpty()) {
         if (includedDestinations_.isEmpty()) {
           includedDestinations_ = other.includedDestinations_;
-          bitField2_ = (bitField2_ & ~0x00008000);
+          bitField2_ = (bitField2_ & ~0x00010000);
         } else {
           ensureIncludedDestinationsIsMutable();
           includedDestinations_.addAll(other.includedDestinations_);
@@ -9156,7 +15106,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.excludedDestinations_.isEmpty()) {
         if (excludedDestinations_.isEmpty()) {
           excludedDestinations_ = other.excludedDestinations_;
-          bitField2_ = (bitField2_ & ~0x00010000);
+          bitField2_ = (bitField2_ & ~0x00020000);
         } else {
           ensureExcludedDestinationsIsMutable();
           excludedDestinations_.addAll(other.excludedDestinations_);
@@ -9166,7 +15116,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.shoppingAdsExcludedCountries_.isEmpty()) {
         if (shoppingAdsExcludedCountries_.isEmpty()) {
           shoppingAdsExcludedCountries_ = other.shoppingAdsExcludedCountries_;
-          bitField2_ |= 0x00020000;
+          bitField2_ |= 0x00040000;
         } else {
           ensureShoppingAdsExcludedCountriesIsMutable();
           shoppingAdsExcludedCountries_.addAll(other.shoppingAdsExcludedCountries_);
@@ -9175,7 +15125,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasExternalSellerId()) {
         externalSellerId_ = other.externalSellerId_;
-        bitField2_ |= 0x00040000;
+        bitField2_ |= 0x00080000;
         onChanged();
       }
       if (other.hasPause()) {
@@ -9184,7 +15134,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.lifestyleImageLinks_.isEmpty()) {
         if (lifestyleImageLinks_.isEmpty()) {
           lifestyleImageLinks_ = other.lifestyleImageLinks_;
-          bitField2_ |= 0x00100000;
+          bitField2_ |= 0x00200000;
         } else {
           ensureLifestyleImageLinksIsMutable();
           lifestyleImageLinks_.addAll(other.lifestyleImageLinks_);
@@ -9195,7 +15145,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         if (!other.cloudExportAdditionalProperties_.isEmpty()) {
           if (cloudExportAdditionalProperties_.isEmpty()) {
             cloudExportAdditionalProperties_ = other.cloudExportAdditionalProperties_;
-            bitField2_ = (bitField2_ & ~0x00200000);
+            bitField2_ = (bitField2_ & ~0x00400000);
           } else {
             ensureCloudExportAdditionalPropertiesIsMutable();
             cloudExportAdditionalProperties_.addAll(other.cloudExportAdditionalProperties_);
@@ -9208,7 +15158,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             cloudExportAdditionalPropertiesBuilder_.dispose();
             cloudExportAdditionalPropertiesBuilder_ = null;
             cloudExportAdditionalProperties_ = other.cloudExportAdditionalProperties_;
-            bitField2_ = (bitField2_ & ~0x00200000);
+            bitField2_ = (bitField2_ & ~0x00400000);
             cloudExportAdditionalPropertiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCloudExportAdditionalPropertiesFieldBuilder()
@@ -9221,14 +15171,14 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasVirtualModelLink()) {
         virtualModelLink_ = other.virtualModelLink_;
-        bitField2_ |= 0x00400000;
+        bitField2_ |= 0x00800000;
         onChanged();
       }
       if (certificationsBuilder_ == null) {
         if (!other.certifications_.isEmpty()) {
           if (certifications_.isEmpty()) {
             certifications_ = other.certifications_;
-            bitField2_ = (bitField2_ & ~0x00800000);
+            bitField2_ = (bitField2_ & ~0x01000000);
           } else {
             ensureCertificationsIsMutable();
             certifications_.addAll(other.certifications_);
@@ -9241,7 +15191,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             certificationsBuilder_.dispose();
             certificationsBuilder_ = null;
             certifications_ = other.certifications_;
-            bitField2_ = (bitField2_ & ~0x00800000);
+            bitField2_ = (bitField2_ & ~0x01000000);
             certificationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCertificationsFieldBuilder()
@@ -9264,7 +15214,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         if (!other.sustainabilityIncentives_.isEmpty()) {
           if (sustainabilityIncentives_.isEmpty()) {
             sustainabilityIncentives_ = other.sustainabilityIncentives_;
-            bitField2_ = (bitField2_ & ~0x08000000);
+            bitField2_ = (bitField2_ & ~0x10000000);
           } else {
             ensureSustainabilityIncentivesIsMutable();
             sustainabilityIncentives_.addAll(other.sustainabilityIncentives_);
@@ -9277,7 +15227,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             sustainabilityIncentivesBuilder_.dispose();
             sustainabilityIncentivesBuilder_ = null;
             sustainabilityIncentives_ = other.sustainabilityIncentives_;
-            bitField2_ = (bitField2_ & ~0x08000000);
+            bitField2_ = (bitField2_ & ~0x10000000);
             sustainabilityIncentivesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSustainabilityIncentivesFieldBuilder()
@@ -9316,7 +15266,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 externalSellerId_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00040000;
+                bitField2_ |= 0x00080000;
                 break;
               } // case 10
             case 32:
@@ -9377,7 +15327,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 104:
               {
                 pause_ = input.readEnum();
-                bitField2_ |= 0x00080000;
+                bitField2_ |= 0x00100000;
                 break;
               } // case 104
             case 114:
@@ -9540,61 +15490,61 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 322:
               {
                 input.readMessage(getShippingWeightFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000200;
+                bitField1_ |= 0x00000400;
                 break;
               } // case 322
             case 330:
               {
                 input.readMessage(getShippingLengthFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000400;
+                bitField1_ |= 0x00000800;
                 break;
               } // case 330
             case 338:
               {
                 input.readMessage(getShippingWidthFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000800;
+                bitField1_ |= 0x00001000;
                 break;
               } // case 338
             case 346:
               {
                 input.readMessage(getShippingHeightFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00001000;
+                bitField1_ |= 0x00002000;
                 break;
               } // case 346
             case 352:
               {
                 maxHandlingTime_ = input.readInt64();
-                bitField1_ |= 0x00002000;
+                bitField1_ |= 0x00004000;
                 break;
               } // case 352
             case 360:
               {
                 minHandlingTime_ = input.readInt64();
-                bitField1_ |= 0x00004000;
+                bitField1_ |= 0x00008000;
                 break;
               } // case 360
             case 370:
               {
                 shippingLabel_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00008000;
+                bitField1_ |= 0x00010000;
                 break;
               } // case 370
             case 378:
               {
                 transitTimeLabel_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00010000;
+                bitField1_ |= 0x00020000;
                 break;
               } // case 378
             case 386:
               {
                 size_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00020000;
+                bitField1_ |= 0x00040000;
                 break;
               } // case 386
             case 392:
               {
                 sizeSystem_ = input.readEnum();
-                bitField1_ |= 0x00040000;
+                bitField1_ |= 0x00080000;
                 break;
               } // case 392
             case 400:
@@ -9619,45 +15569,45 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 424:
               {
                 energyEfficiencyClass_ = input.readEnum();
-                bitField1_ |= 0x00100000;
+                bitField1_ |= 0x00200000;
                 break;
               } // case 424
             case 432:
               {
                 minEnergyEfficiencyClass_ = input.readEnum();
-                bitField1_ |= 0x00200000;
+                bitField1_ |= 0x00400000;
                 break;
               } // case 432
             case 440:
               {
                 maxEnergyEfficiencyClass_ = input.readEnum();
-                bitField1_ |= 0x00400000;
+                bitField1_ |= 0x00800000;
                 break;
               } // case 440
             case 450:
               {
                 input.readMessage(
                     getUnitPricingMeasureFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00800000;
+                bitField1_ |= 0x01000000;
                 break;
               } // case 450
             case 458:
               {
                 input.readMessage(
                     getUnitPricingBaseMeasureFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x01000000;
+                bitField1_ |= 0x02000000;
                 break;
               } // case 458
             case 464:
               {
                 multipack_ = input.readInt64();
-                bitField1_ |= 0x02000000;
+                bitField1_ |= 0x04000000;
                 break;
               } // case 464
             case 474:
               {
                 adsGrouping_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x04000000;
+                bitField1_ |= 0x08000000;
                 break;
               } // case 474
             case 482:
@@ -9670,13 +15620,13 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 490:
               {
                 adsRedirect_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x10000000;
+                bitField1_ |= 0x20000000;
                 break;
               } // case 490
             case 498:
               {
                 input.readMessage(getCostOfGoodsSoldFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x20000000;
+                bitField1_ |= 0x40000000;
                 break;
               } // case 498
             case 506:
@@ -9703,7 +15653,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 522:
               {
                 displayAdsId_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00000001;
+                bitField2_ |= 0x00000002;
                 break;
               } // case 522
             case 530:
@@ -9716,19 +15666,19 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 538:
               {
                 displayAdsTitle_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00000004;
+                bitField2_ |= 0x00000008;
                 break;
               } // case 538
             case 546:
               {
                 displayAdsLink_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00000008;
+                bitField2_ |= 0x00000010;
                 break;
               } // case 546
             case 553:
               {
                 displayAdsValue_ = input.readDouble();
-                bitField2_ |= 0x00000010;
+                bitField2_ |= 0x00000020;
                 break;
               } // case 553
             case 562:
@@ -9741,31 +15691,31 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 570:
               {
                 customLabel0_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00000400;
+                bitField2_ |= 0x00000800;
                 break;
               } // case 570
             case 578:
               {
                 customLabel1_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00000800;
+                bitField2_ |= 0x00001000;
                 break;
               } // case 578
             case 586:
               {
                 customLabel2_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00001000;
+                bitField2_ |= 0x00002000;
                 break;
               } // case 586
             case 594:
               {
                 customLabel3_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00002000;
+                bitField2_ |= 0x00004000;
                 break;
               } // case 594
             case 602:
               {
                 customLabel4_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00004000;
+                bitField2_ |= 0x00008000;
                 break;
               } // case 602
             case 608:
@@ -9822,25 +15772,25 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 640:
               {
                 pickupMethod_ = input.readEnum();
-                bitField2_ |= 0x00000040;
+                bitField2_ |= 0x00000080;
                 break;
               } // case 640
             case 648:
               {
                 pickupSla_ = input.readEnum();
-                bitField2_ |= 0x00000080;
+                bitField2_ |= 0x00000100;
                 break;
               } // case 648
             case 658:
               {
                 linkTemplate_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00000100;
+                bitField2_ |= 0x00000200;
                 break;
               } // case 658
             case 666:
               {
                 mobileLinkTemplate_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00000200;
+                bitField2_ |= 0x00000400;
                 break;
               } // case 666
             case 674:
@@ -9900,26 +15850,26 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     getAutoPricingMinPriceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x04000000;
+                bitField2_ |= 0x08000000;
                 break;
               } // case 994
             case 1042:
               {
                 virtualModelLink_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00400000;
+                bitField2_ |= 0x00800000;
                 break;
               } // case 1042
             case 1058:
               {
                 input.readMessage(getStructuredTitleFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x01000000;
+                bitField2_ |= 0x02000000;
                 break;
               } // case 1058
             case 1066:
               {
                 input.readMessage(
                     getStructuredDescriptionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x02000000;
+                bitField2_ |= 0x04000000;
                 break;
               } // case 1066
             case 1082:
@@ -9979,6 +15929,21 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 gtins_.add(s);
                 break;
               } // case 1122
+            case 1138:
+              {
+                com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping m =
+                    input.readMessage(
+                        com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+                            .parser(),
+                        extensionRegistry);
+                if (carrierShippingBuilder_ == null) {
+                  ensureCarrierShippingIsMutable();
+                  carrierShipping_.add(m);
+                } else {
+                  carrierShippingBuilder_.addMessage(m);
+                }
+                break;
+              } // case 1138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -16780,15 +22745,454 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       return shippingBuilder_;
     }
 
+    private java.util.List<
+            com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping>
+        carrierShipping_ = java.util.Collections.emptyList();
+
+    private void ensureCarrierShippingIsMutable() {
+      if (!((bitField1_ & 0x00000100) != 0)) {
+        carrierShipping_ =
+            new java.util.ArrayList<
+                com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping>(
+                carrierShipping_);
+        bitField1_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping,
+            com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShippingOrBuilder>
+        carrierShippingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public java.util.List<
+            com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping>
+        getCarrierShippingList() {
+      if (carrierShippingBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(carrierShipping_);
+      } else {
+        return carrierShippingBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public int getCarrierShippingCount() {
+      if (carrierShippingBuilder_ == null) {
+        return carrierShipping_.size();
+      } else {
+        return carrierShippingBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+        getCarrierShipping(int index) {
+      if (carrierShippingBuilder_ == null) {
+        return carrierShipping_.get(index);
+      } else {
+        return carrierShippingBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public Builder setCarrierShipping(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping value) {
+      if (carrierShippingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCarrierShippingIsMutable();
+        carrierShipping_.set(index, value);
+        onChanged();
+      } else {
+        carrierShippingBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public Builder setCarrierShipping(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.Builder
+            builderForValue) {
+      if (carrierShippingBuilder_ == null) {
+        ensureCarrierShippingIsMutable();
+        carrierShipping_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        carrierShippingBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public Builder addCarrierShipping(
+        com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping value) {
+      if (carrierShippingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCarrierShippingIsMutable();
+        carrierShipping_.add(value);
+        onChanged();
+      } else {
+        carrierShippingBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public Builder addCarrierShipping(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping value) {
+      if (carrierShippingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCarrierShippingIsMutable();
+        carrierShipping_.add(index, value);
+        onChanged();
+      } else {
+        carrierShippingBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public Builder addCarrierShipping(
+        com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.Builder
+            builderForValue) {
+      if (carrierShippingBuilder_ == null) {
+        ensureCarrierShippingIsMutable();
+        carrierShipping_.add(builderForValue.build());
+        onChanged();
+      } else {
+        carrierShippingBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public Builder addCarrierShipping(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.Builder
+            builderForValue) {
+      if (carrierShippingBuilder_ == null) {
+        ensureCarrierShippingIsMutable();
+        carrierShipping_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        carrierShippingBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public Builder addAllCarrierShipping(
+        java.lang.Iterable<
+                ? extends
+                    com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping>
+            values) {
+      if (carrierShippingBuilder_ == null) {
+        ensureCarrierShippingIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, carrierShipping_);
+        onChanged();
+      } else {
+        carrierShippingBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public Builder clearCarrierShipping() {
+      if (carrierShippingBuilder_ == null) {
+        carrierShipping_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000100);
+        onChanged();
+      } else {
+        carrierShippingBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public Builder removeCarrierShipping(int index) {
+      if (carrierShippingBuilder_ == null) {
+        ensureCarrierShippingIsMutable();
+        carrierShipping_.remove(index);
+        onChanged();
+      } else {
+        carrierShippingBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.Builder
+        getCarrierShippingBuilder(int index) {
+      return getCarrierShippingFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShippingOrBuilder
+        getCarrierShippingOrBuilder(int index) {
+      if (carrierShippingBuilder_ == null) {
+        return carrierShipping_.get(index);
+      } else {
+        return carrierShippingBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShippingOrBuilder>
+        getCarrierShippingOrBuilderList() {
+      if (carrierShippingBuilder_ != null) {
+        return carrierShippingBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(carrierShipping_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.Builder
+        addCarrierShippingBuilder() {
+      return getCarrierShippingFieldBuilder()
+          .addBuilder(
+              com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.Builder
+        addCarrierShippingBuilder(int index) {
+      return getCarrierShippingFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rules for carrier-based shipping.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+     * </code>
+     */
+    public java.util.List<
+            com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.Builder>
+        getCarrierShippingBuilderList() {
+      return getCarrierShippingFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping,
+            com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShippingOrBuilder>
+        getCarrierShippingFieldBuilder() {
+      if (carrierShippingBuilder_ == null) {
+        carrierShippingBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping,
+                com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping.Builder,
+                com.google.shopping.merchant.products.v1.ProductAttributes
+                    .CarrierShippingOrBuilder>(
+                carrierShipping_,
+                ((bitField1_ & 0x00000100) != 0),
+                getParentForChildren(),
+                isClean());
+        carrierShipping_ = null;
+      }
+      return carrierShippingBuilder_;
+    }
+
     private java.util.List<com.google.shopping.merchant.products.v1.FreeShippingThreshold>
         freeShippingThreshold_ = java.util.Collections.emptyList();
 
     private void ensureFreeShippingThresholdIsMutable() {
-      if (!((bitField1_ & 0x00000100) != 0)) {
+      if (!((bitField1_ & 0x00000200) != 0)) {
         freeShippingThreshold_ =
             new java.util.ArrayList<com.google.shopping.merchant.products.v1.FreeShippingThreshold>(
                 freeShippingThreshold_);
-        bitField1_ |= 0x00000100;
+        bitField1_ |= 0x00000200;
       }
     }
 
@@ -17044,7 +23448,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder clearFreeShippingThreshold() {
       if (freeShippingThresholdBuilder_ == null) {
         freeShippingThreshold_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00000100);
+        bitField1_ = (bitField1_ & ~0x00000200);
         onChanged();
       } else {
         freeShippingThresholdBuilder_.clear();
@@ -17196,7 +23600,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 com.google.shopping.merchant.products.v1.FreeShippingThreshold.Builder,
                 com.google.shopping.merchant.products.v1.FreeShippingThresholdOrBuilder>(
                 freeShippingThreshold_,
-                ((bitField1_ & 0x00000100) != 0),
+                ((bitField1_ & 0x00000200) != 0),
                 getParentForChildren(),
                 isClean());
         freeShippingThreshold_ = null;
@@ -17223,7 +23627,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the shippingWeight field is set.
      */
     public boolean hasShippingWeight() {
-      return ((bitField1_ & 0x00000200) != 0);
+      return ((bitField1_ & 0x00000400) != 0);
     }
 
     /**
@@ -17266,7 +23670,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         shippingWeightBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -17287,7 +23691,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         shippingWeightBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -17304,7 +23708,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeShippingWeight(
         com.google.shopping.merchant.products.v1.ShippingWeight value) {
       if (shippingWeightBuilder_ == null) {
-        if (((bitField1_ & 0x00000200) != 0)
+        if (((bitField1_ & 0x00000400) != 0)
             && shippingWeight_ != null
             && shippingWeight_
                 != com.google.shopping.merchant.products.v1.ShippingWeight.getDefaultInstance()) {
@@ -17316,7 +23720,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         shippingWeightBuilder_.mergeFrom(value);
       }
       if (shippingWeight_ != null) {
-        bitField1_ |= 0x00000200;
+        bitField1_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -17332,7 +23736,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.merchant.products.v1.ShippingWeight shipping_weight = 40;</code>
      */
     public Builder clearShippingWeight() {
-      bitField1_ = (bitField1_ & ~0x00000200);
+      bitField1_ = (bitField1_ & ~0x00000400);
       shippingWeight_ = null;
       if (shippingWeightBuilder_ != null) {
         shippingWeightBuilder_.dispose();
@@ -17353,7 +23757,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.ShippingWeight.Builder
         getShippingWeightBuilder() {
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000400;
       onChanged();
       return getShippingWeightFieldBuilder().getBuilder();
     }
@@ -17423,7 +23827,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the shippingLength field is set.
      */
     public boolean hasShippingLength() {
-      return ((bitField1_ & 0x00000400) != 0);
+      return ((bitField1_ & 0x00000800) != 0);
     }
 
     /**
@@ -17466,7 +23870,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         shippingLengthBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -17487,7 +23891,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         shippingLengthBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -17504,7 +23908,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeShippingLength(
         com.google.shopping.merchant.products.v1.ShippingDimension value) {
       if (shippingLengthBuilder_ == null) {
-        if (((bitField1_ & 0x00000400) != 0)
+        if (((bitField1_ & 0x00000800) != 0)
             && shippingLength_ != null
             && shippingLength_
                 != com.google.shopping.merchant.products.v1.ShippingDimension
@@ -17517,7 +23921,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         shippingLengthBuilder_.mergeFrom(value);
       }
       if (shippingLength_ != null) {
-        bitField1_ |= 0x00000400;
+        bitField1_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -17533,7 +23937,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.merchant.products.v1.ShippingDimension shipping_length = 41;</code>
      */
     public Builder clearShippingLength() {
-      bitField1_ = (bitField1_ & ~0x00000400);
+      bitField1_ = (bitField1_ & ~0x00000800);
       shippingLength_ = null;
       if (shippingLengthBuilder_ != null) {
         shippingLengthBuilder_.dispose();
@@ -17554,7 +23958,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.ShippingDimension.Builder
         getShippingLengthBuilder() {
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00000800;
       onChanged();
       return getShippingLengthFieldBuilder().getBuilder();
     }
@@ -17624,7 +24028,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the shippingWidth field is set.
      */
     public boolean hasShippingWidth() {
-      return ((bitField1_ & 0x00000800) != 0);
+      return ((bitField1_ & 0x00001000) != 0);
     }
 
     /**
@@ -17667,7 +24071,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         shippingWidthBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -17688,7 +24092,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         shippingWidthBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -17705,7 +24109,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeShippingWidth(
         com.google.shopping.merchant.products.v1.ShippingDimension value) {
       if (shippingWidthBuilder_ == null) {
-        if (((bitField1_ & 0x00000800) != 0)
+        if (((bitField1_ & 0x00001000) != 0)
             && shippingWidth_ != null
             && shippingWidth_
                 != com.google.shopping.merchant.products.v1.ShippingDimension
@@ -17718,7 +24122,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         shippingWidthBuilder_.mergeFrom(value);
       }
       if (shippingWidth_ != null) {
-        bitField1_ |= 0x00000800;
+        bitField1_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -17734,7 +24138,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.merchant.products.v1.ShippingDimension shipping_width = 42;</code>
      */
     public Builder clearShippingWidth() {
-      bitField1_ = (bitField1_ & ~0x00000800);
+      bitField1_ = (bitField1_ & ~0x00001000);
       shippingWidth_ = null;
       if (shippingWidthBuilder_ != null) {
         shippingWidthBuilder_.dispose();
@@ -17755,7 +24159,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.ShippingDimension.Builder
         getShippingWidthBuilder() {
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00001000;
       onChanged();
       return getShippingWidthFieldBuilder().getBuilder();
     }
@@ -17825,7 +24229,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the shippingHeight field is set.
      */
     public boolean hasShippingHeight() {
-      return ((bitField1_ & 0x00001000) != 0);
+      return ((bitField1_ & 0x00002000) != 0);
     }
 
     /**
@@ -17868,7 +24272,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         shippingHeightBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -17889,7 +24293,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         shippingHeightBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -17906,7 +24310,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeShippingHeight(
         com.google.shopping.merchant.products.v1.ShippingDimension value) {
       if (shippingHeightBuilder_ == null) {
-        if (((bitField1_ & 0x00001000) != 0)
+        if (((bitField1_ & 0x00002000) != 0)
             && shippingHeight_ != null
             && shippingHeight_
                 != com.google.shopping.merchant.products.v1.ShippingDimension
@@ -17919,7 +24323,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         shippingHeightBuilder_.mergeFrom(value);
       }
       if (shippingHeight_ != null) {
-        bitField1_ |= 0x00001000;
+        bitField1_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -17935,7 +24339,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.merchant.products.v1.ShippingDimension shipping_height = 43;</code>
      */
     public Builder clearShippingHeight() {
-      bitField1_ = (bitField1_ & ~0x00001000);
+      bitField1_ = (bitField1_ & ~0x00002000);
       shippingHeight_ = null;
       if (shippingHeightBuilder_ != null) {
         shippingHeightBuilder_.dispose();
@@ -17956,7 +24360,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.ShippingDimension.Builder
         getShippingHeightBuilder() {
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00002000;
       onChanged();
       return getShippingHeightFieldBuilder().getBuilder();
     }
@@ -18022,7 +24426,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasMaxHandlingTime() {
-      return ((bitField1_ & 0x00002000) != 0);
+      return ((bitField1_ & 0x00004000) != 0);
     }
 
     /**
@@ -18056,7 +24460,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder setMaxHandlingTime(long value) {
 
       maxHandlingTime_ = value;
-      bitField1_ |= 0x00002000;
+      bitField1_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -18073,7 +24477,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMaxHandlingTime() {
-      bitField1_ = (bitField1_ & ~0x00002000);
+      bitField1_ = (bitField1_ & ~0x00004000);
       maxHandlingTime_ = 0L;
       onChanged();
       return this;
@@ -18094,7 +24498,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasMinHandlingTime() {
-      return ((bitField1_ & 0x00004000) != 0);
+      return ((bitField1_ & 0x00008000) != 0);
     }
 
     /**
@@ -18128,7 +24532,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder setMinHandlingTime(long value) {
 
       minHandlingTime_ = value;
-      bitField1_ |= 0x00004000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -18145,7 +24549,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMinHandlingTime() {
-      bitField1_ = (bitField1_ & ~0x00004000);
+      bitField1_ = (bitField1_ & ~0x00008000);
       minHandlingTime_ = 0L;
       onChanged();
       return this;
@@ -18166,7 +24570,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the shippingLabel field is set.
      */
     public boolean hasShippingLabel() {
-      return ((bitField1_ & 0x00008000) != 0);
+      return ((bitField1_ & 0x00010000) != 0);
     }
 
     /**
@@ -18235,7 +24639,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       shippingLabel_ = value;
-      bitField1_ |= 0x00008000;
+      bitField1_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -18254,7 +24658,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearShippingLabel() {
       shippingLabel_ = getDefaultInstance().getShippingLabel();
-      bitField1_ = (bitField1_ & ~0x00008000);
+      bitField1_ = (bitField1_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -18278,7 +24682,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       shippingLabel_ = value;
-      bitField1_ |= 0x00008000;
+      bitField1_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -18298,7 +24702,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the transitTimeLabel field is set.
      */
     public boolean hasTransitTimeLabel() {
-      return ((bitField1_ & 0x00010000) != 0);
+      return ((bitField1_ & 0x00020000) != 0);
     }
 
     /**
@@ -18367,7 +24771,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       transitTimeLabel_ = value;
-      bitField1_ |= 0x00010000;
+      bitField1_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -18386,7 +24790,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearTransitTimeLabel() {
       transitTimeLabel_ = getDefaultInstance().getTransitTimeLabel();
-      bitField1_ = (bitField1_ & ~0x00010000);
+      bitField1_ = (bitField1_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -18410,7 +24814,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       transitTimeLabel_ = value;
-      bitField1_ |= 0x00010000;
+      bitField1_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -18432,7 +24836,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the size field is set.
      */
     public boolean hasSize() {
-      return ((bitField1_ & 0x00020000) != 0);
+      return ((bitField1_ & 0x00040000) != 0);
     }
 
     /**
@@ -18507,7 +24911,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       size_ = value;
-      bitField1_ |= 0x00020000;
+      bitField1_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -18528,7 +24932,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearSize() {
       size_ = getDefaultInstance().getSize();
-      bitField1_ = (bitField1_ & ~0x00020000);
+      bitField1_ = (bitField1_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -18554,7 +24958,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       size_ = value;
-      bitField1_ |= 0x00020000;
+      bitField1_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -18576,7 +24980,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasSizeSystem() {
-      return ((bitField1_ & 0x00040000) != 0);
+      return ((bitField1_ & 0x00080000) != 0);
     }
 
     /**
@@ -18613,7 +25017,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setSizeSystemValue(int value) {
       sizeSystem_ = value;
-      bitField1_ |= 0x00040000;
+      bitField1_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -18658,7 +25062,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00040000;
+      bitField1_ |= 0x00080000;
       sizeSystem_ = value.getNumber();
       onChanged();
       return this;
@@ -18678,7 +25082,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSizeSystem() {
-      bitField1_ = (bitField1_ & ~0x00040000);
+      bitField1_ = (bitField1_ & ~0x00080000);
       sizeSystem_ = 0;
       onChanged();
       return this;
@@ -18687,9 +25091,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     private java.util.List<java.lang.Integer> sizeTypes_ = java.util.Collections.emptyList();
 
     private void ensureSizeTypesIsMutable() {
-      if (!((bitField1_ & 0x00080000) != 0)) {
+      if (!((bitField1_ & 0x00100000) != 0)) {
         sizeTypes_ = new java.util.ArrayList<java.lang.Integer>(sizeTypes_);
-        bitField1_ |= 0x00080000;
+        bitField1_ |= 0x00100000;
       }
     }
 
@@ -18836,7 +25240,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearSizeTypes() {
       sizeTypes_ = java.util.Collections.emptyList();
-      bitField1_ = (bitField1_ & ~0x00080000);
+      bitField1_ = (bitField1_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -18961,7 +25365,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasEnergyEfficiencyClass() {
-      return ((bitField1_ & 0x00100000) != 0);
+      return ((bitField1_ & 0x00200000) != 0);
     }
 
     /**
@@ -19002,7 +25406,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setEnergyEfficiencyClassValue(int value) {
       energyEfficiencyClass_ = value;
-      bitField1_ |= 0x00100000;
+      bitField1_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -19054,7 +25458,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00100000;
+      bitField1_ |= 0x00200000;
       energyEfficiencyClass_ = value.getNumber();
       onChanged();
       return this;
@@ -19076,7 +25480,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEnergyEfficiencyClass() {
-      bitField1_ = (bitField1_ & ~0x00100000);
+      bitField1_ = (bitField1_ & ~0x00200000);
       energyEfficiencyClass_ = 0;
       onChanged();
       return this;
@@ -19101,7 +25505,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasMinEnergyEfficiencyClass() {
-      return ((bitField1_ & 0x00200000) != 0);
+      return ((bitField1_ & 0x00400000) != 0);
     }
 
     /**
@@ -19142,7 +25546,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setMinEnergyEfficiencyClassValue(int value) {
       minEnergyEfficiencyClass_ = value;
-      bitField1_ |= 0x00200000;
+      bitField1_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -19194,7 +25598,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00200000;
+      bitField1_ |= 0x00400000;
       minEnergyEfficiencyClass_ = value.getNumber();
       onChanged();
       return this;
@@ -19216,7 +25620,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMinEnergyEfficiencyClass() {
-      bitField1_ = (bitField1_ & ~0x00200000);
+      bitField1_ = (bitField1_ & ~0x00400000);
       minEnergyEfficiencyClass_ = 0;
       onChanged();
       return this;
@@ -19241,7 +25645,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasMaxEnergyEfficiencyClass() {
-      return ((bitField1_ & 0x00400000) != 0);
+      return ((bitField1_ & 0x00800000) != 0);
     }
 
     /**
@@ -19282,7 +25686,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setMaxEnergyEfficiencyClassValue(int value) {
       maxEnergyEfficiencyClass_ = value;
-      bitField1_ |= 0x00400000;
+      bitField1_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -19334,7 +25738,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00400000;
+      bitField1_ |= 0x00800000;
       maxEnergyEfficiencyClass_ = value.getNumber();
       onChanged();
       return this;
@@ -19356,7 +25760,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMaxEnergyEfficiencyClass() {
-      bitField1_ = (bitField1_ & ~0x00400000);
+      bitField1_ = (bitField1_ & ~0x00800000);
       maxEnergyEfficiencyClass_ = 0;
       onChanged();
       return this;
@@ -19382,7 +25786,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the unitPricingMeasure field is set.
      */
     public boolean hasUnitPricingMeasure() {
-      return ((bitField1_ & 0x00800000) != 0);
+      return ((bitField1_ & 0x01000000) != 0);
     }
 
     /**
@@ -19427,7 +25831,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         unitPricingMeasureBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00800000;
+      bitField1_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -19449,7 +25853,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         unitPricingMeasureBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00800000;
+      bitField1_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -19467,7 +25871,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeUnitPricingMeasure(
         com.google.shopping.merchant.products.v1.UnitPricingMeasure value) {
       if (unitPricingMeasureBuilder_ == null) {
-        if (((bitField1_ & 0x00800000) != 0)
+        if (((bitField1_ & 0x01000000) != 0)
             && unitPricingMeasure_ != null
             && unitPricingMeasure_
                 != com.google.shopping.merchant.products.v1.UnitPricingMeasure
@@ -19480,7 +25884,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         unitPricingMeasureBuilder_.mergeFrom(value);
       }
       if (unitPricingMeasure_ != null) {
-        bitField1_ |= 0x00800000;
+        bitField1_ |= 0x01000000;
         onChanged();
       }
       return this;
@@ -19497,7 +25901,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearUnitPricingMeasure() {
-      bitField1_ = (bitField1_ & ~0x00800000);
+      bitField1_ = (bitField1_ & ~0x01000000);
       unitPricingMeasure_ = null;
       if (unitPricingMeasureBuilder_ != null) {
         unitPricingMeasureBuilder_.dispose();
@@ -19519,7 +25923,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.UnitPricingMeasure.Builder
         getUnitPricingMeasureBuilder() {
-      bitField1_ |= 0x00800000;
+      bitField1_ |= 0x01000000;
       onChanged();
       return getUnitPricingMeasureFieldBuilder().getBuilder();
     }
@@ -19593,7 +25997,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the unitPricingBaseMeasure field is set.
      */
     public boolean hasUnitPricingBaseMeasure() {
-      return ((bitField1_ & 0x01000000) != 0);
+      return ((bitField1_ & 0x02000000) != 0);
     }
 
     /**
@@ -19641,7 +26045,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         unitPricingBaseMeasureBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x01000000;
+      bitField1_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -19664,7 +26068,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         unitPricingBaseMeasureBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x01000000;
+      bitField1_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -19683,7 +26087,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeUnitPricingBaseMeasure(
         com.google.shopping.merchant.products.v1.UnitPricingBaseMeasure value) {
       if (unitPricingBaseMeasureBuilder_ == null) {
-        if (((bitField1_ & 0x01000000) != 0)
+        if (((bitField1_ & 0x02000000) != 0)
             && unitPricingBaseMeasure_ != null
             && unitPricingBaseMeasure_
                 != com.google.shopping.merchant.products.v1.UnitPricingBaseMeasure
@@ -19696,7 +26100,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         unitPricingBaseMeasureBuilder_.mergeFrom(value);
       }
       if (unitPricingBaseMeasure_ != null) {
-        bitField1_ |= 0x01000000;
+        bitField1_ |= 0x02000000;
         onChanged();
       }
       return this;
@@ -19714,7 +26118,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearUnitPricingBaseMeasure() {
-      bitField1_ = (bitField1_ & ~0x01000000);
+      bitField1_ = (bitField1_ & ~0x02000000);
       unitPricingBaseMeasure_ = null;
       if (unitPricingBaseMeasureBuilder_ != null) {
         unitPricingBaseMeasureBuilder_.dispose();
@@ -19737,7 +26141,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.UnitPricingBaseMeasure.Builder
         getUnitPricingBaseMeasureBuilder() {
-      bitField1_ |= 0x01000000;
+      bitField1_ |= 0x02000000;
       onChanged();
       return getUnitPricingBaseMeasureFieldBuilder().getBuilder();
     }
@@ -19807,7 +26211,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasMultipack() {
-      return ((bitField1_ & 0x02000000) != 0);
+      return ((bitField1_ & 0x04000000) != 0);
     }
 
     /**
@@ -19841,7 +26245,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder setMultipack(long value) {
 
       multipack_ = value;
-      bitField1_ |= 0x02000000;
+      bitField1_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -19858,7 +26262,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMultipack() {
-      bitField1_ = (bitField1_ & ~0x02000000);
+      bitField1_ = (bitField1_ & ~0x04000000);
       multipack_ = 0L;
       onChanged();
       return this;
@@ -19881,7 +26285,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the adsGrouping field is set.
      */
     public boolean hasAdsGrouping() {
-      return ((bitField1_ & 0x04000000) != 0);
+      return ((bitField1_ & 0x08000000) != 0);
     }
 
     /**
@@ -19956,7 +26360,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       adsGrouping_ = value;
-      bitField1_ |= 0x04000000;
+      bitField1_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -19977,7 +26381,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearAdsGrouping() {
       adsGrouping_ = getDefaultInstance().getAdsGrouping();
-      bitField1_ = (bitField1_ & ~0x04000000);
+      bitField1_ = (bitField1_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -20003,7 +26407,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       adsGrouping_ = value;
-      bitField1_ |= 0x04000000;
+      bitField1_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -20015,7 +26419,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!adsLabels_.isModifiable()) {
         adsLabels_ = new com.google.protobuf.LazyStringArrayList(adsLabels_);
       }
-      bitField1_ |= 0x08000000;
+      bitField1_ |= 0x10000000;
     }
 
     /**
@@ -20100,7 +26504,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureAdsLabelsIsMutable();
       adsLabels_.set(index, value);
-      bitField1_ |= 0x08000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -20123,7 +26527,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureAdsLabelsIsMutable();
       adsLabels_.add(value);
-      bitField1_ |= 0x08000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -20143,7 +26547,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllAdsLabels(java.lang.Iterable<java.lang.String> values) {
       ensureAdsLabelsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, adsLabels_);
-      bitField1_ |= 0x08000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -20161,7 +26565,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearAdsLabels() {
       adsLabels_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField1_ = (bitField1_ & ~0x08000000);
+      bitField1_ = (bitField1_ & ~0x10000000);
       ;
       onChanged();
       return this;
@@ -20186,7 +26590,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureAdsLabelsIsMutable();
       adsLabels_.add(value);
-      bitField1_ |= 0x08000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -20206,7 +26610,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the adsRedirect field is set.
      */
     public boolean hasAdsRedirect() {
-      return ((bitField1_ & 0x10000000) != 0);
+      return ((bitField1_ & 0x20000000) != 0);
     }
 
     /**
@@ -20275,7 +26679,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       adsRedirect_ = value;
-      bitField1_ |= 0x10000000;
+      bitField1_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -20294,7 +26698,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearAdsRedirect() {
       adsRedirect_ = getDefaultInstance().getAdsRedirect();
-      bitField1_ = (bitField1_ & ~0x10000000);
+      bitField1_ = (bitField1_ & ~0x20000000);
       onChanged();
       return this;
     }
@@ -20318,7 +26722,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       adsRedirect_ = value;
-      bitField1_ |= 0x10000000;
+      bitField1_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -20342,7 +26746,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the costOfGoodsSold field is set.
      */
     public boolean hasCostOfGoodsSold() {
-      return ((bitField1_ & 0x20000000) != 0);
+      return ((bitField1_ & 0x40000000) != 0);
     }
 
     /**
@@ -20384,7 +26788,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         costOfGoodsSoldBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x20000000;
+      bitField1_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -20404,7 +26808,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         costOfGoodsSoldBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x20000000;
+      bitField1_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -20420,7 +26824,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeCostOfGoodsSold(com.google.shopping.type.Price value) {
       if (costOfGoodsSoldBuilder_ == null) {
-        if (((bitField1_ & 0x20000000) != 0)
+        if (((bitField1_ & 0x40000000) != 0)
             && costOfGoodsSold_ != null
             && costOfGoodsSold_ != com.google.shopping.type.Price.getDefaultInstance()) {
           getCostOfGoodsSoldBuilder().mergeFrom(value);
@@ -20431,7 +26835,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         costOfGoodsSoldBuilder_.mergeFrom(value);
       }
       if (costOfGoodsSold_ != null) {
-        bitField1_ |= 0x20000000;
+        bitField1_ |= 0x40000000;
         onChanged();
       }
       return this;
@@ -20447,7 +26851,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.type.Price cost_of_goods_sold = 62;</code>
      */
     public Builder clearCostOfGoodsSold() {
-      bitField1_ = (bitField1_ & ~0x20000000);
+      bitField1_ = (bitField1_ & ~0x40000000);
       costOfGoodsSold_ = null;
       if (costOfGoodsSoldBuilder_ != null) {
         costOfGoodsSoldBuilder_.dispose();
@@ -20467,7 +26871,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.type.Price cost_of_goods_sold = 62;</code>
      */
     public com.google.shopping.type.Price.Builder getCostOfGoodsSoldBuilder() {
-      bitField1_ |= 0x20000000;
+      bitField1_ |= 0x40000000;
       onChanged();
       return getCostOfGoodsSoldFieldBuilder().getBuilder();
     }
@@ -20521,11 +26925,11 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureProductDetailsIsMutable() {
-      if (!((bitField1_ & 0x40000000) != 0)) {
+      if (!((bitField1_ & 0x80000000) != 0)) {
         productDetails_ =
             new java.util.ArrayList<com.google.shopping.merchant.products.v1.ProductDetail>(
                 productDetails_);
-        bitField1_ |= 0x40000000;
+        bitField1_ |= 0x80000000;
       }
     }
 
@@ -20766,7 +27170,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder clearProductDetails() {
       if (productDetailsBuilder_ == null) {
         productDetails_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x40000000);
+        bitField1_ = (bitField1_ & ~0x80000000);
         onChanged();
       } else {
         productDetailsBuilder_.clear();
@@ -20908,7 +27312,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 com.google.shopping.merchant.products.v1.ProductDetail.Builder,
                 com.google.shopping.merchant.products.v1.ProductDetailOrBuilder>(
                 productDetails_,
-                ((bitField1_ & 0x40000000) != 0),
+                ((bitField1_ & 0x80000000) != 0),
                 getParentForChildren(),
                 isClean());
         productDetails_ = null;
@@ -20923,7 +27327,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!productHighlights_.isModifiable()) {
         productHighlights_ = new com.google.protobuf.LazyStringArrayList(productHighlights_);
       }
-      bitField1_ |= 0x80000000;
+      bitField2_ |= 0x00000001;
     }
 
     /**
@@ -21013,7 +27417,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureProductHighlightsIsMutable();
       productHighlights_.set(index, value);
-      bitField1_ |= 0x80000000;
+      bitField2_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -21037,7 +27441,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureProductHighlightsIsMutable();
       productHighlights_.add(value);
-      bitField1_ |= 0x80000000;
+      bitField2_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -21058,7 +27462,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllProductHighlights(java.lang.Iterable<java.lang.String> values) {
       ensureProductHighlightsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, productHighlights_);
-      bitField1_ |= 0x80000000;
+      bitField2_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -21077,7 +27481,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearProductHighlights() {
       productHighlights_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField1_ = (bitField1_ & ~0x80000000);
+      bitField2_ = (bitField2_ & ~0x00000001);
       ;
       onChanged();
       return this;
@@ -21103,7 +27507,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureProductHighlightsIsMutable();
       productHighlights_.add(value);
-      bitField1_ |= 0x80000000;
+      bitField2_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -21122,7 +27526,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the displayAdsId field is set.
      */
     public boolean hasDisplayAdsId() {
-      return ((bitField2_ & 0x00000001) != 0);
+      return ((bitField2_ & 0x00000002) != 0);
     }
 
     /**
@@ -21188,7 +27592,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       displayAdsId_ = value;
-      bitField2_ |= 0x00000001;
+      bitField2_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -21206,7 +27610,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearDisplayAdsId() {
       displayAdsId_ = getDefaultInstance().getDisplayAdsId();
-      bitField2_ = (bitField2_ & ~0x00000001);
+      bitField2_ = (bitField2_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -21229,7 +27633,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       displayAdsId_ = value;
-      bitField2_ |= 0x00000001;
+      bitField2_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -21241,7 +27645,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!displayAdsSimilarIds_.isModifiable()) {
         displayAdsSimilarIds_ = new com.google.protobuf.LazyStringArrayList(displayAdsSimilarIds_);
       }
-      bitField2_ |= 0x00000002;
+      bitField2_ |= 0x00000004;
     }
 
     /**
@@ -21336,7 +27740,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureDisplayAdsSimilarIdsIsMutable();
       displayAdsSimilarIds_.set(index, value);
-      bitField2_ |= 0x00000002;
+      bitField2_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -21361,7 +27765,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureDisplayAdsSimilarIdsIsMutable();
       displayAdsSimilarIds_.add(value);
-      bitField2_ |= 0x00000002;
+      bitField2_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -21383,7 +27787,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllDisplayAdsSimilarIds(java.lang.Iterable<java.lang.String> values) {
       ensureDisplayAdsSimilarIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, displayAdsSimilarIds_);
-      bitField2_ |= 0x00000002;
+      bitField2_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -21403,7 +27807,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearDisplayAdsSimilarIds() {
       displayAdsSimilarIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField2_ = (bitField2_ & ~0x00000002);
+      bitField2_ = (bitField2_ & ~0x00000004);
       ;
       onChanged();
       return this;
@@ -21430,7 +27834,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureDisplayAdsSimilarIdsIsMutable();
       displayAdsSimilarIds_.add(value);
-      bitField2_ |= 0x00000002;
+      bitField2_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -21449,7 +27853,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the displayAdsTitle field is set.
      */
     public boolean hasDisplayAdsTitle() {
-      return ((bitField2_ & 0x00000004) != 0);
+      return ((bitField2_ & 0x00000008) != 0);
     }
 
     /**
@@ -21515,7 +27919,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       displayAdsTitle_ = value;
-      bitField2_ |= 0x00000004;
+      bitField2_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -21533,7 +27937,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearDisplayAdsTitle() {
       displayAdsTitle_ = getDefaultInstance().getDisplayAdsTitle();
-      bitField2_ = (bitField2_ & ~0x00000004);
+      bitField2_ = (bitField2_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -21556,7 +27960,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       displayAdsTitle_ = value;
-      bitField2_ |= 0x00000004;
+      bitField2_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -21576,7 +27980,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the displayAdsLink field is set.
      */
     public boolean hasDisplayAdsLink() {
-      return ((bitField2_ & 0x00000008) != 0);
+      return ((bitField2_ & 0x00000010) != 0);
     }
 
     /**
@@ -21645,7 +28049,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       displayAdsLink_ = value;
-      bitField2_ |= 0x00000008;
+      bitField2_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -21664,7 +28068,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearDisplayAdsLink() {
       displayAdsLink_ = getDefaultInstance().getDisplayAdsLink();
-      bitField2_ = (bitField2_ & ~0x00000008);
+      bitField2_ = (bitField2_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -21688,7 +28092,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       displayAdsLink_ = value;
-      bitField2_ |= 0x00000008;
+      bitField2_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -21710,7 +28114,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasDisplayAdsValue() {
-      return ((bitField2_ & 0x00000010) != 0);
+      return ((bitField2_ & 0x00000020) != 0);
     }
 
     /**
@@ -21748,7 +28152,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder setDisplayAdsValue(double value) {
 
       displayAdsValue_ = value;
-      bitField2_ |= 0x00000010;
+      bitField2_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -21767,7 +28171,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDisplayAdsValue() {
-      bitField2_ = (bitField2_ & ~0x00000010);
+      bitField2_ = (bitField2_ & ~0x00000020);
       displayAdsValue_ = 0D;
       onChanged();
       return this;
@@ -21780,7 +28184,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!promotionIds_.isModifiable()) {
         promotionIds_ = new com.google.protobuf.LazyStringArrayList(promotionIds_);
       }
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000040;
     }
 
     /**
@@ -21865,7 +28269,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensurePromotionIdsIsMutable();
       promotionIds_.set(index, value);
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -21888,7 +28292,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensurePromotionIdsIsMutable();
       promotionIds_.add(value);
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -21908,7 +28312,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllPromotionIds(java.lang.Iterable<java.lang.String> values) {
       ensurePromotionIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, promotionIds_);
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -21926,7 +28330,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearPromotionIds() {
       promotionIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField2_ = (bitField2_ & ~0x00000020);
+      bitField2_ = (bitField2_ & ~0x00000040);
       ;
       onChanged();
       return this;
@@ -21951,7 +28355,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensurePromotionIdsIsMutable();
       promotionIds_.add(value);
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -21972,7 +28376,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasPickupMethod() {
-      return ((bitField2_ & 0x00000040) != 0);
+      return ((bitField2_ & 0x00000080) != 0);
     }
 
     /**
@@ -22007,7 +28411,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setPickupMethodValue(int value) {
       pickupMethod_ = value;
-      bitField2_ |= 0x00000040;
+      bitField2_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -22050,7 +28454,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField2_ |= 0x00000040;
+      bitField2_ |= 0x00000080;
       pickupMethod_ = value.getNumber();
       onChanged();
       return this;
@@ -22069,7 +28473,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPickupMethod() {
-      bitField2_ = (bitField2_ & ~0x00000040);
+      bitField2_ = (bitField2_ & ~0x00000080);
       pickupMethod_ = 0;
       onChanged();
       return this;
@@ -22091,7 +28495,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasPickupSla() {
-      return ((bitField2_ & 0x00000080) != 0);
+      return ((bitField2_ & 0x00000100) != 0);
     }
 
     /**
@@ -22126,7 +28530,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setPickupSlaValue(int value) {
       pickupSla_ = value;
-      bitField2_ |= 0x00000080;
+      bitField2_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -22169,7 +28573,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField2_ |= 0x00000080;
+      bitField2_ |= 0x00000100;
       pickupSla_ = value.getNumber();
       onChanged();
       return this;
@@ -22188,7 +28592,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPickupSla() {
-      bitField2_ = (bitField2_ & ~0x00000080);
+      bitField2_ = (bitField2_ & ~0x00000100);
       pickupSla_ = 0;
       onChanged();
       return this;
@@ -22209,7 +28613,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the linkTemplate field is set.
      */
     public boolean hasLinkTemplate() {
-      return ((bitField2_ & 0x00000100) != 0);
+      return ((bitField2_ & 0x00000200) != 0);
     }
 
     /**
@@ -22278,7 +28682,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       linkTemplate_ = value;
-      bitField2_ |= 0x00000100;
+      bitField2_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -22297,7 +28701,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearLinkTemplate() {
       linkTemplate_ = getDefaultInstance().getLinkTemplate();
-      bitField2_ = (bitField2_ & ~0x00000100);
+      bitField2_ = (bitField2_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -22321,7 +28725,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       linkTemplate_ = value;
-      bitField2_ |= 0x00000100;
+      bitField2_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -22342,7 +28746,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the mobileLinkTemplate field is set.
      */
     public boolean hasMobileLinkTemplate() {
-      return ((bitField2_ & 0x00000200) != 0);
+      return ((bitField2_ & 0x00000400) != 0);
     }
 
     /**
@@ -22414,7 +28818,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       mobileLinkTemplate_ = value;
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -22434,7 +28838,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearMobileLinkTemplate() {
       mobileLinkTemplate_ = getDefaultInstance().getMobileLinkTemplate();
-      bitField2_ = (bitField2_ & ~0x00000200);
+      bitField2_ = (bitField2_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -22459,7 +28863,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       mobileLinkTemplate_ = value;
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -22479,7 +28883,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel0 field is set.
      */
     public boolean hasCustomLabel0() {
-      return ((bitField2_ & 0x00000400) != 0);
+      return ((bitField2_ & 0x00000800) != 0);
     }
 
     /**
@@ -22548,7 +28952,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel0_ = value;
-      bitField2_ |= 0x00000400;
+      bitField2_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -22567,7 +28971,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel0() {
       customLabel0_ = getDefaultInstance().getCustomLabel0();
-      bitField2_ = (bitField2_ & ~0x00000400);
+      bitField2_ = (bitField2_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -22591,7 +28995,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel0_ = value;
-      bitField2_ |= 0x00000400;
+      bitField2_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -22611,7 +29015,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel1 field is set.
      */
     public boolean hasCustomLabel1() {
-      return ((bitField2_ & 0x00000800) != 0);
+      return ((bitField2_ & 0x00001000) != 0);
     }
 
     /**
@@ -22680,7 +29084,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel1_ = value;
-      bitField2_ |= 0x00000800;
+      bitField2_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -22699,7 +29103,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel1() {
       customLabel1_ = getDefaultInstance().getCustomLabel1();
-      bitField2_ = (bitField2_ & ~0x00000800);
+      bitField2_ = (bitField2_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -22723,7 +29127,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel1_ = value;
-      bitField2_ |= 0x00000800;
+      bitField2_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -22743,7 +29147,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel2 field is set.
      */
     public boolean hasCustomLabel2() {
-      return ((bitField2_ & 0x00001000) != 0);
+      return ((bitField2_ & 0x00002000) != 0);
     }
 
     /**
@@ -22812,7 +29216,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel2_ = value;
-      bitField2_ |= 0x00001000;
+      bitField2_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -22831,7 +29235,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel2() {
       customLabel2_ = getDefaultInstance().getCustomLabel2();
-      bitField2_ = (bitField2_ & ~0x00001000);
+      bitField2_ = (bitField2_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -22855,7 +29259,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel2_ = value;
-      bitField2_ |= 0x00001000;
+      bitField2_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -22875,7 +29279,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel3 field is set.
      */
     public boolean hasCustomLabel3() {
-      return ((bitField2_ & 0x00002000) != 0);
+      return ((bitField2_ & 0x00004000) != 0);
     }
 
     /**
@@ -22944,7 +29348,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel3_ = value;
-      bitField2_ |= 0x00002000;
+      bitField2_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -22963,7 +29367,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel3() {
       customLabel3_ = getDefaultInstance().getCustomLabel3();
-      bitField2_ = (bitField2_ & ~0x00002000);
+      bitField2_ = (bitField2_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -22987,7 +29391,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel3_ = value;
-      bitField2_ |= 0x00002000;
+      bitField2_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -23007,7 +29411,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel4 field is set.
      */
     public boolean hasCustomLabel4() {
-      return ((bitField2_ & 0x00004000) != 0);
+      return ((bitField2_ & 0x00008000) != 0);
     }
 
     /**
@@ -23076,7 +29480,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel4_ = value;
-      bitField2_ |= 0x00004000;
+      bitField2_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -23095,7 +29499,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel4() {
       customLabel4_ = getDefaultInstance().getCustomLabel4();
-      bitField2_ = (bitField2_ & ~0x00004000);
+      bitField2_ = (bitField2_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -23119,7 +29523,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel4_ = value;
-      bitField2_ |= 0x00004000;
+      bitField2_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -23128,9 +29532,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureIncludedDestinationsIsMutable() {
-      if (!((bitField2_ & 0x00008000) != 0)) {
+      if (!((bitField2_ & 0x00010000) != 0)) {
         includedDestinations_ = new java.util.ArrayList<java.lang.Integer>(includedDestinations_);
-        bitField2_ |= 0x00008000;
+        bitField2_ |= 0x00010000;
       }
     }
 
@@ -23335,7 +29739,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearIncludedDestinations() {
       includedDestinations_ = java.util.Collections.emptyList();
-      bitField2_ = (bitField2_ & ~0x00008000);
+      bitField2_ = (bitField2_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -23485,9 +29889,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureExcludedDestinationsIsMutable() {
-      if (!((bitField2_ & 0x00010000) != 0)) {
+      if (!((bitField2_ & 0x00020000) != 0)) {
         excludedDestinations_ = new java.util.ArrayList<java.lang.Integer>(excludedDestinations_);
-        bitField2_ |= 0x00010000;
+        bitField2_ |= 0x00020000;
       }
     }
 
@@ -23685,7 +30089,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearExcludedDestinations() {
       excludedDestinations_ = java.util.Collections.emptyList();
-      bitField2_ = (bitField2_ & ~0x00010000);
+      bitField2_ = (bitField2_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -23834,7 +30238,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         shoppingAdsExcludedCountries_ =
             new com.google.protobuf.LazyStringArrayList(shoppingAdsExcludedCountries_);
       }
-      bitField2_ |= 0x00020000;
+      bitField2_ |= 0x00040000;
     }
 
     /**
@@ -23934,7 +30338,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureShoppingAdsExcludedCountriesIsMutable();
       shoppingAdsExcludedCountries_.set(index, value);
-      bitField2_ |= 0x00020000;
+      bitField2_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -23960,7 +30364,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureShoppingAdsExcludedCountriesIsMutable();
       shoppingAdsExcludedCountries_.add(value);
-      bitField2_ |= 0x00020000;
+      bitField2_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -23983,7 +30387,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllShoppingAdsExcludedCountries(java.lang.Iterable<java.lang.String> values) {
       ensureShoppingAdsExcludedCountriesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, shoppingAdsExcludedCountries_);
-      bitField2_ |= 0x00020000;
+      bitField2_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -24004,7 +30408,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearShoppingAdsExcludedCountries() {
       shoppingAdsExcludedCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField2_ = (bitField2_ & ~0x00020000);
+      bitField2_ = (bitField2_ & ~0x00040000);
       ;
       onChanged();
       return this;
@@ -24032,7 +30436,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureShoppingAdsExcludedCountriesIsMutable();
       shoppingAdsExcludedCountries_.add(value);
-      bitField2_ |= 0x00020000;
+      bitField2_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -24053,7 +30457,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the externalSellerId field is set.
      */
     public boolean hasExternalSellerId() {
-      return ((bitField2_ & 0x00040000) != 0);
+      return ((bitField2_ & 0x00080000) != 0);
     }
 
     /**
@@ -24125,7 +30529,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       externalSellerId_ = value;
-      bitField2_ |= 0x00040000;
+      bitField2_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -24145,7 +30549,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearExternalSellerId() {
       externalSellerId_ = getDefaultInstance().getExternalSellerId();
-      bitField2_ = (bitField2_ & ~0x00040000);
+      bitField2_ = (bitField2_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -24170,7 +30574,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       externalSellerId_ = value;
-      bitField2_ |= 0x00040000;
+      bitField2_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -24191,7 +30595,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasPause() {
-      return ((bitField2_ & 0x00080000) != 0);
+      return ((bitField2_ & 0x00100000) != 0);
     }
 
     /**
@@ -24226,7 +30630,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setPauseValue(int value) {
       pause_ = value;
-      bitField2_ |= 0x00080000;
+      bitField2_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -24267,7 +30671,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField2_ |= 0x00080000;
+      bitField2_ |= 0x00100000;
       pause_ = value.getNumber();
       onChanged();
       return this;
@@ -24286,7 +30690,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPause() {
-      bitField2_ = (bitField2_ & ~0x00080000);
+      bitField2_ = (bitField2_ & ~0x00100000);
       pause_ = 0;
       onChanged();
       return this;
@@ -24299,7 +30703,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!lifestyleImageLinks_.isModifiable()) {
         lifestyleImageLinks_ = new com.google.protobuf.LazyStringArrayList(lifestyleImageLinks_);
       }
-      bitField2_ |= 0x00100000;
+      bitField2_ |= 0x00200000;
     }
 
     /**
@@ -24399,7 +30803,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureLifestyleImageLinksIsMutable();
       lifestyleImageLinks_.set(index, value);
-      bitField2_ |= 0x00100000;
+      bitField2_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -24425,7 +30829,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureLifestyleImageLinksIsMutable();
       lifestyleImageLinks_.add(value);
-      bitField2_ |= 0x00100000;
+      bitField2_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -24448,7 +30852,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllLifestyleImageLinks(java.lang.Iterable<java.lang.String> values) {
       ensureLifestyleImageLinksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, lifestyleImageLinks_);
-      bitField2_ |= 0x00100000;
+      bitField2_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -24469,7 +30873,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearLifestyleImageLinks() {
       lifestyleImageLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField2_ = (bitField2_ & ~0x00100000);
+      bitField2_ = (bitField2_ & ~0x00200000);
       ;
       onChanged();
       return this;
@@ -24497,7 +30901,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureLifestyleImageLinksIsMutable();
       lifestyleImageLinks_.add(value);
-      bitField2_ |= 0x00100000;
+      bitField2_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -24506,12 +30910,12 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         cloudExportAdditionalProperties_ = java.util.Collections.emptyList();
 
     private void ensureCloudExportAdditionalPropertiesIsMutable() {
-      if (!((bitField2_ & 0x00200000) != 0)) {
+      if (!((bitField2_ & 0x00400000) != 0)) {
         cloudExportAdditionalProperties_ =
             new java.util.ArrayList<
                 com.google.shopping.merchant.products.v1.CloudExportAdditionalProperties>(
                 cloudExportAdditionalProperties_);
-        bitField2_ |= 0x00200000;
+        bitField2_ |= 0x00400000;
       }
     }
 
@@ -24772,7 +31176,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder clearCloudExportAdditionalProperties() {
       if (cloudExportAdditionalPropertiesBuilder_ == null) {
         cloudExportAdditionalProperties_ = java.util.Collections.emptyList();
-        bitField2_ = (bitField2_ & ~0x00200000);
+        bitField2_ = (bitField2_ & ~0x00400000);
         onChanged();
       } else {
         cloudExportAdditionalPropertiesBuilder_.clear();
@@ -24928,7 +31332,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 com.google.shopping.merchant.products.v1.CloudExportAdditionalProperties.Builder,
                 com.google.shopping.merchant.products.v1.CloudExportAdditionalPropertiesOrBuilder>(
                 cloudExportAdditionalProperties_,
-                ((bitField2_ & 0x00200000) != 0),
+                ((bitField2_ & 0x00400000) != 0),
                 getParentForChildren(),
                 isClean());
         cloudExportAdditionalProperties_ = null;
@@ -24952,7 +31356,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the virtualModelLink field is set.
      */
     public boolean hasVirtualModelLink() {
-      return ((bitField2_ & 0x00400000) != 0);
+      return ((bitField2_ & 0x00800000) != 0);
     }
 
     /**
@@ -25024,7 +31428,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       virtualModelLink_ = value;
-      bitField2_ |= 0x00400000;
+      bitField2_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -25044,7 +31448,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearVirtualModelLink() {
       virtualModelLink_ = getDefaultInstance().getVirtualModelLink();
-      bitField2_ = (bitField2_ & ~0x00400000);
+      bitField2_ = (bitField2_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -25069,7 +31473,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       virtualModelLink_ = value;
-      bitField2_ |= 0x00400000;
+      bitField2_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -25078,11 +31482,11 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         certifications_ = java.util.Collections.emptyList();
 
     private void ensureCertificationsIsMutable() {
-      if (!((bitField2_ & 0x00800000) != 0)) {
+      if (!((bitField2_ & 0x01000000) != 0)) {
         certifications_ =
             new java.util.ArrayList<com.google.shopping.merchant.products.v1.ProductCertification>(
                 certifications_);
-        bitField2_ |= 0x00800000;
+        bitField2_ |= 0x01000000;
       }
     }
 
@@ -25382,7 +31786,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder clearCertifications() {
       if (certificationsBuilder_ == null) {
         certifications_ = java.util.Collections.emptyList();
-        bitField2_ = (bitField2_ & ~0x00800000);
+        bitField2_ = (bitField2_ & ~0x01000000);
         onChanged();
       } else {
         certificationsBuilder_.clear();
@@ -25562,7 +31966,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 com.google.shopping.merchant.products.v1.ProductCertification.Builder,
                 com.google.shopping.merchant.products.v1.ProductCertificationOrBuilder>(
                 certifications_,
-                ((bitField2_ & 0x00800000) != 0),
+                ((bitField2_ & 0x01000000) != 0),
                 getParentForChildren(),
                 isClean());
         certifications_ = null;
@@ -25590,7 +31994,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the structuredTitle field is set.
      */
     public boolean hasStructuredTitle() {
-      return ((bitField2_ & 0x01000000) != 0);
+      return ((bitField2_ & 0x02000000) != 0);
     }
 
     /**
@@ -25635,7 +32039,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         structuredTitleBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x01000000;
+      bitField2_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -25657,7 +32061,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         structuredTitleBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x01000000;
+      bitField2_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -25675,7 +32079,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeStructuredTitle(
         com.google.shopping.merchant.products.v1.StructuredTitle value) {
       if (structuredTitleBuilder_ == null) {
-        if (((bitField2_ & 0x01000000) != 0)
+        if (((bitField2_ & 0x02000000) != 0)
             && structuredTitle_ != null
             && structuredTitle_
                 != com.google.shopping.merchant.products.v1.StructuredTitle.getDefaultInstance()) {
@@ -25687,7 +32091,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         structuredTitleBuilder_.mergeFrom(value);
       }
       if (structuredTitle_ != null) {
-        bitField2_ |= 0x01000000;
+        bitField2_ |= 0x02000000;
         onChanged();
       }
       return this;
@@ -25704,7 +32108,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearStructuredTitle() {
-      bitField2_ = (bitField2_ & ~0x01000000);
+      bitField2_ = (bitField2_ & ~0x02000000);
       structuredTitle_ = null;
       if (structuredTitleBuilder_ != null) {
         structuredTitleBuilder_.dispose();
@@ -25726,7 +32130,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.StructuredTitle.Builder
         getStructuredTitleBuilder() {
-      bitField2_ |= 0x01000000;
+      bitField2_ |= 0x02000000;
       onChanged();
       return getStructuredTitleFieldBuilder().getBuilder();
     }
@@ -25800,7 +32204,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the structuredDescription field is set.
      */
     public boolean hasStructuredDescription() {
-      return ((bitField2_ & 0x02000000) != 0);
+      return ((bitField2_ & 0x04000000) != 0);
     }
 
     /**
@@ -25848,7 +32252,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         structuredDescriptionBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x02000000;
+      bitField2_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -25871,7 +32275,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         structuredDescriptionBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x02000000;
+      bitField2_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -25890,7 +32294,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeStructuredDescription(
         com.google.shopping.merchant.products.v1.StructuredDescription value) {
       if (structuredDescriptionBuilder_ == null) {
-        if (((bitField2_ & 0x02000000) != 0)
+        if (((bitField2_ & 0x04000000) != 0)
             && structuredDescription_ != null
             && structuredDescription_
                 != com.google.shopping.merchant.products.v1.StructuredDescription
@@ -25903,7 +32307,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         structuredDescriptionBuilder_.mergeFrom(value);
       }
       if (structuredDescription_ != null) {
-        bitField2_ |= 0x02000000;
+        bitField2_ |= 0x04000000;
         onChanged();
       }
       return this;
@@ -25921,7 +32325,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearStructuredDescription() {
-      bitField2_ = (bitField2_ & ~0x02000000);
+      bitField2_ = (bitField2_ & ~0x04000000);
       structuredDescription_ = null;
       if (structuredDescriptionBuilder_ != null) {
         structuredDescriptionBuilder_.dispose();
@@ -25944,7 +32348,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.StructuredDescription.Builder
         getStructuredDescriptionBuilder() {
-      bitField2_ |= 0x02000000;
+      bitField2_ |= 0x04000000;
       onChanged();
       return getStructuredDescriptionFieldBuilder().getBuilder();
     }
@@ -26023,7 +32427,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the autoPricingMinPrice field is set.
      */
     public boolean hasAutoPricingMinPrice() {
-      return ((bitField2_ & 0x04000000) != 0);
+      return ((bitField2_ & 0x08000000) != 0);
     }
 
     /**
@@ -26075,7 +32479,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         autoPricingMinPriceBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x04000000;
+      bitField2_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -26100,7 +32504,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         autoPricingMinPriceBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x04000000;
+      bitField2_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -26121,7 +32525,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeAutoPricingMinPrice(com.google.shopping.type.Price value) {
       if (autoPricingMinPriceBuilder_ == null) {
-        if (((bitField2_ & 0x04000000) != 0)
+        if (((bitField2_ & 0x08000000) != 0)
             && autoPricingMinPrice_ != null
             && autoPricingMinPrice_ != com.google.shopping.type.Price.getDefaultInstance()) {
           getAutoPricingMinPriceBuilder().mergeFrom(value);
@@ -26132,7 +32536,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         autoPricingMinPriceBuilder_.mergeFrom(value);
       }
       if (autoPricingMinPrice_ != null) {
-        bitField2_ |= 0x04000000;
+        bitField2_ |= 0x08000000;
         onChanged();
       }
       return this;
@@ -26153,7 +32557,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.type.Price auto_pricing_min_price = 124;</code>
      */
     public Builder clearAutoPricingMinPrice() {
-      bitField2_ = (bitField2_ & ~0x04000000);
+      bitField2_ = (bitField2_ & ~0x08000000);
       autoPricingMinPrice_ = null;
       if (autoPricingMinPriceBuilder_ != null) {
         autoPricingMinPriceBuilder_.dispose();
@@ -26178,7 +32582,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.type.Price auto_pricing_min_price = 124;</code>
      */
     public com.google.shopping.type.Price.Builder getAutoPricingMinPriceBuilder() {
-      bitField2_ |= 0x04000000;
+      bitField2_ |= 0x08000000;
       onChanged();
       return getAutoPricingMinPriceFieldBuilder().getBuilder();
     }
@@ -26242,12 +32646,12 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         sustainabilityIncentives_ = java.util.Collections.emptyList();
 
     private void ensureSustainabilityIncentivesIsMutable() {
-      if (!((bitField2_ & 0x08000000) != 0)) {
+      if (!((bitField2_ & 0x10000000) != 0)) {
         sustainabilityIncentives_ =
             new java.util.ArrayList<
                 com.google.shopping.merchant.products.v1.ProductSustainabilityIncentive>(
                 sustainabilityIncentives_);
-        bitField2_ |= 0x08000000;
+        bitField2_ |= 0x10000000;
       }
     }
 
@@ -26507,7 +32911,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder clearSustainabilityIncentives() {
       if (sustainabilityIncentivesBuilder_ == null) {
         sustainabilityIncentives_ = java.util.Collections.emptyList();
-        bitField2_ = (bitField2_ & ~0x08000000);
+        bitField2_ = (bitField2_ & ~0x10000000);
         onChanged();
       } else {
         sustainabilityIncentivesBuilder_.clear();
@@ -26663,7 +33067,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 com.google.shopping.merchant.products.v1.ProductSustainabilityIncentive.Builder,
                 com.google.shopping.merchant.products.v1.ProductSustainabilityIncentiveOrBuilder>(
                 sustainabilityIncentives_,
-                ((bitField2_ & 0x08000000) != 0),
+                ((bitField2_ & 0x10000000) != 0),
                 getParentForChildren(),
                 isClean());
         sustainabilityIncentives_ = null;

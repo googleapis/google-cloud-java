@@ -121,6 +121,7 @@ public class ReasoningEngineServiceClientTest {
             .setEtag("etag3123477")
             .setContextSpec(ReasoningEngineContextSpec.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -181,6 +182,7 @@ public class ReasoningEngineServiceClientTest {
             .setEtag("etag3123477")
             .setContextSpec(ReasoningEngineContextSpec.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -241,6 +243,7 @@ public class ReasoningEngineServiceClientTest {
             .setEtag("etag3123477")
             .setContextSpec(ReasoningEngineContextSpec.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockReasoningEngineService.addResponse(expectedResponse);
 
@@ -290,6 +293,7 @@ public class ReasoningEngineServiceClientTest {
             .setEtag("etag3123477")
             .setContextSpec(ReasoningEngineContextSpec.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockReasoningEngineService.addResponse(expectedResponse);
 
@@ -427,6 +431,7 @@ public class ReasoningEngineServiceClientTest {
             .setEtag("etag3123477")
             .setContextSpec(ReasoningEngineContextSpec.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

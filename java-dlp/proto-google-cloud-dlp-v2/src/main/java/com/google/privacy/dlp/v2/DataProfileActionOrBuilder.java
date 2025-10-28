@@ -237,8 +237,8 @@ public interface DataProfileActionOrBuilder
    *
    *
    * <pre>
-   * Publishes a portion of each profile to Dataplex Catalog with the aspect
-   * type Sensitive Data Protection Profile.
+   * Publishes a portion of each profile to Dataplex Universal Catalog with
+   * the aspect type Sensitive Data Protection Profile.
    * </pre>
    *
    * <code>
@@ -253,8 +253,8 @@ public interface DataProfileActionOrBuilder
    *
    *
    * <pre>
-   * Publishes a portion of each profile to Dataplex Catalog with the aspect
-   * type Sensitive Data Protection Profile.
+   * Publishes a portion of each profile to Dataplex Universal Catalog with
+   * the aspect type Sensitive Data Protection Profile.
    * </pre>
    *
    * <code>
@@ -270,8 +270,8 @@ public interface DataProfileActionOrBuilder
    *
    *
    * <pre>
-   * Publishes a portion of each profile to Dataplex Catalog with the aspect
-   * type Sensitive Data Protection Profile.
+   * Publishes a portion of each profile to Dataplex Universal Catalog with
+   * the aspect type Sensitive Data Protection Profile.
    * </pre>
    *
    * <code>

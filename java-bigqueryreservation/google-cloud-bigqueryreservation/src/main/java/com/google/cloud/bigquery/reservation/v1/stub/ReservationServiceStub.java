@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.reservation.v1.stub;
 
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListCapacityCommitmentsPagedResponse;
+import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationGroupsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAllAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAssignmentsPagedResponse;
@@ -29,23 +30,29 @@ import com.google.cloud.bigquery.reservation.v1.BiReservation;
 import com.google.cloud.bigquery.reservation.v1.CapacityCommitment;
 import com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest;
+import com.google.cloud.bigquery.reservation.v1.CreateReservationGroupRequest;
 import com.google.cloud.bigquery.reservation.v1.CreateReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest;
+import com.google.cloud.bigquery.reservation.v1.DeleteReservationGroupRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest;
+import com.google.cloud.bigquery.reservation.v1.GetReservationGroupRequest;
 import com.google.cloud.bigquery.reservation.v1.GetReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.ListAssignmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse;
 import com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsResponse;
+import com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest;
+import com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse;
 import com.google.cloud.bigquery.reservation.v1.ListReservationsRequest;
 import com.google.cloud.bigquery.reservation.v1.ListReservationsResponse;
 import com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.Reservation;
+import com.google.cloud.bigquery.reservation.v1.ReservationGroup;
 import com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse;
 import com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest;
@@ -56,6 +63,11 @@ import com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -191,6 +203,43 @@ public abstract class ReservationServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateBiReservationRequest, BiReservation> updateBiReservationCallable() {
     throw new UnsupportedOperationException("Not implemented: updateBiReservationCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public UnaryCallable<CreateReservationGroupRequest, ReservationGroup>
+      createReservationGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: createReservationGroupCallable()");
+  }
+
+  public UnaryCallable<GetReservationGroupRequest, ReservationGroup> getReservationGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: getReservationGroupCallable()");
+  }
+
+  public UnaryCallable<DeleteReservationGroupRequest, Empty> deleteReservationGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteReservationGroupCallable()");
+  }
+
+  public UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsPagedResponse>
+      listReservationGroupsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listReservationGroupsPagedCallable()");
+  }
+
+  public UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsResponse>
+      listReservationGroupsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listReservationGroupsCallable()");
   }
 
   @Override

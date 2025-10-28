@@ -37,6 +37,9 @@
             "CreateCluster": {
               "methods": ["createClusterAsync", "createClusterAsync", "createClusterAsync", "createClusterOperationCallable", "createClusterCallable"]
             },
+            "CreateDatabase": {
+              "methods": ["createDatabase", "createDatabase", "createDatabase", "createDatabaseCallable"]
+            },
             "CreateInstance": {
               "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
             },

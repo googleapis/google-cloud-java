@@ -940,6 +940,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= OrganizationSecurityPoliciesClient =======================
+ *
+ * <p>Service Description: The OrganizationSecurityPolicies API.
+ *
+ * <p>Sample for OrganizationSecurityPoliciesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (OrganizationSecurityPoliciesClient organizationSecurityPoliciesClient =
+ *     OrganizationSecurityPoliciesClient.create()) {
+ *   String securityPolicy = "securityPolicy-788621166";
+ *   SecurityPolicy response = organizationSecurityPoliciesClient.get(securityPolicy);
+ * }
+ * }</pre>
+ *
  * <p>======================= PacketMirroringsClient =======================
  *
  * <p>Service Description: The PacketMirrorings API.
@@ -957,6 +976,25 @@
  *   String region = "region-934795532";
  *   String packetMirroring = "packetMirroring1405520923";
  *   PacketMirroring response = packetMirroringsClient.get(project, region, packetMirroring);
+ * }
+ * }</pre>
+ *
+ * <p>======================= PreviewFeaturesClient =======================
+ *
+ * <p>Service Description: The PreviewFeatures API.
+ *
+ * <p>Sample for PreviewFeaturesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (PreviewFeaturesClient previewFeaturesClient = PreviewFeaturesClient.create()) {
+ *   String project = "project-309310695";
+ *   String previewFeature = "previewFeature-712516082";
+ *   PreviewFeature response = previewFeaturesClient.get(project, previewFeature);
  * }
  * }</pre>
  *

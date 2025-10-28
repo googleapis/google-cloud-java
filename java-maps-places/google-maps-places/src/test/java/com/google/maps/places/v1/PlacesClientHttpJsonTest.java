@@ -389,6 +389,8 @@ public class PlacesClientHttpJsonTest {
             .setReviewSummary(Place.ReviewSummary.newBuilder().build())
             .setEvChargeAmenitySummary(Place.EvChargeAmenitySummary.newBuilder().build())
             .setNeighborhoodSummary(Place.NeighborhoodSummary.newBuilder().build())
+            .setMovedPlace("movedPlace-1127226860")
+            .setMovedPlaceId("movedPlaceId-933251505")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -502,6 +504,8 @@ public class PlacesClientHttpJsonTest {
             .setReviewSummary(Place.ReviewSummary.newBuilder().build())
             .setEvChargeAmenitySummary(Place.EvChargeAmenitySummary.newBuilder().build())
             .setNeighborhoodSummary(Place.NeighborhoodSummary.newBuilder().build())
+            .setMovedPlace("movedPlace-1127226860")
+            .setMovedPlaceId("movedPlaceId-933251505")
             .build();
     mockService.addResponse(expectedResponse);
 

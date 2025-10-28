@@ -40,6 +40,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   private SecurityPolicy() {
+    associations_ = java.util.Collections.emptyList();
     creationTimestamp_ = "";
     description_ = "";
     fingerprint_ = "";
@@ -49,6 +50,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     region_ = "";
     rules_ = java.util.Collections.emptyList();
     selfLink_ = "";
+    shortName_ = "";
     type_ = "";
     userDefinedFields_ = java.util.Collections.emptyList();
   }
@@ -306,6 +308,89 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     return advancedOptionsConfig_ == null
         ? com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.getDefaultInstance()
         : advancedOptionsConfig_;
+  }
+
+  public static final int ASSOCIATIONS_FIELD_NUMBER = 508736530;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.compute.v1.SecurityPolicyAssociation> associations_;
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of associations that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.SecurityPolicyAssociation>
+      getAssociationsList() {
+    return associations_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of associations that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.compute.v1.SecurityPolicyAssociationOrBuilder>
+      getAssociationsOrBuilderList() {
+    return associations_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of associations that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+   * </code>
+   */
+  @java.lang.Override
+  public int getAssociationsCount() {
+    return associations_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of associations that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyAssociation getAssociations(int index) {
+    return associations_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of associations that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyAssociationOrBuilder getAssociationsOrBuilder(
+      int index) {
+    return associations_.get(index);
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
@@ -1163,6 +1248,75 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SHORT_NAME_FIELD_NUMBER = 492051566;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object shortName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>optional string short_name = 492051566;</code>
+   *
+   * @return Whether the shortName field is set.
+   */
+  @java.lang.Override
+  public boolean hasShortName() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>optional string short_name = 492051566;</code>
+   *
+   * @return The shortName.
+   */
+  @java.lang.Override
+  public java.lang.String getShortName() {
+    java.lang.Object ref = shortName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      shortName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>optional string short_name = 492051566;</code>
+   *
+   * @return The bytes for shortName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getShortNameBytes() {
+    java.lang.Object ref = shortName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      shortName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int TYPE_FIELD_NUMBER = 3575610;
 
   @SuppressWarnings("serial")
@@ -1182,7 +1336,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasType() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -1349,7 +1503,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
     for (int i = 0; i < userDefinedFields_.size(); i++) {
@@ -1385,8 +1539,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 492051566, shortName_);
+    }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
+    for (int i = 0; i < associations_.size(); i++) {
+      output.writeMessage(508736530, associations_.get(i));
+    }
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(519006811, getRecaptchaOptionsConfig());
     }
@@ -1408,7 +1568,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
     for (int i = 0; i < userDefinedFields_.size(); i++) {
@@ -1454,6 +1614,9 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(492051566, shortName_);
+    }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetLabels().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
@@ -1463,6 +1626,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
               .setValue(entry.getValue())
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
+    }
+    for (int i = 0; i < associations_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(508736530, associations_.get(i));
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       size +=
@@ -1493,6 +1660,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasAdvancedOptionsConfig()) {
       if (!getAdvancedOptionsConfig().equals(other.getAdvancedOptionsConfig())) return false;
     }
+    if (!getAssociationsList().equals(other.getAssociationsList())) return false;
     if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
     if (hasCreationTimestamp()) {
       if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
@@ -1539,6 +1707,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
     }
+    if (hasShortName() != other.hasShortName()) return false;
+    if (hasShortName()) {
+      if (!getShortName().equals(other.getShortName())) return false;
+    }
     if (hasType() != other.hasType()) return false;
     if (hasType()) {
       if (!getType().equals(other.getType())) return false;
@@ -1562,6 +1734,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasAdvancedOptionsConfig()) {
       hash = (37 * hash) + ADVANCED_OPTIONS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAdvancedOptionsConfig().hashCode();
+    }
+    if (getAssociationsCount() > 0) {
+      hash = (37 * hash) + ASSOCIATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getAssociationsList().hashCode();
     }
     if (hasCreationTimestamp()) {
       hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
@@ -1614,6 +1790,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasShortName()) {
+      hash = (37 * hash) + SHORT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getShortName().hashCode();
     }
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -1788,6 +1968,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getAdaptiveProtectionConfigFieldBuilder();
         getAdvancedOptionsConfigFieldBuilder();
+        getAssociationsFieldBuilder();
         getDdosProtectionConfigFieldBuilder();
         getRecaptchaOptionsConfigFieldBuilder();
         getRulesFieldBuilder();
@@ -1809,6 +1990,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         advancedOptionsConfigBuilder_.dispose();
         advancedOptionsConfigBuilder_ = null;
       }
+      if (associationsBuilder_ == null) {
+        associations_ = java.util.Collections.emptyList();
+      } else {
+        associations_ = null;
+        associationsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       creationTimestamp_ = "";
       ddosProtectionConfig_ = null;
       if (ddosProtectionConfigBuilder_ != null) {
@@ -1834,8 +2022,9 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         rules_ = null;
         rulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       selfLink_ = "";
+      shortName_ = "";
       type_ = "";
       if (userDefinedFieldsBuilder_ == null) {
         userDefinedFields_ = java.util.Collections.emptyList();
@@ -1843,7 +2032,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         userDefinedFields_ = null;
         userDefinedFieldsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       return this;
     }
 
@@ -1880,19 +2069,28 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.SecurityPolicy result) {
+      if (associationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          associations_ = java.util.Collections.unmodifiableList(associations_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.associations_ = associations_;
+      } else {
+        result.associations_ = associationsBuilder_.build();
+      }
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.rules_ = rules_;
       } else {
         result.rules_ = rulesBuilder_.build();
       }
       if (userDefinedFieldsBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)) {
+        if (((bitField0_ & 0x00040000) != 0)) {
           userDefinedFields_ = java.util.Collections.unmodifiableList(userDefinedFields_);
-          bitField0_ = (bitField0_ & ~0x00010000);
+          bitField0_ = (bitField0_ & ~0x00040000);
         }
         result.userDefinedFields_ = userDefinedFields_;
       } else {
@@ -1917,63 +2115,67 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
                 : advancedOptionsConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.creationTimestamp_ = creationTimestamp_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.ddosProtectionConfig_ =
             ddosProtectionConfigBuilder_ == null
                 ? ddosProtectionConfig_
                 : ddosProtectionConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.description_ = description_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.fingerprint_ = fingerprint_;
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.id_ = id_;
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.kind_ = kind_;
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.labelFingerprint_ = labelFingerprint_;
         to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.name_ = name_;
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.recaptchaOptionsConfig_ =
             recaptchaOptionsConfigBuilder_ == null
                 ? recaptchaOptionsConfig_
                 : recaptchaOptionsConfigBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.region_ = region_;
         to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00001000;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.type_ = type_;
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.shortName_ = shortName_;
         to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.type_ = type_;
+        to_bitField0_ |= 0x00004000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2029,9 +2231,36 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAdvancedOptionsConfig()) {
         mergeAdvancedOptionsConfig(other.getAdvancedOptionsConfig());
       }
+      if (associationsBuilder_ == null) {
+        if (!other.associations_.isEmpty()) {
+          if (associations_.isEmpty()) {
+            associations_ = other.associations_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureAssociationsIsMutable();
+            associations_.addAll(other.associations_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.associations_.isEmpty()) {
+          if (associationsBuilder_.isEmpty()) {
+            associationsBuilder_.dispose();
+            associationsBuilder_ = null;
+            associations_ = other.associations_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            associationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAssociationsFieldBuilder()
+                    : null;
+          } else {
+            associationsBuilder_.addAllMessages(other.associations_);
+          }
+        }
+      }
       if (other.hasCreationTimestamp()) {
         creationTimestamp_ = other.creationTimestamp_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasDdosProtectionConfig()) {
@@ -2039,12 +2268,12 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDescription()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasFingerprint()) {
         fingerprint_ = other.fingerprint_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasId()) {
@@ -2052,19 +2281,19 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasLabelFingerprint()) {
         labelFingerprint_ = other.labelFingerprint_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasRecaptchaOptionsConfig()) {
@@ -2072,14 +2301,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (rulesBuilder_ == null) {
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -2092,7 +2321,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -2104,19 +2333,24 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      if (other.hasShortName()) {
+        shortName_ = other.shortName_;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasType()) {
         type_ = other.type_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (userDefinedFieldsBuilder_ == null) {
         if (!other.userDefinedFields_.isEmpty()) {
           if (userDefinedFields_.isEmpty()) {
             userDefinedFields_ = other.userDefinedFields_;
-            bitField0_ = (bitField0_ & ~0x00010000);
+            bitField0_ = (bitField0_ & ~0x00040000);
           } else {
             ensureUserDefinedFieldsIsMutable();
             userDefinedFields_.addAll(other.userDefinedFields_);
@@ -2129,7 +2363,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             userDefinedFieldsBuilder_.dispose();
             userDefinedFieldsBuilder_ = null;
             userDefinedFields_ = other.userDefinedFields_;
-            bitField0_ = (bitField0_ & ~0x00010000);
+            bitField0_ = (bitField0_ & ~0x00040000);
             userDefinedFieldsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getUserDefinedFieldsFieldBuilder()
@@ -2168,25 +2402,25 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             case 26840:
               {
                 id_ = input.readUInt64();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26840
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 26989658
             case 28604882:
               {
                 type_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 28604882
             case 226501914:
@@ -2206,14 +2440,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             case 244202930:
               {
                 creationTimestamp_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 244202930
             case 402526826:
               {
                 input.readMessage(
                     getDdosProtectionConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 402526826
             case 870991802:
@@ -2232,7 +2466,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 1111570338
             case 1201925882:
@@ -2245,19 +2479,19 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             case 1424998602:
               {
                 labelFingerprint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 1424998602
             case 1877428002:
               {
                 fingerprint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 1877428002
             case -911466526:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case -911466526
             case -700756478:
@@ -2270,9 +2504,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case -645248918
+            case -358554766:
+              {
+                shortName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case -358554766
             case -293404678:
               {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
@@ -2282,14 +2522,28 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -293404678
+            case -225075054:
+              {
+                com.google.cloud.compute.v1.SecurityPolicyAssociation m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.SecurityPolicyAssociation.parser(),
+                        extensionRegistry);
+                if (associationsBuilder_ == null) {
+                  ensureAssociationsIsMutable();
+                  associations_.add(m);
+                } else {
+                  associationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case -225075054
             case -142912806:
               {
                 input.readMessage(
                     getRecaptchaOptionsConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case -142912806
             default:
@@ -2647,6 +2901,401 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       return advancedOptionsConfigBuilder_;
     }
 
+    private java.util.List<com.google.cloud.compute.v1.SecurityPolicyAssociation> associations_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAssociationsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        associations_ =
+            new java.util.ArrayList<com.google.cloud.compute.v1.SecurityPolicyAssociation>(
+                associations_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyAssociation,
+            com.google.cloud.compute.v1.SecurityPolicyAssociation.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyAssociationOrBuilder>
+        associationsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.SecurityPolicyAssociation>
+        getAssociationsList() {
+      if (associationsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(associations_);
+      } else {
+        return associationsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public int getAssociationsCount() {
+      if (associationsBuilder_ == null) {
+        return associations_.size();
+      } else {
+        return associationsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyAssociation getAssociations(int index) {
+      if (associationsBuilder_ == null) {
+        return associations_.get(index);
+      } else {
+        return associationsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public Builder setAssociations(
+        int index, com.google.cloud.compute.v1.SecurityPolicyAssociation value) {
+      if (associationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAssociationsIsMutable();
+        associations_.set(index, value);
+        onChanged();
+      } else {
+        associationsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public Builder setAssociations(
+        int index, com.google.cloud.compute.v1.SecurityPolicyAssociation.Builder builderForValue) {
+      if (associationsBuilder_ == null) {
+        ensureAssociationsIsMutable();
+        associations_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        associationsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public Builder addAssociations(com.google.cloud.compute.v1.SecurityPolicyAssociation value) {
+      if (associationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAssociationsIsMutable();
+        associations_.add(value);
+        onChanged();
+      } else {
+        associationsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public Builder addAssociations(
+        int index, com.google.cloud.compute.v1.SecurityPolicyAssociation value) {
+      if (associationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAssociationsIsMutable();
+        associations_.add(index, value);
+        onChanged();
+      } else {
+        associationsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public Builder addAssociations(
+        com.google.cloud.compute.v1.SecurityPolicyAssociation.Builder builderForValue) {
+      if (associationsBuilder_ == null) {
+        ensureAssociationsIsMutable();
+        associations_.add(builderForValue.build());
+        onChanged();
+      } else {
+        associationsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public Builder addAssociations(
+        int index, com.google.cloud.compute.v1.SecurityPolicyAssociation.Builder builderForValue) {
+      if (associationsBuilder_ == null) {
+        ensureAssociationsIsMutable();
+        associations_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        associationsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public Builder addAllAssociations(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.SecurityPolicyAssociation>
+            values) {
+      if (associationsBuilder_ == null) {
+        ensureAssociationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, associations_);
+        onChanged();
+      } else {
+        associationsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public Builder clearAssociations() {
+      if (associationsBuilder_ == null) {
+        associations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        associationsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public Builder removeAssociations(int index) {
+      if (associationsBuilder_ == null) {
+        ensureAssociationsIsMutable();
+        associations_.remove(index);
+        onChanged();
+      } else {
+        associationsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyAssociation.Builder getAssociationsBuilder(
+        int index) {
+      return getAssociationsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyAssociationOrBuilder getAssociationsOrBuilder(
+        int index) {
+      if (associationsBuilder_ == null) {
+        return associations_.get(index);
+      } else {
+        return associationsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.compute.v1.SecurityPolicyAssociationOrBuilder>
+        getAssociationsOrBuilderList() {
+      if (associationsBuilder_ != null) {
+        return associationsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(associations_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyAssociation.Builder addAssociationsBuilder() {
+      return getAssociationsFieldBuilder()
+          .addBuilder(com.google.cloud.compute.v1.SecurityPolicyAssociation.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyAssociation.Builder addAssociationsBuilder(
+        int index) {
+      return getAssociationsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.compute.v1.SecurityPolicyAssociation.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of associations that belong to this policy.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.SecurityPolicyAssociation associations = 508736530;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.SecurityPolicyAssociation.Builder>
+        getAssociationsBuilderList() {
+      return getAssociationsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyAssociation,
+            com.google.cloud.compute.v1.SecurityPolicyAssociation.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyAssociationOrBuilder>
+        getAssociationsFieldBuilder() {
+      if (associationsBuilder_ == null) {
+        associationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.SecurityPolicyAssociation,
+                com.google.cloud.compute.v1.SecurityPolicyAssociation.Builder,
+                com.google.cloud.compute.v1.SecurityPolicyAssociationOrBuilder>(
+                associations_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+        associations_ = null;
+      }
+      return associationsBuilder_;
+    }
+
     private java.lang.Object creationTimestamp_ = "";
 
     /**
@@ -2661,7 +3310,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the creationTimestamp field is set.
      */
     public boolean hasCreationTimestamp() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -2727,7 +3376,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       creationTimestamp_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2745,7 +3394,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCreationTimestamp() {
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2768,7 +3417,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       creationTimestamp_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2788,7 +3437,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ddosProtectionConfig field is set.
      */
     public boolean hasDdosProtectionConfig() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -2824,7 +3473,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         ddosProtectionConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2841,7 +3490,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         ddosProtectionConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2854,7 +3503,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDdosProtectionConfig(
         com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig value) {
       if (ddosProtectionConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && ddosProtectionConfig_ != null
             && ddosProtectionConfig_
                 != com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig
@@ -2867,7 +3516,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         ddosProtectionConfigBuilder_.mergeFrom(value);
       }
       if (ddosProtectionConfig_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -2879,7 +3528,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDdosProtectionConfig() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       ddosProtectionConfig_ = null;
       if (ddosProtectionConfigBuilder_ != null) {
         ddosProtectionConfigBuilder_.dispose();
@@ -2896,7 +3545,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.Builder
         getDdosProtectionConfigBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getDdosProtectionConfigFieldBuilder().getBuilder();
     }
@@ -2953,7 +3602,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -3019,7 +3668,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3037,7 +3686,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3060,7 +3709,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3079,7 +3728,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -3145,7 +3794,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       fingerprint_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3163,7 +3812,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFingerprint() {
       fingerprint_ = getDefaultInstance().getFingerprint();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3186,7 +3835,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       fingerprint_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3206,7 +3855,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -3240,7 +3889,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder setId(long value) {
 
       id_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3257,7 +3906,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       id_ = 0L;
       onChanged();
       return this;
@@ -3277,7 +3926,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -3343,7 +3992,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3361,7 +4010,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3384,7 +4033,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3403,7 +4052,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the labelFingerprint field is set.
      */
     public boolean hasLabelFingerprint() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -3469,7 +4118,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       labelFingerprint_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3487,7 +4136,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLabelFingerprint() {
       labelFingerprint_ = getDefaultInstance().getLabelFingerprint();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3510,7 +4159,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       labelFingerprint_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3532,7 +4181,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return labels_;
     }
@@ -3622,7 +4271,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3647,7 +4296,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -3668,7 +4317,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       return this;
     }
 
@@ -3683,7 +4332,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       return this;
     }
 
@@ -3701,7 +4350,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -3767,7 +4416,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3785,7 +4434,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3808,7 +4457,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3829,7 +4478,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the recaptchaOptionsConfig field is set.
      */
     public boolean hasRecaptchaOptionsConfig() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -3865,7 +4514,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         recaptchaOptionsConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3882,7 +4531,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         recaptchaOptionsConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3895,7 +4544,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeRecaptchaOptionsConfig(
         com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig value) {
       if (recaptchaOptionsConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && recaptchaOptionsConfig_ != null
             && recaptchaOptionsConfig_
                 != com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig
@@ -3908,7 +4557,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         recaptchaOptionsConfigBuilder_.mergeFrom(value);
       }
       if (recaptchaOptionsConfig_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -3920,7 +4569,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRecaptchaOptionsConfig() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       recaptchaOptionsConfig_ = null;
       if (recaptchaOptionsConfigBuilder_ != null) {
         recaptchaOptionsConfigBuilder_.dispose();
@@ -3937,7 +4586,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.Builder
         getRecaptchaOptionsConfigBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getRecaptchaOptionsConfigFieldBuilder().getBuilder();
     }
@@ -3994,7 +4643,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -4060,7 +4709,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4078,7 +4727,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4101,7 +4750,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4110,9 +4759,9 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.SecurityPolicyRule>(rules_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
       }
     }
 
@@ -4338,7 +4987,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -4467,7 +5116,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.SecurityPolicyRule,
                 com.google.cloud.compute.v1.SecurityPolicyRule.Builder,
                 com.google.cloud.compute.v1.SecurityPolicyRuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00002000) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;
@@ -4487,7 +5136,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -4553,7 +5202,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4571,7 +5220,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4594,7 +5243,133 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object shortName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>optional string short_name = 492051566;</code>
+     *
+     * @return Whether the shortName field is set.
+     */
+    public boolean hasShortName() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>optional string short_name = 492051566;</code>
+     *
+     * @return The shortName.
+     */
+    public java.lang.String getShortName() {
+      java.lang.Object ref = shortName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shortName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>optional string short_name = 492051566;</code>
+     *
+     * @return The bytes for shortName.
+     */
+    public com.google.protobuf.ByteString getShortNameBytes() {
+      java.lang.Object ref = shortName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        shortName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>optional string short_name = 492051566;</code>
+     *
+     * @param value The shortName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShortName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      shortName_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>optional string short_name = 492051566;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearShortName() {
+      shortName_ = getDefaultInstance().getShortName();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>optional string short_name = 492051566;</code>
+     *
+     * @param value The bytes for shortName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShortNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      shortName_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4614,7 +5389,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -4683,7 +5458,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       type_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4702,7 +5477,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearType() {
       type_ = getDefaultInstance().getType();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -4726,7 +5501,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       type_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4735,11 +5510,11 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         userDefinedFields_ = java.util.Collections.emptyList();
 
     private void ensureUserDefinedFieldsIsMutable() {
-      if (!((bitField0_ & 0x00010000) != 0)) {
+      if (!((bitField0_ & 0x00040000) != 0)) {
         userDefinedFields_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.SecurityPolicyUserDefinedField>(
                 userDefinedFields_);
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00040000;
       }
     }
 
@@ -4995,7 +5770,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearUserDefinedFields() {
       if (userDefinedFieldsBuilder_ == null) {
         userDefinedFields_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         onChanged();
       } else {
         userDefinedFieldsBuilder_.clear();
@@ -5147,7 +5922,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.SecurityPolicyUserDefinedField.Builder,
                 com.google.cloud.compute.v1.SecurityPolicyUserDefinedFieldOrBuilder>(
                 userDefinedFields_,
-                ((bitField0_ & 0x00010000) != 0),
+                ((bitField0_ & 0x00040000) != 0),
                 getParentForChildren(),
                 isClean());
         userDefinedFields_ = null;

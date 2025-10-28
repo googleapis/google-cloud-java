@@ -48,6 +48,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   private ShipmentModel() {
     shipments_ = java.util.Collections.emptyList();
     vehicles_ = java.util.Collections.emptyList();
+    objectives_ = java.util.Collections.emptyList();
     durationDistanceMatrices_ = java.util.Collections.emptyList();
     durationDistanceMatrixSrcTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     durationDistanceMatrixDstTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -76,6 +77,1110 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.maps.routeoptimization.v1.ShipmentModel.class,
             com.google.maps.routeoptimization.v1.ShipmentModel.Builder.class);
+  }
+
+  public interface ObjectiveOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.maps.routeoptimization.v1.ShipmentModel.Objective)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the objective.
+     * </pre>
+     *
+     * <code>optional .google.maps.routeoptimization.v1.ShipmentModel.Objective.Type type = 1;
+     * </code>
+     *
+     * @return Whether the type field is set.
+     */
+    boolean hasType();
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the objective.
+     * </pre>
+     *
+     * <code>optional .google.maps.routeoptimization.v1.ShipmentModel.Objective.Type type = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the objective.
+     * </pre>
+     *
+     * <code>optional .google.maps.routeoptimization.v1.ShipmentModel.Objective.Type type = 1;
+     * </code>
+     *
+     * @return The type.
+     */
+    com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Type getType();
+
+    /**
+     *
+     *
+     * <pre>
+     * How much this objective should count relatively to the others. This can
+     * be any non-negative number, weights do not have to sum to 1. Weights
+     * default to 1.0.
+     * </pre>
+     *
+     * <code>optional double weight = 2;</code>
+     *
+     * @return Whether the weight field is set.
+     */
+    boolean hasWeight();
+
+    /**
+     *
+     *
+     * <pre>
+     * How much this objective should count relatively to the others. This can
+     * be any non-negative number, weights do not have to sum to 1. Weights
+     * default to 1.0.
+     * </pre>
+     *
+     * <code>optional double weight = 2;</code>
+     *
+     * @return The weight.
+     */
+    double getWeight();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Objectives replace the cost model completely, and are therefore
+   * incompatible with pre-existing costs. Each objective maps to a number of
+   * pre-defined costs for, e.g., vehicles, shipments or transition attributes.
+   *
+   * Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+   * for more details.
+   * </pre>
+   *
+   * Protobuf type {@code google.maps.routeoptimization.v1.ShipmentModel.Objective}
+   */
+  public static final class Objective extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.ShipmentModel.Objective)
+      ObjectiveOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use Objective.newBuilder() to construct.
+    private Objective(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Objective() {
+      type_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Objective();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.maps.routeoptimization.v1.RouteOptimizationServiceProto
+          .internal_static_google_maps_routeoptimization_v1_ShipmentModel_Objective_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.maps.routeoptimization.v1.RouteOptimizationServiceProto
+          .internal_static_google_maps_routeoptimization_v1_ShipmentModel_Objective_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.maps.routeoptimization.v1.ShipmentModel.Objective.class,
+              com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The objective type that will be mapped to a set of costs.
+     * </pre>
+     *
+     * Protobuf enum {@code google.maps.routeoptimization.v1.ShipmentModel.Objective.Type}
+     */
+    public enum Type implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * A default set of costs will be used, to ensure a reasonable solution.
+       * Note: this objective can be used on its own, but will also always be
+       * added with weight 1.0, as a baseline, to the objectives specified by
+       * the user, if it's not already present.
+       * </pre>
+       *
+       * <code>DEFAULT = 0;</code>
+       */
+      DEFAULT(0),
+      /**
+       *
+       *
+       * <pre>
+       * "MIN" objectives.
+       * Minimize the total distance traveled.
+       * </pre>
+       *
+       * <code>MIN_DISTANCE = 10;</code>
+       */
+      MIN_DISTANCE(10),
+      /**
+       *
+       *
+       * <pre>
+       * Minimize the total working time, summed over all vehicles.
+       * </pre>
+       *
+       * <code>MIN_WORKING_TIME = 11;</code>
+       */
+      MIN_WORKING_TIME(11),
+      /**
+       *
+       *
+       * <pre>
+       * Same as above but focusing on travel time only.
+       * </pre>
+       *
+       * <code>MIN_TRAVEL_TIME = 12;</code>
+       */
+      MIN_TRAVEL_TIME(12),
+      /**
+       *
+       *
+       * <pre>
+       * Minimize the number of vehicles used.
+       * </pre>
+       *
+       * <code>MIN_NUM_VEHICLES = 13;</code>
+       */
+      MIN_NUM_VEHICLES(13),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * A default set of costs will be used, to ensure a reasonable solution.
+       * Note: this objective can be used on its own, but will also always be
+       * added with weight 1.0, as a baseline, to the objectives specified by
+       * the user, if it's not already present.
+       * </pre>
+       *
+       * <code>DEFAULT = 0;</code>
+       */
+      public static final int DEFAULT_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * "MIN" objectives.
+       * Minimize the total distance traveled.
+       * </pre>
+       *
+       * <code>MIN_DISTANCE = 10;</code>
+       */
+      public static final int MIN_DISTANCE_VALUE = 10;
+
+      /**
+       *
+       *
+       * <pre>
+       * Minimize the total working time, summed over all vehicles.
+       * </pre>
+       *
+       * <code>MIN_WORKING_TIME = 11;</code>
+       */
+      public static final int MIN_WORKING_TIME_VALUE = 11;
+
+      /**
+       *
+       *
+       * <pre>
+       * Same as above but focusing on travel time only.
+       * </pre>
+       *
+       * <code>MIN_TRAVEL_TIME = 12;</code>
+       */
+      public static final int MIN_TRAVEL_TIME_VALUE = 12;
+
+      /**
+       *
+       *
+       * <pre>
+       * Minimize the number of vehicles used.
+       * </pre>
+       *
+       * <code>MIN_NUM_VEHICLES = 13;</code>
+       */
+      public static final int MIN_NUM_VEHICLES_VALUE = 13;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0:
+            return DEFAULT;
+          case 10:
+            return MIN_DISTANCE;
+          case 11:
+            return MIN_WORKING_TIME;
+          case 12:
+            return MIN_TRAVEL_TIME;
+          case 13:
+            return MIN_NUM_VEHICLES;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+            public Type findValueByNumber(int number) {
+              return Type.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.maps.routeoptimization.v1.ShipmentModel.Objective.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.maps.routeoptimization.v1.ShipmentModel.Objective.Type)
+    }
+
+    private int bitField0_;
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the objective.
+     * </pre>
+     *
+     * <code>optional .google.maps.routeoptimization.v1.ShipmentModel.Objective.Type type = 1;
+     * </code>
+     *
+     * @return Whether the type field is set.
+     */
+    @java.lang.Override
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the objective.
+     * </pre>
+     *
+     * <code>optional .google.maps.routeoptimization.v1.ShipmentModel.Objective.Type type = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the objective.
+     * </pre>
+     *
+     * <code>optional .google.maps.routeoptimization.v1.ShipmentModel.Objective.Type type = 1;
+     * </code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Type getType() {
+      com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Type result =
+          com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Type.forNumber(type_);
+      return result == null
+          ? com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Type.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int WEIGHT_FIELD_NUMBER = 2;
+    private double weight_ = 0D;
+
+    /**
+     *
+     *
+     * <pre>
+     * How much this objective should count relatively to the others. This can
+     * be any non-negative number, weights do not have to sum to 1. Weights
+     * default to 1.0.
+     * </pre>
+     *
+     * <code>optional double weight = 2;</code>
+     *
+     * @return Whether the weight field is set.
+     */
+    @java.lang.Override
+    public boolean hasWeight() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * How much this objective should count relatively to the others. This can
+     * be any non-negative number, weights do not have to sum to 1. Weights
+     * default to 1.0.
+     * </pre>
+     *
+     * <code>optional double weight = 2;</code>
+     *
+     * @return The weight.
+     */
+    @java.lang.Override
+    public double getWeight() {
+      return weight_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeEnum(1, type_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeDouble(2, weight_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, weight_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.maps.routeoptimization.v1.ShipmentModel.Objective)) {
+        return super.equals(obj);
+      }
+      com.google.maps.routeoptimization.v1.ShipmentModel.Objective other =
+          (com.google.maps.routeoptimization.v1.ShipmentModel.Objective) obj;
+
+      if (hasType() != other.hasType()) return false;
+      if (hasType()) {
+        if (type_ != other.type_) return false;
+      }
+      if (hasWeight() != other.hasWeight()) return false;
+      if (hasWeight()) {
+        if (java.lang.Double.doubleToLongBits(getWeight())
+            != java.lang.Double.doubleToLongBits(other.getWeight())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasType()) {
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + type_;
+      }
+      if (hasWeight()) {
+        hash = (37 * hash) + WEIGHT_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getWeight()));
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.maps.routeoptimization.v1.ShipmentModel.Objective parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routeoptimization.v1.ShipmentModel.Objective parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routeoptimization.v1.ShipmentModel.Objective parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routeoptimization.v1.ShipmentModel.Objective parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routeoptimization.v1.ShipmentModel.Objective parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routeoptimization.v1.ShipmentModel.Objective parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routeoptimization.v1.ShipmentModel.Objective parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routeoptimization.v1.ShipmentModel.Objective parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routeoptimization.v1.ShipmentModel.Objective parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routeoptimization.v1.ShipmentModel.Objective parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routeoptimization.v1.ShipmentModel.Objective parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routeoptimization.v1.ShipmentModel.Objective parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.maps.routeoptimization.v1.ShipmentModel.Objective prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Objectives replace the cost model completely, and are therefore
+     * incompatible with pre-existing costs. Each objective maps to a number of
+     * pre-defined costs for, e.g., vehicles, shipments or transition attributes.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.routeoptimization.v1.ShipmentModel.Objective}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.maps.routeoptimization.v1.ShipmentModel.Objective)
+        com.google.maps.routeoptimization.v1.ShipmentModel.ObjectiveOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.routeoptimization.v1.RouteOptimizationServiceProto
+            .internal_static_google_maps_routeoptimization_v1_ShipmentModel_Objective_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.routeoptimization.v1.RouteOptimizationServiceProto
+            .internal_static_google_maps_routeoptimization_v1_ShipmentModel_Objective_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.routeoptimization.v1.ShipmentModel.Objective.class,
+                com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Builder.class);
+      }
+
+      // Construct using com.google.maps.routeoptimization.v1.ShipmentModel.Objective.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        type_ = 0;
+        weight_ = 0D;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.maps.routeoptimization.v1.RouteOptimizationServiceProto
+            .internal_static_google_maps_routeoptimization_v1_ShipmentModel_Objective_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routeoptimization.v1.ShipmentModel.Objective
+          getDefaultInstanceForType() {
+        return com.google.maps.routeoptimization.v1.ShipmentModel.Objective.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.maps.routeoptimization.v1.ShipmentModel.Objective build() {
+        com.google.maps.routeoptimization.v1.ShipmentModel.Objective result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routeoptimization.v1.ShipmentModel.Objective buildPartial() {
+        com.google.maps.routeoptimization.v1.ShipmentModel.Objective result =
+            new com.google.maps.routeoptimization.v1.ShipmentModel.Objective(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.maps.routeoptimization.v1.ShipmentModel.Objective result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.weight_ = weight_;
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.maps.routeoptimization.v1.ShipmentModel.Objective) {
+          return mergeFrom((com.google.maps.routeoptimization.v1.ShipmentModel.Objective) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.maps.routeoptimization.v1.ShipmentModel.Objective other) {
+        if (other
+            == com.google.maps.routeoptimization.v1.ShipmentModel.Objective.getDefaultInstance())
+          return this;
+        if (other.hasType()) {
+          setType(other.getType());
+        }
+        if (other.hasWeight()) {
+          setWeight(other.getWeight());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  type_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 17:
+                {
+                  weight_ = input.readDouble();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 17
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int type_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of the objective.
+       * </pre>
+       *
+       * <code>optional .google.maps.routeoptimization.v1.ShipmentModel.Objective.Type type = 1;
+       * </code>
+       *
+       * @return Whether the type field is set.
+       */
+      @java.lang.Override
+      public boolean hasType() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of the objective.
+       * </pre>
+       *
+       * <code>optional .google.maps.routeoptimization.v1.ShipmentModel.Objective.Type type = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override
+      public int getTypeValue() {
+        return type_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of the objective.
+       * </pre>
+       *
+       * <code>optional .google.maps.routeoptimization.v1.ShipmentModel.Objective.Type type = 1;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of the objective.
+       * </pre>
+       *
+       * <code>optional .google.maps.routeoptimization.v1.ShipmentModel.Objective.Type type = 1;
+       * </code>
+       *
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Type getType() {
+        com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Type result =
+            com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Type.forNumber(type_);
+        return result == null
+            ? com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Type.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of the objective.
+       * </pre>
+       *
+       * <code>optional .google.maps.routeoptimization.v1.ShipmentModel.Objective.Type type = 1;
+       * </code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of the objective.
+       * </pre>
+       *
+       * <code>optional .google.maps.routeoptimization.v1.ShipmentModel.Objective.Type type = 1;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private double weight_;
+
+      /**
+       *
+       *
+       * <pre>
+       * How much this objective should count relatively to the others. This can
+       * be any non-negative number, weights do not have to sum to 1. Weights
+       * default to 1.0.
+       * </pre>
+       *
+       * <code>optional double weight = 2;</code>
+       *
+       * @return Whether the weight field is set.
+       */
+      @java.lang.Override
+      public boolean hasWeight() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * How much this objective should count relatively to the others. This can
+       * be any non-negative number, weights do not have to sum to 1. Weights
+       * default to 1.0.
+       * </pre>
+       *
+       * <code>optional double weight = 2;</code>
+       *
+       * @return The weight.
+       */
+      @java.lang.Override
+      public double getWeight() {
+        return weight_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * How much this objective should count relatively to the others. This can
+       * be any non-negative number, weights do not have to sum to 1. Weights
+       * default to 1.0.
+       * </pre>
+       *
+       * <code>optional double weight = 2;</code>
+       *
+       * @param value The weight to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWeight(double value) {
+
+        weight_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * How much this objective should count relatively to the others. This can
+       * be any non-negative number, weights do not have to sum to 1. Weights
+       * default to 1.0.
+       * </pre>
+       *
+       * <code>optional double weight = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearWeight() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        weight_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.maps.routeoptimization.v1.ShipmentModel.Objective)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.maps.routeoptimization.v1.ShipmentModel.Objective)
+    private static final com.google.maps.routeoptimization.v1.ShipmentModel.Objective
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.maps.routeoptimization.v1.ShipmentModel.Objective();
+    }
+
+    public static com.google.maps.routeoptimization.v1.ShipmentModel.Objective
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Objective> PARSER =
+        new com.google.protobuf.AbstractParser<Objective>() {
+          @java.lang.Override
+          public Objective parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Objective> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Objective> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.maps.routeoptimization.v1.ShipmentModel.Objective
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public interface DurationDistanceMatrixOrBuilder
@@ -4451,6 +5556,130 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     return vehicles_.get(index);
   }
 
+  public static final int OBJECTIVES_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.maps.routeoptimization.v1.ShipmentModel.Objective> objectives_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The set of objectives for this model, that we will transform into costs.
+   * If not empty, the input model has to be costless.
+   * To obtain the modified request, please use `solving_mode` =
+   * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+   * be solved in this case. See corresponding documentation.
+   *
+   * Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.maps.routeoptimization.v1.ShipmentModel.Objective>
+      getObjectivesList() {
+    return objectives_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The set of objectives for this model, that we will transform into costs.
+   * If not empty, the input model has to be costless.
+   * To obtain the modified request, please use `solving_mode` =
+   * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+   * be solved in this case. See corresponding documentation.
+   *
+   * Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.maps.routeoptimization.v1.ShipmentModel.ObjectiveOrBuilder>
+      getObjectivesOrBuilderList() {
+    return objectives_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The set of objectives for this model, that we will transform into costs.
+   * If not empty, the input model has to be costless.
+   * To obtain the modified request, please use `solving_mode` =
+   * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+   * be solved in this case. See corresponding documentation.
+   *
+   * Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+   * </code>
+   */
+  @java.lang.Override
+  public int getObjectivesCount() {
+    return objectives_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The set of objectives for this model, that we will transform into costs.
+   * If not empty, the input model has to be costless.
+   * To obtain the modified request, please use `solving_mode` =
+   * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+   * be solved in this case. See corresponding documentation.
+   *
+   * Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.maps.routeoptimization.v1.ShipmentModel.Objective getObjectives(int index) {
+    return objectives_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The set of objectives for this model, that we will transform into costs.
+   * If not empty, the input model has to be costless.
+   * To obtain the modified request, please use `solving_mode` =
+   * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+   * be solved in this case. See corresponding documentation.
+   *
+   * Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+   * for more details.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.maps.routeoptimization.v1.ShipmentModel.ObjectiveOrBuilder
+      getObjectivesOrBuilder(int index) {
+    return objectives_.get(index);
+  }
+
   public static final int MAX_ACTIVE_VEHICLES_FIELD_NUMBER = 4;
   private int maxActiveVehicles_ = 0;
 
@@ -4703,7 +5932,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * }
    * ```
    *
-   *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
    *   matrix "fast".
@@ -4805,7 +6033,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    *   }
    * }
    * ```
-   *
    *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
@@ -4911,7 +6138,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    * }
    * ```
    *
-   *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
    *   matrix "fast".
@@ -5012,7 +6238,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    *   }
    * }
    * ```
-   *
    *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
@@ -5115,7 +6340,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    *   }
    * }
    * ```
-   *
    *
    * * There are three locations: locA, locB and locC.
    * * 1 vehicle starting its route at locA and ending it at locB, using
@@ -5713,6 +6937,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Set of precedence rules which must be enforced in the model.
+   *
+   * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+   * optimized. Requests using precedence rules that include many shipments may
+   * be rejected.
    * </pre>
    *
    * <code>
@@ -5730,6 +6958,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Set of precedence rules which must be enforced in the model.
+   *
+   * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+   * optimized. Requests using precedence rules that include many shipments may
+   * be rejected.
    * </pre>
    *
    * <code>
@@ -5748,6 +6980,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Set of precedence rules which must be enforced in the model.
+   *
+   * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+   * optimized. Requests using precedence rules that include many shipments may
+   * be rejected.
    * </pre>
    *
    * <code>
@@ -5764,6 +7000,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Set of precedence rules which must be enforced in the model.
+   *
+   * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+   * optimized. Requests using precedence rules that include many shipments may
+   * be rejected.
    * </pre>
    *
    * <code>
@@ -5781,6 +7021,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Set of precedence rules which must be enforced in the model.
+   *
+   * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+   * optimized. Requests using precedence rules that include many shipments may
+   * be rejected.
    * </pre>
    *
    * <code>
@@ -5847,6 +7091,9 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < precedenceRules_.size(); i++) {
       output.writeMessage(14, precedenceRules_.get(i));
+    }
+    for (int i = 0; i < objectives_.size(); i++) {
+      output.writeMessage(17, objectives_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -5915,6 +7162,9 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < precedenceRules_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, precedenceRules_.get(i));
     }
+    for (int i = 0; i < objectives_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, objectives_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5933,6 +7183,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
 
     if (!getShipmentsList().equals(other.getShipmentsList())) return false;
     if (!getVehiclesList().equals(other.getVehiclesList())) return false;
+    if (!getObjectivesList().equals(other.getObjectivesList())) return false;
     if (hasMaxActiveVehicles() != other.hasMaxActiveVehicles()) return false;
     if (hasMaxActiveVehicles()) {
       if (getMaxActiveVehicles() != other.getMaxActiveVehicles()) return false;
@@ -5977,6 +7228,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     if (getVehiclesCount() > 0) {
       hash = (37 * hash) + VEHICLES_FIELD_NUMBER;
       hash = (53 * hash) + getVehiclesList().hashCode();
+    }
+    if (getObjectivesCount() > 0) {
+      hash = (37 * hash) + OBJECTIVES_FIELD_NUMBER;
+      hash = (53 * hash) + getObjectivesList().hashCode();
     }
     if (hasMaxActiveVehicles()) {
       hash = (37 * hash) + MAX_ACTIVE_VEHICLES_FIELD_NUMBER;
@@ -6172,6 +7427,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getShipmentsFieldBuilder();
         getVehiclesFieldBuilder();
+        getObjectivesFieldBuilder();
         getGlobalStartTimeFieldBuilder();
         getGlobalEndTimeFieldBuilder();
         getDurationDistanceMatricesFieldBuilder();
@@ -6200,6 +7456,13 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         vehiclesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      if (objectivesBuilder_ == null) {
+        objectives_ = java.util.Collections.emptyList();
+      } else {
+        objectives_ = null;
+        objectivesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       maxActiveVehicles_ = 0;
       globalStartTime_ = null;
       if (globalStartTimeBuilder_ != null) {
@@ -6218,7 +7481,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         durationDistanceMatrices_ = null;
         durationDistanceMatricesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       durationDistanceMatrixSrcTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       durationDistanceMatrixDstTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (transitionAttributesBuilder_ == null) {
@@ -6227,28 +7490,28 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         transitionAttributes_ = null;
         transitionAttributesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       if (shipmentTypeIncompatibilitiesBuilder_ == null) {
         shipmentTypeIncompatibilities_ = java.util.Collections.emptyList();
       } else {
         shipmentTypeIncompatibilities_ = null;
         shipmentTypeIncompatibilitiesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       if (shipmentTypeRequirementsBuilder_ == null) {
         shipmentTypeRequirements_ = java.util.Collections.emptyList();
       } else {
         shipmentTypeRequirements_ = null;
         shipmentTypeRequirementsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       if (precedenceRulesBuilder_ == null) {
         precedenceRules_ = java.util.Collections.emptyList();
       } else {
         precedenceRules_ = null;
         precedenceRulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
 
@@ -6304,49 +7567,58 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.vehicles_ = vehiclesBuilder_.build();
       }
+      if (objectivesBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          objectives_ = java.util.Collections.unmodifiableList(objectives_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.objectives_ = objectives_;
+      } else {
+        result.objectives_ = objectivesBuilder_.build();
+      }
       if (durationDistanceMatricesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           durationDistanceMatrices_ =
               java.util.Collections.unmodifiableList(durationDistanceMatrices_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.durationDistanceMatrices_ = durationDistanceMatrices_;
       } else {
         result.durationDistanceMatrices_ = durationDistanceMatricesBuilder_.build();
       }
       if (transitionAttributesBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           transitionAttributes_ = java.util.Collections.unmodifiableList(transitionAttributes_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.transitionAttributes_ = transitionAttributes_;
       } else {
         result.transitionAttributes_ = transitionAttributesBuilder_.build();
       }
       if (shipmentTypeIncompatibilitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           shipmentTypeIncompatibilities_ =
               java.util.Collections.unmodifiableList(shipmentTypeIncompatibilities_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.shipmentTypeIncompatibilities_ = shipmentTypeIncompatibilities_;
       } else {
         result.shipmentTypeIncompatibilities_ = shipmentTypeIncompatibilitiesBuilder_.build();
       }
       if (shipmentTypeRequirementsBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           shipmentTypeRequirements_ =
               java.util.Collections.unmodifiableList(shipmentTypeRequirements_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.shipmentTypeRequirements_ = shipmentTypeRequirements_;
       } else {
         result.shipmentTypeRequirements_ = shipmentTypeRequirementsBuilder_.build();
       }
       if (precedenceRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           precedenceRules_ = java.util.Collections.unmodifiableList(precedenceRules_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.precedenceRules_ = precedenceRules_;
       } else {
@@ -6357,28 +7629,28 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     private void buildPartial0(com.google.maps.routeoptimization.v1.ShipmentModel result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.maxActiveVehicles_ = maxActiveVehicles_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.globalStartTime_ =
             globalStartTimeBuilder_ == null ? globalStartTime_ : globalStartTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.globalEndTime_ =
             globalEndTimeBuilder_ == null ? globalEndTime_ : globalEndTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.globalDurationCostPerHour_ = globalDurationCostPerHour_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         durationDistanceMatrixSrcTags_.makeImmutable();
         result.durationDistanceMatrixSrcTags_ = durationDistanceMatrixSrcTags_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         durationDistanceMatrixDstTags_.makeImmutable();
         result.durationDistanceMatrixDstTags_ = durationDistanceMatrixDstTags_;
       }
@@ -6485,6 +7757,33 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (objectivesBuilder_ == null) {
+        if (!other.objectives_.isEmpty()) {
+          if (objectives_.isEmpty()) {
+            objectives_ = other.objectives_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureObjectivesIsMutable();
+            objectives_.addAll(other.objectives_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.objectives_.isEmpty()) {
+          if (objectivesBuilder_.isEmpty()) {
+            objectivesBuilder_.dispose();
+            objectivesBuilder_ = null;
+            objectives_ = other.objectives_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            objectivesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getObjectivesFieldBuilder()
+                    : null;
+          } else {
+            objectivesBuilder_.addAllMessages(other.objectives_);
+          }
+        }
+      }
       if (other.hasMaxActiveVehicles()) {
         setMaxActiveVehicles(other.getMaxActiveVehicles());
       }
@@ -6501,7 +7800,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         if (!other.durationDistanceMatrices_.isEmpty()) {
           if (durationDistanceMatrices_.isEmpty()) {
             durationDistanceMatrices_ = other.durationDistanceMatrices_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureDurationDistanceMatricesIsMutable();
             durationDistanceMatrices_.addAll(other.durationDistanceMatrices_);
@@ -6514,7 +7813,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
             durationDistanceMatricesBuilder_.dispose();
             durationDistanceMatricesBuilder_ = null;
             durationDistanceMatrices_ = other.durationDistanceMatrices_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             durationDistanceMatricesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDurationDistanceMatricesFieldBuilder()
@@ -6527,7 +7826,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       if (!other.durationDistanceMatrixSrcTags_.isEmpty()) {
         if (durationDistanceMatrixSrcTags_.isEmpty()) {
           durationDistanceMatrixSrcTags_ = other.durationDistanceMatrixSrcTags_;
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
         } else {
           ensureDurationDistanceMatrixSrcTagsIsMutable();
           durationDistanceMatrixSrcTags_.addAll(other.durationDistanceMatrixSrcTags_);
@@ -6537,7 +7836,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       if (!other.durationDistanceMatrixDstTags_.isEmpty()) {
         if (durationDistanceMatrixDstTags_.isEmpty()) {
           durationDistanceMatrixDstTags_ = other.durationDistanceMatrixDstTags_;
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
         } else {
           ensureDurationDistanceMatrixDstTagsIsMutable();
           durationDistanceMatrixDstTags_.addAll(other.durationDistanceMatrixDstTags_);
@@ -6548,7 +7847,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         if (!other.transitionAttributes_.isEmpty()) {
           if (transitionAttributes_.isEmpty()) {
             transitionAttributes_ = other.transitionAttributes_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureTransitionAttributesIsMutable();
             transitionAttributes_.addAll(other.transitionAttributes_);
@@ -6561,7 +7860,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
             transitionAttributesBuilder_.dispose();
             transitionAttributesBuilder_ = null;
             transitionAttributes_ = other.transitionAttributes_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
             transitionAttributesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTransitionAttributesFieldBuilder()
@@ -6575,7 +7874,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         if (!other.shipmentTypeIncompatibilities_.isEmpty()) {
           if (shipmentTypeIncompatibilities_.isEmpty()) {
             shipmentTypeIncompatibilities_ = other.shipmentTypeIncompatibilities_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureShipmentTypeIncompatibilitiesIsMutable();
             shipmentTypeIncompatibilities_.addAll(other.shipmentTypeIncompatibilities_);
@@ -6588,7 +7887,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
             shipmentTypeIncompatibilitiesBuilder_.dispose();
             shipmentTypeIncompatibilitiesBuilder_ = null;
             shipmentTypeIncompatibilities_ = other.shipmentTypeIncompatibilities_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             shipmentTypeIncompatibilitiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getShipmentTypeIncompatibilitiesFieldBuilder()
@@ -6603,7 +7902,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         if (!other.shipmentTypeRequirements_.isEmpty()) {
           if (shipmentTypeRequirements_.isEmpty()) {
             shipmentTypeRequirements_ = other.shipmentTypeRequirements_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureShipmentTypeRequirementsIsMutable();
             shipmentTypeRequirements_.addAll(other.shipmentTypeRequirements_);
@@ -6616,7 +7915,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
             shipmentTypeRequirementsBuilder_.dispose();
             shipmentTypeRequirementsBuilder_ = null;
             shipmentTypeRequirements_ = other.shipmentTypeRequirements_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             shipmentTypeRequirementsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getShipmentTypeRequirementsFieldBuilder()
@@ -6630,7 +7929,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         if (!other.precedenceRules_.isEmpty()) {
           if (precedenceRules_.isEmpty()) {
             precedenceRules_ = other.precedenceRules_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensurePrecedenceRulesIsMutable();
             precedenceRules_.addAll(other.precedenceRules_);
@@ -6643,7 +7942,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
             precedenceRulesBuilder_.dispose();
             precedenceRulesBuilder_ = null;
             precedenceRules_ = other.precedenceRules_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             precedenceRulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPrecedenceRulesFieldBuilder()
@@ -6708,25 +8007,25 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 maxActiveVehicles_ = input.readInt32();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getGlobalStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getGlobalEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 57:
               {
                 globalDurationCostPerHour_ = input.readDouble();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 57
             case 66:
@@ -6814,6 +8113,20 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 114
+            case 138:
+              {
+                com.google.maps.routeoptimization.v1.ShipmentModel.Objective m =
+                    input.readMessage(
+                        com.google.maps.routeoptimization.v1.ShipmentModel.Objective.parser(),
+                        extensionRegistry);
+                if (objectivesBuilder_ == null) {
+                  ensureObjectivesIsMutable();
+                  objectives_.add(m);
+                } else {
+                  objectivesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7569,6 +8882,552 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       return vehiclesBuilder_;
     }
 
+    private java.util.List<com.google.maps.routeoptimization.v1.ShipmentModel.Objective>
+        objectives_ = java.util.Collections.emptyList();
+
+    private void ensureObjectivesIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        objectives_ =
+            new java.util.ArrayList<com.google.maps.routeoptimization.v1.ShipmentModel.Objective>(
+                objectives_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.maps.routeoptimization.v1.ShipmentModel.Objective,
+            com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Builder,
+            com.google.maps.routeoptimization.v1.ShipmentModel.ObjectiveOrBuilder>
+        objectivesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public java.util.List<com.google.maps.routeoptimization.v1.ShipmentModel.Objective>
+        getObjectivesList() {
+      if (objectivesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(objectives_);
+      } else {
+        return objectivesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public int getObjectivesCount() {
+      if (objectivesBuilder_ == null) {
+        return objectives_.size();
+      } else {
+        return objectivesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public com.google.maps.routeoptimization.v1.ShipmentModel.Objective getObjectives(int index) {
+      if (objectivesBuilder_ == null) {
+        return objectives_.get(index);
+      } else {
+        return objectivesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public Builder setObjectives(
+        int index, com.google.maps.routeoptimization.v1.ShipmentModel.Objective value) {
+      if (objectivesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureObjectivesIsMutable();
+        objectives_.set(index, value);
+        onChanged();
+      } else {
+        objectivesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public Builder setObjectives(
+        int index,
+        com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Builder builderForValue) {
+      if (objectivesBuilder_ == null) {
+        ensureObjectivesIsMutable();
+        objectives_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        objectivesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public Builder addObjectives(
+        com.google.maps.routeoptimization.v1.ShipmentModel.Objective value) {
+      if (objectivesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureObjectivesIsMutable();
+        objectives_.add(value);
+        onChanged();
+      } else {
+        objectivesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public Builder addObjectives(
+        int index, com.google.maps.routeoptimization.v1.ShipmentModel.Objective value) {
+      if (objectivesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureObjectivesIsMutable();
+        objectives_.add(index, value);
+        onChanged();
+      } else {
+        objectivesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public Builder addObjectives(
+        com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Builder builderForValue) {
+      if (objectivesBuilder_ == null) {
+        ensureObjectivesIsMutable();
+        objectives_.add(builderForValue.build());
+        onChanged();
+      } else {
+        objectivesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public Builder addObjectives(
+        int index,
+        com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Builder builderForValue) {
+      if (objectivesBuilder_ == null) {
+        ensureObjectivesIsMutable();
+        objectives_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        objectivesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public Builder addAllObjectives(
+        java.lang.Iterable<? extends com.google.maps.routeoptimization.v1.ShipmentModel.Objective>
+            values) {
+      if (objectivesBuilder_ == null) {
+        ensureObjectivesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, objectives_);
+        onChanged();
+      } else {
+        objectivesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public Builder clearObjectives() {
+      if (objectivesBuilder_ == null) {
+        objectives_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        objectivesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public Builder removeObjectives(int index) {
+      if (objectivesBuilder_ == null) {
+        ensureObjectivesIsMutable();
+        objectives_.remove(index);
+        onChanged();
+      } else {
+        objectivesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Builder
+        getObjectivesBuilder(int index) {
+      return getObjectivesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public com.google.maps.routeoptimization.v1.ShipmentModel.ObjectiveOrBuilder
+        getObjectivesOrBuilder(int index) {
+      if (objectivesBuilder_ == null) {
+        return objectives_.get(index);
+      } else {
+        return objectivesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.maps.routeoptimization.v1.ShipmentModel.ObjectiveOrBuilder>
+        getObjectivesOrBuilderList() {
+      if (objectivesBuilder_ != null) {
+        return objectivesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(objectives_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Builder
+        addObjectivesBuilder() {
+      return getObjectivesFieldBuilder()
+          .addBuilder(
+              com.google.maps.routeoptimization.v1.ShipmentModel.Objective.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Builder
+        addObjectivesBuilder(int index) {
+      return getObjectivesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.maps.routeoptimization.v1.ShipmentModel.Objective.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The set of objectives for this model, that we will transform into costs.
+     * If not empty, the input model has to be costless.
+     * To obtain the modified request, please use `solving_mode` =
+     * TRANSFORM_AND_RETURN_REQUEST. Note that the request will not
+     * be solved in this case. See corresponding documentation.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routeoptimization.v1.ShipmentModel.Objective objectives = 17;
+     * </code>
+     */
+    public java.util.List<com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Builder>
+        getObjectivesBuilderList() {
+      return getObjectivesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.maps.routeoptimization.v1.ShipmentModel.Objective,
+            com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Builder,
+            com.google.maps.routeoptimization.v1.ShipmentModel.ObjectiveOrBuilder>
+        getObjectivesFieldBuilder() {
+      if (objectivesBuilder_ == null) {
+        objectivesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.maps.routeoptimization.v1.ShipmentModel.Objective,
+                com.google.maps.routeoptimization.v1.ShipmentModel.Objective.Builder,
+                com.google.maps.routeoptimization.v1.ShipmentModel.ObjectiveOrBuilder>(
+                objectives_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+        objectives_ = null;
+      }
+      return objectivesBuilder_;
+    }
+
     private int maxActiveVehicles_;
 
     /**
@@ -7589,7 +9448,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMaxActiveVehicles() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -7633,7 +9492,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxActiveVehicles(int value) {
 
       maxActiveVehicles_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -7655,7 +9514,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxActiveVehicles() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       maxActiveVehicles_ = 0;
       onChanged();
       return this;
@@ -7690,7 +9549,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the globalStartTime field is set.
      */
     public boolean hasGlobalStartTime() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -7752,7 +9611,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         globalStartTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -7782,7 +9641,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         globalStartTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -7808,7 +9667,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeGlobalStartTime(com.google.protobuf.Timestamp value) {
       if (globalStartTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && globalStartTime_ != null
             && globalStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getGlobalStartTimeBuilder().mergeFrom(value);
@@ -7819,7 +9678,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         globalStartTimeBuilder_.mergeFrom(value);
       }
       if (globalStartTime_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -7845,7 +9704,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp global_start_time = 5;</code>
      */
     public Builder clearGlobalStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       globalStartTime_ = null;
       if (globalStartTimeBuilder_ != null) {
         globalStartTimeBuilder_.dispose();
@@ -7875,7 +9734,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp global_start_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getGlobalStartTimeBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getGlobalStartTimeFieldBuilder().getBuilder();
     }
@@ -7965,7 +9824,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the globalEndTime field is set.
      */
     public boolean hasGlobalEndTime() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -8009,7 +9868,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         globalEndTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -8030,7 +9889,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         globalEndTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -8047,7 +9906,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeGlobalEndTime(com.google.protobuf.Timestamp value) {
       if (globalEndTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && globalEndTime_ != null
             && globalEndTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getGlobalEndTimeBuilder().mergeFrom(value);
@@ -8058,7 +9917,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         globalEndTimeBuilder_.mergeFrom(value);
       }
       if (globalEndTime_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -8075,7 +9934,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp global_end_time = 6;</code>
      */
     public Builder clearGlobalEndTime() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       globalEndTime_ = null;
       if (globalEndTimeBuilder_ != null) {
         globalEndTimeBuilder_.dispose();
@@ -8096,7 +9955,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp global_end_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getGlobalEndTimeBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getGlobalEndTimeFieldBuilder().getBuilder();
     }
@@ -8191,7 +10050,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public Builder setGlobalDurationCostPerHour(double value) {
 
       globalDurationCostPerHour_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -8213,7 +10072,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGlobalDurationCostPerHour() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       globalDurationCostPerHour_ = 0D;
       onChanged();
       return this;
@@ -8224,12 +10083,12 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         durationDistanceMatrices_ = java.util.Collections.emptyList();
 
     private void ensureDurationDistanceMatricesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         durationDistanceMatrices_ =
             new java.util.ArrayList<
                 com.google.maps.routeoptimization.v1.ShipmentModel.DurationDistanceMatrix>(
                 durationDistanceMatrices_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -8276,7 +10135,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
-     *
      *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
@@ -8383,7 +10241,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * }
      * ```
      *
-     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -8487,7 +10344,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
-     *
      *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
@@ -8593,7 +10449,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
-     *
      *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
@@ -8707,7 +10562,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * }
      * ```
      *
-     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -8817,7 +10671,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
-     *
      *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
@@ -8929,7 +10782,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
-     *
      *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
@@ -9043,7 +10895,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * }
      * ```
      *
-     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -9152,7 +11003,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
-     *
      *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
@@ -9264,7 +11114,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * }
      * ```
      *
-     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -9375,7 +11224,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * }
      * ```
      *
-     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -9437,7 +11285,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDurationDistanceMatrices() {
       if (durationDistanceMatricesBuilder_ == null) {
         durationDistanceMatrices_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         durationDistanceMatricesBuilder_.clear();
@@ -9482,7 +11330,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
-     *
      *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
@@ -9591,7 +11438,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * }
      * ```
      *
-     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -9692,7 +11538,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
-     *
      *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
@@ -9798,7 +11643,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
-     *
      *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
@@ -9907,7 +11751,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * }
      * ```
      *
-     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -10011,7 +11854,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *   }
      * }
      * ```
-     *
      *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
@@ -10118,7 +11960,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * }
      * ```
      *
-     *
      * * There are three locations: locA, locB and locC.
      * * 1 vehicle starting its route at locA and ending it at locB, using
      *   matrix "fast".
@@ -10195,7 +12036,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.routeoptimization.v1.ShipmentModel.DurationDistanceMatrix.Builder,
                 com.google.maps.routeoptimization.v1.ShipmentModel.DurationDistanceMatrixOrBuilder>(
                 durationDistanceMatrices_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         durationDistanceMatrices_ = null;
@@ -10211,7 +12052,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         durationDistanceMatrixSrcTags_ =
             new com.google.protobuf.LazyStringArrayList(durationDistanceMatrixSrcTags_);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
     }
 
     /**
@@ -10361,7 +12202,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDurationDistanceMatrixSrcTagsIsMutable();
       durationDistanceMatrixSrcTags_.set(index, value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -10397,7 +12238,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDurationDistanceMatrixSrcTagsIsMutable();
       durationDistanceMatrixSrcTags_.add(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -10432,7 +12273,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       ensureDurationDistanceMatrixSrcTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, durationDistanceMatrixSrcTags_);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -10463,7 +12304,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDurationDistanceMatrixSrcTags() {
       durationDistanceMatrixSrcTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       ;
       onChanged();
       return this;
@@ -10501,7 +12342,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDurationDistanceMatrixSrcTagsIsMutable();
       durationDistanceMatrixSrcTags_.add(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -10514,7 +12355,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         durationDistanceMatrixDstTags_ =
             new com.google.protobuf.LazyStringArrayList(durationDistanceMatrixDstTags_);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
     }
 
     /**
@@ -10674,7 +12515,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDurationDistanceMatrixDstTagsIsMutable();
       durationDistanceMatrixDstTags_.set(index, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10712,7 +12553,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDurationDistanceMatrixDstTagsIsMutable();
       durationDistanceMatrixDstTags_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10749,7 +12590,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       ensureDurationDistanceMatrixDstTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, durationDistanceMatrixDstTags_);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10782,7 +12623,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDurationDistanceMatrixDstTags() {
       durationDistanceMatrixDstTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       ;
       onChanged();
       return this;
@@ -10822,7 +12663,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDurationDistanceMatrixDstTagsIsMutable();
       durationDistanceMatrixDstTags_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10831,11 +12672,11 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         transitionAttributes_ = java.util.Collections.emptyList();
 
     private void ensureTransitionAttributesIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         transitionAttributes_ =
             new java.util.ArrayList<com.google.maps.routeoptimization.v1.TransitionAttributes>(
                 transitionAttributes_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -11091,7 +12932,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTransitionAttributes() {
       if (transitionAttributesBuilder_ == null) {
         transitionAttributes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         transitionAttributesBuilder_.clear();
@@ -11243,7 +13084,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.routeoptimization.v1.TransitionAttributes.Builder,
                 com.google.maps.routeoptimization.v1.TransitionAttributesOrBuilder>(
                 transitionAttributes_,
-                ((bitField0_ & 0x00000200) != 0),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         transitionAttributes_ = null;
@@ -11255,12 +13096,12 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         shipmentTypeIncompatibilities_ = java.util.Collections.emptyList();
 
     private void ensureShipmentTypeIncompatibilitiesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         shipmentTypeIncompatibilities_ =
             new java.util.ArrayList<
                 com.google.maps.routeoptimization.v1.ShipmentTypeIncompatibility>(
                 shipmentTypeIncompatibilities_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -11518,7 +13359,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public Builder clearShipmentTypeIncompatibilities() {
       if (shipmentTypeIncompatibilitiesBuilder_ == null) {
         shipmentTypeIncompatibilities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         shipmentTypeIncompatibilitiesBuilder_.clear();
@@ -11672,7 +13513,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.routeoptimization.v1.ShipmentTypeIncompatibility.Builder,
                 com.google.maps.routeoptimization.v1.ShipmentTypeIncompatibilityOrBuilder>(
                 shipmentTypeIncompatibilities_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000800) != 0),
                 getParentForChildren(),
                 isClean());
         shipmentTypeIncompatibilities_ = null;
@@ -11684,11 +13525,11 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         shipmentTypeRequirements_ = java.util.Collections.emptyList();
 
     private void ensureShipmentTypeRequirementsIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         shipmentTypeRequirements_ =
             new java.util.ArrayList<com.google.maps.routeoptimization.v1.ShipmentTypeRequirement>(
                 shipmentTypeRequirements_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -11944,7 +13785,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public Builder clearShipmentTypeRequirements() {
       if (shipmentTypeRequirementsBuilder_ == null) {
         shipmentTypeRequirements_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         shipmentTypeRequirementsBuilder_.clear();
@@ -12096,7 +13937,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.routeoptimization.v1.ShipmentTypeRequirement.Builder,
                 com.google.maps.routeoptimization.v1.ShipmentTypeRequirementOrBuilder>(
                 shipmentTypeRequirements_,
-                ((bitField0_ & 0x00000800) != 0),
+                ((bitField0_ & 0x00001000) != 0),
                 getParentForChildren(),
                 isClean());
         shipmentTypeRequirements_ = null;
@@ -12108,12 +13949,12 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         precedenceRules_ = java.util.Collections.emptyList();
 
     private void ensurePrecedenceRulesIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         precedenceRules_ =
             new java.util.ArrayList<
                 com.google.maps.routeoptimization.v1.ShipmentModel.PrecedenceRule>(
                 precedenceRules_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -12128,6 +13969,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12148,6 +13993,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12167,6 +14016,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12187,6 +14040,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12213,6 +14070,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12237,6 +14098,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12263,6 +14128,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12289,6 +14158,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12312,6 +14185,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12336,6 +14213,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12361,6 +14242,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12370,7 +14255,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPrecedenceRules() {
       if (precedenceRulesBuilder_ == null) {
         precedenceRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         precedenceRulesBuilder_.clear();
@@ -12383,6 +14268,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12405,6 +14294,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12421,6 +14314,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12441,6 +14338,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12462,6 +14363,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12481,6 +14386,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12501,6 +14410,10 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Set of precedence rules which must be enforced in the model.
+     *
+     * *IMPORTANT*: Use of precedence rules limits the size of problem that can be
+     * optimized. Requests using precedence rules that include many shipments may
+     * be rejected.
      * </pre>
      *
      * <code>
@@ -12524,7 +14437,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.routeoptimization.v1.ShipmentModel.PrecedenceRule.Builder,
                 com.google.maps.routeoptimization.v1.ShipmentModel.PrecedenceRuleOrBuilder>(
                 precedenceRules_,
-                ((bitField0_ & 0x00001000) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         precedenceRules_ = null;

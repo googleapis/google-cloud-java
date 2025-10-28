@@ -28,6 +28,50 @@ public interface ReasoningEngineSpecOrBuilder
    *
    *
    * <pre>
+   * Deploy from source code files with a defined entrypoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec source_code_spec = 11;
+   * </code>
+   *
+   * @return Whether the sourceCodeSpec field is set.
+   */
+  boolean hasSourceCodeSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Deploy from source code files with a defined entrypoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec source_code_spec = 11;
+   * </code>
+   *
+   * @return The sourceCodeSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec getSourceCodeSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Deploy from source code files with a defined entrypoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec source_code_spec = 11;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpecOrBuilder
+      getSourceCodeSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The service account that the Reasoning Engine artifact runs as.
    * It should have "roles/storage.objectViewer" for reading the user project's
    * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
@@ -83,6 +127,8 @@ public interface ReasoningEngineSpecOrBuilder
    * Ignored when users directly specify a deployment image through
    * `deployment_spec.first_party_image_override`, but keeping the
    * field_behavior to avoid introducing breaking changes.
+   * The `deployment_source` field should not be set if `package_spec` is
+   * specified.
    * </pre>
    *
    * <code>
@@ -101,6 +147,8 @@ public interface ReasoningEngineSpecOrBuilder
    * Ignored when users directly specify a deployment image through
    * `deployment_spec.first_party_image_override`, but keeping the
    * field_behavior to avoid introducing breaking changes.
+   * The `deployment_source` field should not be set if `package_spec` is
+   * specified.
    * </pre>
    *
    * <code>
@@ -119,6 +167,8 @@ public interface ReasoningEngineSpecOrBuilder
    * Ignored when users directly specify a deployment image through
    * `deployment_spec.first_party_image_override`, but keeping the
    * field_behavior to avoid introducing breaking changes.
+   * The `deployment_source` field should not be set if `package_spec` is
+   * specified.
    * </pre>
    *
    * <code>
@@ -271,4 +321,7 @@ public interface ReasoningEngineSpecOrBuilder
    * @return The bytes for agentFramework.
    */
   com.google.protobuf.ByteString getAgentFrameworkBytes();
+
+  com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSourceCase
+      getDeploymentSourceCase();
 }

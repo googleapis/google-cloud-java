@@ -76,10 +76,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The assigned project ID of the project.
+   * Optional. The assigned project ID of the project.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The projectId.
    */
@@ -100,10 +100,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The assigned project ID of the project.
+   * Optional. The assigned project ID of the project.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for projectId.
    */
@@ -129,10 +129,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ID of the dataset in the above project.
+   * Optional. The ID of the dataset in the above project.
    * </pre>
    *
-   * <code>string dataset_id = 2;</code>
+   * <code>string dataset_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The datasetId.
    */
@@ -153,10 +153,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ID of the dataset in the above project.
+   * Optional. The ID of the dataset in the above project.
    * </pre>
    *
-   * <code>string dataset_id = 2;</code>
+   * <code>string dataset_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for datasetId.
    */
@@ -182,10 +182,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ID of the table in the above dataset.
+   * Optional. The ID of the table in the above dataset.
    * </pre>
    *
-   * <code>string table_id = 3;</code>
+   * <code>string table_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The tableId.
    */
@@ -206,10 +206,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ID of the table in the above dataset.
+   * Optional. The ID of the table in the above dataset.
    * </pre>
    *
-   * <code>string table_id = 3;</code>
+   * <code>string table_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for tableId.
    */
@@ -625,10 +625,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The assigned project ID of the project.
+     * Optional. The assigned project ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The projectId.
      */
@@ -648,10 +648,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The assigned project ID of the project.
+     * Optional. The assigned project ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for projectId.
      */
@@ -671,10 +671,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The assigned project ID of the project.
+     * Optional. The assigned project ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The projectId to set.
      * @return This builder for chaining.
@@ -693,10 +693,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The assigned project ID of the project.
+     * Optional. The assigned project ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -711,10 +711,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The assigned project ID of the project.
+     * Optional. The assigned project ID of the project.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
@@ -736,10 +736,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the dataset in the above project.
+     * Optional. The ID of the dataset in the above project.
      * </pre>
      *
-     * <code>string dataset_id = 2;</code>
+     * <code>string dataset_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The datasetId.
      */
@@ -759,10 +759,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the dataset in the above project.
+     * Optional. The ID of the dataset in the above project.
      * </pre>
      *
-     * <code>string dataset_id = 2;</code>
+     * <code>string dataset_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for datasetId.
      */
@@ -782,10 +782,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the dataset in the above project.
+     * Optional. The ID of the dataset in the above project.
      * </pre>
      *
-     * <code>string dataset_id = 2;</code>
+     * <code>string dataset_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The datasetId to set.
      * @return This builder for chaining.
@@ -804,10 +804,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the dataset in the above project.
+     * Optional. The ID of the dataset in the above project.
      * </pre>
      *
-     * <code>string dataset_id = 2;</code>
+     * <code>string dataset_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -822,10 +822,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the dataset in the above project.
+     * Optional. The ID of the dataset in the above project.
      * </pre>
      *
-     * <code>string dataset_id = 2;</code>
+     * <code>string dataset_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for datasetId to set.
      * @return This builder for chaining.
@@ -847,10 +847,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the table in the above dataset.
+     * Optional. The ID of the table in the above dataset.
      * </pre>
      *
-     * <code>string table_id = 3;</code>
+     * <code>string table_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The tableId.
      */
@@ -870,10 +870,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the table in the above dataset.
+     * Optional. The ID of the table in the above dataset.
      * </pre>
      *
-     * <code>string table_id = 3;</code>
+     * <code>string table_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for tableId.
      */
@@ -893,10 +893,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the table in the above dataset.
+     * Optional. The ID of the table in the above dataset.
      * </pre>
      *
-     * <code>string table_id = 3;</code>
+     * <code>string table_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The tableId to set.
      * @return This builder for chaining.
@@ -915,10 +915,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the table in the above dataset.
+     * Optional. The ID of the table in the above dataset.
      * </pre>
      *
-     * <code>string table_id = 3;</code>
+     * <code>string table_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -933,10 +933,10 @@ public final class TableReference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the table in the above dataset.
+     * Optional. The ID of the table in the above dataset.
      * </pre>
      *
-     * <code>string table_id = 3;</code>
+     * <code>string table_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for tableId to set.
      * @return This builder for chaining.

@@ -132,6 +132,31 @@ public class RouteOptimizationSettings extends ClientSettings<RouteOptimizationS
         .batchOptimizeToursOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to optimizeToursLongRunning. */
+  public UnaryCallSettings<OptimizeToursRequest, Operation> optimizeToursLongRunningSettings() {
+    return ((RouteOptimizationStubSettings) getStubSettings()).optimizeToursLongRunningSettings();
+  }
+
+  /** Returns the object with the settings used for calls to optimizeToursLongRunning. */
+  public OperationCallSettings<
+          OptimizeToursRequest, OptimizeToursResponse, OptimizeToursLongRunningMetadata>
+      optimizeToursLongRunningOperationSettings() {
+    return ((RouteOptimizationStubSettings) getStubSettings())
+        .optimizeToursLongRunningOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to optimizeToursUri. */
+  public UnaryCallSettings<OptimizeToursUriRequest, Operation> optimizeToursUriSettings() {
+    return ((RouteOptimizationStubSettings) getStubSettings()).optimizeToursUriSettings();
+  }
+
+  /** Returns the object with the settings used for calls to optimizeToursUri. */
+  public OperationCallSettings<
+          OptimizeToursUriRequest, OptimizeToursUriResponse, OptimizeToursUriMetadata>
+      optimizeToursUriOperationSettings() {
+    return ((RouteOptimizationStubSettings) getStubSettings()).optimizeToursUriOperationSettings();
+  }
+
   public static final RouteOptimizationSettings create(RouteOptimizationStubSettings stub)
       throws IOException {
     return new RouteOptimizationSettings.Builder(stub.toBuilder()).build();
@@ -261,6 +286,32 @@ public class RouteOptimizationSettings extends ClientSettings<RouteOptimizationS
             BatchOptimizeToursRequest, BatchOptimizeToursResponse, BatchOptimizeToursMetadata>
         batchOptimizeToursOperationSettings() {
       return getStubSettingsBuilder().batchOptimizeToursOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to optimizeToursLongRunning. */
+    public UnaryCallSettings.Builder<OptimizeToursRequest, Operation>
+        optimizeToursLongRunningSettings() {
+      return getStubSettingsBuilder().optimizeToursLongRunningSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to optimizeToursLongRunning. */
+    public OperationCallSettings.Builder<
+            OptimizeToursRequest, OptimizeToursResponse, OptimizeToursLongRunningMetadata>
+        optimizeToursLongRunningOperationSettings() {
+      return getStubSettingsBuilder().optimizeToursLongRunningOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to optimizeToursUri. */
+    public UnaryCallSettings.Builder<OptimizeToursUriRequest, Operation>
+        optimizeToursUriSettings() {
+      return getStubSettingsBuilder().optimizeToursUriSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to optimizeToursUri. */
+    public OperationCallSettings.Builder<
+            OptimizeToursUriRequest, OptimizeToursUriResponse, OptimizeToursUriMetadata>
+        optimizeToursUriOperationSettings() {
+      return getStubSettingsBuilder().optimizeToursUriOperationSettings();
     }
 
     @Override

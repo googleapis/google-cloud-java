@@ -54,6 +54,7 @@
     <module>java-billing</module>
     <module>java-billingbudgets</module>
     <module>java-binary-authorization</module>
+    <module>java-capacityplanner</module>
     <module>java-certificate-manager</module>
     <module>java-channel</module>
     <module>java-chat</module>
@@ -125,6 +126,7 @@
     <module>java-language</module>
     <module>java-licensemanager</module>
     <module>java-life-sciences</module>
+    <module>java-locationfinder</module>
     <module>java-lustre</module>
     <module>java-maintenance</module>
     <module>java-managed-identities</module>

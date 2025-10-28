@@ -305,6 +305,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TABLE(1),
+    STORAGE_PATH(5),
     TYPE_NOT_SET(0);
     private final int value;
 
@@ -326,6 +327,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       switch (value) {
         case 1:
           return TABLE;
+        case 5:
+          return STORAGE_PATH;
         case 0:
           return TYPE_NOT_SET;
         default:
@@ -435,6 +438,90 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
     return com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance();
   }
 
+  public static final int STORAGE_PATH_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * Store findings in an existing Cloud Storage bucket. Files will be
+   * generated with the job ID and file part number as the filename and will
+   * contain findings in textproto format as
+   * [SaveToGcsFindingsOutput][google.privacy.dlp.v2.SaveToGcsFindingsOutput].
+   * The filename will follow the naming convention `&lt;job_id&gt;-&lt;shard_number&gt;`.
+   * Example: `my-job-id-2`.
+   *
+   * Supported for [Inspect jobs][google.privacy.dlp.v2.InspectJobConfig]. The
+   * bucket must not be the same as the bucket being inspected. If storing
+   * findings to Cloud Storage, the output schema field should not be set. If
+   * set, it will be ignored.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CloudStoragePath storage_path = 5;</code>
+   *
+   * @return Whether the storagePath field is set.
+   */
+  @java.lang.Override
+  public boolean hasStoragePath() {
+    return typeCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Store findings in an existing Cloud Storage bucket. Files will be
+   * generated with the job ID and file part number as the filename and will
+   * contain findings in textproto format as
+   * [SaveToGcsFindingsOutput][google.privacy.dlp.v2.SaveToGcsFindingsOutput].
+   * The filename will follow the naming convention `&lt;job_id&gt;-&lt;shard_number&gt;`.
+   * Example: `my-job-id-2`.
+   *
+   * Supported for [Inspect jobs][google.privacy.dlp.v2.InspectJobConfig]. The
+   * bucket must not be the same as the bucket being inspected. If storing
+   * findings to Cloud Storage, the output schema field should not be set. If
+   * set, it will be ignored.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CloudStoragePath storage_path = 5;</code>
+   *
+   * @return The storagePath.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.CloudStoragePath getStoragePath() {
+    if (typeCase_ == 5) {
+      return (com.google.privacy.dlp.v2.CloudStoragePath) type_;
+    }
+    return com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Store findings in an existing Cloud Storage bucket. Files will be
+   * generated with the job ID and file part number as the filename and will
+   * contain findings in textproto format as
+   * [SaveToGcsFindingsOutput][google.privacy.dlp.v2.SaveToGcsFindingsOutput].
+   * The filename will follow the naming convention `&lt;job_id&gt;-&lt;shard_number&gt;`.
+   * Example: `my-job-id-2`.
+   *
+   * Supported for [Inspect jobs][google.privacy.dlp.v2.InspectJobConfig]. The
+   * bucket must not be the same as the bucket being inspected. If storing
+   * findings to Cloud Storage, the output schema field should not be set. If
+   * set, it will be ignored.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CloudStoragePath storage_path = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.CloudStoragePathOrBuilder getStoragePathOrBuilder() {
+    if (typeCase_ == 5) {
+      return (com.google.privacy.dlp.v2.CloudStoragePath) type_;
+    }
+    return com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance();
+  }
+
   public static final int OUTPUT_SCHEMA_FIELD_NUMBER = 3;
   private int outputSchema_ = 0;
 
@@ -514,6 +601,9 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       output.writeEnum(3, outputSchema_);
     }
+    if (typeCase_ == 5) {
+      output.writeMessage(5, (com.google.privacy.dlp.v2.CloudStoragePath) type_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -532,6 +622,11 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
         != com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema.OUTPUT_SCHEMA_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, outputSchema_);
+    }
+    if (typeCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.privacy.dlp.v2.CloudStoragePath) type_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -555,6 +650,9 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       case 1:
         if (!getTable().equals(other.getTable())) return false;
         break;
+      case 5:
+        if (!getStoragePath().equals(other.getStoragePath())) return false;
+        break;
       case 0:
       default:
     }
@@ -575,6 +673,10 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       case 1:
         hash = (37 * hash) + TABLE_FIELD_NUMBER;
         hash = (53 * hash) + getTable().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + STORAGE_PATH_FIELD_NUMBER;
+        hash = (53 * hash) + getStoragePath().hashCode();
         break;
       case 0:
       default:
@@ -722,6 +824,9 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       if (tableBuilder_ != null) {
         tableBuilder_.clear();
       }
+      if (storagePathBuilder_ != null) {
+        storagePathBuilder_.clear();
+      }
       outputSchema_ = 0;
       typeCase_ = 0;
       type_ = null;
@@ -762,7 +867,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
 
     private void buildPartial0(com.google.privacy.dlp.v2.OutputStorageConfig result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.outputSchema_ = outputSchema_;
       }
     }
@@ -772,6 +877,9 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       result.type_ = this.type_;
       if (typeCase_ == 1 && tableBuilder_ != null) {
         result.type_ = tableBuilder_.build();
+      }
+      if (typeCase_ == 5 && storagePathBuilder_ != null) {
+        result.type_ = storagePathBuilder_.build();
       }
     }
 
@@ -829,6 +937,11 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
             mergeTable(other.getTable());
             break;
           }
+        case STORAGE_PATH:
+          {
+            mergeStoragePath(other.getStoragePath());
+            break;
+          }
         case TYPE_NOT_SET:
           {
             break;
@@ -869,9 +982,15 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
             case 24:
               {
                 outputSchema_ = input.readEnum();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 42:
+              {
+                input.readMessage(getStoragePathFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 5;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1237,6 +1356,314 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       return tableBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.CloudStoragePath,
+            com.google.privacy.dlp.v2.CloudStoragePath.Builder,
+            com.google.privacy.dlp.v2.CloudStoragePathOrBuilder>
+        storagePathBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Store findings in an existing Cloud Storage bucket. Files will be
+     * generated with the job ID and file part number as the filename and will
+     * contain findings in textproto format as
+     * [SaveToGcsFindingsOutput][google.privacy.dlp.v2.SaveToGcsFindingsOutput].
+     * The filename will follow the naming convention `&lt;job_id&gt;-&lt;shard_number&gt;`.
+     * Example: `my-job-id-2`.
+     *
+     * Supported for [Inspect jobs][google.privacy.dlp.v2.InspectJobConfig]. The
+     * bucket must not be the same as the bucket being inspected. If storing
+     * findings to Cloud Storage, the output schema field should not be set. If
+     * set, it will be ignored.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStoragePath storage_path = 5;</code>
+     *
+     * @return Whether the storagePath field is set.
+     */
+    @java.lang.Override
+    public boolean hasStoragePath() {
+      return typeCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Store findings in an existing Cloud Storage bucket. Files will be
+     * generated with the job ID and file part number as the filename and will
+     * contain findings in textproto format as
+     * [SaveToGcsFindingsOutput][google.privacy.dlp.v2.SaveToGcsFindingsOutput].
+     * The filename will follow the naming convention `&lt;job_id&gt;-&lt;shard_number&gt;`.
+     * Example: `my-job-id-2`.
+     *
+     * Supported for [Inspect jobs][google.privacy.dlp.v2.InspectJobConfig]. The
+     * bucket must not be the same as the bucket being inspected. If storing
+     * findings to Cloud Storage, the output schema field should not be set. If
+     * set, it will be ignored.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStoragePath storage_path = 5;</code>
+     *
+     * @return The storagePath.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.CloudStoragePath getStoragePath() {
+      if (storagePathBuilder_ == null) {
+        if (typeCase_ == 5) {
+          return (com.google.privacy.dlp.v2.CloudStoragePath) type_;
+        }
+        return com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance();
+      } else {
+        if (typeCase_ == 5) {
+          return storagePathBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Store findings in an existing Cloud Storage bucket. Files will be
+     * generated with the job ID and file part number as the filename and will
+     * contain findings in textproto format as
+     * [SaveToGcsFindingsOutput][google.privacy.dlp.v2.SaveToGcsFindingsOutput].
+     * The filename will follow the naming convention `&lt;job_id&gt;-&lt;shard_number&gt;`.
+     * Example: `my-job-id-2`.
+     *
+     * Supported for [Inspect jobs][google.privacy.dlp.v2.InspectJobConfig]. The
+     * bucket must not be the same as the bucket being inspected. If storing
+     * findings to Cloud Storage, the output schema field should not be set. If
+     * set, it will be ignored.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStoragePath storage_path = 5;</code>
+     */
+    public Builder setStoragePath(com.google.privacy.dlp.v2.CloudStoragePath value) {
+      if (storagePathBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        storagePathBuilder_.setMessage(value);
+      }
+      typeCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Store findings in an existing Cloud Storage bucket. Files will be
+     * generated with the job ID and file part number as the filename and will
+     * contain findings in textproto format as
+     * [SaveToGcsFindingsOutput][google.privacy.dlp.v2.SaveToGcsFindingsOutput].
+     * The filename will follow the naming convention `&lt;job_id&gt;-&lt;shard_number&gt;`.
+     * Example: `my-job-id-2`.
+     *
+     * Supported for [Inspect jobs][google.privacy.dlp.v2.InspectJobConfig]. The
+     * bucket must not be the same as the bucket being inspected. If storing
+     * findings to Cloud Storage, the output schema field should not be set. If
+     * set, it will be ignored.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStoragePath storage_path = 5;</code>
+     */
+    public Builder setStoragePath(
+        com.google.privacy.dlp.v2.CloudStoragePath.Builder builderForValue) {
+      if (storagePathBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        storagePathBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Store findings in an existing Cloud Storage bucket. Files will be
+     * generated with the job ID and file part number as the filename and will
+     * contain findings in textproto format as
+     * [SaveToGcsFindingsOutput][google.privacy.dlp.v2.SaveToGcsFindingsOutput].
+     * The filename will follow the naming convention `&lt;job_id&gt;-&lt;shard_number&gt;`.
+     * Example: `my-job-id-2`.
+     *
+     * Supported for [Inspect jobs][google.privacy.dlp.v2.InspectJobConfig]. The
+     * bucket must not be the same as the bucket being inspected. If storing
+     * findings to Cloud Storage, the output schema field should not be set. If
+     * set, it will be ignored.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStoragePath storage_path = 5;</code>
+     */
+    public Builder mergeStoragePath(com.google.privacy.dlp.v2.CloudStoragePath value) {
+      if (storagePathBuilder_ == null) {
+        if (typeCase_ == 5
+            && type_ != com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.CloudStoragePath.newBuilder(
+                      (com.google.privacy.dlp.v2.CloudStoragePath) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 5) {
+          storagePathBuilder_.mergeFrom(value);
+        } else {
+          storagePathBuilder_.setMessage(value);
+        }
+      }
+      typeCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Store findings in an existing Cloud Storage bucket. Files will be
+     * generated with the job ID and file part number as the filename and will
+     * contain findings in textproto format as
+     * [SaveToGcsFindingsOutput][google.privacy.dlp.v2.SaveToGcsFindingsOutput].
+     * The filename will follow the naming convention `&lt;job_id&gt;-&lt;shard_number&gt;`.
+     * Example: `my-job-id-2`.
+     *
+     * Supported for [Inspect jobs][google.privacy.dlp.v2.InspectJobConfig]. The
+     * bucket must not be the same as the bucket being inspected. If storing
+     * findings to Cloud Storage, the output schema field should not be set. If
+     * set, it will be ignored.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStoragePath storage_path = 5;</code>
+     */
+    public Builder clearStoragePath() {
+      if (storagePathBuilder_ == null) {
+        if (typeCase_ == 5) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 5) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        storagePathBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Store findings in an existing Cloud Storage bucket. Files will be
+     * generated with the job ID and file part number as the filename and will
+     * contain findings in textproto format as
+     * [SaveToGcsFindingsOutput][google.privacy.dlp.v2.SaveToGcsFindingsOutput].
+     * The filename will follow the naming convention `&lt;job_id&gt;-&lt;shard_number&gt;`.
+     * Example: `my-job-id-2`.
+     *
+     * Supported for [Inspect jobs][google.privacy.dlp.v2.InspectJobConfig]. The
+     * bucket must not be the same as the bucket being inspected. If storing
+     * findings to Cloud Storage, the output schema field should not be set. If
+     * set, it will be ignored.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStoragePath storage_path = 5;</code>
+     */
+    public com.google.privacy.dlp.v2.CloudStoragePath.Builder getStoragePathBuilder() {
+      return getStoragePathFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Store findings in an existing Cloud Storage bucket. Files will be
+     * generated with the job ID and file part number as the filename and will
+     * contain findings in textproto format as
+     * [SaveToGcsFindingsOutput][google.privacy.dlp.v2.SaveToGcsFindingsOutput].
+     * The filename will follow the naming convention `&lt;job_id&gt;-&lt;shard_number&gt;`.
+     * Example: `my-job-id-2`.
+     *
+     * Supported for [Inspect jobs][google.privacy.dlp.v2.InspectJobConfig]. The
+     * bucket must not be the same as the bucket being inspected. If storing
+     * findings to Cloud Storage, the output schema field should not be set. If
+     * set, it will be ignored.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStoragePath storage_path = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.CloudStoragePathOrBuilder getStoragePathOrBuilder() {
+      if ((typeCase_ == 5) && (storagePathBuilder_ != null)) {
+        return storagePathBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 5) {
+          return (com.google.privacy.dlp.v2.CloudStoragePath) type_;
+        }
+        return com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Store findings in an existing Cloud Storage bucket. Files will be
+     * generated with the job ID and file part number as the filename and will
+     * contain findings in textproto format as
+     * [SaveToGcsFindingsOutput][google.privacy.dlp.v2.SaveToGcsFindingsOutput].
+     * The filename will follow the naming convention `&lt;job_id&gt;-&lt;shard_number&gt;`.
+     * Example: `my-job-id-2`.
+     *
+     * Supported for [Inspect jobs][google.privacy.dlp.v2.InspectJobConfig]. The
+     * bucket must not be the same as the bucket being inspected. If storing
+     * findings to Cloud Storage, the output schema field should not be set. If
+     * set, it will be ignored.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CloudStoragePath storage_path = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.CloudStoragePath,
+            com.google.privacy.dlp.v2.CloudStoragePath.Builder,
+            com.google.privacy.dlp.v2.CloudStoragePathOrBuilder>
+        getStoragePathFieldBuilder() {
+      if (storagePathBuilder_ == null) {
+        if (!(typeCase_ == 5)) {
+          type_ = com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance();
+        }
+        storagePathBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.CloudStoragePath,
+                com.google.privacy.dlp.v2.CloudStoragePath.Builder,
+                com.google.privacy.dlp.v2.CloudStoragePathOrBuilder>(
+                (com.google.privacy.dlp.v2.CloudStoragePath) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 5;
+      onChanged();
+      return storagePathBuilder_;
+    }
+
     private int outputSchema_ = 0;
 
     /**
@@ -1287,7 +1714,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder setOutputSchemaValue(int value) {
       outputSchema_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1347,7 +1774,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       outputSchema_ = value.getNumber();
       onChanged();
       return this;
@@ -1374,7 +1801,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearOutputSchema() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       outputSchema_ = 0;
       onChanged();
       return this;

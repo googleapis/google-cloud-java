@@ -287,6 +287,12 @@ public interface CloudEventOrBuilder
    *
    * <pre>
    * Optional. Proto data.
+   *
+   * NOTE: The `protoData` field only functions as expected when the payload
+   * is specifically a `CloudEvent` message type, and can't be used for
+   * arbitrary protocol buffer messages. For any other protocol buffer type,
+   * you must serialize your proto message into bytes, and use the
+   * `binaryData` field instead.
    * </pre>
    *
    * <code>.google.protobuf.Any proto_data = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -300,6 +306,12 @@ public interface CloudEventOrBuilder
    *
    * <pre>
    * Optional. Proto data.
+   *
+   * NOTE: The `protoData` field only functions as expected when the payload
+   * is specifically a `CloudEvent` message type, and can't be used for
+   * arbitrary protocol buffer messages. For any other protocol buffer type,
+   * you must serialize your proto message into bytes, and use the
+   * `binaryData` field instead.
    * </pre>
    *
    * <code>.google.protobuf.Any proto_data = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -313,6 +325,12 @@ public interface CloudEventOrBuilder
    *
    * <pre>
    * Optional. Proto data.
+   *
+   * NOTE: The `protoData` field only functions as expected when the payload
+   * is specifically a `CloudEvent` message type, and can't be used for
+   * arbitrary protocol buffer messages. For any other protocol buffer type,
+   * you must serialize your proto message into bytes, and use the
+   * `binaryData` field instead.
    * </pre>
    *
    * <code>.google.protobuf.Any proto_data = 8 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -42,6 +42,7 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
 
   private EnterpriseWebSearch() {
     excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    blockingConfidence_ = 0;
   }
 
   @java.lang.Override
@@ -65,6 +66,7 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
             com.google.cloud.aiplatform.v1.EnterpriseWebSearch.Builder.class);
   }
 
+  private int bitField0_;
   public static final int EXCLUDE_DOMAINS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -137,6 +139,70 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
     return excludeDomains_.getByteString(index);
   }
 
+  public static final int BLOCKING_CONFIDENCE_FIELD_NUMBER = 2;
+  private int blockingConfidence_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sites with confidence level chosen &amp; above this value will be
+   * blocked from the search results.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.Tool.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the blockingConfidence field is set.
+   */
+  @java.lang.Override
+  public boolean hasBlockingConfidence() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sites with confidence level chosen &amp; above this value will be
+   * blocked from the search results.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.Tool.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for blockingConfidence.
+   */
+  @java.lang.Override
+  public int getBlockingConfidenceValue() {
+    return blockingConfidence_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sites with confidence level chosen &amp; above this value will be
+   * blocked from the search results.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.Tool.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The blockingConfidence.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Tool.PhishBlockThreshold getBlockingConfidence() {
+    com.google.cloud.aiplatform.v1.Tool.PhishBlockThreshold result =
+        com.google.cloud.aiplatform.v1.Tool.PhishBlockThreshold.forNumber(blockingConfidence_);
+    return result == null
+        ? com.google.cloud.aiplatform.v1.Tool.PhishBlockThreshold.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -153,6 +219,9 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < excludeDomains_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, excludeDomains_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(2, blockingConfidence_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -171,6 +240,9 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
       size += dataSize;
       size += 1 * getExcludeDomainsList().size();
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, blockingConfidence_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -188,6 +260,10 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
         (com.google.cloud.aiplatform.v1.EnterpriseWebSearch) obj;
 
     if (!getExcludeDomainsList().equals(other.getExcludeDomainsList())) return false;
+    if (hasBlockingConfidence() != other.hasBlockingConfidence()) return false;
+    if (hasBlockingConfidence()) {
+      if (blockingConfidence_ != other.blockingConfidence_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -202,6 +278,10 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
     if (getExcludeDomainsCount() > 0) {
       hash = (37 * hash) + EXCLUDE_DOMAINS_FIELD_NUMBER;
       hash = (53 * hash) + getExcludeDomainsList().hashCode();
+    }
+    if (hasBlockingConfidence()) {
+      hash = (37 * hash) + BLOCKING_CONFIDENCE_FIELD_NUMBER;
+      hash = (53 * hash) + blockingConfidence_;
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -345,6 +425,7 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
       super.clear();
       bitField0_ = 0;
       excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      blockingConfidence_ = 0;
       return this;
     }
 
@@ -385,6 +466,12 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
         excludeDomains_.makeImmutable();
         result.excludeDomains_ = excludeDomains_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.blockingConfidence_ = blockingConfidence_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -443,6 +530,9 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
         }
         onChanged();
       }
+      if (other.hasBlockingConfidence()) {
+        setBlockingConfidence(other.getBlockingConfidence());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -476,6 +566,12 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
                 excludeDomains_.add(s);
                 break;
               } // case 10
+            case 16:
+              {
+                blockingConfidence_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -683,6 +779,138 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
       ensureExcludeDomainsIsMutable();
       excludeDomains_.add(value);
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private int blockingConfidence_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sites with confidence level chosen &amp; above this value will be
+     * blocked from the search results.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.Tool.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the blockingConfidence field is set.
+     */
+    @java.lang.Override
+    public boolean hasBlockingConfidence() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sites with confidence level chosen &amp; above this value will be
+     * blocked from the search results.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.Tool.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for blockingConfidence.
+     */
+    @java.lang.Override
+    public int getBlockingConfidenceValue() {
+      return blockingConfidence_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sites with confidence level chosen &amp; above this value will be
+     * blocked from the search results.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.Tool.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for blockingConfidence to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBlockingConfidenceValue(int value) {
+      blockingConfidence_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sites with confidence level chosen &amp; above this value will be
+     * blocked from the search results.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.Tool.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The blockingConfidence.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.Tool.PhishBlockThreshold getBlockingConfidence() {
+      com.google.cloud.aiplatform.v1.Tool.PhishBlockThreshold result =
+          com.google.cloud.aiplatform.v1.Tool.PhishBlockThreshold.forNumber(blockingConfidence_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1.Tool.PhishBlockThreshold.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sites with confidence level chosen &amp; above this value will be
+     * blocked from the search results.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.Tool.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The blockingConfidence to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBlockingConfidence(
+        com.google.cloud.aiplatform.v1.Tool.PhishBlockThreshold value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      blockingConfidence_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sites with confidence level chosen &amp; above this value will be
+     * blocked from the search results.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.Tool.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBlockingConfidence() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      blockingConfidence_ = 0;
       onChanged();
       return this;
     }

@@ -62,4 +62,30 @@ public interface RequestMirrorPolicyOrBuilder
    * @return The bytes for backendService.
    */
   com.google.protobuf.ByteString getBackendServiceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The percentage of requests to be mirrored to `backend_service`.
+   * </pre>
+   *
+   * <code>optional double mirror_percent = 277432261;</code>
+   *
+   * @return Whether the mirrorPercent field is set.
+   */
+  boolean hasMirrorPercent();
+
+  /**
+   *
+   *
+   * <pre>
+   * The percentage of requests to be mirrored to `backend_service`.
+   * </pre>
+   *
+   * <code>optional double mirror_percent = 277432261;</code>
+   *
+   * @return The mirrorPercent.
+   */
+  double getMirrorPercent();
 }

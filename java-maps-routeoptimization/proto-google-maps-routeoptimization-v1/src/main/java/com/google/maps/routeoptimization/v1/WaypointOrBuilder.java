@@ -68,7 +68,13 @@ public interface WaypointOrBuilder
    *
    *
    * <pre>
-   * The POI Place ID associated with the waypoint.
+   * The POI place ID associated with the waypoint.
+   *
+   * When using a place ID to specify arrival or departure location of a
+   * VisitRequest, use a place ID that is specific enough to determine a
+   * LatLng location for navigation to the place.
+   * For example, a place ID representing a building is suitable, but a place
+   * ID representing a road is discouraged.
    * </pre>
    *
    * <code>string place_id = 2;</code>
@@ -81,7 +87,13 @@ public interface WaypointOrBuilder
    *
    *
    * <pre>
-   * The POI Place ID associated with the waypoint.
+   * The POI place ID associated with the waypoint.
+   *
+   * When using a place ID to specify arrival or departure location of a
+   * VisitRequest, use a place ID that is specific enough to determine a
+   * LatLng location for navigation to the place.
+   * For example, a place ID representing a building is suitable, but a place
+   * ID representing a road is discouraged.
    * </pre>
    *
    * <code>string place_id = 2;</code>
@@ -94,7 +106,13 @@ public interface WaypointOrBuilder
    *
    *
    * <pre>
-   * The POI Place ID associated with the waypoint.
+   * The POI place ID associated with the waypoint.
+   *
+   * When using a place ID to specify arrival or departure location of a
+   * VisitRequest, use a place ID that is specific enough to determine a
+   * LatLng location for navigation to the place.
+   * For example, a place ID representing a building is suitable, but a place
+   * ID representing a road is discouraged.
    * </pre>
    *
    * <code>string place_id = 2;</code>
@@ -120,6 +138,23 @@ public interface WaypointOrBuilder
    * @return The sideOfRoad.
    */
   boolean getSideOfRoad();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates that the waypoint is meant for vehicles to stop at, where the
+   * intention is to either pick up or drop off. This option works only for the
+   * 'DRIVING' travel mode, and when the 'location_type' is 'location'.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>bool vehicle_stopover = 4;</code>
+   *
+   * @return The vehicleStopover.
+   */
+  boolean getVehicleStopover();
 
   com.google.maps.routeoptimization.v1.Waypoint.LocationTypeCase getLocationTypeCase();
 }

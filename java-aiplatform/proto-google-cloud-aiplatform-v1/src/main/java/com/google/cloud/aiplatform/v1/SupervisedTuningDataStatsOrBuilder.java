@@ -64,7 +64,7 @@ public interface SupervisedTuningDataStatsOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.SupervisedTuningDataStats.total_billable_character_count
-   *     is deprecated. See google/cloud/aiplatform/v1/tuning_job.proto;l=228
+   *     is deprecated. See google/cloud/aiplatform/v1/tuning_job.proto;l=245
    * @return The totalBillableCharacterCount.
    */
   @java.lang.Deprecated

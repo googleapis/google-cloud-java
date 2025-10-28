@@ -97,4 +97,30 @@ public interface FleetOrBuilder
    * @return The preRegistered.
    */
   boolean getPreRegistered();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of the cluster's fleet membership.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.Fleet.MembershipType membership_type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for membershipType.
+   */
+  int getMembershipTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of the cluster's fleet membership.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.Fleet.MembershipType membership_type = 4;</code>
+   *
+   * @return The membershipType.
+   */
+  com.google.container.v1beta1.Fleet.MembershipType getMembershipType();
 }

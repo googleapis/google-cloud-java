@@ -2830,6 +2830,78 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     return validationErrors_.get(index);
   }
 
+  public static final int PROCESSED_REQUEST_FIELD_NUMBER = 21;
+  private com.google.maps.routeoptimization.v1.OptimizeToursRequest processedRequest_;
+
+  /**
+   *
+   *
+   * <pre>
+   * In some cases we modify the incoming request before solving it, i.e. adding
+   * costs. If solving_mode == TRANSFORM_AND_RETURN_REQUEST, the
+   * modified request is returned here.
+   *
+   * Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+   * for more details.
+   * </pre>
+   *
+   * <code>.google.maps.routeoptimization.v1.OptimizeToursRequest processed_request = 21;</code>
+   *
+   * @return Whether the processedRequest field is set.
+   */
+  @java.lang.Override
+  public boolean hasProcessedRequest() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * In some cases we modify the incoming request before solving it, i.e. adding
+   * costs. If solving_mode == TRANSFORM_AND_RETURN_REQUEST, the
+   * modified request is returned here.
+   *
+   * Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+   * for more details.
+   * </pre>
+   *
+   * <code>.google.maps.routeoptimization.v1.OptimizeToursRequest processed_request = 21;</code>
+   *
+   * @return The processedRequest.
+   */
+  @java.lang.Override
+  public com.google.maps.routeoptimization.v1.OptimizeToursRequest getProcessedRequest() {
+    return processedRequest_ == null
+        ? com.google.maps.routeoptimization.v1.OptimizeToursRequest.getDefaultInstance()
+        : processedRequest_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * In some cases we modify the incoming request before solving it, i.e. adding
+   * costs. If solving_mode == TRANSFORM_AND_RETURN_REQUEST, the
+   * modified request is returned here.
+   *
+   * Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+   * for more details.
+   * </pre>
+   *
+   * <code>.google.maps.routeoptimization.v1.OptimizeToursRequest processed_request = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.routeoptimization.v1.OptimizeToursRequestOrBuilder
+      getProcessedRequestOrBuilder() {
+    return processedRequest_ == null
+        ? com.google.maps.routeoptimization.v1.OptimizeToursRequest.getDefaultInstance()
+        : processedRequest_;
+  }
+
   public static final int METRICS_FIELD_NUMBER = 6;
   private com.google.maps.routeoptimization.v1.OptimizeToursResponse.Metrics metrics_;
 
@@ -2846,7 +2918,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasMetrics() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -2910,8 +2982,11 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < validationErrors_.size(); i++) {
       output.writeMessage(5, validationErrors_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(6, getMetrics());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(21, getProcessedRequest());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2934,8 +3009,11 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < validationErrors_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, validationErrors_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getMetrics());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getProcessedRequest());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2957,6 +3035,10 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     if (!getRequestLabel().equals(other.getRequestLabel())) return false;
     if (!getSkippedShipmentsList().equals(other.getSkippedShipmentsList())) return false;
     if (!getValidationErrorsList().equals(other.getValidationErrorsList())) return false;
+    if (hasProcessedRequest() != other.hasProcessedRequest()) return false;
+    if (hasProcessedRequest()) {
+      if (!getProcessedRequest().equals(other.getProcessedRequest())) return false;
+    }
     if (hasMetrics() != other.hasMetrics()) return false;
     if (hasMetrics()) {
       if (!getMetrics().equals(other.getMetrics())) return false;
@@ -2985,6 +3067,10 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     if (getValidationErrorsCount() > 0) {
       hash = (37 * hash) + VALIDATION_ERRORS_FIELD_NUMBER;
       hash = (53 * hash) + getValidationErrorsList().hashCode();
+    }
+    if (hasProcessedRequest()) {
+      hash = (37 * hash) + PROCESSED_REQUEST_FIELD_NUMBER;
+      hash = (53 * hash) + getProcessedRequest().hashCode();
     }
     if (hasMetrics()) {
       hash = (37 * hash) + METRICS_FIELD_NUMBER;
@@ -3137,6 +3223,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         getRoutesFieldBuilder();
         getSkippedShipmentsFieldBuilder();
         getValidationErrorsFieldBuilder();
+        getProcessedRequestFieldBuilder();
         getMetricsFieldBuilder();
       }
     }
@@ -3167,6 +3254,11 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         validationErrorsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
+      processedRequest_ = null;
+      if (processedRequestBuilder_ != null) {
+        processedRequestBuilder_.dispose();
+        processedRequestBuilder_ = null;
+      }
       metrics_ = null;
       if (metricsBuilder_ != null) {
         metricsBuilder_.dispose();
@@ -3245,8 +3337,13 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.metrics_ = metricsBuilder_ == null ? metrics_ : metricsBuilder_.build();
+        result.processedRequest_ =
+            processedRequestBuilder_ == null ? processedRequest_ : processedRequestBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.metrics_ = metricsBuilder_ == null ? metrics_ : metricsBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3383,6 +3480,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
           }
         }
       }
+      if (other.hasProcessedRequest()) {
+        mergeProcessedRequest(other.getProcessedRequest());
+      }
       if (other.hasMetrics()) {
         mergeMetrics(other.getMetrics());
       }
@@ -3463,9 +3563,16 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
             case 50:
               {
                 input.readMessage(getMetricsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 170:
+              {
+                input.readMessage(
+                    getProcessedRequestFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4892,6 +4999,260 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       return validationErrorsBuilder_;
     }
 
+    private com.google.maps.routeoptimization.v1.OptimizeToursRequest processedRequest_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routeoptimization.v1.OptimizeToursRequest,
+            com.google.maps.routeoptimization.v1.OptimizeToursRequest.Builder,
+            com.google.maps.routeoptimization.v1.OptimizeToursRequestOrBuilder>
+        processedRequestBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * In some cases we modify the incoming request before solving it, i.e. adding
+     * costs. If solving_mode == TRANSFORM_AND_RETURN_REQUEST, the
+     * modified request is returned here.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.OptimizeToursRequest processed_request = 21;</code>
+     *
+     * @return Whether the processedRequest field is set.
+     */
+    public boolean hasProcessedRequest() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * In some cases we modify the incoming request before solving it, i.e. adding
+     * costs. If solving_mode == TRANSFORM_AND_RETURN_REQUEST, the
+     * modified request is returned here.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.OptimizeToursRequest processed_request = 21;</code>
+     *
+     * @return The processedRequest.
+     */
+    public com.google.maps.routeoptimization.v1.OptimizeToursRequest getProcessedRequest() {
+      if (processedRequestBuilder_ == null) {
+        return processedRequest_ == null
+            ? com.google.maps.routeoptimization.v1.OptimizeToursRequest.getDefaultInstance()
+            : processedRequest_;
+      } else {
+        return processedRequestBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * In some cases we modify the incoming request before solving it, i.e. adding
+     * costs. If solving_mode == TRANSFORM_AND_RETURN_REQUEST, the
+     * modified request is returned here.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.OptimizeToursRequest processed_request = 21;</code>
+     */
+    public Builder setProcessedRequest(
+        com.google.maps.routeoptimization.v1.OptimizeToursRequest value) {
+      if (processedRequestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        processedRequest_ = value;
+      } else {
+        processedRequestBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * In some cases we modify the incoming request before solving it, i.e. adding
+     * costs. If solving_mode == TRANSFORM_AND_RETURN_REQUEST, the
+     * modified request is returned here.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.OptimizeToursRequest processed_request = 21;</code>
+     */
+    public Builder setProcessedRequest(
+        com.google.maps.routeoptimization.v1.OptimizeToursRequest.Builder builderForValue) {
+      if (processedRequestBuilder_ == null) {
+        processedRequest_ = builderForValue.build();
+      } else {
+        processedRequestBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * In some cases we modify the incoming request before solving it, i.e. adding
+     * costs. If solving_mode == TRANSFORM_AND_RETURN_REQUEST, the
+     * modified request is returned here.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.OptimizeToursRequest processed_request = 21;</code>
+     */
+    public Builder mergeProcessedRequest(
+        com.google.maps.routeoptimization.v1.OptimizeToursRequest value) {
+      if (processedRequestBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && processedRequest_ != null
+            && processedRequest_
+                != com.google.maps.routeoptimization.v1.OptimizeToursRequest.getDefaultInstance()) {
+          getProcessedRequestBuilder().mergeFrom(value);
+        } else {
+          processedRequest_ = value;
+        }
+      } else {
+        processedRequestBuilder_.mergeFrom(value);
+      }
+      if (processedRequest_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * In some cases we modify the incoming request before solving it, i.e. adding
+     * costs. If solving_mode == TRANSFORM_AND_RETURN_REQUEST, the
+     * modified request is returned here.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.OptimizeToursRequest processed_request = 21;</code>
+     */
+    public Builder clearProcessedRequest() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      processedRequest_ = null;
+      if (processedRequestBuilder_ != null) {
+        processedRequestBuilder_.dispose();
+        processedRequestBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * In some cases we modify the incoming request before solving it, i.e. adding
+     * costs. If solving_mode == TRANSFORM_AND_RETURN_REQUEST, the
+     * modified request is returned here.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.OptimizeToursRequest processed_request = 21;</code>
+     */
+    public com.google.maps.routeoptimization.v1.OptimizeToursRequest.Builder
+        getProcessedRequestBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getProcessedRequestFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * In some cases we modify the incoming request before solving it, i.e. adding
+     * costs. If solving_mode == TRANSFORM_AND_RETURN_REQUEST, the
+     * modified request is returned here.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.OptimizeToursRequest processed_request = 21;</code>
+     */
+    public com.google.maps.routeoptimization.v1.OptimizeToursRequestOrBuilder
+        getProcessedRequestOrBuilder() {
+      if (processedRequestBuilder_ != null) {
+        return processedRequestBuilder_.getMessageOrBuilder();
+      } else {
+        return processedRequest_ == null
+            ? com.google.maps.routeoptimization.v1.OptimizeToursRequest.getDefaultInstance()
+            : processedRequest_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * In some cases we modify the incoming request before solving it, i.e. adding
+     * costs. If solving_mode == TRANSFORM_AND_RETURN_REQUEST, the
+     * modified request is returned here.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>.google.maps.routeoptimization.v1.OptimizeToursRequest processed_request = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routeoptimization.v1.OptimizeToursRequest,
+            com.google.maps.routeoptimization.v1.OptimizeToursRequest.Builder,
+            com.google.maps.routeoptimization.v1.OptimizeToursRequestOrBuilder>
+        getProcessedRequestFieldBuilder() {
+      if (processedRequestBuilder_ == null) {
+        processedRequestBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.routeoptimization.v1.OptimizeToursRequest,
+                com.google.maps.routeoptimization.v1.OptimizeToursRequest.Builder,
+                com.google.maps.routeoptimization.v1.OptimizeToursRequestOrBuilder>(
+                getProcessedRequest(), getParentForChildren(), isClean());
+        processedRequest_ = null;
+      }
+      return processedRequestBuilder_;
+    }
+
     private com.google.maps.routeoptimization.v1.OptimizeToursResponse.Metrics metrics_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.maps.routeoptimization.v1.OptimizeToursResponse.Metrics,
@@ -4911,7 +5272,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * @return Whether the metrics field is set.
      */
     public boolean hasMetrics() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -4955,7 +5316,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       } else {
         metricsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4977,7 +5338,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       } else {
         metricsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4994,7 +5355,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     public Builder mergeMetrics(
         com.google.maps.routeoptimization.v1.OptimizeToursResponse.Metrics value) {
       if (metricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && metrics_ != null
             && metrics_
                 != com.google.maps.routeoptimization.v1.OptimizeToursResponse.Metrics
@@ -5007,7 +5368,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         metricsBuilder_.mergeFrom(value);
       }
       if (metrics_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -5023,7 +5384,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <code>.google.maps.routeoptimization.v1.OptimizeToursResponse.Metrics metrics = 6;</code>
      */
     public Builder clearMetrics() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       metrics_ = null;
       if (metricsBuilder_ != null) {
         metricsBuilder_.dispose();
@@ -5044,7 +5405,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      */
     public com.google.maps.routeoptimization.v1.OptimizeToursResponse.Metrics.Builder
         getMetricsBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getMetricsFieldBuilder().getBuilder();
     }

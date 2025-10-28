@@ -182,7 +182,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * User provided package spec like pickled object and package requirements.
+   * User-provided package specification, containing pickled object and package
+   * requirements.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec}
@@ -633,7 +634,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * User provided package spec like pickled object and package requirements.
+     * User-provided package specification, containing pickled object and package
+     * requirements.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec}
@@ -4731,7 +4733,3573 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public interface SourceCodeSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Source code is provided directly in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource inline_source = 1;
+     * </code>
+     *
+     * @return Whether the inlineSource field is set.
+     */
+    boolean hasInlineSource();
+
+    /**
+     *
+     *
+     * <pre>
+     * Source code is provided directly in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource inline_source = 1;
+     * </code>
+     *
+     * @return The inlineSource.
+     */
+    com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+        getInlineSource();
+
+    /**
+     *
+     *
+     * <pre>
+     * Source code is provided directly in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource inline_source = 1;
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSourceOrBuilder
+        getInlineSourceOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a Python application.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec python_spec = 2;
+     * </code>
+     *
+     * @return Whether the pythonSpec field is set.
+     */
+    boolean hasPythonSpec();
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a Python application.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec python_spec = 2;
+     * </code>
+     *
+     * @return The pythonSpec.
+     */
+    com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec getPythonSpec();
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a Python application.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec python_spec = 2;
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpecOrBuilder
+        getPythonSpecOrBuilder();
+
+    com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.SourceCase getSourceCase();
+
+    com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.LanguageSpecCase
+        getLanguageSpecCase();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specification for deploying from source code.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec}
+   */
+  public static final class SourceCodeSpec extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec)
+      SourceCodeSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use SourceCodeSpec.newBuilder() to construct.
+    private SourceCodeSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SourceCodeSpec() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SourceCodeSpec();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+          .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+          .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.class,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.Builder.class);
+    }
+
+    public interface InlineSourceOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The application source code archive, provided as
+       * a compressed tarball
+       * (.tar.gz) file.
+       * </pre>
+       *
+       * <code>
+       * bytes source_archive = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       *
+       * @return The sourceArchive.
+       */
+      com.google.protobuf.ByteString getSourceArchive();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies source code provided as a byte stream.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource}
+     */
+    public static final class InlineSource extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource)
+        InlineSourceOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use InlineSource.newBuilder() to construct.
+      private InlineSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private InlineSource() {
+        sourceArchive_ = com.google.protobuf.ByteString.EMPTY;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new InlineSource();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_InlineSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_InlineSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+                    .class,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+                    .Builder.class);
+      }
+
+      public static final int SOURCE_ARCHIVE_FIELD_NUMBER = 1;
+      private com.google.protobuf.ByteString sourceArchive_ = com.google.protobuf.ByteString.EMPTY;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The application source code archive, provided as
+       * a compressed tarball
+       * (.tar.gz) file.
+       * </pre>
+       *
+       * <code>
+       * bytes source_archive = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       *
+       * @return The sourceArchive.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getSourceArchive() {
+        return sourceArchive_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!sourceArchive_.isEmpty()) {
+          output.writeBytes(1, sourceArchive_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!sourceArchive_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, sourceArchive_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource other =
+            (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource) obj;
+
+        if (!getSourceArchive().equals(other.getSourceArchive())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + SOURCE_ARCHIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getSourceArchive().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies source code provided as a byte stream.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource)
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSourceOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_InlineSource_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_InlineSource_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+                      .class,
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          sourceArchive_ = com.google.protobuf.ByteString.EMPTY;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_InlineSource_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+            build() {
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+            buildPartial() {
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource result =
+              new com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.sourceArchive_ = sourceArchive_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource other) {
+          if (other
+              == com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+                  .getDefaultInstance()) return this;
+          if (other.getSourceArchive() != com.google.protobuf.ByteString.EMPTY) {
+            setSourceArchive(other.getSourceArchive());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    sourceArchive_ = input.readBytes();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.ByteString sourceArchive_ =
+            com.google.protobuf.ByteString.EMPTY;
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Input only. The application source code archive, provided as
+         * a compressed tarball
+         * (.tar.gz) file.
+         * </pre>
+         *
+         * <code>
+         * bytes source_archive = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+         * </code>
+         *
+         * @return The sourceArchive.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getSourceArchive() {
+          return sourceArchive_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Input only. The application source code archive, provided as
+         * a compressed tarball
+         * (.tar.gz) file.
+         * </pre>
+         *
+         * <code>
+         * bytes source_archive = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+         * </code>
+         *
+         * @param value The sourceArchive to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSourceArchive(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sourceArchive_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Input only. The application source code archive, provided as
+         * a compressed tarball
+         * (.tar.gz) file.
+         * </pre>
+         *
+         * <code>
+         * bytes source_archive = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSourceArchive() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          sourceArchive_ = getDefaultInstance().getSourceArchive();
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource)
+      private static final com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .InlineSource
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource();
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<InlineSource> PARSER =
+          new com.google.protobuf.AbstractParser<InlineSource>() {
+            @java.lang.Override
+            public InlineSource parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<InlineSource> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<InlineSource> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface PythonSpecOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The version of Python to use. Support version
+       * includes 3.9, 3.10, 3.11, 3.12, 3.13.
+       * If not specified, default value is 3.10.
+       * </pre>
+       *
+       * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The version.
+       */
+      java.lang.String getVersion();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The version of Python to use. Support version
+       * includes 3.9, 3.10, 3.11, 3.12, 3.13.
+       * If not specified, default value is 3.10.
+       * </pre>
+       *
+       * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for version.
+       */
+      com.google.protobuf.ByteString getVersionBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Python module to load as the entrypoint, specified as a
+       * fully qualified module name. For example: path.to.agent.
+       * If not specified, defaults to "agent".
+       *
+       * The project root will be added to Python sys.path, allowing imports
+       * to be specified relative to the root.
+       * </pre>
+       *
+       * <code>string entrypoint_module = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The entrypointModule.
+       */
+      java.lang.String getEntrypointModule();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Python module to load as the entrypoint, specified as a
+       * fully qualified module name. For example: path.to.agent.
+       * If not specified, defaults to "agent".
+       *
+       * The project root will be added to Python sys.path, allowing imports
+       * to be specified relative to the root.
+       * </pre>
+       *
+       * <code>string entrypoint_module = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for entrypointModule.
+       */
+      com.google.protobuf.ByteString getEntrypointModuleBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the callable object within the
+       * `entrypoint_module` to use as the application If not specified,
+       * defaults to "root_agent".
+       * </pre>
+       *
+       * <code>string entrypoint_object = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The entrypointObject.
+       */
+      java.lang.String getEntrypointObject();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the callable object within the
+       * `entrypoint_module` to use as the application If not specified,
+       * defaults to "root_agent".
+       * </pre>
+       *
+       * <code>string entrypoint_object = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for entrypointObject.
+       */
+      com.google.protobuf.ByteString getEntrypointObjectBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The path to the requirements file, relative to the source
+       * root. If not specified, defaults to "requirements.txt".
+       * </pre>
+       *
+       * <code>string requirements_file = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The requirementsFile.
+       */
+      java.lang.String getRequirementsFile();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The path to the requirements file, relative to the source
+       * root. If not specified, defaults to "requirements.txt".
+       * </pre>
+       *
+       * <code>string requirements_file = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for requirementsFile.
+       */
+      com.google.protobuf.ByteString getRequirementsFileBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specification for running a Python application from source.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec}
+     */
+    public static final class PythonSpec extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec)
+        PythonSpecOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use PythonSpec.newBuilder() to construct.
+      private PythonSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private PythonSpec() {
+        version_ = "";
+        entrypointModule_ = "";
+        entrypointObject_ = "";
+        requirementsFile_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new PythonSpec();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec.class,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec.Builder
+                    .class);
+      }
+
+      public static final int VERSION_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object version_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The version of Python to use. Support version
+       * includes 3.9, 3.10, 3.11, 3.12, 3.13.
+       * If not specified, default value is 3.10.
+       * </pre>
+       *
+       * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The version.
+       */
+      @java.lang.Override
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          version_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The version of Python to use. Support version
+       * includes 3.9, 3.10, 3.11, 3.12, 3.13.
+       * If not specified, default value is 3.10.
+       * </pre>
+       *
+       * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for version.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getVersionBytes() {
+        java.lang.Object ref = version_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          version_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ENTRYPOINT_MODULE_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object entrypointModule_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Python module to load as the entrypoint, specified as a
+       * fully qualified module name. For example: path.to.agent.
+       * If not specified, defaults to "agent".
+       *
+       * The project root will be added to Python sys.path, allowing imports
+       * to be specified relative to the root.
+       * </pre>
+       *
+       * <code>string entrypoint_module = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The entrypointModule.
+       */
+      @java.lang.Override
+      public java.lang.String getEntrypointModule() {
+        java.lang.Object ref = entrypointModule_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          entrypointModule_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Python module to load as the entrypoint, specified as a
+       * fully qualified module name. For example: path.to.agent.
+       * If not specified, defaults to "agent".
+       *
+       * The project root will be added to Python sys.path, allowing imports
+       * to be specified relative to the root.
+       * </pre>
+       *
+       * <code>string entrypoint_module = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for entrypointModule.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getEntrypointModuleBytes() {
+        java.lang.Object ref = entrypointModule_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          entrypointModule_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ENTRYPOINT_OBJECT_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object entrypointObject_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the callable object within the
+       * `entrypoint_module` to use as the application If not specified,
+       * defaults to "root_agent".
+       * </pre>
+       *
+       * <code>string entrypoint_object = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The entrypointObject.
+       */
+      @java.lang.Override
+      public java.lang.String getEntrypointObject() {
+        java.lang.Object ref = entrypointObject_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          entrypointObject_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the callable object within the
+       * `entrypoint_module` to use as the application If not specified,
+       * defaults to "root_agent".
+       * </pre>
+       *
+       * <code>string entrypoint_object = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for entrypointObject.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getEntrypointObjectBytes() {
+        java.lang.Object ref = entrypointObject_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          entrypointObject_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int REQUIREMENTS_FILE_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object requirementsFile_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The path to the requirements file, relative to the source
+       * root. If not specified, defaults to "requirements.txt".
+       * </pre>
+       *
+       * <code>string requirements_file = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The requirementsFile.
+       */
+      @java.lang.Override
+      public java.lang.String getRequirementsFile() {
+        java.lang.Object ref = requirementsFile_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          requirementsFile_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The path to the requirements file, relative to the source
+       * root. If not specified, defaults to "requirements.txt".
+       * </pre>
+       *
+       * <code>string requirements_file = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for requirementsFile.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getRequirementsFileBytes() {
+        java.lang.Object ref = requirementsFile_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          requirementsFile_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, version_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entrypointModule_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, entrypointModule_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entrypointObject_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, entrypointObject_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requirementsFile_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, requirementsFile_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, version_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entrypointModule_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, entrypointModule_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entrypointObject_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, entrypointObject_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requirementsFile_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, requirementsFile_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec other =
+            (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec) obj;
+
+        if (!getVersion().equals(other.getVersion())) return false;
+        if (!getEntrypointModule().equals(other.getEntrypointModule())) return false;
+        if (!getEntrypointObject().equals(other.getEntrypointObject())) return false;
+        if (!getRequirementsFile().equals(other.getRequirementsFile())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + getVersion().hashCode();
+        hash = (37 * hash) + ENTRYPOINT_MODULE_FIELD_NUMBER;
+        hash = (53 * hash) + getEntrypointModule().hashCode();
+        hash = (37 * hash) + ENTRYPOINT_OBJECT_FIELD_NUMBER;
+        hash = (53 * hash) + getEntrypointObject().hashCode();
+        hash = (37 * hash) + REQUIREMENTS_FILE_FIELD_NUMBER;
+        hash = (53 * hash) + getRequirementsFile().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specification for running a Python application from source.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec)
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpecOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+                      .class,
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          version_ = "";
+          entrypointModule_ = "";
+          entrypointObject_ = "";
+          requirementsFile_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+            build() {
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+            buildPartial() {
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec result =
+              new com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.version_ = version_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.entrypointModule_ = entrypointModule_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.entrypointObject_ = entrypointObject_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.requirementsFile_ = requirementsFile_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec other) {
+          if (other
+              == com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+                  .getDefaultInstance()) return this;
+          if (!other.getVersion().isEmpty()) {
+            version_ = other.version_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getEntrypointModule().isEmpty()) {
+            entrypointModule_ = other.entrypointModule_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          if (!other.getEntrypointObject().isEmpty()) {
+            entrypointObject_ = other.entrypointObject_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          if (!other.getRequirementsFile().isEmpty()) {
+            requirementsFile_ = other.requirementsFile_;
+            bitField0_ |= 0x00000008;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    version_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    entrypointModule_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    entrypointObject_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    requirementsFile_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 34
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object version_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The version of Python to use. Support version
+         * includes 3.9, 3.10, 3.11, 3.12, 3.13.
+         * If not specified, default value is 3.10.
+         * </pre>
+         *
+         * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The version.
+         */
+        public java.lang.String getVersion() {
+          java.lang.Object ref = version_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            version_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The version of Python to use. Support version
+         * includes 3.9, 3.10, 3.11, 3.12, 3.13.
+         * If not specified, default value is 3.10.
+         * </pre>
+         *
+         * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for version.
+         */
+        public com.google.protobuf.ByteString getVersionBytes() {
+          java.lang.Object ref = version_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            version_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The version of Python to use. Support version
+         * includes 3.9, 3.10, 3.11, 3.12, 3.13.
+         * If not specified, default value is 3.10.
+         * </pre>
+         *
+         * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The version to set.
+         * @return This builder for chaining.
+         */
+        public Builder setVersion(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          version_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The version of Python to use. Support version
+         * includes 3.9, 3.10, 3.11, 3.12, 3.13.
+         * If not specified, default value is 3.10.
+         * </pre>
+         *
+         * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearVersion() {
+          version_ = getDefaultInstance().getVersion();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The version of Python to use. Support version
+         * includes 3.9, 3.10, 3.11, 3.12, 3.13.
+         * If not specified, default value is 3.10.
+         * </pre>
+         *
+         * <code>string version = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for version to set.
+         * @return This builder for chaining.
+         */
+        public Builder setVersionBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          version_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object entrypointModule_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The Python module to load as the entrypoint, specified as a
+         * fully qualified module name. For example: path.to.agent.
+         * If not specified, defaults to "agent".
+         *
+         * The project root will be added to Python sys.path, allowing imports
+         * to be specified relative to the root.
+         * </pre>
+         *
+         * <code>string entrypoint_module = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The entrypointModule.
+         */
+        public java.lang.String getEntrypointModule() {
+          java.lang.Object ref = entrypointModule_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            entrypointModule_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The Python module to load as the entrypoint, specified as a
+         * fully qualified module name. For example: path.to.agent.
+         * If not specified, defaults to "agent".
+         *
+         * The project root will be added to Python sys.path, allowing imports
+         * to be specified relative to the root.
+         * </pre>
+         *
+         * <code>string entrypoint_module = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for entrypointModule.
+         */
+        public com.google.protobuf.ByteString getEntrypointModuleBytes() {
+          java.lang.Object ref = entrypointModule_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            entrypointModule_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The Python module to load as the entrypoint, specified as a
+         * fully qualified module name. For example: path.to.agent.
+         * If not specified, defaults to "agent".
+         *
+         * The project root will be added to Python sys.path, allowing imports
+         * to be specified relative to the root.
+         * </pre>
+         *
+         * <code>string entrypoint_module = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The entrypointModule to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEntrypointModule(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          entrypointModule_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The Python module to load as the entrypoint, specified as a
+         * fully qualified module name. For example: path.to.agent.
+         * If not specified, defaults to "agent".
+         *
+         * The project root will be added to Python sys.path, allowing imports
+         * to be specified relative to the root.
+         * </pre>
+         *
+         * <code>string entrypoint_module = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEntrypointModule() {
+          entrypointModule_ = getDefaultInstance().getEntrypointModule();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The Python module to load as the entrypoint, specified as a
+         * fully qualified module name. For example: path.to.agent.
+         * If not specified, defaults to "agent".
+         *
+         * The project root will be added to Python sys.path, allowing imports
+         * to be specified relative to the root.
+         * </pre>
+         *
+         * <code>string entrypoint_module = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for entrypointModule to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEntrypointModuleBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          entrypointModule_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object entrypointObject_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the callable object within the
+         * `entrypoint_module` to use as the application If not specified,
+         * defaults to "root_agent".
+         * </pre>
+         *
+         * <code>string entrypoint_object = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The entrypointObject.
+         */
+        public java.lang.String getEntrypointObject() {
+          java.lang.Object ref = entrypointObject_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            entrypointObject_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the callable object within the
+         * `entrypoint_module` to use as the application If not specified,
+         * defaults to "root_agent".
+         * </pre>
+         *
+         * <code>string entrypoint_object = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for entrypointObject.
+         */
+        public com.google.protobuf.ByteString getEntrypointObjectBytes() {
+          java.lang.Object ref = entrypointObject_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            entrypointObject_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the callable object within the
+         * `entrypoint_module` to use as the application If not specified,
+         * defaults to "root_agent".
+         * </pre>
+         *
+         * <code>string entrypoint_object = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The entrypointObject to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEntrypointObject(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          entrypointObject_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the callable object within the
+         * `entrypoint_module` to use as the application If not specified,
+         * defaults to "root_agent".
+         * </pre>
+         *
+         * <code>string entrypoint_object = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEntrypointObject() {
+          entrypointObject_ = getDefaultInstance().getEntrypointObject();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the callable object within the
+         * `entrypoint_module` to use as the application If not specified,
+         * defaults to "root_agent".
+         * </pre>
+         *
+         * <code>string entrypoint_object = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for entrypointObject to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEntrypointObjectBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          entrypointObject_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object requirementsFile_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The path to the requirements file, relative to the source
+         * root. If not specified, defaults to "requirements.txt".
+         * </pre>
+         *
+         * <code>string requirements_file = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The requirementsFile.
+         */
+        public java.lang.String getRequirementsFile() {
+          java.lang.Object ref = requirementsFile_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            requirementsFile_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The path to the requirements file, relative to the source
+         * root. If not specified, defaults to "requirements.txt".
+         * </pre>
+         *
+         * <code>string requirements_file = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for requirementsFile.
+         */
+        public com.google.protobuf.ByteString getRequirementsFileBytes() {
+          java.lang.Object ref = requirementsFile_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            requirementsFile_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The path to the requirements file, relative to the source
+         * root. If not specified, defaults to "requirements.txt".
+         * </pre>
+         *
+         * <code>string requirements_file = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The requirementsFile to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRequirementsFile(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          requirementsFile_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The path to the requirements file, relative to the source
+         * root. If not specified, defaults to "requirements.txt".
+         * </pre>
+         *
+         * <code>string requirements_file = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearRequirementsFile() {
+          requirementsFile_ = getDefaultInstance().getRequirementsFile();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The path to the requirements file, relative to the source
+         * root. If not specified, defaults to "requirements.txt".
+         * </pre>
+         *
+         * <code>string requirements_file = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for requirementsFile to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRequirementsFileBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          requirementsFile_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec)
+      private static final com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .PythonSpec
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec();
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<PythonSpec> PARSER =
+          new com.google.protobuf.AbstractParser<PythonSpec>() {
+            @java.lang.Override
+            public PythonSpec parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<PythonSpec> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<PythonSpec> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int sourceCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object source_;
+
+    public enum SourceCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      INLINE_SOURCE(1),
+      SOURCE_NOT_SET(0);
+      private final int value;
+
+      private SourceCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SourceCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static SourceCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return INLINE_SOURCE;
+          case 0:
+            return SOURCE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public SourceCase getSourceCase() {
+      return SourceCase.forNumber(sourceCase_);
+    }
+
+    private int languageSpecCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object languageSpec_;
+
+    public enum LanguageSpecCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      PYTHON_SPEC(2),
+      LANGUAGESPEC_NOT_SET(0);
+      private final int value;
+
+      private LanguageSpecCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static LanguageSpecCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static LanguageSpecCase forNumber(int value) {
+        switch (value) {
+          case 2:
+            return PYTHON_SPEC;
+          case 0:
+            return LANGUAGESPEC_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public LanguageSpecCase getLanguageSpecCase() {
+      return LanguageSpecCase.forNumber(languageSpecCase_);
+    }
+
+    public static final int INLINE_SOURCE_FIELD_NUMBER = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Source code is provided directly in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource inline_source = 1;
+     * </code>
+     *
+     * @return Whether the inlineSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasInlineSource() {
+      return sourceCase_ == 1;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source code is provided directly in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource inline_source = 1;
+     * </code>
+     *
+     * @return The inlineSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+        getInlineSource() {
+      if (sourceCase_ == 1) {
+        return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource)
+            source_;
+      }
+      return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source code is provided directly in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource inline_source = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSourceOrBuilder
+        getInlineSourceOrBuilder() {
+      if (sourceCase_ == 1) {
+        return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource)
+            source_;
+      }
+      return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          .getDefaultInstance();
+    }
+
+    public static final int PYTHON_SPEC_FIELD_NUMBER = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a Python application.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec python_spec = 2;
+     * </code>
+     *
+     * @return Whether the pythonSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasPythonSpec() {
+      return languageSpecCase_ == 2;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a Python application.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec python_spec = 2;
+     * </code>
+     *
+     * @return The pythonSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+        getPythonSpec() {
+      if (languageSpecCase_ == 2) {
+        return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec)
+            languageSpec_;
+      }
+      return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a Python application.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec python_spec = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpecOrBuilder
+        getPythonSpecOrBuilder() {
+      if (languageSpecCase_ == 2) {
+        return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec)
+            languageSpec_;
+      }
+      return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+          .getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (sourceCase_ == 1) {
+        output.writeMessage(
+            1,
+            (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource)
+                source_);
+      }
+      if (languageSpecCase_ == 2) {
+        output.writeMessage(
+            2,
+            (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec)
+                languageSpec_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (sourceCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1,
+                (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource)
+                    source_);
+      }
+      if (languageSpecCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2,
+                (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec)
+                    languageSpec_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec other =
+          (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec) obj;
+
+      if (!getSourceCase().equals(other.getSourceCase())) return false;
+      switch (sourceCase_) {
+        case 1:
+          if (!getInlineSource().equals(other.getInlineSource())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getLanguageSpecCase().equals(other.getLanguageSpecCase())) return false;
+      switch (languageSpecCase_) {
+        case 2:
+          if (!getPythonSpec().equals(other.getPythonSpec())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (sourceCase_) {
+        case 1:
+          hash = (37 * hash) + INLINE_SOURCE_FIELD_NUMBER;
+          hash = (53 * hash) + getInlineSource().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      switch (languageSpecCase_) {
+        case 2:
+          hash = (37 * hash) + PYTHON_SPEC_FIELD_NUMBER;
+          hash = (53 * hash) + getPythonSpec().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specification for deploying from source code.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec)
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.class,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (inlineSourceBuilder_ != null) {
+          inlineSourceBuilder_.clear();
+        }
+        if (pythonSpecBuilder_ != null) {
+          pythonSpecBuilder_.clear();
+        }
+        sourceCase_ = 0;
+        source_ = null;
+        languageSpecCase_ = 0;
+        languageSpec_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec build() {
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec buildPartial() {
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec result =
+            new com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec result) {
+        result.sourceCase_ = sourceCase_;
+        result.source_ = this.source_;
+        if (sourceCase_ == 1 && inlineSourceBuilder_ != null) {
+          result.source_ = inlineSourceBuilder_.build();
+        }
+        result.languageSpecCase_ = languageSpecCase_;
+        result.languageSpec_ = this.languageSpec_;
+        if (languageSpecCase_ == 2 && pythonSpecBuilder_ != null) {
+          result.languageSpec_ = pythonSpecBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec other) {
+        if (other
+            == com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .getDefaultInstance()) return this;
+        switch (other.getSourceCase()) {
+          case INLINE_SOURCE:
+            {
+              mergeInlineSource(other.getInlineSource());
+              break;
+            }
+          case SOURCE_NOT_SET:
+            {
+              break;
+            }
+        }
+        switch (other.getLanguageSpecCase()) {
+          case PYTHON_SPEC:
+            {
+              mergePythonSpec(other.getPythonSpec());
+              break;
+            }
+          case LANGUAGESPEC_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getInlineSourceFieldBuilder().getBuilder(), extensionRegistry);
+                  sourceCase_ = 1;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getPythonSpecFieldBuilder().getBuilder(), extensionRegistry);
+                  languageSpecCase_ = 2;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int sourceCase_ = 0;
+      private java.lang.Object source_;
+
+      public SourceCase getSourceCase() {
+        return SourceCase.forNumber(sourceCase_);
+      }
+
+      public Builder clearSource() {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int languageSpecCase_ = 0;
+      private java.lang.Object languageSpec_;
+
+      public LanguageSpecCase getLanguageSpecCase() {
+        return LanguageSpecCase.forNumber(languageSpecCase_);
+      }
+
+      public Builder clearLanguageSpec() {
+        languageSpecCase_ = 0;
+        languageSpec_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+                  .Builder,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                  .InlineSourceOrBuilder>
+          inlineSourceBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is provided directly in the request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource inline_source = 1;
+       * </code>
+       *
+       * @return Whether the inlineSource field is set.
+       */
+      @java.lang.Override
+      public boolean hasInlineSource() {
+        return sourceCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is provided directly in the request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource inline_source = 1;
+       * </code>
+       *
+       * @return The inlineSource.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          getInlineSource() {
+        if (inlineSourceBuilder_ == null) {
+          if (sourceCase_ == 1) {
+            return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource)
+                source_;
+          }
+          return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+              .getDefaultInstance();
+        } else {
+          if (sourceCase_ == 1) {
+            return inlineSourceBuilder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is provided directly in the request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource inline_source = 1;
+       * </code>
+       */
+      public Builder setInlineSource(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource value) {
+        if (inlineSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          source_ = value;
+          onChanged();
+        } else {
+          inlineSourceBuilder_.setMessage(value);
+        }
+        sourceCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is provided directly in the request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource inline_source = 1;
+       * </code>
+       */
+      public Builder setInlineSource(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource.Builder
+              builderForValue) {
+        if (inlineSourceBuilder_ == null) {
+          source_ = builderForValue.build();
+          onChanged();
+        } else {
+          inlineSourceBuilder_.setMessage(builderForValue.build());
+        }
+        sourceCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is provided directly in the request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource inline_source = 1;
+       * </code>
+       */
+      public Builder mergeInlineSource(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource value) {
+        if (inlineSourceBuilder_ == null) {
+          if (sourceCase_ == 1
+              && source_
+                  != com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+                      .getDefaultInstance()) {
+            source_ =
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+                    .newBuilder(
+                        (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                                .InlineSource)
+                            source_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            source_ = value;
+          }
+          onChanged();
+        } else {
+          if (sourceCase_ == 1) {
+            inlineSourceBuilder_.mergeFrom(value);
+          } else {
+            inlineSourceBuilder_.setMessage(value);
+          }
+        }
+        sourceCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is provided directly in the request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource inline_source = 1;
+       * </code>
+       */
+      public Builder clearInlineSource() {
+        if (inlineSourceBuilder_ == null) {
+          if (sourceCase_ == 1) {
+            sourceCase_ = 0;
+            source_ = null;
+            onChanged();
+          }
+        } else {
+          if (sourceCase_ == 1) {
+            sourceCase_ = 0;
+            source_ = null;
+          }
+          inlineSourceBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is provided directly in the request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource inline_source = 1;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource.Builder
+          getInlineSourceBuilder() {
+        return getInlineSourceFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is provided directly in the request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource inline_source = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSourceOrBuilder
+          getInlineSourceOrBuilder() {
+        if ((sourceCase_ == 1) && (inlineSourceBuilder_ != null)) {
+          return inlineSourceBuilder_.getMessageOrBuilder();
+        } else {
+          if (sourceCase_ == 1) {
+            return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource)
+                source_;
+          }
+          return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is provided directly in the request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource inline_source = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+                  .Builder,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                  .InlineSourceOrBuilder>
+          getInlineSourceFieldBuilder() {
+        if (inlineSourceBuilder_ == null) {
+          if (!(sourceCase_ == 1)) {
+            source_ =
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+                    .getDefaultInstance();
+          }
+          inlineSourceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource,
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+                      .Builder,
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                      .InlineSourceOrBuilder>(
+                  (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource)
+                      source_,
+                  getParentForChildren(),
+                  isClean());
+          source_ = null;
+        }
+        sourceCase_ = 1;
+        onChanged();
+        return inlineSourceBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec.Builder,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpecOrBuilder>
+          pythonSpecBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for a Python application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec python_spec = 2;
+       * </code>
+       *
+       * @return Whether the pythonSpec field is set.
+       */
+      @java.lang.Override
+      public boolean hasPythonSpec() {
+        return languageSpecCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for a Python application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec python_spec = 2;
+       * </code>
+       *
+       * @return The pythonSpec.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+          getPythonSpec() {
+        if (pythonSpecBuilder_ == null) {
+          if (languageSpecCase_ == 2) {
+            return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec)
+                languageSpec_;
+          }
+          return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+              .getDefaultInstance();
+        } else {
+          if (languageSpecCase_ == 2) {
+            return pythonSpecBuilder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for a Python application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec python_spec = 2;
+       * </code>
+       */
+      public Builder setPythonSpec(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec value) {
+        if (pythonSpecBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          languageSpec_ = value;
+          onChanged();
+        } else {
+          pythonSpecBuilder_.setMessage(value);
+        }
+        languageSpecCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for a Python application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec python_spec = 2;
+       * </code>
+       */
+      public Builder setPythonSpec(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec.Builder
+              builderForValue) {
+        if (pythonSpecBuilder_ == null) {
+          languageSpec_ = builderForValue.build();
+          onChanged();
+        } else {
+          pythonSpecBuilder_.setMessage(builderForValue.build());
+        }
+        languageSpecCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for a Python application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec python_spec = 2;
+       * </code>
+       */
+      public Builder mergePythonSpec(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec value) {
+        if (pythonSpecBuilder_ == null) {
+          if (languageSpecCase_ == 2
+              && languageSpec_
+                  != com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+                      .getDefaultInstance()) {
+            languageSpec_ =
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+                    .newBuilder(
+                        (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                                .PythonSpec)
+                            languageSpec_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            languageSpec_ = value;
+          }
+          onChanged();
+        } else {
+          if (languageSpecCase_ == 2) {
+            pythonSpecBuilder_.mergeFrom(value);
+          } else {
+            pythonSpecBuilder_.setMessage(value);
+          }
+        }
+        languageSpecCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for a Python application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec python_spec = 2;
+       * </code>
+       */
+      public Builder clearPythonSpec() {
+        if (pythonSpecBuilder_ == null) {
+          if (languageSpecCase_ == 2) {
+            languageSpecCase_ = 0;
+            languageSpec_ = null;
+            onChanged();
+          }
+        } else {
+          if (languageSpecCase_ == 2) {
+            languageSpecCase_ = 0;
+            languageSpec_ = null;
+          }
+          pythonSpecBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for a Python application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec python_spec = 2;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec.Builder
+          getPythonSpecBuilder() {
+        return getPythonSpecFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for a Python application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec python_spec = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpecOrBuilder
+          getPythonSpecOrBuilder() {
+        if ((languageSpecCase_ == 2) && (pythonSpecBuilder_ != null)) {
+          return pythonSpecBuilder_.getMessageOrBuilder();
+        } else {
+          if (languageSpecCase_ == 2) {
+            return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec)
+                languageSpec_;
+          }
+          return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for a Python application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec python_spec = 2;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec.Builder,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpecOrBuilder>
+          getPythonSpecFieldBuilder() {
+        if (pythonSpecBuilder_ == null) {
+          if (!(languageSpecCase_ == 2)) {
+            languageSpec_ =
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+                    .getDefaultInstance();
+          }
+          pythonSpecBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec,
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec
+                      .Builder,
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                      .PythonSpecOrBuilder>(
+                  (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec)
+                      languageSpec_,
+                  getParentForChildren(),
+                  isClean());
+          languageSpec_ = null;
+        }
+        languageSpecCase_ = 2;
+        onChanged();
+        return pythonSpecBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec)
+    private static final com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec();
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SourceCodeSpec> PARSER =
+        new com.google.protobuf.AbstractParser<SourceCodeSpec>() {
+          @java.lang.Override
+          public SourceCodeSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SourceCodeSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SourceCodeSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
+  private int deploymentSourceCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object deploymentSource_;
+
+  public enum DeploymentSourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    SOURCE_CODE_SPEC(11),
+    DEPLOYMENTSOURCE_NOT_SET(0);
+    private final int value;
+
+    private DeploymentSourceCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DeploymentSourceCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static DeploymentSourceCase forNumber(int value) {
+      switch (value) {
+        case 11:
+          return SOURCE_CODE_SPEC;
+        case 0:
+          return DEPLOYMENTSOURCE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public DeploymentSourceCase getDeploymentSourceCase() {
+    return DeploymentSourceCase.forNumber(deploymentSourceCase_);
+  }
+
+  public static final int SOURCE_CODE_SPEC_FIELD_NUMBER = 11;
+
+  /**
+   *
+   *
+   * <pre>
+   * Deploy from source code files with a defined entrypoint.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec source_code_spec = 11;
+   * </code>
+   *
+   * @return Whether the sourceCodeSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceCodeSpec() {
+    return deploymentSourceCase_ == 11;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Deploy from source code files with a defined entrypoint.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec source_code_spec = 11;
+   * </code>
+   *
+   * @return The sourceCodeSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec getSourceCodeSpec() {
+    if (deploymentSourceCase_ == 11) {
+      return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec) deploymentSource_;
+    }
+    return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Deploy from source code files with a defined entrypoint.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec source_code_spec = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpecOrBuilder
+      getSourceCodeSpecOrBuilder() {
+    if (deploymentSourceCase_ == 11) {
+      return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec) deploymentSource_;
+    }
+    return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.getDefaultInstance();
+  }
+
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -4824,6 +8392,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    * Ignored when users directly specify a deployment image through
    * `deployment_spec.first_party_image_override`, but keeping the
    * field_behavior to avoid introducing breaking changes.
+   * The `deployment_source` field should not be set if `package_spec` is
+   * specified.
    * </pre>
    *
    * <code>
@@ -4845,6 +8415,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    * Ignored when users directly specify a deployment image through
    * `deployment_spec.first_party_image_override`, but keeping the
    * field_behavior to avoid introducing breaking changes.
+   * The `deployment_source` field should not be set if `package_spec` is
+   * specified.
    * </pre>
    *
    * <code>
@@ -4868,6 +8440,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    * Ignored when users directly specify a deployment image through
    * `deployment_spec.first_party_image_override`, but keeping the
    * field_behavior to avoid introducing breaking changes.
+   * The `deployment_source` field should not be set if `package_spec` is
+   * specified.
    * </pre>
    *
    * <code>
@@ -5119,6 +8693,11 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentFramework_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, agentFramework_);
     }
+    if (deploymentSourceCase_ == 11) {
+      output.writeMessage(
+          11,
+          (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec) deploymentSource_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -5142,6 +8721,13 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentFramework_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, agentFramework_);
+    }
+    if (deploymentSourceCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11,
+              (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec)
+                  deploymentSource_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -5173,6 +8759,14 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     }
     if (!getClassMethodsList().equals(other.getClassMethodsList())) return false;
     if (!getAgentFramework().equals(other.getAgentFramework())) return false;
+    if (!getDeploymentSourceCase().equals(other.getDeploymentSourceCase())) return false;
+    switch (deploymentSourceCase_) {
+      case 11:
+        if (!getSourceCodeSpec().equals(other.getSourceCodeSpec())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -5202,6 +8796,14 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + AGENT_FRAMEWORK_FIELD_NUMBER;
     hash = (53 * hash) + getAgentFramework().hashCode();
+    switch (deploymentSourceCase_) {
+      case 11:
+        hash = (37 * hash) + SOURCE_CODE_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getSourceCodeSpec().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -5353,6 +8955,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (sourceCodeSpecBuilder_ != null) {
+        sourceCodeSpecBuilder_.clear();
+      }
       serviceAccount_ = "";
       packageSpec_ = null;
       if (packageSpecBuilder_ != null) {
@@ -5370,8 +8975,10 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         classMethods_ = null;
         classMethodsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       agentFramework_ = "";
+      deploymentSourceCase_ = 0;
+      deploymentSource_ = null;
       return this;
     }
 
@@ -5403,6 +9010,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -5410,9 +9018,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1.ReasoningEngineSpec result) {
       if (classMethodsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           classMethods_ = java.util.Collections.unmodifiableList(classMethods_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.classMethods_ = classMethods_;
       } else {
@@ -5423,24 +9031,32 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     private void buildPartial0(com.google.cloud.aiplatform.v1.ReasoningEngineSpec result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.serviceAccount_ = serviceAccount_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.packageSpec_ =
             packageSpecBuilder_ == null ? packageSpec_ : packageSpecBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.deploymentSpec_ =
             deploymentSpecBuilder_ == null ? deploymentSpec_ : deploymentSpecBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.agentFramework_ = agentFramework_;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1.ReasoningEngineSpec result) {
+      result.deploymentSourceCase_ = deploymentSourceCase_;
+      result.deploymentSource_ = this.deploymentSource_;
+      if (deploymentSourceCase_ == 11 && sourceCodeSpecBuilder_ != null) {
+        result.deploymentSource_ = sourceCodeSpecBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -5491,7 +9107,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return this;
       if (other.hasServiceAccount()) {
         serviceAccount_ = other.serviceAccount_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPackageSpec()) {
@@ -5504,7 +9120,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         if (!other.classMethods_.isEmpty()) {
           if (classMethods_.isEmpty()) {
             classMethods_ = other.classMethods_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureClassMethodsIsMutable();
             classMethods_.addAll(other.classMethods_);
@@ -5517,7 +9133,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             classMethodsBuilder_.dispose();
             classMethodsBuilder_ = null;
             classMethods_ = other.classMethods_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             classMethodsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getClassMethodsFieldBuilder()
@@ -5529,8 +9145,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       if (!other.getAgentFramework().isEmpty()) {
         agentFramework_ = other.agentFramework_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
+      }
+      switch (other.getDeploymentSourceCase()) {
+        case SOURCE_CODE_SPEC:
+          {
+            mergeSourceCodeSpec(other.getSourceCodeSpec());
+            break;
+          }
+        case DEPLOYMENTSOURCE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5561,13 +9188,13 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getPackageSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
@@ -5585,15 +9212,21 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             case 34:
               {
                 input.readMessage(getDeploymentSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 agentFramework_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
+            case 90:
+              {
+                input.readMessage(getSourceCodeSpecFieldBuilder().getBuilder(), extensionRegistry);
+                deploymentSourceCase_ = 11;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5611,7 +9244,263 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int deploymentSourceCase_ = 0;
+    private java.lang.Object deploymentSource_;
+
+    public DeploymentSourceCase getDeploymentSourceCase() {
+      return DeploymentSourceCase.forNumber(deploymentSourceCase_);
+    }
+
+    public Builder clearDeploymentSource() {
+      deploymentSourceCase_ = 0;
+      deploymentSource_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec,
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.Builder,
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpecOrBuilder>
+        sourceCodeSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from source code files with a defined entrypoint.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec source_code_spec = 11;
+     * </code>
+     *
+     * @return Whether the sourceCodeSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasSourceCodeSpec() {
+      return deploymentSourceCase_ == 11;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from source code files with a defined entrypoint.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec source_code_spec = 11;
+     * </code>
+     *
+     * @return The sourceCodeSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec getSourceCodeSpec() {
+      if (sourceCodeSpecBuilder_ == null) {
+        if (deploymentSourceCase_ == 11) {
+          return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec)
+              deploymentSource_;
+        }
+        return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+            .getDefaultInstance();
+      } else {
+        if (deploymentSourceCase_ == 11) {
+          return sourceCodeSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from source code files with a defined entrypoint.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec source_code_spec = 11;
+     * </code>
+     */
+    public Builder setSourceCodeSpec(
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec value) {
+      if (sourceCodeSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deploymentSource_ = value;
+        onChanged();
+      } else {
+        sourceCodeSpecBuilder_.setMessage(value);
+      }
+      deploymentSourceCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from source code files with a defined entrypoint.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec source_code_spec = 11;
+     * </code>
+     */
+    public Builder setSourceCodeSpec(
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.Builder builderForValue) {
+      if (sourceCodeSpecBuilder_ == null) {
+        deploymentSource_ = builderForValue.build();
+        onChanged();
+      } else {
+        sourceCodeSpecBuilder_.setMessage(builderForValue.build());
+      }
+      deploymentSourceCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from source code files with a defined entrypoint.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec source_code_spec = 11;
+     * </code>
+     */
+    public Builder mergeSourceCodeSpec(
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec value) {
+      if (sourceCodeSpecBuilder_ == null) {
+        if (deploymentSourceCase_ == 11
+            && deploymentSource_
+                != com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .getDefaultInstance()) {
+          deploymentSource_ =
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.newBuilder(
+                      (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec)
+                          deploymentSource_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          deploymentSource_ = value;
+        }
+        onChanged();
+      } else {
+        if (deploymentSourceCase_ == 11) {
+          sourceCodeSpecBuilder_.mergeFrom(value);
+        } else {
+          sourceCodeSpecBuilder_.setMessage(value);
+        }
+      }
+      deploymentSourceCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from source code files with a defined entrypoint.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec source_code_spec = 11;
+     * </code>
+     */
+    public Builder clearSourceCodeSpec() {
+      if (sourceCodeSpecBuilder_ == null) {
+        if (deploymentSourceCase_ == 11) {
+          deploymentSourceCase_ = 0;
+          deploymentSource_ = null;
+          onChanged();
+        }
+      } else {
+        if (deploymentSourceCase_ == 11) {
+          deploymentSourceCase_ = 0;
+          deploymentSource_ = null;
+        }
+        sourceCodeSpecBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from source code files with a defined entrypoint.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec source_code_spec = 11;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.Builder
+        getSourceCodeSpecBuilder() {
+      return getSourceCodeSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from source code files with a defined entrypoint.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec source_code_spec = 11;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpecOrBuilder
+        getSourceCodeSpecOrBuilder() {
+      if ((deploymentSourceCase_ == 11) && (sourceCodeSpecBuilder_ != null)) {
+        return sourceCodeSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (deploymentSourceCase_ == 11) {
+          return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec)
+              deploymentSource_;
+        }
+        return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploy from source code files with a defined entrypoint.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec source_code_spec = 11;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec,
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.Builder,
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpecOrBuilder>
+        getSourceCodeSpecFieldBuilder() {
+      if (sourceCodeSpecBuilder_ == null) {
+        if (!(deploymentSourceCase_ == 11)) {
+          deploymentSource_ =
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                  .getDefaultInstance();
+        }
+        sourceCodeSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.Builder,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpecOrBuilder>(
+                (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec)
+                    deploymentSource_,
+                getParentForChildren(),
+                isClean());
+        deploymentSource_ = null;
+      }
+      deploymentSourceCase_ = 11;
+      onChanged();
+      return sourceCodeSpecBuilder_;
+    }
 
     private java.lang.Object serviceAccount_ = "";
 
@@ -5631,7 +9520,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return Whether the serviceAccount field is set.
      */
     public boolean hasServiceAccount() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
@@ -5709,7 +9598,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       serviceAccount_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -5731,7 +9620,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     public Builder clearServiceAccount() {
       serviceAccount_ = getDefaultInstance().getServiceAccount();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -5758,7 +9647,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       serviceAccount_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -5778,6 +9667,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * Ignored when users directly specify a deployment image through
      * `deployment_spec.first_party_image_override`, but keeping the
      * field_behavior to avoid introducing breaking changes.
+     * The `deployment_source` field should not be set if `package_spec` is
+     * specified.
      * </pre>
      *
      * <code>
@@ -5787,7 +9678,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return Whether the packageSpec field is set.
      */
     public boolean hasPackageSpec() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -5798,6 +9689,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * Ignored when users directly specify a deployment image through
      * `deployment_spec.first_party_image_override`, but keeping the
      * field_behavior to avoid introducing breaking changes.
+     * The `deployment_source` field should not be set if `package_spec` is
+     * specified.
      * </pre>
      *
      * <code>
@@ -5824,6 +9717,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * Ignored when users directly specify a deployment image through
      * `deployment_spec.first_party_image_override`, but keeping the
      * field_behavior to avoid introducing breaking changes.
+     * The `deployment_source` field should not be set if `package_spec` is
+     * specified.
      * </pre>
      *
      * <code>
@@ -5840,7 +9735,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       } else {
         packageSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -5853,6 +9748,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * Ignored when users directly specify a deployment image through
      * `deployment_spec.first_party_image_override`, but keeping the
      * field_behavior to avoid introducing breaking changes.
+     * The `deployment_source` field should not be set if `package_spec` is
+     * specified.
      * </pre>
      *
      * <code>
@@ -5866,7 +9763,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       } else {
         packageSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -5879,6 +9776,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * Ignored when users directly specify a deployment image through
      * `deployment_spec.first_party_image_override`, but keeping the
      * field_behavior to avoid introducing breaking changes.
+     * The `deployment_source` field should not be set if `package_spec` is
+     * specified.
      * </pre>
      *
      * <code>
@@ -5888,7 +9787,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder mergePackageSpec(
         com.google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec value) {
       if (packageSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && packageSpec_ != null
             && packageSpec_
                 != com.google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec
@@ -5901,7 +9800,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         packageSpecBuilder_.mergeFrom(value);
       }
       if (packageSpec_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -5915,6 +9814,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * Ignored when users directly specify a deployment image through
      * `deployment_spec.first_party_image_override`, but keeping the
      * field_behavior to avoid introducing breaking changes.
+     * The `deployment_source` field should not be set if `package_spec` is
+     * specified.
      * </pre>
      *
      * <code>
@@ -5922,7 +9823,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearPackageSpec() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       packageSpec_ = null;
       if (packageSpecBuilder_ != null) {
         packageSpecBuilder_.dispose();
@@ -5940,6 +9841,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * Ignored when users directly specify a deployment image through
      * `deployment_spec.first_party_image_override`, but keeping the
      * field_behavior to avoid introducing breaking changes.
+     * The `deployment_source` field should not be set if `package_spec` is
+     * specified.
      * </pre>
      *
      * <code>
@@ -5948,7 +9851,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec.Builder
         getPackageSpecBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPackageSpecFieldBuilder().getBuilder();
     }
@@ -5961,6 +9864,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * Ignored when users directly specify a deployment image through
      * `deployment_spec.first_party_image_override`, but keeping the
      * field_behavior to avoid introducing breaking changes.
+     * The `deployment_source` field should not be set if `package_spec` is
+     * specified.
      * </pre>
      *
      * <code>
@@ -5986,6 +9891,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * Ignored when users directly specify a deployment image through
      * `deployment_spec.first_party_image_override`, but keeping the
      * field_behavior to avoid introducing breaking changes.
+     * The `deployment_source` field should not be set if `package_spec` is
+     * specified.
      * </pre>
      *
      * <code>
@@ -6030,7 +9937,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return Whether the deploymentSpec field is set.
      */
     public boolean hasDeploymentSpec() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -6077,7 +9984,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       } else {
         deploymentSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6100,7 +10007,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       } else {
         deploymentSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6119,7 +10026,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder mergeDeploymentSpec(
         com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec value) {
       if (deploymentSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && deploymentSpec_ != null
             && deploymentSpec_
                 != com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec
@@ -6132,7 +10039,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         deploymentSpecBuilder_.mergeFrom(value);
       }
       if (deploymentSpec_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -6150,7 +10057,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearDeploymentSpec() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       deploymentSpec_ = null;
       if (deploymentSpecBuilder_ != null) {
         deploymentSpecBuilder_.dispose();
@@ -6173,7 +10080,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec.Builder
         getDeploymentSpecBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDeploymentSpecFieldBuilder().getBuilder();
     }
@@ -6232,9 +10139,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureClassMethodsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         classMethods_ = new java.util.ArrayList<com.google.protobuf.Struct>(classMethods_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -6490,7 +10397,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder clearClassMethods() {
       if (classMethodsBuilder_ == null) {
         classMethods_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         classMethodsBuilder_.clear();
@@ -6639,7 +10546,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
                 com.google.protobuf.Struct,
                 com.google.protobuf.Struct.Builder,
                 com.google.protobuf.StructOrBuilder>(
-                classMethods_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                classMethods_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         classMethods_ = null;
       }
       return classMethodsBuilder_;
@@ -6716,7 +10623,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       agentFramework_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6736,7 +10643,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     public Builder clearAgentFramework() {
       agentFramework_ = getDefaultInstance().getAgentFramework();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -6761,7 +10668,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       agentFramework_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

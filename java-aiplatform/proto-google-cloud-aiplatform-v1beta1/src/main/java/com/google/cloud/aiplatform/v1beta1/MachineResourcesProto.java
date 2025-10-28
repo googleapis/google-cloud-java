@@ -37,6 +37,10 @@ public final class MachineResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_DedicatedResources_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_DedicatedResources_ScaleToZeroSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_DedicatedResources_ScaleToZeroSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_AutomaticResources_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_AutomaticResources_fieldAccessorTable;
@@ -99,24 +103,32 @@ public final class MachineResourcesProto {
           + "\014tpu_topology\030\004 \001(\tB\003\340A\005\022(\n"
           + "\030multihost_gpu_node_count\030\006 \001(\005B\006\340A\005\340A\001\022Z\n"
           + "\024reservation_affinity\030\005 \001(\01324."
-          + "google.cloud.aiplatform.v1beta1.ReservationAffinityB\006\340A\005\340A\001\"\202\003\n"
+          + "google.cloud.aiplatform.v1beta1.ReservationAffinityB\006\340A\005\340A\001\"\233\005\n"
           + "\022DedicatedResources\022J\n"
           + "\014machine_spec\030\001 \001(\0132,.google.cloud."
           + "aiplatform.v1beta1.MachineSpecB\006\340A\002\340A\005\022!\n"
           + "\021min_replica_count\030\002 \001(\005B\006\340A\002\340A\005\022\036\n"
           + "\021max_replica_count\030\003 \001(\005B\003\340A\005\022#\n"
-          + "\026required_replica_count\030\t \001(\005B\003\340A\001\022]\n"
+          + "\026required_replica_count\030\t \001(\005B\003\340A\001\022\"\n"
+          + "\025initial_replica_count\030\006 \001(\005B\003\340A\005\022]\n"
           + "\030autoscaling_metric_specs\030\004"
           + " \003(\01326.google.cloud.aiplatform.v1beta1.AutoscalingMetricSpecB\003\340A\005\022\021\n"
           + "\004spot\030\005 \001(\010B\003\340A\001\022F\n\n"
           + "flex_start\030\n"
-          + " \001(\0132*.google.cloud.aiplatform.v1beta1.FlexStartB\006\340A\005\340A\001\"T\n"
+          + " \001(\0132*.google.cloud.aiplatform.v1beta1.FlexStartB\006\340A\005\340A\001\022d\n"
+          + "\022scale_to_zero_spec\030\013 \001(\0132C.googl"
+          + "e.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpecB\003\340A\001\032\214\001\n"
+          + "\017ScaleToZeroSpec\022:\n"
+          + "\022min_scaleup_period\030\001"
+          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\022=\n"
+          + "\025idle_scaledown_period\030\002"
+          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\"T\n"
           + "\022AutomaticResources\022\036\n"
           + "\021min_replica_count\030\001 \001(\005B\003\340A\005\022\036\n"
           + "\021max_replica_count\030\002 \001(\005B\003\340A\005\"\205\002\n"
           + "\027BatchDedicatedResources\022J\n"
-          + "\014machine_spec\030\001 \001(\0132,.google.cloud."
-          + "aiplatform.v1beta1.MachineSpecB\006\340A\002\340A\005\022#\n"
+          + "\014machine_spec\030\001 \001(\0132,.google.cloud"
+          + ".aiplatform.v1beta1.MachineSpecB\006\340A\002\340A\005\022#\n"
           + "\026starting_replica_count\030\002 \001(\005B\003\340A\005\022\036\n"
           + "\021max_replica_count\030\003 \001(\005B\003\340A\005\022F\n\n"
           + "flex_start\030\004"
@@ -137,9 +149,9 @@ public final class MachineResourcesProto {
           + "\025AutoscalingMetricSpec\022\030\n"
           + "\013metric_name\030\001 \001(\tB\003\340A\002\022\016\n"
           + "\006target\030\002 \001(\005\022{\n"
-          + "\031monitored_resource_labels\030\003 \003(\0132S.goo"
-          + "gle.cloud.aiplatform.v1beta1.Autoscaling"
-          + "MetricSpec.MonitoredResourceLabelsEntryB\003\340A\001\032>\n"
+          + "\031monitored_resource_labels\030\003 \003(\0132S.go"
+          + "ogle.cloud.aiplatform.v1beta1.Autoscalin"
+          + "gMetricSpec.MonitoredResourceLabelsEntryB\003\340A\001\032>\n"
           + "\034MonitoredResourceLabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\".\n"
@@ -147,10 +159,11 @@ public final class MachineResourcesProto {
           + "\022enable_secure_boot\030\001 \001(\010\"D\n"
           + "\tFlexStart\0227\n"
           + "\024max_runtime_duration\030\001 \001(\0132\031.google.protobuf.DurationB\354\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\025MachineResou"
-          + "rcesProtoP\001ZCcloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aiplatformpb"
-          + "\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Goo"
-          + "gle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\025MachineReso"
+          + "urcesProtoP\001ZCcloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aiplatformp"
+          + "b\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Go"
+          + "ogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::"
+          + "Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -185,9 +198,21 @@ public final class MachineResourcesProto {
               "MinReplicaCount",
               "MaxReplicaCount",
               "RequiredReplicaCount",
+              "InitialReplicaCount",
               "AutoscalingMetricSpecs",
               "Spot",
               "FlexStart",
+              "ScaleToZeroSpec",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_DedicatedResources_ScaleToZeroSpec_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_DedicatedResources_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_DedicatedResources_ScaleToZeroSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_DedicatedResources_ScaleToZeroSpec_descriptor,
+            new java.lang.String[] {
+              "MinScaleupPeriod", "IdleScaledownPeriod",
             });
     internal_static_google_cloud_aiplatform_v1beta1_AutomaticResources_descriptor =
         getDescriptor().getMessageTypes().get(2);

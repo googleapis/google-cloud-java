@@ -1722,6 +1722,77 @@ public interface ProductAttributesOrBuilder
    *
    *
    * <pre>
+   * Rules for carrier-based shipping.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+   * </code>
+   */
+  java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping>
+      getCarrierShippingList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Rules for carrier-based shipping.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping getCarrierShipping(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Rules for carrier-based shipping.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+   * </code>
+   */
+  int getCarrierShippingCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Rules for carrier-based shipping.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShippingOrBuilder>
+      getCarrierShippingOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Rules for carrier-based shipping.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping carrier_shipping = 142;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShippingOrBuilder
+      getCarrierShippingOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Conditions to be met for a product to have free shipping.
    * </pre>
    *

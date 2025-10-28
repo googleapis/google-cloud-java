@@ -1229,4 +1229,48 @@ public interface SubnetworkOrBuilder
    * @return The bytes of the systemReservedInternalIpv6Ranges at the given index.
    */
   com.google.protobuf.ByteString getSystemReservedInternalIpv6RangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+   * </code>
+   *
+   * @return Whether the utilizationDetails field is set.
+   */
+  boolean hasUtilizationDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+   * </code>
+   *
+   * @return The utilizationDetails.
+   */
+  com.google.cloud.compute.v1.SubnetworkUtilizationDetails getUtilizationDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SubnetworkUtilizationDetailsOrBuilder
+      getUtilizationDetailsOrBuilder();
 }

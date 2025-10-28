@@ -216,6 +216,96 @@ public final class PlaybooksGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest,
+          com.google.longrunning.Operation>
+      getExportPlaybookMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportPlaybook",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest,
+          com.google.longrunning.Operation>
+      getExportPlaybookMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest,
+            com.google.longrunning.Operation>
+        getExportPlaybookMethod;
+    if ((getExportPlaybookMethod = PlaybooksGrpc.getExportPlaybookMethod) == null) {
+      synchronized (PlaybooksGrpc.class) {
+        if ((getExportPlaybookMethod = PlaybooksGrpc.getExportPlaybookMethod) == null) {
+          PlaybooksGrpc.getExportPlaybookMethod =
+              getExportPlaybookMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportPlaybook"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new PlaybooksMethodDescriptorSupplier("ExportPlaybook"))
+                      .build();
+        }
+      }
+    }
+    return getExportPlaybookMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest,
+          com.google.longrunning.Operation>
+      getImportPlaybookMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportPlaybook",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest,
+          com.google.longrunning.Operation>
+      getImportPlaybookMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest,
+            com.google.longrunning.Operation>
+        getImportPlaybookMethod;
+    if ((getImportPlaybookMethod = PlaybooksGrpc.getImportPlaybookMethod) == null) {
+      synchronized (PlaybooksGrpc.class) {
+        if ((getImportPlaybookMethod = PlaybooksGrpc.getImportPlaybookMethod) == null) {
+          PlaybooksGrpc.getImportPlaybookMethod =
+              getImportPlaybookMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportPlaybook"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new PlaybooksMethodDescriptorSupplier("ImportPlaybook"))
+                      .build();
+        }
+      }
+    }
+    return getImportPlaybookMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.cx.v3beta1.UpdatePlaybookRequest,
           com.google.cloud.dialogflow.cx.v3beta1.Playbook>
       getUpdatePlaybookMethod;
@@ -354,6 +444,55 @@ public final class PlaybooksGrpc {
       }
     }
     return getGetPlaybookVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionResponse>
+      getRestorePlaybookVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RestorePlaybookVersion",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest.class,
+      responseType = com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionResponse>
+      getRestorePlaybookVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest,
+            com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionResponse>
+        getRestorePlaybookVersionMethod;
+    if ((getRestorePlaybookVersionMethod = PlaybooksGrpc.getRestorePlaybookVersionMethod) == null) {
+      synchronized (PlaybooksGrpc.class) {
+        if ((getRestorePlaybookVersionMethod = PlaybooksGrpc.getRestorePlaybookVersionMethod)
+            == null) {
+          PlaybooksGrpc.getRestorePlaybookVersionMethod =
+              getRestorePlaybookVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest,
+                          com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RestorePlaybookVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PlaybooksMethodDescriptorSupplier("RestorePlaybookVersion"))
+                      .build();
+        }
+      }
+    }
+    return getRestorePlaybookVersionMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -578,6 +717,36 @@ public final class PlaybooksGrpc {
      *
      *
      * <pre>
+     * Exports the specified playbook to a binary file.
+     * Note that resources (e.g. examples, tools) that the playbook
+     * references will also be exported.
+     * </pre>
+     */
+    default void exportPlaybook(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportPlaybookMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified playbook to the specified agent from a binary file.
+     * </pre>
+     */
+    default void importPlaybook(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportPlaybookMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the specified Playbook.
      * </pre>
      */
@@ -617,6 +786,23 @@ public final class PlaybooksGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetPlaybookVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified version of the Playbook and stores it as the
+     * current playbook draft, returning the playbook with resources updated.
+     * </pre>
+     */
+    default void restorePlaybookVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRestorePlaybookVersionMethod(), responseObserver);
     }
 
     /**
@@ -755,6 +941,40 @@ public final class PlaybooksGrpc {
      *
      *
      * <pre>
+     * Exports the specified playbook to a binary file.
+     * Note that resources (e.g. examples, tools) that the playbook
+     * references will also be exported.
+     * </pre>
+     */
+    public void exportPlaybook(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportPlaybookMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified playbook to the specified agent from a binary file.
+     * </pre>
+     */
+    public void importPlaybook(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getImportPlaybookMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the specified Playbook.
      * </pre>
      */
@@ -798,6 +1018,25 @@ public final class PlaybooksGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPlaybookVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified version of the Playbook and stores it as the
+     * current playbook draft, returning the playbook with resources updated.
+     * </pre>
+     */
+    public void restorePlaybookVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRestorePlaybookVersionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -913,6 +1152,34 @@ public final class PlaybooksGrpc {
      *
      *
      * <pre>
+     * Exports the specified playbook to a binary file.
+     * Note that resources (e.g. examples, tools) that the playbook
+     * references will also be exported.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportPlaybook(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportPlaybookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified playbook to the specified agent from a binary file.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importPlaybook(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportPlaybookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the specified Playbook.
      * </pre>
      */
@@ -946,6 +1213,21 @@ public final class PlaybooksGrpc {
         com.google.cloud.dialogflow.cx.v3beta1.GetPlaybookVersionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPlaybookVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified version of the Playbook and stores it as the
+     * current playbook draft, returning the playbook with resources updated.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionResponse
+        restorePlaybookVersion(
+            com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestorePlaybookVersionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1051,6 +1333,34 @@ public final class PlaybooksGrpc {
      *
      *
      * <pre>
+     * Exports the specified playbook to a binary file.
+     * Note that resources (e.g. examples, tools) that the playbook
+     * references will also be exported.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportPlaybook(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportPlaybookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified playbook to the specified agent from a binary file.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importPlaybook(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportPlaybookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the specified Playbook.
      * </pre>
      */
@@ -1084,6 +1394,21 @@ public final class PlaybooksGrpc {
         com.google.cloud.dialogflow.cx.v3beta1.GetPlaybookVersionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPlaybookVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified version of the Playbook and stores it as the
+     * current playbook draft, returning the playbook with resources updated.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionResponse
+        restorePlaybookVersion(
+            com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestorePlaybookVersionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1191,6 +1516,34 @@ public final class PlaybooksGrpc {
      *
      *
      * <pre>
+     * Exports the specified playbook to a binary file.
+     * Note that resources (e.g. examples, tools) that the playbook
+     * references will also be exported.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportPlaybook(com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportPlaybookMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified playbook to the specified agent from a binary file.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        importPlaybook(com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getImportPlaybookMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the specified Playbook.
      * </pre>
      */
@@ -1235,6 +1588,22 @@ public final class PlaybooksGrpc {
      *
      *
      * <pre>
+     * Retrieves the specified version of the Playbook and stores it as the
+     * current playbook draft, returning the playbook with resources updated.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionResponse>
+        restorePlaybookVersion(
+            com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRestorePlaybookVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists versions for the specified Playbook.
      * </pre>
      */
@@ -1265,11 +1634,14 @@ public final class PlaybooksGrpc {
   private static final int METHODID_DELETE_PLAYBOOK = 1;
   private static final int METHODID_LIST_PLAYBOOKS = 2;
   private static final int METHODID_GET_PLAYBOOK = 3;
-  private static final int METHODID_UPDATE_PLAYBOOK = 4;
-  private static final int METHODID_CREATE_PLAYBOOK_VERSION = 5;
-  private static final int METHODID_GET_PLAYBOOK_VERSION = 6;
-  private static final int METHODID_LIST_PLAYBOOK_VERSIONS = 7;
-  private static final int METHODID_DELETE_PLAYBOOK_VERSION = 8;
+  private static final int METHODID_EXPORT_PLAYBOOK = 4;
+  private static final int METHODID_IMPORT_PLAYBOOK = 5;
+  private static final int METHODID_UPDATE_PLAYBOOK = 6;
+  private static final int METHODID_CREATE_PLAYBOOK_VERSION = 7;
+  private static final int METHODID_GET_PLAYBOOK_VERSION = 8;
+  private static final int METHODID_RESTORE_PLAYBOOK_VERSION = 9;
+  private static final int METHODID_LIST_PLAYBOOK_VERSIONS = 10;
+  private static final int METHODID_DELETE_PLAYBOOK_VERSION = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1312,6 +1684,16 @@ public final class PlaybooksGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Playbook>)
                   responseObserver);
           break;
+        case METHODID_EXPORT_PLAYBOOK:
+          serviceImpl.exportPlaybook(
+              (com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_IMPORT_PLAYBOOK:
+          serviceImpl.importPlaybook(
+              (com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_UPDATE_PLAYBOOK:
           serviceImpl.updatePlaybook(
               (com.google.cloud.dialogflow.cx.v3beta1.UpdatePlaybookRequest) request,
@@ -1328,6 +1710,13 @@ public final class PlaybooksGrpc {
           serviceImpl.getPlaybookVersion(
               (com.google.cloud.dialogflow.cx.v3beta1.GetPlaybookVersionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.PlaybookVersion>)
+                  responseObserver);
+          break;
+        case METHODID_RESTORE_PLAYBOOK_VERSION:
+          serviceImpl.restorePlaybookVersion(
+              (com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionResponse>)
                   responseObserver);
           break;
         case METHODID_LIST_PLAYBOOK_VERSIONS:
@@ -1388,6 +1777,18 @@ public final class PlaybooksGrpc {
                     com.google.cloud.dialogflow.cx.v3beta1.Playbook>(
                     service, METHODID_GET_PLAYBOOK)))
         .addMethod(
+            getExportPlaybookMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_PLAYBOOK)))
+        .addMethod(
+            getImportPlaybookMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_PLAYBOOK)))
+        .addMethod(
             getUpdatePlaybookMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1408,6 +1809,13 @@ public final class PlaybooksGrpc {
                     com.google.cloud.dialogflow.cx.v3beta1.GetPlaybookVersionRequest,
                     com.google.cloud.dialogflow.cx.v3beta1.PlaybookVersion>(
                     service, METHODID_GET_PLAYBOOK_VERSION)))
+        .addMethod(
+            getRestorePlaybookVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionResponse>(
+                    service, METHODID_RESTORE_PLAYBOOK_VERSION)))
         .addMethod(
             getListPlaybookVersionsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1476,9 +1884,12 @@ public final class PlaybooksGrpc {
                       .addMethod(getDeletePlaybookMethod())
                       .addMethod(getListPlaybooksMethod())
                       .addMethod(getGetPlaybookMethod())
+                      .addMethod(getExportPlaybookMethod())
+                      .addMethod(getImportPlaybookMethod())
                       .addMethod(getUpdatePlaybookMethod())
                       .addMethod(getCreatePlaybookVersionMethod())
                       .addMethod(getGetPlaybookVersionMethod())
+                      .addMethod(getRestorePlaybookVersionMethod())
                       .addMethod(getListPlaybookVersionsMethod())
                       .addMethod(getDeletePlaybookVersionMethod())
                       .build();
