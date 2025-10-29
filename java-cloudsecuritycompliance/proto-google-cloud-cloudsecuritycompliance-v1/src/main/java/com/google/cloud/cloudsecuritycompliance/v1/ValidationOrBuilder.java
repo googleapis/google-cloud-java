@@ -28,7 +28,7 @@ public interface ValidationOrBuilder
    *
    *
    * <pre>
-   * Allowed set of values for the parameter.
+   * The permitted set of values for the parameter.
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.AllowedValues allowed_values = 1;</code>
@@ -41,7 +41,7 @@ public interface ValidationOrBuilder
    *
    *
    * <pre>
-   * Allowed set of values for the parameter.
+   * The permitted set of values for the parameter.
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.AllowedValues allowed_values = 1;</code>
@@ -54,7 +54,7 @@ public interface ValidationOrBuilder
    *
    *
    * <pre>
-   * Allowed set of values for the parameter.
+   * The permitted set of values for the parameter.
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.AllowedValues allowed_values = 1;</code>
@@ -65,7 +65,7 @@ public interface ValidationOrBuilder
    *
    *
    * <pre>
-   * Allowed range for numeric parameters.
+   * The permitted range for numeric parameters.
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.IntRange int_range = 2;</code>
@@ -78,7 +78,7 @@ public interface ValidationOrBuilder
    *
    *
    * <pre>
-   * Allowed range for numeric parameters.
+   * The permitted range for numeric parameters.
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.IntRange int_range = 2;</code>
@@ -91,7 +91,7 @@ public interface ValidationOrBuilder
    *
    *
    * <pre>
-   * Allowed range for numeric parameters.
+   * The permitted range for numeric parameters.
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.IntRange int_range = 2;</code>
@@ -102,7 +102,7 @@ public interface ValidationOrBuilder
    *
    *
    * <pre>
-   * Regular expression for string parameters.
+   * The regular expression for string parameters.
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.RegexpPattern regexp_pattern = 3;</code>
@@ -115,7 +115,7 @@ public interface ValidationOrBuilder
    *
    *
    * <pre>
-   * Regular expression for string parameters.
+   * The regular expression for string parameters.
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.RegexpPattern regexp_pattern = 3;</code>
@@ -128,7 +128,7 @@ public interface ValidationOrBuilder
    *
    *
    * <pre>
-   * Regular expression for string parameters.
+   * The regular expression for string parameters.
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.RegexpPattern regexp_pattern = 3;</code>

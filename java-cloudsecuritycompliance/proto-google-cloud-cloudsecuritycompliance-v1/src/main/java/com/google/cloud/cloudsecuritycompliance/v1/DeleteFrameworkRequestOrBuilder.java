@@ -28,8 +28,9 @@ public interface DeleteFrameworkRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the resource, in the format
+   * Required. The name of the resource, in the format
    * `organizations/{organization}/locations/{location}/frameworks/{framework}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -44,8 +45,9 @@ public interface DeleteFrameworkRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the resource, in the format
+   * Required. The name of the resource, in the format
    * `organizations/{organization}/locations/{location}/frameworks/{framework}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>

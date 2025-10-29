@@ -28,7 +28,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Logic expression in CEL language.
+   * The rule's logic expression in Common Expression Language (CEL).
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.CELExpression cel_expression = 1;</code>
@@ -41,7 +41,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Logic expression in CEL language.
+   * The rule's logic expression in Common Expression Language (CEL).
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.CELExpression cel_expression = 1;</code>
@@ -54,7 +54,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Logic expression in CEL language.
+   * The rule's logic expression in Common Expression Language (CEL).
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.CELExpression cel_expression = 1;</code>
@@ -65,7 +65,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Optional. Description of the Rule. The maximum length is 2000 characters.
+   * Optional. The rule description. The maximum length is 2000 characters.
    * </pre>
    *
    * <code>string description = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -78,7 +78,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Optional. Description of the Rule. The maximum length is 2000 characters.
+   * Optional. The rule description. The maximum length is 2000 characters.
    * </pre>
    *
    * <code>string description = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -91,7 +91,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Required. The functionality enabled by the Rule.
+   * Required. The functionality that's enabled by the rule.
    * </pre>
    *
    * <code>
@@ -107,7 +107,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Required. The functionality enabled by the Rule.
+   * Required. The functionality that's enabled by the rule.
    * </pre>
    *
    * <code>
@@ -122,7 +122,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Required. The functionality enabled by the Rule.
+   * Required. The functionality that's enabled by the rule.
    * </pre>
    *
    * <code>
@@ -138,7 +138,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Required. The functionality enabled by the Rule.
+   * Required. The functionality that's enabled by the rule.
    * </pre>
    *
    * <code>
@@ -153,7 +153,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Required. The functionality enabled by the Rule.
+   * Required. The functionality that's enabled by the rule.
    * </pre>
    *
    * <code>

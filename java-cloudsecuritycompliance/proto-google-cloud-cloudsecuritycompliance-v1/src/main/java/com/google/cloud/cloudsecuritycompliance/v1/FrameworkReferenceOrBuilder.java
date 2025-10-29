@@ -28,8 +28,8 @@ public interface FrameworkReferenceOrBuilder
    *
    *
    * <pre>
-   * Required. In the format:
-   * organizations/{org}/locations/{location}/frameworks/{framework}
+   * Required. The major version of the framework. If not specified, the version
+   * corresponds to the latest version of the framework.
    * </pre>
    *
    * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -42,8 +42,8 @@ public interface FrameworkReferenceOrBuilder
    *
    *
    * <pre>
-   * Required. In the format:
-   * organizations/{org}/locations/{location}/frameworks/{framework}
+   * Required. The major version of the framework. If not specified, the version
+   * corresponds to the latest version of the framework.
    * </pre>
    *
    * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -56,8 +56,8 @@ public interface FrameworkReferenceOrBuilder
    *
    *
    * <pre>
-   * Optional. Major revision id of the framework. If not specified, corresponds
-   * to the latest revision of the framework.
+   * Optional. The major version of the framework. If not specified, the version
+   * corresponds to the latest version of the framework.
    * </pre>
    *
    * <code>optional int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -70,8 +70,8 @@ public interface FrameworkReferenceOrBuilder
    *
    *
    * <pre>
-   * Optional. Major revision id of the framework. If not specified, corresponds
-   * to the latest revision of the framework.
+   * Optional. The major version of the framework. If not specified, the version
+   * corresponds to the latest version of the framework.
    * </pre>
    *
    * <code>optional int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

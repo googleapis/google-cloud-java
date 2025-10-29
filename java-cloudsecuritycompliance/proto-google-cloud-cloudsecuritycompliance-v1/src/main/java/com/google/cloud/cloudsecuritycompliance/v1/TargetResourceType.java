@@ -23,8 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * TargetResourceType represents the type of resource that a control or
- * framework can be applied to.
+ * The type of resource that a control or framework can be applied to.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.cloudsecuritycompliance.v1.TargetResourceType}
@@ -44,7 +43,7 @@ public enum TargetResourceType implements com.google.protobuf.ProtocolMessageEnu
    *
    *
    * <pre>
-   * Target resource is an Organization.
+   * The target resource is a Google Cloud organization.
    * </pre>
    *
    * <code>TARGET_RESOURCE_CRM_TYPE_ORG = 1;</code>
@@ -54,7 +53,7 @@ public enum TargetResourceType implements com.google.protobuf.ProtocolMessageEnu
    *
    *
    * <pre>
-   * Target resource is a Folder.
+   * The target resource is a folder.
    * </pre>
    *
    * <code>TARGET_RESOURCE_CRM_TYPE_FOLDER = 2;</code>
@@ -64,7 +63,7 @@ public enum TargetResourceType implements com.google.protobuf.ProtocolMessageEnu
    *
    *
    * <pre>
-   * Target resource is a Project.
+   * The target resource is a project.
    * </pre>
    *
    * <code>TARGET_RESOURCE_CRM_TYPE_PROJECT = 3;</code>
@@ -74,7 +73,7 @@ public enum TargetResourceType implements com.google.protobuf.ProtocolMessageEnu
    *
    *
    * <pre>
-   * Target resource is an Application.
+   * The target resource is an application in App Hub.
    * </pre>
    *
    * <code>TARGET_RESOURCE_TYPE_APPLICATION = 4;</code>
@@ -98,7 +97,7 @@ public enum TargetResourceType implements com.google.protobuf.ProtocolMessageEnu
    *
    *
    * <pre>
-   * Target resource is an Organization.
+   * The target resource is a Google Cloud organization.
    * </pre>
    *
    * <code>TARGET_RESOURCE_CRM_TYPE_ORG = 1;</code>
@@ -109,7 +108,7 @@ public enum TargetResourceType implements com.google.protobuf.ProtocolMessageEnu
    *
    *
    * <pre>
-   * Target resource is a Folder.
+   * The target resource is a folder.
    * </pre>
    *
    * <code>TARGET_RESOURCE_CRM_TYPE_FOLDER = 2;</code>
@@ -120,7 +119,7 @@ public enum TargetResourceType implements com.google.protobuf.ProtocolMessageEnu
    *
    *
    * <pre>
-   * Target resource is a Project.
+   * The target resource is a project.
    * </pre>
    *
    * <code>TARGET_RESOURCE_CRM_TYPE_PROJECT = 3;</code>
@@ -131,7 +130,7 @@ public enum TargetResourceType implements com.google.protobuf.ProtocolMessageEnu
    *
    *
    * <pre>
-   * Target resource is an Application.
+   * The target resource is an application in App Hub.
    * </pre>
    *
    * <code>TARGET_RESOURCE_TYPE_APPLICATION = 4;</code>
@@ -204,7 +203,7 @@ public enum TargetResourceType implements com.google.protobuf.ProtocolMessageEnu
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.cloudsecuritycompliance.v1.CommonProto.getDescriptor()
         .getEnumTypes()
-        .get(6);
+        .get(7);
   }
 
   private static final TargetResourceType[] VALUES = values();

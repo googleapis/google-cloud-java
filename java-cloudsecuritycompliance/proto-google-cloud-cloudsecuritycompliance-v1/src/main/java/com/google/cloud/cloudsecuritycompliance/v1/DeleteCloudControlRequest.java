@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Request message for deleting a CloudControl.
+ * The request message for [DeleteCloudControl][].
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.DeleteCloudControlRequest}
@@ -73,8 +73,9 @@ public final class DeleteCloudControlRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Name of the resource, in the format
+   * Required. The name of the cloud control to delete, in the format
    * `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -100,8 +101,9 @@ public final class DeleteCloudControlRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Name of the resource, in the format
+   * Required. The name of the cloud control to delete, in the format
    * `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -289,7 +291,7 @@ public final class DeleteCloudControlRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for deleting a CloudControl.
+   * The request message for [DeleteCloudControl][].
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.DeleteCloudControlRequest}
@@ -481,8 +483,9 @@ public final class DeleteCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Name of the resource, in the format
+     * Required. The name of the cloud control to delete, in the format
      * `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -507,8 +510,9 @@ public final class DeleteCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Name of the resource, in the format
+     * Required. The name of the cloud control to delete, in the format
      * `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -533,8 +537,9 @@ public final class DeleteCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Name of the resource, in the format
+     * Required. The name of the cloud control to delete, in the format
      * `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -558,8 +563,9 @@ public final class DeleteCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Name of the resource, in the format
+     * Required. The name of the cloud control to delete, in the format
      * `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -579,8 +585,9 @@ public final class DeleteCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Name of the resource, in the format
+     * Required. The name of the cloud control to delete, in the format
      * `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>

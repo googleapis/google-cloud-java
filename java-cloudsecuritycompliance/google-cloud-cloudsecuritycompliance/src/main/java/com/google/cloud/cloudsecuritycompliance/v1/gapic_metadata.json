@@ -5,6 +5,54 @@
   "protoPackage": "google.cloud.cloudsecuritycompliance.v1",
   "libraryPackage": "com.google.cloud.cloudsecuritycompliance.v1",
   "services": {
+    "Audit": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AuditClient",
+          "rpcs": {
+            "CreateFrameworkAudit": {
+              "methods": ["createFrameworkAuditAsync", "createFrameworkAuditAsync", "createFrameworkAuditAsync", "createFrameworkAuditAsync", "createFrameworkAuditOperationCallable", "createFrameworkAuditCallable"]
+            },
+            "GenerateFrameworkAuditScopeReport": {
+              "methods": ["generateFrameworkAuditScopeReport", "generateFrameworkAuditScopeReport", "generateFrameworkAuditScopeReportCallable"]
+            },
+            "GetFrameworkAudit": {
+              "methods": ["getFrameworkAudit", "getFrameworkAudit", "getFrameworkAudit", "getFrameworkAuditCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListFrameworkAudits": {
+              "methods": ["listFrameworkAudits", "listFrameworkAudits", "listFrameworkAudits", "listFrameworkAudits", "listFrameworkAuditsPagedCallable", "listFrameworkAuditsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "CmEnrollmentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CmEnrollmentServiceClient",
+          "rpcs": {
+            "CalculateEffectiveCmEnrollment": {
+              "methods": ["calculateEffectiveCmEnrollment", "calculateEffectiveCmEnrollment", "calculateEffectiveCmEnrollment", "calculateEffectiveCmEnrollmentCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateCmEnrollment": {
+              "methods": ["updateCmEnrollment", "updateCmEnrollment", "updateCmEnrollmentCallable"]
+            }
+          }
+        }
+      }
+    },
     "Config": {
       "clients": {
         "grpc": {

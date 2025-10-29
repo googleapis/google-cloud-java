@@ -23,12 +23,8 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * A CloudControl is the fundamental unit encapsulating the rules
- * to meet a specific security or compliance intent. It can contain
- * various rule types (like Organization Policies, CEL expressions, etc.)
- * enabling different enforcement modes (Preventive, Detective, Audit).
- * CloudControls are often parameterized for reusability and can be either
- * BUILT_IN (provided by Google) or CUSTOM (defined by the user).
+ * A cloud control is a set of rules and associated metadata that you can
+ * use to define your organization's security or compliance intent.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.CloudControl}
@@ -81,6 +77,167 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.cloudsecuritycompliance.v1.CloudControl.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The type of cloud control.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.cloudsecuritycompliance.v1.CloudControl.Type}
+   */
+  public enum Type implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>TYPE_UNSPECIFIED = 0;</code>
+     */
+    TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * A cloud control that's created and managed by you.
+     * </pre>
+     *
+     * <code>CUSTOM = 1;</code>
+     */
+    CUSTOM(1),
+    /**
+     *
+     *
+     * <pre>
+     * A cloud control that's provided and managed by Google.
+     * </pre>
+     *
+     * <code>BUILT_IN = 2;</code>
+     */
+    BUILT_IN(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * A cloud control that's created and managed by you.
+     * </pre>
+     *
+     * <code>CUSTOM = 1;</code>
+     */
+    public static final int CUSTOM_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * A cloud control that's provided and managed by Google.
+     * </pre>
+     *
+     * <code>BUILT_IN = 2;</code>
+     */
+    public static final int BUILT_IN_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Type valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Type forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TYPE_UNSPECIFIED;
+        case 1:
+          return CUSTOM;
+        case 2:
+          return BUILT_IN;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+          public Type findValueByNumber(int number) {
+            return Type.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.cloudsecuritycompliance.v1.CloudControl.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final Type[] VALUES = values();
+
+    public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Type(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.cloudsecuritycompliance.v1.CloudControl.Type)
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -91,9 +248,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Identifier. The resource name of the cloud control.
-   * Format:
-   * organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}
+   * Required. Identifier. The name of the cloud control, in the format
+   * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -119,9 +276,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Identifier. The resource name of the cloud control.
-   * Format:
-   * organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}
+   * Required. Identifier. The name of the cloud control, in the format
+   * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -150,8 +307,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Major revision of the cloud control incremented in ascending
-   * order.
+   * Output only. The major version of the cloud control, which is incremented
+   * in ascending order.
    * </pre>
    *
    * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -227,7 +384,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The display name of the cloud control. The maximum length is 200
+   * Optional. The friendly name of the cloud control. The maximum length is 200
    * characters.
    * </pre>
    *
@@ -252,7 +409,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The display name of the cloud control. The maximum length is 200
+   * Optional. The friendly name of the cloud control. The maximum length is 200
    * characters.
    * </pre>
    *
@@ -297,8 +454,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The supported enforcement mode of the cloud control. Default
-   * is DETECTIVE.
+   * Output only. The supported enforcement modes for the cloud control.
    * </pre>
    *
    * <code>
@@ -319,8 +475,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The supported enforcement mode of the cloud control. Default
-   * is DETECTIVE.
+   * Output only. The supported enforcement modes for the cloud control.
    * </pre>
    *
    * <code>
@@ -338,8 +493,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The supported enforcement mode of the cloud control. Default
-   * is DETECTIVE.
+   * Output only. The supported enforcement modes for the cloud control.
    * </pre>
    *
    * <code>
@@ -359,8 +513,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The supported enforcement mode of the cloud control. Default
-   * is DETECTIVE.
+   * Output only. The supported enforcement modes for the cloud control.
    * </pre>
    *
    * <code>
@@ -378,8 +531,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The supported enforcement mode of the cloud control. Default
-   * is DETECTIVE.
+   * Output only. The supported enforcement modes for the cloud control.
    * </pre>
    *
    * <code>
@@ -405,7 +557,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The parameter spec of the cloud control.
+   * Optional. The parameter specifications for the cloud control.
    * </pre>
    *
    * <code>
@@ -422,7 +574,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The parameter spec of the cloud control.
+   * Optional. The parameter specifications for the cloud control.
    * </pre>
    *
    * <code>
@@ -440,7 +592,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The parameter spec of the cloud control.
+   * Optional. The parameter specifications for the cloud control.
    * </pre>
    *
    * <code>
@@ -456,7 +608,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The parameter spec of the cloud control.
+   * Optional. The parameter specifications for the cloud control.
    * </pre>
    *
    * <code>
@@ -472,7 +624,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The parameter spec of the cloud control.
+   * Optional. The parameter specifications for the cloud control.
    * </pre>
    *
    * <code>
@@ -494,8 +646,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Policy to be enforced to prevent/detect resource
-   * non-compliance.
+   * Optional. The rules that you can enforce to meet your security or
+   * compliance intent.
    * </pre>
    *
    * <code>
@@ -511,8 +663,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Policy to be enforced to prevent/detect resource
-   * non-compliance.
+   * Optional. The rules that you can enforce to meet your security or
+   * compliance intent.
    * </pre>
    *
    * <code>
@@ -529,8 +681,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Policy to be enforced to prevent/detect resource
-   * non-compliance.
+   * Optional. The rules that you can enforce to meet your security or
+   * compliance intent.
    * </pre>
    *
    * <code>
@@ -546,8 +698,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Policy to be enforced to prevent/detect resource
-   * non-compliance.
+   * Optional. The rules that you can enforce to meet your security or
+   * compliance intent.
    * </pre>
    *
    * <code>
@@ -563,8 +715,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Policy to be enforced to prevent/detect resource
-   * non-compliance.
+   * Optional. The rules that you can enforce to meet your security or
+   * compliance intent.
    * </pre>
    *
    * <code>
@@ -583,7 +735,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The severity of findings generated by the cloud control.
+   * Optional. The severity of the findings that are generated by the cloud
+   * control.
    * </pre>
    *
    * <code>
@@ -601,7 +754,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The severity of findings generated by the cloud control.
+   * Optional. The severity of the findings that are generated by the cloud
+   * control.
    * </pre>
    *
    * <code>
@@ -628,8 +782,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The finding_category of the cloud control. The maximum length is
-   * 255 characters.
+   * Optional. The finding category for the cloud control findings. The maximum
+   * length is 255 characters.
    * </pre>
    *
    * <code>string finding_category = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -653,8 +807,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The finding_category of the cloud control. The maximum length is
-   * 255 characters.
+   * Optional. The finding category for the cloud control findings. The maximum
+   * length is 255 characters.
    * </pre>
    *
    * <code>string finding_category = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -698,7 +852,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. cloud providers supported
+   * Optional. The supported cloud providers.
    * </pre>
    *
    * <code>
@@ -719,7 +873,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. cloud providers supported
+   * Optional. The supported cloud providers.
    * </pre>
    *
    * <code>
@@ -737,7 +891,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. cloud providers supported
+   * Optional. The supported cloud providers.
    * </pre>
    *
    * <code>
@@ -757,7 +911,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. cloud providers supported
+   * Optional. The supported cloud providers.
    * </pre>
    *
    * <code>
@@ -775,7 +929,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. cloud providers supported
+   * Optional. The supported cloud providers.
    * </pre>
    *
    * <code>
@@ -802,7 +956,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Frameworks that include this CloudControl
+   * Output only. The frameworks that include this cloud control.
    * </pre>
    *
    * <code>repeated string related_frameworks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -818,7 +972,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Frameworks that include this CloudControl
+   * Output only. The frameworks that include this cloud control.
    * </pre>
    *
    * <code>repeated string related_frameworks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -834,7 +988,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Frameworks that include this CloudControl
+   * Output only. The frameworks that include this cloud control.
    * </pre>
    *
    * <code>repeated string related_frameworks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -851,7 +1005,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Frameworks that include this CloudControl
+   * Output only. The frameworks that include this cloud control.
    * </pre>
    *
    * <code>repeated string related_frameworks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -873,8 +1027,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The remediation steps for the findings generated by the cloud
-   * control. The maximum length is 400 characters.
+   * Optional. The remediation steps for the cloud control findings. The
+   * maximum length is 400 characters.
    * </pre>
    *
    * <code>string remediation_steps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -898,8 +1052,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The remediation steps for the findings generated by the cloud
-   * control. The maximum length is 400 characters.
+   * Optional. The remediation steps for the cloud control findings. The
+   * maximum length is 400 characters.
    * </pre>
    *
    * <code>string remediation_steps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -944,7 +1098,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The categories of the cloud control.
+   * Optional. The categories for the cloud control.
    * </pre>
    *
    * <code>
@@ -965,7 +1119,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The categories of the cloud control.
+   * Optional. The categories for the cloud control.
    * </pre>
    *
    * <code>
@@ -983,7 +1137,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The categories of the cloud control.
+   * Optional. The categories for the cloud control.
    * </pre>
    *
    * <code>
@@ -1002,7 +1156,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The categories of the cloud control.
+   * Optional. The categories for the cloud control.
    * </pre>
    *
    * <code>
@@ -1020,7 +1174,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The categories of the cloud control.
+   * Optional. The categories for the cloud control.
    * </pre>
    *
    * <code>
@@ -1044,9 +1198,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The last updated time of the cloud control.
-   * The create_time is used because a new CC is created whenever we update an
-   * existing CC.
+   * Output only. The time that the cloud control was last updated.
+   * `create_time` is used because a new cloud control is created
+   * whenever an existing cloud control is updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1063,9 +1217,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The last updated time of the cloud control.
-   * The create_time is used because a new CC is created whenever we update an
-   * existing CC.
+   * Output only. The time that the cloud control was last updated.
+   * `create_time` is used because a new cloud control is created
+   * whenever an existing cloud control is updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1082,9 +1236,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The last updated time of the cloud control.
-   * The create_time is used because a new CC is created whenever we update an
-   * existing CC.
+   * Output only. The time that the cloud control was last updated.
+   * `create_time` is used because a new cloud control is created
+   * whenever an existing cloud control is updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1119,7 +1273,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. target resource types supported by the CloudControl.
+   * Optional. The target resource types that are supported by the cloud
+   * control.
    * </pre>
    *
    * <code>
@@ -1140,7 +1295,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. target resource types supported by the CloudControl.
+   * Optional. The target resource types that are supported by the cloud
+   * control.
    * </pre>
    *
    * <code>
@@ -1158,7 +1314,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. target resource types supported by the CloudControl.
+   * Optional. The target resource types that are supported by the cloud
+   * control.
    * </pre>
    *
    * <code>
@@ -1179,7 +1336,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. target resource types supported by the CloudControl.
+   * Optional. The target resource types that are supported by the cloud
+   * control.
    * </pre>
    *
    * <code>
@@ -1197,7 +1355,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. target resource types supported by the CloudControl.
+   * Optional. The target resource types that are supported by the cloud
+   * control.
    * </pre>
    *
    * <code>
@@ -1590,12 +1749,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A CloudControl is the fundamental unit encapsulating the rules
-   * to meet a specific security or compliance intent. It can contain
-   * various rule types (like Organization Policies, CEL expressions, etc.)
-   * enabling different enforcement modes (Preventive, Detective, Audit).
-   * CloudControls are often parameterized for reusability and can be either
-   * BUILT_IN (provided by Google) or CUSTOM (defined by the user).
+   * A cloud control is a set of rules and associated metadata that you can
+   * use to define your organization's security or compliance intent.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.CloudControl}
@@ -2184,9 +2339,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifier. The resource name of the cloud control.
-     * Format:
-     * organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}
+     * Required. Identifier. The name of the cloud control, in the format
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -2211,9 +2366,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifier. The resource name of the cloud control.
-     * Format:
-     * organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}
+     * Required. Identifier. The name of the cloud control, in the format
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -2238,9 +2393,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifier. The resource name of the cloud control.
-     * Format:
-     * organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}
+     * Required. Identifier. The name of the cloud control, in the format
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -2264,9 +2419,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifier. The resource name of the cloud control.
-     * Format:
-     * organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}
+     * Required. Identifier. The name of the cloud control, in the format
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -2286,9 +2441,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifier. The resource name of the cloud control.
-     * Format:
-     * organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}
+     * Required. Identifier. The name of the cloud control, in the format
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -2315,8 +2470,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Major revision of the cloud control incremented in ascending
-     * order.
+     * Output only. The major version of the cloud control, which is incremented
+     * in ascending order.
      * </pre>
      *
      * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2332,8 +2487,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Major revision of the cloud control incremented in ascending
-     * order.
+     * Output only. The major version of the cloud control, which is incremented
+     * in ascending order.
      * </pre>
      *
      * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2353,8 +2508,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Major revision of the cloud control incremented in ascending
-     * order.
+     * Output only. The major version of the cloud control, which is incremented
+     * in ascending order.
      * </pre>
      *
      * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2490,7 +2645,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The display name of the cloud control. The maximum length is 200
+     * Optional. The friendly name of the cloud control. The maximum length is 200
      * characters.
      * </pre>
      *
@@ -2514,7 +2669,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The display name of the cloud control. The maximum length is 200
+     * Optional. The friendly name of the cloud control. The maximum length is 200
      * characters.
      * </pre>
      *
@@ -2538,7 +2693,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The display name of the cloud control. The maximum length is 200
+     * Optional. The friendly name of the cloud control. The maximum length is 200
      * characters.
      * </pre>
      *
@@ -2561,7 +2716,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The display name of the cloud control. The maximum length is 200
+     * Optional. The friendly name of the cloud control. The maximum length is 200
      * characters.
      * </pre>
      *
@@ -2580,7 +2735,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The display name of the cloud control. The maximum length is 200
+     * Optional. The friendly name of the cloud control. The maximum length is 200
      * characters.
      * </pre>
      *
@@ -2615,8 +2770,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The supported enforcement mode of the cloud control. Default
-     * is DETECTIVE.
+     * Output only. The supported enforcement modes for the cloud control.
      * </pre>
      *
      * <code>
@@ -2636,8 +2790,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The supported enforcement mode of the cloud control. Default
-     * is DETECTIVE.
+     * Output only. The supported enforcement modes for the cloud control.
      * </pre>
      *
      * <code>
@@ -2654,8 +2807,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The supported enforcement mode of the cloud control. Default
-     * is DETECTIVE.
+     * Output only. The supported enforcement modes for the cloud control.
      * </pre>
      *
      * <code>
@@ -2674,8 +2826,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The supported enforcement mode of the cloud control. Default
-     * is DETECTIVE.
+     * Output only. The supported enforcement modes for the cloud control.
      * </pre>
      *
      * <code>
@@ -2701,8 +2852,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The supported enforcement mode of the cloud control. Default
-     * is DETECTIVE.
+     * Output only. The supported enforcement modes for the cloud control.
      * </pre>
      *
      * <code>
@@ -2727,8 +2877,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The supported enforcement mode of the cloud control. Default
-     * is DETECTIVE.
+     * Output only. The supported enforcement modes for the cloud control.
      * </pre>
      *
      * <code>
@@ -2753,8 +2902,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The supported enforcement mode of the cloud control. Default
-     * is DETECTIVE.
+     * Output only. The supported enforcement modes for the cloud control.
      * </pre>
      *
      * <code>
@@ -2774,8 +2922,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The supported enforcement mode of the cloud control. Default
-     * is DETECTIVE.
+     * Output only. The supported enforcement modes for the cloud control.
      * </pre>
      *
      * <code>
@@ -2792,8 +2939,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The supported enforcement mode of the cloud control. Default
-     * is DETECTIVE.
+     * Output only. The supported enforcement modes for the cloud control.
      * </pre>
      *
      * <code>
@@ -2811,8 +2957,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The supported enforcement mode of the cloud control. Default
-     * is DETECTIVE.
+     * Output only. The supported enforcement modes for the cloud control.
      * </pre>
      *
      * <code>
@@ -2834,8 +2979,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The supported enforcement mode of the cloud control. Default
-     * is DETECTIVE.
+     * Output only. The supported enforcement modes for the cloud control.
      * </pre>
      *
      * <code>
@@ -2856,8 +3000,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The supported enforcement mode of the cloud control. Default
-     * is DETECTIVE.
+     * Output only. The supported enforcement modes for the cloud control.
      * </pre>
      *
      * <code>
@@ -2899,7 +3042,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -2919,7 +3062,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -2938,7 +3081,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -2957,7 +3100,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -2983,7 +3126,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -3007,7 +3150,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -3033,7 +3176,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -3059,7 +3202,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -3082,7 +3225,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -3106,7 +3249,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -3130,7 +3273,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -3152,7 +3295,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -3174,7 +3317,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -3190,7 +3333,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -3210,7 +3353,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -3231,7 +3374,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -3249,7 +3392,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -3268,7 +3411,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The parameter spec of the cloud control.
+     * Optional. The parameter specifications for the cloud control.
      * </pre>
      *
      * <code>
@@ -3320,8 +3463,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3340,8 +3483,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3360,8 +3503,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3380,8 +3523,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3406,8 +3549,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3430,8 +3573,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3456,8 +3599,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3482,8 +3625,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3506,8 +3649,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3530,8 +3673,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3554,8 +3697,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3577,8 +3720,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3600,8 +3743,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3616,8 +3759,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3636,8 +3779,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3657,8 +3800,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3674,8 +3817,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3691,8 +3834,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Policy to be enforced to prevent/detect resource
-     * non-compliance.
+     * Optional. The rules that you can enforce to meet your security or
+     * compliance intent.
      * </pre>
      *
      * <code>
@@ -3727,7 +3870,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of findings generated by the cloud control.
+     * Optional. The severity of the findings that are generated by the cloud
+     * control.
      * </pre>
      *
      * <code>
@@ -3745,7 +3889,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of findings generated by the cloud control.
+     * Optional. The severity of the findings that are generated by the cloud
+     * control.
      * </pre>
      *
      * <code>
@@ -3766,7 +3911,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of findings generated by the cloud control.
+     * Optional. The severity of the findings that are generated by the cloud
+     * control.
      * </pre>
      *
      * <code>
@@ -3788,7 +3934,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of findings generated by the cloud control.
+     * Optional. The severity of the findings that are generated by the cloud
+     * control.
      * </pre>
      *
      * <code>
@@ -3812,7 +3959,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of findings generated by the cloud control.
+     * Optional. The severity of the findings that are generated by the cloud
+     * control.
      * </pre>
      *
      * <code>
@@ -3834,8 +3982,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The finding_category of the cloud control. The maximum length is
-     * 255 characters.
+     * Optional. The finding category for the cloud control findings. The maximum
+     * length is 255 characters.
      * </pre>
      *
      * <code>string finding_category = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3858,8 +4006,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The finding_category of the cloud control. The maximum length is
-     * 255 characters.
+     * Optional. The finding category for the cloud control findings. The maximum
+     * length is 255 characters.
      * </pre>
      *
      * <code>string finding_category = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3882,8 +4030,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The finding_category of the cloud control. The maximum length is
-     * 255 characters.
+     * Optional. The finding category for the cloud control findings. The maximum
+     * length is 255 characters.
      * </pre>
      *
      * <code>string finding_category = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3905,8 +4053,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The finding_category of the cloud control. The maximum length is
-     * 255 characters.
+     * Optional. The finding category for the cloud control findings. The maximum
+     * length is 255 characters.
      * </pre>
      *
      * <code>string finding_category = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3924,8 +4072,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The finding_category of the cloud control. The maximum length is
-     * 255 characters.
+     * Optional. The finding category for the cloud control findings. The maximum
+     * length is 255 characters.
      * </pre>
      *
      * <code>string finding_category = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3959,7 +4107,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. cloud providers supported
+     * Optional. The supported cloud providers.
      * </pre>
      *
      * <code>
@@ -3979,7 +4127,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. cloud providers supported
+     * Optional. The supported cloud providers.
      * </pre>
      *
      * <code>
@@ -3996,7 +4144,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. cloud providers supported
+     * Optional. The supported cloud providers.
      * </pre>
      *
      * <code>
@@ -4015,7 +4163,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. cloud providers supported
+     * Optional. The supported cloud providers.
      * </pre>
      *
      * <code>
@@ -4041,7 +4189,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. cloud providers supported
+     * Optional. The supported cloud providers.
      * </pre>
      *
      * <code>
@@ -4066,7 +4214,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. cloud providers supported
+     * Optional. The supported cloud providers.
      * </pre>
      *
      * <code>
@@ -4091,7 +4239,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. cloud providers supported
+     * Optional. The supported cloud providers.
      * </pre>
      *
      * <code>
@@ -4111,7 +4259,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. cloud providers supported
+     * Optional. The supported cloud providers.
      * </pre>
      *
      * <code>
@@ -4128,7 +4276,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. cloud providers supported
+     * Optional. The supported cloud providers.
      * </pre>
      *
      * <code>
@@ -4146,7 +4294,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. cloud providers supported
+     * Optional. The supported cloud providers.
      * </pre>
      *
      * <code>
@@ -4168,7 +4316,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. cloud providers supported
+     * Optional. The supported cloud providers.
      * </pre>
      *
      * <code>
@@ -4189,7 +4337,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. cloud providers supported
+     * Optional. The supported cloud providers.
      * </pre>
      *
      * <code>
@@ -4223,7 +4371,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Frameworks that include this CloudControl
+     * Output only. The frameworks that include this cloud control.
      * </pre>
      *
      * <code>repeated string related_frameworks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4240,7 +4388,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Frameworks that include this CloudControl
+     * Output only. The frameworks that include this cloud control.
      * </pre>
      *
      * <code>repeated string related_frameworks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4256,7 +4404,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Frameworks that include this CloudControl
+     * Output only. The frameworks that include this cloud control.
      * </pre>
      *
      * <code>repeated string related_frameworks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4273,7 +4421,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Frameworks that include this CloudControl
+     * Output only. The frameworks that include this cloud control.
      * </pre>
      *
      * <code>repeated string related_frameworks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4290,7 +4438,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Frameworks that include this CloudControl
+     * Output only. The frameworks that include this cloud control.
      * </pre>
      *
      * <code>repeated string related_frameworks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4315,7 +4463,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Frameworks that include this CloudControl
+     * Output only. The frameworks that include this cloud control.
      * </pre>
      *
      * <code>repeated string related_frameworks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4339,7 +4487,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Frameworks that include this CloudControl
+     * Output only. The frameworks that include this cloud control.
      * </pre>
      *
      * <code>repeated string related_frameworks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4360,7 +4508,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Frameworks that include this CloudControl
+     * Output only. The frameworks that include this cloud control.
      * </pre>
      *
      * <code>repeated string related_frameworks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4380,7 +4528,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Frameworks that include this CloudControl
+     * Output only. The frameworks that include this cloud control.
      * </pre>
      *
      * <code>repeated string related_frameworks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -4407,8 +4555,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The remediation steps for the findings generated by the cloud
-     * control. The maximum length is 400 characters.
+     * Optional. The remediation steps for the cloud control findings. The
+     * maximum length is 400 characters.
      * </pre>
      *
      * <code>string remediation_steps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4431,8 +4579,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The remediation steps for the findings generated by the cloud
-     * control. The maximum length is 400 characters.
+     * Optional. The remediation steps for the cloud control findings. The
+     * maximum length is 400 characters.
      * </pre>
      *
      * <code>string remediation_steps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4455,8 +4603,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The remediation steps for the findings generated by the cloud
-     * control. The maximum length is 400 characters.
+     * Optional. The remediation steps for the cloud control findings. The
+     * maximum length is 400 characters.
      * </pre>
      *
      * <code>string remediation_steps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4478,8 +4626,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The remediation steps for the findings generated by the cloud
-     * control. The maximum length is 400 characters.
+     * Optional. The remediation steps for the cloud control findings. The
+     * maximum length is 400 characters.
      * </pre>
      *
      * <code>string remediation_steps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4497,8 +4645,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The remediation steps for the findings generated by the cloud
-     * control. The maximum length is 400 characters.
+     * Optional. The remediation steps for the cloud control findings. The
+     * maximum length is 400 characters.
      * </pre>
      *
      * <code>string remediation_steps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4530,7 +4678,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The categories of the cloud control.
+     * Optional. The categories for the cloud control.
      * </pre>
      *
      * <code>
@@ -4550,7 +4698,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The categories of the cloud control.
+     * Optional. The categories for the cloud control.
      * </pre>
      *
      * <code>
@@ -4567,7 +4715,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The categories of the cloud control.
+     * Optional. The categories for the cloud control.
      * </pre>
      *
      * <code>
@@ -4586,7 +4734,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The categories of the cloud control.
+     * Optional. The categories for the cloud control.
      * </pre>
      *
      * <code>
@@ -4612,7 +4760,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The categories of the cloud control.
+     * Optional. The categories for the cloud control.
      * </pre>
      *
      * <code>
@@ -4637,7 +4785,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The categories of the cloud control.
+     * Optional. The categories for the cloud control.
      * </pre>
      *
      * <code>
@@ -4663,7 +4811,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The categories of the cloud control.
+     * Optional. The categories for the cloud control.
      * </pre>
      *
      * <code>
@@ -4683,7 +4831,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The categories of the cloud control.
+     * Optional. The categories for the cloud control.
      * </pre>
      *
      * <code>
@@ -4700,7 +4848,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The categories of the cloud control.
+     * Optional. The categories for the cloud control.
      * </pre>
      *
      * <code>
@@ -4718,7 +4866,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The categories of the cloud control.
+     * Optional. The categories for the cloud control.
      * </pre>
      *
      * <code>
@@ -4740,7 +4888,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The categories of the cloud control.
+     * Optional. The categories for the cloud control.
      * </pre>
      *
      * <code>
@@ -4761,7 +4909,7 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The categories of the cloud control.
+     * Optional. The categories for the cloud control.
      * </pre>
      *
      * <code>
@@ -4791,9 +4939,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last updated time of the cloud control.
-     * The create_time is used because a new CC is created whenever we update an
-     * existing CC.
+     * Output only. The time that the cloud control was last updated.
+     * `create_time` is used because a new cloud control is created
+     * whenever an existing cloud control is updated.
      * </pre>
      *
      * <code>
@@ -4810,9 +4958,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last updated time of the cloud control.
-     * The create_time is used because a new CC is created whenever we update an
-     * existing CC.
+     * Output only. The time that the cloud control was last updated.
+     * `create_time` is used because a new cloud control is created
+     * whenever an existing cloud control is updated.
      * </pre>
      *
      * <code>
@@ -4835,9 +4983,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last updated time of the cloud control.
-     * The create_time is used because a new CC is created whenever we update an
-     * existing CC.
+     * Output only. The time that the cloud control was last updated.
+     * `create_time` is used because a new cloud control is created
+     * whenever an existing cloud control is updated.
      * </pre>
      *
      * <code>
@@ -4862,9 +5010,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last updated time of the cloud control.
-     * The create_time is used because a new CC is created whenever we update an
-     * existing CC.
+     * Output only. The time that the cloud control was last updated.
+     * `create_time` is used because a new cloud control is created
+     * whenever an existing cloud control is updated.
      * </pre>
      *
      * <code>
@@ -4886,9 +5034,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last updated time of the cloud control.
-     * The create_time is used because a new CC is created whenever we update an
-     * existing CC.
+     * Output only. The time that the cloud control was last updated.
+     * `create_time` is used because a new cloud control is created
+     * whenever an existing cloud control is updated.
      * </pre>
      *
      * <code>
@@ -4918,9 +5066,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last updated time of the cloud control.
-     * The create_time is used because a new CC is created whenever we update an
-     * existing CC.
+     * Output only. The time that the cloud control was last updated.
+     * `create_time` is used because a new cloud control is created
+     * whenever an existing cloud control is updated.
      * </pre>
      *
      * <code>
@@ -4942,9 +5090,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last updated time of the cloud control.
-     * The create_time is used because a new CC is created whenever we update an
-     * existing CC.
+     * Output only. The time that the cloud control was last updated.
+     * `create_time` is used because a new cloud control is created
+     * whenever an existing cloud control is updated.
      * </pre>
      *
      * <code>
@@ -4961,9 +5109,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last updated time of the cloud control.
-     * The create_time is used because a new CC is created whenever we update an
-     * existing CC.
+     * Output only. The time that the cloud control was last updated.
+     * `create_time` is used because a new cloud control is created
+     * whenever an existing cloud control is updated.
      * </pre>
      *
      * <code>
@@ -4984,9 +5132,9 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The last updated time of the cloud control.
-     * The create_time is used because a new CC is created whenever we update an
-     * existing CC.
+     * Output only. The time that the cloud control was last updated.
+     * `create_time` is used because a new cloud control is created
+     * whenever an existing cloud control is updated.
      * </pre>
      *
      * <code>
@@ -5025,7 +5173,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. target resource types supported by the CloudControl.
+     * Optional. The target resource types that are supported by the cloud
+     * control.
      * </pre>
      *
      * <code>
@@ -5045,7 +5194,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. target resource types supported by the CloudControl.
+     * Optional. The target resource types that are supported by the cloud
+     * control.
      * </pre>
      *
      * <code>
@@ -5062,7 +5212,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. target resource types supported by the CloudControl.
+     * Optional. The target resource types that are supported by the cloud
+     * control.
      * </pre>
      *
      * <code>
@@ -5082,7 +5233,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. target resource types supported by the CloudControl.
+     * Optional. The target resource types that are supported by the cloud
+     * control.
      * </pre>
      *
      * <code>
@@ -5108,7 +5260,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. target resource types supported by the CloudControl.
+     * Optional. The target resource types that are supported by the cloud
+     * control.
      * </pre>
      *
      * <code>
@@ -5133,7 +5286,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. target resource types supported by the CloudControl.
+     * Optional. The target resource types that are supported by the cloud
+     * control.
      * </pre>
      *
      * <code>
@@ -5158,7 +5312,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. target resource types supported by the CloudControl.
+     * Optional. The target resource types that are supported by the cloud
+     * control.
      * </pre>
      *
      * <code>
@@ -5178,7 +5333,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. target resource types supported by the CloudControl.
+     * Optional. The target resource types that are supported by the cloud
+     * control.
      * </pre>
      *
      * <code>
@@ -5196,7 +5352,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. target resource types supported by the CloudControl.
+     * Optional. The target resource types that are supported by the cloud
+     * control.
      * </pre>
      *
      * <code>
@@ -5215,7 +5372,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. target resource types supported by the CloudControl.
+     * Optional. The target resource types that are supported by the cloud
+     * control.
      * </pre>
      *
      * <code>
@@ -5237,7 +5395,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. target resource types supported by the CloudControl.
+     * Optional. The target resource types that are supported by the cloud
+     * control.
      * </pre>
      *
      * <code>
@@ -5258,7 +5417,8 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. target resource types supported by the CloudControl.
+     * Optional. The target resource types that are supported by the cloud
+     * control.
      * </pre>
      *
      * <code>

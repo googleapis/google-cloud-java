@@ -23,8 +23,8 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * TargetResourceConfig contains either the name of the target_resource or
- * contains the config to create a new target_resource.
+ * The name of the target resource or the configuration that's required to
+ * create a new target resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.TargetResourceConfig}
@@ -119,8 +119,11 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. CRM node in format organizations/{organization},
-   * folders/{folder}, or projects/{project}
+   * Optional. The resource hierarchy node, in one of the following formats:
+   *
+   * - `organizations/{organizationID}`
+   * - `folders/{folderID}`
+   * - `projects/{projectID}`
    * </pre>
    *
    * <code>string existing_target_resource = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -135,8 +138,11 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. CRM node in format organizations/{organization},
-   * folders/{folder}, or projects/{project}
+   * Optional. The resource hierarchy node, in one of the following formats:
+   *
+   * - `organizations/{organizationID}`
+   * - `folders/{folderID}`
+   * - `projects/{projectID}`
    * </pre>
    *
    * <code>string existing_target_resource = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -164,8 +170,11 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. CRM node in format organizations/{organization},
-   * folders/{folder}, or projects/{project}
+   * Optional. The resource hierarchy node, in one of the following formats:
+   *
+   * - `organizations/{organizationID}`
+   * - `folders/{folderID}`
+   * - `projects/{projectID}`
    * </pre>
    *
    * <code>string existing_target_resource = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -195,8 +204,8 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Config to create a new resource and use that as the
-   * target_resource for deployment.
+   * Optional. The details that are required to create a resource and use
+   * that resource as the target resource for deployment.
    * </pre>
    *
    * <code>
@@ -214,8 +223,8 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Config to create a new resource and use that as the
-   * target_resource for deployment.
+   * Optional. The details that are required to create a resource and use
+   * that resource as the target resource for deployment.
    * </pre>
    *
    * <code>
@@ -239,8 +248,8 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Config to create a new resource and use that as the
-   * target_resource for deployment.
+   * Optional. The details that are required to create a resource and use
+   * that resource as the target resource for deployment.
    * </pre>
    *
    * <code>
@@ -457,8 +466,8 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * TargetResourceConfig contains either the name of the target_resource or
-   * contains the config to create a new target_resource.
+   * The name of the target resource or the configuration that's required to
+   * create a new target resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.TargetResourceConfig}
@@ -691,8 +700,11 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. CRM node in format organizations/{organization},
-     * folders/{folder}, or projects/{project}
+     * Optional. The resource hierarchy node, in one of the following formats:
+     *
+     * - `organizations/{organizationID}`
+     * - `folders/{folderID}`
+     * - `projects/{projectID}`
      * </pre>
      *
      * <code>string existing_target_resource = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -708,8 +720,11 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. CRM node in format organizations/{organization},
-     * folders/{folder}, or projects/{project}
+     * Optional. The resource hierarchy node, in one of the following formats:
+     *
+     * - `organizations/{organizationID}`
+     * - `folders/{folderID}`
+     * - `projects/{projectID}`
      * </pre>
      *
      * <code>string existing_target_resource = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -738,8 +753,11 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. CRM node in format organizations/{organization},
-     * folders/{folder}, or projects/{project}
+     * Optional. The resource hierarchy node, in one of the following formats:
+     *
+     * - `organizations/{organizationID}`
+     * - `folders/{folderID}`
+     * - `projects/{projectID}`
      * </pre>
      *
      * <code>string existing_target_resource = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -768,8 +786,11 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. CRM node in format organizations/{organization},
-     * folders/{folder}, or projects/{project}
+     * Optional. The resource hierarchy node, in one of the following formats:
+     *
+     * - `organizations/{organizationID}`
+     * - `folders/{folderID}`
+     * - `projects/{projectID}`
      * </pre>
      *
      * <code>string existing_target_resource = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -791,8 +812,11 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. CRM node in format organizations/{organization},
-     * folders/{folder}, or projects/{project}
+     * Optional. The resource hierarchy node, in one of the following formats:
+     *
+     * - `organizations/{organizationID}`
+     * - `folders/{folderID}`
+     * - `projects/{projectID}`
      * </pre>
      *
      * <code>string existing_target_resource = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -812,8 +836,11 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. CRM node in format organizations/{organization},
-     * folders/{folder}, or projects/{project}
+     * Optional. The resource hierarchy node, in one of the following formats:
+     *
+     * - `organizations/{organizationID}`
+     * - `folders/{folderID}`
+     * - `projects/{projectID}`
      * </pre>
      *
      * <code>string existing_target_resource = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -842,8 +869,8 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Config to create a new resource and use that as the
-     * target_resource for deployment.
+     * Optional. The details that are required to create a resource and use
+     * that resource as the target resource for deployment.
      * </pre>
      *
      * <code>
@@ -861,8 +888,8 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Config to create a new resource and use that as the
-     * target_resource for deployment.
+     * Optional. The details that are required to create a resource and use
+     * that resource as the target resource for deployment.
      * </pre>
      *
      * <code>
@@ -894,8 +921,8 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Config to create a new resource and use that as the
-     * target_resource for deployment.
+     * Optional. The details that are required to create a resource and use
+     * that resource as the target resource for deployment.
      * </pre>
      *
      * <code>
@@ -921,8 +948,8 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Config to create a new resource and use that as the
-     * target_resource for deployment.
+     * Optional. The details that are required to create a resource and use
+     * that resource as the target resource for deployment.
      * </pre>
      *
      * <code>
@@ -946,8 +973,8 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Config to create a new resource and use that as the
-     * target_resource for deployment.
+     * Optional. The details that are required to create a resource and use
+     * that resource as the target resource for deployment.
      * </pre>
      *
      * <code>
@@ -986,8 +1013,8 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Config to create a new resource and use that as the
-     * target_resource for deployment.
+     * Optional. The details that are required to create a resource and use
+     * that resource as the target resource for deployment.
      * </pre>
      *
      * <code>
@@ -1015,8 +1042,8 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Config to create a new resource and use that as the
-     * target_resource for deployment.
+     * Optional. The details that are required to create a resource and use
+     * that resource as the target resource for deployment.
      * </pre>
      *
      * <code>
@@ -1032,8 +1059,8 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Config to create a new resource and use that as the
-     * target_resource for deployment.
+     * Optional. The details that are required to create a resource and use
+     * that resource as the target resource for deployment.
      * </pre>
      *
      * <code>
@@ -1059,8 +1086,8 @@ public final class TargetResourceConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Config to create a new resource and use that as the
-     * target_resource for deployment.
+     * Optional. The details that are required to create a resource and use
+     * that resource as the target resource for deployment.
      * </pre>
      *
      * <code>
