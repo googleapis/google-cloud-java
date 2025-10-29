@@ -70,6 +70,7 @@ public class BuiltinMetricsConstants {
   static final String REMAINING_DEADLINE_NAME = "remaining_deadline";
   static final String CLIENT_BLOCKING_LATENCIES_NAME = "throttling_latencies";
   static final String PER_CONNECTION_ERROR_COUNT_NAME = "per_connection_error_count";
+  static final String OUTSTANDING_RPCS_PER_CHANNEL_NAME = "connection_pool/outstanding_rpcs";
 
   // Start allow list of metrics that will be exported as internal
   public static final Map<String, Set<String>> GRPC_METRICS =
@@ -140,6 +141,15 @@ public class BuiltinMetricsConstants {
               500_000.0,
               1_000_000.0));
 
+  // Buckets for outstanding RPCs per channel, max ~100
+  private static final Aggregation AGGREGATION_OUTSTANDING_RPCS_HISTOGRAM =
+      Aggregation.explicitBucketHistogram(
+          ImmutableList.of(
+              0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0,
+              70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0, 105.0, 110.0, 115.0, 120.0, 125.0, 130.0,
+              135.0, 140.0, 145.0, 150.0, 155.0, 160.0, 165.0, 170.0, 175.0, 180.0, 185.0, 190.0,
+              195.0, 200.0));
+
   static final Set<AttributeKey> COMMON_ATTRIBUTES =
       ImmutableSet.of(
           BIGTABLE_PROJECT_ID_KEY,
@@ -181,12 +191,22 @@ public class BuiltinMetricsConstants {
     viewMap.put(selector, view);
   }
 
+  // uses cloud.BigtableClient schema
   public static Map<InstrumentSelector, View> getInternalViews() {
     ImmutableMap.Builder<InstrumentSelector, View> views = ImmutableMap.builder();
     defineView(
         views,
         PER_CONNECTION_ERROR_COUNT_NAME,
         AGGREGATION_PER_CONNECTION_ERROR_COUNT_HISTOGRAM,
+        InstrumentType.HISTOGRAM,
+        "1",
+        ImmutableSet.<AttributeKey>builder()
+            .add(BIGTABLE_PROJECT_ID_KEY, INSTANCE_ID_KEY, APP_PROFILE_KEY, CLIENT_NAME_KEY)
+            .build());
+    defineView(
+        views,
+        OUTSTANDING_RPCS_PER_CHANNEL_NAME,
+        AGGREGATION_OUTSTANDING_RPCS_HISTOGRAM,
         InstrumentType.HISTOGRAM,
         "1",
         ImmutableSet.<AttributeKey>builder()

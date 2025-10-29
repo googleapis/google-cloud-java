@@ -55,6 +55,10 @@
         <differenceType>8001</differenceType>
         <className>com/google/cloud/bigtable/data/v2/stub/metrics/HeaderTracer</className>
     </difference>
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/ErrorCountPerConnectionMetricTracker</className>
+    </difference>
     <!-- InternalApi that was removed -->
     <difference>
         <differenceType>8001</differenceType>

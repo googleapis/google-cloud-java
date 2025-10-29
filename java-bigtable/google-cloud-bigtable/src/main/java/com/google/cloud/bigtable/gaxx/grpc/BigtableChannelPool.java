@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  * <p>Internal API
  */
 @InternalApi
-public class BigtableChannelPool extends ManagedChannel {
+public class BigtableChannelPool extends ManagedChannel implements BigtableChannelPoolObserver {
   @VisibleForTesting
   static final Logger LOG = Logger.getLogger(BigtableChannelPool.class.getName());
 
@@ -196,7 +196,7 @@ public class BigtableChannelPool extends ManagedChannel {
 
     for (int i = 0; i < localEntries.size(); i++) {
       Entry entry = localEntries.get(i);
-      int rpcs = entry.outstandingRpcs.get();
+      int rpcs = entry.totalOutstandingRpcs();
       if (rpcs < minRpcs) {
         minRpcs = rpcs;
         candidates.clear();
@@ -222,7 +222,7 @@ public class BigtableChannelPool extends ManagedChannel {
 
     Entry entry1 = localEntries.get(choice1);
     Entry entry2 = localEntries.get(choice2);
-    return entry1.outstandingRpcs.get() < entry2.outstandingRpcs.get() ? choice1 : choice2;
+    return entry1.totalOutstandingRpcs() < entry2.totalOutstandingRpcs() ? choice1 : choice2;
   }
 
   Channel getChannel(int index) {
@@ -471,7 +471,7 @@ public class BigtableChannelPool extends ManagedChannel {
    * Get and retain a Channel Entry. The returned Entry will have its rpc count incremented,
    * preventing it from getting recycled.
    */
-  private Entry getRetainedEntry(int affinity) {
+  private Entry getRetainedEntry(int affinity, boolean isStreaming) {
     // If an entry is not retainable, that usually means that it's about to be replaced and if we
     // retry we should get a new useable entry.
     // The maximum number of concurrent calls to this method for any given time span is at most 2,
@@ -479,7 +479,7 @@ public class BigtableChannelPool extends ManagedChannel {
     // code evolving
     for (int i = 0; i < 5; i++) {
       Entry entry = getEntry(affinity);
-      if (entry.retain()) {
+      if (entry.retain(isStreaming)) {
         return entry;
       }
     }
@@ -507,8 +507,14 @@ public class BigtableChannelPool extends ManagedChannel {
     return localEntries.get(index);
   }
 
+  /** Gets the current list of BigtableChannelInsight objects. */
+  @Override
+  public List<? extends BigtableChannelObserver> getChannelInfos() {
+    return entries.get();
+  }
+
   /** Bundles a gRPC {@link ManagedChannel} with some usage accounting. */
-  static class Entry {
+  static class Entry implements BigtableChannelObserver {
     private final ManagedChannel channel;
 
     /**
@@ -525,9 +531,16 @@ public class BigtableChannelPool extends ManagedChannel {
      * outstanding RPCs has to happen when the ClientCall is closed or the ClientCall failed to
      * start.
      */
-    @VisibleForTesting final AtomicInteger outstandingRpcs = new AtomicInteger(0);
+    @VisibleForTesting final AtomicReference<Boolean> isAltsHolder = new AtomicReference<>(null);
 
-    private final AtomicInteger maxOutstanding = new AtomicInteger();
+    @VisibleForTesting final AtomicInteger errorCount = new AtomicInteger(0);
+    @VisibleForTesting final AtomicInteger successCount = new AtomicInteger(0);
+    @VisibleForTesting final AtomicInteger outstandingUnaryRpcs = new AtomicInteger(0);
+
+    @VisibleForTesting final AtomicInteger outstandingStreamingRpcs = new AtomicInteger(0);
+
+    private final AtomicInteger maxOutstandingUnaryRpcs = new AtomicInteger();
+    private final AtomicInteger maxOutstandingStreamingRpcs = new AtomicInteger();
 
     /** Queue storing the last 5 minutes of probe results */
     @VisibleForTesting
@@ -551,12 +564,27 @@ public class BigtableChannelPool extends ManagedChannel {
       this.channel = channel;
     }
 
+    void checkAndSetIsAlts(ClientCall<?, ?> call) {
+      // TODO(populate ALTS holder)
+      boolean result = false;
+      isAltsHolder.compareAndSet(null, result);
+    }
+
     ManagedChannel getManagedChannel() {
       return this.channel;
     }
 
+    @VisibleForTesting
+    int totalOutstandingRpcs() {
+      return outstandingUnaryRpcs.get() + outstandingStreamingRpcs.get();
+    }
+
     int getAndResetMaxOutstanding() {
-      return maxOutstanding.getAndSet(outstandingRpcs.get());
+      int currentUnary = outstandingUnaryRpcs.get();
+      int currentStreaming = outstandingStreamingRpcs.get();
+      int prevMaxUnary = maxOutstandingUnaryRpcs.getAndSet(currentUnary);
+      int prevMaxStreaming = maxOutstandingStreamingRpcs.getAndSet(currentStreaming);
+      return prevMaxStreaming + prevMaxUnary;
     }
 
     /**
@@ -565,19 +593,16 @@ public class BigtableChannelPool extends ManagedChannel {
      * channel has been successfully retained and it is the responsibility of the caller to release
      * it.
      */
-    private boolean retain() {
-      // register desire to start RPC
-      int currentOutstanding = outstandingRpcs.incrementAndGet();
-
-      // Rough bookkeeping
-      int prevMax = maxOutstanding.get();
-      if (currentOutstanding > prevMax) {
-        maxOutstanding.incrementAndGet();
-      }
-
+    @VisibleForTesting
+    boolean retain(boolean isStreaming) {
+      AtomicInteger counter = isStreaming ? outstandingStreamingRpcs : outstandingUnaryRpcs;
+      AtomicInteger maxCounter =
+          isStreaming ? maxOutstandingStreamingRpcs : maxOutstandingUnaryRpcs;
+      int currentOutstanding = counter.incrementAndGet();
+      maxCounter.accumulateAndGet(currentOutstanding, Math::max);
       // abort if the channel is closing
       if (shutdownRequested.get()) {
-        release();
+        release(isStreaming);
         return false;
       }
       return true;
@@ -587,15 +612,19 @@ public class BigtableChannelPool extends ManagedChannel {
      * Notify the channel that the number of outstanding RPCs has decreased. If shutdown has been
      * previously requested, this method will shutdown the channel if its the last outstanding RPC.
      */
-    private void release() {
-      int newCount = outstandingRpcs.decrementAndGet();
+    void release(boolean isStreaming) {
+      int newCount =
+          isStreaming
+              ? outstandingStreamingRpcs.decrementAndGet()
+              : outstandingUnaryRpcs.decrementAndGet();
       if (newCount < 0) {
         LOG.log(Level.WARNING, "Bug! Reference count is negative (" + newCount + ")!");
       }
 
-      // Must check outstandingRpcs after shutdownRequested (in reverse order of retain()) to ensure
+      // Must check toalOutstandingRpcs after shutdownRequested (in reverse order of retain()) to
+      // ensure
       // mutual exclusion.
-      if (shutdownRequested.get() && outstandingRpcs.get() == 0) {
+      if (shutdownRequested.get() && totalOutstandingRpcs() == 0) {
         shutdown();
       }
     }
@@ -606,7 +635,7 @@ public class BigtableChannelPool extends ManagedChannel {
      */
     private void requestShutdown() {
       shutdownRequested.set(true);
-      if (outstandingRpcs.get() == 0) {
+      if (totalOutstandingRpcs() == 0) {
         shutdown();
       }
     }
@@ -616,6 +645,43 @@ public class BigtableChannelPool extends ManagedChannel {
       if (shutdownInitiated.compareAndSet(false, true)) {
         channel.shutdown();
       }
+    }
+
+    /** Gets the current number of outstanding Unary RPCs on this channel. */
+    @Override
+    public int getOutstandingUnaryRpcs() {
+      return outstandingUnaryRpcs.get();
+    }
+
+    @Override
+    public int getOutstandingStreamingRpcs() {
+      return outstandingStreamingRpcs.get();
+    }
+
+    /** Get the current number of errors request count since the last observed period */
+    @Override
+    public long getAndResetErrorCount() {
+      return errorCount.getAndSet(0);
+    }
+
+    /** Get the current number of successful requests since the last observed period */
+    @Override
+    public long getAndResetSuccessCount() {
+      return successCount.getAndSet(0);
+    }
+
+    @Override
+    public boolean isAltsChannel() {
+      Boolean val = isAltsHolder.get();
+      return val != null && val;
+    }
+
+    void incrementErrorCount() {
+      errorCount.incrementAndGet();
+    }
+
+    void incrementSuccessCount() {
+      successCount.incrementAndGet();
     }
   }
 
@@ -635,8 +701,11 @@ public class BigtableChannelPool extends ManagedChannel {
     @Override
     public <RequestT, ResponseT> ClientCall<RequestT, ResponseT> newCall(
         MethodDescriptor<RequestT, ResponseT> methodDescriptor, CallOptions callOptions) {
-      Entry entry = getRetainedEntry(index);
-      return new ReleasingClientCall<>(entry.channel.newCall(methodDescriptor, callOptions), entry);
+      boolean isStreaming =
+          methodDescriptor.getType() == MethodDescriptor.MethodType.SERVER_STREAMING;
+      Entry entry = getRetainedEntry(index, isStreaming);
+      return new ReleasingClientCall<>(
+          entry.channel.newCall(methodDescriptor, callOptions), entry, isStreaming);
     }
   }
 
@@ -644,12 +713,14 @@ public class BigtableChannelPool extends ManagedChannel {
   static class ReleasingClientCall<ReqT, RespT> extends SimpleForwardingClientCall<ReqT, RespT> {
     @Nullable private CancellationException cancellationException;
     final Entry entry;
+    private final boolean isStreaming;
     private final AtomicBoolean wasClosed = new AtomicBoolean();
     private final AtomicBoolean wasReleased = new AtomicBoolean();
 
-    public ReleasingClientCall(ClientCall<ReqT, RespT> delegate, Entry entry) {
+    public ReleasingClientCall(ClientCall<ReqT, RespT> delegate, Entry entry, boolean isStreaming) {
       super(delegate);
       this.entry = entry;
+      this.isStreaming = isStreaming;
     }
 
     @Override
@@ -658,6 +729,8 @@ public class BigtableChannelPool extends ManagedChannel {
         throw new IllegalStateException("Call is already cancelled", cancellationException);
       }
       try {
+        entry.checkAndSetIsAlts(delegate());
+
         super.start(
             new SimpleForwardingClientCallListener<RespT>(responseListener) {
               @Override
@@ -670,10 +743,16 @@ public class BigtableChannelPool extends ManagedChannel {
                   return;
                 }
                 try {
+                  // status for increment success and error count
+                  if (status.isOk()) {
+                    entry.incrementSuccessCount();
+                  } else {
+                    entry.incrementErrorCount();
+                  }
                   super.onClose(status, trailers);
                 } finally {
                   if (wasReleased.compareAndSet(false, true)) {
-                    entry.release();
+                    entry.release(isStreaming);
                   } else {
                     LOG.log(
                         Level.WARNING,
@@ -687,7 +766,7 @@ public class BigtableChannelPool extends ManagedChannel {
       } catch (Exception e) {
         // In case start failed, make sure to release
         if (wasReleased.compareAndSet(false, true)) {
-          entry.release();
+          entry.release(isStreaming);
         } else {
           LOG.log(
               Level.WARNING,
