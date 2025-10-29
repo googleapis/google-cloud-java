@@ -33,6 +33,8 @@ import com.google.cloud.bigquery.storage.v1.ConnectionWorker.TableSchemaAndTimes
 import com.google.cloud.bigquery.storage.v1.StreamWriter.SingleConnectionOrConnectionPool.Kind;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
+import com.google.common.cache.Cache;
+import com.google.common.cache.CacheBuilder;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.google.protobuf.ByteString;
 import io.grpc.Status;
@@ -48,7 +50,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.UUID;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Lock;
@@ -75,8 +79,15 @@ public class StreamWriter implements AutoCloseable {
   private static Pattern streamPatternDefaultStream = Pattern.compile(defaultStreamMatching);
 
   // Cache of location info for a given dataset.
-  private static Map<String, String> projectAndDatasetToLocation = new ConcurrentHashMap<>();
+  private static long LOCATION_CACHE_EXPIRE_MILLIS = 10 * 60 * 1000; // 10 minutes
 
+  private static Cache<String, String> allocateProjectLocationCache() {
+    return CacheBuilder.newBuilder()
+        .expireAfterWrite(LOCATION_CACHE_EXPIRE_MILLIS, TimeUnit.MILLISECONDS)
+        .build();
+  }
+
+  private static Cache<String, String> projectAndDatasetToLocation = allocateProjectLocationCache();
   /*
    * The identifier of stream to write to.
    */
@@ -287,26 +298,33 @@ public class StreamWriter implements AutoCloseable {
       if (location == null || location.isEmpty()) {
         // Location is not passed in, try to fetch from RPC
         String datasetAndProjectName = extractDatasetAndProjectName(builder.streamName);
-        location =
-            projectAndDatasetToLocation.computeIfAbsent(
-                datasetAndProjectName,
-                (key) -> {
-                  GetWriteStreamRequest writeStreamRequest =
-                      GetWriteStreamRequest.newBuilder()
-                          .setName(this.getStreamName())
-                          .setView(WriteStreamView.BASIC)
-                          .build();
+        try {
+          location =
+              projectAndDatasetToLocation.get(
+                  datasetAndProjectName,
+                  new Callable<String>() {
+                    @Override
+                    public String call() throws Exception {
+                      GetWriteStreamRequest writeStreamRequest =
+                          GetWriteStreamRequest.newBuilder()
+                              .setName(getStreamName())
+                              .setView(WriteStreamView.BASIC)
+                              .build();
 
-                  WriteStream writeStream = client.getWriteStream(writeStreamRequest);
-                  TableSchema writeStreamTableSchema = writeStream.getTableSchema();
-                  String fetchedLocation = writeStream.getLocation();
-                  log.info(
-                      String.format(
-                          "Fetched location %s for stream name %s, extracted project and dataset"
-                              + " name: %s\"",
-                          fetchedLocation, streamName, datasetAndProjectName));
-                  return fetchedLocation;
-                });
+                      WriteStream writeStream = client.getWriteStream(writeStreamRequest);
+                      TableSchema writeStreamTableSchema = writeStream.getTableSchema();
+                      String fetchedLocation = writeStream.getLocation();
+                      log.info(
+                          String.format(
+                              "Fetched location %s for stream name %s, extracted project and dataset"
+                                  + " name: %s\"",
+                              fetchedLocation, streamName, datasetAndProjectName));
+                      return fetchedLocation;
+                    }
+                  });
+        } catch (ExecutionException e) {
+          throw new IllegalStateException(e.getCause());
+        }
         if (location.isEmpty()) {
           throw new IllegalStateException(
               String.format(
@@ -369,6 +387,12 @@ public class StreamWriter implements AutoCloseable {
   static boolean isDefaultStream(String streamName) {
     Matcher streamMatcher = streamPatternDefaultStream.matcher(streamName);
     return streamMatcher.find();
+  }
+
+  @VisibleForTesting
+  static void recreateProjectLocationCache(long durationExpireMillis) {
+    LOCATION_CACHE_EXPIRE_MILLIS = durationExpireMillis;
+    projectAndDatasetToLocation = allocateProjectLocationCache();
   }
 
   String getFullTraceId() {

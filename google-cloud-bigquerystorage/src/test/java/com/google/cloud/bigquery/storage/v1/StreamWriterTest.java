@@ -56,6 +56,7 @@ import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Int64Value;
+import com.google.protobuf.Timestamp;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.opentelemetry.api.common.Attributes;
@@ -2550,5 +2551,67 @@ public class StreamWriterTest {
 
     assertEquals(
         "projects/projectId/datasets/datasetId/tables/tableId/_default", actualDefaultName);
+  }
+
+  @Test
+  public void testLocationCacheIsHit() throws Exception {
+    WriteStream expectedResponse =
+        WriteStream.newBuilder()
+            .setName(WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCommitTime(Timestamp.newBuilder().build())
+            .setTableSchema(TableSchema.newBuilder().build())
+            .setLocation("oklahoma")
+            .build();
+    testBigQueryWrite.addResponse(expectedResponse);
+
+    // first stream will result in call to getWriteStream for location lookup
+    StreamWriter writer1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setWriterSchema(createProtoSchema())
+            .setEnableConnectionPool(true)
+            .build();
+
+    // second stream will hit the location cache
+    StreamWriter writer2 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setWriterSchema(createProtoSchema())
+            .setEnableConnectionPool(true)
+            .build();
+    assertEquals(1, testBigQueryWrite.getWriteStreamRequests().size());
+  }
+
+  @Test
+  public void testLocationCacheExpires() throws Exception {
+    // force cache to expire in 1000 millis
+    StreamWriter.recreateProjectLocationCache(1000);
+    WriteStream expectedResponse =
+        WriteStream.newBuilder()
+            .setName(WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCommitTime(Timestamp.newBuilder().build())
+            .setTableSchema(TableSchema.newBuilder().build())
+            .setLocation("oklahoma")
+            .build();
+    testBigQueryWrite.addResponse(expectedResponse);
+    testBigQueryWrite.addResponse(expectedResponse);
+
+    // first stream will result in call to getWriteStream for location lookup
+    StreamWriter writer1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setWriterSchema(createProtoSchema())
+            .setEnableConnectionPool(true)
+            .build();
+
+    // force cache to expire
+    TimeUnit.SECONDS.sleep(2);
+
+    // second stream will result in call to getWriteStream for location lookup
+    StreamWriter writer2 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setWriterSchema(createProtoSchema())
+            .setEnableConnectionPool(true)
+            .build();
+    assertEquals(2, testBigQueryWrite.getWriteStreamRequests().size());
   }
 }
