@@ -97,4 +97,75 @@ public interface FunctionResponseOrBuilder
    * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.StructOrBuilder getResponseOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ordered `Parts` that constitute a function response. Parts may
+   * have different IANA MIME types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1.FunctionResponsePart> getPartsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ordered `Parts` that constitute a function response. Parts may
+   * have different IANA MIME types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.FunctionResponsePart getParts(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ordered `Parts` that constitute a function response. Parts may
+   * have different IANA MIME types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getPartsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ordered `Parts` that constitute a function response. Parts may
+   * have different IANA MIME types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1.FunctionResponsePartOrBuilder>
+      getPartsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ordered `Parts` that constitute a function response. Parts may
+   * have different IANA MIME types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.FunctionResponsePart parts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.FunctionResponsePartOrBuilder getPartsOrBuilder(int index);
 }

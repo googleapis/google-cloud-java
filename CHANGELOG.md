@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.72.0](https://github.com/googleapis/google-cloud-java/compare/v1.71.0...v1.72.0) (2025-10-21)
+
+
+### Features
+
+* [aiplatform] add aspect_ratio and image_config for v1 version ([ba2ed6a](https://github.com/googleapis/google-cloud-java/commit/ba2ed6a6e9c822187d1c76ae677d4d633625fed1))
+* [aiplatform] add aspect_ratio and image_config for v1beta1 version ([ba2ed6a](https://github.com/googleapis/google-cloud-java/commit/ba2ed6a6e9c822187d1c76ae677d4d633625fed1))
+* [aiplatform] add FunctionResponsePart and excluded_predefined_functions in ComputerUse ([2919d20](https://github.com/googleapis/google-cloud-java/commit/2919d20865c7fcd9383b04f76d42bf7b47c9f592))
+* [aiplatform] add FunctionResponsePart and excluded_predefined_functions in ComputerUse ([0a730d4](https://github.com/googleapis/google-cloud-java/commit/0a730d43d863bcca90524c789c1056d934597c6c))
+* [aiplatform] Add support for Inline source based deployment ([ba2ed6a](https://github.com/googleapis/google-cloud-java/commit/ba2ed6a6e9c822187d1c76ae677d4d633625fed1))
+* [aiplatform] Add support for Inline source based deployment ([ba2ed6a](https://github.com/googleapis/google-cloud-java/commit/ba2ed6a6e9c822187d1c76ae677d4d633625fed1))
+* [aiplatform] Continuous Tuning ([0a730d4](https://github.com/googleapis/google-cloud-java/commit/0a730d43d863bcca90524c789c1056d934597c6c))
+* [capacityplanner] new module for capacityplanner ([#11777](https://github.com/googleapis/google-cloud-java/issues/11777)) ([65f4fd0](https://github.com/googleapis/google-cloud-java/commit/65f4fd0dfc3f8dba4c90389bb37285fba89536af))
+* [container] Add SwapConfig to enable and configure swap memory for node pools ([ba2ed6a](https://github.com/googleapis/google-cloud-java/commit/ba2ed6a6e9c822187d1c76ae677d4d633625fed1))
+* [maps-routeoptimization] add experimental Load Costs feature ([ba2ed6a](https://github.com/googleapis/google-cloud-java/commit/ba2ed6a6e9c822187d1c76ae677d4d633625fed1))
+* [texttospeech] add `relax_safety_filters` proto field for Gemini TTS ([0a730d4](https://github.com/googleapis/google-cloud-java/commit/0a730d43d863bcca90524c789c1056d934597c6c))
+* [texttospeech] add `relax_safety_filters` proto field for Gemini TTS ([0a730d4](https://github.com/googleapis/google-cloud-java/commit/0a730d43d863bcca90524c789c1056d934597c6c))
+
+
+### Bug Fixes
+
+* [discoveryengine] Include AssistAnswer as a part of the Session ([0a730d4](https://github.com/googleapis/google-cloud-java/commit/0a730d43d863bcca90524c789c1056d934597c6c))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.63.0 ([ba2ed6a](https://github.com/googleapis/google-cloud-java/commit/ba2ed6a6e9c822187d1c76ae677d4d633625fed1))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.53.0 ([#11776](https://github.com/googleapis/google-cloud-java/issues/11776)) ([e4a2892](https://github.com/googleapis/google-cloud-java/commit/e4a2892c8f7d51e3c3bec551f922b42f70a880d8))
+
+
+### Documentation
+
+* [maps-places] Change comments in some fields in Places API ([2919d20](https://github.com/googleapis/google-cloud-java/commit/2919d20865c7fcd9383b04f76d42bf7b47c9f592))
+
 ## [1.71.0](https://github.com/googleapis/google-cloud-java/compare/v1.70.0...v1.71.0) (2025-10-13)
 
 
