@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/cloudcontrolspartner/v1beta/core.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudControlsPartnerCoreGrpc {
 
@@ -819,8 +816,9 @@ public final class CloudControlsPartnerCoreGrpc {
      * </pre>
      */
     public com.google.cloud.cloudcontrolspartner.v1beta.Workload getWorkload(
-        com.google.cloud.cloudcontrolspartner.v1beta.GetWorkloadRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudcontrolspartner.v1beta.GetWorkloadRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWorkloadMethod(), getCallOptions(), request);
     }
 
@@ -832,8 +830,9 @@ public final class CloudControlsPartnerCoreGrpc {
      * </pre>
      */
     public com.google.cloud.cloudcontrolspartner.v1beta.ListWorkloadsResponse listWorkloads(
-        com.google.cloud.cloudcontrolspartner.v1beta.ListWorkloadsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudcontrolspartner.v1beta.ListWorkloadsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWorkloadsMethod(), getCallOptions(), request);
     }
 
@@ -845,8 +844,9 @@ public final class CloudControlsPartnerCoreGrpc {
      * </pre>
      */
     public com.google.cloud.cloudcontrolspartner.v1beta.Customer getCustomer(
-        com.google.cloud.cloudcontrolspartner.v1beta.GetCustomerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudcontrolspartner.v1beta.GetCustomerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCustomerMethod(), getCallOptions(), request);
     }
 
@@ -858,8 +858,9 @@ public final class CloudControlsPartnerCoreGrpc {
      * </pre>
      */
     public com.google.cloud.cloudcontrolspartner.v1beta.ListCustomersResponse listCustomers(
-        com.google.cloud.cloudcontrolspartner.v1beta.ListCustomersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudcontrolspartner.v1beta.ListCustomersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCustomersMethod(), getCallOptions(), request);
     }
 
@@ -871,8 +872,9 @@ public final class CloudControlsPartnerCoreGrpc {
      * </pre>
      */
     public com.google.cloud.cloudcontrolspartner.v1beta.EkmConnections getEkmConnections(
-        com.google.cloud.cloudcontrolspartner.v1beta.GetEkmConnectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudcontrolspartner.v1beta.GetEkmConnectionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEkmConnectionsMethod(), getCallOptions(), request);
     }
 
@@ -884,8 +886,9 @@ public final class CloudControlsPartnerCoreGrpc {
      * </pre>
      */
     public com.google.cloud.cloudcontrolspartner.v1beta.PartnerPermissions getPartnerPermissions(
-        com.google.cloud.cloudcontrolspartner.v1beta.GetPartnerPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudcontrolspartner.v1beta.GetPartnerPermissionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPartnerPermissionsMethod(), getCallOptions(), request);
     }
 
@@ -898,9 +901,9 @@ public final class CloudControlsPartnerCoreGrpc {
      */
     public com.google.cloud.cloudcontrolspartner.v1beta.ListAccessApprovalRequestsResponse
         listAccessApprovalRequests(
-            com.google.cloud.cloudcontrolspartner.v1beta.ListAccessApprovalRequestsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.cloudcontrolspartner.v1beta.ListAccessApprovalRequestsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAccessApprovalRequestsMethod(), getCallOptions(), request);
     }
 
@@ -912,8 +915,9 @@ public final class CloudControlsPartnerCoreGrpc {
      * </pre>
      */
     public com.google.cloud.cloudcontrolspartner.v1beta.Partner getPartner(
-        com.google.cloud.cloudcontrolspartner.v1beta.GetPartnerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudcontrolspartner.v1beta.GetPartnerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPartnerMethod(), getCallOptions(), request);
     }
   }

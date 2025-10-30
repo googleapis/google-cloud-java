@@ -67,6 +67,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
               "google.cloud.cloudcontrolspartner.v1beta.CloudControlsPartnerCore/GetWorkload")
           .setRequestMarshaller(ProtoUtils.marshaller(GetWorkloadRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Workload.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListWorkloadsRequest, ListWorkloadsResponse>
@@ -79,6 +80,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
                   ProtoUtils.marshaller(ListWorkloadsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkloadsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCustomerRequest, Customer> getCustomerMethodDescriptor =
@@ -88,6 +90,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
               "google.cloud.cloudcontrolspartner.v1beta.CloudControlsPartnerCore/GetCustomer")
           .setRequestMarshaller(ProtoUtils.marshaller(GetCustomerRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Customer.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListCustomersRequest, ListCustomersResponse>
@@ -100,6 +103,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
                   ProtoUtils.marshaller(ListCustomersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEkmConnectionsRequest, EkmConnections>
@@ -111,6 +115,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEkmConnectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EkmConnections.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPartnerPermissionsRequest, PartnerPermissions>
@@ -122,6 +127,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPartnerPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PartnerPermissions.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -136,6 +142,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
                   ProtoUtils.marshaller(ListAccessApprovalRequestsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAccessApprovalRequestsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPartnerRequest, Partner> getPartnerMethodDescriptor =
@@ -145,6 +152,7 @@ public class GrpcCloudControlsPartnerCoreStub extends CloudControlsPartnerCoreSt
               "google.cloud.cloudcontrolspartner.v1beta.CloudControlsPartnerCore/GetPartner")
           .setRequestMarshaller(ProtoUtils.marshaller(GetPartnerRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Partner.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<GetWorkloadRequest, Workload> getWorkloadCallable;
