@@ -34,7 +34,6 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.CreateEndpointOperationMetadata)
     CreateEndpointOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateEndpointOperationMetadata.newBuilder() to construct.
   private CreateEndpointOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,7 +66,6 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.vertexai.api.GenericOperationMetadata genericMetadata_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
         ? com.google.cloud.vertexai.api.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
-
   /**
    *
    *
@@ -284,7 +280,6 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -493,7 +488,6 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
             com.google.cloud.vertexai.api.GenericOperationMetadata.Builder,
             com.google.cloud.vertexai.api.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
-
     /**
      *
      *
@@ -508,7 +502,6 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -529,7 +522,6 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
         return genericMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -553,7 +545,6 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -574,7 +565,6 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -604,7 +594,6 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -624,7 +613,6 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -640,7 +628,6 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -660,7 +647,6 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
             : genericMetadata_;
       }
     }
-
     /**
      *
      *

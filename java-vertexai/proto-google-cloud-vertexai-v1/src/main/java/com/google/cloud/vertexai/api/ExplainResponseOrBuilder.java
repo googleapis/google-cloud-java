@@ -39,7 +39,6 @@ public interface ExplainResponseOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.Explanation explanations = 1;</code>
    */
   java.util.List<com.google.cloud.vertexai.api.Explanation> getExplanationsList();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface ExplainResponseOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.Explanation explanations = 1;</code>
    */
   com.google.cloud.vertexai.api.Explanation getExplanations(int index);
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface ExplainResponseOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.Explanation explanations = 1;</code>
    */
   int getExplanationsCount();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface ExplainResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vertexai.api.ExplanationOrBuilder>
       getExplanationsOrBuilderList();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface ExplainResponseOrBuilder
    * @return The deployedModelId.
    */
   java.lang.String getDeployedModelId();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface ExplainResponseOrBuilder
    * <code>repeated .google.protobuf.Value predictions = 3;</code>
    */
   java.util.List<com.google.protobuf.Value> getPredictionsList();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface ExplainResponseOrBuilder
    * <code>repeated .google.protobuf.Value predictions = 3;</code>
    */
   com.google.protobuf.Value getPredictions(int index);
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public interface ExplainResponseOrBuilder
    * <code>repeated .google.protobuf.Value predictions = 3;</code>
    */
   int getPredictionsCount();
-
   /**
    *
    *
@@ -182,7 +174,6 @@ public interface ExplainResponseOrBuilder
    * <code>repeated .google.protobuf.Value predictions = 3;</code>
    */
   java.util.List<? extends com.google.protobuf.ValueOrBuilder> getPredictionsOrBuilderList();
-
   /**
    *
    *
