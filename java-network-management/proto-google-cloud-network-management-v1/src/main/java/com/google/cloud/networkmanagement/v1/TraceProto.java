@@ -69,6 +69,10 @@ public final class TraceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_networkmanagement_v1_LoadBalancerBackend_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkmanagement_v1_HybridSubnetInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkmanagement_v1_HybridSubnetInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_networkmanagement_v1_VpnGatewayInfo_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_networkmanagement_v1_VpnGatewayInfo_fieldAccessorTable;
@@ -76,6 +80,10 @@ public final class TraceProto {
       internal_static_google_cloud_networkmanagement_v1_VpnTunnelInfo_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_networkmanagement_v1_VpnTunnelInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkmanagement_v1_InterconnectAttachmentInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkmanagement_v1_InterconnectAttachmentInfo_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_networkmanagement_v1_EndpointInfo_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -172,7 +180,7 @@ public final class TraceProto {
           + "endpoint_info\030\001"
           + " \001(\0132/.google.cloud.networkmanagement.v1.EndpointInfo\0226\n"
           + "\005steps\030\002 \003(\0132\'.google.cloud.networkmanagement.v1.Step\022\030\n"
-          + "\020forward_trace_id\030\004 \001(\005\"\311\032\n"
+          + "\020forward_trace_id\030\004 \001(\005\"\275\034\n"
           + "\004Step\022\023\n"
           + "\013description\030\001 \001(\t\022<\n"
           + "\005state\030\002 \001(\0162-.google.cloud.networkmanagement.v1.Step.State\022\023\n"
@@ -188,50 +196,54 @@ public final class TraceProto {
           + "\016google_service\030\030"
           + " \001(\01324.google.cloud.networkmanagement.v1.GoogleServiceInfoH\000\022P\n"
           + "\017forwarding_rule\030\t"
-          + " \001(\01325.google.cloud.networkmanagement.v1.ForwardingRuleInfoH\000\022H\n"
+          + " \001(\01325.google.cloud.networkmanagement.v1.ForwardingRuleInfoH\000\022L\n\r"
+          + "hybrid_subnet\030$"
+          + " \001(\01323.google.cloud.networkmanagement.v1.HybridSubnetInfoH\000\022H\n"
           + "\013vpn_gateway\030\n"
           + " \001(\01321.google.cloud.networkmanagement.v1.VpnGatewayInfoH\000\022F\n\n"
           + "vpn_tunnel\030\013"
-          + " \001(\01320.google.cloud.networkmanagement.v1.VpnTunnelInfoH\000\022L\n\r"
-          + "vpc_connector\030\025 \001"
-          + "(\01323.google.cloud.networkmanagement.v1.VpcConnectorInfoH\000\022h\n"
-          + "\034direct_vpc_egress_connection\030! \001(\0132@.google.cloud.networkma"
-          + "nagement.v1.DirectVpcEgressConnectionInfoH\000\022m\n"
-          + "\036serverless_external_connection\030\" "
-          + "\001(\0132C.google.cloud.networkmanagement.v1.ServerlessExternalConnectionInfoH\000\022A\n"
+          + " \001(\01320.google.cloud.networkmanagement.v1.VpnTunnelInfoH\000\022`\n"
+          + "\027interconnect_attachment\030#"
+          + " \001(\0132=.google.cloud.networkmanagement.v1.InterconnectAttachmentInfoH\000\022L\n\r"
+          + "vpc_connector\030\025"
+          + " \001(\01323.google.cloud.networkmanagement.v1.VpcConnectorInfoH\000\022h\n"
+          + "\034direct_vpc_egress_connection\030! \001(\0132@.google"
+          + ".cloud.networkmanagement.v1.DirectVpcEgressConnectionInfoH\000\022m\n"
+          + "\036serverless_external_connection\030\" \001(\0132C.google.cloud.netwo"
+          + "rkmanagement.v1.ServerlessExternalConnectionInfoH\000\022A\n"
           + "\007deliver\030\014"
           + " \001(\0132..google.cloud.networkmanagement.v1.DeliverInfoH\000\022A\n"
           + "\007forward\030\r"
           + " \001(\0132..google.cloud.networkmanagement.v1.ForwardInfoH\000\022=\n"
           + "\005abort\030\016 \001(\0132,.google.cloud.networkmanagement.v1.AbortInfoH\000\022;\n"
           + "\004drop\030\017 \001(\0132+.google.cloud.networkmanagement.v1.DropInfoH\000\022P\n\r"
-          + "load_balancer\030\020 \001(\01323.go"
-          + "ogle.cloud.networkmanagement.v1.LoadBalancerInfoB\002\030\001H\000\022A\n"
-          + "\007network\030\021 \001(\0132..google"
-          + ".cloud.networkmanagement.v1.NetworkInfoH\000\022F\n\n"
-          + "gke_master\030\022"
-          + " \001(\01320.google.cloud.networkmanagement.v1.GKEMasterInfoH\000\022U\n"
-          + "\022cloud_sql_instance\030\023 \001(\01327.google.cloud.net"
-          + "workmanagement.v1.CloudSQLInstanceInfoH\000\022N\n"
-          + "\016redis_instance\030\036 \001(\01324.google.cloud."
-          + "networkmanagement.v1.RedisInstanceInfoH\000\022L\n\r"
-          + "redis_cluster\030\037 \001(\01323.google.cloud.n"
-          + "etworkmanagement.v1.RedisClusterInfoH\000\022N\n"
-          + "\016cloud_function\030\024 \001(\01324.google.cloud.ne"
-          + "tworkmanagement.v1.CloudFunctionInfoH\000\022U\n"
-          + "\022app_engine_version\030\026 \001(\01327.google.clou"
-          + "d.networkmanagement.v1.AppEngineVersionInfoH\000\022U\n"
-          + "\022cloud_run_revision\030\027 \001(\01327.goog"
-          + "le.cloud.networkmanagement.v1.CloudRunRevisionInfoH\000\0229\n"
+          + "load_balancer\030\020"
+          + " \001(\01323.google.cloud.networkmanagement.v1.LoadBalancerInfoB\002\030\001H\000\022A\n"
+          + "\007network\030\021"
+          + " \001(\0132..google.cloud.networkmanagement.v1.NetworkInfoH\000\022F\n\n"
+          + "gke_master\030\022 \001(\01320."
+          + "google.cloud.networkmanagement.v1.GKEMasterInfoH\000\022U\n"
+          + "\022cloud_sql_instance\030\023 \001(\01327."
+          + "google.cloud.networkmanagement.v1.CloudSQLInstanceInfoH\000\022N\n"
+          + "\016redis_instance\030\036 \001(\013"
+          + "24.google.cloud.networkmanagement.v1.RedisInstanceInfoH\000\022L\n\r"
+          + "redis_cluster\030\037 \001(\0132"
+          + "3.google.cloud.networkmanagement.v1.RedisClusterInfoH\000\022N\n"
+          + "\016cloud_function\030\024 \001(\01324"
+          + ".google.cloud.networkmanagement.v1.CloudFunctionInfoH\000\022U\n"
+          + "\022app_engine_version\030\026 \001"
+          + "(\01327.google.cloud.networkmanagement.v1.AppEngineVersionInfoH\000\022U\n"
+          + "\022cloud_run_revision\030\027"
+          + " \001(\01327.google.cloud.networkmanagement.v1.CloudRunRevisionInfoH\000\0229\n"
           + "\003nat\030\031 \001(\0132*.google.cloud.networkmanagement.v1.NatInfoH\000\022R\n"
-          + "\020proxy_connection\030\032"
-          + " \001(\01326.google.cloud.networkmanagement.v1.ProxyConnectionInfoH\000\022`\n"
-          + "\032load_balancer_backend_info\030\033 \001(\0132:.google"
-          + ".cloud.networkmanagement.v1.LoadBalancerBackendInfoH\000\022N\n"
-          + "\016storage_bucket\030\034 \001(\01324."
-          + "google.cloud.networkmanagement.v1.StorageBucketInfoH\000\022N\n"
-          + "\016serverless_neg\030\035 \001(\01324."
-          + "google.cloud.networkmanagement.v1.ServerlessNegInfoH\000\"\353\007\n"
+          + "\020proxy_connection\030\032 \001(\01326.goog"
+          + "le.cloud.networkmanagement.v1.ProxyConnectionInfoH\000\022`\n"
+          + "\032load_balancer_backend_info\030\033"
+          + " \001(\0132:.google.cloud.networkmanagement.v1.LoadBalancerBackendInfoH\000\022N\n"
+          + "\016storage_bucket\030\034"
+          + " \001(\01324.google.cloud.networkmanagement.v1.StorageBucketInfoH\000\022N\n"
+          + "\016serverless_neg\030\035"
+          + " \001(\01324.google.cloud.networkmanagement.v1.ServerlessNegInfoH\000\"\257\010\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\027\n"
           + "\023START_FROM_INSTANCE\020\001\022\027\n"
@@ -257,10 +269,12 @@ public final class TraceProto {
           + "\022ARRIVE_AT_INSTANCE\020\t\022(\n"
           + " ARRIVE_AT_INTERNAL_LOAD_BALANCER\020\n"
           + "\032\002\010\001\022(\n"
-          + " ARRIVE_AT_EXTERNAL_LOAD_BALANCER\020\013\032\002\010\001\022\031\n"
+          + " ARRIVE_AT_EXTERNAL_LOAD_BALANCER\020\013\032\002\010\001\022\033\n"
+          + "\027ARRIVE_AT_HYBRID_SUBNET\020&\022\031\n"
           + "\025ARRIVE_AT_VPN_GATEWAY\020\014\022\030\n"
           + "\024ARRIVE_AT_VPN_TUNNEL\020\r"
-          + "\022\033\n"
+          + "\022%\n"
+          + "!ARRIVE_AT_INTERCONNECT_ATTACHMENT\020%\022\033\n"
           + "\027ARRIVE_AT_VPC_CONNECTOR\020\030\022 \n"
           + "\034DIRECT_VPC_EGRESS_CONNECTION\020#\022\"\n"
           + "\036SERVERLESS_EXTERNAL_CONNECTION\020$\022\007\n"
@@ -271,7 +285,7 @@ public final class TraceProto {
           + "\007FORWARD\020\022\022\t\n"
           + "\005ABORT\020\023\022\035\n"
           + "\031VIEWER_PERMISSION_MISSING\020\024B\013\n"
-          + "\tstep_info\"\332\001\n"
+          + "\tstep_info\"\367\002\n"
           + "\014InstanceInfo\022\024\n"
           + "\014display_name\030\001 \001(\t\022\013\n"
           + "\003uri\030\002 \001(\t\022\021\n"
@@ -281,13 +295,21 @@ public final class TraceProto {
           + "\013external_ip\030\006 \001(\t\022\024\n"
           + "\014network_tags\030\007 \003(\t\022\033\n"
           + "\017service_account\030\010 \001(\tB\002\030\001\022\"\n"
-          + "\032psc_network_attachment_uri\030\t \001(\t\"v\n"
+          + "\032psc_network_attachment_uri\030\t \001(\t\022\023\n"
+          + "\007running\030\n"
+          + " \001(\010B\002\030\001\022F\n"
+          + "\006status\030\013"
+          + " \001(\01626.google.cloud.networkmanagement.v1.InstanceInfo.Status\">\n"
+          + "\006Status\022\026\n"
+          + "\022STATUS_UNSPECIFIED\020\000\022\013\n"
+          + "\007RUNNING\020\001\022\017\n"
+          + "\013NOT_RUNNING\020\002\"v\n"
           + "\013NetworkInfo\022\024\n"
           + "\014display_name\030\001 \001(\t\022\013\n"
           + "\003uri\030\002 \001(\t\022\032\n"
           + "\022matched_subnet_uri\030\005 \001(\t\022\030\n"
           + "\020matched_ip_range\030\004 \001(\t\022\016\n"
-          + "\006region\030\006 \001(\t\"\227\005\n"
+          + "\006region\030\006 \001(\t\"\324\006\n"
           + "\014FirewallInfo\022\024\n"
           + "\014display_name\030\001 \001(\t\022\013\n"
           + "\003uri\030\002 \001(\t\022\021\n"
@@ -300,8 +322,10 @@ public final class TraceProto {
           + "\006policy\030\t \001(\t\022\022\n\n"
           + "policy_uri\030\013 \001(\t\022\\\n"
           + "\022firewall_rule_type\030\n"
-          + " \001(\0162@.google.cloud.network"
-          + "management.v1.FirewallInfo.FirewallRuleType\"\341\002\n"
+          + " \001(\0162@.google.cloud.networkmanagement.v1.FirewallInfo.FirewallRuleType\022\027\n"
+          + "\017policy_priority\030\014 \001(\005\022O\n"
+          + "\013target_type\030\r"
+          + " \001(\0162:.google.cloud.networkmanagement.v1.FirewallInfo.TargetType\"\341\002\n"
           + "\020FirewallRuleType\022\"\n"
           + "\036FIREWALL_RULE_TYPE_UNSPECIFIED\020\000\022%\n"
           + "!HIERARCHICAL_FIREWALL_POLICY_RULE\020\001\022\025\n"
@@ -312,14 +336,18 @@ public final class TraceProto {
           + "%NETWORK_REGIONAL_FIREWALL_POLICY_RULE\020\006\022$\n"
           + " UNSUPPORTED_FIREWALL_POLICY_RULE\020d\022\022\n"
           + "\016TRACKING_STATE\020e\022\024\n"
-          + "\020ANALYSIS_SKIPPED\020f\"\316\013\n"
+          + "\020ANALYSIS_SKIPPED\020f\"Q\n\n"
+          + "TargetType\022\033\n"
+          + "\027TARGET_TYPE_UNSPECIFIED\020\000\022\r\n"
+          + "\tINSTANCES\020\001\022\027\n"
+          + "\023INTERNAL_MANAGED_LB\020\002\"\354\013\n"
           + "\tRouteInfo\022J\n\n"
-          + "route_type\030\010 \001(\01626.goog"
-          + "le.cloud.networkmanagement.v1.RouteInfo.RouteType\022O\n\r"
-          + "next_hop_type\030\t \001(\01628.googl"
-          + "e.cloud.networkmanagement.v1.RouteInfo.NextHopType\022P\n"
-          + "\013route_scope\030\016 \001(\01627.google"
-          + ".cloud.networkmanagement.v1.RouteInfo.RouteScopeB\002\030\001\022\024\n"
+          + "route_type\030\010 \001(\01626.google.cloud.n"
+          + "etworkmanagement.v1.RouteInfo.RouteType\022O\n\r"
+          + "next_hop_type\030\t \001(\01628.google.cloud.ne"
+          + "tworkmanagement.v1.RouteInfo.NextHopType\022P\n"
+          + "\013route_scope\030\016 \001(\01627.google.cloud.net"
+          + "workmanagement.v1.RouteInfo.RouteScopeB\002\030\001\022\024\n"
           + "\014display_name\030\001 \001(\t\022\013\n"
           + "\003uri\030\002 \001(\t\022\016\n"
           + "\006region\030\023 \001(\t\022\025\n\r"
@@ -353,7 +381,7 @@ public final class TraceProto {
           + "\016PEERING_STATIC\020\005\022\023\n"
           + "\017PEERING_DYNAMIC\020\006\022\020\n"
           + "\014POLICY_BASED\020\007\022\016\n\n"
-          + "ADVERTISED\020e\"\314\002\n"
+          + "ADVERTISED\020e\"\352\002\n"
           + "\013NextHopType\022\035\n"
           + "\031NEXT_HOP_TYPE_UNSPECIFIED\020\000\022\017\n"
           + "\013NEXT_HOP_IP\020\001\022\025\n"
@@ -368,7 +396,9 @@ public final class TraceProto {
           + "\014NEXT_HOP_ILB\020\n"
           + "\022\035\n"
           + "\031NEXT_HOP_ROUTER_APPLIANCE\020\013\022\024\n"
-          + "\020NEXT_HOP_NCC_HUB\020\014\"C\n\n"
+          + "\020NEXT_HOP_NCC_HUB\020\014\022\034\n"
+          + "\030SECURE_WEB_PROXY_GATEWAY\020\r"
+          + "\"C\n\n"
           + "RouteScope\022\033\n"
           + "\027ROUTE_SCOPE_UNSPECIFIED\020\000\022\013\n"
           + "\007NETWORK\020\001\022\013\n"
@@ -379,8 +409,8 @@ public final class TraceProto {
           + "\036_advertised_route_next_hop_uri\"\332\002\n"
           + "\021GoogleServiceInfo\022\021\n"
           + "\tsource_ip\030\001 \001(\t\022c\n"
-          + "\023google_service_type\030\002 \001(\0162F"
-          + ".google.cloud.networkmanagement.v1.GoogleServiceInfo.GoogleServiceType\"\314\001\n"
+          + "\023google_service_type\030\002 \001(\0162F.google.cloud.networ"
+          + "kmanagement.v1.GoogleServiceInfo.GoogleServiceType\"\314\001\n"
           + "\021GoogleServiceType\022#\n"
           + "\037GOOGLE_SERVICE_TYPE_UNSPECIFIED\020\000\022\007\n"
           + "\003IAP\020\001\022$\n"
@@ -404,13 +434,13 @@ public final class TraceProto {
           + " \001(\t\022\035\n"
           + "\025psc_google_api_target\030\013 \001(\t\"\302\004\n"
           + "\020LoadBalancerInfo\022`\n"
-          + "\022load_balancer_type\030\001 \001(\0162"
-          + "D.google.cloud.networkmanagement.v1.LoadBalancerInfo.LoadBalancerType\022\034\n"
+          + "\022load_balancer_type\030\001 \001(\0162D.google.cloud.netwo"
+          + "rkmanagement.v1.LoadBalancerInfo.LoadBalancerType\022\034\n"
           + "\020health_check_uri\030\002 \001(\tB\002\030\001\022H\n"
-          + "\010backends\030\003 \003(\01326."
-          + "google.cloud.networkmanagement.v1.LoadBalancerBackend\022U\n"
-          + "\014backend_type\030\004 \001(\0162?.go"
-          + "ogle.cloud.networkmanagement.v1.LoadBalancerInfo.BackendType\022\023\n"
+          + "\010backends\030\003"
+          + " \003(\01326.google.cloud.networkmanagement.v1.LoadBalancerBackend\022U\n"
+          + "\014backend_type\030\004 \001(\0162?.google.cloud.networkma"
+          + "nagement.v1.LoadBalancerInfo.BackendType\022\023\n"
           + "\013backend_uri\030\005 \001(\t\"\217\001\n"
           + "\020LoadBalancerType\022\"\n"
           + "\036LOAD_BALANCER_TYPE_UNSPECIFIED\020\000\022\024\n"
@@ -427,14 +457,18 @@ public final class TraceProto {
           + "\023LoadBalancerBackend\022\024\n"
           + "\014display_name\030\001 \001(\t\022\013\n"
           + "\003uri\030\002 \001(\t\022t\n"
-          + "\033health_check_firewall_state\030\003 \001(\0162O.google.clo"
-          + "ud.networkmanagement.v1.LoadBalancerBackend.HealthCheckFirewallState\022,\n"
+          + "\033health_check_firewall_state\030\003 \001(\0162O.google.cloud.networkmanagement"
+          + ".v1.LoadBalancerBackend.HealthCheckFirewallState\022,\n"
           + "$health_check_allowing_firewall_rules\030\004 \003(\t\022,\n"
           + "$health_check_blocking_firewall_rules\030\005 \003(\t\"j\n"
           + "\030HealthCheckFirewallState\022+\n"
           + "\'HEALTH_CHECK_FIREWALL_STATE_UNSPECIFIED\020\000\022\016\n\n"
           + "CONFIGURED\020\001\022\021\n\r"
-          + "MISCONFIGURED\020\002\"\204\001\n"
+          + "MISCONFIGURED\020\002\"E\n"
+          + "\020HybridSubnetInfo\022\024\n"
+          + "\014display_name\030\001 \001(\t\022\013\n"
+          + "\003uri\030\002 \001(\t\022\016\n"
+          + "\006region\030\003 \001(\t\"\204\001\n"
           + "\016VpnGatewayInfo\022\024\n"
           + "\014display_name\030\001 \001(\t\022\013\n"
           + "\003uri\030\002 \001(\t\022\023\n"
@@ -451,13 +485,29 @@ public final class TraceProto {
           + "\021source_gateway_ip\030\006 \001(\t\022\023\n"
           + "\013network_uri\030\007 \001(\t\022\016\n"
           + "\006region\030\010 \001(\t\022R\n"
-          + "\014routing_type\030\t \001(\0162<.google.cloud.network"
-          + "management.v1.VpnTunnelInfo.RoutingType\"[\n"
+          + "\014routing_type\030\t \001(\0162<.google.cl"
+          + "oud.networkmanagement.v1.VpnTunnelInfo.RoutingType\"[\n"
           + "\013RoutingType\022\034\n"
           + "\030ROUTING_TYPE_UNSPECIFIED\020\000\022\017\n"
           + "\013ROUTE_BASED\020\001\022\020\n"
           + "\014POLICY_BASED\020\002\022\013\n"
-          + "\007DYNAMIC\020\003\"\321\001\n"
+          + "\007DYNAMIC\020\003\"\353\002\n"
+          + "\032InterconnectAttachmentInfo\022\024\n"
+          + "\014display_name\030\001 \001(\t\022\013\n"
+          + "\003uri\030\002 \001(\t\022\030\n"
+          + "\020interconnect_uri\030\003 \001(\t\022\016\n"
+          + "\006region\030\004 \001(\t\022\030\n"
+          + "\020cloud_router_uri\030\005 \001(\t\022P\n"
+          + "\004type\030\006 \001(\0162B.google.cloud.networkmanage"
+          + "ment.v1.InterconnectAttachmentInfo.Type\0222\n"
+          + " l2_attachment_matched_ip_address\030\007 \001("
+          + "\tB\010\342\214\317\327\010\002\010\004\"`\n"
+          + "\004Type\022\024\n"
+          + "\020TYPE_UNSPECIFIED\020\000\022\r\n"
+          + "\tDEDICATED\020\001\022\013\n"
+          + "\007PARTNER\020\002\022\024\n"
+          + "\020PARTNER_PROVIDER\020\003\022\020\n"
+          + "\014L2_DEDICATED\020\004\"\321\001\n"
           + "\014EndpointInfo\022\021\n"
           + "\tsource_ip\030\001 \001(\t\022\026\n"
           + "\016destination_ip\030\002 \001(\t\022\020\n"
@@ -466,14 +516,16 @@ public final class TraceProto {
           + "\020destination_port\030\005 \001(\005\022\032\n"
           + "\022source_network_uri\030\006 \001(\t\022\037\n"
           + "\027destination_network_uri\030\007 \001(\t\022\030\n"
-          + "\020source_agent_uri\030\010 \001(\t\"\271\004\n"
+          + "\020source_agent_uri\030\010 \001(\t\"\307\006\n"
           + "\013DeliverInfo\022E\n"
-          + "\006target\030\001"
-          + " \001(\01625.google.cloud.networkmanagement.v1.DeliverInfo.Target\022\024\n"
+          + "\006target\030\001 \001(\01625.goog"
+          + "le.cloud.networkmanagement.v1.DeliverInfo.Target\022\024\n"
           + "\014resource_uri\030\002 \001(\t\022\034\n\n"
           + "ip_address\030\003 \001(\tB\010\342\214\317\327\010\002\010\004\022\026\n"
           + "\016storage_bucket\030\004 \001(\t\022\035\n"
-          + "\025psc_google_api_target\030\005 \001(\t\"\367\002\n"
+          + "\025psc_google_api_target\030\005 \001(\t\022]\n"
+          + "\023google_service_type\030\006 \001(\0162@.google.cloud."
+          + "networkmanagement.v1.DeliverInfo.GoogleServiceType\"\367\002\n"
           + "\006Target\022\026\n"
           + "\022TARGET_UNSPECIFIED\020\000\022\014\n"
           + "\010INSTANCE\020\001\022\014\n"
@@ -494,12 +546,19 @@ public final class TraceProto {
           + "\022CLOUD_RUN_REVISION\020\016\022\032\n"
           + "\026GOOGLE_MANAGED_SERVICE\020\017\022\022\n"
           + "\016REDIS_INSTANCE\020\020\022\021\n\r"
-          + "REDIS_CLUSTER\020\021\"\353\002\n"
+          + "REDIS_CLUSTER\020\021\"\254\001\n"
+          + "\021GoogleServiceType\022#\n"
+          + "\037GOOGLE_SERVICE_TYPE_UNSPECIFIED\020\000\022\007\n"
+          + "\003IAP\020\001\022$\n"
+          + " GFE_PROXY_OR_HEALTH_CHECK_PROBER\020\002\022\r\n"
+          + "\tCLOUD_DNS\020\003\022\031\n"
+          + "\025PRIVATE_GOOGLE_ACCESS\020\004\022\031\n"
+          + "\025SERVERLESS_VPC_ACCESS\020\005\"\211\003\n"
           + "\013ForwardInfo\022E\n"
-          + "\006target\030\001 \001(\01625.google.cl"
-          + "oud.networkmanagement.v1.ForwardInfo.Target\022\024\n"
+          + "\006target\030\001 \001(\01625.go"
+          + "ogle.cloud.networkmanagement.v1.ForwardInfo.Target\022\024\n"
           + "\014resource_uri\030\002 \001(\t\022\034\n\n"
-          + "ip_address\030\003 \001(\tB\010\342\214\317\327\010\002\010\004\"\340\001\n"
+          + "ip_address\030\003 \001(\tB\010\342\214\317\327\010\002\010\004\"\376\001\n"
           + "\006Target\022\026\n"
           + "\022TARGET_UNSPECIFIED\020\000\022\017\n"
           + "\013PEERING_VPC\020\001\022\017\n"
@@ -510,13 +569,15 @@ public final class TraceProto {
           + "\022CLOUD_SQL_INSTANCE\020\006\032\002\010\001\022\023\n"
           + "\017ANOTHER_PROJECT\020\007\022\013\n"
           + "\007NCC_HUB\020\010\022\024\n"
-          + "\020ROUTER_APPLIANCE\020\t\"\365\n\n"
+          + "\020ROUTER_APPLIANCE\020\t\022\034\n"
+          + "\030SECURE_WEB_PROXY_GATEWAY\020\n"
+          + "\"\306\013\n"
           + "\tAbortInfo\022A\n"
-          + "\005cause\030\001 \001(\01622.google"
-          + ".cloud.networkmanagement.v1.AbortInfo.Cause\022\024\n"
+          + "\005cause\030\001 \001(\01622.google.cl"
+          + "oud.networkmanagement.v1.AbortInfo.Cause\022\024\n"
           + "\014resource_uri\030\002 \001(\t\022\034\n\n"
           + "ip_address\030\004 \001(\tB\010\342\214\317\327\010\002\010\004\022#\n"
-          + "\033projects_missing_permission\030\003 \003(\t\"\313\t\n"
+          + "\033projects_missing_permission\030\003 \003(\t\"\234\n\n"
           + "\005Cause\022\025\n"
           + "\021CAUSE_UNSPECIFIED\020\000\022\027\n"
           + "\017UNKNOWN_NETWORK\020\001\032\002\010\001\022\027\n"
@@ -548,7 +609,8 @@ public final class TraceProto {
           + "\030NETWORK_CONFIG_NOT_FOUND\020\031\022\035\n"
           + "\031FIREWALL_CONFIG_NOT_FOUND\020\032\022\032\n"
           + "\026ROUTE_CONFIG_NOT_FOUND\020\033\0221\n"
-          + "-GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT\020\023\022$\n"
+          + "-GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT\020\023\022-\n"
+          + ")GOOGLE_MANAGED_SERVICE_AMBIGUOUS_ENDPOINT\020\'\022$\n"
           + " SOURCE_PSC_CLOUD_SQL_UNSUPPORTED\020\024\022$\n"
           + " SOURCE_REDIS_CLUSTER_UNSUPPORTED\020\"\022%\n"
           + "!SOURCE_REDIS_INSTANCE_UNSUPPORTED\020#\022&\n"
@@ -556,14 +618,17 @@ public final class TraceProto {
           + "\027NON_ROUTABLE_IP_ADDRESS\020\026\022+\n"
           + "\'UNKNOWN_ISSUE_IN_GOOGLE_MANAGED_PROJECT\020\036\022-\n"
           + ")UNSUPPORTED_GOOGLE_MANAGED_PROJECT_CONFIG\020\037\022\033\n"
-          + "\027NO_SERVERLESS_IP_RANGES\020%\"\225\034\n"
+          + "\027NO_SERVERLESS_IP_RANGES\020%\022 \n"
+          + "\034IP_VERSION_PROTOCOL_MISMATCH\020(\"\313 \n"
           + "\010DropInfo\022@\n"
-          + "\005cause\030\001 \001(\01621.google."
-          + "cloud.networkmanagement.v1.DropInfo.Cause\022\024\n"
+          + "\005cause\030\001 \001(\01621.google.cl"
+          + "oud.networkmanagement.v1.DropInfo.Cause\022\024\n"
           + "\014resource_uri\030\002 \001(\t\022\021\n"
           + "\tsource_ip\030\003 \001(\t\022\026\n"
           + "\016destination_ip\030\004 \001(\t\022\016\n"
-          + "\006region\030\005 \001(\t\"\365\032\n"
+          + "\006region\030\005 \001(\t\022\037\n"
+          + "\027source_geolocation_code\030\006 \001(\t\022$\n"
+          + "\034destination_geolocation_code\030\007 \001(\t\"\344\036\n"
           + "\005Cause\022\025\n"
           + "\021CAUSE_UNSPECIFIED\020\000\022\034\n"
           + "\030UNKNOWN_EXTERNAL_ADDRESS\020\001\022\031\n"
@@ -579,7 +644,8 @@ public final class TraceProto {
           + "*ROUTE_NEXT_HOP_FORWARDING_RULE_IP_MISMATCH\0203\022-\n"
           + ")ROUTE_NEXT_HOP_VPN_TUNNEL_NOT_ESTABLISHED\0204\022/\n"
           + "+ROUTE_NEXT_HOP_FORWARDING_RULE_TYPE_INVALID\0205\0222\n"
-          + ".NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV6_ADDRESS\020,\022&\n"
+          + ".NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV6_ADDRESS\020,\022>\n"
+          + ":NO_ROUTE_FROM_EXTERNAL_IPV6_SOURCE_TO_PRIVATE_IPV6_ADDRESS\020b\022&\n"
           + "\"VPN_TUNNEL_LOCAL_SELECTOR_MISMATCH\020-\022\'\n"
           + "#VPN_TUNNEL_REMOTE_SELECTOR_MISMATCH\020.\022\037\n"
           + "\033PRIVATE_TRAFFIC_TO_INTERNET\020\007\022$\n"
@@ -654,7 +720,18 @@ public final class TraceProto {
           + "\'PRIVATE_NAT_TO_PSC_ENDPOINT_UNSUPPORTED\020S\022\"\n"
           + "\036PSC_PORT_MAPPING_PORT_MISMATCH\020V\0227\n"
           + "3PSC_PORT_MAPPING_WITHOUT_PSC_CONNECTION_UNSUPPORTED\020W\0223\n"
-          + "/UNSUPPORTED_ROUTE_MATCHED_FOR_NAT64_DESTINATION\020X\"\201\001\n\r"
+          + "/UNSUPPORTED_ROUTE_MATCHED_",
+      "FOR_NAT64_DESTINATION\020X\0227\n"
+          + "3TRAFFIC_FROM_HYBRID_ENDPOINT_TO_INTERNET_DISALLOWED\020Y\022\035\n"
+          + "\031NO_MATCHING_NAT64_GATEWAY\020Z\022-\n"
+          + ")LOAD_BALANCER_BACKEND_IP_VERSION_MISMATCH\020`\0222\n"
+          + ".NO_KNOWN_ROUTE_FROM_NCC_NETWORK_TO_DESTINATION\020a\022\"\n"
+          + "\036CLOUD_NAT_PROTOCOL_UNSUPPORTED\020c\022(\n"
+          + "$L2_INTERCONNECT_UNSUPPORTED_PROTOCOL\020d\022$\n"
+          + " L2_INTERCONNECT_UNSUPPORTED_PORT\020e\022+\n"
+          + "\'L2_INTERCONNECT_DESTINATION_IP_MISMATCH\020f\022.\n"
+          + "*NCC_ROUTE_WITHIN_HYBRID_SUBNET_UNSUPPORTED\020h\022!\n"
+          + "\035HYBRID_SUBNET_REGION_MISMATCH\020i\"\201\001\n\r"
           + "GKEMasterInfo\022\023\n"
           + "\013cluster_uri\030\002 \001(\t\022\033\n"
           + "\023cluster_network_uri\030\004 \001(\t\022\023\n"
@@ -711,7 +788,7 @@ public final class TraceProto {
           + "\006region\030\005 \001(\t\"I\n"
           + " ServerlessExternalConnectionInfo\022%\n"
           + "\023selected_ip_address\030\001 \001("
-          + "\tB\010\342\214\317\327\010\002\010\004\"\357\003\n"
+          + "\tB\010\342\214\317\327\010\002\010\004\"\215\004\n"
           + "\007NatInfo\022=\n"
           + "\004type\030\001 \001(\0162/.google.cloud.networkmanagement.v1.NatInfo.Type\022\020\n"
           + "\010protocol\030\002 \001(\t\022\023\n"
@@ -724,53 +801,73 @@ public final class TraceProto {
           + "\017new_source_port\030\t \001(\005\022\034\n"
           + "\024old_destination_port\030\n"
           + " \001(\005\022\034\n"
-          + "\024new_destination_port\030\013 \001(\005\022\022\n",
-      "\nrouter_uri\030\014 \001(\t\022\030\n\020nat_gateway_name\030\r "
-          + "\001(\t\"|\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\030\n\024INT"
-          + "ERNAL_TO_EXTERNAL\020\001\022\030\n\024EXTERNAL_TO_INTER"
-          + "NAL\020\002\022\r\n\tCLOUD_NAT\020\003\022\033\n\027PRIVATE_SERVICE_"
-          + "CONNECT\020\004\"\244\002\n\023ProxyConnectionInfo\022\020\n\010pro"
-          + "tocol\030\001 \001(\t\022\025\n\rold_source_ip\030\002 \001(\t\022\025\n\rne"
-          + "w_source_ip\030\003 \001(\t\022\032\n\022old_destination_ip\030"
-          + "\004 \001(\t\022\032\n\022new_destination_ip\030\005 \001(\t\022\027\n\017old"
-          + "_source_port\030\006 \001(\005\022\027\n\017new_source_port\030\007 "
-          + "\001(\005\022\034\n\024old_destination_port\030\010 \001(\005\022\034\n\024new"
-          + "_destination_port\030\t \001(\005\022\022\n\nsubnet_uri\030\n "
-          + "\001(\t\022\023\n\013network_uri\030\013 \001(\t\"\362\004\n\027LoadBalance"
-          + "rBackendInfo\022\014\n\004name\030\001 \001(\t\022\024\n\014instance_u"
-          + "ri\030\002 \001(\t\022\033\n\023backend_service_uri\030\003 \001(\t\022\032\n"
-          + "\022instance_group_uri\030\004 \001(\t\022\"\n\032network_end"
-          + "point_group_uri\030\005 \001(\t\022\032\n\022backend_bucket_"
-          + "uri\030\010 \001(\t\022\"\n\032psc_service_attachment_uri\030"
-          + "\t \001(\t\022\035\n\025psc_google_api_target\030\n \001(\t\022\030\n\020"
-          + "health_check_uri\030\006 \001(\t\022\214\001\n#health_check_"
-          + "firewalls_config_state\030\007 \001(\0162Z.google.cl"
-          + "oud.networkmanagement.v1.LoadBalancerBac"
-          + "kendInfo.HealthCheckFirewallsConfigState"
-          + "B\003\340A\003\"\315\001\n\037HealthCheckFirewallsConfigStat"
-          + "e\0223\n/HEALTH_CHECK_FIREWALLS_CONFIG_STATE"
-          + "_UNSPECIFIED\020\000\022\030\n\024FIREWALLS_CONFIGURED\020\001"
-          + "\022\"\n\036FIREWALLS_PARTIALLY_CONFIGURED\020\002\022\034\n\030"
-          + "FIREWALLS_NOT_CONFIGURED\020\003\022\031\n\025FIREWALLS_"
-          + "UNSUPPORTED\020\004\"#\n\021StorageBucketInfo\022\016\n\006bu"
-          + "cket\030\001 \001(\t\"$\n\021ServerlessNegInfo\022\017\n\007neg_u"
-          + "ri\030\001 \001(\t*\366\002\n\020LoadBalancerType\022\"\n\036LOAD_BA"
-          + "LANCER_TYPE_UNSPECIFIED\020\000\022 \n\034HTTPS_ADVAN"
-          + "CED_LOAD_BALANCER\020\001\022\027\n\023HTTPS_LOAD_BALANC"
-          + "ER\020\002\022 \n\034REGIONAL_HTTPS_LOAD_BALANCER\020\003\022 "
-          + "\n\034INTERNAL_HTTPS_LOAD_BALANCER\020\004\022\033\n\027SSL_"
-          + "PROXY_LOAD_BALANCER\020\005\022\033\n\027TCP_PROXY_LOAD_"
-          + "BALANCER\020\006\022$\n INTERNAL_TCP_PROXY_LOAD_BA"
-          + "LANCER\020\007\022\031\n\025NETWORK_LOAD_BALANCER\020\010\022 \n\034L"
-          + "EGACY_NETWORK_LOAD_BALANCER\020\t\022\"\n\036TCP_UDP"
-          + "_INTERNAL_LOAD_BALANCER\020\nB\371\001\n%com.google"
-          + ".cloud.networkmanagement.v1B\nTraceProtoP"
-          + "\001ZScloud.google.com/go/networkmanagement"
-          + "/apiv1/networkmanagementpb;networkmanage"
-          + "mentpb\252\002!Google.Cloud.NetworkManagement."
-          + "V1\312\002!Google\\Cloud\\NetworkManagement\\V1\352\002"
-          + "$Google::Cloud::NetworkManagement::V1b\006p"
-          + "roto3"
+          + "\024new_destination_port\030\013 \001(\005\022\022\n\n"
+          + "router_uri\030\014 \001(\t\022\030\n"
+          + "\020nat_gateway_name\030\r"
+          + " \001(\t\"\231\001\n"
+          + "\004Type\022\024\n"
+          + "\020TYPE_UNSPECIFIED\020\000\022\030\n"
+          + "\024INTERNAL_TO_EXTERNAL\020\001\022\030\n"
+          + "\024EXTERNAL_TO_INTERNAL\020\002\022\r\n"
+          + "\tCLOUD_NAT\020\003\022\033\n"
+          + "\027PRIVATE_SERVICE_CONNECT\020\004\022\033\n"
+          + "\027GKE_POD_IP_MASQUERADING\020\005\"\244\002\n"
+          + "\023ProxyConnectionInfo\022\020\n"
+          + "\010protocol\030\001 \001(\t\022\025\n\r"
+          + "old_source_ip\030\002 \001(\t\022\025\n\r"
+          + "new_source_ip\030\003 \001(\t\022\032\n"
+          + "\022old_destination_ip\030\004 \001(\t\022\032\n"
+          + "\022new_destination_ip\030\005 \001(\t\022\027\n"
+          + "\017old_source_port\030\006 \001(\005\022\027\n"
+          + "\017new_source_port\030\007 \001(\005\022\034\n"
+          + "\024old_destination_port\030\010 \001(\005\022\034\n"
+          + "\024new_destination_port\030\t \001(\005\022\022\n\n"
+          + "subnet_uri\030\n"
+          + " \001(\t\022\023\n"
+          + "\013network_uri\030\013 \001(\t\"\362\004\n"
+          + "\027LoadBalancerBackendInfo\022\014\n"
+          + "\004name\030\001 \001(\t\022\024\n"
+          + "\014instance_uri\030\002 \001(\t\022\033\n"
+          + "\023backend_service_uri\030\003 \001(\t\022\032\n"
+          + "\022instance_group_uri\030\004 \001(\t\022\"\n"
+          + "\032network_endpoint_group_uri\030\005 \001(\t\022\032\n"
+          + "\022backend_bucket_uri\030\010 \001(\t\022\"\n"
+          + "\032psc_service_attachment_uri\030\t \001(\t\022\035\n"
+          + "\025psc_google_api_target\030\n"
+          + " \001(\t\022\030\n"
+          + "\020health_check_uri\030\006 \001(\t\022\214\001\n"
+          + "#health_check_firewalls_config_state\030\007 \001(\0162Z.google.cloud.ne"
+          + "tworkmanagement.v1.LoadBalancerBackendIn"
+          + "fo.HealthCheckFirewallsConfigStateB\003\340A\003\"\315\001\n"
+          + "\037HealthCheckFirewallsConfigState\0223\n"
+          + "/HEALTH_CHECK_FIREWALLS_CONFIG_STATE_UNSPECIFIED\020\000\022\030\n"
+          + "\024FIREWALLS_CONFIGURED\020\001\022\"\n"
+          + "\036FIREWALLS_PARTIALLY_CONFIGURED\020\002\022\034\n"
+          + "\030FIREWALLS_NOT_CONFIGURED\020\003\022\031\n"
+          + "\025FIREWALLS_UNSUPPORTED\020\004\"#\n"
+          + "\021StorageBucketInfo\022\016\n"
+          + "\006bucket\030\001 \001(\t\"$\n"
+          + "\021ServerlessNegInfo\022\017\n"
+          + "\007neg_uri\030\001 \001(\t*\366\002\n"
+          + "\020LoadBalancerType\022\"\n"
+          + "\036LOAD_BALANCER_TYPE_UNSPECIFIED\020\000\022 \n"
+          + "\034HTTPS_ADVANCED_LOAD_BALANCER\020\001\022\027\n"
+          + "\023HTTPS_LOAD_BALANCER\020\002\022 \n"
+          + "\034REGIONAL_HTTPS_LOAD_BALANCER\020\003\022 \n"
+          + "\034INTERNAL_HTTPS_LOAD_BALANCER\020\004\022\033\n"
+          + "\027SSL_PROXY_LOAD_BALANCER\020\005\022\033\n"
+          + "\027TCP_PROXY_LOAD_BALANCER\020\006\022$\n"
+          + " INTERNAL_TCP_PROXY_LOAD_BALANCER\020\007\022\031\n"
+          + "\025NETWORK_LOAD_BALANCER\020\010\022 \n"
+          + "\034LEGACY_NETWORK_LOAD_BALANCER\020\t\022\"\n"
+          + "\036TCP_UDP_INTERNAL_LOAD_BALANCER\020\n"
+          + "B\371\001\n"
+          + "%com.google.cloud.networkmanagement.v1B\n"
+          + "TraceProtoP\001ZScloud.google.com/go/networkmanagement/apiv1"
+          + "/networkmanagementpb;networkmanagementpb"
+          + "\252\002!Google.Cloud.NetworkManagement.V1\312\002!G"
+          + "oogle\\Cloud\\NetworkManagement\\V1\352\002$Googl"
+          + "e::Cloud::NetworkManagement::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -803,8 +900,10 @@ public final class TraceProto {
               "Endpoint",
               "GoogleService",
               "ForwardingRule",
+              "HybridSubnet",
               "VpnGateway",
               "VpnTunnel",
+              "InterconnectAttachment",
               "VpcConnector",
               "DirectVpcEgressConnection",
               "ServerlessExternalConnection",
@@ -843,6 +942,8 @@ public final class TraceProto {
               "NetworkTags",
               "ServiceAccount",
               "PscNetworkAttachmentUri",
+              "Running",
+              "Status",
             });
     internal_static_google_cloud_networkmanagement_v1_NetworkInfo_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -869,6 +970,8 @@ public final class TraceProto {
               "Policy",
               "PolicyUri",
               "FirewallRuleType",
+              "PolicyPriority",
+              "TargetType",
             });
     internal_static_google_cloud_networkmanagement_v1_RouteInfo_descriptor =
         getDescriptor().getMessageTypes().get(5);
@@ -947,8 +1050,16 @@ public final class TraceProto {
               "HealthCheckAllowingFirewallRules",
               "HealthCheckBlockingFirewallRules",
             });
-    internal_static_google_cloud_networkmanagement_v1_VpnGatewayInfo_descriptor =
+    internal_static_google_cloud_networkmanagement_v1_HybridSubnetInfo_descriptor =
         getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_networkmanagement_v1_HybridSubnetInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkmanagement_v1_HybridSubnetInfo_descriptor,
+            new java.lang.String[] {
+              "DisplayName", "Uri", "Region",
+            });
+    internal_static_google_cloud_networkmanagement_v1_VpnGatewayInfo_descriptor =
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_networkmanagement_v1_VpnGatewayInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_VpnGatewayInfo_descriptor,
@@ -956,7 +1067,7 @@ public final class TraceProto {
               "DisplayName", "Uri", "NetworkUri", "IpAddress", "VpnTunnelUri", "Region",
             });
     internal_static_google_cloud_networkmanagement_v1_VpnTunnelInfo_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_networkmanagement_v1_VpnTunnelInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_VpnTunnelInfo_descriptor,
@@ -971,8 +1082,22 @@ public final class TraceProto {
               "Region",
               "RoutingType",
             });
+    internal_static_google_cloud_networkmanagement_v1_InterconnectAttachmentInfo_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_networkmanagement_v1_InterconnectAttachmentInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkmanagement_v1_InterconnectAttachmentInfo_descriptor,
+            new java.lang.String[] {
+              "DisplayName",
+              "Uri",
+              "InterconnectUri",
+              "Region",
+              "CloudRouterUri",
+              "Type",
+              "L2AttachmentMatchedIpAddress",
+            });
     internal_static_google_cloud_networkmanagement_v1_EndpointInfo_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_networkmanagement_v1_EndpointInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_EndpointInfo_descriptor,
@@ -987,15 +1112,20 @@ public final class TraceProto {
               "SourceAgentUri",
             });
     internal_static_google_cloud_networkmanagement_v1_DeliverInfo_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_networkmanagement_v1_DeliverInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_DeliverInfo_descriptor,
             new java.lang.String[] {
-              "Target", "ResourceUri", "IpAddress", "StorageBucket", "PscGoogleApiTarget",
+              "Target",
+              "ResourceUri",
+              "IpAddress",
+              "StorageBucket",
+              "PscGoogleApiTarget",
+              "GoogleServiceType",
             });
     internal_static_google_cloud_networkmanagement_v1_ForwardInfo_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_networkmanagement_v1_ForwardInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_ForwardInfo_descriptor,
@@ -1003,7 +1133,7 @@ public final class TraceProto {
               "Target", "ResourceUri", "IpAddress",
             });
     internal_static_google_cloud_networkmanagement_v1_AbortInfo_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_networkmanagement_v1_AbortInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_AbortInfo_descriptor,
@@ -1011,15 +1141,21 @@ public final class TraceProto {
               "Cause", "ResourceUri", "IpAddress", "ProjectsMissingPermission",
             });
     internal_static_google_cloud_networkmanagement_v1_DropInfo_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_networkmanagement_v1_DropInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_DropInfo_descriptor,
             new java.lang.String[] {
-              "Cause", "ResourceUri", "SourceIp", "DestinationIp", "Region",
+              "Cause",
+              "ResourceUri",
+              "SourceIp",
+              "DestinationIp",
+              "Region",
+              "SourceGeolocationCode",
+              "DestinationGeolocationCode",
             });
     internal_static_google_cloud_networkmanagement_v1_GKEMasterInfo_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_networkmanagement_v1_GKEMasterInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_GKEMasterInfo_descriptor,
@@ -1027,7 +1163,7 @@ public final class TraceProto {
               "ClusterUri", "ClusterNetworkUri", "InternalIp", "ExternalIp", "DnsEndpoint",
             });
     internal_static_google_cloud_networkmanagement_v1_CloudSQLInstanceInfo_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_networkmanagement_v1_CloudSQLInstanceInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_CloudSQLInstanceInfo_descriptor,
@@ -1035,7 +1171,7 @@ public final class TraceProto {
               "DisplayName", "Uri", "NetworkUri", "InternalIp", "ExternalIp", "Region",
             });
     internal_static_google_cloud_networkmanagement_v1_RedisInstanceInfo_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_networkmanagement_v1_RedisInstanceInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_RedisInstanceInfo_descriptor,
@@ -1043,7 +1179,7 @@ public final class TraceProto {
               "DisplayName", "Uri", "NetworkUri", "PrimaryEndpointIp", "ReadEndpointIp", "Region",
             });
     internal_static_google_cloud_networkmanagement_v1_RedisClusterInfo_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_networkmanagement_v1_RedisClusterInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_RedisClusterInfo_descriptor,
@@ -1056,7 +1192,7 @@ public final class TraceProto {
               "Location",
             });
     internal_static_google_cloud_networkmanagement_v1_CloudFunctionInfo_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_networkmanagement_v1_CloudFunctionInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_CloudFunctionInfo_descriptor,
@@ -1064,7 +1200,7 @@ public final class TraceProto {
               "DisplayName", "Uri", "Location", "VersionId",
             });
     internal_static_google_cloud_networkmanagement_v1_CloudRunRevisionInfo_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_networkmanagement_v1_CloudRunRevisionInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_CloudRunRevisionInfo_descriptor,
@@ -1072,7 +1208,7 @@ public final class TraceProto {
               "DisplayName", "Uri", "Location", "ServiceUri",
             });
     internal_static_google_cloud_networkmanagement_v1_AppEngineVersionInfo_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_networkmanagement_v1_AppEngineVersionInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_AppEngineVersionInfo_descriptor,
@@ -1080,7 +1216,7 @@ public final class TraceProto {
               "DisplayName", "Uri", "Runtime", "Environment",
             });
     internal_static_google_cloud_networkmanagement_v1_VpcConnectorInfo_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_networkmanagement_v1_VpcConnectorInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_VpcConnectorInfo_descriptor,
@@ -1088,7 +1224,7 @@ public final class TraceProto {
               "DisplayName", "Uri", "Location",
             });
     internal_static_google_cloud_networkmanagement_v1_DirectVpcEgressConnectionInfo_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_networkmanagement_v1_DirectVpcEgressConnectionInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_DirectVpcEgressConnectionInfo_descriptor,
@@ -1096,7 +1232,7 @@ public final class TraceProto {
               "NetworkUri", "SubnetworkUri", "SelectedIpRange", "SelectedIpAddress", "Region",
             });
     internal_static_google_cloud_networkmanagement_v1_ServerlessExternalConnectionInfo_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_networkmanagement_v1_ServerlessExternalConnectionInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_ServerlessExternalConnectionInfo_descriptor,
@@ -1104,7 +1240,7 @@ public final class TraceProto {
               "SelectedIpAddress",
             });
     internal_static_google_cloud_networkmanagement_v1_NatInfo_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_networkmanagement_v1_NatInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_NatInfo_descriptor,
@@ -1124,7 +1260,7 @@ public final class TraceProto {
               "NatGatewayName",
             });
     internal_static_google_cloud_networkmanagement_v1_ProxyConnectionInfo_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_networkmanagement_v1_ProxyConnectionInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_ProxyConnectionInfo_descriptor,
@@ -1142,7 +1278,7 @@ public final class TraceProto {
               "NetworkUri",
             });
     internal_static_google_cloud_networkmanagement_v1_LoadBalancerBackendInfo_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_networkmanagement_v1_LoadBalancerBackendInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_LoadBalancerBackendInfo_descriptor,
@@ -1159,7 +1295,7 @@ public final class TraceProto {
               "HealthCheckFirewallsConfigState",
             });
     internal_static_google_cloud_networkmanagement_v1_StorageBucketInfo_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_networkmanagement_v1_StorageBucketInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_StorageBucketInfo_descriptor,
@@ -1167,7 +1303,7 @@ public final class TraceProto {
               "Bucket",
             });
     internal_static_google_cloud_networkmanagement_v1_ServerlessNegInfo_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_networkmanagement_v1_ServerlessNegInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_ServerlessNegInfo_descriptor,

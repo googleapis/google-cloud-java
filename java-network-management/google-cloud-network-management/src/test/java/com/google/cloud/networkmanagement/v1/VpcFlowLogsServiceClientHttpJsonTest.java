@@ -18,6 +18,8 @@ package com.google.cloud.networkmanagement.v1;
 
 import static com.google.cloud.networkmanagement.v1.VpcFlowLogsServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.networkmanagement.v1.VpcFlowLogsServiceClient.ListVpcFlowLogsConfigsPagedResponse;
+import static com.google.cloud.networkmanagement.v1.VpcFlowLogsServiceClient.QueryOrgVpcFlowLogsConfigsPagedResponse;
+import static com.google.cloud.networkmanagement.v1.VpcFlowLogsServiceClient.ShowEffectiveFlowLogsConfigsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -159,7 +161,7 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parent = "projects/project-5833/locations/location-5833";
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
 
     ListVpcFlowLogsConfigsPagedResponse pagedListResponse = client.listVpcFlowLogsConfigs(parent);
 
@@ -191,6 +193,56 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listVpcFlowLogsConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listVpcFlowLogsConfigsTest3() throws Exception {
+    VpcFlowLogsConfig responsesElement = VpcFlowLogsConfig.newBuilder().build();
+    ListVpcFlowLogsConfigsResponse expectedResponse =
+        ListVpcFlowLogsConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllVpcFlowLogsConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListVpcFlowLogsConfigsPagedResponse pagedListResponse = client.listVpcFlowLogsConfigs(parent);
+
+    List<VpcFlowLogsConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getVpcFlowLogsConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listVpcFlowLogsConfigsExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
       String parent = "projects/project-5833/locations/location-5833";
       client.listVpcFlowLogsConfigs(parent);
       Assert.fail("No exception raised");
@@ -204,7 +256,8 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     VpcFlowLogsConfig expectedResponse =
         VpcFlowLogsConfig.newBuilder()
             .setName(
-                VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+                VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+                        "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
                     .toString())
             .setDescription("description-1724546052")
             .setFlowSampling(-543591464)
@@ -217,7 +270,8 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     VpcFlowLogsConfigName name =
-        VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+        VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+            "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
 
     VpcFlowLogsConfig actualResponse = client.getVpcFlowLogsConfig(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -246,7 +300,8 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
 
     try {
       VpcFlowLogsConfigName name =
-          VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+          VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+              "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
       client.getVpcFlowLogsConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -259,7 +314,8 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     VpcFlowLogsConfig expectedResponse =
         VpcFlowLogsConfig.newBuilder()
             .setName(
-                VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+                VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+                        "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
                     .toString())
             .setDescription("description-1724546052")
             .setFlowSampling(-543591464)
@@ -314,7 +370,8 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     VpcFlowLogsConfig expectedResponse =
         VpcFlowLogsConfig.newBuilder()
             .setName(
-                VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+                VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+                        "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
                     .toString())
             .setDescription("description-1724546052")
             .setFlowSampling(-543591464)
@@ -335,7 +392,8 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     VpcFlowLogsConfig vpcFlowLogsConfig = VpcFlowLogsConfig.newBuilder().build();
     VpcFlowLogsConfigName vpcFlowLogsConfigId =
-        VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+        VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+            "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
 
     VpcFlowLogsConfig actualResponse =
         client.createVpcFlowLogsConfigAsync(parent, vpcFlowLogsConfig, vpcFlowLogsConfigId).get();
@@ -367,7 +425,8 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       VpcFlowLogsConfig vpcFlowLogsConfig = VpcFlowLogsConfig.newBuilder().build();
       VpcFlowLogsConfigName vpcFlowLogsConfigId =
-          VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+          VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+              "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
       client.createVpcFlowLogsConfigAsync(parent, vpcFlowLogsConfig, vpcFlowLogsConfigId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -379,7 +438,8 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     VpcFlowLogsConfig expectedResponse =
         VpcFlowLogsConfig.newBuilder()
             .setName(
-                VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+                VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+                        "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
                     .toString())
             .setDescription("description-1724546052")
             .setFlowSampling(-543591464)
@@ -443,7 +503,8 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     VpcFlowLogsConfig expectedResponse =
         VpcFlowLogsConfig.newBuilder()
             .setName(
-                VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+                VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+                        "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
                     .toString())
             .setDescription("description-1724546052")
             .setFlowSampling(-543591464)
@@ -461,10 +522,11 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(resultOperation);
 
-    String parent = "projects/project-5833/locations/location-5833";
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
     VpcFlowLogsConfig vpcFlowLogsConfig = VpcFlowLogsConfig.newBuilder().build();
     VpcFlowLogsConfigName vpcFlowLogsConfigId =
-        VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+        VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+            "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
 
     VpcFlowLogsConfig actualResponse =
         client.createVpcFlowLogsConfigAsync(parent, vpcFlowLogsConfig, vpcFlowLogsConfigId).get();
@@ -493,10 +555,11 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      String parent = "projects/project-5833/locations/location-5833";
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
       VpcFlowLogsConfig vpcFlowLogsConfig = VpcFlowLogsConfig.newBuilder().build();
       VpcFlowLogsConfigName vpcFlowLogsConfigId =
-          VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+          VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+              "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
       client.createVpcFlowLogsConfigAsync(parent, vpcFlowLogsConfig, vpcFlowLogsConfigId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -509,7 +572,140 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     VpcFlowLogsConfig expectedResponse =
         VpcFlowLogsConfig.newBuilder()
             .setName(
-                VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+                VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+                        "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setFlowSampling(-543591464)
+            .addAllMetadataFields(new ArrayList<String>())
+            .setFilterExpr("filterExpr-1553498739")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createVpcFlowLogsConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+    VpcFlowLogsConfig vpcFlowLogsConfig = VpcFlowLogsConfig.newBuilder().build();
+    String vpcFlowLogsConfigId = "vpcFlowLogsConfigId649763";
+
+    VpcFlowLogsConfig actualResponse =
+        client.createVpcFlowLogsConfigAsync(parent, vpcFlowLogsConfig, vpcFlowLogsConfigId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createVpcFlowLogsConfigExceptionTest4() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      VpcFlowLogsConfig vpcFlowLogsConfig = VpcFlowLogsConfig.newBuilder().build();
+      String vpcFlowLogsConfigId = "vpcFlowLogsConfigId649763";
+      client.createVpcFlowLogsConfigAsync(parent, vpcFlowLogsConfig, vpcFlowLogsConfigId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createVpcFlowLogsConfigTest5() throws Exception {
+    VpcFlowLogsConfig expectedResponse =
+        VpcFlowLogsConfig.newBuilder()
+            .setName(
+                VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+                        "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setFlowSampling(-543591464)
+            .addAllMetadataFields(new ArrayList<String>())
+            .setFilterExpr("filterExpr-1553498739")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createVpcFlowLogsConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    VpcFlowLogsConfig vpcFlowLogsConfig = VpcFlowLogsConfig.newBuilder().build();
+    VpcFlowLogsConfigName vpcFlowLogsConfigId =
+        VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+            "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+
+    VpcFlowLogsConfig actualResponse =
+        client.createVpcFlowLogsConfigAsync(parent, vpcFlowLogsConfig, vpcFlowLogsConfigId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createVpcFlowLogsConfigExceptionTest5() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      VpcFlowLogsConfig vpcFlowLogsConfig = VpcFlowLogsConfig.newBuilder().build();
+      VpcFlowLogsConfigName vpcFlowLogsConfigId =
+          VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+              "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+      client.createVpcFlowLogsConfigAsync(parent, vpcFlowLogsConfig, vpcFlowLogsConfigId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createVpcFlowLogsConfigTest6() throws Exception {
+    VpcFlowLogsConfig expectedResponse =
+        VpcFlowLogsConfig.newBuilder()
+            .setName(
+                VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+                        "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
                     .toString())
             .setDescription("description-1724546052")
             .setFlowSampling(-543591464)
@@ -551,7 +747,7 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
   }
 
   @Test
-  public void createVpcFlowLogsConfigExceptionTest4() throws Exception {
+  public void createVpcFlowLogsConfigExceptionTest6() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -572,7 +768,8 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     VpcFlowLogsConfig expectedResponse =
         VpcFlowLogsConfig.newBuilder()
             .setName(
-                VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+                VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+                        "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
                     .toString())
             .setDescription("description-1724546052")
             .setFlowSampling(-543591464)
@@ -593,7 +790,8 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     VpcFlowLogsConfig vpcFlowLogsConfig =
         VpcFlowLogsConfig.newBuilder()
             .setName(
-                VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+                VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+                        "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
                     .toString())
             .setDescription("description-1724546052")
             .setFlowSampling(-543591464)
@@ -635,7 +833,8 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
       VpcFlowLogsConfig vpcFlowLogsConfig =
           VpcFlowLogsConfig.newBuilder()
               .setName(
-                  VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+                  VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+                          "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
                       .toString())
               .setDescription("description-1724546052")
               .setFlowSampling(-543591464)
@@ -664,7 +863,8 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     mockService.addResponse(resultOperation);
 
     VpcFlowLogsConfigName name =
-        VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+        VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+            "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
 
     client.deleteVpcFlowLogsConfigAsync(name).get();
 
@@ -692,7 +892,8 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
 
     try {
       VpcFlowLogsConfigName name =
-          VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+          VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+              "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
       client.deleteVpcFlowLogsConfigAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -743,6 +944,135 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
       client.deleteVpcFlowLogsConfigAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void queryOrgVpcFlowLogsConfigsTest() throws Exception {
+    VpcFlowLogsConfig responsesElement = VpcFlowLogsConfig.newBuilder().build();
+    QueryOrgVpcFlowLogsConfigsResponse expectedResponse =
+        QueryOrgVpcFlowLogsConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllVpcFlowLogsConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QueryOrgVpcFlowLogsConfigsRequest request =
+        QueryOrgVpcFlowLogsConfigsRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .setFilter("filter-1274492040")
+            .build();
+
+    QueryOrgVpcFlowLogsConfigsPagedResponse pagedListResponse =
+        client.queryOrgVpcFlowLogsConfigs(request);
+
+    List<VpcFlowLogsConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getVpcFlowLogsConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void queryOrgVpcFlowLogsConfigsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QueryOrgVpcFlowLogsConfigsRequest request =
+          QueryOrgVpcFlowLogsConfigsRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
+              .build();
+      client.queryOrgVpcFlowLogsConfigs(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void showEffectiveFlowLogsConfigsTest() throws Exception {
+    EffectiveVpcFlowLogsConfig responsesElement = EffectiveVpcFlowLogsConfig.newBuilder().build();
+    ShowEffectiveFlowLogsConfigsResponse expectedResponse =
+        ShowEffectiveFlowLogsConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEffectiveFlowLogsConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ShowEffectiveFlowLogsConfigsRequest request =
+        ShowEffectiveFlowLogsConfigsRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setResource("resource-341064690")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .setFilter("filter-1274492040")
+            .build();
+
+    ShowEffectiveFlowLogsConfigsPagedResponse pagedListResponse =
+        client.showEffectiveFlowLogsConfigs(request);
+
+    List<EffectiveVpcFlowLogsConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getEffectiveFlowLogsConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void showEffectiveFlowLogsConfigsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ShowEffectiveFlowLogsConfigsRequest request =
+          ShowEffectiveFlowLogsConfigsRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setResource("resource-341064690")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
+              .build();
+      client.showEffectiveFlowLogsConfigs(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

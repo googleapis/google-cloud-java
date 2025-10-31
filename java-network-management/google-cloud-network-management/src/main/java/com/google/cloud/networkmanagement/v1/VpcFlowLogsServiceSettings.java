@@ -18,6 +18,8 @@ package com.google.cloud.networkmanagement.v1;
 
 import static com.google.cloud.networkmanagement.v1.VpcFlowLogsServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.networkmanagement.v1.VpcFlowLogsServiceClient.ListVpcFlowLogsConfigsPagedResponse;
+import static com.google.cloud.networkmanagement.v1.VpcFlowLogsServiceClient.QueryOrgVpcFlowLogsConfigsPagedResponse;
+import static com.google.cloud.networkmanagement.v1.VpcFlowLogsServiceClient.ShowEffectiveFlowLogsConfigsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -181,6 +183,26 @@ public class VpcFlowLogsServiceSettings extends ClientSettings<VpcFlowLogsServic
       deleteVpcFlowLogsConfigOperationSettings() {
     return ((VpcFlowLogsServiceStubSettings) getStubSettings())
         .deleteVpcFlowLogsConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to queryOrgVpcFlowLogsConfigs. */
+  public PagedCallSettings<
+          QueryOrgVpcFlowLogsConfigsRequest,
+          QueryOrgVpcFlowLogsConfigsResponse,
+          QueryOrgVpcFlowLogsConfigsPagedResponse>
+      queryOrgVpcFlowLogsConfigsSettings() {
+    return ((VpcFlowLogsServiceStubSettings) getStubSettings())
+        .queryOrgVpcFlowLogsConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to showEffectiveFlowLogsConfigs. */
+  public PagedCallSettings<
+          ShowEffectiveFlowLogsConfigsRequest,
+          ShowEffectiveFlowLogsConfigsResponse,
+          ShowEffectiveFlowLogsConfigsPagedResponse>
+      showEffectiveFlowLogsConfigsSettings() {
+    return ((VpcFlowLogsServiceStubSettings) getStubSettings())
+        .showEffectiveFlowLogsConfigsSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -373,6 +395,24 @@ public class VpcFlowLogsServiceSettings extends ClientSettings<VpcFlowLogsServic
     public OperationCallSettings.Builder<DeleteVpcFlowLogsConfigRequest, Empty, OperationMetadata>
         deleteVpcFlowLogsConfigOperationSettings() {
       return getStubSettingsBuilder().deleteVpcFlowLogsConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to queryOrgVpcFlowLogsConfigs. */
+    public PagedCallSettings.Builder<
+            QueryOrgVpcFlowLogsConfigsRequest,
+            QueryOrgVpcFlowLogsConfigsResponse,
+            QueryOrgVpcFlowLogsConfigsPagedResponse>
+        queryOrgVpcFlowLogsConfigsSettings() {
+      return getStubSettingsBuilder().queryOrgVpcFlowLogsConfigsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to showEffectiveFlowLogsConfigs. */
+    public PagedCallSettings.Builder<
+            ShowEffectiveFlowLogsConfigsRequest,
+            ShowEffectiveFlowLogsConfigsResponse,
+            ShowEffectiveFlowLogsConfigsPagedResponse>
+        showEffectiveFlowLogsConfigsSettings() {
+      return getStubSettingsBuilder().showEffectiveFlowLogsConfigsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

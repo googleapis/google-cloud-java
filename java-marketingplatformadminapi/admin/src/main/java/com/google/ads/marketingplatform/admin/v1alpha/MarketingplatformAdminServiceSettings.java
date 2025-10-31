@@ -17,6 +17,7 @@
 package com.google.ads.marketingplatform.admin.v1alpha;
 
 import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListAnalyticsAccountLinksPagedResponse;
+import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListOrganizationsPagedResponse;
 
 import com.google.ads.marketingplatform.admin.v1alpha.stub.MarketingplatformAdminServiceStubSettings;
 import com.google.api.core.ApiFunction;
@@ -99,6 +100,22 @@ public class MarketingplatformAdminServiceSettings
         .getOrganizationSettings();
   }
 
+  /** Returns the object with the settings used for calls to listOrganizations. */
+  public PagedCallSettings<
+          ListOrganizationsRequest, ListOrganizationsResponse, ListOrganizationsPagedResponse>
+      listOrganizationsSettings() {
+    return ((MarketingplatformAdminServiceStubSettings) getStubSettings())
+        .listOrganizationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to findSalesPartnerManagedClients. */
+  public UnaryCallSettings<
+          FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+      findSalesPartnerManagedClientsSettings() {
+    return ((MarketingplatformAdminServiceStubSettings) getStubSettings())
+        .findSalesPartnerManagedClientsSettings();
+  }
+
   /** Returns the object with the settings used for calls to listAnalyticsAccountLinks. */
   public PagedCallSettings<
           ListAnalyticsAccountLinksRequest,
@@ -128,6 +145,13 @@ public class MarketingplatformAdminServiceSettings
       setPropertyServiceLevelSettings() {
     return ((MarketingplatformAdminServiceStubSettings) getStubSettings())
         .setPropertyServiceLevelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to reportPropertyUsage. */
+  public UnaryCallSettings<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
+      reportPropertyUsageSettings() {
+    return ((MarketingplatformAdminServiceStubSettings) getStubSettings())
+        .reportPropertyUsageSettings();
   }
 
   public static final MarketingplatformAdminServiceSettings create(
@@ -249,6 +273,20 @@ public class MarketingplatformAdminServiceSettings
       return getStubSettingsBuilder().getOrganizationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listOrganizations. */
+    public PagedCallSettings.Builder<
+            ListOrganizationsRequest, ListOrganizationsResponse, ListOrganizationsPagedResponse>
+        listOrganizationsSettings() {
+      return getStubSettingsBuilder().listOrganizationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to findSalesPartnerManagedClients. */
+    public UnaryCallSettings.Builder<
+            FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+        findSalesPartnerManagedClientsSettings() {
+      return getStubSettingsBuilder().findSalesPartnerManagedClientsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listAnalyticsAccountLinks. */
     public PagedCallSettings.Builder<
             ListAnalyticsAccountLinksRequest,
@@ -275,6 +313,12 @@ public class MarketingplatformAdminServiceSettings
             SetPropertyServiceLevelRequest, SetPropertyServiceLevelResponse>
         setPropertyServiceLevelSettings() {
       return getStubSettingsBuilder().setPropertyServiceLevelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to reportPropertyUsage. */
+    public UnaryCallSettings.Builder<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
+        reportPropertyUsageSettings() {
+      return getStubSettingsBuilder().reportPropertyUsageSettings();
     }
 
     @Override

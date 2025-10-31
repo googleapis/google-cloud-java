@@ -130,6 +130,36 @@
           }
         }
       }
+    },
+    "Monitoring": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MonitoringClient",
+          "rpcs": {
+            "AggregateFrameworkComplianceReport": {
+              "methods": ["aggregateFrameworkComplianceReport", "aggregateFrameworkComplianceReport", "aggregateFrameworkComplianceReport", "aggregateFrameworkComplianceReportCallable"]
+            },
+            "FetchFrameworkComplianceReport": {
+              "methods": ["fetchFrameworkComplianceReport", "fetchFrameworkComplianceReport", "fetchFrameworkComplianceReport", "fetchFrameworkComplianceReportCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListControlComplianceSummaries": {
+              "methods": ["listControlComplianceSummaries", "listControlComplianceSummaries", "listControlComplianceSummaries", "listControlComplianceSummariesPagedCallable", "listControlComplianceSummariesCallable"]
+            },
+            "ListFindingSummaries": {
+              "methods": ["listFindingSummaries", "listFindingSummaries", "listFindingSummaries", "listFindingSummaries", "listFindingSummaries", "listFindingSummariesPagedCallable", "listFindingSummariesCallable"]
+            },
+            "ListFrameworkComplianceSummaries": {
+              "methods": ["listFrameworkComplianceSummaries", "listFrameworkComplianceSummaries", "listFrameworkComplianceSummaries", "listFrameworkComplianceSummaries", "listFrameworkComplianceSummaries", "listFrameworkComplianceSummariesPagedCallable", "listFrameworkComplianceSummariesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            }
+          }
+        }
+      }
     }
   }
 }

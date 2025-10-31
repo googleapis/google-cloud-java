@@ -99,6 +99,26 @@
  *   FrameworkDeployment response = deploymentClient.getFrameworkDeployment(name);
  * }
  * }</pre>
+ *
+ * <p>======================= MonitoringClient =======================
+ *
+ * <p>Service Description: Service describing handlers for resources
+ *
+ * <p>Sample for MonitoringClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (MonitoringClient monitoringClient = MonitoringClient.create()) {
+ *   FrameworkComplianceReportName name =
+ *       FrameworkComplianceReportName.ofOrganizationLocationFrameworkComplianceReportName(
+ *           "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_COMPLIANCE_REPORT]");
+ *   FrameworkComplianceReport response = monitoringClient.fetchFrameworkComplianceReport(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.cloudsecuritycompliance.v1;
