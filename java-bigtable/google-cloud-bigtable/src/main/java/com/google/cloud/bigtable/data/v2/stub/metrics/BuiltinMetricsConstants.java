@@ -55,6 +55,30 @@ public class BuiltinMetricsConstants {
   static final AttributeKey<String> TRANSPORT_ZONE = AttributeKey.stringKey("transport_zone");
   static final AttributeKey<String> TRANSPORT_SUBZONE = AttributeKey.stringKey("transport_subzone");
 
+  // gRPC attribute keys
+  // Note that these attributes keys from transformed from
+  // A.B.C to A_B_C before exporting to Cloud Monitoring.
+  static final AttributeKey<String> GRPC_LB_BACKEND_SERVICE_KEY =
+      AttributeKey.stringKey("grpc.lb.backend_service");
+  static final AttributeKey<String> GRPC_DISCONNECT_ERROR_KEY =
+      AttributeKey.stringKey("grpc.disconnect_error");
+  static final AttributeKey<String> GRPC_LB_LOCALITY_KEY =
+      AttributeKey.stringKey("grpc.lb.locality");
+  static final AttributeKey<String> GRPC_TARGET_KEY = AttributeKey.stringKey("grpc.target");
+  static final AttributeKey<String> GRPC_SECURITY_LEVEL_KEY =
+      AttributeKey.stringKey("grpc.security_level");
+  static final AttributeKey<String> GRPC_METHOD_KEY = AttributeKey.stringKey("grpc.method");
+  static final AttributeKey<String> GRPC_STATUS_KEY = AttributeKey.stringKey("grpc.status");
+  static final AttributeKey<String> GRPC_LB_RLS_DATA_PLANE_TARGET_KEY =
+      AttributeKey.stringKey("grpc.lb.rls.data_plane_target");
+  static final AttributeKey<String> GRPC_LB_PICK_RESULT_KEY =
+      AttributeKey.stringKey("grpc.lb.pick_result");
+  static final AttributeKey<String> GRPC_LB_RLS_SERVER_TARGET_KEY =
+      AttributeKey.stringKey("grpc.lb.rls.server_target");
+  static final AttributeKey<String> GRPC_XDS_SERVER_KEY = AttributeKey.stringKey("grpc.xds.server");
+  static final AttributeKey<String> GRPC_XDS_RESOURCE_TYPE_KEY =
+      AttributeKey.stringKey("grpc.xds.resource_type");
+
   public static final String METER_NAME = "bigtable.googleapis.com/internal/client/";
 
   // Metric names
@@ -77,31 +101,68 @@ public class BuiltinMetricsConstants {
       ImmutableMap.<String, Set<String>>builder()
           .put(
               "grpc.client.attempt.duration",
-              ImmutableSet.of("grpc.lb.locality", "grpc.method", "grpc.target", "grpc.status"))
+              ImmutableSet.of(
+                  GRPC_LB_LOCALITY_KEY.getKey(),
+                  GRPC_METHOD_KEY.getKey(),
+                  GRPC_TARGET_KEY.getKey(),
+                  GRPC_STATUS_KEY.getKey()))
           .put(
               "grpc.lb.rls.default_target_picks",
-              ImmutableSet.of("grpc.lb.rls.data_plane_target", "grpc.lb.pick_result"))
+              ImmutableSet.of(
+                  GRPC_LB_RLS_DATA_PLANE_TARGET_KEY.getKey(), GRPC_LB_PICK_RESULT_KEY.getKey()))
           .put(
               "grpc.lb.rls.target_picks",
               ImmutableSet.of(
-                  "grpc.target",
-                  "grpc.lb.rls.server_target",
-                  "grpc.lb.rls.data_plane_target",
-                  "grpc.lb.pick_result"))
+                  GRPC_TARGET_KEY.getKey(),
+                  GRPC_LB_RLS_SERVER_TARGET_KEY.getKey(),
+                  GRPC_LB_RLS_DATA_PLANE_TARGET_KEY.getKey(),
+                  GRPC_LB_PICK_RESULT_KEY.getKey()))
           .put(
               "grpc.lb.rls.failed_picks",
-              ImmutableSet.of("grpc.target", "grpc.lb.rls.server_target"))
+              ImmutableSet.of(GRPC_TARGET_KEY.getKey(), GRPC_LB_RLS_SERVER_TARGET_KEY.getKey()))
           // TODO: "grpc.xds_client.connected"
-          .put("grpc.xds_client.server_failure", ImmutableSet.of("grpc.target", "grpc.xds.server"))
+          .put(
+              "grpc.xds_client.server_failure",
+              ImmutableSet.of(GRPC_TARGET_KEY.getKey(), GRPC_XDS_SERVER_KEY.getKey()))
           // TODO: "grpc.xds_client.resource_updates_valid",
           .put(
               "grpc.xds_client.resource_updates_invalid",
-              ImmutableSet.of("grpc.target", "grpc.xds.server", "grpc.xds.resource_type"))
+              ImmutableSet.of(
+                  GRPC_TARGET_KEY.getKey(),
+                  GRPC_XDS_SERVER_KEY.getKey(),
+                  GRPC_XDS_RESOURCE_TYPE_KEY.getKey()))
           // TODO: "grpc.xds_client.resources"
+          //  gRPC subchannel metrics
+          .put(
+              "grpc.subchannel.disconnections",
+              ImmutableSet.of(
+                  GRPC_LB_BACKEND_SERVICE_KEY.getKey(),
+                  GRPC_DISCONNECT_ERROR_KEY.getKey(),
+                  GRPC_LB_LOCALITY_KEY.getKey(),
+                  GRPC_TARGET_KEY.getKey()))
+          .put(
+              "grpc.subchannel.connection_attempts_succeeded",
+              ImmutableSet.of(
+                  GRPC_LB_BACKEND_SERVICE_KEY.getKey(),
+                  GRPC_LB_LOCALITY_KEY.getKey(),
+                  GRPC_TARGET_KEY.getKey()))
+          .put(
+              "grpc.subchannel.connection_attempts_failed",
+              ImmutableSet.of(
+                  GRPC_LB_BACKEND_SERVICE_KEY.getKey(),
+                  GRPC_LB_LOCALITY_KEY.getKey(),
+                  GRPC_TARGET_KEY.getKey()))
+          .put(
+              "grpc.subchannel.open_connections",
+              ImmutableSet.of(
+                  GRPC_LB_BACKEND_SERVICE_KEY.getKey(),
+                  GRPC_LB_LOCALITY_KEY.getKey(),
+                  GRPC_SECURITY_LEVEL_KEY.getKey(),
+                  GRPC_TARGET_KEY.getKey()))
           .build();
 
   public static final Set<String> INTERNAL_METRICS =
-      ImmutableSet.of(PER_CONNECTION_ERROR_COUNT_NAME).stream()
+      ImmutableSet.of(PER_CONNECTION_ERROR_COUNT_NAME, OUTSTANDING_RPCS_PER_CHANNEL_NAME).stream()
           .map(m -> METER_NAME + m)
           .collect(ImmutableSet.toImmutableSet());
   // End allow list of metrics that will be exported
