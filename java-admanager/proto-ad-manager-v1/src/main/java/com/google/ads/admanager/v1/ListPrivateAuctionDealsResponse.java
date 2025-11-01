@@ -211,7 +211,7 @@ public final class ListPrivateAuctionDealsResponse extends com.google.protobuf.G
    * If a filter was included in the request, this reflects the total number
    * after the filtering is applied.
    *
-   * `total_size` will not be calculated in the response unless it has been
+   * `total_size` won't be calculated in the response unless it has been
    * included in a response field mask. The response field mask can be provided
    * to the method by using the URL parameter `$fields` or `fields`, or by using
    * the HTTP/gRPC header `X-Goog-FieldMask`.
@@ -1173,7 +1173,7 @@ public final class ListPrivateAuctionDealsResponse extends com.google.protobuf.G
      * If a filter was included in the request, this reflects the total number
      * after the filtering is applied.
      *
-     * `total_size` will not be calculated in the response unless it has been
+     * `total_size` won't be calculated in the response unless it has been
      * included in a response field mask. The response field mask can be provided
      * to the method by using the URL parameter `$fields` or `fields`, or by using
      * the HTTP/gRPC header `X-Goog-FieldMask`.
@@ -1199,7 +1199,7 @@ public final class ListPrivateAuctionDealsResponse extends com.google.protobuf.G
      * If a filter was included in the request, this reflects the total number
      * after the filtering is applied.
      *
-     * `total_size` will not be calculated in the response unless it has been
+     * `total_size` won't be calculated in the response unless it has been
      * included in a response field mask. The response field mask can be provided
      * to the method by using the URL parameter `$fields` or `fields`, or by using
      * the HTTP/gRPC header `X-Goog-FieldMask`.
@@ -1229,7 +1229,7 @@ public final class ListPrivateAuctionDealsResponse extends com.google.protobuf.G
      * If a filter was included in the request, this reflects the total number
      * after the filtering is applied.
      *
-     * `total_size` will not be calculated in the response unless it has been
+     * `total_size` won't be calculated in the response unless it has been
      * included in a response field mask. The response field mask can be provided
      * to the method by using the URL parameter `$fields` or `fields`, or by using
      * the HTTP/gRPC header `X-Goog-FieldMask`.

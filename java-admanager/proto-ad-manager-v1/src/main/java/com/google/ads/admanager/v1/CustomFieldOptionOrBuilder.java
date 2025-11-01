@@ -28,10 +28,12 @@ public interface CustomFieldOptionOrBuilder
    *
    *
    * <pre>
-   * Output only. `CustomFieldOption` ID.
+   * Optional. Non-empty default. `CustomFieldOption` ID.
    * </pre>
    *
-   * <code>int64 custom_field_option_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * int64 custom_field_option_id = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
    *
    * @return The customFieldOptionId.
    */

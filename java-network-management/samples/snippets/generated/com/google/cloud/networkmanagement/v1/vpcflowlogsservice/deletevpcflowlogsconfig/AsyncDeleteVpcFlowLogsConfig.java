@@ -39,7 +39,8 @@ public class AsyncDeleteVpcFlowLogsConfig {
       DeleteVpcFlowLogsConfigRequest request =
           DeleteVpcFlowLogsConfigRequest.newBuilder()
               .setName(
-                  VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
+                  VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+                          "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]")
                       .toString())
               .build();
       ApiFuture<Operation> future =

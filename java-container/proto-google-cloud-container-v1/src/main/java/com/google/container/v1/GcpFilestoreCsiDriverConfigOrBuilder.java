@@ -28,7 +28,7 @@ public interface GcpFilestoreCsiDriverConfigOrBuilder
    *
    *
    * <pre>
-   * Whether the GCP Filestore CSI driver is enabled for this cluster.
+   * Whether the Filestore CSI driver is enabled for this cluster.
    * </pre>
    *
    * <code>bool enabled = 1;</code>

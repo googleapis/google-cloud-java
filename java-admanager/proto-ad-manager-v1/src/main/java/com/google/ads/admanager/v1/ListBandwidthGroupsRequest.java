@@ -135,8 +135,8 @@ public final class ListBandwidthGroupsRequest extends com.google.protobuf.Genera
    * <pre>
    * Optional. The maximum number of `BandwidthGroups` to return. The service
    * may return fewer than this value. If unspecified, at most 50
-   * `BandwidthGroups` will be returned. The maximum value is 1000; values above
-   * 1000 will be coerced to 1000.
+   * `BandwidthGroups` will be returned. The maximum value is 1000; values
+   * greater than 1000 will be coerced to 1000.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -936,8 +936,8 @@ public final class ListBandwidthGroupsRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. The maximum number of `BandwidthGroups` to return. The service
      * may return fewer than this value. If unspecified, at most 50
-     * `BandwidthGroups` will be returned. The maximum value is 1000; values above
-     * 1000 will be coerced to 1000.
+     * `BandwidthGroups` will be returned. The maximum value is 1000; values
+     * greater than 1000 will be coerced to 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -955,8 +955,8 @@ public final class ListBandwidthGroupsRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. The maximum number of `BandwidthGroups` to return. The service
      * may return fewer than this value. If unspecified, at most 50
-     * `BandwidthGroups` will be returned. The maximum value is 1000; values above
-     * 1000 will be coerced to 1000.
+     * `BandwidthGroups` will be returned. The maximum value is 1000; values
+     * greater than 1000 will be coerced to 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -978,8 +978,8 @@ public final class ListBandwidthGroupsRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. The maximum number of `BandwidthGroups` to return. The service
      * may return fewer than this value. If unspecified, at most 50
-     * `BandwidthGroups` will be returned. The maximum value is 1000; values above
-     * 1000 will be coerced to 1000.
+     * `BandwidthGroups` will be returned. The maximum value is 1000; values
+     * greater than 1000 will be coerced to 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -1576,6 +1576,9 @@
             "DirectRawPredict": {
               "methods": ["directRawPredict", "directRawPredictCallable"]
             },
+            "EmbedContent": {
+              "methods": ["embedContent", "embedContent", "embedContent", "embedContentCallable"]
+            },
             "Explain": {
               "methods": ["explain", "explain", "explain", "explainCallable"]
             },

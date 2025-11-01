@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * The enforcement mode of the cloud control.
+ * The enforcement mode for the cloud control.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.cloudsecuritycompliance.v1.EnforcementMode}
@@ -43,7 +43,7 @@ public enum EnforcementMode implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The cloud control is enforced to prevent resource non-compliance.
+   * The cloud control is enforced to prevent non-compliance.
    * </pre>
    *
    * <code>PREVENTIVE = 1;</code>
@@ -53,7 +53,7 @@ public enum EnforcementMode implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The cloud control is enforced to detect resource non-compliance.
+   * The cloud control is enforced to detect non-compliance.
    * </pre>
    *
    * <code>DETECTIVE = 2;</code>
@@ -63,7 +63,7 @@ public enum EnforcementMode implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The cloud control is enforced to audit resource non-compliance.
+   * The cloud control is enforced to audit for non-compliance.
    * </pre>
    *
    * <code>AUDIT = 3;</code>
@@ -87,7 +87,7 @@ public enum EnforcementMode implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The cloud control is enforced to prevent resource non-compliance.
+   * The cloud control is enforced to prevent non-compliance.
    * </pre>
    *
    * <code>PREVENTIVE = 1;</code>
@@ -98,7 +98,7 @@ public enum EnforcementMode implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The cloud control is enforced to detect resource non-compliance.
+   * The cloud control is enforced to detect non-compliance.
    * </pre>
    *
    * <code>DETECTIVE = 2;</code>
@@ -109,7 +109,7 @@ public enum EnforcementMode implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The cloud control is enforced to audit resource non-compliance.
+   * The cloud control is enforced to audit for non-compliance.
    * </pre>
    *
    * <code>AUDIT = 3;</code>
@@ -179,7 +179,7 @@ public enum EnforcementMode implements com.google.protobuf.ProtocolMessageEnum {
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.cloudsecuritycompliance.v1.CommonProto.getDescriptor()
         .getEnumTypes()
-        .get(0);
+        .get(1);
   }
 
   private static final EnforcementMode[] VALUES = values();

@@ -108,6 +108,7 @@ public class CmekServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setFailureDetails(EncryptionConfig.FailureDetails.newBuilder().build())
+            .setEnableMetastoreEncryption(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -169,6 +170,7 @@ public class CmekServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setFailureDetails(EncryptionConfig.FailureDetails.newBuilder().build())
+            .setEnableMetastoreEncryption(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -230,6 +232,7 @@ public class CmekServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setFailureDetails(EncryptionConfig.FailureDetails.newBuilder().build())
+            .setEnableMetastoreEncryption(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -466,6 +469,7 @@ public class CmekServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setFailureDetails(EncryptionConfig.FailureDetails.newBuilder().build())
+            .setEnableMetastoreEncryption(true)
             .build();
     mockCmekService.addResponse(expectedResponse);
 
@@ -513,6 +517,7 @@ public class CmekServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setFailureDetails(EncryptionConfig.FailureDetails.newBuilder().build())
+            .setEnableMetastoreEncryption(true)
             .build();
     mockCmekService.addResponse(expectedResponse);
 

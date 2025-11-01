@@ -153,4 +153,56 @@ public interface DropInfoOrBuilder
    * @return The bytes for region.
    */
   com.google.protobuf.ByteString getRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Geolocation (region code) of the source IP address (if relevant).
+   * </pre>
+   *
+   * <code>string source_geolocation_code = 6;</code>
+   *
+   * @return The sourceGeolocationCode.
+   */
+  java.lang.String getSourceGeolocationCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Geolocation (region code) of the source IP address (if relevant).
+   * </pre>
+   *
+   * <code>string source_geolocation_code = 6;</code>
+   *
+   * @return The bytes for sourceGeolocationCode.
+   */
+  com.google.protobuf.ByteString getSourceGeolocationCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Geolocation (region code) of the destination IP address (if relevant).
+   * </pre>
+   *
+   * <code>string destination_geolocation_code = 7;</code>
+   *
+   * @return The destinationGeolocationCode.
+   */
+  java.lang.String getDestinationGeolocationCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Geolocation (region code) of the destination IP address (if relevant).
+   * </pre>
+   *
+   * <code>string destination_geolocation_code = 7;</code>
+   *
+   * @return The bytes for destinationGeolocationCode.
+   */
+  com.google.protobuf.ByteString getDestinationGeolocationCodeBytes();
 }

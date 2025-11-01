@@ -129,6 +129,10 @@ public final class V1mainProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_CreateAutonomousDatabaseRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_UpdateAutonomousDatabaseRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_UpdateAutonomousDatabaseRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_oracledatabase_v1_DeleteAutonomousDatabaseRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_DeleteAutonomousDatabaseRequest_fieldAccessorTable;
@@ -148,6 +152,14 @@ public final class V1mainProto {
       internal_static_google_cloud_oracledatabase_v1_RestartAutonomousDatabaseRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_RestartAutonomousDatabaseRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_SwitchoverAutonomousDatabaseRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_SwitchoverAutonomousDatabaseRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_FailoverAutonomousDatabaseRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_FailoverAutonomousDatabaseRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_oracledatabase_v1_GenerateAutonomousDatabaseWalletRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -180,6 +192,34 @@ public final class V1mainProto {
       internal_static_google_cloud_oracledatabase_v1_ListAutonomousDatabaseBackupsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_ListAutonomousDatabaseBackupsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_CreateExadbVmClusterRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_CreateExadbVmClusterRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_DeleteExadbVmClusterRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_DeleteExadbVmClusterRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_GetExadbVmClusterRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_GetExadbVmClusterRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_ListExadbVmClustersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_ListExadbVmClustersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_ListExadbVmClustersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_ListExadbVmClustersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_UpdateExadbVmClusterRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_UpdateExadbVmClusterRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_RemoveVirtualMachineExadbVmClusterRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_RemoveVirtualMachineExadbVmClusterRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -197,22 +237,31 @@ public final class V1mainProto {
           + "to\032\031google/api/resource.proto\0328google/cl"
           + "oud/oracledatabase/v1/autonomous_database.proto\032Fgoogle/cloud/oracledatabase/v1/"
           + "autonomous_database_character_set.proto\0329google/cloud/oracledatabase/v1/autonomo"
-          + "us_db_backup.proto\032:google/cloud/oracledatabase/v1/autonomous_db_version.proto\032,"
-          + "google/cloud/oracledatabase/v1/db_node.proto\032.google/cloud/oracledatabase/v1/db_"
-          + "server.proto\0324google/cloud/oracledatabase/v1/db_system_shape.proto\0320google/cloud"
-          + "/oracledatabase/v1/entitlement.proto\0322google/cloud/oracledatabase/v1/exadata_inf"
-          + "ra.proto\032/google/cloud/oracledatabase/v1/gi_version.proto\032/google/cloud/oracleda"
-          + "tabase/v1/vm_cluster.proto\032#google/longr"
-          + "unning/operations.proto\032\033google/protobuf"
-          + "/empty.proto\032\037google/protobuf/timestamp.proto\"\253\001\n"
+          + "us_db_backup.proto\032:google/cloud/oracledatabase/v1/autonomous_db_version.proto\032-"
+          + "google/cloud/oracledatabase/v1/database.proto\032;google/cloud/oracledatabase/v1/da"
+          + "tabase_character_set.proto\032,google/cloud/oracledatabase/v1/db_node.proto\032.google"
+          + "/cloud/oracledatabase/v1/db_server.proto\032.google/cloud/oracledatabase/v1/db_syst"
+          + "em.proto\032Cgoogle/cloud/oracledatabase/v1/db_system_initial_storage_size.proto\0324g"
+          + "oogle/cloud/oracledatabase/v1/db_system_shape.proto\032/google/cloud/oracledatabase"
+          + "/v1/db_version.proto\0320google/cloud/oracledatabase/v1/entitlement.proto\0322google/c"
+          + "loud/oracledatabase/v1/exadata_infra.proto\0325google/cloud/oracledatabase/v1/exadb"
+          + "_vm_cluster.proto\032>google/cloud/oracledatabase/v1/exascale_db_storage_vault.prot"
+          + "o\032/google/cloud/oracledatabase/v1/gi_version.proto\0322google/cloud/oracledatabase/"
+          + "v1/minor_version.proto\0320google/cloud/oracledatabase/v1/odb_network.proto\032/google"
+          + "/cloud/oracledatabase/v1/odb_subnet.proto\0327google/cloud/oracledatabase/v1/plugga"
+          + "ble_database.proto\032/google/cloud/oracledatabase/v1/vm_cluster.proto\032#google/long"
+          + "running/operations.proto\032\033google/protobuf/empty.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\327\001\n"
           + "&ListCloudExadataInfrastructuresRequest\022P\n"
-          + "\006parent\030\001 \001(\tB@\340A\002\372A:\0228oracle"
-          + "database.googleapis.com/CloudExadataInfrastructure\022\026\n"
+          + "\006parent\030\001 \001(\tB@\340A\002\372A:\0228oracledatab"
+          + "ase.googleapis.com/CloudExadataInfrastructure\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
-          + "page_token\030\003 \001(\tB\003\340A\001\"\245\001\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\245\001\n"
           + "\'ListCloudExadataInfrastructuresResponse\022a\n"
-          + "\035cloud_exadata_infrastructures\030\001 \003(\0132:.google.cloud.or"
-          + "acledatabase.v1.CloudExadataInfrastructure\022\027\n"
+          + "\035cloud_exadata_infrastructures\030\001 \003(\0132:.google.cloud.ora"
+          + "cledatabase.v1.CloudExadataInfrastructure\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"v\n"
           + "$GetCloudExadataInfrastructureRequest\022N\n"
           + "\004name\030\001 \001(\tB@\340A\002\372A:\n"
@@ -221,8 +270,8 @@ public final class V1mainProto {
           + "\006parent\030\001 \001("
           + "\tB@\340A\002\372A:\0228oracledatabase.googleapis.com/CloudExadataInfrastructure\022,\n"
           + "\037cloud_exadata_infrastructure_id\030\002 \001(\tB\003\340A\002\022e\n"
-          + "\034cloud_exadata_infrastructure\030\003 \001(\0132:."
-          + "google.cloud.oracledatabase.v1.CloudExadataInfrastructureB\003\340A\002\022\037\n\n"
+          + "\034cloud_exadata_infrastructure\030\003 \001(\0132:.g"
+          + "oogle.cloud.oracledatabase.v1.CloudExadataInfrastructureB\003\340A\002\022\037\n\n"
           + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\256\001\n"
           + "\'DeleteCloudExadataInfrastructureRequest\022N\n"
           + "\004name\030\001 \001(\tB@\340A\002\372A:\n"
@@ -230,10 +279,9 @@ public final class V1mainProto {
           + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\022\n"
           + "\005force\030\003 \001(\010B\003\340A\001\"\250\001\n"
           + "\032ListCloudVmClustersRequest\022D\n"
-          + "\006parent\030\001 \001(\tB"
-          + "4\340A\002\372A.\022,oracledatabase.googleapis.com/CloudVmCluster\022\026\n"
-          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n"
-          + "\n"
+          + "\006parent\030\001 \001(\tB4"
+          + "\340A\002\372A.\022,oracledatabase.googleapis.com/CloudVmCluster\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\"\201\001\n"
           + "\033ListCloudVmClustersResponse\022I\n"
@@ -244,11 +292,11 @@ public final class V1mainProto {
           + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
           + ",oracledatabase.googleapis.com/CloudVmCluster\"\365\001\n"
           + "\033CreateCloudVmClusterRequest\022D\n"
-          + "\006parent\030\001 \001(\tB"
-          + "4\340A\002\372A.\022,oracledatabase.googleapis.com/CloudVmCluster\022 \n"
+          + "\006parent\030\001 \001(\tB4"
+          + "\340A\002\372A.\022,oracledatabase.googleapis.com/CloudVmCluster\022 \n"
           + "\023cloud_vm_cluster_id\030\002 \001(\tB\003\340A\002\022M\n"
-          + "\020cloud_vm_cluster\030\003 \001(\0132..goog"
-          + "le.cloud.oracledatabase.v1.CloudVmClusterB\003\340A\002\022\037\n\n"
+          + "\020cloud_vm_cluster\030\003 \001(\0132..googl"
+          + "e.cloud.oracledatabase.v1.CloudVmClusterB\003\340A\002\022\037\n\n"
           + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\226\001\n"
           + "\033DeleteCloudVmClusterRequest\022B\n"
           + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
@@ -256,8 +304,8 @@ public final class V1mainProto {
           + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\022\n"
           + "\005force\030\003 \001(\010B\003\340A\001\"\215\001\n"
           + "\027ListEntitlementsRequest\022A\n"
-          + "\006parent\030\001 \001(\tB1\340A"
-          + "\002\372A+\022)oracledatabase.googleapis.com/Entitlement\022\026\n"
+          + "\006parent\030\001 \001(\tB1\340A\002"
+          + "\372A+\022)oracledatabase.googleapis.com/Entitlement\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\"v\n"
           + "\030ListEntitlementsResponse\022A\n"
@@ -279,20 +327,22 @@ public final class V1mainProto {
           + "page_token\030\003 \001(\tB\003\340A\001\"h\n"
           + "\023ListDbNodesResponse\0228\n"
           + "\010db_nodes\030\001 \003(\0132&.google.cloud.oracledatabase.v1.DbNode\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\211\001\n"
+          + "\017next_page_token\030\002 \001(\t\"\236\001\n"
           + "\025ListGiVersionsRequest\022?\n"
           + "\006parent\030\001 \001("
           + "\tB/\340A\002\372A)\022\'oracledatabase.googleapis.com/GiVersion\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
-          + "page_token\030\003 \001(\tB\003\340A\001\"q\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\"q\n"
           + "\026ListGiVersionsResponse\022>\n"
           + "\013gi_versions\030\001 \003(\0132).google.cloud.oracledatabase.v1.GiVersion\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\221\001\n"
+          + "\017next_page_token\030\002 \001(\t\"\246\001\n"
           + "\031ListDbSystemShapesRequest\022C\n"
-          + "\006parent\030\001 \001("
-          + "\tB3\340A\002\372A-\022+oracledatabase.googleapis.com/DbSystemShape\022\026\n"
+          + "\006parent\030\001 \001(\tB3\340A\002\372A-\022+ora"
+          + "cledatabase.googleapis.com/DbSystemShape\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
-          + "page_token\030\003 \001(\tB\003\340A\001\"~\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\"~\n"
           + "\032ListDbSystemShapesResponse\022G\n"
           + "\020db_system_shapes\030\001"
           + " \003(\0132-.google.cloud.oracledatabase.v1.DbSystemShape\022\027\n"
@@ -314,19 +364,24 @@ public final class V1mainProto {
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\214\001\n"
           + "\037ListAutonomousDatabasesResponse\022P\n"
-          + "\024autonomous_databases\030\001 \003(\01322.go"
-          + "ogle.cloud.oracledatabase.v1.AutonomousDatabase\022\027\n"
+          + "\024autonomous_databases\030\001 \003(\01322.g"
+          + "oogle.cloud.oracledatabase.v1.AutonomousDatabase\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"f\n"
           + "\034GetAutonomousDatabaseRequest\022F\n"
           + "\004name\030\001 \001(\tB8\340A\002\372A2\n"
           + "0oracledatabase.googleapis.com/AutonomousDatabase\"\207\002\n"
           + "\037CreateAutonomousDatabaseRequest\022H\n"
-          + "\006parent\030\001 \001(\tB8\340A\002\372A2\0220or"
-          + "acledatabase.googleapis.com/AutonomousDatabase\022#\n"
+          + "\006parent\030\001 \001(\tB8\340A\002\372A2\0220o"
+          + "racledatabase.googleapis.com/AutonomousDatabase\022#\n"
           + "\026autonomous_database_id\030\002 \001(\tB\003\340A\002\022T\n"
-          + "\023autonomous_database\030\003 \001(\01322.googl"
-          + "e.cloud.oracledatabase.v1.AutonomousDatabaseB\003\340A\002\022\037\n\n"
-          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\212\001\n"
+          + "\023autonomous_database\030\003 \001(\01322.goog"
+          + "le.cloud.oracledatabase.v1.AutonomousDatabaseB\003\340A\002\022\037\n\n"
+          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\316\001\n"
+          + "\037UpdateAutonomousDatabaseRequest\0224\n"
+          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022T\n"
+          + "\023autonomous_database\030\002 \001"
+          + "(\01322.google.cloud.oracledatabase.v1.AutonomousDatabaseB\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\212\001\n"
           + "\037DeleteAutonomousDatabaseRequest\022F\n"
           + "\004name\030\001 \001(\tB8\340A\002\372A2\n"
           + "0oracledatabase.googleapis.com/AutonomousDatabase\022\037\n\n"
@@ -343,168 +398,410 @@ public final class V1mainProto {
           + "0oracledatabase.googleapis.com/AutonomousDatabase\"j\n"
           + " RestartAutonomousDatabaseRequest\022F\n"
           + "\004name\030\001 \001(\tB8\340A\002\372A2\n"
+          + "0oracledatabase.googleapis.com/AutonomousDatabase\"\311\001\n"
+          + "#SwitchoverAutonomousDatabaseRequest\022F\n"
+          + "\004name\030\001 \001(\tB8\340A\002\372A2\n"
+          + "0oracledatabase.googleapis.com/AutonomousDatabase\022Z\n"
+          + "\030peer_autonomous_database\030\002 \001(\tB8\340A\002\372A2\n"
+          + "0oracledatabase.googleapis.com/AutonomousDatabase\"\307\001\n"
+          + "!FailoverAutonomousDatabaseRequest\022F\n"
+          + "\004name\030\001 \001(\tB8\340A\002\372A2\n"
+          + "0oracledatabase.googleapis.com/AutonomousDatabase\022Z\n"
+          + "\030peer_autonomous_database\030\002 \001(\tB8\340A\002\372A2\n"
           + "0oracledatabase.googleapis.com/AutonomousDatabase\"\343\001\n"
           + "\'GenerateAutonomousDatabaseWalletRequest\022F\n"
           + "\004name\030\001 \001(\tB8\340A\002\372A2\n"
           + "0oracledatabase.googleapis.com/AutonomousDatabase\022?\n"
-          + "\004type\030\002 \001(\0162,.g"
-          + "oogle.cloud.oracledatabase.v1.GenerateTypeB\003\340A\001\022\030\n"
+          + "\004type\030\002"
+          + " \001(\0162,.google.cloud.oracledatabase.v1.GenerateTypeB\003\340A\001\022\030\n"
           + "\013is_regional\030\003 \001(\010B\003\340A\001\022\025\n"
           + "\010password\030\004 \001(\tB\003\340A\002\"H\n"
           + "(GenerateAutonomousDatabaseWalletResponse\022\034\n"
           + "\017archive_content\030\001 \001(\014B\003\340A\003\"\235\001\n"
           + "\037ListAutonomousDbVersionsRequest\022I\n"
-          + "\006parent\030\001 \001(\tB9\340A\002\372A3\0221oracleda"
-          + "tabase.googleapis.com/AutonomousDbVersion\022\026\n"
+          + "\006parent\030\001 \001(\tB9"
+          + "\340A\002\372A3\0221oracledatabase.googleapis.com/AutonomousDbVersion\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\"\220\001\n"
           + " ListAutonomousDbVersionsResponse\022S\n"
-          + "\026autonomous_db_versions\030\001 \003(\0132"
-          + "3.google.cloud.oracledatabase.v1.AutonomousDbVersion\022\027\n"
+          + "\026autonomous_db_versions\030\001"
+          + " \003(\01323.google.cloud.oracledatabase.v1.AutonomousDbVersion\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"\310\001\n"
           + "*ListAutonomousDatabaseCharacterSetsRequest\022T\n"
-          + "\006parent\030\001 \001(\tBD\340A\002\372A>\022<oracledata"
-          + "base.googleapis.com/AutonomousDatabaseCharacterSet\022\026\n"
+          + "\006parent\030\001 \001(\tBD\340A"
+          + "\002\372A>\022<oracledatabase.googleapis.com/AutonomousDatabaseCharacterSet\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\"\262\001\n"
           + "+ListAutonomousDatabaseCharacterSetsResponse\022j\n"
-          + "\"autonomous_database_character_sets\030\001"
-          + " \003(\0132>.google.cloud.oracledatabase.v1.AutonomousDatabaseCharacterSet\022\027\n"
+          + "\"autonomous_database_character_sets\030\001 \003(\0132>.google.cl"
+          + "oud.oracledatabase.v1.AutonomousDatabaseCharacterSet\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"\274\001\n"
           + "$ListAutonomousDatabaseBackupsRequest\022N\n"
-          + "\006parent\030\001 \001(\tB>"
-          + "\340A\002\372A8\0226oracledatabase.googleapis.com/AutonomousDatabaseBackup\022\023\n"
+          + "\006parent\030\001 \001(\tB>\340A\002\372A8\0226oracledatabase.g"
+          + "oogleapis.com/AutonomousDatabaseBackup\022\023\n"
           + "\006filter\030\005 \001(\tB\003\340A\001\022\026\n"
           + "\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\004 \001(\tB\003\340A\001\"\237\001\n"
           + "%ListAutonomousDatabaseBackupsResponse\022]\n"
-          + "\033autonomous_database_backups\030\001"
-          + " \003(\01328.google.cloud.oracledatabase.v1.AutonomousDatabaseBackup\022\027\n"
-          + "\017next_page_token\030\002 \001(\t2\3610\n"
+          + "\033autonomous_database_backups\030\001 \003(\01328.google.clo"
+          + "ud.oracledatabase.v1.AutonomousDatabaseBackup\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\365\001\n"
+          + "\033CreateExadbVmClusterRequest\022D\n"
+          + "\006parent\030\001 \001(\tB4"
+          + "\340A\002\372A.\022,oracledatabase.googleapis.com/ExadbVmCluster\022 \n"
+          + "\023exadb_vm_cluster_id\030\002 \001(\tB\003\340A\002\022M\n"
+          + "\020exadb_vm_cluster\030\003 \001(\0132..googl"
+          + "e.cloud.oracledatabase.v1.ExadbVmClusterB\003\340A\002\022\037\n\n"
+          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\202\001\n"
+          + "\033DeleteExadbVmClusterRequest\022B\n"
+          + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
+          + ",oracledatabase.googleapis.com/ExadbVmCluster\022\037\n\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"^\n"
+          + "\030GetExadbVmClusterRequest\022B\n"
+          + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
+          + ",oracledatabase.googleapis.com/ExadbVmCluster\"\277\001\n"
+          + "\032ListExadbVmClustersRequest\022D\n"
+          + "\006parent\030\001 \001(\tB4\340A\002\372"
+          + "A.\022,oracledatabase.googleapis.com/ExadbVmCluster\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\201\001\n"
+          + "\033ListExadbVmClustersResponse\022I\n"
+          + "\021exadb_vm_clusters\030\001 \003(\013"
+          + "2..google.cloud.oracledatabase.v1.ExadbVmCluster\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\303\001\n"
+          + "\033UpdateExadbVmClusterRequest\0224\n"
+          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022M\n"
+          + "\020exadb_vm_cluster\030\002 \001(\0132..google.cloud"
+          + ".oracledatabase.v1.ExadbVmClusterB\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\250\001\n"
+          + ")RemoveVirtualMachineExadbVmClusterRequest\022B\n"
+          + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
+          + ",oracledatabase.googleapis.com/ExadbVmCluster\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\026\n"
+          + "\thostnames\030\004 \003(\tB\003\340A\0022\302m\n"
           + "\016OracleDatabase\022\204\002\n"
-          + "\037ListCloudExadataInfrastructures\022F.google.c"
-          + "loud.oracledatabase.v1.ListCloudExadataInfrastructuresRequest\032G.google.cloud.ora"
-          + "cledatabase.v1.ListCloudExadataInfrastru"
-          + "cturesResponse\"P\332A\006parent\202\323\344\223\002A\022?/v1/{pa"
-          + "rent=projects/*/locations/*}/cloudExadataInfrastructures\022\361\001\n"
-          + "\035GetCloudExadataInfrastructure\022D.google.cloud.oracledatabase"
-          + ".v1.GetCloudExadataInfrastructureRequest\032:.google.cloud.oracledatabase.v1.CloudE"
-          + "xadataInfrastructure\"N\332A\004name\202\323\344\223\002A\022?/v1"
-          + "/{name=projects/*/locations/*/cloudExadataInfrastructures/*}\022\352\002\n"
-          + " CreateCloudExadataInfrastructure\022G.google.cloud.oracled"
-          + "atabase.v1.CreateCloudExadataInfrastruct"
-          + "ureRequest\032\035.google.longrunning.Operation\"\335\001\312A/\n"
-          + "\032CloudExadataInfrastructure\022\021OperationMetadata\332ACparent,cloud_exadata_in"
-          + "frastructure,cloud_exadata_infrastructur"
-          + "e_id\202\323\344\223\002_\"?/v1/{parent=projects/*/locat"
-          + "ions/*}/cloudExadataInfrastructures:\034cloud_exadata_infrastructure\022\207\002\n"
-          + " DeleteCloudExadataInfrastructure\022G.google.cloud.or"
-          + "acledatabase.v1.DeleteCloudExadataInfras"
-          + "tructureRequest\032\035.google.longrunning.Operation\"{\312A*\n"
-          + "\025google.protobuf.Empty\022\021Oper"
-          + "ationMetadata\332A\004name\202\323\344\223\002A*?/v1/{name=pr"
-          + "ojects/*/locations/*/cloudExadataInfrastructures/*}\022\324\001\n"
-          + "\023ListCloudVmClusters\022:.google.cloud.oracledatabase.v1.ListCloudVm"
-          + "ClustersRequest\032;.google.cloud.oracledat"
-          + "abase.v1.ListCloudVmClustersResponse\"D\332A"
-          + "\006parent\202\323\344\223\0025\0223/v1/{parent=projects/*/locations/*}/cloudVmClusters\022\301\001\n"
-          + "\021GetCloudVmCluster\0228.google.cloud.oracledatabase.v"
-          + "1.GetCloudVmClusterRequest\032..google.clou"
-          + "d.oracledatabase.v1.CloudVmCluster\"B\332A\004n"
-          + "ame\202\323\344\223\0025\0223/v1/{name=projects/*/locations/*/cloudVmClusters/*}\022\226\002\n"
-          + "\024CreateCloudVmCluster\022;.google.cloud.oracledatabase.v1"
-          + ".CreateCloudVmClusterRequest\032\035.google.longrunning.Operation\"\241\001\312A#\n"
-          + "\016CloudVmCluster\022\021OperationMetadata\332A+parent,cloud_vm_c"
-          + "luster,cloud_vm_cluster_id\202\323\344\223\002G\"3/v1/{p"
-          + "arent=projects/*/locations/*}/cloudVmClusters:\020cloud_vm_cluster\022\343\001\n"
-          + "\024DeleteCloudVmCluster\022;.google.cloud.oracledatabase.v"
-          + "1.DeleteCloudVmClusterRequest\032\035.google.longrunning.Operation\"o\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\0025"
-          + "*3/v1/{name=projects/*/locations/*/cloudVmClusters/*}\022\310\001\n"
-          + "\020ListEntitlements\0227.google.cloud.oracledatabase.v1.ListEntitlem"
-          + "entsRequest\0328.google.cloud.oracledatabas"
-          + "e.v1.ListEntitlementsResponse\"A\332A\006parent"
-          + "\202\323\344\223\0022\0220/v1/{parent=projects/*/locations/*}/entitlements\022\332\001\n\r"
-          + "ListDbServers\0224.google.cloud.oracledatabase.v1.ListDbServer"
-          + "sRequest\0325.google.cloud.oracledatabase.v"
-          + "1.ListDbServersResponse\"\\\332A\006parent\202\323\344\223\002M"
-          + "\022K/v1/{parent=projects/*/locations/*/clo"
-          + "udExadataInfrastructures/*}/dbServers\022\306\001\n"
-          + "\013ListDbNodes\0222.google.cloud.oracledatab"
-          + "ase.v1.ListDbNodesRequest\0323.google.cloud.oracledatabase.v1.ListDbNodesResponse\"N"
-          + "\332A\006parent\202\323\344\223\002?\022=/v1/{parent=projects/*/"
-          + "locations/*/cloudVmClusters/*}/dbNodes\022\300\001\n"
-          + "\016ListGiVersions\0225.google.cloud.oracled"
-          + "atabase.v1.ListGiVersionsRequest\0326.google.cloud.oracledatabase.v1.ListGiVersions"
-          + "Response\"?\332A\006parent\202\323\344\223\0020\022./v1/{parent=projects/*/locations/*}/giVersions\022\320\001\n"
-          + "\022ListDbSystemShapes\0229.google.cloud.oracleda"
-          + "tabase.v1.ListDbSystemShapesRequest\032:.google.cloud.oracledatabase.v1.ListDbSyste"
-          + "mShapesResponse\"C\332A\006parent\202\323\344\223\0024\0222/v1/{p"
-          + "arent=projects/*/locations/*}/dbSystemShapes\022\344\001\n"
-          + "\027ListAutonomousDatabases\022>.google.cloud.oracledatabase.v1.ListAutonomous"
-          + "DatabasesRequest\032?.google.cloud.oracledatabase.v1.ListAutonomousDatabasesRespons"
-          + "e\"H\332A\006parent\202\323\344\223\0029\0227/v1/{parent=projects/*/locations/*}/autonomousDatabases\022\321\001\n"
-          + "\025GetAutonomousDatabase\022<.google.cloud.ora"
-          + "cledatabase.v1.GetAutonomousDatabaseRequest\0322.google.cloud.oracledatabase.v1.Aut"
-          + "onomousDatabase\"F\332A\004name\202\323\344\223\0029\0227/v1/{nam"
-          + "e=projects/*/locations/*/autonomousDatabases/*}\022\257\002\n"
-          + "\030CreateAutonomousDatabase\022?.google.cloud.oracledatabase.v1.CreateAuto"
-          + "nomousDatabaseRequest\032\035.google.longrunning.Operation\"\262\001\312A\'\n"
-          + "\022AutonomousDatabase\022\021OperationMetadata\332A1parent,autonomous_da"
-          + "tabase,autonomous_database_id\202\323\344\223\002N\"7/v1"
-          + "/{parent=projects/*/locations/*}/autonomousDatabases:\023autonomous_database\022\357\001\n"
-          + "\030DeleteAutonomousDatabase\022?.google.cloud.or"
-          + "acledatabase.v1.DeleteAutonomousDatabase"
-          + "Request\032\035.google.longrunning.Operation\"s\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMet"
-          + "adata\332A\004name\202\323\344\223\0029*7/v1/{name=projects/*/locations/*/autonomousDatabases/*}\022\207\002\n"
-          + "\031RestoreAutonomousDatabase\022@.google.cloud"
-          + ".oracledatabase.v1.RestoreAutonomousData"
-          + "baseRequest\032\035.google.longrunning.Operation\"\210\001\312A\'\n"
-          + "\022AutonomousDatabase\022\021OperationM"
-          + "etadata\332A\021name,restore_time\202\323\344\223\002D\"?/v1/{"
-          + "name=projects/*/locations/*/autonomousDatabases/*}:restore:\001*\022\251\002\n"
-          + " GenerateAutonomousDatabaseWallet\022G.google.cloud.oracle"
-          + "database.v1.GenerateAutonomousDatabaseWalletRequest\032H.google.cloud.oracledatabas"
-          + "e.v1.GenerateAutonomousDatabaseWalletRes"
-          + "ponse\"r\332A\036name,type,is_regional,password"
-          + "\202\323\344\223\002K\"F/v1/{name=projects/*/locations/*"
-          + "/autonomousDatabases/*}:generateWallet:\001*\022\350\001\n"
-          + "\030ListAutonomousDbVersions\022?.google.cloud.oracledatabase.v1.ListAutonomousDb"
-          + "VersionsRequest\032@.google.cloud.oracledatabase.v1.ListAutonomousDbVersionsRespons"
-          + "e\"I\332A\006parent\202\323\344\223\002:\0228/v1/{parent=projects/*/locations/*}/autonomousDbVersions\022\224\002\n"
-          + "#ListAutonomousDatabaseCharacterSets\022J.google.cloud.oracledatabase.v1.ListAutono"
-          + "mousDatabaseCharacterSetsRequest\032K.google.cloud.oracledatabase.v1.ListAutonomous"
-          + "DatabaseCharacterSetsResponse\"T\332A\006parent"
-          + "\202\323\344\223\002E\022C/v1/{parent=projects/*/locations/*}/autonomousDatabaseCharacterSets\022\374\001\n"
-          + "\035ListAutonomousDatabaseBackups\022D.google.c"
-          + "loud.oracledatabase.v1.ListAutonomousDatabaseBackupsRequest\032E.google.cloud.oracl"
-          + "edatabase.v1.ListAutonomousDatabaseBacku"
-          + "psResponse\"N\332A\006parent\202\323\344\223\002?\022=/v1/{parent"
-          + "=projects/*/locations/*}/autonomousDatabaseBackups\022\360\001\n"
-          + "\026StopAutonomousDatabase\022=.google.cloud.oracledatabase.v1.StopAuton"
-          + "omousDatabaseRequest\032\035.google.longrunning.Operation\"x\312A\'\n"
-          + "\022AutonomousDatabase\022\021Op"
-          + "erationMetadata\332A\004name\202\323\344\223\002A\"</v1/{name="
-          + "projects/*/locations/*/autonomousDatabases/*}:stop:\001*\022\363\001\n"
-          + "\027StartAutonomousDatabase\022>.google.cloud.oracledatabase.v1.Start"
-          + "AutonomousDatabaseRequest\032\035.google.longrunning.Operation\"y\312A\'\n"
-          + "\022AutonomousDatabas"
-          + "e\022\021OperationMetadata\332A\004name\202\323\344\223\002B\"=/v1/{"
-          + "name=projects/*/locations/*/autonomousDatabases/*}:start:\001*\022\371\001\n"
-          + "\031RestartAutonomousDatabase\022@.google.cloud.oracledatabase."
-          + "v1.RestartAutonomousDatabaseRequest\032\035.google.longrunning.Operation\"{\312A\'\n"
-          + "\022AutonomousDatabase\022\021OperationMetadata\332A\004name\202\323\344"
-          + "\223\002D\"?/v1/{name=projects/*/locations/*/au"
-          + "tonomousDatabases/*}:restart:\001*\032Q\312A\035orac"
-          + "ledatabase.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\266\002\n"
-          + "\"com.google.cloud.oracledatabase.v1B\013V1mai"
-          + "nProtoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracledatabasepb;oracledataba"
-          + "sepb\252\002\036Google.Cloud.OracleDatabase.V1\312\002\036"
-          + "Google\\Cloud\\OracleDatabase\\V1\352\002!Google::Cloud::OracleDatabase::V1\352AN\n"
-          + "\036compute.googleapis.com/Network\022,projects/{project"
-          + "}/global/networks/{network}b\006proto3"
+          + "\037ListCloudExadataInfrastructures\022F.google.cloud.oracled"
+          + "atabase.v1.ListCloudExadataInfrastructuresRequest\032G.google.cloud.oracledatabase."
+          + "v1.ListCloudExadataInfrastructuresRespon"
+          + "se\"P\332A\006parent\202\323\344\223\002A\022?/v1/{parent=project"
+          + "s/*/locations/*}/cloudExadataInfrastructures\022\361\001\n"
+          + "\035GetCloudExadataInfrastructure\022D.google.cloud.oracledatabase.v1.GetCloud"
+          + "ExadataInfrastructureRequest\032:.google.cloud.oracledatabase.v1.CloudExadataInfras"
+          + "tructure\"N\332A\004name\202\323\344\223\002A\022?/v1/{name=proje"
+          + "cts/*/locations/*/cloudExadataInfrastructures/*}\022\352\002\n"
+          + " CreateCloudExadataInfrastructure\022G.google.cloud.oracledatabase.v1.C"
+          + "reateCloudExadataInfrastructureRequest\032\035.google.longrunning.Operation\"\335\001\312A/\n"
+          + "\032CloudExadataInfrastructure\022\021OperationMetada"
+          + "ta\332ACparent,cloud_exadata_infrastructure"
+          + ",cloud_exadata_infrastructure_id\202\323\344\223\002_\"?"
+          + "/v1/{parent=projects/*/locations/*}/clou"
+          + "dExadataInfrastructures:\034cloud_exadata_infrastructure\022\207\002\n"
+          + " DeleteCloudExadataInfrastructure\022G.google.cloud.oracledatabase"
+          + ".v1.DeleteCloudExadataInfrastructureRequest\032\035.google.longrunning.Operation\"{\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadat"
+          + "a\332A\004name\202\323\344\223\002A*?/v1/{name=projects/*/loc"
+          + "ations/*/cloudExadataInfrastructures/*}\022\324\001\n"
+          + "\023ListCloudVmClusters\022:.google.cloud.oracledatabase.v1.ListCloudVmClustersRequ"
+          + "est\032;.google.cloud.oracledatabase.v1.Lis"
+          + "tCloudVmClustersResponse\"D\332A\006parent\202\323\344\223\002"
+          + "5\0223/v1/{parent=projects/*/locations/*}/cloudVmClusters\022\301\001\n"
+          + "\021GetCloudVmCluster\0228.google.cloud.oracledatabase.v1.GetCloudVm"
+          + "ClusterRequest\032..google.cloud.oracledata"
+          + "base.v1.CloudVmCluster\"B\332A\004name\202\323\344\223\0025\0223/"
+          + "v1/{name=projects/*/locations/*/cloudVmClusters/*}\022\226\002\n"
+          + "\024CreateCloudVmCluster\022;.google.cloud.oracledatabase.v1.CreateCloud"
+          + "VmClusterRequest\032\035.google.longrunning.Operation\"\241\001\312A#\n"
+          + "\016CloudVmCluster\022\021OperationMetadata\332A+parent,cloud_vm_cluster,cloud"
+          + "_vm_cluster_id\202\323\344\223\002G\"3/v1/{parent=projec"
+          + "ts/*/locations/*}/cloudVmClusters:\020cloud_vm_cluster\022\343\001\n"
+          + "\024DeleteCloudVmCluster\022;.google.cloud.oracledatabase.v1.DeleteClou"
+          + "dVmClusterRequest\032\035.google.longrunning.Operation\"o\312A*\n"
+          + "\025google.protobuf.Empty\022\021Op"
+          + "erationMetadata\332A\004name\202\323\344\223\0025*3/v1/{name="
+          + "projects/*/locations/*/cloudVmClusters/*}\022\310\001\n"
+          + "\020ListEntitlements\0227.google.cloud.oracledatabase.v1.ListEntitlementsRequest\032"
+          + "8.google.cloud.oracledatabase.v1.ListEnt"
+          + "itlementsResponse\"A\332A\006parent\202\323\344\223\0022\0220/v1/"
+          + "{parent=projects/*/locations/*}/entitlements\022\332\001\n\r"
+          + "ListDbServers\0224.google.cloud.oracledatabase.v1.ListDbServersRequest\0325.g"
+          + "oogle.cloud.oracledatabase.v1.ListDbServ"
+          + "ersResponse\"\\\332A\006parent\202\323\344\223\002M\022K/v1/{paren"
+          + "t=projects/*/locations/*/cloudExadataInfrastructures/*}/dbServers\022\211\002\n"
+          + "\013ListDbNodes\0222.google.cloud.oracledatabase.v1.ListD"
+          + "bNodesRequest\0323.google.cloud.oracledatab"
+          + "ase.v1.ListDbNodesResponse\"\220\001\332A\006parent\202\323"
+          + "\344\223\002\200\001\022=/v1/{parent=projects/*/locations/"
+          + "*/cloudVmClusters/*}/dbNodesZ?\022=/v1/{par"
+          + "ent=projects/*/locations/*/exadbVmClusters/*}/dbNodes\022\300\001\n"
+          + "\016ListGiVersions\0225.google.cloud.oracledatabase.v1.ListGiVersions"
+          + "Request\0326.google.cloud.oracledatabase.v1"
+          + ".ListGiVersionsResponse\"?\332A\006parent\202\323\344\223\0020"
+          + "\022./v1/{parent=projects/*/locations/*}/giVersions\022\331\001\n"
+          + "\021ListMinorVersions\0228.google.cloud.oracledatabase.v1.ListMinorVersion"
+          + "sRequest\0329.google.cloud.oracledatabase.v"
+          + "1.ListMinorVersionsResponse\"O\332A\006parent\202\323"
+          + "\344\223\002@\022>/v1/{parent=projects/*/locations/*/giVersions/*}/minorVersions\022\320\001\n"
+          + "\022ListDbSystemShapes\0229.google.cloud.oracledatabas"
+          + "e.v1.ListDbSystemShapesRequest\032:.google.cloud.oracledatabase.v1.ListDbSystemShap"
+          + "esResponse\"C\332A\006parent\202\323\344\223\0024\0222/v1/{parent"
+          + "=projects/*/locations/*}/dbSystemShapes\022\344\001\n"
+          + "\027ListAutonomousDatabases\022>.google.cloud.oracledatabase.v1.ListAutonomousDatab"
+          + "asesRequest\032?.google.cloud.oracledatabas"
+          + "e.v1.ListAutonomousDatabasesResponse\"H\332A"
+          + "\006parent\202\323\344\223\0029\0227/v1/{parent=projects/*/locations/*}/autonomousDatabases\022\321\001\n"
+          + "\025GetAutonomousDatabase\022<.google.cloud.oracleda"
+          + "tabase.v1.GetAutonomousDatabaseRequest\0322.google.cloud.oracledatabase.v1.Autonomo"
+          + "usDatabase\"F\332A\004name\202\323\344\223\0029\0227/v1/{name=pro"
+          + "jects/*/locations/*/autonomousDatabases/*}\022\257\002\n"
+          + "\030CreateAutonomousDatabase\022?.google.cloud.oracledatabase.v1.CreateAutonomou"
+          + "sDatabaseRequest\032\035.google.longrunning.Operation\"\262\001\312A\'\n"
+          + "\022AutonomousDatabase\022\021OperationMetadata\332A1parent,autonomous_databas"
+          + "e,autonomous_database_id\202\323\344\223\002N\"7/v1/{par"
+          + "ent=projects/*/locations/*}/autonomousDatabases:\023autonomous_database\022\261\002\n"
+          + "\030UpdateAutonomousDatabase\022?.google.cloud.oracled"
+          + "atabase.v1.UpdateAutonomousDatabaseRequest\032\035.google.longrunning.Operation\"\264\001\312A\'\n"
+          + "\022AutonomousDatabase\022\021OperationMetadata\332A"
+          + "\037autonomous_database,update_mask\202\323\344\223\002b2K"
+          + "/v1/{autonomous_database.name=projects/*"
+          + "/locations/*/autonomousDatabases/*}:\023autonomous_database\022\357\001\n"
+          + "\030DeleteAutonomousDatabase\022?.google.cloud.oracledatabase.v1.D"
+          + "eleteAutonomousDatabaseRequest\032\035.google.longrunning.Operation\"s\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002"
+          + "9*7/v1/{name=projects/*/locations/*/autonomousDatabases/*}\022\207\002\n"
+          + "\031RestoreAutonomousDatabase\022@.google.cloud.oracledatabase.v"
+          + "1.RestoreAutonomousDatabaseRequest\032\035.google.longrunning.Operation\"\210\001\312A\'\n"
+          + "\022AutonomousDatabase\022\021OperationMetadata\332A\021name,re"
+          + "store_time\202\323\344\223\002D\"?/v1/{name=projects/*/l"
+          + "ocations/*/autonomousDatabases/*}:restore:\001*\022\251\002\n"
+          + " GenerateAutonomousDatabaseWallet\022G.google.cloud.oracledatabase.v1.Gener"
+          + "ateAutonomousDatabaseWalletRequest\032H.google.cloud.oracledatabase.v1.GenerateAuto"
+          + "nomousDatabaseWalletResponse\"r\332A\036name,ty"
+          + "pe,is_regional,password\202\323\344\223\002K\"F/v1/{name"
+          + "=projects/*/locations/*/autonomousDatabases/*}:generateWallet:\001*\022\350\001\n"
+          + "\030ListAutonomousDbVersions\022?.google.cloud.oracledatab"
+          + "ase.v1.ListAutonomousDbVersionsRequest\032@.google.cloud.oracledatabase.v1.ListAuto"
+          + "nomousDbVersionsResponse\"I\332A\006parent\202\323\344\223\002"
+          + ":\0228/v1/{parent=projects/*/locations/*}/autonomousDbVersions\022\224\002\n"
+          + "#ListAutonomousDatabaseCharacterSets\022J.google.cloud.oracl"
+          + "edatabase.v1.ListAutonomousDatabaseCharacterSetsRequest\032K.google.cloud.oracledat"
+          + "abase.v1.ListAutonomousDatabaseCharacter"
+          + "SetsResponse\"T\332A\006parent\202\323\344\223\002E\022C/v1/{pare"
+          + "nt=projects/*/locations/*}/autonomousDatabaseCharacterSets\022\374\001\n"
+          + "\035ListAutonomousDatabaseBackups\022D.google.cloud.oracledataba"
+          + "se.v1.ListAutonomousDatabaseBackupsRequest\032E.google.cloud.oracledatabase.v1.List"
+          + "AutonomousDatabaseBackupsResponse\"N\332A\006pa"
+          + "rent\202\323\344\223\002?\022=/v1/{parent=projects/*/locations/*}/autonomousDatabaseBackups\022\360\001\n"
+          + "\026StopAutonomousDatabase\022=.google.cloud.orac"
+          + "ledatabase.v1.StopAutonomousDatabaseRequest\032\035.google.longrunning.Operation\"x\312A\'\n"
+          + "\022AutonomousDatabase\022\021OperationMetadata\332A"
+          + "\004name\202\323\344\223\002A\"</v1/{name=projects/*/locations/*/autonomousDatabases/*}:stop:\001*\022\363\001\n"
+          + "\027StartAutonomousDatabase\022>.google.cloud.oracledatabase.v1.StartAutonomousDatabas"
+          + "eRequest\032\035.google.longrunning.Operation\"y\312A\'\n"
+          + "\022AutonomousDatabase\022\021OperationMetad"
+          + "ata\332A\004name\202\323\344\223\002B\"=/v1/{name=projects/*/l"
+          + "ocations/*/autonomousDatabases/*}:start:\001*\022\371\001\n"
+          + "\031RestartAutonomousDatabase\022@.googl",
+      "e.cloud.oracledatabase.v1.RestartAutonom"
+          + "ousDatabaseRequest\032\035.google.longrunning."
+          + "Operation\"{\312A\'\n\022AutonomousDatabase\022\021Oper"
+          + "ationMetadata\332A\004name\202\323\344\223\002D\"?/v1/{name=pr"
+          + "ojects/*/locations/*/autonomousDatabases"
+          + "/*}:restart:\001*\022\234\002\n\034SwitchoverAutonomousD"
+          + "atabase\022C.google.cloud.oracledatabase.v1"
+          + ".SwitchoverAutonomousDatabaseRequest\032\035.g"
+          + "oogle.longrunning.Operation\"\227\001\312A\'\n\022Auton"
+          + "omousDatabase\022\021OperationMetadata\332A\035name,"
+          + "peer_autonomous_database\202\323\344\223\002G\"B/v1/{nam"
+          + "e=projects/*/locations/*/autonomousDatab"
+          + "ases/*}:switchover:\001*\022\226\002\n\032FailoverAutono"
+          + "mousDatabase\022A.google.cloud.oracledataba"
+          + "se.v1.FailoverAutonomousDatabaseRequest\032"
+          + "\035.google.longrunning.Operation\"\225\001\312A\'\n\022Au"
+          + "tonomousDatabase\022\021OperationMetadata\332A\035na"
+          + "me,peer_autonomous_database\202\323\344\223\002E\"@/v1/{"
+          + "name=projects/*/locations/*/autonomousDa"
+          + "tabases/*}:failover:\001*\022\304\001\n\017ListOdbNetwor"
+          + "ks\0226.google.cloud.oracledatabase.v1.List"
+          + "OdbNetworksRequest\0327.google.cloud.oracle"
+          + "database.v1.ListOdbNetworksResponse\"@\332A\006"
+          + "parent\202\323\344\223\0021\022//v1/{parent=projects/*/loc"
+          + "ations/*}/odbNetworks\022\261\001\n\rGetOdbNetwork\022"
+          + "4.google.cloud.oracledatabase.v1.GetOdbN"
+          + "etworkRequest\032*.google.cloud.oracledatab"
+          + "ase.v1.OdbNetwork\">\332A\004name\202\323\344\223\0021\022//v1/{n"
+          + "ame=projects/*/locations/*/odbNetworks/*"
+          + "}\022\367\001\n\020CreateOdbNetwork\0227.google.cloud.or"
+          + "acledatabase.v1.CreateOdbNetworkRequest\032"
+          + "\035.google.longrunning.Operation\"\212\001\312A\037\n\nOd"
+          + "bNetwork\022\021OperationMetadata\332A!parent,odb"
+          + "_network,odb_network_id\202\323\344\223\002>\"//v1/{pare"
+          + "nt=projects/*/locations/*}/odbNetworks:\013"
+          + "odb_network\022\327\001\n\020DeleteOdbNetwork\0227.googl"
+          + "e.cloud.oracledatabase.v1.DeleteOdbNetwo"
+          + "rkRequest\032\035.google.longrunning.Operation"
+          + "\"k\312A*\n\025google.protobuf.Empty\022\021OperationM"
+          + "etadata\332A\004name\202\323\344\223\0021*//v1/{name=projects"
+          + "/*/locations/*/odbNetworks/*}\022\316\001\n\016ListOd"
+          + "bSubnets\0225.google.cloud.oracledatabase.v"
+          + "1.ListOdbSubnetsRequest\0326.google.cloud.o"
+          + "racledatabase.v1.ListOdbSubnetsResponse\""
+          + "M\332A\006parent\202\323\344\223\002>\022</v1/{parent=projects/*"
+          + "/locations/*/odbNetworks/*}/odbSubnets\022\273"
+          + "\001\n\014GetOdbSubnet\0223.google.cloud.oracledat"
+          + "abase.v1.GetOdbSubnetRequest\032).google.cl"
+          + "oud.oracledatabase.v1.OdbSubnet\"K\332A\004name"
+          + "\202\323\344\223\002>\022</v1/{name=projects/*/locations/*"
+          + "/odbNetworks/*/odbSubnets/*}\022\376\001\n\017CreateO"
+          + "dbSubnet\0226.google.cloud.oracledatabase.v"
+          + "1.CreateOdbSubnetRequest\032\035.google.longru"
+          + "nning.Operation\"\223\001\312A\036\n\tOdbSubnet\022\021Operat"
+          + "ionMetadata\332A\037parent,odb_subnet,odb_subn"
+          + "et_id\202\323\344\223\002J\"</v1/{parent=projects/*/loca"
+          + "tions/*/odbNetworks/*}/odbSubnets:\nodb_s"
+          + "ubnet\022\342\001\n\017DeleteOdbSubnet\0226.google.cloud"
+          + ".oracledatabase.v1.DeleteOdbSubnetReques"
+          + "t\032\035.google.longrunning.Operation\"x\312A*\n\025g"
+          + "oogle.protobuf.Empty\022\021OperationMetadata\332"
+          + "A\004name\202\323\344\223\002>*</v1/{name=projects/*/locat"
+          + "ions/*/odbNetworks/*/odbSubnets/*}\022\324\001\n\023L"
+          + "istExadbVmClusters\022:.google.cloud.oracle"
+          + "database.v1.ListExadbVmClustersRequest\032;"
+          + ".google.cloud.oracledatabase.v1.ListExad"
+          + "bVmClustersResponse\"D\332A\006parent\202\323\344\223\0025\0223/v"
+          + "1/{parent=projects/*/locations/*}/exadbV"
+          + "mClusters\022\301\001\n\021GetExadbVmCluster\0228.google"
+          + ".cloud.oracledatabase.v1.GetExadbVmClust"
+          + "erRequest\032..google.cloud.oracledatabase."
+          + "v1.ExadbVmCluster\"B\332A\004name\202\323\344\223\0025\0223/v1/{n"
+          + "ame=projects/*/locations/*/exadbVmCluste"
+          + "rs/*}\022\226\002\n\024CreateExadbVmCluster\022;.google."
+          + "cloud.oracledatabase.v1.CreateExadbVmClu"
+          + "sterRequest\032\035.google.longrunning.Operati"
+          + "on\"\241\001\312A#\n\016ExadbVmCluster\022\021OperationMetad"
+          + "ata\332A+parent,exadb_vm_cluster,exadb_vm_c"
+          + "luster_id\202\323\344\223\002G\"3/v1/{parent=projects/*/"
+          + "locations/*}/exadbVmClusters:\020exadb_vm_c"
+          + "luster\022\343\001\n\024DeleteExadbVmCluster\022;.google"
+          + ".cloud.oracledatabase.v1.DeleteExadbVmCl"
+          + "usterRequest\032\035.google.longrunning.Operat"
+          + "ion\"o\312A*\n\025google.protobuf.Empty\022\021Operati"
+          + "onMetadata\332A\004name\202\323\344\223\0025*3/v1/{name=proje"
+          + "cts/*/locations/*/exadbVmClusters/*}\022\230\002\n"
+          + "\024UpdateExadbVmCluster\022;.google.cloud.ora"
+          + "cledatabase.v1.UpdateExadbVmClusterReque"
+          + "st\032\035.google.longrunning.Operation\"\243\001\312A#\n"
+          + "\016ExadbVmCluster\022\021OperationMetadata\332A\034exa"
+          + "db_vm_cluster,update_mask\202\323\344\223\002X2D/v1/{ex"
+          + "adb_vm_cluster.name=projects/*/locations"
+          + "/*/exadbVmClusters/*}:\020exadb_vm_cluster\022"
+          + "\233\002\n\"RemoveVirtualMachineExadbVmCluster\022I"
+          + ".google.cloud.oracledatabase.v1.RemoveVi"
+          + "rtualMachineExadbVmClusterRequest\032\035.goog"
+          + "le.longrunning.Operation\"\212\001\312A#\n\016ExadbVmC"
+          + "luster\022\021OperationMetadata\332A\016name,hostnam"
+          + "es\202\323\344\223\002M\"H/v1/{name=projects/*/locations"
+          + "/*/exadbVmClusters/*}:removeVirtualMachi"
+          + "ne:\001*\022\364\001\n\033ListExascaleDbStorageVaults\022B."
+          + "google.cloud.oracledatabase.v1.ListExasc"
+          + "aleDbStorageVaultsRequest\032C.google.cloud"
+          + ".oracledatabase.v1.ListExascaleDbStorage"
+          + "VaultsResponse\"L\332A\006parent\202\323\344\223\002=\022;/v1/{pa"
+          + "rent=projects/*/locations/*}/exascaleDbS"
+          + "torageVaults\022\341\001\n\031GetExascaleDbStorageVau"
+          + "lt\022@.google.cloud.oracledatabase.v1.GetE"
+          + "xascaleDbStorageVaultRequest\0326.google.cl"
+          + "oud.oracledatabase.v1.ExascaleDbStorageV"
+          + "ault\"J\332A\004name\202\323\344\223\002=\022;/v1/{name=projects/"
+          + "*/locations/*/exascaleDbStorageVaults/*}"
+          + "\022\321\002\n\034CreateExascaleDbStorageVault\022C.goog"
+          + "le.cloud.oracledatabase.v1.CreateExascal"
+          + "eDbStorageVaultRequest\032\035.google.longrunn"
+          + "ing.Operation\"\314\001\312A+\n\026ExascaleDbStorageVa"
+          + "ult\022\021OperationMetadata\332A=parent,exascale"
+          + "_db_storage_vault,exascale_db_storage_va"
+          + "ult_id\202\323\344\223\002X\";/v1/{parent=projects/*/loc"
+          + "ations/*}/exascaleDbStorageVaults:\031exasc"
+          + "ale_db_storage_vault\022\373\001\n\034DeleteExascaleD"
+          + "bStorageVault\022C.google.cloud.oracledatab"
+          + "ase.v1.DeleteExascaleDbStorageVaultReque"
+          + "st\032\035.google.longrunning.Operation\"w\312A*\n\025"
+          + "google.protobuf.Empty\022\021OperationMetadata"
+          + "\332A\004name\202\323\344\223\002=*;/v1/{name=projects/*/loca"
+          + "tions/*/exascaleDbStorageVaults/*}\022\204\002\n\037L"
+          + "istDbSystemInitialStorageSizes\022F.google."
+          + "cloud.oracledatabase.v1.ListDbSystemInit"
+          + "ialStorageSizesRequest\032G.google.cloud.or"
+          + "acledatabase.v1.ListDbSystemInitialStora"
+          + "geSizesResponse\"P\332A\006parent\202\323\344\223\002A\022?/v1/{p"
+          + "arent=projects/*/locations/*}/dbSystemIn"
+          + "itialStorageSizes\022\274\001\n\rListDatabases\0224.go"
+          + "ogle.cloud.oracledatabase.v1.ListDatabas"
+          + "esRequest\0325.google.cloud.oracledatabase."
+          + "v1.ListDatabasesResponse\">\332A\006parent\202\323\344\223\002"
+          + "/\022-/v1/{parent=projects/*/locations/*}/d"
+          + "atabases\022\251\001\n\013GetDatabase\0222.google.cloud."
+          + "oracledatabase.v1.GetDatabaseRequest\032(.g"
+          + "oogle.cloud.oracledatabase.v1.Database\"<"
+          + "\332A\004name\202\323\344\223\002/\022-/v1/{name=projects/*/loca"
+          + "tions/*/databases/*}\022\340\001\n\026ListPluggableDa"
+          + "tabases\022=.google.cloud.oracledatabase.v1"
+          + ".ListPluggableDatabasesRequest\032>.google."
+          + "cloud.oracledatabase.v1.ListPluggableDat"
+          + "abasesResponse\"G\332A\006parent\202\323\344\223\0028\0226/v1/{pa"
+          + "rent=projects/*/locations/*}/pluggableDa"
+          + "tabases\022\315\001\n\024GetPluggableDatabase\022;.googl"
+          + "e.cloud.oracledatabase.v1.GetPluggableDa"
+          + "tabaseRequest\0321.google.cloud.oracledatab"
+          + "ase.v1.PluggableDatabase\"E\332A\004name\202\323\344\223\0028\022"
+          + "6/v1/{name=projects/*/locations/*/plugga"
+          + "bleDatabases/*}\022\274\001\n\rListDbSystems\0224.goog"
+          + "le.cloud.oracledatabase.v1.ListDbSystems"
+          + "Request\0325.google.cloud.oracledatabase.v1"
+          + ".ListDbSystemsResponse\">\332A\006parent\202\323\344\223\002/\022"
+          + "-/v1/{parent=projects/*/locations/*}/dbS"
+          + "ystems\022\251\001\n\013GetDbSystem\0222.google.cloud.or"
+          + "acledatabase.v1.GetDbSystemRequest\032(.goo"
+          + "gle.cloud.oracledatabase.v1.DbSystem\"<\332A"
+          + "\004name\202\323\344\223\002/\022-/v1/{name=projects/*/locati"
+          + "ons/*/dbSystems/*}\022\351\001\n\016CreateDbSystem\0225."
+          + "google.cloud.oracledatabase.v1.CreateDbS"
+          + "ystemRequest\032\035.google.longrunning.Operat"
+          + "ion\"\200\001\312A\035\n\010DbSystem\022\021OperationMetadata\332A"
+          + "\035parent,db_system,db_system_id\202\323\344\223\002:\"-/v"
+          + "1/{parent=projects/*/locations/*}/dbSyst"
+          + "ems:\tdb_system\022\321\001\n\016DeleteDbSystem\0225.goog"
+          + "le.cloud.oracledatabase.v1.DeleteDbSyste"
+          + "mRequest\032\035.google.longrunning.Operation\""
+          + "i\312A*\n\025google.protobuf.Empty\022\021OperationMe"
+          + "tadata\332A\004name\202\323\344\223\002/*-/v1/{name=projects/"
+          + "*/locations/*/dbSystems/*}\022\300\001\n\016ListDbVer"
+          + "sions\0225.google.cloud.oracledatabase.v1.L"
+          + "istDbVersionsRequest\0326.google.cloud.orac"
+          + "ledatabase.v1.ListDbVersionsResponse\"?\332A"
+          + "\006parent\202\323\344\223\0020\022./v1/{parent=projects/*/lo"
+          + "cations/*}/dbVersions\022\354\001\n\031ListDatabaseCh"
+          + "aracterSets\022@.google.cloud.oracledatabas"
+          + "e.v1.ListDatabaseCharacterSetsRequest\032A."
+          + "google.cloud.oracledatabase.v1.ListDatab"
+          + "aseCharacterSetsResponse\"J\332A\006parent\202\323\344\223\002"
+          + ";\0229/v1/{parent=projects/*/locations/*}/d"
+          + "atabaseCharacterSets\032Q\312A\035oracledatabase."
+          + "googleapis.com\322A.https://www.googleapis."
+          + "com/auth/cloud-platformB\261\003\n\"com.google.c"
+          + "loud.oracledatabase.v1B\013V1mainProtoP\001ZJc"
+          + "loud.google.com/go/oracledatabase/apiv1/"
+          + "oracledatabasepb;oracledatabasepb\252\002\036Goog"
+          + "le.Cloud.OracleDatabase.V1\312\002\036Google\\Clou"
+          + "d\\OracleDatabase\\V1\352\002!Google::Cloud::Ora"
+          + "cleDatabase::V1\352AN\n\036compute.googleapis.c"
+          + "om/Network\022,projects/{project}/global/ne"
+          + "tworks/{network}\352Ax\n!cloudkms.googleapis"
+          + ".com/CryptoKey\022Sprojects/{project}/locat"
+          + "ions/{location}/keyRings/{key_ring}/cryp"
+          + "toKeys/{crypto_key}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -520,15 +817,27 @@ public final class V1mainProto {
                   .getDescriptor(),
               com.google.cloud.oracledatabase.v1.AutonomousDbBackupProto.getDescriptor(),
               com.google.cloud.oracledatabase.v1.AutonomousDbVersionProto.getDescriptor(),
+              com.google.cloud.oracledatabase.v1.DatabaseProto.getDescriptor(),
+              com.google.cloud.oracledatabase.v1.DatabaseCharacterSetProto.getDescriptor(),
               com.google.cloud.oracledatabase.v1.DbNodeProto.getDescriptor(),
               com.google.cloud.oracledatabase.v1.DbServerProto.getDescriptor(),
+              com.google.cloud.oracledatabase.v1.DbSystemProto.getDescriptor(),
+              com.google.cloud.oracledatabase.v1.DbSystemInitialStorageSizeProto.getDescriptor(),
               com.google.cloud.oracledatabase.v1.DbSystemShapeProto.getDescriptor(),
+              com.google.cloud.oracledatabase.v1.DbVersionProto.getDescriptor(),
               com.google.cloud.oracledatabase.v1.EntitlementProto.getDescriptor(),
               com.google.cloud.oracledatabase.v1.CloudExadataInfrastructureProto.getDescriptor(),
+              com.google.cloud.oracledatabase.v1.ExadbVmClusterProto.getDescriptor(),
+              com.google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProto.getDescriptor(),
               com.google.cloud.oracledatabase.v1.GiVersionProto.getDescriptor(),
+              com.google.cloud.oracledatabase.v1.MinorVersionProto.getDescriptor(),
+              com.google.cloud.oracledatabase.v1.OdbNetworkProto.getDescriptor(),
+              com.google.cloud.oracledatabase.v1.OdbSubnetProto.getDescriptor(),
+              com.google.cloud.oracledatabase.v1.PluggableDatabaseProto.getDescriptor(),
               com.google.cloud.oracledatabase.v1.CloudVmClusterProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_oracledatabase_v1_ListCloudExadataInfrastructuresRequest_descriptor =
@@ -537,7 +846,7 @@ public final class V1mainProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListCloudExadataInfrastructuresRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_oracledatabase_v1_ListCloudExadataInfrastructuresResponse_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -665,7 +974,7 @@ public final class V1mainProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListGiVersionsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_oracledatabase_v1_ListGiVersionsResponse_descriptor =
         getDescriptor().getMessageTypes().get(17);
@@ -681,7 +990,7 @@ public final class V1mainProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListDbSystemShapesRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_oracledatabase_v1_ListDbSystemShapesResponse_descriptor =
         getDescriptor().getMessageTypes().get(19);
@@ -738,8 +1047,16 @@ public final class V1mainProto {
             new java.lang.String[] {
               "Parent", "AutonomousDatabaseId", "AutonomousDatabase", "RequestId",
             });
-    internal_static_google_cloud_oracledatabase_v1_DeleteAutonomousDatabaseRequest_descriptor =
+    internal_static_google_cloud_oracledatabase_v1_UpdateAutonomousDatabaseRequest_descriptor =
         getDescriptor().getMessageTypes().get(25);
+    internal_static_google_cloud_oracledatabase_v1_UpdateAutonomousDatabaseRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_UpdateAutonomousDatabaseRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "AutonomousDatabase", "RequestId",
+            });
+    internal_static_google_cloud_oracledatabase_v1_DeleteAutonomousDatabaseRequest_descriptor =
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_oracledatabase_v1_DeleteAutonomousDatabaseRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_DeleteAutonomousDatabaseRequest_descriptor,
@@ -747,7 +1064,7 @@ public final class V1mainProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_oracledatabase_v1_RestoreAutonomousDatabaseRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_oracledatabase_v1_RestoreAutonomousDatabaseRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_RestoreAutonomousDatabaseRequest_descriptor,
@@ -755,7 +1072,7 @@ public final class V1mainProto {
               "Name", "RestoreTime",
             });
     internal_static_google_cloud_oracledatabase_v1_StopAutonomousDatabaseRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_oracledatabase_v1_StopAutonomousDatabaseRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_StopAutonomousDatabaseRequest_descriptor,
@@ -763,7 +1080,7 @@ public final class V1mainProto {
               "Name",
             });
     internal_static_google_cloud_oracledatabase_v1_StartAutonomousDatabaseRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_oracledatabase_v1_StartAutonomousDatabaseRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_StartAutonomousDatabaseRequest_descriptor,
@@ -771,15 +1088,31 @@ public final class V1mainProto {
               "Name",
             });
     internal_static_google_cloud_oracledatabase_v1_RestartAutonomousDatabaseRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_oracledatabase_v1_RestartAutonomousDatabaseRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_RestartAutonomousDatabaseRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_oracledatabase_v1_SwitchoverAutonomousDatabaseRequest_descriptor =
+        getDescriptor().getMessageTypes().get(31);
+    internal_static_google_cloud_oracledatabase_v1_SwitchoverAutonomousDatabaseRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_SwitchoverAutonomousDatabaseRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "PeerAutonomousDatabase",
+            });
+    internal_static_google_cloud_oracledatabase_v1_FailoverAutonomousDatabaseRequest_descriptor =
+        getDescriptor().getMessageTypes().get(32);
+    internal_static_google_cloud_oracledatabase_v1_FailoverAutonomousDatabaseRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_FailoverAutonomousDatabaseRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "PeerAutonomousDatabase",
+            });
     internal_static_google_cloud_oracledatabase_v1_GenerateAutonomousDatabaseWalletRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_oracledatabase_v1_GenerateAutonomousDatabaseWalletRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_GenerateAutonomousDatabaseWalletRequest_descriptor,
@@ -787,7 +1120,7 @@ public final class V1mainProto {
               "Name", "Type", "IsRegional", "Password",
             });
     internal_static_google_cloud_oracledatabase_v1_GenerateAutonomousDatabaseWalletResponse_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_oracledatabase_v1_GenerateAutonomousDatabaseWalletResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_GenerateAutonomousDatabaseWalletResponse_descriptor,
@@ -795,7 +1128,7 @@ public final class V1mainProto {
               "ArchiveContent",
             });
     internal_static_google_cloud_oracledatabase_v1_ListAutonomousDbVersionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_oracledatabase_v1_ListAutonomousDbVersionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListAutonomousDbVersionsRequest_descriptor,
@@ -803,7 +1136,7 @@ public final class V1mainProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_oracledatabase_v1_ListAutonomousDbVersionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_oracledatabase_v1_ListAutonomousDbVersionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListAutonomousDbVersionsResponse_descriptor,
@@ -811,7 +1144,7 @@ public final class V1mainProto {
               "AutonomousDbVersions", "NextPageToken",
             });
     internal_static_google_cloud_oracledatabase_v1_ListAutonomousDatabaseCharacterSetsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_oracledatabase_v1_ListAutonomousDatabaseCharacterSetsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListAutonomousDatabaseCharacterSetsRequest_descriptor,
@@ -819,7 +1152,7 @@ public final class V1mainProto {
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_oracledatabase_v1_ListAutonomousDatabaseCharacterSetsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_oracledatabase_v1_ListAutonomousDatabaseCharacterSetsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListAutonomousDatabaseCharacterSetsResponse_descriptor,
@@ -827,7 +1160,7 @@ public final class V1mainProto {
               "AutonomousDatabaseCharacterSets", "NextPageToken",
             });
     internal_static_google_cloud_oracledatabase_v1_ListAutonomousDatabaseBackupsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_oracledatabase_v1_ListAutonomousDatabaseBackupsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListAutonomousDatabaseBackupsRequest_descriptor,
@@ -835,12 +1168,68 @@ public final class V1mainProto {
               "Parent", "Filter", "PageSize", "PageToken",
             });
     internal_static_google_cloud_oracledatabase_v1_ListAutonomousDatabaseBackupsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_oracledatabase_v1_ListAutonomousDatabaseBackupsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListAutonomousDatabaseBackupsResponse_descriptor,
             new java.lang.String[] {
               "AutonomousDatabaseBackups", "NextPageToken",
+            });
+    internal_static_google_cloud_oracledatabase_v1_CreateExadbVmClusterRequest_descriptor =
+        getDescriptor().getMessageTypes().get(41);
+    internal_static_google_cloud_oracledatabase_v1_CreateExadbVmClusterRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_CreateExadbVmClusterRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ExadbVmClusterId", "ExadbVmCluster", "RequestId",
+            });
+    internal_static_google_cloud_oracledatabase_v1_DeleteExadbVmClusterRequest_descriptor =
+        getDescriptor().getMessageTypes().get(42);
+    internal_static_google_cloud_oracledatabase_v1_DeleteExadbVmClusterRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_DeleteExadbVmClusterRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId",
+            });
+    internal_static_google_cloud_oracledatabase_v1_GetExadbVmClusterRequest_descriptor =
+        getDescriptor().getMessageTypes().get(43);
+    internal_static_google_cloud_oracledatabase_v1_GetExadbVmClusterRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_GetExadbVmClusterRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_oracledatabase_v1_ListExadbVmClustersRequest_descriptor =
+        getDescriptor().getMessageTypes().get(44);
+    internal_static_google_cloud_oracledatabase_v1_ListExadbVmClustersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_ListExadbVmClustersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_oracledatabase_v1_ListExadbVmClustersResponse_descriptor =
+        getDescriptor().getMessageTypes().get(45);
+    internal_static_google_cloud_oracledatabase_v1_ListExadbVmClustersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_ListExadbVmClustersResponse_descriptor,
+            new java.lang.String[] {
+              "ExadbVmClusters", "NextPageToken",
+            });
+    internal_static_google_cloud_oracledatabase_v1_UpdateExadbVmClusterRequest_descriptor =
+        getDescriptor().getMessageTypes().get(46);
+    internal_static_google_cloud_oracledatabase_v1_UpdateExadbVmClusterRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_UpdateExadbVmClusterRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "ExadbVmCluster", "RequestId",
+            });
+    internal_static_google_cloud_oracledatabase_v1_RemoveVirtualMachineExadbVmClusterRequest_descriptor =
+        getDescriptor().getMessageTypes().get(47);
+    internal_static_google_cloud_oracledatabase_v1_RemoveVirtualMachineExadbVmClusterRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_RemoveVirtualMachineExadbVmClusterRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId", "Hostnames",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -864,15 +1253,27 @@ public final class V1mainProto {
     com.google.cloud.oracledatabase.v1.AutonomousDatabaseCharacterSetProto.getDescriptor();
     com.google.cloud.oracledatabase.v1.AutonomousDbBackupProto.getDescriptor();
     com.google.cloud.oracledatabase.v1.AutonomousDbVersionProto.getDescriptor();
+    com.google.cloud.oracledatabase.v1.DatabaseProto.getDescriptor();
+    com.google.cloud.oracledatabase.v1.DatabaseCharacterSetProto.getDescriptor();
     com.google.cloud.oracledatabase.v1.DbNodeProto.getDescriptor();
     com.google.cloud.oracledatabase.v1.DbServerProto.getDescriptor();
+    com.google.cloud.oracledatabase.v1.DbSystemProto.getDescriptor();
+    com.google.cloud.oracledatabase.v1.DbSystemInitialStorageSizeProto.getDescriptor();
     com.google.cloud.oracledatabase.v1.DbSystemShapeProto.getDescriptor();
+    com.google.cloud.oracledatabase.v1.DbVersionProto.getDescriptor();
     com.google.cloud.oracledatabase.v1.EntitlementProto.getDescriptor();
     com.google.cloud.oracledatabase.v1.CloudExadataInfrastructureProto.getDescriptor();
+    com.google.cloud.oracledatabase.v1.ExadbVmClusterProto.getDescriptor();
+    com.google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProto.getDescriptor();
     com.google.cloud.oracledatabase.v1.GiVersionProto.getDescriptor();
+    com.google.cloud.oracledatabase.v1.MinorVersionProto.getDescriptor();
+    com.google.cloud.oracledatabase.v1.OdbNetworkProto.getDescriptor();
+    com.google.cloud.oracledatabase.v1.OdbSubnetProto.getDescriptor();
+    com.google.cloud.oracledatabase.v1.PluggableDatabaseProto.getDescriptor();
     com.google.cloud.oracledatabase.v1.CloudVmClusterProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

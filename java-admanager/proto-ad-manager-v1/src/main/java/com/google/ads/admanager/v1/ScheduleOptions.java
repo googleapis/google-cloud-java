@@ -227,9 +227,4536 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(enum_scope:google.ads.admanager.v1.ScheduleOptions.DeliveryCondition)
   }
 
+  public interface ScheduleOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.ads.admanager.v1.ScheduleOptions.Schedule)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Days of week to schedule report run.
+     * </pre>
+     *
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule weekly_schedule = 6;
+     * </code>
+     *
+     * @return Whether the weeklySchedule field is set.
+     */
+    boolean hasWeeklySchedule();
+
+    /**
+     *
+     *
+     * <pre>
+     * Days of week to schedule report run.
+     * </pre>
+     *
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule weekly_schedule = 6;
+     * </code>
+     *
+     * @return The weeklySchedule.
+     */
+    com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule getWeeklySchedule();
+
+    /**
+     *
+     *
+     * <pre>
+     * Days of week to schedule report run.
+     * </pre>
+     *
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule weekly_schedule = 6;
+     * </code>
+     */
+    com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklyScheduleOrBuilder
+        getWeeklyScheduleOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Days of month to schedule report run.
+     * </pre>
+     *
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule monthly_schedule = 7;
+     * </code>
+     *
+     * @return Whether the monthlySchedule field is set.
+     */
+    boolean hasMonthlySchedule();
+
+    /**
+     *
+     *
+     * <pre>
+     * Days of month to schedule report run.
+     * </pre>
+     *
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule monthly_schedule = 7;
+     * </code>
+     *
+     * @return The monthlySchedule.
+     */
+    com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule getMonthlySchedule();
+
+    /**
+     *
+     *
+     * <pre>
+     * Days of month to schedule report run.
+     * </pre>
+     *
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule monthly_schedule = 7;
+     * </code>
+     */
+    com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlyScheduleOrBuilder
+        getMonthlyScheduleOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Date for the first run of the report.
+     * </pre>
+     *
+     * <code>.google.type.Date start_date = 1;</code>
+     *
+     * @return Whether the startDate field is set.
+     */
+    boolean hasStartDate();
+
+    /**
+     *
+     *
+     * <pre>
+     * Date for the first run of the report.
+     * </pre>
+     *
+     * <code>.google.type.Date start_date = 1;</code>
+     *
+     * @return The startDate.
+     */
+    com.google.type.Date getStartDate();
+
+    /**
+     *
+     *
+     * <pre>
+     * Date for the first run of the report.
+     * </pre>
+     *
+     * <code>.google.type.Date start_date = 1;</code>
+     */
+    com.google.type.DateOrBuilder getStartDateOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Date for the final run of the report.
+     * </pre>
+     *
+     * <code>.google.type.Date end_date = 2;</code>
+     *
+     * @return Whether the endDate field is set.
+     */
+    boolean hasEndDate();
+
+    /**
+     *
+     *
+     * <pre>
+     * Date for the final run of the report.
+     * </pre>
+     *
+     * <code>.google.type.Date end_date = 2;</code>
+     *
+     * @return The endDate.
+     */
+    com.google.type.Date getEndDate();
+
+    /**
+     *
+     *
+     * <pre>
+     * Date for the final run of the report.
+     * </pre>
+     *
+     * <code>.google.type.Date end_date = 2;</code>
+     */
+    com.google.type.DateOrBuilder getEndDateOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Frequency to run report.
+     * </pre>
+     *
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency frequency = 3;</code>
+     *
+     * @return The enum numeric value on the wire for frequency.
+     */
+    int getFrequencyValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Frequency to run report.
+     * </pre>
+     *
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency frequency = 3;</code>
+     *
+     * @return The frequency.
+     */
+    com.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency getFrequency();
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates start time for schedule to run
+     * Will use the time_zone from `ReportDefinition`. Defaults
+     * to the publisher's time zone if not specified.
+     *
+     * For HOURLY, TWO_TIMES_DAILY, THREE_TIMES_DAILY, or FOUR_TIMES_DAILY, this
+     * will be the time of day that the first report will run on the first day.
+     * For example, if the start time is 2:00 PM, and the frequency is
+     * THREE_TIMES_DAILY, the first day will have reports scheduled at 2:00 PM,
+     * 10:00 PM. Each subsequent day will have reports scheduled at 6:00 AM,
+     * 2:00 PM, 10:00 PM.
+     * </pre>
+     *
+     * <code>.google.type.TimeOfDay start_time = 4;</code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    boolean hasStartTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates start time for schedule to run
+     * Will use the time_zone from `ReportDefinition`. Defaults
+     * to the publisher's time zone if not specified.
+     *
+     * For HOURLY, TWO_TIMES_DAILY, THREE_TIMES_DAILY, or FOUR_TIMES_DAILY, this
+     * will be the time of day that the first report will run on the first day.
+     * For example, if the start time is 2:00 PM, and the frequency is
+     * THREE_TIMES_DAILY, the first day will have reports scheduled at 2:00 PM,
+     * 10:00 PM. Each subsequent day will have reports scheduled at 6:00 AM,
+     * 2:00 PM, 10:00 PM.
+     * </pre>
+     *
+     * <code>.google.type.TimeOfDay start_time = 4;</code>
+     *
+     * @return The startTime.
+     */
+    com.google.type.TimeOfDay getStartTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates start time for schedule to run
+     * Will use the time_zone from `ReportDefinition`. Defaults
+     * to the publisher's time zone if not specified.
+     *
+     * For HOURLY, TWO_TIMES_DAILY, THREE_TIMES_DAILY, or FOUR_TIMES_DAILY, this
+     * will be the time of day that the first report will run on the first day.
+     * For example, if the start time is 2:00 PM, and the frequency is
+     * THREE_TIMES_DAILY, the first day will have reports scheduled at 2:00 PM,
+     * 10:00 PM. Each subsequent day will have reports scheduled at 6:00 AM,
+     * 2:00 PM, 10:00 PM.
+     * </pre>
+     *
+     * <code>.google.type.TimeOfDay start_time = 4;</code>
+     */
+    com.google.type.TimeOfDayOrBuilder getStartTimeOrBuilder();
+
+    com.google.ads.admanager.v1.ScheduleOptions.Schedule.FrequencyScheduleCase
+        getFrequencyScheduleCase();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The schedule for the report
+   * </pre>
+   *
+   * Protobuf type {@code google.ads.admanager.v1.ScheduleOptions.Schedule}
+   */
+  public static final class Schedule extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.ScheduleOptions.Schedule)
+      ScheduleOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use Schedule.newBuilder() to construct.
+    private Schedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Schedule() {
+      frequency_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Schedule();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.ads.admanager.v1.ReportMessagesProto
+          .internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.ads.admanager.v1.ReportMessagesProto
+          .internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.ads.admanager.v1.ScheduleOptions.Schedule.class,
+              com.google.ads.admanager.v1.ScheduleOptions.Schedule.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Frequency to run report.
+     * </pre>
+     *
+     * Protobuf enum {@code google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency}
+     */
+    public enum Frequency implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * No Frequency specified.
+       * </pre>
+       *
+       * <code>FREQUENCY_UNSPECIFIED = 0;</code>
+       */
+      FREQUENCY_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Schedule report to run every hour.
+       * </pre>
+       *
+       * <code>HOURLY = 1;</code>
+       */
+      HOURLY(1),
+      /**
+       *
+       *
+       * <pre>
+       * Schedule report to run twice a day (every 12 hours).
+       * </pre>
+       *
+       * <code>TWO_TIMES_DAILY = 2;</code>
+       */
+      TWO_TIMES_DAILY(2),
+      /**
+       *
+       *
+       * <pre>
+       * Schedule report to run three times a day (every 8 hours).
+       * </pre>
+       *
+       * <code>THREE_TIMES_DAILY = 3;</code>
+       */
+      THREE_TIMES_DAILY(3),
+      /**
+       *
+       *
+       * <pre>
+       * Schedule report to run four times a day (every 6 hours).
+       * </pre>
+       *
+       * <code>FOUR_TIMES_DAILY = 4;</code>
+       */
+      FOUR_TIMES_DAILY(4),
+      /**
+       *
+       *
+       * <pre>
+       * Schedule report to run on a daily basis.
+       * </pre>
+       *
+       * <code>DAILY = 5;</code>
+       */
+      DAILY(5),
+      /**
+       *
+       *
+       * <pre>
+       * Schedule report to run on a weekly basis.
+       * </pre>
+       *
+       * <code>WEEKLY = 6;</code>
+       */
+      WEEKLY(6),
+      /**
+       *
+       *
+       * <pre>
+       * Schedule report to run on a monthly basis.
+       * </pre>
+       *
+       * <code>MONTHLY = 7;</code>
+       */
+      MONTHLY(7),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * No Frequency specified.
+       * </pre>
+       *
+       * <code>FREQUENCY_UNSPECIFIED = 0;</code>
+       */
+      public static final int FREQUENCY_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Schedule report to run every hour.
+       * </pre>
+       *
+       * <code>HOURLY = 1;</code>
+       */
+      public static final int HOURLY_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Schedule report to run twice a day (every 12 hours).
+       * </pre>
+       *
+       * <code>TWO_TIMES_DAILY = 2;</code>
+       */
+      public static final int TWO_TIMES_DAILY_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Schedule report to run three times a day (every 8 hours).
+       * </pre>
+       *
+       * <code>THREE_TIMES_DAILY = 3;</code>
+       */
+      public static final int THREE_TIMES_DAILY_VALUE = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * Schedule report to run four times a day (every 6 hours).
+       * </pre>
+       *
+       * <code>FOUR_TIMES_DAILY = 4;</code>
+       */
+      public static final int FOUR_TIMES_DAILY_VALUE = 4;
+
+      /**
+       *
+       *
+       * <pre>
+       * Schedule report to run on a daily basis.
+       * </pre>
+       *
+       * <code>DAILY = 5;</code>
+       */
+      public static final int DAILY_VALUE = 5;
+
+      /**
+       *
+       *
+       * <pre>
+       * Schedule report to run on a weekly basis.
+       * </pre>
+       *
+       * <code>WEEKLY = 6;</code>
+       */
+      public static final int WEEKLY_VALUE = 6;
+
+      /**
+       *
+       *
+       * <pre>
+       * Schedule report to run on a monthly basis.
+       * </pre>
+       *
+       * <code>MONTHLY = 7;</code>
+       */
+      public static final int MONTHLY_VALUE = 7;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Frequency valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Frequency forNumber(int value) {
+        switch (value) {
+          case 0:
+            return FREQUENCY_UNSPECIFIED;
+          case 1:
+            return HOURLY;
+          case 2:
+            return TWO_TIMES_DAILY;
+          case 3:
+            return THREE_TIMES_DAILY;
+          case 4:
+            return FOUR_TIMES_DAILY;
+          case 5:
+            return DAILY;
+          case 6:
+            return WEEKLY;
+          case 7:
+            return MONTHLY;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Frequency> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Frequency> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Frequency>() {
+            public Frequency findValueByNumber(int number) {
+              return Frequency.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.ads.admanager.v1.ScheduleOptions.Schedule.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Frequency[] VALUES = values();
+
+      public static Frequency valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Frequency(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency)
+    }
+
+    public interface WeeklyScheduleOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies days of the week on which to run report.
+       * </pre>
+       *
+       * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+       *
+       * @return A list containing the weeklyScheduledDays.
+       */
+      java.util.List<com.google.type.DayOfWeek> getWeeklyScheduledDaysList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies days of the week on which to run report.
+       * </pre>
+       *
+       * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+       *
+       * @return The count of weeklyScheduledDays.
+       */
+      int getWeeklyScheduledDaysCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies days of the week on which to run report.
+       * </pre>
+       *
+       * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The weeklyScheduledDays at the given index.
+       */
+      com.google.type.DayOfWeek getWeeklyScheduledDays(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies days of the week on which to run report.
+       * </pre>
+       *
+       * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+       *
+       * @return A list containing the enum numeric values on the wire for weeklyScheduledDays.
+       */
+      java.util.List<java.lang.Integer> getWeeklyScheduledDaysValueList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies days of the week on which to run report.
+       * </pre>
+       *
+       * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of weeklyScheduledDays at the given index.
+       */
+      int getWeeklyScheduledDaysValue(int index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Days of week to schedule report run.
+     * </pre>
+     *
+     * Protobuf type {@code google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule}
+     */
+    public static final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule)
+        WeeklyScheduleOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use WeeklySchedule.newBuilder() to construct.
+      private WeeklySchedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private WeeklySchedule() {
+        weeklyScheduledDays_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new WeeklySchedule();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.ads.admanager.v1.ReportMessagesProto
+            .internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_WeeklySchedule_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.admanager.v1.ReportMessagesProto
+            .internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_WeeklySchedule_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule.class,
+                com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule.Builder.class);
+      }
+
+      public static final int WEEKLY_SCHEDULED_DAYS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private java.util.List<java.lang.Integer> weeklyScheduledDays_;
+
+      private static final com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.google.type.DayOfWeek>
+          weeklyScheduledDays_converter_ =
+              new com.google.protobuf.Internal.ListAdapter.Converter<
+                  java.lang.Integer, com.google.type.DayOfWeek>() {
+                public com.google.type.DayOfWeek convert(java.lang.Integer from) {
+                  com.google.type.DayOfWeek result = com.google.type.DayOfWeek.forNumber(from);
+                  return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
+                }
+              };
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies days of the week on which to run report.
+       * </pre>
+       *
+       * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+       *
+       * @return A list containing the weeklyScheduledDays.
+       */
+      @java.lang.Override
+      public java.util.List<com.google.type.DayOfWeek> getWeeklyScheduledDaysList() {
+        return new com.google.protobuf.Internal.ListAdapter<
+            java.lang.Integer, com.google.type.DayOfWeek>(
+            weeklyScheduledDays_, weeklyScheduledDays_converter_);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies days of the week on which to run report.
+       * </pre>
+       *
+       * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+       *
+       * @return The count of weeklyScheduledDays.
+       */
+      @java.lang.Override
+      public int getWeeklyScheduledDaysCount() {
+        return weeklyScheduledDays_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies days of the week on which to run report.
+       * </pre>
+       *
+       * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The weeklyScheduledDays at the given index.
+       */
+      @java.lang.Override
+      public com.google.type.DayOfWeek getWeeklyScheduledDays(int index) {
+        return weeklyScheduledDays_converter_.convert(weeklyScheduledDays_.get(index));
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies days of the week on which to run report.
+       * </pre>
+       *
+       * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+       *
+       * @return A list containing the enum numeric values on the wire for weeklyScheduledDays.
+       */
+      @java.lang.Override
+      public java.util.List<java.lang.Integer> getWeeklyScheduledDaysValueList() {
+        return weeklyScheduledDays_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies days of the week on which to run report.
+       * </pre>
+       *
+       * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of weeklyScheduledDays at the given index.
+       */
+      @java.lang.Override
+      public int getWeeklyScheduledDaysValue(int index) {
+        return weeklyScheduledDays_.get(index);
+      }
+
+      private int weeklyScheduledDaysMemoizedSerializedSize;
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getSerializedSize();
+        if (getWeeklyScheduledDaysList().size() > 0) {
+          output.writeUInt32NoTag(10);
+          output.writeUInt32NoTag(weeklyScheduledDaysMemoizedSerializedSize);
+        }
+        for (int i = 0; i < weeklyScheduledDays_.size(); i++) {
+          output.writeEnumNoTag(weeklyScheduledDays_.get(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < weeklyScheduledDays_.size(); i++) {
+            dataSize +=
+                com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                    weeklyScheduledDays_.get(i));
+          }
+          size += dataSize;
+          if (!getWeeklyScheduledDaysList().isEmpty()) {
+            size += 1;
+            size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+          }
+          weeklyScheduledDaysMemoizedSerializedSize = dataSize;
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule)) {
+          return super.equals(obj);
+        }
+        com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule other =
+            (com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule) obj;
+
+        if (!weeklyScheduledDays_.equals(other.weeklyScheduledDays_)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getWeeklyScheduledDaysCount() > 0) {
+          hash = (37 * hash) + WEEKLY_SCHEDULED_DAYS_FIELD_NUMBER;
+          hash = (53 * hash) + weeklyScheduledDays_.hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of week to schedule report run.
+       * </pre>
+       *
+       * Protobuf type {@code google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule)
+          com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklyScheduleOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.ads.admanager.v1.ReportMessagesProto
+              .internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_WeeklySchedule_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.ads.admanager.v1.ReportMessagesProto
+              .internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_WeeklySchedule_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule.class,
+                  com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          weeklyScheduledDays_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.ads.admanager.v1.ReportMessagesProto
+              .internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_WeeklySchedule_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule
+            getDefaultInstanceForType() {
+          return com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule build() {
+          com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule buildPartial() {
+          com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule result =
+              new com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule(this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule result) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            weeklyScheduledDays_ = java.util.Collections.unmodifiableList(weeklyScheduledDays_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.weeklyScheduledDays_ = weeklyScheduledDays_;
+        }
+
+        private void buildPartial0(
+            com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule) {
+            return mergeFrom(
+                (com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule other) {
+          if (other
+              == com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule
+                  .getDefaultInstance()) return this;
+          if (!other.weeklyScheduledDays_.isEmpty()) {
+            if (weeklyScheduledDays_.isEmpty()) {
+              weeklyScheduledDays_ = other.weeklyScheduledDays_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureWeeklyScheduledDaysIsMutable();
+              weeklyScheduledDays_.addAll(other.weeklyScheduledDays_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    int tmpRaw = input.readEnum();
+                    ensureWeeklyScheduledDaysIsMutable();
+                    weeklyScheduledDays_.add(tmpRaw);
+                    break;
+                  } // case 8
+                case 10:
+                  {
+                    int length = input.readRawVarint32();
+                    int oldLimit = input.pushLimit(length);
+                    while (input.getBytesUntilLimit() > 0) {
+                      int tmpRaw = input.readEnum();
+                      ensureWeeklyScheduledDaysIsMutable();
+                      weeklyScheduledDays_.add(tmpRaw);
+                    }
+                    input.popLimit(oldLimit);
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.util.List<java.lang.Integer> weeklyScheduledDays_ =
+            java.util.Collections.emptyList();
+
+        private void ensureWeeklyScheduledDaysIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            weeklyScheduledDays_ = new java.util.ArrayList<java.lang.Integer>(weeklyScheduledDays_);
+            bitField0_ |= 0x00000001;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the week on which to run report.
+         * </pre>
+         *
+         * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+         *
+         * @return A list containing the weeklyScheduledDays.
+         */
+        public java.util.List<com.google.type.DayOfWeek> getWeeklyScheduledDaysList() {
+          return new com.google.protobuf.Internal.ListAdapter<
+              java.lang.Integer, com.google.type.DayOfWeek>(
+              weeklyScheduledDays_, weeklyScheduledDays_converter_);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the week on which to run report.
+         * </pre>
+         *
+         * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+         *
+         * @return The count of weeklyScheduledDays.
+         */
+        public int getWeeklyScheduledDaysCount() {
+          return weeklyScheduledDays_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the week on which to run report.
+         * </pre>
+         *
+         * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The weeklyScheduledDays at the given index.
+         */
+        public com.google.type.DayOfWeek getWeeklyScheduledDays(int index) {
+          return weeklyScheduledDays_converter_.convert(weeklyScheduledDays_.get(index));
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the week on which to run report.
+         * </pre>
+         *
+         * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The weeklyScheduledDays to set.
+         * @return This builder for chaining.
+         */
+        public Builder setWeeklyScheduledDays(int index, com.google.type.DayOfWeek value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureWeeklyScheduledDaysIsMutable();
+          weeklyScheduledDays_.set(index, value.getNumber());
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the week on which to run report.
+         * </pre>
+         *
+         * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+         *
+         * @param value The weeklyScheduledDays to add.
+         * @return This builder for chaining.
+         */
+        public Builder addWeeklyScheduledDays(com.google.type.DayOfWeek value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureWeeklyScheduledDaysIsMutable();
+          weeklyScheduledDays_.add(value.getNumber());
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the week on which to run report.
+         * </pre>
+         *
+         * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+         *
+         * @param values The weeklyScheduledDays to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllWeeklyScheduledDays(
+            java.lang.Iterable<? extends com.google.type.DayOfWeek> values) {
+          ensureWeeklyScheduledDaysIsMutable();
+          for (com.google.type.DayOfWeek value : values) {
+            weeklyScheduledDays_.add(value.getNumber());
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the week on which to run report.
+         * </pre>
+         *
+         * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearWeeklyScheduledDays() {
+          weeklyScheduledDays_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the week on which to run report.
+         * </pre>
+         *
+         * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+         *
+         * @return A list containing the enum numeric values on the wire for weeklyScheduledDays.
+         */
+        public java.util.List<java.lang.Integer> getWeeklyScheduledDaysValueList() {
+          return java.util.Collections.unmodifiableList(weeklyScheduledDays_);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the week on which to run report.
+         * </pre>
+         *
+         * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The enum numeric value on the wire of weeklyScheduledDays at the given index.
+         */
+        public int getWeeklyScheduledDaysValue(int index) {
+          return weeklyScheduledDays_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the week on which to run report.
+         * </pre>
+         *
+         * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The enum numeric value on the wire for weeklyScheduledDays to set.
+         * @return This builder for chaining.
+         */
+        public Builder setWeeklyScheduledDaysValue(int index, int value) {
+          ensureWeeklyScheduledDaysIsMutable();
+          weeklyScheduledDays_.set(index, value);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the week on which to run report.
+         * </pre>
+         *
+         * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+         *
+         * @param value The enum numeric value on the wire for weeklyScheduledDays to add.
+         * @return This builder for chaining.
+         */
+        public Builder addWeeklyScheduledDaysValue(int value) {
+          ensureWeeklyScheduledDaysIsMutable();
+          weeklyScheduledDays_.add(value);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the week on which to run report.
+         * </pre>
+         *
+         * <code>repeated .google.type.DayOfWeek weekly_scheduled_days = 1;</code>
+         *
+         * @param values The enum numeric values on the wire for weeklyScheduledDays to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllWeeklyScheduledDaysValue(
+            java.lang.Iterable<java.lang.Integer> values) {
+          ensureWeeklyScheduledDaysIsMutable();
+          for (int value : values) {
+            weeklyScheduledDays_.add(value);
+          }
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule)
+      private static final com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule();
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<WeeklySchedule> PARSER =
+          new com.google.protobuf.AbstractParser<WeeklySchedule>() {
+            @java.lang.Override
+            public WeeklySchedule parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<WeeklySchedule> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<WeeklySchedule> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface MonthlyScheduleOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies days of the month to run report. Range is from 1-31.
+       * Will ignore days that are not valid for the given month.
+       * </pre>
+       *
+       * <code>repeated int32 monthly_scheduled_days = 1;</code>
+       *
+       * @return A list containing the monthlyScheduledDays.
+       */
+      java.util.List<java.lang.Integer> getMonthlyScheduledDaysList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies days of the month to run report. Range is from 1-31.
+       * Will ignore days that are not valid for the given month.
+       * </pre>
+       *
+       * <code>repeated int32 monthly_scheduled_days = 1;</code>
+       *
+       * @return The count of monthlyScheduledDays.
+       */
+      int getMonthlyScheduledDaysCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies days of the month to run report. Range is from 1-31.
+       * Will ignore days that are not valid for the given month.
+       * </pre>
+       *
+       * <code>repeated int32 monthly_scheduled_days = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The monthlyScheduledDays at the given index.
+       */
+      int getMonthlyScheduledDays(int index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Days of Month to schedule report run.
+     * </pre>
+     *
+     * Protobuf type {@code google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule}
+     */
+    public static final class MonthlySchedule extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule)
+        MonthlyScheduleOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use MonthlySchedule.newBuilder() to construct.
+      private MonthlySchedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private MonthlySchedule() {
+        monthlyScheduledDays_ = emptyIntList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new MonthlySchedule();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.ads.admanager.v1.ReportMessagesProto
+            .internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_MonthlySchedule_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.admanager.v1.ReportMessagesProto
+            .internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_MonthlySchedule_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule.class,
+                com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule.Builder.class);
+      }
+
+      public static final int MONTHLY_SCHEDULED_DAYS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.Internal.IntList monthlyScheduledDays_ = emptyIntList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies days of the month to run report. Range is from 1-31.
+       * Will ignore days that are not valid for the given month.
+       * </pre>
+       *
+       * <code>repeated int32 monthly_scheduled_days = 1;</code>
+       *
+       * @return A list containing the monthlyScheduledDays.
+       */
+      @java.lang.Override
+      public java.util.List<java.lang.Integer> getMonthlyScheduledDaysList() {
+        return monthlyScheduledDays_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies days of the month to run report. Range is from 1-31.
+       * Will ignore days that are not valid for the given month.
+       * </pre>
+       *
+       * <code>repeated int32 monthly_scheduled_days = 1;</code>
+       *
+       * @return The count of monthlyScheduledDays.
+       */
+      public int getMonthlyScheduledDaysCount() {
+        return monthlyScheduledDays_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies days of the month to run report. Range is from 1-31.
+       * Will ignore days that are not valid for the given month.
+       * </pre>
+       *
+       * <code>repeated int32 monthly_scheduled_days = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The monthlyScheduledDays at the given index.
+       */
+      public int getMonthlyScheduledDays(int index) {
+        return monthlyScheduledDays_.getInt(index);
+      }
+
+      private int monthlyScheduledDaysMemoizedSerializedSize = -1;
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getSerializedSize();
+        if (getMonthlyScheduledDaysList().size() > 0) {
+          output.writeUInt32NoTag(10);
+          output.writeUInt32NoTag(monthlyScheduledDaysMemoizedSerializedSize);
+        }
+        for (int i = 0; i < monthlyScheduledDays_.size(); i++) {
+          output.writeInt32NoTag(monthlyScheduledDays_.getInt(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < monthlyScheduledDays_.size(); i++) {
+            dataSize +=
+                com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(
+                    monthlyScheduledDays_.getInt(i));
+          }
+          size += dataSize;
+          if (!getMonthlyScheduledDaysList().isEmpty()) {
+            size += 1;
+            size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+          }
+          monthlyScheduledDaysMemoizedSerializedSize = dataSize;
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule)) {
+          return super.equals(obj);
+        }
+        com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule other =
+            (com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule) obj;
+
+        if (!getMonthlyScheduledDaysList().equals(other.getMonthlyScheduledDaysList()))
+          return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getMonthlyScheduledDaysCount() > 0) {
+          hash = (37 * hash) + MONTHLY_SCHEDULED_DAYS_FIELD_NUMBER;
+          hash = (53 * hash) + getMonthlyScheduledDaysList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of Month to schedule report run.
+       * </pre>
+       *
+       * Protobuf type {@code google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule)
+          com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlyScheduleOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.ads.admanager.v1.ReportMessagesProto
+              .internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_MonthlySchedule_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.ads.admanager.v1.ReportMessagesProto
+              .internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_MonthlySchedule_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule.class,
+                  com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          monthlyScheduledDays_ = emptyIntList();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.ads.admanager.v1.ReportMessagesProto
+              .internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_MonthlySchedule_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule
+            getDefaultInstanceForType() {
+          return com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule build() {
+          com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule buildPartial() {
+          com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule result =
+              new com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            monthlyScheduledDays_.makeImmutable();
+            result.monthlyScheduledDays_ = monthlyScheduledDays_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule) {
+            return mergeFrom(
+                (com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule other) {
+          if (other
+              == com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule
+                  .getDefaultInstance()) return this;
+          if (!other.monthlyScheduledDays_.isEmpty()) {
+            if (monthlyScheduledDays_.isEmpty()) {
+              monthlyScheduledDays_ = other.monthlyScheduledDays_;
+              monthlyScheduledDays_.makeImmutable();
+              bitField0_ |= 0x00000001;
+            } else {
+              ensureMonthlyScheduledDaysIsMutable();
+              monthlyScheduledDays_.addAll(other.monthlyScheduledDays_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    int v = input.readInt32();
+                    ensureMonthlyScheduledDaysIsMutable();
+                    monthlyScheduledDays_.addInt(v);
+                    break;
+                  } // case 8
+                case 10:
+                  {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    ensureMonthlyScheduledDaysIsMutable();
+                    while (input.getBytesUntilLimit() > 0) {
+                      monthlyScheduledDays_.addInt(input.readInt32());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.Internal.IntList monthlyScheduledDays_ = emptyIntList();
+
+        private void ensureMonthlyScheduledDaysIsMutable() {
+          if (!monthlyScheduledDays_.isModifiable()) {
+            monthlyScheduledDays_ = makeMutableCopy(monthlyScheduledDays_);
+          }
+          bitField0_ |= 0x00000001;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the month to run report. Range is from 1-31.
+         * Will ignore days that are not valid for the given month.
+         * </pre>
+         *
+         * <code>repeated int32 monthly_scheduled_days = 1;</code>
+         *
+         * @return A list containing the monthlyScheduledDays.
+         */
+        public java.util.List<java.lang.Integer> getMonthlyScheduledDaysList() {
+          monthlyScheduledDays_.makeImmutable();
+          return monthlyScheduledDays_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the month to run report. Range is from 1-31.
+         * Will ignore days that are not valid for the given month.
+         * </pre>
+         *
+         * <code>repeated int32 monthly_scheduled_days = 1;</code>
+         *
+         * @return The count of monthlyScheduledDays.
+         */
+        public int getMonthlyScheduledDaysCount() {
+          return monthlyScheduledDays_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the month to run report. Range is from 1-31.
+         * Will ignore days that are not valid for the given month.
+         * </pre>
+         *
+         * <code>repeated int32 monthly_scheduled_days = 1;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The monthlyScheduledDays at the given index.
+         */
+        public int getMonthlyScheduledDays(int index) {
+          return monthlyScheduledDays_.getInt(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the month to run report. Range is from 1-31.
+         * Will ignore days that are not valid for the given month.
+         * </pre>
+         *
+         * <code>repeated int32 monthly_scheduled_days = 1;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The monthlyScheduledDays to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMonthlyScheduledDays(int index, int value) {
+
+          ensureMonthlyScheduledDaysIsMutable();
+          monthlyScheduledDays_.setInt(index, value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the month to run report. Range is from 1-31.
+         * Will ignore days that are not valid for the given month.
+         * </pre>
+         *
+         * <code>repeated int32 monthly_scheduled_days = 1;</code>
+         *
+         * @param value The monthlyScheduledDays to add.
+         * @return This builder for chaining.
+         */
+        public Builder addMonthlyScheduledDays(int value) {
+
+          ensureMonthlyScheduledDaysIsMutable();
+          monthlyScheduledDays_.addInt(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the month to run report. Range is from 1-31.
+         * Will ignore days that are not valid for the given month.
+         * </pre>
+         *
+         * <code>repeated int32 monthly_scheduled_days = 1;</code>
+         *
+         * @param values The monthlyScheduledDays to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllMonthlyScheduledDays(
+            java.lang.Iterable<? extends java.lang.Integer> values) {
+          ensureMonthlyScheduledDaysIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, monthlyScheduledDays_);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies days of the month to run report. Range is from 1-31.
+         * Will ignore days that are not valid for the given month.
+         * </pre>
+         *
+         * <code>repeated int32 monthly_scheduled_days = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearMonthlyScheduledDays() {
+          monthlyScheduledDays_ = emptyIntList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule)
+      private static final com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule();
+      }
+
+      public static com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<MonthlySchedule> PARSER =
+          new com.google.protobuf.AbstractParser<MonthlySchedule>() {
+            @java.lang.Override
+            public MonthlySchedule parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<MonthlySchedule> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<MonthlySchedule> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    private int frequencyScheduleCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object frequencySchedule_;
+
+    public enum FrequencyScheduleCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      WEEKLY_SCHEDULE(6),
+      MONTHLY_SCHEDULE(7),
+      FREQUENCYSCHEDULE_NOT_SET(0);
+      private final int value;
+
+      private FrequencyScheduleCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static FrequencyScheduleCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static FrequencyScheduleCase forNumber(int value) {
+        switch (value) {
+          case 6:
+            return WEEKLY_SCHEDULE;
+          case 7:
+            return MONTHLY_SCHEDULE;
+          case 0:
+            return FREQUENCYSCHEDULE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public FrequencyScheduleCase getFrequencyScheduleCase() {
+      return FrequencyScheduleCase.forNumber(frequencyScheduleCase_);
+    }
+
+    public static final int WEEKLY_SCHEDULE_FIELD_NUMBER = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * Days of week to schedule report run.
+     * </pre>
+     *
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule weekly_schedule = 6;
+     * </code>
+     *
+     * @return Whether the weeklySchedule field is set.
+     */
+    @java.lang.Override
+    public boolean hasWeeklySchedule() {
+      return frequencyScheduleCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Days of week to schedule report run.
+     * </pre>
+     *
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule weekly_schedule = 6;
+     * </code>
+     *
+     * @return The weeklySchedule.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule getWeeklySchedule() {
+      if (frequencyScheduleCase_ == 6) {
+        return (com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule)
+            frequencySchedule_;
+      }
+      return com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Days of week to schedule report run.
+     * </pre>
+     *
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule weekly_schedule = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklyScheduleOrBuilder
+        getWeeklyScheduleOrBuilder() {
+      if (frequencyScheduleCase_ == 6) {
+        return (com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule)
+            frequencySchedule_;
+      }
+      return com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule
+          .getDefaultInstance();
+    }
+
+    public static final int MONTHLY_SCHEDULE_FIELD_NUMBER = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Days of month to schedule report run.
+     * </pre>
+     *
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule monthly_schedule = 7;
+     * </code>
+     *
+     * @return Whether the monthlySchedule field is set.
+     */
+    @java.lang.Override
+    public boolean hasMonthlySchedule() {
+      return frequencyScheduleCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Days of month to schedule report run.
+     * </pre>
+     *
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule monthly_schedule = 7;
+     * </code>
+     *
+     * @return The monthlySchedule.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule
+        getMonthlySchedule() {
+      if (frequencyScheduleCase_ == 7) {
+        return (com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule)
+            frequencySchedule_;
+      }
+      return com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Days of month to schedule report run.
+     * </pre>
+     *
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule monthly_schedule = 7;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlyScheduleOrBuilder
+        getMonthlyScheduleOrBuilder() {
+      if (frequencyScheduleCase_ == 7) {
+        return (com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule)
+            frequencySchedule_;
+      }
+      return com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule
+          .getDefaultInstance();
+    }
+
+    public static final int START_DATE_FIELD_NUMBER = 1;
+    private com.google.type.Date startDate_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Date for the first run of the report.
+     * </pre>
+     *
+     * <code>.google.type.Date start_date = 1;</code>
+     *
+     * @return Whether the startDate field is set.
+     */
+    @java.lang.Override
+    public boolean hasStartDate() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Date for the first run of the report.
+     * </pre>
+     *
+     * <code>.google.type.Date start_date = 1;</code>
+     *
+     * @return The startDate.
+     */
+    @java.lang.Override
+    public com.google.type.Date getStartDate() {
+      return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Date for the first run of the report.
+     * </pre>
+     *
+     * <code>.google.type.Date start_date = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.type.DateOrBuilder getStartDateOrBuilder() {
+      return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
+    }
+
+    public static final int END_DATE_FIELD_NUMBER = 2;
+    private com.google.type.Date endDate_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Date for the final run of the report.
+     * </pre>
+     *
+     * <code>.google.type.Date end_date = 2;</code>
+     *
+     * @return Whether the endDate field is set.
+     */
+    @java.lang.Override
+    public boolean hasEndDate() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Date for the final run of the report.
+     * </pre>
+     *
+     * <code>.google.type.Date end_date = 2;</code>
+     *
+     * @return The endDate.
+     */
+    @java.lang.Override
+    public com.google.type.Date getEndDate() {
+      return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Date for the final run of the report.
+     * </pre>
+     *
+     * <code>.google.type.Date end_date = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.type.DateOrBuilder getEndDateOrBuilder() {
+      return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
+    }
+
+    public static final int FREQUENCY_FIELD_NUMBER = 3;
+    private int frequency_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Frequency to run report.
+     * </pre>
+     *
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency frequency = 3;</code>
+     *
+     * @return The enum numeric value on the wire for frequency.
+     */
+    @java.lang.Override
+    public int getFrequencyValue() {
+      return frequency_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Frequency to run report.
+     * </pre>
+     *
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency frequency = 3;</code>
+     *
+     * @return The frequency.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency getFrequency() {
+      com.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency result =
+          com.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency.forNumber(frequency_);
+      return result == null
+          ? com.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int START_TIME_FIELD_NUMBER = 4;
+    private com.google.type.TimeOfDay startTime_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates start time for schedule to run
+     * Will use the time_zone from `ReportDefinition`. Defaults
+     * to the publisher's time zone if not specified.
+     *
+     * For HOURLY, TWO_TIMES_DAILY, THREE_TIMES_DAILY, or FOUR_TIMES_DAILY, this
+     * will be the time of day that the first report will run on the first day.
+     * For example, if the start time is 2:00 PM, and the frequency is
+     * THREE_TIMES_DAILY, the first day will have reports scheduled at 2:00 PM,
+     * 10:00 PM. Each subsequent day will have reports scheduled at 6:00 AM,
+     * 2:00 PM, 10:00 PM.
+     * </pre>
+     *
+     * <code>.google.type.TimeOfDay start_time = 4;</code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasStartTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates start time for schedule to run
+     * Will use the time_zone from `ReportDefinition`. Defaults
+     * to the publisher's time zone if not specified.
+     *
+     * For HOURLY, TWO_TIMES_DAILY, THREE_TIMES_DAILY, or FOUR_TIMES_DAILY, this
+     * will be the time of day that the first report will run on the first day.
+     * For example, if the start time is 2:00 PM, and the frequency is
+     * THREE_TIMES_DAILY, the first day will have reports scheduled at 2:00 PM,
+     * 10:00 PM. Each subsequent day will have reports scheduled at 6:00 AM,
+     * 2:00 PM, 10:00 PM.
+     * </pre>
+     *
+     * <code>.google.type.TimeOfDay start_time = 4;</code>
+     *
+     * @return The startTime.
+     */
+    @java.lang.Override
+    public com.google.type.TimeOfDay getStartTime() {
+      return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates start time for schedule to run
+     * Will use the time_zone from `ReportDefinition`. Defaults
+     * to the publisher's time zone if not specified.
+     *
+     * For HOURLY, TWO_TIMES_DAILY, THREE_TIMES_DAILY, or FOUR_TIMES_DAILY, this
+     * will be the time of day that the first report will run on the first day.
+     * For example, if the start time is 2:00 PM, and the frequency is
+     * THREE_TIMES_DAILY, the first day will have reports scheduled at 2:00 PM,
+     * 10:00 PM. Each subsequent day will have reports scheduled at 6:00 AM,
+     * 2:00 PM, 10:00 PM.
+     * </pre>
+     *
+     * <code>.google.type.TimeOfDay start_time = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.type.TimeOfDayOrBuilder getStartTimeOrBuilder() {
+      return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getStartDate());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getEndDate());
+      }
+      if (frequency_
+          != com.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency.FREQUENCY_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(3, frequency_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(4, getStartTime());
+      }
+      if (frequencyScheduleCase_ == 6) {
+        output.writeMessage(
+            6,
+            (com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule)
+                frequencySchedule_);
+      }
+      if (frequencyScheduleCase_ == 7) {
+        output.writeMessage(
+            7,
+            (com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule)
+                frequencySchedule_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getStartDate());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndDate());
+      }
+      if (frequency_
+          != com.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency.FREQUENCY_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, frequency_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getStartTime());
+      }
+      if (frequencyScheduleCase_ == 6) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6,
+                (com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule)
+                    frequencySchedule_);
+      }
+      if (frequencyScheduleCase_ == 7) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                7,
+                (com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule)
+                    frequencySchedule_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.ads.admanager.v1.ScheduleOptions.Schedule)) {
+        return super.equals(obj);
+      }
+      com.google.ads.admanager.v1.ScheduleOptions.Schedule other =
+          (com.google.ads.admanager.v1.ScheduleOptions.Schedule) obj;
+
+      if (hasStartDate() != other.hasStartDate()) return false;
+      if (hasStartDate()) {
+        if (!getStartDate().equals(other.getStartDate())) return false;
+      }
+      if (hasEndDate() != other.hasEndDate()) return false;
+      if (hasEndDate()) {
+        if (!getEndDate().equals(other.getEndDate())) return false;
+      }
+      if (frequency_ != other.frequency_) return false;
+      if (hasStartTime() != other.hasStartTime()) return false;
+      if (hasStartTime()) {
+        if (!getStartTime().equals(other.getStartTime())) return false;
+      }
+      if (!getFrequencyScheduleCase().equals(other.getFrequencyScheduleCase())) return false;
+      switch (frequencyScheduleCase_) {
+        case 6:
+          if (!getWeeklySchedule().equals(other.getWeeklySchedule())) return false;
+          break;
+        case 7:
+          if (!getMonthlySchedule().equals(other.getMonthlySchedule())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasStartDate()) {
+        hash = (37 * hash) + START_DATE_FIELD_NUMBER;
+        hash = (53 * hash) + getStartDate().hashCode();
+      }
+      if (hasEndDate()) {
+        hash = (37 * hash) + END_DATE_FIELD_NUMBER;
+        hash = (53 * hash) + getEndDate().hashCode();
+      }
+      hash = (37 * hash) + FREQUENCY_FIELD_NUMBER;
+      hash = (53 * hash) + frequency_;
+      if (hasStartTime()) {
+        hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getStartTime().hashCode();
+      }
+      switch (frequencyScheduleCase_) {
+        case 6:
+          hash = (37 * hash) + WEEKLY_SCHEDULE_FIELD_NUMBER;
+          hash = (53 * hash) + getWeeklySchedule().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + MONTHLY_SCHEDULE_FIELD_NUMBER;
+          hash = (53 * hash) + getMonthlySchedule().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.ads.admanager.v1.ScheduleOptions.Schedule parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.admanager.v1.ScheduleOptions.Schedule parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.admanager.v1.ScheduleOptions.Schedule parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.admanager.v1.ScheduleOptions.Schedule parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.admanager.v1.ScheduleOptions.Schedule parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.admanager.v1.ScheduleOptions.Schedule parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.admanager.v1.ScheduleOptions.Schedule parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.admanager.v1.ScheduleOptions.Schedule parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.admanager.v1.ScheduleOptions.Schedule parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.admanager.v1.ScheduleOptions.Schedule parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.admanager.v1.ScheduleOptions.Schedule parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.admanager.v1.ScheduleOptions.Schedule parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.ads.admanager.v1.ScheduleOptions.Schedule prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The schedule for the report
+     * </pre>
+     *
+     * Protobuf type {@code google.ads.admanager.v1.ScheduleOptions.Schedule}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.ads.admanager.v1.ScheduleOptions.Schedule)
+        com.google.ads.admanager.v1.ScheduleOptions.ScheduleOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.ads.admanager.v1.ReportMessagesProto
+            .internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.admanager.v1.ReportMessagesProto
+            .internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.admanager.v1.ScheduleOptions.Schedule.class,
+                com.google.ads.admanager.v1.ScheduleOptions.Schedule.Builder.class);
+      }
+
+      // Construct using com.google.ads.admanager.v1.ScheduleOptions.Schedule.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getStartDateFieldBuilder();
+          getEndDateFieldBuilder();
+          getStartTimeFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (weeklyScheduleBuilder_ != null) {
+          weeklyScheduleBuilder_.clear();
+        }
+        if (monthlyScheduleBuilder_ != null) {
+          monthlyScheduleBuilder_.clear();
+        }
+        startDate_ = null;
+        if (startDateBuilder_ != null) {
+          startDateBuilder_.dispose();
+          startDateBuilder_ = null;
+        }
+        endDate_ = null;
+        if (endDateBuilder_ != null) {
+          endDateBuilder_.dispose();
+          endDateBuilder_ = null;
+        }
+        frequency_ = 0;
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
+          startTimeBuilder_ = null;
+        }
+        frequencyScheduleCase_ = 0;
+        frequencySchedule_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.ads.admanager.v1.ReportMessagesProto
+            .internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.ads.admanager.v1.ScheduleOptions.Schedule getDefaultInstanceForType() {
+        return com.google.ads.admanager.v1.ScheduleOptions.Schedule.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.ads.admanager.v1.ScheduleOptions.Schedule build() {
+        com.google.ads.admanager.v1.ScheduleOptions.Schedule result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.ads.admanager.v1.ScheduleOptions.Schedule buildPartial() {
+        com.google.ads.admanager.v1.ScheduleOptions.Schedule result =
+            new com.google.ads.admanager.v1.ScheduleOptions.Schedule(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.ads.admanager.v1.ScheduleOptions.Schedule result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.startDate_ = startDateBuilder_ == null ? startDate_ : startDateBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.endDate_ = endDateBuilder_ == null ? endDate_ : endDateBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.frequency_ = frequency_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      private void buildPartialOneofs(com.google.ads.admanager.v1.ScheduleOptions.Schedule result) {
+        result.frequencyScheduleCase_ = frequencyScheduleCase_;
+        result.frequencySchedule_ = this.frequencySchedule_;
+        if (frequencyScheduleCase_ == 6 && weeklyScheduleBuilder_ != null) {
+          result.frequencySchedule_ = weeklyScheduleBuilder_.build();
+        }
+        if (frequencyScheduleCase_ == 7 && monthlyScheduleBuilder_ != null) {
+          result.frequencySchedule_ = monthlyScheduleBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.ads.admanager.v1.ScheduleOptions.Schedule) {
+          return mergeFrom((com.google.ads.admanager.v1.ScheduleOptions.Schedule) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.ads.admanager.v1.ScheduleOptions.Schedule other) {
+        if (other == com.google.ads.admanager.v1.ScheduleOptions.Schedule.getDefaultInstance())
+          return this;
+        if (other.hasStartDate()) {
+          mergeStartDate(other.getStartDate());
+        }
+        if (other.hasEndDate()) {
+          mergeEndDate(other.getEndDate());
+        }
+        if (other.frequency_ != 0) {
+          setFrequencyValue(other.getFrequencyValue());
+        }
+        if (other.hasStartTime()) {
+          mergeStartTime(other.getStartTime());
+        }
+        switch (other.getFrequencyScheduleCase()) {
+          case WEEKLY_SCHEDULE:
+            {
+              mergeWeeklySchedule(other.getWeeklySchedule());
+              break;
+            }
+          case MONTHLY_SCHEDULE:
+            {
+              mergeMonthlySchedule(other.getMonthlySchedule());
+              break;
+            }
+          case FREQUENCYSCHEDULE_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getStartDateFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getEndDateFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 18
+              case 24:
+                {
+                  frequency_ = input.readEnum();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 24
+              case 34:
+                {
+                  input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 34
+              case 50:
+                {
+                  input.readMessage(
+                      getWeeklyScheduleFieldBuilder().getBuilder(), extensionRegistry);
+                  frequencyScheduleCase_ = 6;
+                  break;
+                } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      getMonthlyScheduleFieldBuilder().getBuilder(), extensionRegistry);
+                  frequencyScheduleCase_ = 7;
+                  break;
+                } // case 58
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int frequencyScheduleCase_ = 0;
+      private java.lang.Object frequencySchedule_;
+
+      public FrequencyScheduleCase getFrequencyScheduleCase() {
+        return FrequencyScheduleCase.forNumber(frequencyScheduleCase_);
+      }
+
+      public Builder clearFrequencySchedule() {
+        frequencyScheduleCase_ = 0;
+        frequencySchedule_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule,
+              com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule.Builder,
+              com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklyScheduleOrBuilder>
+          weeklyScheduleBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of week to schedule report run.
+       * </pre>
+       *
+       * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule weekly_schedule = 6;
+       * </code>
+       *
+       * @return Whether the weeklySchedule field is set.
+       */
+      @java.lang.Override
+      public boolean hasWeeklySchedule() {
+        return frequencyScheduleCase_ == 6;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of week to schedule report run.
+       * </pre>
+       *
+       * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule weekly_schedule = 6;
+       * </code>
+       *
+       * @return The weeklySchedule.
+       */
+      @java.lang.Override
+      public com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule
+          getWeeklySchedule() {
+        if (weeklyScheduleBuilder_ == null) {
+          if (frequencyScheduleCase_ == 6) {
+            return (com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule)
+                frequencySchedule_;
+          }
+          return com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule
+              .getDefaultInstance();
+        } else {
+          if (frequencyScheduleCase_ == 6) {
+            return weeklyScheduleBuilder_.getMessage();
+          }
+          return com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of week to schedule report run.
+       * </pre>
+       *
+       * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule weekly_schedule = 6;
+       * </code>
+       */
+      public Builder setWeeklySchedule(
+          com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule value) {
+        if (weeklyScheduleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          frequencySchedule_ = value;
+          onChanged();
+        } else {
+          weeklyScheduleBuilder_.setMessage(value);
+        }
+        frequencyScheduleCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of week to schedule report run.
+       * </pre>
+       *
+       * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule weekly_schedule = 6;
+       * </code>
+       */
+      public Builder setWeeklySchedule(
+          com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule.Builder
+              builderForValue) {
+        if (weeklyScheduleBuilder_ == null) {
+          frequencySchedule_ = builderForValue.build();
+          onChanged();
+        } else {
+          weeklyScheduleBuilder_.setMessage(builderForValue.build());
+        }
+        frequencyScheduleCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of week to schedule report run.
+       * </pre>
+       *
+       * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule weekly_schedule = 6;
+       * </code>
+       */
+      public Builder mergeWeeklySchedule(
+          com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule value) {
+        if (weeklyScheduleBuilder_ == null) {
+          if (frequencyScheduleCase_ == 6
+              && frequencySchedule_
+                  != com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule
+                      .getDefaultInstance()) {
+            frequencySchedule_ =
+                com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule.newBuilder(
+                        (com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule)
+                            frequencySchedule_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            frequencySchedule_ = value;
+          }
+          onChanged();
+        } else {
+          if (frequencyScheduleCase_ == 6) {
+            weeklyScheduleBuilder_.mergeFrom(value);
+          } else {
+            weeklyScheduleBuilder_.setMessage(value);
+          }
+        }
+        frequencyScheduleCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of week to schedule report run.
+       * </pre>
+       *
+       * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule weekly_schedule = 6;
+       * </code>
+       */
+      public Builder clearWeeklySchedule() {
+        if (weeklyScheduleBuilder_ == null) {
+          if (frequencyScheduleCase_ == 6) {
+            frequencyScheduleCase_ = 0;
+            frequencySchedule_ = null;
+            onChanged();
+          }
+        } else {
+          if (frequencyScheduleCase_ == 6) {
+            frequencyScheduleCase_ = 0;
+            frequencySchedule_ = null;
+          }
+          weeklyScheduleBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of week to schedule report run.
+       * </pre>
+       *
+       * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule weekly_schedule = 6;
+       * </code>
+       */
+      public com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule.Builder
+          getWeeklyScheduleBuilder() {
+        return getWeeklyScheduleFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of week to schedule report run.
+       * </pre>
+       *
+       * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule weekly_schedule = 6;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklyScheduleOrBuilder
+          getWeeklyScheduleOrBuilder() {
+        if ((frequencyScheduleCase_ == 6) && (weeklyScheduleBuilder_ != null)) {
+          return weeklyScheduleBuilder_.getMessageOrBuilder();
+        } else {
+          if (frequencyScheduleCase_ == 6) {
+            return (com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule)
+                frequencySchedule_;
+          }
+          return com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of week to schedule report run.
+       * </pre>
+       *
+       * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule weekly_schedule = 6;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule,
+              com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule.Builder,
+              com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklyScheduleOrBuilder>
+          getWeeklyScheduleFieldBuilder() {
+        if (weeklyScheduleBuilder_ == null) {
+          if (!(frequencyScheduleCase_ == 6)) {
+            frequencySchedule_ =
+                com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule
+                    .getDefaultInstance();
+          }
+          weeklyScheduleBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule,
+                  com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule.Builder,
+                  com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklyScheduleOrBuilder>(
+                  (com.google.ads.admanager.v1.ScheduleOptions.Schedule.WeeklySchedule)
+                      frequencySchedule_,
+                  getParentForChildren(),
+                  isClean());
+          frequencySchedule_ = null;
+        }
+        frequencyScheduleCase_ = 6;
+        onChanged();
+        return weeklyScheduleBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule,
+              com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule.Builder,
+              com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlyScheduleOrBuilder>
+          monthlyScheduleBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of month to schedule report run.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule monthly_schedule = 7;
+       * </code>
+       *
+       * @return Whether the monthlySchedule field is set.
+       */
+      @java.lang.Override
+      public boolean hasMonthlySchedule() {
+        return frequencyScheduleCase_ == 7;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of month to schedule report run.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule monthly_schedule = 7;
+       * </code>
+       *
+       * @return The monthlySchedule.
+       */
+      @java.lang.Override
+      public com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule
+          getMonthlySchedule() {
+        if (monthlyScheduleBuilder_ == null) {
+          if (frequencyScheduleCase_ == 7) {
+            return (com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule)
+                frequencySchedule_;
+          }
+          return com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule
+              .getDefaultInstance();
+        } else {
+          if (frequencyScheduleCase_ == 7) {
+            return monthlyScheduleBuilder_.getMessage();
+          }
+          return com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of month to schedule report run.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule monthly_schedule = 7;
+       * </code>
+       */
+      public Builder setMonthlySchedule(
+          com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule value) {
+        if (monthlyScheduleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          frequencySchedule_ = value;
+          onChanged();
+        } else {
+          monthlyScheduleBuilder_.setMessage(value);
+        }
+        frequencyScheduleCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of month to schedule report run.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule monthly_schedule = 7;
+       * </code>
+       */
+      public Builder setMonthlySchedule(
+          com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule.Builder
+              builderForValue) {
+        if (monthlyScheduleBuilder_ == null) {
+          frequencySchedule_ = builderForValue.build();
+          onChanged();
+        } else {
+          monthlyScheduleBuilder_.setMessage(builderForValue.build());
+        }
+        frequencyScheduleCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of month to schedule report run.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule monthly_schedule = 7;
+       * </code>
+       */
+      public Builder mergeMonthlySchedule(
+          com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule value) {
+        if (monthlyScheduleBuilder_ == null) {
+          if (frequencyScheduleCase_ == 7
+              && frequencySchedule_
+                  != com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule
+                      .getDefaultInstance()) {
+            frequencySchedule_ =
+                com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule.newBuilder(
+                        (com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule)
+                            frequencySchedule_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            frequencySchedule_ = value;
+          }
+          onChanged();
+        } else {
+          if (frequencyScheduleCase_ == 7) {
+            monthlyScheduleBuilder_.mergeFrom(value);
+          } else {
+            monthlyScheduleBuilder_.setMessage(value);
+          }
+        }
+        frequencyScheduleCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of month to schedule report run.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule monthly_schedule = 7;
+       * </code>
+       */
+      public Builder clearMonthlySchedule() {
+        if (monthlyScheduleBuilder_ == null) {
+          if (frequencyScheduleCase_ == 7) {
+            frequencyScheduleCase_ = 0;
+            frequencySchedule_ = null;
+            onChanged();
+          }
+        } else {
+          if (frequencyScheduleCase_ == 7) {
+            frequencyScheduleCase_ = 0;
+            frequencySchedule_ = null;
+          }
+          monthlyScheduleBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of month to schedule report run.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule monthly_schedule = 7;
+       * </code>
+       */
+      public com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule.Builder
+          getMonthlyScheduleBuilder() {
+        return getMonthlyScheduleFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of month to schedule report run.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule monthly_schedule = 7;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlyScheduleOrBuilder
+          getMonthlyScheduleOrBuilder() {
+        if ((frequencyScheduleCase_ == 7) && (monthlyScheduleBuilder_ != null)) {
+          return monthlyScheduleBuilder_.getMessageOrBuilder();
+        } else {
+          if (frequencyScheduleCase_ == 7) {
+            return (com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule)
+                frequencySchedule_;
+          }
+          return com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Days of month to schedule report run.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule monthly_schedule = 7;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule,
+              com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule.Builder,
+              com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlyScheduleOrBuilder>
+          getMonthlyScheduleFieldBuilder() {
+        if (monthlyScheduleBuilder_ == null) {
+          if (!(frequencyScheduleCase_ == 7)) {
+            frequencySchedule_ =
+                com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule
+                    .getDefaultInstance();
+          }
+          monthlyScheduleBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule,
+                  com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule.Builder,
+                  com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlyScheduleOrBuilder>(
+                  (com.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlySchedule)
+                      frequencySchedule_,
+                  getParentForChildren(),
+                  isClean());
+          frequencySchedule_ = null;
+        }
+        frequencyScheduleCase_ = 7;
+        onChanged();
+        return monthlyScheduleBuilder_;
+      }
+
+      private com.google.type.Date startDate_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          startDateBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the first run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 1;</code>
+       *
+       * @return Whether the startDate field is set.
+       */
+      public boolean hasStartDate() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the first run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 1;</code>
+       *
+       * @return The startDate.
+       */
+      public com.google.type.Date getStartDate() {
+        if (startDateBuilder_ == null) {
+          return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
+        } else {
+          return startDateBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the first run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 1;</code>
+       */
+      public Builder setStartDate(com.google.type.Date value) {
+        if (startDateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          startDate_ = value;
+        } else {
+          startDateBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the first run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 1;</code>
+       */
+      public Builder setStartDate(com.google.type.Date.Builder builderForValue) {
+        if (startDateBuilder_ == null) {
+          startDate_ = builderForValue.build();
+        } else {
+          startDateBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the first run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 1;</code>
+       */
+      public Builder mergeStartDate(com.google.type.Date value) {
+        if (startDateBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && startDate_ != null
+              && startDate_ != com.google.type.Date.getDefaultInstance()) {
+            getStartDateBuilder().mergeFrom(value);
+          } else {
+            startDate_ = value;
+          }
+        } else {
+          startDateBuilder_.mergeFrom(value);
+        }
+        if (startDate_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the first run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 1;</code>
+       */
+      public Builder clearStartDate() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        startDate_ = null;
+        if (startDateBuilder_ != null) {
+          startDateBuilder_.dispose();
+          startDateBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the first run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 1;</code>
+       */
+      public com.google.type.Date.Builder getStartDateBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getStartDateFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the first run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 1;</code>
+       */
+      public com.google.type.DateOrBuilder getStartDateOrBuilder() {
+        if (startDateBuilder_ != null) {
+          return startDateBuilder_.getMessageOrBuilder();
+        } else {
+          return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the first run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          getStartDateFieldBuilder() {
+        if (startDateBuilder_ == null) {
+          startDateBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.Date,
+                  com.google.type.Date.Builder,
+                  com.google.type.DateOrBuilder>(getStartDate(), getParentForChildren(), isClean());
+          startDate_ = null;
+        }
+        return startDateBuilder_;
+      }
+
+      private com.google.type.Date endDate_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          endDateBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the final run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 2;</code>
+       *
+       * @return Whether the endDate field is set.
+       */
+      public boolean hasEndDate() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the final run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 2;</code>
+       *
+       * @return The endDate.
+       */
+      public com.google.type.Date getEndDate() {
+        if (endDateBuilder_ == null) {
+          return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
+        } else {
+          return endDateBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the final run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 2;</code>
+       */
+      public Builder setEndDate(com.google.type.Date value) {
+        if (endDateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          endDate_ = value;
+        } else {
+          endDateBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the final run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 2;</code>
+       */
+      public Builder setEndDate(com.google.type.Date.Builder builderForValue) {
+        if (endDateBuilder_ == null) {
+          endDate_ = builderForValue.build();
+        } else {
+          endDateBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the final run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 2;</code>
+       */
+      public Builder mergeEndDate(com.google.type.Date value) {
+        if (endDateBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && endDate_ != null
+              && endDate_ != com.google.type.Date.getDefaultInstance()) {
+            getEndDateBuilder().mergeFrom(value);
+          } else {
+            endDate_ = value;
+          }
+        } else {
+          endDateBuilder_.mergeFrom(value);
+        }
+        if (endDate_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the final run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 2;</code>
+       */
+      public Builder clearEndDate() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        endDate_ = null;
+        if (endDateBuilder_ != null) {
+          endDateBuilder_.dispose();
+          endDateBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the final run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 2;</code>
+       */
+      public com.google.type.Date.Builder getEndDateBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getEndDateFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the final run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 2;</code>
+       */
+      public com.google.type.DateOrBuilder getEndDateOrBuilder() {
+        if (endDateBuilder_ != null) {
+          return endDateBuilder_.getMessageOrBuilder();
+        } else {
+          return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Date for the final run of the report.
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          getEndDateFieldBuilder() {
+        if (endDateBuilder_ == null) {
+          endDateBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.Date,
+                  com.google.type.Date.Builder,
+                  com.google.type.DateOrBuilder>(getEndDate(), getParentForChildren(), isClean());
+          endDate_ = null;
+        }
+        return endDateBuilder_;
+      }
+
+      private int frequency_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Frequency to run report.
+       * </pre>
+       *
+       * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency frequency = 3;</code>
+       *
+       * @return The enum numeric value on the wire for frequency.
+       */
+      @java.lang.Override
+      public int getFrequencyValue() {
+        return frequency_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Frequency to run report.
+       * </pre>
+       *
+       * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency frequency = 3;</code>
+       *
+       * @param value The enum numeric value on the wire for frequency to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFrequencyValue(int value) {
+        frequency_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Frequency to run report.
+       * </pre>
+       *
+       * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency frequency = 3;</code>
+       *
+       * @return The frequency.
+       */
+      @java.lang.Override
+      public com.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency getFrequency() {
+        com.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency result =
+            com.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency.forNumber(frequency_);
+        return result == null
+            ? com.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Frequency to run report.
+       * </pre>
+       *
+       * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency frequency = 3;</code>
+       *
+       * @param value The frequency to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFrequency(
+          com.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
+        frequency_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Frequency to run report.
+       * </pre>
+       *
+       * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency frequency = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFrequency() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        frequency_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.type.TimeOfDay startTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.TimeOfDay,
+              com.google.type.TimeOfDay.Builder,
+              com.google.type.TimeOfDayOrBuilder>
+          startTimeBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates start time for schedule to run
+       * Will use the time_zone from `ReportDefinition`. Defaults
+       * to the publisher's time zone if not specified.
+       *
+       * For HOURLY, TWO_TIMES_DAILY, THREE_TIMES_DAILY, or FOUR_TIMES_DAILY, this
+       * will be the time of day that the first report will run on the first day.
+       * For example, if the start time is 2:00 PM, and the frequency is
+       * THREE_TIMES_DAILY, the first day will have reports scheduled at 2:00 PM,
+       * 10:00 PM. Each subsequent day will have reports scheduled at 6:00 AM,
+       * 2:00 PM, 10:00 PM.
+       * </pre>
+       *
+       * <code>.google.type.TimeOfDay start_time = 4;</code>
+       *
+       * @return Whether the startTime field is set.
+       */
+      public boolean hasStartTime() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates start time for schedule to run
+       * Will use the time_zone from `ReportDefinition`. Defaults
+       * to the publisher's time zone if not specified.
+       *
+       * For HOURLY, TWO_TIMES_DAILY, THREE_TIMES_DAILY, or FOUR_TIMES_DAILY, this
+       * will be the time of day that the first report will run on the first day.
+       * For example, if the start time is 2:00 PM, and the frequency is
+       * THREE_TIMES_DAILY, the first day will have reports scheduled at 2:00 PM,
+       * 10:00 PM. Each subsequent day will have reports scheduled at 6:00 AM,
+       * 2:00 PM, 10:00 PM.
+       * </pre>
+       *
+       * <code>.google.type.TimeOfDay start_time = 4;</code>
+       *
+       * @return The startTime.
+       */
+      public com.google.type.TimeOfDay getStartTime() {
+        if (startTimeBuilder_ == null) {
+          return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
+        } else {
+          return startTimeBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates start time for schedule to run
+       * Will use the time_zone from `ReportDefinition`. Defaults
+       * to the publisher's time zone if not specified.
+       *
+       * For HOURLY, TWO_TIMES_DAILY, THREE_TIMES_DAILY, or FOUR_TIMES_DAILY, this
+       * will be the time of day that the first report will run on the first day.
+       * For example, if the start time is 2:00 PM, and the frequency is
+       * THREE_TIMES_DAILY, the first day will have reports scheduled at 2:00 PM,
+       * 10:00 PM. Each subsequent day will have reports scheduled at 6:00 AM,
+       * 2:00 PM, 10:00 PM.
+       * </pre>
+       *
+       * <code>.google.type.TimeOfDay start_time = 4;</code>
+       */
+      public Builder setStartTime(com.google.type.TimeOfDay value) {
+        if (startTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          startTime_ = value;
+        } else {
+          startTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates start time for schedule to run
+       * Will use the time_zone from `ReportDefinition`. Defaults
+       * to the publisher's time zone if not specified.
+       *
+       * For HOURLY, TWO_TIMES_DAILY, THREE_TIMES_DAILY, or FOUR_TIMES_DAILY, this
+       * will be the time of day that the first report will run on the first day.
+       * For example, if the start time is 2:00 PM, and the frequency is
+       * THREE_TIMES_DAILY, the first day will have reports scheduled at 2:00 PM,
+       * 10:00 PM. Each subsequent day will have reports scheduled at 6:00 AM,
+       * 2:00 PM, 10:00 PM.
+       * </pre>
+       *
+       * <code>.google.type.TimeOfDay start_time = 4;</code>
+       */
+      public Builder setStartTime(com.google.type.TimeOfDay.Builder builderForValue) {
+        if (startTimeBuilder_ == null) {
+          startTime_ = builderForValue.build();
+        } else {
+          startTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates start time for schedule to run
+       * Will use the time_zone from `ReportDefinition`. Defaults
+       * to the publisher's time zone if not specified.
+       *
+       * For HOURLY, TWO_TIMES_DAILY, THREE_TIMES_DAILY, or FOUR_TIMES_DAILY, this
+       * will be the time of day that the first report will run on the first day.
+       * For example, if the start time is 2:00 PM, and the frequency is
+       * THREE_TIMES_DAILY, the first day will have reports scheduled at 2:00 PM,
+       * 10:00 PM. Each subsequent day will have reports scheduled at 6:00 AM,
+       * 2:00 PM, 10:00 PM.
+       * </pre>
+       *
+       * <code>.google.type.TimeOfDay start_time = 4;</code>
+       */
+      public Builder mergeStartTime(com.google.type.TimeOfDay value) {
+        if (startTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)
+              && startTime_ != null
+              && startTime_ != com.google.type.TimeOfDay.getDefaultInstance()) {
+            getStartTimeBuilder().mergeFrom(value);
+          } else {
+            startTime_ = value;
+          }
+        } else {
+          startTimeBuilder_.mergeFrom(value);
+        }
+        if (startTime_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates start time for schedule to run
+       * Will use the time_zone from `ReportDefinition`. Defaults
+       * to the publisher's time zone if not specified.
+       *
+       * For HOURLY, TWO_TIMES_DAILY, THREE_TIMES_DAILY, or FOUR_TIMES_DAILY, this
+       * will be the time of day that the first report will run on the first day.
+       * For example, if the start time is 2:00 PM, and the frequency is
+       * THREE_TIMES_DAILY, the first day will have reports scheduled at 2:00 PM,
+       * 10:00 PM. Each subsequent day will have reports scheduled at 6:00 AM,
+       * 2:00 PM, 10:00 PM.
+       * </pre>
+       *
+       * <code>.google.type.TimeOfDay start_time = 4;</code>
+       */
+      public Builder clearStartTime() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
+          startTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates start time for schedule to run
+       * Will use the time_zone from `ReportDefinition`. Defaults
+       * to the publisher's time zone if not specified.
+       *
+       * For HOURLY, TWO_TIMES_DAILY, THREE_TIMES_DAILY, or FOUR_TIMES_DAILY, this
+       * will be the time of day that the first report will run on the first day.
+       * For example, if the start time is 2:00 PM, and the frequency is
+       * THREE_TIMES_DAILY, the first day will have reports scheduled at 2:00 PM,
+       * 10:00 PM. Each subsequent day will have reports scheduled at 6:00 AM,
+       * 2:00 PM, 10:00 PM.
+       * </pre>
+       *
+       * <code>.google.type.TimeOfDay start_time = 4;</code>
+       */
+      public com.google.type.TimeOfDay.Builder getStartTimeBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getStartTimeFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates start time for schedule to run
+       * Will use the time_zone from `ReportDefinition`. Defaults
+       * to the publisher's time zone if not specified.
+       *
+       * For HOURLY, TWO_TIMES_DAILY, THREE_TIMES_DAILY, or FOUR_TIMES_DAILY, this
+       * will be the time of day that the first report will run on the first day.
+       * For example, if the start time is 2:00 PM, and the frequency is
+       * THREE_TIMES_DAILY, the first day will have reports scheduled at 2:00 PM,
+       * 10:00 PM. Each subsequent day will have reports scheduled at 6:00 AM,
+       * 2:00 PM, 10:00 PM.
+       * </pre>
+       *
+       * <code>.google.type.TimeOfDay start_time = 4;</code>
+       */
+      public com.google.type.TimeOfDayOrBuilder getStartTimeOrBuilder() {
+        if (startTimeBuilder_ != null) {
+          return startTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates start time for schedule to run
+       * Will use the time_zone from `ReportDefinition`. Defaults
+       * to the publisher's time zone if not specified.
+       *
+       * For HOURLY, TWO_TIMES_DAILY, THREE_TIMES_DAILY, or FOUR_TIMES_DAILY, this
+       * will be the time of day that the first report will run on the first day.
+       * For example, if the start time is 2:00 PM, and the frequency is
+       * THREE_TIMES_DAILY, the first day will have reports scheduled at 2:00 PM,
+       * 10:00 PM. Each subsequent day will have reports scheduled at 6:00 AM,
+       * 2:00 PM, 10:00 PM.
+       * </pre>
+       *
+       * <code>.google.type.TimeOfDay start_time = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.TimeOfDay,
+              com.google.type.TimeOfDay.Builder,
+              com.google.type.TimeOfDayOrBuilder>
+          getStartTimeFieldBuilder() {
+        if (startTimeBuilder_ == null) {
+          startTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.TimeOfDay,
+                  com.google.type.TimeOfDay.Builder,
+                  com.google.type.TimeOfDayOrBuilder>(
+                  getStartTime(), getParentForChildren(), isClean());
+          startTime_ = null;
+        }
+        return startTimeBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.ads.admanager.v1.ScheduleOptions.Schedule)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.ads.admanager.v1.ScheduleOptions.Schedule)
+    private static final com.google.ads.admanager.v1.ScheduleOptions.Schedule DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.ads.admanager.v1.ScheduleOptions.Schedule();
+    }
+
+    public static com.google.ads.admanager.v1.ScheduleOptions.Schedule getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Schedule> PARSER =
+        new com.google.protobuf.AbstractParser<Schedule>() {
+          @java.lang.Override
+          public Schedule parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Schedule> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Schedule> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ScheduleOptions.Schedule getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int SCHEDULE_FIELD_NUMBER = 1;
-  private com.google.ads.admanager.v1.Schedule schedule_;
+  private com.google.ads.admanager.v1.ScheduleOptions.Schedule schedule_;
 
   /**
    *
@@ -238,7 +4765,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
    * Information pertaining to schedule itself.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.Schedule schedule = 1;</code>
+   * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule schedule = 1;</code>
    *
    * @return Whether the schedule field is set.
    */
@@ -254,14 +4781,14 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
    * Information pertaining to schedule itself.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.Schedule schedule = 1;</code>
+   * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule schedule = 1;</code>
    *
    * @return The schedule.
    */
   @java.lang.Override
-  public com.google.ads.admanager.v1.Schedule getSchedule() {
+  public com.google.ads.admanager.v1.ScheduleOptions.Schedule getSchedule() {
     return schedule_ == null
-        ? com.google.ads.admanager.v1.Schedule.getDefaultInstance()
+        ? com.google.ads.admanager.v1.ScheduleOptions.Schedule.getDefaultInstance()
         : schedule_;
   }
 
@@ -272,12 +4799,12 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
    * Information pertaining to schedule itself.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.Schedule schedule = 1;</code>
+   * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule schedule = 1;</code>
    */
   @java.lang.Override
-  public com.google.ads.admanager.v1.ScheduleOrBuilder getScheduleOrBuilder() {
+  public com.google.ads.admanager.v1.ScheduleOptions.ScheduleOrBuilder getScheduleOrBuilder() {
     return schedule_ == null
-        ? com.google.ads.admanager.v1.Schedule.getDefaultInstance()
+        ? com.google.ads.admanager.v1.ScheduleOptions.Schedule.getDefaultInstance()
         : schedule_;
   }
 
@@ -323,7 +4850,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
   public static final int FLAGS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private java.util.List<com.google.ads.admanager.v1.Report.Flag> flags_;
+  private java.util.List<com.google.ads.admanager.v1.ReportDefinition.Flag> flags_;
 
   /**
    *
@@ -334,11 +4861,11 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
-  public java.util.List<com.google.ads.admanager.v1.Report.Flag> getFlagsList() {
+  public java.util.List<com.google.ads.admanager.v1.ReportDefinition.Flag> getFlagsList() {
     return flags_;
   }
 
@@ -351,11 +4878,11 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.google.ads.admanager.v1.Report.FlagOrBuilder>
+  public java.util.List<? extends com.google.ads.admanager.v1.ReportDefinition.FlagOrBuilder>
       getFlagsOrBuilderList() {
     return flags_;
   }
@@ -369,7 +4896,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -386,11 +4913,11 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
-  public com.google.ads.admanager.v1.Report.Flag getFlags(int index) {
+  public com.google.ads.admanager.v1.ReportDefinition.Flag getFlags(int index) {
     return flags_.get(index);
   }
 
@@ -403,11 +4930,11 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
-  public com.google.ads.admanager.v1.Report.FlagOrBuilder getFlagsOrBuilder(int index) {
+  public com.google.ads.admanager.v1.ReportDefinition.FlagOrBuilder getFlagsOrBuilder(int index) {
     return flags_.get(index);
   }
 
@@ -838,9 +5365,10 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
               } // case 16
             case 26:
               {
-                com.google.ads.admanager.v1.Report.Flag m =
+                com.google.ads.admanager.v1.ReportDefinition.Flag m =
                     input.readMessage(
-                        com.google.ads.admanager.v1.Report.Flag.parser(), extensionRegistry);
+                        com.google.ads.admanager.v1.ReportDefinition.Flag.parser(),
+                        extensionRegistry);
                 if (flagsBuilder_ == null) {
                   ensureFlagsIsMutable();
                   flags_.add(m);
@@ -868,11 +5396,11 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
 
     private int bitField0_;
 
-    private com.google.ads.admanager.v1.Schedule schedule_;
+    private com.google.ads.admanager.v1.ScheduleOptions.Schedule schedule_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.ads.admanager.v1.Schedule,
-            com.google.ads.admanager.v1.Schedule.Builder,
-            com.google.ads.admanager.v1.ScheduleOrBuilder>
+            com.google.ads.admanager.v1.ScheduleOptions.Schedule,
+            com.google.ads.admanager.v1.ScheduleOptions.Schedule.Builder,
+            com.google.ads.admanager.v1.ScheduleOptions.ScheduleOrBuilder>
         scheduleBuilder_;
 
     /**
@@ -882,7 +5410,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * Information pertaining to schedule itself.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Schedule schedule = 1;</code>
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule schedule = 1;</code>
      *
      * @return Whether the schedule field is set.
      */
@@ -897,14 +5425,14 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * Information pertaining to schedule itself.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Schedule schedule = 1;</code>
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule schedule = 1;</code>
      *
      * @return The schedule.
      */
-    public com.google.ads.admanager.v1.Schedule getSchedule() {
+    public com.google.ads.admanager.v1.ScheduleOptions.Schedule getSchedule() {
       if (scheduleBuilder_ == null) {
         return schedule_ == null
-            ? com.google.ads.admanager.v1.Schedule.getDefaultInstance()
+            ? com.google.ads.admanager.v1.ScheduleOptions.Schedule.getDefaultInstance()
             : schedule_;
       } else {
         return scheduleBuilder_.getMessage();
@@ -918,9 +5446,9 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * Information pertaining to schedule itself.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Schedule schedule = 1;</code>
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule schedule = 1;</code>
      */
-    public Builder setSchedule(com.google.ads.admanager.v1.Schedule value) {
+    public Builder setSchedule(com.google.ads.admanager.v1.ScheduleOptions.Schedule value) {
       if (scheduleBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -941,9 +5469,10 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * Information pertaining to schedule itself.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Schedule schedule = 1;</code>
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule schedule = 1;</code>
      */
-    public Builder setSchedule(com.google.ads.admanager.v1.Schedule.Builder builderForValue) {
+    public Builder setSchedule(
+        com.google.ads.admanager.v1.ScheduleOptions.Schedule.Builder builderForValue) {
       if (scheduleBuilder_ == null) {
         schedule_ = builderForValue.build();
       } else {
@@ -961,13 +5490,14 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * Information pertaining to schedule itself.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Schedule schedule = 1;</code>
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule schedule = 1;</code>
      */
-    public Builder mergeSchedule(com.google.ads.admanager.v1.Schedule value) {
+    public Builder mergeSchedule(com.google.ads.admanager.v1.ScheduleOptions.Schedule value) {
       if (scheduleBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)
             && schedule_ != null
-            && schedule_ != com.google.ads.admanager.v1.Schedule.getDefaultInstance()) {
+            && schedule_
+                != com.google.ads.admanager.v1.ScheduleOptions.Schedule.getDefaultInstance()) {
           getScheduleBuilder().mergeFrom(value);
         } else {
           schedule_ = value;
@@ -989,7 +5519,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * Information pertaining to schedule itself.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Schedule schedule = 1;</code>
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule schedule = 1;</code>
      */
     public Builder clearSchedule() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -1009,9 +5539,9 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * Information pertaining to schedule itself.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Schedule schedule = 1;</code>
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule schedule = 1;</code>
      */
-    public com.google.ads.admanager.v1.Schedule.Builder getScheduleBuilder() {
+    public com.google.ads.admanager.v1.ScheduleOptions.Schedule.Builder getScheduleBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getScheduleFieldBuilder().getBuilder();
@@ -1024,14 +5554,14 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * Information pertaining to schedule itself.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Schedule schedule = 1;</code>
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule schedule = 1;</code>
      */
-    public com.google.ads.admanager.v1.ScheduleOrBuilder getScheduleOrBuilder() {
+    public com.google.ads.admanager.v1.ScheduleOptions.ScheduleOrBuilder getScheduleOrBuilder() {
       if (scheduleBuilder_ != null) {
         return scheduleBuilder_.getMessageOrBuilder();
       } else {
         return schedule_ == null
-            ? com.google.ads.admanager.v1.Schedule.getDefaultInstance()
+            ? com.google.ads.admanager.v1.ScheduleOptions.Schedule.getDefaultInstance()
             : schedule_;
       }
     }
@@ -1043,19 +5573,19 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * Information pertaining to schedule itself.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Schedule schedule = 1;</code>
+     * <code>.google.ads.admanager.v1.ScheduleOptions.Schedule schedule = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.ads.admanager.v1.Schedule,
-            com.google.ads.admanager.v1.Schedule.Builder,
-            com.google.ads.admanager.v1.ScheduleOrBuilder>
+            com.google.ads.admanager.v1.ScheduleOptions.Schedule,
+            com.google.ads.admanager.v1.ScheduleOptions.Schedule.Builder,
+            com.google.ads.admanager.v1.ScheduleOptions.ScheduleOrBuilder>
         getScheduleFieldBuilder() {
       if (scheduleBuilder_ == null) {
         scheduleBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.ads.admanager.v1.Schedule,
-                com.google.ads.admanager.v1.Schedule.Builder,
-                com.google.ads.admanager.v1.ScheduleOrBuilder>(
+                com.google.ads.admanager.v1.ScheduleOptions.Schedule,
+                com.google.ads.admanager.v1.ScheduleOptions.Schedule.Builder,
+                com.google.ads.admanager.v1.ScheduleOptions.ScheduleOrBuilder>(
                 getSchedule(), getParentForChildren(), isClean());
         schedule_ = null;
       }
@@ -1166,20 +5696,20 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private java.util.List<com.google.ads.admanager.v1.Report.Flag> flags_ =
+    private java.util.List<com.google.ads.admanager.v1.ReportDefinition.Flag> flags_ =
         java.util.Collections.emptyList();
 
     private void ensureFlagsIsMutable() {
       if (!((bitField0_ & 0x00000004) != 0)) {
-        flags_ = new java.util.ArrayList<com.google.ads.admanager.v1.Report.Flag>(flags_);
+        flags_ = new java.util.ArrayList<com.google.ads.admanager.v1.ReportDefinition.Flag>(flags_);
         bitField0_ |= 0x00000004;
       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.ads.admanager.v1.Report.Flag,
-            com.google.ads.admanager.v1.Report.Flag.Builder,
-            com.google.ads.admanager.v1.Report.FlagOrBuilder>
+            com.google.ads.admanager.v1.ReportDefinition.Flag,
+            com.google.ads.admanager.v1.ReportDefinition.Flag.Builder,
+            com.google.ads.admanager.v1.ReportDefinition.FlagOrBuilder>
         flagsBuilder_;
 
     /**
@@ -1191,10 +5721,10 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public java.util.List<com.google.ads.admanager.v1.Report.Flag> getFlagsList() {
+    public java.util.List<com.google.ads.admanager.v1.ReportDefinition.Flag> getFlagsList() {
       if (flagsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(flags_);
       } else {
@@ -1211,7 +5741,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getFlagsCount() {
@@ -1231,10 +5761,10 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public com.google.ads.admanager.v1.Report.Flag getFlags(int index) {
+    public com.google.ads.admanager.v1.ReportDefinition.Flag getFlags(int index) {
       if (flagsBuilder_ == null) {
         return flags_.get(index);
       } else {
@@ -1251,10 +5781,10 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder setFlags(int index, com.google.ads.admanager.v1.Report.Flag value) {
+    public Builder setFlags(int index, com.google.ads.admanager.v1.ReportDefinition.Flag value) {
       if (flagsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1277,11 +5807,11 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setFlags(
-        int index, com.google.ads.admanager.v1.Report.Flag.Builder builderForValue) {
+        int index, com.google.ads.admanager.v1.ReportDefinition.Flag.Builder builderForValue) {
       if (flagsBuilder_ == null) {
         ensureFlagsIsMutable();
         flags_.set(index, builderForValue.build());
@@ -1301,10 +5831,10 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder addFlags(com.google.ads.admanager.v1.Report.Flag value) {
+    public Builder addFlags(com.google.ads.admanager.v1.ReportDefinition.Flag value) {
       if (flagsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1327,10 +5857,10 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder addFlags(int index, com.google.ads.admanager.v1.Report.Flag value) {
+    public Builder addFlags(int index, com.google.ads.admanager.v1.ReportDefinition.Flag value) {
       if (flagsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1353,10 +5883,11 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder addFlags(com.google.ads.admanager.v1.Report.Flag.Builder builderForValue) {
+    public Builder addFlags(
+        com.google.ads.admanager.v1.ReportDefinition.Flag.Builder builderForValue) {
       if (flagsBuilder_ == null) {
         ensureFlagsIsMutable();
         flags_.add(builderForValue.build());
@@ -1376,11 +5907,11 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addFlags(
-        int index, com.google.ads.admanager.v1.Report.Flag.Builder builderForValue) {
+        int index, com.google.ads.admanager.v1.ReportDefinition.Flag.Builder builderForValue) {
       if (flagsBuilder_ == null) {
         ensureFlagsIsMutable();
         flags_.add(index, builderForValue.build());
@@ -1400,11 +5931,11 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllFlags(
-        java.lang.Iterable<? extends com.google.ads.admanager.v1.Report.Flag> values) {
+        java.lang.Iterable<? extends com.google.ads.admanager.v1.ReportDefinition.Flag> values) {
       if (flagsBuilder_ == null) {
         ensureFlagsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, flags_);
@@ -1424,7 +5955,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearFlags() {
@@ -1447,7 +5978,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeFlags(int index) {
@@ -1470,10 +6001,10 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public com.google.ads.admanager.v1.Report.Flag.Builder getFlagsBuilder(int index) {
+    public com.google.ads.admanager.v1.ReportDefinition.Flag.Builder getFlagsBuilder(int index) {
       return getFlagsFieldBuilder().getBuilder(index);
     }
 
@@ -1486,10 +6017,10 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public com.google.ads.admanager.v1.Report.FlagOrBuilder getFlagsOrBuilder(int index) {
+    public com.google.ads.admanager.v1.ReportDefinition.FlagOrBuilder getFlagsOrBuilder(int index) {
       if (flagsBuilder_ == null) {
         return flags_.get(index);
       } else {
@@ -1506,10 +6037,10 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public java.util.List<? extends com.google.ads.admanager.v1.Report.FlagOrBuilder>
+    public java.util.List<? extends com.google.ads.admanager.v1.ReportDefinition.FlagOrBuilder>
         getFlagsOrBuilderList() {
       if (flagsBuilder_ != null) {
         return flagsBuilder_.getMessageOrBuilderList();
@@ -1527,12 +6058,12 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public com.google.ads.admanager.v1.Report.Flag.Builder addFlagsBuilder() {
+    public com.google.ads.admanager.v1.ReportDefinition.Flag.Builder addFlagsBuilder() {
       return getFlagsFieldBuilder()
-          .addBuilder(com.google.ads.admanager.v1.Report.Flag.getDefaultInstance());
+          .addBuilder(com.google.ads.admanager.v1.ReportDefinition.Flag.getDefaultInstance());
     }
 
     /**
@@ -1544,12 +6075,13 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public com.google.ads.admanager.v1.Report.Flag.Builder addFlagsBuilder(int index) {
+    public com.google.ads.admanager.v1.ReportDefinition.Flag.Builder addFlagsBuilder(int index) {
       return getFlagsFieldBuilder()
-          .addBuilder(index, com.google.ads.admanager.v1.Report.Flag.getDefaultInstance());
+          .addBuilder(
+              index, com.google.ads.admanager.v1.ReportDefinition.Flag.getDefaultInstance());
     }
 
     /**
@@ -1561,24 +6093,25 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.ads.admanager.v1.ReportDefinition.Flag flags = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public java.util.List<com.google.ads.admanager.v1.Report.Flag.Builder> getFlagsBuilderList() {
+    public java.util.List<com.google.ads.admanager.v1.ReportDefinition.Flag.Builder>
+        getFlagsBuilderList() {
       return getFlagsFieldBuilder().getBuilderList();
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.ads.admanager.v1.Report.Flag,
-            com.google.ads.admanager.v1.Report.Flag.Builder,
-            com.google.ads.admanager.v1.Report.FlagOrBuilder>
+            com.google.ads.admanager.v1.ReportDefinition.Flag,
+            com.google.ads.admanager.v1.ReportDefinition.Flag.Builder,
+            com.google.ads.admanager.v1.ReportDefinition.FlagOrBuilder>
         getFlagsFieldBuilder() {
       if (flagsBuilder_ == null) {
         flagsBuilder_ =
             new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.ads.admanager.v1.Report.Flag,
-                com.google.ads.admanager.v1.Report.Flag.Builder,
-                com.google.ads.admanager.v1.Report.FlagOrBuilder>(
+                com.google.ads.admanager.v1.ReportDefinition.Flag,
+                com.google.ads.admanager.v1.ReportDefinition.Flag.Builder,
+                com.google.ads.admanager.v1.ReportDefinition.FlagOrBuilder>(
                 flags_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         flags_ = null;
       }

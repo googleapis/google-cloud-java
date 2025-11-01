@@ -486,4 +486,53 @@ public interface NodeNetworkConfigOrBuilder
    * @return The bytes for subnetwork.
    */
   com.google.protobuf.ByteString getSubnetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The network tier configuration for the node pool inherits from
+   * the cluster-level configuration and remains immutable throughout the node
+   * pool's lifecycle, including during upgrades.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the networkTierConfig field is set.
+   */
+  boolean hasNetworkTierConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The network tier configuration for the node pool inherits from
+   * the cluster-level configuration and remains immutable throughout the node
+   * pool's lifecycle, including during upgrades.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The networkTierConfig.
+   */
+  com.google.container.v1.NetworkTierConfig getNetworkTierConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The network tier configuration for the node pool inherits from
+   * the cluster-level configuration and remains immutable throughout the node
+   * pool's lifecycle, including during upgrades.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1.NetworkTierConfigOrBuilder getNetworkTierConfigOrBuilder();
 }

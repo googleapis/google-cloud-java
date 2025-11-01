@@ -32,6 +32,14 @@ public final class CommonProto {
       internal_static_google_cloud_oracledatabase_v1_CustomerContact_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_CustomerContact_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_IdentityConnector_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_IdentityConnector_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_DataCollectionOptionsCommon_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_DataCollectionOptionsCommon_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -44,13 +52,26 @@ public final class CommonProto {
       "\n+google/cloud/oracledatabase/v1/common."
           + "proto\022\036google.cloud.oracledatabase.v1\032\037g"
           + "oogle/api/field_behavior.proto\"%\n\017Custom"
-          + "erContact\022\022\n\005email\030\001 \001(\tB\003\340A\002B\345\001\n\"com.go"
-          + "ogle.cloud.oracledatabase.v1B\013CommonProt"
-          + "oP\001ZJcloud.google.com/go/oracledatabase/"
-          + "apiv1/oracledatabasepb;oracledatabasepb\252"
-          + "\002\036Google.Cloud.OracleDatabase.V1\312\002\036Googl"
-          + "e\\Cloud\\OracleDatabase\\V1\352\002!Google::Clou"
-          + "d::OracleDatabase::V1b\006proto3"
+          + "erContact\022\022\n\005email\030\001 \001(\tB\003\340A\002\"\223\002\n\021Identi"
+          + "tyConnector\022 \n\023service_agent_email\030\001 \001(\t"
+          + "B\003\340A\003\022`\n\020connection_state\030\002 \001(\0162A.google"
+          + ".cloud.oracledatabase.v1.IdentityConnect"
+          + "or.ConnectionStateB\003\340A\003\"z\n\017ConnectionSta"
+          + "te\022 \n\034CONNECTION_STATE_UNSPECIFIED\020\000\022\r\n\t"
+          + "CONNECTED\020\001\022\027\n\023PARTIALLY_CONNECTED\020\002\022\020\n\014"
+          + "DISCONNECTED\020\003\022\013\n\007UNKNOWN\020\004\"\233\001\n\033DataColl"
+          + "ectionOptionsCommon\022*\n\035is_diagnostics_ev"
+          + "ents_enabled\030\001 \001(\010B\003\340A\001\022)\n\034is_health_mon"
+          + "itoring_enabled\030\002 \001(\010B\003\340A\001\022%\n\030is_inciden"
+          + "t_logs_enabled\030\003 \001(\010B\003\340A\001*]\n\014ComputeMode"
+          + "l\022\035\n\031COMPUTE_MODEL_UNSPECIFIED\020\000\022\026\n\022COMP"
+          + "UTE_MODEL_ECPU\020\001\022\026\n\022COMPUTE_MODEL_OCPU\020\002"
+          + "B\345\001\n\"com.google.cloud.oracledatabase.v1B"
+          + "\013CommonProtoP\001ZJcloud.google.com/go/orac"
+          + "ledatabase/apiv1/oracledatabasepb;oracle"
+          + "databasepb\252\002\036Google.Cloud.OracleDatabase"
+          + ".V1\312\002\036Google\\Cloud\\OracleDatabase\\V1\352\002!G"
+          + "oogle::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -65,6 +86,22 @@ public final class CommonProto {
             internal_static_google_cloud_oracledatabase_v1_CustomerContact_descriptor,
             new java.lang.String[] {
               "Email",
+            });
+    internal_static_google_cloud_oracledatabase_v1_IdentityConnector_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_oracledatabase_v1_IdentityConnector_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_IdentityConnector_descriptor,
+            new java.lang.String[] {
+              "ServiceAgentEmail", "ConnectionState",
+            });
+    internal_static_google_cloud_oracledatabase_v1_DataCollectionOptionsCommon_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_oracledatabase_v1_DataCollectionOptionsCommon_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_DataCollectionOptionsCommon_descriptor,
+            new java.lang.String[] {
+              "IsDiagnosticsEventsEnabled", "IsHealthMonitoringEnabled", "IsIncidentLogsEnabled",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

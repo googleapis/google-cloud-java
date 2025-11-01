@@ -583,7 +583,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3054
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3121
    * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Deprecated
@@ -605,7 +605,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3054
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3121
    * @return The desiredMasterAuthorizedNetworksConfig.
    */
   @java.lang.Deprecated
@@ -850,7 +850,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3092
+   *     google/container/v1/cluster_service.proto;l=3159
    * @return Whether the desiredPrivateClusterConfig field is set.
    */
   @java.lang.Deprecated
@@ -877,7 +877,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3092
+   *     google/container/v1/cluster_service.proto;l=3159
    * @return The desiredPrivateClusterConfig.
    */
   @java.lang.Deprecated
@@ -1360,7 +1360,7 @@ public interface ClusterUpdateOrBuilder
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3137
+   *     See google/container/v1/cluster_service.proto;l=3204
    * @return Whether the desiredEnablePrivateEndpoint field is set.
    */
   @java.lang.Deprecated
@@ -1381,7 +1381,7 @@ public interface ClusterUpdateOrBuilder
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3137
+   *     See google/container/v1/cluster_service.proto;l=3204
    * @return The desiredEnablePrivateEndpoint.
    */
   @java.lang.Deprecated
@@ -2476,7 +2476,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3253
+   *     google/container/v1/cluster_service.proto;l=3320
    * @return Whether the userManagedKeysConfig field is set.
    */
   @java.lang.Deprecated
@@ -2499,7 +2499,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3253
+   *     google/container/v1/cluster_service.proto;l=3320
    * @return The userManagedKeysConfig.
    */
   @java.lang.Deprecated
@@ -2613,12 +2613,20 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The desired enterprise configuration for the cluster.
+   *
+   * Deprecated: GKE Enterprise features are now available without an Enterprise
+   * tier.
    * </pre>
    *
-   * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+   * <code>
+   * .google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1.ClusterUpdate.desired_enterprise_config is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=3333
    * @return Whether the desiredEnterpriseConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasDesiredEnterpriseConfig();
 
   /**
@@ -2626,12 +2634,20 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The desired enterprise configuration for the cluster.
+   *
+   * Deprecated: GKE Enterprise features are now available without an Enterprise
+   * tier.
    * </pre>
    *
-   * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+   * <code>
+   * .google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1.ClusterUpdate.desired_enterprise_config is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=3333
    * @return The desiredEnterpriseConfig.
    */
+  @java.lang.Deprecated
   com.google.container.v1.DesiredEnterpriseConfig getDesiredEnterpriseConfig();
 
   /**
@@ -2639,10 +2655,16 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The desired enterprise configuration for the cluster.
+   *
+   * Deprecated: GKE Enterprise features are now available without an Enterprise
+   * tier.
    * </pre>
    *
-   * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
+   * <code>
+   * .google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.container.v1.DesiredEnterpriseConfigOrBuilder getDesiredEnterpriseConfigOrBuilder();
 
   /**
@@ -2881,4 +2903,41 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1.GkeAutoUpgradeConfig gke_auto_upgrade_config = 154;</code>
    */
   com.google.container.v1.GkeAutoUpgradeConfigOrBuilder getGkeAutoUpgradeConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tier configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTierConfig desired_network_tier_config = 155;</code>
+   *
+   * @return Whether the desiredNetworkTierConfig field is set.
+   */
+  boolean hasDesiredNetworkTierConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tier configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTierConfig desired_network_tier_config = 155;</code>
+   *
+   * @return The desiredNetworkTierConfig.
+   */
+  com.google.container.v1.NetworkTierConfig getDesiredNetworkTierConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tier configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTierConfig desired_network_tier_config = 155;</code>
+   */
+  com.google.container.v1.NetworkTierConfigOrBuilder getDesiredNetworkTierConfigOrBuilder();
 }

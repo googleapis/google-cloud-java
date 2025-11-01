@@ -28,8 +28,8 @@ public interface AttributeSubstitutionRuleOrBuilder
    *
    *
    * <pre>
-   * Fully qualified proto attribute path (in dot notation).
-   * Example: rules[0].cel_expression.resource_types_values
+   * The fully qualified proto attribute path, in dot notation.
+   * For example: `rules[0].cel_expression.resource_types_values`
    * </pre>
    *
    * <code>string attribute = 1;</code>
@@ -42,8 +42,8 @@ public interface AttributeSubstitutionRuleOrBuilder
    *
    *
    * <pre>
-   * Fully qualified proto attribute path (in dot notation).
-   * Example: rules[0].cel_expression.resource_types_values
+   * The fully qualified proto attribute path, in dot notation.
+   * For example: `rules[0].cel_expression.resource_types_values`
    * </pre>
    *
    * <code>string attribute = 1;</code>

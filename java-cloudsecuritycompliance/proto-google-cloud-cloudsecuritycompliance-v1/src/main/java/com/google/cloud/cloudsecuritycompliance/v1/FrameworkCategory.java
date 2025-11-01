@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * The category of the framework.
+ * The category for the framework.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.cloudsecuritycompliance.v1.FrameworkCategory}
@@ -43,7 +43,7 @@ public enum FrameworkCategory implements com.google.protobuf.ProtocolMessageEnum
    *
    *
    * <pre>
-   * Standard framework
+   * An industry-defined framework.
    * </pre>
    *
    * <code>INDUSTRY_DEFINED_STANDARD = 1;</code>
@@ -53,7 +53,7 @@ public enum FrameworkCategory implements com.google.protobuf.ProtocolMessageEnum
    *
    *
    * <pre>
-   * Assured Workloads framework
+   * An Assured Workloads framework.
    * </pre>
    *
    * <code>ASSURED_WORKLOADS = 2;</code>
@@ -63,7 +63,7 @@ public enum FrameworkCategory implements com.google.protobuf.ProtocolMessageEnum
    *
    *
    * <pre>
-   * Data Security framework
+   * A data security posture framework.
    * </pre>
    *
    * <code>DATA_SECURITY = 3;</code>
@@ -73,7 +73,7 @@ public enum FrameworkCategory implements com.google.protobuf.ProtocolMessageEnum
    *
    *
    * <pre>
-   * Google Best Practices framework
+   * A Google's best practices framework.
    * </pre>
    *
    * <code>GOOGLE_BEST_PRACTICES = 4;</code>
@@ -83,7 +83,7 @@ public enum FrameworkCategory implements com.google.protobuf.ProtocolMessageEnum
    *
    *
    * <pre>
-   * User created framework.
+   * A user-created framework.
    * </pre>
    *
    * <code>CUSTOM_FRAMEWORK = 5;</code>
@@ -107,7 +107,7 @@ public enum FrameworkCategory implements com.google.protobuf.ProtocolMessageEnum
    *
    *
    * <pre>
-   * Standard framework
+   * An industry-defined framework.
    * </pre>
    *
    * <code>INDUSTRY_DEFINED_STANDARD = 1;</code>
@@ -118,7 +118,7 @@ public enum FrameworkCategory implements com.google.protobuf.ProtocolMessageEnum
    *
    *
    * <pre>
-   * Assured Workloads framework
+   * An Assured Workloads framework.
    * </pre>
    *
    * <code>ASSURED_WORKLOADS = 2;</code>
@@ -129,7 +129,7 @@ public enum FrameworkCategory implements com.google.protobuf.ProtocolMessageEnum
    *
    *
    * <pre>
-   * Data Security framework
+   * A data security posture framework.
    * </pre>
    *
    * <code>DATA_SECURITY = 3;</code>
@@ -140,7 +140,7 @@ public enum FrameworkCategory implements com.google.protobuf.ProtocolMessageEnum
    *
    *
    * <pre>
-   * Google Best Practices framework
+   * A Google's best practices framework.
    * </pre>
    *
    * <code>GOOGLE_BEST_PRACTICES = 4;</code>
@@ -151,7 +151,7 @@ public enum FrameworkCategory implements com.google.protobuf.ProtocolMessageEnum
    *
    *
    * <pre>
-   * User created framework.
+   * A user-created framework.
    * </pre>
    *
    * <code>CUSTOM_FRAMEWORK = 5;</code>
@@ -226,7 +226,7 @@ public enum FrameworkCategory implements com.google.protobuf.ProtocolMessageEnum
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.cloudsecuritycompliance.v1.CommonProto.getDescriptor()
         .getEnumTypes()
-        .get(1);
+        .get(2);
   }
 
   private static final FrameworkCategory[] VALUES = values();

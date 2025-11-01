@@ -28,9 +28,9 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier. The resource name of the cloud control.
-   * Format:
-   * organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}
+   * Required. Identifier. The name of the cloud control, in the format
+   * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -45,9 +45,9 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier. The resource name of the cloud control.
-   * Format:
-   * organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}
+   * Required. Identifier. The name of the cloud control, in the format
+   * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -62,8 +62,8 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Output only. Major revision of the cloud control incremented in ascending
-   * order.
+   * Output only. The major version of the cloud control, which is incremented
+   * in ascending order.
    * </pre>
    *
    * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -104,7 +104,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name of the cloud control. The maximum length is 200
+   * Optional. The friendly name of the cloud control. The maximum length is 200
    * characters.
    * </pre>
    *
@@ -118,7 +118,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name of the cloud control. The maximum length is 200
+   * Optional. The friendly name of the cloud control. The maximum length is 200
    * characters.
    * </pre>
    *
@@ -132,8 +132,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Output only. The supported enforcement mode of the cloud control. Default
-   * is DETECTIVE.
+   * Output only. The supported enforcement modes for the cloud control.
    * </pre>
    *
    * <code>
@@ -149,8 +148,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Output only. The supported enforcement mode of the cloud control. Default
-   * is DETECTIVE.
+   * Output only. The supported enforcement modes for the cloud control.
    * </pre>
    *
    * <code>
@@ -165,8 +163,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Output only. The supported enforcement mode of the cloud control. Default
-   * is DETECTIVE.
+   * Output only. The supported enforcement modes for the cloud control.
    * </pre>
    *
    * <code>
@@ -183,8 +180,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Output only. The supported enforcement mode of the cloud control. Default
-   * is DETECTIVE.
+   * Output only. The supported enforcement modes for the cloud control.
    * </pre>
    *
    * <code>
@@ -199,8 +195,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Output only. The supported enforcement mode of the cloud control. Default
-   * is DETECTIVE.
+   * Output only. The supported enforcement modes for the cloud control.
    * </pre>
    *
    * <code>
@@ -216,7 +211,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The parameter spec of the cloud control.
+   * Optional. The parameter specifications for the cloud control.
    * </pre>
    *
    * <code>
@@ -229,7 +224,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The parameter spec of the cloud control.
+   * Optional. The parameter specifications for the cloud control.
    * </pre>
    *
    * <code>
@@ -242,7 +237,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The parameter spec of the cloud control.
+   * Optional. The parameter specifications for the cloud control.
    * </pre>
    *
    * <code>
@@ -255,7 +250,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The parameter spec of the cloud control.
+   * Optional. The parameter specifications for the cloud control.
    * </pre>
    *
    * <code>
@@ -269,7 +264,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The parameter spec of the cloud control.
+   * Optional. The parameter specifications for the cloud control.
    * </pre>
    *
    * <code>
@@ -283,8 +278,8 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The Policy to be enforced to prevent/detect resource
-   * non-compliance.
+   * Optional. The rules that you can enforce to meet your security or
+   * compliance intent.
    * </pre>
    *
    * <code>
@@ -297,8 +292,8 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The Policy to be enforced to prevent/detect resource
-   * non-compliance.
+   * Optional. The rules that you can enforce to meet your security or
+   * compliance intent.
    * </pre>
    *
    * <code>
@@ -311,8 +306,8 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The Policy to be enforced to prevent/detect resource
-   * non-compliance.
+   * Optional. The rules that you can enforce to meet your security or
+   * compliance intent.
    * </pre>
    *
    * <code>
@@ -325,8 +320,8 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The Policy to be enforced to prevent/detect resource
-   * non-compliance.
+   * Optional. The rules that you can enforce to meet your security or
+   * compliance intent.
    * </pre>
    *
    * <code>
@@ -340,8 +335,8 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The Policy to be enforced to prevent/detect resource
-   * non-compliance.
+   * Optional. The rules that you can enforce to meet your security or
+   * compliance intent.
    * </pre>
    *
    * <code>
@@ -354,7 +349,8 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The severity of findings generated by the cloud control.
+   * Optional. The severity of the findings that are generated by the cloud
+   * control.
    * </pre>
    *
    * <code>
@@ -369,7 +365,8 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The severity of findings generated by the cloud control.
+   * Optional. The severity of the findings that are generated by the cloud
+   * control.
    * </pre>
    *
    * <code>
@@ -384,8 +381,8 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The finding_category of the cloud control. The maximum length is
-   * 255 characters.
+   * Optional. The finding category for the cloud control findings. The maximum
+   * length is 255 characters.
    * </pre>
    *
    * <code>string finding_category = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -398,8 +395,8 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The finding_category of the cloud control. The maximum length is
-   * 255 characters.
+   * Optional. The finding category for the cloud control findings. The maximum
+   * length is 255 characters.
    * </pre>
    *
    * <code>string finding_category = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -412,7 +409,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. cloud providers supported
+   * Optional. The supported cloud providers.
    * </pre>
    *
    * <code>
@@ -428,7 +425,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. cloud providers supported
+   * Optional. The supported cloud providers.
    * </pre>
    *
    * <code>
@@ -443,7 +440,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. cloud providers supported
+   * Optional. The supported cloud providers.
    * </pre>
    *
    * <code>
@@ -459,7 +456,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. cloud providers supported
+   * Optional. The supported cloud providers.
    * </pre>
    *
    * <code>
@@ -474,7 +471,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. cloud providers supported
+   * Optional. The supported cloud providers.
    * </pre>
    *
    * <code>
@@ -490,7 +487,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Output only. The Frameworks that include this CloudControl
+   * Output only. The frameworks that include this cloud control.
    * </pre>
    *
    * <code>repeated string related_frameworks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -504,7 +501,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Output only. The Frameworks that include this CloudControl
+   * Output only. The frameworks that include this cloud control.
    * </pre>
    *
    * <code>repeated string related_frameworks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -518,7 +515,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Output only. The Frameworks that include this CloudControl
+   * Output only. The frameworks that include this cloud control.
    * </pre>
    *
    * <code>repeated string related_frameworks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -533,7 +530,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Output only. The Frameworks that include this CloudControl
+   * Output only. The frameworks that include this cloud control.
    * </pre>
    *
    * <code>repeated string related_frameworks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -548,8 +545,8 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The remediation steps for the findings generated by the cloud
-   * control. The maximum length is 400 characters.
+   * Optional. The remediation steps for the cloud control findings. The
+   * maximum length is 400 characters.
    * </pre>
    *
    * <code>string remediation_steps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -562,8 +559,8 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The remediation steps for the findings generated by the cloud
-   * control. The maximum length is 400 characters.
+   * Optional. The remediation steps for the cloud control findings. The
+   * maximum length is 400 characters.
    * </pre>
    *
    * <code>string remediation_steps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -576,7 +573,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The categories of the cloud control.
+   * Optional. The categories for the cloud control.
    * </pre>
    *
    * <code>
@@ -592,7 +589,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The categories of the cloud control.
+   * Optional. The categories for the cloud control.
    * </pre>
    *
    * <code>
@@ -607,7 +604,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The categories of the cloud control.
+   * Optional. The categories for the cloud control.
    * </pre>
    *
    * <code>
@@ -623,7 +620,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The categories of the cloud control.
+   * Optional. The categories for the cloud control.
    * </pre>
    *
    * <code>
@@ -638,7 +635,7 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. The categories of the cloud control.
+   * Optional. The categories for the cloud control.
    * </pre>
    *
    * <code>
@@ -654,9 +651,9 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Output only. The last updated time of the cloud control.
-   * The create_time is used because a new CC is created whenever we update an
-   * existing CC.
+   * Output only. The time that the cloud control was last updated.
+   * `create_time` is used because a new cloud control is created
+   * whenever an existing cloud control is updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -670,9 +667,9 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Output only. The last updated time of the cloud control.
-   * The create_time is used because a new CC is created whenever we update an
-   * existing CC.
+   * Output only. The time that the cloud control was last updated.
+   * `create_time` is used because a new cloud control is created
+   * whenever an existing cloud control is updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -686,9 +683,9 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Output only. The last updated time of the cloud control.
-   * The create_time is used because a new CC is created whenever we update an
-   * existing CC.
+   * Output only. The time that the cloud control was last updated.
+   * `create_time` is used because a new cloud control is created
+   * whenever an existing cloud control is updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -700,7 +697,8 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. target resource types supported by the CloudControl.
+   * Optional. The target resource types that are supported by the cloud
+   * control.
    * </pre>
    *
    * <code>
@@ -716,7 +714,8 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. target resource types supported by the CloudControl.
+   * Optional. The target resource types that are supported by the cloud
+   * control.
    * </pre>
    *
    * <code>
@@ -731,7 +730,8 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. target resource types supported by the CloudControl.
+   * Optional. The target resource types that are supported by the cloud
+   * control.
    * </pre>
    *
    * <code>
@@ -748,7 +748,8 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. target resource types supported by the CloudControl.
+   * Optional. The target resource types that are supported by the cloud
+   * control.
    * </pre>
    *
    * <code>
@@ -763,7 +764,8 @@ public interface CloudControlOrBuilder
    *
    *
    * <pre>
-   * Optional. target resource types supported by the CloudControl.
+   * Optional. The target resource types that are supported by the cloud
+   * control.
    * </pre>
    *
    * <code>

@@ -661,4 +661,86 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    * @return The bytes for monthlyDbServerVersion.
    */
   com.google.protobuf.ByteString getMonthlyDbServerVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The compute model of the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for computeModel.
+   */
+  int getComputeModelValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The compute model of the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The computeModel.
+   */
+  com.google.cloud.oracledatabase.v1.ComputeModel getComputeModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The database server type of the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The databaseServerType.
+   */
+  java.lang.String getDatabaseServerType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The database server type of the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for databaseServerType.
+   */
+  com.google.protobuf.ByteString getDatabaseServerTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The storage server type of the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The storageServerType.
+   */
+  java.lang.String getStorageServerType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The storage server type of the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for storageServerType.
+   */
+  com.google.protobuf.ByteString getStorageServerTypeBytes();
 }

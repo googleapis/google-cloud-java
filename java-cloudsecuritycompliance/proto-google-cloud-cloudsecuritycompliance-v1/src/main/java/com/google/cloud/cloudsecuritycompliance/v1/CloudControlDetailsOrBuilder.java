@@ -28,9 +28,9 @@ public interface CloudControlDetailsOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the CloudControl in the format:
-   * “organizations/{organization}/locations/{location}/
-   * cloudControls/{cloud-control}”
+   * Required. The name of the cloud control, in the format
+   * `organizations/{organization}/locations/{location}/cloudControls/{cloud-control}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -43,9 +43,9 @@ public interface CloudControlDetailsOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the CloudControl in the format:
-   * “organizations/{organization}/locations/{location}/
-   * cloudControls/{cloud-control}”
+   * Required. The name of the cloud control, in the format
+   * `organizations/{organization}/locations/{location}/cloudControls/{cloud-control}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -58,7 +58,7 @@ public interface CloudControlDetailsOrBuilder
    *
    *
    * <pre>
-   * Required. Major revision of cloudcontrol
+   * Required. The major version of the cloud control.
    * </pre>
    *
    * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -71,9 +71,10 @@ public interface CloudControlDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Parameters is a key-value pair that is required by the
-   * CloudControl. The specification of these parameters will be present in
-   * cloudcontrol.Eg: { "name": "location","value": "us-west-1"}.
+   * Optional. Parameters are key-value pairs that let you provide your custom
+   * location requirements, environment requirements, or other settings that are
+   * relevant to the cloud control. An example parameter is
+   * `{"name": "location","value": "us-west-1"}`.
    * </pre>
    *
    * <code>
@@ -86,9 +87,10 @@ public interface CloudControlDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Parameters is a key-value pair that is required by the
-   * CloudControl. The specification of these parameters will be present in
-   * cloudcontrol.Eg: { "name": "location","value": "us-west-1"}.
+   * Optional. Parameters are key-value pairs that let you provide your custom
+   * location requirements, environment requirements, or other settings that are
+   * relevant to the cloud control. An example parameter is
+   * `{"name": "location","value": "us-west-1"}`.
    * </pre>
    *
    * <code>
@@ -101,9 +103,10 @@ public interface CloudControlDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Parameters is a key-value pair that is required by the
-   * CloudControl. The specification of these parameters will be present in
-   * cloudcontrol.Eg: { "name": "location","value": "us-west-1"}.
+   * Optional. Parameters are key-value pairs that let you provide your custom
+   * location requirements, environment requirements, or other settings that are
+   * relevant to the cloud control. An example parameter is
+   * `{"name": "location","value": "us-west-1"}`.
    * </pre>
    *
    * <code>
@@ -116,9 +119,10 @@ public interface CloudControlDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Parameters is a key-value pair that is required by the
-   * CloudControl. The specification of these parameters will be present in
-   * cloudcontrol.Eg: { "name": "location","value": "us-west-1"}.
+   * Optional. Parameters are key-value pairs that let you provide your custom
+   * location requirements, environment requirements, or other settings that are
+   * relevant to the cloud control. An example parameter is
+   * `{"name": "location","value": "us-west-1"}`.
    * </pre>
    *
    * <code>
@@ -132,9 +136,10 @@ public interface CloudControlDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Parameters is a key-value pair that is required by the
-   * CloudControl. The specification of these parameters will be present in
-   * cloudcontrol.Eg: { "name": "location","value": "us-west-1"}.
+   * Optional. Parameters are key-value pairs that let you provide your custom
+   * location requirements, environment requirements, or other settings that are
+   * relevant to the cloud control. An example parameter is
+   * `{"name": "location","value": "us-west-1"}`.
    * </pre>
    *
    * <code>

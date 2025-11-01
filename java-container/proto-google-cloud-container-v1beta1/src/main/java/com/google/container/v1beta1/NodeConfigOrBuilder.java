@@ -88,8 +88,7 @@ public interface NodeConfigOrBuilder
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
-   * (the [Google Container
-   * Registry](https://cloud.google.com/container-registry/)).
+   * (the [Artifact Registry](https://cloud.google.com/artifact-registry/)).
    *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
@@ -115,8 +114,7 @@ public interface NodeConfigOrBuilder
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
-   * (the [Google Container
-   * Registry](https://cloud.google.com/container-registry/)).
+   * (the [Artifact Registry](https://cloud.google.com/artifact-registry/)).
    *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
@@ -142,8 +140,7 @@ public interface NodeConfigOrBuilder
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
-   * (the [Google Container
-   * Registry](https://cloud.google.com/container-registry/)).
+   * (the [Artifact Registry](https://cloud.google.com/artifact-registry/)).
    *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
@@ -170,8 +167,7 @@ public interface NodeConfigOrBuilder
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
-   * (the [Google Container
-   * Registry](https://cloud.google.com/container-registry/)).
+   * (the [Artifact Registry](https://cloud.google.com/artifact-registry/)).
    *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.

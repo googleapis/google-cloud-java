@@ -364,4 +364,36 @@ public interface InterconnectOrBuilder
    * @return The bytes of the physicalPorts at the given index.
    */
   com.google.protobuf.ByteString getPhysicalPortsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The remote peering network type of the interconnect. It is
+   * required when peering separation is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgenetwork.v1.RemotePeeringNetworkType remote_peering_network_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for remotePeeringNetworkType.
+   */
+  int getRemotePeeringNetworkTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The remote peering network type of the interconnect. It is
+   * required when peering separation is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgenetwork.v1.RemotePeeringNetworkType remote_peering_network_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The remotePeeringNetworkType.
+   */
+  com.google.cloud.edgenetwork.v1.RemotePeeringNetworkType getRemotePeeringNetworkType();
 }

@@ -304,10 +304,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Whether direct access to the Bigtable instance is enabled or not.
+     * Optional. Whether direct access to the Bigtable instance is enabled or
+     * not.
      * </pre>
      *
-     * <code>bool enable_direct_bigtable_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>bool enable_direct_bigtable_access = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enableDirectBigtableAccess.
@@ -322,7 +323,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the bigtableMetadata field is set.
@@ -337,7 +338,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The bigtableMetadata.
@@ -353,7 +354,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadataOrBuilder
@@ -2386,17 +2387,18 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           : autoScaling_;
     }
 
-    public static final int ENABLE_DIRECT_BIGTABLE_ACCESS_FIELD_NUMBER = 2;
+    public static final int ENABLE_DIRECT_BIGTABLE_ACCESS_FIELD_NUMBER = 3;
     private boolean enableDirectBigtableAccess_ = false;
 
     /**
      *
      *
      * <pre>
-     * Optional. Whether direct access to the Bigtable instance is enabled or not.
+     * Optional. Whether direct access to the Bigtable instance is enabled or
+     * not.
      * </pre>
      *
-     * <code>bool enable_direct_bigtable_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>bool enable_direct_bigtable_access = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enableDirectBigtableAccess.
@@ -2406,7 +2408,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       return enableDirectBigtableAccess_;
     }
 
-    public static final int BIGTABLE_METADATA_FIELD_NUMBER = 3;
+    public static final int BIGTABLE_METADATA_FIELD_NUMBER = 4;
     private com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
         bigtableMetadata_;
 
@@ -2418,7 +2420,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the bigtableMetadata field is set.
@@ -2436,7 +2438,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The bigtableMetadata.
@@ -2458,7 +2460,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -2488,10 +2490,10 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         output.writeMessage(1, getAutoScaling());
       }
       if (enableDirectBigtableAccess_ != false) {
-        output.writeBool(2, enableDirectBigtableAccess_);
+        output.writeBool(3, enableDirectBigtableAccess_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeMessage(3, getBigtableMetadata());
+        output.writeMessage(4, getBigtableMetadata());
       }
       getUnknownFields().writeTo(output);
     }
@@ -2507,10 +2509,10 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       }
       if (enableDirectBigtableAccess_ != false) {
         size +=
-            com.google.protobuf.CodedOutputStream.computeBoolSize(2, enableDirectBigtableAccess_);
+            com.google.protobuf.CodedOutputStream.computeBoolSize(3, enableDirectBigtableAccess_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getBigtableMetadata());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getBigtableMetadata());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2862,19 +2864,19 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
-              case 16:
+              case 24:
                 {
                   enableDirectBigtableAccess_ = input.readBool();
                   bitField0_ |= 0x00000002;
                   break;
-                } // case 16
-              case 26:
+                } // case 24
+              case 34:
                 {
                   input.readMessage(
                       getBigtableMetadataFieldBuilder().getBuilder(), extensionRegistry);
                   bitField0_ |= 0x00000004;
                   break;
-                } // case 26
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3123,10 +3125,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Optional. Whether direct access to the Bigtable instance is enabled or not.
+       * Optional. Whether direct access to the Bigtable instance is enabled or
+       * not.
        * </pre>
        *
-       * <code>bool enable_direct_bigtable_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * <code>bool enable_direct_bigtable_access = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The enableDirectBigtableAccess.
@@ -3140,10 +3143,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Optional. Whether direct access to the Bigtable instance is enabled or not.
+       * Optional. Whether direct access to the Bigtable instance is enabled or
+       * not.
        * </pre>
        *
-       * <code>bool enable_direct_bigtable_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * <code>bool enable_direct_bigtable_access = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param value The enableDirectBigtableAccess to set.
@@ -3161,10 +3165,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Optional. Whether direct access to the Bigtable instance is enabled or not.
+       * Optional. Whether direct access to the Bigtable instance is enabled or
+       * not.
        * </pre>
        *
-       * <code>bool enable_direct_bigtable_access = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * <code>bool enable_direct_bigtable_access = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return This builder for chaining.
@@ -3192,7 +3197,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>
-       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return Whether the bigtableMetadata field is set.
@@ -3209,7 +3214,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>
-       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The bigtableMetadata.
@@ -3234,7 +3239,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>
-       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder setBigtableMetadata(
@@ -3260,7 +3265,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>
-       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder setBigtableMetadata(
@@ -3284,7 +3289,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>
-       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder mergeBigtableMetadata(
@@ -3317,7 +3322,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>
-       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder clearBigtableMetadata() {
@@ -3339,7 +3344,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>
-       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata.Builder
@@ -3357,7 +3362,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>
-       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadataOrBuilder
@@ -3380,7 +3385,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        * </pre>
        *
        * <code>
-       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<

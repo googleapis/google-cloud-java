@@ -121,6 +121,43 @@ public interface KnowledgeOperationMetadataOrBuilder
   com.google.cloud.dialogflow.v2beta1.ExportOperationMetadataOrBuilder
       getExportOperationMetadataOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The time when the operation finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp done_time = 5;</code>
+   *
+   * @return Whether the doneTime field is set.
+   */
+  boolean hasDoneTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * The time when the operation finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp done_time = 5;</code>
+   *
+   * @return The doneTime.
+   */
+  com.google.protobuf.Timestamp getDoneTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * The time when the operation finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp done_time = 5;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getDoneTimeOrBuilder();
+
   com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.OperationMetadataCase
       getOperationMetadataCase();
 }

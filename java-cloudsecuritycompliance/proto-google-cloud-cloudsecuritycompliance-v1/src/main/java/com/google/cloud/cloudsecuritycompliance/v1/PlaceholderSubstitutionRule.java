@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Placeholder is substituted in the rendered string.
+ * The placeholder that's substituted in the rendered string.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.PlaceholderSubstitutionRule}
@@ -73,7 +73,7 @@ public final class PlaceholderSubstitutionRule extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Fully qualified proto attribute path (e.g., dot notation)
+   * The fully qualified proto attribute path, in dot notation.
    * </pre>
    *
    * <code>string attribute = 1;</code>
@@ -97,7 +97,7 @@ public final class PlaceholderSubstitutionRule extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Fully qualified proto attribute path (e.g., dot notation)
+   * The fully qualified proto attribute path, in dot notation.
    * </pre>
    *
    * <code>string attribute = 1;</code>
@@ -283,7 +283,7 @@ public final class PlaceholderSubstitutionRule extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Placeholder is substituted in the rendered string.
+   * The placeholder that's substituted in the rendered string.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.PlaceholderSubstitutionRule}
@@ -478,7 +478,7 @@ public final class PlaceholderSubstitutionRule extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Fully qualified proto attribute path (e.g., dot notation)
+     * The fully qualified proto attribute path, in dot notation.
      * </pre>
      *
      * <code>string attribute = 1;</code>
@@ -501,7 +501,7 @@ public final class PlaceholderSubstitutionRule extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Fully qualified proto attribute path (e.g., dot notation)
+     * The fully qualified proto attribute path, in dot notation.
      * </pre>
      *
      * <code>string attribute = 1;</code>
@@ -524,7 +524,7 @@ public final class PlaceholderSubstitutionRule extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Fully qualified proto attribute path (e.g., dot notation)
+     * The fully qualified proto attribute path, in dot notation.
      * </pre>
      *
      * <code>string attribute = 1;</code>
@@ -546,7 +546,7 @@ public final class PlaceholderSubstitutionRule extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Fully qualified proto attribute path (e.g., dot notation)
+     * The fully qualified proto attribute path, in dot notation.
      * </pre>
      *
      * <code>string attribute = 1;</code>
@@ -564,7 +564,7 @@ public final class PlaceholderSubstitutionRule extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Fully qualified proto attribute path (e.g., dot notation)
+     * The fully qualified proto attribute path, in dot notation.
      * </pre>
      *
      * <code>string attribute = 1;</code>

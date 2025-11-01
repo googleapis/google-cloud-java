@@ -18,10 +18,20 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CustomFieldServiceClient.ListCustomFieldsPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateCustomFieldsRequest;
+import com.google.ads.admanager.v1.BatchActivateCustomFieldsResponse;
+import com.google.ads.admanager.v1.BatchCreateCustomFieldsRequest;
+import com.google.ads.admanager.v1.BatchCreateCustomFieldsResponse;
+import com.google.ads.admanager.v1.BatchDeactivateCustomFieldsRequest;
+import com.google.ads.admanager.v1.BatchDeactivateCustomFieldsResponse;
+import com.google.ads.admanager.v1.BatchUpdateCustomFieldsRequest;
+import com.google.ads.admanager.v1.BatchUpdateCustomFieldsResponse;
+import com.google.ads.admanager.v1.CreateCustomFieldRequest;
 import com.google.ads.admanager.v1.CustomField;
 import com.google.ads.admanager.v1.GetCustomFieldRequest;
 import com.google.ads.admanager.v1.ListCustomFieldsRequest;
 import com.google.ads.admanager.v1.ListCustomFieldsResponse;
+import com.google.ads.admanager.v1.UpdateCustomFieldRequest;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -126,11 +136,258 @@ public class HttpJsonCustomFieldServiceStub extends CustomFieldServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateCustomFieldRequest, CustomField>
+      createCustomFieldMethodDescriptor =
+          ApiMethodDescriptor.<CreateCustomFieldRequest, CustomField>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.CustomFieldService/CreateCustomField")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateCustomFieldRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/customFields",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomFieldRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomFieldRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("customField", request.getCustomField(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CustomField>newBuilder()
+                      .setDefaultInstance(CustomField.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchCreateCustomFieldsRequest, BatchCreateCustomFieldsResponse>
+      batchCreateCustomFieldsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchCreateCustomFieldsRequest, BatchCreateCustomFieldsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CustomFieldService/BatchCreateCustomFields")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchCreateCustomFieldsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/customFields:batchCreate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateCustomFieldsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateCustomFieldsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchCreateCustomFieldsResponse>newBuilder()
+                      .setDefaultInstance(BatchCreateCustomFieldsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateCustomFieldRequest, CustomField>
+      updateCustomFieldMethodDescriptor =
+          ApiMethodDescriptor.<UpdateCustomFieldRequest, CustomField>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.CustomFieldService/UpdateCustomField")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateCustomFieldRequest>newBuilder()
+                      .setPath(
+                          "/v1/{customField.name=networks/*/customFields/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCustomFieldRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "customField.name", request.getCustomField().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCustomFieldRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("customField", request.getCustomField(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CustomField>newBuilder()
+                      .setDefaultInstance(CustomField.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchUpdateCustomFieldsRequest, BatchUpdateCustomFieldsResponse>
+      batchUpdateCustomFieldsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchUpdateCustomFieldsRequest, BatchUpdateCustomFieldsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CustomFieldService/BatchUpdateCustomFields")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchUpdateCustomFieldsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/customFields:batchUpdate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateCustomFieldsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateCustomFieldsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchUpdateCustomFieldsResponse>newBuilder()
+                      .setDefaultInstance(BatchUpdateCustomFieldsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchActivateCustomFieldsRequest, BatchActivateCustomFieldsResponse>
+      batchActivateCustomFieldsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchActivateCustomFieldsRequest, BatchActivateCustomFieldsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CustomFieldService/BatchActivateCustomFields")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchActivateCustomFieldsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/customFields:batchActivate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchActivateCustomFieldsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchActivateCustomFieldsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchActivateCustomFieldsResponse>newBuilder()
+                      .setDefaultInstance(BatchActivateCustomFieldsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchDeactivateCustomFieldsRequest, BatchDeactivateCustomFieldsResponse>
+      batchDeactivateCustomFieldsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchDeactivateCustomFieldsRequest, BatchDeactivateCustomFieldsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CustomFieldService/BatchDeactivateCustomFields")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchDeactivateCustomFieldsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/customFields:batchDeactivate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeactivateCustomFieldsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeactivateCustomFieldsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchDeactivateCustomFieldsResponse>newBuilder()
+                      .setDefaultInstance(BatchDeactivateCustomFieldsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetCustomFieldRequest, CustomField> getCustomFieldCallable;
   private final UnaryCallable<ListCustomFieldsRequest, ListCustomFieldsResponse>
       listCustomFieldsCallable;
   private final UnaryCallable<ListCustomFieldsRequest, ListCustomFieldsPagedResponse>
       listCustomFieldsPagedCallable;
+  private final UnaryCallable<CreateCustomFieldRequest, CustomField> createCustomFieldCallable;
+  private final UnaryCallable<BatchCreateCustomFieldsRequest, BatchCreateCustomFieldsResponse>
+      batchCreateCustomFieldsCallable;
+  private final UnaryCallable<UpdateCustomFieldRequest, CustomField> updateCustomFieldCallable;
+  private final UnaryCallable<BatchUpdateCustomFieldsRequest, BatchUpdateCustomFieldsResponse>
+      batchUpdateCustomFieldsCallable;
+  private final UnaryCallable<BatchActivateCustomFieldsRequest, BatchActivateCustomFieldsResponse>
+      batchActivateCustomFieldsCallable;
+  private final UnaryCallable<
+          BatchDeactivateCustomFieldsRequest, BatchDeactivateCustomFieldsResponse>
+      batchDeactivateCustomFieldsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -197,6 +454,82 @@ public class HttpJsonCustomFieldServiceStub extends CustomFieldServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<CreateCustomFieldRequest, CustomField> createCustomFieldTransportSettings =
+        HttpJsonCallSettings.<CreateCustomFieldRequest, CustomField>newBuilder()
+            .setMethodDescriptor(createCustomFieldMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<BatchCreateCustomFieldsRequest, BatchCreateCustomFieldsResponse>
+        batchCreateCustomFieldsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchCreateCustomFieldsRequest, BatchCreateCustomFieldsResponse>newBuilder()
+                .setMethodDescriptor(batchCreateCustomFieldsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateCustomFieldRequest, CustomField> updateCustomFieldTransportSettings =
+        HttpJsonCallSettings.<UpdateCustomFieldRequest, CustomField>newBuilder()
+            .setMethodDescriptor(updateCustomFieldMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "custom_field.name", String.valueOf(request.getCustomField().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<BatchUpdateCustomFieldsRequest, BatchUpdateCustomFieldsResponse>
+        batchUpdateCustomFieldsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchUpdateCustomFieldsRequest, BatchUpdateCustomFieldsResponse>newBuilder()
+                .setMethodDescriptor(batchUpdateCustomFieldsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<BatchActivateCustomFieldsRequest, BatchActivateCustomFieldsResponse>
+        batchActivateCustomFieldsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchActivateCustomFieldsRequest, BatchActivateCustomFieldsResponse>newBuilder()
+                .setMethodDescriptor(batchActivateCustomFieldsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<BatchDeactivateCustomFieldsRequest, BatchDeactivateCustomFieldsResponse>
+        batchDeactivateCustomFieldsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchDeactivateCustomFieldsRequest, BatchDeactivateCustomFieldsResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchDeactivateCustomFieldsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getCustomFieldCallable =
         callableFactory.createUnaryCallable(
@@ -207,6 +540,36 @@ public class HttpJsonCustomFieldServiceStub extends CustomFieldServiceStub {
     this.listCustomFieldsPagedCallable =
         callableFactory.createPagedCallable(
             listCustomFieldsTransportSettings, settings.listCustomFieldsSettings(), clientContext);
+    this.createCustomFieldCallable =
+        callableFactory.createUnaryCallable(
+            createCustomFieldTransportSettings,
+            settings.createCustomFieldSettings(),
+            clientContext);
+    this.batchCreateCustomFieldsCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateCustomFieldsTransportSettings,
+            settings.batchCreateCustomFieldsSettings(),
+            clientContext);
+    this.updateCustomFieldCallable =
+        callableFactory.createUnaryCallable(
+            updateCustomFieldTransportSettings,
+            settings.updateCustomFieldSettings(),
+            clientContext);
+    this.batchUpdateCustomFieldsCallable =
+        callableFactory.createUnaryCallable(
+            batchUpdateCustomFieldsTransportSettings,
+            settings.batchUpdateCustomFieldsSettings(),
+            clientContext);
+    this.batchActivateCustomFieldsCallable =
+        callableFactory.createUnaryCallable(
+            batchActivateCustomFieldsTransportSettings,
+            settings.batchActivateCustomFieldsSettings(),
+            clientContext);
+    this.batchDeactivateCustomFieldsCallable =
+        callableFactory.createUnaryCallable(
+            batchDeactivateCustomFieldsTransportSettings,
+            settings.batchDeactivateCustomFieldsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -217,6 +580,12 @@ public class HttpJsonCustomFieldServiceStub extends CustomFieldServiceStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getCustomFieldMethodDescriptor);
     methodDescriptors.add(listCustomFieldsMethodDescriptor);
+    methodDescriptors.add(createCustomFieldMethodDescriptor);
+    methodDescriptors.add(batchCreateCustomFieldsMethodDescriptor);
+    methodDescriptors.add(updateCustomFieldMethodDescriptor);
+    methodDescriptors.add(batchUpdateCustomFieldsMethodDescriptor);
+    methodDescriptors.add(batchActivateCustomFieldsMethodDescriptor);
+    methodDescriptors.add(batchDeactivateCustomFieldsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -235,6 +604,40 @@ public class HttpJsonCustomFieldServiceStub extends CustomFieldServiceStub {
   public UnaryCallable<ListCustomFieldsRequest, ListCustomFieldsPagedResponse>
       listCustomFieldsPagedCallable() {
     return listCustomFieldsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCustomFieldRequest, CustomField> createCustomFieldCallable() {
+    return createCustomFieldCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchCreateCustomFieldsRequest, BatchCreateCustomFieldsResponse>
+      batchCreateCustomFieldsCallable() {
+    return batchCreateCustomFieldsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCustomFieldRequest, CustomField> updateCustomFieldCallable() {
+    return updateCustomFieldCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchUpdateCustomFieldsRequest, BatchUpdateCustomFieldsResponse>
+      batchUpdateCustomFieldsCallable() {
+    return batchUpdateCustomFieldsCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchActivateCustomFieldsRequest, BatchActivateCustomFieldsResponse>
+      batchActivateCustomFieldsCallable() {
+    return batchActivateCustomFieldsCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchDeactivateCustomFieldsRequest, BatchDeactivateCustomFieldsResponse>
+      batchDeactivateCustomFieldsCallable() {
+    return batchDeactivateCustomFieldsCallable;
   }
 
   @Override

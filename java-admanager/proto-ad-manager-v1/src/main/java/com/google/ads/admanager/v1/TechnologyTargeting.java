@@ -123,6 +123,185 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
         : bandwidthTargeting_;
   }
 
+  public static final int BROWSER_TARGETING_FIELD_NUMBER = 4;
+  private com.google.ads.admanager.v1.BrowserTargeting browserTargeting_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Browser targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BrowserTargeting browser_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the browserTargeting field is set.
+   */
+  @java.lang.Override
+  public boolean hasBrowserTargeting() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Browser targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BrowserTargeting browser_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The browserTargeting.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.BrowserTargeting getBrowserTargeting() {
+    return browserTargeting_ == null
+        ? com.google.ads.admanager.v1.BrowserTargeting.getDefaultInstance()
+        : browserTargeting_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Browser targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BrowserTargeting browser_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.BrowserTargetingOrBuilder getBrowserTargetingOrBuilder() {
+    return browserTargeting_ == null
+        ? com.google.ads.admanager.v1.BrowserTargeting.getDefaultInstance()
+        : browserTargeting_;
+  }
+
+  public static final int BROWSER_LANGUAGE_TARGETING_FIELD_NUMBER = 5;
+  private com.google.ads.admanager.v1.BrowserLanguageTargeting browserLanguageTargeting_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Browser language targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BrowserLanguageTargeting browser_language_targeting = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the browserLanguageTargeting field is set.
+   */
+  @java.lang.Override
+  public boolean hasBrowserLanguageTargeting() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Browser language targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BrowserLanguageTargeting browser_language_targeting = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The browserLanguageTargeting.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.BrowserLanguageTargeting getBrowserLanguageTargeting() {
+    return browserLanguageTargeting_ == null
+        ? com.google.ads.admanager.v1.BrowserLanguageTargeting.getDefaultInstance()
+        : browserLanguageTargeting_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Browser language targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BrowserLanguageTargeting browser_language_targeting = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.BrowserLanguageTargetingOrBuilder
+      getBrowserLanguageTargetingOrBuilder() {
+    return browserLanguageTargeting_ == null
+        ? com.google.ads.admanager.v1.BrowserLanguageTargeting.getDefaultInstance()
+        : browserLanguageTargeting_;
+  }
+
+  public static final int DEVICE_CAPABILITY_TARGETING_FIELD_NUMBER = 6;
+  private com.google.ads.admanager.v1.DeviceCapabilityTargeting deviceCapabilityTargeting_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Device capability targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DeviceCapabilityTargeting device_capability_targeting = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the deviceCapabilityTargeting field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeviceCapabilityTargeting() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Device capability targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DeviceCapabilityTargeting device_capability_targeting = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The deviceCapabilityTargeting.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.DeviceCapabilityTargeting getDeviceCapabilityTargeting() {
+    return deviceCapabilityTargeting_ == null
+        ? com.google.ads.admanager.v1.DeviceCapabilityTargeting.getDefaultInstance()
+        : deviceCapabilityTargeting_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Device capability targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DeviceCapabilityTargeting device_capability_targeting = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.DeviceCapabilityTargetingOrBuilder
+      getDeviceCapabilityTargetingOrBuilder() {
+    return deviceCapabilityTargeting_ == null
+        ? com.google.ads.admanager.v1.DeviceCapabilityTargeting.getDefaultInstance()
+        : deviceCapabilityTargeting_;
+  }
+
   public static final int DEVICE_CATEGORY_TARGETING_FIELD_NUMBER = 1;
   private com.google.ads.admanager.v1.DeviceCategoryTargeting deviceCategoryTargeting_;
 
@@ -141,7 +320,7 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasDeviceCategoryTargeting() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -183,6 +362,126 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
         : deviceCategoryTargeting_;
   }
 
+  public static final int DEVICE_MANUFACTURER_TARGETING_FIELD_NUMBER = 7;
+  private com.google.ads.admanager.v1.DeviceManufacturerTargeting deviceManufacturerTargeting_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Device manufacturer targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DeviceManufacturerTargeting device_manufacturer_targeting = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the deviceManufacturerTargeting field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeviceManufacturerTargeting() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Device manufacturer targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DeviceManufacturerTargeting device_manufacturer_targeting = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The deviceManufacturerTargeting.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.DeviceManufacturerTargeting getDeviceManufacturerTargeting() {
+    return deviceManufacturerTargeting_ == null
+        ? com.google.ads.admanager.v1.DeviceManufacturerTargeting.getDefaultInstance()
+        : deviceManufacturerTargeting_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Device manufacturer targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DeviceManufacturerTargeting device_manufacturer_targeting = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.DeviceManufacturerTargetingOrBuilder
+      getDeviceManufacturerTargetingOrBuilder() {
+    return deviceManufacturerTargeting_ == null
+        ? com.google.ads.admanager.v1.DeviceManufacturerTargeting.getDefaultInstance()
+        : deviceManufacturerTargeting_;
+  }
+
+  public static final int MOBILE_CARRIER_TARGETING_FIELD_NUMBER = 8;
+  private com.google.ads.admanager.v1.MobileCarrierTargeting mobileCarrierTargeting_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mobile carrier targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.MobileCarrierTargeting mobile_carrier_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the mobileCarrierTargeting field is set.
+   */
+  @java.lang.Override
+  public boolean hasMobileCarrierTargeting() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mobile carrier targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.MobileCarrierTargeting mobile_carrier_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mobileCarrierTargeting.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.MobileCarrierTargeting getMobileCarrierTargeting() {
+    return mobileCarrierTargeting_ == null
+        ? com.google.ads.admanager.v1.MobileCarrierTargeting.getDefaultInstance()
+        : mobileCarrierTargeting_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mobile carrier targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.MobileCarrierTargeting mobile_carrier_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.MobileCarrierTargetingOrBuilder
+      getMobileCarrierTargetingOrBuilder() {
+    return mobileCarrierTargeting_ == null
+        ? com.google.ads.admanager.v1.MobileCarrierTargeting.getDefaultInstance()
+        : mobileCarrierTargeting_;
+  }
+
   public static final int OPERATING_SYSTEM_TARGETING_FIELD_NUMBER = 2;
   private com.google.ads.admanager.v1.OperatingSystemTargeting operatingSystemTargeting_;
 
@@ -201,7 +500,7 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasOperatingSystemTargeting() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -257,14 +556,29 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(1, getDeviceCategoryTargeting());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(2, getOperatingSystemTargeting());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getBandwidthTargeting());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(4, getBrowserTargeting());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(5, getBrowserLanguageTargeting());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(6, getDeviceCapabilityTargeting());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(7, getDeviceManufacturerTargeting());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(8, getMobileCarrierTargeting());
     }
     getUnknownFields().writeTo(output);
   }
@@ -275,17 +589,39 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDeviceCategoryTargeting());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, getOperatingSystemTargeting());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getBandwidthTargeting());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getBrowserTargeting());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, getBrowserLanguageTargeting());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, getDeviceCapabilityTargeting());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, getDeviceManufacturerTargeting());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(8, getMobileCarrierTargeting());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -307,9 +643,31 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
     if (hasBandwidthTargeting()) {
       if (!getBandwidthTargeting().equals(other.getBandwidthTargeting())) return false;
     }
+    if (hasBrowserTargeting() != other.hasBrowserTargeting()) return false;
+    if (hasBrowserTargeting()) {
+      if (!getBrowserTargeting().equals(other.getBrowserTargeting())) return false;
+    }
+    if (hasBrowserLanguageTargeting() != other.hasBrowserLanguageTargeting()) return false;
+    if (hasBrowserLanguageTargeting()) {
+      if (!getBrowserLanguageTargeting().equals(other.getBrowserLanguageTargeting())) return false;
+    }
+    if (hasDeviceCapabilityTargeting() != other.hasDeviceCapabilityTargeting()) return false;
+    if (hasDeviceCapabilityTargeting()) {
+      if (!getDeviceCapabilityTargeting().equals(other.getDeviceCapabilityTargeting()))
+        return false;
+    }
     if (hasDeviceCategoryTargeting() != other.hasDeviceCategoryTargeting()) return false;
     if (hasDeviceCategoryTargeting()) {
       if (!getDeviceCategoryTargeting().equals(other.getDeviceCategoryTargeting())) return false;
+    }
+    if (hasDeviceManufacturerTargeting() != other.hasDeviceManufacturerTargeting()) return false;
+    if (hasDeviceManufacturerTargeting()) {
+      if (!getDeviceManufacturerTargeting().equals(other.getDeviceManufacturerTargeting()))
+        return false;
+    }
+    if (hasMobileCarrierTargeting() != other.hasMobileCarrierTargeting()) return false;
+    if (hasMobileCarrierTargeting()) {
+      if (!getMobileCarrierTargeting().equals(other.getMobileCarrierTargeting())) return false;
     }
     if (hasOperatingSystemTargeting() != other.hasOperatingSystemTargeting()) return false;
     if (hasOperatingSystemTargeting()) {
@@ -330,9 +688,29 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + BANDWIDTH_TARGETING_FIELD_NUMBER;
       hash = (53 * hash) + getBandwidthTargeting().hashCode();
     }
+    if (hasBrowserTargeting()) {
+      hash = (37 * hash) + BROWSER_TARGETING_FIELD_NUMBER;
+      hash = (53 * hash) + getBrowserTargeting().hashCode();
+    }
+    if (hasBrowserLanguageTargeting()) {
+      hash = (37 * hash) + BROWSER_LANGUAGE_TARGETING_FIELD_NUMBER;
+      hash = (53 * hash) + getBrowserLanguageTargeting().hashCode();
+    }
+    if (hasDeviceCapabilityTargeting()) {
+      hash = (37 * hash) + DEVICE_CAPABILITY_TARGETING_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceCapabilityTargeting().hashCode();
+    }
     if (hasDeviceCategoryTargeting()) {
       hash = (37 * hash) + DEVICE_CATEGORY_TARGETING_FIELD_NUMBER;
       hash = (53 * hash) + getDeviceCategoryTargeting().hashCode();
+    }
+    if (hasDeviceManufacturerTargeting()) {
+      hash = (37 * hash) + DEVICE_MANUFACTURER_TARGETING_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceManufacturerTargeting().hashCode();
+    }
+    if (hasMobileCarrierTargeting()) {
+      hash = (37 * hash) + MOBILE_CARRIER_TARGETING_FIELD_NUMBER;
+      hash = (53 * hash) + getMobileCarrierTargeting().hashCode();
     }
     if (hasOperatingSystemTargeting()) {
       hash = (37 * hash) + OPERATING_SYSTEM_TARGETING_FIELD_NUMBER;
@@ -481,7 +859,12 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getBandwidthTargetingFieldBuilder();
+        getBrowserTargetingFieldBuilder();
+        getBrowserLanguageTargetingFieldBuilder();
+        getDeviceCapabilityTargetingFieldBuilder();
         getDeviceCategoryTargetingFieldBuilder();
+        getDeviceManufacturerTargetingFieldBuilder();
+        getMobileCarrierTargetingFieldBuilder();
         getOperatingSystemTargetingFieldBuilder();
       }
     }
@@ -495,10 +878,35 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
         bandwidthTargetingBuilder_.dispose();
         bandwidthTargetingBuilder_ = null;
       }
+      browserTargeting_ = null;
+      if (browserTargetingBuilder_ != null) {
+        browserTargetingBuilder_.dispose();
+        browserTargetingBuilder_ = null;
+      }
+      browserLanguageTargeting_ = null;
+      if (browserLanguageTargetingBuilder_ != null) {
+        browserLanguageTargetingBuilder_.dispose();
+        browserLanguageTargetingBuilder_ = null;
+      }
+      deviceCapabilityTargeting_ = null;
+      if (deviceCapabilityTargetingBuilder_ != null) {
+        deviceCapabilityTargetingBuilder_.dispose();
+        deviceCapabilityTargetingBuilder_ = null;
+      }
       deviceCategoryTargeting_ = null;
       if (deviceCategoryTargetingBuilder_ != null) {
         deviceCategoryTargetingBuilder_.dispose();
         deviceCategoryTargetingBuilder_ = null;
+      }
+      deviceManufacturerTargeting_ = null;
+      if (deviceManufacturerTargetingBuilder_ != null) {
+        deviceManufacturerTargetingBuilder_.dispose();
+        deviceManufacturerTargetingBuilder_ = null;
+      }
+      mobileCarrierTargeting_ = null;
+      if (mobileCarrierTargetingBuilder_ != null) {
+        mobileCarrierTargetingBuilder_.dispose();
+        mobileCarrierTargetingBuilder_ = null;
       }
       operatingSystemTargeting_ = null;
       if (operatingSystemTargetingBuilder_ != null) {
@@ -550,18 +958,51 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.browserTargeting_ =
+            browserTargetingBuilder_ == null ? browserTargeting_ : browserTargetingBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.browserLanguageTargeting_ =
+            browserLanguageTargetingBuilder_ == null
+                ? browserLanguageTargeting_
+                : browserLanguageTargetingBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.deviceCapabilityTargeting_ =
+            deviceCapabilityTargetingBuilder_ == null
+                ? deviceCapabilityTargeting_
+                : deviceCapabilityTargetingBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.deviceCategoryTargeting_ =
             deviceCategoryTargetingBuilder_ == null
                 ? deviceCategoryTargeting_
                 : deviceCategoryTargetingBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.deviceManufacturerTargeting_ =
+            deviceManufacturerTargetingBuilder_ == null
+                ? deviceManufacturerTargeting_
+                : deviceManufacturerTargetingBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.mobileCarrierTargeting_ =
+            mobileCarrierTargetingBuilder_ == null
+                ? mobileCarrierTargeting_
+                : mobileCarrierTargetingBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.operatingSystemTargeting_ =
             operatingSystemTargetingBuilder_ == null
                 ? operatingSystemTargeting_
                 : operatingSystemTargetingBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -615,8 +1056,23 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
       if (other.hasBandwidthTargeting()) {
         mergeBandwidthTargeting(other.getBandwidthTargeting());
       }
+      if (other.hasBrowserTargeting()) {
+        mergeBrowserTargeting(other.getBrowserTargeting());
+      }
+      if (other.hasBrowserLanguageTargeting()) {
+        mergeBrowserLanguageTargeting(other.getBrowserLanguageTargeting());
+      }
+      if (other.hasDeviceCapabilityTargeting()) {
+        mergeDeviceCapabilityTargeting(other.getDeviceCapabilityTargeting());
+      }
       if (other.hasDeviceCategoryTargeting()) {
         mergeDeviceCategoryTargeting(other.getDeviceCategoryTargeting());
+      }
+      if (other.hasDeviceManufacturerTargeting()) {
+        mergeDeviceManufacturerTargeting(other.getDeviceManufacturerTargeting());
+      }
+      if (other.hasMobileCarrierTargeting()) {
+        mergeMobileCarrierTargeting(other.getMobileCarrierTargeting());
       }
       if (other.hasOperatingSystemTargeting()) {
         mergeOperatingSystemTargeting(other.getOperatingSystemTargeting());
@@ -651,14 +1107,14 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
               {
                 input.readMessage(
                     getDeviceCategoryTargetingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getOperatingSystemTargetingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 18
             case 26:
@@ -668,6 +1124,41 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000001;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getBrowserTargetingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getBrowserLanguageTargetingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getDeviceCapabilityTargetingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getDeviceManufacturerTargetingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getMobileCarrierTargetingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -902,6 +1393,656 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
       return bandwidthTargetingBuilder_;
     }
 
+    private com.google.ads.admanager.v1.BrowserTargeting browserTargeting_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.ads.admanager.v1.BrowserTargeting,
+            com.google.ads.admanager.v1.BrowserTargeting.Builder,
+            com.google.ads.admanager.v1.BrowserTargetingOrBuilder>
+        browserTargetingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserTargeting browser_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the browserTargeting field is set.
+     */
+    public boolean hasBrowserTargeting() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserTargeting browser_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The browserTargeting.
+     */
+    public com.google.ads.admanager.v1.BrowserTargeting getBrowserTargeting() {
+      if (browserTargetingBuilder_ == null) {
+        return browserTargeting_ == null
+            ? com.google.ads.admanager.v1.BrowserTargeting.getDefaultInstance()
+            : browserTargeting_;
+      } else {
+        return browserTargetingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserTargeting browser_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBrowserTargeting(com.google.ads.admanager.v1.BrowserTargeting value) {
+      if (browserTargetingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        browserTargeting_ = value;
+      } else {
+        browserTargetingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserTargeting browser_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBrowserTargeting(
+        com.google.ads.admanager.v1.BrowserTargeting.Builder builderForValue) {
+      if (browserTargetingBuilder_ == null) {
+        browserTargeting_ = builderForValue.build();
+      } else {
+        browserTargetingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserTargeting browser_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBrowserTargeting(com.google.ads.admanager.v1.BrowserTargeting value) {
+      if (browserTargetingBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && browserTargeting_ != null
+            && browserTargeting_
+                != com.google.ads.admanager.v1.BrowserTargeting.getDefaultInstance()) {
+          getBrowserTargetingBuilder().mergeFrom(value);
+        } else {
+          browserTargeting_ = value;
+        }
+      } else {
+        browserTargetingBuilder_.mergeFrom(value);
+      }
+      if (browserTargeting_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserTargeting browser_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBrowserTargeting() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      browserTargeting_ = null;
+      if (browserTargetingBuilder_ != null) {
+        browserTargetingBuilder_.dispose();
+        browserTargetingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserTargeting browser_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.BrowserTargeting.Builder getBrowserTargetingBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getBrowserTargetingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserTargeting browser_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.BrowserTargetingOrBuilder getBrowserTargetingOrBuilder() {
+      if (browserTargetingBuilder_ != null) {
+        return browserTargetingBuilder_.getMessageOrBuilder();
+      } else {
+        return browserTargeting_ == null
+            ? com.google.ads.admanager.v1.BrowserTargeting.getDefaultInstance()
+            : browserTargeting_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserTargeting browser_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.ads.admanager.v1.BrowserTargeting,
+            com.google.ads.admanager.v1.BrowserTargeting.Builder,
+            com.google.ads.admanager.v1.BrowserTargetingOrBuilder>
+        getBrowserTargetingFieldBuilder() {
+      if (browserTargetingBuilder_ == null) {
+        browserTargetingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.ads.admanager.v1.BrowserTargeting,
+                com.google.ads.admanager.v1.BrowserTargeting.Builder,
+                com.google.ads.admanager.v1.BrowserTargetingOrBuilder>(
+                getBrowserTargeting(), getParentForChildren(), isClean());
+        browserTargeting_ = null;
+      }
+      return browserTargetingBuilder_;
+    }
+
+    private com.google.ads.admanager.v1.BrowserLanguageTargeting browserLanguageTargeting_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.ads.admanager.v1.BrowserLanguageTargeting,
+            com.google.ads.admanager.v1.BrowserLanguageTargeting.Builder,
+            com.google.ads.admanager.v1.BrowserLanguageTargetingOrBuilder>
+        browserLanguageTargetingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser language targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserLanguageTargeting browser_language_targeting = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the browserLanguageTargeting field is set.
+     */
+    public boolean hasBrowserLanguageTargeting() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser language targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserLanguageTargeting browser_language_targeting = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The browserLanguageTargeting.
+     */
+    public com.google.ads.admanager.v1.BrowserLanguageTargeting getBrowserLanguageTargeting() {
+      if (browserLanguageTargetingBuilder_ == null) {
+        return browserLanguageTargeting_ == null
+            ? com.google.ads.admanager.v1.BrowserLanguageTargeting.getDefaultInstance()
+            : browserLanguageTargeting_;
+      } else {
+        return browserLanguageTargetingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser language targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserLanguageTargeting browser_language_targeting = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBrowserLanguageTargeting(
+        com.google.ads.admanager.v1.BrowserLanguageTargeting value) {
+      if (browserLanguageTargetingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        browserLanguageTargeting_ = value;
+      } else {
+        browserLanguageTargetingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser language targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserLanguageTargeting browser_language_targeting = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBrowserLanguageTargeting(
+        com.google.ads.admanager.v1.BrowserLanguageTargeting.Builder builderForValue) {
+      if (browserLanguageTargetingBuilder_ == null) {
+        browserLanguageTargeting_ = builderForValue.build();
+      } else {
+        browserLanguageTargetingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser language targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserLanguageTargeting browser_language_targeting = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBrowserLanguageTargeting(
+        com.google.ads.admanager.v1.BrowserLanguageTargeting value) {
+      if (browserLanguageTargetingBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && browserLanguageTargeting_ != null
+            && browserLanguageTargeting_
+                != com.google.ads.admanager.v1.BrowserLanguageTargeting.getDefaultInstance()) {
+          getBrowserLanguageTargetingBuilder().mergeFrom(value);
+        } else {
+          browserLanguageTargeting_ = value;
+        }
+      } else {
+        browserLanguageTargetingBuilder_.mergeFrom(value);
+      }
+      if (browserLanguageTargeting_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser language targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserLanguageTargeting browser_language_targeting = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBrowserLanguageTargeting() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      browserLanguageTargeting_ = null;
+      if (browserLanguageTargetingBuilder_ != null) {
+        browserLanguageTargetingBuilder_.dispose();
+        browserLanguageTargetingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser language targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserLanguageTargeting browser_language_targeting = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.BrowserLanguageTargeting.Builder
+        getBrowserLanguageTargetingBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getBrowserLanguageTargetingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser language targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserLanguageTargeting browser_language_targeting = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.BrowserLanguageTargetingOrBuilder
+        getBrowserLanguageTargetingOrBuilder() {
+      if (browserLanguageTargetingBuilder_ != null) {
+        return browserLanguageTargetingBuilder_.getMessageOrBuilder();
+      } else {
+        return browserLanguageTargeting_ == null
+            ? com.google.ads.admanager.v1.BrowserLanguageTargeting.getDefaultInstance()
+            : browserLanguageTargeting_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Browser language targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BrowserLanguageTargeting browser_language_targeting = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.ads.admanager.v1.BrowserLanguageTargeting,
+            com.google.ads.admanager.v1.BrowserLanguageTargeting.Builder,
+            com.google.ads.admanager.v1.BrowserLanguageTargetingOrBuilder>
+        getBrowserLanguageTargetingFieldBuilder() {
+      if (browserLanguageTargetingBuilder_ == null) {
+        browserLanguageTargetingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.ads.admanager.v1.BrowserLanguageTargeting,
+                com.google.ads.admanager.v1.BrowserLanguageTargeting.Builder,
+                com.google.ads.admanager.v1.BrowserLanguageTargetingOrBuilder>(
+                getBrowserLanguageTargeting(), getParentForChildren(), isClean());
+        browserLanguageTargeting_ = null;
+      }
+      return browserLanguageTargetingBuilder_;
+    }
+
+    private com.google.ads.admanager.v1.DeviceCapabilityTargeting deviceCapabilityTargeting_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.ads.admanager.v1.DeviceCapabilityTargeting,
+            com.google.ads.admanager.v1.DeviceCapabilityTargeting.Builder,
+            com.google.ads.admanager.v1.DeviceCapabilityTargetingOrBuilder>
+        deviceCapabilityTargetingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device capability targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceCapabilityTargeting device_capability_targeting = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the deviceCapabilityTargeting field is set.
+     */
+    public boolean hasDeviceCapabilityTargeting() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device capability targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceCapabilityTargeting device_capability_targeting = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The deviceCapabilityTargeting.
+     */
+    public com.google.ads.admanager.v1.DeviceCapabilityTargeting getDeviceCapabilityTargeting() {
+      if (deviceCapabilityTargetingBuilder_ == null) {
+        return deviceCapabilityTargeting_ == null
+            ? com.google.ads.admanager.v1.DeviceCapabilityTargeting.getDefaultInstance()
+            : deviceCapabilityTargeting_;
+      } else {
+        return deviceCapabilityTargetingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device capability targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceCapabilityTargeting device_capability_targeting = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDeviceCapabilityTargeting(
+        com.google.ads.admanager.v1.DeviceCapabilityTargeting value) {
+      if (deviceCapabilityTargetingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deviceCapabilityTargeting_ = value;
+      } else {
+        deviceCapabilityTargetingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device capability targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceCapabilityTargeting device_capability_targeting = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDeviceCapabilityTargeting(
+        com.google.ads.admanager.v1.DeviceCapabilityTargeting.Builder builderForValue) {
+      if (deviceCapabilityTargetingBuilder_ == null) {
+        deviceCapabilityTargeting_ = builderForValue.build();
+      } else {
+        deviceCapabilityTargetingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device capability targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceCapabilityTargeting device_capability_targeting = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDeviceCapabilityTargeting(
+        com.google.ads.admanager.v1.DeviceCapabilityTargeting value) {
+      if (deviceCapabilityTargetingBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && deviceCapabilityTargeting_ != null
+            && deviceCapabilityTargeting_
+                != com.google.ads.admanager.v1.DeviceCapabilityTargeting.getDefaultInstance()) {
+          getDeviceCapabilityTargetingBuilder().mergeFrom(value);
+        } else {
+          deviceCapabilityTargeting_ = value;
+        }
+      } else {
+        deviceCapabilityTargetingBuilder_.mergeFrom(value);
+      }
+      if (deviceCapabilityTargeting_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device capability targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceCapabilityTargeting device_capability_targeting = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDeviceCapabilityTargeting() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      deviceCapabilityTargeting_ = null;
+      if (deviceCapabilityTargetingBuilder_ != null) {
+        deviceCapabilityTargetingBuilder_.dispose();
+        deviceCapabilityTargetingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device capability targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceCapabilityTargeting device_capability_targeting = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DeviceCapabilityTargeting.Builder
+        getDeviceCapabilityTargetingBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getDeviceCapabilityTargetingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device capability targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceCapabilityTargeting device_capability_targeting = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DeviceCapabilityTargetingOrBuilder
+        getDeviceCapabilityTargetingOrBuilder() {
+      if (deviceCapabilityTargetingBuilder_ != null) {
+        return deviceCapabilityTargetingBuilder_.getMessageOrBuilder();
+      } else {
+        return deviceCapabilityTargeting_ == null
+            ? com.google.ads.admanager.v1.DeviceCapabilityTargeting.getDefaultInstance()
+            : deviceCapabilityTargeting_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device capability targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceCapabilityTargeting device_capability_targeting = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.ads.admanager.v1.DeviceCapabilityTargeting,
+            com.google.ads.admanager.v1.DeviceCapabilityTargeting.Builder,
+            com.google.ads.admanager.v1.DeviceCapabilityTargetingOrBuilder>
+        getDeviceCapabilityTargetingFieldBuilder() {
+      if (deviceCapabilityTargetingBuilder_ == null) {
+        deviceCapabilityTargetingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.ads.admanager.v1.DeviceCapabilityTargeting,
+                com.google.ads.admanager.v1.DeviceCapabilityTargeting.Builder,
+                com.google.ads.admanager.v1.DeviceCapabilityTargetingOrBuilder>(
+                getDeviceCapabilityTargeting(), getParentForChildren(), isClean());
+        deviceCapabilityTargeting_ = null;
+      }
+      return deviceCapabilityTargetingBuilder_;
+    }
+
     private com.google.ads.admanager.v1.DeviceCategoryTargeting deviceCategoryTargeting_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.ads.admanager.v1.DeviceCategoryTargeting,
@@ -923,7 +2064,7 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
      * @return Whether the deviceCategoryTargeting field is set.
      */
     public boolean hasDeviceCategoryTargeting() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -970,7 +2111,7 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
       } else {
         deviceCategoryTargetingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -993,7 +2134,7 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
       } else {
         deviceCategoryTargetingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1012,7 +2153,7 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
     public Builder mergeDeviceCategoryTargeting(
         com.google.ads.admanager.v1.DeviceCategoryTargeting value) {
       if (deviceCategoryTargetingBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && deviceCategoryTargeting_ != null
             && deviceCategoryTargeting_
                 != com.google.ads.admanager.v1.DeviceCategoryTargeting.getDefaultInstance()) {
@@ -1024,7 +2165,7 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
         deviceCategoryTargetingBuilder_.mergeFrom(value);
       }
       if (deviceCategoryTargeting_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1042,7 +2183,7 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearDeviceCategoryTargeting() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       deviceCategoryTargeting_ = null;
       if (deviceCategoryTargetingBuilder_ != null) {
         deviceCategoryTargetingBuilder_.dispose();
@@ -1065,7 +2206,7 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
      */
     public com.google.ads.admanager.v1.DeviceCategoryTargeting.Builder
         getDeviceCategoryTargetingBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getDeviceCategoryTargetingFieldBuilder().getBuilder();
     }
@@ -1120,6 +2261,443 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
       return deviceCategoryTargetingBuilder_;
     }
 
+    private com.google.ads.admanager.v1.DeviceManufacturerTargeting deviceManufacturerTargeting_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.ads.admanager.v1.DeviceManufacturerTargeting,
+            com.google.ads.admanager.v1.DeviceManufacturerTargeting.Builder,
+            com.google.ads.admanager.v1.DeviceManufacturerTargetingOrBuilder>
+        deviceManufacturerTargetingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device manufacturer targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceManufacturerTargeting device_manufacturer_targeting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the deviceManufacturerTargeting field is set.
+     */
+    public boolean hasDeviceManufacturerTargeting() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device manufacturer targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceManufacturerTargeting device_manufacturer_targeting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The deviceManufacturerTargeting.
+     */
+    public com.google.ads.admanager.v1.DeviceManufacturerTargeting
+        getDeviceManufacturerTargeting() {
+      if (deviceManufacturerTargetingBuilder_ == null) {
+        return deviceManufacturerTargeting_ == null
+            ? com.google.ads.admanager.v1.DeviceManufacturerTargeting.getDefaultInstance()
+            : deviceManufacturerTargeting_;
+      } else {
+        return deviceManufacturerTargetingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device manufacturer targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceManufacturerTargeting device_manufacturer_targeting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDeviceManufacturerTargeting(
+        com.google.ads.admanager.v1.DeviceManufacturerTargeting value) {
+      if (deviceManufacturerTargetingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deviceManufacturerTargeting_ = value;
+      } else {
+        deviceManufacturerTargetingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device manufacturer targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceManufacturerTargeting device_manufacturer_targeting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDeviceManufacturerTargeting(
+        com.google.ads.admanager.v1.DeviceManufacturerTargeting.Builder builderForValue) {
+      if (deviceManufacturerTargetingBuilder_ == null) {
+        deviceManufacturerTargeting_ = builderForValue.build();
+      } else {
+        deviceManufacturerTargetingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device manufacturer targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceManufacturerTargeting device_manufacturer_targeting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDeviceManufacturerTargeting(
+        com.google.ads.admanager.v1.DeviceManufacturerTargeting value) {
+      if (deviceManufacturerTargetingBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && deviceManufacturerTargeting_ != null
+            && deviceManufacturerTargeting_
+                != com.google.ads.admanager.v1.DeviceManufacturerTargeting.getDefaultInstance()) {
+          getDeviceManufacturerTargetingBuilder().mergeFrom(value);
+        } else {
+          deviceManufacturerTargeting_ = value;
+        }
+      } else {
+        deviceManufacturerTargetingBuilder_.mergeFrom(value);
+      }
+      if (deviceManufacturerTargeting_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device manufacturer targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceManufacturerTargeting device_manufacturer_targeting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDeviceManufacturerTargeting() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      deviceManufacturerTargeting_ = null;
+      if (deviceManufacturerTargetingBuilder_ != null) {
+        deviceManufacturerTargetingBuilder_.dispose();
+        deviceManufacturerTargetingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device manufacturer targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceManufacturerTargeting device_manufacturer_targeting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DeviceManufacturerTargeting.Builder
+        getDeviceManufacturerTargetingBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getDeviceManufacturerTargetingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device manufacturer targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceManufacturerTargeting device_manufacturer_targeting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DeviceManufacturerTargetingOrBuilder
+        getDeviceManufacturerTargetingOrBuilder() {
+      if (deviceManufacturerTargetingBuilder_ != null) {
+        return deviceManufacturerTargetingBuilder_.getMessageOrBuilder();
+      } else {
+        return deviceManufacturerTargeting_ == null
+            ? com.google.ads.admanager.v1.DeviceManufacturerTargeting.getDefaultInstance()
+            : deviceManufacturerTargeting_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Device manufacturer targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DeviceManufacturerTargeting device_manufacturer_targeting = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.ads.admanager.v1.DeviceManufacturerTargeting,
+            com.google.ads.admanager.v1.DeviceManufacturerTargeting.Builder,
+            com.google.ads.admanager.v1.DeviceManufacturerTargetingOrBuilder>
+        getDeviceManufacturerTargetingFieldBuilder() {
+      if (deviceManufacturerTargetingBuilder_ == null) {
+        deviceManufacturerTargetingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.ads.admanager.v1.DeviceManufacturerTargeting,
+                com.google.ads.admanager.v1.DeviceManufacturerTargeting.Builder,
+                com.google.ads.admanager.v1.DeviceManufacturerTargetingOrBuilder>(
+                getDeviceManufacturerTargeting(), getParentForChildren(), isClean());
+        deviceManufacturerTargeting_ = null;
+      }
+      return deviceManufacturerTargetingBuilder_;
+    }
+
+    private com.google.ads.admanager.v1.MobileCarrierTargeting mobileCarrierTargeting_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.ads.admanager.v1.MobileCarrierTargeting,
+            com.google.ads.admanager.v1.MobileCarrierTargeting.Builder,
+            com.google.ads.admanager.v1.MobileCarrierTargetingOrBuilder>
+        mobileCarrierTargetingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mobile carrier targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.MobileCarrierTargeting mobile_carrier_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the mobileCarrierTargeting field is set.
+     */
+    public boolean hasMobileCarrierTargeting() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mobile carrier targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.MobileCarrierTargeting mobile_carrier_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The mobileCarrierTargeting.
+     */
+    public com.google.ads.admanager.v1.MobileCarrierTargeting getMobileCarrierTargeting() {
+      if (mobileCarrierTargetingBuilder_ == null) {
+        return mobileCarrierTargeting_ == null
+            ? com.google.ads.admanager.v1.MobileCarrierTargeting.getDefaultInstance()
+            : mobileCarrierTargeting_;
+      } else {
+        return mobileCarrierTargetingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mobile carrier targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.MobileCarrierTargeting mobile_carrier_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMobileCarrierTargeting(
+        com.google.ads.admanager.v1.MobileCarrierTargeting value) {
+      if (mobileCarrierTargetingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mobileCarrierTargeting_ = value;
+      } else {
+        mobileCarrierTargetingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mobile carrier targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.MobileCarrierTargeting mobile_carrier_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMobileCarrierTargeting(
+        com.google.ads.admanager.v1.MobileCarrierTargeting.Builder builderForValue) {
+      if (mobileCarrierTargetingBuilder_ == null) {
+        mobileCarrierTargeting_ = builderForValue.build();
+      } else {
+        mobileCarrierTargetingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mobile carrier targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.MobileCarrierTargeting mobile_carrier_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMobileCarrierTargeting(
+        com.google.ads.admanager.v1.MobileCarrierTargeting value) {
+      if (mobileCarrierTargetingBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && mobileCarrierTargeting_ != null
+            && mobileCarrierTargeting_
+                != com.google.ads.admanager.v1.MobileCarrierTargeting.getDefaultInstance()) {
+          getMobileCarrierTargetingBuilder().mergeFrom(value);
+        } else {
+          mobileCarrierTargeting_ = value;
+        }
+      } else {
+        mobileCarrierTargetingBuilder_.mergeFrom(value);
+      }
+      if (mobileCarrierTargeting_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mobile carrier targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.MobileCarrierTargeting mobile_carrier_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMobileCarrierTargeting() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      mobileCarrierTargeting_ = null;
+      if (mobileCarrierTargetingBuilder_ != null) {
+        mobileCarrierTargetingBuilder_.dispose();
+        mobileCarrierTargetingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mobile carrier targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.MobileCarrierTargeting mobile_carrier_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.MobileCarrierTargeting.Builder
+        getMobileCarrierTargetingBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getMobileCarrierTargetingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mobile carrier targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.MobileCarrierTargeting mobile_carrier_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.MobileCarrierTargetingOrBuilder
+        getMobileCarrierTargetingOrBuilder() {
+      if (mobileCarrierTargetingBuilder_ != null) {
+        return mobileCarrierTargetingBuilder_.getMessageOrBuilder();
+      } else {
+        return mobileCarrierTargeting_ == null
+            ? com.google.ads.admanager.v1.MobileCarrierTargeting.getDefaultInstance()
+            : mobileCarrierTargeting_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mobile carrier targeting dimension.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.MobileCarrierTargeting mobile_carrier_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.ads.admanager.v1.MobileCarrierTargeting,
+            com.google.ads.admanager.v1.MobileCarrierTargeting.Builder,
+            com.google.ads.admanager.v1.MobileCarrierTargetingOrBuilder>
+        getMobileCarrierTargetingFieldBuilder() {
+      if (mobileCarrierTargetingBuilder_ == null) {
+        mobileCarrierTargetingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.ads.admanager.v1.MobileCarrierTargeting,
+                com.google.ads.admanager.v1.MobileCarrierTargeting.Builder,
+                com.google.ads.admanager.v1.MobileCarrierTargetingOrBuilder>(
+                getMobileCarrierTargeting(), getParentForChildren(), isClean());
+        mobileCarrierTargeting_ = null;
+      }
+      return mobileCarrierTargetingBuilder_;
+    }
+
     private com.google.ads.admanager.v1.OperatingSystemTargeting operatingSystemTargeting_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.ads.admanager.v1.OperatingSystemTargeting,
@@ -1141,7 +2719,7 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
      * @return Whether the operatingSystemTargeting field is set.
      */
     public boolean hasOperatingSystemTargeting() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -1188,7 +2766,7 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
       } else {
         operatingSystemTargetingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1211,7 +2789,7 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
       } else {
         operatingSystemTargetingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1230,7 +2808,7 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
     public Builder mergeOperatingSystemTargeting(
         com.google.ads.admanager.v1.OperatingSystemTargeting value) {
       if (operatingSystemTargetingBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && operatingSystemTargeting_ != null
             && operatingSystemTargeting_
                 != com.google.ads.admanager.v1.OperatingSystemTargeting.getDefaultInstance()) {
@@ -1242,7 +2820,7 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
         operatingSystemTargetingBuilder_.mergeFrom(value);
       }
       if (operatingSystemTargeting_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -1260,7 +2838,7 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearOperatingSystemTargeting() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000080);
       operatingSystemTargeting_ = null;
       if (operatingSystemTargetingBuilder_ != null) {
         operatingSystemTargetingBuilder_.dispose();
@@ -1283,7 +2861,7 @@ public final class TechnologyTargeting extends com.google.protobuf.GeneratedMess
      */
     public com.google.ads.admanager.v1.OperatingSystemTargeting.Builder
         getOperatingSystemTargetingBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getOperatingSystemTargetingFieldBuilder().getBuilder();
     }

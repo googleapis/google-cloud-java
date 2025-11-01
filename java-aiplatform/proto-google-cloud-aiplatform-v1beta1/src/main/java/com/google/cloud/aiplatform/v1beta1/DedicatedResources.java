@@ -124,7 +124,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Duration of no traffic before scaling to zero.
-     * [MinValue=3600] (5 minutes)
+     * [MinValue=300] (5 minutes)
      * [MaxValue=28800] (8 hours)
      * </pre>
      *
@@ -141,7 +141,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Duration of no traffic before scaling to zero.
-     * [MinValue=3600] (5 minutes)
+     * [MinValue=300] (5 minutes)
      * [MaxValue=28800] (8 hours)
      * </pre>
      *
@@ -158,7 +158,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Duration of no traffic before scaling to zero.
-     * [MinValue=3600] (5 minutes)
+     * [MinValue=300] (5 minutes)
      * [MaxValue=28800] (8 hours)
      * </pre>
      *
@@ -286,7 +286,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Duration of no traffic before scaling to zero.
-     * [MinValue=3600] (5 minutes)
+     * [MinValue=300] (5 minutes)
      * [MaxValue=28800] (8 hours)
      * </pre>
      *
@@ -306,7 +306,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Duration of no traffic before scaling to zero.
-     * [MinValue=3600] (5 minutes)
+     * [MinValue=300] (5 minutes)
      * [MaxValue=28800] (8 hours)
      * </pre>
      *
@@ -328,7 +328,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Duration of no traffic before scaling to zero.
-     * [MinValue=3600] (5 minutes)
+     * [MinValue=300] (5 minutes)
      * [MaxValue=28800] (8 hours)
      * </pre>
      *
@@ -1006,7 +1006,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * Optional. Duration of no traffic before scaling to zero.
-       * [MinValue=3600] (5 minutes)
+       * [MinValue=300] (5 minutes)
        * [MaxValue=28800] (8 hours)
        * </pre>
        *
@@ -1025,7 +1025,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * Optional. Duration of no traffic before scaling to zero.
-       * [MinValue=3600] (5 minutes)
+       * [MinValue=300] (5 minutes)
        * [MaxValue=28800] (8 hours)
        * </pre>
        *
@@ -1050,7 +1050,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * Optional. Duration of no traffic before scaling to zero.
-       * [MinValue=3600] (5 minutes)
+       * [MinValue=300] (5 minutes)
        * [MaxValue=28800] (8 hours)
        * </pre>
        *
@@ -1077,7 +1077,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * Optional. Duration of no traffic before scaling to zero.
-       * [MinValue=3600] (5 minutes)
+       * [MinValue=300] (5 minutes)
        * [MaxValue=28800] (8 hours)
        * </pre>
        *
@@ -1101,7 +1101,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * Optional. Duration of no traffic before scaling to zero.
-       * [MinValue=3600] (5 minutes)
+       * [MinValue=300] (5 minutes)
        * [MaxValue=28800] (8 hours)
        * </pre>
        *
@@ -1133,7 +1133,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * Optional. Duration of no traffic before scaling to zero.
-       * [MinValue=3600] (5 minutes)
+       * [MinValue=300] (5 minutes)
        * [MaxValue=28800] (8 hours)
        * </pre>
        *
@@ -1157,7 +1157,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * Optional. Duration of no traffic before scaling to zero.
-       * [MinValue=3600] (5 minutes)
+       * [MinValue=300] (5 minutes)
        * [MaxValue=28800] (8 hours)
        * </pre>
        *
@@ -1176,7 +1176,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * Optional. Duration of no traffic before scaling to zero.
-       * [MinValue=3600] (5 minutes)
+       * [MinValue=300] (5 minutes)
        * [MaxValue=28800] (8 hours)
        * </pre>
        *
@@ -1199,7 +1199,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * Optional. Duration of no traffic before scaling to zero.
-       * [MinValue=3600] (5 minutes)
+       * [MinValue=300] (5 minutes)
        * [MaxValue=28800] (8 hours)
        * </pre>
        *

@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * The category of the cloud control.
+ * The category for the cloud control.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.cloudsecuritycompliance.v1.CloudControlCategory}
@@ -43,7 +43,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Infrastructure
+   * The infrastructure security category.
    * </pre>
    *
    * <code>CC_CATEGORY_INFRASTRUCTURE = 1;</code>
@@ -53,7 +53,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Artificial Intelligence
+   * The artificial intelligence category.
    * </pre>
    *
    * <code>CC_CATEGORY_ARTIFICIAL_INTELLIGENCE = 2;</code>
@@ -63,7 +63,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Physical Security
+   * The physical security category.
    * </pre>
    *
    * <code>CC_CATEGORY_PHYSICAL_SECURITY = 3;</code>
@@ -73,7 +73,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Data Security
+   * The data security category.
    * </pre>
    *
    * <code>CC_CATEGORY_DATA_SECURITY = 4;</code>
@@ -83,7 +83,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Network Security
+   * The network security category.
    * </pre>
    *
    * <code>CC_CATEGORY_NETWORK_SECURITY = 5;</code>
@@ -93,7 +93,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Incident Management
+   * The incident management category.
    * </pre>
    *
    * <code>CC_CATEGORY_INCIDENT_MANAGEMENT = 6;</code>
@@ -103,7 +103,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Identity &amp; Access Management
+   * The identity and access management category.
    * </pre>
    *
    * <code>CC_CATEGORY_IDENTITY_AND_ACCESS_MANAGEMENT = 7;</code>
@@ -113,7 +113,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Encryption
+   * The encryption category.
    * </pre>
    *
    * <code>CC_CATEGORY_ENCRYPTION = 8;</code>
@@ -123,7 +123,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Logs Management &amp; Infrastructure
+   * The logs management and infrastructure category.
    * </pre>
    *
    * <code>CC_CATEGORY_LOGS_MANAGEMENT_AND_INFRASTRUCTURE = 9;</code>
@@ -133,7 +133,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * HR, Admin &amp; Processes
+   * The HR, admin, and processes category.
    * </pre>
    *
    * <code>CC_CATEGORY_HR_ADMIN_AND_PROCESSES = 10;</code>
@@ -143,7 +143,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Third Party &amp; Sub-Processor Management
+   * The third-party and sub-processor management category.
    * </pre>
    *
    * <code>CC_CATEGORY_THIRD_PARTY_AND_SUB_PROCESSOR_MANAGEMENT = 11;</code>
@@ -153,7 +153,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Legal &amp; Disclosures
+   * The legal and disclosures category.
    * </pre>
    *
    * <code>CC_CATEGORY_LEGAL_AND_DISCLOSURES = 12;</code>
@@ -163,7 +163,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Vulnerability Management
+   * The vulnerability management category.
    * </pre>
    *
    * <code>CC_CATEGORY_VULNERABILITY_MANAGEMENT = 13;</code>
@@ -173,7 +173,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Privacy
+   * The privacy category.
    * </pre>
    *
    * <code>CC_CATEGORY_PRIVACY = 14;</code>
@@ -183,7 +183,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * BCDR (Business Continuity and Disaster Recovery)
+   * The business continuity and disaster recovery (BCDR) category.
    * </pre>
    *
    * <code>CC_CATEGORY_BCDR = 15;</code>
@@ -207,7 +207,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Infrastructure
+   * The infrastructure security category.
    * </pre>
    *
    * <code>CC_CATEGORY_INFRASTRUCTURE = 1;</code>
@@ -218,7 +218,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Artificial Intelligence
+   * The artificial intelligence category.
    * </pre>
    *
    * <code>CC_CATEGORY_ARTIFICIAL_INTELLIGENCE = 2;</code>
@@ -229,7 +229,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Physical Security
+   * The physical security category.
    * </pre>
    *
    * <code>CC_CATEGORY_PHYSICAL_SECURITY = 3;</code>
@@ -240,7 +240,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Data Security
+   * The data security category.
    * </pre>
    *
    * <code>CC_CATEGORY_DATA_SECURITY = 4;</code>
@@ -251,7 +251,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Network Security
+   * The network security category.
    * </pre>
    *
    * <code>CC_CATEGORY_NETWORK_SECURITY = 5;</code>
@@ -262,7 +262,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Incident Management
+   * The incident management category.
    * </pre>
    *
    * <code>CC_CATEGORY_INCIDENT_MANAGEMENT = 6;</code>
@@ -273,7 +273,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Identity &amp; Access Management
+   * The identity and access management category.
    * </pre>
    *
    * <code>CC_CATEGORY_IDENTITY_AND_ACCESS_MANAGEMENT = 7;</code>
@@ -284,7 +284,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Encryption
+   * The encryption category.
    * </pre>
    *
    * <code>CC_CATEGORY_ENCRYPTION = 8;</code>
@@ -295,7 +295,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Logs Management &amp; Infrastructure
+   * The logs management and infrastructure category.
    * </pre>
    *
    * <code>CC_CATEGORY_LOGS_MANAGEMENT_AND_INFRASTRUCTURE = 9;</code>
@@ -306,7 +306,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * HR, Admin &amp; Processes
+   * The HR, admin, and processes category.
    * </pre>
    *
    * <code>CC_CATEGORY_HR_ADMIN_AND_PROCESSES = 10;</code>
@@ -317,7 +317,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Third Party &amp; Sub-Processor Management
+   * The third-party and sub-processor management category.
    * </pre>
    *
    * <code>CC_CATEGORY_THIRD_PARTY_AND_SUB_PROCESSOR_MANAGEMENT = 11;</code>
@@ -328,7 +328,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Legal &amp; Disclosures
+   * The legal and disclosures category.
    * </pre>
    *
    * <code>CC_CATEGORY_LEGAL_AND_DISCLOSURES = 12;</code>
@@ -339,7 +339,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Vulnerability Management
+   * The vulnerability management category.
    * </pre>
    *
    * <code>CC_CATEGORY_VULNERABILITY_MANAGEMENT = 13;</code>
@@ -350,7 +350,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Privacy
+   * The privacy category.
    * </pre>
    *
    * <code>CC_CATEGORY_PRIVACY = 14;</code>
@@ -361,7 +361,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * BCDR (Business Continuity and Disaster Recovery)
+   * The business continuity and disaster recovery (BCDR) category.
    * </pre>
    *
    * <code>CC_CATEGORY_BCDR = 15;</code>
@@ -457,7 +457,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.cloudsecuritycompliance.v1.CommonProto.getDescriptor()
         .getEnumTypes()
-        .get(2);
+        .get(3);
   }
 
   private static final CloudControlCategory[] VALUES = values();

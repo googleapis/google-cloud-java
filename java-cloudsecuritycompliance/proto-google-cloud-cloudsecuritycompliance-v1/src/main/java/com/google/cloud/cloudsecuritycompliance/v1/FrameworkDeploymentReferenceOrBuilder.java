@@ -28,8 +28,9 @@ public interface FrameworkDeploymentReferenceOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the FrameworkDeployment. The format is:
-   * organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+   * Output only. The name of the framework deployment, in the format
+   * `organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -44,8 +45,9 @@ public interface FrameworkDeploymentReferenceOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the FrameworkDeployment. The format is:
-   * organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+   * Output only. The name of the framework deployment, in the format
+   * `organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -60,12 +62,18 @@ public interface FrameworkDeploymentReferenceOrBuilder
    *
    *
    * <pre>
-   * Optional. The reference to the Framework that this deployment is for.
-   * Example: {
+   * Optional. The reference to the framework that this deployment is for.
+   * For example:
+   *
+   * ```
+   * {
    *   framework:
    *   "organizations/{org}/locations/{location}/frameworks/{framework}",
    *   major_revision_id: 1
    * }
+   * ```
+   *
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -80,12 +88,18 @@ public interface FrameworkDeploymentReferenceOrBuilder
    *
    *
    * <pre>
-   * Optional. The reference to the Framework that this deployment is for.
-   * Example: {
+   * Optional. The reference to the framework that this deployment is for.
+   * For example:
+   *
+   * ```
+   * {
    *   framework:
    *   "organizations/{org}/locations/{location}/frameworks/{framework}",
    *   major_revision_id: 1
    * }
+   * ```
+   *
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -100,12 +114,18 @@ public interface FrameworkDeploymentReferenceOrBuilder
    *
    *
    * <pre>
-   * Optional. The reference to the Framework that this deployment is for.
-   * Example: {
+   * Optional. The reference to the framework that this deployment is for.
+   * For example:
+   *
+   * ```
+   * {
    *   framework:
    *   "organizations/{org}/locations/{location}/frameworks/{framework}",
    *   major_revision_id: 1
    * }
+   * ```
+   *
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -119,7 +139,7 @@ public interface FrameworkDeploymentReferenceOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name of the Framework that this FrameworkDeployment
+   * Optional. The display name of the framework that this framework deployment
    * is for.
    * </pre>
    *
@@ -133,7 +153,7 @@ public interface FrameworkDeploymentReferenceOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name of the Framework that this FrameworkDeployment
+   * Optional. The display name of the framework that this framework deployment
    * is for.
    * </pre>
    *

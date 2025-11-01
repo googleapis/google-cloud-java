@@ -70,7 +70,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListFrameworks</td>
- *      <td><p> Lists all Frameworks (both Built-in and Custom) available within a given parent resource. This method supports pagination. The latest major version of each Framework is returned.</td>
+ *      <td><p> Lists the frameworks (both built-in and custom) that are available within the parent resource. The latest major version of each framework is returned. This method supports pagination.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -90,8 +90,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetFramework</td>
- *      <td><p> Gets details of a single Framework. This method retrieves a Framework resource, which can be either Built-in or Custom, identified by its name.
- * <p>  By default, the latest major version of the Framework is returned. A specific major version can be retrieved by specifying the `major_revision_id` in the request.</td>
+ *      <td><p> Gets details about a framework. This method retrieves the latest major version of the framework.
+ * <p>  To retrieve a specific major version, include `major_revision_id` in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -110,7 +110,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateFramework</td>
- *      <td><p> Creates a new Framework with type `Custom` under a given parent resource. Frameworks with type `Built-in` are managed by Google and cannot be created through this API.</td>
+ *      <td><p> Creates a custom framework in a given parent resource. You can't create built-in frameworks because those are managed by Google.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -129,9 +129,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateFramework</td>
- *      <td><p> Updates a single Framework. This method allows for partial updates of a Framework resource. The fields to be updated are specified using the `update_mask`.
- * <p>  - If an `update_mask` is provided, only the fields specified in the mask will be updated. - If no `update_mask` is provided, all fields present in the request's `framework` body will be used to overwrite the existing resource.
- * <p>  This operation can only be performed on Frameworks with type `CUSTOM`. A successful update will result in a new version of the Framework.</td>
+ *      <td><p> Updates a custom framework. This method allows for partial updates of a framework. Use the `update_mask` to specify which fields to update. Consider the following:
+ * <p>  - If you provide an `update_mask`, only the fields that are specified in the mask are updated. - If you don't provide an `update_mask`, all the fields that are present in the request's `framework` body are used to overwrite the existing resource.
+ * <p>  You can only update frameworks with the `CUSTOM` type. A successful update creates a new version of the framework.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -149,8 +149,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteFramework</td>
- *      <td><p> Deletes a single Custom Framework, including all its minor and minor revisions.
- * <p>  - This operation can only be performed on Frameworks with type `CUSTOM`.   Built-in Frameworks cannot be deleted. - The Framework cannot be deleted if it is currently deployed on any   resource. - This action is permanent and cannot be undone.</td>
+ *      <td><p> Deletes a custom framework, including all its major and minor revisions. Consider the following:
+ * <p>  - You can't delete built-in frameworks. You can only delete frameworks   with type `CUSTOM`. - You can't delete frameworks that are deployed to a resource. - You can't restore a deleted framework. This action is permanent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -169,7 +169,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListCloudControls</td>
- *      <td><p> Lists all CloudControls (both Built-in and Custom) available within a given parent resource. This method supports pagination. The latest major version of each CloudControl is returned.</td>
+ *      <td><p> Lists the cloud controls (both built-in and custom) that are available in a given parent resource. The latest major version of each cloud control is returned. This method supports pagination.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -189,8 +189,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetCloudControl</td>
- *      <td><p> Gets details of a single CloudControl. This method retrieves a CloudControl resource, which can be either Built-in or Custom, identified by its name.
- * <p>  By default, the latest major version of the CloudControl is returned. A specific major version can be retrieved by specifying the `major_revision_id` in the request.</td>
+ *      <td><p> Gets details about a cloud control. This method retrieves the latest major version of a cloud control that you identify by name.
+ * <p>  By default, the latest major version of the cloud control is returned. To retrieve a specific major version, include `major_revision_id` in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -209,7 +209,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateCloudControl</td>
- *      <td><p> Creates a new CloudControl with type `Custom` under a given parent resource. `Built-in` CloudControls are managed by Google and cannot be created through this API.</td>
+ *      <td><p> Creates a custom cloud control in a given parent resource. You can't create built-in cloud controls because those are managed by Google.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -228,9 +228,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateCloudControl</td>
- *      <td><p> Updates a single CloudControl. This method allows for partial updates of a Custom CloudControl resource. Built-in CloudControls cannot be updated.
- * <p>  - If an `update_mask` is provided, only the fields specified in the mask will be updated. - If no `update_mask` is provided, all fields present in the request's `cloud_control` body will be used to overwrite the existing resource.
- * <p>  A successful update will result in a new version of the CloudControl.</td>
+ *      <td><p> Updates a custom cloud control. This method allows for partial updates of a cloud control. Use the `update_mask` to specify which fields to update. Consider the following:
+ * <p>  - If you provide an `update_mask`, only the fields that are specified in the mask are updated. - If you don't provide an `update_mask`, all the fields that are present in the request's `cloud_control` body are used to overwrite the existing resource.
+ * <p>  You can only update cloud controls with the `CUSTOM` type. A successful update creates a new version of the cloud control.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -248,8 +248,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteCloudControl</td>
- *      <td><p> Deletes a single Custom CloudControl, including all its major and minor revisions.
- * <p>  - This operation can only be performed on CloudControls with type `CUSTOM`.   Built-in CloudControls cannot be deleted. - The CloudControl cannot be deleted if any of its revisions are currently   referenced by any Framework. - This action is permanent and cannot be undone.</td>
+ *      <td><p> Deletes a custom cloud control, including all its major and minor revisions. Consider the following:
+ * <p>  - You can't delete built-in cloud controls. You can only delete cloud   controls with type `CUSTOM`. - You can't delete cloud controls if any of the versions are referenced   by a framework. - You can't restore a deleted cloud control. This action is permanent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -398,8 +398,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all Frameworks (both Built-in and Custom) available within a given parent resource. This
-   * method supports pagination. The latest major version of each Framework is returned.
+   * Lists the frameworks (both built-in and custom) that are available within the parent resource.
+   * The latest major version of each framework is returned. This method supports pagination.
    *
    * <p>Sample code:
    *
@@ -418,7 +418,8 @@ public class ConfigClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`. Only global location is supported.
+   *     `organizations/{organization}/locations/{location}`. The only supported location is
+   *     `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFrameworksPagedResponse listFrameworks(OrganizationLocationName parent) {
@@ -431,8 +432,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all Frameworks (both Built-in and Custom) available within a given parent resource. This
-   * method supports pagination. The latest major version of each Framework is returned.
+   * Lists the frameworks (both built-in and custom) that are available within the parent resource.
+   * The latest major version of each framework is returned. This method supports pagination.
    *
    * <p>Sample code:
    *
@@ -451,7 +452,8 @@ public class ConfigClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`. Only global location is supported.
+   *     `organizations/{organization}/locations/{location}`. The only supported location is
+   *     `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFrameworksPagedResponse listFrameworks(String parent) {
@@ -461,8 +463,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all Frameworks (both Built-in and Custom) available within a given parent resource. This
-   * method supports pagination. The latest major version of each Framework is returned.
+   * Lists the frameworks (both built-in and custom) that are available within the parent resource.
+   * The latest major version of each framework is returned. This method supports pagination.
    *
    * <p>Sample code:
    *
@@ -494,8 +496,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all Frameworks (both Built-in and Custom) available within a given parent resource. This
-   * method supports pagination. The latest major version of each Framework is returned.
+   * Lists the frameworks (both built-in and custom) that are available within the parent resource.
+   * The latest major version of each framework is returned. This method supports pagination.
    *
    * <p>Sample code:
    *
@@ -527,8 +529,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all Frameworks (both Built-in and Custom) available within a given parent resource. This
-   * method supports pagination. The latest major version of each Framework is returned.
+   * Lists the frameworks (both built-in and custom) that are available within the parent resource.
+   * The latest major version of each framework is returned. This method supports pagination.
    *
    * <p>Sample code:
    *
@@ -567,11 +569,10 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Framework. This method retrieves a Framework resource, which can be
-   * either Built-in or Custom, identified by its name.
+   * Gets details about a framework. This method retrieves the latest major version of the
+   * framework.
    *
-   * <p>By default, the latest major version of the Framework is returned. A specific major version
-   * can be retrieved by specifying the `major_revision_id` in the request.
+   * <p>To retrieve a specific major version, include `major_revision_id` in the request.
    *
    * <p>Sample code:
    *
@@ -587,8 +588,9 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the framework to retrieve. Format:
-   *     organizations/{organization}/locations/{location}/frameworks/{framework_id}
+   * @param name Required. The name of the framework to retrieve, in the format
+   *     `organizations/{organization}/locations/{location}/frameworks/{framework_id}` The only
+   *     supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Framework getFramework(FrameworkName name) {
@@ -599,11 +601,10 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Framework. This method retrieves a Framework resource, which can be
-   * either Built-in or Custom, identified by its name.
+   * Gets details about a framework. This method retrieves the latest major version of the
+   * framework.
    *
-   * <p>By default, the latest major version of the Framework is returned. A specific major version
-   * can be retrieved by specifying the `major_revision_id` in the request.
+   * <p>To retrieve a specific major version, include `major_revision_id` in the request.
    *
    * <p>Sample code:
    *
@@ -619,8 +620,9 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the framework to retrieve. Format:
-   *     organizations/{organization}/locations/{location}/frameworks/{framework_id}
+   * @param name Required. The name of the framework to retrieve, in the format
+   *     `organizations/{organization}/locations/{location}/frameworks/{framework_id}` The only
+   *     supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Framework getFramework(String name) {
@@ -630,11 +632,10 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Framework. This method retrieves a Framework resource, which can be
-   * either Built-in or Custom, identified by its name.
+   * Gets details about a framework. This method retrieves the latest major version of the
+   * framework.
    *
-   * <p>By default, the latest major version of the Framework is returned. A specific major version
-   * can be retrieved by specifying the `major_revision_id` in the request.
+   * <p>To retrieve a specific major version, include `major_revision_id` in the request.
    *
    * <p>Sample code:
    *
@@ -663,11 +664,10 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Framework. This method retrieves a Framework resource, which can be
-   * either Built-in or Custom, identified by its name.
+   * Gets details about a framework. This method retrieves the latest major version of the
+   * framework.
    *
-   * <p>By default, the latest major version of the Framework is returned. A specific major version
-   * can be retrieved by specifying the `major_revision_id` in the request.
+   * <p>To retrieve a specific major version, include `major_revision_id` in the request.
    *
    * <p>Sample code:
    *
@@ -695,8 +695,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Framework with type `Custom` under a given parent resource. Frameworks with type
-   * `Built-in` are managed by Google and cannot be created through this API.
+   * Creates a custom framework in a given parent resource. You can't create built-in frameworks
+   * because those are managed by Google.
    *
    * <p>Sample code:
    *
@@ -715,10 +715,11 @@ public class ConfigClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`.
-   * @param framework Required. The resource being created
-   * @param frameworkId Required. ID of the framework. This is not the full name of the framework.
-   *     This is the last part of the full name of the framework.
+   *     `organizations/{organization}/locations/{location}`. The only supported location is
+   *     `global`.
+   * @param framework Required. The resource being created.
+   * @param frameworkId Required. The identifier (ID) of the framework. The ID is not the full name
+   *     of the framework; it's the last part of the full name of the framework.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Framework createFramework(
@@ -734,8 +735,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Framework with type `Custom` under a given parent resource. Frameworks with type
-   * `Built-in` are managed by Google and cannot be created through this API.
+   * Creates a custom framework in a given parent resource. You can't create built-in frameworks
+   * because those are managed by Google.
    *
    * <p>Sample code:
    *
@@ -754,10 +755,11 @@ public class ConfigClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`.
-   * @param framework Required. The resource being created
-   * @param frameworkId Required. ID of the framework. This is not the full name of the framework.
-   *     This is the last part of the full name of the framework.
+   *     `organizations/{organization}/locations/{location}`. The only supported location is
+   *     `global`.
+   * @param framework Required. The resource being created.
+   * @param frameworkId Required. The identifier (ID) of the framework. The ID is not the full name
+   *     of the framework; it's the last part of the full name of the framework.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Framework createFramework(String parent, Framework framework, String frameworkId) {
@@ -772,8 +774,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Framework with type `Custom` under a given parent resource. Frameworks with type
-   * `Built-in` are managed by Google and cannot be created through this API.
+   * Creates a custom framework in a given parent resource. You can't create built-in frameworks
+   * because those are managed by Google.
    *
    * <p>Sample code:
    *
@@ -803,8 +805,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Framework with type `Custom` under a given parent resource. Frameworks with type
-   * `Built-in` are managed by Google and cannot be created through this API.
+   * Creates a custom framework in a given parent resource. You can't create built-in frameworks
+   * because those are managed by Google.
    *
    * <p>Sample code:
    *
@@ -833,15 +835,15 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a single Framework. This method allows for partial updates of a Framework resource. The
-   * fields to be updated are specified using the `update_mask`.
+   * Updates a custom framework. This method allows for partial updates of a framework. Use the
+   * `update_mask` to specify which fields to update. Consider the following:
    *
-   * <p>- If an `update_mask` is provided, only the fields specified in the mask will be updated. -
-   * If no `update_mask` is provided, all fields present in the request's `framework` body will be
-   * used to overwrite the existing resource.
+   * <p>- If you provide an `update_mask`, only the fields that are specified in the mask are
+   * updated. - If you don't provide an `update_mask`, all the fields that are present in the
+   * request's `framework` body are used to overwrite the existing resource.
    *
-   * <p>This operation can only be performed on Frameworks with type `CUSTOM`. A successful update
-   * will result in a new version of the Framework.
+   * <p>You can only update frameworks with the `CUSTOM` type. A successful update creates a new
+   * version of the framework.
    *
    * <p>Sample code:
    *
@@ -858,12 +860,11 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param framework Required. The resource being updated
-   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
-   *     Framework resource by the update. The fields specified in the update_mask are relative to
-   *     the resource, not the full request. A field will be overwritten if it is in the mask. If
-   *     the user does not provide a mask then all fields present in the request will be
-   *     overwritten.
+   * @param framework Required. The resource that is being updated.
+   * @param updateMask Optional. A field mask is used to specify the fields to be overwritten in the
+   *     framework resource by the update. The fields specified in the `update_mask` are relative to
+   *     the resource, not the full request. A field is overwritten if it is in the mask. If you
+   *     don't provide a mask then all fields present in the request will be overwritten.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Framework updateFramework(Framework framework, FieldMask updateMask) {
@@ -877,15 +878,15 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a single Framework. This method allows for partial updates of a Framework resource. The
-   * fields to be updated are specified using the `update_mask`.
+   * Updates a custom framework. This method allows for partial updates of a framework. Use the
+   * `update_mask` to specify which fields to update. Consider the following:
    *
-   * <p>- If an `update_mask` is provided, only the fields specified in the mask will be updated. -
-   * If no `update_mask` is provided, all fields present in the request's `framework` body will be
-   * used to overwrite the existing resource.
+   * <p>- If you provide an `update_mask`, only the fields that are specified in the mask are
+   * updated. - If you don't provide an `update_mask`, all the fields that are present in the
+   * request's `framework` body are used to overwrite the existing resource.
    *
-   * <p>This operation can only be performed on Frameworks with type `CUSTOM`. A successful update
-   * will result in a new version of the Framework.
+   * <p>You can only update frameworks with the `CUSTOM` type. A successful update creates a new
+   * version of the framework.
    *
    * <p>Sample code:
    *
@@ -915,15 +916,15 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a single Framework. This method allows for partial updates of a Framework resource. The
-   * fields to be updated are specified using the `update_mask`.
+   * Updates a custom framework. This method allows for partial updates of a framework. Use the
+   * `update_mask` to specify which fields to update. Consider the following:
    *
-   * <p>- If an `update_mask` is provided, only the fields specified in the mask will be updated. -
-   * If no `update_mask` is provided, all fields present in the request's `framework` body will be
-   * used to overwrite the existing resource.
+   * <p>- If you provide an `update_mask`, only the fields that are specified in the mask are
+   * updated. - If you don't provide an `update_mask`, all the fields that are present in the
+   * request's `framework` body are used to overwrite the existing resource.
    *
-   * <p>This operation can only be performed on Frameworks with type `CUSTOM`. A successful update
-   * will result in a new version of the Framework.
+   * <p>You can only update frameworks with the `CUSTOM` type. A successful update creates a new
+   * version of the framework.
    *
    * <p>Sample code:
    *
@@ -952,11 +953,12 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Custom Framework, including all its minor and minor revisions.
+   * Deletes a custom framework, including all its major and minor revisions. Consider the
+   * following:
    *
-   * <p>- This operation can only be performed on Frameworks with type `CUSTOM`. Built-in Frameworks
-   * cannot be deleted. - The Framework cannot be deleted if it is currently deployed on any
-   * resource. - This action is permanent and cannot be undone.
+   * <p>- You can't delete built-in frameworks. You can only delete frameworks with type `CUSTOM`. -
+   * You can't delete frameworks that are deployed to a resource. - You can't restore a deleted
+   * framework. This action is permanent.
    *
    * <p>Sample code:
    *
@@ -972,8 +974,9 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the resource, in the format
-   *     `organizations/{organization}/locations/{location}/frameworks/{framework}`.
+   * @param name Required. The name of the resource, in the format
+   *     `organizations/{organization}/locations/{location}/frameworks/{framework}`. The only
+   *     supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteFramework(FrameworkName name) {
@@ -984,11 +987,12 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Custom Framework, including all its minor and minor revisions.
+   * Deletes a custom framework, including all its major and minor revisions. Consider the
+   * following:
    *
-   * <p>- This operation can only be performed on Frameworks with type `CUSTOM`. Built-in Frameworks
-   * cannot be deleted. - The Framework cannot be deleted if it is currently deployed on any
-   * resource. - This action is permanent and cannot be undone.
+   * <p>- You can't delete built-in frameworks. You can only delete frameworks with type `CUSTOM`. -
+   * You can't delete frameworks that are deployed to a resource. - You can't restore a deleted
+   * framework. This action is permanent.
    *
    * <p>Sample code:
    *
@@ -1004,8 +1008,9 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the resource, in the format
-   *     `organizations/{organization}/locations/{location}/frameworks/{framework}`.
+   * @param name Required. The name of the resource, in the format
+   *     `organizations/{organization}/locations/{location}/frameworks/{framework}`. The only
+   *     supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteFramework(String name) {
@@ -1015,11 +1020,12 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Custom Framework, including all its minor and minor revisions.
+   * Deletes a custom framework, including all its major and minor revisions. Consider the
+   * following:
    *
-   * <p>- This operation can only be performed on Frameworks with type `CUSTOM`. Built-in Frameworks
-   * cannot be deleted. - The Framework cannot be deleted if it is currently deployed on any
-   * resource. - This action is permanent and cannot be undone.
+   * <p>- You can't delete built-in frameworks. You can only delete frameworks with type `CUSTOM`. -
+   * You can't delete frameworks that are deployed to a resource. - You can't restore a deleted
+   * framework. This action is permanent.
    *
    * <p>Sample code:
    *
@@ -1047,11 +1053,12 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Custom Framework, including all its minor and minor revisions.
+   * Deletes a custom framework, including all its major and minor revisions. Consider the
+   * following:
    *
-   * <p>- This operation can only be performed on Frameworks with type `CUSTOM`. Built-in Frameworks
-   * cannot be deleted. - The Framework cannot be deleted if it is currently deployed on any
-   * resource. - This action is permanent and cannot be undone.
+   * <p>- You can't delete built-in frameworks. You can only delete frameworks with type `CUSTOM`. -
+   * You can't delete frameworks that are deployed to a resource. - You can't restore a deleted
+   * framework. This action is permanent.
    *
    * <p>Sample code:
    *
@@ -1078,8 +1085,9 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all CloudControls (both Built-in and Custom) available within a given parent resource.
-   * This method supports pagination. The latest major version of each CloudControl is returned.
+   * Lists the cloud controls (both built-in and custom) that are available in a given parent
+   * resource. The latest major version of each cloud control is returned. This method supports
+   * pagination.
    *
    * <p>Sample code:
    *
@@ -1098,7 +1106,8 @@ public class ConfigClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`.
+   *     `organizations/{organization}/locations/{location}`. The only supported location is
+   *     `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCloudControlsPagedResponse listCloudControls(OrganizationLocationName parent) {
@@ -1111,8 +1120,9 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all CloudControls (both Built-in and Custom) available within a given parent resource.
-   * This method supports pagination. The latest major version of each CloudControl is returned.
+   * Lists the cloud controls (both built-in and custom) that are available in a given parent
+   * resource. The latest major version of each cloud control is returned. This method supports
+   * pagination.
    *
    * <p>Sample code:
    *
@@ -1131,7 +1141,8 @@ public class ConfigClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`.
+   *     `organizations/{organization}/locations/{location}`. The only supported location is
+   *     `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCloudControlsPagedResponse listCloudControls(String parent) {
@@ -1142,8 +1153,9 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all CloudControls (both Built-in and Custom) available within a given parent resource.
-   * This method supports pagination. The latest major version of each CloudControl is returned.
+   * Lists the cloud controls (both built-in and custom) that are available in a given parent
+   * resource. The latest major version of each cloud control is returned. This method supports
+   * pagination.
    *
    * <p>Sample code:
    *
@@ -1175,8 +1187,9 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all CloudControls (both Built-in and Custom) available within a given parent resource.
-   * This method supports pagination. The latest major version of each CloudControl is returned.
+   * Lists the cloud controls (both built-in and custom) that are available in a given parent
+   * resource. The latest major version of each cloud control is returned. This method supports
+   * pagination.
    *
    * <p>Sample code:
    *
@@ -1209,8 +1222,9 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all CloudControls (both Built-in and Custom) available within a given parent resource.
-   * This method supports pagination. The latest major version of each CloudControl is returned.
+   * Lists the cloud controls (both built-in and custom) that are available in a given parent
+   * resource. The latest major version of each cloud control is returned. This method supports
+   * pagination.
    *
    * <p>Sample code:
    *
@@ -1249,11 +1263,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single CloudControl. This method retrieves a CloudControl resource, which can
-   * be either Built-in or Custom, identified by its name.
+   * Gets details about a cloud control. This method retrieves the latest major version of a cloud
+   * control that you identify by name.
    *
-   * <p>By default, the latest major version of the CloudControl is returned. A specific major
-   * version can be retrieved by specifying the `major_revision_id` in the request.
+   * <p>By default, the latest major version of the cloud control is returned. To retrieve a
+   * specific major version, include `major_revision_id` in the request.
    *
    * <p>Sample code:
    *
@@ -1270,8 +1284,9 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the cloudcontrol to retrieve in the format:
-   *     organizations/{organization}/locations/{location}/cloudControls/{cloud_control}
+   * @param name Required. The name of the cloud control to retrieve, in the format
+   *     `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`. The only
+   *     supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CloudControl getCloudControl(CloudControlName name) {
@@ -1282,11 +1297,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single CloudControl. This method retrieves a CloudControl resource, which can
-   * be either Built-in or Custom, identified by its name.
+   * Gets details about a cloud control. This method retrieves the latest major version of a cloud
+   * control that you identify by name.
    *
-   * <p>By default, the latest major version of the CloudControl is returned. A specific major
-   * version can be retrieved by specifying the `major_revision_id` in the request.
+   * <p>By default, the latest major version of the cloud control is returned. To retrieve a
+   * specific major version, include `major_revision_id` in the request.
    *
    * <p>Sample code:
    *
@@ -1303,8 +1318,9 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the cloudcontrol to retrieve in the format:
-   *     organizations/{organization}/locations/{location}/cloudControls/{cloud_control}
+   * @param name Required. The name of the cloud control to retrieve, in the format
+   *     `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`. The only
+   *     supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CloudControl getCloudControl(String name) {
@@ -1314,11 +1330,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single CloudControl. This method retrieves a CloudControl resource, which can
-   * be either Built-in or Custom, identified by its name.
+   * Gets details about a cloud control. This method retrieves the latest major version of a cloud
+   * control that you identify by name.
    *
-   * <p>By default, the latest major version of the CloudControl is returned. A specific major
-   * version can be retrieved by specifying the `major_revision_id` in the request.
+   * <p>By default, the latest major version of the cloud control is returned. To retrieve a
+   * specific major version, include `major_revision_id` in the request.
    *
    * <p>Sample code:
    *
@@ -1333,6 +1349,7 @@ public class ConfigClient implements BackgroundResource {
    *       GetCloudControlRequest.newBuilder()
    *           .setName(
    *               CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString())
+   *           .setMajorRevisionId(612576889)
    *           .build();
    *   CloudControl response = configClient.getCloudControl(request);
    * }
@@ -1347,11 +1364,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single CloudControl. This method retrieves a CloudControl resource, which can
-   * be either Built-in or Custom, identified by its name.
+   * Gets details about a cloud control. This method retrieves the latest major version of a cloud
+   * control that you identify by name.
    *
-   * <p>By default, the latest major version of the CloudControl is returned. A specific major
-   * version can be retrieved by specifying the `major_revision_id` in the request.
+   * <p>By default, the latest major version of the cloud control is returned. To retrieve a
+   * specific major version, include `major_revision_id` in the request.
    *
    * <p>Sample code:
    *
@@ -1366,6 +1383,7 @@ public class ConfigClient implements BackgroundResource {
    *       GetCloudControlRequest.newBuilder()
    *           .setName(
    *               CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString())
+   *           .setMajorRevisionId(612576889)
    *           .build();
    *   ApiFuture<CloudControl> future = configClient.getCloudControlCallable().futureCall(request);
    *   // Do something.
@@ -1379,8 +1397,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new CloudControl with type `Custom` under a given parent resource. `Built-in`
-   * CloudControls are managed by Google and cannot be created through this API.
+   * Creates a custom cloud control in a given parent resource. You can't create built-in cloud
+   * controls because those are managed by Google.
    *
    * <p>Sample code:
    *
@@ -1399,10 +1417,11 @@ public class ConfigClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`.
-   * @param cloudControl Required. The resource being created
-   * @param cloudControlId Required. ID of the CloudControl. This is the last segment of the
-   *     CloudControl resource name. Format: `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
+   *     `organizations/{organization}/locations/{location}`. The only supported location is
+   *     `global`.
+   * @param cloudControl Required. The cloud control that's being created.
+   * @param cloudControlId Required. The identifier for the cloud control, which is the last segment
+   *     of the cloud control name. The format is `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CloudControl createCloudControl(
@@ -1418,8 +1437,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new CloudControl with type `Custom` under a given parent resource. `Built-in`
-   * CloudControls are managed by Google and cannot be created through this API.
+   * Creates a custom cloud control in a given parent resource. You can't create built-in cloud
+   * controls because those are managed by Google.
    *
    * <p>Sample code:
    *
@@ -1438,10 +1457,11 @@ public class ConfigClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`.
-   * @param cloudControl Required. The resource being created
-   * @param cloudControlId Required. ID of the CloudControl. This is the last segment of the
-   *     CloudControl resource name. Format: `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
+   *     `organizations/{organization}/locations/{location}`. The only supported location is
+   *     `global`.
+   * @param cloudControl Required. The cloud control that's being created.
+   * @param cloudControlId Required. The identifier for the cloud control, which is the last segment
+   *     of the cloud control name. The format is `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CloudControl createCloudControl(
@@ -1457,8 +1477,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new CloudControl with type `Custom` under a given parent resource. `Built-in`
-   * CloudControls are managed by Google and cannot be created through this API.
+   * Creates a custom cloud control in a given parent resource. You can't create built-in cloud
+   * controls because those are managed by Google.
    *
    * <p>Sample code:
    *
@@ -1488,8 +1508,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new CloudControl with type `Custom` under a given parent resource. `Built-in`
-   * CloudControls are managed by Google and cannot be created through this API.
+   * Creates a custom cloud control in a given parent resource. You can't create built-in cloud
+   * controls because those are managed by Google.
    *
    * <p>Sample code:
    *
@@ -1519,14 +1539,15 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a single CloudControl. This method allows for partial updates of a Custom CloudControl
-   * resource. Built-in CloudControls cannot be updated.
+   * Updates a custom cloud control. This method allows for partial updates of a cloud control. Use
+   * the `update_mask` to specify which fields to update. Consider the following:
    *
-   * <p>- If an `update_mask` is provided, only the fields specified in the mask will be updated. -
-   * If no `update_mask` is provided, all fields present in the request's `cloud_control` body will
-   * be used to overwrite the existing resource.
+   * <p>- If you provide an `update_mask`, only the fields that are specified in the mask are
+   * updated. - If you don't provide an `update_mask`, all the fields that are present in the
+   * request's `cloud_control` body are used to overwrite the existing resource.
    *
-   * <p>A successful update will result in a new version of the CloudControl.
+   * <p>You can only update cloud controls with the `CUSTOM` type. A successful update creates a new
+   * version of the cloud control.
    *
    * <p>Sample code:
    *
@@ -1543,13 +1564,13 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param cloudControl Required. The resource being updated
-   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
-   *     CloudControl resource by the update. The fields specified in the update_mask are relative
-   *     to the resource, not the full request. A field will be overwritten if it is in the mask. If
-   *     the user does not provide a mask then all fields present in the request will be
-   *     overwritten. The fields that can be updated are: 1. Display_name 2. Description 3.
-   *     Parameters 4. Rules 5. ParameterSpec.
+   * @param cloudControl Required. The cloud control that you're updating.
+   * @param updateMask Optional. Use a field mask to specify the fields to be overwritten in the
+   *     cloud control during the update. The fields that you specify in the `update_mask` are
+   *     relative to the cloud control, not the full request. A field is overwritten if it is in the
+   *     mask. If you don't provide a mask, all fields in the request are updated.
+   *     <p>You can update the following fields:
+   *     <p>- Display name - Description - Parameters - Rules - Parameter specification
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CloudControl updateCloudControl(CloudControl cloudControl, FieldMask updateMask) {
@@ -1563,14 +1584,15 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a single CloudControl. This method allows for partial updates of a Custom CloudControl
-   * resource. Built-in CloudControls cannot be updated.
+   * Updates a custom cloud control. This method allows for partial updates of a cloud control. Use
+   * the `update_mask` to specify which fields to update. Consider the following:
    *
-   * <p>- If an `update_mask` is provided, only the fields specified in the mask will be updated. -
-   * If no `update_mask` is provided, all fields present in the request's `cloud_control` body will
-   * be used to overwrite the existing resource.
+   * <p>- If you provide an `update_mask`, only the fields that are specified in the mask are
+   * updated. - If you don't provide an `update_mask`, all the fields that are present in the
+   * request's `cloud_control` body are used to overwrite the existing resource.
    *
-   * <p>A successful update will result in a new version of the CloudControl.
+   * <p>You can only update cloud controls with the `CUSTOM` type. A successful update creates a new
+   * version of the cloud control.
    *
    * <p>Sample code:
    *
@@ -1599,14 +1621,15 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a single CloudControl. This method allows for partial updates of a Custom CloudControl
-   * resource. Built-in CloudControls cannot be updated.
+   * Updates a custom cloud control. This method allows for partial updates of a cloud control. Use
+   * the `update_mask` to specify which fields to update. Consider the following:
    *
-   * <p>- If an `update_mask` is provided, only the fields specified in the mask will be updated. -
-   * If no `update_mask` is provided, all fields present in the request's `cloud_control` body will
-   * be used to overwrite the existing resource.
+   * <p>- If you provide an `update_mask`, only the fields that are specified in the mask are
+   * updated. - If you don't provide an `update_mask`, all the fields that are present in the
+   * request's `cloud_control` body are used to overwrite the existing resource.
    *
-   * <p>A successful update will result in a new version of the CloudControl.
+   * <p>You can only update cloud controls with the `CUSTOM` type. A successful update creates a new
+   * version of the cloud control.
    *
    * <p>Sample code:
    *
@@ -1635,11 +1658,12 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Custom CloudControl, including all its major and minor revisions.
+   * Deletes a custom cloud control, including all its major and minor revisions. Consider the
+   * following:
    *
-   * <p>- This operation can only be performed on CloudControls with type `CUSTOM`. Built-in
-   * CloudControls cannot be deleted. - The CloudControl cannot be deleted if any of its revisions
-   * are currently referenced by any Framework. - This action is permanent and cannot be undone.
+   * <p>- You can't delete built-in cloud controls. You can only delete cloud controls with type
+   * `CUSTOM`. - You can't delete cloud controls if any of the versions are referenced by a
+   * framework. - You can't restore a deleted cloud control. This action is permanent.
    *
    * <p>Sample code:
    *
@@ -1656,8 +1680,9 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the resource, in the format
-   *     `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}`.
+   * @param name Required. The name of the cloud control to delete, in the format
+   *     `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}`. The only
+   *     supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCloudControl(CloudControlName name) {
@@ -1670,11 +1695,12 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Custom CloudControl, including all its major and minor revisions.
+   * Deletes a custom cloud control, including all its major and minor revisions. Consider the
+   * following:
    *
-   * <p>- This operation can only be performed on CloudControls with type `CUSTOM`. Built-in
-   * CloudControls cannot be deleted. - The CloudControl cannot be deleted if any of its revisions
-   * are currently referenced by any Framework. - This action is permanent and cannot be undone.
+   * <p>- You can't delete built-in cloud controls. You can only delete cloud controls with type
+   * `CUSTOM`. - You can't delete cloud controls if any of the versions are referenced by a
+   * framework. - You can't restore a deleted cloud control. This action is permanent.
    *
    * <p>Sample code:
    *
@@ -1691,8 +1717,9 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the resource, in the format
-   *     `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}`.
+   * @param name Required. The name of the cloud control to delete, in the format
+   *     `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}`. The only
+   *     supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCloudControl(String name) {
@@ -1703,11 +1730,12 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Custom CloudControl, including all its major and minor revisions.
+   * Deletes a custom cloud control, including all its major and minor revisions. Consider the
+   * following:
    *
-   * <p>- This operation can only be performed on CloudControls with type `CUSTOM`. Built-in
-   * CloudControls cannot be deleted. - The CloudControl cannot be deleted if any of its revisions
-   * are currently referenced by any Framework. - This action is permanent and cannot be undone.
+   * <p>- You can't delete built-in cloud controls. You can only delete cloud controls with type
+   * `CUSTOM`. - You can't delete cloud controls if any of the versions are referenced by a
+   * framework. - You can't restore a deleted cloud control. This action is permanent.
    *
    * <p>Sample code:
    *
@@ -1736,11 +1764,12 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Custom CloudControl, including all its major and minor revisions.
+   * Deletes a custom cloud control, including all its major and minor revisions. Consider the
+   * following:
    *
-   * <p>- This operation can only be performed on CloudControls with type `CUSTOM`. Built-in
-   * CloudControls cannot be deleted. - The CloudControl cannot be deleted if any of its revisions
-   * are currently referenced by any Framework. - This action is permanent and cannot be undone.
+   * <p>- You can't delete built-in cloud controls. You can only delete cloud controls with type
+   * `CUSTOM`. - You can't delete cloud controls if any of the versions are referenced by a
+   * framework. - You can't restore a deleted cloud control. This action is permanent.
    *
    * <p>Sample code:
    *

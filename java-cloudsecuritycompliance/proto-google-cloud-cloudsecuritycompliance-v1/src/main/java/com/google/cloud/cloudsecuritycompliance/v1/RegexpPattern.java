@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Regular Expression Validator for parameter values.
+ * The regular expression (regex) validator for parameter values.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.RegexpPattern}
@@ -73,7 +73,7 @@ public final class RegexpPattern extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Regex Pattern to match the value(s) of parameter.
+   * Required. The regex pattern to match the values of the parameter with.
    * </pre>
    *
    * <code>string pattern = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -97,7 +97,7 @@ public final class RegexpPattern extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Regex Pattern to match the value(s) of parameter.
+   * Required. The regex pattern to match the values of the parameter with.
    * </pre>
    *
    * <code>string pattern = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -282,7 +282,7 @@ public final class RegexpPattern extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Regular Expression Validator for parameter values.
+   * The regular expression (regex) validator for parameter values.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.RegexpPattern}
@@ -467,7 +467,7 @@ public final class RegexpPattern extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Regex Pattern to match the value(s) of parameter.
+     * Required. The regex pattern to match the values of the parameter with.
      * </pre>
      *
      * <code>string pattern = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -490,7 +490,7 @@ public final class RegexpPattern extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Regex Pattern to match the value(s) of parameter.
+     * Required. The regex pattern to match the values of the parameter with.
      * </pre>
      *
      * <code>string pattern = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -513,7 +513,7 @@ public final class RegexpPattern extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Regex Pattern to match the value(s) of parameter.
+     * Required. The regex pattern to match the values of the parameter with.
      * </pre>
      *
      * <code>string pattern = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -535,7 +535,7 @@ public final class RegexpPattern extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Regex Pattern to match the value(s) of parameter.
+     * Required. The regex pattern to match the values of the parameter with.
      * </pre>
      *
      * <code>string pattern = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -553,7 +553,7 @@ public final class RegexpPattern extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Regex Pattern to match the value(s) of parameter.
+     * Required. The regex pattern to match the values of the parameter with.
      * </pre>
      *
      * <code>string pattern = 1 [(.google.api.field_behavior) = REQUIRED];</code>

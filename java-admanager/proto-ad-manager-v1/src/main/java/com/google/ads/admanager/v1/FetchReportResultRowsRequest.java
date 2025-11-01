@@ -131,7 +131,8 @@ public final class FetchReportResultRowsRequest extends com.google.protobuf.Gene
    * <pre>
    * Optional. The maximum number of rows to return. The service may return
    * fewer than this value. If unspecified, at most 1,000 rows will be returned.
-   * The maximum value is 10,000; values above 10,000 will be reduced to 10,000.
+   * The maximum value is 10,000; values greater than 10,000 will be reduced to
+   * 10,000.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -717,7 +718,8 @@ public final class FetchReportResultRowsRequest extends com.google.protobuf.Gene
      * <pre>
      * Optional. The maximum number of rows to return. The service may return
      * fewer than this value. If unspecified, at most 1,000 rows will be returned.
-     * The maximum value is 10,000; values above 10,000 will be reduced to 10,000.
+     * The maximum value is 10,000; values greater than 10,000 will be reduced to
+     * 10,000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -735,7 +737,8 @@ public final class FetchReportResultRowsRequest extends com.google.protobuf.Gene
      * <pre>
      * Optional. The maximum number of rows to return. The service may return
      * fewer than this value. If unspecified, at most 1,000 rows will be returned.
-     * The maximum value is 10,000; values above 10,000 will be reduced to 10,000.
+     * The maximum value is 10,000; values greater than 10,000 will be reduced to
+     * 10,000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -757,7 +760,8 @@ public final class FetchReportResultRowsRequest extends com.google.protobuf.Gene
      * <pre>
      * Optional. The maximum number of rows to return. The service may return
      * fewer than this value. If unspecified, at most 1,000 rows will be returned.
-     * The maximum value is 10,000; values above 10,000 will be reduced to 10,000.
+     * The maximum value is 10,000; values greater than 10,000 will be reduced to
+     * 10,000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

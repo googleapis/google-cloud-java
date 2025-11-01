@@ -28,8 +28,9 @@ public interface CloudControlDeploymentReferenceOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the CloudControlDeployment. The format is:
-   * organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
+   * Output only. The name of the CloudControlDeployment. The format is
+   * `organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -44,8 +45,9 @@ public interface CloudControlDeploymentReferenceOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the CloudControlDeployment. The format is:
-   * organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
+   * Output only. The name of the CloudControlDeployment. The format is
+   * `organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>

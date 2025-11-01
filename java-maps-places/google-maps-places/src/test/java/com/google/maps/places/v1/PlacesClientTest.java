@@ -399,7 +399,8 @@ public class PlacesClientTest {
             .setReviewSummary(Place.ReviewSummary.newBuilder().build())
             .setEvChargeAmenitySummary(Place.EvChargeAmenitySummary.newBuilder().build())
             .setNeighborhoodSummary(Place.NeighborhoodSummary.newBuilder().build())
-            .setMovedPlace("movedPlace-1127226860")
+            .setConsumerAlert(Place.ConsumerAlert.newBuilder().build())
+            .setMovedPlace(PlaceName.of("[PLACE_ID]").toString())
             .setMovedPlaceId("movedPlaceId-933251505")
             .build();
     mockPlaces.addResponse(expectedResponse);
@@ -508,7 +509,8 @@ public class PlacesClientTest {
             .setReviewSummary(Place.ReviewSummary.newBuilder().build())
             .setEvChargeAmenitySummary(Place.EvChargeAmenitySummary.newBuilder().build())
             .setNeighborhoodSummary(Place.NeighborhoodSummary.newBuilder().build())
-            .setMovedPlace("movedPlace-1127226860")
+            .setConsumerAlert(Place.ConsumerAlert.newBuilder().build())
+            .setMovedPlace(PlaceName.of("[PLACE_ID]").toString())
             .setMovedPlaceId("movedPlaceId-933251505")
             .build();
     mockPlaces.addResponse(expectedResponse);

@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Possible parameter value types.
+ * The possible parameter value types.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ParamValue}
@@ -127,7 +127,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a string value.
+   * A string value.
    * </pre>
    *
    * <code>string string_value = 3;</code>
@@ -142,7 +142,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a string value.
+   * A string value.
    * </pre>
    *
    * <code>string string_value = 3;</code>
@@ -170,7 +170,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a string value.
+   * A string value.
    * </pre>
    *
    * <code>string string_value = 3;</code>
@@ -200,7 +200,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a boolean value.
+   * A boolean value.
    * </pre>
    *
    * <code>bool bool_value = 4;</code>
@@ -216,7 +216,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a boolean value.
+   * A boolean value.
    * </pre>
    *
    * <code>bool bool_value = 4;</code>
@@ -237,7 +237,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a repeated string.
+   * A repeated string.
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5;</code>
@@ -253,7 +253,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a repeated string.
+   * A repeated string.
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5;</code>
@@ -272,7 +272,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a repeated string.
+   * A repeated string.
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5;</code>
@@ -292,7 +292,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a double value.
+   * A double value.
    * </pre>
    *
    * <code>double number_value = 6;</code>
@@ -308,7 +308,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a double value.
+   * A double value.
    * </pre>
    *
    * <code>double number_value = 6;</code>
@@ -329,7 +329,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents sub-parameter values.
+   * Sub-parameter values.
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7;</code>
@@ -345,7 +345,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents sub-parameter values.
+   * Sub-parameter values.
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7;</code>
@@ -364,7 +364,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents sub-parameter values.
+   * Sub-parameter values.
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7;</code>
@@ -619,7 +619,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Possible parameter value types.
+   * The possible parameter value types.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ParamValue}
@@ -885,7 +885,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a string value.
+     * A string value.
      * </pre>
      *
      * <code>string string_value = 3;</code>
@@ -901,7 +901,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a string value.
+     * A string value.
      * </pre>
      *
      * <code>string string_value = 3;</code>
@@ -930,7 +930,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a string value.
+     * A string value.
      * </pre>
      *
      * <code>string string_value = 3;</code>
@@ -959,7 +959,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a string value.
+     * A string value.
      * </pre>
      *
      * <code>string string_value = 3;</code>
@@ -981,7 +981,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a string value.
+     * A string value.
      * </pre>
      *
      * <code>string string_value = 3;</code>
@@ -1001,7 +1001,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a string value.
+     * A string value.
      * </pre>
      *
      * <code>string string_value = 3;</code>
@@ -1024,7 +1024,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a boolean value.
+     * A boolean value.
      * </pre>
      *
      * <code>bool bool_value = 4;</code>
@@ -1039,7 +1039,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a boolean value.
+     * A boolean value.
      * </pre>
      *
      * <code>bool bool_value = 4;</code>
@@ -1057,7 +1057,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a boolean value.
+     * A boolean value.
      * </pre>
      *
      * <code>bool bool_value = 4;</code>
@@ -1077,7 +1077,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a boolean value.
+     * A boolean value.
      * </pre>
      *
      * <code>bool bool_value = 4;</code>
@@ -1103,7 +1103,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a repeated string.
+     * A repeated string.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5;</code>
@@ -1119,7 +1119,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a repeated string.
+     * A repeated string.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5;</code>
@@ -1145,7 +1145,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a repeated string.
+     * A repeated string.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5;</code>
@@ -1169,7 +1169,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a repeated string.
+     * A repeated string.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5;</code>
@@ -1190,7 +1190,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a repeated string.
+     * A repeated string.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5;</code>
@@ -1225,7 +1225,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a repeated string.
+     * A repeated string.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5;</code>
@@ -1251,7 +1251,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a repeated string.
+     * A repeated string.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5;</code>
@@ -1265,7 +1265,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a repeated string.
+     * A repeated string.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5;</code>
@@ -1287,7 +1287,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a repeated string.
+     * A repeated string.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5;</code>
@@ -1320,7 +1320,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a double value.
+     * A double value.
      * </pre>
      *
      * <code>double number_value = 6;</code>
@@ -1335,7 +1335,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a double value.
+     * A double value.
      * </pre>
      *
      * <code>double number_value = 6;</code>
@@ -1353,7 +1353,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a double value.
+     * A double value.
      * </pre>
      *
      * <code>double number_value = 6;</code>
@@ -1373,7 +1373,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a double value.
+     * A double value.
      * </pre>
      *
      * <code>double number_value = 6;</code>
@@ -1399,7 +1399,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents sub-parameter values.
+     * Sub-parameter values.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7;</code>
@@ -1415,7 +1415,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents sub-parameter values.
+     * Sub-parameter values.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7;</code>
@@ -1441,7 +1441,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents sub-parameter values.
+     * Sub-parameter values.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7;</code>
@@ -1464,7 +1464,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents sub-parameter values.
+     * Sub-parameter values.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7;</code>
@@ -1485,7 +1485,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents sub-parameter values.
+     * Sub-parameter values.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7;</code>
@@ -1519,7 +1519,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents sub-parameter values.
+     * Sub-parameter values.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7;</code>
@@ -1545,7 +1545,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents sub-parameter values.
+     * Sub-parameter values.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7;</code>
@@ -1558,7 +1558,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents sub-parameter values.
+     * Sub-parameter values.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7;</code>
@@ -1579,7 +1579,7 @@ public final class ParamValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents sub-parameter values.
+     * Sub-parameter values.
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7;</code>

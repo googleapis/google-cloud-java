@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Request message for CreateFrameworkDeployment API.
+ * The request message for [CreateFrameworkDeployment][].
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.CreateFrameworkDeploymentRequest}
@@ -77,9 +77,9 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The parent resource of the FrameworkDeployment in the format:
-   * organizations/{organization}/locations/{location}
-   * Only global location is supported.
+   * Required. The parent resource of the framework deployment in the format
+   * `organizations/{organization}/locations/{location}`.
+   * Only the global location is supported.
    * </pre>
    *
    * <code>
@@ -105,9 +105,9 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The parent resource of the FrameworkDeployment in the format:
-   * organizations/{organization}/locations/{location}
-   * Only global location is supported.
+   * Required. The parent resource of the framework deployment in the format
+   * `organizations/{organization}/locations/{location}`.
+   * Only the global location is supported.
    * </pre>
    *
    * <code>
@@ -138,8 +138,8 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. User provided identifier. It should be unique in scope of a
-   * parent. This is optional and if not provided, a random UUID will be
+   * Optional. An identifier for the framework deployment that's unique in scope
+   * of the parent. If you don't specify a value, then a random UUID is
    * generated.
    * </pre>
    *
@@ -164,8 +164,8 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. User provided identifier. It should be unique in scope of a
-   * parent. This is optional and if not provided, a random UUID will be
+   * Optional. An identifier for the framework deployment that's unique in scope
+   * of the parent. If you don't specify a value, then a random UUID is
    * generated.
    * </pre>
    *
@@ -193,7 +193,7 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The FrameworkDeployment to be created.
+   * Required. The framework deployment that you're creating.
    * </pre>
    *
    * <code>
@@ -211,7 +211,7 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The FrameworkDeployment to be created.
+   * Required. The framework deployment that you're creating.
    * </pre>
    *
    * <code>
@@ -231,7 +231,7 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The FrameworkDeployment to be created.
+   * Required. The framework deployment that you're creating.
    * </pre>
    *
    * <code>
@@ -441,7 +441,7 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Request message for CreateFrameworkDeployment API.
+   * The request message for [CreateFrameworkDeployment][].
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.CreateFrameworkDeploymentRequest}
@@ -685,9 +685,9 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The parent resource of the FrameworkDeployment in the format:
-     * organizations/{organization}/locations/{location}
-     * Only global location is supported.
+     * Required. The parent resource of the framework deployment in the format
+     * `organizations/{organization}/locations/{location}`.
+     * Only the global location is supported.
      * </pre>
      *
      * <code>
@@ -712,9 +712,9 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The parent resource of the FrameworkDeployment in the format:
-     * organizations/{organization}/locations/{location}
-     * Only global location is supported.
+     * Required. The parent resource of the framework deployment in the format
+     * `organizations/{organization}/locations/{location}`.
+     * Only the global location is supported.
      * </pre>
      *
      * <code>
@@ -739,9 +739,9 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The parent resource of the FrameworkDeployment in the format:
-     * organizations/{organization}/locations/{location}
-     * Only global location is supported.
+     * Required. The parent resource of the framework deployment in the format
+     * `organizations/{organization}/locations/{location}`.
+     * Only the global location is supported.
      * </pre>
      *
      * <code>
@@ -765,9 +765,9 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The parent resource of the FrameworkDeployment in the format:
-     * organizations/{organization}/locations/{location}
-     * Only global location is supported.
+     * Required. The parent resource of the framework deployment in the format
+     * `organizations/{organization}/locations/{location}`.
+     * Only the global location is supported.
      * </pre>
      *
      * <code>
@@ -787,9 +787,9 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The parent resource of the FrameworkDeployment in the format:
-     * organizations/{organization}/locations/{location}
-     * Only global location is supported.
+     * Required. The parent resource of the framework deployment in the format
+     * `organizations/{organization}/locations/{location}`.
+     * Only the global location is supported.
      * </pre>
      *
      * <code>
@@ -816,8 +816,8 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. User provided identifier. It should be unique in scope of a
-     * parent. This is optional and if not provided, a random UUID will be
+     * Optional. An identifier for the framework deployment that's unique in scope
+     * of the parent. If you don't specify a value, then a random UUID is
      * generated.
      * </pre>
      *
@@ -841,8 +841,8 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. User provided identifier. It should be unique in scope of a
-     * parent. This is optional and if not provided, a random UUID will be
+     * Optional. An identifier for the framework deployment that's unique in scope
+     * of the parent. If you don't specify a value, then a random UUID is
      * generated.
      * </pre>
      *
@@ -866,8 +866,8 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. User provided identifier. It should be unique in scope of a
-     * parent. This is optional and if not provided, a random UUID will be
+     * Optional. An identifier for the framework deployment that's unique in scope
+     * of the parent. If you don't specify a value, then a random UUID is
      * generated.
      * </pre>
      *
@@ -890,8 +890,8 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. User provided identifier. It should be unique in scope of a
-     * parent. This is optional and if not provided, a random UUID will be
+     * Optional. An identifier for the framework deployment that's unique in scope
+     * of the parent. If you don't specify a value, then a random UUID is
      * generated.
      * </pre>
      *
@@ -910,8 +910,8 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. User provided identifier. It should be unique in scope of a
-     * parent. This is optional and if not provided, a random UUID will be
+     * Optional. An identifier for the framework deployment that's unique in scope
+     * of the parent. If you don't specify a value, then a random UUID is
      * generated.
      * </pre>
      *
@@ -942,7 +942,7 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The FrameworkDeployment to be created.
+     * Required. The framework deployment that you're creating.
      * </pre>
      *
      * <code>
@@ -959,7 +959,7 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The FrameworkDeployment to be created.
+     * Required. The framework deployment that you're creating.
      * </pre>
      *
      * <code>
@@ -983,7 +983,7 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The FrameworkDeployment to be created.
+     * Required. The framework deployment that you're creating.
      * </pre>
      *
      * <code>
@@ -1009,7 +1009,7 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The FrameworkDeployment to be created.
+     * Required. The framework deployment that you're creating.
      * </pre>
      *
      * <code>
@@ -1032,7 +1032,7 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The FrameworkDeployment to be created.
+     * Required. The framework deployment that you're creating.
      * </pre>
      *
      * <code>
@@ -1065,7 +1065,7 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The FrameworkDeployment to be created.
+     * Required. The framework deployment that you're creating.
      * </pre>
      *
      * <code>
@@ -1087,7 +1087,7 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The FrameworkDeployment to be created.
+     * Required. The framework deployment that you're creating.
      * </pre>
      *
      * <code>
@@ -1105,7 +1105,7 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The FrameworkDeployment to be created.
+     * Required. The framework deployment that you're creating.
      * </pre>
      *
      * <code>
@@ -1127,7 +1127,7 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The FrameworkDeployment to be created.
+     * Required. The framework deployment that you're creating.
      * </pre>
      *
      * <code>

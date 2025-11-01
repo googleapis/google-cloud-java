@@ -48,14 +48,16 @@ public final class DbNodeProto {
       "\n"
           + ",google/cloud/oracledatabase/v1/db_node"
           + ".proto\022\036google.cloud.oracledatabase.v1\032\037"
-          + "google/api/field_behavior.proto\032\031google/api/resource.proto\"\202\002\n"
+          + "google/api/field_behavior.proto\032\031google/"
+          + "api/resource.proto\032\037google/protobuf/timestamp.proto\"\340\002\n"
           + "\006DbNode\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022I\n\n"
-          + "properties\030\003 \001(\01320.google.cl"
-          + "oud.oracledatabase.v1.DbNodePropertiesB\003\340A\001:\231\001\352A\225\001\n"
-          + "$oracledatabase.googleapis.com/DbNode\022\\projects/{project}/locations/{"
-          + "location}/cloudVmClusters/{cloud_vm_clus"
-          + "ter}/dbNodes/{db_node}*\007dbNodes2\006dbNode\"\300\003\n"
+          + "properties\030\003 \001(\01320.google.cloud.ora"
+          + "cledatabase.v1.DbNodePropertiesB\003\340A\001:\367\001\352A\363\001\n"
+          + "$oracledatabase.googleapis.com/DbNode\022\\projects/{project}/locations/{locatio"
+          + "n}/cloudVmClusters/{cloud_vm_cluster}/dbNodes/{db_node}\022\\projects/{project}/loca"
+          + "tions/{location}/exadbVmClusters/{exadb_"
+          + "vm_cluster}/dbNodes/{db_node}*\007dbNodes2\006dbNode\"\366\003\n"
           + "\020DbNodeProperties\022\021\n"
           + "\004ocid\030\001 \001(\tB\003\340A\003\022\027\n\n"
           + "ocpu_count\030\002 \001(\005B\003\340A\001\022\026\n"
@@ -63,10 +65,12 @@ public final class DbNodeProto {
           + "\027db_node_storage_size_gb\030\004 \001(\005B\003\340A\001\022\033\n"
           + "\016db_server_ocid\030\005 \001(\tB\003\340A\001\022\025\n"
           + "\010hostname\030\010 \001(\tB\003\340A\001\022J\n"
-          + "\005state\030\t \001(\01626.goog"
-          + "le.cloud.oracledatabase.v1.DbNodeProperties.StateB\003\340A\003\022\034\n"
+          + "\005state\030\t \001(\016"
+          + "26.google.cloud.oracledatabase.v1.DbNodeProperties.StateB\003\340A\003\022\034\n"
           + "\024total_cpu_core_count\030\n"
-          + " \001(\005\"\243\001\n"
+          + " \001(\005\0224\n"
+          + "\013create_time\030\013"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\243\001\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\020\n"
           + "\014PROVISIONING\020\001\022\r\n"
@@ -76,14 +80,12 @@ public final class DbNodeProto {
           + "\007STOPPED\020\005\022\014\n"
           + "\010STARTING\020\006\022\017\n"
           + "\013TERMINATING\020\007\022\016\n\n"
-          + "TERMINATED\020\010\022\n"
-          + "\n"
+          + "TERMINATED\020\010\022\n\n"
           + "\006FAILED\020\tB\345\001\n"
-          + "\"com.google.cloud.oracledatabase.v1B\013DbNodeProtoP\001ZJcloud.google.c"
-          + "om/go/oracledatabase/apiv1/oracledatabas"
-          + "epb;oracledatabasepb\252\002\036Google.Cloud.Orac"
-          + "leDatabase.V1\312\002\036Google\\Cloud\\OracleDatab"
-          + "ase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
+          + "\"com.google.cloud.oracledatabase.v1B\013DbNodePr"
+          + "otoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracledatabasepb;oracledatabasep"
+          + "b\252\002\036Google.Cloud.OracleDatabase.V1\312\002\036Goo"
+          + "gle\\Cloud\\OracleDatabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -91,6 +93,7 @@ public final class DbNodeProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_oracledatabase_v1_DbNode_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -114,6 +117,7 @@ public final class DbNodeProto {
               "Hostname",
               "State",
               "TotalCpuCoreCount",
+              "CreateTime",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -123,6 +127,7 @@ public final class DbNodeProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

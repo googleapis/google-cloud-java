@@ -117,7 +117,7 @@ public final class FeatureViewProto {
           + " \001(\tB\003\340A\003\022\032\n\r"
           + "satisfies_pzs\030\023 \001(\010B\003\340A\003\022\032\n\r"
           + "satisfies_pzi\030\024 \001(\010B\003\340A\003\022X\n"
-          + "\021bigtable_metadata\030\025 \001(\01328.google."
+          + "\021bigtable_metadata\030\026 \001(\01328.google."
           + "cloud.aiplatform.v1.FeatureView.BigtableMetadataB\003\340A\003\032B\n"
           + "\016BigQuerySource\022\020\n"
           + "\003uri\030\001 \001(\tB\003\340A\002\022\036\n"

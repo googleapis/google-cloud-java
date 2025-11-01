@@ -98,6 +98,46 @@ public class PlacementServiceSettings extends ClientSettings<PlacementServiceSet
     return ((PlacementServiceStubSettings) getStubSettings()).listPlacementsSettings();
   }
 
+  /** Returns the object with the settings used for calls to createPlacement. */
+  public UnaryCallSettings<CreatePlacementRequest, Placement> createPlacementSettings() {
+    return ((PlacementServiceStubSettings) getStubSettings()).createPlacementSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePlacement. */
+  public UnaryCallSettings<UpdatePlacementRequest, Placement> updatePlacementSettings() {
+    return ((PlacementServiceStubSettings) getStubSettings()).updatePlacementSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreatePlacements. */
+  public UnaryCallSettings<BatchCreatePlacementsRequest, BatchCreatePlacementsResponse>
+      batchCreatePlacementsSettings() {
+    return ((PlacementServiceStubSettings) getStubSettings()).batchCreatePlacementsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdatePlacements. */
+  public UnaryCallSettings<BatchUpdatePlacementsRequest, BatchUpdatePlacementsResponse>
+      batchUpdatePlacementsSettings() {
+    return ((PlacementServiceStubSettings) getStubSettings()).batchUpdatePlacementsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchActivatePlacements. */
+  public UnaryCallSettings<BatchActivatePlacementsRequest, BatchActivatePlacementsResponse>
+      batchActivatePlacementsSettings() {
+    return ((PlacementServiceStubSettings) getStubSettings()).batchActivatePlacementsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivatePlacements. */
+  public UnaryCallSettings<BatchDeactivatePlacementsRequest, BatchDeactivatePlacementsResponse>
+      batchDeactivatePlacementsSettings() {
+    return ((PlacementServiceStubSettings) getStubSettings()).batchDeactivatePlacementsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchArchivePlacements. */
+  public UnaryCallSettings<BatchArchivePlacementsRequest, BatchArchivePlacementsResponse>
+      batchArchivePlacementsSettings() {
+    return ((PlacementServiceStubSettings) getStubSettings()).batchArchivePlacementsSettings();
+  }
+
   public static final PlacementServiceSettings create(PlacementServiceStubSettings stub)
       throws IOException {
     return new PlacementServiceSettings.Builder(stub.toBuilder()).build();
@@ -205,6 +245,48 @@ public class PlacementServiceSettings extends ClientSettings<PlacementServiceSet
             ListPlacementsRequest, ListPlacementsResponse, ListPlacementsPagedResponse>
         listPlacementsSettings() {
       return getStubSettingsBuilder().listPlacementsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPlacement. */
+    public UnaryCallSettings.Builder<CreatePlacementRequest, Placement> createPlacementSettings() {
+      return getStubSettingsBuilder().createPlacementSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePlacement. */
+    public UnaryCallSettings.Builder<UpdatePlacementRequest, Placement> updatePlacementSettings() {
+      return getStubSettingsBuilder().updatePlacementSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreatePlacements. */
+    public UnaryCallSettings.Builder<BatchCreatePlacementsRequest, BatchCreatePlacementsResponse>
+        batchCreatePlacementsSettings() {
+      return getStubSettingsBuilder().batchCreatePlacementsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdatePlacements. */
+    public UnaryCallSettings.Builder<BatchUpdatePlacementsRequest, BatchUpdatePlacementsResponse>
+        batchUpdatePlacementsSettings() {
+      return getStubSettingsBuilder().batchUpdatePlacementsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivatePlacements. */
+    public UnaryCallSettings.Builder<
+            BatchActivatePlacementsRequest, BatchActivatePlacementsResponse>
+        batchActivatePlacementsSettings() {
+      return getStubSettingsBuilder().batchActivatePlacementsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivatePlacements. */
+    public UnaryCallSettings.Builder<
+            BatchDeactivatePlacementsRequest, BatchDeactivatePlacementsResponse>
+        batchDeactivatePlacementsSettings() {
+      return getStubSettingsBuilder().batchDeactivatePlacementsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchArchivePlacements. */
+    public UnaryCallSettings.Builder<BatchArchivePlacementsRequest, BatchArchivePlacementsResponse>
+        batchArchivePlacementsSettings() {
+      return getStubSettingsBuilder().batchArchivePlacementsSettings();
     }
 
     @Override

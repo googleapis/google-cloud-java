@@ -427,7 +427,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListEntries</td>
- *      <td><p> Lists Entries within an EntryGroup.</td>
+ *      <td><p> Lists Entries within an EntryGroup. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc Metastore metadata that is stored in Dataplex Universal Catalog is changing. For more information, see [Changes to metadata stored in Dataplex Universal Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -447,7 +447,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetEntry</td>
- *      <td><p> Gets an Entry.</td>
+ *      <td><p> Gets an Entry. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc Metastore metadata that is stored in Dataplex Universal Catalog is changing. For more information, see [Changes to metadata stored in Dataplex Universal Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -466,7 +466,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> LookupEntry</td>
- *      <td><p> Looks up an entry by name using the permission on the source system.</td>
+ *      <td><p> Looks up an entry by name using the permission on the source system. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc Metastore metadata that is stored in Dataplex Universal Catalog is changing. For more information, see [Changes to metadata stored in Dataplex Universal Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -3339,7 +3339,10 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Entries within an EntryGroup.
+   * Lists Entries within an EntryGroup. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub,
+   * Dataform, and Dataproc Metastore metadata that is stored in Dataplex Universal Catalog is
+   * changing. For more information, see [Changes to metadata stored in Dataplex Universal
+   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
    *
    * <p>Sample code:
    *
@@ -3371,7 +3374,10 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Entries within an EntryGroup.
+   * Lists Entries within an EntryGroup. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub,
+   * Dataform, and Dataproc Metastore metadata that is stored in Dataplex Universal Catalog is
+   * changing. For more information, see [Changes to metadata stored in Dataplex Universal
+   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
    *
    * <p>Sample code:
    *
@@ -3400,7 +3406,10 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Entries within an EntryGroup.
+   * Lists Entries within an EntryGroup. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub,
+   * Dataform, and Dataproc Metastore metadata that is stored in Dataplex Universal Catalog is
+   * changing. For more information, see [Changes to metadata stored in Dataplex Universal
+   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
    *
    * <p>Sample code:
    *
@@ -3433,7 +3442,10 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Entries within an EntryGroup.
+   * Lists Entries within an EntryGroup. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub,
+   * Dataform, and Dataproc Metastore metadata that is stored in Dataplex Universal Catalog is
+   * changing. For more information, see [Changes to metadata stored in Dataplex Universal
+   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
    *
    * <p>Sample code:
    *
@@ -3466,7 +3478,10 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Entries within an EntryGroup.
+   * Lists Entries within an EntryGroup. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub,
+   * Dataform, and Dataproc Metastore metadata that is stored in Dataplex Universal Catalog is
+   * changing. For more information, see [Changes to metadata stored in Dataplex Universal
+   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
    *
    * <p>Sample code:
    *
@@ -3505,7 +3520,10 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an Entry.
+   * Gets an Entry. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+   * Metastore metadata that is stored in Dataplex Universal Catalog is changing. For more
+   * information, see [Changes to metadata stored in Dataplex Universal
+   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
    *
    * <p>Sample code:
    *
@@ -3533,7 +3551,10 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an Entry.
+   * Gets an Entry. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+   * Metastore metadata that is stored in Dataplex Universal Catalog is changing. For more
+   * information, see [Changes to metadata stored in Dataplex Universal
+   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
    *
    * <p>Sample code:
    *
@@ -3560,7 +3581,10 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an Entry.
+   * Gets an Entry. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+   * Metastore metadata that is stored in Dataplex Universal Catalog is changing. For more
+   * information, see [Changes to metadata stored in Dataplex Universal
+   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
    *
    * <p>Sample code:
    *
@@ -3592,7 +3616,10 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an Entry.
+   * Gets an Entry. Caution: The Vertex AI, Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc
+   * Metastore metadata that is stored in Dataplex Universal Catalog is changing. For more
+   * information, see [Changes to metadata stored in Dataplex Universal
+   * Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
    *
    * <p>Sample code:
    *
@@ -3623,7 +3650,10 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up an entry by name using the permission on the source system.
+   * Looks up an entry by name using the permission on the source system. Caution: The Vertex AI,
+   * Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc Metastore metadata that is stored in
+   * Dataplex Universal Catalog is changing. For more information, see [Changes to metadata stored
+   * in Dataplex Universal Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
    *
    * <p>Sample code:
    *
@@ -3656,7 +3686,10 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up an entry by name using the permission on the source system.
+   * Looks up an entry by name using the permission on the source system. Caution: The Vertex AI,
+   * Bigtable, Spanner, Pub/Sub, Dataform, and Dataproc Metastore metadata that is stored in
+   * Dataplex Universal Catalog is changing. For more information, see [Changes to metadata stored
+   * in Dataplex Universal Catalog](https://cloud.google.com/dataplex/docs/metadata-changes).
    *
    * <p>Sample code:
    *

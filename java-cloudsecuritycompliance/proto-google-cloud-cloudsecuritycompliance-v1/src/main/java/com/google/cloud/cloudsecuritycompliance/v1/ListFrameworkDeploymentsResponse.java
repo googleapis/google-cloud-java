@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Response message for ListFrameworkDeployments.
+ * The response message for [ListFrameworkDeployments][].
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ListFrameworkDeploymentsResponse}
@@ -77,7 +77,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * The list of FrameworkDeployments.
+   * The list of framework deployments.
    * </pre>
    *
    * <code>
@@ -94,7 +94,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * The list of FrameworkDeployments.
+   * The list of framework deployments.
    * </pre>
    *
    * <code>
@@ -112,7 +112,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * The list of FrameworkDeployments.
+   * The list of framework deployments.
    * </pre>
    *
    * <code>
@@ -128,7 +128,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * The list of FrameworkDeployments.
+   * The list of framework deployments.
    * </pre>
    *
    * <code>
@@ -145,7 +145,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * The list of FrameworkDeployments.
+   * The list of framework deployments.
    * </pre>
    *
    * <code>
@@ -167,7 +167,8 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * A token that identifies the next page of results that the server
+   * should return.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -191,7 +192,8 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * A token that identifies the next page of results that the server
+   * should return.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -395,7 +397,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * Response message for ListFrameworkDeployments.
+   * The response message for [ListFrameworkDeployments][].
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ListFrameworkDeploymentsResponse}
@@ -670,7 +672,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -690,7 +692,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -709,7 +711,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -729,7 +731,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -755,7 +757,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -779,7 +781,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -805,7 +807,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -831,7 +833,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -854,7 +856,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -878,7 +880,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -903,7 +905,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -925,7 +927,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -947,7 +949,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -963,7 +965,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -983,7 +985,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -1004,7 +1006,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -1022,7 +1024,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -1041,7 +1043,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * The list of FrameworkDeployments.
+     * The list of framework deployments.
      * </pre>
      *
      * <code>
@@ -1079,7 +1081,8 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A token that identifies the next page of results that the server
+     * should return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1102,7 +1105,8 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A token that identifies the next page of results that the server
+     * should return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1125,7 +1129,8 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A token that identifies the next page of results that the server
+     * should return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1147,7 +1152,8 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A token that identifies the next page of results that the server
+     * should return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1165,7 +1171,8 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A token that identifies the next page of results that the server
+     * should return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

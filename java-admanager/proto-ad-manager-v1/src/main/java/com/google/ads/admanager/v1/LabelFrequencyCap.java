@@ -79,7 +79,26 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>
-   * string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * optional string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the label field is set.
+   */
+  @java.lang.Override
+  public boolean hasLabel() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The label to used for frequency capping.
+   * Format: "networks/{network_code}/labels/{label_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The label.
@@ -106,7 +125,7 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>
-   * string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * optional string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for label.
@@ -134,13 +153,13 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
    * The frequency cap.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
+   * <code>optional .google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
    *
    * @return Whether the frequencyCap field is set.
    */
   @java.lang.Override
   public boolean hasFrequencyCap() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -150,7 +169,7 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
    * The frequency cap.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
+   * <code>optional .google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
    *
    * @return The frequencyCap.
    */
@@ -168,7 +187,7 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
    * The frequency cap.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
+   * <code>optional .google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
    */
   @java.lang.Override
   public com.google.ads.admanager.v1.FrequencyCapOrBuilder getFrequencyCapOrBuilder() {
@@ -191,10 +210,10 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(label_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, label_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getFrequencyCap());
     }
     getUnknownFields().writeTo(output);
@@ -206,10 +225,10 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(label_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, label_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getFrequencyCap());
     }
     size += getUnknownFields().getSerializedSize();
@@ -228,7 +247,10 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
     com.google.ads.admanager.v1.LabelFrequencyCap other =
         (com.google.ads.admanager.v1.LabelFrequencyCap) obj;
 
-    if (!getLabel().equals(other.getLabel())) return false;
+    if (hasLabel() != other.hasLabel()) return false;
+    if (hasLabel()) {
+      if (!getLabel().equals(other.getLabel())) return false;
+    }
     if (hasFrequencyCap() != other.hasFrequencyCap()) return false;
     if (hasFrequencyCap()) {
       if (!getFrequencyCap().equals(other.getFrequencyCap())) return false;
@@ -244,8 +266,10 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + LABEL_FIELD_NUMBER;
-    hash = (53 * hash) + getLabel().hashCode();
+    if (hasLabel()) {
+      hash = (37 * hash) + LABEL_FIELD_NUMBER;
+      hash = (53 * hash) + getLabel().hashCode();
+    }
     if (hasFrequencyCap()) {
       hash = (37 * hash) + FREQUENCY_CAP_FIELD_NUMBER;
       hash = (53 * hash) + getFrequencyCap().hashCode();
@@ -441,14 +465,15 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
 
     private void buildPartial0(com.google.ads.admanager.v1.LabelFrequencyCap result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.label_ = label_;
+        to_bitField0_ |= 0x00000001;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.frequencyCap_ =
             frequencyCapBuilder_ == null ? frequencyCap_ : frequencyCapBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -498,7 +523,7 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
 
     public Builder mergeFrom(com.google.ads.admanager.v1.LabelFrequencyCap other) {
       if (other == com.google.ads.admanager.v1.LabelFrequencyCap.getDefaultInstance()) return this;
-      if (!other.getLabel().isEmpty()) {
+      if (other.hasLabel()) {
         label_ = other.label_;
         bitField0_ |= 0x00000001;
         onChanged();
@@ -574,7 +599,25 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * optional string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the label field is set.
+     */
+    public boolean hasLabel() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The label to used for frequency capping.
+     * Format: "networks/{network_code}/labels/{label_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The label.
@@ -600,7 +643,7 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * optional string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for label.
@@ -626,7 +669,7 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * optional string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The label to set.
@@ -651,7 +694,7 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * optional string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -672,7 +715,7 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>
-     * string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * optional string label = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for label to set.
@@ -703,7 +746,7 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
      * The frequency cap.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
+     * <code>optional .google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
      *
      * @return Whether the frequencyCap field is set.
      */
@@ -718,7 +761,7 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
      * The frequency cap.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
+     * <code>optional .google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
      *
      * @return The frequencyCap.
      */
@@ -739,7 +782,7 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
      * The frequency cap.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
+     * <code>optional .google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
      */
     public Builder setFrequencyCap(com.google.ads.admanager.v1.FrequencyCap value) {
       if (frequencyCapBuilder_ == null) {
@@ -762,7 +805,7 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
      * The frequency cap.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
+     * <code>optional .google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
      */
     public Builder setFrequencyCap(
         com.google.ads.admanager.v1.FrequencyCap.Builder builderForValue) {
@@ -783,7 +826,7 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
      * The frequency cap.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
+     * <code>optional .google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
      */
     public Builder mergeFrequencyCap(com.google.ads.admanager.v1.FrequencyCap value) {
       if (frequencyCapBuilder_ == null) {
@@ -811,7 +854,7 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
      * The frequency cap.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
+     * <code>optional .google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
      */
     public Builder clearFrequencyCap() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -831,7 +874,7 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
      * The frequency cap.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
+     * <code>optional .google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
      */
     public com.google.ads.admanager.v1.FrequencyCap.Builder getFrequencyCapBuilder() {
       bitField0_ |= 0x00000002;
@@ -846,7 +889,7 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
      * The frequency cap.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
+     * <code>optional .google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
      */
     public com.google.ads.admanager.v1.FrequencyCapOrBuilder getFrequencyCapOrBuilder() {
       if (frequencyCapBuilder_ != null) {
@@ -865,7 +908,7 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
      * The frequency cap.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
+     * <code>optional .google.ads.admanager.v1.FrequencyCap frequency_cap = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.ads.admanager.v1.FrequencyCap,

@@ -116,34 +116,6 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Google Cloud Platform location where Oracle Exadata is hosted.
-   * It is same as Google Cloud Platform Oracle zone of Exadata infrastructure.
-   * </pre>
-   *
-   * <code>string gcp_oracle_zone = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The gcpOracleZone.
-   */
-  java.lang.String getGcpOracleZone();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Google Cloud Platform location where Oracle Exadata is hosted.
-   * It is same as Google Cloud Platform Oracle zone of Exadata infrastructure.
-   * </pre>
-   *
-   * <code>string gcp_oracle_zone = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The bytes for gcpOracleZone.
-   */
-  com.google.protobuf.ByteString getGcpOracleZoneBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * Optional. Various properties of the VM Cluster.
    * </pre>
    *
@@ -290,10 +262,10 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Required. Network settings. CIDR to use for cluster IP allocation.
+   * Optional. Network settings. CIDR to use for cluster IP allocation.
    * </pre>
    *
-   * <code>string cidr = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string cidr = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The cidr.
    */
@@ -303,10 +275,10 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Required. Network settings. CIDR to use for cluster IP allocation.
+   * Optional. Network settings. CIDR to use for cluster IP allocation.
    * </pre>
    *
-   * <code>string cidr = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string cidr = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for cidr.
    */
@@ -316,10 +288,10 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Required. CIDR range of the backup subnet.
+   * Optional. CIDR range of the backup subnet.
    * </pre>
    *
-   * <code>string backup_subnet_cidr = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The backupSubnetCidr.
    */
@@ -329,10 +301,10 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Required. CIDR range of the backup subnet.
+   * Optional. CIDR range of the backup subnet.
    * </pre>
    *
-   * <code>string backup_subnet_cidr = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for backupSubnetCidr.
    */
@@ -342,12 +314,12 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the VPC network.
+   * Optional. The name of the VPC network.
    * Format: projects/{project}/global/networks/{network}
    * </pre>
    *
    * <code>
-   * string network = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The network.
@@ -358,15 +330,197 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the VPC network.
+   * Optional. The name of the VPC network.
    * Format: projects/{project}/global/networks/{network}
    * </pre>
    *
    * <code>
-   * string network = 11 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for network.
    */
   com.google.protobuf.ByteString getNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The GCP Oracle zone where Oracle CloudVmCluster is hosted.
+   * This will be the same as the gcp_oracle_zone of the
+   * CloudExadataInfrastructure. Example: us-east4-b-r2.
+   * </pre>
+   *
+   * <code>string gcp_oracle_zone = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The gcpOracleZone.
+   */
+  java.lang.String getGcpOracleZone();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The GCP Oracle zone where Oracle CloudVmCluster is hosted.
+   * This will be the same as the gcp_oracle_zone of the
+   * CloudExadataInfrastructure. Example: us-east4-b-r2.
+   * </pre>
+   *
+   * <code>string gcp_oracle_zone = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for gcpOracleZone.
+   */
+  com.google.protobuf.ByteString getGcpOracleZoneBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the OdbNetwork associated with the VM Cluster.
+   * Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network}
+   * It is optional but if specified, this should match the parent ODBNetwork of
+   * the odb_subnet and backup_odb_subnet.
+   * </pre>
+   *
+   * <code>
+   * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The odbNetwork.
+   */
+  java.lang.String getOdbNetwork();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the OdbNetwork associated with the VM Cluster.
+   * Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network}
+   * It is optional but if specified, this should match the parent ODBNetwork of
+   * the odb_subnet and backup_odb_subnet.
+   * </pre>
+   *
+   * <code>
+   * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for odbNetwork.
+   */
+  com.google.protobuf.ByteString getOdbNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the OdbSubnet associated with the VM Cluster for
+   * IP allocation. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
+   * </pre>
+   *
+   * <code>
+   * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The odbSubnet.
+   */
+  java.lang.String getOdbSubnet();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the OdbSubnet associated with the VM Cluster for
+   * IP allocation. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
+   * </pre>
+   *
+   * <code>
+   * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for odbSubnet.
+   */
+  com.google.protobuf.ByteString getOdbSubnetBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the backup OdbSubnet associated with the VM Cluster.
+   * Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
+   * </pre>
+   *
+   * <code>
+   * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The backupOdbSubnet.
+   */
+  java.lang.String getBackupOdbSubnet();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the backup OdbSubnet associated with the VM Cluster.
+   * Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
+   * </pre>
+   *
+   * <code>
+   * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for backupOdbSubnet.
+   */
+  com.google.protobuf.ByteString getBackupOdbSubnetBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The identity connector details which will allow OCI to
+   * securely access the resources in the customer project.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.IdentityConnector identity_connector = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the identityConnector field is set.
+   */
+  boolean hasIdentityConnector();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The identity connector details which will allow OCI to
+   * securely access the resources in the customer project.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.IdentityConnector identity_connector = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The identityConnector.
+   */
+  com.google.cloud.oracledatabase.v1.IdentityConnector getIdentityConnector();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The identity connector details which will allow OCI to
+   * securely access the resources in the customer project.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.IdentityConnector identity_connector = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.oracledatabase.v1.IdentityConnectorOrBuilder getIdentityConnectorOrBuilder();
 }

@@ -43,7 +43,7 @@ public enum RuleActionType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Preventative action type.
+   * The rule is intended to prevent non-compliance.
    * </pre>
    *
    * <code>RULE_ACTION_TYPE_PREVENTIVE = 1;</code>
@@ -53,7 +53,7 @@ public enum RuleActionType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Detective action type.
+   * The rule is intended to detect non-compliance.
    * </pre>
    *
    * <code>RULE_ACTION_TYPE_DETECTIVE = 2;</code>
@@ -63,7 +63,7 @@ public enum RuleActionType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit action type.
+   * The rule is intended to audit non-compliance.
    * </pre>
    *
    * <code>RULE_ACTION_TYPE_AUDIT = 3;</code>
@@ -87,7 +87,7 @@ public enum RuleActionType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Preventative action type.
+   * The rule is intended to prevent non-compliance.
    * </pre>
    *
    * <code>RULE_ACTION_TYPE_PREVENTIVE = 1;</code>
@@ -98,7 +98,7 @@ public enum RuleActionType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Detective action type.
+   * The rule is intended to detect non-compliance.
    * </pre>
    *
    * <code>RULE_ACTION_TYPE_DETECTIVE = 2;</code>
@@ -109,7 +109,7 @@ public enum RuleActionType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit action type.
+   * The rule is intended to audit non-compliance.
    * </pre>
    *
    * <code>RULE_ACTION_TYPE_AUDIT = 3;</code>
@@ -179,7 +179,7 @@ public enum RuleActionType implements com.google.protobuf.ProtocolMessageEnum {
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.cloudsecuritycompliance.v1.CommonProto.getDescriptor()
         .getEnumTypes()
-        .get(5);
+        .get(6);
   }
 
   private static final RuleActionType[] VALUES = values();

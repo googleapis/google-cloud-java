@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Attribute at the given path is substituted entirely.
+ * The attribute at the given path that's substituted entirely.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.AttributeSubstitutionRule}
@@ -73,8 +73,8 @@ public final class AttributeSubstitutionRule extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Fully qualified proto attribute path (in dot notation).
-   * Example: rules[0].cel_expression.resource_types_values
+   * The fully qualified proto attribute path, in dot notation.
+   * For example: `rules[0].cel_expression.resource_types_values`
    * </pre>
    *
    * <code>string attribute = 1;</code>
@@ -98,8 +98,8 @@ public final class AttributeSubstitutionRule extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Fully qualified proto attribute path (in dot notation).
-   * Example: rules[0].cel_expression.resource_types_values
+   * The fully qualified proto attribute path, in dot notation.
+   * For example: `rules[0].cel_expression.resource_types_values`
    * </pre>
    *
    * <code>string attribute = 1;</code>
@@ -285,7 +285,7 @@ public final class AttributeSubstitutionRule extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Attribute at the given path is substituted entirely.
+   * The attribute at the given path that's substituted entirely.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.AttributeSubstitutionRule}
@@ -477,8 +477,8 @@ public final class AttributeSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully qualified proto attribute path (in dot notation).
-     * Example: rules[0].cel_expression.resource_types_values
+     * The fully qualified proto attribute path, in dot notation.
+     * For example: `rules[0].cel_expression.resource_types_values`
      * </pre>
      *
      * <code>string attribute = 1;</code>
@@ -501,8 +501,8 @@ public final class AttributeSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully qualified proto attribute path (in dot notation).
-     * Example: rules[0].cel_expression.resource_types_values
+     * The fully qualified proto attribute path, in dot notation.
+     * For example: `rules[0].cel_expression.resource_types_values`
      * </pre>
      *
      * <code>string attribute = 1;</code>
@@ -525,8 +525,8 @@ public final class AttributeSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully qualified proto attribute path (in dot notation).
-     * Example: rules[0].cel_expression.resource_types_values
+     * The fully qualified proto attribute path, in dot notation.
+     * For example: `rules[0].cel_expression.resource_types_values`
      * </pre>
      *
      * <code>string attribute = 1;</code>
@@ -548,8 +548,8 @@ public final class AttributeSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully qualified proto attribute path (in dot notation).
-     * Example: rules[0].cel_expression.resource_types_values
+     * The fully qualified proto attribute path, in dot notation.
+     * For example: `rules[0].cel_expression.resource_types_values`
      * </pre>
      *
      * <code>string attribute = 1;</code>
@@ -567,8 +567,8 @@ public final class AttributeSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully qualified proto attribute path (in dot notation).
-     * Example: rules[0].cel_expression.resource_types_values
+     * The fully qualified proto attribute path, in dot notation.
+     * For example: `rules[0].cel_expression.resource_types_values`
      * </pre>
      *
      * <code>string attribute = 1;</code>

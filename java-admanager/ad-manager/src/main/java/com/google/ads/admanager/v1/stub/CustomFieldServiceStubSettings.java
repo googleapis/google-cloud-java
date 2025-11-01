@@ -18,10 +18,20 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CustomFieldServiceClient.ListCustomFieldsPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateCustomFieldsRequest;
+import com.google.ads.admanager.v1.BatchActivateCustomFieldsResponse;
+import com.google.ads.admanager.v1.BatchCreateCustomFieldsRequest;
+import com.google.ads.admanager.v1.BatchCreateCustomFieldsResponse;
+import com.google.ads.admanager.v1.BatchDeactivateCustomFieldsRequest;
+import com.google.ads.admanager.v1.BatchDeactivateCustomFieldsResponse;
+import com.google.ads.admanager.v1.BatchUpdateCustomFieldsRequest;
+import com.google.ads.admanager.v1.BatchUpdateCustomFieldsResponse;
+import com.google.ads.admanager.v1.CreateCustomFieldRequest;
 import com.google.ads.admanager.v1.CustomField;
 import com.google.ads.admanager.v1.GetCustomFieldRequest;
 import com.google.ads.admanager.v1.ListCustomFieldsRequest;
 import com.google.ads.admanager.v1.ListCustomFieldsResponse;
+import com.google.ads.admanager.v1.UpdateCustomFieldRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ObsoleteApi;
@@ -113,6 +123,18 @@ public class CustomFieldServiceStubSettings extends StubSettings<CustomFieldServ
   private final PagedCallSettings<
           ListCustomFieldsRequest, ListCustomFieldsResponse, ListCustomFieldsPagedResponse>
       listCustomFieldsSettings;
+  private final UnaryCallSettings<CreateCustomFieldRequest, CustomField> createCustomFieldSettings;
+  private final UnaryCallSettings<BatchCreateCustomFieldsRequest, BatchCreateCustomFieldsResponse>
+      batchCreateCustomFieldsSettings;
+  private final UnaryCallSettings<UpdateCustomFieldRequest, CustomField> updateCustomFieldSettings;
+  private final UnaryCallSettings<BatchUpdateCustomFieldsRequest, BatchUpdateCustomFieldsResponse>
+      batchUpdateCustomFieldsSettings;
+  private final UnaryCallSettings<
+          BatchActivateCustomFieldsRequest, BatchActivateCustomFieldsResponse>
+      batchActivateCustomFieldsSettings;
+  private final UnaryCallSettings<
+          BatchDeactivateCustomFieldsRequest, BatchDeactivateCustomFieldsResponse>
+      batchDeactivateCustomFieldsSettings;
 
   private static final PagedListDescriptor<
           ListCustomFieldsRequest, ListCustomFieldsResponse, CustomField>
@@ -181,6 +203,40 @@ public class CustomFieldServiceStubSettings extends StubSettings<CustomFieldServ
           ListCustomFieldsRequest, ListCustomFieldsResponse, ListCustomFieldsPagedResponse>
       listCustomFieldsSettings() {
     return listCustomFieldsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createCustomField. */
+  public UnaryCallSettings<CreateCustomFieldRequest, CustomField> createCustomFieldSettings() {
+    return createCustomFieldSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateCustomFields. */
+  public UnaryCallSettings<BatchCreateCustomFieldsRequest, BatchCreateCustomFieldsResponse>
+      batchCreateCustomFieldsSettings() {
+    return batchCreateCustomFieldsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomField. */
+  public UnaryCallSettings<UpdateCustomFieldRequest, CustomField> updateCustomFieldSettings() {
+    return updateCustomFieldSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateCustomFields. */
+  public UnaryCallSettings<BatchUpdateCustomFieldsRequest, BatchUpdateCustomFieldsResponse>
+      batchUpdateCustomFieldsSettings() {
+    return batchUpdateCustomFieldsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateCustomFields. */
+  public UnaryCallSettings<BatchActivateCustomFieldsRequest, BatchActivateCustomFieldsResponse>
+      batchActivateCustomFieldsSettings() {
+    return batchActivateCustomFieldsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateCustomFields. */
+  public UnaryCallSettings<BatchDeactivateCustomFieldsRequest, BatchDeactivateCustomFieldsResponse>
+      batchDeactivateCustomFieldsSettings() {
+    return batchDeactivateCustomFieldsSettings;
   }
 
   public CustomFieldServiceStub createStub() throws IOException {
@@ -267,6 +323,13 @@ public class CustomFieldServiceStubSettings extends StubSettings<CustomFieldServ
 
     getCustomFieldSettings = settingsBuilder.getCustomFieldSettings().build();
     listCustomFieldsSettings = settingsBuilder.listCustomFieldsSettings().build();
+    createCustomFieldSettings = settingsBuilder.createCustomFieldSettings().build();
+    batchCreateCustomFieldsSettings = settingsBuilder.batchCreateCustomFieldsSettings().build();
+    updateCustomFieldSettings = settingsBuilder.updateCustomFieldSettings().build();
+    batchUpdateCustomFieldsSettings = settingsBuilder.batchUpdateCustomFieldsSettings().build();
+    batchActivateCustomFieldsSettings = settingsBuilder.batchActivateCustomFieldsSettings().build();
+    batchDeactivateCustomFieldsSettings =
+        settingsBuilder.batchDeactivateCustomFieldsSettings().build();
   }
 
   /** Builder for CustomFieldServiceStubSettings. */
@@ -278,6 +341,22 @@ public class CustomFieldServiceStubSettings extends StubSettings<CustomFieldServ
     private final PagedCallSettings.Builder<
             ListCustomFieldsRequest, ListCustomFieldsResponse, ListCustomFieldsPagedResponse>
         listCustomFieldsSettings;
+    private final UnaryCallSettings.Builder<CreateCustomFieldRequest, CustomField>
+        createCustomFieldSettings;
+    private final UnaryCallSettings.Builder<
+            BatchCreateCustomFieldsRequest, BatchCreateCustomFieldsResponse>
+        batchCreateCustomFieldsSettings;
+    private final UnaryCallSettings.Builder<UpdateCustomFieldRequest, CustomField>
+        updateCustomFieldSettings;
+    private final UnaryCallSettings.Builder<
+            BatchUpdateCustomFieldsRequest, BatchUpdateCustomFieldsResponse>
+        batchUpdateCustomFieldsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchActivateCustomFieldsRequest, BatchActivateCustomFieldsResponse>
+        batchActivateCustomFieldsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchDeactivateCustomFieldsRequest, BatchDeactivateCustomFieldsResponse>
+        batchDeactivateCustomFieldsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -307,10 +386,23 @@ public class CustomFieldServiceStubSettings extends StubSettings<CustomFieldServ
 
       getCustomFieldSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listCustomFieldsSettings = PagedCallSettings.newBuilder(LIST_CUSTOM_FIELDS_PAGE_STR_FACT);
+      createCustomFieldSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCreateCustomFieldsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateCustomFieldSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUpdateCustomFieldsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchActivateCustomFieldsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeactivateCustomFieldsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getCustomFieldSettings, listCustomFieldsSettings);
+              getCustomFieldSettings,
+              listCustomFieldsSettings,
+              createCustomFieldSettings,
+              batchCreateCustomFieldsSettings,
+              updateCustomFieldSettings,
+              batchUpdateCustomFieldsSettings,
+              batchActivateCustomFieldsSettings,
+              batchDeactivateCustomFieldsSettings);
       initDefaults(this);
     }
 
@@ -319,10 +411,24 @@ public class CustomFieldServiceStubSettings extends StubSettings<CustomFieldServ
 
       getCustomFieldSettings = settings.getCustomFieldSettings.toBuilder();
       listCustomFieldsSettings = settings.listCustomFieldsSettings.toBuilder();
+      createCustomFieldSettings = settings.createCustomFieldSettings.toBuilder();
+      batchCreateCustomFieldsSettings = settings.batchCreateCustomFieldsSettings.toBuilder();
+      updateCustomFieldSettings = settings.updateCustomFieldSettings.toBuilder();
+      batchUpdateCustomFieldsSettings = settings.batchUpdateCustomFieldsSettings.toBuilder();
+      batchActivateCustomFieldsSettings = settings.batchActivateCustomFieldsSettings.toBuilder();
+      batchDeactivateCustomFieldsSettings =
+          settings.batchDeactivateCustomFieldsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getCustomFieldSettings, listCustomFieldsSettings);
+              getCustomFieldSettings,
+              listCustomFieldsSettings,
+              createCustomFieldSettings,
+              batchCreateCustomFieldsSettings,
+              updateCustomFieldSettings,
+              batchUpdateCustomFieldsSettings,
+              batchActivateCustomFieldsSettings,
+              batchDeactivateCustomFieldsSettings);
     }
 
     private static Builder createDefault() {
@@ -345,6 +451,36 @@ public class CustomFieldServiceStubSettings extends StubSettings<CustomFieldServ
 
       builder
           .listCustomFieldsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createCustomFieldSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchCreateCustomFieldsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateCustomFieldSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchUpdateCustomFieldsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchActivateCustomFieldsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchDeactivateCustomFieldsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -376,6 +512,46 @@ public class CustomFieldServiceStubSettings extends StubSettings<CustomFieldServ
             ListCustomFieldsRequest, ListCustomFieldsResponse, ListCustomFieldsPagedResponse>
         listCustomFieldsSettings() {
       return listCustomFieldsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomField. */
+    public UnaryCallSettings.Builder<CreateCustomFieldRequest, CustomField>
+        createCustomFieldSettings() {
+      return createCustomFieldSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateCustomFields. */
+    public UnaryCallSettings.Builder<
+            BatchCreateCustomFieldsRequest, BatchCreateCustomFieldsResponse>
+        batchCreateCustomFieldsSettings() {
+      return batchCreateCustomFieldsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomField. */
+    public UnaryCallSettings.Builder<UpdateCustomFieldRequest, CustomField>
+        updateCustomFieldSettings() {
+      return updateCustomFieldSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateCustomFields. */
+    public UnaryCallSettings.Builder<
+            BatchUpdateCustomFieldsRequest, BatchUpdateCustomFieldsResponse>
+        batchUpdateCustomFieldsSettings() {
+      return batchUpdateCustomFieldsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateCustomFields. */
+    public UnaryCallSettings.Builder<
+            BatchActivateCustomFieldsRequest, BatchActivateCustomFieldsResponse>
+        batchActivateCustomFieldsSettings() {
+      return batchActivateCustomFieldsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivateCustomFields. */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateCustomFieldsRequest, BatchDeactivateCustomFieldsResponse>
+        batchDeactivateCustomFieldsSettings() {
+      return batchDeactivateCustomFieldsSettings;
     }
 
     @Override

@@ -416,7 +416,10 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Creates a new FrameworkDeployment in a given parent resource.
+     * Creates a framework deployment in a given parent resource. A
+     * framework deployment lets you assign a particular framework version to an
+     * organization, folder, or project so that you can control and monitor
+     * those resources using the framework's cloud controls.
      * </pre>
      */
     default void createFrameworkDeployment(
@@ -430,7 +433,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Deletes a single FrameworkDeployment.
+     * Deletes a framework deployment.
      * </pre>
      */
     default void deleteFrameworkDeployment(
@@ -444,7 +447,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single FrameworkDeployment.
+     * Gets details about a framework deployment.
      * </pre>
      */
     default void getFrameworkDeployment(
@@ -459,7 +462,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists FrameworkDeployments in a given parent resource.
+     * Lists the framework deployments in a given parent resource.
      * </pre>
      */
     default void listFrameworkDeployments(
@@ -475,7 +478,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single CloudControlDeployment.
+     * Gets details about a cloud control deployment.
      * </pre>
      */
     default void getCloudControlDeployment(
@@ -491,7 +494,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists CloudControlDeployments in a given parent resource.
+     * Lists the cloud conrol deployments in a given parent resource.
      * </pre>
      */
     default void listCloudControlDeployments(
@@ -542,7 +545,10 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Creates a new FrameworkDeployment in a given parent resource.
+     * Creates a framework deployment in a given parent resource. A
+     * framework deployment lets you assign a particular framework version to an
+     * organization, folder, or project so that you can control and monitor
+     * those resources using the framework's cloud controls.
      * </pre>
      */
     public void createFrameworkDeployment(
@@ -558,7 +564,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Deletes a single FrameworkDeployment.
+     * Deletes a framework deployment.
      * </pre>
      */
     public void deleteFrameworkDeployment(
@@ -574,7 +580,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single FrameworkDeployment.
+     * Gets details about a framework deployment.
      * </pre>
      */
     public void getFrameworkDeployment(
@@ -591,7 +597,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists FrameworkDeployments in a given parent resource.
+     * Lists the framework deployments in a given parent resource.
      * </pre>
      */
     public void listFrameworkDeployments(
@@ -609,7 +615,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single CloudControlDeployment.
+     * Gets details about a cloud control deployment.
      * </pre>
      */
     public void getCloudControlDeployment(
@@ -627,7 +633,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists CloudControlDeployments in a given parent resource.
+     * Lists the cloud conrol deployments in a given parent resource.
      * </pre>
      */
     public void listCloudControlDeployments(
@@ -666,7 +672,10 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Creates a new FrameworkDeployment in a given parent resource.
+     * Creates a framework deployment in a given parent resource. A
+     * framework deployment lets you assign a particular framework version to an
+     * organization, folder, or project so that you can control and monitor
+     * those resources using the framework's cloud controls.
      * </pre>
      */
     public com.google.longrunning.Operation createFrameworkDeployment(
@@ -679,7 +688,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Deletes a single FrameworkDeployment.
+     * Deletes a framework deployment.
      * </pre>
      */
     public com.google.longrunning.Operation deleteFrameworkDeployment(
@@ -692,7 +701,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single FrameworkDeployment.
+     * Gets details about a framework deployment.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.FrameworkDeployment getFrameworkDeployment(
@@ -705,7 +714,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists FrameworkDeployments in a given parent resource.
+     * Lists the framework deployments in a given parent resource.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkDeploymentsResponse
@@ -719,7 +728,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single CloudControlDeployment.
+     * Gets details about a cloud control deployment.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment
@@ -733,7 +742,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists CloudControlDeployments in a given parent resource.
+     * Lists the cloud conrol deployments in a given parent resource.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlDeploymentsResponse
@@ -769,7 +778,10 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Creates a new FrameworkDeployment in a given parent resource.
+     * Creates a framework deployment in a given parent resource. A
+     * framework deployment lets you assign a particular framework version to an
+     * organization, folder, or project so that you can control and monitor
+     * those resources using the framework's cloud controls.
      * </pre>
      */
     public com.google.longrunning.Operation createFrameworkDeployment(
@@ -782,7 +794,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Deletes a single FrameworkDeployment.
+     * Deletes a framework deployment.
      * </pre>
      */
     public com.google.longrunning.Operation deleteFrameworkDeployment(
@@ -795,7 +807,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single FrameworkDeployment.
+     * Gets details about a framework deployment.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.FrameworkDeployment getFrameworkDeployment(
@@ -808,7 +820,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists FrameworkDeployments in a given parent resource.
+     * Lists the framework deployments in a given parent resource.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkDeploymentsResponse
@@ -822,7 +834,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single CloudControlDeployment.
+     * Gets details about a cloud control deployment.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment
@@ -836,7 +848,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists CloudControlDeployments in a given parent resource.
+     * Lists the cloud conrol deployments in a given parent resource.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlDeploymentsResponse
@@ -871,7 +883,10 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Creates a new FrameworkDeployment in a given parent resource.
+     * Creates a framework deployment in a given parent resource. A
+     * framework deployment lets you assign a particular framework version to an
+     * organization, folder, or project so that you can control and monitor
+     * those resources using the framework's cloud controls.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -885,7 +900,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Deletes a single FrameworkDeployment.
+     * Deletes a framework deployment.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -899,7 +914,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single FrameworkDeployment.
+     * Gets details about a framework deployment.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -914,7 +929,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists FrameworkDeployments in a given parent resource.
+     * Lists the framework deployments in a given parent resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -929,7 +944,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single CloudControlDeployment.
+     * Gets details about a cloud control deployment.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -944,7 +959,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists CloudControlDeployments in a given parent resource.
+     * Lists the cloud conrol deployments in a given parent resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

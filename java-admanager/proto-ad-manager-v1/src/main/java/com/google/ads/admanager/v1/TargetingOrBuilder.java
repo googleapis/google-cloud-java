@@ -371,4 +371,91 @@ public interface TargetingOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.DataSegmentTargetingOrBuilder getDataSegmentTargetingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target content.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ContentTargeting content_targeting = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the contentTargeting field is set.
+   */
+  boolean hasContentTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target content.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ContentTargeting content_targeting = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The contentTargeting.
+   */
+  com.google.ads.admanager.v1.ContentTargeting getContentTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target content.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ContentTargeting content_targeting = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.ContentTargetingOrBuilder getContentTargetingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target mobile applications.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.MobileApplicationTargeting mobile_application_targeting = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the mobileApplicationTargeting field is set.
+   */
+  boolean hasMobileApplicationTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target mobile applications.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.MobileApplicationTargeting mobile_application_targeting = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mobileApplicationTargeting.
+   */
+  com.google.ads.admanager.v1.MobileApplicationTargeting getMobileApplicationTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target mobile applications.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.MobileApplicationTargeting mobile_application_targeting = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.MobileApplicationTargetingOrBuilder
+      getMobileApplicationTargetingOrBuilder();
 }

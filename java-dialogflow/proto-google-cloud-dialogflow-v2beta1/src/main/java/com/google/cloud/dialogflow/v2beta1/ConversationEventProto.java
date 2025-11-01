@@ -43,33 +43,36 @@ public final class ConversationEventProto {
     java.lang.String[] descriptorData = {
       "\n8google/cloud/dialogflow/v2beta1/conver"
           + "sation_event.proto\022\037google.cloud.dialogf"
-          + "low.v2beta1\0321google/cloud/dialogflow/v2b"
-          + "eta1/participant.proto\032-google/cloud/dia"
-          + "logflow/v2beta1/session.proto\032\027google/rp"
-          + "c/status.proto\"\216\004\n\021ConversationEvent\022\024\n\014"
-          + "conversation\030\001 \001(\t\022E\n\004type\030\002 \001(\01627.googl"
-          + "e.cloud.dialogflow.v2beta1.ConversationE"
-          + "vent.Type\022(\n\014error_status\030\003 \001(\0132\022.google"
-          + ".rpc.Status\022G\n\023new_message_payload\030\004 \001(\013"
-          + "2(.google.cloud.dialogflow.v2beta1.Messa"
-          + "geH\000\022e\n\036new_recognition_result_payload\030\005"
-          + " \001(\0132;.google.cloud.dialogflow.v2beta1.S"
-          + "treamingRecognitionResultH\000\"\266\001\n\004Type\022\024\n\020"
-          + "TYPE_UNSPECIFIED\020\000\022\030\n\024CONVERSATION_START"
-          + "ED\020\001\022\031\n\025CONVERSATION_FINISHED\020\002\022\035\n\031HUMAN"
-          + "_INTERVENTION_NEEDED\020\003\022\017\n\013NEW_MESSAGE\020\005\022"
-          + "\032\n\026NEW_RECOGNITION_RESULT\020\007\022\027\n\023UNRECOVER"
-          + "ABLE_ERROR\020\004B\t\n\007payloadB\253\001\n#com.google.c"
-          + "loud.dialogflow.v2beta1B\026ConversationEve"
-          + "ntProtoP\001ZCcloud.google.com/go/dialogflo"
-          + "w/apiv2beta1/dialogflowpb;dialogflowpb\242\002"
-          + "\002DF\252\002\037Google.Cloud.Dialogflow.V2Beta1b\006p"
-          + "roto3"
+          + "low.v2beta1\032\037google/api/field_behavior.p"
+          + "roto\032\031google/api/resource.proto\0321google/"
+          + "cloud/dialogflow/v2beta1/participant.pro"
+          + "to\032-google/cloud/dialogflow/v2beta1/sess"
+          + "ion.proto\032\027google/rpc/status.proto\"\216\004\n\021C"
+          + "onversationEvent\022\024\n\014conversation\030\001 \001(\t\022E"
+          + "\n\004type\030\002 \001(\01627.google.cloud.dialogflow.v"
+          + "2beta1.ConversationEvent.Type\022(\n\014error_s"
+          + "tatus\030\003 \001(\0132\022.google.rpc.Status\022G\n\023new_m"
+          + "essage_payload\030\004 \001(\0132(.google.cloud.dial"
+          + "ogflow.v2beta1.MessageH\000\022e\n\036new_recognit"
+          + "ion_result_payload\030\005 \001(\0132;.google.cloud."
+          + "dialogflow.v2beta1.StreamingRecognitionR"
+          + "esultH\000\"\266\001\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\030"
+          + "\n\024CONVERSATION_STARTED\020\001\022\031\n\025CONVERSATION"
+          + "_FINISHED\020\002\022\035\n\031HUMAN_INTERVENTION_NEEDED"
+          + "\020\003\022\017\n\013NEW_MESSAGE\020\005\022\032\n\026NEW_RECOGNITION_R"
+          + "ESULT\020\007\022\027\n\023UNRECOVERABLE_ERROR\020\004B\t\n\007payl"
+          + "oadB\253\001\n#com.google.cloud.dialogflow.v2be"
+          + "ta1B\026ConversationEventProtoP\001ZCcloud.goo"
+          + "gle.com/go/dialogflow/apiv2beta1/dialogf"
+          + "lowpb;dialogflowpb\242\002\002DF\252\002\037Google.Cloud.D"
+          + "ialogflow.V2Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.dialogflow.v2beta1.ParticipantProto.getDescriptor(),
               com.google.cloud.dialogflow.v2beta1.SessionProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
@@ -87,6 +90,8 @@ public final class ConversationEventProto {
               "NewRecognitionResultPayload",
               "Payload",
             });
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.dialogflow.v2beta1.ParticipantProto.getDescriptor();
     com.google.cloud.dialogflow.v2beta1.SessionProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();

@@ -72,6 +72,9 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     sqlWebDeveloperUrl_ = "";
     supportedCloneRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     ociUrl_ = "";
+    allowlistedIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    encryptionKeyHistoryEntries_ = java.util.Collections.emptyList();
+    serviceAgentEmail_ = "";
   }
 
   @java.lang.Override
@@ -4629,6 +4632,130 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         : nextLongTermBackupTime_;
   }
 
+  public static final int DATA_GUARD_ROLE_CHANGED_TIME_FIELD_NUMBER = 61;
+  private com.google.protobuf.Timestamp dataGuardRoleChangedTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time the Autonomous Data Guard role was changed
+   * for the standby Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp data_guard_role_changed_time = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataGuardRoleChangedTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataGuardRoleChangedTime() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time the Autonomous Data Guard role was changed
+   * for the standby Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp data_guard_role_changed_time = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataGuardRoleChangedTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getDataGuardRoleChangedTime() {
+    return dataGuardRoleChangedTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : dataGuardRoleChangedTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time the Autonomous Data Guard role was changed
+   * for the standby Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp data_guard_role_changed_time = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getDataGuardRoleChangedTimeOrBuilder() {
+    return dataGuardRoleChangedTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : dataGuardRoleChangedTime_;
+  }
+
+  public static final int DISASTER_RECOVERY_ROLE_CHANGED_TIME_FIELD_NUMBER = 62;
+  private com.google.protobuf.Timestamp disasterRecoveryRoleChangedTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time the Disaster Recovery role was changed for
+   * the standby Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp disaster_recovery_role_changed_time = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the disasterRecoveryRoleChangedTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisasterRecoveryRoleChangedTime() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time the Disaster Recovery role was changed for
+   * the standby Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp disaster_recovery_role_changed_time = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The disasterRecoveryRoleChangedTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getDisasterRecoveryRoleChangedTime() {
+    return disasterRecoveryRoleChangedTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : disasterRecoveryRoleChangedTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time the Disaster Recovery role was changed for
+   * the standby Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp disaster_recovery_role_changed_time = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getDisasterRecoveryRoleChangedTimeOrBuilder() {
+    return disasterRecoveryRoleChangedTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : disasterRecoveryRoleChangedTime_;
+  }
+
   public static final int MAINTENANCE_BEGIN_TIME_FIELD_NUMBER = 65;
   private com.google.protobuf.Timestamp maintenanceBeginTime_;
 
@@ -4647,7 +4774,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public boolean hasMaintenanceBeginTime() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -4706,7 +4833,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public boolean hasMaintenanceEndTime() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -4745,6 +4872,290 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     return maintenanceEndTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : maintenanceEndTime_;
+  }
+
+  public static final int ALLOWLISTED_IPS_FIELD_NUMBER = 67;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList allowlistedIps_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+   * </pre>
+   *
+   * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the allowlistedIps.
+   */
+  public com.google.protobuf.ProtocolStringList getAllowlistedIpsList() {
+    return allowlistedIps_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+   * </pre>
+   *
+   * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of allowlistedIps.
+   */
+  public int getAllowlistedIpsCount() {
+    return allowlistedIps_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+   * </pre>
+   *
+   * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The allowlistedIps at the given index.
+   */
+  public java.lang.String getAllowlistedIps(int index) {
+    return allowlistedIps_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+   * </pre>
+   *
+   * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the allowlistedIps at the given index.
+   */
+  public com.google.protobuf.ByteString getAllowlistedIpsBytes(int index) {
+    return allowlistedIps_.getByteString(index);
+  }
+
+  public static final int ENCRYPTION_KEY_FIELD_NUMBER = 68;
+  private com.google.cloud.oracledatabase.v1.EncryptionKey encryptionKey_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The encryption key used to encrypt the Autonomous Database.
+   * Updating this field will add a new entry in the
+   * `encryption_key_history_entries` field with the former version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.EncryptionKey encryption_key = 68 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionKey() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The encryption key used to encrypt the Autonomous Database.
+   * Updating this field will add a new entry in the
+   * `encryption_key_history_entries` field with the former version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.EncryptionKey encryption_key = 68 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionKey.
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.EncryptionKey getEncryptionKey() {
+    return encryptionKey_ == null
+        ? com.google.cloud.oracledatabase.v1.EncryptionKey.getDefaultInstance()
+        : encryptionKey_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The encryption key used to encrypt the Autonomous Database.
+   * Updating this field will add a new entry in the
+   * `encryption_key_history_entries` field with the former version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.EncryptionKey encryption_key = 68 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.EncryptionKeyOrBuilder getEncryptionKeyOrBuilder() {
+    return encryptionKey_ == null
+        ? com.google.cloud.oracledatabase.v1.EncryptionKey.getDefaultInstance()
+        : encryptionKey_;
+  }
+
+  public static final int ENCRYPTION_KEY_HISTORY_ENTRIES_FIELD_NUMBER = 69;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry>
+      encryptionKeyHistoryEntries_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The history of the encryption keys used to encrypt the
+   * Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry>
+      getEncryptionKeyHistoryEntriesList() {
+    return encryptionKeyHistoryEntries_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The history of the encryption keys used to encrypt the
+   * Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntryOrBuilder>
+      getEncryptionKeyHistoryEntriesOrBuilderList() {
+    return encryptionKeyHistoryEntries_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The history of the encryption keys used to encrypt the
+   * Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getEncryptionKeyHistoryEntriesCount() {
+    return encryptionKeyHistoryEntries_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The history of the encryption keys used to encrypt the
+   * Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry
+      getEncryptionKeyHistoryEntries(int index) {
+    return encryptionKeyHistoryEntries_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The history of the encryption keys used to encrypt the
+   * Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntryOrBuilder
+      getEncryptionKeyHistoryEntriesOrBuilder(int index) {
+    return encryptionKeyHistoryEntries_.get(index);
+  }
+
+  public static final int SERVICE_AGENT_EMAIL_FIELD_NUMBER = 70;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAgentEmail_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An Oracle-managed Google Cloud service account on which
+   * customers can grant roles to access resources in the customer project.
+   * </pre>
+   *
+   * <code>string service_agent_email = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The serviceAgentEmail.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAgentEmail() {
+    java.lang.Object ref = serviceAgentEmail_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAgentEmail_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An Oracle-managed Google Cloud service account on which
+   * customers can grant roles to access resources in the customer project.
+   * </pre>
+   *
+   * <code>string service_agent_email = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for serviceAgentEmail.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAgentEmailBytes() {
+    java.lang.Object ref = serviceAgentEmail_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAgentEmail_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -4959,17 +5370,35 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(60, getNextLongTermBackupTime());
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(61, getDataGuardRoleChangedTime());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(62, getDisasterRecoveryRoleChangedTime());
+    }
     if (dataStorageSizeGb_ != 0) {
       output.writeInt32(63, dataStorageSizeGb_);
     }
     for (int i = 0; i < scheduledOperationDetails_.size(); i++) {
       output.writeMessage(64, scheduledOperationDetails_.get(i));
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(65, getMaintenanceBeginTime());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(66, getMaintenanceEndTime());
+    }
+    for (int i = 0; i < allowlistedIps_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 67, allowlistedIps_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(68, getEncryptionKey());
+    }
+    for (int i = 0; i < encryptionKeyHistoryEntries_.size(); i++) {
+      output.writeMessage(69, encryptionKeyHistoryEntries_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAgentEmail_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 70, serviceAgentEmail_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -5206,6 +5635,16 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(60, getNextLongTermBackupTime());
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              61, getDataGuardRoleChangedTime());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              62, getDisasterRecoveryRoleChangedTime());
+    }
     if (dataStorageSizeGb_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(63, dataStorageSizeGb_);
     }
@@ -5214,12 +5653,31 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               64, scheduledOperationDetails_.get(i));
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(65, getMaintenanceBeginTime());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(66, getMaintenanceEndTime());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < allowlistedIps_.size(); i++) {
+        dataSize += computeStringSizeNoTag(allowlistedIps_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getAllowlistedIpsList().size();
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(68, getEncryptionKey());
+    }
+    for (int i = 0; i < encryptionKeyHistoryEntries_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              69, encryptionKeyHistoryEntries_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAgentEmail_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(70, serviceAgentEmail_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -5324,6 +5782,16 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     if (hasNextLongTermBackupTime()) {
       if (!getNextLongTermBackupTime().equals(other.getNextLongTermBackupTime())) return false;
     }
+    if (hasDataGuardRoleChangedTime() != other.hasDataGuardRoleChangedTime()) return false;
+    if (hasDataGuardRoleChangedTime()) {
+      if (!getDataGuardRoleChangedTime().equals(other.getDataGuardRoleChangedTime())) return false;
+    }
+    if (hasDisasterRecoveryRoleChangedTime() != other.hasDisasterRecoveryRoleChangedTime())
+      return false;
+    if (hasDisasterRecoveryRoleChangedTime()) {
+      if (!getDisasterRecoveryRoleChangedTime().equals(other.getDisasterRecoveryRoleChangedTime()))
+        return false;
+    }
     if (hasMaintenanceBeginTime() != other.hasMaintenanceBeginTime()) return false;
     if (hasMaintenanceBeginTime()) {
       if (!getMaintenanceBeginTime().equals(other.getMaintenanceBeginTime())) return false;
@@ -5332,6 +5800,14 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     if (hasMaintenanceEndTime()) {
       if (!getMaintenanceEndTime().equals(other.getMaintenanceEndTime())) return false;
     }
+    if (!getAllowlistedIpsList().equals(other.getAllowlistedIpsList())) return false;
+    if (hasEncryptionKey() != other.hasEncryptionKey()) return false;
+    if (hasEncryptionKey()) {
+      if (!getEncryptionKey().equals(other.getEncryptionKey())) return false;
+    }
+    if (!getEncryptionKeyHistoryEntriesList().equals(other.getEncryptionKeyHistoryEntriesList()))
+      return false;
+    if (!getServiceAgentEmail().equals(other.getServiceAgentEmail())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -5484,6 +5960,14 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       hash = (37 * hash) + NEXT_LONG_TERM_BACKUP_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getNextLongTermBackupTime().hashCode();
     }
+    if (hasDataGuardRoleChangedTime()) {
+      hash = (37 * hash) + DATA_GUARD_ROLE_CHANGED_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getDataGuardRoleChangedTime().hashCode();
+    }
+    if (hasDisasterRecoveryRoleChangedTime()) {
+      hash = (37 * hash) + DISASTER_RECOVERY_ROLE_CHANGED_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisasterRecoveryRoleChangedTime().hashCode();
+    }
     if (hasMaintenanceBeginTime()) {
       hash = (37 * hash) + MAINTENANCE_BEGIN_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getMaintenanceBeginTime().hashCode();
@@ -5492,6 +5976,20 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       hash = (37 * hash) + MAINTENANCE_END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getMaintenanceEndTime().hashCode();
     }
+    if (getAllowlistedIpsCount() > 0) {
+      hash = (37 * hash) + ALLOWLISTED_IPS_FIELD_NUMBER;
+      hash = (53 * hash) + getAllowlistedIpsList().hashCode();
+    }
+    if (hasEncryptionKey()) {
+      hash = (37 * hash) + ENCRYPTION_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionKey().hashCode();
+    }
+    if (getEncryptionKeyHistoryEntriesCount() > 0) {
+      hash = (37 * hash) + ENCRYPTION_KEY_HISTORY_ENTRIES_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionKeyHistoryEntriesList().hashCode();
+    }
+    hash = (37 * hash) + SERVICE_AGENT_EMAIL_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAgentEmail().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -5642,8 +6140,12 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         getLocalStandbyDbFieldBuilder();
         getScheduledOperationDetailsFieldBuilder();
         getNextLongTermBackupTimeFieldBuilder();
+        getDataGuardRoleChangedTimeFieldBuilder();
+        getDisasterRecoveryRoleChangedTimeFieldBuilder();
         getMaintenanceBeginTimeFieldBuilder();
         getMaintenanceEndTimeFieldBuilder();
+        getEncryptionKeyFieldBuilder();
+        getEncryptionKeyHistoryEntriesFieldBuilder();
       }
     }
 
@@ -5743,6 +6245,16 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         nextLongTermBackupTimeBuilder_.dispose();
         nextLongTermBackupTimeBuilder_ = null;
       }
+      dataGuardRoleChangedTime_ = null;
+      if (dataGuardRoleChangedTimeBuilder_ != null) {
+        dataGuardRoleChangedTimeBuilder_.dispose();
+        dataGuardRoleChangedTimeBuilder_ = null;
+      }
+      disasterRecoveryRoleChangedTime_ = null;
+      if (disasterRecoveryRoleChangedTimeBuilder_ != null) {
+        disasterRecoveryRoleChangedTimeBuilder_.dispose();
+        disasterRecoveryRoleChangedTimeBuilder_ = null;
+      }
       maintenanceBeginTime_ = null;
       if (maintenanceBeginTimeBuilder_ != null) {
         maintenanceBeginTimeBuilder_.dispose();
@@ -5753,6 +6265,20 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         maintenanceEndTimeBuilder_.dispose();
         maintenanceEndTimeBuilder_ = null;
       }
+      allowlistedIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      encryptionKey_ = null;
+      if (encryptionKeyBuilder_ != null) {
+        encryptionKeyBuilder_.dispose();
+        encryptionKeyBuilder_ = null;
+      }
+      if (encryptionKeyHistoryEntriesBuilder_ == null) {
+        encryptionKeyHistoryEntries_ = java.util.Collections.emptyList();
+      } else {
+        encryptionKeyHistoryEntries_ = null;
+        encryptionKeyHistoryEntriesBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x20000000);
+      serviceAgentEmail_ = "";
       return this;
     }
 
@@ -5812,6 +6338,16 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         result.scheduledOperationDetails_ = scheduledOperationDetails_;
       } else {
         result.scheduledOperationDetails_ = scheduledOperationDetailsBuilder_.build();
+      }
+      if (encryptionKeyHistoryEntriesBuilder_ == null) {
+        if (((bitField1_ & 0x20000000) != 0)) {
+          encryptionKeyHistoryEntries_ =
+              java.util.Collections.unmodifiableList(encryptionKeyHistoryEntries_);
+          bitField1_ = (bitField1_ & ~0x20000000);
+        }
+        result.encryptionKeyHistoryEntries_ = encryptionKeyHistoryEntries_;
+      } else {
+        result.encryptionKeyHistoryEntries_ = encryptionKeyHistoryEntriesBuilder_.build();
       }
     }
 
@@ -6008,18 +6544,44 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField1_ & 0x00800000) != 0)) {
+        result.dataGuardRoleChangedTime_ =
+            dataGuardRoleChangedTimeBuilder_ == null
+                ? dataGuardRoleChangedTime_
+                : dataGuardRoleChangedTimeBuilder_.build();
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField1_ & 0x01000000) != 0)) {
+        result.disasterRecoveryRoleChangedTime_ =
+            disasterRecoveryRoleChangedTimeBuilder_ == null
+                ? disasterRecoveryRoleChangedTime_
+                : disasterRecoveryRoleChangedTimeBuilder_.build();
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField1_ & 0x02000000) != 0)) {
         result.maintenanceBeginTime_ =
             maintenanceBeginTimeBuilder_ == null
                 ? maintenanceBeginTime_
                 : maintenanceBeginTimeBuilder_.build();
-        to_bitField0_ |= 0x00000080;
+        to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField1_ & 0x01000000) != 0)) {
+      if (((from_bitField1_ & 0x04000000) != 0)) {
         result.maintenanceEndTime_ =
             maintenanceEndTimeBuilder_ == null
                 ? maintenanceEndTime_
                 : maintenanceEndTimeBuilder_.build();
-        to_bitField0_ |= 0x00000100;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField1_ & 0x08000000) != 0)) {
+        allowlistedIps_.makeImmutable();
+        result.allowlistedIps_ = allowlistedIps_;
+      }
+      if (((from_bitField1_ & 0x10000000) != 0)) {
+        result.encryptionKey_ =
+            encryptionKeyBuilder_ == null ? encryptionKey_ : encryptionKeyBuilder_.build();
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField1_ & 0x40000000) != 0)) {
+        result.serviceAgentEmail_ = serviceAgentEmail_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -6332,11 +6894,62 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       if (other.hasNextLongTermBackupTime()) {
         mergeNextLongTermBackupTime(other.getNextLongTermBackupTime());
       }
+      if (other.hasDataGuardRoleChangedTime()) {
+        mergeDataGuardRoleChangedTime(other.getDataGuardRoleChangedTime());
+      }
+      if (other.hasDisasterRecoveryRoleChangedTime()) {
+        mergeDisasterRecoveryRoleChangedTime(other.getDisasterRecoveryRoleChangedTime());
+      }
       if (other.hasMaintenanceBeginTime()) {
         mergeMaintenanceBeginTime(other.getMaintenanceBeginTime());
       }
       if (other.hasMaintenanceEndTime()) {
         mergeMaintenanceEndTime(other.getMaintenanceEndTime());
+      }
+      if (!other.allowlistedIps_.isEmpty()) {
+        if (allowlistedIps_.isEmpty()) {
+          allowlistedIps_ = other.allowlistedIps_;
+          bitField1_ |= 0x08000000;
+        } else {
+          ensureAllowlistedIpsIsMutable();
+          allowlistedIps_.addAll(other.allowlistedIps_);
+        }
+        onChanged();
+      }
+      if (other.hasEncryptionKey()) {
+        mergeEncryptionKey(other.getEncryptionKey());
+      }
+      if (encryptionKeyHistoryEntriesBuilder_ == null) {
+        if (!other.encryptionKeyHistoryEntries_.isEmpty()) {
+          if (encryptionKeyHistoryEntries_.isEmpty()) {
+            encryptionKeyHistoryEntries_ = other.encryptionKeyHistoryEntries_;
+            bitField1_ = (bitField1_ & ~0x20000000);
+          } else {
+            ensureEncryptionKeyHistoryEntriesIsMutable();
+            encryptionKeyHistoryEntries_.addAll(other.encryptionKeyHistoryEntries_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.encryptionKeyHistoryEntries_.isEmpty()) {
+          if (encryptionKeyHistoryEntriesBuilder_.isEmpty()) {
+            encryptionKeyHistoryEntriesBuilder_.dispose();
+            encryptionKeyHistoryEntriesBuilder_ = null;
+            encryptionKeyHistoryEntries_ = other.encryptionKeyHistoryEntries_;
+            bitField1_ = (bitField1_ & ~0x20000000);
+            encryptionKeyHistoryEntriesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getEncryptionKeyHistoryEntriesFieldBuilder()
+                    : null;
+          } else {
+            encryptionKeyHistoryEntriesBuilder_.addAllMessages(other.encryptionKeyHistoryEntries_);
+          }
+        }
+      }
+      if (!other.getServiceAgentEmail().isEmpty()) {
+        serviceAgentEmail_ = other.serviceAgentEmail_;
+        bitField1_ |= 0x40000000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -6696,6 +7309,21 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
                 bitField1_ |= 0x00400000;
                 break;
               } // case 482
+            case 490:
+              {
+                input.readMessage(
+                    getDataGuardRoleChangedTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00800000;
+                break;
+              } // case 490
+            case 498:
+              {
+                input.readMessage(
+                    getDisasterRecoveryRoleChangedTimeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField1_ |= 0x01000000;
+                break;
+              } // case 498
             case 504:
               {
                 dataStorageSizeGb_ = input.readInt32();
@@ -6720,16 +7348,49 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
               {
                 input.readMessage(
                     getMaintenanceBeginTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00800000;
+                bitField1_ |= 0x02000000;
                 break;
               } // case 522
             case 530:
               {
                 input.readMessage(
                     getMaintenanceEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x01000000;
+                bitField1_ |= 0x04000000;
                 break;
               } // case 530
+            case 538:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAllowlistedIpsIsMutable();
+                allowlistedIps_.add(s);
+                break;
+              } // case 538
+            case 546:
+              {
+                input.readMessage(getEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x10000000;
+                break;
+              } // case 546
+            case 554:
+              {
+                com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry m =
+                    input.readMessage(
+                        com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry.parser(),
+                        extensionRegistry);
+                if (encryptionKeyHistoryEntriesBuilder_ == null) {
+                  ensureEncryptionKeyHistoryEntriesIsMutable();
+                  encryptionKeyHistoryEntries_.add(m);
+                } else {
+                  encryptionKeyHistoryEntriesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 554
+            case 562:
+              {
+                serviceAgentEmail_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x40000000;
+                break;
+              } // case 562
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13669,6 +14330,451 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       return nextLongTermBackupTimeBuilder_;
     }
 
+    private com.google.protobuf.Timestamp dataGuardRoleChangedTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        dataGuardRoleChangedTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Autonomous Data Guard role was changed
+     * for the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp data_guard_role_changed_time = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dataGuardRoleChangedTime field is set.
+     */
+    public boolean hasDataGuardRoleChangedTime() {
+      return ((bitField1_ & 0x00800000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Autonomous Data Guard role was changed
+     * for the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp data_guard_role_changed_time = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dataGuardRoleChangedTime.
+     */
+    public com.google.protobuf.Timestamp getDataGuardRoleChangedTime() {
+      if (dataGuardRoleChangedTimeBuilder_ == null) {
+        return dataGuardRoleChangedTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : dataGuardRoleChangedTime_;
+      } else {
+        return dataGuardRoleChangedTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Autonomous Data Guard role was changed
+     * for the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp data_guard_role_changed_time = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataGuardRoleChangedTime(com.google.protobuf.Timestamp value) {
+      if (dataGuardRoleChangedTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataGuardRoleChangedTime_ = value;
+      } else {
+        dataGuardRoleChangedTimeBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Autonomous Data Guard role was changed
+     * for the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp data_guard_role_changed_time = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataGuardRoleChangedTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (dataGuardRoleChangedTimeBuilder_ == null) {
+        dataGuardRoleChangedTime_ = builderForValue.build();
+      } else {
+        dataGuardRoleChangedTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Autonomous Data Guard role was changed
+     * for the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp data_guard_role_changed_time = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDataGuardRoleChangedTime(com.google.protobuf.Timestamp value) {
+      if (dataGuardRoleChangedTimeBuilder_ == null) {
+        if (((bitField1_ & 0x00800000) != 0)
+            && dataGuardRoleChangedTime_ != null
+            && dataGuardRoleChangedTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDataGuardRoleChangedTimeBuilder().mergeFrom(value);
+        } else {
+          dataGuardRoleChangedTime_ = value;
+        }
+      } else {
+        dataGuardRoleChangedTimeBuilder_.mergeFrom(value);
+      }
+      if (dataGuardRoleChangedTime_ != null) {
+        bitField1_ |= 0x00800000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Autonomous Data Guard role was changed
+     * for the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp data_guard_role_changed_time = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDataGuardRoleChangedTime() {
+      bitField1_ = (bitField1_ & ~0x00800000);
+      dataGuardRoleChangedTime_ = null;
+      if (dataGuardRoleChangedTimeBuilder_ != null) {
+        dataGuardRoleChangedTimeBuilder_.dispose();
+        dataGuardRoleChangedTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Autonomous Data Guard role was changed
+     * for the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp data_guard_role_changed_time = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getDataGuardRoleChangedTimeBuilder() {
+      bitField1_ |= 0x00800000;
+      onChanged();
+      return getDataGuardRoleChangedTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Autonomous Data Guard role was changed
+     * for the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp data_guard_role_changed_time = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getDataGuardRoleChangedTimeOrBuilder() {
+      if (dataGuardRoleChangedTimeBuilder_ != null) {
+        return dataGuardRoleChangedTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return dataGuardRoleChangedTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : dataGuardRoleChangedTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Autonomous Data Guard role was changed
+     * for the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp data_guard_role_changed_time = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getDataGuardRoleChangedTimeFieldBuilder() {
+      if (dataGuardRoleChangedTimeBuilder_ == null) {
+        dataGuardRoleChangedTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getDataGuardRoleChangedTime(), getParentForChildren(), isClean());
+        dataGuardRoleChangedTime_ = null;
+      }
+      return dataGuardRoleChangedTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp disasterRecoveryRoleChangedTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        disasterRecoveryRoleChangedTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Disaster Recovery role was changed for
+     * the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disaster_recovery_role_changed_time = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the disasterRecoveryRoleChangedTime field is set.
+     */
+    public boolean hasDisasterRecoveryRoleChangedTime() {
+      return ((bitField1_ & 0x01000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Disaster Recovery role was changed for
+     * the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disaster_recovery_role_changed_time = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The disasterRecoveryRoleChangedTime.
+     */
+    public com.google.protobuf.Timestamp getDisasterRecoveryRoleChangedTime() {
+      if (disasterRecoveryRoleChangedTimeBuilder_ == null) {
+        return disasterRecoveryRoleChangedTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : disasterRecoveryRoleChangedTime_;
+      } else {
+        return disasterRecoveryRoleChangedTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Disaster Recovery role was changed for
+     * the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disaster_recovery_role_changed_time = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDisasterRecoveryRoleChangedTime(com.google.protobuf.Timestamp value) {
+      if (disasterRecoveryRoleChangedTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        disasterRecoveryRoleChangedTime_ = value;
+      } else {
+        disasterRecoveryRoleChangedTimeBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Disaster Recovery role was changed for
+     * the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disaster_recovery_role_changed_time = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDisasterRecoveryRoleChangedTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (disasterRecoveryRoleChangedTimeBuilder_ == null) {
+        disasterRecoveryRoleChangedTime_ = builderForValue.build();
+      } else {
+        disasterRecoveryRoleChangedTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Disaster Recovery role was changed for
+     * the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disaster_recovery_role_changed_time = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDisasterRecoveryRoleChangedTime(com.google.protobuf.Timestamp value) {
+      if (disasterRecoveryRoleChangedTimeBuilder_ == null) {
+        if (((bitField1_ & 0x01000000) != 0)
+            && disasterRecoveryRoleChangedTime_ != null
+            && disasterRecoveryRoleChangedTime_
+                != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDisasterRecoveryRoleChangedTimeBuilder().mergeFrom(value);
+        } else {
+          disasterRecoveryRoleChangedTime_ = value;
+        }
+      } else {
+        disasterRecoveryRoleChangedTimeBuilder_.mergeFrom(value);
+      }
+      if (disasterRecoveryRoleChangedTime_ != null) {
+        bitField1_ |= 0x01000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Disaster Recovery role was changed for
+     * the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disaster_recovery_role_changed_time = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDisasterRecoveryRoleChangedTime() {
+      bitField1_ = (bitField1_ & ~0x01000000);
+      disasterRecoveryRoleChangedTime_ = null;
+      if (disasterRecoveryRoleChangedTimeBuilder_ != null) {
+        disasterRecoveryRoleChangedTimeBuilder_.dispose();
+        disasterRecoveryRoleChangedTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Disaster Recovery role was changed for
+     * the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disaster_recovery_role_changed_time = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getDisasterRecoveryRoleChangedTimeBuilder() {
+      bitField1_ |= 0x01000000;
+      onChanged();
+      return getDisasterRecoveryRoleChangedTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Disaster Recovery role was changed for
+     * the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disaster_recovery_role_changed_time = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getDisasterRecoveryRoleChangedTimeOrBuilder() {
+      if (disasterRecoveryRoleChangedTimeBuilder_ != null) {
+        return disasterRecoveryRoleChangedTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return disasterRecoveryRoleChangedTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : disasterRecoveryRoleChangedTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time the Disaster Recovery role was changed for
+     * the standby Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disaster_recovery_role_changed_time = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getDisasterRecoveryRoleChangedTimeFieldBuilder() {
+      if (disasterRecoveryRoleChangedTimeBuilder_ == null) {
+        disasterRecoveryRoleChangedTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getDisasterRecoveryRoleChangedTime(), getParentForChildren(), isClean());
+        disasterRecoveryRoleChangedTime_ = null;
+      }
+      return disasterRecoveryRoleChangedTimeBuilder_;
+    }
+
     private com.google.protobuf.Timestamp maintenanceBeginTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -13690,7 +14796,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * @return Whether the maintenanceBeginTime field is set.
      */
     public boolean hasMaintenanceBeginTime() {
-      return ((bitField1_ & 0x00800000) != 0);
+      return ((bitField1_ & 0x02000000) != 0);
     }
 
     /**
@@ -13736,7 +14842,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       } else {
         maintenanceBeginTimeBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00800000;
+      bitField1_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -13758,7 +14864,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       } else {
         maintenanceBeginTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00800000;
+      bitField1_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -13776,7 +14882,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      */
     public Builder mergeMaintenanceBeginTime(com.google.protobuf.Timestamp value) {
       if (maintenanceBeginTimeBuilder_ == null) {
-        if (((bitField1_ & 0x00800000) != 0)
+        if (((bitField1_ & 0x02000000) != 0)
             && maintenanceBeginTime_ != null
             && maintenanceBeginTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getMaintenanceBeginTimeBuilder().mergeFrom(value);
@@ -13787,7 +14893,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         maintenanceBeginTimeBuilder_.mergeFrom(value);
       }
       if (maintenanceBeginTime_ != null) {
-        bitField1_ |= 0x00800000;
+        bitField1_ |= 0x02000000;
         onChanged();
       }
       return this;
@@ -13805,7 +14911,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearMaintenanceBeginTime() {
-      bitField1_ = (bitField1_ & ~0x00800000);
+      bitField1_ = (bitField1_ & ~0x02000000);
       maintenanceBeginTime_ = null;
       if (maintenanceBeginTimeBuilder_ != null) {
         maintenanceBeginTimeBuilder_.dispose();
@@ -13827,7 +14933,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getMaintenanceBeginTimeBuilder() {
-      bitField1_ |= 0x00800000;
+      bitField1_ |= 0x02000000;
       onChanged();
       return getMaintenanceBeginTimeFieldBuilder().getBuilder();
     }
@@ -13902,7 +15008,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * @return Whether the maintenanceEndTime field is set.
      */
     public boolean hasMaintenanceEndTime() {
-      return ((bitField1_ & 0x01000000) != 0);
+      return ((bitField1_ & 0x04000000) != 0);
     }
 
     /**
@@ -13948,7 +15054,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       } else {
         maintenanceEndTimeBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x01000000;
+      bitField1_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -13970,7 +15076,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       } else {
         maintenanceEndTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x01000000;
+      bitField1_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -13988,7 +15094,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      */
     public Builder mergeMaintenanceEndTime(com.google.protobuf.Timestamp value) {
       if (maintenanceEndTimeBuilder_ == null) {
-        if (((bitField1_ & 0x01000000) != 0)
+        if (((bitField1_ & 0x04000000) != 0)
             && maintenanceEndTime_ != null
             && maintenanceEndTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getMaintenanceEndTimeBuilder().mergeFrom(value);
@@ -13999,7 +15105,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         maintenanceEndTimeBuilder_.mergeFrom(value);
       }
       if (maintenanceEndTime_ != null) {
-        bitField1_ |= 0x01000000;
+        bitField1_ |= 0x04000000;
         onChanged();
       }
       return this;
@@ -14017,7 +15123,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearMaintenanceEndTime() {
-      bitField1_ = (bitField1_ & ~0x01000000);
+      bitField1_ = (bitField1_ & ~0x04000000);
       maintenanceEndTime_ = null;
       if (maintenanceEndTimeBuilder_ != null) {
         maintenanceEndTimeBuilder_.dispose();
@@ -14039,7 +15145,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getMaintenanceEndTimeBuilder() {
-      bitField1_ |= 0x01000000;
+      bitField1_ |= 0x04000000;
       onChanged();
       return getMaintenanceEndTimeFieldBuilder().getBuilder();
     }
@@ -14091,6 +15197,980 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         maintenanceEndTime_ = null;
       }
       return maintenanceEndTimeBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList allowlistedIps_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureAllowlistedIpsIsMutable() {
+      if (!allowlistedIps_.isModifiable()) {
+        allowlistedIps_ = new com.google.protobuf.LazyStringArrayList(allowlistedIps_);
+      }
+      bitField1_ |= 0x08000000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * </pre>
+     *
+     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the allowlistedIps.
+     */
+    public com.google.protobuf.ProtocolStringList getAllowlistedIpsList() {
+      allowlistedIps_.makeImmutable();
+      return allowlistedIps_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * </pre>
+     *
+     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of allowlistedIps.
+     */
+    public int getAllowlistedIpsCount() {
+      return allowlistedIps_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * </pre>
+     *
+     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The allowlistedIps at the given index.
+     */
+    public java.lang.String getAllowlistedIps(int index) {
+      return allowlistedIps_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * </pre>
+     *
+     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the allowlistedIps at the given index.
+     */
+    public com.google.protobuf.ByteString getAllowlistedIpsBytes(int index) {
+      return allowlistedIps_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * </pre>
+     *
+     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The allowlistedIps to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowlistedIps(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAllowlistedIpsIsMutable();
+      allowlistedIps_.set(index, value);
+      bitField1_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * </pre>
+     *
+     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The allowlistedIps to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllowlistedIps(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAllowlistedIpsIsMutable();
+      allowlistedIps_.add(value);
+      bitField1_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * </pre>
+     *
+     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The allowlistedIps to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAllowlistedIps(java.lang.Iterable<java.lang.String> values) {
+      ensureAllowlistedIpsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowlistedIps_);
+      bitField1_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * </pre>
+     *
+     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowlistedIps() {
+      allowlistedIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField1_ = (bitField1_ & ~0x08000000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * </pre>
+     *
+     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the allowlistedIps to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllowlistedIpsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAllowlistedIpsIsMutable();
+      allowlistedIps_.add(value);
+      bitField1_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.oracledatabase.v1.EncryptionKey encryptionKey_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.oracledatabase.v1.EncryptionKey,
+            com.google.cloud.oracledatabase.v1.EncryptionKey.Builder,
+            com.google.cloud.oracledatabase.v1.EncryptionKeyOrBuilder>
+        encryptionKeyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption key used to encrypt the Autonomous Database.
+     * Updating this field will add a new entry in the
+     * `encryption_key_history_entries` field with the former version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.EncryptionKey encryption_key = 68 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the encryptionKey field is set.
+     */
+    public boolean hasEncryptionKey() {
+      return ((bitField1_ & 0x10000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption key used to encrypt the Autonomous Database.
+     * Updating this field will add a new entry in the
+     * `encryption_key_history_entries` field with the former version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.EncryptionKey encryption_key = 68 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The encryptionKey.
+     */
+    public com.google.cloud.oracledatabase.v1.EncryptionKey getEncryptionKey() {
+      if (encryptionKeyBuilder_ == null) {
+        return encryptionKey_ == null
+            ? com.google.cloud.oracledatabase.v1.EncryptionKey.getDefaultInstance()
+            : encryptionKey_;
+      } else {
+        return encryptionKeyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption key used to encrypt the Autonomous Database.
+     * Updating this field will add a new entry in the
+     * `encryption_key_history_entries` field with the former version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.EncryptionKey encryption_key = 68 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryptionKey(com.google.cloud.oracledatabase.v1.EncryptionKey value) {
+      if (encryptionKeyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionKey_ = value;
+      } else {
+        encryptionKeyBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption key used to encrypt the Autonomous Database.
+     * Updating this field will add a new entry in the
+     * `encryption_key_history_entries` field with the former version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.EncryptionKey encryption_key = 68 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryptionKey(
+        com.google.cloud.oracledatabase.v1.EncryptionKey.Builder builderForValue) {
+      if (encryptionKeyBuilder_ == null) {
+        encryptionKey_ = builderForValue.build();
+      } else {
+        encryptionKeyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption key used to encrypt the Autonomous Database.
+     * Updating this field will add a new entry in the
+     * `encryption_key_history_entries` field with the former version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.EncryptionKey encryption_key = 68 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEncryptionKey(com.google.cloud.oracledatabase.v1.EncryptionKey value) {
+      if (encryptionKeyBuilder_ == null) {
+        if (((bitField1_ & 0x10000000) != 0)
+            && encryptionKey_ != null
+            && encryptionKey_
+                != com.google.cloud.oracledatabase.v1.EncryptionKey.getDefaultInstance()) {
+          getEncryptionKeyBuilder().mergeFrom(value);
+        } else {
+          encryptionKey_ = value;
+        }
+      } else {
+        encryptionKeyBuilder_.mergeFrom(value);
+      }
+      if (encryptionKey_ != null) {
+        bitField1_ |= 0x10000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption key used to encrypt the Autonomous Database.
+     * Updating this field will add a new entry in the
+     * `encryption_key_history_entries` field with the former version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.EncryptionKey encryption_key = 68 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEncryptionKey() {
+      bitField1_ = (bitField1_ & ~0x10000000);
+      encryptionKey_ = null;
+      if (encryptionKeyBuilder_ != null) {
+        encryptionKeyBuilder_.dispose();
+        encryptionKeyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption key used to encrypt the Autonomous Database.
+     * Updating this field will add a new entry in the
+     * `encryption_key_history_entries` field with the former version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.EncryptionKey encryption_key = 68 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.oracledatabase.v1.EncryptionKey.Builder getEncryptionKeyBuilder() {
+      bitField1_ |= 0x10000000;
+      onChanged();
+      return getEncryptionKeyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption key used to encrypt the Autonomous Database.
+     * Updating this field will add a new entry in the
+     * `encryption_key_history_entries` field with the former version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.EncryptionKey encryption_key = 68 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.oracledatabase.v1.EncryptionKeyOrBuilder getEncryptionKeyOrBuilder() {
+      if (encryptionKeyBuilder_ != null) {
+        return encryptionKeyBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionKey_ == null
+            ? com.google.cloud.oracledatabase.v1.EncryptionKey.getDefaultInstance()
+            : encryptionKey_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption key used to encrypt the Autonomous Database.
+     * Updating this field will add a new entry in the
+     * `encryption_key_history_entries` field with the former version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.EncryptionKey encryption_key = 68 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.oracledatabase.v1.EncryptionKey,
+            com.google.cloud.oracledatabase.v1.EncryptionKey.Builder,
+            com.google.cloud.oracledatabase.v1.EncryptionKeyOrBuilder>
+        getEncryptionKeyFieldBuilder() {
+      if (encryptionKeyBuilder_ == null) {
+        encryptionKeyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.oracledatabase.v1.EncryptionKey,
+                com.google.cloud.oracledatabase.v1.EncryptionKey.Builder,
+                com.google.cloud.oracledatabase.v1.EncryptionKeyOrBuilder>(
+                getEncryptionKey(), getParentForChildren(), isClean());
+        encryptionKey_ = null;
+      }
+      return encryptionKeyBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry>
+        encryptionKeyHistoryEntries_ = java.util.Collections.emptyList();
+
+    private void ensureEncryptionKeyHistoryEntriesIsMutable() {
+      if (!((bitField1_ & 0x20000000) != 0)) {
+        encryptionKeyHistoryEntries_ =
+            new java.util.ArrayList<com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry>(
+                encryptionKeyHistoryEntries_);
+        bitField1_ |= 0x20000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry,
+            com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry.Builder,
+            com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntryOrBuilder>
+        encryptionKeyHistoryEntriesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry>
+        getEncryptionKeyHistoryEntriesList() {
+      if (encryptionKeyHistoryEntriesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(encryptionKeyHistoryEntries_);
+      } else {
+        return encryptionKeyHistoryEntriesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getEncryptionKeyHistoryEntriesCount() {
+      if (encryptionKeyHistoryEntriesBuilder_ == null) {
+        return encryptionKeyHistoryEntries_.size();
+      } else {
+        return encryptionKeyHistoryEntriesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry
+        getEncryptionKeyHistoryEntries(int index) {
+      if (encryptionKeyHistoryEntriesBuilder_ == null) {
+        return encryptionKeyHistoryEntries_.get(index);
+      } else {
+        return encryptionKeyHistoryEntriesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEncryptionKeyHistoryEntries(
+        int index, com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry value) {
+      if (encryptionKeyHistoryEntriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEncryptionKeyHistoryEntriesIsMutable();
+        encryptionKeyHistoryEntries_.set(index, value);
+        onChanged();
+      } else {
+        encryptionKeyHistoryEntriesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEncryptionKeyHistoryEntries(
+        int index,
+        com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry.Builder builderForValue) {
+      if (encryptionKeyHistoryEntriesBuilder_ == null) {
+        ensureEncryptionKeyHistoryEntriesIsMutable();
+        encryptionKeyHistoryEntries_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        encryptionKeyHistoryEntriesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addEncryptionKeyHistoryEntries(
+        com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry value) {
+      if (encryptionKeyHistoryEntriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEncryptionKeyHistoryEntriesIsMutable();
+        encryptionKeyHistoryEntries_.add(value);
+        onChanged();
+      } else {
+        encryptionKeyHistoryEntriesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addEncryptionKeyHistoryEntries(
+        int index, com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry value) {
+      if (encryptionKeyHistoryEntriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEncryptionKeyHistoryEntriesIsMutable();
+        encryptionKeyHistoryEntries_.add(index, value);
+        onChanged();
+      } else {
+        encryptionKeyHistoryEntriesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addEncryptionKeyHistoryEntries(
+        com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry.Builder builderForValue) {
+      if (encryptionKeyHistoryEntriesBuilder_ == null) {
+        ensureEncryptionKeyHistoryEntriesIsMutable();
+        encryptionKeyHistoryEntries_.add(builderForValue.build());
+        onChanged();
+      } else {
+        encryptionKeyHistoryEntriesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addEncryptionKeyHistoryEntries(
+        int index,
+        com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry.Builder builderForValue) {
+      if (encryptionKeyHistoryEntriesBuilder_ == null) {
+        ensureEncryptionKeyHistoryEntriesIsMutable();
+        encryptionKeyHistoryEntries_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        encryptionKeyHistoryEntriesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllEncryptionKeyHistoryEntries(
+        java.lang.Iterable<? extends com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry>
+            values) {
+      if (encryptionKeyHistoryEntriesBuilder_ == null) {
+        ensureEncryptionKeyHistoryEntriesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, encryptionKeyHistoryEntries_);
+        onChanged();
+      } else {
+        encryptionKeyHistoryEntriesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEncryptionKeyHistoryEntries() {
+      if (encryptionKeyHistoryEntriesBuilder_ == null) {
+        encryptionKeyHistoryEntries_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x20000000);
+        onChanged();
+      } else {
+        encryptionKeyHistoryEntriesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeEncryptionKeyHistoryEntries(int index) {
+      if (encryptionKeyHistoryEntriesBuilder_ == null) {
+        ensureEncryptionKeyHistoryEntriesIsMutable();
+        encryptionKeyHistoryEntries_.remove(index);
+        onChanged();
+      } else {
+        encryptionKeyHistoryEntriesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry.Builder
+        getEncryptionKeyHistoryEntriesBuilder(int index) {
+      return getEncryptionKeyHistoryEntriesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntryOrBuilder
+        getEncryptionKeyHistoryEntriesOrBuilder(int index) {
+      if (encryptionKeyHistoryEntriesBuilder_ == null) {
+        return encryptionKeyHistoryEntries_.get(index);
+      } else {
+        return encryptionKeyHistoryEntriesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntryOrBuilder>
+        getEncryptionKeyHistoryEntriesOrBuilderList() {
+      if (encryptionKeyHistoryEntriesBuilder_ != null) {
+        return encryptionKeyHistoryEntriesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(encryptionKeyHistoryEntries_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry.Builder
+        addEncryptionKeyHistoryEntriesBuilder() {
+      return getEncryptionKeyHistoryEntriesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry.Builder
+        addEncryptionKeyHistoryEntriesBuilder(int index) {
+      return getEncryptionKeyHistoryEntriesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The history of the encryption keys used to encrypt the
+     * Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry.Builder>
+        getEncryptionKeyHistoryEntriesBuilderList() {
+      return getEncryptionKeyHistoryEntriesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry,
+            com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry.Builder,
+            com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntryOrBuilder>
+        getEncryptionKeyHistoryEntriesFieldBuilder() {
+      if (encryptionKeyHistoryEntriesBuilder_ == null) {
+        encryptionKeyHistoryEntriesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry,
+                com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry.Builder,
+                com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntryOrBuilder>(
+                encryptionKeyHistoryEntries_,
+                ((bitField1_ & 0x20000000) != 0),
+                getParentForChildren(),
+                isClean());
+        encryptionKeyHistoryEntries_ = null;
+      }
+      return encryptionKeyHistoryEntriesBuilder_;
+    }
+
+    private java.lang.Object serviceAgentEmail_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An Oracle-managed Google Cloud service account on which
+     * customers can grant roles to access resources in the customer project.
+     * </pre>
+     *
+     * <code>string service_agent_email = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serviceAgentEmail.
+     */
+    public java.lang.String getServiceAgentEmail() {
+      java.lang.Object ref = serviceAgentEmail_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAgentEmail_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An Oracle-managed Google Cloud service account on which
+     * customers can grant roles to access resources in the customer project.
+     * </pre>
+     *
+     * <code>string service_agent_email = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serviceAgentEmail.
+     */
+    public com.google.protobuf.ByteString getServiceAgentEmailBytes() {
+      java.lang.Object ref = serviceAgentEmail_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAgentEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An Oracle-managed Google Cloud service account on which
+     * customers can grant roles to access resources in the customer project.
+     * </pre>
+     *
+     * <code>string service_agent_email = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The serviceAgentEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAgentEmail(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serviceAgentEmail_ = value;
+      bitField1_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An Oracle-managed Google Cloud service account on which
+     * customers can grant roles to access resources in the customer project.
+     * </pre>
+     *
+     * <code>string service_agent_email = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAgentEmail() {
+      serviceAgentEmail_ = getDefaultInstance().getServiceAgentEmail();
+      bitField1_ = (bitField1_ & ~0x40000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An Oracle-managed Google Cloud service account on which
+     * customers can grant roles to access resources in the customer project.
+     * </pre>
+     *
+     * <code>string service_agent_email = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for serviceAgentEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAgentEmailBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serviceAgentEmail_ = value;
+      bitField1_ |= 0x40000000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

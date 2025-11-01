@@ -35,7 +35,8 @@ public class SyncGetVpcFlowLogsConfigVpcflowlogsconfigname {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
       VpcFlowLogsConfigName name =
-          VpcFlowLogsConfigName.of("[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
+          VpcFlowLogsConfigName.ofProjectLocationVpcFlowLogsConfigName(
+              "[PROJECT]", "[LOCATION]", "[VPC_FLOW_LOGS_CONFIG]");
       VpcFlowLogsConfig response = vpcFlowLogsServiceClient.getVpcFlowLogsConfig(name);
     }
   }

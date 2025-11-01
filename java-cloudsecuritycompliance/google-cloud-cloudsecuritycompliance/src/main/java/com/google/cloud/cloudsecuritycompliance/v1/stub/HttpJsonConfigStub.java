@@ -314,6 +314,8 @@ public class HttpJsonConfigStub extends ConfigStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetCloudControlRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "majorRevisionId", request.getMajorRevisionId());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

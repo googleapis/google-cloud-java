@@ -40,6 +40,54 @@ public final class PlacementServiceProto {
       internal_static_google_ads_admanager_v1_ListPlacementsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ListPlacementsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_CreatePlacementRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_CreatePlacementRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreatePlacementsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreatePlacementsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreatePlacementsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreatePlacementsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_UpdatePlacementRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_UpdatePlacementRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdatePlacementsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdatePlacementsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdatePlacementsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdatePlacementsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivatePlacementsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivatePlacementsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivatePlacementsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivatePlacementsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivatePlacementsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivatePlacementsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivatePlacementsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivatePlacementsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchArchivePlacementsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchArchivePlacementsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchArchivePlacementsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchArchivePlacementsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -55,7 +103,8 @@ public final class PlacementServiceProto {
           + "le/ads/admanager/v1/placement_messages.p"
           + "roto\032\034google/api/annotations.proto\032\027goog"
           + "le/api/client.proto\032\037google/api/field_be"
-          + "havior.proto\032\031google/api/resource.proto\"O\n"
+          + "havior.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\"O\n"
           + "\023GetPlacementRequest\0228\n"
           + "\004name\030\001 \001(\tB*\340A\002\372A$\n"
           + "\"admanager.googleapis.com/Placement\"\301\001\n"
@@ -70,21 +119,92 @@ public final class PlacementServiceProto {
           + "\026ListPlacementsResponse\0226\n\n"
           + "placements\030\001 \003(\0132\".google.ads.admanager.v1.Placement\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\232\003\n"
+          + "total_size\030\003 \001(\005\"\216\001\n"
+          + "\026CreatePlacementRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022:\n"
+          + "\tplacement\030\002"
+          + " \001(\0132\".google.ads.admanager.v1.PlacementB\003\340A\002\"\240\001\n"
+          + "\034BatchCreatePlacementsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022F\n"
+          + "\010requests\030\002"
+          + " \003(\0132/.google.ads.admanager.v1.CreatePlacementRequestB\003\340A\002\"W\n"
+          + "\035BatchCreatePlacementsResponse\0226\n\n"
+          + "placements\030\001 \003(\0132\".google.ads.admanager.v1.Placement\"\212\001\n"
+          + "\026UpdatePlacementRequest\022:\n"
+          + "\tplacement\030\001 \001(\013"
+          + "2\".google.ads.admanager.v1.PlacementB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"\240\001\n"
+          + "\034BatchUpdatePlacementsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022F\n"
+          + "\010requests\030\002"
+          + " \003(\0132/.google.ads.admanager.v1.UpdatePlacementRequestB\003\340A\002\"W\n"
+          + "\035BatchUpdatePlacementsResponse\0226\n\n"
+          + "placements\030\001 \003(\0132\".google.ads.admanager.v1.Placement\"\225\001\n"
+          + "\036BatchActivatePlacementsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0229\n"
+          + "\005names\030\003 \003(\tB*\340A\002\372A$\n"
+          + "\"admanager.googleapis.com/Placement\"!\n"
+          + "\037BatchActivatePlacementsResponse\"\227\001\n"
+          + " BatchDeactivatePlacementsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0229\n"
+          + "\005names\030\003 \003(\tB*\340A\002\372A$\n"
+          + "\"admanager.googleapis.com/Placement\"#\n"
+          + "!BatchDeactivatePlacementsResponse\"\224\001\n"
+          + "\035BatchArchivePlacementsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0229\n"
+          + "\005names\030\003 \003(\tB*\340A\002\372A$\n"
+          + "\"admanager.googleapis.com/Placement\" \n"
+          + "\036BatchArchivePlacementsResponse2\320\016\n"
           + "\020PlacementService\022\223\001\n"
-          + "\014GetPlacement\022,.google.ads.admanager.v1.GetPlacement"
-          + "Request\032\".google.ads.admanager.v1.Placem"
-          + "ent\"1\332A\004name\202\323\344\223\002$\022\"/v1/{name=networks/*/placements/*}\022\246\001\n"
-          + "\016ListPlacements\022..google.ads.admanager.v1.ListPlacementsReques"
-          + "t\032/.google.ads.admanager.v1.ListPlacemen"
-          + "tsResponse\"3\332A\006parent\202\323\344\223\002$\022\"/v1/{parent"
-          + "=networks/*}/placements\032G\312A\030admanager.go"
-          + "ogleapis.com\322A)https://www.googleapis.com/auth/admanagerB\311\001\n"
-          + "\033com.google.ads.admanager.v1B\025PlacementServiceProtoP\001Z@googl"
-          + "e.golang.org/genproto/googleapis/ads/adm"
-          + "anager/v1;admanager\252\002\027Google.Ads.AdManag"
-          + "er.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google"
-          + "::Ads::AdManager::V1b\006proto3"
+          + "\014GetPlacement\022,.google.ads.admanager.v1.GetPlacementRequest\032\".goo"
+          + "gle.ads.admanager.v1.Placement\"1\332A\004name\202"
+          + "\323\344\223\002$\022\"/v1/{name=networks/*/placements/*}\022\246\001\n"
+          + "\016ListPlacements\022..google.ads.admanager.v1.ListPlacementsRequest\032/.google.ad"
+          + "s.admanager.v1.ListPlacementsResponse\"3\332"
+          + "A\006parent\202\323\344\223\002$\022\"/v1/{parent=networks/*}/placements\022\260\001\n"
+          + "\017CreatePlacement\022/.google.ads.admanager.v1.CreatePlacementRequest\032"
+          + "\".google.ads.admanager.v1.Placement\"H\332A\020"
+          + "parent,placement\202\323\344\223\002/\"\"/v1/{parent=networks/*}/placements:"
+          + "\tplacement\022\277\001\n"
+          + "\017UpdatePlacement\022/.google.ads.admanager.v1.Upda"
+          + "tePlacementRequest\032\".google.ads.admanage"
+          + "r.v1.Placement\"W\332A\025placement,update_mask"
+          + "\202\323\344\223\00292,/v1/{placement.name=networks/*/placements/*}:"
+          + "\tplacement\022\323\001\n"
+          + "\025BatchCreatePlacements\0225.google.ads.admanager.v1.Batc"
+          + "hCreatePlacementsRequest\0326.google.ads.admanager.v1.BatchCreatePlacementsResponse"
+          + "\"K\332A\017parent,requests\202\323\344\223\0023\"./v1/{parent="
+          + "networks/*}/placements:batchCreate:\001*\022\323\001\n"
+          + "\025BatchUpdatePlacements\0225.google.ads.adm"
+          + "anager.v1.BatchUpdatePlacementsRequest\0326.google.ads.admanager.v1.BatchUpdatePlac"
+          + "ementsResponse\"K\332A\017parent,requests\202\323\344\223\0023"
+          + "\"./v1/{parent=networks/*}/placements:batchUpdate:\001*\022\330\001\n"
+          + "\027BatchActivatePlacements\0227.google.ads.admanager.v1.BatchActivateP"
+          + "lacementsRequest\0328.google.ads.admanager."
+          + "v1.BatchActivatePlacementsResponse\"J\332A\014p"
+          + "arent,names\202\323\344\223\0025\"0/v1/{parent=networks/*}/placements:batchActivate:\001*\022\340\001\n"
+          + "\031BatchDeactivatePlacements\0229.google.ads.admana"
+          + "ger.v1.BatchDeactivatePlacementsRequest\032:.google.ads.admanager.v1.BatchDeactivat"
+          + "ePlacementsResponse\"L\332A\014parent,names\202\323\344\223"
+          + "\0027\"2/v1/{parent=networks/*}/placements:batchDeactivate:\001*\022\324\001\n"
+          + "\026BatchArchivePlacements\0226.google.ads.admanager.v1.BatchArch"
+          + "ivePlacementsRequest\0327.google.ads.admana"
+          + "ger.v1.BatchArchivePlacementsResponse\"I\332"
+          + "A\014parent,names\202\323\344\223\0024\"//v1/{parent=networ"
+          + "ks/*}/placements:batchArchive:\001*\032G\312A\030adm"
+          + "anager.googleapis.com\322A)https://www.googleapis.com/auth/admanagerB\311\001\n"
+          + "\033com.google.ads.admanager.v1B\025PlacementServiceProto"
+          + "P\001Z@google.golang.org/genproto/googleapi"
+          + "s/ads/admanager/v1;admanager\252\002\027Google.Ad"
+          + "s.AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1"
+          + "\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -95,6 +215,7 @@ public final class PlacementServiceProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_GetPlacementRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -120,6 +241,96 @@ public final class PlacementServiceProto {
             new java.lang.String[] {
               "Placements", "NextPageToken", "TotalSize",
             });
+    internal_static_google_ads_admanager_v1_CreatePlacementRequest_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_ads_admanager_v1_CreatePlacementRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_CreatePlacementRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Placement",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreatePlacementsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_ads_admanager_v1_BatchCreatePlacementsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreatePlacementsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreatePlacementsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_ads_admanager_v1_BatchCreatePlacementsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreatePlacementsResponse_descriptor,
+            new java.lang.String[] {
+              "Placements",
+            });
+    internal_static_google_ads_admanager_v1_UpdatePlacementRequest_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_ads_admanager_v1_UpdatePlacementRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_UpdatePlacementRequest_descriptor,
+            new java.lang.String[] {
+              "Placement", "UpdateMask",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdatePlacementsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_ads_admanager_v1_BatchUpdatePlacementsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdatePlacementsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdatePlacementsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_ads_admanager_v1_BatchUpdatePlacementsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdatePlacementsResponse_descriptor,
+            new java.lang.String[] {
+              "Placements",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivatePlacementsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_ads_admanager_v1_BatchActivatePlacementsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivatePlacementsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivatePlacementsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_ads_admanager_v1_BatchActivatePlacementsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivatePlacementsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchDeactivatePlacementsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_ads_admanager_v1_BatchDeactivatePlacementsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivatePlacementsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchDeactivatePlacementsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_ads_admanager_v1_BatchDeactivatePlacementsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivatePlacementsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchArchivePlacementsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_ads_admanager_v1_BatchArchivePlacementsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchArchivePlacementsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchArchivePlacementsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_ads_admanager_v1_BatchArchivePlacementsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchArchivePlacementsResponse_descriptor,
+            new java.lang.String[] {});
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -135,6 +346,7 @@ public final class PlacementServiceProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

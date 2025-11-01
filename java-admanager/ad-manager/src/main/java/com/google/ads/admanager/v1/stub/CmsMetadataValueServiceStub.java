@@ -1,0 +1,55 @@
+/*
+ * Copyright 2025 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.ads.admanager.v1.stub;
+
+import static com.google.ads.admanager.v1.CmsMetadataValueServiceClient.ListCmsMetadataValuesPagedResponse;
+
+import com.google.ads.admanager.v1.CmsMetadataValue;
+import com.google.ads.admanager.v1.GetCmsMetadataValueRequest;
+import com.google.ads.admanager.v1.ListCmsMetadataValuesRequest;
+import com.google.ads.admanager.v1.ListCmsMetadataValuesResponse;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.UnaryCallable;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * Base stub class for the CmsMetadataValueService service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@Generated("by gapic-generator-java")
+public abstract class CmsMetadataValueServiceStub implements BackgroundResource {
+
+  public UnaryCallable<GetCmsMetadataValueRequest, CmsMetadataValue> getCmsMetadataValueCallable() {
+    throw new UnsupportedOperationException("Not implemented: getCmsMetadataValueCallable()");
+  }
+
+  public UnaryCallable<ListCmsMetadataValuesRequest, ListCmsMetadataValuesPagedResponse>
+      listCmsMetadataValuesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listCmsMetadataValuesPagedCallable()");
+  }
+
+  public UnaryCallable<ListCmsMetadataValuesRequest, ListCmsMetadataValuesResponse>
+      listCmsMetadataValuesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listCmsMetadataValuesCallable()");
+  }
+
+  @Override
+  public abstract void close();
+}

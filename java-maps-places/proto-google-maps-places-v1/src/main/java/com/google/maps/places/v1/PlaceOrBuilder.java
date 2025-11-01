@@ -2647,6 +2647,46 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
+   * The consumer alert message for the place when we detect suspicious review
+   * activity on a business or a business violates our policies.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.ConsumerAlert consumer_alert = 92;</code>
+   *
+   * @return Whether the consumerAlert field is set.
+   */
+  boolean hasConsumerAlert();
+
+  /**
+   *
+   *
+   * <pre>
+   * The consumer alert message for the place when we detect suspicious review
+   * activity on a business or a business violates our policies.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.ConsumerAlert consumer_alert = 92;</code>
+   *
+   * @return The consumerAlert.
+   */
+  com.google.maps.places.v1.Place.ConsumerAlert getConsumerAlert();
+
+  /**
+   *
+   *
+   * <pre>
+   * The consumer alert message for the place when we detect suspicious review
+   * activity on a business or a business violates our policies.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.ConsumerAlert consumer_alert = 92;</code>
+   */
+  com.google.maps.places.v1.Place.ConsumerAlertOrBuilder getConsumerAlertOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * If this Place is permanently closed and has moved to a new Place, this
    * field contains the new Place's resource name, in `places/{place_id}`
    * format. If this Place moved multiple times, this field will represent the
@@ -2654,7 +2694,7 @@ public interface PlaceOrBuilder
    * moved.
    * </pre>
    *
-   * <code>string moved_place = 93;</code>
+   * <code>string moved_place = 93 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The movedPlace.
    */
@@ -2671,7 +2711,7 @@ public interface PlaceOrBuilder
    * moved.
    * </pre>
    *
-   * <code>string moved_place = 93;</code>
+   * <code>string moved_place = 93 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for movedPlace.
    */

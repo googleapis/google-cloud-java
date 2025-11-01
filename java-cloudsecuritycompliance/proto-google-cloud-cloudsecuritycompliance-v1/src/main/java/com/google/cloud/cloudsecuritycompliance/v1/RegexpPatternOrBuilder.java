@@ -28,7 +28,7 @@ public interface RegexpPatternOrBuilder
    *
    *
    * <pre>
-   * Required. Regex Pattern to match the value(s) of parameter.
+   * Required. The regex pattern to match the values of the parameter with.
    * </pre>
    *
    * <code>string pattern = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,7 +41,7 @@ public interface RegexpPatternOrBuilder
    *
    *
    * <pre>
-   * Required. Regex Pattern to match the value(s) of parameter.
+   * Required. The regex pattern to match the values of the parameter with.
    * </pre>
    *
    * <code>string pattern = 1 [(.google.api.field_behavior) = REQUIRED];</code>

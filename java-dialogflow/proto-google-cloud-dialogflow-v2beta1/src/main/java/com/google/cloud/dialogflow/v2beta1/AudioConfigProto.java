@@ -53,6 +53,10 @@ public final class AudioConfigProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_SynthesizeSpeechConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_CustomPronunciationParams_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_CustomPronunciationParams_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_fieldAccessorTable;
@@ -113,14 +117,25 @@ public final class AudioConfigProto {
           + "\024VoiceSelectionParams\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\001\022J\n"
           + "\013ssml_gender\030\002"
-          + " \001(\01620.google.cloud.dialogflow.v2beta1.SsmlVoiceGenderB\003\340A\001\"\321\001\n"
+          + " \001(\01620.google.cloud.dialogflow.v2beta1.SsmlVoiceGenderB\003\340A\001\"\245\002\n"
           + "\026SynthesizeSpeechConfig\022\032\n\r"
           + "speaking_rate\030\001 \001(\001B\003\340A\001\022\022\n"
           + "\005pitch\030\002 \001(\001B\003\340A\001\022\033\n"
           + "\016volume_gain_db\030\003 \001(\001B\003\340A\001\022\037\n"
           + "\022effects_profile_id\030\005 \003(\tB\003\340A\001\022I\n"
           + "\005voice\030\004 \001(\01325.google.cloud.dial"
-          + "ogflow.v2beta1.VoiceSelectionParamsB\003\340A\001\"\334\001\n"
+          + "ogflow.v2beta1.VoiceSelectionParamsB\003\340A\001\022R\n"
+          + "\016pronunciations\030\006 \003(\0132:.google.cloud."
+          + "dialogflow.v2beta1.CustomPronunciationParams\"\233\002\n"
+          + "\031CustomPronunciationParams\022\016\n"
+          + "\006phrase\030\001 \001(\t\022f\n"
+          + "\021phonetic_encoding\030\002 \001(\0162K."
+          + "google.cloud.dialogflow.v2beta1.CustomPronunciationParams.PhoneticEncoding\022\025\n\r"
+          + "pronunciation\030\003 \001(\t\"o\n"
+          + "\020PhoneticEncoding\022!\n"
+          + "\035PHONETIC_ENCODING_UNSPECIFIED\020\000\022\031\n"
+          + "\025PHONETIC_ENCODING_IPA\020\001\022\035\n"
+          + "\031PHONETIC_ENCODING_X_SAMPA\020\002\"\334\001\n"
           + "\021OutputAudioConfig\022Q\n"
           + "\016audio_encoding\030\001"
           + " \001(\01624.google.cloud.dialogflow.v2beta1.OutputAudioEncodingB\003\340A\002\022\031\n"
@@ -128,16 +143,16 @@ public final class AudioConfigProto {
           + "\030synthesize_speech_config\030\003"
           + " \001(\01327.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig\"Z\n"
           + "\023TelephonyDtmfEvents\022C\n"
-          + "\013dtmf_events\030\001"
-          + " \003(\0162..google.cloud.dialogflow.v2beta1.TelephonyDtmf\"\354\002\n"
+          + "\013dtmf_events\030\001 \003(\0162.."
+          + "google.cloud.dialogflow.v2beta1.TelephonyDtmf\"\354\002\n"
           + "\022SpeechToTextConfig\022Q\n"
           + "\024speech_model_variant\030\001"
           + " \001(\01623.google.cloud.dialogflow.v2beta1.SpeechModelVariant\022\r\n"
           + "\005model\030\002 \001(\t\0229\n"
           + "\013phrase_sets\030\004 \003(\tB$\372A!\n"
           + "\037speech.googleapis.com/PhraseSet\022F\n"
-          + "\016audio_encoding\030\006 \001(\0162"
-          + "..google.cloud.dialogflow.v2beta1.AudioEncoding\022\031\n"
+          + "\016audio_encoding\030\006"
+          + " \001(\0162..google.cloud.dialogflow.v2beta1.AudioEncoding\022\031\n"
           + "\021sample_rate_hertz\030\007 \001(\005\022\025\n\r"
           + "language_code\030\010 \001(\t\022\030\n"
           + "\020enable_word_info\030\t \001(\010\022%\n"
@@ -158,8 +173,7 @@ public final class AudioConfigProto {
           + "\006DTMF_A\020\013\022\n\n"
           + "\006DTMF_B\020\014\022\n\n"
           + "\006DTMF_C\020\r"
-          + "\022\n"
-          + "\n"
+          + "\022\n\n"
           + "\006DTMF_D\020\016\022\r\n"
           + "\tDTMF_STAR\020\017\022\016\n\n"
           + "DTMF_POUND\020\020*\224\002\n\r"
@@ -191,13 +205,13 @@ public final class AudioConfigProto {
           + "\036OUTPUT_AUDIO_ENCODING_OGG_OPUS\020\003\022\037\n"
           + "\033OUTPUT_AUDIO_ENCODING_MULAW\020\005\022\036\n"
           + "\032OUTPUT_AUDIO_ENCODING_ALAW\020\006B\342\002\n"
-          + "#com.google.cloud.dialogflow.v2beta1B\020AudioConfigProtoP\001ZCclo"
-          + "ud.google.com/go/dialogflow/apiv2beta1/d"
-          + "ialogflowpb;dialogflowpb\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2Beta1\352AU\n"
-          + "\033automl.googl"
-          + "eapis.com/Model\0226projects/{project}/locations/{location}/models/{model}\352Ab\n"
-          + "\037speech.googleapis.com/PhraseSet\022?projects/{p"
-          + "roject}/locations/{location}/phraseSets/{phrase_set}b\006proto3"
+          + "#com.google.cloud.dialogflow.v2beta1B\020AudioConfigPr"
+          + "otoP\001ZCcloud.google.com/go/dialogflow/ap"
+          + "iv2beta1/dialogflowpb;dialogflowpb\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2Beta1\352AU\n"
+          + "\033automl.googleapis.com/Model\0226projects/{pro"
+          + "ject}/locations/{location}/models/{model}\352Ab\n"
+          + "\037speech.googleapis.com/PhraseSet\022?projects/{project}/locations/{location}/p"
+          + "hraseSets/{phrase_set}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -267,10 +281,23 @@ public final class AudioConfigProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_SynthesizeSpeechConfig_descriptor,
             new java.lang.String[] {
-              "SpeakingRate", "Pitch", "VolumeGainDb", "EffectsProfileId", "Voice",
+              "SpeakingRate",
+              "Pitch",
+              "VolumeGainDb",
+              "EffectsProfileId",
+              "Voice",
+              "Pronunciations",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_CustomPronunciationParams_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_dialogflow_v2beta1_CustomPronunciationParams_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_CustomPronunciationParams_descriptor,
+            new java.lang.String[] {
+              "Phrase", "PhoneticEncoding", "Pronunciation",
             });
     internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_descriptor,
@@ -278,7 +305,7 @@ public final class AudioConfigProto {
               "AudioEncoding", "SampleRateHertz", "SynthesizeSpeechConfig",
             });
     internal_static_google_cloud_dialogflow_v2beta1_TelephonyDtmfEvents_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_dialogflow_v2beta1_TelephonyDtmfEvents_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_TelephonyDtmfEvents_descriptor,
@@ -286,7 +313,7 @@ public final class AudioConfigProto {
               "DtmfEvents",
             });
     internal_static_google_cloud_dialogflow_v2beta1_SpeechToTextConfig_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_dialogflow_v2beta1_SpeechToTextConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_SpeechToTextConfig_descriptor,

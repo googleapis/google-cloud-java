@@ -24,7 +24,6 @@ package com.google.cloud.networkmanagement.v1;
  *
  * <pre>
  * For display only. Metadata associated with a Compute Engine network.
- * Next ID: 7
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkmanagement.v1.NetworkInfo}
@@ -535,7 +534,6 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * For display only. Metadata associated with a Compute Engine network.
-   * Next ID: 7
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkmanagement.v1.NetworkInfo}

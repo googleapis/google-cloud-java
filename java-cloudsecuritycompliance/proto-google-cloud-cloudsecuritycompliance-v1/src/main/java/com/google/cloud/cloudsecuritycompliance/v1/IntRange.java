@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Number range for number parameters.
+ * The number range for number parameters.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.IntRange}
@@ -69,7 +69,8 @@ public final class IntRange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Minimum allowed value for the numeric parameter (inclusive).
+   * Required. The minimum permitted value for the numeric parameter
+   * (inclusive).
    * </pre>
    *
    * <code>int64 min = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -88,7 +89,8 @@ public final class IntRange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Maximum allowed value for the numeric parameter (inclusive).
+   * Required. The maximum permitted value for the numeric parameter
+   * (inclusive).
    * </pre>
    *
    * <code>int64 max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -273,7 +275,7 @@ public final class IntRange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Number range for number parameters.
+   * The number range for number parameters.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.IntRange}
@@ -469,7 +471,8 @@ public final class IntRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Minimum allowed value for the numeric parameter (inclusive).
+     * Required. The minimum permitted value for the numeric parameter
+     * (inclusive).
      * </pre>
      *
      * <code>int64 min = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -485,7 +488,8 @@ public final class IntRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Minimum allowed value for the numeric parameter (inclusive).
+     * Required. The minimum permitted value for the numeric parameter
+     * (inclusive).
      * </pre>
      *
      * <code>int64 min = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -505,7 +509,8 @@ public final class IntRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Minimum allowed value for the numeric parameter (inclusive).
+     * Required. The minimum permitted value for the numeric parameter
+     * (inclusive).
      * </pre>
      *
      * <code>int64 min = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -525,7 +530,8 @@ public final class IntRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Maximum allowed value for the numeric parameter (inclusive).
+     * Required. The maximum permitted value for the numeric parameter
+     * (inclusive).
      * </pre>
      *
      * <code>int64 max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -541,7 +547,8 @@ public final class IntRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Maximum allowed value for the numeric parameter (inclusive).
+     * Required. The maximum permitted value for the numeric parameter
+     * (inclusive).
      * </pre>
      *
      * <code>int64 max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -561,7 +568,8 @@ public final class IntRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Maximum allowed value for the numeric parameter (inclusive).
+     * Required. The maximum permitted value for the numeric parameter
+     * (inclusive).
      * </pre>
      *
      * <code>int64 max = 2 [(.google.api.field_behavior) = REQUIRED];</code>

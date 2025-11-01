@@ -33,7 +33,23 @@ public interface AdUnitParentOrBuilder
    * </pre>
    *
    * <code>
-   * string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * optional string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the parentAdUnit field is set.
+   */
+  boolean hasParentAdUnit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The parent of the current AdUnit
+   * Format: `networks/{network_code}/adUnits/{ad_unit_id}`
+   * </pre>
+   *
+   * <code>
+   * optional string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The parentAdUnit.
@@ -49,7 +65,7 @@ public interface AdUnitParentOrBuilder
    * </pre>
    *
    * <code>
-   * string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * optional string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for parentAdUnit.
@@ -63,7 +79,20 @@ public interface AdUnitParentOrBuilder
    * Output only. The display name of the parent AdUnit.
    * </pre>
    *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  boolean hasDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The display name of the parent AdUnit.
+   * </pre>
+   *
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The displayName.
    */
@@ -76,7 +105,7 @@ public interface AdUnitParentOrBuilder
    * Output only. The display name of the parent AdUnit.
    * </pre>
    *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for displayName.
    */
@@ -90,7 +119,21 @@ public interface AdUnitParentOrBuilder
    * purposes of serving the ad.
    * </pre>
    *
-   * <code>string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the adUnitCode field is set.
+   */
+  boolean hasAdUnitCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A string used to uniquely identify the ad unit for the
+   * purposes of serving the ad.
+   * </pre>
+   *
+   * <code>optional string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The adUnitCode.
    */
@@ -104,7 +147,7 @@ public interface AdUnitParentOrBuilder
    * purposes of serving the ad.
    * </pre>
    *
-   * <code>string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for adUnitCode.
    */

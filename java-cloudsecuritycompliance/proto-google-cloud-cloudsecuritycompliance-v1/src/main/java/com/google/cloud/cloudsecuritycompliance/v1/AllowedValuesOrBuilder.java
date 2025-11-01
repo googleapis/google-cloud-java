@@ -28,7 +28,7 @@ public interface AllowedValuesOrBuilder
    *
    *
    * <pre>
-   * Required. List of allowed values for the parameter.
+   * Required. The list of allowed values for the parameter.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface AllowedValuesOrBuilder
    *
    *
    * <pre>
-   * Required. List of allowed values for the parameter.
+   * Required. The list of allowed values for the parameter.
    * </pre>
    *
    * <code>
@@ -54,7 +54,7 @@ public interface AllowedValuesOrBuilder
    *
    *
    * <pre>
-   * Required. List of allowed values for the parameter.
+   * Required. The list of allowed values for the parameter.
    * </pre>
    *
    * <code>
@@ -67,7 +67,7 @@ public interface AllowedValuesOrBuilder
    *
    *
    * <pre>
-   * Required. List of allowed values for the parameter.
+   * Required. The list of allowed values for the parameter.
    * </pre>
    *
    * <code>
@@ -81,7 +81,7 @@ public interface AllowedValuesOrBuilder
    *
    *
    * <pre>
-   * Required. List of allowed values for the parameter.
+   * Required. The list of allowed values for the parameter.
    * </pre>
    *
    * <code>

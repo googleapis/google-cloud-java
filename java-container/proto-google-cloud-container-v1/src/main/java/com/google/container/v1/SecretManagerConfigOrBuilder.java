@@ -49,4 +49,44 @@ public interface SecretManagerConfigOrBuilder
    * @return The enabled.
    */
   boolean getEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Rotation config for secret manager.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.SecretManagerConfig.RotationConfig rotation_config = 2;
+   * </code>
+   *
+   * @return Whether the rotationConfig field is set.
+   */
+  boolean hasRotationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Rotation config for secret manager.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.SecretManagerConfig.RotationConfig rotation_config = 2;
+   * </code>
+   *
+   * @return The rotationConfig.
+   */
+  com.google.container.v1.SecretManagerConfig.RotationConfig getRotationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Rotation config for secret manager.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.SecretManagerConfig.RotationConfig rotation_config = 2;
+   * </code>
+   */
+  com.google.container.v1.SecretManagerConfig.RotationConfigOrBuilder getRotationConfigOrBuilder();
 }

@@ -28,17 +28,20 @@ public interface UpdateCloudControlRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Field mask is used to specify the fields to be overwritten in the
-   * CloudControl resource by the update.
-   * The fields specified in the update_mask are relative to the resource, not
-   * the full request. A field will be overwritten if it is in the mask. If the
-   * user does not provide a mask then all fields present in the request will be
-   * overwritten. The fields that can be updated are:
-   * 1. Display_name
-   * 2. Description
-   * 3. Parameters
-   * 4. Rules
-   * 5. ParameterSpec.
+   * Optional. Use a field mask to specify the fields to be overwritten in the
+   * cloud control during the update.
+   * The fields that you specify in the `update_mask` are relative to the
+   * cloud control, not the full request. A field is overwritten if it is in
+   * the mask. If you don't provide a mask, all fields in the request
+   * are updated.
+   *
+   * You can update the following fields:
+   *
+   * - Display name
+   * - Description
+   * - Parameters
+   * - Rules
+   * - Parameter specification
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -52,17 +55,20 @@ public interface UpdateCloudControlRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Field mask is used to specify the fields to be overwritten in the
-   * CloudControl resource by the update.
-   * The fields specified in the update_mask are relative to the resource, not
-   * the full request. A field will be overwritten if it is in the mask. If the
-   * user does not provide a mask then all fields present in the request will be
-   * overwritten. The fields that can be updated are:
-   * 1. Display_name
-   * 2. Description
-   * 3. Parameters
-   * 4. Rules
-   * 5. ParameterSpec.
+   * Optional. Use a field mask to specify the fields to be overwritten in the
+   * cloud control during the update.
+   * The fields that you specify in the `update_mask` are relative to the
+   * cloud control, not the full request. A field is overwritten if it is in
+   * the mask. If you don't provide a mask, all fields in the request
+   * are updated.
+   *
+   * You can update the following fields:
+   *
+   * - Display name
+   * - Description
+   * - Parameters
+   * - Rules
+   * - Parameter specification
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -76,17 +82,20 @@ public interface UpdateCloudControlRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Field mask is used to specify the fields to be overwritten in the
-   * CloudControl resource by the update.
-   * The fields specified in the update_mask are relative to the resource, not
-   * the full request. A field will be overwritten if it is in the mask. If the
-   * user does not provide a mask then all fields present in the request will be
-   * overwritten. The fields that can be updated are:
-   * 1. Display_name
-   * 2. Description
-   * 3. Parameters
-   * 4. Rules
-   * 5. ParameterSpec.
+   * Optional. Use a field mask to specify the fields to be overwritten in the
+   * cloud control during the update.
+   * The fields that you specify in the `update_mask` are relative to the
+   * cloud control, not the full request. A field is overwritten if it is in
+   * the mask. If you don't provide a mask, all fields in the request
+   * are updated.
+   *
+   * You can update the following fields:
+   *
+   * - Display name
+   * - Description
+   * - Parameters
+   * - Rules
+   * - Parameter specification
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -98,7 +107,7 @@ public interface UpdateCloudControlRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource being updated
+   * Required. The cloud control that you're updating.
    * </pre>
    *
    * <code>
@@ -113,7 +122,7 @@ public interface UpdateCloudControlRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource being updated
+   * Required. The cloud control that you're updating.
    * </pre>
    *
    * <code>
@@ -128,7 +137,7 @@ public interface UpdateCloudControlRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource being updated
+   * Required. The cloud control that you're updating.
    * </pre>
    *
    * <code>

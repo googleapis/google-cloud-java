@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Request message for listing Frameworks.
+ * Request message for [ListFrameworks][].
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ListFrameworksRequest}
@@ -76,7 +76,7 @@ public final class ListFrameworksRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The parent resource name, in the format
    * `organizations/{organization}/locations/{location}`.
-   * Only global location is supported.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -104,7 +104,7 @@ public final class ListFrameworksRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The parent resource name, in the format
    * `organizations/{organization}/locations/{location}`.
-   * Only global location is supported.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -388,7 +388,7 @@ public final class ListFrameworksRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for listing Frameworks.
+   * Request message for [ListFrameworks][].
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ListFrameworksRequest}
@@ -608,7 +608,7 @@ public final class ListFrameworksRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The parent resource name, in the format
      * `organizations/{organization}/locations/{location}`.
-     * Only global location is supported.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -635,7 +635,7 @@ public final class ListFrameworksRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The parent resource name, in the format
      * `organizations/{organization}/locations/{location}`.
-     * Only global location is supported.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -662,7 +662,7 @@ public final class ListFrameworksRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The parent resource name, in the format
      * `organizations/{organization}/locations/{location}`.
-     * Only global location is supported.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -688,7 +688,7 @@ public final class ListFrameworksRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The parent resource name, in the format
      * `organizations/{organization}/locations/{location}`.
-     * Only global location is supported.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -710,7 +710,7 @@ public final class ListFrameworksRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The parent resource name, in the format
      * `organizations/{organization}/locations/{location}`.
-     * Only global location is supported.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>

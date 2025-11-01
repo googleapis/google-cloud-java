@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Response message for ListCloudControlDeployments.
+ * The response message for [ListCloudControlDeployments][].
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ListCloudControlDeploymentsResponse}
@@ -78,7 +78,7 @@ public final class ListCloudControlDeploymentsResponse
    *
    *
    * <pre>
-   * The list of CloudControlDeployments.
+   * The list of cloud control deployments.
    * </pre>
    *
    * <code>
@@ -95,7 +95,7 @@ public final class ListCloudControlDeploymentsResponse
    *
    *
    * <pre>
-   * The list of CloudControlDeployments.
+   * The list of cloud control deployments.
    * </pre>
    *
    * <code>
@@ -113,7 +113,7 @@ public final class ListCloudControlDeploymentsResponse
    *
    *
    * <pre>
-   * The list of CloudControlDeployments.
+   * The list of cloud control deployments.
    * </pre>
    *
    * <code>
@@ -129,7 +129,7 @@ public final class ListCloudControlDeploymentsResponse
    *
    *
    * <pre>
-   * The list of CloudControlDeployments.
+   * The list of cloud control deployments.
    * </pre>
    *
    * <code>
@@ -146,7 +146,7 @@ public final class ListCloudControlDeploymentsResponse
    *
    *
    * <pre>
-   * The list of CloudControlDeployments.
+   * The list of cloud control deployments.
    * </pre>
    *
    * <code>
@@ -168,7 +168,8 @@ public final class ListCloudControlDeploymentsResponse
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * A token that identifies the next page of results that the server
+   * should return.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -192,7 +193,8 @@ public final class ListCloudControlDeploymentsResponse
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * A token that identifies the next page of results that the server
+   * should return.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -399,7 +401,7 @@ public final class ListCloudControlDeploymentsResponse
    *
    *
    * <pre>
-   * Response message for ListCloudControlDeployments.
+   * The response message for [ListCloudControlDeployments][].
    * </pre>
    *
    * Protobuf type {@code
@@ -678,7 +680,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -698,7 +700,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -717,7 +719,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -737,7 +739,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -763,7 +765,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -788,7 +790,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -814,7 +816,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -840,7 +842,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -864,7 +866,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -889,7 +891,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -914,7 +916,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -936,7 +938,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -958,7 +960,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -974,7 +976,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -994,7 +996,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -1015,7 +1017,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -1034,7 +1036,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -1054,7 +1056,7 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * The list of CloudControlDeployments.
+     * The list of cloud control deployments.
      * </pre>
      *
      * <code>
@@ -1093,7 +1095,8 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A token that identifies the next page of results that the server
+     * should return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1116,7 +1119,8 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A token that identifies the next page of results that the server
+     * should return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1139,7 +1143,8 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A token that identifies the next page of results that the server
+     * should return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1161,7 +1166,8 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A token that identifies the next page of results that the server
+     * should return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1179,7 +1185,8 @@ public final class ListCloudControlDeploymentsResponse
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A token that identifies the next page of results that the server
+     * should return.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

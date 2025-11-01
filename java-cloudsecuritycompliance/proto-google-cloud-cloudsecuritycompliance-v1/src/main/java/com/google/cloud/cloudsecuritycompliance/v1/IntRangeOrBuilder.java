@@ -28,7 +28,8 @@ public interface IntRangeOrBuilder
    *
    *
    * <pre>
-   * Required. Minimum allowed value for the numeric parameter (inclusive).
+   * Required. The minimum permitted value for the numeric parameter
+   * (inclusive).
    * </pre>
    *
    * <code>int64 min = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,7 +42,8 @@ public interface IntRangeOrBuilder
    *
    *
    * <pre>
-   * Required. Maximum allowed value for the numeric parameter (inclusive).
+   * Required. The maximum permitted value for the numeric parameter
+   * (inclusive).
    * </pre>
    *
    * <code>int64 max = 2 [(.google.api.field_behavior) = REQUIRED];</code>

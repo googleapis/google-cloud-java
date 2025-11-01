@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * DeploymentState represents the state of the Deployment resource.
+ * The state of the deployment resource.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.cloudsecuritycompliance.v1.DeploymentState}
@@ -33,7 +33,7 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Unspecified. Invalid state.
+   * Default value. This value is unused.
    * </pre>
    *
    * <code>DEPLOYMENT_STATE_UNSPECIFIED = 0;</code>
@@ -53,7 +53,7 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Deployment is in CREATING state.
+   * Deployment is being created.
    * </pre>
    *
    * <code>DEPLOYMENT_STATE_CREATING = 2;</code>
@@ -63,7 +63,7 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Deployment is in DELETING state.
+   * Deployment is being deleted.
    * </pre>
    *
    * <code>DEPLOYMENT_STATE_DELETING = 3;</code>
@@ -73,9 +73,9 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Deployment has failed. All the changes made by the deployment have been
-   * successfully rolled back. A deployment in the FAILED state can be retried
-   * or deleted.
+   * Deployment has failed. All the changes made by the deployment were
+   * successfully rolled back. You can retry or delete a deployment that's
+   * in this state.
    * </pre>
    *
    * <code>DEPLOYMENT_STATE_FAILED = 4;</code>
@@ -95,8 +95,8 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Deployment is partially deployed. All the Cloud Controls were not deployed
-   * successfully. Retrying the operation will resume from the first failed
+   * Deployment is partially deployed. All the cloud controls weren't deployed
+   * successfully. Retrying the operation resumes from the first failed
    * step.
    * </pre>
    *
@@ -107,8 +107,8 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Deployment is partially deleted. All the Cloud Control Deployments were not
-   * deleted successfully. Retrying the operation will resume from the first
+   * Deployment is partially deleted. All the cloud control deployments weren't
+   * deleted successfully. Retrying the operation resumes from the first
    * failed step.
    * </pre>
    *
@@ -122,7 +122,7 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Unspecified. Invalid state.
+   * Default value. This value is unused.
    * </pre>
    *
    * <code>DEPLOYMENT_STATE_UNSPECIFIED = 0;</code>
@@ -144,7 +144,7 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Deployment is in CREATING state.
+   * Deployment is being created.
    * </pre>
    *
    * <code>DEPLOYMENT_STATE_CREATING = 2;</code>
@@ -155,7 +155,7 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Deployment is in DELETING state.
+   * Deployment is being deleted.
    * </pre>
    *
    * <code>DEPLOYMENT_STATE_DELETING = 3;</code>
@@ -166,9 +166,9 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Deployment has failed. All the changes made by the deployment have been
-   * successfully rolled back. A deployment in the FAILED state can be retried
-   * or deleted.
+   * Deployment has failed. All the changes made by the deployment were
+   * successfully rolled back. You can retry or delete a deployment that's
+   * in this state.
    * </pre>
    *
    * <code>DEPLOYMENT_STATE_FAILED = 4;</code>
@@ -190,8 +190,8 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Deployment is partially deployed. All the Cloud Controls were not deployed
-   * successfully. Retrying the operation will resume from the first failed
+   * Deployment is partially deployed. All the cloud controls weren't deployed
+   * successfully. Retrying the operation resumes from the first failed
    * step.
    * </pre>
    *
@@ -203,8 +203,8 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Deployment is partially deleted. All the Cloud Control Deployments were not
-   * deleted successfully. Retrying the operation will resume from the first
+   * Deployment is partially deleted. All the cloud control deployments weren't
+   * deleted successfully. Retrying the operation resumes from the first
    * failed step.
    * </pre>
    *

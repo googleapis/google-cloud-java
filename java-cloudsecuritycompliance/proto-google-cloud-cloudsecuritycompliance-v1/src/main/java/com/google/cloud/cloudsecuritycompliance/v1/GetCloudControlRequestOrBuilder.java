@@ -28,8 +28,9 @@ public interface GetCloudControlRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the cloudcontrol to retrieve in the format:
-   * organizations/{organization}/locations/{location}/cloudControls/{cloud_control}
+   * Required. The name of the cloud control to retrieve, in the format
+   * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -44,8 +45,9 @@ public interface GetCloudControlRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the cloudcontrol to retrieve in the format:
-   * organizations/{organization}/locations/{location}/cloudControls/{cloud_control}
+   * Required. The name of the cloud control to retrieve, in the format
+   * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -55,4 +57,18 @@ public interface GetCloudControlRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The major version of the cloud control to retrieve. If not
+   * specified, the most recently updated `revision_id` is retrieved.
+   * </pre>
+   *
+   * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The majorRevisionId.
+   */
+  long getMajorRevisionId();
 }

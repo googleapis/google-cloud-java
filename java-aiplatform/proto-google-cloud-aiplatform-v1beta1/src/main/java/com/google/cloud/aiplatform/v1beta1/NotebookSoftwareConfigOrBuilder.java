@@ -139,6 +139,12 @@ public interface NotebookSoftwareConfigOrBuilder
   com.google.cloud.aiplatform.v1beta1.EnvVarOrBuilder getEnvOrBuilder(int index);
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. Post-startup script config.
+   * </pre>
+   *
    * <code>
    * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig post_startup_script_config = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
@@ -148,6 +154,12 @@ public interface NotebookSoftwareConfigOrBuilder
   boolean hasPostStartupScriptConfig();
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. Post-startup script config.
+   * </pre>
+   *
    * <code>
    * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig post_startup_script_config = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
@@ -157,6 +169,12 @@ public interface NotebookSoftwareConfigOrBuilder
   com.google.cloud.aiplatform.v1beta1.PostStartupScriptConfig getPostStartupScriptConfig();
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. Post-startup script config.
+   * </pre>
+   *
    * <code>
    * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig post_startup_script_config = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>

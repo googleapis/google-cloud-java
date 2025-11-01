@@ -1681,6 +1681,25 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         : failureDetails_;
   }
 
+  public static final int ENABLE_METASTORE_ENCRYPTION_FIELD_NUMBER = 8;
+  private boolean enableMetastoreEncryption_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represent the state of CMEK opt-in for metastore.
+   * </pre>
+   *
+   * <code>bool enable_metastore_encryption = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableMetastoreEncryption.
+   */
+  @java.lang.Override
+  public boolean getEnableMetastoreEncryption() {
+    return enableMetastoreEncryption_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1719,6 +1738,9 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(7, getFailureDetails());
     }
+    if (enableMetastoreEncryption_ != false) {
+      output.writeBool(8, enableMetastoreEncryption_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1752,6 +1774,9 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getFailureDetails());
     }
+    if (enableMetastoreEncryption_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, enableMetastoreEncryption_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1784,6 +1809,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     if (hasFailureDetails()) {
       if (!getFailureDetails().equals(other.getFailureDetails())) return false;
     }
+    if (getEnableMetastoreEncryption() != other.getEnableMetastoreEncryption()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1815,6 +1841,8 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + FAILURE_DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getFailureDetails().hashCode();
     }
+    hash = (37 * hash) + ENABLE_METASTORE_ENCRYPTION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableMetastoreEncryption());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1986,6 +2014,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         failureDetailsBuilder_.dispose();
         failureDetailsBuilder_ = null;
       }
+      enableMetastoreEncryption_ = false;
       return this;
     }
 
@@ -2047,6 +2076,9 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         result.failureDetails_ =
             failureDetailsBuilder_ == null ? failureDetails_ : failureDetailsBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.enableMetastoreEncryption_ = enableMetastoreEncryption_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2123,6 +2155,9 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       if (other.hasFailureDetails()) {
         mergeFailureDetails(other.getFailureDetails());
       }
+      if (other.getEnableMetastoreEncryption() != false) {
+        setEnableMetastoreEncryption(other.getEnableMetastoreEncryption());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2191,6 +2226,12 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 64:
+              {
+                enableMetastoreEncryption_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3327,6 +3368,62 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         failureDetails_ = null;
       }
       return failureDetailsBuilder_;
+    }
+
+    private boolean enableMetastoreEncryption_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represent the state of CMEK opt-in for metastore.
+     * </pre>
+     *
+     * <code>bool enable_metastore_encryption = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableMetastoreEncryption.
+     */
+    @java.lang.Override
+    public boolean getEnableMetastoreEncryption() {
+      return enableMetastoreEncryption_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represent the state of CMEK opt-in for metastore.
+     * </pre>
+     *
+     * <code>bool enable_metastore_encryption = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableMetastoreEncryption to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableMetastoreEncryption(boolean value) {
+
+      enableMetastoreEncryption_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represent the state of CMEK opt-in for metastore.
+     * </pre>
+     *
+     * <code>bool enable_metastore_encryption = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableMetastoreEncryption() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      enableMetastoreEncryption_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -565,8 +565,7 @@ public interface OrderOrBuilder
    *
    * <pre>
    * Output only. The resource name of the User who created the Order on behalf
-   * of the advertiser. This value is assigned by Google. Format:
-   * "networks/{network_code}/users/{user_id}"
+   * of the advertiser. Format: "networks/{network_code}/users/{user_id}"
    * </pre>
    *
    * <code>
@@ -582,8 +581,7 @@ public interface OrderOrBuilder
    *
    * <pre>
    * Output only. The resource name of the User who created the Order on behalf
-   * of the advertiser. This value is assigned by Google. Format:
-   * "networks/{network_code}/users/{user_id}"
+   * of the advertiser. Format: "networks/{network_code}/users/{user_id}"
    * </pre>
    *
    * <code>
@@ -599,8 +597,7 @@ public interface OrderOrBuilder
    *
    * <pre>
    * Output only. The resource name of the User who created the Order on behalf
-   * of the advertiser. This value is assigned by Google. Format:
-   * "networks/{network_code}/users/{user_id}"
+   * of the advertiser. Format: "networks/{network_code}/users/{user_id}"
    * </pre>
    *
    * <code>
@@ -657,9 +654,9 @@ public interface OrderOrBuilder
    *
    *
    * <pre>
-   * Output only. The instant at which the Order and its associated line items
-   * are eligible to begin serving. This attribute is derived from the line item
-   * of the order that has the earliest LineItem.start_time.
+   * Output only. The instant at which the Order and its associated Line items
+   * are eligible to begin serving. This attribute is derived from the Line item
+   * of the order that has the earliest `LineItem.start_time`.
    * </pre>
    *
    * <code>
@@ -674,9 +671,9 @@ public interface OrderOrBuilder
    *
    *
    * <pre>
-   * Output only. The instant at which the Order and its associated line items
-   * are eligible to begin serving. This attribute is derived from the line item
-   * of the order that has the earliest LineItem.start_time.
+   * Output only. The instant at which the Order and its associated Line items
+   * are eligible to begin serving. This attribute is derived from the Line item
+   * of the order that has the earliest `LineItem.start_time`.
    * </pre>
    *
    * <code>
@@ -691,9 +688,9 @@ public interface OrderOrBuilder
    *
    *
    * <pre>
-   * Output only. The instant at which the Order and its associated line items
-   * are eligible to begin serving. This attribute is derived from the line item
-   * of the order that has the earliest LineItem.start_time.
+   * Output only. The instant at which the Order and its associated Line items
+   * are eligible to begin serving. This attribute is derived from the Line item
+   * of the order that has the earliest `LineItem.start_time`.
    * </pre>
    *
    * <code>
@@ -706,9 +703,9 @@ public interface OrderOrBuilder
    *
    *
    * <pre>
-   * Output only. The instant at which the Order and its associated line items
-   * stop being served. This attribute is derived from the line item of the
-   * order that has the latest LineItem.end_time.
+   * Output only. The instant at which the Order and its associated Line items
+   * stop being served. This attribute is derived from the Line item of the
+   * order that has the latest `LineItem.end_time`.
    * </pre>
    *
    * <code>
@@ -723,9 +720,9 @@ public interface OrderOrBuilder
    *
    *
    * <pre>
-   * Output only. The instant at which the Order and its associated line items
-   * stop being served. This attribute is derived from the line item of the
-   * order that has the latest LineItem.end_time.
+   * Output only. The instant at which the Order and its associated Line items
+   * stop being served. This attribute is derived from the Line item of the
+   * order that has the latest `LineItem.end_time`.
    * </pre>
    *
    * <code>
@@ -740,9 +737,9 @@ public interface OrderOrBuilder
    *
    *
    * <pre>
-   * Output only. The instant at which the Order and its associated line items
-   * stop being served. This attribute is derived from the line item of the
-   * order that has the latest LineItem.end_time.
+   * Output only. The instant at which the Order and its associated Line items
+   * stop being served. This attribute is derived from the Line item of the
+   * order that has the latest `LineItem.end_time`.
    * </pre>
    *
    * <code>

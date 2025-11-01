@@ -41,6 +41,8 @@ public class AsyncListCloudExadataInfrastructures {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
+              .setOrderBy("orderBy-1207110587")
               .build();
       ApiFuture<CloudExadataInfrastructure> future =
           oracleDatabaseClient.listCloudExadataInfrastructuresPagedCallable().futureCall(request);

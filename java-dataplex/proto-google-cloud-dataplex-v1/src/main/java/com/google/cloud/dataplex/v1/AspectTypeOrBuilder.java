@@ -313,6 +313,36 @@ public interface AspectTypeOrBuilder
    *
    *
    * <pre>
+   * Optional. Immutable. Stores data classification of the aspect.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.AspectType.DataClassification data_classification = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for dataClassification.
+   */
+  int getDataClassificationValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Stores data classification of the aspect.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.AspectType.DataClassification data_classification = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The dataClassification.
+   */
+  com.google.cloud.dataplex.v1.AspectType.DataClassification getDataClassification();
+
+  /**
+   *
+   *
+   * <pre>
    * Immutable. Defines the Authorization for this type.
    * </pre>
    *

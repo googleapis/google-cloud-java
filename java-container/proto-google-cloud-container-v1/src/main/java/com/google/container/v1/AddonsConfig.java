@@ -198,7 +198,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1812
+   *     google/container/v1/cluster_service.proto;l=1862
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Override
@@ -222,7 +222,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1812
+   *     google/container/v1/cluster_service.proto;l=1862
    * @return The kubernetesDashboard.
    */
   @java.lang.Override
@@ -431,7 +431,8 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Configuration for the ConfigConnector add-on, a Kubernetes
-   * extension to manage hosted GCP services through the Kubernetes API
+   * extension to manage hosted Google Cloud services through the Kubernetes
+   * API.
    * </pre>
    *
    * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
@@ -448,7 +449,8 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Configuration for the ConfigConnector add-on, a Kubernetes
-   * extension to manage hosted GCP services through the Kubernetes API
+   * extension to manage hosted Google Cloud services through the Kubernetes
+   * API.
    * </pre>
    *
    * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
@@ -467,7 +469,8 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Configuration for the ConfigConnector add-on, a Kubernetes
-   * extension to manage hosted GCP services through the Kubernetes API
+   * extension to manage hosted Google Cloud services through the Kubernetes
+   * API.
    * </pre>
    *
    * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
@@ -549,7 +552,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration for the GCP Filestore CSI driver.
+   * Configuration for the Filestore CSI driver.
    * </pre>
    *
    * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
@@ -566,7 +569,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration for the GCP Filestore CSI driver.
+   * Configuration for the Filestore CSI driver.
    * </pre>
    *
    * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
@@ -585,7 +588,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration for the GCP Filestore CSI driver.
+   * Configuration for the Filestore CSI driver.
    * </pre>
    *
    * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
@@ -2367,7 +2370,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1812
+     *     google/container/v1/cluster_service.proto;l=1862
      * @return Whether the kubernetesDashboard field is set.
      */
     @java.lang.Deprecated
@@ -2390,7 +2393,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1812
+     *     google/container/v1/cluster_service.proto;l=1862
      * @return The kubernetesDashboard.
      */
     @java.lang.Deprecated
@@ -3223,7 +3226,8 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration for the ConfigConnector add-on, a Kubernetes
-     * extension to manage hosted GCP services through the Kubernetes API
+     * extension to manage hosted Google Cloud services through the Kubernetes
+     * API.
      * </pre>
      *
      * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
@@ -3239,7 +3243,8 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration for the ConfigConnector add-on, a Kubernetes
-     * extension to manage hosted GCP services through the Kubernetes API
+     * extension to manage hosted Google Cloud services through the Kubernetes
+     * API.
      * </pre>
      *
      * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
@@ -3261,7 +3266,8 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration for the ConfigConnector add-on, a Kubernetes
-     * extension to manage hosted GCP services through the Kubernetes API
+     * extension to manage hosted Google Cloud services through the Kubernetes
+     * API.
      * </pre>
      *
      * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
@@ -3285,7 +3291,8 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration for the ConfigConnector add-on, a Kubernetes
-     * extension to manage hosted GCP services through the Kubernetes API
+     * extension to manage hosted Google Cloud services through the Kubernetes
+     * API.
      * </pre>
      *
      * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
@@ -3307,7 +3314,8 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration for the ConfigConnector add-on, a Kubernetes
-     * extension to manage hosted GCP services through the Kubernetes API
+     * extension to manage hosted Google Cloud services through the Kubernetes
+     * API.
      * </pre>
      *
      * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
@@ -3337,7 +3345,8 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration for the ConfigConnector add-on, a Kubernetes
-     * extension to manage hosted GCP services through the Kubernetes API
+     * extension to manage hosted Google Cloud services through the Kubernetes
+     * API.
      * </pre>
      *
      * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
@@ -3358,7 +3367,8 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration for the ConfigConnector add-on, a Kubernetes
-     * extension to manage hosted GCP services through the Kubernetes API
+     * extension to manage hosted Google Cloud services through the Kubernetes
+     * API.
      * </pre>
      *
      * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
@@ -3374,7 +3384,8 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration for the ConfigConnector add-on, a Kubernetes
-     * extension to manage hosted GCP services through the Kubernetes API
+     * extension to manage hosted Google Cloud services through the Kubernetes
+     * API.
      * </pre>
      *
      * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
@@ -3395,7 +3406,8 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration for the ConfigConnector add-on, a Kubernetes
-     * extension to manage hosted GCP services through the Kubernetes API
+     * extension to manage hosted Google Cloud services through the Kubernetes
+     * API.
      * </pre>
      *
      * <code>.google.container.v1.ConfigConnectorConfig config_connector_config = 10;</code>
@@ -3648,7 +3660,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for the GCP Filestore CSI driver.
+     * Configuration for the Filestore CSI driver.
      * </pre>
      *
      * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
@@ -3664,7 +3676,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for the GCP Filestore CSI driver.
+     * Configuration for the Filestore CSI driver.
      * </pre>
      *
      * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
@@ -3686,7 +3698,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for the GCP Filestore CSI driver.
+     * Configuration for the Filestore CSI driver.
      * </pre>
      *
      * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
@@ -3711,7 +3723,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for the GCP Filestore CSI driver.
+     * Configuration for the Filestore CSI driver.
      * </pre>
      *
      * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
@@ -3733,7 +3745,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for the GCP Filestore CSI driver.
+     * Configuration for the Filestore CSI driver.
      * </pre>
      *
      * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
@@ -3764,7 +3776,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for the GCP Filestore CSI driver.
+     * Configuration for the Filestore CSI driver.
      * </pre>
      *
      * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
@@ -3785,7 +3797,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for the GCP Filestore CSI driver.
+     * Configuration for the Filestore CSI driver.
      * </pre>
      *
      * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
@@ -3802,7 +3814,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for the GCP Filestore CSI driver.
+     * Configuration for the Filestore CSI driver.
      * </pre>
      *
      * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;
@@ -3823,7 +3835,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for the GCP Filestore CSI driver.
+     * Configuration for the Filestore CSI driver.
      * </pre>
      *
      * <code>.google.container.v1.GcpFilestoreCsiDriverConfig gcp_filestore_csi_driver_config = 14;

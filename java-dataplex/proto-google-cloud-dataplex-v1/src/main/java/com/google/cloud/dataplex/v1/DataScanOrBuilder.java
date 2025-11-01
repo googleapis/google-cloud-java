@@ -600,6 +600,43 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
+   * Settings for a data documentation scan.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103;</code>
+   *
+   * @return Whether the dataDocumentationSpec field is set.
+   */
+  boolean hasDataDocumentationSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Settings for a data documentation scan.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103;</code>
+   *
+   * @return The dataDocumentationSpec.
+   */
+  com.google.cloud.dataplex.v1.DataDocumentationSpec getDataDocumentationSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Settings for a data documentation scan.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103;</code>
+   */
+  com.google.cloud.dataplex.v1.DataDocumentationSpecOrBuilder getDataDocumentationSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The result of a data quality scan.
    * </pre>
    *
@@ -724,6 +761,50 @@ public interface DataScanOrBuilder
    * </code>
    */
   com.google.cloud.dataplex.v1.DataDiscoveryResultOrBuilder getDataDiscoveryResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data documentation scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataDocumentationResult field is set.
+   */
+  boolean hasDataDocumentationResult();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data documentation scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataDocumentationResult.
+   */
+  com.google.cloud.dataplex.v1.DataDocumentationResult getDataDocumentationResult();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data documentation scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataDocumentationResultOrBuilder
+      getDataDocumentationResultOrBuilder();
 
   com.google.cloud.dataplex.v1.DataScan.SpecCase getSpecCase();
 

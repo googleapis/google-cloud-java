@@ -23,9 +23,9 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * FrameworkDeployment represents deployment of a Framework on a target
- * resource. Supported target resources are organizations/{organization},
- * folders/{folder}, and projects/{project}.
+ * Framework deployments represent the assignment of a framework to a target
+ * resource. Supported target resources are organizations, folders, and
+ * projects.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.FrameworkDeployment}
@@ -83,8 +83,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Identifier. FrameworkDeployment name in the following format:
-   * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+   * Identifier. The name of the framework deployment, in the format
+   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -108,8 +109,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Identifier. FrameworkDeployment name in the following format:
-   * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+   * Identifier. The name of the framework deployment, in the format
+   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -136,9 +138,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The details of the target resource on which the Framework is to
-   * be deployed. It can either be an existing target resource or a new target
-   * resource to be created.
+   * Required. The details of the target resource that you want to deploy the
+   * framework to. You can specify an existing resource, or create a new one.
    * </pre>
    *
    * <code>
@@ -156,9 +157,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The details of the target resource on which the Framework is to
-   * be deployed. It can either be an existing target resource or a new target
-   * resource to be created.
+   * Required. The details of the target resource that you want to deploy the
+   * framework to. You can specify an existing resource, or create a new one.
    * </pre>
    *
    * <code>
@@ -179,9 +179,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The details of the target resource on which the Framework is to
-   * be deployed. It can either be an existing target resource or a new target
-   * resource to be created.
+   * Required. The details of the target resource that you want to deploy the
+   * framework to. You can specify an existing resource, or create a new one.
    * </pre>
    *
    * <code>
@@ -205,9 +204,12 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The resource on which the Framework is deployed based on the
-   * provided TargetResourceConfig in the following format:
-   * organizations/{organization}, folders/{folder} or projects/{project}
+   * Output only. The target resource to deploy the framework to, in one  the
+   * following formats:
+   *
+   * - `organizations/{organizationID}`
+   * - `folders/{folderID}`
+   * - `projects/{projectID}`
    * </pre>
    *
    * <code>string computed_target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -231,9 +233,12 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The resource on which the Framework is deployed based on the
-   * provided TargetResourceConfig in the following format:
-   * organizations/{organization}, folders/{folder} or projects/{project}
+   * Output only. The target resource to deploy the framework to, in one  the
+   * following formats:
+   *
+   * - `organizations/{organizationID}`
+   * - `folders/{folderID}`
+   * - `projects/{projectID}`
    * </pre>
    *
    * <code>string computed_target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -260,7 +265,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Reference to the framework to be deployed.
+   * Required. A reference to the framework that you're deploying.
    * </pre>
    *
    * <code>
@@ -278,7 +283,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Reference to the framework to be deployed.
+   * Required. A reference to the framework that you're deploying.
    * </pre>
    *
    * <code>
@@ -298,7 +303,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Reference to the framework to be deployed.
+   * Required. A reference to the framework that you're deploying.
    * </pre>
    *
    * <code>
@@ -322,7 +327,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. User provided description of the Framework deployment
+   * Optional. A user-provided description of the framework deployment.
    * </pre>
    *
    * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -346,7 +351,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. User provided description of the Framework deployment
+   * Optional. A user-provided description of the framework deployment.
    * </pre>
    *
    * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -376,9 +381,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Deployment mode and parameters for each of the Cloud Controls in
-   * the framework. Every Cloud Control in the framework must have a
-   * CloudControlMetadata.
+   * Required. The deployment mode and parameters for each of the cloud controls
+   * in the framework. Every cloud control in the framework includes metadata.
    * </pre>
    *
    * <code>
@@ -395,9 +399,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Deployment mode and parameters for each of the Cloud Controls in
-   * the framework. Every Cloud Control in the framework must have a
-   * CloudControlMetadata.
+   * Required. The deployment mode and parameters for each of the cloud controls
+   * in the framework. Every cloud control in the framework includes metadata.
    * </pre>
    *
    * <code>
@@ -415,9 +418,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Deployment mode and parameters for each of the Cloud Controls in
-   * the framework. Every Cloud Control in the framework must have a
-   * CloudControlMetadata.
+   * Required. The deployment mode and parameters for each of the cloud controls
+   * in the framework. Every cloud control in the framework includes metadata.
    * </pre>
    *
    * <code>
@@ -433,9 +435,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Deployment mode and parameters for each of the Cloud Controls in
-   * the framework. Every Cloud Control in the framework must have a
-   * CloudControlMetadata.
+   * Required. The deployment mode and parameters for each of the cloud controls
+   * in the framework. Every cloud control in the framework includes metadata.
    * </pre>
    *
    * <code>
@@ -452,9 +453,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Deployment mode and parameters for each of the Cloud Controls in
-   * the framework. Every Cloud Control in the framework must have a
-   * CloudControlMetadata.
+   * Required. The deployment mode and parameters for each of the cloud controls
+   * in the framework. Every cloud control in the framework includes metadata.
    * </pre>
    *
    * <code>
@@ -474,7 +474,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. State of the Framework Deployment
+   * Output only. The state for the framework deployment.
    * </pre>
    *
    * <code>
@@ -492,7 +492,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. State of the Framework Deployment
+   * Output only. The state for the framework deployment.
    * </pre>
    *
    * <code>
@@ -624,10 +624,10 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. To prevent concurrent updates from overwriting each other, always
-   * provide the `etag` when you update a FrameworkDeployment. You can also
-   * provide the `etag` when you delete a FrameworkDeployment, to help
+   * provide the `etag` when you update a framework deployment. You can also
+   * provide the `etag` when you delete a framework deployment, to help
    * ensure that you're deleting the intended version of the
-   * FrameworkDeployment.
+   * framework deployment.
    * </pre>
    *
    * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -652,10 +652,10 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. To prevent concurrent updates from overwriting each other, always
-   * provide the `etag` when you update a FrameworkDeployment. You can also
-   * provide the `etag` when you delete a FrameworkDeployment, to help
+   * provide the `etag` when you update a framework deployment. You can also
+   * provide the `etag` when you delete a framework deployment, to help
    * ensure that you're deleting the intended version of the
-   * FrameworkDeployment.
+   * framework deployment.
    * </pre>
    *
    * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -741,11 +741,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The references to the cloud control deployments. It has all
-   * the CloudControlDeployments which are either directly added in the
-   * framework or through a CloudControlGroup. Example: If a framework
-   * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-   * then the cloud_control_deployment_references will be:
+   * Output only. The references to the cloud control deployments. The reference
+   * includes all the cloud control deployments that are in the framework or in
+   * a cloud control group.
+   *
+   * For example, if a framework deployment deploys two
+   * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+   * references are:
+   *
+   * ```
    * {
    *  cloud_control_deployment_reference: {
    *    cloud_control_deployment:
@@ -755,6 +759,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *   cloud_control_deployment:
    *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
    *  }
+   * ```
    * </pre>
    *
    * <code>
@@ -771,11 +776,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The references to the cloud control deployments. It has all
-   * the CloudControlDeployments which are either directly added in the
-   * framework or through a CloudControlGroup. Example: If a framework
-   * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-   * then the cloud_control_deployment_references will be:
+   * Output only. The references to the cloud control deployments. The reference
+   * includes all the cloud control deployments that are in the framework or in
+   * a cloud control group.
+   *
+   * For example, if a framework deployment deploys two
+   * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+   * references are:
+   *
+   * ```
    * {
    *  cloud_control_deployment_reference: {
    *    cloud_control_deployment:
@@ -785,6 +794,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *   cloud_control_deployment:
    *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
    *  }
+   * ```
    * </pre>
    *
    * <code>
@@ -803,11 +813,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The references to the cloud control deployments. It has all
-   * the CloudControlDeployments which are either directly added in the
-   * framework or through a CloudControlGroup. Example: If a framework
-   * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-   * then the cloud_control_deployment_references will be:
+   * Output only. The references to the cloud control deployments. The reference
+   * includes all the cloud control deployments that are in the framework or in
+   * a cloud control group.
+   *
+   * For example, if a framework deployment deploys two
+   * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+   * references are:
+   *
+   * ```
    * {
    *  cloud_control_deployment_reference: {
    *    cloud_control_deployment:
@@ -817,6 +831,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *   cloud_control_deployment:
    *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
    *  }
+   * ```
    * </pre>
    *
    * <code>
@@ -832,11 +847,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The references to the cloud control deployments. It has all
-   * the CloudControlDeployments which are either directly added in the
-   * framework or through a CloudControlGroup. Example: If a framework
-   * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-   * then the cloud_control_deployment_references will be:
+   * Output only. The references to the cloud control deployments. The reference
+   * includes all the cloud control deployments that are in the framework or in
+   * a cloud control group.
+   *
+   * For example, if a framework deployment deploys two
+   * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+   * references are:
+   *
+   * ```
    * {
    *  cloud_control_deployment_reference: {
    *    cloud_control_deployment:
@@ -846,6 +865,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *   cloud_control_deployment:
    *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
    *  }
+   * ```
    * </pre>
    *
    * <code>
@@ -862,11 +882,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The references to the cloud control deployments. It has all
-   * the CloudControlDeployments which are either directly added in the
-   * framework or through a CloudControlGroup. Example: If a framework
-   * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-   * then the cloud_control_deployment_references will be:
+   * Output only. The references to the cloud control deployments. The reference
+   * includes all the cloud control deployments that are in the framework or in
+   * a cloud control group.
+   *
+   * For example, if a framework deployment deploys two
+   * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+   * references are:
+   *
+   * ```
    * {
    *  cloud_control_deployment_reference: {
    *    cloud_control_deployment:
@@ -876,6 +900,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *   cloud_control_deployment:
    *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
    *  }
+   * ```
    * </pre>
    *
    * <code>
@@ -1186,9 +1211,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * FrameworkDeployment represents deployment of a Framework on a target
-   * resource. Supported target resources are organizations/{organization},
-   * folders/{folder}, and projects/{project}.
+   * Framework deployments represent the assignment of a framework to a target
+   * resource. Supported target resources are organizations, folders, and
+   * projects.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.FrameworkDeployment}
@@ -1664,8 +1689,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier. FrameworkDeployment name in the following format:
-     * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+     * Identifier. The name of the framework deployment, in the format
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1688,8 +1714,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier. FrameworkDeployment name in the following format:
-     * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+     * Identifier. The name of the framework deployment, in the format
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1712,8 +1739,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier. FrameworkDeployment name in the following format:
-     * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+     * Identifier. The name of the framework deployment, in the format
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1735,8 +1763,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier. FrameworkDeployment name in the following format:
-     * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+     * Identifier. The name of the framework deployment, in the format
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1754,8 +1783,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier. FrameworkDeployment name in the following format:
-     * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+     * Identifier. The name of the framework deployment, in the format
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1785,9 +1815,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The details of the target resource on which the Framework is to
-     * be deployed. It can either be an existing target resource or a new target
-     * resource to be created.
+     * Required. The details of the target resource that you want to deploy the
+     * framework to. You can specify an existing resource, or create a new one.
      * </pre>
      *
      * <code>
@@ -1804,9 +1833,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The details of the target resource on which the Framework is to
-     * be deployed. It can either be an existing target resource or a new target
-     * resource to be created.
+     * Required. The details of the target resource that you want to deploy the
+     * framework to. You can specify an existing resource, or create a new one.
      * </pre>
      *
      * <code>
@@ -1830,9 +1858,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The details of the target resource on which the Framework is to
-     * be deployed. It can either be an existing target resource or a new target
-     * resource to be created.
+     * Required. The details of the target resource that you want to deploy the
+     * framework to. You can specify an existing resource, or create a new one.
      * </pre>
      *
      * <code>
@@ -1858,9 +1885,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The details of the target resource on which the Framework is to
-     * be deployed. It can either be an existing target resource or a new target
-     * resource to be created.
+     * Required. The details of the target resource that you want to deploy the
+     * framework to. You can specify an existing resource, or create a new one.
      * </pre>
      *
      * <code>
@@ -1883,9 +1909,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The details of the target resource on which the Framework is to
-     * be deployed. It can either be an existing target resource or a new target
-     * resource to be created.
+     * Required. The details of the target resource that you want to deploy the
+     * framework to. You can specify an existing resource, or create a new one.
      * </pre>
      *
      * <code>
@@ -1918,9 +1943,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The details of the target resource on which the Framework is to
-     * be deployed. It can either be an existing target resource or a new target
-     * resource to be created.
+     * Required. The details of the target resource that you want to deploy the
+     * framework to. You can specify an existing resource, or create a new one.
      * </pre>
      *
      * <code>
@@ -1942,9 +1966,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The details of the target resource on which the Framework is to
-     * be deployed. It can either be an existing target resource or a new target
-     * resource to be created.
+     * Required. The details of the target resource that you want to deploy the
+     * framework to. You can specify an existing resource, or create a new one.
      * </pre>
      *
      * <code>
@@ -1962,9 +1985,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The details of the target resource on which the Framework is to
-     * be deployed. It can either be an existing target resource or a new target
-     * resource to be created.
+     * Required. The details of the target resource that you want to deploy the
+     * framework to. You can specify an existing resource, or create a new one.
      * </pre>
      *
      * <code>
@@ -1986,9 +2008,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The details of the target resource on which the Framework is to
-     * be deployed. It can either be an existing target resource or a new target
-     * resource to be created.
+     * Required. The details of the target resource that you want to deploy the
+     * framework to. You can specify an existing resource, or create a new one.
      * </pre>
      *
      * <code>
@@ -2018,9 +2039,12 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The resource on which the Framework is deployed based on the
-     * provided TargetResourceConfig in the following format:
-     * organizations/{organization}, folders/{folder} or projects/{project}
+     * Output only. The target resource to deploy the framework to, in one  the
+     * following formats:
+     *
+     * - `organizations/{organizationID}`
+     * - `folders/{folderID}`
+     * - `projects/{projectID}`
      * </pre>
      *
      * <code>string computed_target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2044,9 +2068,12 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The resource on which the Framework is deployed based on the
-     * provided TargetResourceConfig in the following format:
-     * organizations/{organization}, folders/{folder} or projects/{project}
+     * Output only. The target resource to deploy the framework to, in one  the
+     * following formats:
+     *
+     * - `organizations/{organizationID}`
+     * - `folders/{folderID}`
+     * - `projects/{projectID}`
      * </pre>
      *
      * <code>string computed_target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2070,9 +2097,12 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The resource on which the Framework is deployed based on the
-     * provided TargetResourceConfig in the following format:
-     * organizations/{organization}, folders/{folder} or projects/{project}
+     * Output only. The target resource to deploy the framework to, in one  the
+     * following formats:
+     *
+     * - `organizations/{organizationID}`
+     * - `folders/{folderID}`
+     * - `projects/{projectID}`
      * </pre>
      *
      * <code>string computed_target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2095,9 +2125,12 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The resource on which the Framework is deployed based on the
-     * provided TargetResourceConfig in the following format:
-     * organizations/{organization}, folders/{folder} or projects/{project}
+     * Output only. The target resource to deploy the framework to, in one  the
+     * following formats:
+     *
+     * - `organizations/{organizationID}`
+     * - `folders/{folderID}`
+     * - `projects/{projectID}`
      * </pre>
      *
      * <code>string computed_target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2116,9 +2149,12 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The resource on which the Framework is deployed based on the
-     * provided TargetResourceConfig in the following format:
-     * organizations/{organization}, folders/{folder} or projects/{project}
+     * Output only. The target resource to deploy the framework to, in one  the
+     * following formats:
+     *
+     * - `organizations/{organizationID}`
+     * - `folders/{folderID}`
+     * - `projects/{projectID}`
      * </pre>
      *
      * <code>string computed_target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2149,7 +2185,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Reference to the framework to be deployed.
+     * Required. A reference to the framework that you're deploying.
      * </pre>
      *
      * <code>
@@ -2166,7 +2202,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Reference to the framework to be deployed.
+     * Required. A reference to the framework that you're deploying.
      * </pre>
      *
      * <code>
@@ -2189,7 +2225,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Reference to the framework to be deployed.
+     * Required. A reference to the framework that you're deploying.
      * </pre>
      *
      * <code>
@@ -2215,7 +2251,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Reference to the framework to be deployed.
+     * Required. A reference to the framework that you're deploying.
      * </pre>
      *
      * <code>
@@ -2238,7 +2274,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Reference to the framework to be deployed.
+     * Required. A reference to the framework that you're deploying.
      * </pre>
      *
      * <code>
@@ -2271,7 +2307,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Reference to the framework to be deployed.
+     * Required. A reference to the framework that you're deploying.
      * </pre>
      *
      * <code>
@@ -2293,7 +2329,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Reference to the framework to be deployed.
+     * Required. A reference to the framework that you're deploying.
      * </pre>
      *
      * <code>
@@ -2311,7 +2347,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Reference to the framework to be deployed.
+     * Required. A reference to the framework that you're deploying.
      * </pre>
      *
      * <code>
@@ -2333,7 +2369,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Reference to the framework to be deployed.
+     * Required. A reference to the framework that you're deploying.
      * </pre>
      *
      * <code>
@@ -2363,7 +2399,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. User provided description of the Framework deployment
+     * Optional. A user-provided description of the framework deployment.
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2386,7 +2422,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. User provided description of the Framework deployment
+     * Optional. A user-provided description of the framework deployment.
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2409,7 +2445,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. User provided description of the Framework deployment
+     * Optional. A user-provided description of the framework deployment.
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2431,7 +2467,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. User provided description of the Framework deployment
+     * Optional. A user-provided description of the framework deployment.
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2449,7 +2485,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. User provided description of the Framework deployment
+     * Optional. A user-provided description of the framework deployment.
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2491,9 +2527,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2513,9 +2548,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2534,9 +2568,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2556,9 +2589,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2584,9 +2616,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2610,9 +2641,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2638,9 +2668,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2666,9 +2695,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2691,9 +2719,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2717,9 +2744,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2744,9 +2770,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2768,9 +2793,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2792,9 +2816,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2810,9 +2833,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2832,9 +2854,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2855,9 +2876,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2876,9 +2896,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2898,9 +2917,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the Cloud Controls in
-     * the framework. Every Cloud Control in the framework must have a
-     * CloudControlMetadata.
+     * Required. The deployment mode and parameters for each of the cloud controls
+     * in the framework. Every cloud control in the framework includes metadata.
      * </pre>
      *
      * <code>
@@ -2938,7 +2956,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. State of the Framework Deployment
+     * Output only. The state for the framework deployment.
      * </pre>
      *
      * <code>
@@ -2956,7 +2974,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. State of the Framework Deployment
+     * Output only. The state for the framework deployment.
      * </pre>
      *
      * <code>
@@ -2977,7 +2995,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. State of the Framework Deployment
+     * Output only. The state for the framework deployment.
      * </pre>
      *
      * <code>
@@ -2999,7 +3017,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. State of the Framework Deployment
+     * Output only. The state for the framework deployment.
      * </pre>
      *
      * <code>
@@ -3024,7 +3042,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. State of the Framework Deployment
+     * Output only. The state for the framework deployment.
      * </pre>
      *
      * <code>
@@ -3471,10 +3489,10 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. To prevent concurrent updates from overwriting each other, always
-     * provide the `etag` when you update a FrameworkDeployment. You can also
-     * provide the `etag` when you delete a FrameworkDeployment, to help
+     * provide the `etag` when you update a framework deployment. You can also
+     * provide the `etag` when you delete a framework deployment, to help
      * ensure that you're deleting the intended version of the
-     * FrameworkDeployment.
+     * framework deployment.
      * </pre>
      *
      * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3498,10 +3516,10 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. To prevent concurrent updates from overwriting each other, always
-     * provide the `etag` when you update a FrameworkDeployment. You can also
-     * provide the `etag` when you delete a FrameworkDeployment, to help
+     * provide the `etag` when you update a framework deployment. You can also
+     * provide the `etag` when you delete a framework deployment, to help
      * ensure that you're deleting the intended version of the
-     * FrameworkDeployment.
+     * framework deployment.
      * </pre>
      *
      * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3525,10 +3543,10 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. To prevent concurrent updates from overwriting each other, always
-     * provide the `etag` when you update a FrameworkDeployment. You can also
-     * provide the `etag` when you delete a FrameworkDeployment, to help
+     * provide the `etag` when you update a framework deployment. You can also
+     * provide the `etag` when you delete a framework deployment, to help
      * ensure that you're deleting the intended version of the
-     * FrameworkDeployment.
+     * framework deployment.
      * </pre>
      *
      * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3551,10 +3569,10 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. To prevent concurrent updates from overwriting each other, always
-     * provide the `etag` when you update a FrameworkDeployment. You can also
-     * provide the `etag` when you delete a FrameworkDeployment, to help
+     * provide the `etag` when you update a framework deployment. You can also
+     * provide the `etag` when you delete a framework deployment, to help
      * ensure that you're deleting the intended version of the
-     * FrameworkDeployment.
+     * framework deployment.
      * </pre>
      *
      * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3573,10 +3591,10 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. To prevent concurrent updates from overwriting each other, always
-     * provide the `etag` when you update a FrameworkDeployment. You can also
-     * provide the `etag` when you delete a FrameworkDeployment, to help
+     * provide the `etag` when you update a framework deployment. You can also
+     * provide the `etag` when you delete a framework deployment, to help
      * ensure that you're deleting the intended version of the
-     * FrameworkDeployment.
+     * framework deployment.
      * </pre>
      *
      * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3735,11 +3753,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -3749,6 +3771,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>
@@ -3769,11 +3792,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -3783,6 +3810,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>
@@ -3801,11 +3829,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -3815,6 +3847,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>
@@ -3834,11 +3867,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -3848,6 +3885,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>
@@ -3874,11 +3912,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -3888,6 +3930,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>
@@ -3912,11 +3955,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -3926,6 +3973,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>
@@ -3951,11 +3999,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -3965,6 +4017,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>
@@ -3991,11 +4044,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -4005,6 +4062,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>
@@ -4028,11 +4086,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -4042,6 +4104,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>
@@ -4066,11 +4129,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -4080,6 +4147,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>
@@ -4106,11 +4174,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -4120,6 +4192,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>
@@ -4141,11 +4214,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -4155,6 +4232,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>
@@ -4176,11 +4254,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -4190,6 +4272,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>
@@ -4205,11 +4288,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -4219,6 +4306,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>
@@ -4238,11 +4326,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -4252,6 +4344,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>
@@ -4274,11 +4367,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -4288,6 +4385,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>
@@ -4306,11 +4404,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -4320,6 +4422,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>
@@ -4339,11 +4442,15 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments. It has all
-     * the CloudControlDeployments which are either directly added in the
-     * framework or through a CloudControlGroup. Example: If a framework
-     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
-     * then the cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. The reference
+     * includes all the cloud control deployments that are in the framework or in
+     * a cloud control group.
+     *
+     * For example, if a framework deployment deploys two
+     * cloud controls, `cc-deployment-1` and `cc-deployment-2`, then the
+     * references are:
+     *
+     * ```
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -4353,6 +4460,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *   cloud_control_deployment:
      *   "organizations/{organization}/locations/{location}/cloudControlDeployments/cc-deployment-2"
      *  }
+     * ```
      * </pre>
      *
      * <code>

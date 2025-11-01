@@ -23,8 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * A [CEL
- * expression](https://cloud.google.com/certificate-authority-service/docs/using-cel).
+ * A Common Expression Language (CEL) expression that's used to create a rule.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.CELExpression}
@@ -119,8 +118,8 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource instance types on which this expression is defined.
-   * Format will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;`
-   * Example: `compute.googleapis.com/Instance`.
+   * The format is `&lt;SERVICE_NAME&gt;/&lt;type&gt;`.
+   * For example: `compute.googleapis.com/Instance`
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.StringList resource_types_values = 3;</code>
@@ -137,8 +136,8 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource instance types on which this expression is defined.
-   * Format will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;`
-   * Example: `compute.googleapis.com/Instance`.
+   * The format is `&lt;SERVICE_NAME&gt;/&lt;type&gt;`.
+   * For example: `compute.googleapis.com/Instance`
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.StringList resource_types_values = 3;</code>
@@ -158,8 +157,8 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource instance types on which this expression is defined.
-   * Format will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;`
-   * Example: `compute.googleapis.com/Instance`.
+   * The format is `&lt;SERVICE_NAME&gt;/&lt;type&gt;`.
+   * For example: `compute.googleapis.com/Instance`
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.StringList resource_types_values = 3;</code>
@@ -182,8 +181,9 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Logic expression in CEL language.
-   * The max length of the condition is 1000 characters.
+   * Required. The logical expression in CEL. The maximum length of the
+   * condition is 1000 characters. For more information, see [CEL
+   * expression](https://cloud.google.com/security-command-center/docs/compliance-manager-write-cel-expressions).
    * </pre>
    *
    * <code>string expression = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -207,8 +207,9 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Logic expression in CEL language.
-   * The max length of the condition is 1000 characters.
+   * Required. The logical expression in CEL. The maximum length of the
+   * condition is 1000 characters. For more information, see [CEL
+   * expression](https://cloud.google.com/security-command-center/docs/compliance-manager-write-cel-expressions).
    * </pre>
    *
    * <code>string expression = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -417,8 +418,7 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A [CEL
-   * expression](https://cloud.google.com/certificate-authority-service/docs/using-cel).
+   * A Common Expression Language (CEL) expression that's used to create a rule.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.CELExpression}
@@ -655,8 +655,8 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource instance types on which this expression is defined.
-     * Format will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;`
-     * Example: `compute.googleapis.com/Instance`.
+     * The format is `&lt;SERVICE_NAME&gt;/&lt;type&gt;`.
+     * For example: `compute.googleapis.com/Instance`
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList resource_types_values = 3;</code>
@@ -673,8 +673,8 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource instance types on which this expression is defined.
-     * Format will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;`
-     * Example: `compute.googleapis.com/Instance`.
+     * The format is `&lt;SERVICE_NAME&gt;/&lt;type&gt;`.
+     * For example: `compute.googleapis.com/Instance`
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList resource_types_values = 3;</code>
@@ -701,8 +701,8 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource instance types on which this expression is defined.
-     * Format will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;`
-     * Example: `compute.googleapis.com/Instance`.
+     * The format is `&lt;SERVICE_NAME&gt;/&lt;type&gt;`.
+     * For example: `compute.googleapis.com/Instance`
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList resource_types_values = 3;</code>
@@ -727,8 +727,8 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource instance types on which this expression is defined.
-     * Format will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;`
-     * Example: `compute.googleapis.com/Instance`.
+     * The format is `&lt;SERVICE_NAME&gt;/&lt;type&gt;`.
+     * For example: `compute.googleapis.com/Instance`
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList resource_types_values = 3;</code>
@@ -750,8 +750,8 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource instance types on which this expression is defined.
-     * Format will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;`
-     * Example: `compute.googleapis.com/Instance`.
+     * The format is `&lt;SERVICE_NAME&gt;/&lt;type&gt;`.
+     * For example: `compute.googleapis.com/Instance`
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList resource_types_values = 3;</code>
@@ -787,8 +787,8 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource instance types on which this expression is defined.
-     * Format will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;`
-     * Example: `compute.googleapis.com/Instance`.
+     * The format is `&lt;SERVICE_NAME&gt;/&lt;type&gt;`.
+     * For example: `compute.googleapis.com/Instance`
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList resource_types_values = 3;</code>
@@ -815,8 +815,8 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource instance types on which this expression is defined.
-     * Format will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;`
-     * Example: `compute.googleapis.com/Instance`.
+     * The format is `&lt;SERVICE_NAME&gt;/&lt;type&gt;`.
+     * For example: `compute.googleapis.com/Instance`
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList resource_types_values = 3;</code>
@@ -831,8 +831,8 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource instance types on which this expression is defined.
-     * Format will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;`
-     * Example: `compute.googleapis.com/Instance`.
+     * The format is `&lt;SERVICE_NAME&gt;/&lt;type&gt;`.
+     * For example: `compute.googleapis.com/Instance`
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList resource_types_values = 3;</code>
@@ -855,8 +855,8 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource instance types on which this expression is defined.
-     * Format will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;`
-     * Example: `compute.googleapis.com/Instance`.
+     * The format is `&lt;SERVICE_NAME&gt;/&lt;type&gt;`.
+     * For example: `compute.googleapis.com/Instance`
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.StringList resource_types_values = 3;</code>
@@ -891,8 +891,9 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Logic expression in CEL language.
-     * The max length of the condition is 1000 characters.
+     * Required. The logical expression in CEL. The maximum length of the
+     * condition is 1000 characters. For more information, see [CEL
+     * expression](https://cloud.google.com/security-command-center/docs/compliance-manager-write-cel-expressions).
      * </pre>
      *
      * <code>string expression = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -915,8 +916,9 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Logic expression in CEL language.
-     * The max length of the condition is 1000 characters.
+     * Required. The logical expression in CEL. The maximum length of the
+     * condition is 1000 characters. For more information, see [CEL
+     * expression](https://cloud.google.com/security-command-center/docs/compliance-manager-write-cel-expressions).
      * </pre>
      *
      * <code>string expression = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -939,8 +941,9 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Logic expression in CEL language.
-     * The max length of the condition is 1000 characters.
+     * Required. The logical expression in CEL. The maximum length of the
+     * condition is 1000 characters. For more information, see [CEL
+     * expression](https://cloud.google.com/security-command-center/docs/compliance-manager-write-cel-expressions).
      * </pre>
      *
      * <code>string expression = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -962,8 +965,9 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Logic expression in CEL language.
-     * The max length of the condition is 1000 characters.
+     * Required. The logical expression in CEL. The maximum length of the
+     * condition is 1000 characters. For more information, see [CEL
+     * expression](https://cloud.google.com/security-command-center/docs/compliance-manager-write-cel-expressions).
      * </pre>
      *
      * <code>string expression = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -981,8 +985,9 @@ public final class CELExpression extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Logic expression in CEL language.
-     * The max length of the condition is 1000 characters.
+     * Required. The logical expression in CEL. The maximum length of the
+     * condition is 1000 characters. For more information, see [CEL
+     * expression](https://cloud.google.com/security-command-center/docs/compliance-manager-write-cel-expressions).
      * </pre>
      *
      * <code>string expression = 1 [(.google.api.field_behavior) = REQUIRED];</code>

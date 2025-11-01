@@ -18,10 +18,22 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.PlacementServiceClient.ListPlacementsPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivatePlacementsRequest;
+import com.google.ads.admanager.v1.BatchActivatePlacementsResponse;
+import com.google.ads.admanager.v1.BatchArchivePlacementsRequest;
+import com.google.ads.admanager.v1.BatchArchivePlacementsResponse;
+import com.google.ads.admanager.v1.BatchCreatePlacementsRequest;
+import com.google.ads.admanager.v1.BatchCreatePlacementsResponse;
+import com.google.ads.admanager.v1.BatchDeactivatePlacementsRequest;
+import com.google.ads.admanager.v1.BatchDeactivatePlacementsResponse;
+import com.google.ads.admanager.v1.BatchUpdatePlacementsRequest;
+import com.google.ads.admanager.v1.BatchUpdatePlacementsResponse;
+import com.google.ads.admanager.v1.CreatePlacementRequest;
 import com.google.ads.admanager.v1.GetPlacementRequest;
 import com.google.ads.admanager.v1.ListPlacementsRequest;
 import com.google.ads.admanager.v1.ListPlacementsResponse;
 import com.google.ads.admanager.v1.Placement;
+import com.google.ads.admanager.v1.UpdatePlacementRequest;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
@@ -46,6 +58,39 @@ public abstract class PlacementServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListPlacementsRequest, ListPlacementsResponse> listPlacementsCallable() {
     throw new UnsupportedOperationException("Not implemented: listPlacementsCallable()");
+  }
+
+  public UnaryCallable<CreatePlacementRequest, Placement> createPlacementCallable() {
+    throw new UnsupportedOperationException("Not implemented: createPlacementCallable()");
+  }
+
+  public UnaryCallable<UpdatePlacementRequest, Placement> updatePlacementCallable() {
+    throw new UnsupportedOperationException("Not implemented: updatePlacementCallable()");
+  }
+
+  public UnaryCallable<BatchCreatePlacementsRequest, BatchCreatePlacementsResponse>
+      batchCreatePlacementsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreatePlacementsCallable()");
+  }
+
+  public UnaryCallable<BatchUpdatePlacementsRequest, BatchUpdatePlacementsResponse>
+      batchUpdatePlacementsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchUpdatePlacementsCallable()");
+  }
+
+  public UnaryCallable<BatchActivatePlacementsRequest, BatchActivatePlacementsResponse>
+      batchActivatePlacementsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchActivatePlacementsCallable()");
+  }
+
+  public UnaryCallable<BatchDeactivatePlacementsRequest, BatchDeactivatePlacementsResponse>
+      batchDeactivatePlacementsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeactivatePlacementsCallable()");
+  }
+
+  public UnaryCallable<BatchArchivePlacementsRequest, BatchArchivePlacementsResponse>
+      batchArchivePlacementsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchArchivePlacementsCallable()");
   }
 
   @Override

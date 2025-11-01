@@ -263,28 +263,6 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
-  public static final int TRANSFER_TO_AGENT_FIELD_NUMBER = 5;
-  private boolean transferToAgent_ = false;
-
-  /**
-   *
-   *
-   * <pre>
-   * Deprecated. If set, the event transfers to the specified agent.
-   * </pre>
-   *
-   * <code>bool transfer_to_agent = 5 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.aiplatform.v1beta1.EventActions.transfer_to_agent is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/session.proto;l=176
-   * @return The transferToAgent.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public boolean getTransferToAgent() {
-    return transferToAgent_;
-  }
-
   public static final int ESCALATE_FIELD_NUMBER = 6;
   private boolean escalate_ = false;
 
@@ -447,9 +425,6 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetArtifactDelta(), ArtifactDeltaDefaultEntryHolder.defaultEntry, 3);
-    if (transferToAgent_ != false) {
-      output.writeBool(5, transferToAgent_);
-    }
     if (escalate_ != false) {
       output.writeBool(6, escalate_);
     }
@@ -484,9 +459,6 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, artifactDelta__);
     }
-    if (transferToAgent_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, transferToAgent_);
-    }
     if (escalate_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, escalate_);
     }
@@ -519,7 +491,6 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       if (!getStateDelta().equals(other.getStateDelta())) return false;
     }
     if (!internalGetArtifactDelta().equals(other.internalGetArtifactDelta())) return false;
-    if (getTransferToAgent() != other.getTransferToAgent()) return false;
     if (getEscalate() != other.getEscalate()) return false;
     if (hasRequestedAuthConfigs() != other.hasRequestedAuthConfigs()) return false;
     if (hasRequestedAuthConfigs()) {
@@ -547,8 +518,6 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ARTIFACT_DELTA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetArtifactDelta().hashCode();
     }
-    hash = (37 * hash) + TRANSFER_TO_AGENT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTransferToAgent());
     hash = (37 * hash) + ESCALATE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEscalate());
     if (hasRequestedAuthConfigs()) {
@@ -736,7 +705,6 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
         stateDeltaBuilder_ = null;
       }
       internalGetMutableArtifactDelta().clear();
-      transferToAgent_ = false;
       escalate_ = false;
       requestedAuthConfigs_ = null;
       if (requestedAuthConfigsBuilder_ != null) {
@@ -793,19 +761,16 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
         result.artifactDelta_.makeImmutable();
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.transferToAgent_ = transferToAgent_;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.escalate_ = escalate_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.requestedAuthConfigs_ =
             requestedAuthConfigsBuilder_ == null
                 ? requestedAuthConfigs_
                 : requestedAuthConfigsBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.transferAgent_ = transferAgent_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -865,9 +830,6 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableArtifactDelta().mergeFrom(other.internalGetArtifactDelta());
       bitField0_ |= 0x00000004;
-      if (other.getTransferToAgent() != false) {
-        setTransferToAgent(other.getTransferToAgent());
-      }
       if (other.getEscalate() != false) {
         setEscalate(other.getEscalate());
       }
@@ -876,7 +838,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getTransferAgent().isEmpty()) {
         transferAgent_ = other.transferAgent_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -929,29 +891,23 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
-            case 40:
-              {
-                transferToAgent_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 40
             case 48:
               {
                 escalate_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 48
             case 58:
               {
                 input.readMessage(
                     getRequestedAuthConfigsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 66:
               {
                 transferAgent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 66
             default:
@@ -1424,71 +1380,6 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private boolean transferToAgent_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated. If set, the event transfers to the specified agent.
-     * </pre>
-     *
-     * <code>bool transfer_to_agent = 5 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.aiplatform.v1beta1.EventActions.transfer_to_agent is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/session.proto;l=176
-     * @return The transferToAgent.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public boolean getTransferToAgent() {
-      return transferToAgent_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated. If set, the event transfers to the specified agent.
-     * </pre>
-     *
-     * <code>bool transfer_to_agent = 5 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.aiplatform.v1beta1.EventActions.transfer_to_agent is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/session.proto;l=176
-     * @param value The transferToAgent to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setTransferToAgent(boolean value) {
-
-      transferToAgent_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deprecated. If set, the event transfers to the specified agent.
-     * </pre>
-     *
-     * <code>bool transfer_to_agent = 5 [deprecated = true];</code>
-     *
-     * @deprecated google.cloud.aiplatform.v1beta1.EventActions.transfer_to_agent is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/session.proto;l=176
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder clearTransferToAgent() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      transferToAgent_ = false;
-      onChanged();
-      return this;
-    }
-
     private boolean escalate_;
 
     /**
@@ -1522,7 +1413,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     public Builder setEscalate(boolean value) {
 
       escalate_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1539,7 +1430,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEscalate() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       escalate_ = false;
       onChanged();
       return this;
@@ -1569,7 +1460,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the requestedAuthConfigs field is set.
      */
     public boolean hasRequestedAuthConfigs() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1621,7 +1512,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       } else {
         requestedAuthConfigsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1646,7 +1537,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       } else {
         requestedAuthConfigsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1667,7 +1558,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRequestedAuthConfigs(com.google.protobuf.Struct value) {
       if (requestedAuthConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && requestedAuthConfigs_ != null
             && requestedAuthConfigs_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getRequestedAuthConfigsBuilder().mergeFrom(value);
@@ -1678,7 +1569,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
         requestedAuthConfigsBuilder_.mergeFrom(value);
       }
       if (requestedAuthConfigs_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1699,7 +1590,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRequestedAuthConfigs() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       requestedAuthConfigs_ = null;
       if (requestedAuthConfigsBuilder_ != null) {
         requestedAuthConfigsBuilder_.dispose();
@@ -1724,7 +1615,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Struct.Builder getRequestedAuthConfigsBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getRequestedAuthConfigsFieldBuilder().getBuilder();
     }
@@ -1849,7 +1740,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       transferAgent_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1867,7 +1758,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTransferAgent() {
       transferAgent_ = getDefaultInstance().getTransferAgent();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1890,7 +1781,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       transferAgent_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

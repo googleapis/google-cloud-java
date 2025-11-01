@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Request message for getting a CloudControl.
+ * The request message for [GetCloudControl][].
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.GetCloudControlRequest}
@@ -73,8 +73,9 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the cloudcontrol to retrieve in the format:
-   * organizations/{organization}/locations/{location}/cloudControls/{cloud_control}
+   * Required. The name of the cloud control to retrieve, in the format
+   * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -100,8 +101,9 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the cloudcontrol to retrieve in the format:
-   * organizations/{organization}/locations/{location}/cloudControls/{cloud_control}
+   * Required. The name of the cloud control to retrieve, in the format
+   * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -123,6 +125,26 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int MAJOR_REVISION_ID_FIELD_NUMBER = 2;
+  private long majorRevisionId_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The major version of the cloud control to retrieve. If not
+   * specified, the most recently updated `revision_id` is retrieved.
+   * </pre>
+   *
+   * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The majorRevisionId.
+   */
+  @java.lang.Override
+  public long getMajorRevisionId() {
+    return majorRevisionId_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -140,6 +162,9 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (majorRevisionId_ != 0L) {
+      output.writeInt64(2, majorRevisionId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -151,6 +176,9 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (majorRevisionId_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, majorRevisionId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -169,6 +197,7 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
         (com.google.cloud.cloudsecuritycompliance.v1.GetCloudControlRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getMajorRevisionId() != other.getMajorRevisionId()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -182,6 +211,8 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + MAJOR_REVISION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMajorRevisionId());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -289,7 +320,7 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Request message for getting a CloudControl.
+   * The request message for [GetCloudControl][].
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.GetCloudControlRequest}
@@ -326,6 +357,7 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      majorRevisionId_ = 0L;
       return this;
     }
 
@@ -367,6 +399,9 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.majorRevisionId_ = majorRevisionId_;
       }
     }
 
@@ -424,6 +459,9 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.getMajorRevisionId() != 0L) {
+        setMajorRevisionId(other.getMajorRevisionId());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -456,6 +494,12 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                majorRevisionId_ = input.readInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -481,8 +525,9 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the cloudcontrol to retrieve in the format:
-     * organizations/{organization}/locations/{location}/cloudControls/{cloud_control}
+     * Required. The name of the cloud control to retrieve, in the format
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -507,8 +552,9 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the cloudcontrol to retrieve in the format:
-     * organizations/{organization}/locations/{location}/cloudControls/{cloud_control}
+     * Required. The name of the cloud control to retrieve, in the format
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -533,8 +579,9 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the cloudcontrol to retrieve in the format:
-     * organizations/{organization}/locations/{location}/cloudControls/{cloud_control}
+     * Required. The name of the cloud control to retrieve, in the format
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -558,8 +605,9 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the cloudcontrol to retrieve in the format:
-     * organizations/{organization}/locations/{location}/cloudControls/{cloud_control}
+     * Required. The name of the cloud control to retrieve, in the format
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -579,8 +627,9 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the cloudcontrol to retrieve in the format:
-     * organizations/{organization}/locations/{location}/cloudControls/{cloud_control}
+     * Required. The name of the cloud control to retrieve, in the format
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -597,6 +646,65 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private long majorRevisionId_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The major version of the cloud control to retrieve. If not
+     * specified, the most recently updated `revision_id` is retrieved.
+     * </pre>
+     *
+     * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The majorRevisionId.
+     */
+    @java.lang.Override
+    public long getMajorRevisionId() {
+      return majorRevisionId_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The major version of the cloud control to retrieve. If not
+     * specified, the most recently updated `revision_id` is retrieved.
+     * </pre>
+     *
+     * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The majorRevisionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMajorRevisionId(long value) {
+
+      majorRevisionId_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The major version of the cloud control to retrieve. If not
+     * specified, the most recently updated `revision_id` is retrieved.
+     * </pre>
+     *
+     * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMajorRevisionId() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      majorRevisionId_ = 0L;
       onChanged();
       return this;
     }

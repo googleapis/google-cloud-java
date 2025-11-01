@@ -23,7 +23,7 @@ package com.google.container.v1;
  *
  *
  * <pre>
- * Collection of [GCP
+ * Collection of [Resource Manager
  * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels).
  * </pre>
  *
@@ -353,7 +353,7 @@ public final class ResourceLabels extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Collection of [GCP
+   * Collection of [Resource Manager
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels).
    * </pre>
    *

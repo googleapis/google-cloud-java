@@ -171,6 +171,11 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     return ((PredictionServiceStubSettings) getStubSettings()).streamGenerateContentSettings();
   }
 
+  /** Returns the object with the settings used for calls to embedContent. */
+  public UnaryCallSettings<EmbedContentRequest, EmbedContentResponse> embedContentSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).embedContentSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -368,6 +373,12 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     public ServerStreamingCallSettings.Builder<GenerateContentRequest, GenerateContentResponse>
         streamGenerateContentSettings() {
       return getStubSettingsBuilder().streamGenerateContentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to embedContent. */
+    public UnaryCallSettings.Builder<EmbedContentRequest, EmbedContentResponse>
+        embedContentSettings() {
+      return getStubSettingsBuilder().embedContentSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

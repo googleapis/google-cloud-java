@@ -105,13 +105,12 @@ public final class SessionProto {
           + "\013interrupted\030\004 \001(\010B\003\340A\001\022\"\n"
           + "\025long_running_tool_ids\030\005 \003(\tB\003\340A\001\022\023\n"
           + "\006branch\030\006 \001(\tB\003\340A\001\0220\n"
-          + "\017custom_metadata\030\007 \001(\0132\027.google.protobuf.Struct\"\210\003\n"
+          + "\017custom_metadata\030\007 \001(\0132\027.google.protobuf.Struct\"\351\002\n"
           + "\014EventActions\022\037\n"
           + "\022skip_summarization\030\001 \001(\010B\003\340A\001\0221\n"
           + "\013state_delta\030\002 \001(\0132\027.google.protobuf.StructB\003\340A\001\022]\n"
           + "\016artifact_delta\030\003 \003("
-          + "\0132@.google.cloud.aiplatform.v1beta1.EventActions.ArtifactDeltaEntryB\003\340A\001\022\035\n"
-          + "\021transfer_to_agent\030\005 \001(\010B\002\030\001\022\025\n"
+          + "\0132@.google.cloud.aiplatform.v1beta1.EventActions.ArtifactDeltaEntryB\003\340A\001\022\025\n"
           + "\010escalate\030\006 \001(\010B\003\340A\001\022<\n"
           + "\026requested_auth_configs\030\007"
           + " \001(\0132\027.google.protobuf.StructB\003\340A\001\022\033\n"
@@ -119,11 +118,11 @@ public final class SessionProto {
           + "\022ArtifactDeltaEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\005:\0028\001B\343\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\014Session"
-          + "ProtoP\001ZCcloud.google.com/go/aiplatform/"
-          + "apiv1beta1/aiplatformpb;aiplatformpb\252\002\037G"
-          + "oogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\"
-          + "Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\014SessionProtoP\001ZCcloud.google.com/go/ai"
+          + "platform/apiv1beta1/aiplatformpb;aiplatf"
+          + "ormpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312"
+          + "\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goog"
+          + "le::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -191,7 +190,6 @@ public final class SessionProto {
               "SkipSummarization",
               "StateDelta",
               "ArtifactDelta",
-              "TransferToAgent",
               "Escalate",
               "RequestedAuthConfigs",
               "TransferAgent",

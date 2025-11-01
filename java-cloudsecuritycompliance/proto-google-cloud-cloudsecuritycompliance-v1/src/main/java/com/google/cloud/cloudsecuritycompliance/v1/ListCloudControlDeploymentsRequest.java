@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Request message for ListCloudControlDeployments.
+ * The request message for [ListCloudControlDeployments][].
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ListCloudControlDeploymentsRequest}
@@ -78,9 +78,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. parent resource of the CloudControlDeployment in the format:
-   * organizations/{organization}/locations/{location}
-   * Only global location is supported.
+   * Required. The parent resource for the cloud control deployment, in the
+   * format `organizations/{organization}/locations/{location}`. The only
+   * supported location is `global`.
    * </pre>
    *
    * <code>
@@ -106,9 +106,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. parent resource of the CloudControlDeployment in the format:
-   * organizations/{organization}/locations/{location}
-   * Only global location is supported.
+   * Required. The parent resource for the cloud control deployment, in the
+   * format `organizations/{organization}/locations/{location}`. The only
+   * supported location is `global`.
    * </pre>
    *
    * <code>
@@ -137,8 +137,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Optional. Requested page size. Server may return fewer items than
-   * requested. If unspecified, server will pick an appropriate default.
+   * Optional. The requested page size. The server might return fewer items than
+   * you requested.
+   * If unspecified, the server picks an appropriate default.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -159,7 +160,8 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Optional. A token identifying a page of results the server should return.
+   * Optional. A token that identifies the page of results that the server
+   * should return.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -183,7 +185,8 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Optional. A token identifying a page of results the server should return.
+   * Optional. A token that identifies the page of results that the server
+   * should return.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -212,8 +215,8 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Optional. Filter to be applied on the resource, defined by EBNF grammar
-   * https://google.aip.dev/assets/misc/ebnf-filtering.txt.
+   * Optional. The filter to apply on the resource, as defined by
+   * [AIP-160: Filtering](https://google.aip.dev/160).
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -237,8 +240,8 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Optional. Filter to be applied on the resource, defined by EBNF grammar
-   * https://google.aip.dev/assets/misc/ebnf-filtering.txt.
+   * Optional. The filter to apply on the resource, as defined by
+   * [AIP-160: Filtering](https://google.aip.dev/160).
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -267,7 +270,13 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Optional. Sort results. Supported are "name", "name desc" or "" (unsorted).
+   * Optional. The sort order for the results. The following values are
+   * supported:
+   *
+   * * `name`
+   * * `name desc`
+   *
+   * If you do not specify a value, then the results are not sorted.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -291,7 +300,13 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Optional. Sort results. Supported are "name", "name desc" or "" (unsorted).
+   * Optional. The sort order for the results. The following values are
+   * supported:
+   *
+   * * `name`
+   * * `name desc`
+   *
+   * If you do not specify a value, then the results are not sorted.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -520,7 +535,7 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Request message for ListCloudControlDeployments.
+   * The request message for [ListCloudControlDeployments][].
    * </pre>
    *
    * Protobuf type {@code
@@ -776,9 +791,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. parent resource of the CloudControlDeployment in the format:
-     * organizations/{organization}/locations/{location}
-     * Only global location is supported.
+     * Required. The parent resource for the cloud control deployment, in the
+     * format `organizations/{organization}/locations/{location}`. The only
+     * supported location is `global`.
      * </pre>
      *
      * <code>
@@ -803,9 +818,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. parent resource of the CloudControlDeployment in the format:
-     * organizations/{organization}/locations/{location}
-     * Only global location is supported.
+     * Required. The parent resource for the cloud control deployment, in the
+     * format `organizations/{organization}/locations/{location}`. The only
+     * supported location is `global`.
      * </pre>
      *
      * <code>
@@ -830,9 +845,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. parent resource of the CloudControlDeployment in the format:
-     * organizations/{organization}/locations/{location}
-     * Only global location is supported.
+     * Required. The parent resource for the cloud control deployment, in the
+     * format `organizations/{organization}/locations/{location}`. The only
+     * supported location is `global`.
      * </pre>
      *
      * <code>
@@ -856,9 +871,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. parent resource of the CloudControlDeployment in the format:
-     * organizations/{organization}/locations/{location}
-     * Only global location is supported.
+     * Required. The parent resource for the cloud control deployment, in the
+     * format `organizations/{organization}/locations/{location}`. The only
+     * supported location is `global`.
      * </pre>
      *
      * <code>
@@ -878,9 +893,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. parent resource of the CloudControlDeployment in the format:
-     * organizations/{organization}/locations/{location}
-     * Only global location is supported.
+     * Required. The parent resource for the cloud control deployment, in the
+     * format `organizations/{organization}/locations/{location}`. The only
+     * supported location is `global`.
      * </pre>
      *
      * <code>
@@ -907,8 +922,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Requested page size. Server may return fewer items than
-     * requested. If unspecified, server will pick an appropriate default.
+     * Optional. The requested page size. The server might return fewer items than
+     * you requested.
+     * If unspecified, the server picks an appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -924,8 +940,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Requested page size. Server may return fewer items than
-     * requested. If unspecified, server will pick an appropriate default.
+     * Optional. The requested page size. The server might return fewer items than
+     * you requested.
+     * If unspecified, the server picks an appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -945,8 +962,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Requested page size. Server may return fewer items than
-     * requested. If unspecified, server will pick an appropriate default.
+     * Optional. The requested page size. The server might return fewer items than
+     * you requested.
+     * If unspecified, the server picks an appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -966,7 +984,8 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results the server should return.
+     * Optional. A token that identifies the page of results that the server
+     * should return.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -989,7 +1008,8 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results the server should return.
+     * Optional. A token that identifies the page of results that the server
+     * should return.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1012,7 +1032,8 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results the server should return.
+     * Optional. A token that identifies the page of results that the server
+     * should return.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1034,7 +1055,8 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results the server should return.
+     * Optional. A token that identifies the page of results that the server
+     * should return.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1052,7 +1074,8 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results the server should return.
+     * Optional. A token that identifies the page of results that the server
+     * should return.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1077,8 +1100,8 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Filter to be applied on the resource, defined by EBNF grammar
-     * https://google.aip.dev/assets/misc/ebnf-filtering.txt.
+     * Optional. The filter to apply on the resource, as defined by
+     * [AIP-160: Filtering](https://google.aip.dev/160).
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1101,8 +1124,8 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Filter to be applied on the resource, defined by EBNF grammar
-     * https://google.aip.dev/assets/misc/ebnf-filtering.txt.
+     * Optional. The filter to apply on the resource, as defined by
+     * [AIP-160: Filtering](https://google.aip.dev/160).
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1125,8 +1148,8 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Filter to be applied on the resource, defined by EBNF grammar
-     * https://google.aip.dev/assets/misc/ebnf-filtering.txt.
+     * Optional. The filter to apply on the resource, as defined by
+     * [AIP-160: Filtering](https://google.aip.dev/160).
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1148,8 +1171,8 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Filter to be applied on the resource, defined by EBNF grammar
-     * https://google.aip.dev/assets/misc/ebnf-filtering.txt.
+     * Optional. The filter to apply on the resource, as defined by
+     * [AIP-160: Filtering](https://google.aip.dev/160).
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1167,8 +1190,8 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Filter to be applied on the resource, defined by EBNF grammar
-     * https://google.aip.dev/assets/misc/ebnf-filtering.txt.
+     * Optional. The filter to apply on the resource, as defined by
+     * [AIP-160: Filtering](https://google.aip.dev/160).
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1193,7 +1216,13 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Sort results. Supported are "name", "name desc" or "" (unsorted).
+     * Optional. The sort order for the results. The following values are
+     * supported:
+     *
+     * * `name`
+     * * `name desc`
+     *
+     * If you do not specify a value, then the results are not sorted.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1216,7 +1245,13 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Sort results. Supported are "name", "name desc" or "" (unsorted).
+     * Optional. The sort order for the results. The following values are
+     * supported:
+     *
+     * * `name`
+     * * `name desc`
+     *
+     * If you do not specify a value, then the results are not sorted.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1239,7 +1274,13 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Sort results. Supported are "name", "name desc" or "" (unsorted).
+     * Optional. The sort order for the results. The following values are
+     * supported:
+     *
+     * * `name`
+     * * `name desc`
+     *
+     * If you do not specify a value, then the results are not sorted.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1261,7 +1302,13 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Sort results. Supported are "name", "name desc" or "" (unsorted).
+     * Optional. The sort order for the results. The following values are
+     * supported:
+     *
+     * * `name`
+     * * `name desc`
+     *
+     * If you do not specify a value, then the results are not sorted.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1279,7 +1326,13 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Sort results. Supported are "name", "name desc" or "" (unsorted).
+     * Optional. The sort order for the results. The following values are
+     * supported:
+     *
+     * * `name`
+     * * `name desc`
+     *
+     * If you do not specify a value, then the results are not sorted.
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

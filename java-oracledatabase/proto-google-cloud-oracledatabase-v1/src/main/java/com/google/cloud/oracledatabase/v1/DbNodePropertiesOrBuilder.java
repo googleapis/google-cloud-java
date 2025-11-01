@@ -183,4 +183,44 @@ public interface DbNodePropertiesOrBuilder
    * @return The totalCpuCoreCount.
    */
   int getTotalCpuCoreCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time that the database node was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  boolean hasCreateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time that the database node was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time that the database node was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 }

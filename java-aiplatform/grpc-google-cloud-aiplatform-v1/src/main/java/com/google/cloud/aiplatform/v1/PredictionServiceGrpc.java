@@ -649,6 +649,53 @@ public final class PredictionServiceGrpc {
     return getStreamGenerateContentMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.EmbedContentRequest,
+          com.google.cloud.aiplatform.v1.EmbedContentResponse>
+      getEmbedContentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EmbedContent",
+      requestType = com.google.cloud.aiplatform.v1.EmbedContentRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.EmbedContentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.EmbedContentRequest,
+          com.google.cloud.aiplatform.v1.EmbedContentResponse>
+      getEmbedContentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.EmbedContentRequest,
+            com.google.cloud.aiplatform.v1.EmbedContentResponse>
+        getEmbedContentMethod;
+    if ((getEmbedContentMethod = PredictionServiceGrpc.getEmbedContentMethod) == null) {
+      synchronized (PredictionServiceGrpc.class) {
+        if ((getEmbedContentMethod = PredictionServiceGrpc.getEmbedContentMethod) == null) {
+          PredictionServiceGrpc.getEmbedContentMethod =
+              getEmbedContentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.EmbedContentRequest,
+                          com.google.cloud.aiplatform.v1.EmbedContentResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EmbedContent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.EmbedContentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.EmbedContentResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PredictionServiceMethodDescriptorSupplier("EmbedContent"))
+                      .build();
+        }
+      }
+    }
+    return getEmbedContentMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static PredictionServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<PredictionServiceStub> factory =
@@ -925,6 +972,21 @@ public final class PredictionServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getStreamGenerateContentMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Embed content with multimodal inputs.
+     * </pre>
+     */
+    default void embedContent(
+        com.google.cloud.aiplatform.v1.EmbedContentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.EmbedContentResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getEmbedContentMethod(), responseObserver);
+    }
   }
 
   /**
@@ -1190,6 +1252,23 @@ public final class PredictionServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Embed content with multimodal inputs.
+     * </pre>
+     */
+    public void embedContent(
+        com.google.cloud.aiplatform.v1.EmbedContentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.EmbedContentResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEmbedContentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1419,6 +1498,19 @@ public final class PredictionServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
           getChannel(), getStreamGenerateContentMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Embed content with multimodal inputs.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.EmbedContentResponse embedContent(
+        com.google.cloud.aiplatform.v1.EmbedContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEmbedContentMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1576,6 +1668,19 @@ public final class PredictionServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getStreamGenerateContentMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Embed content with multimodal inputs.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.EmbedContentResponse embedContent(
+        com.google.cloud.aiplatform.v1.EmbedContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEmbedContentMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1697,6 +1802,20 @@ public final class PredictionServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGenerateContentMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Embed content with multimodal inputs.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.EmbedContentResponse>
+        embedContent(com.google.cloud.aiplatform.v1.EmbedContentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEmbedContentMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_PREDICT = 0;
@@ -1708,10 +1827,11 @@ public final class PredictionServiceGrpc {
   private static final int METHODID_EXPLAIN = 6;
   private static final int METHODID_GENERATE_CONTENT = 7;
   private static final int METHODID_STREAM_GENERATE_CONTENT = 8;
-  private static final int METHODID_STREAM_DIRECT_PREDICT = 9;
-  private static final int METHODID_STREAM_DIRECT_RAW_PREDICT = 10;
-  private static final int METHODID_STREAMING_PREDICT = 11;
-  private static final int METHODID_STREAMING_RAW_PREDICT = 12;
+  private static final int METHODID_EMBED_CONTENT = 9;
+  private static final int METHODID_STREAM_DIRECT_PREDICT = 10;
+  private static final int METHODID_STREAM_DIRECT_RAW_PREDICT = 11;
+  private static final int METHODID_STREAMING_PREDICT = 12;
+  private static final int METHODID_STREAMING_RAW_PREDICT = 13;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1780,6 +1900,12 @@ public final class PredictionServiceGrpc {
           serviceImpl.streamGenerateContent(
               (com.google.cloud.aiplatform.v1.GenerateContentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.GenerateContentResponse>)
+                  responseObserver);
+          break;
+        case METHODID_EMBED_CONTENT:
+          serviceImpl.embedContent(
+              (com.google.cloud.aiplatform.v1.EmbedContentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.EmbedContentResponse>)
                   responseObserver);
           break;
         default:
@@ -1911,6 +2037,13 @@ public final class PredictionServiceGrpc {
                     com.google.cloud.aiplatform.v1.GenerateContentRequest,
                     com.google.cloud.aiplatform.v1.GenerateContentResponse>(
                     service, METHODID_STREAM_GENERATE_CONTENT)))
+        .addMethod(
+            getEmbedContentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.EmbedContentRequest,
+                    com.google.cloud.aiplatform.v1.EmbedContentResponse>(
+                    service, METHODID_EMBED_CONTENT)))
         .build();
   }
 
@@ -1975,6 +2108,7 @@ public final class PredictionServiceGrpc {
                       .addMethod(getExplainMethod())
                       .addMethod(getGenerateContentMethod())
                       .addMethod(getStreamGenerateContentMethod())
+                      .addMethod(getEmbedContentMethod())
                       .build();
         }
       }

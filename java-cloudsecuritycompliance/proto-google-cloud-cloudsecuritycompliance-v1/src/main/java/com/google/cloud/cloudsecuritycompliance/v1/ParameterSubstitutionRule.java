@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Parameter substitution rules.
+ * The parameter substitution rules.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ParameterSubstitutionRule}
@@ -118,7 +118,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Placeholder substitution rule.
+   * The placeholder substitution rule.
    * </pre>
    *
    * <code>
@@ -136,7 +136,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Placeholder substitution rule.
+   * The placeholder substitution rule.
    * </pre>
    *
    * <code>
@@ -160,7 +160,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Placeholder substitution rule.
+   * The placeholder substitution rule.
    * </pre>
    *
    * <code>
@@ -184,7 +184,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Attribute substitution rule.
+   * The attribute substitution rule.
    * </pre>
    *
    * <code>
@@ -202,7 +202,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Attribute substitution rule.
+   * The attribute substitution rule.
    * </pre>
    *
    * <code>
@@ -226,7 +226,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Attribute substitution rule.
+   * The attribute substitution rule.
    * </pre>
    *
    * <code>
@@ -452,7 +452,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Parameter substitution rules.
+   * The parameter substitution rules.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ParameterSubstitutionRule}
@@ -698,7 +698,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Placeholder substitution rule.
+     * The placeholder substitution rule.
      * </pre>
      *
      * <code>
@@ -716,7 +716,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Placeholder substitution rule.
+     * The placeholder substitution rule.
      * </pre>
      *
      * <code>
@@ -748,7 +748,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Placeholder substitution rule.
+     * The placeholder substitution rule.
      * </pre>
      *
      * <code>
@@ -774,7 +774,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Placeholder substitution rule.
+     * The placeholder substitution rule.
      * </pre>
      *
      * <code>
@@ -798,7 +798,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Placeholder substitution rule.
+     * The placeholder substitution rule.
      * </pre>
      *
      * <code>
@@ -837,7 +837,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Placeholder substitution rule.
+     * The placeholder substitution rule.
      * </pre>
      *
      * <code>
@@ -865,7 +865,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Placeholder substitution rule.
+     * The placeholder substitution rule.
      * </pre>
      *
      * <code>
@@ -881,7 +881,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Placeholder substitution rule.
+     * The placeholder substitution rule.
      * </pre>
      *
      * <code>
@@ -907,7 +907,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Placeholder substitution rule.
+     * The placeholder substitution rule.
      * </pre>
      *
      * <code>
@@ -951,7 +951,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Attribute substitution rule.
+     * The attribute substitution rule.
      * </pre>
      *
      * <code>
@@ -969,7 +969,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Attribute substitution rule.
+     * The attribute substitution rule.
      * </pre>
      *
      * <code>
@@ -1001,7 +1001,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Attribute substitution rule.
+     * The attribute substitution rule.
      * </pre>
      *
      * <code>
@@ -1027,7 +1027,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Attribute substitution rule.
+     * The attribute substitution rule.
      * </pre>
      *
      * <code>
@@ -1051,7 +1051,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Attribute substitution rule.
+     * The attribute substitution rule.
      * </pre>
      *
      * <code>
@@ -1090,7 +1090,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Attribute substitution rule.
+     * The attribute substitution rule.
      * </pre>
      *
      * <code>
@@ -1118,7 +1118,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Attribute substitution rule.
+     * The attribute substitution rule.
      * </pre>
      *
      * <code>
@@ -1134,7 +1134,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Attribute substitution rule.
+     * The attribute substitution rule.
      * </pre>
      *
      * <code>
@@ -1160,7 +1160,7 @@ public final class ParameterSubstitutionRule extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Attribute substitution rule.
+     * The attribute substitution rule.
      * </pre>
      *
      * <code>

@@ -18,10 +18,22 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.PlacementServiceClient.ListPlacementsPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivatePlacementsRequest;
+import com.google.ads.admanager.v1.BatchActivatePlacementsResponse;
+import com.google.ads.admanager.v1.BatchArchivePlacementsRequest;
+import com.google.ads.admanager.v1.BatchArchivePlacementsResponse;
+import com.google.ads.admanager.v1.BatchCreatePlacementsRequest;
+import com.google.ads.admanager.v1.BatchCreatePlacementsResponse;
+import com.google.ads.admanager.v1.BatchDeactivatePlacementsRequest;
+import com.google.ads.admanager.v1.BatchDeactivatePlacementsResponse;
+import com.google.ads.admanager.v1.BatchUpdatePlacementsRequest;
+import com.google.ads.admanager.v1.BatchUpdatePlacementsResponse;
+import com.google.ads.admanager.v1.CreatePlacementRequest;
 import com.google.ads.admanager.v1.GetPlacementRequest;
 import com.google.ads.admanager.v1.ListPlacementsRequest;
 import com.google.ads.admanager.v1.ListPlacementsResponse;
 import com.google.ads.admanager.v1.Placement;
+import com.google.ads.admanager.v1.UpdatePlacementRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ObsoleteApi;
@@ -112,6 +124,19 @@ public class PlacementServiceStubSettings extends StubSettings<PlacementServiceS
   private final PagedCallSettings<
           ListPlacementsRequest, ListPlacementsResponse, ListPlacementsPagedResponse>
       listPlacementsSettings;
+  private final UnaryCallSettings<CreatePlacementRequest, Placement> createPlacementSettings;
+  private final UnaryCallSettings<UpdatePlacementRequest, Placement> updatePlacementSettings;
+  private final UnaryCallSettings<BatchCreatePlacementsRequest, BatchCreatePlacementsResponse>
+      batchCreatePlacementsSettings;
+  private final UnaryCallSettings<BatchUpdatePlacementsRequest, BatchUpdatePlacementsResponse>
+      batchUpdatePlacementsSettings;
+  private final UnaryCallSettings<BatchActivatePlacementsRequest, BatchActivatePlacementsResponse>
+      batchActivatePlacementsSettings;
+  private final UnaryCallSettings<
+          BatchDeactivatePlacementsRequest, BatchDeactivatePlacementsResponse>
+      batchDeactivatePlacementsSettings;
+  private final UnaryCallSettings<BatchArchivePlacementsRequest, BatchArchivePlacementsResponse>
+      batchArchivePlacementsSettings;
 
   private static final PagedListDescriptor<ListPlacementsRequest, ListPlacementsResponse, Placement>
       LIST_PLACEMENTS_PAGE_STR_DESC =
@@ -175,6 +200,46 @@ public class PlacementServiceStubSettings extends StubSettings<PlacementServiceS
           ListPlacementsRequest, ListPlacementsResponse, ListPlacementsPagedResponse>
       listPlacementsSettings() {
     return listPlacementsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createPlacement. */
+  public UnaryCallSettings<CreatePlacementRequest, Placement> createPlacementSettings() {
+    return createPlacementSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updatePlacement. */
+  public UnaryCallSettings<UpdatePlacementRequest, Placement> updatePlacementSettings() {
+    return updatePlacementSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreatePlacements. */
+  public UnaryCallSettings<BatchCreatePlacementsRequest, BatchCreatePlacementsResponse>
+      batchCreatePlacementsSettings() {
+    return batchCreatePlacementsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdatePlacements. */
+  public UnaryCallSettings<BatchUpdatePlacementsRequest, BatchUpdatePlacementsResponse>
+      batchUpdatePlacementsSettings() {
+    return batchUpdatePlacementsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchActivatePlacements. */
+  public UnaryCallSettings<BatchActivatePlacementsRequest, BatchActivatePlacementsResponse>
+      batchActivatePlacementsSettings() {
+    return batchActivatePlacementsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivatePlacements. */
+  public UnaryCallSettings<BatchDeactivatePlacementsRequest, BatchDeactivatePlacementsResponse>
+      batchDeactivatePlacementsSettings() {
+    return batchDeactivatePlacementsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchArchivePlacements. */
+  public UnaryCallSettings<BatchArchivePlacementsRequest, BatchArchivePlacementsResponse>
+      batchArchivePlacementsSettings() {
+    return batchArchivePlacementsSettings;
   }
 
   public PlacementServiceStub createStub() throws IOException {
@@ -261,6 +326,13 @@ public class PlacementServiceStubSettings extends StubSettings<PlacementServiceS
 
     getPlacementSettings = settingsBuilder.getPlacementSettings().build();
     listPlacementsSettings = settingsBuilder.listPlacementsSettings().build();
+    createPlacementSettings = settingsBuilder.createPlacementSettings().build();
+    updatePlacementSettings = settingsBuilder.updatePlacementSettings().build();
+    batchCreatePlacementsSettings = settingsBuilder.batchCreatePlacementsSettings().build();
+    batchUpdatePlacementsSettings = settingsBuilder.batchUpdatePlacementsSettings().build();
+    batchActivatePlacementsSettings = settingsBuilder.batchActivatePlacementsSettings().build();
+    batchDeactivatePlacementsSettings = settingsBuilder.batchDeactivatePlacementsSettings().build();
+    batchArchivePlacementsSettings = settingsBuilder.batchArchivePlacementsSettings().build();
   }
 
   /** Builder for PlacementServiceStubSettings. */
@@ -270,6 +342,25 @@ public class PlacementServiceStubSettings extends StubSettings<PlacementServiceS
     private final PagedCallSettings.Builder<
             ListPlacementsRequest, ListPlacementsResponse, ListPlacementsPagedResponse>
         listPlacementsSettings;
+    private final UnaryCallSettings.Builder<CreatePlacementRequest, Placement>
+        createPlacementSettings;
+    private final UnaryCallSettings.Builder<UpdatePlacementRequest, Placement>
+        updatePlacementSettings;
+    private final UnaryCallSettings.Builder<
+            BatchCreatePlacementsRequest, BatchCreatePlacementsResponse>
+        batchCreatePlacementsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchUpdatePlacementsRequest, BatchUpdatePlacementsResponse>
+        batchUpdatePlacementsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchActivatePlacementsRequest, BatchActivatePlacementsResponse>
+        batchActivatePlacementsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchDeactivatePlacementsRequest, BatchDeactivatePlacementsResponse>
+        batchDeactivatePlacementsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchArchivePlacementsRequest, BatchArchivePlacementsResponse>
+        batchArchivePlacementsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -299,10 +390,25 @@ public class PlacementServiceStubSettings extends StubSettings<PlacementServiceS
 
       getPlacementSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listPlacementsSettings = PagedCallSettings.newBuilder(LIST_PLACEMENTS_PAGE_STR_FACT);
+      createPlacementSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updatePlacementSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCreatePlacementsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUpdatePlacementsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchActivatePlacementsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeactivatePlacementsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchArchivePlacementsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getPlacementSettings, listPlacementsSettings);
+              getPlacementSettings,
+              listPlacementsSettings,
+              createPlacementSettings,
+              updatePlacementSettings,
+              batchCreatePlacementsSettings,
+              batchUpdatePlacementsSettings,
+              batchActivatePlacementsSettings,
+              batchDeactivatePlacementsSettings,
+              batchArchivePlacementsSettings);
       initDefaults(this);
     }
 
@@ -311,10 +417,25 @@ public class PlacementServiceStubSettings extends StubSettings<PlacementServiceS
 
       getPlacementSettings = settings.getPlacementSettings.toBuilder();
       listPlacementsSettings = settings.listPlacementsSettings.toBuilder();
+      createPlacementSettings = settings.createPlacementSettings.toBuilder();
+      updatePlacementSettings = settings.updatePlacementSettings.toBuilder();
+      batchCreatePlacementsSettings = settings.batchCreatePlacementsSettings.toBuilder();
+      batchUpdatePlacementsSettings = settings.batchUpdatePlacementsSettings.toBuilder();
+      batchActivatePlacementsSettings = settings.batchActivatePlacementsSettings.toBuilder();
+      batchDeactivatePlacementsSettings = settings.batchDeactivatePlacementsSettings.toBuilder();
+      batchArchivePlacementsSettings = settings.batchArchivePlacementsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getPlacementSettings, listPlacementsSettings);
+              getPlacementSettings,
+              listPlacementsSettings,
+              createPlacementSettings,
+              updatePlacementSettings,
+              batchCreatePlacementsSettings,
+              batchUpdatePlacementsSettings,
+              batchActivatePlacementsSettings,
+              batchDeactivatePlacementsSettings,
+              batchArchivePlacementsSettings);
     }
 
     private static Builder createDefault() {
@@ -337,6 +458,41 @@ public class PlacementServiceStubSettings extends StubSettings<PlacementServiceS
 
       builder
           .listPlacementsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createPlacementSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updatePlacementSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchCreatePlacementsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchUpdatePlacementsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchActivatePlacementsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchDeactivatePlacementsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchArchivePlacementsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -368,6 +524,48 @@ public class PlacementServiceStubSettings extends StubSettings<PlacementServiceS
             ListPlacementsRequest, ListPlacementsResponse, ListPlacementsPagedResponse>
         listPlacementsSettings() {
       return listPlacementsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createPlacement. */
+    public UnaryCallSettings.Builder<CreatePlacementRequest, Placement> createPlacementSettings() {
+      return createPlacementSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updatePlacement. */
+    public UnaryCallSettings.Builder<UpdatePlacementRequest, Placement> updatePlacementSettings() {
+      return updatePlacementSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreatePlacements. */
+    public UnaryCallSettings.Builder<BatchCreatePlacementsRequest, BatchCreatePlacementsResponse>
+        batchCreatePlacementsSettings() {
+      return batchCreatePlacementsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdatePlacements. */
+    public UnaryCallSettings.Builder<BatchUpdatePlacementsRequest, BatchUpdatePlacementsResponse>
+        batchUpdatePlacementsSettings() {
+      return batchUpdatePlacementsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivatePlacements. */
+    public UnaryCallSettings.Builder<
+            BatchActivatePlacementsRequest, BatchActivatePlacementsResponse>
+        batchActivatePlacementsSettings() {
+      return batchActivatePlacementsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivatePlacements. */
+    public UnaryCallSettings.Builder<
+            BatchDeactivatePlacementsRequest, BatchDeactivatePlacementsResponse>
+        batchDeactivatePlacementsSettings() {
+      return batchDeactivatePlacementsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchArchivePlacements. */
+    public UnaryCallSettings.Builder<BatchArchivePlacementsRequest, BatchArchivePlacementsResponse>
+        batchArchivePlacementsSettings() {
+      return batchArchivePlacementsSettings;
     }
 
     @Override

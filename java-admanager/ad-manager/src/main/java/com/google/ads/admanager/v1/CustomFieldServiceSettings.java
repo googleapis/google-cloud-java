@@ -99,6 +99,41 @@ public class CustomFieldServiceSettings extends ClientSettings<CustomFieldServic
     return ((CustomFieldServiceStubSettings) getStubSettings()).listCustomFieldsSettings();
   }
 
+  /** Returns the object with the settings used for calls to createCustomField. */
+  public UnaryCallSettings<CreateCustomFieldRequest, CustomField> createCustomFieldSettings() {
+    return ((CustomFieldServiceStubSettings) getStubSettings()).createCustomFieldSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateCustomFields. */
+  public UnaryCallSettings<BatchCreateCustomFieldsRequest, BatchCreateCustomFieldsResponse>
+      batchCreateCustomFieldsSettings() {
+    return ((CustomFieldServiceStubSettings) getStubSettings()).batchCreateCustomFieldsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomField. */
+  public UnaryCallSettings<UpdateCustomFieldRequest, CustomField> updateCustomFieldSettings() {
+    return ((CustomFieldServiceStubSettings) getStubSettings()).updateCustomFieldSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateCustomFields. */
+  public UnaryCallSettings<BatchUpdateCustomFieldsRequest, BatchUpdateCustomFieldsResponse>
+      batchUpdateCustomFieldsSettings() {
+    return ((CustomFieldServiceStubSettings) getStubSettings()).batchUpdateCustomFieldsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateCustomFields. */
+  public UnaryCallSettings<BatchActivateCustomFieldsRequest, BatchActivateCustomFieldsResponse>
+      batchActivateCustomFieldsSettings() {
+    return ((CustomFieldServiceStubSettings) getStubSettings()).batchActivateCustomFieldsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateCustomFields. */
+  public UnaryCallSettings<BatchDeactivateCustomFieldsRequest, BatchDeactivateCustomFieldsResponse>
+      batchDeactivateCustomFieldsSettings() {
+    return ((CustomFieldServiceStubSettings) getStubSettings())
+        .batchDeactivateCustomFieldsSettings();
+  }
+
   public static final CustomFieldServiceSettings create(CustomFieldServiceStubSettings stub)
       throws IOException {
     return new CustomFieldServiceSettings.Builder(stub.toBuilder()).build();
@@ -206,6 +241,46 @@ public class CustomFieldServiceSettings extends ClientSettings<CustomFieldServic
             ListCustomFieldsRequest, ListCustomFieldsResponse, ListCustomFieldsPagedResponse>
         listCustomFieldsSettings() {
       return getStubSettingsBuilder().listCustomFieldsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomField. */
+    public UnaryCallSettings.Builder<CreateCustomFieldRequest, CustomField>
+        createCustomFieldSettings() {
+      return getStubSettingsBuilder().createCustomFieldSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateCustomFields. */
+    public UnaryCallSettings.Builder<
+            BatchCreateCustomFieldsRequest, BatchCreateCustomFieldsResponse>
+        batchCreateCustomFieldsSettings() {
+      return getStubSettingsBuilder().batchCreateCustomFieldsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomField. */
+    public UnaryCallSettings.Builder<UpdateCustomFieldRequest, CustomField>
+        updateCustomFieldSettings() {
+      return getStubSettingsBuilder().updateCustomFieldSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateCustomFields. */
+    public UnaryCallSettings.Builder<
+            BatchUpdateCustomFieldsRequest, BatchUpdateCustomFieldsResponse>
+        batchUpdateCustomFieldsSettings() {
+      return getStubSettingsBuilder().batchUpdateCustomFieldsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateCustomFields. */
+    public UnaryCallSettings.Builder<
+            BatchActivateCustomFieldsRequest, BatchActivateCustomFieldsResponse>
+        batchActivateCustomFieldsSettings() {
+      return getStubSettingsBuilder().batchActivateCustomFieldsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivateCustomFields. */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateCustomFieldsRequest, BatchDeactivateCustomFieldsResponse>
+        batchDeactivateCustomFieldsSettings() {
+      return getStubSettingsBuilder().batchDeactivateCustomFieldsSettings();
     }
 
     @Override

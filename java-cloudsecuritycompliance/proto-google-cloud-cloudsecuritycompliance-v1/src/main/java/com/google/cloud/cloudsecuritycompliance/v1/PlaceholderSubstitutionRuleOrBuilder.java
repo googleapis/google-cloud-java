@@ -28,7 +28,7 @@ public interface PlaceholderSubstitutionRuleOrBuilder
    *
    *
    * <pre>
-   * Fully qualified proto attribute path (e.g., dot notation)
+   * The fully qualified proto attribute path, in dot notation.
    * </pre>
    *
    * <code>string attribute = 1;</code>
@@ -41,7 +41,7 @@ public interface PlaceholderSubstitutionRuleOrBuilder
    *
    *
    * <pre>
-   * Fully qualified proto attribute path (e.g., dot notation)
+   * The fully qualified proto attribute path, in dot notation.
    * </pre>
    *
    * <code>string attribute = 1;</code>

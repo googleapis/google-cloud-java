@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * A list of strings.
+ * A list of strings for the parameter value.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.StringList}
@@ -304,7 +304,7 @@ public final class StringList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of strings.
+   * A list of strings for the parameter value.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.StringList}

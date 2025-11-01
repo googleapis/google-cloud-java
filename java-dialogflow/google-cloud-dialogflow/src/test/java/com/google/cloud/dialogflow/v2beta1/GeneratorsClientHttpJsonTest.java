@@ -39,6 +39,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -94,6 +95,8 @@ public class GeneratorsClientHttpJsonTest {
             .setTriggerEvent(TriggerEvent.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllTools(new ArrayList<String>())
+            .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -147,6 +150,8 @@ public class GeneratorsClientHttpJsonTest {
             .setTriggerEvent(TriggerEvent.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllTools(new ArrayList<String>())
+            .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -200,6 +205,8 @@ public class GeneratorsClientHttpJsonTest {
             .setTriggerEvent(TriggerEvent.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllTools(new ArrayList<String>())
+            .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -249,6 +256,8 @@ public class GeneratorsClientHttpJsonTest {
             .setTriggerEvent(TriggerEvent.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllTools(new ArrayList<String>())
+            .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -478,6 +487,8 @@ public class GeneratorsClientHttpJsonTest {
             .setTriggerEvent(TriggerEvent.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllTools(new ArrayList<String>())
+            .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -489,6 +500,8 @@ public class GeneratorsClientHttpJsonTest {
             .setTriggerEvent(TriggerEvent.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllTools(new ArrayList<String>())
+            .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -526,6 +539,8 @@ public class GeneratorsClientHttpJsonTest {
               .setTriggerEvent(TriggerEvent.forNumber(0))
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
+              .addAllTools(new ArrayList<String>())
+              .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateGenerator(generator, updateMask);

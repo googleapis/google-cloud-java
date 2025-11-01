@@ -84,7 +84,9 @@ public interface CloudExadataInfrastructureOrBuilder
    *
    *
    * <pre>
-   * Optional. Google Cloud Platform location where Oracle Exadata is hosted.
+   * Optional. The GCP Oracle zone where Oracle Exadata Infrastructure is
+   * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
+   * zone based on availability.
    * </pre>
    *
    * <code>string gcp_oracle_zone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -97,7 +99,9 @@ public interface CloudExadataInfrastructureOrBuilder
    *
    *
    * <pre>
-   * Optional. Google Cloud Platform location where Oracle Exadata is hosted.
+   * Optional. The GCP Oracle zone where Oracle Exadata Infrastructure is
+   * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
+   * zone based on availability.
    * </pre>
    *
    * <code>string gcp_oracle_zone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>

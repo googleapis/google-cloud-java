@@ -99,6 +99,7 @@ public class CmekServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setFailureDetails(EncryptionConfig.FailureDetails.newBuilder().build())
+            .setEnableMetastoreEncryption(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -160,6 +161,7 @@ public class CmekServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setFailureDetails(EncryptionConfig.FailureDetails.newBuilder().build())
+            .setEnableMetastoreEncryption(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -221,6 +223,7 @@ public class CmekServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setFailureDetails(EncryptionConfig.FailureDetails.newBuilder().build())
+            .setEnableMetastoreEncryption(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -240,6 +243,7 @@ public class CmekServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setFailureDetails(EncryptionConfig.FailureDetails.newBuilder().build())
+            .setEnableMetastoreEncryption(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -280,6 +284,7 @@ public class CmekServiceClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .setEtag("etag3123477")
               .setFailureDetails(EncryptionConfig.FailureDetails.newBuilder().build())
+              .setEnableMetastoreEncryption(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateEncryptionConfigAsync(encryptionConfig, updateMask).get();
@@ -494,6 +499,7 @@ public class CmekServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setFailureDetails(EncryptionConfig.FailureDetails.newBuilder().build())
+            .setEnableMetastoreEncryption(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -547,6 +553,7 @@ public class CmekServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setFailureDetails(EncryptionConfig.FailureDetails.newBuilder().build())
+            .setEnableMetastoreEncryption(true)
             .build();
     mockService.addResponse(expectedResponse);
 

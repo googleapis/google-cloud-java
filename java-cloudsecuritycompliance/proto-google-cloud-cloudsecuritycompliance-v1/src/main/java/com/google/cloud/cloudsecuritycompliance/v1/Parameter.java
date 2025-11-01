@@ -23,7 +23,9 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Parameters is a key-value pair.
+ * Parameters are key-value pairs that let you provide your custom location
+ * requirements, environment requirements, or other settings that are
+ * relevant to the cloud control.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.Parameter}
@@ -74,7 +76,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the parameter.
+   * Required. The name or key of the parameter.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -98,7 +100,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the parameter.
+   * Required. The name or key of the parameter.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -125,7 +127,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The value of the parameter
+   * Required. The value of the parameter.
    * </pre>
    *
    * <code>
@@ -143,7 +145,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The value of the parameter
+   * Required. The value of the parameter.
    * </pre>
    *
    * <code>
@@ -163,7 +165,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The value of the parameter
+   * Required. The value of the parameter.
    * </pre>
    *
    * <code>
@@ -357,7 +359,9 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Parameters is a key-value pair.
+   * Parameters are key-value pairs that let you provide your custom location
+   * requirements, environment requirements, or other settings that are
+   * relevant to the cloud control.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.Parameter}
@@ -572,7 +576,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the parameter.
+     * Required. The name or key of the parameter.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -595,7 +599,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the parameter.
+     * Required. The name or key of the parameter.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -618,7 +622,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the parameter.
+     * Required. The name or key of the parameter.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -640,7 +644,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the parameter.
+     * Required. The name or key of the parameter.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -658,7 +662,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the parameter.
+     * Required. The name or key of the parameter.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -688,7 +692,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The value of the parameter
+     * Required. The value of the parameter.
      * </pre>
      *
      * <code>
@@ -705,7 +709,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The value of the parameter
+     * Required. The value of the parameter.
      * </pre>
      *
      * <code>
@@ -728,7 +732,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The value of the parameter
+     * Required. The value of the parameter.
      * </pre>
      *
      * <code>
@@ -753,7 +757,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The value of the parameter
+     * Required. The value of the parameter.
      * </pre>
      *
      * <code>
@@ -776,7 +780,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The value of the parameter
+     * Required. The value of the parameter.
      * </pre>
      *
      * <code>
@@ -808,7 +812,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The value of the parameter
+     * Required. The value of the parameter.
      * </pre>
      *
      * <code>
@@ -830,7 +834,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The value of the parameter
+     * Required. The value of the parameter.
      * </pre>
      *
      * <code>
@@ -848,7 +852,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The value of the parameter
+     * Required. The value of the parameter.
      * </pre>
      *
      * <code>
@@ -870,7 +874,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The value of the parameter
+     * Required. The value of the parameter.
      * </pre>
      *
      * <code>

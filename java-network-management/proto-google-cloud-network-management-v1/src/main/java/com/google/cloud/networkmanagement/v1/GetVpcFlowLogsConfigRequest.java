@@ -73,8 +73,14 @@ public final class GetVpcFlowLogsConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. `VpcFlowLogsConfig` resource name using the form:
-   *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+   * Required. The resource name of the VpcFlowLogsConfig,
+   * in one of the following formats:
+   *
+   * - For project-level resources:
+   * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+   *
+   * - For organization-level resources:
+   * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
    * </pre>
    *
    * <code>
@@ -100,8 +106,14 @@ public final class GetVpcFlowLogsConfigRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. `VpcFlowLogsConfig` resource name using the form:
-   *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+   * Required. The resource name of the VpcFlowLogsConfig,
+   * in one of the following formats:
+   *
+   * - For project-level resources:
+   * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+   *
+   * - For organization-level resources:
+   * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
    * </pre>
    *
    * <code>
@@ -479,8 +491,14 @@ public final class GetVpcFlowLogsConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. `VpcFlowLogsConfig` resource name using the form:
-     *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+     * Required. The resource name of the VpcFlowLogsConfig,
+     * in one of the following formats:
+     *
+     * - For project-level resources:
+     * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     *
+     * - For organization-level resources:
+     * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
      * </pre>
      *
      * <code>
@@ -505,8 +523,14 @@ public final class GetVpcFlowLogsConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. `VpcFlowLogsConfig` resource name using the form:
-     *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+     * Required. The resource name of the VpcFlowLogsConfig,
+     * in one of the following formats:
+     *
+     * - For project-level resources:
+     * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     *
+     * - For organization-level resources:
+     * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
      * </pre>
      *
      * <code>
@@ -531,8 +555,14 @@ public final class GetVpcFlowLogsConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. `VpcFlowLogsConfig` resource name using the form:
-     *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+     * Required. The resource name of the VpcFlowLogsConfig,
+     * in one of the following formats:
+     *
+     * - For project-level resources:
+     * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     *
+     * - For organization-level resources:
+     * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
      * </pre>
      *
      * <code>
@@ -556,8 +586,14 @@ public final class GetVpcFlowLogsConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. `VpcFlowLogsConfig` resource name using the form:
-     *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+     * Required. The resource name of the VpcFlowLogsConfig,
+     * in one of the following formats:
+     *
+     * - For project-level resources:
+     * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     *
+     * - For organization-level resources:
+     * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
      * </pre>
      *
      * <code>
@@ -577,8 +613,14 @@ public final class GetVpcFlowLogsConfigRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. `VpcFlowLogsConfig` resource name using the form:
-     *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+     * Required. The resource name of the VpcFlowLogsConfig,
+     * in one of the following formats:
+     *
+     * - For project-level resources:
+     * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     *
+     * - For organization-level resources:
+     * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
      * </pre>
      *
      * <code>

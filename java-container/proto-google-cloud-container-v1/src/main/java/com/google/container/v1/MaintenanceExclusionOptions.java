@@ -41,6 +41,7 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
 
   private MaintenanceExclusionOptions() {
     scope_ = 0;
+    endTimeBehavior_ = 0;
   }
 
   @java.lang.Override
@@ -235,6 +236,150 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
     // @@protoc_insertion_point(enum_scope:google.container.v1.MaintenanceExclusionOptions.Scope)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * EndTimeBehavior specifies the behavior of the exclusion end time.
+   * </pre>
+   *
+   * Protobuf enum {@code google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior}
+   */
+  public enum EndTimeBehavior implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * END_TIME_BEHAVIOR_UNSPECIFIED is the default behavior, which is fixed
+     * end time.
+     * </pre>
+     *
+     * <code>END_TIME_BEHAVIOR_UNSPECIFIED = 0;</code>
+     */
+    END_TIME_BEHAVIOR_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * UNTIL_END_OF_SUPPORT means the exclusion will be in effect until the end
+     * of the support of the cluster's current version.
+     * </pre>
+     *
+     * <code>UNTIL_END_OF_SUPPORT = 1;</code>
+     */
+    UNTIL_END_OF_SUPPORT(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * END_TIME_BEHAVIOR_UNSPECIFIED is the default behavior, which is fixed
+     * end time.
+     * </pre>
+     *
+     * <code>END_TIME_BEHAVIOR_UNSPECIFIED = 0;</code>
+     */
+    public static final int END_TIME_BEHAVIOR_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * UNTIL_END_OF_SUPPORT means the exclusion will be in effect until the end
+     * of the support of the cluster's current version.
+     * </pre>
+     *
+     * <code>UNTIL_END_OF_SUPPORT = 1;</code>
+     */
+    public static final int UNTIL_END_OF_SUPPORT_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EndTimeBehavior valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EndTimeBehavior forNumber(int value) {
+      switch (value) {
+        case 0:
+          return END_TIME_BEHAVIOR_UNSPECIFIED;
+        case 1:
+          return UNTIL_END_OF_SUPPORT;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EndTimeBehavior> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<EndTimeBehavior>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<EndTimeBehavior>() {
+              public EndTimeBehavior findValueByNumber(int number) {
+                return EndTimeBehavior.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.container.v1.MaintenanceExclusionOptions.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final EndTimeBehavior[] VALUES = values();
+
+    public static EndTimeBehavior valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EndTimeBehavior(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior)
+  }
+
   public static final int SCOPE_FIELD_NUMBER = 1;
   private int scope_ = 0;
 
@@ -276,6 +421,48 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
         : result;
   }
 
+  public static final int END_TIME_BEHAVIOR_FIELD_NUMBER = 2;
+  private int endTimeBehavior_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * EndTimeBehavior specifies the behavior of the exclusion end time.
+   * </pre>
+   *
+   * <code>.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior end_time_behavior = 2;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for endTimeBehavior.
+   */
+  @java.lang.Override
+  public int getEndTimeBehaviorValue() {
+    return endTimeBehavior_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * EndTimeBehavior specifies the behavior of the exclusion end time.
+   * </pre>
+   *
+   * <code>.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior end_time_behavior = 2;
+   * </code>
+   *
+   * @return The endTimeBehavior.
+   */
+  @java.lang.Override
+  public com.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior getEndTimeBehavior() {
+    com.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior result =
+        com.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior.forNumber(
+            endTimeBehavior_);
+    return result == null
+        ? com.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -294,6 +481,12 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
         != com.google.container.v1.MaintenanceExclusionOptions.Scope.NO_UPGRADES.getNumber()) {
       output.writeEnum(1, scope_);
     }
+    if (endTimeBehavior_
+        != com.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior
+            .END_TIME_BEHAVIOR_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(2, endTimeBehavior_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -306,6 +499,12 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
     if (scope_
         != com.google.container.v1.MaintenanceExclusionOptions.Scope.NO_UPGRADES.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, scope_);
+    }
+    if (endTimeBehavior_
+        != com.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior
+            .END_TIME_BEHAVIOR_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, endTimeBehavior_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -324,6 +523,7 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
         (com.google.container.v1.MaintenanceExclusionOptions) obj;
 
     if (scope_ != other.scope_) return false;
+    if (endTimeBehavior_ != other.endTimeBehavior_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -337,6 +537,8 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SCOPE_FIELD_NUMBER;
     hash = (53 * hash) + scope_;
+    hash = (37 * hash) + END_TIME_BEHAVIOR_FIELD_NUMBER;
+    hash = (53 * hash) + endTimeBehavior_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -478,6 +680,7 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
       super.clear();
       bitField0_ = 0;
       scope_ = 0;
+      endTimeBehavior_ = 0;
       return this;
     }
 
@@ -516,6 +719,9 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.scope_ = scope_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endTimeBehavior_ = endTimeBehavior_;
       }
     }
 
@@ -568,6 +774,9 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
       if (other.scope_ != 0) {
         setScopeValue(other.getScopeValue());
       }
+      if (other.endTimeBehavior_ != 0) {
+        setEndTimeBehaviorValue(other.getEndTimeBehaviorValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -600,6 +809,12 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 16:
+              {
+                endTimeBehavior_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -717,6 +932,111 @@ public final class MaintenanceExclusionOptions extends com.google.protobuf.Gener
     public Builder clearScope() {
       bitField0_ = (bitField0_ & ~0x00000001);
       scope_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int endTimeBehavior_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * EndTimeBehavior specifies the behavior of the exclusion end time.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior end_time_behavior = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for endTimeBehavior.
+     */
+    @java.lang.Override
+    public int getEndTimeBehaviorValue() {
+      return endTimeBehavior_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * EndTimeBehavior specifies the behavior of the exclusion end time.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior end_time_behavior = 2;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for endTimeBehavior to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndTimeBehaviorValue(int value) {
+      endTimeBehavior_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * EndTimeBehavior specifies the behavior of the exclusion end time.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior end_time_behavior = 2;
+     * </code>
+     *
+     * @return The endTimeBehavior.
+     */
+    @java.lang.Override
+    public com.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior
+        getEndTimeBehavior() {
+      com.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior result =
+          com.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior.forNumber(
+              endTimeBehavior_);
+      return result == null
+          ? com.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * EndTimeBehavior specifies the behavior of the exclusion end time.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior end_time_behavior = 2;
+     * </code>
+     *
+     * @param value The endTimeBehavior to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndTimeBehavior(
+        com.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      endTimeBehavior_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * EndTimeBehavior specifies the behavior of the exclusion end time.
+     * </pre>
+     *
+     * <code>.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior end_time_behavior = 2;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEndTimeBehavior() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      endTimeBehavior_ = 0;
       onChanged();
       return this;
     }

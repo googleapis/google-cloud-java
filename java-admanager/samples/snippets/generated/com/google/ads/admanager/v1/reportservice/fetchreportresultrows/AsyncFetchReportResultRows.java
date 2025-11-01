@@ -18,7 +18,7 @@ package com.google.ads.admanager.v1.samples;
 
 // [START admanager_v1_generated_ReportService_FetchReportResultRows_async]
 import com.google.ads.admanager.v1.FetchReportResultRowsRequest;
-import com.google.ads.admanager.v1.Report;
+import com.google.ads.admanager.v1.ReportDataTable;
 import com.google.ads.admanager.v1.ReportServiceClient;
 import com.google.api.core.ApiFuture;
 
@@ -41,10 +41,10 @@ public class AsyncFetchReportResultRows {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();
-      ApiFuture<Report.DataTable.Row> future =
+      ApiFuture<ReportDataTable.Row> future =
           reportServiceClient.fetchReportResultRowsPagedCallable().futureCall(request);
       // Do something.
-      for (Report.DataTable.Row element : future.get().iterateAll()) {
+      for (ReportDataTable.Row element : future.get().iterateAll()) {
         // doThingsWith(element);
       }
     }

@@ -31,6 +31,8 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest;
 import com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse;
+import com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest;
+import com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse;
 import com.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest;
 import com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse;
 import com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest;
@@ -143,6 +145,21 @@ public class GrpcParticipantsStub extends ParticipantsStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentMethodDescriptor =
+          MethodDescriptor
+              .<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.v2beta1.Participants/BidiStreamingAnalyzeContent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BidiStreamingAnalyzeContentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BidiStreamingAnalyzeContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<SuggestArticlesRequest, SuggestArticlesResponse>
       suggestArticlesMethodDescriptor =
           MethodDescriptor.<SuggestArticlesRequest, SuggestArticlesResponse>newBuilder()
@@ -250,6 +267,9 @@ public class GrpcParticipantsStub extends ParticipantsStub {
   private final BidiStreamingCallable<
           StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
       streamingAnalyzeContentCallable;
+  private final BidiStreamingCallable<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentCallable;
   private final UnaryCallable<SuggestArticlesRequest, SuggestArticlesResponse>
       suggestArticlesCallable;
   private final UnaryCallable<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
@@ -370,6 +390,13 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                 .<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>newBuilder()
                 .setMethodDescriptor(streamingAnalyzeContentMethodDescriptor)
                 .build();
+    GrpcCallSettings<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+        bidiStreamingAnalyzeContentTransportSettings =
+            GrpcCallSettings
+                .<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+                    newBuilder()
+                .setMethodDescriptor(bidiStreamingAnalyzeContentMethodDescriptor)
+                .build();
     GrpcCallSettings<SuggestArticlesRequest, SuggestArticlesResponse>
         suggestArticlesTransportSettings =
             GrpcCallSettings.<SuggestArticlesRequest, SuggestArticlesResponse>newBuilder()
@@ -485,6 +512,11 @@ public class GrpcParticipantsStub extends ParticipantsStub {
             streamingAnalyzeContentTransportSettings,
             settings.streamingAnalyzeContentSettings(),
             clientContext);
+    this.bidiStreamingAnalyzeContentCallable =
+        callableFactory.createBidiStreamingCallable(
+            bidiStreamingAnalyzeContentTransportSettings,
+            settings.bidiStreamingAnalyzeContentSettings(),
+            clientContext);
     this.suggestArticlesCallable =
         callableFactory.createUnaryCallable(
             suggestArticlesTransportSettings, settings.suggestArticlesSettings(), clientContext);
@@ -568,6 +600,13 @@ public class GrpcParticipantsStub extends ParticipantsStub {
   public BidiStreamingCallable<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
       streamingAnalyzeContentCallable() {
     return streamingAnalyzeContentCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentCallable() {
+    return bidiStreamingAnalyzeContentCallable;
   }
 
   @Override

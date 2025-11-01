@@ -28,7 +28,7 @@ public interface ListCloudControlDeploymentsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of CloudControlDeployments.
+   * The list of cloud control deployments.
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface ListCloudControlDeploymentsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of CloudControlDeployments.
+   * The list of cloud control deployments.
    * </pre>
    *
    * <code>
@@ -56,7 +56,7 @@ public interface ListCloudControlDeploymentsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of CloudControlDeployments.
+   * The list of cloud control deployments.
    * </pre>
    *
    * <code>
@@ -69,7 +69,7 @@ public interface ListCloudControlDeploymentsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of CloudControlDeployments.
+   * The list of cloud control deployments.
    * </pre>
    *
    * <code>
@@ -84,7 +84,7 @@ public interface ListCloudControlDeploymentsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of CloudControlDeployments.
+   * The list of cloud control deployments.
    * </pre>
    *
    * <code>
@@ -98,7 +98,8 @@ public interface ListCloudControlDeploymentsResponseOrBuilder
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * A token that identifies the next page of results that the server
+   * should return.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -111,7 +112,8 @@ public interface ListCloudControlDeploymentsResponseOrBuilder
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * A token that identifies the next page of results that the server
+   * should return.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

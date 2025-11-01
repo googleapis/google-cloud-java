@@ -71,7 +71,7 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
   public static final int ROWS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private java.util.List<com.google.ads.admanager.v1.Report.DataTable.Row> rows_;
+  private java.util.List<com.google.ads.admanager.v1.ReportDataTable.Row> rows_;
 
   /**
    *
@@ -80,10 +80,10 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
    * Up to `page_size` rows of report data.
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+   * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
    */
   @java.lang.Override
-  public java.util.List<com.google.ads.admanager.v1.Report.DataTable.Row> getRowsList() {
+  public java.util.List<com.google.ads.admanager.v1.ReportDataTable.Row> getRowsList() {
     return rows_;
   }
 
@@ -94,10 +94,10 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
    * Up to `page_size` rows of report data.
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+   * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.google.ads.admanager.v1.Report.DataTable.RowOrBuilder>
+  public java.util.List<? extends com.google.ads.admanager.v1.ReportDataTable.RowOrBuilder>
       getRowsOrBuilderList() {
     return rows_;
   }
@@ -109,7 +109,7 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
    * Up to `page_size` rows of report data.
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+   * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
    */
   @java.lang.Override
   public int getRowsCount() {
@@ -123,10 +123,10 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
    * Up to `page_size` rows of report data.
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+   * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
    */
   @java.lang.Override
-  public com.google.ads.admanager.v1.Report.DataTable.Row getRows(int index) {
+  public com.google.ads.admanager.v1.ReportDataTable.Row getRows(int index) {
     return rows_.get(index);
   }
 
@@ -137,10 +137,10 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
    * Up to `page_size` rows of report data.
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+   * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
    */
   @java.lang.Override
-  public com.google.ads.admanager.v1.Report.DataTable.RowOrBuilder getRowsOrBuilder(int index) {
+  public com.google.ads.admanager.v1.ReportDataTable.RowOrBuilder getRowsOrBuilder(int index) {
     return rows_.get(index);
   }
 
@@ -199,7 +199,8 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
   public static final int DATE_RANGES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private java.util.List<com.google.ads.admanager.v1.Report.DateRange.FixedDateRange> dateRanges_;
+  private java.util.List<com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange>
+      dateRanges_;
 
   /**
    *
@@ -210,10 +211,12 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
    * included in the request).
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;</code>
+   * <code>
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
+   * </code>
    */
   @java.lang.Override
-  public java.util.List<com.google.ads.admanager.v1.Report.DateRange.FixedDateRange>
+  public java.util.List<com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange>
       getDateRangesList() {
     return dateRanges_;
   }
@@ -227,11 +230,13 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
    * included in the request).
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;</code>
+   * <code>
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
+   * </code>
    */
   @java.lang.Override
   public java.util.List<
-          ? extends com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder>
+          ? extends com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder>
       getDateRangesOrBuilderList() {
     return dateRanges_;
   }
@@ -245,7 +250,9 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
    * included in the request).
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;</code>
+   * <code>
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
+   * </code>
    */
   @java.lang.Override
   public int getDateRangesCount() {
@@ -261,10 +268,13 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
    * included in the request).
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;</code>
+   * <code>
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
+   * </code>
    */
   @java.lang.Override
-  public com.google.ads.admanager.v1.Report.DateRange.FixedDateRange getDateRanges(int index) {
+  public com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange getDateRanges(
+      int index) {
     return dateRanges_.get(index);
   }
 
@@ -277,10 +287,12 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
    * included in the request).
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;</code>
+   * <code>
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
+   * </code>
    */
   @java.lang.Override
-  public com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder
+  public com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder
       getDateRangesOrBuilder(int index) {
     return dateRanges_.get(index);
   }
@@ -288,7 +300,7 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
   public static final int COMPARISON_DATE_RANGES_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private java.util.List<com.google.ads.admanager.v1.Report.DateRange.FixedDateRange>
+  private java.util.List<com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange>
       comparisonDateRanges_;
 
   /**
@@ -301,11 +313,11 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
    * </code>
    */
   @java.lang.Override
-  public java.util.List<com.google.ads.admanager.v1.Report.DateRange.FixedDateRange>
+  public java.util.List<com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange>
       getComparisonDateRangesList() {
     return comparisonDateRanges_;
   }
@@ -320,12 +332,12 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
    * </code>
    */
   @java.lang.Override
   public java.util.List<
-          ? extends com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder>
+          ? extends com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder>
       getComparisonDateRangesOrBuilderList() {
     return comparisonDateRanges_;
   }
@@ -340,7 +352,7 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
    * </code>
    */
   @java.lang.Override
@@ -358,12 +370,12 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
    * </code>
    */
   @java.lang.Override
-  public com.google.ads.admanager.v1.Report.DateRange.FixedDateRange getComparisonDateRanges(
-      int index) {
+  public com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange
+      getComparisonDateRanges(int index) {
     return comparisonDateRanges_.get(index);
   }
 
@@ -377,11 +389,11 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
    * </code>
    */
   @java.lang.Override
-  public com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder
+  public com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder
       getComparisonDateRangesOrBuilder(int index) {
     return comparisonDateRanges_.get(index);
   }
@@ -1008,9 +1020,9 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
               break;
             case 10:
               {
-                com.google.ads.admanager.v1.Report.DataTable.Row m =
+                com.google.ads.admanager.v1.ReportDataTable.Row m =
                     input.readMessage(
-                        com.google.ads.admanager.v1.Report.DataTable.Row.parser(),
+                        com.google.ads.admanager.v1.ReportDataTable.Row.parser(),
                         extensionRegistry);
                 if (rowsBuilder_ == null) {
                   ensureRowsIsMutable();
@@ -1028,9 +1040,10 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
               } // case 18
             case 26:
               {
-                com.google.ads.admanager.v1.Report.DateRange.FixedDateRange m =
+                com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange m =
                     input.readMessage(
-                        com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.parser(),
+                        com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange
+                            .parser(),
                         extensionRegistry);
                 if (dateRangesBuilder_ == null) {
                   ensureDateRangesIsMutable();
@@ -1042,9 +1055,10 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
               } // case 26
             case 34:
               {
-                com.google.ads.admanager.v1.Report.DateRange.FixedDateRange m =
+                com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange m =
                     input.readMessage(
-                        com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.parser(),
+                        com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange
+                            .parser(),
                         extensionRegistry);
                 if (comparisonDateRangesBuilder_ == null) {
                   ensureComparisonDateRangesIsMutable();
@@ -1085,20 +1099,20 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
 
     private int bitField0_;
 
-    private java.util.List<com.google.ads.admanager.v1.Report.DataTable.Row> rows_ =
+    private java.util.List<com.google.ads.admanager.v1.ReportDataTable.Row> rows_ =
         java.util.Collections.emptyList();
 
     private void ensureRowsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        rows_ = new java.util.ArrayList<com.google.ads.admanager.v1.Report.DataTable.Row>(rows_);
+        rows_ = new java.util.ArrayList<com.google.ads.admanager.v1.ReportDataTable.Row>(rows_);
         bitField0_ |= 0x00000001;
       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.ads.admanager.v1.Report.DataTable.Row,
-            com.google.ads.admanager.v1.Report.DataTable.Row.Builder,
-            com.google.ads.admanager.v1.Report.DataTable.RowOrBuilder>
+            com.google.ads.admanager.v1.ReportDataTable.Row,
+            com.google.ads.admanager.v1.ReportDataTable.Row.Builder,
+            com.google.ads.admanager.v1.ReportDataTable.RowOrBuilder>
         rowsBuilder_;
 
     /**
@@ -1108,9 +1122,9 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
-    public java.util.List<com.google.ads.admanager.v1.Report.DataTable.Row> getRowsList() {
+    public java.util.List<com.google.ads.admanager.v1.ReportDataTable.Row> getRowsList() {
       if (rowsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(rows_);
       } else {
@@ -1125,7 +1139,7 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
     public int getRowsCount() {
       if (rowsBuilder_ == null) {
@@ -1142,9 +1156,9 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
-    public com.google.ads.admanager.v1.Report.DataTable.Row getRows(int index) {
+    public com.google.ads.admanager.v1.ReportDataTable.Row getRows(int index) {
       if (rowsBuilder_ == null) {
         return rows_.get(index);
       } else {
@@ -1159,9 +1173,9 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
-    public Builder setRows(int index, com.google.ads.admanager.v1.Report.DataTable.Row value) {
+    public Builder setRows(int index, com.google.ads.admanager.v1.ReportDataTable.Row value) {
       if (rowsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1182,10 +1196,10 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
     public Builder setRows(
-        int index, com.google.ads.admanager.v1.Report.DataTable.Row.Builder builderForValue) {
+        int index, com.google.ads.admanager.v1.ReportDataTable.Row.Builder builderForValue) {
       if (rowsBuilder_ == null) {
         ensureRowsIsMutable();
         rows_.set(index, builderForValue.build());
@@ -1203,9 +1217,9 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
-    public Builder addRows(com.google.ads.admanager.v1.Report.DataTable.Row value) {
+    public Builder addRows(com.google.ads.admanager.v1.ReportDataTable.Row value) {
       if (rowsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1226,9 +1240,9 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
-    public Builder addRows(int index, com.google.ads.admanager.v1.Report.DataTable.Row value) {
+    public Builder addRows(int index, com.google.ads.admanager.v1.ReportDataTable.Row value) {
       if (rowsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1249,10 +1263,10 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
     public Builder addRows(
-        com.google.ads.admanager.v1.Report.DataTable.Row.Builder builderForValue) {
+        com.google.ads.admanager.v1.ReportDataTable.Row.Builder builderForValue) {
       if (rowsBuilder_ == null) {
         ensureRowsIsMutable();
         rows_.add(builderForValue.build());
@@ -1270,10 +1284,10 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
     public Builder addRows(
-        int index, com.google.ads.admanager.v1.Report.DataTable.Row.Builder builderForValue) {
+        int index, com.google.ads.admanager.v1.ReportDataTable.Row.Builder builderForValue) {
       if (rowsBuilder_ == null) {
         ensureRowsIsMutable();
         rows_.add(index, builderForValue.build());
@@ -1291,10 +1305,10 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
     public Builder addAllRows(
-        java.lang.Iterable<? extends com.google.ads.admanager.v1.Report.DataTable.Row> values) {
+        java.lang.Iterable<? extends com.google.ads.admanager.v1.ReportDataTable.Row> values) {
       if (rowsBuilder_ == null) {
         ensureRowsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, rows_);
@@ -1312,7 +1326,7 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
     public Builder clearRows() {
       if (rowsBuilder_ == null) {
@@ -1332,7 +1346,7 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
     public Builder removeRows(int index) {
       if (rowsBuilder_ == null) {
@@ -1352,9 +1366,9 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
-    public com.google.ads.admanager.v1.Report.DataTable.Row.Builder getRowsBuilder(int index) {
+    public com.google.ads.admanager.v1.ReportDataTable.Row.Builder getRowsBuilder(int index) {
       return getRowsFieldBuilder().getBuilder(index);
     }
 
@@ -1365,9 +1379,9 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
-    public com.google.ads.admanager.v1.Report.DataTable.RowOrBuilder getRowsOrBuilder(int index) {
+    public com.google.ads.admanager.v1.ReportDataTable.RowOrBuilder getRowsOrBuilder(int index) {
       if (rowsBuilder_ == null) {
         return rows_.get(index);
       } else {
@@ -1382,9 +1396,9 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
-    public java.util.List<? extends com.google.ads.admanager.v1.Report.DataTable.RowOrBuilder>
+    public java.util.List<? extends com.google.ads.admanager.v1.ReportDataTable.RowOrBuilder>
         getRowsOrBuilderList() {
       if (rowsBuilder_ != null) {
         return rowsBuilder_.getMessageOrBuilderList();
@@ -1400,11 +1414,11 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
-    public com.google.ads.admanager.v1.Report.DataTable.Row.Builder addRowsBuilder() {
+    public com.google.ads.admanager.v1.ReportDataTable.Row.Builder addRowsBuilder() {
       return getRowsFieldBuilder()
-          .addBuilder(com.google.ads.admanager.v1.Report.DataTable.Row.getDefaultInstance());
+          .addBuilder(com.google.ads.admanager.v1.ReportDataTable.Row.getDefaultInstance());
     }
 
     /**
@@ -1414,11 +1428,11 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
-    public com.google.ads.admanager.v1.Report.DataTable.Row.Builder addRowsBuilder(int index) {
+    public com.google.ads.admanager.v1.ReportDataTable.Row.Builder addRowsBuilder(int index) {
       return getRowsFieldBuilder()
-          .addBuilder(index, com.google.ads.admanager.v1.Report.DataTable.Row.getDefaultInstance());
+          .addBuilder(index, com.google.ads.admanager.v1.ReportDataTable.Row.getDefaultInstance());
     }
 
     /**
@@ -1428,24 +1442,24 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * Up to `page_size` rows of report data.
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+     * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
      */
-    public java.util.List<com.google.ads.admanager.v1.Report.DataTable.Row.Builder>
+    public java.util.List<com.google.ads.admanager.v1.ReportDataTable.Row.Builder>
         getRowsBuilderList() {
       return getRowsFieldBuilder().getBuilderList();
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.ads.admanager.v1.Report.DataTable.Row,
-            com.google.ads.admanager.v1.Report.DataTable.Row.Builder,
-            com.google.ads.admanager.v1.Report.DataTable.RowOrBuilder>
+            com.google.ads.admanager.v1.ReportDataTable.Row,
+            com.google.ads.admanager.v1.ReportDataTable.Row.Builder,
+            com.google.ads.admanager.v1.ReportDataTable.RowOrBuilder>
         getRowsFieldBuilder() {
       if (rowsBuilder_ == null) {
         rowsBuilder_ =
             new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.ads.admanager.v1.Report.DataTable.Row,
-                com.google.ads.admanager.v1.Report.DataTable.Row.Builder,
-                com.google.ads.admanager.v1.Report.DataTable.RowOrBuilder>(
+                com.google.ads.admanager.v1.ReportDataTable.Row,
+                com.google.ads.admanager.v1.ReportDataTable.Row.Builder,
+                com.google.ads.admanager.v1.ReportDataTable.RowOrBuilder>(
                 rows_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         rows_ = null;
       }
@@ -1651,22 +1665,22 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
       return runTimeBuilder_;
     }
 
-    private java.util.List<com.google.ads.admanager.v1.Report.DateRange.FixedDateRange>
+    private java.util.List<com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange>
         dateRanges_ = java.util.Collections.emptyList();
 
     private void ensureDateRangesIsMutable() {
       if (!((bitField0_ & 0x00000004) != 0)) {
         dateRanges_ =
-            new java.util.ArrayList<com.google.ads.admanager.v1.Report.DateRange.FixedDateRange>(
-                dateRanges_);
+            new java.util.ArrayList<
+                com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange>(dateRanges_);
         bitField0_ |= 0x00000004;
       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.ads.admanager.v1.Report.DateRange.FixedDateRange,
-            com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder,
-            com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder>
+            com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange,
+            com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder,
+            com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder>
         dateRangesBuilder_;
 
     /**
@@ -1678,10 +1692,11 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
-    public java.util.List<com.google.ads.admanager.v1.Report.DateRange.FixedDateRange>
+    public java.util.List<com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange>
         getDateRangesList() {
       if (dateRangesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(dateRanges_);
@@ -1699,7 +1714,8 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
     public int getDateRangesCount() {
@@ -1719,10 +1735,12 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
-    public com.google.ads.admanager.v1.Report.DateRange.FixedDateRange getDateRanges(int index) {
+    public com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange getDateRanges(
+        int index) {
       if (dateRangesBuilder_ == null) {
         return dateRanges_.get(index);
       } else {
@@ -1739,11 +1757,12 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
     public Builder setDateRanges(
-        int index, com.google.ads.admanager.v1.Report.DateRange.FixedDateRange value) {
+        int index, com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange value) {
       if (dateRangesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1766,12 +1785,14 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
     public Builder setDateRanges(
         int index,
-        com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder builderForValue) {
+        com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder
+            builderForValue) {
       if (dateRangesBuilder_ == null) {
         ensureDateRangesIsMutable();
         dateRanges_.set(index, builderForValue.build());
@@ -1791,11 +1812,12 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
     public Builder addDateRanges(
-        com.google.ads.admanager.v1.Report.DateRange.FixedDateRange value) {
+        com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange value) {
       if (dateRangesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1818,11 +1840,12 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
     public Builder addDateRanges(
-        int index, com.google.ads.admanager.v1.Report.DateRange.FixedDateRange value) {
+        int index, com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange value) {
       if (dateRangesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1845,11 +1868,13 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
     public Builder addDateRanges(
-        com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder builderForValue) {
+        com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder
+            builderForValue) {
       if (dateRangesBuilder_ == null) {
         ensureDateRangesIsMutable();
         dateRanges_.add(builderForValue.build());
@@ -1869,12 +1894,14 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
     public Builder addDateRanges(
         int index,
-        com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder builderForValue) {
+        com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder
+            builderForValue) {
       if (dateRangesBuilder_ == null) {
         ensureDateRangesIsMutable();
         dateRanges_.add(index, builderForValue.build());
@@ -1894,11 +1921,13 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
     public Builder addAllDateRanges(
-        java.lang.Iterable<? extends com.google.ads.admanager.v1.Report.DateRange.FixedDateRange>
+        java.lang.Iterable<
+                ? extends com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange>
             values) {
       if (dateRangesBuilder_ == null) {
         ensureDateRangesIsMutable();
@@ -1919,7 +1948,8 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
     public Builder clearDateRanges() {
@@ -1942,7 +1972,8 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
     public Builder removeDateRanges(int index) {
@@ -1965,11 +1996,12 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
-    public com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder getDateRangesBuilder(
-        int index) {
+    public com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder
+        getDateRangesBuilder(int index) {
       return getDateRangesFieldBuilder().getBuilder(index);
     }
 
@@ -1982,10 +2014,11 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
-    public com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder
+    public com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder
         getDateRangesOrBuilder(int index) {
       if (dateRangesBuilder_ == null) {
         return dateRanges_.get(index);
@@ -2003,11 +2036,13 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
     public java.util.List<
-            ? extends com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder>
+            ? extends
+                com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder>
         getDateRangesOrBuilderList() {
       if (dateRangesBuilder_ != null) {
         return dateRangesBuilder_.getMessageOrBuilderList();
@@ -2025,14 +2060,16 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
-    public com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder
+    public com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder
         addDateRangesBuilder() {
       return getDateRangesFieldBuilder()
           .addBuilder(
-              com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.getDefaultInstance());
+              com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange
+                  .getDefaultInstance());
     }
 
     /**
@@ -2044,15 +2081,17 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
-    public com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder addDateRangesBuilder(
-        int index) {
+    public com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder
+        addDateRangesBuilder(int index) {
       return getDateRangesFieldBuilder()
           .addBuilder(
               index,
-              com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.getDefaultInstance());
+              com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange
+                  .getDefaultInstance());
     }
 
     /**
@@ -2064,47 +2103,50 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * included in the request).
      * </pre>
      *
-     * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;
+     * <code>
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
      * </code>
      */
-    public java.util.List<com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder>
+    public java.util.List<
+            com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder>
         getDateRangesBuilderList() {
       return getDateRangesFieldBuilder().getBuilderList();
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.ads.admanager.v1.Report.DateRange.FixedDateRange,
-            com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder,
-            com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder>
+            com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange,
+            com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder,
+            com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder>
         getDateRangesFieldBuilder() {
       if (dateRangesBuilder_ == null) {
         dateRangesBuilder_ =
             new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.ads.admanager.v1.Report.DateRange.FixedDateRange,
-                com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder,
-                com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder>(
+                com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange,
+                com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder,
+                com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder>(
                 dateRanges_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         dateRanges_ = null;
       }
       return dateRangesBuilder_;
     }
 
-    private java.util.List<com.google.ads.admanager.v1.Report.DateRange.FixedDateRange>
+    private java.util.List<com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange>
         comparisonDateRanges_ = java.util.Collections.emptyList();
 
     private void ensureComparisonDateRangesIsMutable() {
       if (!((bitField0_ & 0x00000008) != 0)) {
         comparisonDateRanges_ =
-            new java.util.ArrayList<com.google.ads.admanager.v1.Report.DateRange.FixedDateRange>(
+            new java.util.ArrayList<
+                com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange>(
                 comparisonDateRanges_);
         bitField0_ |= 0x00000008;
       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.ads.admanager.v1.Report.DateRange.FixedDateRange,
-            com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder,
-            com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder>
+            com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange,
+            com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder,
+            com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder>
         comparisonDateRangesBuilder_;
 
     /**
@@ -2117,10 +2159,10 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
-    public java.util.List<com.google.ads.admanager.v1.Report.DateRange.FixedDateRange>
+    public java.util.List<com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange>
         getComparisonDateRangesList() {
       if (comparisonDateRangesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(comparisonDateRanges_);
@@ -2139,7 +2181,7 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
     public int getComparisonDateRangesCount() {
@@ -2160,11 +2202,11 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
-    public com.google.ads.admanager.v1.Report.DateRange.FixedDateRange getComparisonDateRanges(
-        int index) {
+    public com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange
+        getComparisonDateRanges(int index) {
       if (comparisonDateRangesBuilder_ == null) {
         return comparisonDateRanges_.get(index);
       } else {
@@ -2182,11 +2224,11 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
     public Builder setComparisonDateRanges(
-        int index, com.google.ads.admanager.v1.Report.DateRange.FixedDateRange value) {
+        int index, com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange value) {
       if (comparisonDateRangesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2210,12 +2252,13 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
     public Builder setComparisonDateRanges(
         int index,
-        com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder builderForValue) {
+        com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder
+            builderForValue) {
       if (comparisonDateRangesBuilder_ == null) {
         ensureComparisonDateRangesIsMutable();
         comparisonDateRanges_.set(index, builderForValue.build());
@@ -2236,11 +2279,11 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
     public Builder addComparisonDateRanges(
-        com.google.ads.admanager.v1.Report.DateRange.FixedDateRange value) {
+        com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange value) {
       if (comparisonDateRangesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2264,11 +2307,11 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
     public Builder addComparisonDateRanges(
-        int index, com.google.ads.admanager.v1.Report.DateRange.FixedDateRange value) {
+        int index, com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange value) {
       if (comparisonDateRangesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2292,11 +2335,12 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
     public Builder addComparisonDateRanges(
-        com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder builderForValue) {
+        com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder
+            builderForValue) {
       if (comparisonDateRangesBuilder_ == null) {
         ensureComparisonDateRangesIsMutable();
         comparisonDateRanges_.add(builderForValue.build());
@@ -2317,12 +2361,13 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
     public Builder addComparisonDateRanges(
         int index,
-        com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder builderForValue) {
+        com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder
+            builderForValue) {
       if (comparisonDateRangesBuilder_ == null) {
         ensureComparisonDateRangesIsMutable();
         comparisonDateRanges_.add(index, builderForValue.build());
@@ -2343,11 +2388,12 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
     public Builder addAllComparisonDateRanges(
-        java.lang.Iterable<? extends com.google.ads.admanager.v1.Report.DateRange.FixedDateRange>
+        java.lang.Iterable<
+                ? extends com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange>
             values) {
       if (comparisonDateRangesBuilder_ == null) {
         ensureComparisonDateRangesIsMutable();
@@ -2369,7 +2415,7 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
     public Builder clearComparisonDateRanges() {
@@ -2393,7 +2439,7 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
     public Builder removeComparisonDateRanges(int index) {
@@ -2417,10 +2463,10 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
-    public com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder
+    public com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder
         getComparisonDateRangesBuilder(int index) {
       return getComparisonDateRangesFieldBuilder().getBuilder(index);
     }
@@ -2435,10 +2481,10 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
-    public com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder
+    public com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder
         getComparisonDateRangesOrBuilder(int index) {
       if (comparisonDateRangesBuilder_ == null) {
         return comparisonDateRanges_.get(index);
@@ -2457,11 +2503,12 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
     public java.util.List<
-            ? extends com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder>
+            ? extends
+                com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder>
         getComparisonDateRangesOrBuilderList() {
       if (comparisonDateRangesBuilder_ != null) {
         return comparisonDateRangesBuilder_.getMessageOrBuilderList();
@@ -2480,14 +2527,15 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
-    public com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder
+    public com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder
         addComparisonDateRangesBuilder() {
       return getComparisonDateRangesFieldBuilder()
           .addBuilder(
-              com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.getDefaultInstance());
+              com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange
+                  .getDefaultInstance());
     }
 
     /**
@@ -2500,15 +2548,16 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
-    public com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder
+    public com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder
         addComparisonDateRangesBuilder(int index) {
       return getComparisonDateRangesFieldBuilder()
           .addBuilder(
               index,
-              com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.getDefaultInstance());
+              com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange
+                  .getDefaultInstance());
     }
 
     /**
@@ -2521,25 +2570,26 @@ public final class FetchReportResultRowsResponse extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+     * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
      * </code>
      */
-    public java.util.List<com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder>
+    public java.util.List<
+            com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder>
         getComparisonDateRangesBuilderList() {
       return getComparisonDateRangesFieldBuilder().getBuilderList();
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.ads.admanager.v1.Report.DateRange.FixedDateRange,
-            com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder,
-            com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder>
+            com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange,
+            com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder,
+            com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder>
         getComparisonDateRangesFieldBuilder() {
       if (comparisonDateRangesBuilder_ == null) {
         comparisonDateRangesBuilder_ =
             new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.ads.admanager.v1.Report.DateRange.FixedDateRange,
-                com.google.ads.admanager.v1.Report.DateRange.FixedDateRange.Builder,
-                com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder>(
+                com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange,
+                com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange.Builder,
+                com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder>(
                 comparisonDateRanges_,
                 ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),

@@ -19,6 +19,7 @@
 // Protobuf Java Version: 3.25.8
 package com.google.container.v1;
 
+@java.lang.Deprecated
 public interface DesiredEnterpriseConfigOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.DesiredEnterpriseConfig)

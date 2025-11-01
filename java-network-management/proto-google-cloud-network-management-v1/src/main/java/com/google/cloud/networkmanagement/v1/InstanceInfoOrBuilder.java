@@ -244,7 +244,7 @@ public interface InstanceInfoOrBuilder
    * <code>string service_account = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=340
+   *     google/cloud/networkmanagement/v1/trace.proto;l=363
    * @return The serviceAccount.
    */
   @java.lang.Deprecated
@@ -260,7 +260,7 @@ public interface InstanceInfoOrBuilder
    * <code>string service_account = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=340
+   *     google/cloud/networkmanagement/v1/trace.proto;l=363
    * @return The bytes for serviceAccount.
    */
   @java.lang.Deprecated
@@ -291,4 +291,47 @@ public interface InstanceInfoOrBuilder
    * @return The bytes for pscNetworkAttachmentUri.
    */
   com.google.protobuf.ByteString getPscNetworkAttachmentUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the Compute Engine instance is running.
+   * Deprecated: use the `status` field instead.
+   * </pre>
+   *
+   * <code>bool running = 10 [deprecated = true];</code>
+   *
+   * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.running is deprecated. See
+   *     google/cloud/networkmanagement/v1/trace.proto;l=370
+   * @return The running.
+   */
+  @java.lang.Deprecated
+  boolean getRunning();
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of the instance.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.InstanceInfo.Status status = 11;</code>
+   *
+   * @return The enum numeric value on the wire for status.
+   */
+  int getStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of the instance.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.InstanceInfo.Status status = 11;</code>
+   *
+   * @return The status.
+   */
+  com.google.cloud.networkmanagement.v1.InstanceInfo.Status getStatus();
 }

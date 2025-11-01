@@ -314,21 +314,6 @@ public interface PrimaryProductDataSourceOrBuilder
    *
    *
    * <pre>
-   * Output only. The existing data source setup contains at least one custom
-   * (non-default) rule and therefore its management through the
-   * `default_rule_data_sources` field should be treated with caution.
-   * </pre>
-   *
-   * <code>bool contains_custom_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The containsCustomRules.
-   */
-  boolean getContainsCustomRules();
-
-  /**
-   *
-   *
-   * <pre>
    * Optional. A list of destinations describing where products of the data
    * source can be shown.
    *

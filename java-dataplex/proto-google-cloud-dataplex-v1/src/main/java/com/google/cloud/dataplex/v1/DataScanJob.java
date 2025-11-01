@@ -332,6 +332,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
     DATA_QUALITY_SPEC(100),
     DATA_PROFILE_SPEC(101),
     DATA_DISCOVERY_SPEC(102),
+    DATA_DOCUMENTATION_SPEC(103),
     SPEC_NOT_SET(0);
     private final int value;
 
@@ -357,6 +358,8 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
           return DATA_PROFILE_SPEC;
         case 102:
           return DATA_DISCOVERY_SPEC;
+        case 103:
+          return DATA_DOCUMENTATION_SPEC;
         case 0:
           return SPEC_NOT_SET;
         default:
@@ -385,6 +388,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
     DATA_QUALITY_RESULT(200),
     DATA_PROFILE_RESULT(201),
     DATA_DISCOVERY_RESULT(202),
+    DATA_DOCUMENTATION_RESULT(203),
     RESULT_NOT_SET(0);
     private final int value;
 
@@ -410,6 +414,8 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
           return DATA_PROFILE_RESULT;
         case 202:
           return DATA_DISCOVERY_RESULT;
+        case 203:
+          return DATA_DOCUMENTATION_RESULT;
         case 0:
           return RESULT_NOT_SET;
         default:
@@ -1019,6 +1025,67 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance();
   }
 
+  public static final int DATA_DOCUMENTATION_SPEC_FIELD_NUMBER = 103;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Settings for a data documentation scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataDocumentationSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataDocumentationSpec() {
+    return specCase_ == 103;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Settings for a data documentation scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataDocumentationSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDocumentationSpec getDataDocumentationSpec() {
+    if (specCase_ == 103) {
+      return (com.google.cloud.dataplex.v1.DataDocumentationSpec) spec_;
+    }
+    return com.google.cloud.dataplex.v1.DataDocumentationSpec.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Settings for a data documentation scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDocumentationSpecOrBuilder
+      getDataDocumentationSpecOrBuilder() {
+    if (specCase_ == 103) {
+      return (com.google.cloud.dataplex.v1.DataDocumentationSpec) spec_;
+    }
+    return com.google.cloud.dataplex.v1.DataDocumentationSpec.getDefaultInstance();
+  }
+
   public static final int DATA_QUALITY_RESULT_FIELD_NUMBER = 200;
 
   /**
@@ -1200,6 +1267,67 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance();
   }
 
+  public static final int DATA_DOCUMENTATION_RESULT_FIELD_NUMBER = 203;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data documentation scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataDocumentationResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataDocumentationResult() {
+    return resultCase_ == 203;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data documentation scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataDocumentationResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDocumentationResult getDataDocumentationResult() {
+    if (resultCase_ == 203) {
+      return (com.google.cloud.dataplex.v1.DataDocumentationResult) result_;
+    }
+    return com.google.cloud.dataplex.v1.DataDocumentationResult.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data documentation scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDocumentationResultOrBuilder
+      getDataDocumentationResultOrBuilder() {
+    if (resultCase_ == 203) {
+      return (com.google.cloud.dataplex.v1.DataDocumentationResult) result_;
+    }
+    return com.google.cloud.dataplex.v1.DataDocumentationResult.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1247,6 +1375,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
     if (specCase_ == 102) {
       output.writeMessage(102, (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_);
     }
+    if (specCase_ == 103) {
+      output.writeMessage(103, (com.google.cloud.dataplex.v1.DataDocumentationSpec) spec_);
+    }
     if (resultCase_ == 200) {
       output.writeMessage(200, (com.google.cloud.dataplex.v1.DataQualityResult) result_);
     }
@@ -1255,6 +1386,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
     }
     if (resultCase_ == 202) {
       output.writeMessage(202, (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_);
+    }
+    if (resultCase_ == 203) {
+      output.writeMessage(203, (com.google.cloud.dataplex.v1.DataDocumentationResult) result_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1304,6 +1438,11 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               102, (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_);
     }
+    if (specCase_ == 103) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              103, (com.google.cloud.dataplex.v1.DataDocumentationSpec) spec_);
+    }
     if (resultCase_ == 200) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1318,6 +1457,11 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               202, (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_);
+    }
+    if (resultCase_ == 203) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              203, (com.google.cloud.dataplex.v1.DataDocumentationResult) result_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1362,6 +1506,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       case 102:
         if (!getDataDiscoverySpec().equals(other.getDataDiscoverySpec())) return false;
         break;
+      case 103:
+        if (!getDataDocumentationSpec().equals(other.getDataDocumentationSpec())) return false;
+        break;
       case 0:
       default:
     }
@@ -1375,6 +1522,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
         break;
       case 202:
         if (!getDataDiscoveryResult().equals(other.getDataDiscoveryResult())) return false;
+        break;
+      case 203:
+        if (!getDataDocumentationResult().equals(other.getDataDocumentationResult())) return false;
         break;
       case 0:
       default:
@@ -1425,6 +1575,10 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + DATA_DISCOVERY_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getDataDiscoverySpec().hashCode();
         break;
+      case 103:
+        hash = (37 * hash) + DATA_DOCUMENTATION_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getDataDocumentationSpec().hashCode();
+        break;
       case 0:
       default:
     }
@@ -1440,6 +1594,10 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       case 202:
         hash = (37 * hash) + DATA_DISCOVERY_RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getDataDiscoveryResult().hashCode();
+        break;
+      case 203:
+        hash = (37 * hash) + DATA_DOCUMENTATION_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getDataDocumentationResult().hashCode();
         break;
       case 0:
       default:
@@ -1624,6 +1782,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       if (dataDiscoverySpecBuilder_ != null) {
         dataDiscoverySpecBuilder_.clear();
       }
+      if (dataDocumentationSpecBuilder_ != null) {
+        dataDocumentationSpecBuilder_.clear();
+      }
       if (dataQualityResultBuilder_ != null) {
         dataQualityResultBuilder_.clear();
       }
@@ -1632,6 +1793,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (dataDiscoveryResultBuilder_ != null) {
         dataDiscoveryResultBuilder_.clear();
+      }
+      if (dataDocumentationResultBuilder_ != null) {
+        dataDocumentationResultBuilder_.clear();
       }
       specCase_ = 0;
       spec_ = null;
@@ -1717,6 +1881,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       if (specCase_ == 102 && dataDiscoverySpecBuilder_ != null) {
         result.spec_ = dataDiscoverySpecBuilder_.build();
       }
+      if (specCase_ == 103 && dataDocumentationSpecBuilder_ != null) {
+        result.spec_ = dataDocumentationSpecBuilder_.build();
+      }
       result.resultCase_ = resultCase_;
       result.result_ = this.result_;
       if (resultCase_ == 200 && dataQualityResultBuilder_ != null) {
@@ -1727,6 +1894,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (resultCase_ == 202 && dataDiscoveryResultBuilder_ != null) {
         result.result_ = dataDiscoveryResultBuilder_.build();
+      }
+      if (resultCase_ == 203 && dataDocumentationResultBuilder_ != null) {
+        result.result_ = dataDocumentationResultBuilder_.build();
       }
     }
 
@@ -1821,6 +1991,11 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
             mergeDataDiscoverySpec(other.getDataDiscoverySpec());
             break;
           }
+        case DATA_DOCUMENTATION_SPEC:
+          {
+            mergeDataDocumentationSpec(other.getDataDocumentationSpec());
+            break;
+          }
         case SPEC_NOT_SET:
           {
             break;
@@ -1840,6 +2015,11 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
         case DATA_DISCOVERY_RESULT:
           {
             mergeDataDiscoveryResult(other.getDataDiscoveryResult());
+            break;
+          }
+        case DATA_DOCUMENTATION_RESULT:
+          {
+            mergeDataDocumentationResult(other.getDataDocumentationResult());
             break;
           }
         case RESULT_NOT_SET:
@@ -1940,6 +2120,13 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
                 specCase_ = 102;
                 break;
               } // case 818
+            case 826:
+              {
+                input.readMessage(
+                    getDataDocumentationSpecFieldBuilder().getBuilder(), extensionRegistry);
+                specCase_ = 103;
+                break;
+              } // case 826
             case 1602:
               {
                 input.readMessage(
@@ -1961,6 +2148,13 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
                 resultCase_ = 202;
                 break;
               } // case 1618
+            case 1626:
+              {
+                input.readMessage(
+                    getDataDocumentationResultFieldBuilder().getBuilder(), extensionRegistry);
+                resultCase_ = 203;
+                break;
+              } // case 1626
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3910,6 +4104,246 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataDocumentationSpec,
+            com.google.cloud.dataplex.v1.DataDocumentationSpec.Builder,
+            com.google.cloud.dataplex.v1.DataDocumentationSpecOrBuilder>
+        dataDocumentationSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dataDocumentationSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataDocumentationSpec() {
+      return specCase_ == 103;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dataDocumentationSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationSpec getDataDocumentationSpec() {
+      if (dataDocumentationSpecBuilder_ == null) {
+        if (specCase_ == 103) {
+          return (com.google.cloud.dataplex.v1.DataDocumentationSpec) spec_;
+        }
+        return com.google.cloud.dataplex.v1.DataDocumentationSpec.getDefaultInstance();
+      } else {
+        if (specCase_ == 103) {
+          return dataDocumentationSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.DataDocumentationSpec.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataDocumentationSpec(
+        com.google.cloud.dataplex.v1.DataDocumentationSpec value) {
+      if (dataDocumentationSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spec_ = value;
+        onChanged();
+      } else {
+        dataDocumentationSpecBuilder_.setMessage(value);
+      }
+      specCase_ = 103;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataDocumentationSpec(
+        com.google.cloud.dataplex.v1.DataDocumentationSpec.Builder builderForValue) {
+      if (dataDocumentationSpecBuilder_ == null) {
+        spec_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataDocumentationSpecBuilder_.setMessage(builderForValue.build());
+      }
+      specCase_ = 103;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDataDocumentationSpec(
+        com.google.cloud.dataplex.v1.DataDocumentationSpec value) {
+      if (dataDocumentationSpecBuilder_ == null) {
+        if (specCase_ == 103
+            && spec_ != com.google.cloud.dataplex.v1.DataDocumentationSpec.getDefaultInstance()) {
+          spec_ =
+              com.google.cloud.dataplex.v1.DataDocumentationSpec.newBuilder(
+                      (com.google.cloud.dataplex.v1.DataDocumentationSpec) spec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          spec_ = value;
+        }
+        onChanged();
+      } else {
+        if (specCase_ == 103) {
+          dataDocumentationSpecBuilder_.mergeFrom(value);
+        } else {
+          dataDocumentationSpecBuilder_.setMessage(value);
+        }
+      }
+      specCase_ = 103;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDataDocumentationSpec() {
+      if (dataDocumentationSpecBuilder_ == null) {
+        if (specCase_ == 103) {
+          specCase_ = 0;
+          spec_ = null;
+          onChanged();
+        }
+      } else {
+        if (specCase_ == 103) {
+          specCase_ = 0;
+          spec_ = null;
+        }
+        dataDocumentationSpecBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataDocumentationSpec.Builder
+        getDataDocumentationSpecBuilder() {
+      return getDataDocumentationSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationSpecOrBuilder
+        getDataDocumentationSpecOrBuilder() {
+      if ((specCase_ == 103) && (dataDocumentationSpecBuilder_ != null)) {
+        return dataDocumentationSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (specCase_ == 103) {
+          return (com.google.cloud.dataplex.v1.DataDocumentationSpec) spec_;
+        }
+        return com.google.cloud.dataplex.v1.DataDocumentationSpec.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataDocumentationSpec,
+            com.google.cloud.dataplex.v1.DataDocumentationSpec.Builder,
+            com.google.cloud.dataplex.v1.DataDocumentationSpecOrBuilder>
+        getDataDocumentationSpecFieldBuilder() {
+      if (dataDocumentationSpecBuilder_ == null) {
+        if (!(specCase_ == 103)) {
+          spec_ = com.google.cloud.dataplex.v1.DataDocumentationSpec.getDefaultInstance();
+        }
+        dataDocumentationSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataDocumentationSpec,
+                com.google.cloud.dataplex.v1.DataDocumentationSpec.Builder,
+                com.google.cloud.dataplex.v1.DataDocumentationSpecOrBuilder>(
+                (com.google.cloud.dataplex.v1.DataDocumentationSpec) spec_,
+                getParentForChildren(),
+                isClean());
+        spec_ = null;
+      }
+      specCase_ = 103;
+      onChanged();
+      return dataDocumentationSpecBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.DataQualityResult,
             com.google.cloud.dataplex.v1.DataQualityResult.Builder,
             com.google.cloud.dataplex.v1.DataQualityResultOrBuilder>
@@ -4618,6 +5052,247 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 202;
       onChanged();
       return dataDiscoveryResultBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataDocumentationResult,
+            com.google.cloud.dataplex.v1.DataDocumentationResult.Builder,
+            com.google.cloud.dataplex.v1.DataDocumentationResultOrBuilder>
+        dataDocumentationResultBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dataDocumentationResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataDocumentationResult() {
+      return resultCase_ == 203;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dataDocumentationResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult getDataDocumentationResult() {
+      if (dataDocumentationResultBuilder_ == null) {
+        if (resultCase_ == 203) {
+          return (com.google.cloud.dataplex.v1.DataDocumentationResult) result_;
+        }
+        return com.google.cloud.dataplex.v1.DataDocumentationResult.getDefaultInstance();
+      } else {
+        if (resultCase_ == 203) {
+          return dataDocumentationResultBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.DataDocumentationResult.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataDocumentationResult(
+        com.google.cloud.dataplex.v1.DataDocumentationResult value) {
+      if (dataDocumentationResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        result_ = value;
+        onChanged();
+      } else {
+        dataDocumentationResultBuilder_.setMessage(value);
+      }
+      resultCase_ = 203;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataDocumentationResult(
+        com.google.cloud.dataplex.v1.DataDocumentationResult.Builder builderForValue) {
+      if (dataDocumentationResultBuilder_ == null) {
+        result_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataDocumentationResultBuilder_.setMessage(builderForValue.build());
+      }
+      resultCase_ = 203;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDataDocumentationResult(
+        com.google.cloud.dataplex.v1.DataDocumentationResult value) {
+      if (dataDocumentationResultBuilder_ == null) {
+        if (resultCase_ == 203
+            && result_
+                != com.google.cloud.dataplex.v1.DataDocumentationResult.getDefaultInstance()) {
+          result_ =
+              com.google.cloud.dataplex.v1.DataDocumentationResult.newBuilder(
+                      (com.google.cloud.dataplex.v1.DataDocumentationResult) result_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          result_ = value;
+        }
+        onChanged();
+      } else {
+        if (resultCase_ == 203) {
+          dataDocumentationResultBuilder_.mergeFrom(value);
+        } else {
+          dataDocumentationResultBuilder_.setMessage(value);
+        }
+      }
+      resultCase_ = 203;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDataDocumentationResult() {
+      if (dataDocumentationResultBuilder_ == null) {
+        if (resultCase_ == 203) {
+          resultCase_ = 0;
+          result_ = null;
+          onChanged();
+        }
+      } else {
+        if (resultCase_ == 203) {
+          resultCase_ = 0;
+          result_ = null;
+        }
+        dataDocumentationResultBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.Builder
+        getDataDocumentationResultBuilder() {
+      return getDataDocumentationResultFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResultOrBuilder
+        getDataDocumentationResultOrBuilder() {
+      if ((resultCase_ == 203) && (dataDocumentationResultBuilder_ != null)) {
+        return dataDocumentationResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (resultCase_ == 203) {
+          return (com.google.cloud.dataplex.v1.DataDocumentationResult) result_;
+        }
+        return com.google.cloud.dataplex.v1.DataDocumentationResult.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data documentation scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataDocumentationResult,
+            com.google.cloud.dataplex.v1.DataDocumentationResult.Builder,
+            com.google.cloud.dataplex.v1.DataDocumentationResultOrBuilder>
+        getDataDocumentationResultFieldBuilder() {
+      if (dataDocumentationResultBuilder_ == null) {
+        if (!(resultCase_ == 203)) {
+          result_ = com.google.cloud.dataplex.v1.DataDocumentationResult.getDefaultInstance();
+        }
+        dataDocumentationResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataDocumentationResult,
+                com.google.cloud.dataplex.v1.DataDocumentationResult.Builder,
+                com.google.cloud.dataplex.v1.DataDocumentationResultOrBuilder>(
+                (com.google.cloud.dataplex.v1.DataDocumentationResult) result_,
+                getParentForChildren(),
+                isClean());
+        result_ = null;
+      }
+      resultCase_ = 203;
+      onChanged();
+      return dataDocumentationResultBuilder_;
     }
 
     @java.lang.Override

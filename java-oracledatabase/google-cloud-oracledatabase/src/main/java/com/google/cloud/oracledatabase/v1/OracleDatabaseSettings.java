@@ -22,12 +22,23 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListAutono
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListAutonomousDbVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudExadataInfrastructuresPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudVmClustersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabaseCharacterSetsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabasesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbNodesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbServersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemInitialStorageSizesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemShapesPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListEntitlementsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExadbVmClustersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExascaleDbStorageVaultsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbSubnetsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListPluggableDatabasesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -238,6 +249,13 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
     return ((OracleDatabaseStubSettings) getStubSettings()).listGiVersionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to listMinorVersions. */
+  public PagedCallSettings<
+          ListMinorVersionsRequest, ListMinorVersionsResponse, ListMinorVersionsPagedResponse>
+      listMinorVersionsSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).listMinorVersionsSettings();
+  }
+
   /** Returns the object with the settings used for calls to listDbSystemShapes. */
   public PagedCallSettings<
           ListDbSystemShapesRequest, ListDbSystemShapesResponse, ListDbSystemShapesPagedResponse>
@@ -272,6 +290,20 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       createAutonomousDatabaseOperationSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings())
         .createAutonomousDatabaseOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAutonomousDatabase. */
+  public UnaryCallSettings<UpdateAutonomousDatabaseRequest, Operation>
+      updateAutonomousDatabaseSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).updateAutonomousDatabaseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAutonomousDatabase. */
+  public OperationCallSettings<
+          UpdateAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      updateAutonomousDatabaseOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .updateAutonomousDatabaseOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteAutonomousDatabase. */
@@ -376,6 +408,289 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       restartAutonomousDatabaseOperationSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings())
         .restartAutonomousDatabaseOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to switchoverAutonomousDatabase. */
+  public UnaryCallSettings<SwitchoverAutonomousDatabaseRequest, Operation>
+      switchoverAutonomousDatabaseSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).switchoverAutonomousDatabaseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to switchoverAutonomousDatabase. */
+  public OperationCallSettings<
+          SwitchoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      switchoverAutonomousDatabaseOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .switchoverAutonomousDatabaseOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to failoverAutonomousDatabase. */
+  public UnaryCallSettings<FailoverAutonomousDatabaseRequest, Operation>
+      failoverAutonomousDatabaseSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).failoverAutonomousDatabaseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to failoverAutonomousDatabase. */
+  public OperationCallSettings<
+          FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      failoverAutonomousDatabaseOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .failoverAutonomousDatabaseOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listOdbNetworks. */
+  public PagedCallSettings<
+          ListOdbNetworksRequest, ListOdbNetworksResponse, ListOdbNetworksPagedResponse>
+      listOdbNetworksSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).listOdbNetworksSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getOdbNetwork. */
+  public UnaryCallSettings<GetOdbNetworkRequest, OdbNetwork> getOdbNetworkSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).getOdbNetworkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createOdbNetwork. */
+  public UnaryCallSettings<CreateOdbNetworkRequest, Operation> createOdbNetworkSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).createOdbNetworkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createOdbNetwork. */
+  public OperationCallSettings<CreateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+      createOdbNetworkOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).createOdbNetworkOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteOdbNetwork. */
+  public UnaryCallSettings<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).deleteOdbNetworkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteOdbNetwork. */
+  public OperationCallSettings<DeleteOdbNetworkRequest, Empty, OperationMetadata>
+      deleteOdbNetworkOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).deleteOdbNetworkOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listOdbSubnets. */
+  public PagedCallSettings<
+          ListOdbSubnetsRequest, ListOdbSubnetsResponse, ListOdbSubnetsPagedResponse>
+      listOdbSubnetsSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).listOdbSubnetsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getOdbSubnet. */
+  public UnaryCallSettings<GetOdbSubnetRequest, OdbSubnet> getOdbSubnetSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).getOdbSubnetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createOdbSubnet. */
+  public UnaryCallSettings<CreateOdbSubnetRequest, Operation> createOdbSubnetSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).createOdbSubnetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createOdbSubnet. */
+  public OperationCallSettings<CreateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+      createOdbSubnetOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).createOdbSubnetOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteOdbSubnet. */
+  public UnaryCallSettings<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).deleteOdbSubnetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteOdbSubnet. */
+  public OperationCallSettings<DeleteOdbSubnetRequest, Empty, OperationMetadata>
+      deleteOdbSubnetOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).deleteOdbSubnetOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listExadbVmClusters. */
+  public PagedCallSettings<
+          ListExadbVmClustersRequest, ListExadbVmClustersResponse, ListExadbVmClustersPagedResponse>
+      listExadbVmClustersSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).listExadbVmClustersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getExadbVmCluster. */
+  public UnaryCallSettings<GetExadbVmClusterRequest, ExadbVmCluster> getExadbVmClusterSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).getExadbVmClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createExadbVmCluster. */
+  public UnaryCallSettings<CreateExadbVmClusterRequest, Operation> createExadbVmClusterSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).createExadbVmClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createExadbVmCluster. */
+  public OperationCallSettings<CreateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      createExadbVmClusterOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).createExadbVmClusterOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteExadbVmCluster. */
+  public UnaryCallSettings<DeleteExadbVmClusterRequest, Operation> deleteExadbVmClusterSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).deleteExadbVmClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteExadbVmCluster. */
+  public OperationCallSettings<DeleteExadbVmClusterRequest, Empty, OperationMetadata>
+      deleteExadbVmClusterOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).deleteExadbVmClusterOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateExadbVmCluster. */
+  public UnaryCallSettings<UpdateExadbVmClusterRequest, Operation> updateExadbVmClusterSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).updateExadbVmClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateExadbVmCluster. */
+  public OperationCallSettings<UpdateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      updateExadbVmClusterOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).updateExadbVmClusterOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeVirtualMachineExadbVmCluster. */
+  public UnaryCallSettings<RemoveVirtualMachineExadbVmClusterRequest, Operation>
+      removeVirtualMachineExadbVmClusterSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .removeVirtualMachineExadbVmClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeVirtualMachineExadbVmCluster. */
+  public OperationCallSettings<
+          RemoveVirtualMachineExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      removeVirtualMachineExadbVmClusterOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .removeVirtualMachineExadbVmClusterOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listExascaleDbStorageVaults. */
+  public PagedCallSettings<
+          ListExascaleDbStorageVaultsRequest,
+          ListExascaleDbStorageVaultsResponse,
+          ListExascaleDbStorageVaultsPagedResponse>
+      listExascaleDbStorageVaultsSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).listExascaleDbStorageVaultsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getExascaleDbStorageVault. */
+  public UnaryCallSettings<GetExascaleDbStorageVaultRequest, ExascaleDbStorageVault>
+      getExascaleDbStorageVaultSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).getExascaleDbStorageVaultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createExascaleDbStorageVault. */
+  public UnaryCallSettings<CreateExascaleDbStorageVaultRequest, Operation>
+      createExascaleDbStorageVaultSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).createExascaleDbStorageVaultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createExascaleDbStorageVault. */
+  public OperationCallSettings<
+          CreateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+      createExascaleDbStorageVaultOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .createExascaleDbStorageVaultOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteExascaleDbStorageVault. */
+  public UnaryCallSettings<DeleteExascaleDbStorageVaultRequest, Operation>
+      deleteExascaleDbStorageVaultSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).deleteExascaleDbStorageVaultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteExascaleDbStorageVault. */
+  public OperationCallSettings<DeleteExascaleDbStorageVaultRequest, Empty, OperationMetadata>
+      deleteExascaleDbStorageVaultOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .deleteExascaleDbStorageVaultOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDbSystemInitialStorageSizes. */
+  public PagedCallSettings<
+          ListDbSystemInitialStorageSizesRequest,
+          ListDbSystemInitialStorageSizesResponse,
+          ListDbSystemInitialStorageSizesPagedResponse>
+      listDbSystemInitialStorageSizesSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .listDbSystemInitialStorageSizesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDatabases. */
+  public PagedCallSettings<ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
+      listDatabasesSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).listDatabasesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDatabase. */
+  public UnaryCallSettings<GetDatabaseRequest, Database> getDatabaseSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).getDatabaseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPluggableDatabases. */
+  public PagedCallSettings<
+          ListPluggableDatabasesRequest,
+          ListPluggableDatabasesResponse,
+          ListPluggableDatabasesPagedResponse>
+      listPluggableDatabasesSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).listPluggableDatabasesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPluggableDatabase. */
+  public UnaryCallSettings<GetPluggableDatabaseRequest, PluggableDatabase>
+      getPluggableDatabaseSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).getPluggableDatabaseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDbSystems. */
+  public PagedCallSettings<ListDbSystemsRequest, ListDbSystemsResponse, ListDbSystemsPagedResponse>
+      listDbSystemsSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).listDbSystemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDbSystem. */
+  public UnaryCallSettings<GetDbSystemRequest, DbSystem> getDbSystemSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).getDbSystemSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDbSystem. */
+  public UnaryCallSettings<CreateDbSystemRequest, Operation> createDbSystemSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).createDbSystemSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDbSystem. */
+  public OperationCallSettings<CreateDbSystemRequest, DbSystem, OperationMetadata>
+      createDbSystemOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).createDbSystemOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDbSystem. */
+  public UnaryCallSettings<DeleteDbSystemRequest, Operation> deleteDbSystemSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).deleteDbSystemSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDbSystem. */
+  public OperationCallSettings<DeleteDbSystemRequest, Empty, OperationMetadata>
+      deleteDbSystemOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).deleteDbSystemOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDbVersions. */
+  public PagedCallSettings<
+          ListDbVersionsRequest, ListDbVersionsResponse, ListDbVersionsPagedResponse>
+      listDbVersionsSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).listDbVersionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDatabaseCharacterSets. */
+  public PagedCallSettings<
+          ListDatabaseCharacterSetsRequest,
+          ListDatabaseCharacterSetsResponse,
+          ListDatabaseCharacterSetsPagedResponse>
+      listDatabaseCharacterSetsSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).listDatabaseCharacterSetsSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -611,6 +926,13 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       return getStubSettingsBuilder().listGiVersionsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listMinorVersions. */
+    public PagedCallSettings.Builder<
+            ListMinorVersionsRequest, ListMinorVersionsResponse, ListMinorVersionsPagedResponse>
+        listMinorVersionsSettings() {
+      return getStubSettingsBuilder().listMinorVersionsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listDbSystemShapes. */
     public PagedCallSettings.Builder<
             ListDbSystemShapesRequest, ListDbSystemShapesResponse, ListDbSystemShapesPagedResponse>
@@ -644,6 +966,19 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
             CreateAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
         createAutonomousDatabaseOperationSettings() {
       return getStubSettingsBuilder().createAutonomousDatabaseOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutonomousDatabase. */
+    public UnaryCallSettings.Builder<UpdateAutonomousDatabaseRequest, Operation>
+        updateAutonomousDatabaseSettings() {
+      return getStubSettingsBuilder().updateAutonomousDatabaseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutonomousDatabase. */
+    public OperationCallSettings.Builder<
+            UpdateAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        updateAutonomousDatabaseOperationSettings() {
+      return getStubSettingsBuilder().updateAutonomousDatabaseOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteAutonomousDatabase. */
@@ -744,6 +1079,299 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
             RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
         restartAutonomousDatabaseOperationSettings() {
       return getStubSettingsBuilder().restartAutonomousDatabaseOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to switchoverAutonomousDatabase. */
+    public UnaryCallSettings.Builder<SwitchoverAutonomousDatabaseRequest, Operation>
+        switchoverAutonomousDatabaseSettings() {
+      return getStubSettingsBuilder().switchoverAutonomousDatabaseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to switchoverAutonomousDatabase. */
+    public OperationCallSettings.Builder<
+            SwitchoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        switchoverAutonomousDatabaseOperationSettings() {
+      return getStubSettingsBuilder().switchoverAutonomousDatabaseOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to failoverAutonomousDatabase. */
+    public UnaryCallSettings.Builder<FailoverAutonomousDatabaseRequest, Operation>
+        failoverAutonomousDatabaseSettings() {
+      return getStubSettingsBuilder().failoverAutonomousDatabaseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to failoverAutonomousDatabase. */
+    public OperationCallSettings.Builder<
+            FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        failoverAutonomousDatabaseOperationSettings() {
+      return getStubSettingsBuilder().failoverAutonomousDatabaseOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listOdbNetworks. */
+    public PagedCallSettings.Builder<
+            ListOdbNetworksRequest, ListOdbNetworksResponse, ListOdbNetworksPagedResponse>
+        listOdbNetworksSettings() {
+      return getStubSettingsBuilder().listOdbNetworksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getOdbNetwork. */
+    public UnaryCallSettings.Builder<GetOdbNetworkRequest, OdbNetwork> getOdbNetworkSettings() {
+      return getStubSettingsBuilder().getOdbNetworkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createOdbNetwork. */
+    public UnaryCallSettings.Builder<CreateOdbNetworkRequest, Operation>
+        createOdbNetworkSettings() {
+      return getStubSettingsBuilder().createOdbNetworkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createOdbNetwork. */
+    public OperationCallSettings.Builder<CreateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+        createOdbNetworkOperationSettings() {
+      return getStubSettingsBuilder().createOdbNetworkOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOdbNetwork. */
+    public UnaryCallSettings.Builder<DeleteOdbNetworkRequest, Operation>
+        deleteOdbNetworkSettings() {
+      return getStubSettingsBuilder().deleteOdbNetworkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOdbNetwork. */
+    public OperationCallSettings.Builder<DeleteOdbNetworkRequest, Empty, OperationMetadata>
+        deleteOdbNetworkOperationSettings() {
+      return getStubSettingsBuilder().deleteOdbNetworkOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listOdbSubnets. */
+    public PagedCallSettings.Builder<
+            ListOdbSubnetsRequest, ListOdbSubnetsResponse, ListOdbSubnetsPagedResponse>
+        listOdbSubnetsSettings() {
+      return getStubSettingsBuilder().listOdbSubnetsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getOdbSubnet. */
+    public UnaryCallSettings.Builder<GetOdbSubnetRequest, OdbSubnet> getOdbSubnetSettings() {
+      return getStubSettingsBuilder().getOdbSubnetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createOdbSubnet. */
+    public UnaryCallSettings.Builder<CreateOdbSubnetRequest, Operation> createOdbSubnetSettings() {
+      return getStubSettingsBuilder().createOdbSubnetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createOdbSubnet. */
+    public OperationCallSettings.Builder<CreateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+        createOdbSubnetOperationSettings() {
+      return getStubSettingsBuilder().createOdbSubnetOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOdbSubnet. */
+    public UnaryCallSettings.Builder<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetSettings() {
+      return getStubSettingsBuilder().deleteOdbSubnetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOdbSubnet. */
+    public OperationCallSettings.Builder<DeleteOdbSubnetRequest, Empty, OperationMetadata>
+        deleteOdbSubnetOperationSettings() {
+      return getStubSettingsBuilder().deleteOdbSubnetOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listExadbVmClusters. */
+    public PagedCallSettings.Builder<
+            ListExadbVmClustersRequest,
+            ListExadbVmClustersResponse,
+            ListExadbVmClustersPagedResponse>
+        listExadbVmClustersSettings() {
+      return getStubSettingsBuilder().listExadbVmClustersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getExadbVmCluster. */
+    public UnaryCallSettings.Builder<GetExadbVmClusterRequest, ExadbVmCluster>
+        getExadbVmClusterSettings() {
+      return getStubSettingsBuilder().getExadbVmClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createExadbVmCluster. */
+    public UnaryCallSettings.Builder<CreateExadbVmClusterRequest, Operation>
+        createExadbVmClusterSettings() {
+      return getStubSettingsBuilder().createExadbVmClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createExadbVmCluster. */
+    public OperationCallSettings.Builder<
+            CreateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+        createExadbVmClusterOperationSettings() {
+      return getStubSettingsBuilder().createExadbVmClusterOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExadbVmCluster. */
+    public UnaryCallSettings.Builder<DeleteExadbVmClusterRequest, Operation>
+        deleteExadbVmClusterSettings() {
+      return getStubSettingsBuilder().deleteExadbVmClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExadbVmCluster. */
+    public OperationCallSettings.Builder<DeleteExadbVmClusterRequest, Empty, OperationMetadata>
+        deleteExadbVmClusterOperationSettings() {
+      return getStubSettingsBuilder().deleteExadbVmClusterOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateExadbVmCluster. */
+    public UnaryCallSettings.Builder<UpdateExadbVmClusterRequest, Operation>
+        updateExadbVmClusterSettings() {
+      return getStubSettingsBuilder().updateExadbVmClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateExadbVmCluster. */
+    public OperationCallSettings.Builder<
+            UpdateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+        updateExadbVmClusterOperationSettings() {
+      return getStubSettingsBuilder().updateExadbVmClusterOperationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to removeVirtualMachineExadbVmCluster.
+     */
+    public UnaryCallSettings.Builder<RemoveVirtualMachineExadbVmClusterRequest, Operation>
+        removeVirtualMachineExadbVmClusterSettings() {
+      return getStubSettingsBuilder().removeVirtualMachineExadbVmClusterSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to removeVirtualMachineExadbVmCluster.
+     */
+    public OperationCallSettings.Builder<
+            RemoveVirtualMachineExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+        removeVirtualMachineExadbVmClusterOperationSettings() {
+      return getStubSettingsBuilder().removeVirtualMachineExadbVmClusterOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listExascaleDbStorageVaults. */
+    public PagedCallSettings.Builder<
+            ListExascaleDbStorageVaultsRequest,
+            ListExascaleDbStorageVaultsResponse,
+            ListExascaleDbStorageVaultsPagedResponse>
+        listExascaleDbStorageVaultsSettings() {
+      return getStubSettingsBuilder().listExascaleDbStorageVaultsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getExascaleDbStorageVault. */
+    public UnaryCallSettings.Builder<GetExascaleDbStorageVaultRequest, ExascaleDbStorageVault>
+        getExascaleDbStorageVaultSettings() {
+      return getStubSettingsBuilder().getExascaleDbStorageVaultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createExascaleDbStorageVault. */
+    public UnaryCallSettings.Builder<CreateExascaleDbStorageVaultRequest, Operation>
+        createExascaleDbStorageVaultSettings() {
+      return getStubSettingsBuilder().createExascaleDbStorageVaultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createExascaleDbStorageVault. */
+    public OperationCallSettings.Builder<
+            CreateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+        createExascaleDbStorageVaultOperationSettings() {
+      return getStubSettingsBuilder().createExascaleDbStorageVaultOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExascaleDbStorageVault. */
+    public UnaryCallSettings.Builder<DeleteExascaleDbStorageVaultRequest, Operation>
+        deleteExascaleDbStorageVaultSettings() {
+      return getStubSettingsBuilder().deleteExascaleDbStorageVaultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExascaleDbStorageVault. */
+    public OperationCallSettings.Builder<
+            DeleteExascaleDbStorageVaultRequest, Empty, OperationMetadata>
+        deleteExascaleDbStorageVaultOperationSettings() {
+      return getStubSettingsBuilder().deleteExascaleDbStorageVaultOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDbSystemInitialStorageSizes. */
+    public PagedCallSettings.Builder<
+            ListDbSystemInitialStorageSizesRequest,
+            ListDbSystemInitialStorageSizesResponse,
+            ListDbSystemInitialStorageSizesPagedResponse>
+        listDbSystemInitialStorageSizesSettings() {
+      return getStubSettingsBuilder().listDbSystemInitialStorageSizesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDatabases. */
+    public PagedCallSettings.Builder<
+            ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
+        listDatabasesSettings() {
+      return getStubSettingsBuilder().listDatabasesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDatabase. */
+    public UnaryCallSettings.Builder<GetDatabaseRequest, Database> getDatabaseSettings() {
+      return getStubSettingsBuilder().getDatabaseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPluggableDatabases. */
+    public PagedCallSettings.Builder<
+            ListPluggableDatabasesRequest,
+            ListPluggableDatabasesResponse,
+            ListPluggableDatabasesPagedResponse>
+        listPluggableDatabasesSettings() {
+      return getStubSettingsBuilder().listPluggableDatabasesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPluggableDatabase. */
+    public UnaryCallSettings.Builder<GetPluggableDatabaseRequest, PluggableDatabase>
+        getPluggableDatabaseSettings() {
+      return getStubSettingsBuilder().getPluggableDatabaseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDbSystems. */
+    public PagedCallSettings.Builder<
+            ListDbSystemsRequest, ListDbSystemsResponse, ListDbSystemsPagedResponse>
+        listDbSystemsSettings() {
+      return getStubSettingsBuilder().listDbSystemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDbSystem. */
+    public UnaryCallSettings.Builder<GetDbSystemRequest, DbSystem> getDbSystemSettings() {
+      return getStubSettingsBuilder().getDbSystemSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDbSystem. */
+    public UnaryCallSettings.Builder<CreateDbSystemRequest, Operation> createDbSystemSettings() {
+      return getStubSettingsBuilder().createDbSystemSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDbSystem. */
+    public OperationCallSettings.Builder<CreateDbSystemRequest, DbSystem, OperationMetadata>
+        createDbSystemOperationSettings() {
+      return getStubSettingsBuilder().createDbSystemOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDbSystem. */
+    public UnaryCallSettings.Builder<DeleteDbSystemRequest, Operation> deleteDbSystemSettings() {
+      return getStubSettingsBuilder().deleteDbSystemSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDbSystem. */
+    public OperationCallSettings.Builder<DeleteDbSystemRequest, Empty, OperationMetadata>
+        deleteDbSystemOperationSettings() {
+      return getStubSettingsBuilder().deleteDbSystemOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDbVersions. */
+    public PagedCallSettings.Builder<
+            ListDbVersionsRequest, ListDbVersionsResponse, ListDbVersionsPagedResponse>
+        listDbVersionsSettings() {
+      return getStubSettingsBuilder().listDbVersionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDatabaseCharacterSets. */
+    public PagedCallSettings.Builder<
+            ListDatabaseCharacterSetsRequest,
+            ListDatabaseCharacterSetsResponse,
+            ListDatabaseCharacterSetsPagedResponse>
+        listDatabaseCharacterSetsSettings() {
+      return getStubSettingsBuilder().listDatabaseCharacterSetsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

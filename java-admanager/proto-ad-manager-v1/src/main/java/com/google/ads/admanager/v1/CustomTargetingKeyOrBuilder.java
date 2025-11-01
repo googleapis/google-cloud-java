@@ -61,7 +61,22 @@ public interface CustomTargetingKeyOrBuilder
    * Output only. `CustomTargetingKey` ID.
    * </pre>
    *
-   * <code>int64 custom_targeting_key_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 custom_targeting_key_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the customTargetingKeyId field is set.
+   */
+  boolean hasCustomTargetingKeyId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. `CustomTargetingKey` ID.
+   * </pre>
+   *
+   * <code>optional int64 custom_targeting_key_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The customTargetingKeyId.
    */
@@ -76,7 +91,22 @@ public interface CustomTargetingKeyOrBuilder
    * ", ', =, !, +, #, *, ~, ;, ^, (, ), &lt;, &gt;, [, ], the white space character.
    * </pre>
    *
-   * <code>string ad_tag_name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>optional string ad_tag_name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return Whether the adTagName field is set.
+   */
+  boolean hasAdTagName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Name of the key. Keys can contain up to 10 characters each. You
+   * can use alphanumeric characters and symbols other than the following:
+   * ", ', =, !, +, #, *, ~, ;, ^, (, ), &lt;, &gt;, [, ], the white space character.
+   * </pre>
+   *
+   * <code>optional string ad_tag_name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The adTagName.
    */
@@ -91,7 +121,7 @@ public interface CustomTargetingKeyOrBuilder
    * ", ', =, !, +, #, *, ~, ;, ^, (, ), &lt;, &gt;, [, ], the white space character.
    * </pre>
    *
-   * <code>string ad_tag_name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>optional string ad_tag_name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The bytes for adTagName.
    */
@@ -104,7 +134,20 @@ public interface CustomTargetingKeyOrBuilder
    * Optional. Descriptive name for the `CustomTargetingKey`.
    * </pre>
    *
-   * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  boolean hasDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Descriptive name for the `CustomTargetingKey`.
+   * </pre>
+   *
+   * <code>optional string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The displayName.
    */
@@ -117,7 +160,7 @@ public interface CustomTargetingKeyOrBuilder
    * Optional. Descriptive name for the `CustomTargetingKey`.
    * </pre>
    *
-   * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for displayName.
    */
@@ -133,7 +176,24 @@ public interface CustomTargetingKeyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomTargetingKeyTypeEnum.CustomTargetingKeyType type = 5 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CustomTargetingKeyTypeEnum.CustomTargetingKeyType type = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the type field is set.
+   */
+  boolean hasType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Indicates whether users will select from predefined values or
+   * create new targeting values, while specifying targeting criteria for a line
+   * item.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CustomTargetingKeyTypeEnum.CustomTargetingKeyType type = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for type.
@@ -150,7 +210,7 @@ public interface CustomTargetingKeyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomTargetingKeyTypeEnum.CustomTargetingKeyType type = 5 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CustomTargetingKeyTypeEnum.CustomTargetingKeyType type = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The type.
@@ -165,7 +225,22 @@ public interface CustomTargetingKeyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomTargetingKeyStatusEnum.CustomTargetingKeyStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.CustomTargetingKeyStatusEnum.CustomTargetingKeyStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Status of the `CustomTargetingKey`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CustomTargetingKeyStatusEnum.CustomTargetingKeyStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The enum numeric value on the wire for status.
@@ -180,7 +255,7 @@ public interface CustomTargetingKeyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomTargetingKeyStatusEnum.CustomTargetingKeyStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.CustomTargetingKeyStatusEnum.CustomTargetingKeyStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The status.
@@ -195,7 +270,22 @@ public interface CustomTargetingKeyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomTargetingKeyReportableTypeEnum.CustomTargetingKeyReportableType reportable_type = 7 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CustomTargetingKeyReportableTypeEnum.CustomTargetingKeyReportableType reportable_type = 7 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the reportableType field is set.
+   */
+  boolean hasReportableType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Reportable state of the `CustomTargetingKey`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CustomTargetingKeyReportableTypeEnum.CustomTargetingKeyReportableType reportable_type = 7 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for reportableType.
@@ -210,7 +300,7 @@ public interface CustomTargetingKeyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomTargetingKeyReportableTypeEnum.CustomTargetingKeyReportableType reportable_type = 7 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CustomTargetingKeyReportableTypeEnum.CustomTargetingKeyReportableType reportable_type = 7 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The reportableType.

@@ -398,4 +398,25 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void embedContent(
+      EmbedContentRequest request, StreamObserver<EmbedContentResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EmbedContentResponse) {
+      requests.add(request);
+      responseObserver.onNext(((EmbedContentResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method EmbedContent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EmbedContentResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

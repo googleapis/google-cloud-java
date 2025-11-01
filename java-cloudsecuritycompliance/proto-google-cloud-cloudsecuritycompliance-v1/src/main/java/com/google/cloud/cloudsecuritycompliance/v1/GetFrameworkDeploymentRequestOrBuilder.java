@@ -28,8 +28,9 @@ public interface GetFrameworkDeploymentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. FrameworkDeployment name in the following format:
-   * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+   * Required. The name of the framework deployment, in the format
+   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -44,8 +45,9 @@ public interface GetFrameworkDeploymentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. FrameworkDeployment name in the following format:
-   * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+   * Required. The name of the framework deployment, in the format
+   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>

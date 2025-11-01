@@ -1264,6 +1264,849 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public interface AutoscaledRolloutPolicyOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to wait after cordoning the blue pool before draining the
+     * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+     * inclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the waitForDrainDuration field is set.
+     */
+    boolean hasWaitForDrainDuration();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to wait after cordoning the blue pool before draining the
+     * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+     * inclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The waitForDrainDuration.
+     */
+    com.google.protobuf.Duration getWaitForDrainDuration();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to wait after cordoning the blue pool before draining the
+     * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+     * inclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.DurationOrBuilder getWaitForDrainDurationOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Autoscaled rollout policy utilizes the cluster autoscaler during
+   * blue-green upgrade to scale both the blue and green pools.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy}
+   */
+  public static final class AutoscaledRolloutPolicy extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy)
+      AutoscaledRolloutPolicyOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use AutoscaledRolloutPolicy.newBuilder() to construct.
+    private AutoscaledRolloutPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AutoscaledRolloutPolicy() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AutoscaledRolloutPolicy();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_BlueGreenSettings_AutoscaledRolloutPolicy_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_BlueGreenSettings_AutoscaledRolloutPolicy_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy.class,
+              com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int WAIT_FOR_DRAIN_DURATION_FIELD_NUMBER = 1;
+    private com.google.protobuf.Duration waitForDrainDuration_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to wait after cordoning the blue pool before draining the
+     * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+     * inclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the waitForDrainDuration field is set.
+     */
+    @java.lang.Override
+    public boolean hasWaitForDrainDuration() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to wait after cordoning the blue pool before draining the
+     * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+     * inclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The waitForDrainDuration.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getWaitForDrainDuration() {
+      return waitForDrainDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : waitForDrainDuration_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time to wait after cordoning the blue pool before draining the
+     * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+     * inclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getWaitForDrainDurationOrBuilder() {
+      return waitForDrainDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : waitForDrainDuration_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getWaitForDrainDuration());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, getWaitForDrainDuration());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy other =
+          (com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy) obj;
+
+      if (hasWaitForDrainDuration() != other.hasWaitForDrainDuration()) return false;
+      if (hasWaitForDrainDuration()) {
+        if (!getWaitForDrainDuration().equals(other.getWaitForDrainDuration())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasWaitForDrainDuration()) {
+        hash = (37 * hash) + WAIT_FOR_DRAIN_DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getWaitForDrainDuration().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaled rollout policy utilizes the cluster autoscaler during
+     * blue-green upgrade to scale both the blue and green pools.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy)
+        com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_BlueGreenSettings_AutoscaledRolloutPolicy_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_BlueGreenSettings_AutoscaledRolloutPolicy_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy.class,
+                com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy.Builder.class);
+      }
+
+      // Construct using
+      // com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getWaitForDrainDurationFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        waitForDrainDuration_ = null;
+        if (waitForDrainDurationBuilder_ != null) {
+          waitForDrainDurationBuilder_.dispose();
+          waitForDrainDurationBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_BlueGreenSettings_AutoscaledRolloutPolicy_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy
+          getDefaultInstanceForType() {
+        return com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy build() {
+        com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy buildPartial() {
+        com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy result =
+            new com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.waitForDrainDuration_ =
+              waitForDrainDurationBuilder_ == null
+                  ? waitForDrainDuration_
+                  : waitForDrainDurationBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy) {
+          return mergeFrom(
+              (com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy other) {
+        if (other
+            == com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy
+                .getDefaultInstance()) return this;
+        if (other.hasWaitForDrainDuration()) {
+          mergeWaitForDrainDuration(other.getWaitForDrainDuration());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getWaitForDrainDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Duration waitForDrainDuration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          waitForDrainDurationBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the waitForDrainDuration field is set.
+       */
+      public boolean hasWaitForDrainDuration() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The waitForDrainDuration.
+       */
+      public com.google.protobuf.Duration getWaitForDrainDuration() {
+        if (waitForDrainDurationBuilder_ == null) {
+          return waitForDrainDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : waitForDrainDuration_;
+        } else {
+          return waitForDrainDurationBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setWaitForDrainDuration(com.google.protobuf.Duration value) {
+        if (waitForDrainDurationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          waitForDrainDuration_ = value;
+        } else {
+          waitForDrainDurationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setWaitForDrainDuration(com.google.protobuf.Duration.Builder builderForValue) {
+        if (waitForDrainDurationBuilder_ == null) {
+          waitForDrainDuration_ = builderForValue.build();
+        } else {
+          waitForDrainDurationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeWaitForDrainDuration(com.google.protobuf.Duration value) {
+        if (waitForDrainDurationBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && waitForDrainDuration_ != null
+              && waitForDrainDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getWaitForDrainDurationBuilder().mergeFrom(value);
+          } else {
+            waitForDrainDuration_ = value;
+          }
+        } else {
+          waitForDrainDurationBuilder_.mergeFrom(value);
+        }
+        if (waitForDrainDuration_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearWaitForDrainDuration() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        waitForDrainDuration_ = null;
+        if (waitForDrainDurationBuilder_ != null) {
+          waitForDrainDurationBuilder_.dispose();
+          waitForDrainDurationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Duration.Builder getWaitForDrainDurationBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getWaitForDrainDurationFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.DurationOrBuilder getWaitForDrainDurationOrBuilder() {
+        if (waitForDrainDurationBuilder_ != null) {
+          return waitForDrainDurationBuilder_.getMessageOrBuilder();
+        } else {
+          return waitForDrainDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : waitForDrainDuration_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Time to wait after cordoning the blue pool before draining the
+       * nodes. Defaults to 3 days. The value can be set between 0 and 7 days,
+       * inclusive.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration wait_for_drain_duration = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getWaitForDrainDurationFieldBuilder() {
+        if (waitForDrainDurationBuilder_ == null) {
+          waitForDrainDurationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getWaitForDrainDuration(), getParentForChildren(), isClean());
+          waitForDrainDuration_ = null;
+        }
+        return waitForDrainDurationBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy)
+    private static final com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy();
+    }
+
+    public static com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AutoscaledRolloutPolicy> PARSER =
+        new com.google.protobuf.AbstractParser<AutoscaledRolloutPolicy>() {
+          @java.lang.Override
+          public AutoscaledRolloutPolicy parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AutoscaledRolloutPolicy> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AutoscaledRolloutPolicy> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int rolloutPolicyCase_ = 0;
 
@@ -1275,6 +2118,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     STANDARD_ROLLOUT_POLICY(1),
+    AUTOSCALED_ROLLOUT_POLICY(3),
     ROLLOUTPOLICY_NOT_SET(0);
     private final int value;
 
@@ -1296,6 +2140,8 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       switch (value) {
         case 1:
           return STANDARD_ROLLOUT_POLICY;
+        case 3:
+          return AUTOSCALED_ROLLOUT_POLICY;
         case 0:
           return ROLLOUTPOLICY_NOT_SET;
         default:
@@ -1369,6 +2215,68 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       return (com.google.container.v1.BlueGreenSettings.StandardRolloutPolicy) rolloutPolicy_;
     }
     return com.google.container.v1.BlueGreenSettings.StandardRolloutPolicy.getDefaultInstance();
+  }
+
+  public static final int AUTOSCALED_ROLLOUT_POLICY_FIELD_NUMBER = 3;
+
+  /**
+   *
+   *
+   * <pre>
+   * Autoscaled policy for cluster autoscaler enabled blue-green upgrade.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy autoscaled_rollout_policy = 3;
+   * </code>
+   *
+   * @return Whether the autoscaledRolloutPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoscaledRolloutPolicy() {
+    return rolloutPolicyCase_ == 3;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Autoscaled policy for cluster autoscaler enabled blue-green upgrade.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy autoscaled_rollout_policy = 3;
+   * </code>
+   *
+   * @return The autoscaledRolloutPolicy.
+   */
+  @java.lang.Override
+  public com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy
+      getAutoscaledRolloutPolicy() {
+    if (rolloutPolicyCase_ == 3) {
+      return (com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy) rolloutPolicy_;
+    }
+    return com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Autoscaled policy for cluster autoscaler enabled blue-green upgrade.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy autoscaled_rollout_policy = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicyOrBuilder
+      getAutoscaledRolloutPolicyOrBuilder() {
+    if (rolloutPolicyCase_ == 3) {
+      return (com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy) rolloutPolicy_;
+    }
+    return com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy.getDefaultInstance();
   }
 
   public static final int NODE_POOL_SOAK_DURATION_FIELD_NUMBER = 2;
@@ -1448,6 +2356,10 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getNodePoolSoakDuration());
     }
+    if (rolloutPolicyCase_ == 3) {
+      output.writeMessage(
+          3, (com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy) rolloutPolicy_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1465,6 +2377,12 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, getNodePoolSoakDuration());
+    }
+    if (rolloutPolicyCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3,
+              (com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy) rolloutPolicy_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1491,6 +2409,9 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       case 1:
         if (!getStandardRolloutPolicy().equals(other.getStandardRolloutPolicy())) return false;
         break;
+      case 3:
+        if (!getAutoscaledRolloutPolicy().equals(other.getAutoscaledRolloutPolicy())) return false;
+        break;
       case 0:
       default:
     }
@@ -1513,6 +2434,10 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       case 1:
         hash = (37 * hash) + STANDARD_ROLLOUT_POLICY_FIELD_NUMBER;
         hash = (53 * hash) + getStandardRolloutPolicy().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + AUTOSCALED_ROLLOUT_POLICY_FIELD_NUMBER;
+        hash = (53 * hash) + getAutoscaledRolloutPolicy().hashCode();
         break;
       case 0:
       default:
@@ -1669,6 +2594,9 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       if (standardRolloutPolicyBuilder_ != null) {
         standardRolloutPolicyBuilder_.clear();
       }
+      if (autoscaledRolloutPolicyBuilder_ != null) {
+        autoscaledRolloutPolicyBuilder_.clear();
+      }
       nodePoolSoakDuration_ = null;
       if (nodePoolSoakDurationBuilder_ != null) {
         nodePoolSoakDurationBuilder_.dispose();
@@ -1714,7 +2642,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
     private void buildPartial0(com.google.container.v1.BlueGreenSettings result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.nodePoolSoakDuration_ =
             nodePoolSoakDurationBuilder_ == null
                 ? nodePoolSoakDuration_
@@ -1729,6 +2657,9 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       result.rolloutPolicy_ = this.rolloutPolicy_;
       if (rolloutPolicyCase_ == 1 && standardRolloutPolicyBuilder_ != null) {
         result.rolloutPolicy_ = standardRolloutPolicyBuilder_.build();
+      }
+      if (rolloutPolicyCase_ == 3 && autoscaledRolloutPolicyBuilder_ != null) {
+        result.rolloutPolicy_ = autoscaledRolloutPolicyBuilder_.build();
       }
     }
 
@@ -1786,6 +2717,11 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
             mergeStandardRolloutPolicy(other.getStandardRolloutPolicy());
             break;
           }
+        case AUTOSCALED_ROLLOUT_POLICY:
+          {
+            mergeAutoscaledRolloutPolicy(other.getAutoscaledRolloutPolicy());
+            break;
+          }
         case ROLLOUTPOLICY_NOT_SET:
           {
             break;
@@ -1828,9 +2764,16 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     getNodePoolSoakDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getAutoscaledRolloutPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                rolloutPolicyCase_ = 3;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2109,6 +3052,255 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       return standardRolloutPolicyBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy,
+            com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy.Builder,
+            com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicyOrBuilder>
+        autoscaledRolloutPolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaled policy for cluster autoscaler enabled blue-green upgrade.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy autoscaled_rollout_policy = 3;
+     * </code>
+     *
+     * @return Whether the autoscaledRolloutPolicy field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutoscaledRolloutPolicy() {
+      return rolloutPolicyCase_ == 3;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaled policy for cluster autoscaler enabled blue-green upgrade.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy autoscaled_rollout_policy = 3;
+     * </code>
+     *
+     * @return The autoscaledRolloutPolicy.
+     */
+    @java.lang.Override
+    public com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy
+        getAutoscaledRolloutPolicy() {
+      if (autoscaledRolloutPolicyBuilder_ == null) {
+        if (rolloutPolicyCase_ == 3) {
+          return (com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy) rolloutPolicy_;
+        }
+        return com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy
+            .getDefaultInstance();
+      } else {
+        if (rolloutPolicyCase_ == 3) {
+          return autoscaledRolloutPolicyBuilder_.getMessage();
+        }
+        return com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaled policy for cluster autoscaler enabled blue-green upgrade.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy autoscaled_rollout_policy = 3;
+     * </code>
+     */
+    public Builder setAutoscaledRolloutPolicy(
+        com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy value) {
+      if (autoscaledRolloutPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rolloutPolicy_ = value;
+        onChanged();
+      } else {
+        autoscaledRolloutPolicyBuilder_.setMessage(value);
+      }
+      rolloutPolicyCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaled policy for cluster autoscaler enabled blue-green upgrade.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy autoscaled_rollout_policy = 3;
+     * </code>
+     */
+    public Builder setAutoscaledRolloutPolicy(
+        com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy.Builder builderForValue) {
+      if (autoscaledRolloutPolicyBuilder_ == null) {
+        rolloutPolicy_ = builderForValue.build();
+        onChanged();
+      } else {
+        autoscaledRolloutPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      rolloutPolicyCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaled policy for cluster autoscaler enabled blue-green upgrade.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy autoscaled_rollout_policy = 3;
+     * </code>
+     */
+    public Builder mergeAutoscaledRolloutPolicy(
+        com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy value) {
+      if (autoscaledRolloutPolicyBuilder_ == null) {
+        if (rolloutPolicyCase_ == 3
+            && rolloutPolicy_
+                != com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy
+                    .getDefaultInstance()) {
+          rolloutPolicy_ =
+              com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy.newBuilder(
+                      (com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy)
+                          rolloutPolicy_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          rolloutPolicy_ = value;
+        }
+        onChanged();
+      } else {
+        if (rolloutPolicyCase_ == 3) {
+          autoscaledRolloutPolicyBuilder_.mergeFrom(value);
+        } else {
+          autoscaledRolloutPolicyBuilder_.setMessage(value);
+        }
+      }
+      rolloutPolicyCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaled policy for cluster autoscaler enabled blue-green upgrade.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy autoscaled_rollout_policy = 3;
+     * </code>
+     */
+    public Builder clearAutoscaledRolloutPolicy() {
+      if (autoscaledRolloutPolicyBuilder_ == null) {
+        if (rolloutPolicyCase_ == 3) {
+          rolloutPolicyCase_ = 0;
+          rolloutPolicy_ = null;
+          onChanged();
+        }
+      } else {
+        if (rolloutPolicyCase_ == 3) {
+          rolloutPolicyCase_ = 0;
+          rolloutPolicy_ = null;
+        }
+        autoscaledRolloutPolicyBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaled policy for cluster autoscaler enabled blue-green upgrade.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy autoscaled_rollout_policy = 3;
+     * </code>
+     */
+    public com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy.Builder
+        getAutoscaledRolloutPolicyBuilder() {
+      return getAutoscaledRolloutPolicyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaled policy for cluster autoscaler enabled blue-green upgrade.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy autoscaled_rollout_policy = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicyOrBuilder
+        getAutoscaledRolloutPolicyOrBuilder() {
+      if ((rolloutPolicyCase_ == 3) && (autoscaledRolloutPolicyBuilder_ != null)) {
+        return autoscaledRolloutPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        if (rolloutPolicyCase_ == 3) {
+          return (com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy) rolloutPolicy_;
+        }
+        return com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaled policy for cluster autoscaler enabled blue-green upgrade.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy autoscaled_rollout_policy = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy,
+            com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy.Builder,
+            com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicyOrBuilder>
+        getAutoscaledRolloutPolicyFieldBuilder() {
+      if (autoscaledRolloutPolicyBuilder_ == null) {
+        if (!(rolloutPolicyCase_ == 3)) {
+          rolloutPolicy_ =
+              com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy
+                  .getDefaultInstance();
+        }
+        autoscaledRolloutPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy,
+                com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy.Builder,
+                com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicyOrBuilder>(
+                (com.google.container.v1.BlueGreenSettings.AutoscaledRolloutPolicy) rolloutPolicy_,
+                getParentForChildren(),
+                isClean());
+        rolloutPolicy_ = null;
+      }
+      rolloutPolicyCase_ = 3;
+      onChanged();
+      return autoscaledRolloutPolicyBuilder_;
+    }
+
     private com.google.protobuf.Duration nodePoolSoakDuration_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -2129,7 +3321,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      * @return Whether the nodePoolSoakDuration field is set.
      */
     public boolean hasNodePoolSoakDuration() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -2173,7 +3365,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       } else {
         nodePoolSoakDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2194,7 +3386,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
       } else {
         nodePoolSoakDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2211,7 +3403,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeNodePoolSoakDuration(com.google.protobuf.Duration value) {
       if (nodePoolSoakDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && nodePoolSoakDuration_ != null
             && nodePoolSoakDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getNodePoolSoakDurationBuilder().mergeFrom(value);
@@ -2222,7 +3414,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
         nodePoolSoakDurationBuilder_.mergeFrom(value);
       }
       if (nodePoolSoakDuration_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -2239,7 +3431,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      * <code>optional .google.protobuf.Duration node_pool_soak_duration = 2;</code>
      */
     public Builder clearNodePoolSoakDuration() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       nodePoolSoakDuration_ = null;
       if (nodePoolSoakDurationBuilder_ != null) {
         nodePoolSoakDurationBuilder_.dispose();
@@ -2260,7 +3452,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      * <code>optional .google.protobuf.Duration node_pool_soak_duration = 2;</code>
      */
     public com.google.protobuf.Duration.Builder getNodePoolSoakDurationBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getNodePoolSoakDurationFieldBuilder().getBuilder();
     }

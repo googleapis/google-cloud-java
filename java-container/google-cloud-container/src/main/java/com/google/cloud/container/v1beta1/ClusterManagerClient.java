@@ -161,7 +161,7 @@ import javax.annotation.Generated;
  *      <td><p> CreateCluster</td>
  *      <td><p> Creates a cluster, consisting of the specified number and type of Google Compute Engine instances.
  * <p>  By default, the cluster is created in the project's [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
- * <p>  One firewall is added for the cluster. After cluster creation, the Kubelet creates routes for each node to allow the containers on that node to communicate with all other instances in the cluster.
+ * <p>  One firewall is added for the cluster. After cluster creation, the kubelet creates routes for each node to allow the containers on that node to communicate with all other instances in the cluster.
  * <p>  Finally, an entry is added to the project's global metadata indicating which CIDR range the cluster is using.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -1059,7 +1059,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>By default, the cluster is created in the project's [default
    * network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
    *
-   * <p>One firewall is added for the cluster. After cluster creation, the Kubelet creates routes
+   * <p>One firewall is added for the cluster. After cluster creation, the kubelet creates routes
    * for each node to allow the containers on that node to communicate with all other instances in
    * the cluster.
    *
@@ -1110,7 +1110,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>By default, the cluster is created in the project's [default
    * network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
    *
-   * <p>One firewall is added for the cluster. After cluster creation, the Kubelet creates routes
+   * <p>One firewall is added for the cluster. After cluster creation, the kubelet creates routes
    * for each node to allow the containers on that node to communicate with all other instances in
    * the cluster.
    *
@@ -1152,7 +1152,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>By default, the cluster is created in the project's [default
    * network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
    *
-   * <p>One firewall is added for the cluster. After cluster creation, the Kubelet creates routes
+   * <p>One firewall is added for the cluster. After cluster creation, the kubelet creates routes
    * for each node to allow the containers on that node to communicate with all other instances in
    * the cluster.
    *

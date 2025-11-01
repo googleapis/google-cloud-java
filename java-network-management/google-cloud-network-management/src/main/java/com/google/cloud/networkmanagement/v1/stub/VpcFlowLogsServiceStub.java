@@ -18,6 +18,8 @@ package com.google.cloud.networkmanagement.v1.stub;
 
 import static com.google.cloud.networkmanagement.v1.VpcFlowLogsServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.networkmanagement.v1.VpcFlowLogsServiceClient.ListVpcFlowLogsConfigsPagedResponse;
+import static com.google.cloud.networkmanagement.v1.VpcFlowLogsServiceClient.QueryOrgVpcFlowLogsConfigsPagedResponse;
+import static com.google.cloud.networkmanagement.v1.VpcFlowLogsServiceClient.ShowEffectiveFlowLogsConfigsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -32,6 +34,10 @@ import com.google.cloud.networkmanagement.v1.GetVpcFlowLogsConfigRequest;
 import com.google.cloud.networkmanagement.v1.ListVpcFlowLogsConfigsRequest;
 import com.google.cloud.networkmanagement.v1.ListVpcFlowLogsConfigsResponse;
 import com.google.cloud.networkmanagement.v1.OperationMetadata;
+import com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsRequest;
+import com.google.cloud.networkmanagement.v1.QueryOrgVpcFlowLogsConfigsResponse;
+import com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsRequest;
+import com.google.cloud.networkmanagement.v1.ShowEffectiveFlowLogsConfigsResponse;
 import com.google.cloud.networkmanagement.v1.UpdateVpcFlowLogsConfigRequest;
 import com.google.cloud.networkmanagement.v1.VpcFlowLogsConfig;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -108,6 +114,31 @@ public abstract class VpcFlowLogsServiceStub implements BackgroundResource {
   public UnaryCallable<DeleteVpcFlowLogsConfigRequest, Operation>
       deleteVpcFlowLogsConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteVpcFlowLogsConfigCallable()");
+  }
+
+  public UnaryCallable<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsPagedResponse>
+      queryOrgVpcFlowLogsConfigsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: queryOrgVpcFlowLogsConfigsPagedCallable()");
+  }
+
+  public UnaryCallable<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsResponse>
+      queryOrgVpcFlowLogsConfigsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: queryOrgVpcFlowLogsConfigsCallable()");
+  }
+
+  public UnaryCallable<
+          ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsPagedResponse>
+      showEffectiveFlowLogsConfigsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: showEffectiveFlowLogsConfigsPagedCallable()");
+  }
+
+  public UnaryCallable<ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsResponse>
+      showEffectiveFlowLogsConfigsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: showEffectiveFlowLogsConfigsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

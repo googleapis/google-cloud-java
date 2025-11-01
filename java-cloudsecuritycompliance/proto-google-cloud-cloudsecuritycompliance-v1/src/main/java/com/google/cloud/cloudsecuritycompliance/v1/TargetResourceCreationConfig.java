@@ -23,8 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * TargetResourceCreationConfig contains the config to create a new resource to
- * be used as the target_resource of a deployment.
+ * The configuration that's required to create a target resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.TargetResourceCreationConfig}
@@ -119,8 +118,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. Config to create a new folder to be used as the target_resource
-   * of a deployment.
+   * Optional. The configuration that's required to create a folder.
    * </pre>
    *
    * <code>
@@ -138,8 +136,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. Config to create a new folder to be used as the target_resource
-   * of a deployment.
+   * Optional. The configuration that's required to create a folder.
    * </pre>
    *
    * <code>
@@ -162,8 +159,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. Config to create a new folder to be used as the target_resource
-   * of a deployment.
+   * Optional. The configuration that's required to create a folder.
    * </pre>
    *
    * <code>
@@ -186,8 +182,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. Config to create a new project to be used as the
-   * target_resource of a deployment.
+   * Optional. The configuration that's required to create a project.
    * </pre>
    *
    * <code>
@@ -205,8 +200,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. Config to create a new project to be used as the
-   * target_resource of a deployment.
+   * Optional. The configuration that's required to create a project.
    * </pre>
    *
    * <code>
@@ -229,8 +223,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. Config to create a new project to be used as the
-   * target_resource of a deployment.
+   * Optional. The configuration that's required to create a project.
    * </pre>
    *
    * <code>
@@ -455,8 +448,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * TargetResourceCreationConfig contains the config to create a new resource to
-   * be used as the target_resource of a deployment.
+   * The configuration that's required to create a target resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.TargetResourceCreationConfig}
@@ -705,8 +697,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new folder to be used as the target_resource
-     * of a deployment.
+     * Optional. The configuration that's required to create a folder.
      * </pre>
      *
      * <code>
@@ -724,8 +715,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new folder to be used as the target_resource
-     * of a deployment.
+     * Optional. The configuration that's required to create a folder.
      * </pre>
      *
      * <code>
@@ -757,8 +747,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new folder to be used as the target_resource
-     * of a deployment.
+     * Optional. The configuration that's required to create a folder.
      * </pre>
      *
      * <code>
@@ -784,8 +773,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new folder to be used as the target_resource
-     * of a deployment.
+     * Optional. The configuration that's required to create a folder.
      * </pre>
      *
      * <code>
@@ -808,8 +796,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new folder to be used as the target_resource
-     * of a deployment.
+     * Optional. The configuration that's required to create a folder.
      * </pre>
      *
      * <code>
@@ -848,8 +835,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new folder to be used as the target_resource
-     * of a deployment.
+     * Optional. The configuration that's required to create a folder.
      * </pre>
      *
      * <code>
@@ -877,8 +863,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new folder to be used as the target_resource
-     * of a deployment.
+     * Optional. The configuration that's required to create a folder.
      * </pre>
      *
      * <code>
@@ -894,8 +879,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new folder to be used as the target_resource
-     * of a deployment.
+     * Optional. The configuration that's required to create a folder.
      * </pre>
      *
      * <code>
@@ -921,8 +905,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new folder to be used as the target_resource
-     * of a deployment.
+     * Optional. The configuration that's required to create a folder.
      * </pre>
      *
      * <code>
@@ -965,8 +948,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new project to be used as the
-     * target_resource of a deployment.
+     * Optional. The configuration that's required to create a project.
      * </pre>
      *
      * <code>
@@ -984,8 +966,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new project to be used as the
-     * target_resource of a deployment.
+     * Optional. The configuration that's required to create a project.
      * </pre>
      *
      * <code>
@@ -1017,8 +998,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new project to be used as the
-     * target_resource of a deployment.
+     * Optional. The configuration that's required to create a project.
      * </pre>
      *
      * <code>
@@ -1044,8 +1024,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new project to be used as the
-     * target_resource of a deployment.
+     * Optional. The configuration that's required to create a project.
      * </pre>
      *
      * <code>
@@ -1068,8 +1047,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new project to be used as the
-     * target_resource of a deployment.
+     * Optional. The configuration that's required to create a project.
      * </pre>
      *
      * <code>
@@ -1108,8 +1086,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new project to be used as the
-     * target_resource of a deployment.
+     * Optional. The configuration that's required to create a project.
      * </pre>
      *
      * <code>
@@ -1137,8 +1114,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new project to be used as the
-     * target_resource of a deployment.
+     * Optional. The configuration that's required to create a project.
      * </pre>
      *
      * <code>
@@ -1154,8 +1130,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new project to be used as the
-     * target_resource of a deployment.
+     * Optional. The configuration that's required to create a project.
      * </pre>
      *
      * <code>
@@ -1181,8 +1156,7 @@ public final class TargetResourceCreationConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Config to create a new project to be used as the
-     * target_resource of a deployment.
+     * Optional. The configuration that's required to create a project.
      * </pre>
      *
      * <code>

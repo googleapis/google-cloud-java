@@ -28,7 +28,7 @@ public interface ListFrameworkDeploymentsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of FrameworkDeployments.
+   * The list of framework deployments.
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface ListFrameworkDeploymentsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of FrameworkDeployments.
+   * The list of framework deployments.
    * </pre>
    *
    * <code>
@@ -56,7 +56,7 @@ public interface ListFrameworkDeploymentsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of FrameworkDeployments.
+   * The list of framework deployments.
    * </pre>
    *
    * <code>
@@ -69,7 +69,7 @@ public interface ListFrameworkDeploymentsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of FrameworkDeployments.
+   * The list of framework deployments.
    * </pre>
    *
    * <code>
@@ -83,7 +83,7 @@ public interface ListFrameworkDeploymentsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of FrameworkDeployments.
+   * The list of framework deployments.
    * </pre>
    *
    * <code>
@@ -97,7 +97,8 @@ public interface ListFrameworkDeploymentsResponseOrBuilder
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * A token that identifies the next page of results that the server
+   * should return.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -110,7 +111,8 @@ public interface ListFrameworkDeploymentsResponseOrBuilder
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * A token that identifies the next page of results that the server
+   * should return.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

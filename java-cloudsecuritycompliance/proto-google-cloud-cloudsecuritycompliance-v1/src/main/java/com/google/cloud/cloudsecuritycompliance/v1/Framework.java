@@ -23,11 +23,9 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * A Framework is a collection of CloudControls to address security and
- * compliance requirements. Frameworks can be used for prevention, detection,
- * and auditing. They can be either built-in, industry-standard frameworks
- * provided by GCP/AZURE/AWS (e.g., NIST, FedRAMP) or custom frameworks created
- * by users.
+ * A framework is a collection of cloud controls and regulatory controls
+ * that represent security best practices or industry-defined standards such as
+ * FedRAMP or NIST.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.Framework}
@@ -80,7 +78,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of the framework.
+   * The type of framework.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.cloudsecuritycompliance.v1.Framework.FrameworkType}
@@ -100,8 +98,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The framework is a built-in framework if it is created and managed by
-     * GCP.
+     * A framework that's provided and managed by Google.
      * </pre>
      *
      * <code>BUILT_IN = 1;</code>
@@ -111,8 +108,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The framework is a custom framework if it is created and managed by the
-     * user.
+     * A framework that's created and managed by you.
      * </pre>
      *
      * <code>CUSTOM = 2;</code>
@@ -136,8 +132,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The framework is a built-in framework if it is created and managed by
-     * GCP.
+     * A framework that's provided and managed by Google.
      * </pre>
      *
      * <code>BUILT_IN = 1;</code>
@@ -148,8 +143,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The framework is a custom framework if it is created and managed by the
-     * user.
+     * A framework that's created and managed by you.
      * </pre>
      *
      * <code>CUSTOM = 2;</code>
@@ -250,9 +244,9 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Identifier. The name of the framework.
-   * Format:
-   * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+   * Required. Identifier. The name of the framework, in the format
+   * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -278,9 +272,9 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Identifier. The name of the framework.
-   * Format:
-   * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+   * Required. Identifier. The name of the framework, in the format
+   * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -309,8 +303,8 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Major revision of the framework incremented in ascending
-   * order.
+   * Output only. The major version of the framework, which is incremented in
+   * ascending order.
    * </pre>
    *
    * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -331,7 +325,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Display name of the framework. The maximum length is 200
+   * Optional. The friendly name of the framework. The maximum length is 200
    * characters.
    * </pre>
    *
@@ -356,7 +350,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Display name of the framework. The maximum length is 200
+   * Optional. The friendly name of the framework. The maximum length is 200
    * characters.
    * </pre>
    *
@@ -439,7 +433,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The type of the framework. The default is TYPE_CUSTOM.
+   * Output only. The type of framework.
    * </pre>
    *
    * <code>
@@ -457,7 +451,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The type of the framework. The default is TYPE_CUSTOM.
+   * Output only. The type of framework.
    * </pre>
    *
    * <code>
@@ -485,7 +479,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The details of the cloud controls directly added without any
+   * Optional. The cloud control details that are directly added without any
    * grouping in the framework.
    * </pre>
    *
@@ -503,7 +497,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The details of the cloud controls directly added without any
+   * Optional. The cloud control details that are directly added without any
    * grouping in the framework.
    * </pre>
    *
@@ -522,7 +516,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The details of the cloud controls directly added without any
+   * Optional. The cloud control details that are directly added without any
    * grouping in the framework.
    * </pre>
    *
@@ -539,7 +533,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The details of the cloud controls directly added without any
+   * Optional. The cloud control details that are directly added without any
    * grouping in the framework.
    * </pre>
    *
@@ -557,7 +551,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The details of the cloud controls directly added without any
+   * Optional. The cloud control details that are directly added without any
    * grouping in the framework.
    * </pre>
    *
@@ -712,7 +706,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. cloud providers supported
+   * Output only. The cloud providers that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -733,7 +727,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. cloud providers supported
+   * Output only. The cloud providers that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -751,7 +745,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. cloud providers supported
+   * Output only. The cloud providers that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -771,7 +765,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. cloud providers supported
+   * Output only. The cloud providers that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -789,7 +783,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. cloud providers supported
+   * Output only. The cloud providers that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -830,7 +824,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. target resource types supported by the Framework.
+   * Output only. The target resource types that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -851,7 +845,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. target resource types supported by the Framework.
+   * Output only. The target resource types that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -869,7 +863,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. target resource types supported by the Framework.
+   * Output only. The target resource types that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -890,7 +884,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. target resource types supported by the Framework.
+   * Output only. The target resource types that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -908,7 +902,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. target resource types supported by the Framework.
+   * Output only. The target resource types that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -1365,11 +1359,9 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Framework is a collection of CloudControls to address security and
-   * compliance requirements. Frameworks can be used for prevention, detection,
-   * and auditing. They can be either built-in, industry-standard frameworks
-   * provided by GCP/AZURE/AWS (e.g., NIST, FedRAMP) or custom frameworks created
-   * by users.
+   * A framework is a collection of cloud controls and regulatory controls
+   * that represent security best practices or industry-defined standards such as
+   * FedRAMP or NIST.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.Framework}
@@ -1818,9 +1810,9 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifier. The name of the framework.
-     * Format:
-     * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+     * Required. Identifier. The name of the framework, in the format
+     * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -1845,9 +1837,9 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifier. The name of the framework.
-     * Format:
-     * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+     * Required. Identifier. The name of the framework, in the format
+     * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -1872,9 +1864,9 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifier. The name of the framework.
-     * Format:
-     * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+     * Required. Identifier. The name of the framework, in the format
+     * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -1898,9 +1890,9 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifier. The name of the framework.
-     * Format:
-     * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+     * Required. Identifier. The name of the framework, in the format
+     * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -1920,9 +1912,9 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifier. The name of the framework.
-     * Format:
-     * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+     * Required. Identifier. The name of the framework, in the format
+     * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -1949,8 +1941,8 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Major revision of the framework incremented in ascending
-     * order.
+     * Output only. The major version of the framework, which is incremented in
+     * ascending order.
      * </pre>
      *
      * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1966,8 +1958,8 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Major revision of the framework incremented in ascending
-     * order.
+     * Output only. The major version of the framework, which is incremented in
+     * ascending order.
      * </pre>
      *
      * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1987,8 +1979,8 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Major revision of the framework incremented in ascending
-     * order.
+     * Output only. The major version of the framework, which is incremented in
+     * ascending order.
      * </pre>
      *
      * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2008,7 +2000,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Display name of the framework. The maximum length is 200
+     * Optional. The friendly name of the framework. The maximum length is 200
      * characters.
      * </pre>
      *
@@ -2032,7 +2024,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Display name of the framework. The maximum length is 200
+     * Optional. The friendly name of the framework. The maximum length is 200
      * characters.
      * </pre>
      *
@@ -2056,7 +2048,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Display name of the framework. The maximum length is 200
+     * Optional. The friendly name of the framework. The maximum length is 200
      * characters.
      * </pre>
      *
@@ -2079,7 +2071,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Display name of the framework. The maximum length is 200
+     * Optional. The friendly name of the framework. The maximum length is 200
      * characters.
      * </pre>
      *
@@ -2098,7 +2090,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Display name of the framework. The maximum length is 200
+     * Optional. The friendly name of the framework. The maximum length is 200
      * characters.
      * </pre>
      *
@@ -2240,7 +2232,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The type of the framework. The default is TYPE_CUSTOM.
+     * Output only. The type of framework.
      * </pre>
      *
      * <code>
@@ -2258,7 +2250,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The type of the framework. The default is TYPE_CUSTOM.
+     * Output only. The type of framework.
      * </pre>
      *
      * <code>
@@ -2279,7 +2271,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The type of the framework. The default is TYPE_CUSTOM.
+     * Output only. The type of framework.
      * </pre>
      *
      * <code>
@@ -2301,7 +2293,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The type of the framework. The default is TYPE_CUSTOM.
+     * Output only. The type of framework.
      * </pre>
      *
      * <code>
@@ -2326,7 +2318,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The type of the framework. The default is TYPE_CUSTOM.
+     * Output only. The type of framework.
      * </pre>
      *
      * <code>
@@ -2365,7 +2357,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -2386,7 +2378,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -2406,7 +2398,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -2427,7 +2419,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -2454,7 +2446,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -2479,7 +2471,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -2506,7 +2498,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -2533,7 +2525,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -2557,7 +2549,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -2582,7 +2574,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -2608,7 +2600,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -2631,7 +2623,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -2654,7 +2646,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -2671,7 +2663,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -2692,7 +2684,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -2714,7 +2706,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -2733,7 +2725,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -2753,7 +2745,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the cloud controls directly added without any
+     * Optional. The cloud control details that are directly added without any
      * grouping in the framework.
      * </pre>
      *
@@ -3062,7 +3054,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. cloud providers supported
+     * Output only. The cloud providers that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3082,7 +3074,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. cloud providers supported
+     * Output only. The cloud providers that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3099,7 +3091,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. cloud providers supported
+     * Output only. The cloud providers that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3118,7 +3110,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. cloud providers supported
+     * Output only. The cloud providers that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3144,7 +3136,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. cloud providers supported
+     * Output only. The cloud providers that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3169,7 +3161,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. cloud providers supported
+     * Output only. The cloud providers that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3194,7 +3186,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. cloud providers supported
+     * Output only. The cloud providers that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3214,7 +3206,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. cloud providers supported
+     * Output only. The cloud providers that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3231,7 +3223,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. cloud providers supported
+     * Output only. The cloud providers that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3249,7 +3241,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. cloud providers supported
+     * Output only. The cloud providers that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3271,7 +3263,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. cloud providers supported
+     * Output only. The cloud providers that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3292,7 +3284,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. cloud providers supported
+     * Output only. The cloud providers that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3327,7 +3319,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. target resource types supported by the Framework.
+     * Output only. The target resource types that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3347,7 +3339,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. target resource types supported by the Framework.
+     * Output only. The target resource types that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3364,7 +3356,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. target resource types supported by the Framework.
+     * Output only. The target resource types that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3384,7 +3376,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. target resource types supported by the Framework.
+     * Output only. The target resource types that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3410,7 +3402,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. target resource types supported by the Framework.
+     * Output only. The target resource types that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3435,7 +3427,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. target resource types supported by the Framework.
+     * Output only. The target resource types that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3460,7 +3452,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. target resource types supported by the Framework.
+     * Output only. The target resource types that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3480,7 +3472,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. target resource types supported by the Framework.
+     * Output only. The target resource types that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3498,7 +3490,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. target resource types supported by the Framework.
+     * Output only. The target resource types that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3517,7 +3509,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. target resource types supported by the Framework.
+     * Output only. The target resource types that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3539,7 +3531,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. target resource types supported by the Framework.
+     * Output only. The target resource types that are supported by the framework.
      * </pre>
      *
      * <code>
@@ -3560,7 +3552,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. target resource types supported by the Framework.
+     * Output only. The target resource types that are supported by the framework.
      * </pre>
      *
      * <code>

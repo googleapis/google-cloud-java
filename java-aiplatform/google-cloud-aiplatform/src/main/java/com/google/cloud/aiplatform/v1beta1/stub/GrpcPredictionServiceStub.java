@@ -36,6 +36,8 @@ import com.google.cloud.aiplatform.v1beta1.DirectPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.DirectPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.EmbedContentRequest;
+import com.google.cloud.aiplatform.v1beta1.EmbedContentResponse;
 import com.google.cloud.aiplatform.v1beta1.ExplainRequest;
 import com.google.cloud.aiplatform.v1beta1.ExplainResponse;
 import com.google.cloud.aiplatform.v1beta1.GenerateContentRequest;
@@ -257,6 +259,17 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<EmbedContentRequest, EmbedContentResponse>
+      embedContentMethodDescriptor =
+          MethodDescriptor.<EmbedContentRequest, EmbedContentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/EmbedContent")
+              .setRequestMarshaller(ProtoUtils.marshaller(EmbedContentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(EmbedContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -331,6 +344,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   private final ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentCallable;
   private final ServerStreamingCallable<ChatCompletionsRequest, HttpBody> chatCompletionsCallable;
+  private final UnaryCallable<EmbedContentRequest, EmbedContentResponse> embedContentCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -519,6 +533,16 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<EmbedContentRequest, EmbedContentResponse> embedContentTransportSettings =
+        GrpcCallSettings.<EmbedContentRequest, EmbedContentResponse>newBuilder()
+            .setMethodDescriptor(embedContentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("model", String.valueOf(request.getModel()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -626,6 +650,9 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
     this.chatCompletionsCallable =
         callableFactory.createServerStreamingCallable(
             chatCompletionsTransportSettings, settings.chatCompletionsSettings(), clientContext);
+    this.embedContentCallable =
+        callableFactory.createUnaryCallable(
+            embedContentTransportSettings, settings.embedContentSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -735,6 +762,11 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   @Override
   public ServerStreamingCallable<ChatCompletionsRequest, HttpBody> chatCompletionsCallable() {
     return chatCompletionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<EmbedContentRequest, EmbedContentResponse> embedContentCallable() {
+    return embedContentCallable;
   }
 
   @Override

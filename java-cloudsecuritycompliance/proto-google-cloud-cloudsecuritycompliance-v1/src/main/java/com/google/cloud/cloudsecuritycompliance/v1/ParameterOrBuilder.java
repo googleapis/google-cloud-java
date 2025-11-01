@@ -28,7 +28,7 @@ public interface ParameterOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the parameter.
+   * Required. The name or key of the parameter.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,7 +41,7 @@ public interface ParameterOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the parameter.
+   * Required. The name or key of the parameter.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -54,7 +54,7 @@ public interface ParameterOrBuilder
    *
    *
    * <pre>
-   * Required. The value of the parameter
+   * Required. The value of the parameter.
    * </pre>
    *
    * <code>
@@ -69,7 +69,7 @@ public interface ParameterOrBuilder
    *
    *
    * <pre>
-   * Required. The value of the parameter
+   * Required. The value of the parameter.
    * </pre>
    *
    * <code>
@@ -84,7 +84,7 @@ public interface ParameterOrBuilder
    *
    *
    * <pre>
-   * Required. The value of the parameter
+   * Required. The value of the parameter.
    * </pre>
    *
    * <code>

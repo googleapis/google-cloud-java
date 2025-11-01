@@ -22,12 +22,23 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListAutono
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListAutonomousDbVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudExadataInfrastructuresPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudVmClustersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabaseCharacterSetsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabasesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbNodesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbServersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemInitialStorageSizesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemShapesPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListEntitlementsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExadbVmClustersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExascaleDbStorageVaultsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbSubnetsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListPluggableDatabasesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -48,8 +59,10 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -662,13 +675,21 @@ public class OracleDatabaseClientHttpJsonTest {
                         "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
                     .toString())
             .setDisplayName("displayName1714148973")
-            .setGcpOracleZone("gcpOracleZone217860222")
             .setProperties(CloudVmClusterProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setCidr("cidr3053428")
             .setBackupSubnetCidr("backupSubnetCidr1087692755")
             .setNetwork("network1843485230")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -721,13 +742,21 @@ public class OracleDatabaseClientHttpJsonTest {
                         "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
                     .toString())
             .setDisplayName("displayName1714148973")
-            .setGcpOracleZone("gcpOracleZone217860222")
             .setProperties(CloudVmClusterProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setCidr("cidr3053428")
             .setBackupSubnetCidr("backupSubnetCidr1087692755")
             .setNetwork("network1843485230")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -780,13 +809,21 @@ public class OracleDatabaseClientHttpJsonTest {
                         "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
                     .toString())
             .setDisplayName("displayName1714148973")
-            .setGcpOracleZone("gcpOracleZone217860222")
             .setProperties(CloudVmClusterProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setCidr("cidr3053428")
             .setBackupSubnetCidr("backupSubnetCidr1087692755")
             .setNetwork("network1843485230")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -847,13 +884,21 @@ public class OracleDatabaseClientHttpJsonTest {
                         "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
                     .toString())
             .setDisplayName("displayName1714148973")
-            .setGcpOracleZone("gcpOracleZone217860222")
             .setProperties(CloudVmClusterProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setCidr("cidr3053428")
             .setBackupSubnetCidr("backupSubnetCidr1087692755")
             .setNetwork("network1843485230")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1265,6 +1310,58 @@ public class OracleDatabaseClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    ExadbVmClusterName parent =
+        ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]");
+
+    ListDbNodesPagedResponse pagedListResponse = client.listDbNodes(parent);
+
+    List<DbNode> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDbNodesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDbNodesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExadbVmClusterName parent =
+          ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]");
+      client.listDbNodes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDbNodesTest3() throws Exception {
+    DbNode responsesElement = DbNode.newBuilder().build();
+    ListDbNodesResponse expectedResponse =
+        ListDbNodesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDbNodes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
     String parent =
         "projects/project-2426/locations/location-2426/cloudVmClusters/cloudVmCluster-2426";
 
@@ -1291,7 +1388,7 @@ public class OracleDatabaseClientHttpJsonTest {
   }
 
   @Test
-  public void listDbNodesExceptionTest2() throws Exception {
+  public void listDbNodesExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -1401,6 +1498,106 @@ public class OracleDatabaseClientHttpJsonTest {
     try {
       String parent = "projects/project-5833/locations/location-5833";
       client.listGiVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMinorVersionsTest() throws Exception {
+    MinorVersion responsesElement = MinorVersion.newBuilder().build();
+    ListMinorVersionsResponse expectedResponse =
+        ListMinorVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMinorVersions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GiVersionName parent = GiVersionName.of("[PROJECT]", "[LOCATION]", "[GI_VERSION]");
+
+    ListMinorVersionsPagedResponse pagedListResponse = client.listMinorVersions(parent);
+
+    List<MinorVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMinorVersionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listMinorVersionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GiVersionName parent = GiVersionName.of("[PROJECT]", "[LOCATION]", "[GI_VERSION]");
+      client.listMinorVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMinorVersionsTest2() throws Exception {
+    MinorVersion responsesElement = MinorVersion.newBuilder().build();
+    ListMinorVersionsResponse expectedResponse =
+        ListMinorVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMinorVersions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-8722/locations/location-8722/giVersions/giVersion-8722";
+
+    ListMinorVersionsPagedResponse pagedListResponse = client.listMinorVersions(parent);
+
+    List<MinorVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMinorVersionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listMinorVersionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-8722/locations/location-8722/giVersions/giVersion-8722";
+      client.listMinorVersions(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -1622,7 +1819,14 @@ public class OracleDatabaseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
             .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1679,7 +1883,14 @@ public class OracleDatabaseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
             .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1736,7 +1947,14 @@ public class OracleDatabaseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
             .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1803,7 +2021,14 @@ public class OracleDatabaseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
             .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1850,6 +2075,119 @@ public class OracleDatabaseClientHttpJsonTest {
       AutonomousDatabase autonomousDatabase = AutonomousDatabase.newBuilder().build();
       String autonomousDatabaseId = "autonomousDatabaseId-1972693114";
       client.createAutonomousDatabaseAsync(parent, autonomousDatabase, autonomousDatabaseId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateAutonomousDatabaseTest() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutonomousDatabase autonomousDatabase =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AutonomousDatabase actualResponse =
+        client.updateAutonomousDatabaseAsync(autonomousDatabase, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateAutonomousDatabaseExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutonomousDatabase autonomousDatabase =
+          AutonomousDatabase.newBuilder()
+              .setName(
+                  AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                      .toString())
+              .setDatabase("database1789464955")
+              .setDisplayName("displayName1714148973")
+              .setEntitlementId("entitlementId-1302274264")
+              .setAdminPassword("adminPassword-95067382")
+              .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setNetwork("network1843485230")
+              .setCidr("cidr3053428")
+              .setOdbNetwork(
+                  OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+              .setOdbSubnet(
+                  OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                      .toString())
+              .setSourceConfig(SourceConfig.newBuilder().build())
+              .addAllPeerAutonomousDatabases(new ArrayList<String>())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAutonomousDatabaseAsync(autonomousDatabase, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -1964,7 +2302,14 @@ public class OracleDatabaseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
             .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2029,7 +2374,14 @@ public class OracleDatabaseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
             .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2514,7 +2866,14 @@ public class OracleDatabaseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
             .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2576,7 +2935,14 @@ public class OracleDatabaseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
             .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2638,7 +3004,14 @@ public class OracleDatabaseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
             .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2700,7 +3073,14 @@ public class OracleDatabaseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
             .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2762,7 +3142,14 @@ public class OracleDatabaseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
             .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2824,7 +3211,14 @@ public class OracleDatabaseClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
             .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2868,6 +3262,3687 @@ public class OracleDatabaseClientHttpJsonTest {
       client.restartAutonomousDatabaseAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void switchoverAutonomousDatabaseTest() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("switchoverAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutonomousDatabaseName name =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+    AutonomousDatabaseName peerAutonomousDatabase =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+
+    AutonomousDatabase actualResponse =
+        client.switchoverAutonomousDatabaseAsync(name, peerAutonomousDatabase).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void switchoverAutonomousDatabaseExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutonomousDatabaseName name =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      AutonomousDatabaseName peerAutonomousDatabase =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      client.switchoverAutonomousDatabaseAsync(name, peerAutonomousDatabase).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void switchoverAutonomousDatabaseTest2() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("switchoverAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutonomousDatabaseName name =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+    String peerAutonomousDatabase = "peerAutonomousDatabase-1153991155";
+
+    AutonomousDatabase actualResponse =
+        client.switchoverAutonomousDatabaseAsync(name, peerAutonomousDatabase).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void switchoverAutonomousDatabaseExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutonomousDatabaseName name =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      String peerAutonomousDatabase = "peerAutonomousDatabase-1153991155";
+      client.switchoverAutonomousDatabaseAsync(name, peerAutonomousDatabase).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void switchoverAutonomousDatabaseTest3() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("switchoverAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+    AutonomousDatabaseName peerAutonomousDatabase =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+
+    AutonomousDatabase actualResponse =
+        client.switchoverAutonomousDatabaseAsync(name, peerAutonomousDatabase).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void switchoverAutonomousDatabaseExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+      AutonomousDatabaseName peerAutonomousDatabase =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      client.switchoverAutonomousDatabaseAsync(name, peerAutonomousDatabase).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void switchoverAutonomousDatabaseTest4() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("switchoverAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+    String peerAutonomousDatabase = "peerAutonomousDatabase-1153991155";
+
+    AutonomousDatabase actualResponse =
+        client.switchoverAutonomousDatabaseAsync(name, peerAutonomousDatabase).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void switchoverAutonomousDatabaseExceptionTest4() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+      String peerAutonomousDatabase = "peerAutonomousDatabase-1153991155";
+      client.switchoverAutonomousDatabaseAsync(name, peerAutonomousDatabase).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void failoverAutonomousDatabaseTest() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("failoverAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutonomousDatabaseName name =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+    AutonomousDatabaseName peerAutonomousDatabase =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+
+    AutonomousDatabase actualResponse =
+        client.failoverAutonomousDatabaseAsync(name, peerAutonomousDatabase).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void failoverAutonomousDatabaseExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutonomousDatabaseName name =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      AutonomousDatabaseName peerAutonomousDatabase =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      client.failoverAutonomousDatabaseAsync(name, peerAutonomousDatabase).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void failoverAutonomousDatabaseTest2() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("failoverAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutonomousDatabaseName name =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+    String peerAutonomousDatabase = "peerAutonomousDatabase-1153991155";
+
+    AutonomousDatabase actualResponse =
+        client.failoverAutonomousDatabaseAsync(name, peerAutonomousDatabase).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void failoverAutonomousDatabaseExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutonomousDatabaseName name =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      String peerAutonomousDatabase = "peerAutonomousDatabase-1153991155";
+      client.failoverAutonomousDatabaseAsync(name, peerAutonomousDatabase).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void failoverAutonomousDatabaseTest3() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("failoverAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+    AutonomousDatabaseName peerAutonomousDatabase =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+
+    AutonomousDatabase actualResponse =
+        client.failoverAutonomousDatabaseAsync(name, peerAutonomousDatabase).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void failoverAutonomousDatabaseExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+      AutonomousDatabaseName peerAutonomousDatabase =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      client.failoverAutonomousDatabaseAsync(name, peerAutonomousDatabase).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void failoverAutonomousDatabaseTest4() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("failoverAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+    String peerAutonomousDatabase = "peerAutonomousDatabase-1153991155";
+
+    AutonomousDatabase actualResponse =
+        client.failoverAutonomousDatabaseAsync(name, peerAutonomousDatabase).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void failoverAutonomousDatabaseExceptionTest4() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+      String peerAutonomousDatabase = "peerAutonomousDatabase-1153991155";
+      client.failoverAutonomousDatabaseAsync(name, peerAutonomousDatabase).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listOdbNetworksTest() throws Exception {
+    OdbNetwork responsesElement = OdbNetwork.newBuilder().build();
+    ListOdbNetworksResponse expectedResponse =
+        ListOdbNetworksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllOdbNetworks(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListOdbNetworksPagedResponse pagedListResponse = client.listOdbNetworks(parent);
+
+    List<OdbNetwork> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getOdbNetworksList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listOdbNetworksExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listOdbNetworks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listOdbNetworksTest2() throws Exception {
+    OdbNetwork responsesElement = OdbNetwork.newBuilder().build();
+    ListOdbNetworksResponse expectedResponse =
+        ListOdbNetworksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllOdbNetworks(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListOdbNetworksPagedResponse pagedListResponse = client.listOdbNetworks(parent);
+
+    List<OdbNetwork> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getOdbNetworksList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listOdbNetworksExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listOdbNetworks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getOdbNetworkTest() throws Exception {
+    OdbNetwork expectedResponse =
+        OdbNetwork.newBuilder()
+            .setName(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setNetwork("network1843485230")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OdbNetworkName name = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+
+    OdbNetwork actualResponse = client.getOdbNetwork(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getOdbNetworkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OdbNetworkName name = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+      client.getOdbNetwork(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getOdbNetworkTest2() throws Exception {
+    OdbNetwork expectedResponse =
+        OdbNetwork.newBuilder()
+            .setName(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setNetwork("network1843485230")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-8312/locations/location-8312/odbNetworks/odbNetwork-8312";
+
+    OdbNetwork actualResponse = client.getOdbNetwork(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getOdbNetworkExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-8312/locations/location-8312/odbNetworks/odbNetwork-8312";
+      client.getOdbNetwork(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createOdbNetworkTest() throws Exception {
+    OdbNetwork expectedResponse =
+        OdbNetwork.newBuilder()
+            .setName(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setNetwork("network1843485230")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createOdbNetworkTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    OdbNetwork odbNetwork = OdbNetwork.newBuilder().build();
+    String odbNetworkId = "odbNetworkId-169900740";
+
+    OdbNetwork actualResponse =
+        client.createOdbNetworkAsync(parent, odbNetwork, odbNetworkId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createOdbNetworkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      OdbNetwork odbNetwork = OdbNetwork.newBuilder().build();
+      String odbNetworkId = "odbNetworkId-169900740";
+      client.createOdbNetworkAsync(parent, odbNetwork, odbNetworkId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createOdbNetworkTest2() throws Exception {
+    OdbNetwork expectedResponse =
+        OdbNetwork.newBuilder()
+            .setName(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setNetwork("network1843485230")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createOdbNetworkTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    OdbNetwork odbNetwork = OdbNetwork.newBuilder().build();
+    String odbNetworkId = "odbNetworkId-169900740";
+
+    OdbNetwork actualResponse =
+        client.createOdbNetworkAsync(parent, odbNetwork, odbNetworkId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createOdbNetworkExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      OdbNetwork odbNetwork = OdbNetwork.newBuilder().build();
+      String odbNetworkId = "odbNetworkId-169900740";
+      client.createOdbNetworkAsync(parent, odbNetwork, odbNetworkId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteOdbNetworkTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteOdbNetworkTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    OdbNetworkName name = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+
+    client.deleteOdbNetworkAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteOdbNetworkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OdbNetworkName name = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+      client.deleteOdbNetworkAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteOdbNetworkTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteOdbNetworkTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-8312/locations/location-8312/odbNetworks/odbNetwork-8312";
+
+    client.deleteOdbNetworkAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteOdbNetworkExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-8312/locations/location-8312/odbNetworks/odbNetwork-8312";
+      client.deleteOdbNetworkAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listOdbSubnetsTest() throws Exception {
+    OdbSubnet responsesElement = OdbSubnet.newBuilder().build();
+    ListOdbSubnetsResponse expectedResponse =
+        ListOdbSubnetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllOdbSubnets(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OdbNetworkName parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+
+    ListOdbSubnetsPagedResponse pagedListResponse = client.listOdbSubnets(parent);
+
+    List<OdbSubnet> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getOdbSubnetsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listOdbSubnetsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OdbNetworkName parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+      client.listOdbSubnets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listOdbSubnetsTest2() throws Exception {
+    OdbSubnet responsesElement = OdbSubnet.newBuilder().build();
+    ListOdbSubnetsResponse expectedResponse =
+        ListOdbSubnetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllOdbSubnets(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-2537/locations/location-2537/odbNetworks/odbNetwork-2537";
+
+    ListOdbSubnetsPagedResponse pagedListResponse = client.listOdbSubnets(parent);
+
+    List<OdbSubnet> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getOdbSubnetsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listOdbSubnetsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-2537/locations/location-2537/odbNetworks/odbNetwork-2537";
+      client.listOdbSubnets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getOdbSubnetTest() throws Exception {
+    OdbSubnet expectedResponse =
+        OdbSubnet.newBuilder()
+            .setName(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setCidrRange("cidrRange1660631593")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OdbSubnetName name =
+        OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]");
+
+    OdbSubnet actualResponse = client.getOdbSubnet(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getOdbSubnetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OdbSubnetName name =
+          OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]");
+      client.getOdbSubnet(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getOdbSubnetTest2() throws Exception {
+    OdbSubnet expectedResponse =
+        OdbSubnet.newBuilder()
+            .setName(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setCidrRange("cidrRange1660631593")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9755/locations/location-9755/odbNetworks/odbNetwork-9755/odbSubnets/odbSubnet-9755";
+
+    OdbSubnet actualResponse = client.getOdbSubnet(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getOdbSubnetExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9755/locations/location-9755/odbNetworks/odbNetwork-9755/odbSubnets/odbSubnet-9755";
+      client.getOdbSubnet(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createOdbSubnetTest() throws Exception {
+    OdbSubnet expectedResponse =
+        OdbSubnet.newBuilder()
+            .setName(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setCidrRange("cidrRange1660631593")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createOdbSubnetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    OdbNetworkName parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+    OdbSubnet odbSubnet = OdbSubnet.newBuilder().build();
+    String odbSubnetId = "odbSubnetId1186954661";
+
+    OdbSubnet actualResponse = client.createOdbSubnetAsync(parent, odbSubnet, odbSubnetId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createOdbSubnetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OdbNetworkName parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+      OdbSubnet odbSubnet = OdbSubnet.newBuilder().build();
+      String odbSubnetId = "odbSubnetId1186954661";
+      client.createOdbSubnetAsync(parent, odbSubnet, odbSubnetId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createOdbSubnetTest2() throws Exception {
+    OdbSubnet expectedResponse =
+        OdbSubnet.newBuilder()
+            .setName(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setCidrRange("cidrRange1660631593")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createOdbSubnetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-2537/locations/location-2537/odbNetworks/odbNetwork-2537";
+    OdbSubnet odbSubnet = OdbSubnet.newBuilder().build();
+    String odbSubnetId = "odbSubnetId1186954661";
+
+    OdbSubnet actualResponse = client.createOdbSubnetAsync(parent, odbSubnet, odbSubnetId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createOdbSubnetExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-2537/locations/location-2537/odbNetworks/odbNetwork-2537";
+      OdbSubnet odbSubnet = OdbSubnet.newBuilder().build();
+      String odbSubnetId = "odbSubnetId1186954661";
+      client.createOdbSubnetAsync(parent, odbSubnet, odbSubnetId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteOdbSubnetTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteOdbSubnetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    OdbSubnetName name =
+        OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]");
+
+    client.deleteOdbSubnetAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteOdbSubnetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OdbSubnetName name =
+          OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]");
+      client.deleteOdbSubnetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteOdbSubnetTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteOdbSubnetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-9755/locations/location-9755/odbNetworks/odbNetwork-9755/odbSubnets/odbSubnet-9755";
+
+    client.deleteOdbSubnetAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteOdbSubnetExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9755/locations/location-9755/odbNetworks/odbNetwork-9755/odbSubnets/odbSubnet-9755";
+      client.deleteOdbSubnetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listExadbVmClustersTest() throws Exception {
+    ExadbVmCluster responsesElement = ExadbVmCluster.newBuilder().build();
+    ListExadbVmClustersResponse expectedResponse =
+        ListExadbVmClustersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExadbVmClusters(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListExadbVmClustersPagedResponse pagedListResponse = client.listExadbVmClusters(parent);
+
+    List<ExadbVmCluster> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExadbVmClustersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listExadbVmClustersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listExadbVmClusters(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listExadbVmClustersTest2() throws Exception {
+    ExadbVmCluster responsesElement = ExadbVmCluster.newBuilder().build();
+    ListExadbVmClustersResponse expectedResponse =
+        ListExadbVmClustersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExadbVmClusters(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListExadbVmClustersPagedResponse pagedListResponse = client.listExadbVmClusters(parent);
+
+    List<ExadbVmCluster> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExadbVmClustersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listExadbVmClustersExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listExadbVmClusters(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getExadbVmClusterTest() throws Exception {
+    ExadbVmCluster expectedResponse =
+        ExadbVmCluster.newBuilder()
+            .setName(
+                ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+            .setProperties(ExadbVmClusterProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ExadbVmClusterName name =
+        ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]");
+
+    ExadbVmCluster actualResponse = client.getExadbVmCluster(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getExadbVmClusterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExadbVmClusterName name =
+          ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]");
+      client.getExadbVmCluster(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getExadbVmClusterTest2() throws Exception {
+    ExadbVmCluster expectedResponse =
+        ExadbVmCluster.newBuilder()
+            .setName(
+                ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+            .setProperties(ExadbVmClusterProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-6130/locations/location-6130/exadbVmClusters/exadbVmCluster-6130";
+
+    ExadbVmCluster actualResponse = client.getExadbVmCluster(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getExadbVmClusterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6130/locations/location-6130/exadbVmClusters/exadbVmCluster-6130";
+      client.getExadbVmCluster(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createExadbVmClusterTest() throws Exception {
+    ExadbVmCluster expectedResponse =
+        ExadbVmCluster.newBuilder()
+            .setName(
+                ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+            .setProperties(ExadbVmClusterProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createExadbVmClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    ExadbVmCluster exadbVmCluster = ExadbVmCluster.newBuilder().build();
+    String exadbVmClusterId = "exadbVmClusterId1890152722";
+
+    ExadbVmCluster actualResponse =
+        client.createExadbVmClusterAsync(parent, exadbVmCluster, exadbVmClusterId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createExadbVmClusterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      ExadbVmCluster exadbVmCluster = ExadbVmCluster.newBuilder().build();
+      String exadbVmClusterId = "exadbVmClusterId1890152722";
+      client.createExadbVmClusterAsync(parent, exadbVmCluster, exadbVmClusterId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createExadbVmClusterTest2() throws Exception {
+    ExadbVmCluster expectedResponse =
+        ExadbVmCluster.newBuilder()
+            .setName(
+                ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+            .setProperties(ExadbVmClusterProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createExadbVmClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    ExadbVmCluster exadbVmCluster = ExadbVmCluster.newBuilder().build();
+    String exadbVmClusterId = "exadbVmClusterId1890152722";
+
+    ExadbVmCluster actualResponse =
+        client.createExadbVmClusterAsync(parent, exadbVmCluster, exadbVmClusterId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createExadbVmClusterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      ExadbVmCluster exadbVmCluster = ExadbVmCluster.newBuilder().build();
+      String exadbVmClusterId = "exadbVmClusterId1890152722";
+      client.createExadbVmClusterAsync(parent, exadbVmCluster, exadbVmClusterId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteExadbVmClusterTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteExadbVmClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExadbVmClusterName name =
+        ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]");
+
+    client.deleteExadbVmClusterAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteExadbVmClusterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExadbVmClusterName name =
+          ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]");
+      client.deleteExadbVmClusterAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteExadbVmClusterTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteExadbVmClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-6130/locations/location-6130/exadbVmClusters/exadbVmCluster-6130";
+
+    client.deleteExadbVmClusterAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteExadbVmClusterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6130/locations/location-6130/exadbVmClusters/exadbVmCluster-6130";
+      client.deleteExadbVmClusterAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateExadbVmClusterTest() throws Exception {
+    ExadbVmCluster expectedResponse =
+        ExadbVmCluster.newBuilder()
+            .setName(
+                ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+            .setProperties(ExadbVmClusterProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateExadbVmClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExadbVmCluster exadbVmCluster =
+        ExadbVmCluster.newBuilder()
+            .setName(
+                ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+            .setProperties(ExadbVmClusterProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ExadbVmCluster actualResponse =
+        client.updateExadbVmClusterAsync(exadbVmCluster, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateExadbVmClusterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExadbVmCluster exadbVmCluster =
+          ExadbVmCluster.newBuilder()
+              .setName(
+                  ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+              .setProperties(ExadbVmClusterProperties.newBuilder().build())
+              .setGcpOracleZone("gcpOracleZone217860222")
+              .putAllLabels(new HashMap<String, String>())
+              .setOdbNetwork(
+                  OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+              .setOdbSubnet(
+                  OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                      .toString())
+              .setBackupOdbSubnet(
+                  OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                      .toString())
+              .setDisplayName("displayName1714148973")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setEntitlementId("entitlementId-1302274264")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateExadbVmClusterAsync(exadbVmCluster, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void removeVirtualMachineExadbVmClusterTest() throws Exception {
+    ExadbVmCluster expectedResponse =
+        ExadbVmCluster.newBuilder()
+            .setName(
+                ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+            .setProperties(ExadbVmClusterProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("removeVirtualMachineExadbVmClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExadbVmClusterName name =
+        ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]");
+    List<String> hostnames = new ArrayList<>();
+
+    ExadbVmCluster actualResponse =
+        client.removeVirtualMachineExadbVmClusterAsync(name, hostnames).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void removeVirtualMachineExadbVmClusterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExadbVmClusterName name =
+          ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]");
+      List<String> hostnames = new ArrayList<>();
+      client.removeVirtualMachineExadbVmClusterAsync(name, hostnames).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void removeVirtualMachineExadbVmClusterTest2() throws Exception {
+    ExadbVmCluster expectedResponse =
+        ExadbVmCluster.newBuilder()
+            .setName(
+                ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+            .setProperties(ExadbVmClusterProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("removeVirtualMachineExadbVmClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-6130/locations/location-6130/exadbVmClusters/exadbVmCluster-6130";
+    List<String> hostnames = new ArrayList<>();
+
+    ExadbVmCluster actualResponse =
+        client.removeVirtualMachineExadbVmClusterAsync(name, hostnames).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void removeVirtualMachineExadbVmClusterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6130/locations/location-6130/exadbVmClusters/exadbVmCluster-6130";
+      List<String> hostnames = new ArrayList<>();
+      client.removeVirtualMachineExadbVmClusterAsync(name, hostnames).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listExascaleDbStorageVaultsTest() throws Exception {
+    ExascaleDbStorageVault responsesElement = ExascaleDbStorageVault.newBuilder().build();
+    ListExascaleDbStorageVaultsResponse expectedResponse =
+        ListExascaleDbStorageVaultsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExascaleDbStorageVaults(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListExascaleDbStorageVaultsPagedResponse pagedListResponse =
+        client.listExascaleDbStorageVaults(parent);
+
+    List<ExascaleDbStorageVault> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExascaleDbStorageVaultsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listExascaleDbStorageVaultsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listExascaleDbStorageVaults(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listExascaleDbStorageVaultsTest2() throws Exception {
+    ExascaleDbStorageVault responsesElement = ExascaleDbStorageVault.newBuilder().build();
+    ListExascaleDbStorageVaultsResponse expectedResponse =
+        ListExascaleDbStorageVaultsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExascaleDbStorageVaults(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListExascaleDbStorageVaultsPagedResponse pagedListResponse =
+        client.listExascaleDbStorageVaults(parent);
+
+    List<ExascaleDbStorageVault> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExascaleDbStorageVaultsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listExascaleDbStorageVaultsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listExascaleDbStorageVaults(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getExascaleDbStorageVaultTest() throws Exception {
+    ExascaleDbStorageVault expectedResponse =
+        ExascaleDbStorageVault.newBuilder()
+            .setName(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setProperties(ExascaleDbStorageVaultProperties.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ExascaleDbStorageVaultName name =
+        ExascaleDbStorageVaultName.of("[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]");
+
+    ExascaleDbStorageVault actualResponse = client.getExascaleDbStorageVault(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getExascaleDbStorageVaultExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExascaleDbStorageVaultName name =
+          ExascaleDbStorageVaultName.of("[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]");
+      client.getExascaleDbStorageVault(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getExascaleDbStorageVaultTest2() throws Exception {
+    ExascaleDbStorageVault expectedResponse =
+        ExascaleDbStorageVault.newBuilder()
+            .setName(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setProperties(ExascaleDbStorageVaultProperties.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-6696/locations/location-6696/exascaleDbStorageVaults/exascaleDbStorageVault-6696";
+
+    ExascaleDbStorageVault actualResponse = client.getExascaleDbStorageVault(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getExascaleDbStorageVaultExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6696/locations/location-6696/exascaleDbStorageVaults/exascaleDbStorageVault-6696";
+      client.getExascaleDbStorageVault(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createExascaleDbStorageVaultTest() throws Exception {
+    ExascaleDbStorageVault expectedResponse =
+        ExascaleDbStorageVault.newBuilder()
+            .setName(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setProperties(ExascaleDbStorageVaultProperties.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createExascaleDbStorageVaultTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    ExascaleDbStorageVault exascaleDbStorageVault = ExascaleDbStorageVault.newBuilder().build();
+    String exascaleDbStorageVaultId = "exascaleDbStorageVaultId-24370132";
+
+    ExascaleDbStorageVault actualResponse =
+        client
+            .createExascaleDbStorageVaultAsync(
+                parent, exascaleDbStorageVault, exascaleDbStorageVaultId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createExascaleDbStorageVaultExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      ExascaleDbStorageVault exascaleDbStorageVault = ExascaleDbStorageVault.newBuilder().build();
+      String exascaleDbStorageVaultId = "exascaleDbStorageVaultId-24370132";
+      client
+          .createExascaleDbStorageVaultAsync(
+              parent, exascaleDbStorageVault, exascaleDbStorageVaultId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createExascaleDbStorageVaultTest2() throws Exception {
+    ExascaleDbStorageVault expectedResponse =
+        ExascaleDbStorageVault.newBuilder()
+            .setName(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setProperties(ExascaleDbStorageVaultProperties.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createExascaleDbStorageVaultTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    ExascaleDbStorageVault exascaleDbStorageVault = ExascaleDbStorageVault.newBuilder().build();
+    String exascaleDbStorageVaultId = "exascaleDbStorageVaultId-24370132";
+
+    ExascaleDbStorageVault actualResponse =
+        client
+            .createExascaleDbStorageVaultAsync(
+                parent, exascaleDbStorageVault, exascaleDbStorageVaultId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createExascaleDbStorageVaultExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      ExascaleDbStorageVault exascaleDbStorageVault = ExascaleDbStorageVault.newBuilder().build();
+      String exascaleDbStorageVaultId = "exascaleDbStorageVaultId-24370132";
+      client
+          .createExascaleDbStorageVaultAsync(
+              parent, exascaleDbStorageVault, exascaleDbStorageVaultId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteExascaleDbStorageVaultTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteExascaleDbStorageVaultTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExascaleDbStorageVaultName name =
+        ExascaleDbStorageVaultName.of("[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]");
+
+    client.deleteExascaleDbStorageVaultAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteExascaleDbStorageVaultExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExascaleDbStorageVaultName name =
+          ExascaleDbStorageVaultName.of("[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]");
+      client.deleteExascaleDbStorageVaultAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteExascaleDbStorageVaultTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteExascaleDbStorageVaultTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-6696/locations/location-6696/exascaleDbStorageVaults/exascaleDbStorageVault-6696";
+
+    client.deleteExascaleDbStorageVaultAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteExascaleDbStorageVaultExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6696/locations/location-6696/exascaleDbStorageVaults/exascaleDbStorageVault-6696";
+      client.deleteExascaleDbStorageVaultAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listDbSystemInitialStorageSizesTest() throws Exception {
+    DbSystemInitialStorageSize responsesElement = DbSystemInitialStorageSize.newBuilder().build();
+    ListDbSystemInitialStorageSizesResponse expectedResponse =
+        ListDbSystemInitialStorageSizesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDbSystemInitialStorageSizes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListDbSystemInitialStorageSizesPagedResponse pagedListResponse =
+        client.listDbSystemInitialStorageSizes(parent);
+
+    List<DbSystemInitialStorageSize> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getDbSystemInitialStorageSizesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDbSystemInitialStorageSizesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listDbSystemInitialStorageSizes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDbSystemInitialStorageSizesTest2() throws Exception {
+    DbSystemInitialStorageSize responsesElement = DbSystemInitialStorageSize.newBuilder().build();
+    ListDbSystemInitialStorageSizesResponse expectedResponse =
+        ListDbSystemInitialStorageSizesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDbSystemInitialStorageSizes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListDbSystemInitialStorageSizesPagedResponse pagedListResponse =
+        client.listDbSystemInitialStorageSizes(parent);
+
+    List<DbSystemInitialStorageSize> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getDbSystemInitialStorageSizesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDbSystemInitialStorageSizesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listDbSystemInitialStorageSizes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDatabasesTest() throws Exception {
+    Database responsesElement = Database.newBuilder().build();
+    ListDatabasesResponse expectedResponse =
+        ListDatabasesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatabases(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListDatabasesPagedResponse pagedListResponse = client.listDatabases(parent);
+
+    List<Database> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatabasesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDatabasesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listDatabases(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDatabasesTest2() throws Exception {
+    Database responsesElement = Database.newBuilder().build();
+    ListDatabasesResponse expectedResponse =
+        ListDatabasesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatabases(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListDatabasesPagedResponse pagedListResponse = client.listDatabases(parent);
+
+    List<Database> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatabasesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDatabasesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listDatabases(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDatabaseTest() throws Exception {
+    Database expectedResponse =
+        Database.newBuilder()
+            .setName(DatabaseName.of("[PROJECT]", "[LOCATION]", "[DATABASE]").toString())
+            .setDbName("dbName-1339126743")
+            .setDbUniqueName("dbUniqueName-1793979110")
+            .setAdminPassword("adminPassword-95067382")
+            .setTdeWalletPassword("tdeWalletPassword727082249")
+            .setCharacterSet("characterSet-1443214215")
+            .setNcharacterSet("ncharacterSet642193383")
+            .setOciUrl("ociUrl-1022489574")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setProperties(DatabaseProperties.newBuilder().build())
+            .setDatabaseId("databaseId1688905718")
+            .setDbHomeName("dbHomeName364867240")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DatabaseName name = DatabaseName.of("[PROJECT]", "[LOCATION]", "[DATABASE]");
+
+    Database actualResponse = client.getDatabase(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDatabaseExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DatabaseName name = DatabaseName.of("[PROJECT]", "[LOCATION]", "[DATABASE]");
+      client.getDatabase(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDatabaseTest2() throws Exception {
+    Database expectedResponse =
+        Database.newBuilder()
+            .setName(DatabaseName.of("[PROJECT]", "[LOCATION]", "[DATABASE]").toString())
+            .setDbName("dbName-1339126743")
+            .setDbUniqueName("dbUniqueName-1793979110")
+            .setAdminPassword("adminPassword-95067382")
+            .setTdeWalletPassword("tdeWalletPassword727082249")
+            .setCharacterSet("characterSet-1443214215")
+            .setNcharacterSet("ncharacterSet642193383")
+            .setOciUrl("ociUrl-1022489574")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setProperties(DatabaseProperties.newBuilder().build())
+            .setDatabaseId("databaseId1688905718")
+            .setDbHomeName("dbHomeName364867240")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-1522/locations/location-1522/databases/database-1522";
+
+    Database actualResponse = client.getDatabase(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDatabaseExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1522/locations/location-1522/databases/database-1522";
+      client.getDatabase(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPluggableDatabasesTest() throws Exception {
+    PluggableDatabase responsesElement = PluggableDatabase.newBuilder().build();
+    ListPluggableDatabasesResponse expectedResponse =
+        ListPluggableDatabasesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPluggableDatabases(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListPluggableDatabasesPagedResponse pagedListResponse = client.listPluggableDatabases(parent);
+
+    List<PluggableDatabase> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPluggableDatabasesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listPluggableDatabasesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listPluggableDatabases(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPluggableDatabasesTest2() throws Exception {
+    PluggableDatabase responsesElement = PluggableDatabase.newBuilder().build();
+    ListPluggableDatabasesResponse expectedResponse =
+        ListPluggableDatabasesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPluggableDatabases(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListPluggableDatabasesPagedResponse pagedListResponse = client.listPluggableDatabases(parent);
+
+    List<PluggableDatabase> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPluggableDatabasesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listPluggableDatabasesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listPluggableDatabases(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPluggableDatabaseTest() throws Exception {
+    PluggableDatabase expectedResponse =
+        PluggableDatabase.newBuilder()
+            .setName(
+                PluggableDatabaseName.of("[PROJECT]", "[LOCATION]", "[PLUGGABLE_DATABASE]")
+                    .toString())
+            .setProperties(PluggableDatabaseProperties.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PluggableDatabaseName name =
+        PluggableDatabaseName.of("[PROJECT]", "[LOCATION]", "[PLUGGABLE_DATABASE]");
+
+    PluggableDatabase actualResponse = client.getPluggableDatabase(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getPluggableDatabaseExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PluggableDatabaseName name =
+          PluggableDatabaseName.of("[PROJECT]", "[LOCATION]", "[PLUGGABLE_DATABASE]");
+      client.getPluggableDatabase(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPluggableDatabaseTest2() throws Exception {
+    PluggableDatabase expectedResponse =
+        PluggableDatabase.newBuilder()
+            .setName(
+                PluggableDatabaseName.of("[PROJECT]", "[LOCATION]", "[PLUGGABLE_DATABASE]")
+                    .toString())
+            .setProperties(PluggableDatabaseProperties.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-219/locations/location-219/pluggableDatabases/pluggableDatabase-219";
+
+    PluggableDatabase actualResponse = client.getPluggableDatabase(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getPluggableDatabaseExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-219/locations/location-219/pluggableDatabases/pluggableDatabase-219";
+      client.getPluggableDatabase(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDbSystemsTest() throws Exception {
+    DbSystem responsesElement = DbSystem.newBuilder().build();
+    ListDbSystemsResponse expectedResponse =
+        ListDbSystemsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDbSystems(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListDbSystemsPagedResponse pagedListResponse = client.listDbSystems(parent);
+
+    List<DbSystem> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDbSystemsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDbSystemsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listDbSystems(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDbSystemsTest2() throws Exception {
+    DbSystem responsesElement = DbSystem.newBuilder().build();
+    ListDbSystemsResponse expectedResponse =
+        ListDbSystemsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDbSystems(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListDbSystemsPagedResponse pagedListResponse = client.listDbSystems(parent);
+
+    List<DbSystem> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDbSystemsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDbSystemsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listDbSystems(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDbSystemTest() throws Exception {
+    DbSystem expectedResponse =
+        DbSystem.newBuilder()
+            .setName(DbSystemName.of("[PROJECT]", "[LOCATION]", "[DB_SYSTEM]").toString())
+            .setProperties(DbSystemProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DbSystemName name = DbSystemName.of("[PROJECT]", "[LOCATION]", "[DB_SYSTEM]");
+
+    DbSystem actualResponse = client.getDbSystem(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDbSystemExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DbSystemName name = DbSystemName.of("[PROJECT]", "[LOCATION]", "[DB_SYSTEM]");
+      client.getDbSystem(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDbSystemTest2() throws Exception {
+    DbSystem expectedResponse =
+        DbSystem.newBuilder()
+            .setName(DbSystemName.of("[PROJECT]", "[LOCATION]", "[DB_SYSTEM]").toString())
+            .setProperties(DbSystemProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-1220/locations/location-1220/dbSystems/dbSystem-1220";
+
+    DbSystem actualResponse = client.getDbSystem(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDbSystemExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1220/locations/location-1220/dbSystems/dbSystem-1220";
+      client.getDbSystem(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDbSystemTest() throws Exception {
+    DbSystem expectedResponse =
+        DbSystem.newBuilder()
+            .setName(DbSystemName.of("[PROJECT]", "[LOCATION]", "[DB_SYSTEM]").toString())
+            .setProperties(DbSystemProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDbSystemTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    DbSystem dbSystem = DbSystem.newBuilder().build();
+    String dbSystemId = "dbSystemId-1467630008";
+
+    DbSystem actualResponse = client.createDbSystemAsync(parent, dbSystem, dbSystemId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDbSystemExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      DbSystem dbSystem = DbSystem.newBuilder().build();
+      String dbSystemId = "dbSystemId-1467630008";
+      client.createDbSystemAsync(parent, dbSystem, dbSystemId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createDbSystemTest2() throws Exception {
+    DbSystem expectedResponse =
+        DbSystem.newBuilder()
+            .setName(DbSystemName.of("[PROJECT]", "[LOCATION]", "[DB_SYSTEM]").toString())
+            .setProperties(DbSystemProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDbSystemTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    DbSystem dbSystem = DbSystem.newBuilder().build();
+    String dbSystemId = "dbSystemId-1467630008";
+
+    DbSystem actualResponse = client.createDbSystemAsync(parent, dbSystem, dbSystemId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDbSystemExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      DbSystem dbSystem = DbSystem.newBuilder().build();
+      String dbSystemId = "dbSystemId-1467630008";
+      client.createDbSystemAsync(parent, dbSystem, dbSystemId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteDbSystemTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDbSystemTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    DbSystemName name = DbSystemName.of("[PROJECT]", "[LOCATION]", "[DB_SYSTEM]");
+
+    client.deleteDbSystemAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDbSystemExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DbSystemName name = DbSystemName.of("[PROJECT]", "[LOCATION]", "[DB_SYSTEM]");
+      client.deleteDbSystemAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteDbSystemTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDbSystemTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-1220/locations/location-1220/dbSystems/dbSystem-1220";
+
+    client.deleteDbSystemAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDbSystemExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1220/locations/location-1220/dbSystems/dbSystem-1220";
+      client.deleteDbSystemAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listDbVersionsTest() throws Exception {
+    DbVersion responsesElement = DbVersion.newBuilder().build();
+    ListDbVersionsResponse expectedResponse =
+        ListDbVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDbVersions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListDbVersionsPagedResponse pagedListResponse = client.listDbVersions(parent);
+
+    List<DbVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDbVersionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDbVersionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listDbVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDbVersionsTest2() throws Exception {
+    DbVersion responsesElement = DbVersion.newBuilder().build();
+    ListDbVersionsResponse expectedResponse =
+        ListDbVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDbVersions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListDbVersionsPagedResponse pagedListResponse = client.listDbVersions(parent);
+
+    List<DbVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDbVersionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDbVersionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listDbVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDatabaseCharacterSetsTest() throws Exception {
+    DatabaseCharacterSet responsesElement = DatabaseCharacterSet.newBuilder().build();
+    ListDatabaseCharacterSetsResponse expectedResponse =
+        ListDatabaseCharacterSetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatabaseCharacterSets(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListDatabaseCharacterSetsPagedResponse pagedListResponse =
+        client.listDatabaseCharacterSets(parent);
+
+    List<DatabaseCharacterSet> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatabaseCharacterSetsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDatabaseCharacterSetsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listDatabaseCharacterSets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDatabaseCharacterSetsTest2() throws Exception {
+    DatabaseCharacterSet responsesElement = DatabaseCharacterSet.newBuilder().build();
+    ListDatabaseCharacterSetsResponse expectedResponse =
+        ListDatabaseCharacterSetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatabaseCharacterSets(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListDatabaseCharacterSetsPagedResponse pagedListResponse =
+        client.listDatabaseCharacterSets(parent);
+
+    List<DatabaseCharacterSet> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatabaseCharacterSetsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDatabaseCharacterSetsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listDatabaseCharacterSets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

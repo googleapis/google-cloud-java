@@ -71,6 +71,137 @@ public interface TechnologyTargetingOrBuilder
    *
    *
    * <pre>
+   * Optional. Browser targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BrowserTargeting browser_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the browserTargeting field is set.
+   */
+  boolean hasBrowserTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Browser targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BrowserTargeting browser_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The browserTargeting.
+   */
+  com.google.ads.admanager.v1.BrowserTargeting getBrowserTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Browser targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BrowserTargeting browser_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.BrowserTargetingOrBuilder getBrowserTargetingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Browser language targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BrowserLanguageTargeting browser_language_targeting = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the browserLanguageTargeting field is set.
+   */
+  boolean hasBrowserLanguageTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Browser language targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BrowserLanguageTargeting browser_language_targeting = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The browserLanguageTargeting.
+   */
+  com.google.ads.admanager.v1.BrowserLanguageTargeting getBrowserLanguageTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Browser language targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BrowserLanguageTargeting browser_language_targeting = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.BrowserLanguageTargetingOrBuilder
+      getBrowserLanguageTargetingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Device capability targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DeviceCapabilityTargeting device_capability_targeting = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the deviceCapabilityTargeting field is set.
+   */
+  boolean hasDeviceCapabilityTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Device capability targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DeviceCapabilityTargeting device_capability_targeting = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The deviceCapabilityTargeting.
+   */
+  com.google.ads.admanager.v1.DeviceCapabilityTargeting getDeviceCapabilityTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Device capability targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DeviceCapabilityTargeting device_capability_targeting = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.DeviceCapabilityTargetingOrBuilder
+      getDeviceCapabilityTargetingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Device category targeting dimension.
    * </pre>
    *
@@ -110,6 +241,93 @@ public interface TechnologyTargetingOrBuilder
    */
   com.google.ads.admanager.v1.DeviceCategoryTargetingOrBuilder
       getDeviceCategoryTargetingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Device manufacturer targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DeviceManufacturerTargeting device_manufacturer_targeting = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the deviceManufacturerTargeting field is set.
+   */
+  boolean hasDeviceManufacturerTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Device manufacturer targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DeviceManufacturerTargeting device_manufacturer_targeting = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The deviceManufacturerTargeting.
+   */
+  com.google.ads.admanager.v1.DeviceManufacturerTargeting getDeviceManufacturerTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Device manufacturer targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DeviceManufacturerTargeting device_manufacturer_targeting = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.DeviceManufacturerTargetingOrBuilder
+      getDeviceManufacturerTargetingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mobile carrier targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.MobileCarrierTargeting mobile_carrier_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the mobileCarrierTargeting field is set.
+   */
+  boolean hasMobileCarrierTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mobile carrier targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.MobileCarrierTargeting mobile_carrier_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mobileCarrierTargeting.
+   */
+  com.google.ads.admanager.v1.MobileCarrierTargeting getMobileCarrierTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mobile carrier targeting dimension.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.MobileCarrierTargeting mobile_carrier_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.MobileCarrierTargetingOrBuilder getMobileCarrierTargetingOrBuilder();
 
   /**
    *

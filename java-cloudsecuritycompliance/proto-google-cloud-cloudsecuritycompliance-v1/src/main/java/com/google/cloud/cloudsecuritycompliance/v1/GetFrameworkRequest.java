@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Request message for getting a Framework.
+ * The request message for [GetFramework][].
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.GetFrameworkRequest}
@@ -73,9 +73,9 @@ public final class GetFrameworkRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The name of the framework to retrieve.
-   * Format:
-   * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+   * Required. The name of the framework to retrieve, in the format
+   * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -101,9 +101,9 @@ public final class GetFrameworkRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The name of the framework to retrieve.
-   * Format:
-   * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+   * Required. The name of the framework to retrieve, in the format
+   * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -132,8 +132,8 @@ public final class GetFrameworkRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. The Framework major version to retrieve. If not specified, the
-   * most recently updated revision_id is retrieved.
+   * Optional. The framework major version to retrieve. If not specified, the
+   * most recently updated `revision_id` is retrieved.
    * </pre>
    *
    * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -319,7 +319,7 @@ public final class GetFrameworkRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for getting a Framework.
+   * The request message for [GetFramework][].
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.GetFrameworkRequest}
@@ -521,9 +521,9 @@ public final class GetFrameworkRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the framework to retrieve.
-     * Format:
-     * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+     * Required. The name of the framework to retrieve, in the format
+     * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -548,9 +548,9 @@ public final class GetFrameworkRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the framework to retrieve.
-     * Format:
-     * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+     * Required. The name of the framework to retrieve, in the format
+     * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -575,9 +575,9 @@ public final class GetFrameworkRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the framework to retrieve.
-     * Format:
-     * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+     * Required. The name of the framework to retrieve, in the format
+     * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -601,9 +601,9 @@ public final class GetFrameworkRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the framework to retrieve.
-     * Format:
-     * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+     * Required. The name of the framework to retrieve, in the format
+     * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -623,9 +623,9 @@ public final class GetFrameworkRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the framework to retrieve.
-     * Format:
-     * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+     * Required. The name of the framework to retrieve, in the format
+     * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -652,8 +652,8 @@ public final class GetFrameworkRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The Framework major version to retrieve. If not specified, the
-     * most recently updated revision_id is retrieved.
+     * Optional. The framework major version to retrieve. If not specified, the
+     * most recently updated `revision_id` is retrieved.
      * </pre>
      *
      * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -669,8 +669,8 @@ public final class GetFrameworkRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The Framework major version to retrieve. If not specified, the
-     * most recently updated revision_id is retrieved.
+     * Optional. The framework major version to retrieve. If not specified, the
+     * most recently updated `revision_id` is retrieved.
      * </pre>
      *
      * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -690,8 +690,8 @@ public final class GetFrameworkRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The Framework major version to retrieve. If not specified, the
-     * most recently updated revision_id is retrieved.
+     * Optional. The framework major version to retrieve. If not specified, the
+     * most recently updated `revision_id` is retrieved.
      * </pre>
      *
      * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

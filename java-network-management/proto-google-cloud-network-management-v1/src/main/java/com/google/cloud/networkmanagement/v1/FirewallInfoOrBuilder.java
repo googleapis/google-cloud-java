@@ -372,4 +372,45 @@ public interface FirewallInfoOrBuilder
    * @return The firewallRuleType.
    */
   com.google.cloud.networkmanagement.v1.FirewallInfo.FirewallRuleType getFirewallRuleType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The priority of the firewall policy that this rule is associated with.
+   * This field is not applicable to VPC firewall rules and implied VPC firewall
+   * rules.
+   * </pre>
+   *
+   * <code>int32 policy_priority = 12;</code>
+   *
+   * @return The policyPriority.
+   */
+  int getPolicyPriority();
+
+  /**
+   *
+   *
+   * <pre>
+   * Target type of the firewall rule.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.FirewallInfo.TargetType target_type = 13;</code>
+   *
+   * @return The enum numeric value on the wire for targetType.
+   */
+  int getTargetTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Target type of the firewall rule.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.FirewallInfo.TargetType target_type = 13;</code>
+   *
+   * @return The targetType.
+   */
+  com.google.cloud.networkmanagement.v1.FirewallInfo.TargetType getTargetType();
 }

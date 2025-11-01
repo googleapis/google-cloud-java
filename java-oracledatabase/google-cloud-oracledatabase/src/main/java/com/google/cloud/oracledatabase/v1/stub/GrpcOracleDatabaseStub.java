@@ -22,12 +22,23 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListAutono
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListAutonomousDbVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudExadataInfrastructuresPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudVmClustersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabaseCharacterSetsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabasesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbNodesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbServersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemInitialStorageSizesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemShapesPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListEntitlementsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExadbVmClustersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExascaleDbStorageVaultsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbSubnetsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListPluggableDatabasesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -47,14 +58,36 @@ import com.google.cloud.oracledatabase.v1.CloudVmCluster;
 import com.google.cloud.oracledatabase.v1.CreateAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.CreateDbSystemRequest;
+import com.google.cloud.oracledatabase.v1.CreateExadbVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.CreateExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.CreateOdbNetworkRequest;
+import com.google.cloud.oracledatabase.v1.CreateOdbSubnetRequest;
+import com.google.cloud.oracledatabase.v1.Database;
+import com.google.cloud.oracledatabase.v1.DbSystem;
 import com.google.cloud.oracledatabase.v1.DeleteAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.DeleteCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.DeleteDbSystemRequest;
+import com.google.cloud.oracledatabase.v1.DeleteExadbVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.DeleteExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.DeleteOdbNetworkRequest;
+import com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest;
+import com.google.cloud.oracledatabase.v1.ExadbVmCluster;
+import com.google.cloud.oracledatabase.v1.ExascaleDbStorageVault;
+import com.google.cloud.oracledatabase.v1.FailoverAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletResponse;
 import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.GetDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.GetDbSystemRequest;
+import com.google.cloud.oracledatabase.v1.GetExadbVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.GetExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.GetOdbNetworkRequest;
+import com.google.cloud.oracledatabase.v1.GetOdbSubnetRequest;
+import com.google.cloud.oracledatabase.v1.GetPluggableDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsRequest;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsResponse;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseCharacterSetsRequest;
@@ -67,21 +100,50 @@ import com.google.cloud.oracledatabase.v1.ListCloudExadataInfrastructuresRequest
 import com.google.cloud.oracledatabase.v1.ListCloudExadataInfrastructuresResponse;
 import com.google.cloud.oracledatabase.v1.ListCloudVmClustersRequest;
 import com.google.cloud.oracledatabase.v1.ListCloudVmClustersResponse;
+import com.google.cloud.oracledatabase.v1.ListDatabaseCharacterSetsRequest;
+import com.google.cloud.oracledatabase.v1.ListDatabaseCharacterSetsResponse;
+import com.google.cloud.oracledatabase.v1.ListDatabasesRequest;
+import com.google.cloud.oracledatabase.v1.ListDatabasesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbNodesRequest;
 import com.google.cloud.oracledatabase.v1.ListDbNodesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbServersRequest;
 import com.google.cloud.oracledatabase.v1.ListDbServersResponse;
+import com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesRequest;
+import com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbSystemShapesRequest;
 import com.google.cloud.oracledatabase.v1.ListDbSystemShapesResponse;
+import com.google.cloud.oracledatabase.v1.ListDbSystemsRequest;
+import com.google.cloud.oracledatabase.v1.ListDbSystemsResponse;
+import com.google.cloud.oracledatabase.v1.ListDbVersionsRequest;
+import com.google.cloud.oracledatabase.v1.ListDbVersionsResponse;
 import com.google.cloud.oracledatabase.v1.ListEntitlementsRequest;
 import com.google.cloud.oracledatabase.v1.ListEntitlementsResponse;
+import com.google.cloud.oracledatabase.v1.ListExadbVmClustersRequest;
+import com.google.cloud.oracledatabase.v1.ListExadbVmClustersResponse;
+import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsRequest;
+import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsResponse;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsResponse;
+import com.google.cloud.oracledatabase.v1.ListMinorVersionsRequest;
+import com.google.cloud.oracledatabase.v1.ListMinorVersionsResponse;
+import com.google.cloud.oracledatabase.v1.ListOdbNetworksRequest;
+import com.google.cloud.oracledatabase.v1.ListOdbNetworksResponse;
+import com.google.cloud.oracledatabase.v1.ListOdbSubnetsRequest;
+import com.google.cloud.oracledatabase.v1.ListOdbSubnetsResponse;
+import com.google.cloud.oracledatabase.v1.ListPluggableDatabasesRequest;
+import com.google.cloud.oracledatabase.v1.ListPluggableDatabasesResponse;
+import com.google.cloud.oracledatabase.v1.OdbNetwork;
+import com.google.cloud.oracledatabase.v1.OdbSubnet;
 import com.google.cloud.oracledatabase.v1.OperationMetadata;
+import com.google.cloud.oracledatabase.v1.PluggableDatabase;
+import com.google.cloud.oracledatabase.v1.RemoveVirtualMachineExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.RestartAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RestoreAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.StartAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.StopAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.SwitchoverAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.UpdateAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.UpdateExadbVmClusterRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -253,6 +315,18 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ListMinorVersionsRequest, ListMinorVersionsResponse>
+      listMinorVersionsMethodDescriptor =
+          MethodDescriptor.<ListMinorVersionsRequest, ListMinorVersionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/ListMinorVersions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListMinorVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListMinorVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListDbSystemShapesRequest, ListDbSystemShapesResponse>
       listDbSystemShapesMethodDescriptor =
           MethodDescriptor.<ListDbSystemShapesRequest, ListDbSystemShapesResponse>newBuilder()
@@ -300,6 +374,18 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   "google.cloud.oracledatabase.v1.OracleDatabase/CreateAutonomousDatabase")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAutonomousDatabaseRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateAutonomousDatabaseRequest, Operation>
+      updateAutonomousDatabaseMethodDescriptor =
+          MethodDescriptor.<UpdateAutonomousDatabaseRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/UpdateAutonomousDatabase")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAutonomousDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
@@ -432,6 +518,380 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<SwitchoverAutonomousDatabaseRequest, Operation>
+      switchoverAutonomousDatabaseMethodDescriptor =
+          MethodDescriptor.<SwitchoverAutonomousDatabaseRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/SwitchoverAutonomousDatabase")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SwitchoverAutonomousDatabaseRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<FailoverAutonomousDatabaseRequest, Operation>
+      failoverAutonomousDatabaseMethodDescriptor =
+          MethodDescriptor.<FailoverAutonomousDatabaseRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/FailoverAutonomousDatabase")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FailoverAutonomousDatabaseRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListOdbNetworksRequest, ListOdbNetworksResponse>
+      listOdbNetworksMethodDescriptor =
+          MethodDescriptor.<ListOdbNetworksRequest, ListOdbNetworksResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/ListOdbNetworks")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListOdbNetworksRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListOdbNetworksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetOdbNetworkRequest, OdbNetwork>
+      getOdbNetworkMethodDescriptor =
+          MethodDescriptor.<GetOdbNetworkRequest, OdbNetwork>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/GetOdbNetwork")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetOdbNetworkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(OdbNetwork.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateOdbNetworkRequest, Operation>
+      createOdbNetworkMethodDescriptor =
+          MethodDescriptor.<CreateOdbNetworkRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/CreateOdbNetwork")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateOdbNetworkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteOdbNetworkRequest, Operation>
+      deleteOdbNetworkMethodDescriptor =
+          MethodDescriptor.<DeleteOdbNetworkRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/DeleteOdbNetwork")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteOdbNetworkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListOdbSubnetsRequest, ListOdbSubnetsResponse>
+      listOdbSubnetsMethodDescriptor =
+          MethodDescriptor.<ListOdbSubnetsRequest, ListOdbSubnetsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/ListOdbSubnets")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListOdbSubnetsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListOdbSubnetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetOdbSubnetRequest, OdbSubnet>
+      getOdbSubnetMethodDescriptor =
+          MethodDescriptor.<GetOdbSubnetRequest, OdbSubnet>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/GetOdbSubnet")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetOdbSubnetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(OdbSubnet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateOdbSubnetRequest, Operation>
+      createOdbSubnetMethodDescriptor =
+          MethodDescriptor.<CreateOdbSubnetRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/CreateOdbSubnet")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateOdbSubnetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteOdbSubnetRequest, Operation>
+      deleteOdbSubnetMethodDescriptor =
+          MethodDescriptor.<DeleteOdbSubnetRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/DeleteOdbSubnet")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteOdbSubnetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListExadbVmClustersRequest, ListExadbVmClustersResponse>
+      listExadbVmClustersMethodDescriptor =
+          MethodDescriptor.<ListExadbVmClustersRequest, ListExadbVmClustersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListExadbVmClusters")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListExadbVmClustersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListExadbVmClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetExadbVmClusterRequest, ExadbVmCluster>
+      getExadbVmClusterMethodDescriptor =
+          MethodDescriptor.<GetExadbVmClusterRequest, ExadbVmCluster>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/GetExadbVmCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetExadbVmClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ExadbVmCluster.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateExadbVmClusterRequest, Operation>
+      createExadbVmClusterMethodDescriptor =
+          MethodDescriptor.<CreateExadbVmClusterRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/CreateExadbVmCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateExadbVmClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteExadbVmClusterRequest, Operation>
+      deleteExadbVmClusterMethodDescriptor =
+          MethodDescriptor.<DeleteExadbVmClusterRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/DeleteExadbVmCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteExadbVmClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateExadbVmClusterRequest, Operation>
+      updateExadbVmClusterMethodDescriptor =
+          MethodDescriptor.<UpdateExadbVmClusterRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/UpdateExadbVmCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateExadbVmClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<RemoveVirtualMachineExadbVmClusterRequest, Operation>
+      removeVirtualMachineExadbVmClusterMethodDescriptor =
+          MethodDescriptor.<RemoveVirtualMachineExadbVmClusterRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/RemoveVirtualMachineExadbVmCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      RemoveVirtualMachineExadbVmClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsResponse>
+      listExascaleDbStorageVaultsMethodDescriptor =
+          MethodDescriptor
+              .<ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListExascaleDbStorageVaults")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListExascaleDbStorageVaultsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListExascaleDbStorageVaultsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetExascaleDbStorageVaultRequest, ExascaleDbStorageVault>
+      getExascaleDbStorageVaultMethodDescriptor =
+          MethodDescriptor.<GetExascaleDbStorageVaultRequest, ExascaleDbStorageVault>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/GetExascaleDbStorageVault")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetExascaleDbStorageVaultRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ExascaleDbStorageVault.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateExascaleDbStorageVaultRequest, Operation>
+      createExascaleDbStorageVaultMethodDescriptor =
+          MethodDescriptor.<CreateExascaleDbStorageVaultRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/CreateExascaleDbStorageVault")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateExascaleDbStorageVaultRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteExascaleDbStorageVaultRequest, Operation>
+      deleteExascaleDbStorageVaultMethodDescriptor =
+          MethodDescriptor.<DeleteExascaleDbStorageVaultRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/DeleteExascaleDbStorageVault")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteExascaleDbStorageVaultRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesResponse>
+      listDbSystemInitialStorageSizesMethodDescriptor =
+          MethodDescriptor
+              .<ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListDbSystemInitialStorageSizes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListDbSystemInitialStorageSizesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListDbSystemInitialStorageSizesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListDatabasesRequest, ListDatabasesResponse>
+      listDatabasesMethodDescriptor =
+          MethodDescriptor.<ListDatabasesRequest, ListDatabasesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/ListDatabases")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDatabasesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDatabasesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetDatabaseRequest, Database> getDatabaseMethodDescriptor =
+      MethodDescriptor.<GetDatabaseRequest, Database>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/GetDatabase")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetDatabaseRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Database.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<
+          ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>
+      listPluggableDatabasesMethodDescriptor =
+          MethodDescriptor
+              .<ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListPluggableDatabases")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListPluggableDatabasesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListPluggableDatabasesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetPluggableDatabaseRequest, PluggableDatabase>
+      getPluggableDatabaseMethodDescriptor =
+          MethodDescriptor.<GetPluggableDatabaseRequest, PluggableDatabase>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/GetPluggableDatabase")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetPluggableDatabaseRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(PluggableDatabase.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListDbSystemsRequest, ListDbSystemsResponse>
+      listDbSystemsMethodDescriptor =
+          MethodDescriptor.<ListDbSystemsRequest, ListDbSystemsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/ListDbSystems")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDbSystemsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDbSystemsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetDbSystemRequest, DbSystem> getDbSystemMethodDescriptor =
+      MethodDescriptor.<GetDbSystemRequest, DbSystem>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/GetDbSystem")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetDbSystemRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(DbSystem.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<CreateDbSystemRequest, Operation>
+      createDbSystemMethodDescriptor =
+          MethodDescriptor.<CreateDbSystemRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/CreateDbSystem")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateDbSystemRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteDbSystemRequest, Operation>
+      deleteDbSystemMethodDescriptor =
+          MethodDescriptor.<DeleteDbSystemRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/DeleteDbSystem")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteDbSystemRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListDbVersionsRequest, ListDbVersionsResponse>
+      listDbVersionsMethodDescriptor =
+          MethodDescriptor.<ListDbVersionsRequest, ListDbVersionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/ListDbVersions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDbVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDbVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsResponse>
+      listDatabaseCharacterSetsMethodDescriptor =
+          MethodDescriptor
+              .<ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListDatabaseCharacterSets")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDatabaseCharacterSetsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDatabaseCharacterSetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -494,6 +954,10 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<ListGiVersionsRequest, ListGiVersionsResponse> listGiVersionsCallable;
   private final UnaryCallable<ListGiVersionsRequest, ListGiVersionsPagedResponse>
       listGiVersionsPagedCallable;
+  private final UnaryCallable<ListMinorVersionsRequest, ListMinorVersionsResponse>
+      listMinorVersionsCallable;
+  private final UnaryCallable<ListMinorVersionsRequest, ListMinorVersionsPagedResponse>
+      listMinorVersionsPagedCallable;
   private final UnaryCallable<ListDbSystemShapesRequest, ListDbSystemShapesResponse>
       listDbSystemShapesCallable;
   private final UnaryCallable<ListDbSystemShapesRequest, ListDbSystemShapesPagedResponse>
@@ -509,6 +973,11 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final OperationCallable<
           CreateAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
       createAutonomousDatabaseOperationCallable;
+  private final UnaryCallable<UpdateAutonomousDatabaseRequest, Operation>
+      updateAutonomousDatabaseCallable;
+  private final OperationCallable<
+          UpdateAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      updateAutonomousDatabaseOperationCallable;
   private final UnaryCallable<DeleteAutonomousDatabaseRequest, Operation>
       deleteAutonomousDatabaseCallable;
   private final OperationCallable<DeleteAutonomousDatabaseRequest, Empty, OperationMetadata>
@@ -554,6 +1023,107 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final OperationCallable<
           RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
       restartAutonomousDatabaseOperationCallable;
+  private final UnaryCallable<SwitchoverAutonomousDatabaseRequest, Operation>
+      switchoverAutonomousDatabaseCallable;
+  private final OperationCallable<
+          SwitchoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      switchoverAutonomousDatabaseOperationCallable;
+  private final UnaryCallable<FailoverAutonomousDatabaseRequest, Operation>
+      failoverAutonomousDatabaseCallable;
+  private final OperationCallable<
+          FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      failoverAutonomousDatabaseOperationCallable;
+  private final UnaryCallable<ListOdbNetworksRequest, ListOdbNetworksResponse>
+      listOdbNetworksCallable;
+  private final UnaryCallable<ListOdbNetworksRequest, ListOdbNetworksPagedResponse>
+      listOdbNetworksPagedCallable;
+  private final UnaryCallable<GetOdbNetworkRequest, OdbNetwork> getOdbNetworkCallable;
+  private final UnaryCallable<CreateOdbNetworkRequest, Operation> createOdbNetworkCallable;
+  private final OperationCallable<CreateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+      createOdbNetworkOperationCallable;
+  private final UnaryCallable<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkCallable;
+  private final OperationCallable<DeleteOdbNetworkRequest, Empty, OperationMetadata>
+      deleteOdbNetworkOperationCallable;
+  private final UnaryCallable<ListOdbSubnetsRequest, ListOdbSubnetsResponse> listOdbSubnetsCallable;
+  private final UnaryCallable<ListOdbSubnetsRequest, ListOdbSubnetsPagedResponse>
+      listOdbSubnetsPagedCallable;
+  private final UnaryCallable<GetOdbSubnetRequest, OdbSubnet> getOdbSubnetCallable;
+  private final UnaryCallable<CreateOdbSubnetRequest, Operation> createOdbSubnetCallable;
+  private final OperationCallable<CreateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+      createOdbSubnetOperationCallable;
+  private final UnaryCallable<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetCallable;
+  private final OperationCallable<DeleteOdbSubnetRequest, Empty, OperationMetadata>
+      deleteOdbSubnetOperationCallable;
+  private final UnaryCallable<ListExadbVmClustersRequest, ListExadbVmClustersResponse>
+      listExadbVmClustersCallable;
+  private final UnaryCallable<ListExadbVmClustersRequest, ListExadbVmClustersPagedResponse>
+      listExadbVmClustersPagedCallable;
+  private final UnaryCallable<GetExadbVmClusterRequest, ExadbVmCluster> getExadbVmClusterCallable;
+  private final UnaryCallable<CreateExadbVmClusterRequest, Operation> createExadbVmClusterCallable;
+  private final OperationCallable<CreateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      createExadbVmClusterOperationCallable;
+  private final UnaryCallable<DeleteExadbVmClusterRequest, Operation> deleteExadbVmClusterCallable;
+  private final OperationCallable<DeleteExadbVmClusterRequest, Empty, OperationMetadata>
+      deleteExadbVmClusterOperationCallable;
+  private final UnaryCallable<UpdateExadbVmClusterRequest, Operation> updateExadbVmClusterCallable;
+  private final OperationCallable<UpdateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      updateExadbVmClusterOperationCallable;
+  private final UnaryCallable<RemoveVirtualMachineExadbVmClusterRequest, Operation>
+      removeVirtualMachineExadbVmClusterCallable;
+  private final OperationCallable<
+          RemoveVirtualMachineExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      removeVirtualMachineExadbVmClusterOperationCallable;
+  private final UnaryCallable<
+          ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsResponse>
+      listExascaleDbStorageVaultsCallable;
+  private final UnaryCallable<
+          ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsPagedResponse>
+      listExascaleDbStorageVaultsPagedCallable;
+  private final UnaryCallable<GetExascaleDbStorageVaultRequest, ExascaleDbStorageVault>
+      getExascaleDbStorageVaultCallable;
+  private final UnaryCallable<CreateExascaleDbStorageVaultRequest, Operation>
+      createExascaleDbStorageVaultCallable;
+  private final OperationCallable<
+          CreateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+      createExascaleDbStorageVaultOperationCallable;
+  private final UnaryCallable<DeleteExascaleDbStorageVaultRequest, Operation>
+      deleteExascaleDbStorageVaultCallable;
+  private final OperationCallable<DeleteExascaleDbStorageVaultRequest, Empty, OperationMetadata>
+      deleteExascaleDbStorageVaultOperationCallable;
+  private final UnaryCallable<
+          ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesResponse>
+      listDbSystemInitialStorageSizesCallable;
+  private final UnaryCallable<
+          ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesPagedResponse>
+      listDbSystemInitialStorageSizesPagedCallable;
+  private final UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable;
+  private final UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
+      listDatabasesPagedCallable;
+  private final UnaryCallable<GetDatabaseRequest, Database> getDatabaseCallable;
+  private final UnaryCallable<ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>
+      listPluggableDatabasesCallable;
+  private final UnaryCallable<ListPluggableDatabasesRequest, ListPluggableDatabasesPagedResponse>
+      listPluggableDatabasesPagedCallable;
+  private final UnaryCallable<GetPluggableDatabaseRequest, PluggableDatabase>
+      getPluggableDatabaseCallable;
+  private final UnaryCallable<ListDbSystemsRequest, ListDbSystemsResponse> listDbSystemsCallable;
+  private final UnaryCallable<ListDbSystemsRequest, ListDbSystemsPagedResponse>
+      listDbSystemsPagedCallable;
+  private final UnaryCallable<GetDbSystemRequest, DbSystem> getDbSystemCallable;
+  private final UnaryCallable<CreateDbSystemRequest, Operation> createDbSystemCallable;
+  private final OperationCallable<CreateDbSystemRequest, DbSystem, OperationMetadata>
+      createDbSystemOperationCallable;
+  private final UnaryCallable<DeleteDbSystemRequest, Operation> deleteDbSystemCallable;
+  private final OperationCallable<DeleteDbSystemRequest, Empty, OperationMetadata>
+      deleteDbSystemOperationCallable;
+  private final UnaryCallable<ListDbVersionsRequest, ListDbVersionsResponse> listDbVersionsCallable;
+  private final UnaryCallable<ListDbVersionsRequest, ListDbVersionsPagedResponse>
+      listDbVersionsPagedCallable;
+  private final UnaryCallable<ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsResponse>
+      listDatabaseCharacterSetsCallable;
+  private final UnaryCallable<
+          ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsPagedResponse>
+      listDatabaseCharacterSetsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -734,6 +1304,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<ListMinorVersionsRequest, ListMinorVersionsResponse>
+        listMinorVersionsTransportSettings =
+            GrpcCallSettings.<ListMinorVersionsRequest, ListMinorVersionsResponse>newBuilder()
+                .setMethodDescriptor(listMinorVersionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListDbSystemShapesRequest, ListDbSystemShapesResponse>
         listDbSystemShapesTransportSettings =
             GrpcCallSettings.<ListDbSystemShapesRequest, ListDbSystemShapesResponse>newBuilder()
@@ -776,6 +1357,19 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateAutonomousDatabaseRequest, Operation>
+        updateAutonomousDatabaseTransportSettings =
+            GrpcCallSettings.<UpdateAutonomousDatabaseRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateAutonomousDatabaseMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "autonomous_database.name",
+                          String.valueOf(request.getAutonomousDatabase().getName()));
                       return builder.build();
                     })
                 .build();
@@ -885,6 +1479,340 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<SwitchoverAutonomousDatabaseRequest, Operation>
+        switchoverAutonomousDatabaseTransportSettings =
+            GrpcCallSettings.<SwitchoverAutonomousDatabaseRequest, Operation>newBuilder()
+                .setMethodDescriptor(switchoverAutonomousDatabaseMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<FailoverAutonomousDatabaseRequest, Operation>
+        failoverAutonomousDatabaseTransportSettings =
+            GrpcCallSettings.<FailoverAutonomousDatabaseRequest, Operation>newBuilder()
+                .setMethodDescriptor(failoverAutonomousDatabaseMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListOdbNetworksRequest, ListOdbNetworksResponse>
+        listOdbNetworksTransportSettings =
+            GrpcCallSettings.<ListOdbNetworksRequest, ListOdbNetworksResponse>newBuilder()
+                .setMethodDescriptor(listOdbNetworksMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetOdbNetworkRequest, OdbNetwork> getOdbNetworkTransportSettings =
+        GrpcCallSettings.<GetOdbNetworkRequest, OdbNetwork>newBuilder()
+            .setMethodDescriptor(getOdbNetworkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateOdbNetworkRequest, Operation> createOdbNetworkTransportSettings =
+        GrpcCallSettings.<CreateOdbNetworkRequest, Operation>newBuilder()
+            .setMethodDescriptor(createOdbNetworkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkTransportSettings =
+        GrpcCallSettings.<DeleteOdbNetworkRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteOdbNetworkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListOdbSubnetsRequest, ListOdbSubnetsResponse>
+        listOdbSubnetsTransportSettings =
+            GrpcCallSettings.<ListOdbSubnetsRequest, ListOdbSubnetsResponse>newBuilder()
+                .setMethodDescriptor(listOdbSubnetsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetOdbSubnetRequest, OdbSubnet> getOdbSubnetTransportSettings =
+        GrpcCallSettings.<GetOdbSubnetRequest, OdbSubnet>newBuilder()
+            .setMethodDescriptor(getOdbSubnetMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateOdbSubnetRequest, Operation> createOdbSubnetTransportSettings =
+        GrpcCallSettings.<CreateOdbSubnetRequest, Operation>newBuilder()
+            .setMethodDescriptor(createOdbSubnetMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetTransportSettings =
+        GrpcCallSettings.<DeleteOdbSubnetRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteOdbSubnetMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListExadbVmClustersRequest, ListExadbVmClustersResponse>
+        listExadbVmClustersTransportSettings =
+            GrpcCallSettings.<ListExadbVmClustersRequest, ListExadbVmClustersResponse>newBuilder()
+                .setMethodDescriptor(listExadbVmClustersMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetExadbVmClusterRequest, ExadbVmCluster> getExadbVmClusterTransportSettings =
+        GrpcCallSettings.<GetExadbVmClusterRequest, ExadbVmCluster>newBuilder()
+            .setMethodDescriptor(getExadbVmClusterMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateExadbVmClusterRequest, Operation> createExadbVmClusterTransportSettings =
+        GrpcCallSettings.<CreateExadbVmClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(createExadbVmClusterMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteExadbVmClusterRequest, Operation> deleteExadbVmClusterTransportSettings =
+        GrpcCallSettings.<DeleteExadbVmClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteExadbVmClusterMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateExadbVmClusterRequest, Operation> updateExadbVmClusterTransportSettings =
+        GrpcCallSettings.<UpdateExadbVmClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateExadbVmClusterMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "exadb_vm_cluster.name",
+                      String.valueOf(request.getExadbVmCluster().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<RemoveVirtualMachineExadbVmClusterRequest, Operation>
+        removeVirtualMachineExadbVmClusterTransportSettings =
+            GrpcCallSettings.<RemoveVirtualMachineExadbVmClusterRequest, Operation>newBuilder()
+                .setMethodDescriptor(removeVirtualMachineExadbVmClusterMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsResponse>
+        listExascaleDbStorageVaultsTransportSettings =
+            GrpcCallSettings
+                .<ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listExascaleDbStorageVaultsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetExascaleDbStorageVaultRequest, ExascaleDbStorageVault>
+        getExascaleDbStorageVaultTransportSettings =
+            GrpcCallSettings.<GetExascaleDbStorageVaultRequest, ExascaleDbStorageVault>newBuilder()
+                .setMethodDescriptor(getExascaleDbStorageVaultMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateExascaleDbStorageVaultRequest, Operation>
+        createExascaleDbStorageVaultTransportSettings =
+            GrpcCallSettings.<CreateExascaleDbStorageVaultRequest, Operation>newBuilder()
+                .setMethodDescriptor(createExascaleDbStorageVaultMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteExascaleDbStorageVaultRequest, Operation>
+        deleteExascaleDbStorageVaultTransportSettings =
+            GrpcCallSettings.<DeleteExascaleDbStorageVaultRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteExascaleDbStorageVaultMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesResponse>
+        listDbSystemInitialStorageSizesTransportSettings =
+            GrpcCallSettings
+                .<ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listDbSystemInitialStorageSizesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListDatabasesRequest, ListDatabasesResponse> listDatabasesTransportSettings =
+        GrpcCallSettings.<ListDatabasesRequest, ListDatabasesResponse>newBuilder()
+            .setMethodDescriptor(listDatabasesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetDatabaseRequest, Database> getDatabaseTransportSettings =
+        GrpcCallSettings.<GetDatabaseRequest, Database>newBuilder()
+            .setMethodDescriptor(getDatabaseMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>
+        listPluggableDatabasesTransportSettings =
+            GrpcCallSettings
+                .<ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>newBuilder()
+                .setMethodDescriptor(listPluggableDatabasesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetPluggableDatabaseRequest, PluggableDatabase>
+        getPluggableDatabaseTransportSettings =
+            GrpcCallSettings.<GetPluggableDatabaseRequest, PluggableDatabase>newBuilder()
+                .setMethodDescriptor(getPluggableDatabaseMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListDbSystemsRequest, ListDbSystemsResponse> listDbSystemsTransportSettings =
+        GrpcCallSettings.<ListDbSystemsRequest, ListDbSystemsResponse>newBuilder()
+            .setMethodDescriptor(listDbSystemsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetDbSystemRequest, DbSystem> getDbSystemTransportSettings =
+        GrpcCallSettings.<GetDbSystemRequest, DbSystem>newBuilder()
+            .setMethodDescriptor(getDbSystemMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateDbSystemRequest, Operation> createDbSystemTransportSettings =
+        GrpcCallSettings.<CreateDbSystemRequest, Operation>newBuilder()
+            .setMethodDescriptor(createDbSystemMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteDbSystemRequest, Operation> deleteDbSystemTransportSettings =
+        GrpcCallSettings.<DeleteDbSystemRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteDbSystemMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListDbVersionsRequest, ListDbVersionsResponse>
+        listDbVersionsTransportSettings =
+            GrpcCallSettings.<ListDbVersionsRequest, ListDbVersionsResponse>newBuilder()
+                .setMethodDescriptor(listDbVersionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsResponse>
+        listDatabaseCharacterSetsTransportSettings =
+            GrpcCallSettings
+                .<ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsResponse>newBuilder()
+                .setMethodDescriptor(listDatabaseCharacterSetsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
                 .build();
@@ -1007,6 +1935,16 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
     this.listGiVersionsPagedCallable =
         callableFactory.createPagedCallable(
             listGiVersionsTransportSettings, settings.listGiVersionsSettings(), clientContext);
+    this.listMinorVersionsCallable =
+        callableFactory.createUnaryCallable(
+            listMinorVersionsTransportSettings,
+            settings.listMinorVersionsSettings(),
+            clientContext);
+    this.listMinorVersionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listMinorVersionsTransportSettings,
+            settings.listMinorVersionsSettings(),
+            clientContext);
     this.listDbSystemShapesCallable =
         callableFactory.createUnaryCallable(
             listDbSystemShapesTransportSettings,
@@ -1041,6 +1979,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
         callableFactory.createOperationCallable(
             createAutonomousDatabaseTransportSettings,
             settings.createAutonomousDatabaseOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateAutonomousDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            updateAutonomousDatabaseTransportSettings,
+            settings.updateAutonomousDatabaseSettings(),
+            clientContext);
+    this.updateAutonomousDatabaseOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAutonomousDatabaseTransportSettings,
+            settings.updateAutonomousDatabaseOperationSettings(),
             clientContext,
             operationsStub);
     this.deleteAutonomousDatabaseCallable =
@@ -1133,6 +2082,255 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             settings.restartAutonomousDatabaseOperationSettings(),
             clientContext,
             operationsStub);
+    this.switchoverAutonomousDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            switchoverAutonomousDatabaseTransportSettings,
+            settings.switchoverAutonomousDatabaseSettings(),
+            clientContext);
+    this.switchoverAutonomousDatabaseOperationCallable =
+        callableFactory.createOperationCallable(
+            switchoverAutonomousDatabaseTransportSettings,
+            settings.switchoverAutonomousDatabaseOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.failoverAutonomousDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            failoverAutonomousDatabaseTransportSettings,
+            settings.failoverAutonomousDatabaseSettings(),
+            clientContext);
+    this.failoverAutonomousDatabaseOperationCallable =
+        callableFactory.createOperationCallable(
+            failoverAutonomousDatabaseTransportSettings,
+            settings.failoverAutonomousDatabaseOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listOdbNetworksCallable =
+        callableFactory.createUnaryCallable(
+            listOdbNetworksTransportSettings, settings.listOdbNetworksSettings(), clientContext);
+    this.listOdbNetworksPagedCallable =
+        callableFactory.createPagedCallable(
+            listOdbNetworksTransportSettings, settings.listOdbNetworksSettings(), clientContext);
+    this.getOdbNetworkCallable =
+        callableFactory.createUnaryCallable(
+            getOdbNetworkTransportSettings, settings.getOdbNetworkSettings(), clientContext);
+    this.createOdbNetworkCallable =
+        callableFactory.createUnaryCallable(
+            createOdbNetworkTransportSettings, settings.createOdbNetworkSettings(), clientContext);
+    this.createOdbNetworkOperationCallable =
+        callableFactory.createOperationCallable(
+            createOdbNetworkTransportSettings,
+            settings.createOdbNetworkOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteOdbNetworkCallable =
+        callableFactory.createUnaryCallable(
+            deleteOdbNetworkTransportSettings, settings.deleteOdbNetworkSettings(), clientContext);
+    this.deleteOdbNetworkOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteOdbNetworkTransportSettings,
+            settings.deleteOdbNetworkOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listOdbSubnetsCallable =
+        callableFactory.createUnaryCallable(
+            listOdbSubnetsTransportSettings, settings.listOdbSubnetsSettings(), clientContext);
+    this.listOdbSubnetsPagedCallable =
+        callableFactory.createPagedCallable(
+            listOdbSubnetsTransportSettings, settings.listOdbSubnetsSettings(), clientContext);
+    this.getOdbSubnetCallable =
+        callableFactory.createUnaryCallable(
+            getOdbSubnetTransportSettings, settings.getOdbSubnetSettings(), clientContext);
+    this.createOdbSubnetCallable =
+        callableFactory.createUnaryCallable(
+            createOdbSubnetTransportSettings, settings.createOdbSubnetSettings(), clientContext);
+    this.createOdbSubnetOperationCallable =
+        callableFactory.createOperationCallable(
+            createOdbSubnetTransportSettings,
+            settings.createOdbSubnetOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteOdbSubnetCallable =
+        callableFactory.createUnaryCallable(
+            deleteOdbSubnetTransportSettings, settings.deleteOdbSubnetSettings(), clientContext);
+    this.deleteOdbSubnetOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteOdbSubnetTransportSettings,
+            settings.deleteOdbSubnetOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listExadbVmClustersCallable =
+        callableFactory.createUnaryCallable(
+            listExadbVmClustersTransportSettings,
+            settings.listExadbVmClustersSettings(),
+            clientContext);
+    this.listExadbVmClustersPagedCallable =
+        callableFactory.createPagedCallable(
+            listExadbVmClustersTransportSettings,
+            settings.listExadbVmClustersSettings(),
+            clientContext);
+    this.getExadbVmClusterCallable =
+        callableFactory.createUnaryCallable(
+            getExadbVmClusterTransportSettings,
+            settings.getExadbVmClusterSettings(),
+            clientContext);
+    this.createExadbVmClusterCallable =
+        callableFactory.createUnaryCallable(
+            createExadbVmClusterTransportSettings,
+            settings.createExadbVmClusterSettings(),
+            clientContext);
+    this.createExadbVmClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            createExadbVmClusterTransportSettings,
+            settings.createExadbVmClusterOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteExadbVmClusterCallable =
+        callableFactory.createUnaryCallable(
+            deleteExadbVmClusterTransportSettings,
+            settings.deleteExadbVmClusterSettings(),
+            clientContext);
+    this.deleteExadbVmClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteExadbVmClusterTransportSettings,
+            settings.deleteExadbVmClusterOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateExadbVmClusterCallable =
+        callableFactory.createUnaryCallable(
+            updateExadbVmClusterTransportSettings,
+            settings.updateExadbVmClusterSettings(),
+            clientContext);
+    this.updateExadbVmClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            updateExadbVmClusterTransportSettings,
+            settings.updateExadbVmClusterOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.removeVirtualMachineExadbVmClusterCallable =
+        callableFactory.createUnaryCallable(
+            removeVirtualMachineExadbVmClusterTransportSettings,
+            settings.removeVirtualMachineExadbVmClusterSettings(),
+            clientContext);
+    this.removeVirtualMachineExadbVmClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            removeVirtualMachineExadbVmClusterTransportSettings,
+            settings.removeVirtualMachineExadbVmClusterOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listExascaleDbStorageVaultsCallable =
+        callableFactory.createUnaryCallable(
+            listExascaleDbStorageVaultsTransportSettings,
+            settings.listExascaleDbStorageVaultsSettings(),
+            clientContext);
+    this.listExascaleDbStorageVaultsPagedCallable =
+        callableFactory.createPagedCallable(
+            listExascaleDbStorageVaultsTransportSettings,
+            settings.listExascaleDbStorageVaultsSettings(),
+            clientContext);
+    this.getExascaleDbStorageVaultCallable =
+        callableFactory.createUnaryCallable(
+            getExascaleDbStorageVaultTransportSettings,
+            settings.getExascaleDbStorageVaultSettings(),
+            clientContext);
+    this.createExascaleDbStorageVaultCallable =
+        callableFactory.createUnaryCallable(
+            createExascaleDbStorageVaultTransportSettings,
+            settings.createExascaleDbStorageVaultSettings(),
+            clientContext);
+    this.createExascaleDbStorageVaultOperationCallable =
+        callableFactory.createOperationCallable(
+            createExascaleDbStorageVaultTransportSettings,
+            settings.createExascaleDbStorageVaultOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteExascaleDbStorageVaultCallable =
+        callableFactory.createUnaryCallable(
+            deleteExascaleDbStorageVaultTransportSettings,
+            settings.deleteExascaleDbStorageVaultSettings(),
+            clientContext);
+    this.deleteExascaleDbStorageVaultOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteExascaleDbStorageVaultTransportSettings,
+            settings.deleteExascaleDbStorageVaultOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listDbSystemInitialStorageSizesCallable =
+        callableFactory.createUnaryCallable(
+            listDbSystemInitialStorageSizesTransportSettings,
+            settings.listDbSystemInitialStorageSizesSettings(),
+            clientContext);
+    this.listDbSystemInitialStorageSizesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDbSystemInitialStorageSizesTransportSettings,
+            settings.listDbSystemInitialStorageSizesSettings(),
+            clientContext);
+    this.listDatabasesCallable =
+        callableFactory.createUnaryCallable(
+            listDatabasesTransportSettings, settings.listDatabasesSettings(), clientContext);
+    this.listDatabasesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDatabasesTransportSettings, settings.listDatabasesSettings(), clientContext);
+    this.getDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            getDatabaseTransportSettings, settings.getDatabaseSettings(), clientContext);
+    this.listPluggableDatabasesCallable =
+        callableFactory.createUnaryCallable(
+            listPluggableDatabasesTransportSettings,
+            settings.listPluggableDatabasesSettings(),
+            clientContext);
+    this.listPluggableDatabasesPagedCallable =
+        callableFactory.createPagedCallable(
+            listPluggableDatabasesTransportSettings,
+            settings.listPluggableDatabasesSettings(),
+            clientContext);
+    this.getPluggableDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            getPluggableDatabaseTransportSettings,
+            settings.getPluggableDatabaseSettings(),
+            clientContext);
+    this.listDbSystemsCallable =
+        callableFactory.createUnaryCallable(
+            listDbSystemsTransportSettings, settings.listDbSystemsSettings(), clientContext);
+    this.listDbSystemsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDbSystemsTransportSettings, settings.listDbSystemsSettings(), clientContext);
+    this.getDbSystemCallable =
+        callableFactory.createUnaryCallable(
+            getDbSystemTransportSettings, settings.getDbSystemSettings(), clientContext);
+    this.createDbSystemCallable =
+        callableFactory.createUnaryCallable(
+            createDbSystemTransportSettings, settings.createDbSystemSettings(), clientContext);
+    this.createDbSystemOperationCallable =
+        callableFactory.createOperationCallable(
+            createDbSystemTransportSettings,
+            settings.createDbSystemOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteDbSystemCallable =
+        callableFactory.createUnaryCallable(
+            deleteDbSystemTransportSettings, settings.deleteDbSystemSettings(), clientContext);
+    this.deleteDbSystemOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDbSystemTransportSettings,
+            settings.deleteDbSystemOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listDbVersionsCallable =
+        callableFactory.createUnaryCallable(
+            listDbVersionsTransportSettings, settings.listDbVersionsSettings(), clientContext);
+    this.listDbVersionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDbVersionsTransportSettings, settings.listDbVersionsSettings(), clientContext);
+    this.listDatabaseCharacterSetsCallable =
+        callableFactory.createUnaryCallable(
+            listDatabaseCharacterSetsTransportSettings,
+            settings.listDatabaseCharacterSetsSettings(),
+            clientContext);
+    this.listDatabaseCharacterSetsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDatabaseCharacterSetsTransportSettings,
+            settings.listDatabaseCharacterSetsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1280,6 +2478,18 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
+  public UnaryCallable<ListMinorVersionsRequest, ListMinorVersionsResponse>
+      listMinorVersionsCallable() {
+    return listMinorVersionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMinorVersionsRequest, ListMinorVersionsPagedResponse>
+      listMinorVersionsPagedCallable() {
+    return listMinorVersionsPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<ListDbSystemShapesRequest, ListDbSystemShapesResponse>
       listDbSystemShapesCallable() {
     return listDbSystemShapesCallable;
@@ -1319,6 +2529,18 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   public OperationCallable<CreateAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
       createAutonomousDatabaseOperationCallable() {
     return createAutonomousDatabaseOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAutonomousDatabaseRequest, Operation>
+      updateAutonomousDatabaseCallable() {
+    return updateAutonomousDatabaseCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      updateAutonomousDatabaseOperationCallable() {
+    return updateAutonomousDatabaseOperationCallable;
   }
 
   @Override
@@ -1425,6 +2647,322 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   public OperationCallable<RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
       restartAutonomousDatabaseOperationCallable() {
     return restartAutonomousDatabaseOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SwitchoverAutonomousDatabaseRequest, Operation>
+      switchoverAutonomousDatabaseCallable() {
+    return switchoverAutonomousDatabaseCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          SwitchoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      switchoverAutonomousDatabaseOperationCallable() {
+    return switchoverAutonomousDatabaseOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FailoverAutonomousDatabaseRequest, Operation>
+      failoverAutonomousDatabaseCallable() {
+    return failoverAutonomousDatabaseCallable;
+  }
+
+  @Override
+  public OperationCallable<FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      failoverAutonomousDatabaseOperationCallable() {
+    return failoverAutonomousDatabaseOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOdbNetworksRequest, ListOdbNetworksResponse> listOdbNetworksCallable() {
+    return listOdbNetworksCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOdbNetworksRequest, ListOdbNetworksPagedResponse>
+      listOdbNetworksPagedCallable() {
+    return listOdbNetworksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetOdbNetworkRequest, OdbNetwork> getOdbNetworkCallable() {
+    return getOdbNetworkCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateOdbNetworkRequest, Operation> createOdbNetworkCallable() {
+    return createOdbNetworkCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+      createOdbNetworkOperationCallable() {
+    return createOdbNetworkOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkCallable() {
+    return deleteOdbNetworkCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteOdbNetworkRequest, Empty, OperationMetadata>
+      deleteOdbNetworkOperationCallable() {
+    return deleteOdbNetworkOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOdbSubnetsRequest, ListOdbSubnetsResponse> listOdbSubnetsCallable() {
+    return listOdbSubnetsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOdbSubnetsRequest, ListOdbSubnetsPagedResponse>
+      listOdbSubnetsPagedCallable() {
+    return listOdbSubnetsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetOdbSubnetRequest, OdbSubnet> getOdbSubnetCallable() {
+    return getOdbSubnetCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateOdbSubnetRequest, Operation> createOdbSubnetCallable() {
+    return createOdbSubnetCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+      createOdbSubnetOperationCallable() {
+    return createOdbSubnetOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetCallable() {
+    return deleteOdbSubnetCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteOdbSubnetRequest, Empty, OperationMetadata>
+      deleteOdbSubnetOperationCallable() {
+    return deleteOdbSubnetOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListExadbVmClustersRequest, ListExadbVmClustersResponse>
+      listExadbVmClustersCallable() {
+    return listExadbVmClustersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListExadbVmClustersRequest, ListExadbVmClustersPagedResponse>
+      listExadbVmClustersPagedCallable() {
+    return listExadbVmClustersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetExadbVmClusterRequest, ExadbVmCluster> getExadbVmClusterCallable() {
+    return getExadbVmClusterCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateExadbVmClusterRequest, Operation> createExadbVmClusterCallable() {
+    return createExadbVmClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      createExadbVmClusterOperationCallable() {
+    return createExadbVmClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteExadbVmClusterRequest, Operation> deleteExadbVmClusterCallable() {
+    return deleteExadbVmClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteExadbVmClusterRequest, Empty, OperationMetadata>
+      deleteExadbVmClusterOperationCallable() {
+    return deleteExadbVmClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateExadbVmClusterRequest, Operation> updateExadbVmClusterCallable() {
+    return updateExadbVmClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      updateExadbVmClusterOperationCallable() {
+    return updateExadbVmClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RemoveVirtualMachineExadbVmClusterRequest, Operation>
+      removeVirtualMachineExadbVmClusterCallable() {
+    return removeVirtualMachineExadbVmClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          RemoveVirtualMachineExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      removeVirtualMachineExadbVmClusterOperationCallable() {
+    return removeVirtualMachineExadbVmClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsResponse>
+      listExascaleDbStorageVaultsCallable() {
+    return listExascaleDbStorageVaultsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsPagedResponse>
+      listExascaleDbStorageVaultsPagedCallable() {
+    return listExascaleDbStorageVaultsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetExascaleDbStorageVaultRequest, ExascaleDbStorageVault>
+      getExascaleDbStorageVaultCallable() {
+    return getExascaleDbStorageVaultCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateExascaleDbStorageVaultRequest, Operation>
+      createExascaleDbStorageVaultCallable() {
+    return createExascaleDbStorageVaultCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+      createExascaleDbStorageVaultOperationCallable() {
+    return createExascaleDbStorageVaultOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteExascaleDbStorageVaultRequest, Operation>
+      deleteExascaleDbStorageVaultCallable() {
+    return deleteExascaleDbStorageVaultCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteExascaleDbStorageVaultRequest, Empty, OperationMetadata>
+      deleteExascaleDbStorageVaultOperationCallable() {
+    return deleteExascaleDbStorageVaultOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesResponse>
+      listDbSystemInitialStorageSizesCallable() {
+    return listDbSystemInitialStorageSizesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesPagedResponse>
+      listDbSystemInitialStorageSizesPagedCallable() {
+    return listDbSystemInitialStorageSizesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable() {
+    return listDatabasesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
+      listDatabasesPagedCallable() {
+    return listDatabasesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDatabaseRequest, Database> getDatabaseCallable() {
+    return getDatabaseCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>
+      listPluggableDatabasesCallable() {
+    return listPluggableDatabasesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPluggableDatabasesRequest, ListPluggableDatabasesPagedResponse>
+      listPluggableDatabasesPagedCallable() {
+    return listPluggableDatabasesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPluggableDatabaseRequest, PluggableDatabase>
+      getPluggableDatabaseCallable() {
+    return getPluggableDatabaseCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDbSystemsRequest, ListDbSystemsResponse> listDbSystemsCallable() {
+    return listDbSystemsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDbSystemsRequest, ListDbSystemsPagedResponse>
+      listDbSystemsPagedCallable() {
+    return listDbSystemsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDbSystemRequest, DbSystem> getDbSystemCallable() {
+    return getDbSystemCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDbSystemRequest, Operation> createDbSystemCallable() {
+    return createDbSystemCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateDbSystemRequest, DbSystem, OperationMetadata>
+      createDbSystemOperationCallable() {
+    return createDbSystemOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDbSystemRequest, Operation> deleteDbSystemCallable() {
+    return deleteDbSystemCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteDbSystemRequest, Empty, OperationMetadata>
+      deleteDbSystemOperationCallable() {
+    return deleteDbSystemOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDbVersionsRequest, ListDbVersionsResponse> listDbVersionsCallable() {
+    return listDbVersionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDbVersionsRequest, ListDbVersionsPagedResponse>
+      listDbVersionsPagedCallable() {
+    return listDbVersionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsResponse>
+      listDatabaseCharacterSetsCallable() {
+    return listDatabaseCharacterSetsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsPagedResponse>
+      listDatabaseCharacterSetsPagedCallable() {
+    return listDatabaseCharacterSetsPagedCallable;
   }
 
   @Override

@@ -48,6 +48,10 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     adminPassword_ = "";
     network_ = "";
     cidr_ = "";
+    odbNetwork_ = "";
+    odbSubnet_ = "";
+    peerAutonomousDatabases_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    disasterRecoverySupportedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -596,7 +600,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The subnet CIDR range for the Autonmous Database.
+   * Optional. The subnet CIDR range for the Autonomous Database.
    * </pre>
    *
    * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -620,7 +624,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The subnet CIDR range for the Autonmous Database.
+   * Optional. The subnet CIDR range for the Autonomous Database.
    * </pre>
    *
    * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -640,6 +644,277 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int ODB_NETWORK_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object odbNetwork_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the OdbNetwork associated with the Autonomous
+   * Database. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
+   * optional but if specified, this should match the parent ODBNetwork of the
+   * OdbSubnet.
+   * </pre>
+   *
+   * <code>
+   * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The odbNetwork.
+   */
+  @java.lang.Override
+  public java.lang.String getOdbNetwork() {
+    java.lang.Object ref = odbNetwork_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      odbNetwork_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the OdbNetwork associated with the Autonomous
+   * Database. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
+   * optional but if specified, this should match the parent ODBNetwork of the
+   * OdbSubnet.
+   * </pre>
+   *
+   * <code>
+   * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for odbNetwork.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOdbNetworkBytes() {
+    java.lang.Object ref = odbNetwork_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      odbNetwork_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ODB_SUBNET_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object odbSubnet_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the OdbSubnet associated with the Autonomous
+   * Database. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
+   * </pre>
+   *
+   * <code>
+   * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The odbSubnet.
+   */
+  @java.lang.Override
+  public java.lang.String getOdbSubnet() {
+    java.lang.Object ref = odbSubnet_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      odbSubnet_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the OdbSubnet associated with the Autonomous
+   * Database. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
+   * </pre>
+   *
+   * <code>
+   * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for odbSubnet.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOdbSubnetBytes() {
+    java.lang.Object ref = odbSubnet_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      odbSubnet_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SOURCE_CONFIG_FIELD_NUMBER = 11;
+  private com.google.cloud.oracledatabase.v1.SourceConfig sourceConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source Autonomous Database configuration for the standby
+   * Autonomous Database. The source Autonomous Database is configured while
+   * creating the Peer Autonomous Database and can't be updated after creation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sourceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source Autonomous Database configuration for the standby
+   * Autonomous Database. The source Autonomous Database is configured while
+   * creating the Peer Autonomous Database and can't be updated after creation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sourceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.SourceConfig getSourceConfig() {
+    return sourceConfig_ == null
+        ? com.google.cloud.oracledatabase.v1.SourceConfig.getDefaultInstance()
+        : sourceConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source Autonomous Database configuration for the standby
+   * Autonomous Database. The source Autonomous Database is configured while
+   * creating the Peer Autonomous Database and can't be updated after creation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.SourceConfigOrBuilder getSourceConfigOrBuilder() {
+    return sourceConfig_ == null
+        ? com.google.cloud.oracledatabase.v1.SourceConfig.getDefaultInstance()
+        : sourceConfig_;
+  }
+
+  public static final int PEER_AUTONOMOUS_DATABASES_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList peerAutonomousDatabases_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The peer Autonomous Database names of the given Autonomous
+   * Database.
+   * </pre>
+   *
+   * <code>
+   * repeated string peer_autonomous_databases = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the peerAutonomousDatabases.
+   */
+  public com.google.protobuf.ProtocolStringList getPeerAutonomousDatabasesList() {
+    return peerAutonomousDatabases_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The peer Autonomous Database names of the given Autonomous
+   * Database.
+   * </pre>
+   *
+   * <code>
+   * repeated string peer_autonomous_databases = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of peerAutonomousDatabases.
+   */
+  public int getPeerAutonomousDatabasesCount() {
+    return peerAutonomousDatabases_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The peer Autonomous Database names of the given Autonomous
+   * Database.
+   * </pre>
+   *
+   * <code>
+   * repeated string peer_autonomous_databases = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The peerAutonomousDatabases at the given index.
+   */
+  public java.lang.String getPeerAutonomousDatabases(int index) {
+    return peerAutonomousDatabases_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The peer Autonomous Database names of the given Autonomous
+   * Database.
+   * </pre>
+   *
+   * <code>
+   * repeated string peer_autonomous_databases = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the peerAutonomousDatabases at the given index.
+   */
+  public com.google.protobuf.ByteString getPeerAutonomousDatabasesBytes(int index) {
+    return peerAutonomousDatabases_.getByteString(index);
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 13;
   private com.google.protobuf.Timestamp createTime_;
 
@@ -657,7 +932,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -690,6 +965,86 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+
+  public static final int DISASTER_RECOVERY_SUPPORTED_LOCATIONS_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList disasterRecoverySupportedLocations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of supported GCP region to clone the Autonomous Database
+   * for disaster recovery. Format: `project/{project}/locations/{location}`.
+   * </pre>
+   *
+   * <code>
+   * repeated string disaster_recovery_supported_locations = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the disasterRecoverySupportedLocations.
+   */
+  public com.google.protobuf.ProtocolStringList getDisasterRecoverySupportedLocationsList() {
+    return disasterRecoverySupportedLocations_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of supported GCP region to clone the Autonomous Database
+   * for disaster recovery. Format: `project/{project}/locations/{location}`.
+   * </pre>
+   *
+   * <code>
+   * repeated string disaster_recovery_supported_locations = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of disasterRecoverySupportedLocations.
+   */
+  public int getDisasterRecoverySupportedLocationsCount() {
+    return disasterRecoverySupportedLocations_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of supported GCP region to clone the Autonomous Database
+   * for disaster recovery. Format: `project/{project}/locations/{location}`.
+   * </pre>
+   *
+   * <code>
+   * repeated string disaster_recovery_supported_locations = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The disasterRecoverySupportedLocations at the given index.
+   */
+  public java.lang.String getDisasterRecoverySupportedLocations(int index) {
+    return disasterRecoverySupportedLocations_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of supported GCP region to clone the Autonomous Database
+   * for disaster recovery. Format: `project/{project}/locations/{location}`.
+   * </pre>
+   *
+   * <code>
+   * repeated string disaster_recovery_supported_locations = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the disasterRecoverySupportedLocations at the given index.
+   */
+  public com.google.protobuf.ByteString getDisasterRecoverySupportedLocationsBytes(int index) {
+    return disasterRecoverySupportedLocations_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -733,7 +1088,24 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, cidr_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(11, getSourceConfig());
+    }
+    for (int i = 0; i < peerAutonomousDatabases_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 12, peerAutonomousDatabases_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(13, getCreateTime());
+    }
+    for (int i = 0; i < disasterRecoverySupportedLocations_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 15, disasterRecoverySupportedLocations_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(odbNetwork_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, odbNetwork_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(odbSubnet_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, odbSubnet_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -779,7 +1151,32 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, cidr_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getSourceConfig());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < peerAutonomousDatabases_.size(); i++) {
+        dataSize += computeStringSizeNoTag(peerAutonomousDatabases_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getPeerAutonomousDatabasesList().size();
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getCreateTime());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < disasterRecoverySupportedLocations_.size(); i++) {
+        dataSize += computeStringSizeNoTag(disasterRecoverySupportedLocations_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDisasterRecoverySupportedLocationsList().size();
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(odbNetwork_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, odbNetwork_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(odbSubnet_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, odbSubnet_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -809,10 +1206,20 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getNetwork().equals(other.getNetwork())) return false;
     if (!getCidr().equals(other.getCidr())) return false;
+    if (!getOdbNetwork().equals(other.getOdbNetwork())) return false;
+    if (!getOdbSubnet().equals(other.getOdbSubnet())) return false;
+    if (hasSourceConfig() != other.hasSourceConfig()) return false;
+    if (hasSourceConfig()) {
+      if (!getSourceConfig().equals(other.getSourceConfig())) return false;
+    }
+    if (!getPeerAutonomousDatabasesList().equals(other.getPeerAutonomousDatabasesList()))
+      return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
+    if (!getDisasterRecoverySupportedLocationsList()
+        .equals(other.getDisasterRecoverySupportedLocationsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -846,9 +1253,25 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getNetwork().hashCode();
     hash = (37 * hash) + CIDR_FIELD_NUMBER;
     hash = (53 * hash) + getCidr().hashCode();
+    hash = (37 * hash) + ODB_NETWORK_FIELD_NUMBER;
+    hash = (53 * hash) + getOdbNetwork().hashCode();
+    hash = (37 * hash) + ODB_SUBNET_FIELD_NUMBER;
+    hash = (53 * hash) + getOdbSubnet().hashCode();
+    if (hasSourceConfig()) {
+      hash = (37 * hash) + SOURCE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceConfig().hashCode();
+    }
+    if (getPeerAutonomousDatabasesCount() > 0) {
+      hash = (37 * hash) + PEER_AUTONOMOUS_DATABASES_FIELD_NUMBER;
+      hash = (53 * hash) + getPeerAutonomousDatabasesList().hashCode();
+    }
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (getDisasterRecoverySupportedLocationsCount() > 0) {
+      hash = (37 * hash) + DISASTER_RECOVERY_SUPPORTED_LOCATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getDisasterRecoverySupportedLocationsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1016,6 +1439,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPropertiesFieldBuilder();
+        getSourceConfigFieldBuilder();
         getCreateTimeFieldBuilder();
       }
     }
@@ -1037,11 +1461,20 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       internalGetMutableLabels().clear();
       network_ = "";
       cidr_ = "";
+      odbNetwork_ = "";
+      odbSubnet_ = "";
+      sourceConfig_ = null;
+      if (sourceConfigBuilder_ != null) {
+        sourceConfigBuilder_.dispose();
+        sourceConfigBuilder_ = null;
+      }
+      peerAutonomousDatabases_ = com.google.protobuf.LazyStringArrayList.emptyList();
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
+      disasterRecoverySupportedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1109,8 +1542,27 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         result.cidr_ = cidr_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        result.odbNetwork_ = odbNetwork_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.odbSubnet_ = odbSubnet_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.sourceConfig_ =
+            sourceConfigBuilder_ == null ? sourceConfig_ : sourceConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        peerAutonomousDatabases_.makeImmutable();
+        result.peerAutonomousDatabases_ = peerAutonomousDatabases_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        disasterRecoverySupportedLocations_.makeImmutable();
+        result.disasterRecoverySupportedLocations_ = disasterRecoverySupportedLocations_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1201,8 +1653,41 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (!other.getOdbNetwork().isEmpty()) {
+        odbNetwork_ = other.odbNetwork_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (!other.getOdbSubnet().isEmpty()) {
+        odbSubnet_ = other.odbSubnet_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (other.hasSourceConfig()) {
+        mergeSourceConfig(other.getSourceConfig());
+      }
+      if (!other.peerAutonomousDatabases_.isEmpty()) {
+        if (peerAutonomousDatabases_.isEmpty()) {
+          peerAutonomousDatabases_ = other.peerAutonomousDatabases_;
+          bitField0_ |= 0x00001000;
+        } else {
+          ensurePeerAutonomousDatabasesIsMutable();
+          peerAutonomousDatabases_.addAll(other.peerAutonomousDatabases_);
+        }
+        onChanged();
+      }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
+      }
+      if (!other.disasterRecoverySupportedLocations_.isEmpty()) {
+        if (disasterRecoverySupportedLocations_.isEmpty()) {
+          disasterRecoverySupportedLocations_ = other.disasterRecoverySupportedLocations_;
+          bitField0_ |= 0x00004000;
+        } else {
+          ensureDisasterRecoverySupportedLocationsIsMutable();
+          disasterRecoverySupportedLocations_.addAll(other.disasterRecoverySupportedLocations_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1290,12 +1775,44 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000100;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(getSourceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 90
+            case 98:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePeerAutonomousDatabasesIsMutable();
+                peerAutonomousDatabases_.add(s);
+                break;
+              } // case 98
             case 106:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
+            case 122:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDisasterRecoverySupportedLocationsIsMutable();
+                disasterRecoverySupportedLocations_.add(s);
+                break;
+              } // case 122
+            case 130:
+              {
+                odbNetwork_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 130
+            case 138:
+              {
+                odbSubnet_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2423,7 +2940,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The subnet CIDR range for the Autonmous Database.
+     * Optional. The subnet CIDR range for the Autonomous Database.
      * </pre>
      *
      * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2446,7 +2963,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The subnet CIDR range for the Autonmous Database.
+     * Optional. The subnet CIDR range for the Autonomous Database.
      * </pre>
      *
      * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2469,7 +2986,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The subnet CIDR range for the Autonmous Database.
+     * Optional. The subnet CIDR range for the Autonomous Database.
      * </pre>
      *
      * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2491,7 +3008,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The subnet CIDR range for the Autonmous Database.
+     * Optional. The subnet CIDR range for the Autonomous Database.
      * </pre>
      *
      * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2509,7 +3026,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The subnet CIDR range for the Autonmous Database.
+     * Optional. The subnet CIDR range for the Autonomous Database.
      * </pre>
      *
      * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2524,6 +3041,721 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       cidr_ = value;
       bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object odbNetwork_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the OdbNetwork associated with the Autonomous
+     * Database. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
+     * optional but if specified, this should match the parent ODBNetwork of the
+     * OdbSubnet.
+     * </pre>
+     *
+     * <code>
+     * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The odbNetwork.
+     */
+    public java.lang.String getOdbNetwork() {
+      java.lang.Object ref = odbNetwork_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        odbNetwork_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the OdbNetwork associated with the Autonomous
+     * Database. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
+     * optional but if specified, this should match the parent ODBNetwork of the
+     * OdbSubnet.
+     * </pre>
+     *
+     * <code>
+     * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for odbNetwork.
+     */
+    public com.google.protobuf.ByteString getOdbNetworkBytes() {
+      java.lang.Object ref = odbNetwork_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        odbNetwork_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the OdbNetwork associated with the Autonomous
+     * Database. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
+     * optional but if specified, this should match the parent ODBNetwork of the
+     * OdbSubnet.
+     * </pre>
+     *
+     * <code>
+     * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The odbNetwork to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOdbNetwork(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      odbNetwork_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the OdbNetwork associated with the Autonomous
+     * Database. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
+     * optional but if specified, this should match the parent ODBNetwork of the
+     * OdbSubnet.
+     * </pre>
+     *
+     * <code>
+     * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOdbNetwork() {
+      odbNetwork_ = getDefaultInstance().getOdbNetwork();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the OdbNetwork associated with the Autonomous
+     * Database. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
+     * optional but if specified, this should match the parent ODBNetwork of the
+     * OdbSubnet.
+     * </pre>
+     *
+     * <code>
+     * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for odbNetwork to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOdbNetworkBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      odbNetwork_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object odbSubnet_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the OdbSubnet associated with the Autonomous
+     * Database. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
+     * </pre>
+     *
+     * <code>
+     * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The odbSubnet.
+     */
+    public java.lang.String getOdbSubnet() {
+      java.lang.Object ref = odbSubnet_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        odbSubnet_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the OdbSubnet associated with the Autonomous
+     * Database. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
+     * </pre>
+     *
+     * <code>
+     * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for odbSubnet.
+     */
+    public com.google.protobuf.ByteString getOdbSubnetBytes() {
+      java.lang.Object ref = odbSubnet_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        odbSubnet_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the OdbSubnet associated with the Autonomous
+     * Database. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
+     * </pre>
+     *
+     * <code>
+     * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The odbSubnet to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOdbSubnet(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      odbSubnet_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the OdbSubnet associated with the Autonomous
+     * Database. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
+     * </pre>
+     *
+     * <code>
+     * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOdbSubnet() {
+      odbSubnet_ = getDefaultInstance().getOdbSubnet();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the OdbSubnet associated with the Autonomous
+     * Database. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
+     * </pre>
+     *
+     * <code>
+     * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for odbSubnet to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOdbSubnetBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      odbSubnet_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.oracledatabase.v1.SourceConfig sourceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.oracledatabase.v1.SourceConfig,
+            com.google.cloud.oracledatabase.v1.SourceConfig.Builder,
+            com.google.cloud.oracledatabase.v1.SourceConfigOrBuilder>
+        sourceConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source Autonomous Database configuration for the standby
+     * Autonomous Database. The source Autonomous Database is configured while
+     * creating the Peer Autonomous Database and can't be updated after creation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sourceConfig field is set.
+     */
+    public boolean hasSourceConfig() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source Autonomous Database configuration for the standby
+     * Autonomous Database. The source Autonomous Database is configured while
+     * creating the Peer Autonomous Database and can't be updated after creation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sourceConfig.
+     */
+    public com.google.cloud.oracledatabase.v1.SourceConfig getSourceConfig() {
+      if (sourceConfigBuilder_ == null) {
+        return sourceConfig_ == null
+            ? com.google.cloud.oracledatabase.v1.SourceConfig.getDefaultInstance()
+            : sourceConfig_;
+      } else {
+        return sourceConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source Autonomous Database configuration for the standby
+     * Autonomous Database. The source Autonomous Database is configured while
+     * creating the Peer Autonomous Database and can't be updated after creation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSourceConfig(com.google.cloud.oracledatabase.v1.SourceConfig value) {
+      if (sourceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceConfig_ = value;
+      } else {
+        sourceConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source Autonomous Database configuration for the standby
+     * Autonomous Database. The source Autonomous Database is configured while
+     * creating the Peer Autonomous Database and can't be updated after creation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSourceConfig(
+        com.google.cloud.oracledatabase.v1.SourceConfig.Builder builderForValue) {
+      if (sourceConfigBuilder_ == null) {
+        sourceConfig_ = builderForValue.build();
+      } else {
+        sourceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source Autonomous Database configuration for the standby
+     * Autonomous Database. The source Autonomous Database is configured while
+     * creating the Peer Autonomous Database and can't be updated after creation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSourceConfig(com.google.cloud.oracledatabase.v1.SourceConfig value) {
+      if (sourceConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && sourceConfig_ != null
+            && sourceConfig_
+                != com.google.cloud.oracledatabase.v1.SourceConfig.getDefaultInstance()) {
+          getSourceConfigBuilder().mergeFrom(value);
+        } else {
+          sourceConfig_ = value;
+        }
+      } else {
+        sourceConfigBuilder_.mergeFrom(value);
+      }
+      if (sourceConfig_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source Autonomous Database configuration for the standby
+     * Autonomous Database. The source Autonomous Database is configured while
+     * creating the Peer Autonomous Database and can't be updated after creation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSourceConfig() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      sourceConfig_ = null;
+      if (sourceConfigBuilder_ != null) {
+        sourceConfigBuilder_.dispose();
+        sourceConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source Autonomous Database configuration for the standby
+     * Autonomous Database. The source Autonomous Database is configured while
+     * creating the Peer Autonomous Database and can't be updated after creation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.oracledatabase.v1.SourceConfig.Builder getSourceConfigBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getSourceConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source Autonomous Database configuration for the standby
+     * Autonomous Database. The source Autonomous Database is configured while
+     * creating the Peer Autonomous Database and can't be updated after creation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.oracledatabase.v1.SourceConfigOrBuilder getSourceConfigOrBuilder() {
+      if (sourceConfigBuilder_ != null) {
+        return sourceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return sourceConfig_ == null
+            ? com.google.cloud.oracledatabase.v1.SourceConfig.getDefaultInstance()
+            : sourceConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source Autonomous Database configuration for the standby
+     * Autonomous Database. The source Autonomous Database is configured while
+     * creating the Peer Autonomous Database and can't be updated after creation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.oracledatabase.v1.SourceConfig,
+            com.google.cloud.oracledatabase.v1.SourceConfig.Builder,
+            com.google.cloud.oracledatabase.v1.SourceConfigOrBuilder>
+        getSourceConfigFieldBuilder() {
+      if (sourceConfigBuilder_ == null) {
+        sourceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.oracledatabase.v1.SourceConfig,
+                com.google.cloud.oracledatabase.v1.SourceConfig.Builder,
+                com.google.cloud.oracledatabase.v1.SourceConfigOrBuilder>(
+                getSourceConfig(), getParentForChildren(), isClean());
+        sourceConfig_ = null;
+      }
+      return sourceConfigBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList peerAutonomousDatabases_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensurePeerAutonomousDatabasesIsMutable() {
+      if (!peerAutonomousDatabases_.isModifiable()) {
+        peerAutonomousDatabases_ =
+            new com.google.protobuf.LazyStringArrayList(peerAutonomousDatabases_);
+      }
+      bitField0_ |= 0x00001000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The peer Autonomous Database names of the given Autonomous
+     * Database.
+     * </pre>
+     *
+     * <code>
+     * repeated string peer_autonomous_databases = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the peerAutonomousDatabases.
+     */
+    public com.google.protobuf.ProtocolStringList getPeerAutonomousDatabasesList() {
+      peerAutonomousDatabases_.makeImmutable();
+      return peerAutonomousDatabases_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The peer Autonomous Database names of the given Autonomous
+     * Database.
+     * </pre>
+     *
+     * <code>
+     * repeated string peer_autonomous_databases = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of peerAutonomousDatabases.
+     */
+    public int getPeerAutonomousDatabasesCount() {
+      return peerAutonomousDatabases_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The peer Autonomous Database names of the given Autonomous
+     * Database.
+     * </pre>
+     *
+     * <code>
+     * repeated string peer_autonomous_databases = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The peerAutonomousDatabases at the given index.
+     */
+    public java.lang.String getPeerAutonomousDatabases(int index) {
+      return peerAutonomousDatabases_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The peer Autonomous Database names of the given Autonomous
+     * Database.
+     * </pre>
+     *
+     * <code>
+     * repeated string peer_autonomous_databases = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the peerAutonomousDatabases at the given index.
+     */
+    public com.google.protobuf.ByteString getPeerAutonomousDatabasesBytes(int index) {
+      return peerAutonomousDatabases_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The peer Autonomous Database names of the given Autonomous
+     * Database.
+     * </pre>
+     *
+     * <code>
+     * repeated string peer_autonomous_databases = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The peerAutonomousDatabases to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPeerAutonomousDatabases(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePeerAutonomousDatabasesIsMutable();
+      peerAutonomousDatabases_.set(index, value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The peer Autonomous Database names of the given Autonomous
+     * Database.
+     * </pre>
+     *
+     * <code>
+     * repeated string peer_autonomous_databases = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The peerAutonomousDatabases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPeerAutonomousDatabases(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePeerAutonomousDatabasesIsMutable();
+      peerAutonomousDatabases_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The peer Autonomous Database names of the given Autonomous
+     * Database.
+     * </pre>
+     *
+     * <code>
+     * repeated string peer_autonomous_databases = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The peerAutonomousDatabases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllPeerAutonomousDatabases(java.lang.Iterable<java.lang.String> values) {
+      ensurePeerAutonomousDatabasesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, peerAutonomousDatabases_);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The peer Autonomous Database names of the given Autonomous
+     * Database.
+     * </pre>
+     *
+     * <code>
+     * repeated string peer_autonomous_databases = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPeerAutonomousDatabases() {
+      peerAutonomousDatabases_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The peer Autonomous Database names of the given Autonomous
+     * Database.
+     * </pre>
+     *
+     * <code>
+     * repeated string peer_autonomous_databases = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the peerAutonomousDatabases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPeerAutonomousDatabasesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensurePeerAutonomousDatabasesIsMutable();
+      peerAutonomousDatabases_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2549,7 +3781,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -2595,7 +3827,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -2617,7 +3849,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -2635,7 +3867,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2646,7 +3878,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -2664,7 +3896,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00002000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2686,7 +3918,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2738,6 +3970,220 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         createTime_ = null;
       }
       return createTimeBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList disasterRecoverySupportedLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDisasterRecoverySupportedLocationsIsMutable() {
+      if (!disasterRecoverySupportedLocations_.isModifiable()) {
+        disasterRecoverySupportedLocations_ =
+            new com.google.protobuf.LazyStringArrayList(disasterRecoverySupportedLocations_);
+      }
+      bitField0_ |= 0x00004000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of supported GCP region to clone the Autonomous Database
+     * for disaster recovery. Format: `project/{project}/locations/{location}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string disaster_recovery_supported_locations = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the disasterRecoverySupportedLocations.
+     */
+    public com.google.protobuf.ProtocolStringList getDisasterRecoverySupportedLocationsList() {
+      disasterRecoverySupportedLocations_.makeImmutable();
+      return disasterRecoverySupportedLocations_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of supported GCP region to clone the Autonomous Database
+     * for disaster recovery. Format: `project/{project}/locations/{location}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string disaster_recovery_supported_locations = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of disasterRecoverySupportedLocations.
+     */
+    public int getDisasterRecoverySupportedLocationsCount() {
+      return disasterRecoverySupportedLocations_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of supported GCP region to clone the Autonomous Database
+     * for disaster recovery. Format: `project/{project}/locations/{location}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string disaster_recovery_supported_locations = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The disasterRecoverySupportedLocations at the given index.
+     */
+    public java.lang.String getDisasterRecoverySupportedLocations(int index) {
+      return disasterRecoverySupportedLocations_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of supported GCP region to clone the Autonomous Database
+     * for disaster recovery. Format: `project/{project}/locations/{location}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string disaster_recovery_supported_locations = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the disasterRecoverySupportedLocations at the given index.
+     */
+    public com.google.protobuf.ByteString getDisasterRecoverySupportedLocationsBytes(int index) {
+      return disasterRecoverySupportedLocations_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of supported GCP region to clone the Autonomous Database
+     * for disaster recovery. Format: `project/{project}/locations/{location}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string disaster_recovery_supported_locations = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The disasterRecoverySupportedLocations to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisasterRecoverySupportedLocations(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDisasterRecoverySupportedLocationsIsMutable();
+      disasterRecoverySupportedLocations_.set(index, value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of supported GCP region to clone the Autonomous Database
+     * for disaster recovery. Format: `project/{project}/locations/{location}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string disaster_recovery_supported_locations = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The disasterRecoverySupportedLocations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDisasterRecoverySupportedLocations(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDisasterRecoverySupportedLocationsIsMutable();
+      disasterRecoverySupportedLocations_.add(value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of supported GCP region to clone the Autonomous Database
+     * for disaster recovery. Format: `project/{project}/locations/{location}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string disaster_recovery_supported_locations = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The disasterRecoverySupportedLocations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDisasterRecoverySupportedLocations(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureDisasterRecoverySupportedLocationsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, disasterRecoverySupportedLocations_);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of supported GCP region to clone the Autonomous Database
+     * for disaster recovery. Format: `project/{project}/locations/{location}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string disaster_recovery_supported_locations = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisasterRecoverySupportedLocations() {
+      disasterRecoverySupportedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of supported GCP region to clone the Autonomous Database
+     * for disaster recovery. Format: `project/{project}/locations/{location}`.
+     * </pre>
+     *
+     * <code>
+     * repeated string disaster_recovery_supported_locations = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the disasterRecoverySupportedLocations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDisasterRecoverySupportedLocationsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDisasterRecoverySupportedLocationsIsMutable();
+      disasterRecoverySupportedLocations_.add(value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

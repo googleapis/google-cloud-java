@@ -75,7 +75,7 @@ public final class CloudExadataInfrastructureProto {
           + "8oracledatabase.googleapis.com/CloudExadataInfrastr"
           + "ucture\022bprojects/{project}/locations/{location}/cloudExadataInfrastructures/{clo"
           + "ud_exadata_infrastructure}*\033cloudExadata"
-          + "Infrastructures2\032cloudExadataInfrastructure\"\246\n\n"
+          + "Infrastructures2\032cloudExadataInfrastructure\"\265\013\n"
           + "$CloudExadataInfrastructureProperties\022\021\n"
           + "\004ocid\030\001 \001(\tB\003\340A\003\022\032\n\r"
           + "compute_count\030\002 \001(\005B\003\340A\001\022\032\n\r"
@@ -110,7 +110,11 @@ public final class CloudExadataInfrastructureProto {
           + "\021customer_contacts\030\031 \003(\0132/.google"
           + ".cloud.oracledatabase.v1.CustomerContactB\003\340A\001\022+\n"
           + "\036monthly_storage_server_version\030\032 \001(\tB\003\340A\003\022&\n"
-          + "\031monthly_db_server_version\030\033 \001(\tB\003\340A\003\"\227\001\n"
+          + "\031monthly_db_server_version\030\033 \001(\tB\003\340A\003\022H\n\r"
+          + "compute_model\030\037 \001(\0162,.goog"
+          + "le.cloud.oracledatabase.v1.ComputeModelB\003\340A\003\022!\n"
+          + "\024database_server_type\030\035 \001(\tB\003\340A\003\022 \n"
+          + "\023storage_server_type\030\036 \001(\tB\003\340A\003\"\227\001\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\020\n"
           + "\014PROVISIONING\020\001\022\r\n"
@@ -121,15 +125,15 @@ public final class CloudExadataInfrastructureProto {
           + "\006FAILED\020\006\022\033\n"
           + "\027MAINTENANCE_IN_PROGRESS\020\007\"\245\005\n"
           + "\021MaintenanceWindow\022f\n\n"
-          + "preference\030\001 \001(\0162M.google.cloud.oracledatabase.v1."
-          + "MaintenanceWindow.MaintenanceWindowPreferenceB\003\340A\001\022\'\n"
+          + "preference\030\001 \001(\0162M.google.c"
+          + "loud.oracledatabase.v1.MaintenanceWindow.MaintenanceWindowPreferenceB\003\340A\001\022\'\n"
           + "\006months\030\002 \003(\0162\022.google.type.MonthB\003\340A\001\022\033\n"
           + "\016weeks_of_month\030\003 \003(\005B\003\340A\001\0221\n"
           + "\014days_of_week\030\004 \003(\0162\026.google.type.DayOfWeekB\003\340A\001\022\031\n"
           + "\014hours_of_day\030\005 \003(\005B\003\340A\001\022\033\n"
           + "\016lead_time_week\030\006 \001(\005B\003\340A\001\022Z\n\r"
-          + "patching_mode\030\007 \001(\0162>.google.cloud.oracledatabase"
-          + ".v1.MaintenanceWindow.PatchingModeB\003\340A\001\022\'\n"
+          + "patching_mode\030\007 \001(\0162>.goog"
+          + "le.cloud.oracledatabase.v1.MaintenanceWindow.PatchingModeB\003\340A\001\022\'\n"
           + "\032custom_action_timeout_mins\030\010 \001(\005B\003\340A\001\022-\n"
           + " is_custom_action_timeout_enabled\030\t \001(\010B\003\340A\001\"v\n"
           + "\033MaintenanceWindowPreference\022-\n"
@@ -140,11 +144,11 @@ public final class CloudExadataInfrastructureProto {
           + "\031PATCHING_MODE_UNSPECIFIED\020\000\022\013\n"
           + "\007ROLLING\020\001\022\017\n"
           + "\013NON_ROLLING\020\002B\371\001\n"
-          + "\"com.google.cloud.oracledatabase.v1B\037CloudExadataInfrastructureProtoP\001ZJ"
-          + "cloud.google.com/go/oracledatabase/apiv1"
-          + "/oracledatabasepb;oracledatabasepb\252\002\036Goo"
-          + "gle.Cloud.OracleDatabase.V1\312\002\036Google\\Clo"
-          + "ud\\OracleDatabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
+          + "\"com.google.cloud.oracledatabase.v1B\037CloudExadata"
+          + "InfrastructureProtoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracledatabasepb"
+          + ";oracledatabasepb\252\002\036Google.Cloud.OracleD"
+          + "atabase.V1\312\002\036Google\\Cloud\\OracleDatabase"
+          + "\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -214,6 +218,9 @@ public final class CloudExadataInfrastructureProto {
               "CustomerContacts",
               "MonthlyStorageServerVersion",
               "MonthlyDbServerVersion",
+              "ComputeModel",
+              "DatabaseServerType",
+              "StorageServerType",
             });
     internal_static_google_cloud_oracledatabase_v1_MaintenanceWindow_descriptor =
         getDescriptor().getMessageTypes().get(2);

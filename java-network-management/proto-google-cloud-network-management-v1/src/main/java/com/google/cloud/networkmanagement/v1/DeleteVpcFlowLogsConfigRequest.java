@@ -74,8 +74,14 @@ public final class DeleteVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. `VpcFlowLogsConfig` resource name using the form:
-   *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+   * Required. The resource name of the VpcFlowLogsConfig,
+   * in one of the following formats:
+   *
+   * - For a project-level resource:
+   * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+   *
+   * - For an organization-level resource:
+   * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
    * </pre>
    *
    * <code>
@@ -101,8 +107,14 @@ public final class DeleteVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. `VpcFlowLogsConfig` resource name using the form:
-   *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+   * Required. The resource name of the VpcFlowLogsConfig,
+   * in one of the following formats:
+   *
+   * - For a project-level resource:
+   * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+   *
+   * - For an organization-level resource:
+   * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
    * </pre>
    *
    * <code>
@@ -482,8 +494,14 @@ public final class DeleteVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. `VpcFlowLogsConfig` resource name using the form:
-     *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+     * Required. The resource name of the VpcFlowLogsConfig,
+     * in one of the following formats:
+     *
+     * - For a project-level resource:
+     * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     *
+     * - For an organization-level resource:
+     * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
      * </pre>
      *
      * <code>
@@ -508,8 +526,14 @@ public final class DeleteVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. `VpcFlowLogsConfig` resource name using the form:
-     *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+     * Required. The resource name of the VpcFlowLogsConfig,
+     * in one of the following formats:
+     *
+     * - For a project-level resource:
+     * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     *
+     * - For an organization-level resource:
+     * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
      * </pre>
      *
      * <code>
@@ -534,8 +558,14 @@ public final class DeleteVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. `VpcFlowLogsConfig` resource name using the form:
-     *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+     * Required. The resource name of the VpcFlowLogsConfig,
+     * in one of the following formats:
+     *
+     * - For a project-level resource:
+     * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     *
+     * - For an organization-level resource:
+     * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
      * </pre>
      *
      * <code>
@@ -559,8 +589,14 @@ public final class DeleteVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. `VpcFlowLogsConfig` resource name using the form:
-     *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+     * Required. The resource name of the VpcFlowLogsConfig,
+     * in one of the following formats:
+     *
+     * - For a project-level resource:
+     * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     *
+     * - For an organization-level resource:
+     * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
      * </pre>
      *
      * <code>
@@ -580,8 +616,14 @@ public final class DeleteVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. `VpcFlowLogsConfig` resource name using the form:
-     *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+     * Required. The resource name of the VpcFlowLogsConfig,
+     * in one of the following formats:
+     *
+     * - For a project-level resource:
+     * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     *
+     * - For an organization-level resource:
+     * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
      * </pre>
      *
      * <code>

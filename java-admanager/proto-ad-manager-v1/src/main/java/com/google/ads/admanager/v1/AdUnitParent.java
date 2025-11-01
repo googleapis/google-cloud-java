@@ -66,6 +66,7 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
             com.google.ads.admanager.v1.AdUnitParent.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PARENT_AD_UNIT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -80,7 +81,26 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * optional string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the parentAdUnit field is set.
+   */
+  @java.lang.Override
+  public boolean hasParentAdUnit() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The parent of the current AdUnit
+   * Format: `networks/{network_code}/adUnits/{ad_unit_id}`
+   * </pre>
+   *
+   * <code>
+   * optional string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The parentAdUnit.
@@ -107,7 +127,7 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * optional string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for parentAdUnit.
@@ -137,7 +157,23 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
    * Output only. The display name of the parent AdUnit.
    * </pre>
    *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisplayName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The display name of the parent AdUnit.
+   * </pre>
+   *
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The displayName.
    */
@@ -161,7 +197,7 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
    * Output only. The display name of the parent AdUnit.
    * </pre>
    *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for displayName.
    */
@@ -191,7 +227,24 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
    * purposes of serving the ad.
    * </pre>
    *
-   * <code>string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the adUnitCode field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdUnitCode() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A string used to uniquely identify the ad unit for the
+   * purposes of serving the ad.
+   * </pre>
+   *
+   * <code>optional string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The adUnitCode.
    */
@@ -216,7 +269,7 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
    * purposes of serving the ad.
    * </pre>
    *
-   * <code>string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for adUnitCode.
    */
@@ -247,13 +300,13 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentAdUnit_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parentAdUnit_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(adUnitCode_)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, adUnitCode_);
     }
     getUnknownFields().writeTo(output);
@@ -265,13 +318,13 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentAdUnit_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parentAdUnit_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(adUnitCode_)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, adUnitCode_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -289,9 +342,18 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.ads.admanager.v1.AdUnitParent other = (com.google.ads.admanager.v1.AdUnitParent) obj;
 
-    if (!getParentAdUnit().equals(other.getParentAdUnit())) return false;
-    if (!getDisplayName().equals(other.getDisplayName())) return false;
-    if (!getAdUnitCode().equals(other.getAdUnitCode())) return false;
+    if (hasParentAdUnit() != other.hasParentAdUnit()) return false;
+    if (hasParentAdUnit()) {
+      if (!getParentAdUnit().equals(other.getParentAdUnit())) return false;
+    }
+    if (hasDisplayName() != other.hasDisplayName()) return false;
+    if (hasDisplayName()) {
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+    }
+    if (hasAdUnitCode() != other.hasAdUnitCode()) return false;
+    if (hasAdUnitCode()) {
+      if (!getAdUnitCode().equals(other.getAdUnitCode())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -303,12 +365,18 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PARENT_AD_UNIT_FIELD_NUMBER;
-    hash = (53 * hash) + getParentAdUnit().hashCode();
-    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDisplayName().hashCode();
-    hash = (37 * hash) + AD_UNIT_CODE_FIELD_NUMBER;
-    hash = (53 * hash) + getAdUnitCode().hashCode();
+    if (hasParentAdUnit()) {
+      hash = (37 * hash) + PARENT_AD_UNIT_FIELD_NUMBER;
+      hash = (53 * hash) + getParentAdUnit().hashCode();
+    }
+    if (hasDisplayName()) {
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+    }
+    if (hasAdUnitCode()) {
+      hash = (37 * hash) + AD_UNIT_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getAdUnitCode().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -488,15 +556,20 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.ads.admanager.v1.AdUnitParent result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parentAdUnit_ = parentAdUnit_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.displayName_ = displayName_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.adUnitCode_ = adUnitCode_;
+        to_bitField0_ |= 0x00000004;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -544,17 +617,17 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.ads.admanager.v1.AdUnitParent other) {
       if (other == com.google.ads.admanager.v1.AdUnitParent.getDefaultInstance()) return this;
-      if (!other.getParentAdUnit().isEmpty()) {
+      if (other.hasParentAdUnit()) {
         parentAdUnit_ = other.parentAdUnit_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getDisplayName().isEmpty()) {
+      if (other.hasDisplayName()) {
         displayName_ = other.displayName_;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (!other.getAdUnitCode().isEmpty()) {
+      if (other.hasAdUnitCode()) {
         adUnitCode_ = other.adUnitCode_;
         bitField0_ |= 0x00000004;
         onChanged();
@@ -633,7 +706,25 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * optional string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the parentAdUnit field is set.
+     */
+    public boolean hasParentAdUnit() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The parent of the current AdUnit
+     * Format: `networks/{network_code}/adUnits/{ad_unit_id}`
+     * </pre>
+     *
+     * <code>
+     * optional string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The parentAdUnit.
@@ -659,7 +750,7 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * optional string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for parentAdUnit.
@@ -685,7 +776,7 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * optional string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The parentAdUnit to set.
@@ -710,7 +801,7 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * optional string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -731,7 +822,7 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * optional string parent_ad_unit = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for parentAdUnit to set.
@@ -757,7 +848,22 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of the parent AdUnit.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the displayName field is set.
+     */
+    public boolean hasDisplayName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The display name of the parent AdUnit.
+     * </pre>
+     *
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The displayName.
      */
@@ -780,7 +886,7 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of the parent AdUnit.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for displayName.
      */
@@ -803,7 +909,7 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of the parent AdUnit.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -825,7 +931,7 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of the parent AdUnit.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -843,7 +949,7 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The display name of the parent AdUnit.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -869,7 +975,23 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
      * purposes of serving the ad.
      * </pre>
      *
-     * <code>string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the adUnitCode field is set.
+     */
+    public boolean hasAdUnitCode() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A string used to uniquely identify the ad unit for the
+     * purposes of serving the ad.
+     * </pre>
+     *
+     * <code>optional string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The adUnitCode.
      */
@@ -893,7 +1015,7 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
      * purposes of serving the ad.
      * </pre>
      *
-     * <code>string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for adUnitCode.
      */
@@ -917,7 +1039,7 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
      * purposes of serving the ad.
      * </pre>
      *
-     * <code>string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The adUnitCode to set.
      * @return This builder for chaining.
@@ -940,7 +1062,7 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
      * purposes of serving the ad.
      * </pre>
      *
-     * <code>string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -959,7 +1081,7 @@ public final class AdUnitParent extends com.google.protobuf.GeneratedMessageV3
      * purposes of serving the ad.
      * </pre>
      *
-     * <code>string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string ad_unit_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for adUnitCode to set.
      * @return This builder for chaining.

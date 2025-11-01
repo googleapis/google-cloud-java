@@ -73,6 +73,10 @@ public final class DataQualityProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_DataQualityResult_PostScanActionsResult_BigQueryExportResult_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataQualityResult_AnomalyDetectionGeneratedAssets_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataQualityResult_AnomalyDetectionGeneratedAssets_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataplex_v1_DataQualityRuleResult_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_DataQualityRuleResult_fieldAccessorTable;
@@ -172,7 +176,7 @@ public final class DataQualityProto {
           + "\023job_failure_trigger\030\004 \001(\0132K.google.cloud.dataplex.v1.Da"
           + "taQualitySpec.PostScanActions.JobFailureTriggerB\003\340A\001\022e\n"
           + "\017job_end_trigger\030\005 \001(\0132G."
-          + "google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTriggerB\003\340A\001\"\317\007\n"
+          + "google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTriggerB\003\340A\001\"\205\n\n"
           + "\021DataQualityResult\022\023\n"
           + "\006passed\030\005 \001(\010B\003\340A\003\022\027\n"
           + "\005score\030\t \001(\002B\003\340A\003H\000\210\001\001\022M\n\n"
@@ -188,24 +192,30 @@ public final class DataQualityProto {
           + "\030post_scan_actions_result\030\010 \001(\0132A.google.cloud.dataplex.v1.Data"
           + "QualityResult.PostScanActionsResultB\003\340A\003\022a\n"
           + "\031catalog_publishing_status\030\013 \001(\01329.go"
-          + "ogle.cloud.dataplex.v1.DataScanCatalogPublishingStatusB\003\340A\003\032\375\002\n"
+          + "ogle.cloud.dataplex.v1.DataScanCatalogPublishingStatusB\003\340A\003\022|\n"
+          + "\"anomaly_detection_generated_assets\030\014 \001(\0132K.google.cloud.d"
+          + "ataplex.v1.DataQualityResult.AnomalyDetectionGeneratedAssetsB\003\340A\003\032\375\002\n"
           + "\025PostScanActionsResult\022{\n"
-          + "\026bigquery_export_result\030\001 \001(\0132V."
-          + "google.cloud.dataplex.v1.DataQualityResu"
-          + "lt.PostScanActionsResult.BigQueryExportResultB\003\340A\003\032\346\001\n"
+          + "\026bigquery_export_result\030\001 \001(\0132V.google.cloud.dataplex.v1.DataQuali"
+          + "tyResult.PostScanActionsResult.BigQueryExportResultB\003\340A\003\032\346\001\n"
           + "\024BigQueryExportResult\022p\n"
-          + "\005state\030\001 \001(\0162\\.google.cloud.dataplex.v1.Da"
-          + "taQualityResult.PostScanActionsResult.BigQueryExportResult.StateB\003\340A\003\022\024\n"
+          + "\005state\030\001 \001(\0162\\.google.cloud.dataplex"
+          + ".v1.DataQualityResult.PostScanActionsResult.BigQueryExportResult.StateB\003\340A\003\022\024\n"
           + "\007message\030\002 \001(\tB\003\340A\003\"F\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\r\n"
           + "\tSUCCEEDED\020\001\022\n\n"
           + "\006FAILED\020\002\022\013\n"
-          + "\007SKIPPED\020\003B\010\n"
+          + "\007SKIPPED\020\003\032\265\001\n"
+          + "\037AnomalyDetectionGeneratedAssets\022\031\n"
+          + "\014result_table\030\001 \001(\tB\003\340A\003\022$\n"
+          + "\027data_intermediate_table\030\002 \001(\tB\003\340A\003\022)\n"
+          + "\034freshness_intermediate_table\030\003 \001(\tB\003\340A\003\022&\n"
+          + "\031volume_intermediate_table\030\004 \001(\tB\003\340A\003B\010\n"
           + "\006_score\"\230\002\n"
           + "\025DataQualityRuleResult\022<\n"
-          + "\004rule\030\001"
-          + " \001(\0132).google.cloud.dataplex.v1.DataQualityRuleB\003\340A\003\022\023\n"
+          + "\004rule\030\001 "
+          + "\001(\0132).google.cloud.dataplex.v1.DataQualityRuleB\003\340A\003\022\023\n"
           + "\006passed\030\007 \001(\010B\003\340A\003\022\034\n"
           + "\017evaluated_count\030\t \001(\003B\003\340A\003\022\031\n"
           + "\014passed_count\030\010 \001(\003B\003\340A\003\022\027\n\n"
@@ -215,32 +225,32 @@ public final class DataQualityProto {
           + " \001(\tB\003\340A\003\022 \n"
           + "\023assertion_row_count\030\013 \001(\003B\003\340A\003\"\234\001\n"
           + "\032DataQualityDimensionResult\022F\n"
-          + "\tdimension\030\001 \001(\0132..google.clou"
-          + "d.dataplex.v1.DataQualityDimensionB\003\340A\003\022\023\n"
+          + "\tdimension\030\001"
+          + " \001(\0132..google.cloud.dataplex.v1.DataQualityDimensionB\003\340A\003\022\023\n"
           + "\006passed\030\003 \001(\010B\003\340A\003\022\027\n"
           + "\005score\030\004 \001(\002B\003\340A\003H\000\210\001\001B\010\n"
           + "\006_score\")\n"
           + "\024DataQualityDimension\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\"\215\016\n"
           + "\017DataQualityRule\022W\n"
-          + "\021range_expectation\030\001 \001(\0132:.google.cloud"
-          + ".dataplex.v1.DataQualityRule.RangeExpectationH\000\022\\\n"
-          + "\024non_null_expectation\030\002 \001(\0132<."
-          + "google.cloud.dataplex.v1.DataQualityRule.NonNullExpectationH\000\022S\n"
-          + "\017set_expectation\030\003"
-          + " \001(\01328.google.cloud.dataplex.v1.DataQualityRule.SetExpectationH\000\022W\n"
-          + "\021regex_expectation\030\004"
-          + " \001(\0132:.google.cloud.dataplex.v1.DataQualityRule.RegexExpectationH\000\022a\n"
-          + "\026uniqueness_expectation\030d \001(\0132?.google.clo"
-          + "ud.dataplex.v1.DataQualityRule.UniquenessExpectationH\000\022j\n"
-          + "\033statistic_range_expectation\030e \001(\0132C.google.cloud.dataplex.v1.D"
-          + "ataQualityRule.StatisticRangeExpectationH\000\022g\n"
-          + "\031row_condition_expectation\030\310\001 \001(\0132A"
-          + ".google.cloud.dataplex.v1.DataQualityRule.RowConditionExpectationH\000\022k\n"
-          + "\033table_condition_expectation\030\311\001 \001(\0132C.google.cloud"
-          + ".dataplex.v1.DataQualityRule.TableConditionExpectationH\000\022P\n\r"
-          + "sql_assertion\030\312\001 \001(\013"
-          + "26.google.cloud.dataplex.v1.DataQualityRule.SqlAssertionH\000\022\024\n"
+          + "\021range_expectation\030\001"
+          + " \001(\0132:.google.cloud.dataplex.v1.DataQualityRule.RangeExpectationH\000\022\\\n"
+          + "\024non_null_expectation\030\002 \001(\0132<.google.clo"
+          + "ud.dataplex.v1.DataQualityRule.NonNullExpectationH\000\022S\n"
+          + "\017set_expectation\030\003 \001(\01328.g"
+          + "oogle.cloud.dataplex.v1.DataQualityRule.SetExpectationH\000\022W\n"
+          + "\021regex_expectation\030\004 "
+          + "\001(\0132:.google.cloud.dataplex.v1.DataQualityRule.RegexExpectationH\000\022a\n"
+          + "\026uniqueness_expectation\030d \001(\0132?.google.cloud.dataple"
+          + "x.v1.DataQualityRule.UniquenessExpectationH\000\022j\n"
+          + "\033statistic_range_expectation\030e \001("
+          + "\0132C.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectationH\000\022g\n"
+          + "\031row_condition_expectation\030\310\001 \001(\0132A.google.cl"
+          + "oud.dataplex.v1.DataQualityRule.RowConditionExpectationH\000\022k\n"
+          + "\033table_condition_expectation\030\311\001 \001(\0132C.google.cloud.dataplex."
+          + "v1.DataQualityRule.TableConditionExpectationH\000\022P\n\r"
+          + "sql_assertion\030\312\001 \001(\01326.google."
+          + "cloud.dataplex.v1.DataQualityRule.SqlAssertionH\000\022\024\n"
           + "\006column\030\364\003 \001(\tB\003\340A\001\022\031\n"
           + "\013ignore_null\030\365\003 \001(\010B\003\340A\001\022\027\n"
           + "\tdimension\030\366\003 \001(\tB\003\340A\002\022\027\n"
@@ -260,8 +270,8 @@ public final class DataQualityProto {
           + "\005regex\030\001 \001(\tB\003\340A\001\032\027\n"
           + "\025UniquenessExpectation\032\302\002\n"
           + "\031StatisticRangeExpectation\022k\n"
-          + "\tstatistic\030\001 \001(\0162S.google.cloud.datap"
-          + "lex.v1.DataQualityRule.StatisticRangeExpectation.ColumnStatisticB\003\340A\001\022\026\n"
+          + "\tstatistic\030\001 \001(\0162S.google.cloud.dataplex.v1.Dat"
+          + "aQualityRule.StatisticRangeExpectation.ColumnStatisticB\003\340A\001\022\026\n"
           + "\tmin_value\030\002 \001(\tB\003\340A\001\022\026\n"
           + "\tmax_value\030\003 \001(\tB\003\340A\001\022\037\n"
           + "\022strict_min_enabled\030\004 \001(\010B\003\340A\001\022\037\n"
@@ -282,13 +292,13 @@ public final class DataQualityProto {
           + "\006column\030\001 \001(\tB\003\340A\003\022\027\n"
           + "\005score\030\002 \001(\002B\003\340A\003H\000\210\001\001\022\023\n"
           + "\006passed\030\003 \001(\010B\003\340A\003\022M\n\n"
-          + "dimensions\030\004 \003(\01324.google.cloud.dat"
-          + "aplex.v1.DataQualityDimensionResultB\003\340A\003B\010\n"
+          + "dimensions\030\004"
+          + " \003(\01324.google.cloud.dataplex.v1.DataQualityDimensionResultB\003\340A\003B\010\n"
           + "\006_scoreB\304\001\n"
-          + "\034com.google.cloud.dataplex.v1B\020DataQualityProtoP\001Z8cloud.google.co"
-          + "m/go/dataplex/apiv1/dataplexpb;dataplexpb\352AU\n"
-          + "\035bigquery.googleapis.com/Table\0224projects/{project}/datasets/{dataset}/table"
-          + "s/{table}b\006proto3"
+          + "\034com.google.cloud.dataplex.v1B\020DataQ"
+          + "ualityProtoP\001Z8cloud.google.com/go/dataplex/apiv1/dataplexpb;dataplexpb\352AU\n"
+          + "\035bigquery.googleapis.com/Table\0224projects/{pro"
+          + "ject}/datasets/{dataset}/tables/{table}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -390,6 +400,7 @@ public final class DataQualityProto {
               "ScannedData",
               "PostScanActionsResult",
               "CatalogPublishingStatus",
+              "AnomalyDetectionGeneratedAssets",
             });
     internal_static_google_cloud_dataplex_v1_DataQualityResult_PostScanActionsResult_descriptor =
         internal_static_google_cloud_dataplex_v1_DataQualityResult_descriptor
@@ -410,6 +421,19 @@ public final class DataQualityProto {
             internal_static_google_cloud_dataplex_v1_DataQualityResult_PostScanActionsResult_BigQueryExportResult_descriptor,
             new java.lang.String[] {
               "State", "Message",
+            });
+    internal_static_google_cloud_dataplex_v1_DataQualityResult_AnomalyDetectionGeneratedAssets_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataQualityResult_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_dataplex_v1_DataQualityResult_AnomalyDetectionGeneratedAssets_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataQualityResult_AnomalyDetectionGeneratedAssets_descriptor,
+            new java.lang.String[] {
+              "ResultTable",
+              "DataIntermediateTable",
+              "FreshnessIntermediateTable",
+              "VolumeIntermediateTable",
             });
     internal_static_google_cloud_dataplex_v1_DataQualityRuleResult_descriptor =
         getDescriptor().getMessageTypes().get(2);
