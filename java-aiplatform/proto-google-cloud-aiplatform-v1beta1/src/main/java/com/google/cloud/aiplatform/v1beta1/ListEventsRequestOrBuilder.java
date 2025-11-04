@@ -142,4 +142,38 @@ public interface ListEventsRequestOrBuilder
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A comma-separated list of fields to order by, sorted in ascending
+   * order. Use "desc" after a field name for descending. Supported fields:
+   *   * `timestamp`
+   *
+   * Example: `timestamp desc`.
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A comma-separated list of fields to order by, sorted in ascending
+   * order. Use "desc" after a field name for descending. Supported fields:
+   *   * `timestamp`
+   *
+   * Example: `timestamp desc`.
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
 }

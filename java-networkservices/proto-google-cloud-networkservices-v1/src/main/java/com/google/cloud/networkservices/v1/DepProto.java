@@ -105,6 +105,38 @@ public final class DepProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_networkservices_v1_DeleteLbRouteExtensionRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkservices_v1_LbEdgeExtension_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkservices_v1_LbEdgeExtension_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkservices_v1_LbEdgeExtension_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkservices_v1_LbEdgeExtension_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkservices_v1_ListLbEdgeExtensionsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkservices_v1_ListLbEdgeExtensionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkservices_v1_ListLbEdgeExtensionsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkservices_v1_ListLbEdgeExtensionsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkservices_v1_GetLbEdgeExtensionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkservices_v1_GetLbEdgeExtensionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkservices_v1_CreateLbEdgeExtensionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkservices_v1_CreateLbEdgeExtensionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkservices_v1_UpdateLbEdgeExtensionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkservices_v1_UpdateLbEdgeExtensionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkservices_v1_DeleteLbEdgeExtensionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkservices_v1_DeleteLbEdgeExtensionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_networkservices_v1_AuthzExtension_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_networkservices_v1_AuthzExtension_fieldAccessorTable;
@@ -278,6 +310,56 @@ public final class DepProto {
           + "\035DeleteLbRouteExtensionRequest\022E\n"
           + "\004name\030\001 \001(\tB7\340A\002\372A1\n"
           + "/networkservices.googleapis.com/LbRouteExtension\022\037\n\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\240\005\n"
+          + "\017LbEdgeExtension\022\024\n"
+          + "\004name\030\001 \001(\tB\006\340A\002\340A\010\0224\n"
+          + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\003"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\030\n"
+          + "\013description\030\t \001(\tB\003\340A\001\022Q\n"
+          + "\006labels\030\004 \003(\0132<.google.cloud.networkse"
+          + "rvices.v1.LbEdgeExtension.LabelsEntryB\003\340A\001\022\035\n"
+          + "\020forwarding_rules\030\005 \003(\tB\003\340A\002\022N\n"
+          + "\020extension_chains\030\006"
+          + " \003(\0132/.google.cloud.networkservices.v1.ExtensionChainB\003\340A\002\022X\n"
+          + "\025load_balancing_scheme\030\007 \001(\01624.google.cloud."
+          + "networkservices.v1.LoadBalancingSchemeB\003\340A\002\032-\n"
+          + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001:\245\001\352A\241\001\n"
+          + ".networkservices.googleapis.com/LbEdgeExtension\022Lprojects/{pro"
+          + "ject}/locations/{location}/lbEdgeExtensi"
+          + "ons/{lb_edge_extension}*\020lbEdgeExtensions2\017lbEdgeExtension\"\302\001\n"
+          + "\033ListLbEdgeExtensionsRequest\022F\n"
+          + "\006parent\030\001 \001(\tB6\340A\002\372A0\022.netw"
+          + "orkservices.googleapis.com/LbEdgeExtension\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\232\001\n"
+          + "\034ListLbEdgeExtensionsResponse\022L\n"
+          + "\022lb_edge_extensions\030\001 \003(\01320.g"
+          + "oogle.cloud.networkservices.v1.LbEdgeExtension\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"a\n"
+          + "\031GetLbEdgeExtensionRequest\022D\n"
+          + "\004name\030\001 \001(\tB6\340A\002\372A0\n"
+          + ".networkservices.googleapis.com/LbEdgeExtension\"\374\001\n"
+          + "\034CreateLbEdgeExtensionRequest\022F\n"
+          + "\006parent\030\001 \001(\t"
+          + "B6\340A\002\372A0\022.networkservices.googleapis.com/LbEdgeExtension\022!\n"
+          + "\024lb_edge_extension_id\030\002 \001(\tB\003\340A\002\022P\n"
+          + "\021lb_edge_extension\030\003 \001(\01320"
+          + ".google.cloud.networkservices.v1.LbEdgeExtensionB\003\340A\002\022\037\n\n"
+          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\307\001\n"
+          + "\034UpdateLbEdgeExtensionRequest\0224\n"
+          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022P\n"
+          + "\021lb_edge_extension\030\002 \001(\013"
+          + "20.google.cloud.networkservices.v1.LbEdgeExtensionB\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\205\001\n"
+          + "\034DeleteLbEdgeExtensionRequest\022D\n"
+          + "\004name\030\001 \001(\tB6\340A\002\372A0\n"
+          + ".networkservices.googleapis.com/LbEdgeExtension\022\037\n\n"
           + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\265\006\n"
           + "\016AuthzExtension\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\002\340A\010\0224\n"
@@ -285,10 +367,10 @@ public final class DepProto {
           + "\013update_time\030\003"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\030\n"
           + "\013description\030\004 \001(\tB\003\340A\001\022P\n"
-          + "\006labels\030\005 \003(\0132;.google.cloud.networkser"
-          + "vices.v1.AuthzExtension.LabelsEntryB\003\340A\001\022X\n"
-          + "\025load_balancing_scheme\030\006 \001(\01624.google"
-          + ".cloud.networkservices.v1.LoadBalancingSchemeB\003\340A\002\022\026\n"
+          + "\006labels\030\005 \003(\0132;.google.cloud.networkse"
+          + "rvices.v1.AuthzExtension.LabelsEntryB\003\340A\001\022X\n"
+          + "\025load_balancing_scheme\030\006 \001(\01624.googl"
+          + "e.cloud.networkservices.v1.LoadBalancingSchemeB\003\340A\002\022\026\n"
           + "\tauthority\030\007 \001(\tB\003\340A\002\022\024\n"
           + "\007service\030\010 \001(\tB\003\340A\002\022/\n"
           + "\007timeout\030\t \001(\0132\031.google.protobuf.DurationB\003\340A\002\022\026\n"
@@ -296,14 +378,14 @@ public final class DepProto {
           + " \001(\010B\003\340A\001\022.\n"
           + "\010metadata\030\013 \001(\0132\027.google.protobuf.StructB\003\340A\001\022\034\n"
           + "\017forward_headers\030\014 \003(\tB\003\340A\001\022E\n"
-          + "\013wire_format\030\016 \001(\0162+.google.cl"
-          + "oud.networkservices.v1.WireFormatB\003\340A\001\032-\n"
+          + "\013wire_format\030\016 \001(\0162+.google.c"
+          + "loud.networkservices.v1.WireFormatB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\237\001\352A\233\001\n"
-          + "-networkservices.googleapis.com/AuthzExtension\022Iprojects/{project}/"
-          + "locations/{location}/authzExtensions/{au"
-          + "thz_extension}*\017authzExtensions2\016authzExtension\"\300\001\n"
+          + "-networkservices.googleapis.com/AuthzExtension\022Iprojects/{project}"
+          + "/locations/{location}/authzExtensions/{a"
+          + "uthz_extension}*\017authzExtensions2\016authzExtension\"\300\001\n"
           + "\032ListAuthzExtensionsRequest\022E\n"
           + "\006parent\030\001 \001("
           + "\tB5\340A\002\372A/\022-networkservices.googleapis.com/AuthzExtension\022\026\n"
@@ -349,87 +431,110 @@ public final class DepProto {
           + "\020EXTERNAL_MANAGED\020\002*<\n\n"
           + "WireFormat\022\033\n"
           + "\027WIRE_FORMAT_UNSPECIFIED\020\000\022\021\n\r"
-          + "EXT_PROC_GRPC\020\0012\244\036\n\n"
+          + "EXT_PROC_GRPC\020\0012\371\'\n\n"
           + "DepService\022\346\001\n"
-          + "\027ListLbTrafficExtensions\022?.google.cloud.networkservice"
-          + "s.v1.ListLbTrafficExtensionsRequest\032@.google.cloud.networkservices.v1.ListLbTraf"
-          + "ficExtensionsResponse\"H\332A\006parent\202\323\344\223\0029\0227"
-          + "/v1/{parent=projects/*/locations/*}/lbTrafficExtensions\022\323\001\n"
-          + "\025GetLbTrafficExtension\022=.google.cloud.networkservices.v1.GetL"
-          + "bTrafficExtensionRequest\0323.google.cloud."
-          + "networkservices.v1.LbTrafficExtension\"F\332"
-          + "A\004name\202\323\344\223\0029\0227/v1/{name=projects/*/locations/*/lbTrafficExtensions/*}\022\263\002\n"
-          + "\030CreateLbTrafficExtension\022@.google.cloud.networ"
-          + "kservices.v1.CreateLbTrafficExtensionReq"
-          + "uest\032\035.google.longrunning.Operation\"\265\001\312A\'\n"
-          + "\022LbTrafficExtension\022\021OperationMetadata"
-          + "\332A3parent,lb_traffic_extension,lb_traffi"
-          + "c_extension_id\202\323\344\223\002O\"7/v1/{parent=projec"
-          + "ts/*/locations/*}/lbTrafficExtensions:\024lb_traffic_extension\022\265\002\n"
-          + "\030UpdateLbTrafficExtension\022@.google.cloud.networkservices."
-          + "v1.UpdateLbTrafficExtensionRequest\032\035.google.longrunning.Operation\"\267\001\312A\'\n"
-          + "\022LbTrafficExtension\022\021OperationMetadata\332A lb_traf"
-          + "fic_extension,update_mask\202\323\344\223\002d2L/v1/{lb"
-          + "_traffic_extension.name=projects/*/locat"
-          + "ions/*/lbTrafficExtensions/*}:\024lb_traffic_extension\022\360\001\n"
-          + "\030DeleteLbTrafficExtension\022@.google.cloud.networkservices.v1.Delet"
-          + "eLbTrafficExtensionRequest\032\035.google.longrunning.Operation\"s\312A*\n"
-          + "\025google.protobuf."
-          + "Empty\022\021OperationMetadata\332A\004name\202\323\344\223\0029*7/"
-          + "v1/{name=projects/*/locations/*/lbTrafficExtensions/*}\022\336\001\n"
-          + "\025ListLbRouteExtensions\022=.google.cloud.networkservices.v1.ListL"
-          + "bRouteExtensionsRequest\032>.google.cloud.networkservices.v1.ListLbRouteExtensionsR"
-          + "esponse\"F\332A\006parent\202\323\344\223\0027\0225/v1/{parent=pr"
-          + "ojects/*/locations/*}/lbRouteExtensions\022\313\001\n"
-          + "\023GetLbRouteExtension\022;.google.cloud.networkservices.v1.GetLbRouteExtensionReq"
-          + "uest\0321.google.cloud.networkservices.v1.L"
-          + "bRouteExtension\"D\332A\004name\202\323\344\223\0027\0225/v1/{nam"
-          + "e=projects/*/locations/*/lbRouteExtensions/*}\022\245\002\n"
-          + "\026CreateLbRouteExtension\022>.google.cloud.networkservices.v1.CreateLbRoute"
-          + "ExtensionRequest\032\035.google.longrunning.Operation\"\253\001\312A%\n"
-          + "\020LbRouteExtension\022\021OperationMetadata\332A/parent,lb_route_extension,l"
-          + "b_route_extension_id\202\323\344\223\002K\"5/v1/{parent="
-          + "projects/*/locations/*}/lbRouteExtensions:\022lb_route_extension\022\247\002\n"
-          + "\026UpdateLbRouteExtension\022>.google.cloud.networkservices."
-          + "v1.UpdateLbRouteExtensionRequest\032\035.google.longrunning.Operation\"\255\001\312A%\n"
-          + "\020LbRouteExtension\022\021OperationMetadata\332A\036lb_route_ex"
-          + "tension,update_mask\202\323\344\223\002^2H/v1/{lb_route"
-          + "_extension.name=projects/*/locations/*/l"
-          + "bRouteExtensions/*}:\022lb_route_extension\022\352\001\n"
-          + "\026DeleteLbRouteExtension\022>.google.cloud.networkservices.v1.DeleteLbRouteExtens"
-          + "ionRequest\032\035.google.longrunning.Operation\"q\312A*\n"
-          + "\025google.protobuf.Empty\022\021Operation"
-          + "Metadata\332A\004name\202\323\344\223\0027*5/v1/{name=projects/*/locations/*/lbRouteExtensions/*}\022\326\001\n"
-          + "\023ListAuthzExtensions\022;.google.cloud.networkservices.v1.ListAuthzExtensionsReques"
-          + "t\032<.google.cloud.networkservices.v1.List"
-          + "AuthzExtensionsResponse\"D\332A\006parent\202\323\344\223\0025"
-          + "\0223/v1/{parent=projects/*/locations/*}/authzExtensions\022\303\001\n"
-          + "\021GetAuthzExtension\0229.google.cloud.networkservices.v1.GetAuthzEx"
-          + "tensionRequest\032/.google.cloud.networkser"
-          + "vices.v1.AuthzExtension\"B\332A\004name\202\323\344\223\0025\0223"
-          + "/v1/{name=projects/*/locations/*/authzExtensions/*}\022\224\002\n"
-          + "\024CreateAuthzExtension\022<.google.cloud.networkservices.v1.CreateAut"
-          + "hzExtensionRequest\032\035.google.longrunning.Operation\"\236\001\312A#\n"
-          + "\016AuthzExtension\022\021OperationMetadata\332A)parent,authz_extension,auth"
-          + "z_extension_id\202\323\344\223\002F\"3/v1/{parent=projec"
-          + "ts/*/locations/*}/authzExtensions:\017authz_extension\022\226\002\n"
-          + "\024UpdateAuthzExtension\022<.google.cloud.networkservices.v1.UpdateAuth"
-          + "zExtensionRequest\032\035.google.longrunning.Operation\"\240\001\312A#\n"
-          + "\016AuthzExtension\022\021OperationMetadata\332A\033authz_extension,update_mask\202"
-          + "\323\344\223\002V2C/v1/{authz_extension.name=project"
-          + "s/*/locations/*/authzExtensions/*}:\017authz_extension\022\344\001\n"
-          + "\024DeleteAuthzExtension\022<.google.cloud.networkservices.v1.DeleteAut"
-          + "hzExtensionRequest\032\035.google.longrunning.Operation\"o\312A*\n"
-          + "\025google.protobuf.Empty\022\021O"
-          + "perationMetadata\332A\004name\202\323\344\223\0025*3/v1/{name"
-          + "=projects/*/locations/*/authzExtensions/"
-          + "*}\032R\312A\036networkservices.googleapis.com\322A."
-          + "https://www.googleapis.com/auth/cloud-platformB\351\001\n"
-          + "#com.google.cloud.networkservices.v1B\010DepProtoP\001ZMcloud.google.com/go/"
-          + "networkservices/apiv1/networkservicespb;"
-          + "networkservicespb\252\002\037Google.Cloud.Network"
-          + "Services.V1\312\002\037Google\\Cloud\\NetworkServic"
-          + "es\\V1\352\002\"Google::Cloud::NetworkServices::V1b\006proto3"
+          + "\027ListLbTrafficExtensions\022?.google.cloud.networkservic"
+          + "es.v1.ListLbTrafficExtensionsRequest\032@.google.cloud.networkservices.v1.ListLbTra"
+          + "fficExtensionsResponse\"H\332A\006parent\202\323\344\223\0029\022"
+          + "7/v1/{parent=projects/*/locations/*}/lbTrafficExtensions\022\323\001\n"
+          + "\025GetLbTrafficExtension\022=.google.cloud.networkservices.v1.Get"
+          + "LbTrafficExtensionRequest\0323.google.cloud.networkservices.v1.LbTrafficExtension\"F"
+          + "\332A\004name\202\323\344\223\0029\0227/v1/{name=projects/*/locations/*/lbTrafficExtensions/*}\022\263\002\n"
+          + "\030CreateLbTrafficExtension\022@.google.cloud.netwo"
+          + "rkservices.v1.CreateLbTrafficExtensionRe"
+          + "quest\032\035.google.longrunning.Operation\"\265\001\312A\'\n"
+          + "\022LbTrafficExtension\022\021OperationMetadat"
+          + "a\332A3parent,lb_traffic_extension,lb_traff"
+          + "ic_extension_id\202\323\344\223\002O\"7/v1/{parent=proje"
+          + "cts/*/locations/*}/lbTrafficExtensions:\024lb_traffic_extension\022\265\002\n"
+          + "\030UpdateLbTrafficExtension\022@.google.cloud.networkservices"
+          + ".v1.UpdateLbTrafficExtensionRequest\032\035.google.longrunning.Operation\"\267\001\312A\'\n"
+          + "\022LbTrafficExtension\022\021OperationMetadata\332A lb_tra"
+          + "ffic_extension,update_mask\202\323\344\223\002d2L/v1/{l"
+          + "b_traffic_extension.name=projects/*/loca"
+          + "tions/*/lbTrafficExtensions/*}:\024lb_traffic_extension\022\360\001\n"
+          + "\030DeleteLbTrafficExtension\022@.google.cloud.networkservices.v1.Dele"
+          + "teLbTrafficExtensionRequest\032\035.google.longrunning.Operation\"s\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\0029*7"
+          + "/v1/{name=projects/*/locations/*/lbTrafficExtensions/*}\022\336\001\n"
+          + "\025ListLbRouteExtensions\022=.google.cloud.networkservices.v1.List"
+          + "LbRouteExtensionsRequest\032>.google.cloud.networkservices.v1.ListLbRouteExtensions"
+          + "Response\"F\332A\006parent\202\323\344\223\0027\0225/v1/{parent=p"
+          + "rojects/*/locations/*}/lbRouteExtensions\022\313\001\n"
+          + "\023GetLbRouteExtension\022;.google.cloud.networkservices.v1.GetLbRouteExtensionRe"
+          + "quest\0321.google.cloud.networkservices.v1."
+          + "LbRouteExtension\"D\332A\004name\202\323\344\223\0027\0225/v1/{na"
+          + "me=projects/*/locations/*/lbRouteExtensions/*}\022\245\002\n"
+          + "\026CreateLbRouteExtension\022>.google.cloud.networkservices.v1.CreateLbRout"
+          + "eExtensionRequest\032\035.google.longrunning.Operation\"\253\001\312A%\n"
+          + "\020LbRouteExtension\022\021OperationMetadata\332A/parent,lb_route_extension,"
+          + "lb_route_extension_id\202\323\344\223\002K\"5/v1/{parent"
+          + "=projects/*/locations/*}/lbRouteExtensions:\022lb_route_extension\022\247\002\n"
+          + "\026UpdateLbRouteExtension\022>.google.cloud.networkservices"
+          + ".v1.UpdateLbRouteExtensionRequest\032\035.google.longrunning.Operation\"\255\001\312A%\n"
+          + "\020LbRouteExtension\022\021OperationMetadata\332A\036lb_route_e"
+          + "xtension,update_mask\202\323\344\223\002^2H/v1/{lb_rout"
+          + "e_extension.name=projects/*/locations/*/"
+          + "lbRouteExtensions/*}:\022lb_route_extension\022\352\001\n"
+          + "\026DeleteLbRouteExtension\022>.google.cloud.networkservices.v1.DeleteLbRouteExten"
+          + "sionRequest\032\035.google.longrunning.Operation\"q\312A*\n"
+          + "\025google.protobuf.Empty\022\021Operatio"
+          + "nMetadata\332A\004name\202\323\344\223\0027*5/v1/{name=projec"
+          + "ts/*/locations/*/lbRouteExtensions/*}\022\332\001\n"
+          + "\024ListLbEdgeExtensions\022<.google.cloud.networkservices.v1.ListLbEdgeExtensionsReq"
+          + "uest\032=.google.cloud.networkservices.v1.L"
+          + "istLbEdgeExtensionsResponse\"E\332A\006parent\202\323"
+          + "\344\223\0026\0224/v1/{parent=projects/*/locations/*}/lbEdgeExtensions\022\307\001\n"
+          + "\022GetLbEdgeExtension\022:.google.cloud.networkservices.v1.GetL"
+          + "bEdgeExtensionRequest\0320.google.cloud.net"
+          + "workservices.v1.LbEdgeExtension\"C\332A\004name"
+          + "\202\323\344\223\0026\0224/v1/{name=projects/*/locations/*/lbEdgeExtensions/*}\022\236\002\n"
+          + "\025CreateLbEdgeExtension\022=.google.cloud.networkservices.v1"
+          + ".CreateLbEdgeExtensionRequest\032\035.google.longrunning.Operation\"\246\001\312A$\n"
+          + "\017LbEdgeExtension\022\021OperationMetadata\332A-parent,lb_edge_"
+          + "extension,lb_edge_extension_id\202\323\344\223\002I\"4/v"
+          + "1/{parent=projects/*/locations/*}/lbEdgeExtensions:\021lb_edge_extension\022\240\002\n"
+          + "\025UpdateLbEdgeExtension\022=.google.cloud.networkse"
+          + "rvices.v1.UpdateLbEdgeExtensionRequest\032\035.google.longrunning.Operation\"\250\001\312A$\n"
+          + "\017LbEdgeExtension\022\021OperationMetadata\332A\035lb_edg"
+          + "e_extension,update_mask\202\323\344\223\002[2F/v1/{lb_e"
+          + "dge_extension.name=projects/*/locations/"
+          + "*/lbEdgeExtensions/*}:\021lb_edge_extension\022\347\001\n"
+          + "\025DeleteLbEdgeExtension\022=.google.cloud.networkservices.v1.DeleteLbEdgeExtensi"
+          + "onRequest\032\035.google.longrunning.Operation\"p\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationM"
+          + "etadata\332A\004name\202\323\344\223\0026*4/v1/{name=projects/*/locations/*/lbEdgeExtensions/*}\022\326\001\n"
+          + "\023ListAuthzExtensions\022;.google.cloud.networ"
+          + "kservices.v1.ListAuthzExtensionsRequest\032<.google.cloud.networkservices.v1.ListAu"
+          + "thzExtensionsResponse\"D\332A\006parent\202\323\344\223\0025\0223"
+          + "/v1/{parent=projects/*/locations/*}/authzExtensions\022\303\001\n"
+          + "\021GetAuthzExtension\0229.google.cloud.networkservices.v1.GetAuthzExte"
+          + "nsionRequest\032/.google.cloud.networkservi"
+          + "ces.v1.AuthzExtension\"B\332A\004name\202\323\344\223\0025\0223/v"
+          + "1/{name=projects/*/locations/*/authzExtensions/*}\022\224\002\n"
+          + "\024CreateAuthzExtension\022<.google.cloud.networkservices.v1.CreateAuthz"
+          + "ExtensionRequest\032\035.google.longrunning.Operation\"\236\001\312A#\n"
+          + "\016AuthzExtension\022\021OperationMetadata\332A)parent,authz_extension,authz_"
+          + "extension_id\202\323\344\223\002F\"3/v1/{parent=projects"
+          + "/*/locations/*}/authzExtensions:\017authz_extension\022\226\002\n"
+          + "\024UpdateAuthzExtension\022<.google.cloud.networkservices.v1.UpdateAuthzE"
+          + "xtensionRequest\032\035.google.longrunning.Operation\"\240\001\312A#\n"
+          + "\016AuthzExtension\022\021OperationM"
+          + "etadata\332A\033authz_extension,update_mask\202\323\344"
+          + "\223\002V2C/v1/{authz_extension.name=projects/"
+          + "*/locations/*/authzExtensions/*}:\017authz_extension\022\344\001\n"
+          + "\024DeleteAuthzExtension\022<.google.cloud.networkservices.v1.DeleteAuthz"
+          + "ExtensionRequest\032\035.google.longrunning.Operation\"o\312A*\n"
+          + "\025google.protobuf.Empty\022\021Ope"
+          + "rationMetadata\332A\004name\202\323\344\223\0025*3/v1/{name=p"
+          + "rojects/*/locations/*/authzExtensions/*}"
+          + "\032R\312A\036networkservices.googleapis.com\322A.ht"
+          + "tps://www.googleapis.com/auth/cloud-platformB\351\001\n"
+          + "#com.google.cloud.networkservices.v1B\010DepProtoP\001ZMcloud.google.com/go/ne"
+          + "tworkservices/apiv1/networkservicespb;ne"
+          + "tworkservicespb\252\002\037Google.Cloud.NetworkSe"
+          + "rvices.V1\312\002\037Google\\Cloud\\NetworkServices"
+          + "\\V1\352\002\"Google::Cloud::NetworkServices::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -631,8 +736,81 @@ public final class DepProto {
             new java.lang.String[] {
               "Name", "RequestId",
             });
-    internal_static_google_cloud_networkservices_v1_AuthzExtension_descriptor =
+    internal_static_google_cloud_networkservices_v1_LbEdgeExtension_descriptor =
         getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_networkservices_v1_LbEdgeExtension_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkservices_v1_LbEdgeExtension_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "CreateTime",
+              "UpdateTime",
+              "Description",
+              "Labels",
+              "ForwardingRules",
+              "ExtensionChains",
+              "LoadBalancingScheme",
+            });
+    internal_static_google_cloud_networkservices_v1_LbEdgeExtension_LabelsEntry_descriptor =
+        internal_static_google_cloud_networkservices_v1_LbEdgeExtension_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_networkservices_v1_LbEdgeExtension_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkservices_v1_LbEdgeExtension_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_networkservices_v1_ListLbEdgeExtensionsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(16);
+    internal_static_google_cloud_networkservices_v1_ListLbEdgeExtensionsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkservices_v1_ListLbEdgeExtensionsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_networkservices_v1_ListLbEdgeExtensionsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(17);
+    internal_static_google_cloud_networkservices_v1_ListLbEdgeExtensionsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkservices_v1_ListLbEdgeExtensionsResponse_descriptor,
+            new java.lang.String[] {
+              "LbEdgeExtensions", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_networkservices_v1_GetLbEdgeExtensionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_networkservices_v1_GetLbEdgeExtensionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkservices_v1_GetLbEdgeExtensionRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_networkservices_v1_CreateLbEdgeExtensionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(19);
+    internal_static_google_cloud_networkservices_v1_CreateLbEdgeExtensionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkservices_v1_CreateLbEdgeExtensionRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "LbEdgeExtensionId", "LbEdgeExtension", "RequestId",
+            });
+    internal_static_google_cloud_networkservices_v1_UpdateLbEdgeExtensionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(20);
+    internal_static_google_cloud_networkservices_v1_UpdateLbEdgeExtensionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkservices_v1_UpdateLbEdgeExtensionRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "LbEdgeExtension", "RequestId",
+            });
+    internal_static_google_cloud_networkservices_v1_DeleteLbEdgeExtensionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(21);
+    internal_static_google_cloud_networkservices_v1_DeleteLbEdgeExtensionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkservices_v1_DeleteLbEdgeExtensionRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId",
+            });
+    internal_static_google_cloud_networkservices_v1_AuthzExtension_descriptor =
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_networkservices_v1_AuthzExtension_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_AuthzExtension_descriptor,
@@ -662,7 +840,7 @@ public final class DepProto {
               "Key", "Value",
             });
     internal_static_google_cloud_networkservices_v1_ListAuthzExtensionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_networkservices_v1_ListAuthzExtensionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_ListAuthzExtensionsRequest_descriptor,
@@ -670,7 +848,7 @@ public final class DepProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_networkservices_v1_ListAuthzExtensionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_networkservices_v1_ListAuthzExtensionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_ListAuthzExtensionsResponse_descriptor,
@@ -678,7 +856,7 @@ public final class DepProto {
               "AuthzExtensions", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_networkservices_v1_GetAuthzExtensionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_networkservices_v1_GetAuthzExtensionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_GetAuthzExtensionRequest_descriptor,
@@ -686,7 +864,7 @@ public final class DepProto {
               "Name",
             });
     internal_static_google_cloud_networkservices_v1_CreateAuthzExtensionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_networkservices_v1_CreateAuthzExtensionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_CreateAuthzExtensionRequest_descriptor,
@@ -694,7 +872,7 @@ public final class DepProto {
               "Parent", "AuthzExtensionId", "AuthzExtension", "RequestId",
             });
     internal_static_google_cloud_networkservices_v1_UpdateAuthzExtensionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_networkservices_v1_UpdateAuthzExtensionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_UpdateAuthzExtensionRequest_descriptor,
@@ -702,7 +880,7 @@ public final class DepProto {
               "UpdateMask", "AuthzExtension", "RequestId",
             });
     internal_static_google_cloud_networkservices_v1_DeleteAuthzExtensionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_networkservices_v1_DeleteAuthzExtensionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkservices_v1_DeleteAuthzExtensionRequest_descriptor,

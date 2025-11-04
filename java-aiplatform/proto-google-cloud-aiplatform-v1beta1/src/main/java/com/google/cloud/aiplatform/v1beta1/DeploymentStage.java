@@ -119,6 +119,26 @@ public enum DeploymentStage implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DEPLOYMENT_TERMINATED = 10;</code>
    */
   DEPLOYMENT_TERMINATED(10),
+  /**
+   *
+   *
+   * <pre>
+   * The deployment has succeeded.
+   * </pre>
+   *
+   * <code>SUCCESSFULLY_DEPLOYED = 11;</code>
+   */
+  SUCCESSFULLY_DEPLOYED(11),
+  /**
+   *
+   *
+   * <pre>
+   * The deployment has failed.
+   * </pre>
+   *
+   * <code>FAILED_TO_DEPLOY = 12;</code>
+   */
+  FAILED_TO_DEPLOY(12),
   UNRECOGNIZED(-1),
   ;
 
@@ -221,6 +241,28 @@ public enum DeploymentStage implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int DEPLOYMENT_TERMINATED_VALUE = 10;
 
+  /**
+   *
+   *
+   * <pre>
+   * The deployment has succeeded.
+   * </pre>
+   *
+   * <code>SUCCESSFULLY_DEPLOYED = 11;</code>
+   */
+  public static final int SUCCESSFULLY_DEPLOYED_VALUE = 11;
+
+  /**
+   *
+   *
+   * <pre>
+   * The deployment has failed.
+   * </pre>
+   *
+   * <code>FAILED_TO_DEPLOY = 12;</code>
+   */
+  public static final int FAILED_TO_DEPLOY_VALUE = 12;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -263,6 +305,10 @@ public enum DeploymentStage implements com.google.protobuf.ProtocolMessageEnum {
         return FINISHING_UP;
       case 10:
         return DEPLOYMENT_TERMINATED;
+      case 11:
+        return SUCCESSFULLY_DEPLOYED;
+      case 12:
+        return FAILED_TO_DEPLOY;
       default:
         return null;
     }
